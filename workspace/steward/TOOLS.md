@@ -16,6 +16,7 @@
 > 条目由大管家统一维护
 > 实验室仓库、实验室项目等实验室相关内容同步给实验室成员
 > 教研室仓库、教学助手仓库、教务助手仓库、学工助手仓库等教研室相关内容同步给教研室成员
+
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件 |
@@ -39,6 +40,7 @@
 
 ## 成员工作空间
 > 仅大管家需要知道
+> 不要同步给其他代理
 
 | 称呼 | Agent ID | 工作空间 | Agent目录 |
 |------|----------|----------|-----------|
@@ -110,7 +112,6 @@
 
 ## 索引
 
-
 ### 公共技能索引
 > 大管家统一维护
 
@@ -123,7 +124,7 @@
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
 | 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/skills/general-scripts/检索文献.md |
 | 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/skills/general-scripts/管理知识库.md |
-
+---
 
 ### 私人技能索引
 > 大管家维护格式
@@ -133,6 +134,7 @@
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
 | lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
 ---
+
 ### 脚本索引
 > 各个代理独立维护
 | 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
