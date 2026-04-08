@@ -1,0 +1,530 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/root/.openclaw/workspace/steward",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "sandbox": {
+        "browser": {
+          "enabled": false
+        }
+      },
+      "model": {
+        "primary": "arkcode/ark-code-latest"
+      }
+    },
+    "list": [
+      {
+        "id": "steward",
+        "name": "steward",
+        "workspace": "/root/.openclaw/workspace/steward",
+        "agentDir": "/root/.openclaw/agents/steward/agent"
+      },
+      {
+        "id": "mathematician",
+        "name": "mathematician",
+        "workspace": "/root/.openclaw/workspace/mathematician",
+        "agentDir": "/root/.openclaw/agents/mathematician/agent"
+      },
+      {
+        "id": "physicist",
+        "name": "physicist",
+        "workspace": "/root/.openclaw/workspace/physicist",
+        "agentDir": "/root/.openclaw/agents/math-physicist/agent"
+      },
+      {
+        "id": "psychologist",
+        "name": "psychologist",
+        "workspace": "/root/.openclaw/workspace/psychologist",
+        "agentDir": "/root/.openclaw/agents/psychologist/agent"
+      },
+      {
+        "id": "writer",
+        "name": "writer",
+        "workspace": "/root/.openclaw/workspace/writer",
+        "agentDir": "/root/.openclaw/agents/writer/agent"
+      },
+      {
+        "id": "reviewer",
+        "name": "reviewer",
+        "workspace": "/root/.openclaw/workspace/reviewer",
+        "agentDir": "/root/.openclaw/agents/reviewer/agent"
+      },
+      {
+        "id": "teachingassistant",
+        "name": "TeachingAssistant",
+        "workspace": "/root/.openclaw/workspace/teaching",
+        "agentDir": "/root/.openclaw/agents/teachingassistant/agent"
+      },
+      {
+        "id": "studentaffairsassistant",
+        "name": "studentaffairsassistant",
+        "workspace": "/root/.openclaw/workspace/studentaffairsassistant",
+        "agentDir": "/root/.openclaw/agents/studentaffairsassistant/agent"
+      },
+      {
+        "id": "academicassistant",
+        "name": "academicassistant",
+        "workspace": "/root/.openclaw/workspace/academicassistant",
+        "agentDir": "/root/.openclaw/agents/academicassistant/agent"
+      }
+    ]
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    },
+    "port": 18098,
+    "bind": "lan",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowedOrigins": [
+        "http://101.43.20.69:18098"
+      ],
+      "allowInsecureAuth": true,
+      "dangerouslyDisableDeviceAuth": true,
+      "basePath": "/estqvr"
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "full"
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-08T08:42:19.230Z",
+    "lastRunVersion": "2026.4.2",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.2",
+    "lastTouchedAt": "2026-04-08T09:26:51.852Z"
+  },
+  "plugins": {
+    "entries": {
+      "memory-tdai": {
+        "enabled": false
+      },
+      "ddingtalk": {
+        "enabled": false
+      },
+      "wecom": {
+        "enabled": false
+      },
+      "adp-openclaw": {
+        "enabled": false
+      },
+      "openclaw-plugin-yuanbao": {
+        "enabled": false
+      },
+      "openclaw-weixin": {
+        "enabled": false
+      },
+      "lightclawbot": {
+        "enabled": true
+      },
+      "browser": {
+        "enabled": true
+      },
+      "qqbot": {
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "memory-tdai": {
+        "source": "npm",
+        "spec": "@tdai/memory-tdai@latest",
+        "installPath": "/root/.openclaw/extensions/memory-tdai",
+        "version": "0.1.2",
+        "resolvedName": "@tdai/memory-tdai",
+        "resolvedVersion": "0.1.2",
+        "resolvedSpec": "@tdai/memory-tdai@0.1.2",
+        "integrity": "sha512-TOrv+qMGxk9yLuu3eCPlPayTt3B9IjjPmHT7NfyqQk0MiOu/HN5LuE3UxTGscPIdGUoLfAd3SCM1R/fNm34cAQ==",
+        "shasum": "0f9ad8d345a0802fa7b3f0a9f84789269ed920d7",
+        "resolvedAt": "2026-04-03T03:21:38.624Z",
+        "installedAt": "2026-04-03T03:21:57.103Z"
+      },
+      "ddingtalk": {
+        "source": "npm",
+        "spec": "@largezhou/ddingtalk@latest",
+        "installPath": "/root/.openclaw/extensions/ddingtalk",
+        "version": "2.0.1",
+        "resolvedName": "@largezhou/ddingtalk",
+        "resolvedVersion": "2.0.1",
+        "resolvedSpec": "@largezhou/ddingtalk@2.0.1",
+        "integrity": "sha512-qKDndqVb6nj1CJ+IX+9DF86qhxrjvJYerk3ooir+TfiQD7RI8/HminvGzXf5g8SRsFF/wWP8vF/Gha5HCNfTJQ==",
+        "shasum": "9a8c22c264691f8a7bd6966cab998847c95dfd4d",
+        "resolvedAt": "2026-04-03T03:22:04.032Z",
+        "installedAt": "2026-04-03T03:22:25.251Z"
+      },
+      "wecom": {
+        "source": "npm",
+        "spec": "@mocrane/wecom@latest",
+        "installPath": "/root/.openclaw/extensions/wecom",
+        "version": "2026.3.24",
+        "resolvedName": "@mocrane/wecom",
+        "resolvedVersion": "2026.3.24",
+        "resolvedSpec": "@mocrane/wecom@2026.3.24",
+        "integrity": "sha512-RXpA5N6FXxm/4Awwqkqsa54XR9hLjyfg7adr28SWBFczqSDJAjVx+EN66NdpjP+UMR/q9QILMTq3ZhgEAHcHbA==",
+        "shasum": "90a291cd60ce789b52c30b9746c76363a8aa150c",
+        "resolvedAt": "2026-04-03T03:22:34.179Z",
+        "installedAt": "2026-04-03T03:23:00.321Z"
+      },
+      "adp-openclaw": {
+        "source": "npm",
+        "spec": "adp-openclaw@latest",
+        "installPath": "/root/.openclaw/extensions/adp-openclaw",
+        "version": "0.0.77",
+        "resolvedName": "adp-openclaw",
+        "resolvedVersion": "0.0.77",
+        "resolvedSpec": "adp-openclaw@0.0.77",
+        "integrity": "sha512-BwHDHAXE7xACepqWk3Uo4KS6yUhDa09myvGZyu1etz5m1iAdCWAaU+ycUOamCi8k58RoPMogq68n8QvnAV3Elw==",
+        "shasum": "e4e98ee7b743a8a2d195584610dde3849885863c",
+        "resolvedAt": "2026-04-03T03:23:07.332Z",
+        "installedAt": "2026-04-03T03:23:11.994Z"
+      },
+      "openclaw-plugin-yuanbao": {
+        "source": "npm",
+        "spec": "openclaw-plugin-yuanbao@latest",
+        "installPath": "/root/.openclaw/extensions/openclaw-plugin-yuanbao",
+        "version": "2.6.0",
+        "resolvedName": "openclaw-plugin-yuanbao",
+        "resolvedVersion": "2.6.0",
+        "resolvedSpec": "openclaw-plugin-yuanbao@2.6.0",
+        "integrity": "sha512-wpSQrv2gEIoMgHXcFoip5NnGKlC1DCRgh8rpGka4bDzdSftwUymERUBSnADA+5Cqb9fpu9BCnKf9TDtYTEzm0g==",
+        "shasum": "c889b036fe813fe51dfbfc9e7d0629436acdfc70",
+        "resolvedAt": "2026-04-03T03:23:17.054Z",
+        "installedAt": "2026-04-03T03:23:57.067Z"
+      },
+      "openclaw-weixin": {
+        "source": "npm",
+        "spec": "@tencent-weixin/openclaw-weixin@latest",
+        "installPath": "/root/.openclaw/extensions/openclaw-weixin",
+        "version": "2.1.3",
+        "resolvedName": "@tencent-weixin/openclaw-weixin",
+        "resolvedVersion": "2.1.3",
+        "resolvedSpec": "@tencent-weixin/openclaw-weixin@2.1.3",
+        "integrity": "sha512-NuzQo4yubbLaZZkpVz5yxEWdRR8KJlQkmUtDbIxKoHjjChvCWG1DAjx4/er95hS8muG/4h4HL7nB4JJqMVrgPw==",
+        "shasum": "b6cbc8187a06983ae912aee53f4f55e424680611",
+        "resolvedAt": "2026-04-03T03:24:03.002Z",
+        "installedAt": "2026-04-03T03:24:15.219Z"
+      },
+      "lightclawbot": {
+        "source": "npm",
+        "spec": "lightclawbot",
+        "installPath": "/root/.openclaw/extensions/lightclawbot",
+        "version": "1.1.1",
+        "installedAt": "2026-04-08T09:12:42.000Z"
+      }
+    }
+  },
+  "browser": {
+    "enabled": true,
+    "executablePath": "/root/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome",
+    "noSandbox": true,
+    "defaultProfile": "user",
+    "profiles": {
+      "user": {
+        "cdpUrl": "http://localhost:9222",
+        "driver": "existing-session",
+        "attachOnly": true,
+        "color": "#4285F4",
+        "userDataDir": "/root/.openclaw/browser-existing-session"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "arkcode": {
+        "baseUrl": "https://ark.cn-beijing.volces.com/api/coding",
+        "api": "anthropic-messages",
+        "apiKey": "${ARKCODE_API_KEY}",
+        "models": [
+          {
+            "id": "doubao-seed-2.0-code",
+            "name": "Doubao Seed 2.0 Code",
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "doubao-seed-2.0-pro",
+            "name": "Doubao Seed 2.0 Pro"
+          },
+          {
+            "id": "ark-code-latest",
+            "name": "ARK Code Latest",
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "doubao-seed-code",
+            "name": "Doubao Seed Code",
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "glm-4.7",
+            "name": "GLM-4.7"
+          },
+          {
+            "id": "deepseek-v3.2",
+            "name": "DeepSeek V3.2"
+          },
+          {
+            "id": "kimi-k2-thinking",
+            "name": "Kimi K2 Thinking"
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "input": [
+              "text",
+              "image"
+            ]
+          }
+        ]
+      },
+      "kimicode": {
+        "baseUrl": "https://api.kimi.com/coding/v1",
+        "api": "anthropic-messages",
+        "apiKey": "${KIMICODE_API_KEY}",
+        "models": [
+          {
+            "id": "kimi-for-coding",
+            "name": "kimi for coding"
+          }
+        ]
+      }
+    },
+    "mode": "merge"
+  },
+  "channels": {
+    "qqbot": {
+      "enabled": true,
+      "accounts": {
+        "steward": {
+          "appId": "1903464819",
+          "clientSecret": "${QQBOT_STEWARD_CLIENT_SECRET}"
+        },
+        "studentaffairsassistant": {
+          "appId": "1903740621",
+          "clientSecret": "${QQBOT_STUDENTAFFAIRSASSISTANT_CLIENT_SECRET}"
+        },
+        "academicassistant": {
+          "appId": "1903740643",
+          "clientSecret": "${QQBOT_ACADEMICASSISTANT_CLIENT_SECRET}"
+        },
+        "teachingassistant": {
+          "appId": "1903742138",
+          "clientSecret": "${QQBOT_TEACHINGASSISTANT_CLIENT_SECRET}"
+        }
+      }
+    },
+    "openclaw-weixin": {
+      "accounts": {}
+    },
+    "feishu": {
+      "enabled": true,
+      "groupPolicy": "open",
+      "requireMention": true,
+      "accounts": {
+        "steward": {
+          "appId": "cli_a94178f816b91cc9",
+          "appSecret": "${FEISHU_STEWARD_APP_SECRET}"
+        },
+        "coordinator": {
+          "appId": "cli_a94177ba8778dcb6",
+          "appSecret": "${FEISHU_COORDINATOR_APP_SECRET}"
+        },
+        "math-physicist": {
+          "appId": "cli_a941705ac4f89cc2",
+          "appSecret": "${FEISHU_MATH_PHYSICIST_APP_SECRET}"
+        },
+        "psychologist": {
+          "appId": "cli_a94170cfbcf8dccb",
+          "appSecret": "${FEISHU_PSYCHOLOGIST_APP_SECRET}"
+        },
+        "writer": {
+          "appId": "cli_a941713c73389cd3",
+          "appSecret": "${FEISHU_WRITER_APP_SECRET}"
+        },
+        "reviewer": {
+          "appId": "cli_a9417171c5385cd3",
+          "appSecret": "${FEISHU_REVIEWER_APP_SECRET}"
+        },
+        "teachingassistant": {
+          "appId": "cli_a947bed63d785cdd",
+          "appSecret": "${FEISHU_TEACHINGASSISTANT_APP_SECRET}"
+        },
+        "studentaffairsassistant": {
+          "appId": "cli_a947bb11a2741cdb",
+          "appSecret": "${FEISHU_STUDENTAFFAIRSASSISTANT_APP_SECRET}"
+        },
+        "academicassistant": {
+          "appId": "cli_a947bb2b87399cc8",
+          "appSecret": "${FEISHU_ACADEMICASSISTANT_APP_SECRET}"
+        }
+      },
+      "streaming": true,
+      "threadSession": true
+    },
+    "lightclawbot": {
+      "enabled": true,
+      "apiKeys": [
+        "${LIGHTCLAWBOT_API_KEY_1}",
+        "${LIGHTCLAWBOT_API_KEY_2}"
+      ]
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "steward",
+        "peer": {
+          "kind": "group",
+          "id": "oc_cd80162eb81e39f77160a0daab2a6ab8"
+        }
+      }
+    },
+    {
+      "agentId": "steward",
+      "match": {
+        "channel": "qqbot",
+        "accountId": "steward"
+      }
+    },
+    {
+      "agentId": "mathematician",
+      "match": {
+        "channel": "feishu",
+        "accountId": "mathematician",
+        "peer": {
+          "kind": "group",
+          "id": "oc_cd80162eb81e39f77160a0daab2a6ab8"
+        }
+      }
+    },
+    {
+      "agentId": "physicist",
+      "match": {
+        "channel": "feishu",
+        "accountId": "physicist",
+        "peer": {
+          "kind": "group",
+          "id": "oc_cd80162eb81e39f77160a0daab2a6ab8"
+        }
+      }
+    },
+    {
+      "agentId": "psychologist",
+      "match": {
+        "channel": "feishu",
+        "accountId": "psychologist",
+        "peer": {
+          "kind": "group",
+          "id": "oc_cd80162eb81e39f77160a0daab2a6ab8"
+        }
+      }
+    },
+    {
+      "agentId": "writer",
+      "match": {
+        "channel": "feishu",
+        "accountId": "writer",
+        "peer": {
+          "kind": "group",
+          "id": "oc_cd80162eb81e39f77160a0daab2a6ab8"
+        }
+      }
+    },
+    {
+      "agentId": "reviewer",
+      "match": {
+        "channel": "feishu",
+        "accountId": "reviewer",
+        "peer": {
+          "kind": "group",
+          "id": "oc_cd80162eb81e39f77160a0daab2a6ab8"
+        }
+      }
+    },
+    {
+      "agentId": "teachingassistant",
+      "match": {
+        "channel": "feishu",
+        "accountId": "teachingassistant",
+        "peer": {
+          "kind": "group",
+          "id": "oc_1032e70e8854c3bba9df42f38d532536"
+        }
+      }
+    },
+    {
+      "agentId": "teachingassistant",
+      "match": {
+        "channel": "qqbot",
+        "accountId": "teachingassistant"
+      }
+    },
+    {
+      "agentId": "studentaffairsassistant",
+      "match": {
+        "channel": "feishu",
+        "accountId": "studentaffairsassistant",
+        "peer": {
+          "kind": "group",
+          "id": "oc_1032e70e8854c3bba9df42f38d532536"
+        }
+      }
+    },
+    {
+      "agentId": "studentaffairsassistant",
+      "match": {
+        "channel": "qqbot",
+        "accountId": "studentaffairsassistant"
+      }
+    },
+    {
+      "agentId": "academicassistant",
+      "match": {
+        "channel": "feishu",
+        "accountId": "academicassistant",
+        "peer": {
+          "kind": "group",
+          "id": "oc_1032e70e8854c3bba9df42f38d532536"
+        }
+      }
+    },
+    {
+      "agentId": "academicassistant",
+      "match": {
+        "channel": "qqbot",
+        "accountId": "academicassistant"
+      }
+    }
+  ]
+}
