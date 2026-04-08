@@ -78,7 +78,7 @@ metadata: { "openclaw": { "emoji": "🔄", "requires": { "bins": ["git"] } } }
 ### 基本使用
 
 ```bash
-bash /root/.openclaw/backup.sh
+bash /root/.openclaw/skills/lab-backup-manager/backup.sh
 ```
 
 ### 定时执行
@@ -167,14 +167,15 @@ openclaw.json
 
 ## 安装与配置
 
-### 1. 安装脚本
+### 1. 脚本位置
 
-将备份脚本复制到OpenClaw根目录：
+备份脚本已位于技能目录，无需复制：
 
 ```bash
-cp /root/.openclaw/skills/lab-backup-manager/backup.sh /root/.openclaw/backup.sh
-chmod +x /root/.openclaw/backup.sh
+/root/.openclaw/skills/lab-backup-manager/backup.sh
 ```
+
+可直接执行，无需额外安装步骤。
 
 ### 2. 配置.gitignore
 
@@ -263,7 +264,6 @@ ssh -T git@github.com  # 测试连接
 备份脚本位于：
 ```bash
 /root/.openclaw/skills/lab-backup-manager/backup.sh
-/root/.openclaw/backup.sh  # 运行位置
 ```
 
 ## 快速开始
@@ -271,10 +271,7 @@ ssh -T git@github.com  # 测试连接
 ### 手动执行备份
 
 ```bash
-# 方法1: 直接执行
-/root/.openclaw/backup.sh
-
-# 方法2: 使用技能路径
+# 直接执行
 bash /root/.openclaw/skills/lab-backup-manager/backup.sh
 ```
 
@@ -287,7 +284,7 @@ bash /root/.openclaw/skills/lab-backup-manager/backup.sh
 crontab -e
 
 # 添加以下行
-0 2 * * * /root/.openclaw/backup.sh >> /var/log/openclaw_backup.log 2>&1
+0 2 * * * /root/.openclaw/skills/lab-backup-manager/backup.sh >> /var/log/openclaw_backup.log 2>&1
 ```
 
 ### 查看备份日志
@@ -327,9 +324,8 @@ git checkout <commit-hash> -- <file>  # 恢复特定文件
 
 ### Q: 备份脚本在哪里？
 
-A: 脚本有两个位置：
+A: 脚本只存储在技能目录：
 - 技能目录: `/root/.openclaw/skills/lab-backup-manager/backup.sh`
-- 运行位置: `/root/.openclaw/backup.sh`
 
 ### Q: 如何检查备份是否正常工作？
 
