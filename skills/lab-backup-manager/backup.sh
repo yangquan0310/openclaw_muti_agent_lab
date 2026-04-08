@@ -57,7 +57,8 @@ echo ""
 
 # 5. 推送到远程仓库
 echo "5. 推送到远程仓库..."
-if git push origin main; then
+CURRENT_BRANCH=$(git branch --show-current)
+if git push origin $CURRENT_BRANCH; then
     echo "✅ 推送成功"
 else
     echo "❌ 推送失败，请检查网络连接或权限"
