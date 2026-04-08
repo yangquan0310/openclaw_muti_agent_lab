@@ -31,7 +31,7 @@
         "id": "physicist",
         "name": "physicist",
         "workspace": "/root/.openclaw/workspace/physicist",
-        "agentDir": "/root/.openclaw/agents/math-physicist/agent"
+        "agentDir": "/root/.openclaw/agents/physicist/agent"
       },
       {
         "id": "psychologist",
@@ -104,14 +104,14 @@
     }
   },
   "wizard": {
-    "lastRunAt": "2026-04-08T08:42:19.230Z",
+    "lastRunAt": "2026-04-08T18:18:01.903Z",
     "lastRunVersion": "2026.4.2",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "meta": {
     "lastTouchedVersion": "2026.4.2",
-    "lastTouchedAt": "2026-04-08T09:26:51.852Z"
+    "lastTouchedAt": "2026-04-08T18:18:02.140Z"
   },
   "plugins": {
     "entries": {
@@ -230,7 +230,7 @@
         "spec": "lightclawbot",
         "installPath": "/root/.openclaw/extensions/lightclawbot",
         "version": "1.1.1",
-        "installedAt": "2026-04-08T09:12:42.000Z"
+        "installedAt": "2026-04-08T18:12:38.000Z"
       }
     }
   },
@@ -347,20 +347,19 @@
     },
     "feishu": {
       "enabled": true,
-      "groupPolicy": "open",
       "requireMention": true,
       "accounts": {
         "steward": {
           "appId": "cli_a94178f816b91cc9",
           "appSecret": "${FEISHU_STEWARD_APP_SECRET}"
         },
-        "coordinator": {
+        "physicist": {
           "appId": "cli_a94177ba8778dcb6",
-          "appSecret": "${FEISHU_COORDINATOR_APP_SECRET}"
+          "appSecret": "${FEISHU_PHYSICIST_APP_SECRET}"
         },
-        "math-physicist": {
+        "mathematician": {
           "appId": "cli_a941705ac4f89cc2",
-          "appSecret": "${FEISHU_MATH_PHYSICIST_APP_SECRET}"
+          "appSecret": "${FEISHU_MATHEMATICIAN_APP_SECRET}"
         },
         "psychologist": {
           "appId": "cli_a94170cfbcf8dccb",
@@ -385,6 +384,9 @@
         "academicassistant": {
           "appId": "cli_a947bb2b87399cc8",
           "appSecret": "${FEISHU_ACADEMICASSISTANT_APP_SECRET}"
+        },
+        "default": {
+          "groupPolicy": "open"
         }
       },
       "streaming": true,
@@ -394,7 +396,8 @@
       "enabled": true,
       "apiKeys": [
         "${LIGHTCLAWBOT_API_KEY_1}",
-        "${LIGHTCLAWBOT_API_KEY_2}"
+        "${LIGHTCLAWBOT_API_KEY_2}",
+        "88dc1ec7c36083d011e304079f37010d10eaac8b"
       ]
     }
   },
