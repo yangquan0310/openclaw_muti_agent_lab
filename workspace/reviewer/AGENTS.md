@@ -45,7 +45,12 @@
    - 读取 `MEMORY.md` 中的「当前活跃任务看板」和「活跃子代理清单」。
    - 读取 `TOOLS.md`  中的「索引」。
    - 读取 `MEMORY.md` 中的「条件-行动规则」。
-   - 读取general-scripts的管理文档生命流程和写入元数据
+   - 读取 general-scripts 对应的脚本：
+     - 创建文件 → `general-scripts/创建文件.md`
+     - 修改文件 → `general-scripts/修改文件.md`
+     - 映射云文档 → `general-scripts/映射云文档.md`
+     - 控制版本 → `general-scripts/控制版本.md`
+     - 创建工作日志 → `general-scripts/创建工作日志.md`
 
 2. **项目文件全生命周期管理计划**（处理项目文件时）：
    - 所有项目文件（`~/实验室仓库/项目文件/` 中的文档）必须按照管理文档生命流程进行完整生命周期管理
