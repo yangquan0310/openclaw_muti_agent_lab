@@ -1,0 +1,17 @@
+{
+  "name": "semantic-scholar-mcp",
+  "displayName": "Semantic Scholar MCP",
+  "version": "1.0.0",
+  "description": "使用 Semantic Scholar API 进行学术论文搜索和检索",
+  "author": "OpenClaw",
+  "category": "academic",
+  "keywords": ["semantic scholar", "学术搜索", "论文检索", "API"],
+  "capabilities": ["search", "details"],
+  "dependencies": {
+    "python": ">=3.7"
+  },
+  "config": {
+    "apiKeyRequired": true,
+    "configFile": "semantic_scholar_config.json"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "openclaw": {
+    "emoji": "🔄",
+    "requires": {
+      "bins": ["git"]
+    },
+    "description": "实验室仓库轻量级备份管理技能。使用backup_openclaw_config.sh脚本自动备份核心配置文件到GitHub，确保仓库清洁、轻量。"
+  }
+}

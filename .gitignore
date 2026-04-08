@@ -1,0 +1,10 @@
+# 排除敏感文件
+.env
+# 默认排除所有文件
+/*
+
+# 排除目录
+!/README.md
+!/.gitignore
+!/workspace
+!/skills

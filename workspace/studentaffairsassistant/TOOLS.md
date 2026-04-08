@@ -1,0 +1,80 @@
+# TOOLS.md
+
+> 配置档案
+
+---
+
+## 存储位置
+>条目 Agent 个人记忆、Agent 个人脚本、工作日志由各代理独立维护
+>技能文件夹、API密钥存储所有代理都有
+>教研室仓库、教学助手仓库、教务助手仓库、学工助手仓库同步给教研室成员
+
+| 文件 | 存储路径 | 说明 |
+|----------|----------|------|
+| Agent 个人记忆 | ~/.openclaw/workspace/studentaffairsassistant/MEMORY.md | 学工助手独立维护 |
+| Agent 个人脚本 | ~/.openclaw/workspace/studentaffairsassistant/scripts/ | 学工助手专属脚本存储目录 |
+| 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
+| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件 |
+| API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
+| 教研室仓库 | ~/教研室仓库/ | 教学研究、教务管理和学生工作相关文件存储 |
+|教学助手仓库|	~/教研室仓库/备课资料/	|教学助手用来进行工作的文件夹、其他成员不可以写入，只能读取|
+|教务助手仓库|	~/教研室仓库/教务归档/	|教务助手用来进行工作的文件夹、其他成员不可以写入，只能读取|
+|学工助手仓库|	~/教研室仓库/学生工作/	|学工助手用来进行工作的文件夹、其他成员不可以写入，只能读取|
+
+---
+
+## 教研室仓库结构
+```
+~/教研室仓库/
+├── 主任信息/                   # 教研室主任个人信息和学术资料
+├── 备课资料/                   # 课程准备材料
+├── 学生工作/                   # 学生管理和辅导
+├── 教务归档/                   # 教学教务文件归档
+├── 日志文件/                   # 教学相关日志记录
+└── 日程文件/                   # 教学日程安排
+```
+
+## 项目
+> 各个代理独立维护
+### 项目结构
+```
+项目文件/
+└── YYYY-MM-DD_项目名/
+    ├── 文档/                  # 用户上传的文档
+    ├── 草稿/                   # 论文草稿
+    ├── 终稿/                   # 最终版本
+    ├── 知识库/                 # 项目专属知识库
+    │   └── 索引.json          # 文献索引
+    ├── 元数据.json             # 项目元数据
+    └── README.md               # 项目说明
+```
+
+---
+
+## 索引
+> 各个代理独立维护
+
+### 技能索引
+
+| 技能名称 | 触发示例 | 描述 | 路径 |
+|---------|---------|------|------|
+| feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
+| tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
+| tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
+| Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
+| Semantic Scholar | 文献检索 | Semantic Scholar 论文搜索 | ~/.openclaw/skills/semantic-scholar-mcp/SKILL.md |
+| github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
+| lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
+| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志、创建新项目、撰写脚本 | 提供标准化通用操作脚本 | ~/.openclaw/skills/general-scripts/SKILL.md |
+
+---
+### 脚本索引
+> 各个代理独立维护，这里显示学工助手特有脚本
+
+| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
+|----------|----------|----------|----------|
+
+---
+
+*最后重构: 2026-04-08*
+*重构者: 大管家*

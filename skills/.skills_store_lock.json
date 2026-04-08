@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "skills": {
+    "docx-cn": {
+      "name": "Docx Cn",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=docx-cn",
+      "source": "skillhub",
+      "version": "1.0.1"
+    },
+    "docx-generator": {
+      "name": "docx-generator",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=docx-generator",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "pptx-generator": {
+      "name": "Pptx Generator",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=pptx-generator",
+      "source": "skillhub",
+      "version": "1.0.2"
+    },
+    "excel-xlsx": {
+      "name": "Excel / XLSX",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=excel-xlsx",
+      "source": "skillhub",
+      "version": "1.0.2"
+    },
+    "pdf": {
+      "name": "Pdf",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=pdf",
+      "source": "skillhub",
+      "version": "0.1.0"
+    },
+    "pdf-generator": {
+      "name": "Pdf Generator",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=pdf-generator",
+      "source": "skillhub",
+      "version": "1.0.1"
+    },
+    "baidu-scholar-search": {
+      "name": "baidu scholar search",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=baidu-scholar-search",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "cnki-advanced-search": {
+      "name": "知网高级检索",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=cnki-advanced-search",
+      "source": "skillhub",
+      "version": "1.0.0"
+    }
+  }
+}
