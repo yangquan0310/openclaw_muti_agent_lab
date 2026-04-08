@@ -17,6 +17,7 @@
 > 实验室仓库、实验室项目等实验室相关内容同步给实验室成员
 > 教研室仓库、教学助手仓库、教务助手仓库、学工助手仓库等教研室相关内容同步给教研室成员
 | 文件 | 存储路径 | 说明 |
+| 脚本存储位置 | /root/.openclaw/workspace/physicist/scripts | 物理学家Agent自定义脚本存储目录 |
 |----------|----------|------|
 | 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件 |
 | API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
@@ -31,6 +32,7 @@
 > 大管家维护格式
 > 内容由各代理独立维护
 | 文件 | 存储路径 | 说明 |
+| 脚本存储位置 | /root/.openclaw/workspace/physicist/scripts | 物理学家Agent自定义脚本存储目录 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/physicist/MEMORY.md | 物理学家独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/physicist/scripts/ | 物理学家专属脚本存储目录 |
@@ -115,13 +117,6 @@
 |---------|---------|------|------|
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
 | lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
----
-### 脚本索引
-> 各个代理独立维护，这里显示物理学家特有脚本
-
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
-|----------|----------|----------|----------|
-
 ---
 
 *最后重构: 2026-04-08*

@@ -32,10 +32,9 @@
 > 内容由各代理独立维护
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
-| Agent 个人记忆 | ~/.openclaw/workspace/teaching/MEMORY.md | 教学助手独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/teaching/scripts/ | 教学助手专属脚本存储目录 |
-| 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
-| 课程项目文件 | ~/教研室仓库/备课资料/ | 教学助手课程项目文件存储位置 |
+| Agent 个人记忆 | ~/.openclaw/workspace/mathematician/MEMORY.md | 数学家独立维护 |
+| Agent 个人脚本 | ~/.openclaw/workspace/mathematician/scripts/ | 数学家专属脚本存储目录 |
+| 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
 ---
 
 ## 实验室仓库结构
@@ -71,7 +70,6 @@
     ├── 文档/                  # 用户上传的文档
     ├── 草稿/                   # 论文草稿
     ├── 终稿/                   # 最终版本
-    ├── 课件/                   # 课件
     ├── 知识库/                 # 项目专属知识库
     │   └── 索引.json          # 文献索引
     ├── 元数据.json             # 项目元数据
@@ -81,12 +79,17 @@
 ### 项目库
 > 大管家维护格式
 > 内容由各代理独立维护
-**教研室项目（私人项目库，存储于备课资料）：**
 | 项目名 | 存储位置 | 描述 |
 |--------|----------|------|
-||||
+| 2026-04-01_数字化存储与自传体记忆 | ~/实验室仓库/项目文件/2026-04-01_数字化存储与自传体记忆/ | 研究数字化存储对自传体记忆的影响机制 |
+| 2026-04-01_跨期选择的年龄差异 | ~/实验室仓库/项目文件/2026-04-01_跨期选择的年龄差异/ | 研究不同年龄群体在跨期选择任务中的决策差异 |
+| 2026-04-04_影响者营销中的自我扩展机制 | ~/实验室仓库/项目文件/2026-04-04_影响者营销中的自我扩展机制/ | 研究影响者营销中自我扩展机制对消费意愿的影响 |
+| 2026-04-05_Zotero文件管理 | ~/实验室仓库/项目文件/2026-04-05_Zotero文件管理/ | Zotero文献管理和学习项目 |
+| 2026-04-05_审稿学习 | ~/实验室仓库/项目文件/2026-04-05_审稿学习/ | 审稿学习项目，包含各类审稿范文 |
+| 2026-04-05_科研实验室搭建 | ~/实验室仓库/项目文件/2026-04-05_科研实验室搭建/ | 基于心理学理论重构Agent配置体系，介绍实验室搭建方法 |
+| 2026-04-05_范文学习 | ~/实验室仓库/项目文件/2026-04-05_范文学习/ | 范文学习项目，包含各类论文范文和写作模板 |
+| 2026-04-07_维护老板信息 | ~/实验室仓库/项目文件/2026-04-07_维护老板信息/ | 老板的个人信息、学术成就和账户信息管理项目 |
 
----
 ---
 
 ## 索引
@@ -102,24 +105,22 @@
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
 | tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
-| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/skills/general-scripts/检索文献.md |
-| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/skills/general-scripts/管理知识库.md |
+| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/skills/general-scripts/retrieve-literature.md |
+| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/skills/general-scripts/manage-knowledge-base.md |
 
 ### 私人技能索引
 > 大管家维护格式
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-||||
+| github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
+| lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
 ---
 ### 脚本索引
-> 各个代理独立维护，这里显示教学助手特有脚本
+> 各个代理独立维护，这里显示数学家特有脚本
 
 | 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
 |----------|----------|----------|----------|
-| 需要下载论文 | T1 | download_papers.py | 批量下载学术论文 |
-| 需要检索论文 | T2 | retrieve_papers.py | 检索并获取论文信息 |
-| 需要文献检索 | T3 | search_literature.py | 综合文献检索工具 |
 
 ---
 
