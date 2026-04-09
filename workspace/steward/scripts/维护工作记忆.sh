@@ -2,21 +2,25 @@
 # 工作记忆维护脚本
 # 功能：清理非active/paused任务，归档到事件记忆
 
-WORKSPACE="$HOME/.openclaw/workspace/$(basename $(dirname $0))"
+# 获取脚本所在目录的父目录（即workspace/agent目录）
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WORKSPACE="$(dirname "$SCRIPT_DIR")"
+AGENT_NAME="$(basename "$WORKSPACE")"
 MEMORY_FILE="$WORKSPACE/MEMORY.md"
-LOG_FILE="$HOME/实验室仓库/日志文件/$(date +%Y-%m-%d)/04-00-00-$(basename $(dirname $0))-工作记忆维护.md"
+LOG_FILE="$HOME/实验室仓库/日志文件/$(date +%Y-%m-%d)/04-00-00-${AGENT_NAME}-工作记忆维护.md"
 
 # 创建日志目录
-mkdir -p "$(dirname $LOG_FILE)"
+mkdir -p "$(dirname "$LOG_FILE")"
 
 # 记录维护开始时间
 echo "# 工作记忆维护日志" > "$LOG_FILE"
 echo "维护时间：$(date '+%Y-%m-%d %H:%M:%S')" >> "$LOG_FILE"
+echo "代理：$AGENT_NAME" >> "$LOG_FILE"
 echo "" >> "$LOG_FILE"
 
 # 检查MEMORY.md是否存在
 if [ ! -f "$MEMORY_FILE" ]; then
-    echo "❌ MEMORY.md不存在" >> "$LOG_FILE"
+    echo "❌ MEMORY.md不存在: $MEMORY_FILE" >> "$LOG_FILE"
     exit 1
 fi
 
