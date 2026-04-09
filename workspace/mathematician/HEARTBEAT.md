@@ -6,7 +6,7 @@
 
 | 任务ID | 负责人 | 执行时间 | 任务名称 | 功能描述 | 子代理ID | 状态 |
 |--------|--------|----------|----------|----------|----------|------|
-| `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 数学家（mathematician） | 0 3 * * *（每天凌晨3点） | 每日索引更新 | 查看程序性记忆中的脚本和个人存储中的脚本，添加新的到个人脚本索引，删除无效的条目；查看项目，添加新的到项目库，删除无效的条目 | `agent:mathematician:subagent:7ce42d1f-239d-4339-81e1-4e641e7935ab` | 启用 |
+| `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 数学家（mathematician） | 每日 03:00 | 每日索引更新任务 | 运行~/.openclaw/workspace/mathematician/scripts/update_indexes.sh脚本，更新TOOLS.md中的脚本索引和项目库 | `agent:mathematician:cron:b86ca7c9-5cda-43e8-8800-d340b32c165d` | 启用 |
 
 ---
 ## 定时任务添加规范
