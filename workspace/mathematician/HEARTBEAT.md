@@ -6,7 +6,7 @@
 
 | 任务ID | 负责人 | 执行时间 | 任务名称 | 功能描述 | 执行方式 | 状态 |
 |--------|--------|----------|----------|----------|----------|------|
-| `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 数学家（mathematician） | 每日 03:00 | 每日索引更新任务 | 运行~/.openclaw/workspace/mathematician/scripts/update_indexes.sh脚本，更新TOOLS.md中的脚本索引和项目库 | 子代理执行 | 启用 |
+| `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 数学家（mathematician） | 每日 03:00 | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | 子代理执行 | 启用 |
 | `a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d` | 数学家（mathematician） | 每日 04:00 | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | 子代理执行 | 启用 |
 
 ---
