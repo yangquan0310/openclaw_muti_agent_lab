@@ -103,12 +103,18 @@
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
 | general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志、创建新项目、撰写脚本、创建文件、修改文件、映射云文档、控制版本、管理知识库、检索文献 | 提供标准化通用操作脚本 | ~/.openclaw/skills/general-scripts/SKILL.md |
-| feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
 | tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
 | 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/skills/general-scripts/检索文献.md |
 | 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/skills/general-scripts/管理知识库.md |
+| baidu-scholar-search | 百度学术搜索、中英文文献检索 | 检索中英文文献，涵盖学术期刊、会议论文、学位论文等 | ~/.openclaw/skills/baidu-scholar-search/SKILL.md |
+| cnki-advanced-search | 知网高级检索、CSSCI论文检索 | 知网高级检索页面模拟人类检索行为，支持关键词搜索C刊论文、下载题录信息 | ~/.openclaw/skills/cnki-advanced-search/SKILL.md |
+| semantic-scholar-mcp | Semantic Scholar文献检索 | 学术文献检索，获取论文题录、摘要、引用信息 | ~/.openclaw/skills/semantic-scholar-mcp/SKILL.md |
+| scihub-paper-downloader | Sci-Hub论文下载 | 通过DOI获取论文PDF下载链接 | ~/.openclaw/skills/scihub-paper-downloader/SKILL.md |
+| zotero-local-pdf-import | Zotero本地PDF导入 | 将本地PDF文件批量导入Zotero文献库 | ~/.openclaw/skills/zotero-local-pdf-import/SKILL.md |
+| zotero-vectorize | Zotero文献向量化 | 构建Zotero文献库语义索引，支持语义检索 | ~/.openclaw/skills/zotero-vectorize/SKILL.md |
+| tavily-search | Tavily网络搜索 | 网络信息检索，获取相关网页、新闻、资料 | ~/.openclaw/skills/openclaw-tavily-search/SKILL.md |
 
 ### 私人技能索引
 > 大管家维护格式
@@ -117,7 +123,23 @@
 |---------|---------|------|------|
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
 | lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
+| docx-cn | Word文档处理 | 创建、读取、编辑Word文档，支持格式化、表格、图片 | ~/.openclaw/skills/docx-cn/SKILL.md |
+| docx-generator | Word文档生成 | 编程方式生成包含页脚的Microsoft Word文档 | ~/.openclaw/skills/docx-generator/SKILL.md |
+| excel-xlsx | Excel文件处理 | 创建、编辑Excel工作簿，支持公式、格式化、模板 | ~/.openclaw/skills/excel-xlsx/SKILL.md |
+| pdf | PDF处理 | 提取PDF文本和表格、创建PDF、合并拆分文档 | ~/.openclaw/skills/pdf/SKILL.md |
+| pdf-generator | PDF生成 | 从Markdown、HTML、数据生成专业PDF文档 | ~/.openclaw/skills/pdf-generator/SKILL.md |
+| pdf-processing | PDF高级处理 | 填写PDF表单、合并文档、提取内容 | ~/.openclaw/skills/pdf-processing/SKILL.md |
+| pptx | PPT文件处理 | 创建、读取、编辑PPT演示文稿，支持模板、布局 | ~/.openclaw/skills/pptx-2/SKILL.md |
+| pptx-generator | PPT生成 | 创建专业可编辑PowerPoint演示文稿，支持多种样式 | ~/.openclaw/skills/pptx-generator/SKILL.md |
+| summarize | 内容总结 | 总结URL、文件（网页、PDF、图片、音频、YouTube） | ~/.openclaw/skills/summarize/SKILL.md |
+| tencent-meeting-skill | 腾讯会议管理 | 预约/修改/取消会议、查询参会人、获取会议录制 | ~/.openclaw/skills/tencent-meeting-skill/SKILL.md |
+| tencent-cos-skill | 腾讯云COS管理 | 上传/下载/管理云存储文件，图片处理、文档转PDF | ~/.openclaw/skills/tencent-cos-skill/SKILL.md |
+| tencentcloud-lighthouse-skill | 腾讯云轻量服务器管理 | 查询实例、监控告警、防火墙管理、远程命令执行 | ~/.openclaw/skills/tencentcloud-lighthouse-skill/SKILL.md |
+| find-skills | 技能查找与安装 | 查找、安装、更新Agent技能，优先使用skillhub | ~/.openclaw/skills/find-skills/SKILL.md |
+| skillhub-preference | 技能源配置 | 优先使用skillhub进行技能发现/安装/更新 | ~/.openclaw/skills/skillhub-preference/SKILL.md |
+| memory-hygiene | 记忆优化 | 审计、清理、优化向量记忆，降低token使用 | ~/.openclaw/skills/memory-hygiene/SKILL.md |
+| mcp-adapter | MCP服务器集成 | 访问外部工具和数据源，扩展Agent能力 | ~/.openclaw/skills/mcp-adapter/SKILL.md |
 ---
 
-*最后重构: 2026-04-08*
+*最后重构: 2026-04-09*
 *重构者: 大管家*
