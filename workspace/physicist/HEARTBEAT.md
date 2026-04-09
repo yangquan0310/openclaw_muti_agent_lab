@@ -4,9 +4,9 @@
 ## 当前活跃定时任务（physicist 专属）
 ### 每日执行任务（时区：Asia/Shanghai）
 
-| 任务ID | 负责人 | 执行时间 | 任务名称 | 功能描述 | 子代理ID | 状态 |
+| 任务ID | 负责人 | 执行时间 | 任务名称 | 功能描述 | 执行方式 | 状态 |
 |--------|--------|----------|----------|----------|----------|------|
-| `95c97b8c-1daa-4360-8f3e-e3dfea9dcb3e` | 物理学家（physicist） | 每日 03:00 | 每日更新TOOLS.md | 执行每日TOOLS.md更新任务：运行~/.openclaw/workspace/physicist/scripts/update_tools.sh脚本，更新项目列表和脚本索引，记录工作日志，同步结果到HEARTBEAT.md | `agent:physicist:cron:95c97b8c-1daa-4360-8f3e-e3dfea9dcb3e` | 启用 |
+| `95c97b8c-1daa-4360-8f3e-e3dfea9dcb3e` | 物理学家（physicist） | 每日 03:00 | 每日更新TOOLS.md | 执行每日TOOLS.md更新任务：运行~/.openclaw/workspace/physicist/scripts/update_tools.sh脚本，更新项目列表和脚本索引，记录工作日志，同步结果到HEARTBEAT.md | 子代理执行 | 启用 |
 
 ---
 ## 定时任务添加规范

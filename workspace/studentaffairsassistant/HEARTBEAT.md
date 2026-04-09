@@ -4,9 +4,9 @@
 ## 当前活跃定时任务（studentaffairsassistant 专属）
 ### 每日执行任务（时区：Asia/Shanghai）
 
-| 任务ID | 负责人 | 执行时间 | 任务名称 | 功能描述 | 子代理ID | 状态 |
+| 任务ID | 负责人 | 执行时间 | 任务名称 | 功能描述 | 执行方式 | 状态 |
 |--------|--------|----------|----------|----------|----------|------|
-| `853a6b05-6957-46ec-8e86-caf4551acd95` | 学工助手（studentaffairsassistant） | 每日 03:00 | 学工助手每日索引更新 | 每日定时任务：1. 查看 MEMORY.md 程序性记忆中的脚本，同时查看 ~/.openclaw/workspace/studentaffairsassistant/scripts/ 个人脚本存储目录中的实际脚本文件，对比更新 TOOLS.md 中的个人脚本索引，添加新脚本到索引，删除无效条目。2. 查看 ~/教研室仓库/学生工作/ 中的项目，对比更新 TOOLS.md 中的项目库，添加新项目到项目库，删除无效条目。保持 TOOLS.md 中索引和项目库最新。 | `agent:studentaffairsassistant:cron:853a6b05-6957-46ec-8e86-caf4551acd95` | 启用 |
+| `853a6b05-6957-46ec-8e86-caf4551acd95` | 学工助手（studentaffairsassistant） | 每日 03:00 | 学工助手每日索引更新 | 每日定时任务：1. 查看 MEMORY.md 程序性记忆中的脚本，同时查看 ~/.openclaw/workspace/studentaffairsassistant/scripts/ 个人脚本存储目录中的实际脚本文件，对比更新 TOOLS.md 中的个人脚本索引，添加新脚本到索引，删除无效条目。2. 查看 ~/教研室仓库/学生工作/ 中的项目，对比更新 TOOLS.md 中的项目库，添加新项目到项目库，删除无效条目。保持 TOOLS.md 中索引和项目库最新。 | 子代理执行 | 启用 |
 
 ---
 ## 定时任务添加规范

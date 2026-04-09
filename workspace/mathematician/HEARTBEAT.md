@@ -4,9 +4,9 @@
 ## 当前活跃定时任务（mathematician 专属）
 ### 每日执行任务（时区：Asia/Shanghai）
 
-| 任务ID | 负责人 | 执行时间 | 任务名称 | 功能描述 | 子代理ID | 状态 |
+| 任务ID | 负责人 | 执行时间 | 任务名称 | 功能描述 | 执行方式 | 状态 |
 |--------|--------|----------|----------|----------|----------|------|
-| `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 数学家（mathematician） | 每日 03:00 | 每日索引更新任务 | 运行~/.openclaw/workspace/mathematician/scripts/update_indexes.sh脚本，更新TOOLS.md中的脚本索引和项目库 | `agent:mathematician:cron:b86ca7c9-5cda-43e8-8800-d340b32c165d` | 启用 |
+| `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 数学家（mathematician） | 每日 03:00 | 每日索引更新任务 | 运行~/.openclaw/workspace/mathematician/scripts/update_indexes.sh脚本，更新TOOLS.md中的脚本索引和项目库 | 子代理执行 | 启用 |
 
 ---
 ## 定时任务添加规范
