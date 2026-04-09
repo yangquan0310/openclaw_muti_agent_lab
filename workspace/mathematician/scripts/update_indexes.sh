@@ -27,33 +27,21 @@ fi
 # 读取程序性记忆中的脚本
 declare -A PROCEDURAL_SCRIPTS
 # 从MEMORY.md中提取脚本信息
-while IFS= read -r line; do
-  if [[ "${line}" =~ ^####\ S([0-9]+)：(.*)$ ]]; then
+while IFS= read -r line || [[ -n "$line" ]]; do
+  # 匹配脚本定义行，支持中文冒号
+  if [[ "${line}" =~ ^####[[:space:]]+S([0-9]+)[：:](.*)$ ]]; then
     SCRIPT_ID="S${BASH_REMATCH[1]}"
     SCRIPT_NAME="${BASH_REMATCH[2]}"
+    SCRIPT_NAME=$(echo "$SCRIPT_NAME" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
     # 读取触发条件
-    read -r trigger_line
-    if [[ "${trigger_line}" =~ 触发条件:[[:space:]]*(.*)$ ]]; then
+    IFS= read -r trigger_line || true
+    TRIGGER_CONDITION=""
+    if [[ "${trigger_line}" =~ 触发条件[：:][[:space:]]*(.*)$ ]]; then
       TRIGGER_CONDITION="${BASH_REMATCH[1]}"
-      # 查找功能描述
-      FUNCTION_DESC=""
-      while read -r desc_line; do
-        if [[ "${desc_line}" =~ ^[[:space:]]*#.* ]] || [[ "${desc_line}" =~ ^```$ ]]; then
-          continue
-        fi
-        if [[ "${desc_line}" =~ 功能描述:[[:space:]]*(.*)$ ]]; then
-          FUNCTION_DESC="${BASH_REMATCH[1]}"
-          break
-        elif [[ "${desc_line}" =~ ^步骤:$ ]]; then
-          break
-        fi
-      done
-      # 如果没有功能描述，使用脚本名称作为描述
-      if [ -z "${FUNCTION_DESC}" ]; then
-        FUNCTION_DESC="${SCRIPT_NAME}"
-      fi
-      PROCEDURAL_SCRIPTS["${SCRIPT_ID}"]="${TRIGGER_CONDITION}|${SCRIPT_NAME}|${FUNCTION_DESC}"
     fi
+    # 使用脚本名称作为功能描述
+    FUNCTION_DESC="${SCRIPT_NAME}"
+    PROCEDURAL_SCRIPTS["${SCRIPT_ID}"]="${TRIGGER_CONDITION}|${SCRIPT_NAME}|${FUNCTION_DESC}"
   fi
 done < "${MEMORY_FILE}"
 
@@ -63,7 +51,7 @@ for script_file in "${SCRIPTS_DIR}"/*.sh; do
   if [ -f "${script_file}" ]; then
     script_name=$(basename "${script_file}" .sh)
     # 尝试从脚本中提取描述
-    description=$(grep -m1 "^# 功能：" "${script_file}" | cut -d： -f2- | sed 's/^ *//')
+    description=$(grep -m1 "^# 功能" "${script_file}" | sed 's/^# 功能[：:][[:space:]]*//')
     if [ -z "${description}" ]; then
       description="自定义脚本 ${script_name}"
     fi
@@ -109,7 +97,7 @@ echo "更新项目库..."
 # 提取现有项目库部分
 PROJECT_INDEX_START=$(grep -n "### 项目库" "${TOOLS_FILE}" | head -n1 | cut -d: -f1)
 PROJECT_INDEX_END=$(grep -n "^---" "${TOOLS_FILE}" | awk -v start="$PROJECT_INDEX_START" 'NR > start {print NR; exit}')
-if [ -z "${PROJECT_INDEX_END}" ]; then
+if [ -z "$PROJECT_INDEX_END" ]; then
   PROJECT_INDEX_END=$(grep -n "## 索引" "${TOOLS_FILE}" | head -n1 | cut -d: -f1)
   PROJECT_INDEX_END=$((PROJECT_INDEX_END - 1))
 fi
@@ -122,7 +110,7 @@ for project_dir in "${PROJECTS_DIR}"/*/; do
     # 尝试从README.md中提取描述
     description=""
     if [ -f "${project_dir}/README.md" ]; then
-      description=$(grep -m1 "^#.*" "${project_dir}/README.md" | cut -d# -f2- | sed 's/^ *//')
+      description=$(grep -m1 "^#" "${project_dir}/README.md" | sed 's/^#*[[:space:]]*//')
     fi
     if [ -z "${description}" ]; then
       # 从目录名推断描述

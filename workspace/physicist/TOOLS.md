@@ -32,11 +32,13 @@
 > 大管家维护格式
 > 内容由各代理独立维护
 | 文件 | 存储路径 | 说明 |
-| 脚本存储位置 | /root/.openclaw/workspace/physicist/scripts | 物理学家Agent自定义脚本存储目录 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/physicist/MEMORY.md | 物理学家独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/physicist/scripts/ | 物理学家专属脚本存储目录 |
+| 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
+| 实验室项目 | ~/实验室仓库/项目文件/ | 实验室各个项目 |
 | 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
+| 项目知识库 | ~/实验室仓库/项目文件/{项目名}/知识库/index.json | 项目专属文献知识库索引 |
 ---
 
 ## 实验室仓库结构
@@ -139,6 +141,14 @@
 | skillhub-preference | 技能源配置 | 优先使用skillhub进行技能发现/安装/更新 | ~/.openclaw/skills/skillhub-preference/SKILL.md |
 | memory-hygiene | 记忆优化 | 审计、清理、优化向量记忆，降低token使用 | ~/.openclaw/skills/memory-hygiene/SKILL.md |
 | mcp-adapter | MCP服务器集成 | 访问外部工具和数据源，扩展Agent能力 | ~/.openclaw/skills/mcp-adapter/SKILL.md |
+### 脚本索引
+
+| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
+|----------|----------|----------|----------|
+| 收到物理建模或理论分析任务 | **P1** | 执行物理建模任务 | 构建物理模型、理论分析、物理解释 |
+| 需要物理理论分析 | **P2** | 理论分析与推导 | 数学推导、物理意义阐释、结果分析 |
+| 需要分析物理问题类型 | **P3** | 物理问题分类与识别 | 问题类型判断、分析框架确定、方法选择 |
+
 ---
 
 *最后重构: 2026-04-09*
