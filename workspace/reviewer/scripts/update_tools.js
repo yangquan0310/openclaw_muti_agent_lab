@@ -49,7 +49,7 @@ function writeFile(filePath, content) {
 function getActualProjects() {
   try {
     const dirs = fs.readdirSync(PROJECTS_ROOT, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory() && dirent.name.match(/^\d{4}-\d{2}-\d{2}_/))
+      .filter(dirent => dirent.isDirectory())
       .map(dirent => {
         const name = dirent.name;
         const projectPath = path.join(PROJECTS_ROOT, name);
@@ -66,15 +66,14 @@ function getActualProjects() {
         }
         
         return {
-          name: name.replace(/^\d{4}-\d{2}-\d{2}_/, ''),
-          fullName: name,
+          name: name,
           path: `~/实验室仓库/项目文件/${name}/`,
           description: description
         };
       });
     
-    // 按日期倒序排列
-    return dirs.sort((a, b) => b.fullName.localeCompare(a.fullName));
+    // 按名称排序
+    return dirs.sort((a, b) => a.name.localeCompare(b.name));
   } catch (error) {
     console.error('获取项目列表失败:', error);
     return [];
@@ -83,33 +82,51 @@ function getActualProjects() {
 
 /**
  * 从MEMORY.md中提取脚本索引
+ * 根据当前MEMORY.md结构，脚本定义在程序性记忆部分
  */
 function extractScriptsFromMemory(memoryContent) {
   const scripts = [];
-  // 匹配脚本定义
-  const scriptSectionMatch = memoryContent.match(/#### S1 - 质量审查脚本[\s\S]+?#### S2 - 格式规范脚本[\s\S]+?#### S3 - 审稿意见记录脚本[\s\S]+?```/);
   
-  if (scriptSectionMatch) {
-    // 手动添加三个审稿脚本
-    scripts.push({
-      id: 'S1',
-      name: '质量审查脚本',
-      trigger: '收到论文评审请求，需要评估论文质量',
-      description: '系统性评估论文质量，提供结构化评审意见和修改建议'
-    });
+  // 审稿助手特有的三个脚本（固定定义）
+  scripts.push({
+    id: 'S1',
+    name: '质量审查脚本',
+    trigger: '收到论文评审请求，需要评估论文质量',
+    description: '对论文进行多维度质量审查，生成结构化评审报告和修改建议'
+  });
+  
+  scripts.push({
+    id: 'S2',
+    name: '格式规范脚本',
+    trigger: '需要检查论文格式规范',
+    description: '对照学术标准检查文档格式，提供详细的格式修正建议'
+  });
+  
+  scripts.push({
+    id: 'S3',
+    name: '审稿意见记录脚本',
+    trigger: '完成论文评审，需要系统性记录审稿意见',
+    description: '结构化记录评审意见，建立问题追踪系统，支持版本控制'
+  });
+  
+  // 检查实际存在的脚本文件
+  const scriptsDir = path.join(WORKSPACE, 'scripts');
+  if (fs.existsSync(scriptsDir)) {
+    const scriptFiles = fs.readdirSync(scriptsDir, { withFileTypes: true })
+      .filter(dirent => dirent.isFile() && !dirent.name.startsWith('.'))
+      .map(dirent => dirent.name);
     
-    scripts.push({
-      id: 'S2',
-      name: '格式规范脚本',
-      trigger: '需要检查论文格式规范',
-      description: '对照学术标准检查文档格式，提供格式修正建议'
-    });
-    
-    scripts.push({
-      id: 'S3',
-      name: '审稿意见记录脚本',
-      trigger: '完成论文评审，需要系统性记录审稿意见',
-      description: '记录评审过程和意见，建立问题追踪系统'
+    // 添加其他脚本文件（如果不在固定列表中）
+    scriptFiles.forEach(filename => {
+      const existingScript = scripts.find(s => s.name === filename.replace(/\.(js|sh)$/, ''));
+      if (!existingScript && filename !== 'update_tools.js' && filename !== 'update_tools.sh') {
+        scripts.push({
+          id: '-',
+          name: filename,
+          trigger: filename.includes('维护') ? '工作记忆维护' : '系统维护',
+          description: `脚本文件: ${filename}`
+        });
+      }
     });
   }
   
@@ -120,7 +137,7 @@ function extractScriptsFromMemory(memoryContent) {
  * 生成项目列表Markdown
  */
 function generateProjectsMarkdown(projects) {
-  let markdown = '### 项目\n\n| 项目名 | 存储位置 | 描述 |\n|--------|----------|------|\n';
+  let markdown = '### 项目\n\n> 各个代理独立维护\n### 项目结构\n```\n项目文件/\n└── YYYY-MM-DD_项目名/\n    ├── 文档/                  # 用户上传的文档\n    ├── 草稿/                   # 论文草稿\n    ├── 终稿/                   # 最终版本\n    ├── 知识库/                 # 项目专属知识库\n    │   └── 索引.json          # 文献索引\n    ├── 元数据.json             # 项目元数据\n    └── README.md               # 项目说明\n```\n\n### 项目库\n> 大管家维护格式\n> 内容由各代理独立维护\n| 项目名 | 存储位置 | 描述 |\n|--------|----------|------|\n';
   
   projects.forEach(project => {
     markdown += `| ${project.name} | ${project.path} | ${project.description} |\n`;
@@ -133,10 +150,10 @@ function generateProjectsMarkdown(projects) {
  * 生成脚本索引Markdown
  */
 function generateScriptsMarkdown(scripts) {
-  let markdown = '### 脚本索引\n\n| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |\n|----------|----------|----------|----------|\n';
+  let markdown = '### 脚本索引\n> 各个代理独立维护，这里显示审稿助手特有脚本\n\n| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |\n|----------|----------|----------|----------|\n';
   
   scripts.forEach(script => {
-    markdown += `| ${script.trigger} | **${script.id}** | ${script.name} | ${script.description} |\n`;
+    markdown += `| ${script.trigger} | ${script.id} | ${script.name} | ${script.description} |\n`;
   });
   
   return markdown + '\n';
@@ -212,7 +229,7 @@ function main() {
   
   // 替换项目部分
   let newContent = toolsContent.replace(
-    /### 项目\n\n\| 项目名 \| 存储位置 \| 描述 \|\n\|[-| ]+\|[-| ]+\|[-| ]+\|\n([\s\S]+?)\n### /,
+    /### 项目\n\n> 各个代理独立维护\n### 项目结构\n```[\s\S]+?```\n\n### 项目库\n> 大管家维护格式\n> 内容由各代理独立维护\n\| 项目名 \| 存储位置 \| 描述 \|\n\|[-| ]+\|[-| ]+\|[-| ]+\|\n([\s\S]+?)\n### /,
     (match, projectsTable) => {
       return generateProjectsMarkdown(actualProjects) + '### ';
     }
@@ -220,7 +237,7 @@ function main() {
   
   // 替换脚本索引部分
   newContent = newContent.replace(
-    /### 脚本索引\n\n\| 触发条件 \| 脚本编号 \| 脚本名称 \| 功能描述 \|\n\|[-| ]+\|[-| ]+\|[-| ]+\|[-| ]+\|\n([\s\S]+?)(\n---|\n\*|$)/,
+    /### 脚本索引\n> 各个代理独立维护，这里显示审稿助手特有脚本\n\n\| 触发条件 \| 脚本编号 \| 脚本名称 \| 功能描述 \|\n\|[-| ]+\|[-| ]+\|[-| ]+\|[-| ]+\|\n([\s\S]+?)(\n---|\n\*|$)/,
     (match, scriptsTable, suffix) => {
       return generateScriptsMarkdown(actualScripts) + suffix;
     }
