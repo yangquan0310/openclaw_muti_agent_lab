@@ -259,7 +259,8 @@
 | MEMORY.md 与 metadata.json 状态不一致 | 以 metadata.json 为准同步更新 |
 | 用户明确提出"结束"或"完成" | 更新状态为completed，执行归档 |
 | 版本确定 | 推送到main分支 |
-| 非版本确定/日常修改 | 只推送到test-branch分支 |
+| 非版本确定/日常修改 | 只推送到development分支 |
+| 上传/同步操作 | 默认推送到development分支 |
 
 ---
 
