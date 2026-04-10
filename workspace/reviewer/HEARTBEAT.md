@@ -6,8 +6,8 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 03:00 | 审稿助手（reviewer） | ```` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/reviewer/scripts/` | 子代理执行 | enabled |
-| 每日 04:00 | 审稿助手（reviewer） | ```` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/reviewer/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+| 每日 03:00 | 审稿助手（reviewer） | `8d60078e-ccc5-4f1a-b7d6-36da4b4dd4fe` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/reviewer/scripts/` | 子代理执行 | enabled |
+| 每日 04:00 | 审稿助手（reviewer） | `31d48b54-1a1c-4ec0-bcbe-2bd8d0001b24` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/reviewer/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则
@@ -38,6 +38,6 @@
 > 添加后请按执行时间重新排序表格
 
 ---
-*最后更新: 2026-04-10*
-*更新者: 大管家*
+*最后更新: 2026-04-10 13:43*
+*更新者: 审稿助手*
 *说明: 表格排序规则改为表格形式，cron状态使用字典格式*

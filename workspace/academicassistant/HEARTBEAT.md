@@ -6,8 +6,8 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 03:00 | 教务助手（academicassistant） | ```` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/academicassistant/scripts/` | 子代理执行 | enabled |
-| 每日 04:00 | 教务助手（academicassistant） | ```` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/academicassistant/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+| 每日 03:00 | 教务助手（academicassistant） | `31db3717-398c-432b-800b-58b74e52a840` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/academicassistant/scripts/` | 子代理执行 | enabled |
+| 每日 04:00 | 教务助手（academicassistant） | `ab3de930-1183-41f9-aae3-5190c26c8d7c` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/academicassistant/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则

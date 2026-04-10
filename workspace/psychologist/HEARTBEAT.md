@@ -6,8 +6,25 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 03:00 | 心理学家（psychologist） | ```` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/psychologist/scripts/` | 子代理执行 | enabled |
-| 每日 04:00 | 心理学家（psychologist） | ```` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/psychologist/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+| 每日 03:00 | 心理学家（psychologist） | `548da0f2-db95-4b37-ad71-7d1f783a5d09` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/psychologist/scripts/` | 子代理执行 | enabled |
+| 每日 04:00 | 心理学家（psychologist） | `c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/psychologist/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+
+### Cron 注册详情
+
+**注册时间**: 2026-04-10 13:17
+
+**Cron 表达式**:
+```
+# 每日TOOLS更新任务 (03:00)
+0 3 * * * cd /root/.openclaw/workspace/psychologist && /usr/bin/openclaw sessions spawn --agent-id psychologist --label "psychologist-cron-tools-update" --mode run --runtime subagent --task "执行心理学家每日TOOLS更新任务..."
+
+# 工作记忆维护任务 (04:00)
+0 4 * * * cd /root/.openclaw/workspace/psychologist && /usr/bin/openclaw sessions spawn --agent-id psychologist --label "psychologist-cron-memory-maintenance" --mode run --runtime subagent --task "执行心理学家工作记忆维护任务..."
+```
+
+**日志位置**:
+- 定时任务日志: `~/实验室仓库/日志文件/cron_psychologist_*.log`
+- 任务执行日志: `~/实验室仓库/日志文件/YYYY-MM-DD/`
 
 ---
 ## 表格排序规则
@@ -39,5 +56,5 @@
 
 ---
 *最后更新: 2026-04-10*
-*更新者: 大管家*
+*更新者: 心理学家*
 *说明: 表格排序规则改为表格形式，cron状态使用字典格式*

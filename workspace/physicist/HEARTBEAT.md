@@ -6,8 +6,8 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 03:00 | 物理学家（physicist） | ```` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/physicist/scripts/` | 子代理执行 | enabled |
-| 每日 04:00 | 物理学家（physicist） | ```` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/physicist/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+| 每日 03:00 | 物理学家（physicist） | `95c97b8c-1daa-4360-8f3e-e3dfea9dcb3e` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/physicist/scripts/` | 子代理执行 | enabled |
+| 每日 04:00 | 物理学家（physicist） | `3d340b13-9ed9-4237-bdc1-bbc9fe673d52` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/physicist/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则
@@ -39,5 +39,5 @@
 
 ---
 *最后更新: 2026-04-10*
-*更新者: 大管家*
+*更新者: 物理学家*
 *说明: 表格排序规则改为表格形式，cron状态使用字典格式*
