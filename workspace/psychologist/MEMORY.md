@@ -353,13 +353,13 @@
      - `statistics`：统计字典（total_count/empirical_count/review_count/theory_count）
      - `notes`：笔记字典（每篇文献包含type和content）
    - **必须保存为JSON格式**，文件扩展名为.json
-   - 保存到`知识库/笔记/{笔记}_{YYYYMMDD}.json`
+   - 保存到`知识库/笔记/{笔记}.json`
 
 4. **管理元数据**
    - 按照「管理元数据.md」更新项目元数据.json中的笔记文件路径
 
 ##### 输出
-- 笔记文件：`知识库/笔记/{笔记}_{YYYYMMDD}.json`
+- 笔记文件：`知识库/笔记/{笔记}.json`
 - 本地路径、版本信息
 - 返回主代理：文件路径、文献统计信息
 
