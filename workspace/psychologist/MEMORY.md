@@ -182,7 +182,7 @@
 **子代理执行上下文**：
 - **技能**：
   - `semantic-scholar-mcp`：用于Semantic Scholar文献检索
-    - 使用方法：`mcporter call semantic-scholar.semantic_scholar_search query="关键词" limit=100`
+    - 使用方法：`mcporter call semantic-scholar.semantic_scholar_search query="关键词" limit=50`
   - `zotero`：用于Zotero文献管理和引用（可选）
 - **密钥**：
   - `SEMANTIC_SCHOLAR_API_KEY`：Semantic Scholar API密钥（从~/.openclaw/.env读取）
@@ -247,11 +247,18 @@
 ### 步骤3：整理文献
 
 **排除非期刊文献**：
-- 根据venue字段排除预印本、手稿等
+- 根据venue字段排除预印本、手稿、图书章节等
+
+**排除内容无关文献**：
+- 根据abstract字段排除与主题无关的文献等
 
 **添加labels字典**：
 - `importance`：🔴奠基（500+）/ 🟡重要（50-500）/ 🔵一般（<50）
-- `type`：📊实证 / 📖综述 / 💡理论
+- `type`：根据标题、摘要和期刊标题分类
+  - 📖**综述**：标题明确包含review、meta-analysis、systematic review；或期刊标题含review、trends等
+  - 💡**理论**：期刊标题含perspective、opinion、commentary、viewpoint等，或文章标题含theoretical、theory、viewpoint、commentary等理论关键词
+  - 📊**实证**：摘要中包含被试/样本/方法/结果描述（关键词：participant, subject, sample, method, result, experiment, data, analysis等）
+  - 📋**待分类**：无法明确归类为上述三类的文献
 - `jcr_quartile`：Q1/Q2/Q3/Q4/待筛选（默认）
 
 ### 步骤4：统计文献
@@ -270,6 +277,7 @@
    - 关键词
    - 搜索引擎
    - 搜索过程
+   - 剔除标准
    - 文献最终数量
 
 2. **文献统计**
@@ -280,10 +288,8 @@
    - 主要作者
    - 主要期刊
 
-3. **参考文献（APA 7th格式）**
-   - 如果不多（≤30篇）：全部写入
-   - 如果多（>30篇）：只写重要+奠基
-   - 如果还是多（>50篇）：只写奠基
+3. **高引用文献（APA 7th格式）**
+   - 按照引用数排序，列出前30篇
 
 ### 步骤6：管理与交付文档
 - 按照「创建文件.md」创建检索报告文档（终稿/目录）
