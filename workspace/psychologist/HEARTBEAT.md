@@ -6,7 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 04:00 | 心理学家（psychologist） | `f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c` | 每日维护任务 | 1)更新TOOLS.md：个人技能索引、个人脚本索引<br>2)更新MEMORY.md：任务看板、活跃子代理清单<br>3)工作空间维护：检查多余文件、维护临时文件夹、维护脚本文件夹 | `~/.openclaw/workspace/psychologist/scripts/每日维护任务.sh` | 子代理执行 | enabled |
+| 每日 04:00 | 心理学家（psychologist） | `f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c` | 每日维护任务 | 1)维护TOOLS.md：维护个人技能索引、维护个人脚本索引<br>2)维护MEMORY.md：维护任务看板、维护活跃子代理清单<br>3)工作空间维护：删除多余文件、维护临时文件夹、维护脚本文件夹 | `~/.openclaw/workspace/psychologist/scripts/每日维护任务.sh` | 子代理执行 | enabled |
 
 ### Cron 注册详情
 
