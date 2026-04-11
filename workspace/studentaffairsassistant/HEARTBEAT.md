@@ -6,8 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 03:00 | 学工助手（studentaffairsassistant） | `f9057181-b0f3-4842-b2df-fc4c66ba01ad` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/studentaffairsassistant/scripts/` | 子代理执行 | enabled |
-| 每日 04:00 | 学工助手（studentaffairsassistant） | `1b345b4b-9528-414b-a274-88afbfe9f0c9` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/studentaffairsassistant/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+| 每日 04:00 | 学工助手（studentaffairsassistant） | `1b345b4b-9528-414b-a274-88afbfe9f0c9` | 每日维护 | 1. 更新个人脚本索引、维护项目库<br>2. 清理completed/killed任务，归档到事件记忆<br>3. 检查并清理工作空间中不应该存在的文件夹、整理临时文件 | `~/.openclaw/workspace/studentaffairsassistant/scripts/` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则

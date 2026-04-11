@@ -6,8 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 03:00 | 数学家（mathematician） | `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/mathematician/scripts/` | 子代理执行 | enabled |
-| 每日 04:00 | 数学家（mathematician） | `a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/mathematician/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+| 每日 04:00 | 数学家（mathematician） | `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 每日维护 | 1. 更新个人脚本索引、维护项目库<br>2. 清理completed/killed任务，归档到事件记忆<br>3. 检查是否有不应该存在的文件夹、整理临时文件 | `~/.openclaw/workspace/mathematician/scripts/` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则

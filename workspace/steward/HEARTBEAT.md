@@ -8,9 +8,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 00:00 | 大管家（steward） | `d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a` | 维护任务 | 维护自己的定时任务 | `~/.openclaw/workspace/steward/scripts/` | 子代理执行 | enabled |
-| 每日 03:00 | 大管家（steward） | `ab40d36a-e823-4404-8411-cc9446414562` | 每日凌晨更新个人记忆脚本索引和项目库 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/steward/scripts/` | 子代理执行 | enabled |
-| 每日 04:00 | 大管家（steward） | `c7d8e9f0-a1b2-4c3d-8e4f-5a6b7c8d9e0f` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/steward/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+| 每日 04:00 | 大管家（steward） | `ab40d36a-e823-4404-8411-cc9446414562` | 每日维护 | 1.更新个人脚本索引、维护项目库<br>2.清理completed/killed任务，归档到事件记忆<br>3.检查工作空间：清理不应该存在的文件夹、整理临时文件 | `~/.openclaw/workspace/steward/scripts/` | 子代理执行 | enabled |
 | 每日 05:00 | 大管家（steward） | `a4980ce3-ce17-47f0-801f-0135f7cec45d` | 每日凌晨自动提交推送Git | 自动Git提交、推送GitHub远程仓库 | - | 子代理执行 | enabled |
 
 > 注：其他代理的定时任务由各代理自行记录在各自的HEARTBEAT.md中

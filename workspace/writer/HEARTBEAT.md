@@ -6,8 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 03:00 | 写作助手（writer） | `a6de78f3-a9f2-4dac-b2f6-b9de9f5be29a` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/writer/scripts/` | 子代理执行 | enabled |
-| 每日 04:00 | 写作助手（writer） | `bc37ed4d-b3bf-402a-9e0f-579500820ded` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/writer/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+| 每日 04:00 | 写作助手（writer） | `a6de78f3-a9f2-4dac-b2f6-b9de9f5be29a` | 每日维护 | 合并任务：1)TOOLS更新-更新个人脚本索引、维护项目库；2)工作记忆维护-清理completed/killed任务，归档到事件记忆；3)工作空间维护-检查不应该存在的文件夹、临时文件整理 | `~/.openclaw/workspace/writer/scripts/` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则

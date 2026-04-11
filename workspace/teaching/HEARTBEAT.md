@@ -6,8 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 03:00 | 教学助手（teaching） | `66322ff5-9516-4b47-8a69-31b8d264688f` | 每日TOOLS更新任务 | 更新个人脚本索引、维护项目库 | `~/.openclaw/workspace/teaching/scripts/` | 子代理执行 | enabled |
-| 每日 04:00 | 教学助手（teaching） | `06fa1c96-a580-472b-80b0-5d320274adf5` | 工作记忆维护 | 清理completed/killed任务，归档到事件记忆 | `~/.openclaw/workspace/teaching/scripts/维护工作记忆.sh` | 子代理执行 | enabled |
+| 每日 04:00 | 教学助手（teaching） | `06fa1c96-a580-472b-80b0-5d320274adf5` | 每日维护 | 1. 更新个人脚本索引、维护项目库<br>2. 清理completed/killed任务，归档到事件记忆<br>3. 检查工作空间是否有不应该存在的文件夹、整理临时文件 | `~/.openclaw/workspace/teaching/scripts/` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则
