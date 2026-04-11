@@ -34,6 +34,7 @@
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/academicassistant/MEMORY.md | 教务助手独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/academicassistant/scripts/ | 教务助手专属脚本存储目录 |
+| 临时文件位置 | ~/.openclaw/workspace/academicassistant/temp/{任务}/ | 任务临时文件存储目录，按任务分子文件夹 |
 | 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
 | 教研室项目文件 | ~/教研室仓库/项目文件/ | 教研室科研项目文件存储位置 |
 ---

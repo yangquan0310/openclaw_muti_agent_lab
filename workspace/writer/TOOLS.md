@@ -34,6 +34,7 @@
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/writer/MEMORY.md | 写作助手独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/writer/scripts/ | 写作助手专属脚本存储目录 |
+| 临时文件 | ~/.openclaw/workspace/writer/temp/{任务}/ | 任务执行过程中的临时文件存储 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 | ~/实验室仓库/项目文件/ | 实验室各个项目 |
 | 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
