@@ -283,12 +283,15 @@
   - `papers`: 文献列表，每篇包含：
     - `id`: 唯一标识
     - `title`: 标题
-    - `authors`: 作者
+    - `authors`: 作者列表（["作者1", "作者2"]）
     - `year`: 年份
     - `venue`: 期刊/会议
-    - `citation_count`: 引用量
+    - `volume`: 卷号
+    - `issue`: 期号
+    - `pages`: 页码范围
     - `doi`: DOI
     - `url`: URL
+    - `citation_count`: 引用量
     - `abstract`: 摘要
     - `labels`: 标签字典，包含：
       - `importance`: 重要性标签（🔴奠基/🟡重要/🔵一般）
@@ -335,7 +338,7 @@
        - **理论观点**：用什么概念，概念逻辑是什么，怎么解释科学问题（中文概括，1-2句话）
 
 3. **生成笔记文件**
-   - 创建JSON格式笔记文件：
+   - 创建JSON格式笔记文件，每篇文献包含完整的参考文献信息：
 ```json
   {
     "version": "1.0.0",
@@ -351,8 +354,20 @@
     },
     "notes": {
       "文献id（实证示例）": {
-        "title":"标题",
+        "title": "标题",
         "type": "📊实证",
+        "paper": {
+          "authors": ["作者1", "作者2"],
+          "year": 2024,
+          "title": "完整标题",
+          "venue": "期刊名称",
+          "volume": "卷号",
+          "issue": "期号",
+          "pages": "页码范围",
+          "doi": "DOI",
+          "url": "URL链接",
+          "citation_count": 引用量
+        },
         "content": {
           "research_question": "研究问题",
           "method": "研究方法",
@@ -361,8 +376,20 @@
         }
       },
       "文献id（综述示例）": {
-        "title":"标题",
+        "title": "标题",
         "type": "📖综述",
+        "paper": {
+          "authors": ["作者1", "作者2"],
+          "year": 2024,
+          "title": "完整标题",
+          "venue": "期刊名称",
+          "volume": "卷号",
+          "issue": "期号",
+          "pages": "页码范围",
+          "doi": "DOI",
+          "url": "URL链接",
+          "citation_count": 引用量
+        },
         "content": {
           "question": "问题",
           "results": "结果",
@@ -370,8 +397,20 @@
         }
       },
       "文献id（理论示例）": {
-        "title":"标题",
+        "title": "标题",
         "type": "💡理论",
+        "paper": {
+          "authors": ["作者1", "作者2"],
+          "year": 2024,
+          "title": "完整标题",
+          "venue": "期刊名称",
+          "volume": "卷号",
+          "issue": "期号",
+          "pages": "页码范围",
+          "doi": "DOI",
+          "url": "URL链接",
+          "citation_count": 引用量
+        },
         "content": {
           "question": "问题",
           "viewpoint": "观点"

@@ -32,6 +32,12 @@ class Paper:
     authors: str = ""
     year: int = 0
     venue: str = ""
+    volume: str = ""
+    issue: str = ""
+    pages: str = ""
+    doi: str = ""
+    url: str = ""
+    citation_count: int = 0
     abstract: str = ""
     topic: str = ""
     labels: Dict[str, str] = field(default_factory=dict)
@@ -52,6 +58,7 @@ class NoteContent:
     """笔记内容数据类"""
     title: str
     doc_type: str
+    paper: Dict[str, Any]  # 完整的参考文献信息
     content: Dict[str, str]
     
     def to_dict(self) -> Dict[str, Any]:
@@ -59,6 +66,7 @@ class NoteContent:
         return {
             "title": self.title,
             "type": self.doc_type,
+            "paper": self.paper,
             "content": self.content
         }
 
@@ -118,10 +126,25 @@ class NoteExtractor:
         doc_type = paper.doc_type
         content = self._extract_by_type(paper, doc_type)
         
+        # 构建完整的参考文献信息
+        paper_info = {
+            "authors": paper.authors.split(', ') if paper.authors else [],
+            "year": paper.year,
+            "title": paper.title,
+            "venue": paper.venue,
+            "volume": paper.volume,
+            "issue": paper.issue,
+            "pages": paper.pages,
+            "doi": paper.doi,
+            "url": paper.url,
+            "citation_count": paper.citation_count
+        }
+        
         self.processed_count += 1
         return NoteContent(
             title=paper.title,
             doc_type=doc_type,
+            paper=paper_info,
             content=content
         )
     
