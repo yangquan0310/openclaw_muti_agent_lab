@@ -19,7 +19,8 @@
 
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
-| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件 |
+| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（结构化程序） |
+| 脚本文件夹 | ~/.openclaw/scripts/ | 存放了所有脚本文件（非结构化Markdown） |
 | API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 |~/实验室仓库/项目文件/|实验室各个项目|
@@ -35,7 +36,8 @@
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/steward/MEMORY.md | 大管家独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/steward/scripts/ | 大管家专属脚本存储目录 |
-| 临时文件 | ~/.openclaw/workspace/steward/temp/{任务}/ | 任务执行过程中的临时文件存储 |
+| Agent 个人技能 | ~/.openclaw/workspace/steward/skills/ | 大管家专属技能存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/steward/temp/ | 大管家专属临时文件存储目录 |
 | 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
 ---
 
@@ -121,7 +123,7 @@
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| general-scripts | 修改文档、记录工作日志、管理项目元数据、撰写脚本、检索文献 | 提供标准化通用操作脚本 | ~/.openclaw/skills/general-scripts/SKILL.md |
+| general-scripts | 修改文档、记录工作日志、管理项目元数据 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/ |
 | feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |

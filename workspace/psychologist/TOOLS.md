@@ -34,7 +34,8 @@
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/psychologist/MEMORY.md | 心理学家独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/psychologist/scripts/ | 心理学家专属脚本存储目录 |
-| 临时文件 | ~/.openclaw/workspace/psychologist/temp/{任务}/ | 任务执行过程中的临时文件存储 |
+| Agent 个人技能 | ~/.openclaw/workspace/psychologist/skills/ | 心理学家专属技能存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/psychologist/temp/ | 心理学家专属临时文件存储目录 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 | ~/实验室仓库/项目文件/ | 实验室各个项目 |
 | 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
@@ -147,6 +148,7 @@
 
 | 需要合并文献笔记文件 | **S6** | 笔记合并任务 | 按主题合并多个笔记JSON文件，生成统一的主题笔记 |
 | 需要根据研究问题重新分类文献 | **S7** | 文献主题分类任务 | 使用面向对象设计的classify_papers.py自动判断文献主题归属 |
+| 需要处理文献（去重、分类、筛选、合并） | **S8** | 文献处理工具 | 使用面向对象的literature_processor.py进行文献去重、分类、筛选、合并 |
 
 ---
 

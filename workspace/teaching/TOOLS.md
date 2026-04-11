@@ -34,7 +34,8 @@
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/teaching/MEMORY.md | 教学助手独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/teaching/scripts/ | 教学助手专属脚本存储目录 |
-| 临时文件 | ~/.openclaw/workspace/teaching/temp/{任务}/ | 任务执行过程中的临时文件存储 |
+| Agent 个人技能 | ~/.openclaw/workspace/teaching/skills/ | 教学助手专属技能存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/teaching/temp/ | 教学助手专属临时文件存储目录 |
 | 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
 | 课程项目文件 | ~/教研室仓库/备课资料/ | 教学助手课程项目文件存储位置 |
 ---

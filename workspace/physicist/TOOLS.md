@@ -35,7 +35,8 @@
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/physicist/MEMORY.md | 物理学家独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/physicist/scripts/ | 物理学家专属脚本存储目录 |
-| 临时文件 | ~/.openclaw/workspace/physicist/temp/{任务}/ | 任务执行过程中的临时文件存储位置 |
+| Agent 个人技能 | ~/.openclaw/workspace/physicist/skills/ | 物理学家专属技能存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/physicist/temp/ | 物理学家专属临时文件存储目录 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 | ~/实验室仓库/项目文件/ | 实验室各个项目 |
 | 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |

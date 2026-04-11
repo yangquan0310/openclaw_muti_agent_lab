@@ -61,3 +61,67 @@ __pycache__/
 !/openclaw.json
 !/workspace/
 !/skills/
+# 默认排除所有文件
+/*
+
+# 排除敏感文件
+.env
+*.key
+*.secret
+*.pem
+*.env*
+credentials.json
+tokens.json
+
+# 排除备份文件
+*.bak
+*.backup
+*.old
+*.tmp
+*.tmp.md
+*.backup.*
+
+# 排除日志和缓存文件
+*.log
+*.cache
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 排除OpenClaw内部文件
+.openclaw
+node_modules/
+.cache/
+*.db
+sessions/
+memory/
+devices/
+openclaw-*/
+subagents/
+exec-approvals.json
+identity/
+venv/
+*/venv/
+*/sessions/
+*/memory/
+*.db-journal
+*.pyc
+__pycache__/
+.pytest_cache/
+**/.openclaw/
+**/*.state.json
+
+# 排除IDE配置文件
+.vscode/
+.idea/
+
+# 允许需要备份的文件
+!/README.md
+!/.gitignore
+!/openclaw.json
+!/workspace/
+!/skills/
+!/scripts/

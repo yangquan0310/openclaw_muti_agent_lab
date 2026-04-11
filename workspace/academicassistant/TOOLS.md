@@ -34,7 +34,8 @@
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/academicassistant/MEMORY.md | 教务助手独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/academicassistant/scripts/ | 教务助手专属脚本存储目录 |
-| 临时文件位置 | ~/.openclaw/workspace/academicassistant/temp/{任务}/ | 任务临时文件存储目录，按任务分子文件夹 |
+| Agent 个人技能 | ~/.openclaw/workspace/academicassistant/skills/ | 教务助手专属技能存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/academicassistant/temp/ | 教务助手专属临时文件存储目录 |
 | 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
 | 教研室项目文件 | ~/教研室仓库/项目文件/ | 教研室科研项目文件存储位置 |
 ---
@@ -142,13 +143,17 @@
 | zotero-vectorize | Zotero语义索引 | 构建和维护Zotero文献库的语义索引 | ~/.openclaw/skills/zotero-vectorize/SKILL.md |
 ---
 ### 脚本索引
-> 各个代理独立维护，这里显示科研助手特有脚本
+> 各个代理独立维护，这里显示教务助手特有脚本
 
 | 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
 |----------|----------|----------|----------|
-| *暂无脚本* | - | - | - |
+| 批量更新课程大纲 | S001 | update_syllabi.py | 批量更新课程大纲文件 |
+| 转换大纲格式 | S002 | convert_syllabus.py | 将课程大纲转换为标准格式 |
+| 更新TOOLS.md | S003 | update_tools_md.sh | 自动更新工具索引文档 |
+| 更新索引 | S004 | update_index.sh | 更新项目索引文件 |
+| 维护工作记忆 | S005 | 维护工作记忆.sh | 每日维护工作记忆和清理任务 |
 
 ---
 
-*最后重构: 2026-04-09*
-*重构者: 科研助手*
+*最后重构: 2026-04-12*
+*重构者: 教务助手*
