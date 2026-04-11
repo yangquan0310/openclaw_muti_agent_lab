@@ -6,7 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 04:00 | 科研助手（academicassistant） | `31db3717-398c-432b-800b-58b74e52a840` | 每日维护任务 | 1)TOOLS更新 2)工作记忆维护 3)工作空间维护 | `~/.openclaw/workspace/academicassistant/scripts/` | 子代理执行 | enabled |
+| 每日 04:00 | 教务助手（academicassistant） | `31db3717-398c-432b-800b-58b74e52a840` | 每日维护任务 | 1)更新TOOLS.md：个人技能索引、个人脚本索引 2)更新MEMORY.md：任务看板、活跃子代理清单 3)工作空间维护：检查多余文件、临时文件清理、脚本目录规范 | `~/.openclaw/workspace/academicassistant/scripts/` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则
