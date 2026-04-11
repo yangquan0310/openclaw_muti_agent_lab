@@ -32,6 +32,7 @@
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/studentaffairsassistant/MEMORY.md | 学工助手独立维护 |
 | Agent 个人脚本 | ~/.openclaw/workspace/studentaffairsassistant/scripts/ | 学工助手专属脚本存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/studentaffairsassistant/temp/{任务}/ | 临时任务文件存储，任务完成后清理 |
 | 学工项目文件 | ~/教研室仓库/学生工作/ | 学生工作项目文件存储（学生档案、学业辅导、社团活动、工作记录） |
 | 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
 ---
