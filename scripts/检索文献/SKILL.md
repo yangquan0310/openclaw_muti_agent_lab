@@ -25,3 +25,5 @@ metadata:
 
 ### 检索文献
 详见：`~/.openclaw/scripts/检索文献/检索文献.md`
+### 知识库json格式
+详见：`~/.openclaw/scripts/检索文献/知识库索引示例.md`
