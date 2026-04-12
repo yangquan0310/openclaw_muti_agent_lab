@@ -90,9 +90,12 @@
 
 ## 五、程序性记忆（Procedural Memory）
 
-### 脚本（Scripts）
+### 脚本索引
 
-
+| 脚本名 | 功能 | 位置 |
+|--------|------|------|
+| update_indexes | 自动更新 TOOLS.md 中的脚本索引和项目库 | `~/.openclaw/workspace/mathematician/skills/update_indexes/SKILL.md` |
+| 维护工作记忆 | 清理非 active/paused 任务，归档到事件记忆 | `~/.openclaw/workspace/mathematician/skills/维护工作记忆/SKILL.md` |
 
 ### 条件-行动规则（If-Then Rules）
 

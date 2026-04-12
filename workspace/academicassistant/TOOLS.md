@@ -34,9 +34,9 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/academicassistant/MEMORY.md | 教务助手独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/academicassistant/scripts/ | 教务助手专属脚本存储目录 |
-| Agent 个人技能 | ~/.openclaw/workspace/academicassistant/skills/ | 教务助手专属技能存储目录 |
-| Agent 临时文件 | ~/.openclaw/workspace/academicassistant/temp/ | 教务助手专属临时文件存储目录 |
+| Agent 个人脚本 | ~/.openclaw/workspace/academicassistant/scripts/README.md | 教务助手专属脚本存储目录 |
+| Agent 个人技能 | ~/.openclaw/workspace/academicassistant/skills/README.md | 教务助手专属技能存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/academicassistant/temp/README.md | 教务助手专属临时文件存储目录 |
 | 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
 | 教研室项目文件 | ~/教研室仓库/项目文件/ | 教研室科研项目文件存储位置 |
 ---
@@ -100,12 +100,12 @@
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/ |
+| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/SKILL.md |
 | feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
 | tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
-| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/检索文献.md |
+| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/SKILL.md检索文献.md |
 
 ### 私人技能索引
 > 大管家维护格式
@@ -152,7 +152,18 @@
 | 转换大纲格式 | S002 | convert_syllabus.py | 将课程大纲转换为标准格式 |
 | 更新TOOLS.md | S003 | update_tools_md.sh | 自动更新工具索引文档 |
 | 更新索引 | S004 | update_index.sh | 更新项目索引文件 |
-| 维护工作记忆 | S005 | 维护工作记忆.sh | 每日维护工作记忆和清理任务 |
+| 每日维护 | S005 | 每日维护.sh | 每日维护TOOLS.md、MEMORY.md和工作空间 |
+
+### 个人技能索引
+> 教务助手专属技能列表
+
+| 技能名称 | 路径 | 说明 |
+|---------|------|------|
+| convert_syllabus | `skills/convert_syllabus/` | 转换课程大纲格式 |
+| update_index | `skills/update_index/` | 更新项目索引 |
+| update_syllabi | `skills/update_syllabi/` | 批量更新课程大纲 |
+| update_tools_md | `skills/update_tools_md/` | 自动更新工具索引文档 |
+| 每日维护 | `skills/每日维护/` | 每日维护TOOLS.md、MEMORY.md和工作空间 |
 
 ---
 

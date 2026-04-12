@@ -34,9 +34,9 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/teaching/MEMORY.md | 教学助手独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/teaching/scripts/ | 教学助手专属脚本存储目录 |
-| Agent 个人技能 | ~/.openclaw/workspace/teaching/skills/ | 教学助手专属技能存储目录 |
-| Agent 临时文件 | ~/.openclaw/workspace/teaching/temp/ | 教学助手专属临时文件存储目录 |
+| Agent 个人脚本 | ~/.openclaw/workspace/teaching/scripts/README.md | 教学助手专属脚本存储目录 |
+| Agent 个人技能 | ~/.openclaw/workspace/teaching/skills/README.md | 教学助手专属技能存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/teaching/temp/README.md | 教学助手专属临时文件存储目录 |
 | 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
 | 课程项目文件 | ~/教研室仓库/备课资料/ | 教学助手课程项目文件存储位置 |
 ---
@@ -101,30 +101,33 @@
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/ |
+| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/SKILL.md |
 | feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
 | tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
-| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/检索文献.md |
-| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/scripts/general-scripts/管理知识库.md |
+| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/SKILL.md检索文献.md |
+| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/scripts/general-scripts/SKILL.md管理知识库.md |
 
 ### 私人技能索引
 > 大管家维护格式
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-||||
+| download_papers | 需要下载论文 | 批量下载学术论文 | ~/.openclaw/workspace/teaching/skills/download_papers/SKILL.md |
+| retrieve_papers | 需要检索论文 | 检索并获取论文信息 | ~/.openclaw/workspace/teaching/skills/retrieve_papers/SKILL.md |
+| search_literature | 需要文献检索 | 综合文献检索工具 | ~/.openclaw/workspace/teaching/skills/search_literature/SKILL.md |
+| 每日维护 | 需要执行每日维护 | 清理completed任务并归档，删除killed任务 | ~/.openclaw/workspace/teaching/skills/每日维护/SKILL.md |
 ---
 ### 脚本索引
 > 各个代理独立维护，这里显示教学助手特有脚本
 
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
-|----------|----------|----------|----------|
-| 需要下载论文 | T1 | download_papers.py | 批量下载学术论文 |
-| 需要检索论文 | T2 | retrieve_papers.py | 检索并获取论文信息 |
-| 需要文献检索 | T3 | search_literature.py | 综合文献检索工具 |
-| 需要维护工作记忆 | T4 | 维护工作记忆.sh | 清理completed任务并归档，删除killed任务 |
+| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 | 路径 |
+|----------|----------|----------|----------|------|
+| 需要下载论文 | T1 | download_papers | 批量下载学术论文 | ~/.openclaw/workspace/teaching/skills/download_papers/SKILL.md |
+| 需要检索论文 | T2 | retrieve_papers | 检索并获取论文信息 | ~/.openclaw/workspace/teaching/skills/retrieve_papers/SKILL.md |
+| 需要文献检索 | T3 | search_literature | 综合文献检索工具 | ~/.openclaw/workspace/teaching/skills/search_literature/SKILL.md |
+| 需要执行每日维护 | T4 | 每日维护 | 清理completed任务并归档，删除killed任务 | ~/.openclaw/workspace/teaching/skills/每日维护/SKILL.md |
 
 ---
 

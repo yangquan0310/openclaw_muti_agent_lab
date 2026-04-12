@@ -89,17 +89,13 @@
 
 ## 🛠️ 程序性记忆区
 
-### 脚本（Scripts）
+### 脚本索引
 
-### 条件-行动规则（Condition-Action Rules）
-
-| 条件 | 行动 |
-|------|------|
-| 当用户提到"学生信息"、"学生档案"、"学生资料"时 | 启动学生信息管理脚本 |
-| 当用户提到"学业"、"学习困难"、"成绩"、"辅导"时 | 启动学业辅导脚本 |
-| 当用户提到"社团"、"活动"、"俱乐部"、"组织"时 | 启动社团活动记录脚本 |
-| 当需要存储学生数据时 | 检查数据完整性，确保隐私保护 |
-| 当遇到学工问题无法解决时 | 记录问题，寻求用户指导 |
+| 脚本名 | 功能 | 位置 |
+|--------|------|------|
+| 学生信息管理 | 学生信息分类、存储、元数据记录 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学生信息管理/SKILL.md |
+| 学业辅导 | 学业问题识别、辅导记录、资源协调 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学业辅导/SKILL.md |
+| 社团活动记录 | 活动记录、资料管理、档案保存 | ~/.openclaw/workspace/studentaffairsassistant/scripts/社团活动记录/SKILL.md |
 
 
 

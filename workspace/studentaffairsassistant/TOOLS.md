@@ -32,9 +32,9 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/studentaffairsassistant/MEMORY.md | 学工助手独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/studentaffairsassistant/scripts/ | 学工助手专属脚本存储目录 |
-| Agent 个人技能 | ~/.openclaw/workspace/studentaffairsassistant/skills/ | 学工助手专属技能存储目录 |
-| Agent 临时文件 | ~/.openclaw/workspace/studentaffairsassistant/temp/ | 学工助手专属临时文件存储目录 |
+| Agent 个人脚本 | ~/.openclaw/workspace/studentaffairsassistant/scripts/README.md | 学工助手专属脚本存储目录 |
+| Agent 个人技能 | ~/.openclaw/workspace/studentaffairsassistant/skills/README.md | 学工助手专属技能存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/studentaffairsassistant/temp/README.md | 学工助手专属临时文件存储目录 |
 | 学工项目文件 | ~/教研室仓库/学生工作/ | 学生工作项目文件存储（学生档案、学业辅导、社团活动、工作记录） |
 | 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
 ---
@@ -111,19 +111,20 @@
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/ |
+| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/SKILL.md |
 | feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
 | tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
-| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/检索文献.md |
-| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/scripts/general-scripts/管理知识库.md |
+| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/SKILL.md检索文献.md |
+| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/scripts/general-scripts/SKILL.md管理知识库.md |
 
 ### 私人技能索引
 > 大管家维护格式
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
+| 每日维护 | 定时任务触发 | 定时执行TOOLS.md维护、MEMORY.md维护和工作空间清理 | ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/SKILL.md |
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
 | lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
 ---
@@ -132,7 +133,7 @@
 
 | 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
 |----------|----------|----------|----------|
-| 工作记忆维护 | S001 | 维护工作记忆.sh | 清理非active/paused状态任务，归档到事件记忆 |
+| *暂无脚本* | - | - | - |
 
 ---
 

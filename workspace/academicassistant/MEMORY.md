@@ -6,7 +6,7 @@
 > - 程序性记忆：脚本形式存储
 > 
 > 版本：v7.5.0
-> 最后更新：2026-04-07
+> 最后更新：2026-04-12
 
 ---
 
@@ -17,7 +17,7 @@
 
 | 任务ID | 描述 | 状态 | 开始时间 | 预计完成 | 负责子代理key | 创建时间 | 备注 |
 |--------|------|------|----------|----------|---------------|----------|------|
-| T001 | 每日维护任务 | active | 2026-04-12 03:51 | 2026-04-12 04:00 | maintenance-agent | 2026-04-12 | 更新TOOLS.md、MEMORY.md、工作空间清理 |
+| T001 | 每日维护任务 | completed | 2026-04-12 03:51 | 2026-04-12 04:00 | maintenance-agent | 2026-04-12 | 维护任务已完成，TOOLS.md、MEMORY.md已更新，工作空间已清理 |
 
 > **说明**：本看板用于跟踪当前正在执行的任务，最多保留10个任务行。已完成的任务应及时归档到「陈述性记忆区」。
 
@@ -104,9 +104,15 @@
 
 ## 🛠️ 程序性记忆区
 
-### 脚本
+### 脚本索引
 
----
+| 脚本名 | 功能 | 位置 |
+|--------|------|------|
+| 每日维护 | 每日维护TOOLS.md、MEMORY.md和工作空间 | ~/.openclaw/workspace/academicassistant/skills/每日维护/SKILL.md |
+| convert_syllabus | 转换课程大纲格式 | ~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md |
+| update_index | 更新项目索引 | ~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md |
+| update_syllabi | 批量更新课程大纲 | ~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md |
+| update_tools_md | 自动更新工具索引文档 | ~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md |
 
 ### 条件-行动规则
 
@@ -126,8 +132,8 @@
 
 ---
 
-*最后更新: 2026-04-07*  
-*更新者: 科研助手*  
+*最后更新: 2026-04-12*  
+*更新者: 教务助手*  
 *理论基础: 身份理论、工作记忆理论、认知架构理论*
 
 

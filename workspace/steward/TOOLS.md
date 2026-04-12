@@ -35,9 +35,9 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/steward/MEMORY.md | 大管家独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/steward/scripts/ | 大管家专属脚本存储目录 |
-| Agent 个人技能 | ~/.openclaw/workspace/steward/skills/ | 大管家专属技能存储目录 |
-| Agent 临时文件 | ~/.openclaw/workspace/steward/temp/ | 大管家专属临时文件存储目录 |
+| Agent 个人脚本 | ~/.openclaw/workspace/steward/scripts/README.md | 非结构化脚本存储目录说明 |
+| Agent 个人技能 | ~/.openclaw/workspace/steward/skills/README.md | 结构化技能存储目录说明 |
+| Agent 临时文件 | ~/.openclaw/workspace/steward/temp/README.md | 临时文件存储目录说明 |
 | 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
 ---
 

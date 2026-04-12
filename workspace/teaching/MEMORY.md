@@ -112,11 +112,14 @@
 
 ---
 ## 程序性记忆
-### 脚本（Scripts）
+### 脚本索引
 
-### 条件-行动规则
-|条件|行动|
-|------|----------|
+| 脚本名 | 功能 | 位置 |
+|--------|------|------|
+| download_papers | 批量下载学术论文 | ~/.openclaw/workspace/teaching/skills/download_papers/SKILL.md |
+| retrieve_papers | 检索并获取论文信息 | ~/.openclaw/workspace/teaching/skills/retrieve_papers/SKILL.md |
+| search_literature | 综合文献检索工具 | ~/.openclaw/workspace/teaching/skills/search_literature/SKILL.md |
+| 每日维护 | 清理completed任务并归档，删除killed任务 | ~/.openclaw/workspace/teaching/skills/每日维护/SKILL.md |
 ---
 
 ## 版本历史

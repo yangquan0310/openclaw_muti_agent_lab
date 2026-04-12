@@ -9,16 +9,20 @@
 ## 存储位置
 
 >技能文件夹、API密钥存储所有代理都有
+>实验室仓库、实验室项目同步给实验室成员
 >教研室仓库、教学助手仓库、教务助手仓库、学工助手仓库同步给教研室成员
 
 ### 公共存储位置
 > 条目由大管家统一维护
+> 实验室仓库、实验室项目等实验室相关内容同步给实验室成员
 > 教研室仓库、教学助手仓库、教务助手仓库、学工助手仓库等教研室相关内容同步给教研室成员
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（结构化程序） |
 | 脚本文件夹 | ~/.openclaw/scripts/ | 存放了所有脚本文件（非结构化Markdown） |
 | API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
+| 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
+| 实验室项目 |~/实验室仓库/项目文件/|实验室各个项目|
 | 教研室仓库 | ~/教研室仓库/ | 教学研究、教务管理和学生工作相关文件存储 |
 |教学助手仓库|	~/教研室仓库/备课资料/	|教学助手用来进行工作的文件夹、其他成员不可以写入，只能读取|
 |教务助手仓库|	~/教研室仓库/教务归档/	|教务助手用来进行工作的文件夹、其他成员不可以写入，只能读取|
@@ -30,13 +34,10 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/mathematician/MEMORY.md | 数学家独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/mathematician/scripts/ | 数学家专属脚本存储目录 |
-| Agent 个人技能 | ~/.openclaw/workspace/mathematician/skills/ | 数学家专属技能存储目录 |
-| Agent 临时文件 | ~/.openclaw/workspace/mathematician/temp/ | 数学家专属临时文件存储目录 |
-| 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
-| 实验室项目 | ~/实验室仓库/项目文件/ | 实验室各个项目 |
+| Agent 个人脚本 | ~/.openclaw/workspace/mathematician/scripts/README.md | 非结构化脚本存储目录说明 |
+| Agent 个人技能 | ~/.openclaw/workspace/mathematician/skills/README.md | 结构化技能存储目录说明 |
+| Agent 临时文件 | ~/.openclaw/workspace/mathematician/temp/README.md | 临时文件存储目录说明 |
 | 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
-| 项目知识库 | ~/实验室仓库/项目文件/{项目名}/知识库/index.json | 项目专属文献知识库索引 |
 ---
 
 ## 实验室仓库结构
@@ -53,6 +54,7 @@
 
 ## 教研室仓库结构
 > 只同步给教学助手、教务助手和学工助手
+> 不同步给数学家、物理学家、心理学家、写作助手和审稿助手
 ```
 ~/教研室仓库/
 ├── 主任信息/                   # 教研室主任个人信息和学术资料
@@ -68,7 +70,7 @@
 ### 项目结构
 ```
 项目文件/
-└── YYYY-MM-DD_项目名/
+└── 项目名/
     ├── 文档/                  # 用户上传的文档
     ├── 草稿/                   # 论文草稿
     ├── 终稿/                   # 最终版本
@@ -101,13 +103,11 @@
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/ |
+| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/SKILL.md |
 | feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
 | tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
-| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/retrieve-literature.md |
-| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/scripts/general-scripts/manage-knowledge-base.md |
 
 ### 私人技能索引
 > 大管家维护格式
@@ -120,9 +120,11 @@
 ### 脚本索引
 > 各个代理独立维护，这里显示数学家特有脚本
 
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
-|----------|----------|----------|----------|
-| 脚本文件执行 | update_indexes | update_indexes | 自动更新TOOLS.md中的脚本索引和项目库 |
-| 脚本文件执行 | update_indexes_fixed | update_indexes_fixed | 自动更新TOOLS.md中的脚本索引和项目库 |
-| 脚本文件执行 | 维护工作记忆 | 维护工作记忆 | 清理非active/paused任务，归档到事件记忆 |
+| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 | 路径 |
+|----------|----------|----------|----------|------|
+| 脚本文件执行 | update_indexes | update_indexes | 自动更新TOOLS.md中的脚本索引和项目库 | `skills/update_indexes/SKILL.md` |
+| 脚本文件执行 | 维护工作记忆 | 维护工作记忆 | 清理非active/paused任务，归档到事件记忆 | `skills/维护工作记忆/SKILL.md` |
 
+---
+*最后重构: 2026-04-12*
+*重构者: 大管家*

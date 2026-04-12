@@ -6,7 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 04:00 | 学工助手（studentaffairsassistant） | `fc6f0b01-579d-4410-aa0d-e7adfa55d3e4` | 每日维护 | 1)维护TOOLS.md：维护个人技能索引、维护个人脚本索引<br>2)维护MEMORY.md：维护任务看板、维护活跃子代理清单<br>3)工作空间维护：检查非标准文件夹、维护临时文件夹、维护脚本文件夹 | `~/.openclaw/workspace/studentaffairsassistant/scripts/每日维护.sh` | 子代理执行 | enabled |
+| 每日 04:00 | 学工助手（studentaffairsassistant） | `18790739-caae-472e-938e-9bebf427f6e6` | 每日维护 | 1)维护TOOLS.md：维护个人技能索引、维护个人脚本索引<br>2)维护MEMORY.md：维护任务看板、维护活跃子代理清单<br>3)工作空间维护：检查非标准文件夹、维护临时文件夹、维护技能文件夹 | `~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/SKILL.md` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则
