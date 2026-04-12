@@ -19,7 +19,8 @@
 | 文件 | 存储路径 | 说明 |
 | 脚本存储位置 | /root/.openclaw/workspace/physicist/scripts | 物理学家Agent自定义脚本存储目录 |
 |----------|----------|------|
-| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件 |
+| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（结构化程序） |
+| 脚本文件夹 | ~/.openclaw/scripts/ | 存放了所有脚本文件（非结构化Markdown） |
 | API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 |~/实验室仓库/项目文件/|实验室各个项目|
@@ -106,12 +107,12 @@
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志、创建新项目、撰写脚本、创建文件、修改文件、映射云文档、控制版本、管理知识库、检索文献 | 提供标准化通用操作脚本 | ~/.openclaw/skills/general-scripts/SKILL.md |
+| general-scripts | 管理文档生命流程、写入项目元数据、创建工作日志 | 提供标准化通用操作脚本（Markdown格式，位于scripts目录） | ~/.openclaw/scripts/general-scripts/ |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
 | tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
-| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/skills/general-scripts/检索文献.md |
-| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/skills/general-scripts/管理知识库.md |
+| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/检索文献.md |
+| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/scripts/general-scripts/管理知识库.md |
 | baidu-scholar-search | 百度学术搜索、中英文文献检索 | 检索中英文文献，涵盖学术期刊、会议论文、学位论文等 | ~/.openclaw/skills/baidu-scholar-search/SKILL.md |
 | cnki-advanced-search | 知网高级检索、CSSCI论文检索 | 知网高级检索页面模拟人类检索行为，支持关键词搜索C刊论文、下载题录信息 | ~/.openclaw/skills/cnki-advanced-search/SKILL.md |
 | semantic-scholar-mcp | Semantic Scholar文献检索 | 学术文献检索，获取论文题录、摘要、引用信息 | ~/.openclaw/skills/semantic-scholar-mcp/SKILL.md |

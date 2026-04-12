@@ -76,7 +76,7 @@
 6. 风险与成功标准定义
 7. 整合与汇报
 
-**详细规范**：详见 `~/.openclaw/skills/agents-sop/计划阶段.md`
+**详细规范**：详见 `~/.openclaw/scripts/agents-sop/计划阶段.md`
 
 **输出**：计划方案，等待用户确认
 
@@ -93,7 +93,7 @@
 6. 结果核验与处理
 7. 阶段结果汇总
 
-**详细规范**：详见 `~/.openclaw/skills/agents-sop/监控阶段.md`
+**详细规范**：详见 `~/.openclaw/scripts/agents-sop/监控阶段.md`
 
 **输出**：执行结果，等待用户反馈
 
@@ -108,7 +108,7 @@
 4. 收尾清理
 5. 最终交付准备
 
-**详细规范**：详见 `~/.openclaw/skills/agents-sop/调节阶段.md`
+**详细规范**：详见 `~/.openclaw/scripts/agents-sop/调节阶段.md`
 
 **输出**：任务完成确认
 
