@@ -6,7 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 04:00 | 数学家（mathematician） | `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 每日维护任务 | 1)维护TOOLS.md：维护个人技能索引、维护个人脚本索引<br>2)维护MEMORY.md：维护任务看板、维护活跃子代理清单<br>3)工作空间维护：删除多余文件、维护临时文件夹、维护脚本文件夹 | `~/.openclaw/workspace/mathematician/skills/维护工作记忆/SKILL.md` | 子代理执行 | enabled |
+| 每日 04:00 | 数学家（mathematician） | `b86ca7c9-5cda-43e8-8800-d340b32c165d` | 每日维护任务 | 1)维护TOOLS.md<br>2)维护MEMORY.md<br>3)工作空间维护 | `~/.openclaw/workspace/mathematician/skills/每日维护/SKILL.md` | 子代理执行 | enabled |
 
 ---
 ## 表格排序规则

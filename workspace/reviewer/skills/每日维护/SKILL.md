@@ -1,13 +1,13 @@
-> 学工助手每日维护任务技能，包含 TOOLS.md 维护、MEMORY.md 维护和工作空间维护。
+> 审稿助手每日维护任务技能，包含 TOOLS.md 维护、MEMORY.md 维护和工作空间维护。
 > 每日 04:00 自动执行。
-> 版本: v1.2.0
+> 版本: v1.1.0
 > 最后更新: 2026-04-12
 
 ---
 
 ## 功能描述
 
-执行学工助手工作空间的每日维护任务，确保工作空间整洁、索引文件及时更新。
+执行审稿助手工作空间的每日维护任务，确保工作空间整洁、索引文件及时更新。
 
 ---
 
@@ -21,7 +21,7 @@
 ## 执行方式
 
 ```bash
-bash ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/main.sh
+bash ~/.openclaw/workspace/reviewer/skills/每日维护/每日维护.sh
 ```
 
 ---
@@ -34,7 +34,7 @@ bash ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/main.sh
 |--------|----------|
 | 维护个人技能索引 | 扫描 `skills/` 文件夹，更新技能列表，路径指向各技能的 `SKILL.md` |
 | 维护个人脚本索引 | 扫描 `scripts/` 文件夹，更新脚本列表，路径指向各脚本的 `SKILL.md` |
-| 维护项目表 | 检查 `~/教研室仓库/学生工作/` 下各项目，确保项目信息完整 |
+| 维护项目表 | 检查 `~/实验室仓库/项目文件/` 下各项目，确保项目信息完整 |
 
 ### 2. 维护 MEMORY.md
 
@@ -48,9 +48,9 @@ bash ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/main.sh
 
 | 子任务 | 功能描述 |
 |--------|----------|
-| 检查配置文件 | 检查 `AGENTS.md`、`TOOLS.md`、`MEMORY.md`、`SOUL.md`、`IDENTITY.md`、`USER.md`、`HEARTBEAT.md` 是否存在且格式正确 |
-| 维护临时文件夹 | 清理 `temp/` 文件夹中超过 7 天的临时文件 |
-| 维护技能文件夹 | 检查 `skills/` 下各技能文件夹结构是否完整（包含 `.py/.sh`、`SKILL.md`、`README.md`），设置脚本执行权限 |
+| 检查配置文件 | 检查 `AGENTS.md`、`TOOLS.md`、`MEMORY.md`、`SOUL.md`、`IDENTITY.md`、`USER.md`、`HEARTBEAT.md` 是否存在且格式正确，缺失时自动创建模板 |
+| 维护临时文件夹 | 清理 `temp/` 文件夹中超过 7 天的临时文件，删除空目录 |
+| 维护技能文件夹 | 检查 `skills/` 下各技能文件夹结构是否完整（包含 `.py/.sh`、`SKILL.md`、`README.md`） |
 | 维护脚本文件夹 | 检查 `scripts/` 下各脚本文件夹结构是否完整（包含 `.md`、`SKILL.md`、`README.md`） |
 | 删除多余文件 | 删除工作空间根目录下的非标准文件和文件夹 |
 
@@ -74,7 +74,7 @@ bash ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/main.sh
 ### 工作空间维护规则
 
 - **临时文件**：删除 `temp/` 下超过 7 天的文件和空目录
-- **技能文件夹**：确保每个技能包含程序文件、`SKILL.md`、`README.md`，设置脚本执行权限
+- **技能文件夹**：确保每个技能包含程序文件、`SKILL.md`、`README.md`
 - **脚本文件夹**：确保每个脚本包含核心 `.md` 文件、`SKILL.md`、`README.md`
 - **多余文件**：删除非标准文件和文件夹（保留配置文件和隐藏文件）
 
@@ -92,12 +92,11 @@ bash ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/main.sh
 - 更新后的 `TOOLS.md`
 - 更新后的 `MEMORY.md`
 - 清理后的工作空间
-- 维护日志：`~/教研室仓库/日志文件/学工助手_YYYYMMDD.log`
+- 维护日志：`~/实验室仓库/日志文件/YYYY-MM-DD/04-00-00-reviewer-每日维护.log`
 
 ---
 
 ## 版本历史
 
-- **v1.2.0** (2026-04-12): 完善维护任务清单，增加详细维护规则
-- **v1.1.0** (2026-04-12): 合并"维护工作记忆"功能到本技能
-- **v1.0.0** (2026-04-12): 初始版本，合并TOOLS更新、工作记忆维护、工作空间维护三项任务
+- **v1.1.0** (2026-04-12): 从"daily_maintenance"重命名为"每日维护"，完善 SKILL.md 格式
+- **v1.0.0** (2026-04-12): 初始版本

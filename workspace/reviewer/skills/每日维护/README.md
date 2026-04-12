@@ -1,10 +1,10 @@
 # 每日维护
 
-学工助手每日定时维护任务脚本
+审稿助手每日定时维护任务脚本
 
 ## 简介
 
-本技能用于执行学工助手工作空间的每日维护任务，确保工作空间整洁、索引文件及时更新。
+本技能用于执行审稿助手工作空间的每日维护任务，确保工作空间整洁、索引文件及时更新。
 
 ## 功能
 
@@ -30,7 +30,7 @@
 ### 手动执行
 
 ```bash
-bash ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/main.sh
+bash ~/.openclaw/workspace/reviewer/skills/每日维护/每日维护.sh
 ```
 
 ### 定时执行
@@ -41,7 +41,7 @@ bash ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/main.sh
 
 ```
 每日维护/
-├── main.sh          # 主脚本
+├── 每日维护.sh      # 主脚本
 ├── SKILL.md         # 技能说明文档
 └── README.md        # 本文件
 ```
@@ -54,4 +54,4 @@ bash ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/main.sh
 
 ## 更新日志
 
-- 2026-04-12: 完善 SKILL.md 格式，增加详细任务清单和维护规则
+- 2026-04-12: 从"daily_maintenance"重命名为"每日维护"，完善 SKILL.md 格式
