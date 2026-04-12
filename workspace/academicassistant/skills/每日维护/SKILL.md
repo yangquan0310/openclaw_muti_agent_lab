@@ -19,6 +19,10 @@
   - 扫描 `~/.openclaw/workspace/academicassistant/scripts/` 目录
   - 更新脚本列表，路径指向各脚本的 `SKILL.md`
 
+- **维护项目表**
+  - 检查「项目库」表格完整性
+  - 更新项目列表和存储位置
+
 ### 2. 维护 MEMORY.md
 - **维护任务看板**
   - 检查「当前活跃任务看板」状态

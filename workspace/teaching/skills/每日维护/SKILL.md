@@ -35,6 +35,7 @@ bash ~/.openclaw/workspace/teaching/skills/每日维护/每日维护.sh
 |--------|----------|
 | 维护个人技能索引 | 扫描 `skills/` 文件夹，更新技能列表，路径指向各技能的 `SKILL.md` |
 | 维护个人脚本索引 | 扫描 `scripts/` 文件夹，更新脚本列表，路径指向各脚本的 `SKILL.md` |
+| 维护项目表 | 检查 `~/教研室仓库/备课资料/项目库.json` 和 `索引.json`，确保项目信息完整 |
 
 ### 2. 维护 MEMORY.md
 

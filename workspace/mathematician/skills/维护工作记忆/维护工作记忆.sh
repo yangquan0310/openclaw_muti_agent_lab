@@ -87,8 +87,8 @@ echo "" >> "$LOG_FILE"
 if [ ! -f "$TOOLS_FILE" ]; then
     echo "❌ TOOLS.md 不存在" >> "$LOG_FILE"
 else
-    # 检查技能文件夹
-    echo "### 检查技能文件夹" >> "$LOG_FILE"
+    # 2.1 维护个人技能索引
+    echo "### 维护个人技能索引" >> "$LOG_FILE"
     skills_dir="$WORKSPACE/skills"
     if [ -d "$skills_dir" ]; then
         skill_count=$(find "$skills_dir" -mindepth 1 -maxdepth 1 -type d | wc -l)
@@ -109,8 +109,8 @@ else
     
     echo "" >> "$LOG_FILE"
     
-    # 检查脚本文件夹
-    echo "### 检查脚本文件夹" >> "$LOG_FILE"
+    # 2.2 维护个人脚本索引
+    echo "### 维护个人脚本索引" >> "$LOG_FILE"
     scripts_dir="$WORKSPACE/scripts"
     if [ -d "$scripts_dir" ]; then
         script_count=$(find "$scripts_dir" -mindepth 1 -maxdepth 1 -type d | wc -l)
@@ -129,6 +129,39 @@ else
         done
     else
         echo "- ❌ scripts 文件夹不存在" >> "$LOG_FILE"
+    fi
+    
+    echo "" >> "$LOG_FILE"
+    
+    # 2.3 维护项目表
+    echo "### 维护项目表" >> "$LOG_FILE"
+    projects_dir="$HOME/实验室仓库/项目文件"
+    if [ -d "$projects_dir" ]; then
+        project_count=$(find "$projects_dir" -mindepth 1 -maxdepth 1 -type d | wc -l)
+        echo "- 发现 $project_count 个项目" >> "$LOG_FILE"
+        
+        # 检查每个项目的完整性
+        for project_dir in "$projects_dir"/*/; do
+            if [ -d "$project_dir" ]; then
+                project_name=$(basename "$project_dir")
+                has_readme=false
+                has_metadata=false
+                
+                [ -f "$project_dir/README.md" ] && has_readme=true
+                [ -f "$project_dir/元数据.json" ] && has_metadata=true
+                
+                if [ "$has_readme" = true ] && [ "$has_metadata" = true ]; then
+                    echo "  - ✅ $project_name（完整）" >> "$LOG_FILE"
+                else
+                    missing=""
+                    [ "$has_readme" = false ] && missing="$missing README.md"
+                    [ "$has_metadata" = false ] && missing="$missing 元数据.json"
+                    echo "  - ⚠️ $project_name（缺少$missing）" >> "$LOG_FILE"
+                fi
+            fi
+        done
+    else
+        echo "- ❌ 项目文件夹不存在" >> "$LOG_FILE"
     fi
 fi
 

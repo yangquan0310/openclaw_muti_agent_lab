@@ -36,20 +36,21 @@ bash skills/daily_maintenance/每日维护.sh
 ## 任务详情
 
 ### 任务1：维护 TOOLS.md
-- **维护个人技能索引** - 检查 skills/ 文件夹中每个技能的 SKILL.md 和 README.md
-- **维护个人脚本索引** - 检查 scripts/ 文件夹中每个脚本的 .md 文件、SKILL.md 和 README.md
+- **维护个人技能索引** - 扫描 skills/ 文件夹，检查每个技能的 SKILL.md 和 README.md
+- **维护个人脚本索引** - 扫描 scripts/ 文件夹，检查每个脚本的 .md 文件、SKILL.md 和 README.md
+- **维护项目表** - 扫描 ~/实验室仓库/项目文件/，检查每个项目的 README.md
 
 ### 任务2：维护 MEMORY.md
-- **维护任务看板** - 检查并统计 completed 状态任务待归档
-- **维护活跃子代理清单** - 统计 active 和 paused 状态任务
-- **维护程序性记忆脚本位置表** - 检查脚本索引部分完整性
+- **维护任务看板** - 检查并归档 completed 状态任务到事件记忆
+- **维护活跃子代理清单** - 统计 active/paused/killed 任务，清理 killed 任务
+- **维护程序性记忆脚本位置表** - 检查脚本索引完整性，验证脚本位置正确性
 
 ### 任务3：工作空间维护
-- **检查配置文件** - 验证 AGENTS.md, SOUL.md, TOOLS.md, MEMORY.md, HEARTBEAT.md, USER.md, IDENTITY.md 存在
+- **核查配置文件缺失** - 检查 AGENTS.md, SOUL.md, TOOLS.md, MEMORY.md, HEARTBEAT.md, USER.md, IDENTITY.md，自动创建缺失文件
 - **维护临时文件夹** - 删除7天前的临时文件，删除空目录
 - **维护技能文件夹** - 检查每个技能文件夹包含 SKILL.md 和 README.md
 - **维护脚本文件夹** - 检查每个脚本文件夹包含核心 .md 文件、SKILL.md 和 README.md
-- **删除多余文件** - 检查根目录下的非标准文件/目录
+- **删除多余文件** - 检查并自动删除根目录下的非标准文件/目录
 
 ## 文件结构
 

@@ -146,13 +146,13 @@
 ### 脚本索引
 > 各个代理独立维护，这里显示教务助手特有脚本
 
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
-|----------|----------|----------|----------|
-| 批量更新课程大纲 | S001 | update_syllabi.py | 批量更新课程大纲文件 |
-| 转换大纲格式 | S002 | convert_syllabus.py | 将课程大纲转换为标准格式 |
-| 更新TOOLS.md | S003 | update_tools_md.sh | 自动更新工具索引文档 |
-| 更新索引 | S004 | update_index.sh | 更新项目索引文件 |
-| 每日维护 | S005 | 每日维护.sh | 每日维护TOOLS.md、MEMORY.md和工作空间 |
+| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 | 路径 |
+|----------|----------|----------|----------|------|
+| 批量更新课程大纲 | S001 | update_syllabi | 批量更新课程大纲文件 | ~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md |
+| 转换大纲格式 | S002 | convert_syllabus | 将课程大纲转换为标准格式 | ~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md |
+| 更新TOOLS.md | S003 | update_tools_md | 自动更新工具索引文档 | ~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md |
+| 更新索引 | S004 | update_index | 更新项目索引文件 | ~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md |
+| 每日维护 | S005 | 每日维护 | 每日维护TOOLS.md、MEMORY.md和工作空间 | ~/.openclaw/workspace/academicassistant/skills/每日维护/SKILL.md |
 
 ### 个人技能索引
 > 教务助手专属技能列表

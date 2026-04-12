@@ -7,6 +7,7 @@
 ### 维护 TOOLS.md
 - 维护个人技能索引（扫描 skills/ 目录，路径指向 SKILL.md）
 - 维护个人脚本索引（扫描 scripts/ 目录，路径指向 SKILL.md）
+- 维护项目表（检查项目库表格完整性）
 
 ### 维护 MEMORY.md
 - 维护任务看板（清理 completed/killed 任务）

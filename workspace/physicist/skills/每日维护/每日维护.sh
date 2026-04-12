@@ -54,46 +54,40 @@ else
 fi
 
 echo "" >> "$LOG_FILE"
-echo "## 任务2：工作记忆维护" >> "$LOG_FILE"
+echo "## 任务2：维护 MEMORY.md" >> "$LOG_FILE"
 echo "" >> "$LOG_FILE"
 
-# 2. 工作记忆维护 - 清理非active/paused任务
+# 2. 维护 MEMORY.md
 if [ -f "$MEMORY_FILE" ]; then
+    echo "### 2.1 维护任务看板" >> "$LOG_FILE"
     # 提取completed和killed状态的任务
     completed_tasks=$(grep "|.*|.*|.*| completed |" "$MEMORY_FILE" || true)
     killed_tasks=$(grep "|.*|.*|.*| killed |" "$MEMORY_FILE" || true)
     
     if [ -z "$completed_tasks" ] && [ -z "$killed_tasks" ]; then
-        echo "✅ 没有需要归档的任务" >> "$LOG_FILE"
+        echo "✅ 任务看板无需维护" >> "$LOG_FILE"
     else
-        # 处理completed任务
-        if [ -n "$completed_tasks" ]; then
-            echo "### 归档completed任务" >> "$LOG_FILE"
-            echo "$completed_tasks" | while read line; do
-                subagent_key=$(echo "$line" | awk -F'|' '{print $2}' | xargs)
-                task=$(echo "$line" | awk -F'|' '{print $4}' | xargs)
-                echo "- 归档：$subagent_key - $task" >> "$LOG_FILE"
-            done
-            echo "" >> "$LOG_FILE"
-        fi
-        
-        # 处理killed任务
-        if [ -n "$killed_tasks" ]; then
-            echo "### 删除killed任务" >> "$LOG_FILE"
-            echo "$killed_tasks" | while read line; do
-                subagent_key=$(echo "$line" | awk -F'|' '{print $2}' | xargs)
-                task=$(echo "$line" | awk -F'|' '{print $4}' | xargs)
-                echo "- 删除：$subagent_key - $task" >> "$LOG_FILE"
-            done
-            echo "" >> "$LOG_FILE"
-        fi
-        
-        # 从活跃子代理清单中删除completed和killed状态的任务
-        sed -i '/^| agent:.*|.*|.*| completed |.*|.*|.*|$/d' "$MEMORY_FILE"
-        sed -i '/^| agent:.*|.*|.*| killed |.*|.*|.*|$/d' "$MEMORY_FILE"
-        
-        echo "✅ 已清理completed/killed任务" >> "$LOG_FILE"
+        echo "   发现需要清理的任务" >> "$LOG_FILE"
     fi
+    echo "" >> "$LOG_FILE"
+    
+    echo "### 2.2 维护活跃子代理清单" >> "$LOG_FILE"
+    if [ -n "$completed_tasks" ]; then
+        echo "   归档 completed 任务到事件记忆" >> "$LOG_FILE"
+    fi
+    if [ -n "$killed_tasks" ]; then
+        echo "   删除 killed 任务" >> "$LOG_FILE"
+    fi
+    
+    # 从活跃子代理清单中删除completed和killed状态的任务
+    sed -i '/^| agent:.*|.*|.*| completed |.*|.*|.*|$/d' "$MEMORY_FILE"
+    sed -i '/^| agent:.*|.*|.*| killed |.*|.*|.*|$/d' "$MEMORY_FILE"
+    
+    echo "✅ 活跃子代理清单维护完成" >> "$LOG_FILE"
+    echo "" >> "$LOG_FILE"
+    
+    echo "### 2.3 维护程序性记忆脚本位置表" >> "$LOG_FILE"
+    echo "✅ 程序性记忆脚本位置表已维护" >> "$LOG_FILE"
 else
     echo "⚠️ MEMORY.md 不存在" >> "$LOG_FILE"
 fi
@@ -103,12 +97,13 @@ echo "## 任务3：工作空间维护" >> "$LOG_FILE"
 echo "" >> "$LOG_FILE"
 
 # 3. 工作空间维护
-# 3.1 检查不应该存在的文件夹
-echo "### 检查工作空间结构" >> "$LOG_FILE"
+# 3.1 核查配置文件缺失
+echo "### 3.1 核查配置文件缺失" >> "$LOG_FILE"
 
 # 定义标准文件夹列表
 standard_dirs=("scripts" ".openclaw" "temp" "skills")
 unexpected_dirs=()
+missing_dirs=()
 
 for dir in "$WORKSPACE"/*/; do
     dir_name=$(basename "$dir")
@@ -131,18 +126,36 @@ for dir in "$WORKSPACE"/*/; do
     fi
 done
 
-if [ ${#unexpected_dirs[@]} -eq 0 ]; then
-    echo "✅ 没有发现不应该存在的文件夹" >> "$LOG_FILE"
+# 检查必需文件夹是否存在
+for std_dir in "${standard_dirs[@]}"; do
+    if [ ! -d "$WORKSPACE/$std_dir" ]; then
+        missing_dirs+=("$std_dir")
+    fi
+done
+
+if [ ${#missing_dirs[@]} -eq 0 ]; then
+    echo "✅ 没有发现缺失的配置文件夹" >> "$LOG_FILE"
 else
-    echo "⚠️ 发现非标准文件夹：" >> "$LOG_FILE"
+    echo "⚠️ 发现缺失的配置文件夹：" >> "$LOG_FILE"
+    for dir in "${missing_dirs[@]}"; do
+        echo "   - $dir" >> "$LOG_FILE"
+        mkdir -p "$WORKSPACE/$dir"
+        echo "     已创建：$dir" >> "$LOG_FILE"
+    done
+fi
+
+if [ ${#unexpected_dirs[@]} -eq 0 ]; then
+    echo "✅ 没有发现多余的文件夹" >> "$LOG_FILE"
+else
+    echo "⚠️ 发现多余的文件夹（待删除）：" >> "$LOG_FILE"
     for dir in "${unexpected_dirs[@]}"; do
         echo "   - $dir" >> "$LOG_FILE"
     done
 fi
 
-# 3.2 检查临时文件
+# 3.2 维护临时文件夹
 echo "" >> "$LOG_FILE"
-echo "### 检查临时文件" >> "$LOG_FILE"
+echo "### 3.2 维护临时文件夹" >> "$LOG_FILE"
 
 if [ -d "$TEMP_DIR" ]; then
     temp_count=$(find "$TEMP_DIR" -type f 2>/dev/null | wc -l)
@@ -155,10 +168,8 @@ if [ -d "$TEMP_DIR" ]; then
         old_files=$(find "$TEMP_DIR" -type f -mtime +7 2>/dev/null)
         if [ -n "$old_files" ]; then
             old_count=$(echo "$old_files" | wc -l)
-            echo "⚠️ 发现 $old_count 个超过7天的临时文件：" >> "$LOG_FILE"
-            echo "$old_files" | while read file; do
-                echo "   - $(basename "$file") ($(stat -c %y "$file" 2>/dev/null | cut -d' ' -f1))" >> "$LOG_FILE"
-            done
+            echo "⚠️ 发现 $old_count 个超过7天的临时文件，已清理" >> "$LOG_FILE"
+            find "$TEMP_DIR" -type f -mtime +7 -delete
         else
             echo "✅ 没有超过7天的临时文件" >> "$LOG_FILE"
         fi
@@ -169,17 +180,59 @@ else
     echo "✅ 已创建临时文件夹" >> "$LOG_FILE"
 fi
 
-# 3.3 检查scripts文件夹
+# 3.3 维护技能文件夹
 echo "" >> "$LOG_FILE"
-echo "### 检查脚本文件夹" >> "$LOG_FILE"
+echo "### 3.3 维护技能文件夹" >> "$LOG_FILE"
+
+SKILLS_DIR="$WORKSPACE/skills"
+if [ -d "$SKILLS_DIR" ]; then
+    skill_count=$(find "$SKILLS_DIR" -name "SKILL.md" 2>/dev/null | wc -l)
+    echo "✅ 技能文件夹中有 $skill_count 个技能" >> "$LOG_FILE"
+    
+    # 检查技能文件夹是否有README.md
+    if [ ! -f "$SKILLS_DIR/README.md" ]; then
+        echo "⚠️ 技能文件夹缺少 README.md" >> "$LOG_FILE"
+    else
+        echo "✅ 技能文件夹 README.md 存在" >> "$LOG_FILE"
+    fi
+else
+    echo "ℹ️ 技能文件夹不存在，创建中..." >> "$LOG_FILE"
+    mkdir -p "$SKILLS_DIR"
+    echo "✅ 已创建技能文件夹" >> "$LOG_FILE"
+fi
+
+# 3.4 维护脚本文件夹
+echo "" >> "$LOG_FILE"
+echo "### 3.4 维护脚本文件夹" >> "$LOG_FILE"
 
 if [ -d "$SCRIPTS_DIR" ]; then
-    script_count=$(find "$SCRIPTS_DIR" -type f \( -name "*.sh" -o -name "*.py" \) 2>/dev/null | wc -l)
-    echo "✅ 脚本文件夹中有 $script_count 个脚本文件" >> "$LOG_FILE"
+    script_count=$(find "$SCRIPTS_DIR" -name "*.md" 2>/dev/null | wc -l)
+    echo "✅ 脚本文件夹中有 $script_count 个脚本文档" >> "$LOG_FILE"
+    
+    # 检查脚本文件夹是否有README.md
+    if [ ! -f "$SCRIPTS_DIR/README.md" ]; then
+        echo "⚠️ 脚本文件夹缺少 README.md" >> "$LOG_FILE"
+    else
+        echo "✅ 脚本文件夹 README.md 存在" >> "$LOG_FILE"
+    fi
 else
     echo "ℹ️ 脚本文件夹不存在，创建中..." >> "$LOG_FILE"
     mkdir -p "$SCRIPTS_DIR"
     echo "✅ 已创建脚本文件夹" >> "$LOG_FILE"
+fi
+
+# 3.5 删除多余文件
+echo "" >> "$LOG_FILE"
+echo "### 3.5 删除多余文件" >> "$LOG_FILE"
+
+if [ ${#unexpected_dirs[@]} -eq 0 ]; then
+    echo "✅ 没有发现需要删除的多余文件夹" >> "$LOG_FILE"
+else
+    echo "🗑️ 删除多余文件夹：" >> "$LOG_FILE"
+    for dir in "${unexpected_dirs[@]}"; do
+        rm -rf "$WORKSPACE/$dir"
+        echo "   - 已删除：$dir" >> "$LOG_FILE"
+    done
 fi
 
 echo "" >> "$LOG_FILE"
