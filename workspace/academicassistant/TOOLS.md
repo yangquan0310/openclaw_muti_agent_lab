@@ -154,13 +154,9 @@
 ### 个人脚本索引
 > 各个代理独立维护，这里显示教务助手特有脚本
 
-| 技能名称 | 触发示例 | 描述 | 路径 |
+| 脚本名称 | 触发示例 | 描述 | 路径 |
 |----------|----------|----------|----------|------|
-| 批量更新课程大纲 | S001 | update_syllabi | 批量更新课程大纲文件 | ~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md |
-| 转换大纲格式 | S002 | convert_syllabus | 将课程大纲转换为标准格式 | ~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md |
-| 更新TOOLS.md | S003 | update_tools_md | 自动更新工具索引文档 | ~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md |
-| 更新索引 | S004 | update_index | 更新项目索引文件 | ~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md |
-| 每日维护 | S005 | 每日维护 | 每日维护TOOLS.md、MEMORY.md和工作空间 | ~/.openclaw/workspace/academicassistant/skills/每日维护/SKILL.md |
+||||||
 ---
 
 *最后重构: 2026-04-12*

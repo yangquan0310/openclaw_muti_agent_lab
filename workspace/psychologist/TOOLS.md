@@ -140,17 +140,9 @@
 ### 个人脚本索引
 > 各个代理独立维护，这里显示心理学家特有脚本
 
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
-|----------|----------|----------|----------|
-| 需要进行心理学领域文献检索 | **S1** | 执行心理学文献检索任务 | 执行心理学文献检索任务相关任务 | ~/.openclaw/workspace/psychologist/skills/daily-maintenance/SKILL.md |
-| 需要更新TOOLS.md索引 | **S2** | 每日TOOLS更新 | 每日自动更新TOOLS.md中的脚本索引和项目列表 | ~/.openclaw/workspace/psychologist/skills/update-tools/SKILL.md |
-| 需要搜索照片效应相关文献 | **S3** | 搜索照片效应 | 使用search_photo_effect.py脚本检索照片效应相关文献 | ~/.openclaw/workspace/psychologist/skills/search-photo-effect/SKILL.md |
-| 需要更新索引并验证 | **S4** | 更新索引并验证 | 使用update_index_with_verification.py更新项目索引 | ~/.openclaw/workspace/psychologist/skills/update-index-verification/SKILL.md |
-| 需要维护工作记忆 | **S5** | 维护工作记忆 | 使用维护工作记忆.sh脚本维护MEMORY.md工作记忆 | ~/.openclaw/workspace/psychologist/skills/memory-maintenance/SKILL.md |
-| 需要合并文献笔记文件 | **S6** | 笔记合并任务 | 按主题合并多个笔记JSON文件，生成统一的主题笔记 | ~/.openclaw/workspace/psychologist/skills/笔记合并任务/SKILL.md |
-| 需要根据研究问题重新分类文献 | **S7** | 文献主题分类任务 | 使用面向对象设计的classify_papers.py自动判断文献主题归属 | ~/.openclaw/workspace/psychologist/skills/文献分类任务/SKILL.md |
-| 需要处理文献（去重、分类、筛选、合并） | **S8** | 文献处理工具 | 使用面向对象的literature_processor.py进行文献去重、分类、筛选、合并 | ~/.openclaw/workspace/psychologist/skills/文献处理工具/SKILL.md |
-
+| 脚本名称 | 触发示例 | 描述 | 路径 |
+|----------|----------|----------|----------|------|
+||||||
 ---
 
 *最后重构: 2026-04-11

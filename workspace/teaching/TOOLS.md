@@ -124,13 +124,9 @@
 ---
 ### 个人脚本索引
 > 各个代理独立维护，这里显示教学助手特有脚本
-
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 | 路径 |
+| 脚本名称 | 触发示例 | 描述 | 路径 |
 |----------|----------|----------|----------|------|
-| 需要下载论文 | T1 | download_papers | 批量下载学术论文 | ~/.openclaw/workspace/teaching/skills/download_papers/SKILL.md |
-| 需要检索论文 | T2 | retrieve_papers | 检索并获取论文信息 | ~/.openclaw/workspace/teaching/skills/retrieve_papers/SKILL.md |
-| 需要文献检索 | T3 | search_literature | 综合文献检索工具 | ~/.openclaw/workspace/teaching/skills/search_literature/SKILL.md |
-| 需要执行每日维护 | T4 | 每日维护 | 清理completed任务并归档，删除killed任务 | ~/.openclaw/workspace/teaching/skills/每日维护/SKILL.md |
+||||||
 
 ---
 

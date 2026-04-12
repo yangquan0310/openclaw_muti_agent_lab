@@ -127,15 +127,9 @@
 ---
 ### 个人脚本索引
 > 各个代理独立维护，这里显示写作助手特有脚本
-
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 | 路径 |
+| 脚本名称 | 触发示例 | 描述 | 路径 |
 |----------|----------|----------|----------|------|
-| 撰写文献综述 | S1 | 文献综述脚本 | 系统性检索、整合、评述文献，生成结构化综述 | ~/.openclaw/workspace/writer/scripts/文献综述脚本/SKILL.md |
-| 撰写完整学术篇章 | S2 | 学术篇章撰写脚本 | 撰写完整学术篇章，整合段落形成连贯论述 | ~/.openclaw/workspace/writer/scripts/学术篇章撰写脚本/SKILL.md |
-| 撰写学术段落 | S3 | 学术段落撰写脚本 | 撰写独立学术段落，论证特定论点 | ~/.openclaw/workspace/writer/scripts/学术段落撰写脚本/SKILL.md |
-| 撰写学术句子 | S4 | 撰写句子脚本 | 撰写符合学术规范的中英文句子 | ~/.openclaw/workspace/writer/scripts/撰写句子脚本/SKILL.md |
-| AI降重 | - | AI降重提示工程 | AI降重的提示词工程模板 | ~/.openclaw/workspace/writer/scripts/AI降重提示工程/SKILL.md |
-
+||||||
 ---
 
 *最后重构: 2026-04-08*
