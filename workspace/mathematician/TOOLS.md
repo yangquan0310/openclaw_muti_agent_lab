@@ -96,19 +96,24 @@
 | Zotero文件管理 | ~/实验室仓库/项目文件/Zotero文件管理/ | Zotero文件管理 |
 
 ## 索引
-> 各个代理独立维护
 
 ### 公共技能索引
 > 大管家统一维护
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
+| 修改文档 | 需要修改已存在的文档文件 | 修改文档文件，保存新版本并记录修改历史 | ~/.openclaw/scripts/修改文档/SKILL.md |
+| 撰写脚本 | 需要创建新的操作脚本 | 按照五要素SOP规范撰写新脚本 | ~/.openclaw/scripts/撰写脚本/SKILL.md |
+| 撰写技能 | 需要创建新的技能 | 创建新的技能（结构化或非结构化） | ~/.openclaw/scripts/撰写技能/SKILL.md |
+| 检索文献 | 需要检索学术文献 | 使用Zotero和Semantic Scholar检索学术文献 | ~/.openclaw/scripts/检索文献/SKILL.md |
+| 管理项目元数据 | 需要创建或维护项目 | 创建和维护项目元数据，管理云文档映射 | ~/.openclaw/scripts/管理项目元数据/SKILL.md |
+| 记录工作日志 | 任务执行完成 | 记录任务执行日志 | ~/.openclaw/scripts/记录工作日志/SKILL.md |
 | feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
-| tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
+---
 
-### 私人技能索引
+### 个人技能索引
 > 大管家维护格式
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
@@ -116,7 +121,7 @@
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
 | lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
 ---
-### 脚本索引
+### 个人脚本索引
 > 各个代理独立维护，这里显示数学家特有脚本
 
 | 触发条件 | 脚本编号 | 脚本名称 | 功能描述 | 路径 |

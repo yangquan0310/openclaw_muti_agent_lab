@@ -100,27 +100,24 @@
 ---
 
 ## 索引
-> 各个代理独立维护
 
 ### 公共技能索引
 > 大管家统一维护
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
+| 修改文档 | 需要修改已存在的文档文件 | 修改文档文件，保存新版本并记录修改历史 | ~/.openclaw/scripts/修改文档/SKILL.md |
+| 撰写脚本 | 需要创建新的操作脚本 | 按照五要素SOP规范撰写新脚本 | ~/.openclaw/scripts/撰写脚本/SKILL.md |
+| 撰写技能 | 需要创建新的技能 | 创建新的技能（结构化或非结构化） | ~/.openclaw/scripts/撰写技能/SKILL.md |
+| 检索文献 | 需要检索学术文献 | 使用Zotero和Semantic Scholar检索学术文献 | ~/.openclaw/scripts/检索文献/SKILL.md |
+| 管理项目元数据 | 需要创建或维护项目 | 创建和维护项目元数据，管理云文档映射 | ~/.openclaw/scripts/管理项目元数据/SKILL.md |
+| 记录工作日志 | 任务执行完成 | 记录任务执行日志 | ~/.openclaw/scripts/记录工作日志/SKILL.md |
+| feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
-| tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
-| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/SKILL.md检索文献.md |
-| 管理知识库 | 管理项目知识库index.json | 将检索到的文献存入项目知识库的index.json | ~/.openclaw/scripts/general-scripts/SKILL.md管理知识库.md |
-| baidu-scholar-search | 百度学术搜索、中英文文献检索 | 检索中英文文献，涵盖学术期刊、会议论文、学位论文等 | ~/.openclaw/skills/baidu-scholar-search/SKILL.md |
-| cnki-advanced-search | 知网高级检索、CSSCI论文检索 | 知网高级检索页面模拟人类检索行为，支持关键词搜索C刊论文、下载题录信息 | ~/.openclaw/skills/cnki-advanced-search/SKILL.md |
-| semantic-scholar-mcp | Semantic Scholar文献检索 | 学术文献检索，获取论文题录、摘要、引用信息 | ~/.openclaw/skills/semantic-scholar-mcp/SKILL.md |
-| scihub-paper-downloader | Sci-Hub论文下载 | 通过DOI获取论文PDF下载链接 | ~/.openclaw/skills/scihub-paper-downloader/SKILL.md |
-| zotero-local-pdf-import | Zotero本地PDF导入 | 将本地PDF文件批量导入Zotero文献库 | ~/.openclaw/skills/zotero-local-pdf-import/SKILL.md |
-| zotero-vectorize | Zotero文献向量化 | 构建Zotero文献库语义索引，支持语义检索 | ~/.openclaw/skills/zotero-vectorize/SKILL.md |
-| tavily-search | Tavily网络搜索 | 网络信息检索，获取相关网页、新闻、资料 | ~/.openclaw/skills/openclaw-tavily-search/SKILL.md |
+---
 
-### 私人技能索引
+### 个人技能索引
 > 大管家维护格式
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
@@ -147,5 +144,12 @@
 | memory-hygiene | 记忆优化 | 审计、清理、优化向量记忆，降低token使用 | ~/.openclaw/skills/memory-hygiene/SKILL.md |
 | mcp-adapter | MCP服务器集成 | 访问外部工具和数据源，扩展Agent能力 | ~/.openclaw/skills/mcp-adapter/SKILL.md |
 
+---
+
+### 个人脚本索引
+> 大管家维护格式
+> 内容由各代理独立维护
+| 技能名称 | 触发示例 | 描述 | 路径 |
+|---------|---------|------|------|
 *最后重构: 2026-04-09*
 *重构者: 大管家*

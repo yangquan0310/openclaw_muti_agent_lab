@@ -93,20 +93,24 @@
 ---
 
 ## 索引
-> 各个代理独立维护
 
 ### 公共技能索引
 > 大管家统一维护
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
+| 修改文档 | 需要修改已存在的文档文件 | 修改文档文件，保存新版本并记录修改历史 | ~/.openclaw/scripts/修改文档/SKILL.md |
+| 撰写脚本 | 需要创建新的操作脚本 | 按照五要素SOP规范撰写新脚本 | ~/.openclaw/scripts/撰写脚本/SKILL.md |
+| 撰写技能 | 需要创建新的技能 | 创建新的技能（结构化或非结构化） | ~/.openclaw/scripts/撰写技能/SKILL.md |
+| 检索文献 | 需要检索学术文献 | 使用Zotero和Semantic Scholar检索学术文献 | ~/.openclaw/scripts/检索文献/SKILL.md |
+| 管理项目元数据 | 需要创建或维护项目 | 创建和维护项目元数据，管理云文档映射 | ~/.openclaw/scripts/管理项目元数据/SKILL.md |
+| 记录工作日志 | 任务执行完成 | 记录任务执行日志 | ~/.openclaw/scripts/记录工作日志/SKILL.md |
 | feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
-| tencent-docs-upload-by-sections | 分段上传腾讯云文档 | 文件太大，上传腾讯云文档无法使用时，分段上传 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
-| 检索文献 | 检索学术文献存入项目知识库 | 使用Semantic Scholar和Zotero检索文献并更新项目知识库 | ~/.openclaw/scripts/general-scripts/SKILL.md检索文献.md |
+---
 
-### 私人技能索引
+### 个人技能索引
 > 大管家维护格式
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
@@ -141,29 +145,22 @@
 | zotero-local-pdf-import | Zotero本地PDF导入 | 将本地PDF文件导入Zotero文献库 | ~/.openclaw/skills/zotero-local-pdf-import/SKILL.md |
 | zotero-scholar | Zotero学术检索 | Zotero学术文献检索和管理 | ~/.openclaw/skills/zotero-scholar/SKILL.md |
 | zotero-vectorize | Zotero语义索引 | 构建和维护Zotero文献库的语义索引 | ~/.openclaw/skills/zotero-vectorize/SKILL.md |
+| convert_syllabus | `skills/convert_syllabus/` | 转换课程大纲格式 |
+| update_index | `skills/update_index/` | 更新项目索引 |
+| update_syllabi | `skills/update_syllabi/` | 批量更新课程大纲 |
+| update_tools_md | `skills/update_tools_md/` | 自动更新工具索引文档 |
+| 每日维护 | `skills/每日维护/` | 每日维护TOOLS.md、MEMORY.md和工作空间 |
 ---
-### 脚本索引
+### 个人脚本索引
 > 各个代理独立维护，这里显示教务助手特有脚本
 
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 | 路径 |
+| 技能名称 | 触发示例 | 描述 | 路径 |
 |----------|----------|----------|----------|------|
 | 批量更新课程大纲 | S001 | update_syllabi | 批量更新课程大纲文件 | ~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md |
 | 转换大纲格式 | S002 | convert_syllabus | 将课程大纲转换为标准格式 | ~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md |
 | 更新TOOLS.md | S003 | update_tools_md | 自动更新工具索引文档 | ~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md |
 | 更新索引 | S004 | update_index | 更新项目索引文件 | ~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md |
 | 每日维护 | S005 | 每日维护 | 每日维护TOOLS.md、MEMORY.md和工作空间 | ~/.openclaw/workspace/academicassistant/skills/每日维护/SKILL.md |
-
-### 个人技能索引
-> 教务助手专属技能列表
-
-| 技能名称 | 路径 | 说明 |
-|---------|------|------|
-| convert_syllabus | `skills/convert_syllabus/` | 转换课程大纲格式 |
-| update_index | `skills/update_index/` | 更新项目索引 |
-| update_syllabi | `skills/update_syllabi/` | 批量更新课程大纲 |
-| update_tools_md | `skills/update_tools_md/` | 自动更新工具索引文档 |
-| 每日维护 | `skills/每日维护/` | 每日维护TOOLS.md、MEMORY.md和工作空间 |
-
 ---
 
 *最后重构: 2026-04-12*

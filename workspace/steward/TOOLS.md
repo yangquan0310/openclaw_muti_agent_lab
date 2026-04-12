@@ -134,7 +134,7 @@
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
 ---
 
-### 私人技能索引
+### 个人技能索引
 > 大管家维护格式
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
@@ -143,9 +143,9 @@
 | lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
 ---
 
-### 脚本索引
+### 个人脚本索引
 > 各个代理独立维护
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
+| 技能名称 | 触发示例 | 描述 | 路径 |
 |----------|----------|----------|----------|
 | 存储key | **S1** | 安全存储API Key | 安全存储API密钥并设置权限 |
 | 维护代理 | **S2** | 管理其他Agent配置 | 创建或更新其他Agent的配置文件 |
