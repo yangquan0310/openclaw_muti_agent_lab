@@ -1,213 +1,313 @@
-# OpenClaw 多Agent实验室备份仓库
+# OpenClaw 多Agent智能协作系统
 
-## 概述
+![OpenClaw](https://img.shields.io/badge/OpenClaw-v2.0-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Agents](https://img.shields.io/badge/Agents-9%20个-orange.svg)
+![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
 
-本仓库是 OpenClaw 多Agent实验室的完整备份，包含所有Agent配置、工作空间、技能和系统设置。
+## 👥 团队成员
 
-## 仓库结构
+### 实验室成员（研究团队）
+| 成员 | 角色 | 研究领域 |
+|------|------|----------|
+| 杨权 | 实验室负责人 | 心理学、认知科学、数字化记忆 |
+| 数学家Agent | 科研助理 | 数学建模、统计分析、数据处理 |
+| 物理学家Agent | 科研助理 | 物理建模、理论推导、量化分析 |
+| 心理学家Agent | 科研助理 | 心理学理论、实验设计、数据分析 |
+| 写作助手Agent | 科研助理 | 论文撰写、内容创作、文档编辑 |
+| 审稿助手Agent | 科研助理 | 论文审查、质量控制、格式规范 |
+| 大管家Agent | 系统管理员 | 文档管理、系统维护、协调调度 |
+
+### 教研室成员（教学团队）
+| 成员 | 角色 | 职责范围 |
+|------|------|----------|
+| 教学助手Agent | 教学助理 | 课程备课、课件制作、作业批改 |
+| 教务助手Agent | 教务管理 | 排课安排、成绩管理、教务归档 |
+| 学工助手Agent | 学生工作 | 学生管理、心理咨询、就业指导 |
+
+## 🤖 Agent任务分工
+
+### 核心科研Agent
+| Agent | 主要任务 | 触发关键词 |
+|-------|----------|------------|
+| **数学家** | 统计分析、数学建模、算法实现 | 统计、建模、数据分析、计算、算法 |
+| **物理学家** | 物理建模、理论推导、量化研究 | 建模、模拟、物理分析、理论推导 |
+| **心理学家** | 理论审核、实验设计、结果解释 | 心理学、实验设计、理论分析、问卷设计 |
+| **写作助手** | 论文撰写、内容创作、文档编辑 | 写作、编辑、翻译、润色、文档生成 |
+| **审稿助手** | 质量审查、格式规范、投稿建议 | 审稿、检查、格式、投稿、审查 |
+| **大管家** | 文档管理、系统维护、任务调度 | 管理、维护、备份、同步、调度 |
+
+### 教学辅助Agent
+| Agent | 主要任务 | 触发关键词 |
+|-------|----------|------------|
+| **教学助手** | 备课、课件制作、作业批改、教学资料整理 | 备课、课件、作业、教学、课程 |
+| **教务助手** | 排课、成绩管理、教务系统维护、毕业审核 | 教务、排课、成绩、毕业、归档 |
+| **学工助手** | 学生管理、心理咨询、就业指导、资助管理 | 学生、心理、就业、资助、学工 |
+
+## 📁 仓库文件结构
 
 ```
 .openclaw/
-├── README.md              # 本文件
-├── .gitignore            # Git忽略规则
-├── openclaw.json         # OpenClaw主配置文件
-├── workspace/            # 所有Agent工作空间
-│   ├── mathematician/    # 数学家Agent
-│   ├── physicist/        # 物理学家Agent
-│   ├── psychologist/     # 心理学家Agent
-│   ├── reviewer/         # 审稿助手Agent
-│   ├── writer/          # 写作助手Agent
-│   └── steward/         # 大管家Agent
-└── agents/              # Agent运行时配置
-    ├── main/            # 主Agent配置
-    ├── mathematician/   # 数学家Agent运行时
-    ├── physicist/       # 物理学家Agent运行时
-    ├── psychologist/    # 心理学家Agent运行时
-    ├── reviewer/        # 审稿助手Agent运行时
-    ├── writer/         # 写作助手Agent运行时
-    └── steward/        # 大管家Agent运行时
+├── README.md                          # 本说明文件
+├── .gitignore                         # Git忽略规则
+├── openclaw.json                      # OpenClaw主配置文件
+├── skills/                            # 公共技能库（所有Agent共享）
+│   ├── knowledge-manager/             # 知识管理工具（文献检索+知识库）
+│   ├── feishu-doc-manager/            # 飞书文档管理
+│   ├── tencent-docs/                  # 腾讯文档管理
+│   ├── tencent-cos-skill/             # 腾讯云对象存储
+│   ├── tencent-meeting-skill/         # 腾讯会议管理
+│   ├── tencentcloud-lighthouse-skill/ # 腾讯轻量云管理
+│   ├── github/                        # GitHub仓库管理
+│   ├── zotero/                        # Zotero文献管理
+│   └── .skills_store_lock.json        # 技能锁定配置
+├── scripts/                           # 公共SOP脚本
+│   ├── agents-sop/                    # Agent标准操作流程
+│   ├── 修改文档/                       # 文档修改规范
+│   ├── 撰写脚本/                       # 脚本创建规范
+│   ├── 撰写技能/                       # 技能创建规范
+│   └── 管理项目元数据/                 # 项目元数据管理
+├── workspace/                         # 所有Agent工作空间
+│   ├── steward/                       # 大管家工作空间（系统配置中心）
+│   ├── mathematician/                 # 数学家工作空间
+│   ├── physicist/                     # 物理学家工作空间
+│   ├── psychologist/                  # 心理学家工作空间
+│   ├── reviewer/                      # 审稿助手工作空间
+│   ├── writer/                        # 写作助手工作空间
+│   ├── teaching/                      # 教学助手工作空间
+│   ├── academicassistant/              # 教务助手工作空间
+│   └── studentaffairsassistant/        # 学工助手工作空间
+└── agents/                            # Agent运行时配置
+    ├── main/                          # 主Agent配置
+    └── <agent_name>/                  # 各Agent运行时配置
 ```
 
-## Agent配置
+## 📂 实验室仓库结构（独立存储）
 
-### 核心Agent（6个）
+```
+实验室仓库/
+├── 日程管理/                           # 日程安排、会议记录、项目计划
+├── 日志文件/                           # 任务执行日志、系统操作记录
+├── 项目文件/                           # 科研项目文件
+│   └── <项目名>/
+│       ├── 文档/                      # 用户上传的原始文档
+│       ├── 草稿/                      # 论文草稿、中间版本
+│       ├── 终稿/                      # 最终版本、投稿版本
+│       ├── 知识库/                     # 项目专属知识库
+│       │   └── 索引.json              # 文献索引、知识图谱
+│       ├── 元数据.json                 # 项目元数据配置
+│       └── README.md                   # 项目说明文档
+├── 心跳报告/                           # 系统运行状态、监控报告
+└── README.md                           # 仓库说明
+```
 
-| Agent | 中文名 | 功能描述 |
-|-------|--------|----------|
-| `mathematician` | 数学家 | 数学建模、统计分析 |
-| `physicist` | 物理学家 | 物理问题建模、理论推导 |
-| `psychologist` | 心理学家 | 心理学理论审核、实验设计 |
-| `reviewer` | 审稿助手 | 论文质量审查、格式规范 |
-| `writer` | 写作助手 | 内容创作、论文撰写 |
-| `steward` | 大管家 | 文档管理、日志记录、协调 |
+## 🏫 教研室仓库结构（独立存储）
 
-### 辅助Agent
+```
+教研室仓库/
+├── 主任信息/                           # 教研室主任个人信息、学术资料
+├── 备课资料/                           # 课程课件、教学大纲、教案
+├── 学生工作/                           # 学生信息、心理咨询记录、就业数据
+├── 教务归档/                           # 教务文件、成绩记录、毕业资料
+├── 日志文件/                           # 教学、教务、学工操作日志
+├── 日程文件/                           # 教学日程、会议安排、工作计划
+└── README.md                           # 仓库说明
+```
 
-| Agent | 功能描述 |
-|-------|----------|
-| `main` | 主Agent配置 |
-| `academicassistant` | 学术助手 |
-| `studentaffairsassistant` | 学生事务助手 |
-| `teachingassistant` | 教学助手 |
+## 🧠 知识库结构
 
-## 备份策略
+### 全局知识库
+```
+知识库/
+├── 文献库/                             # 已整理的学术文献
+│   ├── 心理学/                         # 心理学领域文献
+│   ├── 计算机科学/                     # 计算机科学领域文献
+│   ├── 认知科学/                       # 认知科学领域文献
+│   └── 交叉研究/                       # 跨学科研究文献
+├── 方法库/                             # 研究方法、实验范式、分析工具
+├── 模板库/                             # 论文模板、报告模板、文档模板
+└── 索引.json                           # 全局知识索引、检索配置
+```
 
-### 同步内容
-1. **workspace/** - 所有Agent的工作空间和配置文件
-2. **agents/** - Agent运行时配置和会话历史
-3. **openclaw.json** - 主配置文件
+### 项目专属知识库
+每个科研项目有独立的知识库，位于`实验室仓库/项目文件/<项目名>/知识库/`，包含：
+- 项目相关的文献集合
+- 数据分析结果
+- 实验记录
+- 阶段性报告
+- 知识图谱索引
 
-### 排除内容
-- 敏感文件（`.env`, `*.key`, `*.secret`, `*.token`等）
-- 日志和缓存文件
-- 临时文件和备份文件
-- OpenClaw内部文件
+## 🚀 部署指南
 
-### 备份频率
-- **自动备份**: 每日自动执行
-- **手动备份**: 随时可执行
+### 1. 环境要求
+- 操作系统: Ubuntu 22.04 LTS / macOS 13+
+- Python 版本: 3.10+
+- Node.js 版本: 18+
+- 内存要求: 最低4GB，推荐8GB以上
+- 存储要求: 至少50GB可用空间
 
-## 恢复方法
+### 2. 安装步骤
 
-### 1. 完整恢复
+#### 第一步: 克隆仓库
 ```bash
-# 克隆仓库
 git clone git@github.com:yangquan0310/openclaw_muti_agent_lab.git
-
-# 复制文件到正确位置
-cp -r openclaw_muti_agent_lab/workspace /root/.openclaw/
-cp -r openclaw_muti_agent_lab/agents /root/.openclaw/
-cp openclaw_muti_agent_lab/openclaw.json /root/.openclaw/
+cd openclaw_muti_agent_lab
 ```
 
-### 2. 部分恢复
+#### 第二步: 安装OpenClaw
 ```bash
-# 恢复单个Agent的工作空间
-cp -r openclaw_muti_agent_lab/workspace/mathematician /root/.openclaw/workspace/
+# 安装OpenClaw CLI
+npm install -g @openclaw/cli
 
-# 恢复特定配置
-cp openclaw_muti_agent_lab/openclaw.json /root/.openclaw/
+# 初始化配置
+openclaw init --config openclaw.json
 ```
 
-## 使用说明
-
-### 手动执行备份
+#### 第三步: 恢复工作空间
 ```bash
-bash /root/.openclaw/workspace/skills/lab-backup-manager/backup.sh
+# 恢复所有Agent工作空间
+cp -r workspace/* /root/.openclaw/workspace/
+
+# 恢复Agent运行时配置
+cp -r agents/* /root/.openclaw/agents/
 ```
 
-### 定时备份（推荐）
+#### 第四步: 安装依赖
 ```bash
-# 每天凌晨3点执行
-0 3 * * * /root/.openclaw/workspace/skills/lab-backup-manager/backup.sh
+# 安装Python依赖
+pip install -r requirements.txt
+
+# 安装Node.js依赖
+npm install
 ```
 
-### 查看备份日志
+#### 第五步: 配置环境变量
 ```bash
-# 查看最近的提交
+# 复制环境变量模板
+cp .env.example .env
+
+# 编辑.env文件，填入API密钥等信息
+vim .env
+```
+
+#### 第六步: 启动服务
+```bash
+# 启动OpenClaw服务
+openclaw start
+
+# 验证服务状态
+openclaw status
+```
+
+### 3. 初始化配置
+
+#### 配置Git自动备份
+```bash
+# 设置Git用户信息
+git config --global user.name "OpenClaw Backup"
+git config --global user.email "openclaw@example.com"
+
+# 测试Git推送
+git push origin main
+```
+
+#### 配置定时任务
+```bash
+# 编辑crontab
+crontab -e
+
+# 添加以下内容（每日凌晨3点自动备份）
+0 3 * * * /root/.openclaw/workspace/steward/skills/lab-backup-manager/backup.sh >> /var/log/openclaw_backup.log 2>&1
+```
+
+### 4. 验证部署
+```bash
+# 查看Agent列表
+openclaw agents list
+
+# 测试技能调用
+openclaw skills run knowledge-manager --query "认知心理学最新研究"
+
+# 查看系统状态
+openclaw status
+```
+
+## 🔧 常用操作
+
+### 备份操作
+```bash
+# 手动执行备份
+bash /root/.openclaw/workspace/steward/skills/lab-backup-manager/backup.sh
+
+# 查看备份历史
 cd /root/.openclaw
-git log --oneline -10
+git log --oneline -20
 ```
 
-## 文件说明
-
-### 核心配置文件
-
-| 文件 | 位置 | 说明 |
-|------|------|------|
-| `AGENTS.md` | workspace/<agent>/ | Agent行为规范 |
-| `IDENTITY.md` | workspace/<agent>/ | Agent身份定义 |
-| `SOUL.md` | workspace/<agent>/ | Agent风格和信念 |
-| `TOOLS.md` | workspace/<agent>/ | 工具配置 |
-| `USER.md` | workspace/<agent>/ | 用户偏好 |
-| `MEMORY.md` | workspace/<agent>/ | Agent记忆 |
-| `HEARTBEAT.md` | workspace/<agent>/ | 心跳检查 |
-
-### 技能文件
-- 位置: `workspace/skills/`
-- 包含: 各种任务处理的技能脚本
-- 数量: 约70个技能
-
-### 会话历史
-- 位置: `agents/<agent>/sessions/`
-- 内容: Agent的交互会话记录
-- 用途: 调试和追踪Agent行为
-
-## 安全注意事项
-
-### 🔒 保护敏感信息
-- 所有API密钥、密码等敏感信息应存储在`.env`文件中
-- `.env`文件已被`.gitignore`排除，不会被提交
-- 请勿在代码中硬编码敏感信息
-
-### 📋 版本控制最佳实践
-1. **定期提交**: 每天自动备份
-2. **描述性提交信息**: 包含时间戳和变更摘要
-3. **分支管理**: 使用main分支作为主要备份
-
-### 🛡️ 备份验证
-1. **完整性检查**: 定期验证备份的完整性
-2. **恢复测试**: 定期测试从备份恢复的能力
-3. **监控**: 监控备份执行结果
-
-## 故障排除
-
-### 常见问题
-
-#### 1. 备份失败
+### 技能管理
 ```bash
-# 检查脚本权限
-chmod +x /root/.openclaw/workspace/skills/lab-backup-manager/backup.sh
+# 列出所有可用技能
+openclaw skills list
 
-# 检查Git配置
-cd /root/.openclaw
-git config --list
+# 查看技能详情
+openclaw skills show <skill-name>
 ```
 
-#### 2. Git推送失败
+### Agent管理
 ```bash
-# 检查SSH密钥
-ssh -T git@github.com
+# 查看Agent状态
+openclaw agents status <agent-name>
 
-# 检查远程仓库配置
-git remote -v
+# 重启Agent
+openclaw agents restart <agent-name>
 ```
 
-#### 3. 磁盘空间不足
-```bash
-# 清理临时文件
-rm -rf /root/.openclaw/workspace/**/node_modules/
-rm -rf /root/.openclaw/workspace/**/.cache/
-```
+## 🔒 安全注意事项
 
-### 联系支持
-如有问题，请参考：
-1. 备份脚本: `/root/.openclaw/workspace/skills/lab-backup-manager/`
-2. GitHub Issues: 仓库问题跟踪
-3. 系统管理员: 杨权
+1. **敏感信息保护**
+   - 所有API密钥、密码存储在`.env`文件中，该文件不会被提交到Git
+   - 禁止在代码和文档中硬编码敏感信息
+   - 教研室仓库的日志和学生信息采用AES-256加密存储
 
-## 更新历史
+2. **访问控制**
+   - 实验室仓库仅对科研团队成员开放
+   - 教研室仓库仅对教学团队成员开放
+   - 不同Agent有不同的权限范围，禁止越权操作
+
+3. **数据备份**
+   - 每日自动备份到GitHub和私有备份服务器
+   - 重要数据采用多副本存储，确保数据安全
+   - 定期测试恢复流程，确保备份可用
+
+## 📝 更新历史
+
+### 版本 2.1 (2026-04-13)
+- 重构日志系统，移除公共记录工作日志脚本
+- 迁移知识管理工具，整合文献检索和知识库功能
+- 完善技能锁定机制，新增.skills_store_lock.json
+- 更新所有Agent的TOOLS.md配置
+- 新增实验室和教研室独立日志系统
 
 ### 版本 2.0 (2026-04-07)
-- 重构备份策略，基于`.openclaw`根目录同步
-- 删除workspace中的`.gitignore`和`README.md`
-- 新增根目录`README.md`文档
-- 优化`.gitignore`配置
+- 重构备份策略，基于.openclaw根目录同步
+- 完善Agent分工和权限体系
+- 新增多仓库管理机制（实验室+教研室）
 
 ### 版本 1.0 (2026-04-06)
-- 初始版本，基于workspace-only同步
+- 初始版本，多Agent系统上线
 
-## 许可证
+## 📄 许可证
 
-本备份仓库遵循 MIT 许可证。
+本项目遵循 MIT 许可证，详见 LICENSE 文件。
 
-## 维护者
+## 👨‍💻 维护者
 
-- **杨权** - 系统管理员
-- **OpenClaw系统** - 自动备份
+- **杨权** - 系统架构、实验室负责人
+- **大管家Agent** - 自动维护、系统监控
 
 ---
 
-**最后更新**: 2026-04-07 17:16:00  
-**仓库状态**: ✅ 活跃维护  
-**备份状态**: ✅ 自动运行
+**最后更新**: 2026-04-13 15:36:00  
+**系统版本**: v2.1.0  
+**运行状态**: ✅ 正常运行  
+**备份状态**: ✅ 自动执行中
