@@ -19,7 +19,7 @@ auto-push/
 5. 记录执行日志到指定位置
 
 ## 执行时间
-每日凌晨03:30（Asia/Shanghai时区）
+每日凌晨05:00（Asia/Shanghai时区）
 
 ## 日志位置
 - 执行日志：`/root/教研室仓库/日志文件/心跳任务/cron_steward_auto-push.log`
