@@ -36,7 +36,7 @@ CONTENT_BEFORE=$(awk '/## 索引/{exit}1' "${BACKUP_FILE}")
 
 # 提取技能索引部分 - 保留原始技能列表（使用原始备份文件）
 log "正在提取现有技能索引"
-SKILLS_SECTION=$(grep -A 20 "### 技能索引" /root/.openclaw/workspace/academicassistant/TOOLS.md.bak.20260408054632 | grep -E "^\|" | grep -v "技能名称" | grep -v "-------")
+SKILLS_SECTION=$(grep -A 20 "### 技能索引"  | grep -E "^\|" | grep -v "技能名称" | grep -v "-------")
 log "提取到技能: $(echo "${SKILLS_SECTION}" | grep -v "^$" | wc -l) 个"
 
 # 2. 获取最新项目列表
