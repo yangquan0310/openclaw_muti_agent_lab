@@ -134,6 +134,14 @@
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
+| daily-maintenance | 每日维护 | 每日维护任务 | ~/.openclaw/workspace/psychologist/skills/daily-maintenance/ |
+| memory-maintenance | 记忆维护 | 工作记忆维护 | ~/.openclaw/workspace/psychologist/skills/memory-maintenance/ |
+| search-photo-effect | 照片效应文献检索 | 照片效应相关文献检索 | ~/.openclaw/workspace/psychologist/skills/search-photo-effect/ |
+| update-index-verification | 索引更新验证 | 索引更新与验证 | ~/.openclaw/workspace/psychologist/skills/update-index-verification/ |
+| update-tools | TOOLS.md更新 | TOOLS.md自动更新 | ~/.openclaw/workspace/psychologist/skills/update-tools/ |
+| 文献分类任务 | 文献主题分类 | 自动分类文献主题 | ~/.openclaw/workspace/psychologist/skills/文献分类任务/ |
+| 文献处理工具 | 文献处理 | 文献去重、筛选、合并 | ~/.openclaw/workspace/psychologist/skills/文献处理工具/ |
+| 笔记合并任务 | 笔记合并 | 按主题合并笔记 | ~/.openclaw/workspace/psychologist/skills/笔记合并任务/ |
 
 ---
 ### 个人脚本索引
@@ -141,8 +149,9 @@
 
 | 脚本名称 | 触发示例 | 描述 | 路径 |
 |----------|----------|----------|----------|------|
-||||||
+| S1-心理学文献检索 | 检索心理学文献 | 执行心理学领域文献检索，建立项目知识库并生成检索报告 | ~/.openclaw/workspace/psychologist/scripts/S1-心理学文献检索/SKILL.md |
+| S2-总结文献笔记 | 总结文献笔记 | 对知识库文献进行深度阅读并提取关键信息，形成结构化笔记 | ~/.openclaw/workspace/psychologist/scripts/S2-总结文献笔记/SKILL.md |
 ---
 
-*最后重构: 2026-04-11
-*重构者: 心理学家-文献主题分类任务
+*最后重构: 2026-04-13
+*重构者: 心理学家-每日维护任务

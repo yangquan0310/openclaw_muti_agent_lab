@@ -96,7 +96,8 @@
     "dmScope": "per-channel-peer"
   },
   "tools": {
-    "profile": "full"
+    "profile": "full",
+    "deny": []
   },
   "skills": {
     "install": {
@@ -115,16 +116,16 @@
   },
   "plugins": {
     "entries": {
-      "memory-tdai": {
+      "browser": {
+        "enabled": true
+      },
+      "feishu": {
         "enabled": false
       },
       "ddingtalk": {
         "enabled": false
       },
       "wecom": {
-        "enabled": false
-      },
-      "adp-openclaw": {
         "enabled": false
       },
       "openclaw-plugin-yuanbao": {
@@ -136,101 +137,65 @@
       "lightclawbot": {
         "enabled": true
       },
-      "browser": {
-        "enabled": true
+      "adp-openclaw": {
+        "enabled": false
+      },
+      "memory-tdai": {
+        "enabled": false
       },
       "qqbot": {
-        "enabled": true
-      },
-      "feishu": {
         "enabled": true
       }
     },
     "installs": {
-      "memory-tdai": {
-        "source": "npm",
-        "spec": "@tdai/memory-tdai@latest",
-        "installPath": "/root/.openclaw/extensions/memory-tdai",
-        "version": "0.1.2",
-        "resolvedName": "@tdai/memory-tdai",
-        "resolvedVersion": "0.1.2",
-        "resolvedSpec": "@tdai/memory-tdai@0.1.2",
-        "integrity": "sha512-TOrv+qMGxk9yLuu3eCPlPayTt3B9IjjPmHT7NfyqQk0MiOu/HN5LuE3UxTGscPIdGUoLfAd3SCM1R/fNm34cAQ==",
-        "shasum": "0f9ad8d345a0802fa7b3f0a9f84789269ed920d7",
-        "resolvedAt": "2026-04-03T03:21:38.624Z",
-        "installedAt": "2026-04-03T03:21:57.103Z"
-      },
       "ddingtalk": {
         "source": "npm",
-        "spec": "@largezhou/ddingtalk@latest",
+        "spec": "@largezhou/ddingtalk@2.0.1",
         "installPath": "/root/.openclaw/extensions/ddingtalk",
         "version": "2.0.1",
-        "resolvedName": "@largezhou/ddingtalk",
-        "resolvedVersion": "2.0.1",
-        "resolvedSpec": "@largezhou/ddingtalk@2.0.1",
-        "integrity": "sha512-qKDndqVb6nj1CJ+IX+9DF86qhxrjvJYerk3ooir+TfiQD7RI8/HminvGzXf5g8SRsFF/wWP8vF/Gha5HCNfTJQ==",
-        "shasum": "9a8c22c264691f8a7bd6966cab998847c95dfd4d",
-        "resolvedAt": "2026-04-03T03:22:04.032Z",
-        "installedAt": "2026-04-03T03:22:25.251Z"
+        "installedAt": "2026-04-13T09:10:22.000Z"
       },
       "wecom": {
         "source": "npm",
-        "spec": "@mocrane/wecom@latest",
+        "spec": "@mocrane/wecom@2026.3.24",
         "installPath": "/root/.openclaw/extensions/wecom",
         "version": "2026.3.24",
-        "resolvedName": "@mocrane/wecom",
-        "resolvedVersion": "2026.3.24",
-        "resolvedSpec": "@mocrane/wecom@2026.3.24",
-        "integrity": "sha512-RXpA5N6FXxm/4Awwqkqsa54XR9hLjyfg7adr28SWBFczqSDJAjVx+EN66NdpjP+UMR/q9QILMTq3ZhgEAHcHbA==",
-        "shasum": "90a291cd60ce789b52c30b9746c76363a8aa150c",
-        "resolvedAt": "2026-04-03T03:22:34.179Z",
-        "installedAt": "2026-04-03T03:23:00.321Z"
-      },
-      "adp-openclaw": {
-        "source": "npm",
-        "spec": "adp-openclaw@latest",
-        "installPath": "/root/.openclaw/extensions/adp-openclaw",
-        "version": "0.0.77",
-        "resolvedName": "adp-openclaw",
-        "resolvedVersion": "0.0.77",
-        "resolvedSpec": "adp-openclaw@0.0.77",
-        "integrity": "sha512-BwHDHAXE7xACepqWk3Uo4KS6yUhDa09myvGZyu1etz5m1iAdCWAaU+ycUOamCi8k58RoPMogq68n8QvnAV3Elw==",
-        "shasum": "e4e98ee7b743a8a2d195584610dde3849885863c",
-        "resolvedAt": "2026-04-03T03:23:07.332Z",
-        "installedAt": "2026-04-03T03:23:11.994Z"
+        "installedAt": "2026-04-13T09:11:11.000Z"
       },
       "openclaw-plugin-yuanbao": {
         "source": "npm",
-        "spec": "openclaw-plugin-yuanbao@latest",
+        "spec": "openclaw-plugin-yuanbao@2.7.2",
         "installPath": "/root/.openclaw/extensions/openclaw-plugin-yuanbao",
-        "version": "2.6.0",
-        "resolvedName": "openclaw-plugin-yuanbao",
-        "resolvedVersion": "2.6.0",
-        "resolvedSpec": "openclaw-plugin-yuanbao@2.6.0",
-        "integrity": "sha512-wpSQrv2gEIoMgHXcFoip5NnGKlC1DCRgh8rpGka4bDzdSftwUymERUBSnADA+5Cqb9fpu9BCnKf9TDtYTEzm0g==",
-        "shasum": "c889b036fe813fe51dfbfc9e7d0629436acdfc70",
-        "resolvedAt": "2026-04-03T03:23:17.054Z",
-        "installedAt": "2026-04-03T03:23:57.067Z"
+        "version": "2.7.2",
+        "installedAt": "2026-04-13T09:12:01.000Z"
       },
       "openclaw-weixin": {
         "source": "npm",
-        "spec": "@tencent-weixin/openclaw-weixin@latest",
+        "spec": "@tencent-weixin/openclaw-weixin@2.1.7",
         "installPath": "/root/.openclaw/extensions/openclaw-weixin",
-        "version": "2.1.3",
-        "resolvedName": "@tencent-weixin/openclaw-weixin",
-        "resolvedVersion": "2.1.3",
-        "resolvedSpec": "@tencent-weixin/openclaw-weixin@2.1.3",
-        "integrity": "sha512-NuzQo4yubbLaZZkpVz5yxEWdRR8KJlQkmUtDbIxKoHjjChvCWG1DAjx4/er95hS8muG/4h4HL7nB4JJqMVrgPw==",
-        "shasum": "b6cbc8187a06983ae912aee53f4f55e424680611",
-        "resolvedAt": "2026-04-03T03:24:03.002Z",
-        "installedAt": "2026-04-03T03:24:15.219Z"
+        "version": "2.1.7",
+        "installedAt": "2026-04-13T09:12:21.000Z"
       },
       "lightclawbot": {
         "source": "npm",
         "spec": "lightclawbot",
         "installPath": "/root/.openclaw/extensions/lightclawbot",
-        "version": "1.1.1",
-        "installedAt": "2026-04-08T18:12:38.000Z"
+        "version": "1.1.2",
+        "installedAt": "2026-04-13T10:33:06.000Z"
+      },
+      "adp-openclaw": {
+        "source": "npm",
+        "spec": "adp-openclaw@0.0.77",
+        "installPath": "/root/.openclaw/extensions/adp-openclaw",
+        "version": "0.0.77",
+        "installedAt": "2026-04-13T09:12:39.000Z"
+      },
+      "memory-tdai": {
+        "source": "npm",
+        "spec": "@tdai/memory-tdai@0.1.2",
+        "installPath": "/root/.openclaw/extensions/memory-tdai",
+        "version": "0.1.2",
+        "installedAt": "2026-04-13T09:13:46.000Z"
       }
     }
   },
@@ -348,6 +313,7 @@
     "feishu": {
       "enabled": true,
       "requireMention": true,
+      "groupPolicy": "open",
       "accounts": {
         "steward": {
           "appId": "cli_a94178f816b91cc9",
@@ -384,26 +350,22 @@
         "academicassistant": {
           "appId": "cli_a947bb2b87399cc8",
           "appSecret": "${FEISHU_ACADEMICASSISTANT_APP_SECRET}"
-        },
-        "default": {
-          "groupPolicy": "open"
         }
-      },
-      "streaming": true,
-      "threadSession": true
+      }
     },
     "lightclawbot": {
       "enabled": true,
       "apiKeys": [
         "${LIGHTCLAWBOT_API_KEY_1}",
         "${LIGHTCLAWBOT_API_KEY_2}",
-        "88dc1ec7c36083d011e304079f37010d10eaac8b"
+        "88dc1ec7c36083d011e304079f37010d10eaac8b",
+        "1187cbc692fcc1ba9264bc819804747016931b04"
       ]
     }
   },
   "bindings": [
     {
-      "agentId": "main",
+      "agentId": "steward",
       "match": {
         "channel": "feishu",
         "accountId": "steward",
