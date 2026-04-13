@@ -582,41 +582,141 @@ class AcademicSearchSummarizer:
         self.all_papers.sort(key=lambda x: x.get('citationCount', 0), reverse=True)
         return self
     
-    def filter_by_criteria(self, 
-                          foundation_min: int = 500,
-                          important_min: int = 50,
-                          important_max: int = 500,
-                          foundation_limit: int = 5,
-                          important_limit: int = 10,
-                          general_limit: int = 30) -> 'AcademicSearchSummarizer':
+    def filter_by_criteria(self, filters: Dict = None, **kwargs) -> 'AcademicSearchSummarizer':
         """
-        按标准筛选（链式调用）
+        按多条件筛选文献（链式调用）
+        
+        默认筛选规则（不提供任何参数时自动启用）：
+        - 奠基文献：无时间限制，引用≥500，全部保留
+        - 重要文献：近10年，引用≥50，全部保留
+        - 新近文献：近3年，实证研究，全部保留
+        
+        支持两种使用方式：
+        1. 传统参数方式：filter_by_criteria(foundation_min=500, important_min=50, ...)
+        2. 新筛选器方式：filter_by_criteria({
+            "filter1": {
+                "citations": {"min": 500, "max": None},  # ≥500引用
+                "years": {"min": 2020, "max": 2025}     # 2020-2025年
+            },
+            "filter2": {
+                "citations": {"min": 100, "max": 500},  # 100-500引用
+                "venue": ["Journal of Personality", "Psychological Review"]  # 特定期刊
+            }
+        })
+        
+        多个filter之间取并集，满足任意一个filter条件的文献都会被保留
         
         Args:
-            foundation_min: 奠基文献最低引用
-            important_min: 重要文献最低引用
-            important_max: 重要文献最高引用
-            foundation_limit: 奠基文献保留数量
-            important_limit: 重要文献保留数量
-            general_limit: 一般文献保留数量
+            filters: 筛选条件字典，支持的筛选维度：
+                citations: {"min": int, "max": int} - 引用量范围
+                years: {"min": int, "max": int} - 发表年份范围
+                venue: list - 期刊/会议名称列表（包含任意一个即匹配）
+                type: list - 文献类型列表（📊实证/📖综述/💡理论等）
+                importance: list - 重要性等级列表（🔴奠基/🟡重要/🔵一般）
+                **kwargs: 传统参数，兼容旧版调用方式
         """
         print("\n" + "="*60)
-        print("步骤 3: 按引用量筛选")
+        print("步骤 3: 按条件筛选")
         print("="*60)
         
-        foundation = [p for p in self.all_papers 
-                     if p.get('citationCount', 0) >= foundation_min][:foundation_limit]
-        important = [p for p in self.all_papers 
-                    if important_min <= p.get('citationCount', 0) < important_max][:important_limit]
-        general = [p for p in self.all_papers 
-                  if p.get('citationCount', 0) < important_min][:general_limit]
+        current_year = datetime.now().year
         
-        self.all_papers = foundation + important + general
+        # 默认筛选规则（不提供任何参数时使用）
+        if filters is None and not kwargs:
+            filters = {
+                "奠基文献": {
+                    "citations": {"min": 500, "max": None},
+                    "years": {"min": 0, "max": current_year},  # 无时间限制
+                    "limit": 99999  # 全部保留
+                },
+                "重要文献": {
+                    "citations": {"min": 50, "max": 500},
+                    "years": {"min": current_year - 10, "max": current_year},  # 近10年
+                    "limit": 99999  # 全部保留
+                },
+                "新近文献": {
+                    "years": {"min": current_year - 3, "max": current_year},  # 近3年
+                    "type": ["📊实证"],  # 仅实证研究
+                    "limit": 99999  # 全部保留
+                }
+            }
+            print("使用默认筛选规则：")
+            print("  奠基文献：引用≥500，无时间限制，全部保留")
+            print("  重要文献：引用≥50，近10年，全部保留")
+            print("  新近文献：近3年，实证研究，全部保留")
+        # 兼容旧版参数调用
+        elif filters is None and kwargs:
+            foundation_min = kwargs.get('foundation_min', 500)
+            important_min = kwargs.get('important_min', 50)
+            important_max = kwargs.get('important_max', 500)
+            foundation_limit = kwargs.get('foundation_limit', 5)
+            important_limit = kwargs.get('important_limit', 10)
+            general_limit = kwargs.get('general_limit', 30)
+            
+            # 转换为新的筛选器格式
+            filters = {
+                "foundation": {
+                    "citations": {"min": foundation_min, "max": None},
+                    "limit": foundation_limit
+                },
+                "important": {
+                    "citations": {"min": important_min, "max": important_max},
+                    "limit": important_limit
+                },
+                "general": {
+                    "citations": {"min": 0, "max": important_min},
+                    "limit": general_limit
+                }
+            }
         
-        print(f"奠基(≥{foundation_min}): {len(foundation)} 篇")
-        print(f"重要({important_min}-{important_max}): {len(important)} 篇")
-        print(f"一般(<{important_min}): {len(general)} 篇")
-        print(f"总计: {len(self.all_papers)} 篇")
+        if not filters:
+            print("未提供筛选条件，跳过筛选")
+            return self
+        
+        filtered_papers = []
+        filter_stats = {}
+        
+        for filter_name, filter_cond in filters.items():
+            papers = self.all_papers.copy()
+            
+            # 应用筛选条件
+            if 'citations' in filter_cond:
+                cite_min = filter_cond['citations'].get('min', 0)
+                cite_max = filter_cond['citations'].get('max', float('inf'))
+                papers = [p for p in papers if cite_min <= p.get('citationCount', 0) < cite_max]
+            
+            if 'years' in filter_cond:
+                year_min = filter_cond['years'].get('min', 0)
+                year_max = filter_cond['years'].get('max', float('inf'))
+                papers = [p for p in papers if year_min <= p.get('year', 0) <= year_max]
+            
+            if 'venue' in filter_cond:
+                venues = [v.lower() for v in filter_cond['venue']]
+                papers = [p for p in papers if p.get('venue', '').lower() in venues]
+            
+            # 应用数量限制
+            if 'limit' in filter_cond and filter_cond['limit'] > 0:
+                papers = papers[:filter_cond['limit']]
+            
+            filter_stats[filter_name] = len(papers)
+            filtered_papers.extend(papers)
+        
+        # 去重（可能被多个filter匹配到同一篇）
+        seen_ids = set()
+        unique_papers = []
+        for paper in filtered_papers:
+            paper_id = paper.get('paperId', paper.get('id', ''))
+            if paper_id and paper_id not in seen_ids:
+                seen_ids.add(paper_id)
+                unique_papers.append(paper)
+        
+        self.all_papers = unique_papers
+        
+        # 打印统计
+        print("\n筛选结果：")
+        for filter_name, count in filter_stats.items():
+            print(f"  {filter_name}: {count} 篇")
+        print(f"总计: {len(self.all_papers)} 篇（去重后）")
         
         return self
     

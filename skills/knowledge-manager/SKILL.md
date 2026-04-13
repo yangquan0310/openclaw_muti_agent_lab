@@ -53,7 +53,7 @@ export LKEAP_MODEL="deepseek-v3.2"
 | `deduplicate()` | 按标题去重 | ✅ | ❌ |
 | `filter_by_year()` | 按年份筛选 | ✅ | ❌ |
 | `sort_by_citations()` | 按引用量排序 | ✅ | ❌ |
-| `filter_by_criteria()` | 按奠基/重要/一般三级筛选 | ✅ | ❌ |
+| `filter_by_criteria()` | 多维度组合筛选文献 | ✅ | ❌ |
 | `fetch_full_metadata()` | 批量获取完整元数据（摘要、DOI、期刊信息等） | ✅ | ❌ |
 | `summarize()` | 使用LLM分析文献类型和生成笔记 | ✅ | ✅ |
 | `load_knowledge_base()` | 从index.json加载文献 | ✅ | ❌ |
@@ -137,28 +137,54 @@ ass.sort_by_citations()
 
 ---
 
-### 5. filter_by_criteria(...)
+### 5. filter_by_criteria(filters=None, **kwargs)
 
-**功能：** 按奠基/重要/一般三级标准筛选
+**功能：** 多维度组合筛选文献
+
+**默认规则（不传参数时自动生效）：**
+- 🔴 奠基文献：引用≥500，无时间限制，全部保留
+- 🟡 重要文献：引用≥50，近10年，全部保留
+- 🔵 新近文献：近3年，实证研究，全部保留
 
 **参数：**
-- `foundation_min=500`: 奠基文献最低引用量
-- `important_min=50`: 重要文献最低引用量
-- `important_max=500`: 重要文献最高引用量
-- `foundation_limit=5`: 奠基文献保留数量
-- `important_limit=10`: 重要文献保留数量
-- `general_limit=30`: 一般文献保留数量
+- `filters`: 筛选条件字典，支持多维度组合，多个filter之间取并集
+  - 支持维度：
+    - `citations`: {"min": int, "max": int} - 引用量范围
+    - `years`: {"min": int, "max": int} - 发表年份范围
+    - `venue`: list - 期刊/会议名称列表
+    - `limit`: int - 本条件最多保留数量
+- `**kwargs`: 兼容旧版参数调用方式
 
 **返回值：** `self`（支持链式调用）
 
-**示例：**
+**示例1：默认筛选（推荐）**
+```python
+ass.filter_by_criteria()  # 自动应用默认三级筛选规则
+```
+
+**示例2：自定义多维度筛选**
+```python
+ass.filter_by_criteria({
+    "高引顶刊": {
+        "citations": {"min": 500, "max": None},
+        "years": {"min": 2020, "max": 2026},
+        "venue": ["Psychological Review", "Journal of Personality and Social Psychology"],
+        "limit": 20
+    },
+    "近年研究": {
+        "citations": {"min": 50, "max": 500},
+        "years": {"min": 2022, "max": 2026},
+        "limit": 50
+    }
+})
+```
+
+**示例3：旧版参数兼容**
 ```python
 ass.filter_by_criteria(
     foundation_min=500,
     important_min=50,
-    foundation_limit=5,
-    important_limit=10,
-    general_limit=30
+    foundation_limit=10
 )
 ```
 

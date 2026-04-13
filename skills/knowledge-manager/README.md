@@ -1,9 +1,9 @@
 # 检索文献
 
-> 版本: 1.5.0  
+> 版本: 1.6.0  
 > 维护者: 大管家  
 > 创建时间: 2026-04-08  
-> 更新内容: 元数据补全功能升级，支持自动补全DOI、期刊信息、卷期页码等完整文献信息
+> 更新内容: filter_by_criteria功能升级，支持多维度组合筛选，默认启用三级文献筛选规则
 
 ## 功能描述
 
@@ -65,38 +65,26 @@ python3 AcademicSearchSummarizer.py fill-metadata \
 
 ## 快速开始示例
 
-### 示例1：完整检索流程
-
+### 示例2：使用默认筛选规则（推荐）
 ```python
 from AcademicSearchSummarizer import AcademicSearchSummarizer
 
 ass = AcademicSearchSummarizer()
 
-queries = {
-    "负性思维与睡眠质量": [
-        "rumination sleep quality",
-        "rumination insomnia",
-        "anxiety sleep quality",
-        "anxious thinking sleep",
-        "repetitive negative thinking sleep"
-    ]
-}
-
+# 默认筛选规则自动生效：
+# - 奠基文献：引用≥500，无时间限制，全部保留
+# - 重要文献：引用≥50，近10年，全部保留  
+# - 新近文献：近3年，实证研究，全部保留
 ass \
     .search(queries, limit=30) \
     .deduplicate() \
-    .filter_by_year(2020) \
-    .sort_by_citations() \
-    .filter_by_criteria(
-        foundation_min=500,
-        important_min=50,
-        foundation_limit=5,
-        important_limit=10,
-        general_limit=30
-    ) \
+    .fetch_full_metadata() \
+    .filter_by_criteria()  # 不传参数自动使用默认规则
     .summarize() \
-    .save("./知识库/index.json", "负性思维与睡眠质量")
+    .save("./知识库/")  # 自动保存为 知识库/index.json
 ```
+
+### 示例3：自定义多维度筛选
 
 ### 示例2：导出主题笔记
 
@@ -170,13 +158,33 @@ export OPENAI_API_KEY="your-openai-api-key"
 export OPENAI_MODEL="gpt-4o-mini"
 ```
 
-## 文献分级标准
+## 默认筛选规则
 
-| 级别 | 引用量 | 标记 | 处理方式 |
-|------|--------|------|----------|
-| 奠基 | >=500 | 🔴 | 全部保留（最多5篇） |
-| 重要 | 50-500 | 🟡 | 保留10篇 |
-| 一般 | <50 | 🔵 | 保留30篇（近3年） |
+无需任何参数，调用 `filter_by_criteria()` 自动启用：
+
+| 类别 | 规则 | 处理方式 |
+|------|------|----------|
+| 🔴 奠基文献 | 引用量≥500，无时间限制 | 全部保留 |
+| 🟡 重要文献 | 引用量50-500，近10年发表 | 全部保留 |
+| 🔵 新近文献 | 近3年发表，类型为实证研究 | 全部保留 |
+
+## 自定义筛选器示例
+
+```python
+# 多维度组合筛选，多个条件取并集
+ass.filter_by_criteria({
+    "高引顶刊": {
+        "citations": {"min": 500, "max": None},
+        "venue": ["Psychological Review", "JPSP"],
+        "limit": 20
+    },
+    "近年研究": {
+        "citations": {"min": 50, "max": 500},
+        "years": {"min": 2022, "max": 2026},
+        "limit": 50
+    }
+})
+```
 
 ## 文献类型分类
 
