@@ -121,7 +121,7 @@
 | download_papers | 需要下载论文 | 批量下载学术论文 | ~/.openclaw/workspace/teaching/skills/download_papers/SKILL.md |
 | retrieve_papers | 需要检索论文 | 检索并获取论文信息 | ~/.openclaw/workspace/teaching/skills/retrieve_papers/SKILL.md |
 | search_literature | 需要文献检索 | 综合文献检索工具 | ~/.openclaw/workspace/teaching/skills/search_literature/SKILL.md |
-| 每日维护 | 需要执行每日维护 | 清理completed任务并归档，删除killed任务 | ~/.openclaw/workspace/teaching/skills/每日维护/SKILL.md |
+
 ---
 ### 个人脚本索引
 > 各个代理独立维护，这里显示教学助手特有脚本
