@@ -4,7 +4,7 @@
 
 WORKSPACE="$HOME/.openclaw/workspace/academicassistant"
 MEMORY_FILE="$WORKSPACE/MEMORY.md"
-LOG_FILE="$HOME/教研室仓库/日志文件/$(date +%Y-%m-%d)/04-00-00-教务助手-每日维护.md"
+LOG_FILE="$HOME/教研室仓库/日志文件/$(date +%Y-%m-%d)/$(date +%H-%M-%S)-academicassistant-每日维护.md"
 
 # 创建日志目录
 mkdir -p "$(dirname $LOG_FILE)"

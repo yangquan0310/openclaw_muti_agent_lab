@@ -8,7 +8,7 @@ MEMORY_FILE="$WORKSPACE/MEMORY.md"
 TOOLS_FILE="$WORKSPACE/TOOLS.md"
 SCRIPTS_DIR="$WORKSPACE/scripts"
 TEMP_DIR="$WORKSPACE/temp"
-LOG_DIR="$HOME/实验室仓库/日志文件"
+LOG_DIR="/root/实验室仓库/日志文件"
 LOG_FILE="$LOG_DIR/$(date +%Y-%m-%d)/04-00-00-physicist-每日维护.md"
 
 # 创建日志目录

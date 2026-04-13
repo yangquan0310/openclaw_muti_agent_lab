@@ -1,53 +1,234 @@
 {
-  "version": 1,
-  "skills": {
-    "docx-cn": {
-      "name": "Docx Cn",
-      "zip_url": "https://lightmake.site/api/v1/download?slug=docx-cn",
-      "source": "skillhub",
-      "version": "1.0.1"
+  "version": "1.0.0",
+  "last_updated": "2026-04-13T15:06:00+08:00",
+  "lock_strategy": "immutable_once_released",
+  "description": "技能商店锁定文件，防止已发布的技能被意外修改或删除",
+  "locked_skills": {
+    "公共技能区 (skills/)": [
+      {
+        "name": "knowledge-manager",
+        "display_name": "知识管理工具",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-13T14:15:00+08:00",
+        "locked_by": "大管家",
+        "path": "skills/knowledge-manager/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "支持文献检索、知识库更新、笔记总结和信息提取功能的综合工具"
+      },
+      {
+        "name": "tencent-docs",
+        "display_name": "腾讯云文档",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-10T09:00:00+08:00",
+        "locked_by": "大管家",
+        "path": "skills/tencent-docs/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "腾讯云文档管理和上传工具"
+      },
+      {
+        "name": "tencent-cos-skill",
+        "display_name": "腾讯云COS",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-10T09:00:00+08:00",
+        "locked_by": "大管家",
+        "path": "skills/tencent-cos-skill/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "腾讯云对象存储管理工具"
+      },
+      {
+        "name": "tencent-meeting-skill",
+        "display_name": "腾讯会议",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-10T09:00:00+08:00",
+        "locked_by": "大管家",
+        "path": "skills/tencent-meeting-skill/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "腾讯会议管理工具"
+      },
+      {
+        "name": "tencentcloud-lighthouse-skill",
+        "display_name": "腾讯轻量云",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-10T09:00:00+08:00",
+        "locked_by": "大管家",
+        "path": "skills/tencentcloud-lighthouse-skill/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "腾讯轻量应用服务器管理工具"
+      },
+      {
+        "name": "feishu-doc-manager",
+        "display_name": "飞书文档",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-10T09:00:00+08:00",
+        "locked_by": "大管家",
+        "path": "skills/feishu-doc-manager/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "飞书文档管理工具"
+      },
+      {
+        "name": "github",
+        "display_name": "GitHub管理",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-10T09:00:00+08:00",
+        "locked_by": "大管家",
+        "path": "skills/github/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "GitHub仓库管理和操作工具"
+      },
+      {
+        "name": "zotero",
+        "display_name": "Zotero文献管理",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-10T09:00:00+08:00",
+        "locked_by": "大管家",
+        "path": "skills/zotero/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "Zotero文献库管理工具"
+      }
+    ],
+    "脚本技能区 (scripts/)": [
+      {
+        "name": "修改文档",
+        "display_name": "文档修改工具",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-13T14:34:00+08:00",
+        "locked_by": "大管家",
+        "path": "scripts/修改文档/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "修改已有文档文件，保存新版本并记录修改历史"
+      },
+      {
+        "name": "撰写脚本",
+        "display_name": "脚本撰写工具",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-13T14:34:00+08:00",
+        "locked_by": "大管家",
+        "path": "scripts/撰写脚本/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "按照五要素SOP规范创建新的操作脚本"
+      },
+      {
+        "name": "撰写技能",
+        "display_name": "技能创建工具",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-13T14:34:00+08:00",
+        "locked_by": "大管家",
+        "path": "scripts/撰写技能/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "创建新的结构化或非结构化技能，符合OpenClaw规范"
+      },
+      {
+        "name": "管理项目元数据",
+        "display_name": "项目元数据管理",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-13T14:34:00+08:00",
+        "locked_by": "大管家",
+        "path": "scripts/管理项目元数据/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "创建和维护项目元数据，管理云文档映射关系"
+      },
+      {
+      {
+        "name": "agents-sop",
+        "display_name": "Agent标准流程",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-13T14:34:00+08:00",
+        "locked_by": "大管家",
+        "path": "scripts/agents-sop/",
+        "permissions": "只读",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "Agent标准操作流程，包含计划、监控、调节三阶段规范"
+      }
+    ],
+    "大管家私有技能区 (workspace/steward/skills/)": [
+      {
+        "name": "lab-backup-manager",
+        "display_name": "实验室备份工具",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-13T15:05:00+08:00",
+        "locked_by": "大管家",
+        "path": "workspace/steward/skills/lab-backup-manager/",
+        "permissions": "仅大管家可使用",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略"
+      },
+      {
+        "name": "每日维护",
+        "display_name": "每日维护任务",
+        "version": "1.0.0",
+        "locked": true,
+        "locked_at": "2026-04-10T09:00:00+08:00",
+        "locked_by": "大管家",
+        "path": "workspace/steward/skills/每日维护/",
+        "permissions": "仅大管家可使用",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "description": "每日维护任务，包括TOOLS.md维护、MEMORY.md维护、工作空间维护"
+      }
+    ]
+  },
+  "unlocked_skills": [],
+  "deleted_skills": [
+    {
+      "name": "semantic-scholar-mcp",
+      "deleted_at": "2026-04-13T14:05:00+08:00",
+      "deleted_by": "大管家",
+      "reason": "功能已整合到knowledge-manager技能中"
     },
-    "docx-generator": {
-      "name": "docx-generator",
-      "zip_url": "https://lightmake.site/api/v1/download?slug=docx-generator",
-      "source": "skillhub",
-      "version": "1.0.0"
+    {
+      "name": "tencent-docs-upload-by-sections",
+      "deleted_at": "2026-04-13T14:05:00+08:00",
+      "deleted_by": "大管家",
+      "reason": "功能已整合到tencent-docs技能中"
     },
-    "pptx-generator": {
-      "name": "Pptx Generator",
-      "zip_url": "https://lightmake.site/api/v1/download?slug=pptx-generator",
-      "source": "skillhub",
-      "version": "1.0.2"
+    {
+      "name": "general-scripts",
+      "deleted_at": "2026-04-13T14:34:00+08:00",
+      "deleted_by": "大管家",
+      "reason": "已废弃，功能已拆分为各个独立脚本"
     },
-    "excel-xlsx": {
-      "name": "Excel / XLSX",
-      "zip_url": "https://lightmake.site/api/v1/download?slug=excel-xlsx",
-      "source": "skillhub",
-      "version": "1.0.2"
+    {
+      "name": "检索文献",
+    {
+      "name": "记录工作日志",
+      "deleted_at": "2026-04-13T15:28:00+08:00",
+      "deleted_by": "大管家",
+      "reason": "功能已重构为实验室和教研室仓库的日志目录专属维护机制"
     },
-    "pdf": {
-      "name": "Pdf",
-      "zip_url": "https://lightmake.site/api/v1/download?slug=pdf",
-      "source": "skillhub",
-      "version": "0.1.0"
-    },
-    "pdf-generator": {
-      "name": "Pdf Generator",
-      "zip_url": "https://lightmake.site/api/v1/download?slug=pdf-generator",
-      "source": "skillhub",
-      "version": "1.0.1"
-    },
-    "baidu-scholar-search": {
-      "name": "baidu scholar search",
-      "zip_url": "https://lightmake.site/api/v1/download?slug=baidu-scholar-search",
-      "source": "skillhub",
-      "version": "1.0.0"
-    },
-    "cnki-advanced-search": {
-      "name": "知网高级检索",
-      "zip_url": "https://lightmake.site/api/v1/download?slug=cnki-advanced-search",
-      "source": "skillhub",
-      "version": "1.0.0"
+      "deleted_at": "2026-04-13T14:15:00+08:00",
+      "deleted_by": "大管家",
+      "reason": "已升级为knowledge-manager知识管理工具"
     }
+  ],
+  "validation_rules": {
+    "sha256_check": true,
+    "permissions_enforcement": true,
+    "prevent_modification_locked": true,
+    "prevent_deletion_locked": true
   }
 }

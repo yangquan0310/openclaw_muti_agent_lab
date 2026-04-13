@@ -4,15 +4,22 @@
 
 WORKSPACE="$HOME/.openclaw/workspace/teaching"
 MEMORY_FILE="$WORKSPACE/MEMORY.md"
-LOG_FILE="$HOME/实验室仓库/日志文件/$(date +%Y-%m-%d)/04-00-00-$(basename $(dirname $0))-工作记忆维护.md"
+LOG_FILE="/root/教研室仓库/日志文件/$(date +%Y-%m-%d)/$(date +%H-%M-%S)-teaching-每日维护.md"
+
+# 同时在心跳任务目录保存执行日志
+HEARTBEAT_LOG="/root/教研室仓库/日志文件/心跳任务/teaching-每日维护-$(date +%Y-%m-%d).log"
 
 # 创建日志目录
 mkdir -p "$(dirname $LOG_FILE)"
+mkdir -p "$(dirname $HEARTBEAT_LOG)"
 
 # 记录维护开始时间
-echo "# 工作记忆维护日志" > "$LOG_FILE"
+echo "# 教学助手每日维护日志" > "$LOG_FILE"
 echo "维护时间：$(date '+%Y-%m-%d %H:%M:%S')" >> "$LOG_FILE"
 echo "" >> "$LOG_FILE"
+
+# 同时写入心跳执行日志
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] 教学助手每日维护任务开始执行" >> "$HEARTBEAT_LOG"
 
 # 检查MEMORY.md是否存在
 if [ ! -f "$MEMORY_FILE" ]; then
@@ -70,4 +77,8 @@ echo "" >> "$LOG_FILE"
 echo "## 维护完成" >> "$LOG_FILE"
 echo "完成时间：$(date '+%Y-%m-%d %H:%M:%S')" >> "$LOG_FILE"
 
-echo "工作记忆维护完成，日志已保存到：$LOG_FILE"
+# 记录执行完成到心跳日志
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] 教学助手每日维护任务执行完成，详细日志：$LOG_FILE" >> "$HEARTBEAT_LOG"
+echo "" >> "$HEARTBEAT_LOG"
+
+echo "教学助手每日维护完成，日志已保存到：$LOG_FILE"

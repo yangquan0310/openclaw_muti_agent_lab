@@ -6,7 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 04:00 | 教学助手（teaching） | `06fa1c96-a580-472b-80b0-5d320274adf5` | 每日维护 | 1)维护TOOLS.md<br>2)维护MEMORY.md<br>3)工作空间维护 | `~/.openclaw/workspace/teaching/skills/每日维护/SKILL.md` | 子代理执行 | enabled |
+| 每日 04:00 | 教学助手（teaching） | `abbedbcf-bc22-4a35-9e58-3f0aa17ef2d3` | 每日维护 | 1)维护TOOLS.md<br>2)维护MEMORY.md<br>3)工作空间维护 | `~/.openclaw/workspace/teaching/skills/每日维护/SKILL.md` | 子代理执行 | error |
 
 ---
 ## 表格排序规则

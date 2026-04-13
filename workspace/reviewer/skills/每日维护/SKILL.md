@@ -92,7 +92,8 @@ bash ~/.openclaw/workspace/reviewer/skills/每日维护/每日维护.sh
 - 更新后的 `TOOLS.md`
 - 更新后的 `MEMORY.md`
 - 清理后的工作空间
-- 维护日志：`~/实验室仓库/日志文件/YYYY-MM-DD/04-00-00-reviewer-每日维护.log`
+- 执行日志：`/root/实验室仓库/日志文件/心跳任务/cron_reviewer_daily.log`
+- 详细日志：`/root/实验室仓库/日志文件/YYYY-MM-DD/04-00-00-reviewer-每日维护.md`
 
 ---
 

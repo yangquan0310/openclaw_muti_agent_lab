@@ -19,8 +19,8 @@
 ```
 
 **日志位置**:
-- 定时任务日志: `~/实验室仓库/日志文件/cron_psychologist_*.log`
-- 任务执行日志: `~/实验室仓库/日志文件/YYYY-MM-DD/`
+- 定时任务执行日志: `/root/实验室仓库/日志文件/心跳任务/cron_psychologist_*.log`
+- 任务详细日志: `/root/实验室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-psychologist-每日维护任务.md`
 
 ---
 ## 表格排序规则

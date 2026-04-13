@@ -6,11 +6,12 @@
 set -e
 
 WORKSPACE="$HOME/.openclaw/workspace/reviewer"
-LOG_ROOT="$HOME/实验室仓库/日志文件"
-PROJECTS_ROOT="$HOME/实验室仓库/项目文件"
+LOG_ROOT="/root/实验室仓库/日志文件"
+HEARTBEAT_LOG_ROOT="/root/实验室仓库/日志文件/心跳任务"
+PROJECTS_ROOT="/root/实验室仓库/项目文件"
 DATE_STR=$(date +%Y-%m-%d)
 TIME_STR=$(date +%H-%M-%S)
-LOG_FILE="$LOG_ROOT/$DATE_STR/04-00-00-reviewer-每日维护.log"
+LOG_FILE="$LOG_ROOT/$DATE_STR/04-00-00-reviewer-每日维护.md"
 
 # 创建日志目录
 mkdir -p "$(dirname "$LOG_FILE")"
