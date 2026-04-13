@@ -1,9 +1,9 @@
 # 检索文献
 
-> 版本: 1.3.0  
+> 版本: 1.5.0  
 > 维护者: 大管家  
 > 创建时间: 2026-04-08  
-> 更新内容: 重构为AcademicSearchSummarizer，整合检索和LLM总结
+> 更新内容: 元数据补全功能升级，支持自动补全DOI、期刊信息、卷期页码等完整文献信息
 
 ## 功能描述
 
@@ -14,7 +14,7 @@
 ### AcademicSearchSummarizer.py（推荐）
 
 **一体化检索+LLM总结系统**，包含三个核心类：
-- **Searcher**: 从Semantic Scholar检索文献
+- **Searcher**: 从Semantic Scholar检索文献，支持完整元数据补全
 - **Summarizer**: 使用LLM判断文献类型和总结
 - **AcademicSearchSummarizer**: 总类，协调检索和总结流程
 
@@ -37,11 +37,12 @@ queries = {
     ]
 }
 
-# 执行完整流程（链式调用）
+# 执行完整流程（链式调用，支持自动补全完整元数据）
 ass \
     .search(queries, limit=30) \
     .deduplicate() \
     .filter_by_year(2020) \
+    .fetch_full_metadata() \
     .filter_by_criteria() \
     .summarize() \
     .save("output.json", "项目名称")
@@ -50,10 +51,16 @@ ass \
 **命令行调用：**
 
 ```bash
-python3 AcademicSearchSummarizer.py \
+# 检索并生成知识库
+python3 AcademicSearchSummarizer.py search \
   --queries queries.json \
   --output result.json \
-  --project "负性思维与睡眠质量"
+  --project "负性思维与睡眠质量" \
+  --fetch-abstracts
+
+# 补全已有知识库的完整元数据（摘要、DOI、期刊信息等）
+python3 AcademicSearchSummarizer.py fill-metadata \
+  --kb-path "./知识库/index.json"
 ```
 
 ## 快速开始示例

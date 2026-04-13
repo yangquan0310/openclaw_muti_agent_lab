@@ -132,13 +132,13 @@
 | pptx-2 | PPT文件处理 | 创建、读取、编辑PowerPoint演示文稿 | ~/.openclaw/skills/pptx-2/SKILL.md |
 | pptx-generator | PPT生成器 | 创建专业可编辑的PowerPoint演示文稿 | ~/.openclaw/skills/pptx-generator/SKILL.md |
 | scihub-paper-downloader | Sci-Hub文献下载 | 根据DOI从Sci-Hub获取PDF文献 | ~/.openclaw/skills/scihub-paper-downloader/SKILL.md |
-| semantic-scholar-mcp | Semantic Scholar检索 | 检索Semantic Scholar学术文献 | ~/.openclaw/skills/semantic-scholar-mcp/SKILL.md |
+
 | skillhub-preference | Skillhub优先 | 优先使用Skillhub进行技能发现和安装 | ~/.openclaw/skills/skillhub-preference/SKILL.md |
 | summarize | 内容摘要 | 总结URL、文件、PDF、音频、视频、YouTube内容 | ~/.openclaw/skills/summarize/SKILL.md |
 | tencentcloud-lighthouse-skill | 腾讯云轻量应用服务器管理 | 管理腾讯云Lighthouse实例、监控、防火墙等 | ~/.openclaw/skills/tencentcloud-lighthouse-skill/SKILL.md |
 | tencent-cos-skill | 腾讯云对象存储管理 | 上传、下载、管理腾讯云COS文件，进行图片处理 | ~/.openclaw/skills/tencent-cos-skill/SKILL.md |
 | tencent-docs | 腾讯云文档操作 | 创建、编辑、管理腾讯云文档 | ~/.openclaw/skills/tencent-docs/SKILL.md |
-| tencent-docs-upload-by-sections | 腾讯云文档分段上传 | 长文档分段上传到腾讯云文档，避免内容截断 | ~/.openclaw/skills/tencent-docs-upload-by-sections/SKILL.md |
+
 | tencent-meeting-skill | 腾讯会议管理 | 预约、修改、查询腾讯会议，管理录制和转写 | ~/.openclaw/skills/tencent-meeting-skill/SKILL.md |
 | zotero | Zotero文献管理 | 管理Zotero参考文献库、搜索、导出引文 | ~/.openclaw/skills/zotero/SKILL.md |
 | zotero-local-pdf-import | Zotero本地PDF导入 | 将本地PDF文件导入Zotero文献库 | ~/.openclaw/skills/zotero-local-pdf-import/SKILL.md |

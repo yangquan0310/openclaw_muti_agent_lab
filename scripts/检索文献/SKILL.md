@@ -54,11 +54,14 @@ export LKEAP_MODEL="deepseek-v3.2"
 | `filter_by_year()` | 按年份筛选 | ✅ | ❌ |
 | `sort_by_citations()` | 按引用量排序 | ✅ | ❌ |
 | `filter_by_criteria()` | 按奠基/重要/一般三级筛选 | ✅ | ❌ |
+| `fetch_full_metadata()` | 批量获取完整元数据（摘要、DOI、期刊信息等） | ✅ | ❌ |
 | `summarize()` | 使用LLM分析文献类型和生成笔记 | ✅ | ✅ |
+| `load_knowledge_base()` | 从index.json加载文献 | ✅ | ❌ |
 | `to_knowledge_base()` | 转换为知识库格式 | ❌ | ❌ |
 | `save()` | 保存知识库到文件 | ❌ | ❌ |
 | `export_topic_notes()` | 导出特定主题的笔记（JSON格式） | ❌ | ❌ |
 | `complete_notes()` | 给知识库补全笔记 | ❌ | ✅ |
+| `fill_metadata_from_kb()` | 直接补全已有知识库的完整元数据 | ❌ | ❌ |
 
 ---
 
@@ -67,7 +70,7 @@ export LKEAP_MODEL="deepseek-v3.2"
 **功能：** 多主题多轮次检索文献
 
 **参数：**
-- `queries`: 检索词字典，格式 `{主题: {轮次: [关键词列表]}}`
+- `queries`: 检索词字典，格式 `{主题: [关键词列表]}`，列表长度即为轮次
 - `limit`: 每轮检索数量，默认20
 
 **返回值：** `self`（支持链式调用）
@@ -75,10 +78,15 @@ export LKEAP_MODEL="deepseek-v3.2"
 **示例：**
 ```python
 queries = {
-    "负性思维与睡眠质量": {
-        1: ["rumination sleep quality", "rumination insomnia"],
-        2: ["anxiety sleep quality", "anxious thinking sleep"],
-        3: ["repetitive negative thinking sleep"]
+    "负性思维与睡眠质量": [
+        "rumination sleep quality",      # 轮次1
+        "rumination insomnia",           # 轮次2
+        "anxiety sleep quality",         # 轮次3
+        "anxious thinking sleep",        # 轮次4
+        "repetitive negative thinking sleep"  # 轮次5
+    ]
+}
+```        3: ["repetitive negative thinking sleep"]
     }
 }
 
@@ -156,7 +164,43 @@ ass.filter_by_criteria(
 
 ---
 
-### 6. summarize()
+### 6. fetch_full_metadata(paper_ids=None)
+
+**功能：** 批量获取文献的完整元数据（摘要、DOI、期刊信息、卷期页码、引用量、PDF链接等）
+
+**说明：** Semantic Scholar搜索接口返回的信息不完整，此方法会调用详情接口获取所有可用元数据
+
+**获取的字段包括：**
+- `abstract`: 完整摘要
+- `venue`: 会议/期刊名称
+- `journal_name`: 期刊全称
+- `journal_volume`: 卷号
+- `journal_issue`: 期号
+- `journal_pages`: 页码范围
+- `doi`: 文献DOI
+- `citationCount`: 最新引用量
+- `isOpenAccess`: 是否开放获取
+- `openAccessPdf`: PDF下载链接
+- `author_names`: 完整作者列表
+
+**参数：**
+- `paper_ids`: 需要补全信息的文献ID列表，None表示补全所有文献
+
+**返回值：** `self`（支持链式调用）
+
+**示例：**
+```python
+# 检索后自动补全所有元数据
+ass.search(queries)\
+    .deduplicate()\
+    .fetch_full_metadata()  # 补全完整信息
+    .summarize()\
+    .save("output.json")
+```
+
+---
+
+### 7. summarize()
 
 **功能：** 使用LLM分析文献，自动判断类型并生成笔记
 
@@ -303,6 +347,30 @@ ass.complete_notes(
 
 ---
 
+### 11. fill_metadata_from_kb(kb_path, paper_ids=None)
+
+**功能：** 直接补全已有index.json中的完整元数据（摘要、DOI、期刊信息、卷期页码等）
+
+**参数：**
+- `kb_path`: 知识库文件路径
+- `paper_ids`: 需要补全信息的文献ID列表（可选，None表示补全所有）
+
+**返回值：** 成功补全的文献数量
+
+**示例：**
+```python
+# 补全所有元数据
+count = ass.fill_metadata_from_kb("./知识库/index.json")
+
+# 或补全指定文献
+count = ass.fill_metadata_from_kb(
+    "./知识库/index.json",
+    paper_ids=["paper_001", "paper_002"]
+)
+```
+
+---
+
 ## 完整工作流示例
 
 ### 工作流1：完整检索流程（从检索到保存）
@@ -313,11 +381,13 @@ from AcademicSearchSummarizer import AcademicSearchSummarizer
 ass = AcademicSearchSummarizer()
 
 queries = {
-    "负性思维与睡眠质量": {
-        1: ["rumination sleep quality", "rumination insomnia"],
-        2: ["anxiety sleep quality", "anxious thinking sleep"],
-        3: ["repetitive negative thinking sleep"]
-    }
+    "负性思维与睡眠质量": [
+        "rumination sleep quality",
+        "rumination insomnia",
+        "anxiety sleep quality",
+        "anxious thinking sleep",
+        "repetitive negative thinking sleep"
+    ]
 }
 
 ass \
@@ -328,15 +398,28 @@ ass \
     .filter_by_criteria(
         foundation_min=500,
         important_min=50,
-        foundation_limit=5,
-        important_limit=10,
+        foundation_limit=999,  # 全部保留
+        important_limit=999,   # 全部保留
         general_limit=30
     ) \
+    .fetch_full_metadata() \
     .summarize() \
     .save("./知识库/index.json", "负性思维与睡眠质量")
 ```
 
-### 工作流2：导出主题笔记
+### 工作流2：补全已有知识库的元数据
+
+```python
+from AcademicSearchSummarizer import AcademicSearchSummarizer
+
+ass = AcademicSearchSummarizer()
+
+# 直接补全已有知识库的完整元数据
+count = ass.fill_metadata_from_kb("./知识库/index.json")
+print(f"成功补全{count}篇文献的完整信息")
+```
+
+### 工作流3：导出主题笔记
 
 ```python
 from AcademicSearchSummarizer import AcademicSearchSummarizer

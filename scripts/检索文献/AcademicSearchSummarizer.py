@@ -16,6 +16,7 @@ import os
 import sys
 import requests
 import time
+import argparse
 from typing import List, Dict, Optional, Any, Tuple
 from datetime import datetime
 
@@ -135,6 +136,107 @@ class Searcher:
             all_results[topic] = topic_papers
         
         return all_results
+        
+    def _fetch_paper_details(self, paper_id: str) -> Optional[Dict[str, Any]]:
+        """
+        获取文献的完整元数据
+        
+        Args:
+            paper_id: Semantic Scholar paper ID
+            
+        Returns:
+            包含完整信息的字典，如果获取失败则返回 None
+        """
+        url = f"{self.BASE_URL}/{paper_id}"
+        params = {
+            "fields": "abstract,venue,year,journal,volume,issue,pages,doi,referenceCount,citationCount,influentialCitationCount,isOpenAccess,openAccessPdf,fieldsOfStudy,authors"
+        }
+        
+        try:
+            response = self.session.get(url, params=params)
+            response.raise_for_status()
+            data = response.json()
+            
+            # 提取需要的字段
+            result = {}
+            if data.get('abstract'):
+                result['abstract'] = data['abstract']
+            if data.get('venue'):
+                result['venue'] = data['venue']
+            if data.get('journal'):
+                result['journal'] = data['journal']
+                if data['journal'].get('name'):
+                    result['journal_name'] = data['journal']['name']
+                if data['journal'].get('volume'):
+                    result['journal_volume'] = data['journal']['volume']
+                if data['journal'].get('issue'):
+                    result['journal_issue'] = data['journal']['issue']
+                if data['journal'].get('pages'):
+                    result['journal_pages'] = data['journal']['pages']
+            if data.get('doi'):
+                result['doi'] = data['doi']
+            if data.get('citationCount') is not None:
+                result['citationCount'] = data['citationCount']
+            if data.get('isOpenAccess') is not None:
+                result['isOpenAccess'] = data['isOpenAccess']
+            if data.get('openAccessPdf'):
+                result['openAccessPdf'] = data['openAccessPdf']
+            if data.get('authors'):
+                result['authors'] = data['authors']
+                # 提取作者姓名列表（兼容现有格式）
+                result['author_names'] = [a['name'] for a in data['authors'] if a.get('name')]
+            
+            return result if result else None
+            
+        except requests.RequestException as e:
+            # 静默失败，不影响主流程
+            return None
+            
+    def fetch_full_metadata(self, papers: List[Dict], paper_ids: Optional[List[str]] = None) -> int:
+        """
+        批量获取文献的完整元数据（摘要、DOI、期刊信息、卷期页码等）
+        
+        Args:
+            papers: 文献列表
+            paper_ids: 需要补全信息的文献ID列表，None表示补全所有
+            
+        Returns:
+            成功补全的文献数量
+        """
+        print("\n" + "="*60)
+        print("正在补全文献完整元数据")
+        print("="*60)
+        
+        count = 0
+        for paper in papers:
+            paper_id = paper.get('paperId')
+            if not paper_id:
+                continue
+                
+            # 判断是否需要补全
+            need_fetch = False
+            if paper_ids is None:
+                # 补全所有文献，或摘要长度>=500（疑似被截断）
+                need_fetch = True
+            else:
+                # 补全指定ID的文献
+                if paper.get('id') in paper_ids or paper.get('paperId') in paper_ids:
+                    need_fetch = True
+            
+            if need_fetch:
+                full_data = self._fetch_paper_details(paper_id)
+                if full_data:
+                    # 更新现有字段
+                    for key, value in full_data.items():
+                        if value is not None and str(value).strip():
+                            paper[key] = value
+                    count += 1
+                    
+                # 延迟避免速率限制
+                time.sleep(0.5)
+        
+        print(f"补全完成：共{count}篇文献获取了完整元数据")
+        return count
 
 
 # ============================================================================
@@ -544,6 +646,19 @@ class AcademicSearchSummarizer:
             paper['topic'] = self.topic_map.get(title, ['待分类'])
         
         return self
+        
+    def fetch_full_metadata(self, paper_ids: Optional[List[str]] = None) -> 'AcademicSearchSummarizer':
+        """
+        批量获取文献的完整元数据（摘要、DOI、期刊信息、卷期页码等）
+        
+        Args:
+            paper_ids: 需要补全信息的文献ID列表，None表示补全所有
+            
+        Returns:
+            self (链式调用)
+        """
+        self.searcher.fetch_full_metadata(self.all_papers, paper_ids)
+        return self
     
     def _get_importance(self, citation_count: int) -> str:
         """根据引用量判断重要性"""
@@ -772,6 +887,58 @@ class AcademicSearchSummarizer:
         print(f"知识库已保存: {kb_path}")
         
         return self
+        
+    def load_knowledge_base(self, kb_path: str) -> 'AcademicSearchSummarizer':
+        """
+        从已有的index.json加载文献
+        
+        Args:
+            kb_path: 知识库文件路径
+            
+        Returns:
+            self (链式调用)
+        """
+        print("\n" + "="*60)
+        print("加载知识库")
+        print("="*60)
+        
+        with open(kb_path, 'r', encoding='utf-8') as f:
+            kb = json.load(f)
+        
+        self.all_papers = kb.get('papers', [])
+        self.project_name = kb.get('project', '')
+        
+        # 构建主题映射
+        self.topic_map = {}
+        for paper in self.all_papers:
+            title = paper.get('title', '')
+            topics = paper.get('topic', [])
+            if title and topics:
+                self.topic_map[title] = topics
+        
+        print(f"加载完成：共{len(self.all_papers)}篇文献")
+        return self
+    
+    def fill_metadata_from_kb(self, kb_path: str, paper_ids: Optional[List[str]] = None) -> int:
+        """
+        直接补全已有index.json中的完整元数据（摘要、DOI、期刊信息等）
+        
+        Args:
+            kb_path: 知识库文件路径
+            paper_ids: 需要补全信息的文献ID列表，None表示补全所有
+            
+        Returns:
+            成功补全的文献数量
+        """
+        self.load_knowledge_base(kb_path)
+        count = self.searcher.fetch_full_metadata(self.all_papers, paper_ids)
+        
+        # 保存更新后的知识库
+        with open(kb_path, 'w', encoding='utf-8') as f:
+            json.dump(self.to_knowledge_base(self.project_name), f, ensure_ascii=False, indent=2)
+        
+        print(f"元数据补全结果已保存到：{kb_path}")
+        return count
 
 
 # ============================================================================
@@ -781,35 +948,57 @@ class AcademicSearchSummarizer:
 def main():
     """命令行入口"""
     parser = argparse.ArgumentParser(description='学术文献检索与总结系统')
-    parser.add_argument('--queries', '-q', required=True, help='检索词 JSON 文件路径')
-    parser.add_argument('--output', '-o', required=True, help='输出知识库 JSON 文件路径')
-    parser.add_argument('--project', '-p', default='', help='项目名称')
-    parser.add_argument('--limit', '-l', type=int, default=20, help='每轮检索数量')
-    parser.add_argument('--min-year', '-y', type=int, default=2020, help='最小年份')
-    parser.add_argument('--no-summarize', action='store_true', help='跳过 LLM 总结')
+    subparsers = parser.add_subparsers(dest='command', help='可用命令')
+    
+    # 检索命令
+    search_parser = subparsers.add_parser('search', help='检索文献并生成知识库')
+    search_parser.add_argument('--queries', '-q', required=True, help='检索词 JSON 文件路径')
+    search_parser.add_argument('--output', '-o', required=True, help='输出知识库 JSON 文件路径')
+    search_parser.add_argument('--project', '-p', default='', help='项目名称')
+    search_parser.add_argument('--limit', '-l', type=int, default=20, help='每轮检索数量')
+    search_parser.add_argument('--min-year', '-y', type=int, default=2020, help='最小年份')
+    search_parser.add_argument('--no-summarize', action='store_true', help='跳过 LLM 总结')
+    search_parser.add_argument('--fetch-abstracts', action='store_true', help='检索后自动补全完整摘要')
+    
+    # 摘要补全命令
+    abstract_parser = subparsers.add_parser('fill-metadata', help='补全已有知识库的完整元数据（摘要、DOI、期刊信息等）')
+    abstract_parser.add_argument('--kb-path', '-k', required=True, help='知识库index.json路径')
+    abstract_parser.add_argument('--paper-ids', '-i', nargs='+', help='指定需要补全的文献ID列表，不指定则补全所有')
     
     args = parser.parse_args()
     
-    # 读取检索词
-    with open(args.queries, 'r', encoding='utf-8') as f:
-        queries = json.load(f)
-    
-    # 初始化总类
-    summarizer = AcademicSearchSummarizer()
-    
-    # 执行完整流程
-    summarizer \
-        .search(queries, args.limit) \
-        .deduplicate() \
-        .filter_by_year(args.min_year) \
-        .sort_by_citations() \
-        .filter_by_criteria() \
-        .summarize() \
-        .save(args.output, args.project)
-    
-    print("\n" + "="*60)
-    print("全部完成!")
-    print("="*60)
+    if args.command == 'search':
+        # 执行检索流程
+        summarizer = AcademicSearchSummarizer()
+        
+        # 读取检索词
+        with open(args.queries, 'r', encoding='utf-8') as f:
+            queries = json.load(f)
+        
+        # 执行流程
+        summarizer.search(queries, args.limit)
+        summarizer.deduplicate()
+        summarizer.filter_by_year(args.min_year)
+        summarizer.sort_by_citations()
+        summarizer.filter_by_criteria()
+        
+        if args.fetch_abstracts:
+            summarizer.fetch_full_metadata()
+        
+        if not args.no_summarize:
+            summarizer.summarize()
+        
+        summarizer.save(args.output, args.project)
+        
+        print("\n" + "="*60)
+        print("全部完成!")
+        print("="*60)
+        
+    elif args.command == 'fill-metadata':
+        # 执行元数据补全
+        summarizer = AcademicSearchSummarizer()
+        count = summarizer.fill_metadata_from_kb(args.kb_path, args.paper_ids)
+        print(f"\n元数据补全任务完成，共补全{count}篇文献")
 
 
 if __name__ == "__main__":
