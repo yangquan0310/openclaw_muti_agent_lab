@@ -125,7 +125,6 @@
 | feishu-calendar-advanced | 飞书日历管理 | 查看日历、列出事件、创建和删除日历事件 | ~/.openclaw/skills/feishu-calendar-advanced/SKILL.md |
 | find-skills | 查找技能 | 搜索、发现、安装新的Agent技能 | ~/.openclaw/skills/find-skills/SKILL.md |
 | github | GitHub操作 | 使用gh CLI管理GitHub issues、PR、CI运行等 | ~/.openclaw/skills/github/SKILL.md |
-| lab-backup-manager | 实验室仓库备份 | 自动备份OpenClaw核心配置文件到GitHub | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
 | mcp-adapter | MCP服务器集成 | 访问MCP服务器提供的外部工具和数据源 | ~/.openclaw/skills/mcp-adapter/SKILL.md |
 | memory-hygiene | 记忆库优化 | 审计、清理、优化Clawdbot的向量记忆 | ~/.openclaw/skills/memory-hygiene/SKILL.md |
 | tavily-search | Tavily网络搜索 | 网络搜索、查找来源和链接 | ~/.openclaw/skills/openclaw-tavily-search/SKILL.md |

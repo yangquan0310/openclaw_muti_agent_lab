@@ -126,7 +126,6 @@
 | 维护工作记忆 | 工作记忆清理、任务归档 | 清理MEMORY.md中的completed/killed任务，归档到事件记忆 | ~/.openclaw/workspace/physicist/skills/维护工作记忆/SKILL.md |
 | update_tools | TOOLS.md更新 | 自动更新TOOLS.md：存储位置、项目列表、脚本索引 | ~/.openclaw/workspace/physicist/skills/update_tools/SKILL.md |
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
-| lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
 | docx-cn | Word文档处理 | 创建、读取、编辑Word文档，支持格式化、表格、图片 | ~/.openclaw/skills/docx-cn/SKILL.md |
 | docx-generator | Word文档生成 | 编程方式生成包含页脚的Microsoft Word文档 | ~/.openclaw/skills/docx-generator/SKILL.md |
 | excel-xlsx | Excel文件处理 | 创建、编辑Excel工作簿，支持公式、格式化、模板 | ~/.openclaw/skills/excel-xlsx/SKILL.md |

@@ -128,7 +128,6 @@
 |---------|---------|------|------|
 | 每日维护 | 定时任务触发 | 定时执行TOOLS.md维护、MEMORY.md维护和工作空间清理 | ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/SKILL.md |
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
-| lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/skills/lab-backup-manager/SKILL.md |
 ---
 ### 个人脚本索引
 > 各个代理独立维护，这里显示学工助手特有脚本
