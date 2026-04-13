@@ -1,0 +1,25 @@
+{
+  "name": "auto-push",
+  "displayName": "自动推送技能",
+  "version": "1.0.0",
+  "author": "大管家",
+  "createdAt": "2026-04-13",
+  "emoji": "🚀",
+  "description": "每日自动推送代码到development分支的定时任务技能",
+  "triggers": [
+    "自动推送",
+    "推送代码",
+    "git push"
+  ],
+  "dependencies": {
+    "bins": ["git"],
+    "packages": []
+  },
+  "environment": {
+    "REPO_DIR": "/root/.openclaw",
+    "BRANCH_NAME": "development",
+    "LOG_FILE": "/root/教研室仓库/日志文件/心跳任务/cron_steward_auto-push.log"
+  },
+  "privilege": "private",
+  "owner": "steward"
+}
