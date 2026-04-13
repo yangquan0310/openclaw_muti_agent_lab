@@ -11,7 +11,7 @@
         }
       },
       "model": {
-        "primary": "arkcode/doubao-seed-2.0-pro"
+        "primary": "arkcode/doubao-seed-2.0-code"
       }
     },
     "list": [
@@ -462,7 +462,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.8",
-    "lastTouchedAt": "2026-04-13T14:21:45.474Z"
+    "lastTouchedAt": "2026-04-13T17:11:27.060Z"
   },
   "plugins": {
     "entries": {
@@ -498,6 +498,13 @@
       },
       "openclaw-lark": {
         "enabled": true
+      },
+      "memory-core": {
+        "config": {
+          "dreaming": {
+            "enabled": true
+          }
+        }
       }
     },
     "installs": {
@@ -681,6 +688,45 @@
           {
             "id": "kimi-for-coding",
             "name": "kimi for coding"
+          }
+        ]
+      },
+      "tencenttokenplan": {
+        "baseUrl": "https://api.lkeap.cloud.tencent.com/plan/v3",
+        "apiKey": "${LKEAP_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "tc-code-latest",
+            "name": "自动",
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "hunyuan-2.0-instruct",
+            "name": "Tencent HY 2.0 Instruct"
+          },
+          {
+            "id": "hunyuan-2.0-thinking",
+            "name": "Tencent HY 2.0 Think"
+          },
+          {
+            "id": "minimax-m2.5",
+            "name": "MiniMax-M2.5"
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi-K2.5",
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "glm-5",
+            "name": "GLM-5"
           }
         ]
       }

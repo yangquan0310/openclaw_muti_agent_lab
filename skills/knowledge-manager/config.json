@@ -1,0 +1,76 @@
+{
+  "llm": {
+    "default_provider": "ark",
+    "providers": {
+      "ark": {
+        "name": "火山引擎方舟",
+        "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+        "default_model": "deepseek-v3-2-251201",
+        "api_key_env": "ARK_API_KEY",
+        "timeout": 30,
+        "temperature": 0.3,
+        "max_tokens": 2000
+      },
+      "tencent": {
+        "name": "腾讯云LKE",
+        "base_url": "https://api.lkeap.cloud.tencent.com/v1",
+        "default_model": "deepseek-v3.2",
+        "api_key_env": "LKEAP_API_KEY",
+        "timeout": 30,
+        "temperature": 0.3,
+        "max_tokens": 2000
+      },
+      "tencent_hub": {
+        "name": "腾讯云TokenHub",
+        "base_url": "https://tokenhub.tencentmaas.com/v1/chat/completions",
+        "default_model": "deepseek-v3.2",
+        "api_key_env": "LKEAP_API_KEY",
+        "timeout": 30,
+        "temperature": 0.3,
+        "max_tokens": 2000
+      },
+      "tencent_plan": {
+        "name": "腾讯云LKE规划版",
+        "base_url": "https://api.lkeap.cloud.tencent.com/plan/v3",
+        "default_model": "kimi-k2.5",
+        "api_key_env": "LKEAP_API_KEY",
+        "timeout": 30,
+        "temperature": 0.3,
+        "max_tokens": 4000
+      },
+      "openai": {
+        "name": "OpenAI",
+        "base_url": "https://api.openai.com/v1",
+        "default_model": "gpt-4o-mini",
+        "api_key_env": "OPENAI_API_KEY",
+        "timeout": 30,
+        "temperature": 0.3,
+        "max_tokens": 2000
+      }
+    }
+  },
+  "semantic_scholar": {
+    "base_url": "https://api.semanticscholar.org/graph/v1/",
+    "api_key_env": "SEMANTIC_SCHOLAR_API_KEY",
+    "request_interval": 0.5,
+    "default_limit": 20
+  },
+  "storage": {
+    "root_path": "/root/实验室仓库/项目文件/",
+    "knowledge_base_dir": "知识库/",
+    "notes_dir": "知识库/笔记/",
+    "index_file": "index.json",
+    "notes_file_format": "{主题}.json"
+  },
+  "filter": {
+    "foundation_min_citation": 500,
+    "important_min_citation": 50,
+    "recent_max_year": 3,
+    "default_filter_enabled": true
+  },
+  "log": {
+    "log_root": "/root/实验室仓库/日志文件/",
+    "log_file_format": "%Y-%m-%d/%H-%M-%S-心理学家-{任务类型}.md",
+    "auto_logging": true
+  }
+}

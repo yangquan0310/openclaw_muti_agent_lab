@@ -81,6 +81,7 @@
 | 2026-04-05_科研实验室搭建 | /root/实验室仓库/项目文件/2026-04-05_科研实验室搭建/ | 科研实验室搭建 |
 | 2026-04-05_范文学习 | /root/实验室仓库/项目文件/2026-04-05_范文学习/ | 范文学习 |
 | 2026-04-07_维护老板信息 | /root/实验室仓库/项目文件/2026-04-07_维护老板信息/ | 维护老板信息 |
+| 2026-04-13_学生论文修改 | /root/实验室仓库/项目文件/2026-04-13_学生论文修改/ | 学生论文修改 |
 
 ### 项目结构
 ```
@@ -108,6 +109,7 @@
 | 2026-04-05_科研实验室搭建 | ~/实验室仓库/项目文件/2026-04-05_科研实验室搭建/ | 基于心理学理论重构Agent配置体系，介绍实验室搭建方法 |
 | 2026-04-05_范文学习 | ~/实验室仓库/项目文件/2026-04-05_范文学习/ | 范文学习项目，包含各类论文范文和写作模板 |
 | 2026-04-07_维护老板信息 | ~/实验室仓库/项目文件/2026-04-07_维护老板信息/ | 老板的个人信息、学术成就和账户信息管理项目 |
+| 2026-04-13_学生论文修改 | ~/实验室仓库/项目文件/2026-04-13_学生论文修改/ | 学生论文修改和指导项目 |
 
 ---
 
@@ -134,15 +136,25 @@
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
+| 每日维护 | 心理学家每日维护 | 心理学家工作空间每日维护任务 | ~/.openclaw/workspace/psychologist/skills/每日维护/ |
+| 文献分类任务 | 文献主题分类 | 文献主题分类任务 | ~/.openclaw/workspace/psychologist/skills/文献分类任务/ |
+| 文献处理工具 | 文献处理 | 文献处理工具集合 | ~/.openclaw/workspace/psychologist/skills/文献处理工具/ |
+| 笔记合并任务 | 笔记合并 | 笔记合并任务 | ~/.openclaw/workspace/psychologist/skills/笔记合并任务/ |
+| search-photo-effect | 拍照效应检索 | 拍照效应文献检索 | ~/.openclaw/workspace/psychologist/skills/search-photo-effect/ |
+| update-index-verification | 索引验证更新 | 知识库索引验证更新 | ~/.openclaw/workspace/psychologist/skills/update-index-verification/ |
+| update-tools | TOOLS更新 | TOOLS.md更新工具 | ~/.openclaw/workspace/psychologist/skills/update-tools/ |
+| daily-maintenance | 日常维护 | 日常维护任务 | ~/.openclaw/workspace/psychologist/skills/daily-maintenance/ |
+| memory-maintenance | 记忆维护 | 记忆维护任务 | ~/.openclaw/workspace/psychologist/skills/memory-maintenance/ |
 
 ---
 ### 个人脚本索引
 > 各个代理独立维护，这里显示心理学家特有脚本
 
 | 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|----------|----------|------|
-||||||
+|----------|----------|----------|------|
+| S1-心理学文献检索 | 心理学文献检索 | 执行心理学领域文献检索，建立项目知识库并生成检索报告 | ~/.openclaw/workspace/psychologist/scripts/S1-心理学文献检索/ |
+| S2-总结文献笔记 | 总结文献笔记 | 对知识库文献进行深度阅读并提取关键信息，形成结构化笔记 | ~/.openclaw/workspace/psychologist/scripts/S2-总结文献笔记/ |
 ---
 
-*最后重构: 2026-04-11
-*重构者: 心理学家-文献主题分类任务
+*最后重构: 2026-04-14
+*重构者: 心理学家-每日维护任务

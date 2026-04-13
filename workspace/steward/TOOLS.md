@@ -140,13 +140,17 @@
 |---------|---------|------|------|
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
 | lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/workspace/steward/skills/lab-backup-manager/SKILL.md |
+| update_tools | 更新工具索引 | 更新个人技能索引、个人脚本索引、项目库 | ~/.openclaw/workspace/steward/skills/update_tools/SKILL.md |
+| 维护工作记忆 | 维护工作记忆 | 清理已完成任务，归档到事件记忆 | ~/.openclaw/workspace/steward/skills/维护工作记忆/SKILL.md |
+| 每日维护 | 每日维护 | 大管家每日维护任务 | ~/.openclaw/workspace/steward/skills/每日维护/SKILL.md |
+| auto-push | 自动提交推送Git | 自动提交所有更改并推送到development分支 | ~/.openclaw/workspace/steward/skills/auto-push/SKILL.md |
 ---
 
 ### 个人脚本索引
 > 各个代理独立维护
 | 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|----------|----------|------|
-||||||
+|----------|----------|----------|----------|
+| 维护配置文件 | 维护配置文件 | 维护其他Agent的配置文件 | ~/.openclaw/workspace/steward/scripts/维护配置文件/SKILL.md |
 
 ---
 

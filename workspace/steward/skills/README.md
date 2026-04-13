@@ -26,6 +26,9 @@ skills/
 |---------|------|------|
 | update_tools | `skills/update_tools/` | 更新工具索引和项目库 |
 | 维护工作记忆 | `skills/维护工作记忆/` | 清理已完成任务，归档到事件记忆 |
+| 每日维护 | `skills/每日维护/` | 大管家每日维护任务 |
+| lab-backup-manager | `skills/lab-backup-manager/` | 实验室仓库备份管理 |
+| auto-push | `skills/auto-push/` | 自动提交推送Git |
 
 ## 使用方式
 

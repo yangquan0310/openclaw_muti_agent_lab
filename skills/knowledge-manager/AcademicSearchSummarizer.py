@@ -783,9 +783,35 @@ class AcademicSearchSummarizer:
         print("步骤 5: 生成知识库")
         print("="*60)
         
-        # 分配 ID
+        # 分配 ID 并重排字段顺序
+        field_order = [
+            'id', 'paperId', 'authors', 'year', 'title', 'venue', 
+            'volume', 'issue', 'pages', 'doi', 'url', 'abstract', 
+            'topic', 'citationCount', 'labels', 'notes'
+        ]
+        
         for i, paper in enumerate(self.all_papers, 1):
             paper['id'] = f"paper_{i:03d}"
+            
+            # 保留所有现有字段
+            all_fields = list(paper.keys())
+            
+            # 创建新的有序 dict
+            new_paper = {}
+            
+            # 先按指定顺序添加字段
+            for field in field_order:
+                if field in paper:
+                    new_paper[field] = paper[field]
+            
+            # 再添加剩余字段
+            for field in all_fields:
+                if field not in field_order:
+                    new_paper[field] = paper[field]
+            
+            # 替换原 paper
+            paper.clear()
+            paper.update(new_paper)
         
         # 统计
         total = len(self.all_papers)

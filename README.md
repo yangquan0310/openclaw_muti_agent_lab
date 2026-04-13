@@ -52,7 +52,11 @@
 ├── .gitignore                         # Git忽略规则
 ├── openclaw.json                      # OpenClaw主配置文件
 ├── skills/                            # 公共技能库（所有Agent共享）
-│   ├── knowledge-manager/             # 知识管理工具（文献检索+知识库）
+│   ├── knowledge-manager/             # 知识管理工具（文献检索+知识库管理+笔记生成）
+│   │   ├── AcademicSearchSummarizer.py # 核心工具：学术文献检索、元数据补全、LLM笔记生成
+│   │   ├── config.json                 # 统一配置文件：多LLM供应商、API参数、存储规则
+│   │   ├── README.md                   # 工具使用说明
+│   │   └── SKILL.md                    # 技能调用规范
 │   ├── feishu-doc-manager/            # 飞书文档管理
 │   ├── tencent-docs/                  # 腾讯文档管理
 │   ├── tencent-cos-skill/             # 腾讯云对象存储
