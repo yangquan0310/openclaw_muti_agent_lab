@@ -1,0 +1,14 @@
+{
+  "name": "撰写技能",
+  "description": "创建新的结构化或非结构化技能，符合OpenClaw规范",
+  "version": "1.0.0",
+  "author": "大管家",
+  "created_at": "2026-04-13",
+  "emoji": "🔧",
+  "triggers": ["撰写技能", "创建技能", "封装技能", "技能开发"],
+  "dependencies": {
+    "bins": [],
+    "python_packages": []
+  },
+  "environment_variables": []
+}

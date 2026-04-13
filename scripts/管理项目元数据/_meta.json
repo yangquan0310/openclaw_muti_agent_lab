@@ -1,0 +1,14 @@
+{
+  "name": "管理项目元数据",
+  "description": "创建和维护项目元数据，管理云文档映射关系",
+  "version": "1.0.0",
+  "author": "大管家",
+  "created_at": "2026-04-13",
+  "emoji": "📋",
+  "triggers": ["管理元数据", "更新元数据", "项目元数据", "云文档映射"],
+  "dependencies": {
+    "bins": [],
+    "python_packages": []
+  },
+  "environment_variables": []
+}

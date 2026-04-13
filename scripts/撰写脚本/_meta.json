@@ -1,0 +1,14 @@
+{
+  "name": "撰写脚本",
+  "description": "按照五要素SOP规范创建新的操作脚本",
+  "version": "1.0.0",
+  "author": "大管家",
+  "created_at": "2026-04-13",
+  "emoji": "📝",
+  "triggers": ["撰写脚本", "创建脚本", "编写SOP", "标准化流程"],
+  "dependencies": {
+    "bins": [],
+    "python_packages": []
+  },
+  "environment_variables": []
+}

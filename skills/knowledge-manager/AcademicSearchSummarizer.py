@@ -720,30 +720,44 @@ class AcademicSearchSummarizer:
         
         return kb
     
-    def save(self, output_path: str, project_name: str = ""):
+    def save(self, output_path: str, project_name: str = "") -> str:
         """
         保存知识库到文件
         
         Args:
-            output_path: 输出文件路径
+            output_path: 输出路径，支持两种形式：
+                         1. 完整文件路径：如 "/path/to/知识库/index.json"
+                         2. 目录路径：如 "/path/to/知识库/"，自动保存为 index.json
             project_name: 项目名称
+            
+        Returns:
+            保存的文件路径
         """
         kb = self.to_knowledge_base(project_name)
         
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        # 处理路径：如果是目录，自动添加 index.json
+        if os.path.isdir(output_path) or output_path.endswith('/'):
+            os.makedirs(output_path, exist_ok=True)
+            output_path = os.path.join(output_path, 'index.json')
+        else:
+            # 确保父目录存在
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(kb, f, ensure_ascii=False, indent=2)
         
         print(f"\n知识库已保存: {output_path}")
+        return output_path
     
-    def export_topic_notes(self, topic: str, notes_dir: str, 
+    def export_topic_notes(self, topic: str, notes_dir: str = None, 
                           kb_path: Optional[str] = None) -> str:
         """
-        导出特定主题的笔记到笔记文件夹（JSON格式，index.json的子集）
+        导出特定主题的笔记（JSON格式，index.json的子集）
         
         Args:
-            topic: 主题名称
-            notes_dir: 笔记文件夹路径
+            topic: 主题名称，用作笔记文件名
+            notes_dir: 笔记保存目录，默认在知识库同级的「笔记/」目录下
+                       如果提供kb_path，会自动在kb_path所在目录下创建「笔记/」子目录
             kb_path: 知识库文件路径（如果已加载则不需要）
             
         Returns:
@@ -754,12 +768,16 @@ class AcademicSearchSummarizer:
         print("="*60)
         
         # 如果提供了知识库路径，加载它
+        papers = self.all_papers
         if kb_path:
             with open(kb_path, 'r', encoding='utf-8') as f:
                 kb = json.load(f)
             papers = kb.get('papers', [])
-        else:
-            papers = self.all_papers
+            
+            # 如果没有指定notes_dir，默认在知识库所在目录下创建「笔记/」目录
+            if notes_dir is None:
+                kb_dir = os.path.dirname(os.path.abspath(kb_path))
+                notes_dir = os.path.join(kb_dir, '笔记')
         
         # 筛选特定主题的文献
         topic_papers = [p for p in papers if topic in p.get('topic', [])]
@@ -787,6 +805,20 @@ class AcademicSearchSummarizer:
             },
             "papers": topic_papers
         }
+        
+        # 确保笔记目录存在
+        os.makedirs(notes_dir, exist_ok=True)
+        
+        # 笔记文件名：{主题名}.json，自动替换不合法字符
+        notes_filename = f"{topic.replace('/', '_').replace(' ', '_')}.json"
+        notes_path = os.path.join(notes_dir, notes_filename)
+        
+        with open(notes_path, 'w', encoding='utf-8') as f:
+            json.dump(notes_json, f, ensure_ascii=False, indent=2)
+        
+        print(f"笔记已导出: {notes_path}")
+        print(f"  总计: {len(topic_papers)} 篇")
+        return notes_path
         
         # 保存笔记文件
         os.makedirs(notes_dir, exist_ok=True)
