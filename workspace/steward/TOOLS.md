@@ -109,8 +109,8 @@
 | Zotero文件管理 | ~/实验室仓库/项目文件/Zotero文件管理/ | Zotero文献管理和学习项目 |
 | 审稿学习 | ~/实验室仓库/项目文件/审稿学习/ | 审稿学习项目，包含各类审稿范文 |
 | 科研实验室搭建 | ~/实验室仓库/项目文件/科研实验室搭建/ | 基于心理学理论重构Agent配置体系，介绍实验室搭建方法 |
-| 范文学习 | ~/实验室仓库/项目文件/范文学习/ | 范文学习项目，包含各类论文范文和写作模板 |
 | 维护老板信息 | ~/实验室仓库/项目文件/维护老板信息/ | 老板的个人信息、学术成就和账户信息管理项目 |
+| 范文学习 | ~/实验室仓库/项目文件/范文学习/ | 范文学习项目，包含各类论文范文和写作模板 |
 | 学生论文修改 | ~/实验室仓库/项目文件/学生论文修改/ | 学生论文修改指导项目，包含论文原始版本和修改记录 |
 
 
@@ -140,15 +140,18 @@
 |---------|---------|------|------|
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
 | lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/workspace/steward/skills/lab-backup-manager/SKILL.md |
+| update_tools | 更新TOOLS.md | 自动更新TOOLS.md中的个人技能索引、个人脚本索引和项目表 | ~/.openclaw/workspace/steward/skills/update_tools/SKILL.md |
+| 维护工作记忆 | 维护MEMORY.md | 自动维护MEMORY.md中的任务看板、活跃子代理清单和程序性记忆脚本位置表 | ~/.openclaw/workspace/steward/skills/维护工作记忆/SKILL.md |
 ---
 
 ### 个人脚本索引
 > 各个代理独立维护
 | 脚本名称 | 触发示例 | 描述 | 路径 |
 |----------|----------|----------|----------|------|
-||||||
+| 安全存储API密钥 | 需要存储API密钥 | 安全存储API密钥到.env文件 | ~/.openclaw/workspace/steward/scripts/安全存储API密钥/SKILL.md |
+| 维护配置文件 | 需要维护其他Agent配置 | 维护其他Agent的配置文件 | ~/.openclaw/workspace/steward/scripts/维护配置文件/SKILL.md |
 
 ---
 
-*最后重构: 2026-04-10*
+*最后重构: 2026-04-13*
 *重构者: 大管家*
