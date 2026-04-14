@@ -115,7 +115,7 @@
 └── README.md                           # 仓库说明
 ```
 
-## 🧠 知识库管理系统
+## 🧠 知识库管理系统（knowledge-manager v2.1.0）
 
 ### 项目专属知识库
 每个科研项目有独立的知识库，位于`实验室仓库/项目文件/<项目名>/知识库/`，包含：
@@ -126,12 +126,19 @@
 - 知识图谱索引
 
 ### 知识管理工具（knowledge-manager）
-系统内置强大的知识管理技能，提供以下功能：
+系统内置强大的知识管理技能，采用三模块架构，支持多主题多轮次文献检索、LLM智能总结和知识库管理。
+
+#### 核心架构
+| 模块 | 文件 | 功能说明 |
+|------|------|----------|
+| **Searcher** | `Searcher.py` | 从Semantic Scholar获取数据，支持检索和更新两种模式 |
+| **Summarizer** | `Summarizer.py` | 使用LLM分析文献，添加labels和notes字段 |
+| **Manager** | `Manager.py` | 合并、筛选、保存知识库，支持链式调用 |
 
 #### 核心功能
 | 功能 | 描述 | 触发关键词 |
 |------|------|------------|
-| **文献检索** | 多主题多轮次学术文献检索，支持Semantic Scholar等数据源 | 检索、文献、查资料 |
+| **文献检索** | 多主题多轮次学术文献检索，每轮可单独设置query、limit、year、minCitationCount等 | 检索、文献、查资料 |
 | **知识库维护** | 文献分类、打标签、更新元数据，自动生成知识图谱 | 知识库、维护、分类 |
 | **笔记总结** | LLM自动分析文献内容，提取核心观点，生成结构化笔记 | 总结、笔记、摘要 |
 | **信息提取** | 从文献中提取指定类型的数据、观点、实验方法等 | 提取、找数据、统计 |
@@ -142,10 +149,37 @@
 ✅ **全文检索**：支持关键词、作者、发表时间等多维度检索
 ✅ **关联分析**：自动识别文献之间的引用关系和研究脉络
 ✅ **导出功能**：支持导出为Markdown、JSON、BibTeX等多种格式
+✅ **多主题多轮检索**：每个主题可设置多轮检索条件，每轮单独配置query、limit、year、minCitationCount、venue等
 
-#### 知识处理流程
-```
-文献检索 → 去重筛选 → 元数据补全 → LLM分析总结 → 知识分类打标签 → 生成知识图谱 → 存入知识库
+#### 快速开始示例
+```python
+from Searcher import Searcher
+from Summarizer import Summarizer
+from Manager import Manager
+
+# 1. 多主题多轮检索（每轮可单独设置条件）
+searcher = Searcher()
+queries = {
+    "自传体记忆基础": [
+        {"query": "autobiographical memory | personal memory", "limit": 30},
+        {"query": "\"self-memory system\" Conway", "year": "2010-2025", "minCitationCount": 50}
+    ],
+    "数字记忆": [
+        {"query": "digital memory | Google effect", "limit": 20, "year": "2020-2025"}
+    ]
+}
+kb = searcher.search(queries, kb_path="my_project.json")
+
+# 2. 总结文献
+Summarizer().summarize(kb_path="my_project.json")
+
+# 3. 筛选和保存
+Manager("my_project.json").filter({
+    "citations_min": 50,
+    "types": ["📊实证", "📖综述"],
+    "sort_by": "citationCount",
+    "limit": 10
+}).save("final_kb.json")
 ```
 
 ## 🚀 部署指南
