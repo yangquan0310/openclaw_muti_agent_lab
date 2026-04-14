@@ -60,16 +60,15 @@
 | 触发条件 | 技能名称 | 功能描述 | SKILL.md |
 |----------|----------|----------|----------|
 | 需要自动更新 TOOLS.md 文件 | update_tools | 扫描项目文件夹，更新项目列表和脚本索引 | [SKILL.md](skills/update_tools/SKILL.md) |
-| 每日定时执行维护任务 | daily_maintenance | 合并执行 TOOLS 更新、工作记忆维护、工作空间维护 | [SKILL.md](skills/daily_maintenance/SKILL.md) |
 | 需要清理工作记忆 | memory_maintenance | 清理非活跃任务，归档 completed 任务 | [SKILL.md](skills/memory_maintenance/SKILL.md) |
 ---
 
 ### 个人脚本索引
 
 | 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|----------|----------|------|
-||||||
+|----------|----------|----------|----------|
+| 论文审稿脚本 | 需要对论文进行质量审查 | 按照标准化流程进行论文审稿，涵盖方法论、统计、格式、伦理等维度 | [S1-论文审稿.md](scripts/paper_review/S1-论文审稿.md) |
 ---
 
-*最后重构: 2026-04-11*
+*最后重构: 2026-04-13*
 *重构者: 审稿助手*

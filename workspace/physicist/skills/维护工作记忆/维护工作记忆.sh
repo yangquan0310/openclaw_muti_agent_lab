@@ -2,7 +2,7 @@
 # 工作记忆维护脚本
 # 功能：清理非active/paused任务，归档到事件记忆
 
-WORKSPACE="$HOME/.openclaw/workspace/$(basename $(dirname $0))"
+WORKSPACE="$HOME/.openclaw/workspace/physicist"
 MEMORY_FILE="$WORKSPACE/MEMORY.md"
 LOG_FILE="$HOME/实验室仓库/日志文件/$(date +%Y-%m-%d)/04-00-00-$(basename $(dirname $0))-工作记忆维护.md"
 

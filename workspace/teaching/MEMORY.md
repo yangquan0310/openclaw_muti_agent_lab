@@ -119,7 +119,7 @@
 | download_papers | 批量下载学术论文 | ~/.openclaw/workspace/teaching/skills/download_papers/SKILL.md |
 | retrieve_papers | 检索并获取论文信息 | ~/.openclaw/workspace/teaching/skills/retrieve_papers/SKILL.md |
 | search_literature | 综合文献检索工具 | ~/.openclaw/workspace/teaching/skills/search_literature/SKILL.md |
-| 每日维护 | 清理completed任务并归档，删除killed任务 | ~/.openclaw/workspace/teaching/skills/每日维护/SKILL.md |
+
 ---
 
 ## 版本历史
@@ -138,3 +138,12 @@
 | 子代理key | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 | 备注 |
 |-----------|-----------|----------|------|----------|----------|------|
 | *当前无活跃子代理* | | | | | | |
+
+---
+## 事件记忆
+
+### 已归档任务
+
+| 归档日期 | 任务ID | 任务描述 | 完成时间 | 结果 | 日志位置 | 备注 |
+|----------|--------|----------|----------|------|----------|------|
+| 2026-04-13 | - | 每日维护任务 | 2026-04-13 18:47 | 已完成 | /root/教研室仓库/日志文件/2026-04-13/18-47-00-teaching_每日维护任务.md | 例行维护 |

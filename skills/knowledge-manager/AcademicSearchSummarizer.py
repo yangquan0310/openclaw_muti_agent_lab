@@ -251,19 +251,19 @@ class Summarizer:
     """
     
     def __init__(self, api_key: Optional[str] = None, 
-                 base_url: str = "https://api.lkeap.cloud.tencent.com/v1",
-                 model: str = "deepseek-v3.2"):
+                 base_url: str = "https://ark.cn-beijing.volces.com/api/v3",
+                 model: str = "deepseek-v3-2-251201"):
         """
         初始化 Summarizer
         
         Args:
-            api_key: API key，默认从环境变量 LKEAP_API_KEY 或 OPENAI_API_KEY 读取
-            base_url: API base URL，默认腾讯云 LKEAP
+            api_key: API key，默认从环境变量 ARK_API_KEY 读取
+            base_url: API base URL，默认火山引擎
             model: 模型名称
         """
-        self.api_key = api_key or os.environ.get('LKEAP_API_KEY') or os.environ.get('OPENAI_API_KEY')
+        self.api_key = api_key or os.environ.get('ARK_API_KEY')
         if not self.api_key:
-            raise ValueError("LKEAP_API_KEY 或 OPENAI_API_KEY 环境变量未设置")
+            raise ValueError("ARK_API_KEY 环境变量未设置")
         
         self.base_url = base_url
         self.model = model

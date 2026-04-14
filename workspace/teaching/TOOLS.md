@@ -85,10 +85,12 @@
 > 大管家维护格式
 > 内容由各代理独立维护
 **教研室项目（私人项目库，存储于备课资料）：**
-| 项目名 | 存储位置 | 描述 |
-|--------|----------|------|
-| 索引 | ~/教研室仓库/备课资料/索引.json | 课程项目索引 |
-| 项目库 | ~/教研室仓库/备课资料/项目库.json | 项目库信息 |
+| 项目ID | 项目名 | 项目类型 | 状态 | 存储位置 | 描述 |
+|--------|--------|----------|------|----------|------|
+| JY001 | 教育科学研究方法 | 本科课程 | 进行中 | ~/教研室仓库/备课资料/教育科学研究方法/ | 教育科学研究方法本科课程教学资料，包含16章完整教学内容 |
+| CY001 | 创新创业基础 | 本科课程 | 未开始 | ~/教研室仓库/备课资料/创新创业基础/ | 创新创业基础本科课程教学资料 |
+| 索引 | - | - | - | ~/教研室仓库/备课资料/索引.json | 课程项目索引 |
+| 项目库 | - | - | - | ~/教研室仓库/备课资料/项目库.json | 项目库信息 |
 
 ---
 ---
@@ -119,7 +121,7 @@
 | download_papers | 需要下载论文 | 批量下载学术论文 | ~/.openclaw/workspace/teaching/skills/download_papers/SKILL.md |
 | retrieve_papers | 需要检索论文 | 检索并获取论文信息 | ~/.openclaw/workspace/teaching/skills/retrieve_papers/SKILL.md |
 | search_literature | 需要文献检索 | 综合文献检索工具 | ~/.openclaw/workspace/teaching/skills/search_literature/SKILL.md |
-| 每日维护 | 需要执行每日维护 | 清理completed任务并归档，删除killed任务 | ~/.openclaw/workspace/teaching/skills/每日维护/SKILL.md |
+
 ---
 ### 个人脚本索引
 > 各个代理独立维护，这里显示教学助手特有脚本

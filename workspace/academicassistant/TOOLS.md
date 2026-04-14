@@ -130,23 +130,20 @@
 | pptx-2 | PPT文件处理 | 创建、读取、编辑PowerPoint演示文稿 | ~/.openclaw/skills/pptx-2/SKILL.md |
 | pptx-generator | PPT生成器 | 创建专业可编辑的PowerPoint演示文稿 | ~/.openclaw/skills/pptx-generator/SKILL.md |
 | scihub-paper-downloader | Sci-Hub文献下载 | 根据DOI从Sci-Hub获取PDF文献 | ~/.openclaw/skills/scihub-paper-downloader/SKILL.md |
-
 | skillhub-preference | Skillhub优先 | 优先使用Skillhub进行技能发现和安装 | ~/.openclaw/skills/skillhub-preference/SKILL.md |
 | summarize | 内容摘要 | 总结URL、文件、PDF、音频、视频、YouTube内容 | ~/.openclaw/skills/summarize/SKILL.md |
 | tencentcloud-lighthouse-skill | 腾讯云轻量应用服务器管理 | 管理腾讯云Lighthouse实例、监控、防火墙等 | ~/.openclaw/skills/tencentcloud-lighthouse-skill/SKILL.md |
 | tencent-cos-skill | 腾讯云对象存储管理 | 上传、下载、管理腾讯云COS文件，进行图片处理 | ~/.openclaw/skills/tencent-cos-skill/SKILL.md |
 | tencent-docs | 腾讯云文档操作 | 创建、编辑、管理腾讯云文档 | ~/.openclaw/skills/tencent-docs/SKILL.md |
-
 | tencent-meeting-skill | 腾讯会议管理 | 预约、修改、查询腾讯会议，管理录制和转写 | ~/.openclaw/skills/tencent-meeting-skill/SKILL.md |
 | zotero | Zotero文献管理 | 管理Zotero参考文献库、搜索、导出引文 | ~/.openclaw/skills/zotero/SKILL.md |
 | zotero-local-pdf-import | Zotero本地PDF导入 | 将本地PDF文件导入Zotero文献库 | ~/.openclaw/skills/zotero-local-pdf-import/SKILL.md |
 | zotero-scholar | Zotero学术检索 | Zotero学术文献检索和管理 | ~/.openclaw/skills/zotero-scholar/SKILL.md |
 | zotero-vectorize | Zotero语义索引 | 构建和维护Zotero文献库的语义索引 | ~/.openclaw/skills/zotero-vectorize/SKILL.md |
-| convert_syllabus | `skills/convert_syllabus/` | 转换课程大纲格式 |
-| update_index | `skills/update_index/` | 更新项目索引 |
-| update_syllabi | `skills/update_syllabi/` | 批量更新课程大纲 |
-| update_tools_md | `skills/update_tools_md/` | 自动更新工具索引文档 |
-| 每日维护 | `skills/每日维护/` | 每日维护TOOLS.md、MEMORY.md和工作空间 |
+| convert_syllabus | 转换课程大纲格式 | 转换课程大纲格式 | ~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md |
+| update_index | 更新项目索引 | 更新项目索引 | ~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md |
+| update_syllabi | 批量更新课程大纲 | 批量更新课程大纲 | ~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md |
+| update_tools_md | 自动更新工具索引文档 | 自动更新工具索引文档 | ~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md |
 ---
 ### 个人脚本索引
 > 各个代理独立维护，这里显示教务助手特有脚本

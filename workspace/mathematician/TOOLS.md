@@ -117,7 +117,7 @@
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
+| update_indexes | 更新索引、维护 TOOLS.md | 自动更新 TOOLS.md 中的脚本索引和项目库 | ~/.openclaw/workspace/mathematician/skills/update_indexes/SKILL.md |
 ---
 ### 个人脚本索引
 > 各个代理独立维护，这里显示数学家特有脚本
@@ -127,5 +127,5 @@
 ||||||
 
 ---
-*最后重构: 2026-04-12*
-*重构者: 大管家*
+*最后重构: 2026-04-13*
+*重构者: 数学家*
