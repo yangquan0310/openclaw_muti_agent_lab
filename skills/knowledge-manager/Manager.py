@@ -1,0 +1,256 @@
+#!/usr/bin/env python3
+"""
+Manager.py - 知识库管理工具
+
+功能：
+    - 合并多个知识库文件（去重）
+    - 按条件筛选论文（年份、引用量、主题、类型等）
+    - 支持链式调用和保存
+"""
+
+import os
+import json
+from datetime import datetime
+from copy import deepcopy
+from typing import List, Dict, Optional, Union, Any
+
+
+class Manager:
+    """知识库管理器 - 合并、筛选、整理"""
+
+    def __init__(self, kb_path: Optional[str] = None):
+        """
+        初始化管理器
+        Args:
+            kb_path: 可选，初始知识库文件路径
+        """
+        self._kb_data = None
+        self._current_papers = []
+        if kb_path:
+            self.load(kb_path)
+
+    # ==================== 加载与保存 ====================
+
+    def load(self, kb_path: str) -> 'Manager':
+        """加载知识库文件"""
+        with open(kb_path, 'r', encoding='utf-8') as f:
+            self._kb_data = json.load(f)
+        self._current_papers = self._kb_data.get('papers', [])
+        print(f"已加载知识库: {kb_path}, 共 {len(self._current_papers)} 篇论文")
+        return self
+
+    def save(self, output_path: str, project_name: str = "") -> str:
+        """
+        保存当前知识库数据到文件
+        Args:
+            output_path: 输出文件路径
+            project_name: 项目名称（会更新到知识库中）
+        """
+        if self._kb_data is None:
+            raise ValueError("没有可保存的知识库数据，请先加载或合并数据")
+        # 更新统计和元数据
+        self._kb_data['papers'] = self._current_papers
+        self._kb_data['statistics'] = self._compute_statistics(self._current_papers)
+        self._kb_data['updated_at'] = datetime.now().isoformat()
+        if project_name:
+            self._kb_data['project'] = project_name
+        os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(self._kb_data, f, ensure_ascii=False, indent=2)
+        print(f"知识库已保存至: {output_path}")
+        return output_path
+
+    # ==================== 核心功能 ====================
+
+    def merge(self, *kb_paths: str, deduplicate: bool = True) -> 'Manager':
+        """
+        合并一个或多个知识库文件（去重）
+        Args:
+            *kb_paths: 知识库文件路径（可传入多个）
+            deduplicate: 是否全局去重（基于 paperId）
+        Returns:
+            self
+        """
+        all_papers = []
+        # 若已存在当前知识库，先加入
+        if self._current_papers:
+            all_papers.extend(self._current_papers)
+
+        for path in kb_paths:
+            with open(path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                papers = data.get('papers', [])
+                all_papers.extend(papers)
+                print(f"合并 {path}: {len(papers)} 篇")
+
+        if deduplicate:
+            before = len(all_papers)
+            all_papers = self._deduplicate(all_papers)
+            print(f"去重: {before} -> {len(all_papers)} 篇")
+
+        self._current_papers = all_papers
+        # 重建知识库结构（保留原有元数据或创建新结构）
+        if self._kb_data is None:
+            self._kb_data = {
+                "version": "1.0.0",
+                "project": "合并知识库",
+                "created_at": datetime.now().isoformat(),
+                "updated_at": datetime.now().isoformat(),
+                "statistics": {},
+                "papers": self._current_papers
+            }
+        else:
+            self._kb_data['papers'] = self._current_papers
+        return self
+
+    def filter(self, conditions: Dict[str, Any]) -> 'Manager':
+        """
+        按条件筛选当前知识库，生成新的知识库子集
+        Args:
+            conditions: 筛选条件字典，支持以下键：
+                - year_min: 最小年份
+                - year_max: 最大年份
+                - citations_min: 最小引用量
+                - citations_max: 最大引用量
+                - topics: 主题列表（任意匹配）
+                - types: 文献类型列表（如 ["📊实证", "📖综述"]）
+                - importance: 重要性列表（如 ["🔴奠基", "🟡重要"]）
+                - venue: 期刊/会议名称（模糊匹配）
+                - limit: 返回前 N 篇（需与排序配合）
+                - sort_by: 排序字段（如 "citationCount", "year"），默认不排序
+                - sort_desc: 是否降序（默认 True）
+        Returns:
+            self (当前对象的 _current_papers 变为筛选后的列表)
+        """
+        if not self._current_papers:
+            raise ValueError("当前没有论文数据，请先加载或合并知识库")
+
+        result = deepcopy(self._current_papers)
+
+        # 年份筛选
+        if 'year_min' in conditions:
+            year_min = conditions['year_min']
+            result = [p for p in result if p.get('year', 0) >= year_min]
+        if 'year_max' in conditions:
+            year_max = conditions['year_max']
+            result = [p for p in result if p.get('year', 0) <= year_max]
+
+        # 引用量筛选
+        if 'citations_min' in conditions:
+            cit_min = conditions['citations_min']
+            result = [p for p in result if p.get('citationCount', 0) >= cit_min]
+        if 'citations_max' in conditions:
+            cit_max = conditions['citations_max']
+            result = [p for p in result if p.get('citationCount', 0) <= cit_max]
+
+        # 主题筛选（任意匹配）
+        if 'topics' in conditions:
+            topics = conditions['topics']
+            result = [p for p in result if any(t in p.get('topic', []) for t in topics)]
+
+        # 文献类型筛选
+        if 'types' in conditions:
+            types = conditions['types']
+            result = [p for p in result if p.get('labels', {}).get('type') in types]
+
+        # 重要性筛选
+        if 'importance' in conditions:
+            imp_list = conditions['importance']
+            result = [p for p in result if p.get('labels', {}).get('importance') in imp_list]
+
+        # 期刊/会议名称模糊匹配
+        if 'venue' in conditions:
+            venue_keyword = conditions['venue'].lower()
+            result = [p for p in result if venue_keyword in p.get('venue', '').lower()]
+
+        # 排序
+        if 'sort_by' in conditions:
+            sort_key = conditions['sort_by']
+            desc = conditions.get('sort_desc', True)
+            result.sort(key=lambda x: x.get(sort_key, 0) or 0, reverse=desc)
+
+        # 数量限制
+        if 'limit' in conditions:
+            limit = conditions['limit']
+            result = result[:limit]
+
+        self._current_papers = result
+        # 同步到 _kb_data
+        if self._kb_data:
+            self._kb_data['papers'] = self._current_papers
+        print(f"筛选后剩余 {len(result)} 篇论文")
+        return self
+
+    # ==================== 辅助方法 ====================
+
+    def _deduplicate(self, papers: List[Dict]) -> List[Dict]:
+        """基于 paperId 去重"""
+        seen = set()
+        unique = []
+        for p in papers:
+            pid = p.get('paperId')
+            if pid and pid not in seen:
+                seen.add(pid)
+                unique.append(p)
+            elif not pid:
+                title = p.get('title')
+                if title and title not in seen:
+                    seen.add(title)
+                    unique.append(p)
+        return unique
+
+    def _compute_statistics(self, papers: List[Dict]) -> Dict:
+        total = len(papers)
+        total_cites = sum(p.get('citationCount', 0) for p in papers)
+        foundation = sum(1 for p in papers if p.get('labels', {}).get('importance') == '🔴奠基')
+        important = sum(1 for p in papers if p.get('labels', {}).get('importance') == '🟡重要')
+        general = total - foundation - important
+        empirical = sum(1 for p in papers if p.get('labels', {}).get('type') == '📊实证')
+        review = sum(1 for p in papers if p.get('labels', {}).get('type') == '📖综述')
+        theory = sum(1 for p in papers if p.get('labels', {}).get('type') == '💡理论')
+        return {
+            "total_count": total,
+            "total_citations": total_cites,
+            "foundation_count": foundation,
+            "important_count": important,
+            "general_count": general,
+            "empirical_count": empirical,
+            "review_count": review,
+            "theory_count": theory
+        }
+
+    # ==================== 获取结果 ====================
+
+    def get_kb(self) -> Dict:
+        """返回当前知识库字典（若没有 _kb_data 则基于 _current_papers 构建）"""
+        if self._kb_data is None:
+            return {
+                "version": "1.0.0",
+                "project": "临时知识库",
+                "created_at": datetime.now().isoformat(),
+                "updated_at": datetime.now().isoformat(),
+                "statistics": self._compute_statistics(self._current_papers),
+                "papers": self._current_papers
+            }
+        else:
+            self._kb_data['papers'] = self._current_papers
+            self._kb_data['statistics'] = self._compute_statistics(self._current_papers)
+            return self._kb_data
+
+    def get_papers(self) -> List[Dict]:
+        """返回当前论文列表"""
+        return self._current_papers
+
+
+# ==================== 测试入口 ====================
+if __name__ == "__main__":
+    manager = Manager()
+    # 合并多个知识库
+    manager.merge("kb1.json", "kb2.json").save("merged.json", "合并项目")
+    # 筛选引用量≥50、类型为实证的论文，按引用量降序取前10篇
+    manager.filter({
+        "citations_min": 50,
+        "types": ["📊实证"],
+        "sort_by": "citationCount",
+        "limit": 10
+    }).save("filtered.json")

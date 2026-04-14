@@ -50,7 +50,6 @@
     }
   },
   "semantic_scholar": {
-    "base_url": "https://api.semanticscholar.org/graph/v1/",
     "api_key_env": "SEMANTIC_SCHOLAR_API_KEY",
     "request_interval": 0.5,
     "default_limit": 20
@@ -61,12 +60,6 @@
     "notes_dir": "知识库/笔记/",
     "index_file": "index.json",
     "notes_file_format": "{主题}.json"
-  },
-  "filter": {
-    "foundation_min_citation": 500,
-    "important_min_citation": 50,
-    "recent_max_year": 3,
-    "default_filter_enabled": true
   },
   "log": {
     "log_root": "/root/实验室仓库/日志文件/",

@@ -53,7 +53,9 @@
 ├── openclaw.json                      # OpenClaw主配置文件
 ├── skills/                            # 公共技能库（所有Agent共享）
 │   ├── knowledge-manager/             # 知识管理工具（文献检索+知识库管理+笔记生成）
-│   │   ├── AcademicSearchSummarizer.py # 核心工具：学术文献检索、元数据补全、LLM笔记生成
+│   │   ├── Searcher.py                 # 文献检索类：多主题多轮检索，支持每轮单独条件
+│   │   ├── Summarizer.py               # 文献总结类：LLM分析，添加labels和notes
+│   │   ├── Manager.py                  # 知识库管理类：合并、筛选、链式调用
 │   │   ├── config.json                 # 统一配置文件：多LLM供应商、API参数、存储规则
 │   │   ├── README.md                   # 工具使用说明
 │   │   └── SKILL.md                    # 技能调用规范

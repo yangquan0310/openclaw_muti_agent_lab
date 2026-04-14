@@ -1,147 +1,274 @@
+
 # 检索文献
 
-> 版本: 1.6.0  
-> 维护者: 大管家  
-> 创建时间: 2026-04-08  
-> 更新内容: filter_by_criteria功能升级，支持多维度组合筛选，默认启用三级文献筛选规则
+&gt; 版本: 2.1.0  
+&gt; 维护者: 大管家  
+&gt; 创建时间: 2026-04-08  
+&gt; 更新时间: 2026-04-14  
+&gt; 更新内容: Searcher.search()支持字典格式条件列表，每轮可单独设置query、limit、year、minCitationCount等
 
 ## 功能描述
 
-本脚本用于进行文献检索，建立项目知识库并生成检索报告。使用Semantic Scholar作为唯一允许的学术文献检索来源，支持文献分级、分类和统计分析。
+本技能用于进行文献检索，建立项目知识库并生成检索报告。使用Semantic Scholar作为唯一允许的学术文献检索来源，支持文献分级、分类和统计分析。
 
-## 核心脚本
+## 核心架构
+
+### 三个独立类
+
+| 类 | 文件 | 功能 |
+|----|------|------|
+| **Searcher** | `Searcher.py` | 从Semantic Scholar获取数据，支持检索和更新两种模式 |
+| **Summarizer** | `Summarizer.py` | 使用LLM分析文献，添加labels和notes字段 |
+| **Manager** | `Manager.py` | 合并、筛选、保存知识库，支持链式调用 |
+
 ### 配置文件
-- `config.json`：统一配置文件，包含LLM供应商、API地址、模型、存储路径、筛选规则等所有参数
-- 支持多LLM供应商切换：火山引擎方舟、腾讯云LKE、腾讯云LKE规划版、OpenAI
-- 所有配置修改无需改动代码，直接编辑config.json即可全局生效
+- `config.json`：统一配置文件，存放所有API、模型、存储相关配置
+- `SKILL.md`：给AI看的技能说明（完整方法文档）
 
+---
 
-### AcademicSearchSummarizer.py（推荐）
+## 快速开始
 
-**一体化检索+LLM总结系统**，包含三个核心类：
-- **Searcher**: 从Semantic Scholar检索文献，支持完整元数据补全
-- **Summarizer**: 使用LLM判断文献类型和总结
-- **AcademicSearchSummarizer**: 总类，协调检索和总结流程
-
-**Python代码调用：**
-
+### 1. 检索文献并保存
 ```python
-from AcademicSearchSummarizer import AcademicSearchSummarizer
+from Searcher import Searcher
 
-# 初始化
-ass = AcademicSearchSummarizer()
-
-# 配置检索词（新格式：列表长度=轮次）
+searcher = Searcher()
 queries = {
-    "负性思维与睡眠质量": [
-        "rumination sleep quality",      # 轮次1
-        "rumination insomnia",           # 轮次2
-        "anxiety sleep quality",         # 轮次3
-        "anxious thinking sleep",        # 轮次4
-        "repetitive negative thinking sleep"  # 轮次5
+    "自传体记忆": [
+        {"query": "autobiographical memory | personal memory", "limit": 30},
+        {"query": "\"self-memory system\" Conway", "year": "2010-2025"},
+        {"query": "autobiographical memory -childhood", "minCitationCount": 50}
+    ],
+    "数字记忆": [
+        {"query": "digital memory | Google effect", "limit": 20},
+        {"query": "photo taking memory", "year": "2020-2025", "minCitationCount": 20}
     ]
 }
-
-# 执行完整流程（链式调用，支持自动补全完整元数据）
-ass \
-    .search(queries, limit=30) \
-    .deduplicate() \
-    .filter_by_year(2020) \
-    .fetch_full_metadata() \
-    .filter_by_criteria() \
-    .summarize() \
-    .save("output.json", "项目名称")
+kb = searcher.search(queries, kb_path="my_kb.json")
 ```
 
-**命令行调用：**
-
-```bash
-# 检索并生成知识库
-python3 AcademicSearchSummarizer.py search \
-  --queries queries.json \
-  --output result.json \
-  --project "负性思维与睡眠质量" \
-  --fetch-abstracts
-
-# 补全已有知识库的完整元数据（摘要、DOI、期刊信息等）
-python3 AcademicSearchSummarizer.py fill-metadata \
-  --kb-path "./知识库/index.json"
-```
-
-## 快速开始示例
-
-### 示例2：使用默认筛选规则（推荐）
+### 2. 更新知识库元数据
 ```python
-from AcademicSearchSummarizer import AcademicSearchSummarizer
+from Searcher import Searcher
 
-ass = AcademicSearchSummarizer()
-
-# 默认筛选规则自动生效：
-# - 奠基文献：引用≥500，无时间限制，全部保留
-# - 重要文献：引用≥50，近10年，全部保留  
-# - 新近文献：近3年，实证研究，全部保留
-ass \
-    .search(queries, limit=30) \
-    .deduplicate() \
-    .fetch_full_metadata() \
-    .filter_by_criteria()  # 不传参数自动使用默认规则
-    .summarize() \
-    .save("./知识库/")  # 自动保存为 知识库/index.json
+searcher = Searcher()
+kb = searcher.update(kb_path="my_kb.json")
 ```
 
-### 示例3：自定义多维度筛选
-
-### 示例2：导出主题笔记
-
+### 3. 总结文献
 ```python
-from AcademicSearchSummarizer import AcademicSearchSummarizer
+from Summarizer import Summarizer
 
-ass = AcademicSearchSummarizer()
-
-# 不需要LLM，直接导出
-ass.export_topic_notes(
-    topic="负性思维与睡眠质量",
-    notes_dir="./笔记",
-    kb_path="./知识库/index.json"
-)
+summarizer = Summarizer()
+kb = summarizer.summarize(kb_path="my_kb.json")
 ```
 
-### 示例3：补全已有知识库的笔记
-
+### 4. 合并知识库
 ```python
-from AcademicSearchSummarizer import AcademicSearchSummarizer
+from Manager import Manager
 
-ass = AcademicSearchSummarizer()
-
-# 需要LLM API key
-ass.complete_notes("./知识库/index.json")
+manager = Manager()
+manager.merge("kb1.json", "kb2.json", "kb3.json").save("merged.json", "合并项目")
 ```
 
-## 文件结构
+### 5. 筛选文献
+```python
+from Manager import Manager
 
+manager = Manager("my_kb.json")
+manager.filter({
+    "citations_min": 50,
+    "types": ["📊实证", "📖综述"],
+    "sort_by": "citationCount",
+    "limit": 10
+}).save("filtered.json")
 ```
-检索文献/
-├── AcademicSearchSummarizer.py      # 学术文献检索与总结系统（主脚本）
-├── 总结笔记.md                       # 文献笔记总结SOP
-├── SKILL.md                         # 给AI看的技能说明（完整方法文档）
-├── README.md                        # 给人类看的说明（本文件）
-├── 检索文献.md                       # 核心脚本（五要素SOP）
-├── 检索报告格式.md                   # 检索报告模板
-├── 知识库结构.md                     # 知识库JSON格式规范
-└── __pycache__/                     # Python缓存
+
+---
+
+## 完整示例
+
+### 从零开始检索并总结
+```python
+from Searcher import Searcher
+from Summarizer import Summarizer
+
+# 1. 检索
+searcher = Searcher()
+queries = {
+    "自传体记忆": [
+        {"query": "autobiographical memory | personal memory", "limit": 30},
+        {"query": "\"self-memory system\" Conway", "year": "2010-2025"},
+        {"query": "autobiographical memory -childhood", "minCitationCount": 50}
+    ]
+}
+searcher.search(queries, kb_path="my_project.json")
+
+# 2. 更新元数据
+searcher.update(kb_path="my_project.json")
+
+# 3. 总结文献
+summarizer = Summarizer()
+summarizer.summarize(kb_path="my_project.json")
 ```
 
-### 各文件详细说明
+### 合并多个知识库并筛选
+```python
+from Manager import Manager
 
-| 文件 | 功能 | 说明 |
+manager = Manager()
+manager.merge("kb1.json", "kb2.json", "kb3.json")
+manager.filter({
+    "citations_min": 50,
+    "types": ["📊实证", "📖综述"],
+    "sort_by": "citationCount",
+    "limit": 20
+})
+manager.save("final_kb.json", "最终项目")
+```
+
+---
+
+## 检索规则建立指南
+
+### 第一步：确定研究主题和关键词
+
+**核心概念与同义词**
+- 先列出你的核心研究概念
+- 然后列出该概念的同义词、近义词、相关术语
+
+**示例：研究"自传体记忆"**
+- 核心概念：autobiographical memory
+- 同义词：personal memory, life narrative, episodic memory
+- 相关术语：self-memory system, life story, reminiscence
+
+---
+
+### 第二步：构建检索关键词组合
+
+| 语法 | 说明 | 示例 |
 |------|------|------|
-| `AcademicSearchSummarizer.py` | 学术文献检索与总结系统 | 主脚本，整合检索、筛选、LLM分析、导出功能 |
-| `总结笔记.md` | 文献笔记总结SOP | 手动总结文献笔记的标准操作流程 |
-| `SKILL.md` | 技能文档 | 给AI看的完整技能说明，包含10个方法的详细文档 |
-| `README.md` | 文件夹说明 | 本文件，给人类看的整体说明 |
-| `检索文献.md` | 检索文献SOP | 完整的文献检索流程文档，包含Step 1-8详细步骤 |
-| `检索报告格式.md` | 检索报告模板 | 定义检索报告的标准结构 |
-| `知识库结构.md` | 知识库格式规范 | index.json标准格式，包含字段说明 |
+| **空格** | AND关系（必须同时出现） | `autobiographical memory self` |
+| `\|` | OR关系（任一即可） | `autobiographical memory \| personal memory` |
+| `\"\"` | 精确短语匹配 | `\"self-memory system\"` |
+| `-` | NOT关系（排除） | `autobiographical memory -childhood` |
+| `()` | 优先级组合 | `(autobiographical \| personal) memory (self \| identity)` |
+
+---
+
+### 第三步：多主题多轮检索策略（每轮单独设置条件）
+
+```python
+queries = {
+    "自传体记忆基础": [
+        {
+            "query": "autobiographical memory | personal memory",
+            "limit": 30,
+            "year": "2015-2025"
+        },
+        {
+            "query": "\"self-memory system\" Conway",
+            "limit": 20,
+            "minCitationCount": 100
+        },
+        {
+            "query": "autobiographical memory -childhood",
+            "year": "2020-2025",
+            "minCitationCount": 50
+        }
+    ],
+    "自传体记忆功能": [
+        {
+            "query": "autobiographical memory function social | directive",
+            "limit": 25,
+            "venue": "Memory"
+        },
+        {
+            "query": "autobiographical memory (self-continuity | identity)",
+            "year": "2018-2025",
+            "minCitationCount": 30
+        }
+    ]
+}
+```
+
+**条件字典说明**
+- 每个条件字典必须包含 `query` 字段（检索关键词）
+- 其他字段可选：`limit`、`year`、`minCitationCount`、`venue`、`fields_of_study`、`publication_types`
+- 支持全局默认参数（会被条件字典中的同名字段覆盖）
+
+---
+
+### 第四步：条件字典支持的所有字段
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `query` | str | **必填**，检索关键词 |
+| `limit` | int | 本次检索数量（默认20，最大100） |
+| `year` | str | 年份范围，如 `"2020-2023"` |
+| `minCitationCount` | int | **客户端过滤**，最小引用量 |
+| `venue` | str | 期刊/会议名称 |
+| `fields_of_study` | str | 研究领域 |
+| `publication_types` | str | 文献类型 |
+
+---
+
+## 可用选项
+
+### 可用文献类型
+- `Review` - 综述
+- `JournalArticle` - 期刊论文
+- `MetaAnalysis` - 元分析
+- `Study` - 研究报告
+- `Conference` - 会议论文
+- `Book` - 书籍
+- `BookSection` - 书籍章节
+
+### 可用研究领域
+- `Computer Science` - 计算机科学
+- `Medicine` - 医学
+- `Chemistry` - 化学
+- `Biology` - 生物学
+- `Materials Science` - 材料科学
+- `Physics` - 物理学
+- `Geology` - 地质学
+- `Psychology` - 心理学
+- `Art` - 艺术
+- `History` - 历史学
+- `Geography` - 地理学
+- `Sociology` - 社会学
+- `Business` - 商学
+- `Political Science` - 政治学
+- `Economics` - 经济学
+- `Philosophy` - 哲学
+- `Mathematics` - 数学
+- `Engineering` - 工程学
+- `Environmental Science` - 环境科学
+- `Agricultural and Food Sciences` - 农业与食品科学
+- `Education` - 教育学
+- `Law` - 法学
+- `Linguistics` - 语言学
+
+---
+
+## Manager筛选条件
+
+| 键 | 类型 | 说明 |
+|----|------|------|
+| `year_min` | int | 最小年份 |
+| `year_max` | int | 最大年份 |
+| `citations_min` | int | 最小引用量 |
+| `citations_max` | int | 最大引用量 |
+| `topics` | List[str] | 主题列表（任意匹配） |
+| `types` | List[str] | 文献类型列表（如 `["📊实证", "📖综述"]`） |
+| `importance` | List[str] | 重要性列表（如 `["🔴奠基", "🟡重要"]`） |
+| `venue` | str | 期刊/会议名称（模糊匹配） |
+| `limit` | int | 返回前N篇（需与排序配合） |
+| `sort_by` | str | 排序字段（如 `"citationCount"`, `"year"`） |
+| `sort_desc` | bool | 是否降序（默认True） |
+
+---
 
 ## 环境变量配置
 
@@ -150,67 +277,40 @@ ass.complete_notes("./知识库/index.json")
 export SEMANTIC_SCHOLAR_API_KEY="your-semantic-scholar-api-key"
 ```
 
-### 腾讯云 LKEAP API（推荐）
+### LLM API（Summarizer）
 ```bash
+# 火山引擎方舟（推荐）
+export ARK_API_KEY="your-ark-api-key"
+
+# 腾讯云 LKEAP
 export LKEAP_API_KEY="your-tencent-api-key"
-export LKEAP_BASE_URL="https://api.lkeap.cloud.tencent.com/v1"
-export LKEAP_MODEL="deepseek-v3.2"
 ```
 
-### OpenAI API（可选）
-```bash
-export OPENAI_API_KEY="your-openai-api-key"
-export OPENAI_MODEL="gpt-4o-mini"
+---
+
+## 文件结构
+
+```
+检索文献/
+├── Searcher.py              # 文献检索类
+├── Summarizer.py            # 文献总结类
+├── Manager.py               # 知识库管理类
+├── SKILL.md                 # 给AI看的技能说明（完整方法文档）
+├── README.md                # 给人类看的说明（本文件）
+├── config.json              # 统一配置文件
+├── _meta.json               # 技能元数据
+└── __pycache__/             # Python缓存
 ```
 
-## 默认筛选规则
-
-无需任何参数，调用 `filter_by_criteria()` 自动启用：
-
-| 类别 | 规则 | 处理方式 |
-|------|------|----------|
-| 🔴 奠基文献 | 引用量≥500，无时间限制 | 全部保留 |
-| 🟡 重要文献 | 引用量50-500，近10年发表 | 全部保留 |
-| 🔵 新近文献 | 近3年发表，类型为实证研究 | 全部保留 |
-
-## 自定义筛选器示例
-
-```python
-# 多维度组合筛选，多个条件取并集
-ass.filter_by_criteria({
-    "高引顶刊": {
-        "citations": {"min": 500, "max": None},
-        "venue": ["Psychological Review", "JPSP"],
-        "limit": 20
-    },
-    "近年研究": {
-        "citations": {"min": 50, "max": 500},
-        "years": {"min": 2022, "max": 2026},
-        "limit": 50
-    }
-})
-```
-
-## 文献类型分类
-
-### 初分类（基于规则）
-
-| 类型 | 标记 | 判断标准 |
-|------|------|----------|
-| 实证 | 📊 | 摘要含 participant / sample / method / result |
-| 综述 | 📖 | 标题含 review / meta-analysis / systematic review |
-| 理论 | 💡 | 标题含 theoretical / theory / perspective / commentary |
-| 待分类 | 📋 | 无法明确归类的文献 |
-
-### 修订（再分类，基于LLM）
-
-使用大语言模型对初分类结果进行验证和修正，生成对应的notes字段。
+---
 
 ## 版本历史
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| 1.3.0 | 2026-04-13 | 重构为AcademicSearchSummarizer，整合检索和LLM总结 |
-| 1.2.0 | 2026-04-13 | 添加academic_search.py重构版 |
-| 1.1.0 | 2026-04-12 | 添加topic字段为列表格式 |
+| 2.1.0 | 2026-04-14 | Searcher.search()支持字典格式条件列表，每轮可单独设置query、limit、year、minCitationCount等 |
+| 2.0.0 | 2026-04-14 | 重构为三个独立类：Searcher、Summarizer、Manager |
+| 1.6.0 | 2026-04-08 | filter_by_criteria功能升级 |
+| 1.3.0 | 2026-04-13 | 重构为AcademicSearchSummarizer |
 | 1.0.0 | 2026-04-08 | 初始版本 |
+
