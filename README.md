@@ -212,9 +212,6 @@ openclaw init --config openclaw.json
 ```bash
 # 恢复所有Agent工作空间
 cp -r workspace/* /root/.openclaw/workspace/
-
-# 恢复Agent运行时配置
-cp -r agents/* /root/.openclaw/agents/
 ```
 
 #### 第四步: 安装依赖
@@ -228,9 +225,6 @@ npm install
 
 #### 第五步: 配置环境变量
 ```bash
-# 复制环境变量模板
-cp .env.example .env
-
 # 编辑.env文件，填入API密钥等信息
 vim .env
 ```
@@ -269,9 +263,6 @@ crontab -e
 ```bash
 # 查看Agent列表
 openclaw agents list
-
-# 测试技能调用
-openclaw skills run knowledge-manager --query "认知心理学最新研究"
 
 # 查看系统状态
 openclaw status

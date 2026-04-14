@@ -114,6 +114,7 @@
 | 管理项目元数据 | 需要创建或维护项目 | 创建和维护项目元数据，管理云文档映射 | ~/.openclaw/scripts/管理项目元数据/SKILL.md |
 | feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
+| 腾讯文档分段上传 | 长文档分段上传到腾讯文档 | 将长文档切分成多个段落，逐段上传到腾讯文档智能文档 | ~/.openclaw/skills/tencent-docs/upload_by_sections.py |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
 ---
 
