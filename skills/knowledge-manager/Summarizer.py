@@ -18,20 +18,27 @@ class Summarizer:
 
     def __init__(self,
                  api_key: Optional[str] = None,
-                 base_url: str = "https://ark.cn-beijing.volces.com/api/v3",
-                 model: str = "deepseek-v3-2-251201"):
+                 base_url: Optional[str] = "https://tokenhub.tencentmaas.com/v1",
+                 model: Optional[str] = "deepseek-v3.2",
+                 use_conversation: bool = False):
         """
         初始化 Summarizer
         Args:
-            api_key: API key，默认从环境变量 LKEAP_API_KEY 或 ARK_API_KEY 读取
-            base_url: API base URL
-            model: 模型名称
+            api_key: API key，默认从config.json和环境变量读取
+            base_url: API base URL，默认从config.json读取
+            model: 模型名称，默认从config.json读取
+            use_conversation: 是否使用会话模式（保留对话历史），默认False
         """
-        self.api_key = api_key or os.environ.get('LKEAP_API_KEY') or os.environ.get('ARK_API_KEY')
-        if not self.api_key:
-            raise ValueError("请设置环境变量 LKEAP_API_KEY 或 ARK_API_KEY")
+
         self.base_url = base_url
         self.model = model
+        api_key_env = "TOKENHUB_API_KEY"
+        self.api_key = api_key or os.environ.get('TOKENHUB_API_KEY') or os.environ.get('ARK_API_KEY')
+        if not self.api_key:
+            raise ValueError(f"请设置环境变量 {api_key_env}")
+        
+        self.use_conversation = use_conversation
+        self.conversation_history = []  # 会话历史
         self._init_openai()
         self._init_system_prompt()
 
@@ -154,10 +161,21 @@ class Summarizer:
     def _summarize_single(self, title: str, abstract: str) -> Dict[str, Any]:
         """分析单篇论文，返回 {type, notes}"""
         user_prompt = f"标题：{title}\n摘要：{abstract if abstract else '无摘要'}\n请分析。"
-        messages = [
-            {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": user_prompt}
-        ]
+        
+        if self.use_conversation:
+            # 会话模式：保留对话历史
+            if not self.conversation_history:
+                # 第一次请求，添加system prompt
+                self.conversation_history.append({"role": "system", "content": self.system_prompt})
+            self.conversation_history.append({"role": "user", "content": user_prompt})
+            messages = self.conversation_history
+        else:
+            # 非会话模式：每次都是新对话
+            messages = [
+                {"role": "system", "content": self.system_prompt},
+                {"role": "user", "content": user_prompt}
+            ]
+        
         try:
             resp = self.client.chat.completions.create(
                 model=self.model,
@@ -167,6 +185,11 @@ class Summarizer:
             )
             content = resp.choices[0].message.content
             result = self._extract_json(content)
+            
+            if self.use_conversation:
+                # 会话模式：保存助手响应到历史
+                self.conversation_history.append({"role": "assistant", "content": content})
+            
             return {
                 "type": result.get('paper_type', '📋待分类'),
                 "notes": result.get('notes', {})
@@ -218,6 +241,11 @@ if __name__ == "__main__":
         default=10, 
         help="进度打印间隔 (默认: 10)"
     )
+    parser.add_argument(
+        "--use-conversation",
+        action="store_true",
+        help="使用会话模式（默认不使用会话模式）"
+    )
     
     args = parser.parse_args()
     
@@ -227,7 +255,7 @@ if __name__ == "__main__":
         sys.exit(1)
     
     print(f"正在总结文献...")
-    summarizer = Summarizer()
+    summarizer = Summarizer(use_conversation=args.use_conversation)
     kb = summarizer.summarize(
         kb_path=args.kb_path,
         progress_interval=args.progress_interval

@@ -1,6 +1,6 @@
 {
   "llm": {
-    "default_provider": "ark",
+    "default_provider": "tencent",
     "providers": {
       "ark": {
         "name": "火山引擎方舟",
@@ -11,42 +11,25 @@
         "temperature": 0.3,
         "max_tokens": 2000
       },
-      "tencent": {
-        "name": "腾讯云LKE",
-        "base_url": "https://api.lkeap.cloud.tencent.com/v1",
+      "tencent_token": {
+        "name": "腾讯云tokenhub",
+        "base_url": "https://tokenhub.tencentmaas.com/v1",
         "default_model": "deepseek-v3.2",
-        "api_key_env": "LKEAP_API_KEY",
+        "api_key_env": "TOKENHUB_API_KEY",
         "timeout": 30,
         "temperature": 0.3,
         "max_tokens": 2000
       },
-      "tencent_hub": {
-        "name": "腾讯云TokenHub",
-        "base_url": "https://tokenhub.tencentmaas.com/v1/chat/completions",
-        "default_model": "deepseek-v3.2",
-        "api_key_env": "LKEAP_API_KEY",
-        "timeout": 30,
-        "temperature": 0.3,
-        "max_tokens": 2000
-      },
-      "tencent_plan": {
-        "name": "腾讯云LKE规划版",
+      "tencent_token_plan": {
+        "name": "腾讯云tokenhub_plan",
         "base_url": "https://api.lkeap.cloud.tencent.com/plan/v3",
-        "default_model": "kimi-k2.5",
-        "api_key_env": "LKEAP_API_KEY",
-        "timeout": 30,
-        "temperature": 0.3,
-        "max_tokens": 4000
-      },
-      "openai": {
-        "name": "OpenAI",
-        "base_url": "https://api.openai.com/v1",
-        "default_model": "gpt-4o-mini",
-        "api_key_env": "OPENAI_API_KEY",
+        "default_model": "deepseek-v3.2",
+        "api_key_env": "TOKENHUB_PLAN_API_KEY",
         "timeout": 30,
         "temperature": 0.3,
         "max_tokens": 2000
       }
+      
     }
   },
   "semantic_scholar": {
