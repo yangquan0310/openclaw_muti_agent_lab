@@ -198,9 +198,43 @@ class Summarizer:
             return "🔵一般文献"
 
 
-# ==================== 测试入口 ====================
+# ==================== 命令行入口 ====================
 if __name__ == "__main__":
+    import argparse
+    import os
+    import json
+    
+    parser = argparse.ArgumentParser(
+        description="Summarizer - 文献总结工具"
+    )
+    parser.add_argument(
+        "--kb-path", 
+        default="index.json", 
+        help="知识库文件路径 (默认: index.json)"
+    )
+    parser.add_argument(
+        "--progress-interval", 
+        type=int, 
+        default=10, 
+        help="进度打印间隔 (默认: 10)"
+    )
+    
+    args = parser.parse_args()
+    
+    if not os.path.exists(args.kb_path):
+        print(f"错误: 知识库文件不存在: {args.kb_path}")
+        import sys
+        sys.exit(1)
+    
+    print(f"正在总结文献...")
     summarizer = Summarizer()
-    # 分析知识库
-    kb = summarizer.summarize(kb_path="test_kb.json")
-    print("分析完成，论文数:", len(kb['papers']))
+    kb = summarizer.summarize(
+        kb_path=args.kb_path,
+        progress_interval=args.progress_interval
+    )
+    
+    print(f"完成! 知识库: {args.kb_path}")
+    print(f"  论文总数: {len(kb['papers'])}")
+    print(f"  实证文献: {kb['statistics']['empirical_count']}")
+    print(f"  综述文献: {kb['statistics']['review_count']}")
+    print(f"  理论文献: {kb['statistics']['theory_count']}")

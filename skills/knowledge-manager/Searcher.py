@@ -319,21 +319,57 @@ class Searcher:
         return unique
 
 
-# ==================== 测试入口 ====================
+# ==================== 命令行入口 ====================
 if __name__ == "__main__":
+    import argparse
+    import sys
+    
+    parser = argparse.ArgumentParser(
+        description="Searcher - 文献检索工具"
+    )
+    subparsers = parser.add_subparsers(title="命令", dest="command")
+    
+    # search 命令
+    search_parser = subparsers.add_parser("search", help="检索文献")
+    search_parser.add_argument("--queries", required=True, help="检索条件JSON文件路径")
+    search_parser.add_argument("--kb-path", default="index.json", help="知识库文件路径 (默认: index.json)")
+    search_parser.add_argument("--fields", help="请求字段 (可选)")
+    search_parser.add_argument("--no-deduplicate", action="store_true", help="不去重")
+    
+    # update 命令
+    update_parser = subparsers.add_parser("update", help="更新知识库元数据")
+    update_parser.add_argument("--kb-path", default="index.json", help="知识库文件路径 (默认: index.json)")
+    update_parser.add_argument("--fields", help="请求字段 (可选)")
+    
+    args = parser.parse_args()
+    
     searcher = Searcher()
-    queries = {
-        "数字记忆": [
-            {"query": "digital memory", "limit": 3},
-            {"query": "Google effect", "year": "2020-2023", "minCitationCount": 50}
-        ],
-        "怀旧技术": [
-            {"query": "nostalgia technology", "year": "2015-2025"}
-        ]
-    }
-    # 检索并保存
-    kb = searcher.search(queries, kb_path="test_kb.json", limit=5, year="2010-2025")
-    print("检索后论文数:", len(kb['papers']))
-    # 更新元数据
-    # kb = searcher.update(kb_path="test_kb.json")
-    # print("更新后论文数:", len(kb['papers']))
+    
+    if args.command == "search":
+        # 加载检索条件
+        if not os.path.exists(args.queries):
+            print(f"错误: 检索条件文件不存在: {args.queries}")
+            sys.exit(1)
+        
+        with open(args.queries, 'r', encoding='utf-8') as f:
+            queries = json.load(f)
+        
+        print(f"正在检索...")
+        kb = searcher.search(
+            queries, 
+            kb_path=args.kb_path,
+            fields=args.fields,
+            deduplicate=not args.no_deduplicate
+        )
+        print(f"完成! 知识库: {args.kb_path}, 论文数: {len(kb['papers'])}")
+    
+    elif args.command == "update":
+        print(f"正在更新元数据...")
+        kb = searcher.update(
+            kb_path=args.kb_path,
+            fields=args.fields
+        )
+        print(f"完成! 知识库: {args.kb_path}, DOI非空: {sum(1 for p in kb['papers'] if p.get('doi'))}")
+    
+    else:
+        parser.print_help()

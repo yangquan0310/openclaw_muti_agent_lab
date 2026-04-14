@@ -242,15 +242,130 @@ class Manager:
         return self._current_papers
 
 
-# ==================== 测试入口 ====================
+# ==================== 命令行入口 ====================
 if __name__ == "__main__":
-    manager = Manager()
-    # 合并多个知识库
-    manager.merge("kb1.json", "kb2.json").save("merged.json", "合并项目")
-    # 筛选引用量≥50、类型为实证的论文，按引用量降序取前10篇
-    manager.filter({
-        "citations_min": 50,
-        "types": ["📊实证"],
-        "sort_by": "citationCount",
-        "limit": 10
-    }).save("filtered.json")
+    import argparse
+    import os
+    import json
+    
+    parser = argparse.ArgumentParser(
+        description="Manager - 知识库管理工具"
+    )
+    subparsers = parser.add_subparsers(title="命令", dest="command")
+    
+    # merge 命令
+    merge_parser = subparsers.add_parser("merge", help="合并多个知识库")
+    merge_parser.add_argument("kb_paths", nargs="+", help="知识库文件路径列表")
+    merge_parser.add_argument("--output", required=True, help="输出文件路径")
+    merge_parser.add_argument("--project", default="合并项目", help="项目名称 (默认: 合并项目)")
+    merge_parser.add_argument("--no-deduplicate", action="store_true", help="不去重")
+    
+    # filter 命令
+    filter_parser = subparsers.add_parser("filter", help="筛选知识库")
+    filter_parser.add_argument("--kb-path", required=True, help="输入知识库文件路径")
+    filter_parser.add_argument("--output", required=True, help="输出文件路径")
+    filter_parser.add_argument("--conditions", help="筛选条件JSON文件路径")
+    filter_parser.add_argument("--year-min", type=int, help="最小年份")
+    filter_parser.add_argument("--year-max", type=int, help="最大年份")
+    filter_parser.add_argument("--citations-min", type=int, help="最小引用量")
+    filter_parser.add_argument("--citations-max", type=int, help="最大引用量")
+    filter_parser.add_argument("--types", help="文献类型（逗号分隔，如：📊实证,📖综述）")
+    filter_parser.add_argument("--importance", help="重要性（逗号分隔，如：🔴奠基,🟡重要）")
+    filter_parser.add_argument("--venue", help="期刊/会议名称（模糊匹配）")
+    filter_parser.add_argument("--sort-by", help="排序字段（如：citationCount, year）")
+    filter_parser.add_argument("--sort-asc", action="store_true", help="升序排序（默认降序）")
+    filter_parser.add_argument("--limit", type=int, help="返回前N篇")
+    
+    # info 命令
+    info_parser = subparsers.add_parser("info", help="显示知识库信息")
+    info_parser.add_argument("--kb-path", default="index.json", help="知识库文件路径 (默认: index.json)")
+    
+    args = parser.parse_args()
+    
+    if args.command == "merge":
+        # 检查输入文件
+        for kb_path in args.kb_paths:
+            if not os.path.exists(kb_path):
+                print(f"错误: 知识库文件不存在: {kb_path}")
+                import sys
+                sys.exit(1)
+        
+        print(f"正在合并 {len(args.kb_paths)} 个知识库...")
+        manager = Manager()
+        manager.merge(*args.kb_paths, deduplicate=not args.no_deduplicate)
+        manager.save(args.output, args.project)
+        print(f"完成! 输出: {args.output}")
+    
+    elif args.command == "filter":
+        # 检查输入文件
+        if not os.path.exists(args.kb_path):
+            print(f"错误: 知识库文件不存在: {args.kb_path}")
+            import sys
+            sys.exit(1)
+        
+        # 构建筛选条件
+        conditions = {}
+        if args.conditions:
+            if not os.path.exists(args.conditions):
+                print(f"错误: 筛选条件文件不存在: {args.conditions}")
+                import sys
+                sys.exit(1)
+            with open(args.conditions, 'r', encoding='utf-8') as f:
+                conditions = json.load(f)
+        
+        # 命令行参数覆盖
+        if args.year_min is not None:
+            conditions["year_min"] = args.year_min
+        if args.year_max is not None:
+            conditions["year_max"] = args.year_max
+        if args.citations_min is not None:
+            conditions["citations_min"] = args.citations_min
+        if args.citations_max is not None:
+            conditions["citations_max"] = args.citations_max
+        if args.types:
+            conditions["types"] = args.types.split(",")
+        if args.importance:
+            conditions["importance"] = args.importance.split(",")
+        if args.venue:
+            conditions["venue"] = args.venue
+        if args.sort_by:
+            conditions["sort_by"] = args.sort_by
+        if args.sort_asc:
+            conditions["sort_desc"] = False
+        if args.limit is not None:
+            conditions["limit"] = args.limit
+        
+        print(f"正在筛选知识库...")
+        manager = Manager(args.kb_path)
+        manager.filter(conditions).save(args.output)
+        print(f"完成! 输出: {args.output}")
+    
+    elif args.command == "info":
+        if not os.path.exists(args.kb_path):
+            print(f"错误: 知识库文件不存在: {args.kb_path}")
+            import sys
+            sys.exit(1)
+        
+        manager = Manager(args.kb_path)
+        kb = manager.get_kb()
+        print("="*60)
+        print("知识库信息")
+        print("="*60)
+        print(f"版本: {kb.get('version', 'N/A')}")
+        print(f"项目: {kb.get('project', 'N/A')}")
+        print(f"创建时间: {kb.get('created_at', 'N/A')}")
+        print(f"更新时间: {kb.get('updated_at', 'N/A')}")
+        print("-"*60)
+        stats = kb.get('statistics', {})
+        print(f"论文总数: {stats.get('total_count', 0)}")
+        print(f"总引用量: {stats.get('total_citations', 0)}")
+        print(f"奠基文献: {stats.get('foundation_count', 0)}")
+        print(f"重要文献: {stats.get('important_count', 0)}")
+        print(f"一般文献: {stats.get('general_count', 0)}")
+        print(f"实证文献: {stats.get('empirical_count', 0)}")
+        print(f"综述文献: {stats.get('review_count', 0)}")
+        print(f"理论文献: {stats.get('theory_count', 0)}")
+        print("="*60)
+    
+    else:
+        parser.print_help()

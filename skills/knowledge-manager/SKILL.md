@@ -77,6 +77,135 @@ manager.filter({
 }).save("filtered.json")
 ```
 
+---
+
+## 命令行工具
+
+### Searcher.py - 文献检索
+
+**检索文献**
+```bash
+# 1. 创建检索条件JSON文件 (queries.json)
+cat &gt; queries.json &lt;&lt; 'EOF'
+{
+    "自传体记忆": [
+        {"query": "autobiographical memory | personal memory", "limit": 30},
+        {"query": "\"self-memory system\" Conway", "year": "2010-2025"}
+    ]
+}
+EOF
+
+# 2. 执行检索
+python3 Searcher.py search \
+    --queries queries.json \
+    --kb-path my_kb.json
+```
+
+**更新知识库元数据**
+```bash
+python3 Searcher.py update \
+    --kb-path my_kb.json
+```
+
+**命令参数**
+| 参数 | 说明 |
+|------|------|
+| `search` | 检索子命令 |
+| `--queries` | 检索条件JSON文件（必填） |
+| `--kb-path` | 知识库文件路径（默认: index.json） |
+| `--fields` | 请求字段（可选） |
+| `--no-deduplicate` | 不去重 |
+| `update` | 更新元数据子命令 |
+| `--kb-path` | 知识库文件路径（默认: index.json） |
+| `--fields` | 请求字段（可选） |
+
+---
+
+### Summarizer.py - 文献总结
+
+**总结文献**
+```bash
+python3 Summarizer.py \
+    --kb-path my_kb.json \
+    --progress-interval 10
+```
+
+**命令参数**
+| 参数 | 说明 |
+|------|------|
+| `--kb-path` | 知识库文件路径（默认: index.json） |
+| `--progress-interval` | 进度打印间隔（默认: 10） |
+
+---
+
+### Manager.py - 知识库管理
+
+**显示知识库信息**
+```bash
+python3 Manager.py info \
+    --kb-path my_kb.json
+```
+
+**合并多个知识库**
+```bash
+python3 Manager.py merge \
+    kb1.json kb2.json kb3.json \
+    --output merged.json \
+    --project "合并项目"
+```
+
+**筛选知识库**
+```bash
+# 方法1: 使用命令行参数
+python3 Manager.py filter \
+    --kb-path my_kb.json \
+    --output filtered.json \
+    --citations-min 50 \
+    --types "📊实证,📖综述" \
+    --sort-by citationCount \
+    --limit 10
+
+# 方法2: 使用筛选条件JSON文件
+cat &gt; filter_conditions.json &lt;&lt; 'EOF'
+{
+    "citations_min": 50,
+    "types": ["📊实证", "📖综述"],
+    "sort_by": "citationCount",
+    "limit": 10
+}
+EOF
+
+python3 Manager.py filter \
+    --kb-path my_kb.json \
+    --output filtered.json \
+    --conditions filter_conditions.json
+```
+
+**命令参数**
+| 参数 | 说明 |
+|------|------|
+| `info` | 显示信息子命令 |
+| `--kb-path` | 知识库文件路径（默认: index.json） |
+| `merge` | 合并子命令 |
+| `kb_paths` | 知识库文件列表（必填） |
+| `--output` | 输出文件路径（必填） |
+| `--project` | 项目名称（默认: 合并项目） |
+| `--no-deduplicate` | 不去重 |
+| `filter` | 筛选子命令 |
+| `--kb-path` | 输入知识库文件路径（必填） |
+| `--output` | 输出文件路径（必填） |
+| `--conditions` | 筛选条件JSON文件（可选） |
+| `--year-min` | 最小年份（可选） |
+| `--year-max` | 最大年份（可选） |
+| `--citations-min` | 最小引用量（可选） |
+| `--citations-max` | 最大引用量（可选） |
+| `--types` | 文献类型（逗号分隔，可选） |
+| `--importance` | 重要性（逗号分隔，可选） |
+| `--venue` | 期刊/会议名称（可选） |
+| `--sort-by` | 排序字段（可选） |
+| `--sort-asc` | 升序排序（默认降序） |
+| `--limit` | 返回前N篇（可选） |
+
 ## 完整方法文档
 
 ### 核心配置
