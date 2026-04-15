@@ -8,7 +8,7 @@
       "name": "每日凌晨自动提交推送Git",
       "enabled": true,
       "createdAtMs": 1775653560199,
-      "updatedAtMs": 1776200542616,
+      "updatedAtMs": 1776230528884,
       "schedule": {
         "kind": "cron",
         "expr": "0 5 * * *",
@@ -33,8 +33,9 @@
       },
       "deleteAfterRun": false,
       "delivery": {
-        "mode": "none",
-        "channel": "qqbot",
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
         "bestEffort": false
       }
     },
@@ -44,7 +45,7 @@
       "name": "学工助手每日维护",
       "enabled": true,
       "createdAtMs": 1775961229499,
-      "updatedAtMs": 1776227006617,
+      "updatedAtMs": 1776230480521,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -58,19 +59,20 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
+        "to": "oc_1032e70e8854c3bba9df42f38d532536",
         "bestEffort": false
       },
       "state": {
         "nextRunAtMs": 1776283200000,
-        "lastRunAtMs": 1776196800002,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 176953,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastError": "Delivering to Feishu requires target <chatId|user:openId|chat:chatId>"
+        "lastRunAtMs": 1776230349171,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 21148,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
       },
       "deleteAfterRun": false
     },
@@ -80,7 +82,7 @@
       "name": "教学助手每日维护",
       "enabled": true,
       "createdAtMs": 1776036914923,
-      "updatedAtMs": 1776197104084,
+      "updatedAtMs": 1776230509745,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -94,8 +96,9 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
+        "to": "oc_1032e70e8854c3bba9df42f38d532536",
         "bestEffort": false
       },
       "state": {
@@ -116,7 +119,7 @@
       "name": "教务助手每日维护",
       "enabled": true,
       "createdAtMs": 1776036919487,
-      "updatedAtMs": 1776197297701,
+      "updatedAtMs": 1776230514105,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -130,8 +133,9 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
+        "to": "oc_1032e70e8854c3bba9df42f38d532536",
         "bestEffort": false
       },
       "state": {
@@ -152,7 +156,7 @@
       "name": "心理学家每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776197458497,
+      "updatedAtMs": 1776230500552,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -166,8 +170,9 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
         "bestEffort": false
       },
       "state": {
@@ -188,7 +193,7 @@
       "name": "物理学家每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776197600210,
+      "updatedAtMs": 1776230519650,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -202,8 +207,9 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
         "bestEffort": false
       },
       "state": {
@@ -224,7 +230,7 @@
       "name": "写作助手每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776197758462,
+      "updatedAtMs": 1776230505182,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -238,8 +244,9 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
         "bestEffort": false
       },
       "state": {
@@ -260,7 +267,7 @@
       "name": "审稿助手每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776197843604,
+      "updatedAtMs": 1776230524616,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -274,8 +281,9 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
         "bestEffort": false
       },
       "state": {
@@ -296,7 +304,7 @@
       "name": "大管家每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776197888901,
+      "updatedAtMs": 1776230489539,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -310,8 +318,9 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
         "bestEffort": false
       },
       "state": {
@@ -332,7 +341,7 @@
       "name": "数学家每日维护",
       "enabled": true,
       "createdAtMs": 1776068111397,
-      "updatedAtMs": 1776198080129,
+      "updatedAtMs": 1776230495491,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -346,8 +355,9 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
         "bestEffort": false
       },
       "state": {
@@ -363,30 +373,32 @@
       "deleteAfterRun": false
     },
     {
-      "id": "a240607a-96cf-4ee3-85fe-b99a09f3a7b3",
+      "id": "ad6eaa7c-d72e-4b75-a77f-692626c82cfd",
+      "agentId": "steward",
+      "sessionKey": "agent:steward:feishu:group:oc_cd80162eb81e39f77160a0daab2a6ab8",
       "name": "Memory Dreaming Promotion",
       "description": "[managed-by=memory-core.short-term-promotion] Promote weighted short-term recalls into MEMORY.md (limit=10, minScore=0.800, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30).",
       "enabled": true,
-      "createdAtMs": 1776100720457,
-      "updatedAtMs": 1776193200007,
+      "createdAtMs": 1776229595108,
+      "updatedAtMs": 1776230268430,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *"
       },
-      "sessionTarget": "main",
+      "sessionTarget": "session:CORN:steward的定时任务",
       "wakeMode": "next-heartbeat",
       "payload": {
-        "kind": "systemEvent",
-        "text": "__openclaw_memory_core_short_term_promotion_dream__"
+        "kind": "agentTurn",
+        "message": "__openclaw_memory_core_short_term_promotion_dream__"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
+        "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776279600000,
-        "lastRunAtMs": 1776193200004,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 3,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1776279600000
       }
     }
   ]

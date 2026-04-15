@@ -52,13 +52,21 @@
 ├── .gitignore                         # Git忽略规则
 ├── openclaw.json                      # OpenClaw主配置文件
 ├── skills/                            # 公共技能库（所有Agent共享）
-│   ├── knowledge-manager/             # 知识管理工具（文献检索+知识库管理+笔记生成）
-│   │   ├── Searcher.py                 # 文献检索类：多主题多轮检索，支持每轮单独条件
-│   │   ├── Summarizer.py               # 文献总结类：LLM分析，添加labels和notes
-│   │   ├── Manager.py                  # 知识库管理类：合并、筛选、链式调用
+│   ├── knowledge-manager/             # 知识管理工具（文献检索+知识库管理+笔记生成+综述合成）
+│   │   ├── search/                     # 文献检索模块
+│   │   │   ├── Searcher.py             # 文献检索类：多主题多轮检索，支持每轮单独条件
+│   │   │   └── SKILL.md               # 检索模块说明
+│   │   ├── summarize/                  # 文献总结模块
+│   │   │   ├── Summarizer.py           # 文献总结类：LLM分析，添加labels和notes
+│   │   │   └── SKILL.md               # 总结模块说明
+│   │   ├── manage/                     # 知识库管理模块
+│   │   │   ├── Manager.py              # 知识库管理类：合并、筛选、链式调用
+│   │   │   └── SKILL.md               # 管理模块说明
+│   │   ├── synthesize/                 # 文献综述合成模块
+│   │   │   └── SKILL.md               # 综述合成模块说明
 │   │   ├── config.json                 # 统一配置文件：多LLM供应商、API参数、存储规则
 │   │   ├── README.md                   # 工具使用说明
-│   │   └── SKILL.md                    # 技能调用规范
+│   │   └── SKILL.md                    # 主技能说明（AI入口）
 │   ├── feishu-doc-manager/            # 飞书文档管理
 │   ├── tencent-docs/                  # 腾讯文档管理
 │   ├── tencent-cos-skill/             # 腾讯云对象存储
@@ -126,22 +134,23 @@
 - 知识图谱索引
 
 ### 知识管理工具（knowledge-manager）
-系统内置强大的知识管理技能，采用三模块架构，支持多主题多轮次文献检索、LLM智能总结和知识库管理。
+系统内置强大的知识管理技能，采用面向对象的四模块架构，支持多主题多轮次文献检索、LLM智能总结、知识库管理和文献综述合成。
 
 #### 核心架构
-| 模块 | 文件 | 功能说明 |
-|------|------|----------|
-| **Searcher** | `Searcher.py` | 从Semantic Scholar获取数据，支持检索和更新两种模式 |
-| **Summarizer** | `Summarizer.py` | 使用LLM分析文献，添加labels和notes字段 |
-| **Manager** | `Manager.py` | 合并、筛选、保存知识库，支持链式调用 |
+| 模块 | 目录 | 功能说明 | 对应类 |
+|------|------|----------|--------|
+| **文献检索** | `search/` | 从Semantic Scholar获取数据，支持多主题多轮检索 | Searcher |
+| **文献总结** | `summarize/` | 使用LLM分析文献，添加labels和notes字段 | Summarizer |
+| **知识库管理** | `manage/` | 合并、筛选、保存知识库，支持链式调用 | Manager |
+| **文献综述合成** | `synthesize/` | 基于知识库生成文献综述和研究现状 | Synthesizer |
 
 #### 核心功能
 | 功能 | 描述 | 触发关键词 |
 |------|------|------------|
 | **文献检索** | 多主题多轮次学术文献检索，每轮可单独设置query、limit、year、minCitationCount等 | 检索、文献、查资料 |
-| **笔记总结** | LLM自动分析文献内容，提取核心观点，生成结构化笔记，打标签 ，分类| 总结、笔记、摘要 |
+| **笔记总结** | LLM自动分析文献内容，提取核心观点，生成结构化笔记，打标签，分类 | 总结、笔记、摘要 |
 | **知识库维护** | 合并知识库、筛选知识库、提取知识库 | 知识库、维护、分类 |
-
+| **文献综述** | 基于知识库生成文献综述和研究现状 | 综述、文献综述、研究现状 |
 
 #### 知识库特性
 ✅ **分级分类**：按照研究领域、文献类型、重要程度多级分类
@@ -150,12 +159,14 @@
 ✅ **关联分析**：自动识别文献之间的引用关系和研究脉络
 ✅ **导出功能**：支持导出为Markdown、JSON、BibTeX等多种格式
 ✅ **多主题多轮检索**：每个主题可设置多轮检索条件，每轮单独配置query、limit、year、minCitationCount、venue等
+✅ **面向对象架构**：四个独立模块，职责清晰，易于扩展和维护
 
 #### 快速开始示例
 ```python
-from Searcher import Searcher
-from Summarizer import Summarizer
-from Manager import Manager
+from search.Searcher import Searcher
+from summarize.Summarizer import Summarizer
+from manage.Manager import Manager
+from synthesize.Synthesizer import Synthesizer
 
 # 1. 多主题多轮检索（每轮可单独设置条件）
 searcher = Searcher()
@@ -180,6 +191,9 @@ Manager("my_project.json").filter({
     "sort_by": "citationCount",
     "limit": 10
 }).save("final_kb.json")
+
+# 4. 合成文献综述
+Synthesizer().synthesize(kb_path="final_kb.json", output_path="review.md")
 ```
 
 ## 🚀 部署指南
