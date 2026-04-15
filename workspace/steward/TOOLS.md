@@ -112,6 +112,7 @@
 | 范文学习 | ~/实验室仓库/项目文件/范文学习/ | 范文学习项目，包含各类论文范文和写作模板 |
 | 维护老板信息 | ~/实验室仓库/项目文件/维护老板信息/ | 老板的个人信息、学术成就和账户信息管理项目 |
 | 学生论文修改 | ~/实验室仓库/项目文件/学生论文修改/ | 学生论文修改指导项目，包含论文原始版本和修改记录 |
+| 内卷感知与工作繁荣 | ~/实验室仓库/项目文件/内卷感知与工作繁荣/ | 研究内卷感知对工作繁荣的影响机制 |
 
 
 ---
@@ -139,10 +140,8 @@
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
-| lab-backup-manager | 备份 | 使用backup_openclaw_config.sh脚本自动备份OpenClaw核心配置文件到GitHub，轻量级备份策略 | ~/.openclaw/workspace/steward/skills/lab-backup-manager/SKILL.md |
-| update_tools | 更新工具索引 | 更新个人技能索引、个人脚本索引、项目库 | ~/.openclaw/workspace/steward/skills/update_tools/SKILL.md |
-| 维护工作记忆 | 维护工作记忆 | 清理已完成任务，归档到事件记忆 | ~/.openclaw/workspace/steward/skills/维护工作记忆/SKILL.md |
-| 每日维护 | 每日维护 | 大管家每日维护任务 | ~/.openclaw/workspace/steward/skills/每日维护/SKILL.md |
+| update_tools | 更新工具索引 | 更新个人技能索引、个人脚本索引、项目库 | ~/.openclaw/workspace/steward/skills/update_tools/update_tools.sh |
+| 维护工作记忆 | 维护工作记忆 | 清理已完成任务，归档到事件记忆 | ~/.openclaw/workspace/steward/skills/维护工作记忆/维护工作记忆.sh |
 | auto-push | 自动提交推送Git | 自动提交所有更改并推送到development分支 | ~/.openclaw/workspace/steward/skills/auto-push/SKILL.md |
 ---
 
@@ -154,5 +153,5 @@
 
 ---
 
-*最后重构: 2026-04-10*
+*最后重构: 2026-04-15*
 *重构者: 大管家*
