@@ -104,6 +104,34 @@ kb = summarizer.summarize(kb_path="my_kb.json")
 
 ---
 
+## 命令行工具
+
+### 总结文献
+```bash
+python3 Summarizer.py \
+    --kb-path my_kb.json \
+    --progress-interval 10
+```
+
+### 命令参数
+| 参数 | 说明 |
+|------|------|
+| `--kb-path` | 知识库文件路径（默认: index.json） |
+| `--progress-interval` | 进度打印间隔（默认: 10） |
+| `--use-conversation` | 使用会话模式（默认不使用） |
+
+### 输出示例
+```bash
+正在总结文献...
+完成! 知识库: my_kb.json
+  论文总数: 30
+  实证文献: 20
+  综述文献: 8
+  理论文献: 2
+```
+
+---
+
 ## 配置说明
 
 ### LLM 配置

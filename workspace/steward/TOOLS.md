@@ -112,7 +112,8 @@
 | 范文学习 | ~/实验室仓库/项目文件/范文学习/ | 范文学习项目，包含各类论文范文和写作模板 |
 | 维护老板信息 | ~/实验室仓库/项目文件/维护老板信息/ | 老板的个人信息、学术成就和账户信息管理项目 |
 | 学生论文修改 | ~/实验室仓库/项目文件/学生论文修改/ | 学生论文修改指导项目，包含论文原始版本和修改记录 |
-| 内卷感知与工作繁荣 | ~/实验室仓库/项目文件/内卷感知与工作繁荣/ | 研究内卷感知对工作繁荣的影响机制 |
+| 内卷感知与工作繁荣 | ~/实验室仓库/项目文件/内卷感知与工作繁荣/ | 研究内卷感知感知感知繁荣的影响机制 |
+| AI降重提示工程 | ~/实验室仓库/项目文件/AI降重提示工程/ | 研究AI降重提示工程的方法和技巧 |
 
 
 ---
@@ -128,7 +129,6 @@
 | 撰写脚本 | 需要创建新的操作脚本 | 按照五要素SOP规范撰写新脚本 | ~/.openclaw/scripts/撰写脚本/SKILL.md |
 | 撰写技能 | 需要创建新的技能 | 创建新的技能（结构化或非结构化） | ~/.openclaw/scripts/撰写技能/SKILL.md |
 | knowledge-manager | 检索文献、更新知识库、总结笔记、提取笔记 | 知识管理工具，支持文献检索、知识库维护、笔记处理等功能 | ~/.openclaw/skills/knowledge-manager/SKILL.md |
-| 管理项目元数据 | 需要创建或维护项目 | 创建和维护项目元数据，管理云文档映射 | ~/.openclaw/scripts/管理项目元数据/SKILL.md |
 | feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
 | tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
 | Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
@@ -143,6 +143,7 @@
 | update_tools | 更新工具索引 | 更新个人技能索引、个人脚本索引、项目库 | ~/.openclaw/workspace/steward/skills/update_tools/update_tools.sh |
 | 维护工作记忆 | 维护工作记忆 | 清理已完成任务，归档到事件记忆 | ~/.openclaw/workspace/steward/skills/维护工作记忆/维护工作记忆.sh |
 | auto-push | 自动提交推送Git | 自动提交所有更改并推送到development分支 | ~/.openclaw/workspace/steward/skills/auto-push/SKILL.md |
+| 管理项目元数据 | 需要创建或维护项目 | 创建和维护项目元数据，管理云文档映射 | ~/.openclaw/workspace/steward/scripts/管理项目元数据/SKILL.md |
 ---
 
 ### 个人脚本索引

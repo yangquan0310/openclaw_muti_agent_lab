@@ -109,7 +109,7 @@ manager.merge("kb1.json", "kb2.json") \
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `output_path` | str | 必填 | 输出文件路径 |
+| `output_path` | str | 必填 | 输出文件路径：笔记/{主题}.json |
 | `project_name` | str | "" | 项目名称（会更新到知识库中） |
 
 ### `get_kb()`
@@ -117,6 +117,71 @@ manager.merge("kb1.json", "kb2.json") \
 
 ### `get_papers()`
 返回当前论文列表
+
+---
+
+## 命令行工具
+
+### 合并知识库
+```bash
+python3 Manager.py merge \
+    --inputs kb1.json,kb2.json,kb3.json \
+    --output merged.json
+```
+
+### 筛选知识库
+```bash
+# 方式1: 使用命令行参数
+python3 Manager.py filter \
+    --kb-path my_kb.json \
+    --output filtered.json \
+    --citations-min 50 \
+    --types "📊实证,📖综述" \
+    --sort-by citationCount \
+    --limit 10
+
+# 方式2: 使用筛选条件JSON文件
+cat > conditions.json << 'EOF'
+{
+    "citations_min": 50,
+    "types": ["📊实证", "📖综述"],
+    "sort_by": "citationCount",
+    "limit": 10
+}
+EOF
+
+python3 Manager.py filter \
+    --kb-path my_kb.json \
+    --output filtered.json \
+    --conditions conditions.json
+```
+
+### 查看知识库信息
+```bash
+python3 Manager.py info \
+    --kb-path my_kb.json
+```
+
+### 命令参数
+| 命令 | 参数 | 说明 |
+|------|------|------|
+| `merge` | `--inputs` | 输入知识库文件（逗号分隔） |
+| `merge` | `--output` | 输出文件路径 |
+| `merge` | `--no-deduplicate` | 不去重 |
+| `filter` | `--kb-path` | 输入知识库文件 |
+| `filter` | `--output` | 输出文件路径 |
+| `filter` | `--conditions` | 筛选条件JSON文件 |
+| `filter` | `--year-min` | 最小年份 |
+| `filter` | `--year-max` | 最大年份 |
+| `filter` | `--citations-min` | 最小引用量 |
+| `filter` | `--citations-max` | 最大引用量 |
+| `filter` | `--types` | 文献类型（逗号分隔） |
+| `filter` | `--importance` | 重要性（逗号分隔） |
+| `filter` | `--venue` | 期刊/会议名称 |
+| `filter` | `--sort-by` | 排序字段 |
+| `filter` | `--sort-asc` | 升序排序（默认降序） |
+| `filter` | `--limit` | 返回数量限制 |
+| `info` | `--kb-path` | 知识库文件路径 |
 
 ---
 
