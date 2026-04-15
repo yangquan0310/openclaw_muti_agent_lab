@@ -21,7 +21,7 @@ tools:
 - **`Searcher`** (位于 `search/SKILL.md`)：负责检索并获取论文列表或加载已有知识库并更新。
 - **`Summarizer`** (位于 `Summarize/SKILL.md`)：负责解析摘要并提取结构化笔记。
 - **`Manager`**(位于 `Manage/SKILL.md`):负责知识库合并、筛选、提取。
-- **`Synthesizer`** (位于 `synthesize/SKILL.md`)：负责将所有提取的笔记组织成一篇完整的综述。
+- **`Synthesizer`** (位于 `synthesize/SKILL.md`)：负责将所有提取的笔记组织成一篇完整的综述、检查参考文献引用是否正确。
 ---
 ## 快速开始
 
@@ -79,10 +79,11 @@ manager.filter({"citations_min": 50}).save("笔记.json")
 ## 配置介绍
 - `config.json`：统一配置文件，存放所有 API、模型、存储相关配置
 - `README.md`：给人类看的说明文档
-- `search`：负责检索并获取论文列表或加载已有知识库并更新。
-- `Summarize`：负责解析摘要并提取结构化笔记。
-- `Manager`:负责知识库合并、筛选、提取。
-- `Synthesize`：负责将所有提取的笔记组织成一篇完整的综述。
+- `search/`：负责检索并获取论文列表或加载已有知识库并更新。
+- `summarize/`：负责解析摘要并提取结构化笔记。
+- `manage/`:负责知识库合并、筛选、提取。
+- `synthesize/`：负责将所有提取的笔记组织成一篇完整的综述。
+  - `reference_checker.py`：参考文献检查与修复类
 ---
 
 ## 版本历史
