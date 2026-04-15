@@ -1,0 +1,393 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "a4980ce3-ce17-47f0-801f-0135f7cec45d",
+      "agentId": "steward",
+      "sessionKey": "agent:steward:main",
+      "name": "每日凌晨自动提交推送Git",
+      "enabled": true,
+      "createdAtMs": 1775653560199,
+      "updatedAtMs": 1776200542616,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 5 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:steward的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "/root/.openclaw/workspace/steward/skills/auto-push/auto-push.sh\n日志文件: /root/教研室仓库/日志文件/心跳任务/cron_steward_auto-push.log",
+        "timeoutSeconds": 300
+      },
+      "state": {
+        "nextRunAtMs": 1776286800000,
+        "lastRunAtMs": 1776200400003,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 142613,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      },
+      "deleteAfterRun": false,
+      "delivery": {
+        "mode": "none",
+        "channel": "qqbot",
+        "bestEffort": false
+      }
+    },
+    {
+      "id": "18790739-caae-472e-938e-9bebf427f6e6",
+      "agentId": "studentaffairsassistant",
+      "name": "学工助手每日维护",
+      "enabled": true,
+      "createdAtMs": 1775961229499,
+      "updatedAtMs": 1776227006617,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:studentaffairsassistant的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_studentaffairsassistant_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-studentaffairsassistant_每日维护任务.md",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776283200000,
+        "lastRunAtMs": 1776196800002,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 176953,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "Delivering to Feishu requires target <chatId|user:openId|chat:chatId>"
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "abbedbcf-bc22-4a35-9e58-3f0aa17ef2d3",
+      "agentId": "teachingassistant",
+      "name": "教学助手每日维护",
+      "enabled": true,
+      "createdAtMs": 1776036914923,
+      "updatedAtMs": 1776197104084,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:teaching的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_teaching_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-teaching_每日维护任务.md",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776283200000,
+        "lastRunAtMs": 1776196976955,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 127129,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "c513ab6c-5a06-4393-b94b-5692dcafb5e0",
+      "agentId": "academicassistant",
+      "name": "教务助手每日维护",
+      "enabled": true,
+      "createdAtMs": 1776036919487,
+      "updatedAtMs": 1776197297701,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:academicassistant的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_academicassistant_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-academicassistant_每日维护任务.md",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776283200000,
+        "lastRunAtMs": 1776197104084,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 193617,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "978b0800-5035-4784-9645-c40f700c623d",
+      "agentId": "psychologist",
+      "name": "心理学家每日维护",
+      "enabled": true,
+      "createdAtMs": 1776067897486,
+      "updatedAtMs": 1776197458497,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:psychologist的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_psychologist_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-psychologist_每日维护任务.md",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776283200000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776197297701,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 160796,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "d0c92aae-022f-4b20-897b-30b589ea3321",
+      "agentId": "physicist",
+      "name": "物理学家每日维护",
+      "enabled": true,
+      "createdAtMs": 1776067897486,
+      "updatedAtMs": 1776197600210,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:physicist的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_physicist_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-physicist_每日维护任务.md",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776283200000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776197458497,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 141713,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "9f0b6136-7486-4817-9ff1-9788c6059d11",
+      "agentId": "writer",
+      "name": "写作助手每日维护",
+      "enabled": true,
+      "createdAtMs": 1776067897486,
+      "updatedAtMs": 1776197758462,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:writer的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_writer_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-writer_每日维护任务.md",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776283200000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776197600210,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 158252,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "ee863158-efe4-4c4a-99a7-66466ac874c6",
+      "agentId": "reviewer",
+      "name": "审稿助手每日维护",
+      "enabled": true,
+      "createdAtMs": 1776067897486,
+      "updatedAtMs": 1776197843604,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:reviewer的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_reviewer_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-reviewer_每日维护任务.md",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776283200000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776197758462,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 85142,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "757bffa8-bd05-4f27-b197-b4edfa3d3aef",
+      "agentId": "steward",
+      "name": "大管家每日维护",
+      "enabled": true,
+      "createdAtMs": 1776067897486,
+      "updatedAtMs": 1776197888901,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:steward的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_steward_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-steward_每日维护任务.md",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776283200000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776197843604,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 45297,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "9477dc79-885f-4f35-8725-8dde4160760d",
+      "agentId": "mathematician",
+      "name": "数学家每日维护",
+      "enabled": true,
+      "createdAtMs": 1776068111397,
+      "updatedAtMs": 1776198080129,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:mathematician的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_mathematician_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-mathematician_每日维护任务.md",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776283200000,
+        "lastRunAtMs": 1776197888901,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 191228,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "a240607a-96cf-4ee3-85fe-b99a09f3a7b3",
+      "name": "Memory Dreaming Promotion",
+      "description": "[managed-by=memory-core.short-term-promotion] Promote weighted short-term recalls into MEMORY.md (limit=10, minScore=0.800, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30).",
+      "enabled": true,
+      "createdAtMs": 1776100720457,
+      "updatedAtMs": 1776193200007,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "__openclaw_memory_core_short_term_promotion_dream__"
+      },
+      "state": {
+        "nextRunAtMs": 1776279600000,
+        "lastRunAtMs": 1776193200004,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 3,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    }
+  ]
+}

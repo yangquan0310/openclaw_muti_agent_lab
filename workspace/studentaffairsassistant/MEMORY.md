@@ -93,15 +93,25 @@
 
 | 脚本名 | 功能 | 位置 |
 |--------|------|------|
-| 学生信息管理 | 学生信息分类、存储、元数据记录 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学生信息管理/SKILL.md |
-| 学业辅导 | 学业问题识别、辅导记录、资源协调 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学业辅导/SKILL.md |
-| 社团活动记录 | 活动记录、资料管理、档案保存 | ~/.openclaw/workspace/studentaffairsassistant/scripts/社团活动记录/SKILL.md |
+| 学生信息管理 | 学生信息分类、存储、元数据记录 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学生信息管理/ |
+| 学业辅导 | 学业问题识别、辅导记录、资源协调 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学业辅导/ |
+| 社团活动记录 | 活动记录、资料管理、档案保存 | ~/.openclaw/workspace/studentaffairsassistant/scripts/社团活动记录/ |
 
 
 
 ---
 
 ## 📝 工作日志
+
+### 2026-04-15
+- **时间**：04:00
+- **事件**：每日维护任务
+- **描述**：执行学工助手每日维护任务
+- **涉及文件**：
+  - TOOLS.md：更新个人脚本索引
+  - MEMORY.md：更新程序性记忆脚本位置表、添加工作日志
+- **结果**：成功完成每日维护任务
+- **备注**：检查了所有配置文件、更新了索引
 
 ### 2026-04-07
 - **时间**：18:20
@@ -119,6 +129,7 @@
 
 | 版本 | 日期 | 更新内容 | 更新者 |
 |------|------|----------|--------|
+| v1.1.0 | 2026-04-15 | 每日维护：更新TOOLS.md索引、MEMORY.md脚本位置 | 学工助手 |
 | v1.0.0 | 2026-04-07 | 初始版本，基于大管家模板重构 | 学工助手 |
 
 ---
@@ -133,7 +144,7 @@
 
 ---
 
-*最后更新：2026-04-14*
+*最后更新：2026-04-15*
 *更新者：学工助手*
 
 ## 工作记忆（Working Memory）
