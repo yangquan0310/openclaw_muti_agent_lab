@@ -93,16 +93,18 @@
 ---
 ## 索引
 
-### 技能索引
+### 公共技能索引
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
+||||
 
-
----
-### 脚本索引
-
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
-|----------|----------|----------|----------|
+### 个人技能索引
+| 技能名称 | 触发示例 | 描述 | 路径 |
+|---------|---------|------|------|
+| convert_syllabus | 转换课程大纲格式 | 将Word格式课程大纲转换为Markdown | `~/.openclaw/workspace/academicassistant/skills/convert_syllabus/` |
+| update_index | 更新项目索引 | 更新教研室项目文件的索引 | `~/.openclaw/workspace/academicassistant/skills/update_index/` |
+| update_syllabi | 批量更新课程大纲 | 批量处理课程大纲文件 | `~/.openclaw/workspace/academicassistant/skills/update_syllabi/` |
+| update_tools_md | 自动更新工具索引文档 | 自动维护TOOLS.md文档内容 | `~/.openclaw/workspace/academicassistant/skills/update_tools_md/` |
 
 
 ---

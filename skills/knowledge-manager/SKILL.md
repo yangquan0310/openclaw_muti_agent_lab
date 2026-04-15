@@ -19,8 +19,8 @@ tools:
 你将严格按照“面向对象”的调度方式，实例化并调用以下三个类：
 
 - **`Searcher`** (位于 `search/SKILL.md`)：负责检索并获取论文列表或加载已有知识库并更新。
-- **`Summarizer`** (位于 `Summarize/SKILL.md`)：负责解析摘要并提取结构化笔记。
-- **`Manager`**(位于 `Manage/SKILL.md`):负责知识库合并、筛选、提取。
+- **`Summarizer`** (位于 `Summarize/SKILL.md`)：负责解析摘要并完善结构化笔记。
+- **`Manager`**(位于 `Manage/SKILL.md`):负责知识库合并、筛选、提取子知识库。
 - **`Synthesizer`** (位于 `synthesize/SKILL.md`)：负责将所有提取的笔记组织成一篇完整的综述、检查参考文献引用是否正确。
 ---
 ## 快速开始

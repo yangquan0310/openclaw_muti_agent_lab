@@ -2,15 +2,6 @@
   "llm": {
     "default_provider": "tencent",
     "providers": {
-      "ark": {
-        "name": "火山引擎方舟",
-        "base_url": "https://ark.cn-beijing.volces.com/api/v3",
-        "default_model": "deepseek-v3-2-251201",
-        "api_key_env": "ARK_API_KEY",
-        "timeout": 30,
-        "temperature": 0.3,
-        "max_tokens": 2000
-      },
       "tencent_token": {
         "name": "腾讯云tokenhub",
         "base_url": "https://tokenhub.tencentmaas.com/v1",
@@ -19,17 +10,7 @@
         "timeout": 30,
         "temperature": 0.3,
         "max_tokens": 2000
-      },
-      "tencent_token_plan": {
-        "name": "腾讯云tokenhub_plan",
-        "base_url": "https://api.lkeap.cloud.tencent.com/plan/v3",
-        "default_model": "deepseek-v3.2",
-        "api_key_env": "TOKENHUB_PLAN_API_KEY",
-        "timeout": 30,
-        "temperature": 0.3,
-        "max_tokens": 2000
-      }
-      
+      }      
     }
   },
   "semantic_scholar": {

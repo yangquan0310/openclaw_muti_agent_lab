@@ -94,7 +94,6 @@
 
 | 脚本名 | 功能 | 位置 |
 |--------|------|------|
-| 每日维护 | 执行每日维护：TOOLS.md更新、工作记忆清理、工作空间检查 | ~/.openclaw/workspace/physicist/skills/每日维护/SKILL.md |
 | 维护工作记忆 | 清理MEMORY.md中的completed/killed任务，归档到事件记忆 | ~/.openclaw/workspace/physicist/skills/维护工作记忆/SKILL.md |
 | update_tools | 自动更新TOOLS.md：存储位置、项目列表、脚本索引 | ~/.openclaw/workspace/physicist/skills/update_tools/SKILL.md |
 

@@ -112,13 +112,20 @@
 
 ---
 ## 程序性记忆
-### 脚本索引
 
-| 脚本名 | 功能 | 位置 |
+### 技能索引（个人技能文件夹）
+
+| 技能名 | 功能 | 位置 |
 |--------|------|------|
 | download_papers | 批量下载学术论文 | ~/.openclaw/workspace/teaching/skills/download_papers/SKILL.md |
 | retrieve_papers | 检索并获取论文信息 | ~/.openclaw/workspace/teaching/skills/retrieve_papers/SKILL.md |
 | search_literature | 综合文献检索工具 | ~/.openclaw/workspace/teaching/skills/search_literature/SKILL.md |
+
+### 脚本索引（个人脚本文件夹）
+
+| 脚本名 | 功能 | 位置 |
+|--------|------|------|
+| *暂无个人脚本* | - | - |
 
 ---
 
@@ -128,8 +135,8 @@
 
 ---
 
-*最后更新: 2026-04-07*
-*更新者: 大管家*
+*最后更新: 2026-04-16*
+*更新者: 教学助手*
 
 ## 工作记忆（Working Memory）
 

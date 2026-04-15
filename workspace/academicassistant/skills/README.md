@@ -24,8 +24,10 @@ skills/
 
 | 技能名称 | 路径 | 说明 |
 |---------|------|------|
-| update_tools | `skills/update_tools/` | 更新工具索引和项目库 |
-| 维护工作记忆 | `skills/维护工作记忆/` | 清理已完成任务，归档到事件记忆 |
+| convert_syllabus | `skills/convert_syllabus/` | 转换课程大纲格式 |
+| update_index | `skills/update_index/` | 更新项目索引 |
+| update_syllabi | `skills/update_syllabi/` | 批量更新课程大纲 |
+| update_tools_md | `skills/update_tools_md/` | 自动更新工具索引文档 |
 
 ## 使用方式
 

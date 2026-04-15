@@ -147,14 +147,6 @@
 | memory-maintenance | 记忆维护 | 记忆维护任务 | ~/.openclaw/workspace/psychologist/skills/memory-maintenance/ |
 
 ---
-### 个人脚本索引
-> 各个代理独立维护，这里显示心理学家特有脚本
-
-| 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|----------|------|
-| S1-心理学文献检索 | 心理学文献检索 | 执行心理学领域文献检索，建立项目知识库并生成检索报告 | ~/.openclaw/workspace/psychologist/scripts/S1-心理学文献检索/ |
-| S2-总结文献笔记 | 总结文献笔记 | 对知识库文献进行深度阅读并提取关键信息，形成结构化笔记 | ~/.openclaw/workspace/psychologist/scripts/S2-总结文献笔记/ |
----
 
 *最后重构: 2026-04-15
 *重构者: 心理学家-每日维护任务

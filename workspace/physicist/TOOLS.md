@@ -96,6 +96,9 @@
 | 2026-04-05_科研实验室搭建 | ~/实验室仓库/项目文件/2026-04-05_科研实验室搭建/ | 基于心理学理论重构Agent配置体系，介绍实验室搭建方法 |
 | 2026-04-05_范文学习 | ~/实验室仓库/项目文件/2026-04-05_范文学习/ | 范文学习项目，包含各类论文范文和写作模板 |
 | 2026-04-07_维护老板信息 | ~/实验室仓库/项目文件/2026-04-07_维护老板信息/ | 老板的个人信息、学术成就和账户信息管理项目 |
+| 2025-12-20_AI降重提示工程 | ~/实验室仓库/项目文件/AI降重提示工程/ | AI降重提示工程项目 |
+| 2025-12-20_内卷感知与工作繁荣 | ~/实验室仓库/项目文件/内卷感知与工作繁荣/ | 内卷感知与工作繁荣研究项目 |
+| 2025-12-20_学生论文修改 | ~/实验室仓库/项目文件/学生论文修改/ | 学生论文修改项目 |
 
 ---
 
@@ -120,7 +123,6 @@
 > 内容由各代理独立维护
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| 每日维护 | 每日维护任务、工作空间维护 | 执行每日维护：TOOLS.md更新、工作记忆清理、工作空间检查 | ~/.openclaw/workspace/physicist/skills/每日维护/SKILL.md |
 | 维护工作记忆 | 工作记忆清理、任务归档 | 清理MEMORY.md中的completed/killed任务，归档到事件记忆 | ~/.openclaw/workspace/physicist/skills/维护工作记忆/SKILL.md |
 | update_tools | TOOLS.md更新 | 自动更新TOOLS.md：存储位置、项目列表、脚本索引 | ~/.openclaw/workspace/physicist/skills/update_tools/SKILL.md |
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
@@ -140,14 +142,7 @@
 | skillhub-preference | 技能源配置 | 优先使用skillhub进行技能发现/安装/更新 | ~/.openclaw/skills/skillhub-preference/SKILL.md |
 | memory-hygiene | 记忆优化 | 审计、清理、优化向量记忆，降低token使用 | ~/.openclaw/skills/memory-hygiene/SKILL.md |
 | mcp-adapter | MCP服务器集成 | 访问外部工具和数据源，扩展Agent能力 | ~/.openclaw/skills/mcp-adapter/SKILL.md |
-
+ 
 ---
-
-### 个人脚本索引
-> 大管家维护格式
-> 内容由各代理独立维护
-| 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|----------|----------|------|
-||||||
 *最后重构: 2026-04-09*
 *重构者: 大管家*

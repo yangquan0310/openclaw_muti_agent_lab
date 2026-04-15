@@ -29,7 +29,8 @@
         "lastDurationMs": 142613,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1776286800001
       },
       "deleteAfterRun": false,
       "delivery": {
@@ -45,7 +46,7 @@
       "name": "学工助手每日维护",
       "enabled": true,
       "createdAtMs": 1775961229499,
-      "updatedAtMs": 1776230480521,
+      "updatedAtMs": 1776283346501,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -55,7 +56,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_studentaffairsassistant_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-studentaffairsassistant_每日维护任务.md",
+        "message": "维护 TOOLS.md - 查看个人技能和脚本文件夹，在个人技能索引添加没有的技能和删除失效的技能。维护项目表，查看个人项目文件夹，添加未有项目和删减失效项目。\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_studentaffairsassistant_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-studentaffairsassistant_每日维护任务.md",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -65,14 +66,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776283200000,
-        "lastRunAtMs": 1776230349171,
+        "nextRunAtMs": 1776369600000,
+        "lastRunAtMs": 1776283200003,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 21148,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 146498,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -82,7 +83,7 @@
       "name": "教学助手每日维护",
       "enabled": true,
       "createdAtMs": 1776036914923,
-      "updatedAtMs": 1776230509745,
+      "updatedAtMs": 1776283473126,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -92,7 +93,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_teaching_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-teaching_每日维护任务.md",
+        "message": "维护 TOOLS.md - 查看个人技能和脚本文件夹，在个人技能索引添加没有的技能和删除失效的技能。维护项目表，查看个人项目文件夹，添加未有项目和删减失效项目。\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_teaching_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-teaching_每日维护任务.md",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -102,14 +103,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776283200000,
-        "lastRunAtMs": 1776196976955,
+        "nextRunAtMs": 1776369600000,
+        "lastRunAtMs": 1776283346501,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 127129,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 126625,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -119,7 +120,7 @@
       "name": "教务助手每日维护",
       "enabled": true,
       "createdAtMs": 1776036919487,
-      "updatedAtMs": 1776230514105,
+      "updatedAtMs": 1776283592890,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -129,7 +130,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_academicassistant_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-academicassistant_每日维护任务.md",
+        "message": "维护 TOOLS.md - 查看个人技能和脚本文件夹，在个人技能索引添加没有的技能和删除失效的技能。维护项目表，查看个人项目文件夹，添加未有项目和删减失效项目。\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_academicassistant_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-academicassistant_每日维护任务.md",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -139,14 +140,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776283200000,
-        "lastRunAtMs": 1776197104084,
+        "nextRunAtMs": 1776369600000,
+        "lastRunAtMs": 1776283473126,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 193617,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 119764,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -156,7 +157,7 @@
       "name": "心理学家每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776230500552,
+      "updatedAtMs": 1776283620607,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -166,7 +167,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_psychologist_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-psychologist_每日维护任务.md",
+        "message": "维护 TOOLS.md - 查看个人技能和脚本文件夹，在个人技能索引添加没有的技能和删除失效的技能。维护项目表，查看个人项目文件夹，添加未有项目和删减失效项目。\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_psychologist_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-psychologist_每日维护任务.md",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -176,14 +177,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776283200000,
+        "nextRunAtMs": 1776369600000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776197297701,
+        "lastRunAtMs": 1776283592890,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 160796,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDurationMs": 27717,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -193,7 +194,7 @@
       "name": "物理学家每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776230519650,
+      "updatedAtMs": 1776283759524,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -203,7 +204,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_physicist_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-physicist_每日维护任务.md",
+        "message": "维护 TOOLS.md - 查看个人技能和脚本文件夹，在个人技能索引添加没有的技能和删除失效的技能。维护项目表，查看个人项目文件夹，添加未有项目和删减失效项目。\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_physicist_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-physicist_每日维护任务.md",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -213,14 +214,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776283200000,
+        "nextRunAtMs": 1776369600000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776197458497,
+        "lastRunAtMs": 1776283620607,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 141713,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDurationMs": 138917,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -230,7 +231,7 @@
       "name": "写作助手每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776230505182,
+      "updatedAtMs": 1776283931799,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -240,7 +241,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_writer_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-writer_每日维护任务.md",
+        "message": "维护 TOOLS.md - 查看个人技能和脚本文件夹，在个人技能索引添加没有的技能和删除失效的技能。维护项目表，查看个人项目文件夹，添加未有项目和删减失效项目。\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_writer_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-writer_每日维护任务.md",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -250,14 +251,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776283200000,
+        "nextRunAtMs": 1776369600000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776197600210,
+        "lastRunAtMs": 1776283759524,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 158252,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDurationMs": 172275,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -267,7 +268,7 @@
       "name": "审稿助手每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776230524616,
+      "updatedAtMs": 1776284047795,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -277,7 +278,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_reviewer_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-reviewer_每日维护任务.md",
+        "message": "维护 TOOLS.md - 查看个人技能和脚本文件夹，在个人技能索引添加没有的技能和删除失效的技能。维护项目表，查看个人项目文件夹，添加未有项目和删减失效项目。\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_reviewer_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-reviewer_每日维护任务.md",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -287,14 +288,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776283200000,
+        "nextRunAtMs": 1776369600000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776197758462,
+        "lastRunAtMs": 1776283931799,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 85142,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDurationMs": 115996,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -304,7 +305,7 @@
       "name": "大管家每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776230489539,
+      "updatedAtMs": 1776284111677,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -314,7 +315,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_steward_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-steward_每日维护任务.md",
+        "message": "维护 TOOLS.md - 查看个人技能和脚本文件夹，在个人技能索引添加没有的技能和删除失效的技能。维护项目表，查看个人项目文件夹，添加未有项目和删减失效项目。\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_steward_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-steward_每日维护任务.md",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -324,14 +325,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776283200000,
+        "nextRunAtMs": 1776369600000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776197843604,
+        "lastRunAtMs": 1776284047795,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 45297,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDurationMs": 63882,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -341,7 +342,7 @@
       "name": "数学家每日维护",
       "enabled": true,
       "createdAtMs": 1776068111397,
-      "updatedAtMs": 1776230495491,
+      "updatedAtMs": 1776284240350,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -351,7 +352,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_mathematician_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-mathematician_每日维护任务.md",
+        "message": "维护 TOOLS.md - 查看个人技能和脚本文件夹，在个人技能索引添加没有的技能和删除失效的技能。维护项目表，查看个人项目文件夹，添加未有项目和删减失效项目。\n维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表\n工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_mathematician_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-mathematician_每日维护任务.md",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -361,14 +362,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776283200000,
-        "lastRunAtMs": 1776197888901,
+        "nextRunAtMs": 1776369600000,
+        "lastRunAtMs": 1776284111677,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 191228,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 128673,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -380,25 +381,25 @@
       "description": "[managed-by=memory-core.short-term-promotion] Promote weighted short-term recalls into MEMORY.md (limit=10, minScore=0.800, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30).",
       "enabled": true,
       "createdAtMs": 1776229595108,
-      "updatedAtMs": 1776230268430,
+      "updatedAtMs": 1776279600022,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *"
       },
-      "sessionTarget": "session:CORN:steward的定时任务",
+      "sessionTarget": "main",
       "wakeMode": "next-heartbeat",
       "payload": {
-        "kind": "agentTurn",
-        "message": "__openclaw_memory_core_short_term_promotion_dream__"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
-        "bestEffort": false
+        "kind": "systemEvent",
+        "text": "__openclaw_memory_core_short_term_promotion_dream__"
       },
       "state": {
-        "nextRunAtMs": 1776279600000
+        "nextRunAtMs": 1776366000000,
+        "lastRunAtMs": 1776279600007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 15,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
       }
     }
   ]

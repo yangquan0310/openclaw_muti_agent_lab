@@ -11,7 +11,7 @@
         }
       },
       "model": {
-        "primary": "arkcode/doubao-seed-2.0-code"
+        "primary": "tencenttokenplan/kimi-k2.5"
       }
     },
     "list": [
@@ -462,7 +462,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.8",
-    "lastTouchedAt": "2026-04-13T17:11:27.060Z"
+    "lastTouchedAt": "2026-04-15T16:56:30.121Z"
   },
   "plugins": {
     "entries": {
@@ -493,9 +493,7 @@
       "qqbot": {
         "enabled": true
       },
-      "feishu": {
-        "enabled": false
-      },
+
       "openclaw-lark": {
         "enabled": true
       },
@@ -605,7 +603,8 @@
       "openclaw-lark",
       "openclaw-weixin",
       "lightclawbot",
-      "browser"
+      "browser",
+      "qqbot"
     ]
   },
   "browser": {
@@ -625,61 +624,6 @@
   },
   "models": {
     "providers": {
-      "arkcode": {
-        "baseUrl": "https://ark.cn-beijing.volces.com/api/coding",
-        "api": "anthropic-messages",
-        "apiKey": "${ARKCODE_API_KEY}",
-        "models": [
-          {
-            "id": "doubao-seed-2.0-code",
-            "name": "Doubao Seed 2.0 Code",
-            "input": [
-              "text",
-              "image"
-            ]
-          },
-          {
-            "id": "doubao-seed-2.0-pro",
-            "name": "Doubao Seed 2.0 Pro"
-          },
-          {
-            "id": "ark-code-latest",
-            "name": "ARK Code Latest",
-            "input": [
-              "text",
-              "image"
-            ]
-          },
-          {
-            "id": "doubao-seed-code",
-            "name": "Doubao Seed Code",
-            "input": [
-              "text",
-              "image"
-            ]
-          },
-          {
-            "id": "glm-4.7",
-            "name": "GLM-4.7"
-          },
-          {
-            "id": "deepseek-v3.2",
-            "name": "DeepSeek V3.2"
-          },
-          {
-            "id": "kimi-k2-thinking",
-            "name": "Kimi K2 Thinking"
-          },
-          {
-            "id": "kimi-k2.5",
-            "name": "Kimi K2.5",
-            "input": [
-              "text",
-              "image"
-            ]
-          }
-        ]
-      },
       "kimicode": {
         "baseUrl": "https://api.kimi.com/coding/v1",
         "api": "anthropic-messages",

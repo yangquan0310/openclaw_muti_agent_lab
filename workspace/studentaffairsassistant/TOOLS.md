@@ -126,17 +126,11 @@
 |---------|---------|------|------|
 | 每日维护 | 定时任务触发 | 定时执行TOOLS.md维护、MEMORY.md维护和工作空间清理 | ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/SKILL.md |
 | github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
----
-### 个人脚本索引
-> 各个代理独立维护，这里显示学工助手特有脚本
-
-| 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|----------|------|
 | 学生信息管理 | 收到学生信息、需要管理学生档案 | 学生信息分类、存储、元数据记录 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学生信息管理/ |
 | 学业辅导 | 学生学业问题、需要辅导记录 | 学业问题识别、辅导记录、资源协调 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学业辅导/ |
 | 社团活动记录 | 组织社团活动、需要记录活动 | 活动记录、资料管理、档案保存 | ~/.openclaw/workspace/studentaffairsassistant/scripts/社团活动记录/ |
 
 ---
 
-*最后重构: 2026-04-15 04:00 (每日索引更新)*
+*最后重构: 2026-04-16 04:00 (每日索引更新)*
 *重构者: 学工助手*

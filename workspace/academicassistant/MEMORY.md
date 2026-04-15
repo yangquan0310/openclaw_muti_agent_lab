@@ -110,11 +110,10 @@
 
 | 脚本名 | 功能 | 位置 |
 |--------|------|------|
-| 每日维护 | 每日维护TOOLS.md、MEMORY.md和工作空间 | ~/.openclaw/workspace/academicassistant/skills/每日维护/SKILL.md |
-| convert_syllabus | 转换课程大纲格式 | ~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md |
-| update_index | 更新项目索引 | ~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md |
-| update_syllabi | 批量更新课程大纲 | ~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md |
-| update_tools_md | 自动更新工具索引文档 | ~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md |
+| convert_syllabus | 转换课程大纲格式 | `~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md` |
+| update_index | 更新项目索引 | `~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md` |
+| update_syllabi | 批量更新课程大纲 | `~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md` |
+| update_tools_md | 自动更新工具索引文档 | `~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md` |
 
 ### 条件-行动规则
 
