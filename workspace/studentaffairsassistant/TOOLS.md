@@ -16,8 +16,7 @@
 > 教研室仓库、教学助手仓库、教务助手仓库、学工助手仓库等教研室相关内容同步给教研室成员
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
-| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（结构化程序） |
-| 脚本文件夹 | ~/.openclaw/scripts/ | 存放了所有脚本文件（非结构化Markdown） |
+| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（公共技能库） |
 | API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 |~/实验室仓库/项目文件/|实验室各个项目|
@@ -32,7 +31,6 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/studentaffairsassistant/MEMORY.md | 学工助手独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/studentaffairsassistant/scripts/README.md | 学工助手专属脚本存储目录 |
 | Agent 个人技能 | ~/.openclaw/workspace/studentaffairsassistant/skills/README.md | 学工助手专属技能存储目录 |
 | Agent 临时文件 | ~/.openclaw/workspace/studentaffairsassistant/temp/README.md | 学工助手专属临时文件存储目录 |
 | 学工项目文件 | ~/教研室仓库/学生工作/ | 学生工作项目文件存储（学生档案、学业辅导、社团活动、工作记录） |
@@ -86,11 +84,14 @@
 | 2026-04-01_数字化存储与自传体记忆 | ~/实验室仓库/项目文件/2026-04-01_数字化存储与自传体记忆/ | 研究数字化存储对自传体记忆的影响机制 |
 | 2026-04-01_跨期选择的年龄差异 | ~/实验室仓库/项目文件/2026-04-01_跨期选择的年龄差异/ | 研究不同年龄群体在跨期选择任务中的决策差异 |
 | 2026-04-04_影响者营销中的自我扩展机制 | ~/实验室仓库/项目文件/2026-04-04_影响者营销中的自我扩展机制/ | 研究影响者营销中自我扩展机制对消费意愿的影响 |
-| 2026-04-05_Zotero文件管理 | ~/实验室仓库/项目文件/2026-04-05_Zotero-file-management/ | Zotero文献管理和学习项目 |
+| 2026-04-05_Zotero文件管理 | ~/实验室仓库/项目文件/2026-04-05_Zotero文件管理/ | Zotero文献管理和学习项目 |
 | 2026-04-05_审稿学习 | ~/实验室仓库/项目文件/2026-04-05_审稿学习/ | 审稿学习项目，包含各类审稿范文 |
 | 2026-04-05_科研实验室搭建 | ~/实验室仓库/项目文件/2026-04-05_科研实验室搭建/ | 基于心理学理论重构Agent配置体系，介绍实验室搭建方法 |
 | 2026-04-05_范文学习 | ~/实验室仓库/项目文件/2026-04-05_范文学习/ | 范文学习项目，包含各类论文范文和写作模板 |
 | 2026-04-07_维护老板信息 | ~/实验室仓库/项目文件/2026-04-07_维护老板信息/ | 老板的个人信息、学术成就和账户信息管理项目 |
+| AI降重提示工程 | ~/实验室仓库/项目文件/AI降重提示工程/ | AI降重提示工程项目 |
+| 内卷感知与工作繁荣 | ~/实验室仓库/项目文件/内卷感知与工作繁荣/ | 内卷感知与工作繁荣研究项目 |
+| 学生论文修改 | ~/实验室仓库/项目文件/学生论文修改/ | 学生论文修改项目 |
 
 ### 学工项目库
 > 学工助手独立维护
@@ -107,16 +108,17 @@
 
 ### 公共技能索引
 > 大管家统一维护
+> 所有技能存储在 ~/.openclaw/workspace/skills/ 目录下
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| 修改文档 | 需要修改已存在的文档文件 | 修改文档文件，保存新版本并记录修改历史 | ~/.openclaw/scripts/修改文档/SKILL.md |
-| 撰写脚本 | 需要创建新的操作脚本 | 按照五要素SOP规范撰写新脚本 | ~/.openclaw/scripts/撰写脚本/SKILL.md |
-| 撰写技能 | 需要创建新的技能 | 创建新的技能（结构化或非结构化） | ~/.openclaw/scripts/撰写技能/SKILL.md |
-| knowledge-manager | 检索文献、更新知识库、总结笔记、提取笔记 | 知识管理工具，支持文献检索、知识库维护、笔记处理等功能 | ~/.openclaw/skills/knowledge-manager/SKILL.md |
-| feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
-| tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
-| Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
+| 修改文档 | 需要修改已存在的文档文件 | 修改文档文件，保存新版本并记录修改历史 | ~/.openclaw/workspace/skills/修改文档/SKILL.md |
+| 撰写脚本 | 需要创建新的操作脚本 | 按照五要素SOP规范撰写新脚本 | ~/.openclaw/workspace/skills/撰写脚本/SKILL.md |
+| 撰写技能 | 需要创建新的技能 | 创建新的技能（结构化或非结构化） | ~/.openclaw/workspace/skills/撰写技能/SKILL.md |
+| knowledge-manager | 检索文献、更新知识库、总结笔记、提取笔记 | 知识管理工具，支持文献检索、知识库维护、笔记处理等功能 | ~/.openclaw/workspace/skills/knowledge-manager/SKILL.md |
+| feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/workspace/skills/feishu-doc-manager/SKILL.md |
+| tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/workspace/skills/tencent-docs/SKILL.md |
+| Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/workspace/skills/zotero/SKILL.md |
 ---
 
 ### 个人技能索引
@@ -125,18 +127,8 @@
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
 | 每日维护 | 定时任务触发 | 定时执行TOOLS.md维护、MEMORY.md维护和工作空间清理 | ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/SKILL.md |
-| github | GitHub操作、代码同步 | 使用 gh CLI 进行 GitHub 交互、拉取/推送代码、管理 issues/PRs | ~/.openclaw/skills/github/SKILL.md |
----
-### 个人脚本索引
-> 各个代理独立维护，这里显示学工助手特有脚本
-
-| 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|----------|------|
-| 学生信息管理 | 收到学生信息、需要管理学生档案 | 学生信息分类、存储、元数据记录 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学生信息管理/ |
-| 学业辅导 | 学生学业问题、需要辅导记录 | 学业问题识别、辅导记录、资源协调 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学业辅导/ |
-| 社团活动记录 | 组织社团活动、需要记录活动 | 活动记录、资料管理、档案保存 | ~/.openclaw/workspace/studentaffairsassistant/scripts/社团活动记录/ |
-
+| 学业辅导 | 学业辅导、学习问题、成绩提升 | 识别学生学业问题、记录辅导过程、协调辅导资源 | ~/.openclaw/workspace/studentaffairsassistant/skills/学业辅导/SKILL.md |
 ---
 
-*最后重构: 2026-04-15 04:00 (每日索引更新)*
+*最后重构: 2026-04-16 16:50 (每日索引更新)*
 *重构者: 学工助手*

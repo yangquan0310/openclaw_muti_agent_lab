@@ -18,8 +18,7 @@
 > 教研室仓库、教学助手仓库、教务助手仓库、学工助手仓库等教研室相关内容同步给教研室成员
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
-| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（结构化程序） |
-| 脚本文件夹 | ~/.openclaw/scripts/ | 存放了所有脚本文件（非结构化Markdown） |
+| 技能文件夹 | ~/.openclaw/workspace/skills/README.md | 存放了所有技能文件（公共技能） |
 | API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 |~/实验室仓库/项目文件/|实验室各个项目|
@@ -34,12 +33,11 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/writer/MEMORY.md | 写作助手独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/writer/scripts/README.md | 写作助手专属脚本存储目录 |
-| Agent 个人技能 | ~/.openclaw/workspace/writer/skills/README.md | 写作助手专属技能存储目录 |
-| Agent 临时文件 | ~/.openclaw/workspace/writer/temp/README.md | 写作助手专属临时文件存储目录 |
+| Agent 个人技能 | ~/.openclaw/workspace/writer/skills/ | 写作助手专属技能存储目录 |
+| Agent 临时文件 | ~/.openclaw/workspace/writer/temp/ | 写作助手专属临时文件存储目录 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 | ~/实验室仓库/项目文件/ | 实验室各个项目 |
-| 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
+| 工作日志 | ~/实验室仓库/日志文件/ | 任务执行记录 |
 | 项目知识库 | ~/实验室仓库/项目文件/{项目名}/知识库/index.json | 项目专属文献知识库索引 |
 ---
 
@@ -87,6 +85,7 @@
 > 内容由各代理独立维护
 | 项目名 | 存储位置 | 描述 |
 |--------|----------|------|
+| AI降重提示工程 | ~/实验室仓库/项目文件/AI降重提示工程/ | AI降重提示词工程和学习项目 |
 | 2026-04-01_数字化存储与自传体记忆 | ~/实验室仓库/项目文件/数字化存储与自传体记忆/ | 研究数字化存储对自传体记忆的影响机制 |
 | 2026-04-01_跨期选择的年龄差异 | ~/实验室仓库/项目文件/跨期选择的年龄差异/ | 研究不同年龄群体在跨期选择任务中的决策差异 |
 | 2026-04-04_影响者营销中的自我扩展机制 | ~/实验室仓库/项目文件/影响者营销中的自我扩展机制/ | 研究影响者营销中自我扩展机制对消费意愿的影响 |
@@ -105,36 +104,55 @@
 
 ### 公共技能索引
 > 大管家统一维护
+> 完整列表见: `/root/.openclaw/workspace/skills/README.md`
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| 修改文档 | 需要修改已存在的文档文件 | 修改文档文件，保存新版本并记录修改历史 | ~/.openclaw/scripts/修改文档/SKILL.md |
-| 撰写脚本 | 需要创建新的操作脚本 | 按照五要素SOP规范撰写新脚本 | ~/.openclaw/scripts/撰写脚本/SKILL.md |
-| 撰写技能 | 需要创建新的技能 | 创建新的技能（结构化或非结构化） | ~/.openclaw/scripts/撰写技能/SKILL.md |
-| knowledge-manager | 检索文献、更新知识库、总结笔记、提取笔记 | 知识管理工具，支持文献检索、知识库维护、笔记处理等功能 | ~/.openclaw/skills/knowledge-manager/SKILL.md |
-| feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
-| tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
-| 腾讯文档分段上传 | 长文档分段上传到腾讯文档 | 将长文档切分成多个段落，逐段上传到腾讯文档智能文档 | ~/.openclaw/skills/tencent-docs/upload_by_sections.py |
-| Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
----
+| agent-browser-clawdbot | 浏览器自动化 | 浏览器自动化工具 | ~/.openclaw/workspace/skills/agent-browser-clawdbot/SKILL.md |
+| baidu-scholar-search | 百度学术搜索 | 百度学术文献检索 | ~/.openclaw/workspace/skills/baidu-scholar-search/SKILL.md |
+| cnki-advanced-search | 知网高级检索 | 知网CSSCI论文检索 | ~/.openclaw/workspace/skills/cnki-advanced-search/SKILL.md |
+| docx-cn | Word文档处理 | 创建、读取、编辑Word文档 | ~/.openclaw/workspace/skills/docx-cn/SKILL.md |
+| docx-generator | Word文档生成 | 生成带AI页脚的Word文档 | ~/.openclaw/workspace/skills/docx-generator/SKILL.md |
+| excel-xlsx | Excel处理 | 创建、编辑Excel工作簿 | ~/.openclaw/workspace/skills/excel-xlsx/SKILL.md |
+| feishu-calendar-advanced | 飞书日历 | 飞书日历管理 | ~/.openclaw/workspace/skills/feishu-calendar-advanced/SKILL.md |
+| find-skills | 查找技能 | 技能发现和安装 | ~/.openclaw/workspace/skills/find-skills/SKILL.md |
+| github | GitHub操作 | GitHub CLI操作 | ~/.openclaw/workspace/skills/github/SKILL.md |
+| ima-skills | IMA技能 | IMA相关技能 | ~/.openclaw/workspace/skills/ima-skills/SKILL.md |
+| knowledge-manager | 知识管理 | 文献检索、知识库维护 | ~/.openclaw/workspace/skills/knowledge-manager/SKILL.md |
+| mcp-adapter | MCP集成 | Model Context Protocol | ~/.openclaw/workspace/skills/mcp-adapter/SKILL.md |
+| memory-hygiene | 记忆清理 | 向量记忆审计和优化 | ~/.openclaw/workspace/skills/memory-hygiene/SKILL.md |
+| openclaw-tavily-search | Tavily搜索 | 网络搜索 | ~/.openclaw/workspace/skills/openclaw-tavily-search/SKILL.md |
+| pdf | PDF处理 | PDF文本提取、合并、分割 | ~/.openclaw/workspace/skills/pdf/SKILL.md |
+| pdf-generator | PDF生成 | 生成专业PDF文档 | ~/.openclaw/workspace/skills/pdf-generator/SKILL.md |
+| pdf-processing | PDF处理(中文) | PDF文本和表格提取 | ~/.openclaw/workspace/skills/pdf-processing/SKILL.md |
+| pptx-2 | PPT处理 | 读取、创建PPT | ~/.openclaw/workspace/skills/pptx-2/SKILL.md |
+| pptx-generator | PPT生成器 | 生成可编辑PPT | ~/.openclaw/workspace/skills/pptx-generator/SKILL.md |
+| scihub-paper-downloader | Sci-Hub下载 | 获取论文PDF链接 | ~/.openclaw/workspace/skills/scihub-paper-downloader/SKILL.md |
+| Skill-developer | 技能开发 | 创建和改进技能 | ~/.openclaw/workspace/skills/Skill-developer/SKILL.md |
+| skillhub-preference | SkillHub偏好 | 技能发现安装偏好 | ~/.openclaw/workspace/skills/skillhub-preference/SKILL.md |
+| Subagents-manager | 子代理管理 | 子代理创建和管理 | ~/.openclaw/workspace/skills/Subagents-manager/SKILL.md |
+| summarize | 摘要总结 | URL和文件摘要 | ~/.openclaw/workspace/skills/summarize/SKILL.md |
+| tencentcloud-lighthouse-skill | 腾讯云轻量服务器 | 轻量服务器管理 | ~/.openclaw/workspace/skills/tencentcloud-lighthouse-skill/SKILL.md |
+| tencent-cos-skill | 腾讯云COS | 对象存储和图片处理 | ~/.openclaw/workspace/skills/tencent-cos-skill/SKILL.md |
+| tencent-docs | 腾讯文档 | 腾讯文档操作 | ~/.openclaw/workspace/skills/tencent-docs/SKILL.md |
+| tencent-meeting-skill | 腾讯会议 | 腾讯会议管理 | ~/.openclaw/workspace/skills/tencent-meeting-skill/SKILL.md |
+| web-tools-guide | Web工具指南 | 搜索抓取策略 | ~/.openclaw/workspace/skills/web-tools-guide/SKILL.md |
+| zotero | Zotero管理 | 文献库管理 | ~/.openclaw/workspace/skills/zotero/SKILL.md |
+| zotero-local-pdf-import | Zotero本地导入 | 本地PDF导入Zotero | ~/.openclaw/workspace/skills/zotero-local-pdf-import/SKILL.md |
+| zotero-scholar | Zotero学术 | Zotero学术功能 | ~/.openclaw/workspace/skills/zotero-scholar/SKILL.md |
+| zotero-vectorize | Zotero向量化 | 语义索引构建 | ~/.openclaw/workspace/skills/zotero-vectorize/SKILL.md |
 
 ### 个人技能索引
 > 大管家维护格式
 > 内容由各代理独立维护
+
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| 引用检查修复 | 检查文献引用格式 | 文献引用检查和修复功能 | ~/.openclaw/workspace/writer/skills/引用检查修复/SKILL.md |
----
-### 个人脚本索引
-> 各个代理独立维护，这里显示写作助手特有脚本
-| 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|------|------|
-| AI降重提示工程 | 需要进行论文降重 | 提供AI降重的提示词模板和方法 | ~/.openclaw/workspace/writer/scripts/AI降重提示工程/SKILL.md |
-| 学术段落撰写脚本 | 需要撰写独立学术段落、论证特定论点 | 撰写独立学术段落，论证特定论点 | ~/.openclaw/workspace/writer/scripts/学术段落撰写脚本/SKILL.md |
-| 学术篇章撰写脚本 | 需要撰写完整学术篇章 | 撰写完整学术篇章，整合段落形成连贯论述 | ~/.openclaw/workspace/writer/scripts/学术篇章撰写脚本/SKILL.md |
-| 撰写句子脚本 | 需要撰写符合学术规范的中英文句子 | 撰写符合学术规范的中英文句子 | ~/.openclaw/workspace/writer/scripts/撰写句子脚本/SKILL.md |
-| 文献综述脚本 | 需要撰写文献综述 | 系统性检索、整合、评述文献，生成结构化综述 | ~/.openclaw/workspace/writer/scripts/文献综述脚本/SKILL.md |
+| 学术句子撰写脚本 | 撰写学术句子 | 撰写符合学术规范的中英文句子 | ~/.openclaw/workspace/writer/skills/学术句子撰写脚本/SKILL.md |
+| 学术段落撰写脚本 | 撰写学术段落 | 撰写独立学术段落，论证特定论点 | ~/.openclaw/workspace/writer/skills/学术段落撰写脚本/SKILL.md |
+| 学术篇章撰写脚本 | 撰写学术篇章 | 撰写完整学术篇章，整合段落形成连贯论述 | ~/.openclaw/workspace/writer/skills/学术篇章撰写脚本/SKILL.md |
+
 ---
 
-*最后重构: 2026-04-08*
-*重构者: 大管家*
+*最后重构: 2026-04-16*
+*重构者: 写作助手*

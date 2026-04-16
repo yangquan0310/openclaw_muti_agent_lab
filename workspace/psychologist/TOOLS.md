@@ -18,8 +18,7 @@
 > 教研室仓库、教学助手仓库、教务助手仓库、学工助手仓库等教研室相关内容同步给教研室成员
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
-| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（结构化程序） |
-| 脚本文件夹 | ~/.openclaw/scripts/ | 存放了所有脚本文件（非结构化Markdown） |
+| 技能文件夹 | ~/.openclaw/workspace/skills/README.md | 存放了所有技能文件（公共技能） |
 | API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 |~/实验室仓库/项目文件/|实验室各个项目|
@@ -34,7 +33,6 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/psychologist/MEMORY.md | 心理学家独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/psychologist/scripts/README.md | 心理学家专属脚本存储目录 |
 | Agent 个人技能 | ~/.openclaw/workspace/psychologist/skills/README.md | 心理学家专属技能存储目录 |
 | Agent 临时文件 | ~/.openclaw/workspace/psychologist/temp/README.md | 心理学家专属临时文件存储目录 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
@@ -111,25 +109,15 @@
 | 2026-04-07_维护老板信息 | ~/实验室仓库/项目文件/2026-04-07_维护老板信息/ | 老板的个人信息、学术成就和账户信息管理项目 |
 | 2026-04-13_学生论文修改 | ~/实验室仓库/项目文件/2026-04-13_学生论文修改/ | 学生论文修改和指导项目 |
 | 2026-04-14_内卷感知与工作繁荣 | ~/实验室仓库/项目文件/2026-04-14_内卷感知与工作繁荣/ | 研究内卷感知对工作繁荣的影响机制 |
+| 2026-04-15_AI降重提示工程 | ~/实验室仓库/项目文件/AI降重提示工程/ | AI降重提示工程研究项目 |
 
 ---
 
 ## 索引
 
-
 ### 公共技能索引
 > 大管家统一维护
-
-| 技能名称 | 触发示例 | 描述 | 路径 |
-|---------|---------|------|------|
-| 修改文档 | 需要修改已存在的文档文件 | 修改文档文件，保存新版本并记录修改历史 | ~/.openclaw/scripts/修改文档/SKILL.md |
-| 撰写脚本 | 需要创建新的操作脚本 | 按照五要素SOP规范撰写新脚本 | ~/.openclaw/scripts/撰写脚本/SKILL.md |
-| 撰写技能 | 需要创建新的技能 | 创建新的技能（结构化或非结构化） | ~/.openclaw/scripts/撰写技能/SKILL.md |
-| knowledge-manager | 检索文献、更新知识库、总结笔记、提取笔记 | 知识管理工具，支持文献检索、知识库维护、笔记处理等功能 | ~/.openclaw/skills/knowledge-manager/SKILL.md |
-| feishu-doc-manager | 上传飞书云文档 | Markdown 渲染、权限管理、长文档处理 | ~/.openclaw/skills/feishu-doc-manager/SKILL.md |
-| tencent-docs | 上传腾讯云文档 | 使用 md 上传 | ~/.openclaw/skills/tencent-docs/SKILL.md |
-| Zotero | 管理文献、搜索文献 | Zotero 文献管理 | ~/.openclaw/skills/zotero/SKILL.md |
----
+> 完整索引请查看：`/root/.openclaw/workspace/skills/README.md`
 
 ### 个人技能索引
 > 大管家维护格式
@@ -137,9 +125,6 @@
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
 | 每日维护 | 心理学家每日维护 | 心理学家工作空间每日维护任务 | ~/.openclaw/workspace/psychologist/skills/每日维护/ |
-| 文献分类任务 | 文献主题分类 | 文献主题分类任务 | ~/.openclaw/workspace/psychologist/skills/文献分类任务/ |
-| 文献处理工具 | 文献处理 | 文献处理工具集合 | ~/.openclaw/workspace/psychologist/skills/文献处理工具/ |
-| 笔记合并任务 | 笔记合并 | 笔记合并任务 | ~/.openclaw/workspace/psychologist/skills/笔记合并任务/ |
 | search-photo-effect | 拍照效应检索 | 拍照效应文献检索 | ~/.openclaw/workspace/psychologist/skills/search-photo-effect/ |
 | update-index-verification | 索引验证更新 | 知识库索引验证更新 | ~/.openclaw/workspace/psychologist/skills/update-index-verification/ |
 | update-tools | TOOLS更新 | TOOLS.md更新工具 | ~/.openclaw/workspace/psychologist/skills/update-tools/ |
@@ -147,14 +132,5 @@
 | memory-maintenance | 记忆维护 | 记忆维护任务 | ~/.openclaw/workspace/psychologist/skills/memory-maintenance/ |
 
 ---
-### 个人脚本索引
-> 各个代理独立维护，这里显示心理学家特有脚本
-
-| 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|----------|------|
-| S1-心理学文献检索 | 心理学文献检索 | 执行心理学领域文献检索，建立项目知识库并生成检索报告 | ~/.openclaw/workspace/psychologist/scripts/S1-心理学文献检索/ |
-| S2-总结文献笔记 | 总结文献笔记 | 对知识库文献进行深度阅读并提取关键信息，形成结构化笔记 | ~/.openclaw/workspace/psychologist/scripts/S2-总结文献笔记/ |
----
-
-*最后重构: 2026-04-15
+*最后重构: 2026-04-16
 *重构者: 心理学家-每日维护任务

@@ -18,8 +18,7 @@
 > 教研室仓库、教学助手仓库、教务助手仓库、学工助手仓库等教研室相关内容同步给教研室成员
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
-| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（结构化程序） |
-| 脚本文件夹 | ~/.openclaw/scripts/ | 存放了所有脚本文件（非结构化Markdown） |
+| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（公共技能） |
 | API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 |~/实验室仓库/项目文件/|实验室各个项目|
@@ -34,7 +33,6 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/academicassistant/MEMORY.md | 教务助手独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/academicassistant/scripts/README.md | 教务助手专属脚本存储目录 |
 | Agent 个人技能 | ~/.openclaw/workspace/academicassistant/skills/README.md | 教务助手专属技能存储目录 |
 | Agent 临时文件 | ~/.openclaw/workspace/academicassistant/temp/README.md | 教务助手专属临时文件存储目录 |
 | 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
@@ -93,20 +91,30 @@
 ---
 ## 索引
 
-### 技能索引
+### 公共技能索引
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
+| knowledge-manager | 文献检索、知识库管理 | 文献检索、总结、管理、综述撰写 | `~/.openclaw/workspace/skills/knowledge-manager/` |
+| zotero | Zotero文献管理 | 管理Zotero文献库，支持DOI/ISBN/PMID添加、导出、PDF获取 | `~/.openclaw/workspace/skills/zotero/` |
+| cnki-advanced-search | 知网检索 | 知网高级检索CSSCI论文，提取题录和摘要 | `~/.openclaw/workspace/skills/cnki-advanced-search/` |
+| baidu-scholar-search | 百度学术搜索 | 中英文文献检索，覆盖期刊、会议、学位论文 | `~/.openclaw/workspace/skills/baidu-scholar-search/` |
+| excel-xlsx | Excel处理 | 创建、编辑、检查Excel工作簿，支持公式、格式、模板 | `~/.openclaw/workspace/skills/excel-xlsx/` |
+| pptx-2 | PPT处理 | 创建、编辑、读取PPT演示文稿，支持模板和设计 | `~/.openclaw/workspace/skills/pptx-2/` |
+| pdf | PDF处理 | PDF文本提取、合并分割、创建、表单填写 | `~/.openclaw/workspace/skills/pdf/` |
+| docx-cn | Word处理 | 创建、编辑Word文档，支持格式、表格、图片 | `~/.openclaw/workspace/skills/docx-cn/` |
+| github | GitHub操作 | 使用gh CLI操作Issues、PRs、CI工作流 | `~/.openclaw/workspace/skills/github/` |
+| summarize | 内容总结 | 总结URL、PDF、图片、音频、YouTube内容 | `~/.openclaw/workspace/skills/summarize/` |
+| web-tools-guide | Web工具策略 | 搜索、抓取、浏览器自动化的策略指南 | `~/.openclaw/workspace/skills/web-tools-guide/` |
 
+### 个人技能索引
+| 技能名称 | 触发示例 | 描述 | 路径 |
+|---------|---------|------|------|
+| convert_syllabus | 转换课程大纲格式 | 将Word格式课程大纲转换为Markdown | `~/.openclaw/workspace/academicassistant/skills/convert_syllabus/` |
+| update_index | 更新项目索引 | 更新教研室项目文件的索引 | `~/.openclaw/workspace/academicassistant/skills/update_index/` |
+| update_syllabi | 批量更新课程大纲 | 批量处理课程大纲文件 | `~/.openclaw/workspace/academicassistant/skills/update_syllabi/` |
+| update_tools_md | 自动更新工具索引文档 | 自动维护TOOLS.md文档内容 | `~/.openclaw/workspace/academicassistant/skills/update_tools_md/` |
 
 ---
-### 脚本索引
 
-| 触发条件 | 脚本编号 | 脚本名称 | 功能描述 |
-|----------|----------|----------|----------|
-
-
----
-
-*最后重构: 2026-04-15*
-*重构者: 大管家*
-
+*最后重构: 2026-04-16*
+*重构者: 教务助手*

@@ -20,13 +20,13 @@
 
 | 项目 | 任务 | 负责子代理key | 状态 | 创建时间 | 最后更新 | 备注 |
 |------|------|---------------|------|----------|----------|------|
-| - | - | - | - | - | - | - |
+| （当前无活跃任务） | - | - | - | - | - | - |
 
 ### 1.2 活跃子代理清单
 
 | 子代理key | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 |
 |-----------|-----------|----------|------|----------|----------|
-| - | - | - | - | - | - |
+| （当前无活跃子代理） | - | - | - | - | - |
 
 ### 1.3 工作记忆使用规则
 
@@ -97,7 +97,8 @@
 
 | 脚本名 | 功能 | 位置 |
 |--------|------|------|
-| update_indexes | 自动更新 TOOLS.md 中的脚本索引和项目库 | `~/.openclaw/workspace/mathematician/skills/update_indexes/SKILL.md` |
+| daily_maintenance | 执行数学家每日维护任务 | `~/.openclaw/workspace/mathematician/skills/daily_maintenance.sh` |
+| update_indexes | 自动更新 TOOLS.md 中的技能索引和项目库 | `~/.openclaw/workspace/mathematician/skills/update_indexes/SKILL.md` |
 
 ### 条件-行动规则（If-Then Rules）
 

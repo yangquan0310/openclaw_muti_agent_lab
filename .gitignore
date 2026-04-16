@@ -66,16 +66,16 @@ __pycache__/
 .vscode/
 .idea/
 
-# 排除 cron 运行记录
-cron/runs/
 
 # 允许需要备份的文件
 !/README.md
+!/requirements.txt
 !/.gitignore
 !/openclaw.json
 !/workspace/
-!/skills/
-!/scripts/
 !/cron/
-!cron/jobs.json
-skills/.skills_store_lock.json
+!/cron/jobs.json
+
+# 排除 cron 运行记录
+/cron/runs/
+/worspace/skills/.skills_store_lock.json

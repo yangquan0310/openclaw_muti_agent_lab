@@ -11,7 +11,7 @@
         }
       },
       "model": {
-        "primary": "arkcode/doubao-seed-2.0-code"
+        "primary": "kimicode/kimi-for-coding"
       }
     },
     "list": [
@@ -625,61 +625,6 @@
   },
   "models": {
     "providers": {
-      "arkcode": {
-        "baseUrl": "https://ark.cn-beijing.volces.com/api/coding",
-        "api": "anthropic-messages",
-        "apiKey": "${ARKCODE_API_KEY}",
-        "models": [
-          {
-            "id": "doubao-seed-2.0-code",
-            "name": "Doubao Seed 2.0 Code",
-            "input": [
-              "text",
-              "image"
-            ]
-          },
-          {
-            "id": "doubao-seed-2.0-pro",
-            "name": "Doubao Seed 2.0 Pro"
-          },
-          {
-            "id": "ark-code-latest",
-            "name": "ARK Code Latest",
-            "input": [
-              "text",
-              "image"
-            ]
-          },
-          {
-            "id": "doubao-seed-code",
-            "name": "Doubao Seed Code",
-            "input": [
-              "text",
-              "image"
-            ]
-          },
-          {
-            "id": "glm-4.7",
-            "name": "GLM-4.7"
-          },
-          {
-            "id": "deepseek-v3.2",
-            "name": "DeepSeek V3.2"
-          },
-          {
-            "id": "kimi-k2-thinking",
-            "name": "Kimi K2 Thinking"
-          },
-          {
-            "id": "kimi-k2.5",
-            "name": "Kimi K2.5",
-            "input": [
-              "text",
-              "image"
-            ]
-          }
-        ]
-      },
       "kimicode": {
         "baseUrl": "https://api.kimi.com/coding/v1",
         "api": "anthropic-messages",
@@ -757,59 +702,6 @@
     },
     "openclaw-weixin": {
       "accounts": {}
-    },
-    "feishu": {
-      "enabled": true,
-      "domain": "feishu",
-      "connectionMode": "websocket",
-      "reactionNotifications": "own",
-      "typingIndicator": true,
-      "resolveSenderNames": true,
-      "requireMention": true,
-      "streaming": true,
-      "accounts": {
-        "steward": {
-          "appId": "cli_a94178f816b91cc9",
-          "appSecret": "${FEISHU_STEWARD_APP_SECRET}"
-        },
-        "physicist": {
-          "appId": "cli_a94177ba8778dcb6",
-          "appSecret": "${FEISHU_PHYSICIST_APP_SECRET}"
-        },
-        "mathematician": {
-          "appId": "cli_a941705ac4f89cc2",
-          "appSecret": "${FEISHU_MATHEMATICIAN_APP_SECRET}"
-        },
-        "psychologist": {
-          "appId": "cli_a94170cfbcf8dccb",
-          "appSecret": "${FEISHU_PSYCHOLOGIST_APP_SECRET}"
-        },
-        "writer": {
-          "appId": "cli_a941713c73389cd3",
-          "appSecret": "${FEISHU_WRITER_APP_SECRET}"
-        },
-        "reviewer": {
-          "appId": "cli_a9417171c5385cd3",
-          "appSecret": "${FEISHU_REVIEWER_APP_SECRET}"
-        },
-        "teachingassistant": {
-          "appId": "cli_a947bed63d785cdd",
-          "appSecret": "${FEISHU_TEACHINGASSISTANT_APP_SECRET}"
-        },
-        "studentaffairsassistant": {
-          "appId": "cli_a947bb11a2741cdb",
-          "appSecret": "${FEISHU_STUDENTAFFAIRSASSISTANT_APP_SECRET}"
-        },
-        "academicassistant": {
-          "appId": "cli_a947bb2b87399cc8",
-          "appSecret": "${FEISHU_ACADEMICASSISTANT_APP_SECRET}"
-        },
-        "default": {
-          "webhookPath": "/feishu/events",
-          "dmPolicy": "pairing",
-          "groupPolicy": "open"
-        }
-      }
     },
     "lightclawbot": {
       "enabled": true,

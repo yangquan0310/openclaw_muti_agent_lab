@@ -7,7 +7,7 @@
 
 ## 功能说明
 
-本文件夹用于存储大管家的**结构化技能**，每个技能是一个独立的程序模块，包含可执行代码和对应的技能文档。
+本文件夹用于存储教务助手的**结构化技能**，每个技能是一个独立的程序模块，包含可执行代码和对应的技能文档。
 
 ## 文件夹结构
 
@@ -24,8 +24,10 @@ skills/
 
 | 技能名称 | 路径 | 说明 |
 |---------|------|------|
-| update_tools | `skills/update_tools/` | 更新工具索引和项目库 |
-| 维护工作记忆 | `skills/维护工作记忆/` | 清理已完成任务，归档到事件记忆 |
+| convert_syllabus | `skills/convert_syllabus/` | 转换课程大纲格式 |
+| update_index | `skills/update_index/` | 更新项目索引 |
+| update_syllabi | `skills/update_syllabi/` | 批量更新课程大纲 |
+| update_tools_md | `skills/update_tools_md/` | 自动更新工具索引文档 |
 
 ## 使用方式
 
@@ -33,16 +35,7 @@ skills/
 2. **执行技能**：运行 `.sh` 脚本或调用 `.py` 模块
 3. **了解详情**：阅读 `README.md` 获取详细说明
 
-## 与 Scripts 的区别
-
-| 对比项 | Skills | Scripts |
-|--------|--------|---------|
-| 内容 | 代码脚本（.py + .sh） | Markdown 文档（.md） |
-| 性质 | 结构化程序 | 非结构化脚本 |
-| 执行 | 可直接执行 | 需人工按步骤执行 |
-| 文档 | SKILL.md + README.md | SKILL.md + README.md |
-
 ---
 
 *维护者：教务助手*
-*最后更新：2026-04-12*
+*最后更新：2026-04-16*

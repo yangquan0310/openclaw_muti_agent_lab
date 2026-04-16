@@ -19,8 +19,7 @@
 
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
-| 技能文件夹 | ~/.openclaw/skills/ | 存放了所有技能文件（结构化程序） |
-| 脚本文件夹 | ~/.openclaw/scripts/ | 存放了所有脚本文件（非结构化Markdown） |
+| 技能文件夹 | ~/.openclaw/workspace/skills/README.md | 存放了所有技能文件（公共技能） |
 | API密钥存储 | ~/.openclaw/.env | 安全存储所有API密钥 |
 | 实验室仓库 | ~/实验室仓库/ | 实验室仓库 |
 | 实验室项目 |~/实验室仓库/项目文件/|实验室各个项目|
@@ -35,8 +34,7 @@
 | 文件 | 存储路径 | 说明 |
 |----------|----------|------|
 | Agent 个人记忆 | ~/.openclaw/workspace/steward/MEMORY.md | 大管家独立维护 |
-| Agent 个人脚本 | ~/.openclaw/workspace/steward/scripts/README.md | 非结构化脚本存储目录说明 |
-| Agent 个人技能 | ~/.openclaw/workspace/steward/skills/README.md | 结构化技能存储目录说明 |
+| Agent 个人技能 | ~/.openclaw/workspace/steward/skills/README.md | 技能存储目录说明 |
 | Agent 临时文件 | ~/.openclaw/workspace/steward/temp/README.md | 临时文件存储目录说明 |
 | 工作日志 | ~/实验室仓库/日志文件/README.MD | 任务执行记录 |
 ---
@@ -144,13 +142,6 @@
 | 维护工作记忆 | 维护工作记忆 | 清理已完成任务，归档到事件记忆 | ~/.openclaw/workspace/steward/skills/维护工作记忆/维护工作记忆.sh |
 | auto-push | 自动提交推送Git | 自动提交所有更改并推送到development分支 | ~/.openclaw/workspace/steward/skills/auto-push/SKILL.md |
 | 管理项目元数据 | 需要创建或维护项目 | 创建和维护项目元数据，管理云文档映射 | ~/.openclaw/workspace/steward/scripts/管理项目元数据/SKILL.md |
----
-
-### 个人脚本索引
-> 各个代理独立维护
-| 脚本名称 | 触发示例 | 描述 | 路径 |
-|----------|----------|----------|----------|
-| 维护配置文件 | 维护配置文件 | 维护其他Agent的配置文件 | ~/.openclaw/workspace/steward/scripts/维护配置文件/SKILL.md |
 
 ---
 

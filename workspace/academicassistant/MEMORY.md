@@ -106,15 +106,14 @@
 
 ## 🛠️ 程序性记忆区
 
-### 脚本索引
+### 技能索引
 
-| 脚本名 | 功能 | 位置 |
+| 技能名 | 功能 | 位置 |
 |--------|------|------|
-| 每日维护 | 每日维护TOOLS.md、MEMORY.md和工作空间 | ~/.openclaw/workspace/academicassistant/skills/每日维护/SKILL.md |
-| convert_syllabus | 转换课程大纲格式 | ~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md |
-| update_index | 更新项目索引 | ~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md |
-| update_syllabi | 批量更新课程大纲 | ~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md |
-| update_tools_md | 自动更新工具索引文档 | ~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md |
+| convert_syllabus | 转换课程大纲格式 | `~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md` |
+| update_index | 更新项目索引 | `~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md` |
+| update_syllabi | 批量更新课程大纲 | `~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md` |
+| update_tools_md | 自动更新工具索引文档 | `~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md` |
 
 ### 条件-行动规则
 
@@ -130,11 +129,12 @@
 ---
 ## 📈 版本历史
 
-- **v1.0.0** (2026-04-07): 初始版本，基于大管家模板重构，保留3个科研专属脚本
+- **v1.0.0** (2026-04-07): 初始版本，基于大管家模板重构
+- **v1.1.0** (2026-04-16): 按新规范更新，不再区分脚本和技能
 
 ---
 
-*最后更新: 2026-04-15*  
+*最后更新: 2026-04-16*  
 *更新者: 教务助手*  
 *理论基础: 身份理论、工作记忆理论、认知架构理论*
 
