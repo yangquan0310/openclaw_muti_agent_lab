@@ -1,0 +1,38 @@
+# OpenClaw Python Dependencies
+# Generated: 2026-04-16
+
+# Core dependencies
+requests>=2.31.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+
+# WebSocket support
+websockets>=12.0
+
+# Async support
+aiohttp>=3.9.0
+asyncio-mqtt>=0.16.0
+
+# Data processing
+pyyaml>=6.0.1
+jsonschema>=4.20.0
+
+# Date/Time handling
+python-dateutil>=2.8.2
+pytz>=2024.1
+
+# HTTP client
+httpx>=0.25.0
+
+# Cryptography (for tokens/secrets)
+cryptography>=42.0.0
+
+# Optional: For browser automation support
+# playwright>=1.40.0
+
+# Optional: For image processing
+# pillow>=10.0.0
+
+# Optional: For data analysis
+# pandas>=2.0.0
+# numpy>=1.24.0
