@@ -93,15 +93,32 @@
 
 | 脚本名 | 功能 | 位置 |
 |--------|------|------|
-| 学生信息管理 | 学生信息分类、存储、元数据记录 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学生信息管理/ |
-| 学业辅导 | 学业问题识别、辅导记录、资源协调 | ~/.openclaw/workspace/studentaffairsassistant/scripts/学业辅导/ |
-| 社团活动记录 | 活动记录、资料管理、档案保存 | ~/.openclaw/workspace/studentaffairsassistant/scripts/社团活动记录/ |
+| *暂无脚本* | | |
 
 
 
 ---
 
 ## 📝 工作日志
+
+### 2026-04-16
+- **时间**：18:12
+- **事件**：每日维护任务
+- **描述**：执行学工助手每日维护任务 - 全面扫描和更新
+- **涉及文件**：
+  - TOOLS.md：更新日期标记
+  - MEMORY.md：更新程序性记忆脚本位置表（清空，因scripts目录已移除）
+- **检查结果**：
+  - 公共技能文件夹：35个技能，索引由大管家维护
+  - 个人技能文件夹：仅README.md，无实际技能
+  - 实验室项目：11个项目，与TOOLS.md项目表一致
+  - 任务看板：无completed/killed任务
+  - 活跃子代理清单：无completed/killed子代理
+  - 配置文件检查：AGENTS.md、IDENTITY.md、SOUL.md、USER.md、MEMORY.md、TOOLS.md、HEARTBEAT.md 均存在
+  - 临时文件夹：temp/README.md 存在
+  - 技能文件夹：skills/README.md 存在
+- **结果**：成功完成每日维护任务
+- **备注**：程序性记忆脚本位置表已清空（scripts目录已移除）
 
 ### 2026-04-16
 - **时间**：16:50

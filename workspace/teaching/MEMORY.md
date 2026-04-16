@@ -117,22 +117,15 @@
 
 | 技能名 | 功能 | 位置 |
 |--------|------|------|
-| download_papers | 批量下载学术论文 | ~/.openclaw/workspace/teaching/skills/download_papers/SKILL.md |
-| retrieve_papers | 检索并获取论文信息 | ~/.openclaw/workspace/teaching/skills/retrieve_papers/SKILL.md |
-| search_literature | 综合文献检索工具 | ~/.openclaw/workspace/teaching/skills/search_literature/SKILL.md |
-
-### 脚本索引（个人脚本文件夹）
-
-| 脚本名 | 功能 | 位置 |
-|--------|------|------|
-| *暂无个人脚本* | - | - |
+| *暂无个人技能* | - | - |
 
 ---
 
 ## 版本历史
 
-- **v1.0.0** (2026-04-07): 初始版本，包含3个教学助手专属技能
-- **v1.1.0** (2026-04-16): 统一技能索引，移除脚本分类
+- **v1.0.0** (2026-04-07): 初始版本
+- **v1.1.0** (2026-04-16): 统一技能索引
+- **v1.2.0** (2026-04-16): 清空个人技能索引（技能已迁移）
 
 ---
 

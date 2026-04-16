@@ -82,6 +82,7 @@
 
 | 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
 |------|------|----------|------|----------|
+| 2026-04-16 | 每日维护任务执行 | 数学家 | 成功 | /root/教研室仓库/日志文件/2026-04-16/18-19-00-mathematician_每日维护任务.md |
 | 2026-04-16 | 每日维护任务执行 | 数学家 | 成功 | /root/教研室仓库/日志文件/2026-04-16/04-15-00-mathematician_每日维护任务.md |
 | 2026-04-15 | 每日维护任务执行 | 数学家 | 成功 | /root/教研室仓库/日志文件/2026-04-15/04-18-00-mathematician_每日维护任务.md |
 | 2026-04-13 | 每日维护任务执行 | 数学家 | 成功 | ~/实验室仓库/日志文件/2026-04-13/18-47-58-mathematician_每日维护任务.md |
@@ -98,8 +99,7 @@
 
 | 脚本名 | 功能 | 位置 |
 |--------|------|------|
-| daily_maintenance | 执行数学家每日维护任务 | `~/.openclaw/workspace/mathematician/skills/daily_maintenance.sh` |
-| update_indexes | 自动更新 TOOLS.md 中的技能索引和项目库 | `~/.openclaw/workspace/mathematician/skills/update_indexes/SKILL.md` |
+| （当前无脚本） | - | - |
 
 ### 条件-行动规则（If-Then Rules）
 

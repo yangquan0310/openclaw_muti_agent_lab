@@ -45,7 +45,7 @@
       "name": "学工助手每日维护",
       "enabled": true,
       "createdAtMs": 1775961229499,
-      "updatedAtMs": 1776329229658,
+      "updatedAtMs": 1776334627997,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -66,13 +66,13 @@
       },
       "state": {
         "nextRunAtMs": 1776369600000,
-        "lastRunAtMs": 1776329006015,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 223643,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Error: LarkClient[studentaffairsassistant]: appId and appSecret are required"
+        "lastRunAtMs": 1776334351419,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 276578,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -82,7 +82,7 @@
       "name": "教学助手每日维护",
       "enabled": true,
       "createdAtMs": 1776036914923,
-      "updatedAtMs": 1776330629220,
+      "updatedAtMs": 1776335337166,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -103,13 +103,13 @@
       },
       "state": {
         "nextRunAtMs": 1776369600000,
-        "lastRunAtMs": 1776330430046,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 199174,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Error: LarkClient[teachingassistant]: appId and appSecret are required"
+        "lastRunAtMs": 1776335130601,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 206565,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -119,7 +119,7 @@
       "name": "教务助手每日维护",
       "enabled": true,
       "createdAtMs": 1776036919487,
-      "updatedAtMs": 1776330929278,
+      "updatedAtMs": 1776335637200,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -140,14 +140,14 @@
       },
       "state": {
         "nextRunAtMs": 1776369600000,
-        "lastRunAtMs": 1776330629257,
+        "lastRunAtMs": 1776335337178,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 300021,
+        "lastDurationMs": 300022,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "consecutiveErrors": 2,
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
       },
       "deleteAfterRun": false
     },
@@ -157,7 +157,7 @@
       "name": "心理学家每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776330129871,
+      "updatedAtMs": 1776335028062,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -178,14 +178,13 @@
       },
       "state": {
         "nextRunAtMs": 1776369600000,
-        "consecutiveErrors": 2,
-        "lastRunAtMs": 1776329829853,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 300018,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776334902647,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 125415,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -195,7 +194,7 @@
       "name": "物理学家每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776331078635,
+      "updatedAtMs": 1776335752420,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -216,13 +215,13 @@
       },
       "state": {
         "nextRunAtMs": 1776369600000,
-        "consecutiveErrors": 2,
-        "lastRunAtMs": 1776330929363,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 149272,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "Error: LarkClient[physicist]: appId and appSecret are required"
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776335637254,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 115166,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -232,7 +231,7 @@
       "name": "写作助手每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776330429961,
+      "updatedAtMs": 1776335130587,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -253,14 +252,13 @@
       },
       "state": {
         "nextRunAtMs": 1776369600000,
-        "consecutiveErrors": 2,
-        "lastRunAtMs": 1776330129939,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 300022,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776335028091,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 102496,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -270,7 +268,7 @@
       "name": "审稿助手每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776331261325,
+      "updatedAtMs": 1776335878359,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -291,13 +289,13 @@
       },
       "state": {
         "nextRunAtMs": 1776369600000,
-        "consecutiveErrors": 2,
-        "lastRunAtMs": 1776331078686,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 182639,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "Error: LarkClient[reviewer]: appId and appSecret are required"
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776335752431,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 125928,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -307,7 +305,7 @@
       "name": "大管家每日维护",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776329529691,
+      "updatedAtMs": 1776334768766,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -328,14 +326,13 @@
       },
       "state": {
         "nextRunAtMs": 1776369600000,
-        "consecutiveErrors": 2,
-        "lastRunAtMs": 1776329229679,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 300012,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776334628014,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 140752,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -345,7 +342,7 @@
       "name": "数学家每日维护",
       "enabled": true,
       "createdAtMs": 1776068111397,
-      "updatedAtMs": 1776329829804,
+      "updatedAtMs": 1776334902619,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * *",
@@ -366,14 +363,14 @@
       },
       "state": {
         "nextRunAtMs": 1776369600000,
-        "lastRunAtMs": 1776329529781,
+        "lastRunAtMs": 1776334768780,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 300023,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "lastDurationMs": 133839,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 3,
+        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/mathematician/memory failed",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },

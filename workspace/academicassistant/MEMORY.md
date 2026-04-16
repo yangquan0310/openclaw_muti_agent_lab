@@ -110,10 +110,7 @@
 
 | 技能名 | 功能 | 位置 |
 |--------|------|------|
-| convert_syllabus | 转换课程大纲格式 | `~/.openclaw/workspace/academicassistant/skills/convert_syllabus/SKILL.md` |
-| update_index | 更新项目索引 | `~/.openclaw/workspace/academicassistant/skills/update_index/SKILL.md` |
-| update_syllabi | 批量更新课程大纲 | `~/.openclaw/workspace/academicassistant/skills/update_syllabi/SKILL.md` |
-| update_tools_md | 自动更新工具索引文档 | `~/.openclaw/workspace/academicassistant/skills/update_tools_md/SKILL.md` |
+| *当前无个人技能* | - | - |
 
 ### 条件-行动规则
 
