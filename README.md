@@ -95,9 +95,6 @@
         ├── tencentcloud-lighthouse-skill/ # 腾讯轻量云管理
         ├── github/                        # GitHub仓库管理
         ├── zotero/                        # Zotero文献管理
-        ├── 修改文档/                       # 文档修改规范
-        ├── 撰写技能/                       # 技能创建规范
-        └── 管理项目元数据/                 # 项目元数据管理
         └── .skills_store_lock.json        # 技能锁定配置
 ```
 
