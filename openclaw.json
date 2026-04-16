@@ -752,7 +752,11 @@
         "default": {
           "webhookPath": "/feishu/events",
           "dmPolicy": "pairing",
-          "groupPolicy": "open"
+          "groupPolicy": "allowlist",
+          "groupAllowlist": [
+            "ou_25cf20a1973aecc51f73d8e2800d7f7e",
+            "ou_368fc4e19dc00f24f6291edee49eab10"
+          ]
         }
       }
     },
@@ -780,6 +784,27 @@
       "match": {
         "channel": "qqbot",
         "accountId": "steward"
+      }
+    },
+    {
+      "agentId": "teachingassistant",
+      "match": {
+        "channel": "qqbot",
+        "accountId": "teachingassistant"
+      }
+    },
+    {
+      "agentId": "studentaffairsassistant",
+      "match": {
+        "channel": "qqbot",
+        "accountId": "studentaffairsassistant"
+      }
+    },
+    {
+      "agentId": "academicassistant",
+      "match": {
+        "channel": "qqbot",
+        "accountId": "academicassistant"
       }
     },
     {
