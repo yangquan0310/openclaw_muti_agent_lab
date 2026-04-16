@@ -86,6 +86,8 @@
 | mcp-adapter | MCP集成 | 使用Model Context Protocol访问外部工具和数据源 | `~/.openclaw/workspace/skills/mcp-adapter/` |
 | memory-hygiene | 内存清理 | 审计、清理和优化Clawdbot的向量内存 | `~/.openclaw/workspace/skills/memory-hygiene/` |
 | openclaw-tavily-search | Tavily搜索 | 使用Tavily API进行网络搜索 | `~/.openclaw/workspace/skills/openclaw-tavily-search/` |
+| find-skills | 技能发现 | 最高优先级技能发现流程 | `~/.openclaw/workspace/skills/find-skills/` |
+| skillhub-preference | Skillhub偏好 | 优先使用skillhub进行技能发现 | `~/.openclaw/workspace/skills/skillhub-preference/` |
 | pdf | PDF处理 | PDF文本提取、合并分割、创建、表单填写 | `~/.openclaw/workspace/skills/pdf/` |
 | pdf-generator | PDF生成器 | 从Markdown、HTML、数据生成专业PDF文档 | `~/.openclaw/workspace/skills/pdf-generator/` |
 | pdf-processing | PDF处理 | PDF文本和表格提取、表单填写、合并文档 | `~/.openclaw/workspace/skills/pdf-processing/` |
@@ -113,5 +115,5 @@
 
 ---
 
-*最后重构: 2026-04-16*
+*最后重构: 2026-04-17*
 *重构者: 教务助手*

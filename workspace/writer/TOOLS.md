@@ -92,7 +92,6 @@
 | docx-generator | Word文档生成 | 生成带AI页脚的Word文档 | ~/.openclaw/workspace/skills/docx-generator/SKILL.md |
 | excel-xlsx | Excel处理 | 创建、编辑Excel工作簿 | ~/.openclaw/workspace/skills/excel-xlsx/SKILL.md |
 | feishu-calendar-advanced | 飞书日历 | 飞书日历管理 | ~/.openclaw/workspace/skills/feishu-calendar-advanced/SKILL.md |
-| find-skills | 查找技能 | 技能发现和安装 | ~/.openclaw/workspace/skills/find-skills/SKILL.md |
 | github | GitHub操作 | GitHub CLI操作 | ~/.openclaw/workspace/skills/github/SKILL.md |
 | ima-skills | IMA技能 | IMA相关技能 | ~/.openclaw/workspace/skills/ima-skills/SKILL.md |
 | knowledge-manager | 知识管理 | 文献检索、知识库维护 | ~/.openclaw/workspace/skills/knowledge-manager/SKILL.md |
@@ -106,7 +105,6 @@
 | pptx-generator | PPT生成器 | 生成可编辑PPT | ~/.openclaw/workspace/skills/pptx-generator/SKILL.md |
 | scihub-paper-downloader | Sci-Hub下载 | 获取论文PDF链接 | ~/.openclaw/workspace/skills/scihub-paper-downloader/SKILL.md |
 | Skill-developer | 技能开发 | 创建和改进技能 | ~/.openclaw/workspace/skills/Skill-developer/SKILL.md |
-| skillhub-preference | SkillHub偏好 | 技能发现安装偏好 | ~/.openclaw/workspace/skills/skillhub-preference/SKILL.md |
 | Subagents-manager | 子代理管理 | 子代理创建和管理 | ~/.openclaw/workspace/skills/Subagents-manager/SKILL.md |
 | summarize | 摘要总结 | URL和文件摘要 | ~/.openclaw/workspace/skills/summarize/SKILL.md |
 | tencentcloud-lighthouse-skill | 腾讯云轻量服务器 | 轻量服务器管理 | ~/.openclaw/workspace/skills/tencentcloud-lighthouse-skill/SKILL.md |
@@ -129,5 +127,5 @@
 
 ---
 
-*最后重构: 2026-04-16*
+*最后重构: 2026-04-17*
 *重构者: 写作助手*

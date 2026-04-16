@@ -9,6 +9,7 @@
 | 执行时间 | 负责人 | 任务ID | 会话ID | 任务名称 | 功能描述 | cron状态 |
 |----------|--------|--------|--------|----------|----------|----------|
 | 每日 04:00 | 大管家（steward） | `757bffa8-bd05-4f27-b197-b4edfa3d3aef` | `session:CORN:steward的定时任务` | 每日维护任务 | 1. 维护 TOOLS.md；2.维护 MEMORY.md；3.维护工作空间 | enabled |
+| 每日 03:00 | 大管家（steward） | `c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f` | `session:CORN:steward的定时任务` | 每日仓库维护任务 | 1. 检查仓库结构完整性；2.检查所有README.md；3.检查所有文档是否已记录；4.检查笔记命名规范性 | enabled |
 | 每日 05:00 | 大管家（steward） | `a4980ce3-ce17-47f0-801f-0135f7cec45d` | `session:CORN:steward的定时任务` | 每日凌晨自动提交推送Git | 自动提交所有更改并推送到development分支，使用auto-push.sh脚本 | enabled |
 
 > 注：其他代理的定时任务由各代理自行记录在各自的HEARTBEAT.md中

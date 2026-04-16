@@ -107,9 +107,7 @@
 | zotero-local-pdf-import | Zotero本地导入 | 本地PDF导入Zotero | ~/.openclaw/workspace/skills/zotero-local-pdf-import/SKILL.md |
 | zotero-scholar | Zotero学术 | Zotero学术功能 | ~/.openclaw/workspace/skills/zotero-scholar/SKILL.md |
 | zotero-vectorize | Zotero向量化 | Zotero语义索引 | ~/.openclaw/workspace/skills/zotero-vectorize/SKILL.md |
-| 修改文档 | 需要修改已存在的文档文件 | 修改文档文件，保存新版本并记录修改历史 | ~/.openclaw/workspace/skills/修改文档/SKILL.md |
-| 撰写脚本 | 需要创建新的操作脚本 | 按照五要素SOP规范撰写新脚本 | ~/.openclaw/workspace/skills/撰写脚本/SKILL.md |
-| 撰写技能 | 需要创建新的技能 | 创建新的技能（结构化或非结构化） | ~/.openclaw/workspace/skills/撰写技能/SKILL.md |
+
 ---
 
 ### 个人技能索引
@@ -120,5 +118,5 @@
 
 ---
 
-*最后重构: 2026-04-16*
+*最后重构: 2026-04-17*
 *重构者: 教学助手*

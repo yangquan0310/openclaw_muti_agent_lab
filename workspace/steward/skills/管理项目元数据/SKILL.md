@@ -69,7 +69,9 @@ python3 维护所有项目元数据.py
   "directories": {},
   "documents": [],
   "tags": [],
-  "cloud_doc_mappings": {}
+  "markdown": {},
+  "notes": {},
+  "knowledge_base": {}
 }
 ```
 
@@ -80,7 +82,8 @@ python3 维护所有项目元数据.py
   "文档": "文档/",
   "草稿": "草稿/",
   "终稿": "终稿/",
-  "知识库": "知识库/"
+  "知识库": "知识库/",
+  "笔记": "知识库/笔记/"
 }
 ```
 
@@ -91,15 +94,16 @@ python3 维护所有项目元数据.py
 | 草稿 | str | 论文草稿的目录路径 |
 | 终稿 | str | 最终版本的目录路径 |
 | 知识库 | str | 项目专属知识库的目录路径 |
+| 笔记 | str | 笔记文件的目录路径 |
 
 ### documents结构
-只记录代理撰写的非草稿文档和用户上传的文档。
+只记录用户上传的文档（docx/pdf等），不记录代理撰写的文件。
 ```json
 [
   {
     "title": "文档标题",
     "version": "v1",
-    "path": "文档/文档标题.md",
+    "path": "文档/文档标题.docx",
     "type": "user_uploaded"
   }
 ]
@@ -111,7 +115,7 @@ python3 维护所有项目元数据.py
 | title | str | 文档标题 |
 | version | str | 文档版本号（如 v1、v2） |
 | path | str | 文档相对路径 |
-| type | str | 文档类型：user_uploaded（用户上传）或 agent_written（代理撰写） |
+| type | str | 文档类型：user_uploaded（用户上传） |
 
 ### tags结构
 ```json
@@ -127,11 +131,12 @@ python3 维护所有项目元数据.py
 |------|--------|------|
 | - | str | 标签字符串，用于项目分类和检索 |
 
-### cloud_doc_mappings 结构
+### markdown 结构
+记录本地代理撰写的markdown文件及其云文档映射。
 ```json
 {
-  "文档标题": {
-    "local_path": "文档标题.md",
+  "文档标题.md": {
+    "local_path": "终稿/文档标题.md",
     "cloud": [
       {
         "platform": "feishu",
@@ -154,4 +159,42 @@ python3 维护所有项目元数据.py
 | cloud_id | str | 云文档ID |
 | created_at | str | 云文档创建时间（ISO格式） |
 | updated_at | str | 云文档更新时间（ISO格式） |
+
+### notes 结构
+记录笔记文件（json格式），不上传云文档。
+```json
+{
+  "笔记标题.json": {
+    "local_path": "知识库/笔记/笔记标题.json",
+    "created_at": "2026-04-16",
+    "description": "笔记描述"
+  }
+}
+```
+
+字段表
+| 字段 | 值类型 | 说明 |
+|------|--------|------|
+| local_path | str | 本地笔记文件路径 |
+| created_at | str | 创建日期 |
+| description | str | 笔记描述 |
+
+### knowledge_base 结构
+记录知识库索引信息。
+```json
+{
+  "index_file": "知识库/index.json",
+  "description": "项目知识库索引",
+  "created_at": "2026-04-01",
+  "updated_at": "2026-04-16"
+}
+```
+
+字段表
+| 字段 | 值类型 | 说明 |
+|------|--------|------|
+| index_file | str | 知识库索引文件路径 |
+| description | str | 知识库描述 |
+| created_at | str | 创建日期 |
+| updated_at | str | 更新日期 |
 
