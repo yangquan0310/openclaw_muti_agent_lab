@@ -11,7 +11,7 @@
         }
       },
       "model": {
-        "primary": "tencenttokenplan/kimi-k2.5"
+        "primary": "kimicode/kimi-for-coding"
       }
     },
     "list": [
@@ -462,7 +462,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.8",
-    "lastTouchedAt": "2026-04-15T16:56:30.121Z"
+    "lastTouchedAt": "2026-04-13T17:11:27.060Z"
   },
   "plugins": {
     "entries": {
@@ -493,7 +493,9 @@
       "qqbot": {
         "enabled": true
       },
-
+      "feishu": {
+        "enabled": false
+      },
       "openclaw-lark": {
         "enabled": true
       },
@@ -603,8 +605,7 @@
       "openclaw-lark",
       "openclaw-weixin",
       "lightclawbot",
-      "browser",
-      "qqbot"
+      "browser"
     ]
   },
   "browser": {
@@ -701,59 +702,6 @@
     },
     "openclaw-weixin": {
       "accounts": {}
-    },
-    "feishu": {
-      "enabled": true,
-      "domain": "feishu",
-      "connectionMode": "websocket",
-      "reactionNotifications": "own",
-      "typingIndicator": true,
-      "resolveSenderNames": true,
-      "requireMention": true,
-      "streaming": true,
-      "accounts": {
-        "steward": {
-          "appId": "cli_a94178f816b91cc9",
-          "appSecret": "${FEISHU_STEWARD_APP_SECRET}"
-        },
-        "physicist": {
-          "appId": "cli_a94177ba8778dcb6",
-          "appSecret": "${FEISHU_PHYSICIST_APP_SECRET}"
-        },
-        "mathematician": {
-          "appId": "cli_a941705ac4f89cc2",
-          "appSecret": "${FEISHU_MATHEMATICIAN_APP_SECRET}"
-        },
-        "psychologist": {
-          "appId": "cli_a94170cfbcf8dccb",
-          "appSecret": "${FEISHU_PSYCHOLOGIST_APP_SECRET}"
-        },
-        "writer": {
-          "appId": "cli_a941713c73389cd3",
-          "appSecret": "${FEISHU_WRITER_APP_SECRET}"
-        },
-        "reviewer": {
-          "appId": "cli_a9417171c5385cd3",
-          "appSecret": "${FEISHU_REVIEWER_APP_SECRET}"
-        },
-        "teachingassistant": {
-          "appId": "cli_a947bed63d785cdd",
-          "appSecret": "${FEISHU_TEACHINGASSISTANT_APP_SECRET}"
-        },
-        "studentaffairsassistant": {
-          "appId": "cli_a947bb11a2741cdb",
-          "appSecret": "${FEISHU_STUDENTAFFAIRSASSISTANT_APP_SECRET}"
-        },
-        "academicassistant": {
-          "appId": "cli_a947bb2b87399cc8",
-          "appSecret": "${FEISHU_ACADEMICASSISTANT_APP_SECRET}"
-        },
-        "default": {
-          "webhookPath": "/feishu/events",
-          "dmPolicy": "pairing",
-          "groupPolicy": "open"
-        }
-      }
     },
     "lightclawbot": {
       "enabled": true,

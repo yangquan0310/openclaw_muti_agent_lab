@@ -1,0 +1,14 @@
+{
+  "name": "subagent-manager",
+  "description": "Agent 子代理管理技能包，提供三阶段任务执行规范：计划阶段、监控阶段、调节阶段",
+  "version": "2.0.0",
+  "author": "大管家",
+  "created_at": "2026-04-16",
+  "emoji": "🤖",
+  "triggers": ["子代理管理", "Agent流程", "SOP规范", "计划阶段", "监控阶段", "调节阶段", "三阶段闭环"],
+  "dependencies": {
+    "bins": [],
+    "python_packages": []
+  },
+  "environment_variables": []
+}

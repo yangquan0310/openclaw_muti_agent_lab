@@ -1,6 +1,6 @@
 # OpenClaw 多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-v2.0-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-v3.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-9%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -50,47 +50,55 @@
 .openclaw/
 ├── README.md                          # 本说明文件
 ├── .gitignore                         # Git忽略规则
+├── requirements.txt                   # 需求文件
 ├── openclaw.json                      # OpenClaw主配置文件
-├── skills/                            # 公共技能库（所有Agent共享）
-│   ├── knowledge-manager/             # 知识管理工具（文献检索+知识库管理+笔记生成+综述合成）
-│   │   ├── search/                     # 文献检索模块
-│   │   │   ├── Searcher.py             # 文献检索类：多主题多轮检索，支持每轮单独条件
-│   │   │   └── SKILL.md               # 检索模块说明
-│   │   ├── summarize/                  # 文献总结模块
-│   │   │   ├── Summarizer.py           # 文献总结类：LLM分析，添加labels和notes
-│   │   │   └── SKILL.md               # 总结模块说明
-│   │   ├── manage/                     # 知识库管理模块
-│   │   │   ├── Manager.py              # 知识库管理类：合并、筛选、链式调用
-│   │   │   └── SKILL.md               # 管理模块说明
-│   │   ├── synthesize/                 # 文献综述合成模块
-│   │   │   └── SKILL.md               # 综述合成模块说明
-│   │   ├── config.json                 # 统一配置文件：多LLM供应商、API参数、存储规则
-│   │   ├── README.md                   # 工具使用说明
-│   │   └── SKILL.md                    # 主技能说明（AI入口）
-│   ├── feishu-doc-manager/            # 飞书文档管理
-│   ├── tencent-docs/                  # 腾讯文档管理
-│   ├── tencent-cos-skill/             # 腾讯云对象存储
-│   ├── tencent-meeting-skill/         # 腾讯会议管理
-│   ├── tencentcloud-lighthouse-skill/ # 腾讯轻量云管理
-│   ├── github/                        # GitHub仓库管理
-│   ├── zotero/                        # Zotero文献管理
-│   └── .skills_store_lock.json        # 技能锁定配置
-├── scripts/                           # 公共SOP脚本
-│   ├── agents-sop/                    # Agent标准操作流程
-│   ├── 修改文档/                       # 文档修改规范
-│   ├── 撰写脚本/                       # 脚本创建规范
-│   ├── 撰写技能/                       # 技能创建规范
-│   └── 管理项目元数据/                 # 项目元数据管理
+├── cron                               # 定时任务
 └── workspace/                         # 所有Agent工作空间
     ├── steward/                       # 大管家工作空间（系统配置中心）
+    │   └── skills/                    # 个人技能库
     ├── mathematician/                 # 数学家工作空间
+    │   └── skills/                    # 个人技能库
     ├── physicist/                     # 物理学家工作空间
+    │   └── skills/                    # 个人技能库
     ├── psychologist/                  # 心理学家工作空间
+    │   └── skills/                    # 个人技能库
     ├── reviewer/                      # 审稿助手工作空间
+    │   └── skills/                    # 个人技能库
     ├── writer/                        # 写作助手工作空间
+    │   └── skills/                    # 个人技能库
     ├── teaching/                      # 教学助手工作空间
+    │   └── skills/                    # 个人技能库
     ├── academicassistant/              # 教务助手工作空间
-    └── studentaffairsassistant/        # 学工助手工作空间
+    │   └── skills/                    # 个人技能库
+    ├── studentaffairsassistant/        # 学工助手工作空间
+    │   └── skills/                    # 个人技能库
+    └── skills/                            # 公共技能库（所有Agent共享）
+        ├── knowledge-manager/             # 知识管理工具（文献检索+知识库管理+笔记生成+综述合成）
+        │   ├── search/                     # 文献检索模块
+        │   │   ├── Searcher.py             # 文献检索类：多主题多轮检索，支持每轮单独条件
+        │   │   └── SKILL.md               # 检索模块说明
+        │   ├── summarize/                  # 文献总结模块
+        │   │   ├── Summarizer.py           # 文献总结类：LLM分析，添加labels和notes
+        │   │   └── SKILL.md               # 总结模块说明
+        │   ├── manage/                     # 知识库管理模块
+        │   │   ├── Manager.py              # 知识库管理类：合并、筛选、链式调用
+        │   │   └── SKILL.md               # 管理模块说明
+        │   ├── synthesize/                 # 文献综述合成模块
+        │   │   └── SKILL.md               # 综述合成模块说明
+        │   ├── config.json                 # 统一配置文件：多LLM供应商、API参数、存储规则
+        │   ├── README.md                   # 工具使用说明
+        │   └── SKILL.md                    # 主技能说明（AI入口）
+        ├── feishu-doc-manager/            # 飞书文档管理
+        ├── tencent-docs/                  # 腾讯文档管理
+        ├── tencent-cos-skill/             # 腾讯云对象存储
+        ├── tencent-meeting-skill/         # 腾讯会议管理
+        ├── tencentcloud-lighthouse-skill/ # 腾讯轻量云管理
+        ├── github/                        # GitHub仓库管理
+        ├── zotero/                        # Zotero文献管理
+        ├── 修改文档/                       # 文档修改规范
+        ├── 撰写技能/                       # 技能创建规范
+        └── 管理项目元数据/                 # 项目元数据管理
+        └── .skills_store_lock.json        # 技能锁定配置
 ```
 
 ## 📂 实验室仓库结构（独立存储）
@@ -331,6 +339,12 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 3.0 (2026-04-16)
+- **技能文件夹重构**：各Agent工作空间中的 `scripts` 文件夹内容已统一合并至 `skills` 文件夹，不再区分脚本和技能
+- **新增子代理管理员技能**：面向对象设计的子代理管理技能，提供三阶段任务执行规范（计划→监控→调节）
+- **新增技能开发者技能**：面向对象设计的技能开发技能，支持类、对象、属性、方法、继承、封装等概念
+- **简化技能管理**：统一技能存储位置，降低维护复杂度
+
 ### 版本 2.1 (2026-04-13)
 - 重构日志系统，移除公共记录工作日志脚本
 - 迁移知识管理工具，整合文献检索和知识库功能
@@ -357,7 +371,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新**: 2026-04-13 19:37:00  
-**系统版本**: v2.1.1  
+**最后更新**: 2026-04-16 16:44:00  
+**系统版本**: v3.0.0  
 **运行状态**: ✅ 正常运行  
 **备份状态**: ✅ 自动执行中

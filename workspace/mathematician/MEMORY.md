@@ -98,7 +98,8 @@
 
 | 脚本名 | 功能 | 位置 |
 |--------|------|------|
-| update_indexes | 自动更新 TOOLS.md 中的脚本索引和项目库 | `~/.openclaw/workspace/mathematician/skills/update_indexes/SKILL.md` |
+| daily_maintenance | 执行数学家每日维护任务 | `~/.openclaw/workspace/mathematician/skills/daily_maintenance.sh` |
+| update_indexes | 自动更新 TOOLS.md 中的技能索引和项目库 | `~/.openclaw/workspace/mathematician/skills/update_indexes/SKILL.md` |
 
 ### 条件-行动规则（If-Then Rules）
 
