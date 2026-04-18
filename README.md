@@ -5,6 +5,56 @@
 ![Agents](https://img.shields.io/badge/Agents-9%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
 
+## 🤖 Agent自我发展机制（agent_self_development v1.1.0）
+
+> 基于皮亚杰认知发展理论 + Baddeley 工作记忆模型构建的 Agent 自我进化系统
+
+### 核心机制
+
+所有Agent每日00:00自动执行自我更新，通过记录日记、同化顺应分析、执行更新实现持续进化。
+
+```
+每日 00:00 定时触发
+    ↓
+1. 阅读当日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）
+    ↓
+2. 撰写/完善发展日记（memory/YYYY-MM-DD/diary.md）
+    ↓
+3. 阅读核心自我（MEMORY.md/SOUL.md/IDENTITY.md/skills/README.md）
+    ↓
+4. 同化与顺应分析（对比日记与核心自我）
+    ↓
+5. 检测更新触发信号
+    ↓
+6. 执行相应更新
+    ↓
+7. 记录更新日志
+```
+
+### 更新类型
+
+| 更新维度 | 触发条件 | 更新内容 | 目标文件 |
+|----------|----------|----------|----------|
+| **核心自我** | 能力边界变化 | 核心身份、能做什么/不能做什么 | MEMORY.md（核心自我认知） |
+| **身份** | 角色变化 | 角色集、社会身份、协作网络 | IDENTITY.md |
+| **风格-信念** | 价值观/工作方式变化 | 工作信念、交互/文档/代码/执行风格 | SOUL.md |
+| **技能** | 习得/细化/淘汰 | 技能体系、技能索引 | skills/README.md |
+
+### 理论基础
+
+- **皮亚杰认知发展理论**：同化（将新信息纳入现有结构）与顺应（调整结构适应新信息）
+- **Baddeley 工作记忆模型**：中央执行系统管理当前活跃任务
+- **元认知理论**：计划→监控→调节三阶段闭环
+
+### 详细文档
+
+- `workspace/skills/agent_self_development/README.md` - 完整概述
+- `workspace/skills/agent_self_development/SKILL.md` - 根路由
+- `workspace/skills/agent_self_development/assimilation_accommodation/SKILL.md` - 同化顺应模块
+- `workspace/skills/agent_self_development/working_memory/SKILL.md` - 工作记忆模块
+
+---
+
 ## 👥 团队成员
 
 ### 实验室成员（研究团队）
@@ -336,6 +386,13 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 3.1 (2026-04-19)
+- **新增Agent自我发展机制**：基于皮亚杰认知发展理论，每日00:00自动执行自我更新
+- **重构MEMORY.md工作记忆规则**：删除与技能包重复内容，统一引用agent_self_development规范
+- **统一定时任务时间**：所有Agent每日自我更新改为00:00执行
+- **修正事件记忆路径**：所有代理路径指向自己的工作空间
+- **新增agent_self_development技能包**：包含元认知、工作记忆、同化顺应三大模块
+
 ### 版本 3.0 (2026-04-16)
 - **技能文件夹重构**：各Agent工作空间中的 `scripts` 文件夹内容已统一合并至 `skills` 文件夹，不再区分脚本和技能
 - **新增子代理管理员技能**：面向对象设计的子代理管理技能，提供三阶段任务执行规范（计划→监控→调节）
@@ -368,7 +425,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新**: 2026-04-16 16:44:00  
-**系统版本**: v3.0.0  
+**最后更新**: 2026-04-19 01:20:00  
+**系统版本**: v3.1.0  
 **运行状态**: ✅ 正常运行  
 **备份状态**: ✅ 自动执行中
