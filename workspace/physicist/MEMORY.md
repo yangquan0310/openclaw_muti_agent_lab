@@ -4,8 +4,8 @@
 > - 工作记忆:追踪当前活跃的子代理任务状态
 > - 陈述性记忆:语义网络形式存储
 > - 程序性记忆:脚本形式存储
-> 版本:v8.0.0
-> 最后更新:2026-04-17
+> 版本:v8.0.1
+> 最后更新:2026-04-19
 
 ---
 
@@ -75,7 +75,7 @@
 
 > 记录关键事件及其时间线索引,包含事件详细日志位置
 
-> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/steward/memory/YYYY-MM-DD/HH-MM-SS-{event}.md`
+> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/physicist/memory/YYYY-MM-DD/HH-MM-SS-{event}.md`
 | 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
 |------|------|----------|------|----------|
 ||||
@@ -85,7 +85,7 @@
 
 ### 脚本索引
 > 公共技能完整列表见: `/root/.openclaw/workspace/skills/README.md`
-> 个人技能完整列表见: `/root/.openclaw/workspace/steward/skills/README.md`
+> 个人技能完整列表见: `/root/.openclaw/workspace/physicist/skills/README.md`
 
 ### 条件-行动规则(If-Then Rules)
 

@@ -102,5 +102,5 @@
 > 完整列表见: `/root/.openclaw/workspace/psychologist/skills/README.md`
 
 ---
-*最后重构: 2026-04-16
+*最后重构: 2026-04-19
 *重构者: 心理学家-每日维护任务

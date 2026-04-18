@@ -18,17 +18,20 @@
 | docx-generator | Word文档生成 | Word文档自动生成工具 | `workspace/skills/docx-generator/SKILL.md` |
 | excel-xlsx | Excel表格处理 | Excel文件处理技能 | `workspace/skills/excel-xlsx/SKILL.md` |
 | feishu-calendar-advanced | 飞书日历高级功能 | 飞书日历高级管理功能 | `workspace/skills/feishu-calendar-advanced/SKILL.md` |
+| find-skills | 查找技能 | 技能发现和安装工具 | `workspace/skills/find-skills/SKILL.md` |
 | github | GitHub操作 | GitHub代码托管操作技能 | `workspace/skills/github/SKILL.md` |
 | ima-skills | IMA知识管理 | IMA知识库管理技能 | `workspace/skills/ima-skills/SKILL.md` |
 | knowledge-manager | 知识管理 | 文献检索、知识库维护、笔记处理 | `workspace/skills/knowledge-manager/SKILL.md` |
 | mcp-adapter | MCP适配器 | MCP协议适配工具 | `workspace/skills/mcp-adapter/SKILL.md` |
 | memory-hygiene | 记忆清理 | 工作记忆清理和维护工具 | `workspace/skills/memory-hygiene/SKILL.md` |
+| openclaw-tavily-search | Tavily搜索 | 使用Tavily API进行网络搜索 | `workspace/skills/openclaw-tavily-search/SKILL.md` |
 | pdf-generator | PDF生成 | PDF文档生成工具 | `workspace/skills/pdf-generator/SKILL.md` |
 | pdf-processing | PDF处理 | PDF文件处理技能 | `workspace/skills/pdf-processing/SKILL.md` |
 | pdf | PDF工具 | PDF基础操作工具 | `workspace/skills/pdf/SKILL.md` |
 | pptx-2 | PPT处理 | PowerPoint文档处理技能 | `workspace/skills/pptx-2/SKILL.md` |
 | pptx-generator | PPT生成 | PowerPoint自动生成工具 | `workspace/skills/pptx-generator/SKILL.md` |
 | scihub-paper-downloader | SciHub下载 | 学术论文下载工具 | `workspace/skills/scihub-paper-downloader/SKILL.md` |
+| skillhub-preference | 技能偏好 | 技能发现和安装偏好设置 | `workspace/skills/skillhub-preference/SKILL.md` |
 | Skill-developer | 技能开发 | 技能包开发工具 | `workspace/skills/Skill-developer/SKILL.md` |
 | Subagents-manager | 子代理管理 | 子代理创建、监控、调节管理 | `workspace/skills/Subagents-manager/SKILL.md` |
 | summarize | 文本摘要 | 文本自动摘要工具 | `workspace/skills/summarize/SKILL.md` |
