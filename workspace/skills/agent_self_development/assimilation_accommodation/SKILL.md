@@ -1,3 +1,25 @@
+---
+name: assimilation_accommodation
+description: >
+  同化与顺应模块。基于皮亚杰认知发展理论，通过日记记录和经验反思实现 Agent 持续自我更新。
+version: 1.0.0
+author: 大管家
+dependencies:
+  - ../working_memory
+exports:
+  - diary_template
+  - core_self_update_template
+  - identity_update_template
+  - belief_style_update_template
+  - skills_update_template
+routes:
+  - diary/
+  - core_self_update/
+  - identity_update/
+  - belief_style_update/
+  - skills_update/
+---
+
 # assimilation_accommodation
 
 > 同化与顺应模块 - 通过日记记录实现自我更新
@@ -5,63 +27,132 @@
 
 ---
 
-## 概述
+## 文件说明
 
-同化与顺应（Assimilation & Accommodation）是皮亚杰认知发展理论的核心概念。本模块帮助 Agent 通过日记记录和经验反思，实现持续的核心自我更新、身份更新、风格和信念更新与技能更新。
-
-- **同化 (Assimilation)**：将新经验纳入现有认知结构
-- **顺应 (Accommodation)**：调整认知结构以适应新经验
-- **平衡 (Equilibration)**：在同化与顺应之间寻求动态平衡
-
----
-
-## 子模块
-
-| 子模块 | 路径 | 功能描述 |
-|--------|------|----------|
-| 发展日记 | `diary/SKILL.md` | 记录每日经验和反思 |
-| 核心自我更新 | `core_self_update/SKILL.md` | 更新核心身份和能力 |
-| 身份更新 | `identity_update/SKILL.md` | 更新角色和社会身份 |
-| 信念与风格更新 | `belief_style_update/SKILL.md` | 更新信念和工作风格 |
-| 技能更新 | `skills_update/SKILL.md` | 更新自我认同和价值观 |
+| 文件 | 功能 | 说明 |
+|------|------|------|
+| `SKILL.md` | 模块路由 | 同化与顺应总览，索引子模块 |
+| `diary/SKILL.md` | 发展日记 | 记录每日经验和反思 |
+| `core_self_update/SKILL.md` | 核心自我更新 | 更新核心身份和能力边界 |
+| `identity_update/SKILL.md` | 身份更新 | 更新角色集和社会身份 |
+| `belief_style_update/SKILL.md` | 信念与风格更新 | 更新工作信念和工作风格 |
+| `skills_update/SKILL.md` | 技能更新 | 更新技能体系 |
 
 ---
 
-## 工作流程
+## 工作流
+
+### 工作流1：任务工作流（六阶段闭环）
+
+> 从接受用户需求到任务完成并归档的完整生命周期。
+> 对应 `AGENTS.md` 六阶段规范，其中阶段6由本模块（assimilation_accommodation）主导。
 
 ```
-每日经验积累
+接受用户需求
     ↓
-[步骤1] 记录发展日记 (diary/SKILL.md)
-    ├── 今日任务回顾
-    ├── 成功经验记录
-    ├── 失败教训总结
-    └── 新技能/知识学习
+阶段0：会话初始化
+    ├── 载入 SOUL.md / IDENTITY.md / MEMORY.md / TOOLS.md
+    └── 初始化工作记忆（读取当前活跃任务看板、活跃子代理清单）
     ↓
-[步骤2] 同化与顺应
-    ├── 阅读日记 → 更新自我
-    ├── 开发新的脚本 → 记录与个人技能文件夹
-    ├── 角色变化 → 身份更新
-    ├── 信念调整 → 信念与风格更新
-    └── 身份认知变化 → 自我身份更新
-    ↓
-[步骤3] 执行相应更新
-    ↓
-[步骤4] 记录更新日志
+阶段1：任务决策
+    ├── 快速查询 / Cron → 主代理直接执行（跳至阶段5）
+    └── 复杂任务 → 进入元认知闭环
+        ↓
+阶段2：计划（Planning）→ metacognition/planning/SKILL.md
+        ├── 目标澄清、约束识别
+        ├── 任务层级拆解
+        ├── 子代理与工具分配
+        └── 在工作记忆创建任务记录（状态：active）
+        ↓
+阶段3：执行或监控（Monitoring）→ metacognition/monitoring/SKILL.md
+        ├── 创建子代理并分配任务
+        ├── 持续跟踪子代理状态
+        ├── 更新工作记忆（最后活跃时间、进度）
+        └── 偏差检测（>10% / >80% / >30min）
+        ↓
+阶段4：调节（Regulation）→ metacognition/regulation/SKILL.md（条件触发）
+        ├── 根因分析
+        ├── 生成调节方案
+        ├── 执行调节（paused → active）
+        └── 返回阶段3继续监控
+        ↓
+阶段5：任务完成与归档 → working_memory/memory_table/SKILL.md
+        ├── 更新状态为 completed
+        ├── 记录完成摘要到工作记忆
+        ├── 归档到事件记忆：memory/YYYY-MM-DD/HH-MM-SS-completed.md
+        └── killed 任务：memory/YYYY-MM-DD/HH-MM-SS-killed.md（后删除）
 ```
+
+### 工作流2：每日同化与顺应（每日定时执行）
+
+> 每日任务全部结束后（或每日 04:00 定时）执行，完成系统性反思与自我更新
+
+**步骤**：
+
+1. **阅读当日事件记忆**
+   - 读取 `memory/YYYY-MM-DD/` 下所有 `HH-MM-SS-{event}.md` 文件
+   - 梳理 completed / killed / regulation 事件的完整脉络
+
+2. **撰写/完善发展日记**
+   - 在 `memory/YYYY-MM-DD/diary.md` 中整合全天任务回顾
+   - 提取跨任务的成功经验与失败教训（去重、归类）
+   - 评估可复用性（高/中/低），标记需固化的技能点
+
+3. **同化与顺应分析**
+   - **同化**：原有流程/风格的细化（如将"细心"操作化为检查清单）
+   - **顺应**：新结构的出现（如用户提出全新约束、新角色分配）
+   - 阅读日记 → 识别需要更新的信号
+
+4. **检测更新触发信号**
+   - [ ] 能力边界扩展 → 调用 `core_self_update`
+   - [ ] 角色变化 → 调用 `identity_update`
+   - [ ] 信念/风格调整 → 调用 `belief_style_update`
+   - [ ] 技能变化 → 调用 `skills_update`
+
+5. **执行相应更新**
+   - 调用对应子模块 SKILL.md
+   - 更新 `IDENTITY.md` / `SOUL.md`
+   - 同步到 `lab_repository`
+
+6. **记录更新日志**
+   - 将变更记录到 `MEMORY.md` 历史版本
+   - 生成 `memory/YYYY-MM-DD/HH-MM-SS-self-update.md` 事件文件
+
+7. **固化个人 skills**
+   - 若新增/优化技能，按 `Skill-developer` 规范创建或更新 `skills/{技能名}/`
+   - 更新 `skills/README.md` 技能索引
+   - 更新 `TOOLS.md` 个人技能索引
 
 ---
 
-## 同化与顺应差异
+## 使用指南
 
-### 同化：原有内容的细化
+### 输入参数
 
-- 例如工作风格有“细心”，将细心操作化，变成流程就是同化
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `daily_events` | list | ✅ | 今日执行任务清单 |
+| `memory_archive` | object | ❌ | 从 working_memory 归档的事件 |
+| `current_identity` | object | ✅ | 当前身份定义（IDENTITY.md 内容） |
 
+### 输出结果
 
-### 顺应：新的结构
+| 输出项 | 格式 | 说明 |
+|--------|------|------|
+| `diary_entry` | Markdown | 发展日记条目 |
+| `update_log` | Markdown | 自我更新日志 |
+| `identity_patch` | Markdown | 身份/信念/技能更新补丁 |
 
-- 之前从来没有的内容被提出。用户提出新的风格要求：你不要乱扩展。
+### 同化与顺应判定
+
+| 类型 | 判定标准 | 处理方式 |
+|------|----------|----------|
+| **同化** | 原有内容的细化 | 更新现有流程、细化标准操作 |
+| **顺应** | 新结构的出现 | 新增模块、新增约束、新增角色 |
+
+**示例**：
+- 同化：工作风格有"细心"，将"细心"操作化为具体流程
+- 顺应：用户提出全新风格要求（如"不要过度扩展"），需新增约束规则
 
 ---
 
@@ -75,7 +166,7 @@ assimilation_accommodation
     ├── 事件记忆 (陈述性记忆)
     └── 发展日记 (经验积累)
             ↓ 反思
-    自我更新 (核心自我/身份/信念/认同)
+    自我更新 (核心自我/身份/信念/技能)
 ```
 
 ---
@@ -84,7 +175,7 @@ assimilation_accommodation
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v1.0.0 | 2026-04-17 | 初始版本 |
+| v1.0.0 | 2026-04-17 | 初始版本，标准化文档规范 |
 
 ---
 

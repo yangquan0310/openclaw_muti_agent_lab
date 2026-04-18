@@ -24,7 +24,7 @@
 | Agent 个人记忆 | ~/.openclaw/workspace/studentaffairsassistant/MEMORY.md | 学工助手独立维护 |
 | Agent 个人技能 | ~/.openclaw/workspace/studentaffairsassistant/skills/README.md | 学工助手专属技能存储目录 |
 | Agent 临时文件 | ~/.openclaw/workspace/studentaffairsassistant/temp/README.md | 学工助手专属临时文件存储目录 |
-| 工作日志 | ~/教研室仓库/日志文件/README.MD | 任务执行记录 |
+| Agent 工作日志 | ~/.openclaw/workspace/studentaffairsassistant/memory/README.md | 任务执行记录 |
 | 学工助手仓库 |	~/教研室仓库/学生工作/README.MD	|学工助手用来进行工作的文件夹、其他成员不可以写入，只能读取|
 | 学工助手项目 |	~/教研室仓库/学生工作/项目文件/README.MD	|学工助手用来存储项目的文件夹、其他成员不可以写入，只能读取|
 ---
@@ -83,20 +83,15 @@
 
 ---
 
-## 索引
+## 技能索引
 
 ### 公共技能索引
-
-> 所有技能存储在 ~/.openclaw/workspace/skills/ 目录下
+> 完整列表见: `/root/.openclaw/workspace/skills/README.md`
 
 ---
 
 ### 个人技能索引
-
-| 技能名称 | 触发示例 | 描述 | 路径 |
-|---------|---------|------|------|
-| 每日维护 | 定时任务触发 | 定时执行TOOLS.md维护、MEMORY.md维护和工作空间清理 | ~/.openclaw/workspace/studentaffairsassistant/skills/每日维护/SKILL.md |
-| 学业辅导 | 学业辅导、学习问题、成绩提升 | 识别学生学业问题、记录辅导过程、协调辅导资源 | ~/.openclaw/workspace/studentaffairsassistant/skills/学业辅导/SKILL.md |
+> 完整列表见: `/root/.openclaw/workspace/studentaffairsassistant/skills/README.md`
 ---
 
 *最后重构: 2026-04-17 04:00 (每日索引更新)*

@@ -24,6 +24,7 @@
 | Agent 个人记忆 | ~/.openclaw/workspace/mathematician/MEMORY.md | 数学家独立维护 |
 | Agent 个人技能 | ~/.openclaw/workspace/mathematician/skills/ | 个人技能存储目录 |
 | Agent 临时文件 | ~/.openclaw/workspace/mathematician/temp/ | 临时文件存储目录 |
+| Agent 工作日志 | ~/.openclaw/workspace/mathematician/memory/README.md | 任务执行记录 |
 | 实验室仓库 | ~/实验室仓库/README.md | 实验室仓库 |
 | 实验室项目 | ~/实验室仓库/项目文件/README.md | 实验室各个项目 |
 | 工作日志 | ~/实验室仓库/日志文件/README.md | 任务执行记录 |
@@ -88,49 +89,12 @@
 ## 技能索引
 
 ### 公共技能索引
+> 完整列表见: `/root/.openclaw/workspace/skills/README.md`
 
-| 技能名称 | 触发示例 | 描述 | 路径 |
-|---------|---------|------|------|
-| agent-browser | 浏览器自动化、网页抓取 | Headless browser automation CLI | /root/.openclaw/workspace/skills/agent-browser-clawdbot/SKILL.md |
-| baidu-scholar-search | 百度学术搜索 | 中英文文献检索 | /root/.openclaw/workspace/skills/baidu-scholar-search/SKILL.md |
-| cnki-advanced-search | 知网高级检索 | CSSCI/C刊论文检索 | /root/.openclaw/workspace/skills/cnki-advanced-search/SKILL.md |
-| docx-cn | Word文档处理 | 创建、读取、编辑Word文档 | /root/.openclaw/workspace/skills/docx-cn/SKILL.md |
-| docx-generator | Word文档生成 | 生成带AI页脚的Word文档 | /root/.openclaw/workspace/skills/docx-generator/SKILL.md |
-| excel-xlsx | Excel处理 | 创建、编辑Excel工作簿 | /root/.openclaw/workspace/skills/excel-xlsx/SKILL.md |
-| feishu-calendar-advanced | 飞书日历管理 | 日历和日程管理 | /root/.openclaw/workspace/skills/feishu-calendar-advanced/SKILL.md |
-| find-skills | 查找技能 | 技能发现和安装 | /root/.openclaw/workspace/skills/find-skills/SKILL.md |
-| github | GitHub交互 | 使用gh CLI操作GitHub | /root/.openclaw/workspace/skills/github/SKILL.md |
-| ima-skills | IMA技能 | IMA相关技能 | /root/.openclaw/workspace/skills/ima-skills/SKILL.md |
-| knowledge-manager | 检索文献、更新知识库 | 知识管理工具 | /root/.openclaw/workspace/skills/knowledge-manager/SKILL.md |
-| mcp-adapter | MCP集成 | Model Context Protocol服务器 | /root/.openclaw/workspace/skills/mcp-adapter/SKILL.md |
-| memory-hygiene | 记忆清理 | 向量记忆审计和优化 | /root/.openclaw/workspace/skills/memory-hygiene/SKILL.md |
-| openclaw-tavily-search | Tavily搜索 | 网络搜索 | /root/.openclaw/workspace/skills/openclaw-tavily-search/SKILL.md |
-| pdf | PDF处理 | PDF文本提取、创建、合并 | /root/.openclaw/workspace/skills/pdf/SKILL.md |
-| pdf-generator | PDF生成 | 从Markdown生成PDF | /root/.openclaw/workspace/skills/pdf-generator/SKILL.md |
-| pdf-processing | PDF处理 | PDF文本和表格提取 | /root/.openclaw/workspace/skills/pdf-processing/SKILL.md |
-| pptx-2 | PPT处理 | PowerPoint文件处理 | /root/.openclaw/workspace/skills/pptx-2/SKILL.md |
-| pptx-generator | PPT生成器 | 生成可编辑的PPT | /root/.openclaw/workspace/skills/pptx-generator/SKILL.md |
-| scihub-paper-downloader | Sci-Hub下载 | 获取PDF链接 | /root/.openclaw/workspace/skills/scihub-paper-downloader/SKILL.md |
-| skillhub-preference | SkillHub偏好 | 技能发现首选 | /root/.openclaw/workspace/skills/skillhub-preference/SKILL.md |
-| Skill-developer | 技能开发 | 创建和改进技能 | /root/.openclaw/workspace/skills/Skill-developer/SKILL.md |
-| Subagents-manager | 子代理管理 | 子代理创建和管理 | /root/.openclaw/workspace/skills/Subagents-manager/SKILL.md |
-| summarize | 内容总结 | 总结URL或文件 | /root/.openclaw/workspace/skills/summarize/SKILL.md |
-| tencentcloud-lighthouse-skill | 腾讯云轻量服务器 | Lighthouse管理 | /root/.openclaw/workspace/skills/tencentcloud-lighthouse-skill/SKILL.md |
-| tencent-cos-skill | 腾讯云COS | 对象存储管理 | /root/.openclaw/workspace/skills/tencent-cos-skill/SKILL.md |
-| tencent-docs | 腾讯文档 | 在线云文档平台 | /root/.openclaw/workspace/skills/tencent-docs/SKILL.md |
-| tencent-meeting-skill | 腾讯会议 | 视频会议管理 | /root/.openclaw/workspace/skills/tencent-meeting-skill/SKILL.md |
-| web-tools-guide | Web工具指南 | 搜索/抓取/浏览器策略 | /root/.openclaw/workspace/skills/web-tools-guide/SKILL.md |
-| zotero | Zotero管理 | 文献管理 | /root/.openclaw/workspace/skills/zotero/SKILL.md |
-| zotero-local-pdf-import | Zotero本地导入 | 本地PDF导入Zotero | /root/.openclaw/workspace/skills/zotero-local-pdf-import/SKILL.md |
-| zotero-scholar | Zotero学术搜索 | Zotero学术搜索 | /root/.openclaw/workspace/skills/zotero-scholar/SKILL.md |
-| zotero-vectorize | Zotero向量化 | Zotero语义索引 | /root/.openclaw/workspace/skills/zotero-vectorize/SKILL.md |
 ---
 
 ### 个人技能索引
-
-| 技能名称 | 触发示例 | 描述 | 路径 |
-|---------|---------|------|------|
-| （当前无个人技能） | - | - | - |
+> 完整列表见: `/root/.openclaw/workspace/mathematician/skills/README.md`
 
 ---
 *最后重构: 2026-04-16*

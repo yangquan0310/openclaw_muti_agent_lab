@@ -26,9 +26,9 @@
 | Agent 个人记忆 | ~/.openclaw/workspace/physicist/MEMORY.md | 物理学家独立维护 |
 | Agent 个人技能 | ~/.openclaw/workspace/physicist/skills/ | 物理学家专属技能存储目录 |
 | Agent 临时文件 | ~/.openclaw/workspace/physicist/temp/ | 物理学家专属临时文件存储目录 |
+| Agent 工作日志 | ~/.openclaw/workspace/physicist/memory/README.md | 任务执行记录 |
 | 实验室仓库 | ~/实验室仓库/README.md | 实验室仓库 |
 | 实验室项目 | ~/实验室仓库/项目文件/README.md | 实验室各个项目 |
-| 工作日志 | ~/实验室仓库/日志文件/README.md | 任务执行记录 |
 | 项目知识库 | ~/实验室仓库/项目文件/{项目名}/知识库/index.json | 项目专属文献知识库索引 |
 ---
 
@@ -79,16 +79,15 @@
 
 ---
 
-## 索引
+## 技能索引
 
 ### 公共技能索引
-> 完整技能列表见: ~/.openclaw/workspace/skills/README.md
+> 完整列表见: `/root/.openclaw/workspace/skills/README.md`
+
+---
 
 ### 个人技能索引
-
-| 技能名称 | 触发示例 | 描述 | 路径 |
-|---------|---------|------|------|
-| - | - | - | - |
+> 完整列表见: `/root/.openclaw/workspace/physicist/skills/README.md`
 
 ---
 *最后重构: 2026-04-17*

@@ -46,10 +46,16 @@
 ---
 
 ## 工作流
-- 判断主代理执行还是子代理执行
+
+> 严格遵循 `skills/agent_self_development` 认知框架执行任务。
+
+**单个任务执行完整规范参见 `skills/agent_self_development/SKILL.md` 工作流1。**
+
+**每日更新任务完整规范参见 `skills/agent_self_development/SKILL.md` 工作流2。**
+
 ---
 
-**现在，请严格按照上述三阶段执行每个任务。**
+**现在，请严格按照 `agent_self_development` 六阶段规范执行每个任务。**
 
 ---
 

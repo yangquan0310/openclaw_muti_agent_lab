@@ -1,3 +1,21 @@
+---
+name: agent_self_development
+description: >
+  Agent 自我发展技能包。基于皮亚杰认知发展理论，将自我发展分为元认知、工作记忆、同化与顺应三大维度，
+  提供纯文档规范指导 Agent 理解、构建和迭代自身的元认知能力。
+version: 1.0.0
+author: 大管家
+dependencies: []
+exports:
+  - metacognition
+  - working_memory
+  - assimilation_accommodation
+routes:
+  - metacognition/
+  - working_memory/
+  - assimilation_accommodation/
+---
+
 # agent_self_development
 
 > Agent 自我发展技能包
@@ -5,75 +23,78 @@
 
 ---
 
-## 概述
+## 文件说明
 
-本技能包提供一套完整的 Agent 自我发展框架，帮助 Agent 实现持续学习和自我进化。基于皮亚杰的认知发展理论，将 Agent 的自我发展分为三个核心维度：
-
-1. **元认知 (Metacognition)** - 对认知的认知，包括计划、监控和调节
-2. **工作记忆 (Working Memory)** - 管理当前活跃任务和子代理状态
-3. **同化与顺应 (Assimilation & Accommodation)** - 通过日记记录实现自我更新
+| 文件 | 功能 | 说明 |
+|------|------|------|
+| `SKILL.md` | 根路由 / 总控 | 技能包总览，提供模块索引和典型工作流 |
+| `_meta.json` | 技能元数据 | 机器可读的技能名称、版本、触发词、依赖 |
+| `metacognition/SKILL.md` | 元认知模块路由 | 计划、监控、调节三阶段闭环 |
+| `working_memory/SKILL.md` | 工作记忆模块路由 | 活跃任务和子代理状态管理 |
+| `assimilation_accommodation/SKILL.md` | 同化顺应模块路由 | 通过日记记录实现自我更新 |
+| `README.md` | 人类可读说明 | 项目概述（如需要可额外创建） |
 
 ---
 
-## 目录结构
+## 工作流
+
+### 工作流1：Agent 完整任务生命周期（六阶段闭环）
 
 ```
-agent_self_development/
-├── SKILL.md                          # 本文件 - 技能包总览
-├── metacognition/                    # 元认知模块
-│   ├── SKILL.md                      # 元认知总览
-│   ├── planning/                     # 计划阶段
-│   │   └── SKILL.md
-│   ├── monitoring/                   # 监控阶段
-│   │   └── SKILL.md
-│   └── regulation/                   # 调节阶段
-│       └── SKILL.md
-├── working_memory/                   # 工作记忆模块
-│   ├── SKILL.md                      # 工作记忆总览
-│   ├── memory_table/                 # 记忆表管理
-│   │   └── SKILL.md
-│   └── subagent_tracker/             # 子代理追踪
-│       └── SKILL.md
-└── assimilation_accommodation/       # 同化与顺应模块
-    ├── SKILL.md                      # 同化与顺应总览
-    ├── diary/                        # 发展日记
-    │   └── SKILL.md
-    ├── core_self_update/             # 核心自我更新
-    │   └── SKILL.md
-    ├── identity_update/              # 身份更新
-    │   └── SKILL.md
-    ├── belief_style_update/          # 信念与风格更新
-    │   └── SKILL.md
-    └── self_identity_update/         # 自我认同更新
-        └── SKILL.md
+阶段0：会话初始化
+    ↓
+阶段1：任务决策
+    ├── 快速查询 / Cron → 主代理直接执行（跳至阶段5）
+    └── 复杂任务 → 进入闭环
+        ↓
+阶段2：计划（Planning）→ metacognition/planning/SKILL.md
+        ↓
+阶段3：执行与监控（Monitoring）→ metacognition/monitoring/SKILL.md
+        ↓
+阶段4：调节（Regulation）（条件触发）→ metacognition/regulation/SKILL.md
+        └── 返回阶段3
+        ↓
+阶段5：任务完成与归档 → working_memory/memory_table/SKILL.md
+```
+
+### 工作流2：每日自我更新
+
+```
+每日定时
+    ↓
+[记录日记] assimilation_accommodation/diary/SKILL.md
+    ↓
+[执行更新] identity_update/SKILL.md; / belief_style_update/SKILL.md; / skills_update/SKILL.md
 ```
 
 ---
 
 ## 使用指南
 
-### 快速开始
+### 输入参数
 
-1. **元认知管理** - 使用 `metacognition/` 下的技能进行任务计划、监控和调节
-2. **工作记忆维护** - 使用 `working_memory/` 下的技能管理活跃任务和子代理
-3. **自我发展记录** - 使用 `assimilation_accommodation/` 下的技能记录发展日记和更新自我
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `task_context` | string | ✅ | 当前任务的上下文描述 |
+| `agent_identity` | object | ✅ | 当前 Agent 的身份定义（来自 IDENTITY.md） |
+| `memory_state` | object | ❌ | 当前工作记忆状态（如已有活跃任务看板） |
 
-### 典型工作流
+### 输出结果
 
-```
-任务开始
-    ↓
-[计划阶段] metacognition/planning/SKILL.md
-    ↓
-[工作记忆] working_memory/subagent_tracker/SKILL.md
-    ↓
-[监控阶段] metacognition/monitoring/SKILL.md
-    ↓
-[调节阶段] metacognition/regulation/SKILL.md
-    ↓
-[发展日记] assimilation_accommodation/diary/SKILL.md
-    ↓
-[自我更新] assimilation_accommodation/*/SKILL.md
+| 输出项 | 格式 | 说明 |
+|--------|------|------|
+| `task_plan` | Markdown | 结构化任务计划（planning 阶段） |
+| `memory_update` | Markdown 表格 | 更新的工作记忆记录（subagent_tracker） |
+| `diary_entry` | Markdown | 发展日记条目（diary 阶段） |
+| `identity_patch` | Markdown | 自我更新补丁（可选，同化顺应阶段） |
+
+### 调用方式
+
+本技能包为纯文档规范，无代码实现。其他 Agent 或技能通过读取对应 `SKILL.md` 获取执行规范：
+
+```markdown
+<!-- 在其他 SKILL.md 中引用 -->
+参见 [agent_self_development/metacognition/planning/SKILL.md](metacognition/planning/SKILL.md)
 ```
 
 ---
@@ -99,7 +120,7 @@ agent_self_development/
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v1.0.0 | 2026-04-17 | 初始版本，创建完整目录结构 |
+| v1.0.0 | 2026-04-17 | 初始版本，创建完整目录结构和标准化文档规范 |
 
 ---
 
