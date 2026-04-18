@@ -45,7 +45,6 @@ node_modules/
 .cache/
 *.db
 sessions/
-memory/
 devices/
 openclaw-*/
 subagents/
@@ -54,7 +53,6 @@ identity/
 venv/
 */venv/
 */sessions/
-*/memory/
 *.db-journal
 *.pyc
 __pycache__/
