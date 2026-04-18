@@ -64,7 +64,15 @@ routes:
     ↓
 [记录日记] assimilation_accommodation/diary/SKILL.md
     ↓
-[执行更新] identity_update/SKILL.md; / belief_style_update/SKILL.md; / skills_update/SKILL.md
+[阅读核心自我] MEMORY.md(核心自我认知) / SOUL.md / IDENTITY.md / skills/README.md
+    ↓
+[同化顺应分析] 对比日记与核心自我 → 识别更新信号
+    ↓
+[执行更新] core_self_update / identity_update / belief_style_update / skills_update
+    ↓
+[同步更新] 更新 IDENTITY.md / SOUL.md / MEMORY.md / 固化个人 skills
+    ↓
+[记录日志] 生成更新事件文件
 ```
 
 ---

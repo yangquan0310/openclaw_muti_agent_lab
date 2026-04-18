@@ -8,7 +8,7 @@
       "name": "每日凌晨自动提交推送Git",
       "enabled": true,
       "createdAtMs": 1775653560199,
-      "updatedAtMs": 1776286865418,
+      "updatedAtMs": 1776530604758,
       "schedule": {
         "kind": "cron",
         "expr": "0 5 * * *",
@@ -22,15 +22,14 @@
         "timeoutSeconds": 300
       },
       "state": {
-        "nextRunAtMs": 1776373200000,
-        "lastRunAtMs": 1776286800003,
+        "nextRunAtMs": 1776546000000,
+        "lastRunAtMs": 1776530538597,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 65415,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 66161,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1776530538594
+        "lastDelivered": false
       },
       "deleteAfterRun": false,
       "delivery": {
