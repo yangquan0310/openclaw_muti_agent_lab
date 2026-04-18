@@ -5,6 +5,81 @@
 ![Agents](https://img.shields.io/badge/Agents-9%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
 
+## 🧠 知识库管理系统（knowledge-manager v2.1.0）
+
+### 项目专属知识库
+每个科研项目有独立的知识库，位于`实验室仓库/项目文件/<项目名>/知识库/`，包含：
+- 项目相关的文献集合
+- 数据分析结果
+- 实验记录
+- 阶段性报告
+- 知识图谱索引
+
+### 知识管理工具（knowledge-manager）
+系统内置强大的知识管理技能，采用面向对象的四模块架构，支持多主题多轮次文献检索、LLM智能总结、知识库管理和文献综述合成。
+
+#### 核心架构
+| 模块 | 目录 | 功能说明 | 对应类 |
+|------|------|----------|--------|
+| **文献检索** | `search/` | 从Semantic Scholar获取数据，支持多主题多轮检索 | Searcher |
+| **文献总结** | `summarize/` | 使用LLM分析文献，添加labels和notes字段 | Summarizer |
+| **知识库管理** | `manage/` | 合并、筛选、保存知识库，支持链式调用 | Manager |
+| **文献综述合成** | `synthesize/` | 基于知识库生成文献综述和研究现状 | Synthesizer |
+
+#### 核心功能
+| 功能 | 描述 | 触发关键词 |
+|------|------|------------|
+| **文献检索** | 多主题多轮次学术文献检索，每轮可单独设置query、limit、year、minCitationCount等 | 检索、文献、查资料 |
+| **笔记总结** | LLM自动分析文献内容，提取核心观点，生成结构化笔记，打标签，分类 | 总结、笔记、摘要 |
+| **知识库维护** | 合并知识库、筛选知识库、提取知识库 | 知识库、维护、分类 |
+| **文献综述** | 基于知识库生成文献综述和研究现状 | 综述、文献综述、研究现状 |
+
+#### 知识库特性
+✅ **分级分类**：按照研究领域、文献类型、重要程度多级分类
+✅ **版本控制**：记录每一次修改和更新，支持历史版本回溯
+✅ **全文检索**：支持关键词、作者、发表时间等多维度检索
+✅ **关联分析**：自动识别文献之间的引用关系和研究脉络
+✅ **导出功能**：支持导出为Markdown、JSON、BibTeX等多种格式
+✅ **多主题多轮检索**：每个主题可设置多轮检索条件，每轮单独配置query、limit、year、minCitationCount、venue等
+✅ **面向对象架构**：四个独立模块，职责清晰，易于扩展和维护
+
+#### 快速开始示例
+```python
+from search.Searcher import Searcher
+from summarize.Summarizer import Summarizer
+from manage.Manager import Manager
+from synthesize.Synthesizer import Synthesizer
+
+# 1. 多主题多轮检索（每轮可单独设置条件）
+searcher = Searcher()
+queries = {
+    "自传体记忆基础": [
+        {"query": "autobiographical memory | personal memory", "limit": 30},
+        {"query": "\"self-memory system\" Conway", "year": "2010-2025", "minCitationCount": 50}
+    ],
+    "数字记忆": [
+        {"query": "digital memory | Google effect", "limit": 20, "year": "2020-2025"}
+    ]
+}
+kb = searcher.search(queries, kb_path="my_project.json")
+
+# 2. 总结文献
+Summarizer().summarize(kb_path="my_project.json")
+
+# 3. 筛选和保存
+Manager("my_project.json").filter({
+    "citations_min": 50,
+    "types": ["📊实证", "📖综述"],
+    "sort_by": "citationCount",
+    "limit": 10
+}).save("final_kb.json")
+
+# 4. 合成文献综述
+Synthesizer().synthesize(kb_path="final_kb.json", output_path="review.md")
+```
+
+---
+
 ## 🤖 Agent自我发展机制（agent_self_development v1.1.0）
 
 > 基于皮亚杰认知发展理论 + Baddeley 工作记忆模型构建的 Agent 自我进化系统
