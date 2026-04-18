@@ -48,6 +48,7 @@ exports:
    - 添加到 Agent 个人技能文件夹 `workspace/<agent>/skills/`
    - 更新 `_meta.json`
    - 在根 SKILL.md 中添加路由（如需要）
+   - **更新 `skills/README.md` 技能索引**
 
 4. **验证与测试**
    - 确认技能可独立调用
@@ -68,6 +69,7 @@ exports:
    - 修改对应 SKILL.md 中的工作流
    - 更新参数说明
    - 更新模板和示例
+   - **如技能名称/描述变更，同步更新 `skills/README.md` 索引**
 
 3. **同步版本号**
    - 遵循语义化版本（major.minor.patch）
@@ -87,6 +89,7 @@ exports:
 2. **标记弃用**
    - 在 SKILL.md 顶部添加弃用声明
    - 指向替代技能路径
+   - **更新 `skills/README.md` 索引，标记为 deprecated**
 
 3. **迁移依赖**
    - 检查其他技能是否依赖此技能
@@ -141,6 +144,7 @@ exports:
 - [ ] 文档完整
 - [ ] 可独立调用
 - [ ] 已注册到 _meta.json
+- [ ] 已更新 skills/README.md 索引
 ```
 
 ### 技能细化模板

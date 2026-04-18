@@ -118,7 +118,7 @@ routes:
 6. **执行相应更新**
    - 调用对应子模块 SKILL.md
    - 更新 `IDENTITY.md` / `SOUL.md` / `MEMORY.md`
-   - 固化个人 skills（创建/更新技能文件）
+   - 固化个人 skills（创建/更新技能文件，更新 `skills/README.md` 索引）
    - 同步到 `lab_repository`
 
 7. **记录更新日志**
