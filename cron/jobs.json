@@ -29,7 +29,8 @@
         "lastDurationMs": 66161,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1776546000003
       },
       "deleteAfterRun": false,
       "delivery": {
@@ -45,7 +46,7 @@
       "name": "学工助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1775961229499,
-      "updatedAtMs": 1776528583848,
+      "updatedAtMs": 1776542654235,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -65,14 +66,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776542400000,
-        "lastRunAtMs": 1776528456336,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 127512,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 1,
-        "lastDelivered": false
+        "nextRunAtMs": 1776614400000,
+        "lastRunAtMs": 1776542400021,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 254214,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -82,7 +83,7 @@
       "name": "教学助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776036914923,
-      "updatedAtMs": 1776528883856,
+      "updatedAtMs": 1776542774098,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -102,14 +103,15 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776542400000,
-        "lastRunAtMs": 1776528583848,
+        "nextRunAtMs": 1776614400000,
+        "lastRunAtMs": 1776542654235,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 300008,
-        "lastDeliveryStatus": "unknown",
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
+        "lastDurationMs": 119863,
+        "lastDeliveryStatus": "delivered",
+        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/teaching/HEARTBEAT.md failed",
+        "lastDelivered": true,
+        "consecutiveErrors": 1
       },
       "deleteAfterRun": false
     },
@@ -119,7 +121,7 @@
       "name": "教务助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776036919487,
-      "updatedAtMs": 1776528999353,
+      "updatedAtMs": 1776542953097,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -139,14 +141,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776542400000,
-        "lastRunAtMs": 1776528883856,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 115497,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 1,
-        "lastDelivered": false
+        "nextRunAtMs": 1776614400000,
+        "lastRunAtMs": 1776542774098,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 178999,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -156,7 +158,7 @@
       "name": "心理学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776529174217,
+      "updatedAtMs": 1776543253102,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -176,14 +178,15 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776542400000,
-        "consecutiveErrors": 0,
-        "lastRunAtMs": 1776528999353,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 174864,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "nextRunAtMs": 1776614400000,
+        "consecutiveErrors": 1,
+        "lastRunAtMs": 1776542953097,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300005,
+        "lastDeliveryStatus": "unknown",
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
       },
       "deleteAfterRun": false
     },
@@ -193,7 +196,7 @@
       "name": "物理学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776529318896,
+      "updatedAtMs": 1776543367149,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -213,14 +216,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776542400000,
+        "nextRunAtMs": 1776614400000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776529174217,
+        "lastRunAtMs": 1776543253103,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 144679,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDurationMs": 114046,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -230,7 +233,7 @@
       "name": "写作助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776529618903,
+      "updatedAtMs": 1776543483859,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -250,15 +253,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776542400000,
-        "consecutiveErrors": 1,
-        "lastRunAtMs": 1776529318896,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 300007,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "nextRunAtMs": 1776614400000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776543367149,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 116710,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -268,7 +270,7 @@
       "name": "审稿助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776529918909,
+      "updatedAtMs": 1776543561438,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -288,15 +290,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776542400000,
-        "consecutiveErrors": 2,
-        "lastRunAtMs": 1776529618903,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 300006,
-        "lastDeliveryStatus": "unknown",
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1776614400000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776543483859,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 77579,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -306,7 +307,7 @@
       "name": "每日仓库检查",
       "enabled": true,
       "createdAtMs": 1776367728000,
-      "updatedAtMs": 1776530005866,
+      "updatedAtMs": 1776538965849,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *",
@@ -326,14 +327,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776538800000,
+        "nextRunAtMs": 1776625200000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776529918909,
+        "lastRunAtMs": 1776538800007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 86957,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDurationMs": 165842,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered"
       },
       "deleteAfterRun": false
     },
@@ -343,7 +344,7 @@
       "name": "大管家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776530081596,
+      "updatedAtMs": 1776543669468,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -363,14 +364,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776542400000,
+        "nextRunAtMs": 1776614400000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776530005866,
+        "lastRunAtMs": 1776543561438,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 75730,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDurationMs": 108030,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -380,7 +381,7 @@
       "name": "数学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776068111397,
-      "updatedAtMs": 1776530232779,
+      "updatedAtMs": 1776543820945,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -400,14 +401,15 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776542400000,
-        "lastRunAtMs": 1776530081596,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 151183,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false
+        "nextRunAtMs": 1776614400000,
+        "lastRunAtMs": 1776543669468,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 151477,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1,
+        "lastDelivered": true,
+        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/mathematician/MEMORY.md failed"
       },
       "deleteAfterRun": false
     },
@@ -419,7 +421,7 @@
       "description": "[managed-by=memory-core.short-term-promotion] Promote weighted short-term recalls into MEMORY.md (limit=10, minScore=0.800, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30).",
       "enabled": true,
       "createdAtMs": 1776229595108,
-      "updatedAtMs": 1776530536429,
+      "updatedAtMs": 1776539226466,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *"
@@ -431,11 +433,11 @@
         "text": "__openclaw_memory_core_short_term_promotion_dream__"
       },
       "state": {
-        "nextRunAtMs": 1776538800000,
-        "lastRunAtMs": 1776530232779,
+        "nextRunAtMs": 1776625200000,
+        "lastRunAtMs": 1776538965849,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 303650,
+        "lastDurationMs": 260617,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }

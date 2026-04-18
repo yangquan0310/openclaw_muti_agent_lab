@@ -69,7 +69,8 @@
 > **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/reviewer/memory/YYYY-MM-DD/HH-MM-SS-{event}.md`
 | 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
 |------|------|----------|------|----------|
-| 2026-04-19 | 每日维护任务 | TOOLS.md, MEMORY.md | 已完成 | /root/教研室仓库/日志文件/2026-04-19/00-26-00-reviewer_每日维护任务.md |
+| 2026-04-19 | 每日维护任务 | TOOLS.md, MEMORY.md | 已完成 | /root/.openclaw/workspace/reviewer/memory/2026-04-19/00-00-00-heartbeat-cron_reviewer_每日维护任务.log |
+| 2026-04-19 | 每日自我更新 | diary.md, MEMORY.md | 已完成 | /root/.openclaw/workspace/reviewer/memory/2026-04-19/diary.md |
 ---
 
 ## 五、程序性记忆(Procedural Memory)
@@ -90,6 +91,7 @@
 
 | 版本 | 日期 | 更新内容 | 更新者 |
 |------|------|----------|--------|
+| v8.0.2 | 2026-04-19 | 每日自我更新执行，创建发展日记，更新事件记忆表 | 审稿助手 |
 | v8.0.1 | 2026-04-19 | 每日维护任务执行，清理工作记忆，更新事件记忆 | 审稿助手 |
 | v3.5.0 | 2026-04-07 | 完全重构MEMORY.md，采用大管家统一结构，保留审稿助手专属脚本 | 大管家（子代理） |
 | v3.4.0 | 2026-04-06 | 原版MEMORY.md，包含复杂记忆架构和脚本分层 | 审稿助手 |
