@@ -1,6 +1,6 @@
 # OpenClaw 多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-v3.2.0-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-v3.2.1-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-9%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -148,6 +148,28 @@
 ## 🤖 Agent自我发展机制（agent_self_development v1.1.0）
 
 > 基于皮亚杰认知发展理论 + Baddeley 工作记忆模型构建的 Agent 自我进化系统
+> **v1.2.0 更新**：存储结构分离，events/ 和 diary/ 独立于 memory-core
+
+### 存储结构分离（v1.2.0 重要更新）
+
+为避免与 OpenClaw 核心记忆系统（memory-core）冲突，Agent 自我发展机制采用完全分离的存储结构：
+
+```
+~/.openclaw/workspace/{agent}/
+├── events/                    ← 详细事件记录（agent-self-development）
+│   └── YYYY-MM-DD/
+│       └── HH-MM-SS-{事件}.md
+├── diary/                     ← 每日发展总结（agent-self-development）
+│   └── YYYY-MM-DD.md
+└── memory/                    ← OpenClaw核心记忆（memory-core）
+    └── .dreams/               ← 自动索引数据
+```
+
+| 目录 | 维护者 | 用途 | 触发方式 |
+|------|--------|------|----------|
+| **events/** | agent-self-development | 详细事件记录 | 任务执行时 |
+| **diary/** | agent-self-development | 每日发展总结 | 每日 00:00 Cron |
+| **memory/.dreams/** | memory-core | OpenClaw核心记忆索引 | 自动（每轮对话） |
 
 ### 核心机制
 
@@ -156,9 +178,9 @@
 ```
 每日 00:00 定时触发
     ↓
-1. 阅读当日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）
+1. 阅读当日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）
     ↓
-2. 撰写/完善发展日记（memory/YYYY-MM-DD/diary.md）
+2. 撰写/完善发展日记（diary/YYYY-MM-DD.md）
     ↓
 3. 阅读核心自我（MEMORY.md/SOUL.md/IDENTITY.md/skills/README.md）
     ↓
@@ -168,7 +190,7 @@
     ↓
 6. 执行相应更新
     ↓
-7. 记录更新日志
+7. 记录更新日志（events/YYYY-MM-DD/HH-MM-SS-self-update.md）
 ```
 
 ### 更新类型
@@ -327,6 +349,15 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 3.2.1 (2026-04-19)
+- **存储结构分离**：agent_self_development 与 memory-core 完全分离
+  - 新增 `events/` 目录：存放详细事件记录（`events/YYYY-MM-DD/HH-MM-SS-{event}.md`）
+  - 新增 `diary/` 目录：存放每日发展日记（`diary/YYYY-MM-DD.md`）
+  - 保留 `memory/.dreams/`：OpenClaw核心记忆索引（自动维护）
+- **更新所有代理配置**：9个代理的 TOOLS.md、MEMORY.md、HEARTBEAT.md 全部更新
+- **更新agent_self_development技能**：所有 SKILL.md 文件路径更新为 events/ 和 diary/
+- **创建统一目录结构**：所有代理工作空间统一使用 events/ + diary/ + memory/ 结构
+
 ### 版本 3.2.0 (2026-04-19)
 - **新增MCP服务器支持**：为公共技能添加MCP服务器，支持通过OpenClaw MCP接口调用
   - knowledge-manager: 5个MCP工具 (km_root, km_search, km_summarize, km_manage, km_synthesize)
@@ -392,7 +423,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新**: 2026-04-19 12:09:00  
-**系统版本**: v3.2.0  
+**最后更新**: 2026-04-19 18:42:00  
+**系统版本**: v3.2.1  
 **运行状态**: ✅ 正常运行  
 **备份状态**: ✅ 自动执行中
