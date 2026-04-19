@@ -74,7 +74,6 @@
 | docx-cn | Word文档处理 | 中文Word文档处理技能 | `workspace/skills/docx-cn/SKILL.md` |
 | docx-generator | Word文档生成 | Word文档自动生成工具 | `workspace/skills/docx-generator/SKILL.md` |
 | excel-xlsx | Excel表格处理 | Excel文件处理技能 | `workspace/skills/excel-xlsx/SKILL.md` |
-| feishu-calendar-advanced | 飞书日历高级功能 | 飞书日历高级管理功能 | `workspace/skills/feishu-calendar-advanced/SKILL.md` |
 | find-skills | 查找技能 | 技能发现和安装工具 | `workspace/skills/find-skills/SKILL.md` |
 | github | GitHub操作 | GitHub代码托管操作技能 | `workspace/skills/github/SKILL.md` |
 | ima-skills | IMA知识管理 | IMA知识库管理技能 | `workspace/skills/ima-skills/SKILL.md` |
