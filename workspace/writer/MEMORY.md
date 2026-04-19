@@ -67,7 +67,7 @@
 
 > 记录关键事件及其时间线索引,包含事件详细日志位置
 
-> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/writer/memory/YYYY-MM-DD/HH-MM-SS-{event}.md`
+> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/writer/events/YYYY-MM-DD/HH-MM-SS-{event}.md`
 | 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
 |------|------|----------|------|----------|
 | 2026-04-19 | 每日自我更新 | 写作助手 | 完成，无需更新 | memory/2026-04-19/04-16-00-self-update.md |

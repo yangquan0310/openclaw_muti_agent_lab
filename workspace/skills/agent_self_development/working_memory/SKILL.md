@@ -40,7 +40,7 @@ routes:
 | **执行时间** | `0 0 * * *`（每日 00:00，Asia/Shanghai） |
 | **执行方式** | 主代理执行 |
 | **触发消息** | `[cron:每日自我更新]` 的一部分 |
-| **日志路径** | `memory/YYYY-MM-DD/HH-MM-SS-cleanup.md` |
+| **日志路径** | `events/YYYY-MM-DD/HH-MM-SS-cleanup.md` |
 
 ### 清理流程
 
@@ -56,7 +56,7 @@ routes:
    - 事件: 子代理任务归档
    - 涉及实体: 子代理key
    - 结果: 任务完成
-   - 日志位置: `memory/YYYY-MM-DD/HH-MM-SS-completed.md`
+   - 日志位置: `events/YYYY-MM-DD/HH-MM-SS-completed.md`
     ↓
 4. 筛选 `killed` 状态任务
     ↓
@@ -153,6 +153,7 @@ assimilation_accommodation (长期)
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
+| v1.2.0 | 2026-04-19 | 更新存储路径：memory/ → events/ |
 | v1.1.0 | 2026-04-19 | 添加定时任务配置章节，规范定时清理流程 |
 | v1.0.0 | 2026-04-17 | 初始版本，标准化文档规范 |
 

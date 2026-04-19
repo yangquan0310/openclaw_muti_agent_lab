@@ -64,7 +64,7 @@
 
 > 记录关键事件及其时间线索引,包含事件详细日志位置
 
-> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/mathematician/memory/YYYY-MM-DD/HH-MM-SS-{event}.md`
+> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/mathematician/events/YYYY-MM-DD/HH-MM-SS-{event}.md`
 | 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
 |------|------|----------|------|----------|
 | 2026-04-19 | 每日维护任务 | 数学家 | 已完成 | memory/2026-04-19/00-34-00-每日维护任务.md |

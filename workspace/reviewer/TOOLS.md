@@ -23,7 +23,9 @@
 | Agent 个人记忆 | ~/.openclaw/workspace/reviewer/MEMORY.md | 审稿助手独立维护 |
 | Agent 个人技能 | ~/.openclaw/workspace/reviewer/skills/README.md | 审稿助手专属技能存储目录（含原脚本内容） |
 | Agent 临时文件 | ~/.openclaw/workspace/reviewer/temp/README.md | 审稿助手专属临时文件存储目录 |
-| Agent 工作日志 | ~/.openclaw/workspace/reviewer/memory/README.md | 任务执行记录 |
+| Agent 工作记忆 | ~/.openclaw/workspace/reviewer/memory/ | OpenClaw核心记忆系统数据（由memory-core维护） |
+| **Agent 发展日记** | ~/.openclaw/workspace/reviewer/diary/YYYY-MM-DD.md | 每日自我发展总结（由agent-self-development维护） |
+| **Agent 事件记录** | ~/.openclaw/workspace/reviewer/events/YYYY-MM-DD/{HH-MM-SS-事件}.md | 详细事件记录（由agent-self-development维护） |
 | 实验室仓库 | ~/实验室仓库/README.md | 实验室仓库 |
 | 实验室项目 | ~/实验室仓库/项目文件/README.md | 实验室各个项目 |
 | 项目知识库 | ~/实验室仓库/项目文件/{项目名}/知识库/index.json | 项目专属文献知识库索引 |

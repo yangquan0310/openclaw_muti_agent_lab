@@ -2,7 +2,7 @@
 name: assimilation_accommodation
 description: >
   同化与顺应模块。基于皮亚杰认知发展理论，通过日记记录和经验反思实现 Agent 持续自我更新。
-version: 1.0.0
+version: 1.1.0
 author: 大管家
 dependencies:
   - ../working_memory
@@ -33,6 +33,7 @@ routes:
 |------|------|------|
 | `SKILL.md` | 模块路由 | 同化与顺应总览，索引子模块 |
 | `diary/SKILL.md` | 发展日记 | 记录每日经验和反思 |
+| `diary_reader/SKILL.md` | 日记阅读器 | 读取事件日志，为日记生成提供素材 |
 | `core_self_update/SKILL.md` | 核心自我更新 | 更新核心身份和能力边界 |
 | `identity_update/SKILL.md` | 身份更新 | 更新角色集和社会身份 |
 | `belief_style_update/SKILL.md` | 信念与风格更新 | 更新工作信念和工作风格 |
@@ -51,16 +52,17 @@ routes:
 | **执行方式** | 主代理执行 |
 | **触发消息** | `[cron:每日自我更新]` |
 | **超时时间** | 300秒 |
-| **日志路径** | `memory/YYYY-MM-DD/HH-MM-SS-self-update.md` |
+| **事件日志路径** | `events/YYYY-MM-DD/HH-MM-SS-self-update.md` |
+| **日记路径** | `diary/YYYY-MM-DD.md` |
 
 ### 任务执行流程
 
 ```
 [cron:每日自我更新] 触发
     ↓
-1. 阅读当日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）
+1. 阅读当日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）
     ↓
-2. 撰写/完善发展日记（memory/YYYY-MM-DD/diary.md）
+2. 撰写/完善发展日记（diary/YYYY-MM-DD.md）
     ↓
 3. 阅读核心自我与配置文件
    ├── MEMORY.md（核心自我认知）
@@ -85,7 +87,7 @@ routes:
     ↓
 7. 记录更新日志
    ├── 更新 MEMORY.md 历史版本
-   └── 生成 self-update 事件文件
+   └── 生成 self-update 事件文件（events/YYYY-MM-DD/HH-MM-SS-self-update.md）
 ```
 
 ---
@@ -129,8 +131,8 @@ routes:
 阶段5：任务完成与归档 → working_memory/memory_table/SKILL.md
         ├── 更新状态为 completed
         ├── 记录完成摘要到工作记忆
-        ├── 归档到事件记忆：memory/YYYY-MM-DD/HH-MM-SS-completed.md
-        └── killed 任务：memory/YYYY-MM-DD/HH-MM-SS-killed.md（后删除）
+        ├── 归档到事件记忆：events/YYYY-MM-DD/HH-MM-SS-completed.md
+        └── killed 任务：events/YYYY-MM-DD/HH-MM-SS-killed.md（后删除）
 ```
 
 ### 工作流2：每日同化与顺应（每日定时执行）
@@ -140,11 +142,11 @@ routes:
 **步骤**：
 
 1. **阅读当日事件记忆**
-   - 读取 `memory/YYYY-MM-DD/` 下所有 `HH-MM-SS-{event}.md` 文件
+   - 读取 `events/YYYY-MM-DD/` 下所有 `HH-MM-SS-{event}.md` 文件
    - 梳理 completed / killed / regulation 事件的完整脉络
 
 2. **撰写/完善发展日记**
-   - 在 `memory/YYYY-MM-DD/diary.md` 中整合全天任务回顾
+   - 在 `diary/YYYY-MM-DD.md` 中整合全天任务回顾
    - 提取跨任务的成功经验与失败教训（去重、归类）
    - 评估可复用性（高/中/低），标记需固化的技能点
 
@@ -173,7 +175,7 @@ routes:
 
 7. **记录更新日志**
    - 将变更记录到 `MEMORY.md` 历史版本
-   - 生成 `memory/YYYY-MM-DD/HH-MM-SS-self-update.md` 事件文件
+   - 生成 `events/YYYY-MM-DD/HH-MM-SS-self-update.md` 事件文件
 
 ---
 
@@ -191,7 +193,7 @@ routes:
 
 | 输出项 | 格式 | 说明 |
 |--------|------|------|
-| `diary_entry` | Markdown | 发展日记条目 |
+| `diary_entry` | Markdown | 发展日记条目（存储在 diary/YYYY-MM-DD.md） |
 | `update_log` | Markdown | 自我更新日志 |
 | `identity_patch` | Markdown | 身份/信念/技能更新补丁 |
 
@@ -215,10 +217,10 @@ working_memory
     └── 任务完成 (completed)
             ↓ 归档
 assimilation_accommodation
-    ├── 事件记忆 (陈述性记忆)
-    └── 发展日记 (经验积累)
+    ├── 事件记忆（events/ 目录，陈述性记忆）
+    └── 发展日记（diary/ 目录，经验积累）
             ↓ 反思
-    自我更新 (核心自我/身份/信念/技能)
+    自我更新（核心自我/身份/信念/技能）
 ```
 
 ---
@@ -227,10 +229,12 @@ assimilation_accommodation
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
+| v1.2.0 | 2026-04-19 | 更新存储路径：memory/ → events/ 和 diary/ |
 | v1.1.0 | 2026-04-19 | 添加定时任务配置章节，规范每日自我更新流程 |
 | v1.0.0 | 2026-04-17 | 初始版本，标准化文档规范 |
 
 ---
 
 *创建者: 大管家*  
-*创建时间: 2026-04-17*
+*创建时间: 2026-04-17*  
+*最后更新: 2026-04-19*

@@ -77,7 +77,7 @@ exports:
 ### 输出结果
 | 输出 | 类型 | 说明 |
 |------|------|------|
-| 发展日记文件 | markdown | 生成的日记文件，存储在 `memory/YYYY-MM-DD/diary.md` |
+| 发展日记文件 | markdown | 生成的日记文件，存储在 `diary/YYYY-MM-DD.md` |
 
 ### 日记模板
 

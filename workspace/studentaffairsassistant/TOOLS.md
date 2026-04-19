@@ -24,7 +24,9 @@
 | Agent 个人记忆 | ~/.openclaw/workspace/studentaffairsassistant/MEMORY.md | 学工助手独立维护 |
 | Agent 个人技能 | ~/.openclaw/workspace/studentaffairsassistant/skills/README.md | 学工助手专属技能存储目录 |
 | Agent 临时文件 | ~/.openclaw/workspace/studentaffairsassistant/temp/README.md | 学工助手专属临时文件存储目录 |
-| Agent 工作日志 | ~/.openclaw/workspace/studentaffairsassistant/memory/README.md | 任务执行记录 |
+| Agent 工作记忆 | ~/.openclaw/workspace/studentaffairsassistant/memory/ | OpenClaw核心记忆系统数据（由memory-core维护） |
+| **Agent 发展日记** | ~/.openclaw/workspace/studentaffairsassistant/diary/YYYY-MM-DD.md | 每日自我发展总结（由agent-self-development维护） |
+| **Agent 事件记录** | ~/.openclaw/workspace/studentaffairsassistant/events/YYYY-MM-DD/{HH-MM-SS-事件}.md | 详细事件记录（由agent-self-development维护） |
 | 学工助手仓库 |	~/教研室仓库/学生工作/README.MD	|学工助手用来进行工作的文件夹、其他成员不可以写入，只能读取|
 | 学工助手项目 |	~/教研室仓库/学生工作/项目文件/README.MD	|学工助手用来存储项目的文件夹、其他成员不可以写入，只能读取|
 ---

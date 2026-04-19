@@ -22,7 +22,9 @@
 | Agent 个人记忆 | ~/.openclaw/workspace/teaching/MEMORY.md | 教学助手独立维护 |
 | Agent 个人技能 | ~/.openclaw/workspace/teaching/skills/README.md | 教学助手专属技能存储目录 |
 | Agent 临时文件 | ~/.openclaw/workspace/teaching/temp/README.md | 教学助手专属临时文件存储目录 |
-| Agent 工作日志 | ~/.openclaw/workspace/teaching/memory/README.md | 任务执行记录 |
+| Agent 工作记忆 | ~/.openclaw/workspace/teaching/memory/ | OpenClaw核心记忆系统数据（由memory-core维护） |
+| **Agent 发展日记** | ~/.openclaw/workspace/teaching/diary/YYYY-MM-DD.md | 每日自我发展总结（由agent-self-development维护） |
+| **Agent 事件记录** | ~/.openclaw/workspace/teaching/events/YYYY-MM-DD/{HH-MM-SS-事件}.md | 详细事件记录（由agent-self-development维护） |
 | 教学助手仓库 |	~/教研室仓库/备课资料/README.MD	|教学助手用来进行工作的文件夹、其他成员不可以写入，只能读取|
 | 课程项目 |	~/教研室仓库/备课资料/项目文件/README.MD	|教学助手用来存储项目的文件夹、其他成员不可以写入，只能读取|
 ---

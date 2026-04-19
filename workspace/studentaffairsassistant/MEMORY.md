@@ -82,8 +82,8 @@
 - **事件**：每日自我更新任务
 - **描述**：按照 agent_self_development 工作流2 执行每日自我更新
 - **涉及文件**：
-  - 阅读当日事件记忆：memory/2026-04-19/00-07-00-studentaffairsassistant_每日维护任务.md
-  - 撰写发展日记：memory/2026-04-19/diary.md
+  - 阅读当日事件记忆：events/2026-04-19/00-07-00-studentaffairsassistant_每日维护任务.md
+  - 撰写发展日记：diary/2026-04-19.md
   - 阅读核心自我：IDENTITY.md、SOUL.md、skills/README.md
 - **执行阶段（工作流1六阶段）**：
   - 阶段0-会话初始化：✅ 已加载 SOUL.md、IDENTITY.md、MEMORY.md、TOOLS.md

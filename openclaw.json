@@ -463,7 +463,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.12",
-    "lastTouchedAt": "2026-04-19T03:53:41.089Z"
+    "lastTouchedAt": "2026-04-19T08:25:55.920Z"
   },
   "plugins": {
     "entries": {
@@ -499,9 +499,6 @@
         "enabled": true
       },
       "adp-openclaw": {
-        "enabled": false
-      },
-      "memory-tencentdb": {
         "enabled": false
       },
       "qqbot": {
@@ -557,13 +554,6 @@
         "installPath": "/root/.openclaw/extensions/adp-openclaw",
         "version": "0.0.77",
         "installedAt": "2026-04-16T12:20:44.000Z"
-      },
-      "memory-tencentdb": {
-        "source": "npm",
-        "spec": "@tencentdb-agent-memory/memory-tencentdb@0.1.4",
-        "installPath": "/root/.openclaw/extensions/memory-tencentdb",
-        "version": "0.1.4",
-        "installedAt": "2026-04-16T12:21:07.000Z"
       }
     },
     "allow": [

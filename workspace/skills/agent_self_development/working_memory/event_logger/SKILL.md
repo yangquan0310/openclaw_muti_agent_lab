@@ -1,13 +1,13 @@
 # event_logger
 
 > 工作记忆 - 事件日志记录
-> 记录元认知过程到 memory 文件夹
+> 记录元认知过程到 events 文件夹
 
 ---
 
 ## 概述
 
-事件日志记录器负责将元认知过程中的关键事件记录到 `~/.openclaw/workspace/{agentId}/memory/` 文件夹，为后续的日记生成和自我更新提供素材。
+事件日志记录器负责将元认知过程中的关键事件记录到 `~/.openclaw/workspace/{agentId}/events/` 文件夹，为后续的日记生成和自我更新提供素材。
 
 ---
 
@@ -15,18 +15,20 @@
 
 ### 存储位置
 
-- **主目录**: `~/.openclaw/workspace/{agentId}/memory/`
-- **日记目录**: `~/.openclaw/workspace/{agentId}/memory/diary/`
+- **事件目录**: `~/.openclaw/workspace/{agentId}/events/YYYY-MM-DD/`
+- **日记目录**: `~/.openclaw/workspace/{agentId}/diary/`
 
 ### 文件命名
 
 **事件日志**:
 - **格式**: `HH-MM-SS-事件描述.md`
 - **示例**: `14-30-00-创建文献检索子代理.md`
+- **完整路径**: `events/2026-04-17/14-30-00-创建文献检索子代理.md`
 
 **发展日记**:
 - **格式**: `YYYY-MM-DD.md`
 - **示例**: `2026-04-17.md`
+- **完整路径**: `diary/2026-04-17.md`
 
 ---
 
@@ -48,7 +50,8 @@
 ```
 触发事件
     ↓
-[步骤1] 确定文件名
+[步骤1] 确定目录和文件名
+    └── 目录: events/YYYY-MM-DD/
     └── 格式: HH-MM-SS-事件描述.md
     ↓
 [步骤2] 复制模板
@@ -65,7 +68,7 @@
     ├── 同化标记
     └── 顺应标记
     ↓
-[步骤5] 保存到 memory 目录
+[步骤5] 保存到 events/YYYY-MM-DD/ 目录
 ```
 
 ### 2. 读取事件日志
@@ -75,7 +78,7 @@
 每日 01:00 定时任务
     ↓
 [步骤1] 读取前一天所有事件日志
-    └── 扫描 memory/*.md (排除 diary/)
+    └── 扫描 events/YYYY-MM-DD/*.md
     ↓
 [步骤2] 按时间排序
     ↓
@@ -85,6 +88,7 @@
     └── 经验总结
     ↓
 [步骤4] 生成发展日记
+    └── 保存到 diary/YYYY-MM-DD.md
 ```
 
 ### 3. 管理事件日志
@@ -126,14 +130,14 @@
 
 ```
 event_logger (记录事件)
-    ├── 创建 HH-MM-SS-事件.md
+    ├── 创建 events/YYYY-MM-DD/HH-MM-SS-事件.md
     └── 添加日记标记
             ↓ (每日 01:00)
     diary_reader (读取事件)
         └── 读取所有事件日志
                 ↓
     diary (生成日记)
-        └── 创建 YYYY-MM-DD.md
+        └── 创建 diary/YYYY-MM-DD.md
                 ↓ (每日 02:00)
     自我更新 (同化/顺应)
         ├── core_self_update
@@ -149,9 +153,11 @@ event_logger (记录事件)
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
+| v1.1.0 | 2026-04-19 | 更新存储路径：memory/ → events/ 和 diary/ |
 | v1.0.0 | 2026-04-17 | 初始版本 |
 
 ---
 
 *创建者: 大管家*  
 *创建时间: 2026-04-17*
+*最后更新: 2026-04-19*

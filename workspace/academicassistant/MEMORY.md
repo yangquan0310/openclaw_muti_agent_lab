@@ -81,7 +81,7 @@
 
 > 记录关键事件及其时间线索引,包含事件详细日志位置
 
-> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/academicassistant/memory/YYYY-MM-DD/HH-MM-SS-{event}.md`
+> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/academicassistant/events/YYYY-MM-DD/HH-MM-SS-{event}.md`
 | 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
 |------|------|----------|------|----------|
 | 2026-04-19 | 每日自我更新 | MEMORY.md, BOOTSTRAP.md | 成功创建 BOOTSTRAP.md，撰写发展日记 | ~/.openclaw/workspace/academicassistant/memory/2026-04-19/diary.md |
