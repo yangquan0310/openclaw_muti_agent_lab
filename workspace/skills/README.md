@@ -69,8 +69,6 @@
 |---------|---------|------|------|
 | agent-browser-clawdbot | 浏览器自动化、网页抓取 | 基于 Clawdbot 的浏览器自动化工具 | `workspace/skills/agent-browser-clawdbot/SKILL.md` |
 | **agent_self_development** | **Agent自我发展** | **基于认知发展理论的Agent自我进化系统**<br>• 定时任务：每日00:00执行自我更新<br>• 工作流：记录日记→同化顺应分析→执行更新<br>• 更新类型：核心自我/身份/风格-信念/技能 | **`workspace/skills/agent_self_development/SKILL.md`** |
-| baidu-scholar-search | 百度学术搜索 | 百度学术文献检索工具 | `workspace/skills/baidu-scholar-search/SKILL.md` |
-| cnki-advanced-search | CNKI高级检索 | 中国知网高级检索工具 | `workspace/skills/cnki-advanced-search/SKILL.md` |
 | docx-cn | Word文档处理 | 中文Word文档处理技能 | `workspace/skills/docx-cn/SKILL.md` |
 | docx-generator | Word文档生成 | Word文档自动生成工具 | `workspace/skills/docx-generator/SKILL.md` |
 | excel-xlsx | Excel表格处理 | Excel文件处理技能 | `workspace/skills/excel-xlsx/SKILL.md` |
