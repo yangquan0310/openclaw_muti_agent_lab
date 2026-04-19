@@ -1,6 +1,6 @@
 # OpenClaw 多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-v3.2-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-v3.2.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-9%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -327,6 +327,15 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 3.2.0 (2026-04-19)
+- **新增MCP服务器支持**：为公共技能添加MCP服务器，支持通过OpenClaw MCP接口调用
+  - knowledge-manager: 5个MCP工具 (km_root, km_search, km_summarize, km_manage, km_synthesize)
+  - agent_self_development: 4个MCP工具 (asd_root, asd_metacognition, asd_working_memory, asd_assimilation)
+  - Skill-developer: 3个MCP工具 (skill_dev_create, skill_dev_mcp, skill_dev_extend)
+- **删除mcp-adapter技能**：移除独立的mcp-adapter技能，功能由OpenClaw内置mcp工具替代
+- **删除semantic-scholar MCP**：被knowledge-manager取代，统一使用知识库管理技能
+- **更新Skill-developer文档**：添加MCP支持章节，明确公共技能添加MCP、私有技能不添加的区分
+
 ### 版本 3.1.2 (2026-04-19)
 - **创建项目文件README.md**：为实验室仓库和教研室仓库各子目录创建项目文件README.md
 - **统一项目索引格式**：各代理TOOLS.md中使用`> 项目索引详见...`注释指向对应README
@@ -383,7 +392,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新**: 2026-04-19 01:42:00  
-**系统版本**: v3.1.1  
+**最后更新**: 2026-04-19 12:09:00  
+**系统版本**: v3.2.0  
 **运行状态**: ✅ 正常运行  
 **备份状态**: ✅ 自动执行中
