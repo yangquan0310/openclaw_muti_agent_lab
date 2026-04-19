@@ -462,8 +462,8 @@
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.4.12",
-    "lastTouchedAt": "2026-04-19T11:49:31.308Z"
+    "lastTouchedVersion": "2026.4.14",
+    "lastTouchedAt": "2026-04-19T12:45:03.732Z"
   },
   "plugins": {
     "entries": {
@@ -483,6 +483,9 @@
           }
         }
       },
+      "memory-wiki": {
+        "enabled": true
+      },
       "ddingtalk": {
         "enabled": false
       },
@@ -501,10 +504,10 @@
       "adp-openclaw": {
         "enabled": false
       },
-      "qqbot": {
-        "enabled": true
+      "memory-tencentdb": {
+        "enabled": false
       },
-      "memory-wiki": {
+      "qqbot": {
         "enabled": true
       }
     },
@@ -521,42 +524,49 @@
         "spec": "@largezhou/ddingtalk@2.0.1",
         "installPath": "/root/.openclaw/extensions/ddingtalk",
         "version": "2.0.1",
-        "installedAt": "2026-04-16T12:20:24.000Z"
+        "installedAt": "2026-04-19T12:43:29.000Z"
       },
       "wecom": {
         "source": "npm",
         "spec": "@mocrane/wecom@2026.3.24",
         "installPath": "/root/.openclaw/extensions/wecom",
         "version": "2026.3.24",
-        "installedAt": "2026-04-16T12:20:30.000Z"
+        "installedAt": "2026-04-19T12:43:35.000Z"
       },
       "openclaw-plugin-yuanbao": {
         "source": "npm",
-        "spec": "openclaw-plugin-yuanbao@2.9.1",
+        "spec": "openclaw-plugin-yuanbao@2.10.0",
         "installPath": "/root/.openclaw/extensions/openclaw-plugin-yuanbao",
-        "version": "2.9.1",
-        "installedAt": "2026-04-16T12:20:35.000Z"
+        "version": "2.10.0",
+        "installedAt": "2026-04-19T12:43:40.000Z"
       },
       "openclaw-weixin": {
         "source": "npm",
         "spec": "@tencent-weixin/openclaw-weixin@2.1.8",
         "installPath": "/root/.openclaw/extensions/openclaw-weixin",
         "version": "2.1.8",
-        "installedAt": "2026-04-16T12:20:39.000Z"
+        "installedAt": "2026-04-19T12:43:44.000Z"
       },
       "lightclawbot": {
         "source": "npm",
         "spec": "lightclawbot@1.1.2",
         "installPath": "/root/.openclaw/extensions/lightclawbot",
         "version": "1.1.2",
-        "installedAt": "2026-04-16T12:20:42.000Z"
+        "installedAt": "2026-04-19T12:43:47.000Z"
       },
       "adp-openclaw": {
         "source": "npm",
         "spec": "adp-openclaw@0.0.77",
         "installPath": "/root/.openclaw/extensions/adp-openclaw",
         "version": "0.0.77",
-        "installedAt": "2026-04-16T12:20:44.000Z"
+        "installedAt": "2026-04-19T12:43:49.000Z"
+      },
+      "memory-tencentdb": {
+        "source": "npm",
+        "spec": "@tencentdb-agent-memory/memory-tencentdb@0.2.0",
+        "installPath": "/root/.openclaw/extensions/memory-tencentdb",
+        "version": "0.2.0",
+        "installedAt": "2026-04-19T12:44:18.000Z"
       }
     },
     "allow": [
@@ -565,12 +575,12 @@
       "ddingtalk",
       "lightclawbot",
       "memory-core",
+      "memory-wiki",
       "openclaw-lark",
       "openclaw-plugin-yuanbao",
       "openclaw-weixin",
       "qqbot",
-      "wecom",
-      "memory-wiki"
+      "wecom"
     ]
   },
   "browser": {

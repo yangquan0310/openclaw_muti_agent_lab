@@ -11,7 +11,7 @@
       "updatedAtMs": 1776600169809,
       "schedule": {
         "kind": "cron",
-        "expr": "0 5 * * *",
+        "expr": "0 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:steward的定时任务",
@@ -29,7 +29,8 @@
         "lastDurationMs": 300529,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": true,
+        "runningAtMs": 1776632400001
       },
       "deleteAfterRun": false,
       "delivery": {
@@ -45,10 +46,10 @@
       "name": "学工助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1775961229499,
-      "updatedAtMs": 1776599619343,
+      "updatedAtMs": 1776616903714,
       "schedule": {
         "kind": "cron",
-        "expr": "40 0 * * *",
+        "expr": "35 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:studentaffairsassistant的定时任务",
@@ -65,11 +66,11 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776616800000,
-        "lastRunAtMs": 1776542400021,
+        "nextRunAtMs": 1776699300000,
+        "lastRunAtMs": 1776616800009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 254214,
+        "lastDurationMs": 103705,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -85,7 +86,7 @@
       "updatedAtMs": 1776600175469,
       "schedule": {
         "kind": "cron",
-        "expr": "0 20 * * *",
+        "expr": "40 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:teaching的定时任务",
@@ -119,10 +120,10 @@
       "name": "教务助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776036919487,
-      "updatedAtMs": 1776599593517,
+      "updatedAtMs": 1776616654142,
       "schedule": {
         "kind": "cron",
-        "expr": "35 0 * * *",
+        "expr": "30 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:academicassistant的定时任务",
@@ -139,11 +140,11 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776616500000,
-        "lastRunAtMs": 1776542774098,
+        "nextRunAtMs": 1776699000000,
+        "lastRunAtMs": 1776616500009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 178999,
+        "lastDurationMs": 154133,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -156,10 +157,10 @@
       "name": "心理学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776599593399,
+      "updatedAtMs": 1776615070974,
       "schedule": {
         "kind": "cron",
-        "expr": "10 0 * * *",
+        "expr": "15 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:psychologist的定时任务",
@@ -176,15 +177,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776615000000,
-        "consecutiveErrors": 1,
-        "lastRunAtMs": 1776542953097,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 300005,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "nextRunAtMs": 1776701400000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776615000009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 70965,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -194,10 +194,10 @@
       "name": "物理学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776599593340,
+      "updatedAtMs": 1776614879021,
       "schedule": {
         "kind": "cron",
-        "expr": "5 0 * * *",
+        "expr": "10 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:physicist的定时任务",
@@ -214,12 +214,12 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776614700000,
+        "nextRunAtMs": 1776701100000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776543253103,
+        "lastRunAtMs": 1776614700009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 114046,
+        "lastDurationMs": 179012,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       },
@@ -231,10 +231,10 @@
       "name": "写作助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776599593441,
+      "updatedAtMs": 1776615977342,
       "schedule": {
         "kind": "cron",
-        "expr": "25 0 * * *",
+        "expr": "20 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:writer的定时任务",
@@ -251,12 +251,12 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776615900000,
+        "nextRunAtMs": 1776698400000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776543367149,
+        "lastRunAtMs": 1776615900010,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 116710,
+        "lastDurationMs": 77332,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       },
@@ -268,10 +268,10 @@
       "name": "审稿助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776599593502,
+      "updatedAtMs": 1776616335442,
       "schedule": {
         "kind": "cron",
-        "expr": "30 0 * * *",
+        "expr": "25 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:reviewer的定时任务",
@@ -288,12 +288,12 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776616200000,
+        "nextRunAtMs": 1776698700000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776543483859,
+        "lastRunAtMs": 1776616200009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 77579,
+        "lastDurationMs": 135433,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       },
@@ -305,10 +305,10 @@
       "name": "每日仓库检查",
       "enabled": true,
       "createdAtMs": 1776367728000,
-      "updatedAtMs": 1776564228517,
+      "updatedAtMs": 1776625466021,
       "schedule": {
         "kind": "cron",
-        "expr": "0 3 * * *",
+        "expr": "30 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:steward的定时任务",
@@ -325,12 +325,12 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776625200000,
+        "nextRunAtMs": 1776699000000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776538800007,
+        "lastRunAtMs": 1776625200011,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 165842,
+        "lastDurationMs": 266010,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered"
       },
@@ -342,10 +342,10 @@
       "name": "大管家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776599536209,
+      "updatedAtMs": 1776614511868,
       "schedule": {
         "kind": "cron",
-        "expr": "0 0 * * *",
+        "expr": "0 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:steward的定时任务",
@@ -362,12 +362,12 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776614400000,
+        "nextRunAtMs": 1776700800000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776543561438,
+        "lastRunAtMs": 1776614400011,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 108030,
+        "lastDurationMs": 111857,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       },
@@ -379,10 +379,10 @@
       "name": "数学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776068111397,
-      "updatedAtMs": 1776599549595,
+      "updatedAtMs": 1776614613199,
       "schedule": {
         "kind": "cron",
-        "expr": "0 0 * * *",
+        "expr": "5 23 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:mathematician的定时任务",
@@ -399,15 +399,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776614400000,
-        "lastRunAtMs": 1776543669468,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 151477,
+        "nextRunAtMs": 1776700800000,
+        "lastRunAtMs": 1776614511868,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 101331,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastDelivered": true,
-        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/mathematician/MEMORY.md failed"
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
@@ -419,7 +418,7 @@
       "description": "[managed-by=memory-core.short-term-promotion] Promote weighted short-term recalls into MEMORY.md (limit=10, minScore=0.800, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30).",
       "enabled": true,
       "createdAtMs": 1776229595108,
-      "updatedAtMs": 1776539226466,
+      "updatedAtMs": 1776625779352,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *"
@@ -431,11 +430,11 @@
         "text": "__openclaw_memory_core_short_term_promotion_dream__"
       },
       "state": {
-        "nextRunAtMs": 1776625200000,
-        "lastRunAtMs": 1776538965849,
+        "nextRunAtMs": 1776711600000,
+        "lastRunAtMs": 1776625466021,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 260617,
+        "lastDurationMs": 313331,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }

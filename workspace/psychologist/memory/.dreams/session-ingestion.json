@@ -477,6 +477,13 @@
       "lineCount": 7,
       "lastContentLine": 7
     },
+    "psychologist:sessions/794a7679-b545-409a-8a40-5393eef189da.jsonl.deleted.2026-04-19T02-42-31.608Z": {
+      "mtimeMs": 1776566336155,
+      "size": 21552,
+      "contentHash": "082c64782ed4187279980eb2d3cdd0aadd767cc922f3e25b0d5f324b0c62f0d8",
+      "lineCount": 4,
+      "lastContentLine": 4
+    },
     "psychologist:sessions/7fb77352-cce3-44c7-94f9-3f46fc2eafb2.jsonl.deleted.2026-04-11T12-26-29.064Z": {
       "mtimeMs": 1775887785061,
       "size": 471269,
@@ -532,6 +539,13 @@
       "contentHash": "b04203f5ea4ac0ad73e17a72fa2c00cb8d13c4a417bcf7d75cb867be0436a356",
       "lineCount": 5,
       "lastContentLine": 5
+    },
+    "psychologist:sessions/866796f2-a6c9-43ec-86f7-63ddc38c6b89.jsonl": {
+      "mtimeMs": 1776604586039,
+      "size": 138803,
+      "contentHash": "451efff813f31bfda13d576d76502891eddccc9fb7420a8b105373e857851f7e",
+      "lineCount": 32,
+      "lastContentLine": 24
     },
     "psychologist:sessions/8847a7f8-ef6d-4385-9b05-eaac5b3df5de.jsonl.deleted.2026-04-11T12-26-26.849Z": {
       "mtimeMs": 1775908512749,
@@ -820,7 +834,7 @@
       "lineCount": 8,
       "lastContentLine": 8
     },
-    "psychologist:sessions/d3772c1c-779c-4dcd-b3d9-cc1c2312bf2f.jsonl": {
+    "psychologist:sessions/d3772c1c-779c-4dcd-b3d9-cc1c2312bf2f.jsonl.reset.2026-04-19T02-36-20.236Z": {
       "mtimeMs": 1776348307492,
       "size": 175236,
       "contentHash": "95e35df4de5dffaf4236cbcb69d3b96cd6d6856a17a54bf0f7c6456ffadb8d5b",
@@ -994,6 +1008,13 @@
       "contentHash": "fbe73944b66725ec04e23b2f2c39a6a36eb27fc4d3baab7a124b33769ba6cc52",
       "lineCount": 1,
       "lastContentLine": 1
+    },
+    "psychologist:sessions/f88121bf-5f73-4184-8d9f-3a4cab115312.jsonl": {
+      "mtimeMs": 1776615069961,
+      "size": 131250,
+      "contentHash": "8d8866675f560b8295e9c72985b0adf15276e3ce4a864b5f1666b4c3d645b037",
+      "lineCount": 4,
+      "lastContentLine": 4
     },
     "psychologist:sessions/f8f32814-aca0-4767-9222-127534599d0c.jsonl.deleted.2026-04-09T13-02-38.547Z": {
       "mtimeMs": 1775736229523,
@@ -5729,6 +5750,44 @@
       "228395ce14d458cef1ea4c1dbbd096917f13df53",
       "c5dca084fd1f54bd761bc472aa0b3ade7e3caa3a",
       "2de1bed73c15bb0a3c754b6fa0fed9a0e250e373"
+    ],
+    "psychologist:794a7679-b545-409a-8a40-5393eef189da": [
+      "da80e736f2953b8f945179a3f6d9118fa86c10b3",
+      "e0d65b885cc020897c70cb5c9ac5d8d706a7153e",
+      "57392c3966bfde75c31c77d7470c8384d1c9e1aa",
+      "5fa669718a253efb3262b653e69a12c34b270489"
+    ],
+    "psychologist:866796f2-a6c9-43ec-86f7-63ddc38c6b89": [
+      "55ca4d171fecdd413fa9c81d9b7261a712cd1ea1",
+      "724ba31aab57e9ec627e6e5d27a2b86bf9546d6f",
+      "733924fefb3e4cd1d96a524fc4dca77da50f9135",
+      "a724eff1798e2fa3d7264767cca3c614eee6739b",
+      "fbb2b0ae5a701969db5164fb98b99d607df39897",
+      "801e9ceaf1f4ab2dd0c3811a28df44308a25b2ac",
+      "4a66d00c9dfd69793ee947dcb5daae412e390db1",
+      "c7c38b167b0f42de34370953e37869b2a89b79ca",
+      "d6e6bb0c7bf0f10f0ce98744810013e0ec979e06",
+      "61c71c254c78b14c570aea9d1a8da67e896120f6",
+      "3d8150c2e6dea4c324a3e72f8a7903206d6ebe58",
+      "3251feb98f8eba1c48b2af5d108e86ad845124f4",
+      "0f729cce506e30580089c9c880a1c9d3d68935f8",
+      "4670d7092d9d65709e1af662a5a65aa04efac14f",
+      "6b68882b1cdbc8a4f125127a73c426384609b282",
+      "996750a60547126210d0ab33f64fe5d581a3c009",
+      "0fde2a8f98d1c36c8f33c17788675ca2ce9c3241",
+      "a2789484550c3f9d69ef0faaff650a6528a631a7",
+      "f516e4100a08b61603e44c0b1c78a98fe5c91406",
+      "d01e131e93f2474a7ce6363938f7fe8bccc8f9a3",
+      "e9ad501d2d9872a0f17dddcc4dfaa462c3a09e01",
+      "1993925bee4a02986a547e797cca8eada4abd0db",
+      "04af512075b6e744a60d8ddc802a9e39f3bafc41",
+      "57d5a3bcad9b86451c6cee8608a4a3ca5111be65"
+    ],
+    "psychologist:f88121bf-5f73-4184-8d9f-3a4cab115312": [
+      "1cc29874d52d23e93fa3e51329ce30cb9ee8195d",
+      "482de51eea47899dad225eaaf6dcffb64495ed61",
+      "86b19f211e6d25178b7c4f07947dbe635cf968d7",
+      "cebed26af2021d5ece5ba07405d7410d205e65ae"
     ]
   }
 }
