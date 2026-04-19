@@ -118,6 +118,139 @@ tools:
 ### 工作流4：扩展与维护项目
 - 扩展与维护项目，可以重复工作流2和3，添加新的子模块
 - 更新根目录的SKILL.md、_meta.json和README.md
+### 工作流5：添加 MCP 支持（仅限公共技能，可选）
+
+> ⚠️ **重要区分**：
+> - **公共技能**（`workspace/skills/`）：可以添加 MCP 支持，供所有 Agent 调用
+> - **个人私有技能**（`~/.openclaw/workspace/<agent>/skills/`）：**不需要**添加 MCP 支持
+
+如果**公共技能**需要暴露为 MCP 服务器供其他 Agent 调用，按以下步骤添加 MCP 支持：
+
+#### 5.1 创建 MCP 目录结构
+```
+workspace/skills/<技能名称>/
+├── ...
+├── mcp/
+│   └── server.py              # MCP 服务器入口文件
+└── ...
+```
+
+#### 5.2 编写 MCP 服务器 (mcp/server.py)
+- 使用 Python MCP SDK 创建 stdio 服务器
+- 定义工具列表（list_tools）
+- 实现工具调用处理（call_tool）
+- 每个工具对应技能的一个功能模块
+
+```python
+#!/usr/bin/env python3
+"""
+<技能名称> MCP Server
+"""
+
+import asyncio
+import json
+from pathlib import Path
+from mcp.server import Server
+from mcp.server.stdio import stdio_server
+from mcp.types import Tool, TextContent
+
+SKILL_DIR = Path("/root/.openclaw/workspace/skills/<技能名称>")
+
+EXPOSED_TOOLS = [
+    {
+        "name": "<工具名>",
+        "description": "<工具描述>",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["<操作1>", "<操作2>"],
+                    "description": "要执行的操作"
+                }
+            },
+            "required": ["action"]
+        }
+    }
+]
+
+
+class <技能名>Handler:
+    """处理技能请求"""
+    
+    def __init__(self):
+        self.skill_dir = SKILL_DIR
+    
+    async def handle_<工具名>(self, args: dict) -> dict:
+        """处理工具请求"""
+        action = args.get("action")
+        # 实现处理逻辑
+        return {"success": True, "action": action}
+
+
+app = Server("<技能名称>")
+handler = <技能名>Handler()
+
+
+@app.list_tools()
+async def list_tools() -> list[Tool]:
+    return [Tool(name=t["name"], description=t["description"], inputSchema=t["parameters"]) for t in EXPOSED_TOOLS]
+
+
+@app.call_tool()
+async def call_tool(name: str, arguments: dict) -> list[TextContent]:
+    handlers = {
+        "<工具名>": handler.handle_<工具名>,
+    }
+    
+    if name not in handlers:
+        return [TextContent(type="text", text=json.dumps({"success": False, "error": f"未知工具: {name}"}, ensure_ascii=False))]
+    
+    try:
+        result = await handlers[name](arguments)
+        return [TextContent(type="text", text=json.dumps(result, ensure_ascii=False, indent=2))]
+    except Exception as e:
+        return [TextContent(type="text", text=json.dumps({"success": False, "error": str(e)}, ensure_ascii=False))]
+
+
+async def main():
+    async with stdio_server(server=app) as (read_stream, write_stream):
+        await app.run(read_stream, write_stream, app.create_initialization_options())
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+#### 5.3 注册到 OpenClaw MCP
+
+使用 `gateway config.patch` 将技能注册到 `openclaw.json` 的 `mcp.servers` 中：
+
+```json
+{
+  "mcp": {
+    "servers": {
+      "<技能名称>": {
+        "command": "python3",
+        "args": ["/root/.openclaw/workspace/skills/<技能名称>/mcp/server.py"]
+      }
+    }
+  }
+}
+```
+
+#### 5.4 验证注册
+
+注册完成后，运行以下命令验证：
+```bash
+openclaw mcp list
+```
+
+应看到新注册的技能服务器：
+```
+- <技能名称>
+```
+
 ---
 ## 使用指南
 

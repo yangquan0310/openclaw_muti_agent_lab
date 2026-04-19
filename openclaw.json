@@ -463,7 +463,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.12",
-    "lastTouchedAt": "2026-04-16T12:21:51.148Z"
+    "lastTouchedAt": "2026-04-19T03:53:41.089Z"
   },
   "plugins": {
     "entries": {
@@ -896,6 +896,46 @@
       "lark-secrets": {
         "source": "file",
         "path": "~/.openclaw/credentials/lark.secrets.json"
+      }
+    }
+  },
+  "mcp": {
+    "servers": {
+      "tencent-docs": {
+        "url": "https://docs.qq.com/openapi/mcp",
+        "headers": {
+          "Authorization": "03e03d2067a24d7bba38840eb1c20853"
+        }
+      },
+      "tencent-docengine": {
+        "url": "https://docs.qq.com/api/v6/doc/mcp",
+        "headers": {
+          "Authorization": "03e03d2067a24d7bba38840eb1c20853"
+        }
+      },
+      "tencent-sheetengine": {
+        "url": "https://docs.qq.com/api/v6/sheet/mcp",
+        "headers": {
+          "Authorization": "03e03d2067a24d7bba38840eb1c20853"
+        }
+      },
+      "knowledge-manager": {
+        "command": "python3",
+        "args": [
+          "/root/.openclaw/workspace/skills/knowledge-manager/mcp/server.py"
+        ]
+      },
+      "agent-self-development": {
+        "command": "python3",
+        "args": [
+          "/root/.openclaw/workspace/skills/agent_self_development/mcp/server.py"
+        ]
+      },
+      "skill-developer": {
+        "command": "python3",
+        "args": [
+          "/root/.openclaw/workspace/skills/Skill-developer/mcp/server.py"
+        ]
       }
     }
   }

@@ -50,6 +50,19 @@
 
 ---
 
+## MCP 服务器支持
+
+以下公共技能已添加 MCP 服务器支持，可通过 OpenClaw MCP 接口调用：
+
+| 技能名称 | MCP 工具 | 描述 |
+|---------|---------|------|
+| **knowledge-manager** | km_root, km_search, km_summarize, km_manage, km_synthesize | 知识库管理 MCP 工具 |
+| **agent_self_development** | asd_root, asd_metacognition, asd_working_memory, asd_assimilation | Agent 自我发展 MCP 工具 |
+| **Skill-developer** | skill_dev_create, skill_dev_mcp, skill_dev_extend | 技能开发 MCP 工具 |
+
+> 注：MCP 服务器文件位于各技能的 `mcp/server.py`，注册配置在 `openclaw.json` 的 `mcp.servers` 中。
+
+---
 ## 公共技能索引表
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
@@ -66,7 +79,6 @@
 | github | GitHub操作 | GitHub代码托管操作技能 | `workspace/skills/github/SKILL.md` |
 | ima-skills | IMA知识管理 | IMA知识库管理技能 | `workspace/skills/ima-skills/SKILL.md` |
 | knowledge-manager | 知识管理 | 文献检索、知识库维护、笔记处理 | `workspace/skills/knowledge-manager/SKILL.md` |
-| mcp-adapter | MCP适配器 | MCP协议适配工具 | `workspace/skills/mcp-adapter/SKILL.md` |
 | memory-hygiene | 记忆清理 | 工作记忆清理和维护工具 | `workspace/skills/memory-hygiene/SKILL.md` |
 | openclaw-tavily-search | Tavily搜索 | 使用Tavily API进行网络搜索 | `workspace/skills/openclaw-tavily-search/SKILL.md` |
 | pdf-generator | PDF生成 | PDF文档生成工具 | `workspace/skills/pdf-generator/SKILL.md` |
