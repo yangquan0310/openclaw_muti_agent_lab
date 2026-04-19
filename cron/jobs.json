@@ -8,7 +8,7 @@
       "name": "每日凌晨自动提交推送Git",
       "enabled": true,
       "createdAtMs": 1775653560199,
-      "updatedAtMs": 1776286865418,
+      "updatedAtMs": 1776546300536,
       "schedule": {
         "kind": "cron",
         "expr": "0 5 * * *",
@@ -18,15 +18,15 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "/root/.openclaw/workspace/steward/skills/auto-push/auto-push.sh\n日志文件: /root/教研室仓库/日志文件/心跳任务/cron_steward_auto-push.log",
+        "message": "执行每日Git自动推送任务\n详细规范参见：skills/agent_self_development/working_memory/SKILL.md 工作流2\n日志路径：memory/YYYY-MM-DD/HH-MM-SS-git-push.md",
         "timeoutSeconds": 300
       },
       "state": {
-        "nextRunAtMs": 1776373200000,
-        "lastRunAtMs": 1776286800003,
+        "nextRunAtMs": 1776632400000,
+        "lastRunAtMs": 1776546000007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 65415,
+        "lastDurationMs": 300529,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -42,21 +42,21 @@
     {
       "id": "18790739-caae-472e-938e-9bebf427f6e6",
       "agentId": "studentaffairsassistant",
-      "name": "学工助手每日维护",
+      "name": "学工助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1775961229499,
-      "updatedAtMs": 1776334627997,
+      "updatedAtMs": 1776565813617,
       "schedule": {
         "kind": "cron",
-        "expr": "0 4 * * *",
+        "expr": "40 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:studentaffairsassistant的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md：\n维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目\n\n维护 MEMORY.md：\n维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务\n维护活跃子代理清单：剔除所有completed/killed的子代理，并删除对应会话。\n维护程序性记忆脚本位置表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n\n工作空间维护：\n核查配置文件缺失：7个核心配置文件是否存在\n维护临时文件夹：是否有README.md\n维护技能文件夹：是否有README.md\n删除多余文件：只保留7个配置文件和必要文件夹，不保留备份文件\n\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_studentaffairsassistant_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-studentaffairsassistant_每日维护任务.md",
-        "timeoutSeconds": 300
+        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -65,11 +65,11 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776369600000,
-        "lastRunAtMs": 1776334351419,
+        "nextRunAtMs": 1776616800000,
+        "lastRunAtMs": 1776542400021,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 276578,
+        "lastDurationMs": 254214,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -79,21 +79,21 @@
     {
       "id": "abbedbcf-bc22-4a35-9e58-3f0aa17ef2d3",
       "agentId": "teachingassistant",
-      "name": "教学助手每日维护",
+      "name": "教学助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776036914923,
-      "updatedAtMs": 1776335337166,
+      "updatedAtMs": 1776565424346,
       "schedule": {
         "kind": "cron",
-        "expr": "0 4 * * *",
+        "expr": "0 20 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:teaching的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md：\n维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目\n\n维护 MEMORY.md：\n维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务\n维护活跃子代理清单：剔除所有completed/killed的子代理，并删除对应会话。\n维护程序性记忆脚本位置表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n\n工作空间维护：\n核查配置文件缺失：7个核心配置文件是否存在\n维护临时文件夹：是否有README.md\n维护技能文件夹：是否有README.md\n删除多余文件：只保留7个配置文件和必要文件夹，不保留备份文件\n\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_teaching_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-teaching_每日维护任务.md",
-        "timeoutSeconds": 300
+        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -102,35 +102,36 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776369600000,
-        "lastRunAtMs": 1776335130601,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 206565,
+        "nextRunAtMs": 1776600000000,
+        "lastRunAtMs": 1776542654235,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 119863,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/teaching/HEARTBEAT.md failed",
+        "lastDelivered": true,
+        "consecutiveErrors": 1
       },
       "deleteAfterRun": false
     },
     {
       "id": "c513ab6c-5a06-4393-b94b-5692dcafb5e0",
       "agentId": "academicassistant",
-      "name": "教务助手每日维护",
+      "name": "教务助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776036919487,
-      "updatedAtMs": 1776335637200,
+      "updatedAtMs": 1776565806802,
       "schedule": {
         "kind": "cron",
-        "expr": "0 4 * * *",
+        "expr": "35 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:academicassistant的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md：\n维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目\n\n维护 MEMORY.md：\n维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务\n维护活跃子代理清单：剔除所有completed/killed的子代理，并删除对应会话。\n维护程序性记忆脚本位置表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n\n工作空间维护：\n核查配置文件缺失：7个核心配置文件是否存在\n维护临时文件夹：是否有README.md\n维护技能文件夹：是否有README.md\n删除多余文件：只保留7个配置文件和必要文件夹，不保留备份文件\n\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_academicassistant_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-academicassistant_每日维护任务.md",
-        "timeoutSeconds": 300
+        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -139,36 +140,35 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776369600000,
-        "lastRunAtMs": 1776335337178,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 300022,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1776616500000,
+        "lastRunAtMs": 1776542774098,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 178999,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       },
       "deleteAfterRun": false
     },
     {
       "id": "978b0800-5035-4784-9645-c40f700c623d",
       "agentId": "psychologist",
-      "name": "心理学家每日维护",
+      "name": "心理学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776335028062,
+      "updatedAtMs": 1776565981637,
       "schedule": {
         "kind": "cron",
-        "expr": "0 4 * * *",
+        "expr": "10 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:psychologist的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md：\n维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目\n\n维护 MEMORY.md：\n维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务\n维护活跃子代理清单：剔除所有completed/killed的子代理，并删除对应会话。\n维护程序性记忆脚本位置表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n\n工作空间维护：\n核查配置文件缺失：7个核心配置文件是否存在\n维护临时文件夹：是否有README.md\n维护技能文件夹：是否有README.md\n删除多余文件：只保留7个配置文件和必要文件夹，不保留备份文件\n\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_psychologist_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-psychologist_每日维护任务.md",
-        "timeoutSeconds": 300
+        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -177,35 +177,36 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776369600000,
-        "consecutiveErrors": 0,
-        "lastRunAtMs": 1776334902647,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 125415,
-        "lastDeliveryStatus": "delivered",
-        "lastDelivered": true
+        "nextRunAtMs": 1776615000000,
+        "consecutiveErrors": 1,
+        "lastRunAtMs": 1776542953097,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300005,
+        "lastDeliveryStatus": "unknown",
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
       },
       "deleteAfterRun": false
     },
     {
       "id": "d0c92aae-022f-4b20-897b-30b589ea3321",
       "agentId": "physicist",
-      "name": "物理学家每日维护",
+      "name": "物理学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776335752420,
+      "updatedAtMs": 1776565991471,
       "schedule": {
         "kind": "cron",
-        "expr": "0 4 * * *",
+        "expr": "5 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:physicist的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md：\n维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目\n\n维护 MEMORY.md：\n维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务\n维护活跃子代理清单：剔除所有completed/killed的子代理，并删除对应会话。\n维护程序性记忆脚本位置表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n\n工作空间维护：\n核查配置文件缺失：7个核心配置文件是否存在\n维护临时文件夹：是否有README.md\n维护技能文件夹：是否有README.md\n删除多余文件：只保留7个配置文件和必要文件夹，不保留备份文件\n\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_physicist_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-physicist_每日维护任务.md",
-        "timeoutSeconds": 300
+        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -214,12 +215,12 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776369600000,
+        "nextRunAtMs": 1776614700000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776335637254,
+        "lastRunAtMs": 1776543253103,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 115166,
+        "lastDurationMs": 114046,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       },
@@ -228,21 +229,21 @@
     {
       "id": "9f0b6136-7486-4817-9ff1-9788c6059d11",
       "agentId": "writer",
-      "name": "写作助手每日维护",
+      "name": "写作助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776335130587,
+      "updatedAtMs": 1776565787990,
       "schedule": {
         "kind": "cron",
-        "expr": "0 4 * * *",
+        "expr": "25 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:writer的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md：\n维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目\n\n维护 MEMORY.md：\n维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务\n维护活跃子代理清单：剔除所有completed/killed的子代理，并删除对应会话。\n维护程序性记忆脚本位置表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n\n工作空间维护：\n核查配置文件缺失：7个核心配置文件是否存在\n维护临时文件夹：是否有README.md\n维护技能文件夹：是否有README.md\n删除多余文件：只保留7个配置文件和必要文件夹，不保留备份文件\n\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_writer_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-writer_每日维护任务.md",
-        "timeoutSeconds": 300
+        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -251,12 +252,12 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776369600000,
+        "nextRunAtMs": 1776615900000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776335028091,
+        "lastRunAtMs": 1776543367149,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 102496,
+        "lastDurationMs": 116710,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       },
@@ -265,21 +266,21 @@
     {
       "id": "ee863158-efe4-4c4a-99a7-66466ac874c6",
       "agentId": "reviewer",
-      "name": "审稿助手每日维护",
+      "name": "审稿助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776335878359,
+      "updatedAtMs": 1776565794703,
       "schedule": {
         "kind": "cron",
-        "expr": "0 4 * * *",
+        "expr": "30 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:reviewer的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md：\n维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目\n\n维护 MEMORY.md：\n维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务\n维护活跃子代理清单：剔除所有completed/killed的子代理，并删除对应会话。\n维护程序性记忆脚本位置表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n\n工作空间维护：\n核查配置文件缺失：7个核心配置文件是否存在\n维护临时文件夹：是否有README.md\n维护技能文件夹：是否有README.md\n删除多余文件：只保留7个配置文件和必要文件夹，不保留备份文件\n\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_reviewer_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-reviewer_每日维护任务.md",
-        "timeoutSeconds": 300
+        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -288,34 +289,34 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776369600000,
+        "nextRunAtMs": 1776616200000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776335752431,
+        "lastRunAtMs": 1776543483859,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 125928,
+        "lastDurationMs": 77579,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       },
       "deleteAfterRun": false
     },
     {
-      "id": "757bffa8-bd05-4f27-b197-b4edfa3d3aef",
+      "id": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
       "agentId": "steward",
-      "name": "大管家每日维护",
+      "name": "每日仓库检查",
       "enabled": true,
-      "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776334768766,
+      "createdAtMs": 1776367728000,
+      "updatedAtMs": 1776564228517,
       "schedule": {
         "kind": "cron",
-        "expr": "0 4 * * *",
+        "expr": "0 3 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:steward的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md：\n维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目\n\n维护 MEMORY.md：\n维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务\n维护活跃子代理清单：剔除所有completed/killed的子代理，并删除对应会话。\n维护程序性记忆脚本位置表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n\n工作空间维护：\n核查配置文件缺失：7个核心配置文件是否存在\n维护临时文件夹：是否有README.md\n维护技能文件夹：是否有README.md\n删除多余文件：只保留7个配置文件和必要文件夹，不保留备份文件\n\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_steward_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-steward_每日维护任务.md",
+        "message": "[cron:每日仓库检查]\n检查实验室仓库和教研室个代理仓库项目文件夹：\n1. README.md规范性\n  - 项目结构是否正确\n  - 项目索引是否包含了当前项目文件夹所有项目\n2. 各个项目元数据.json\n  - 记录完整性\n  - 命名规范性",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -325,12 +326,49 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776369600000,
+        "nextRunAtMs": 1776625200000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1776334628014,
+        "lastRunAtMs": 1776538800007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 140752,
+        "lastDurationMs": 165842,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered"
+      },
+      "deleteAfterRun": false
+    },
+    {
+      "id": "757bffa8-bd05-4f27-b197-b4edfa3d3aef",
+      "agentId": "steward",
+      "name": "大管家每日自我更新",
+      "enabled": true,
+      "createdAtMs": 1776067897486,
+      "updatedAtMs": 1776565755578,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:CORN:steward的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
+        "bestEffort": false
+      },
+      "state": {
+        "nextRunAtMs": 1776614400000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776543561438,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 108030,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       },
@@ -339,21 +377,21 @@
     {
       "id": "9477dc79-885f-4f35-8725-8dde4160760d",
       "agentId": "mathematician",
-      "name": "数学家每日维护",
+      "name": "数学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776068111397,
-      "updatedAtMs": 1776334902619,
+      "updatedAtMs": 1776565424451,
       "schedule": {
         "kind": "cron",
-        "expr": "0 4 * * *",
+        "expr": "0 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:mathematician的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "维护 TOOLS.md：\n维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目\n\n维护 MEMORY.md：\n维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务\n维护活跃子代理清单：剔除所有completed/killed的子代理，并删除对应会话。\n维护程序性记忆脚本位置表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能\n\n工作空间维护：\n核查配置文件缺失：7个核心配置文件是否存在\n维护临时文件夹：是否有README.md\n维护技能文件夹：是否有README.md\n删除多余文件：只保留7个配置文件和必要文件夹，不保留备份文件\n\n执行完成后，请确认：\n日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_mathematician_每日维护任务.log\n详细日志已生成在 /root/教研室仓库/日志文件/YYYY-MM-DD/HH-MM-SS-mathematician_每日维护任务.md",
-        "timeoutSeconds": 300
+        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -362,15 +400,15 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776369600000,
-        "lastRunAtMs": 1776334768780,
+        "nextRunAtMs": 1776614400000,
+        "lastRunAtMs": 1776543669468,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 133839,
+        "lastDurationMs": 151477,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 3,
-        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/mathematician/memory failed",
-        "lastDelivered": true
+        "consecutiveErrors": 1,
+        "lastDelivered": true,
+        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/mathematician/MEMORY.md failed"
       },
       "deleteAfterRun": false
     },
@@ -382,26 +420,25 @@
       "description": "[managed-by=memory-core.short-term-promotion] Promote weighted short-term recalls into MEMORY.md (limit=10, minScore=0.800, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30).",
       "enabled": true,
       "createdAtMs": 1776229595108,
-      "updatedAtMs": 1776287227551,
+      "updatedAtMs": 1776539226466,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *"
       },
       "sessionTarget": "main",
-      "wakeMode": "next-heartbeat",
+      "wakeMode": "now",
       "payload": {
         "kind": "systemEvent",
         "text": "__openclaw_memory_core_short_term_promotion_dream__"
       },
       "state": {
-        "nextRunAtMs": 1776366000000,
-        "lastRunAtMs": 1776287161858,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 47,
-        "lastError": "GatewayDrainingError: Gateway is draining for restart; new tasks are not accepted",
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1
+        "nextRunAtMs": 1776625200000,
+        "lastRunAtMs": 1776538965849,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 260617,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
       }
     }
   ]

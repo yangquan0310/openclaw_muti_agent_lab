@@ -1,0 +1,24 @@
+{
+  "name": "daily_self_update",
+  "description": "教务助手每日自我更新脚本，基于 agent_self_development 工作流2 执行每日自我更新",
+  "version": "1.0.0",
+  "author": "academicassistant",
+  "triggers": [
+    "每日自我更新",
+    "发展日记",
+    "自我更新"
+  ],
+  "dependencies": [
+    "agent_self_development/assimilation_accommodation/diary",
+    "agent_self_development/assimilation_accommodation/core_self_update",
+    "agent_self_development/assimilation_accommodation/identity_update",
+    "agent_self_development/assimilation_accommodation/belief_style_update",
+    "agent_self_development/assimilation_accommodation/skills_update"
+  ],
+  "environment": {},
+  "schedule": {
+    "enabled": true,
+    "cron": "0 0 * * *",
+    "timezone": "Asia/Shanghai"
+  }
+}

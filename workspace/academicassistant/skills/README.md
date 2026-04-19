@@ -1,41 +1,63 @@
 # Skills 文件夹
 
-> 教务助手个人技能存储目录
-> 结构化程序技能，包含代码脚本和技能文档
+> 教务助手（academicassistant）个人技能存储目录
+> 遵循 Skill-developer 规范，每个技能包含代码实现、AI 规范文档和人类说明文档
 
 ---
 
 ## 功能说明
 
-本文件夹用于存储教务助手的**结构化技能**，每个技能是一个独立的程序模块，包含可执行代码和对应的技能文档。
+本文件夹用于存储教务助手的**个人技能**，每个技能是一个独立的程序模块或文档规范，可被主代理直接调用或委派给子代理执行。
+
+技能分为两类：
+- **结构化技能**：包含可执行代码（Python/Shell），可直接运行
+- **非结构化技能**：纯 Markdown 描述的操作流程，作为 SOP 指导执行
+
+所有技能均遵循 `Skill-developer` 规范进行创建和维护，支持面向对象的代码框架和统一的文档格式。
+
+---
 
 ## 文件夹结构
 
 ```
 skills/
-├── {技能名}/
-│   ├── *.py              # Python 脚本（核心功能实现）
-│   ├── *.sh              # Shell 脚本（命令行接口）
-│   ├── SKILL.md          # 技能说明文档（触发条件、使用方法）
-│   └── README.md         # 技能详细介绍
+├── {技能名}/                   # 技能目录（英文小写，横线分隔）
+│   ├── SKILL.md                # AI 可读的技能规范（YAML front matter + Markdown）
+│   ├── README.md               # 给人类看的技能说明
+│   ├── _meta.json              # 技能元数据（名称、版本、触发词、依赖）
+│   └── {功能模块}/              # 功能模块目录（英文小写，横线分隔）
+│       ├── SKILL.md            # AI 可读的技能规范（YAML front matter + Markdown）
+│       └── *.py / *.sh         # 核心代码实现（面向对象框架）
+│
+└── README.md                   # 本文件 - 技能目录总览
 ```
 
-## 技能列表
+### 规范要求
 
-| 技能名称 | 路径 | 说明 |
-|---------|------|------|
-| convert_syllabus | `skills/convert_syllabus/` | 转换课程大纲格式 |
-| update_index | `skills/update_index/` | 更新项目索引 |
-| update_syllabi | `skills/update_syllabi/` | 批量更新课程大纲 |
-| update_tools_md | `skills/update_tools_md/` | 自动更新工具索引文档 |
-
-## 使用方式
-
-1. **查看技能文档**：阅读对应技能文件夹中的 `SKILL.md`
-2. **执行技能**：运行 `.sh` 脚本或调用 `.py` 模块
-3. **了解详情**：阅读 `README.md` 获取详细说明
+| 文件 | 必需 | 说明 |
+|------|------|------|
+| `SKILL.md` | ✅ | AI 执行规范，必须包含 YAML front matter（name, description, version） |
+| `README.md` | ✅ | 人类可读说明，包含功能、用法、示例 |
+| `_meta.json` | ✅ | 机器可读元数据（triggers, dependencies, environment） |
+| 代码文件 | 视类型 | 结构化技能必须有 `.py` 或 `.sh` |
 
 ---
 
-*维护者：教务助手*
-*最后更新：2026-04-16*
+## 技能索引
+
+| 技能名称 | 触发示例 | 描述 | 路径 |
+|---------|---------|------|------|
+| daily_self_update | `每日自我更新`、`发展日记` | 基于 agent_self_development 工作流2 执行每日自我更新：记录日记、核心自我对比、同化顺应分析、执行更新 | `skills/daily_self_update/` |
+
+---
+
+## 使用方式
+
+1. **查看技能文档**：阅读对应技能文件夹中的 `SKILL.md`（AI 规范）或 `README.md`（人类说明）
+2. **执行技能**：运行 `.sh` 脚本或调用 `.py` 模块，或按照 SKILL.md 步骤手动执行
+3. **了解元数据**：阅读 `_meta.json` 获取触发词、依赖和环境变量
+
+---
+
+*维护者：教务助手（academicassistant）*
+*最后更新：2026-04-19*
