@@ -6,7 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 会话ID | 任务名称 | 功能描述 | cron状态 |
 |----------|--------|--------|--------|----------|----------|----------|
-| 每日 00:00 | 学工助手（studentaffairsassistant） | `18790739-caae-472e-938e-9bebf427f6e6` | `session:CORN:studentaffairsassistant的定时任务` | 每日自我更新 | 按照`agent_self_development`工作流2执行每日自我更新：阶段0-会话初始化→阶段1-任务决策→阶段2-计划→阶段3-执行与监控→阶段4-调节（条件触发）→阶段5-任务完成与归档。具体包括：1.记录发展日记；2.执行自我更新（身份/风格-信念/技能）；3.更新工作日志 | enabled |
+| 每日 00:40 | 学工助手（studentaffairsassistant） | `18790739-caae-472e-938e-9bebf427f6e6` | `session:CORN:studentaffairsassistant的定时任务` | 每日自我更新 | 按照`agent_self_development`工作流2执行每日自我更新：具体包括：1.记录发展日记；2.执行自我更新（身份/风格-信念/技能）；3.更新工作日志 | enabled |
 
 ---
 ## 表格排序规则

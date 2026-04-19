@@ -45,10 +45,10 @@
       "name": "学工助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1775961229499,
-      "updatedAtMs": 1776564487142,
+      "updatedAtMs": 1776565813617,
       "schedule": {
         "kind": "cron",
-        "expr": "0 0 * * *",
+        "expr": "40 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:studentaffairsassistant的定时任务",
@@ -56,7 +56,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -65,7 +65,7 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776614400000,
+        "nextRunAtMs": 1776616800000,
         "lastRunAtMs": 1776542400021,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -120,10 +120,10 @@
       "name": "教务助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776036919487,
-      "updatedAtMs": 1776564541826,
+      "updatedAtMs": 1776565806802,
       "schedule": {
         "kind": "cron",
-        "expr": "0 0 * * *",
+        "expr": "35 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:academicassistant的定时任务",
@@ -131,7 +131,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -140,7 +140,7 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776614400000,
+        "nextRunAtMs": 1776616500000,
         "lastRunAtMs": 1776542774098,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -157,10 +157,10 @@
       "name": "心理学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776565424404,
+      "updatedAtMs": 1776565981637,
       "schedule": {
         "kind": "cron",
-        "expr": "0 10 * * *",
+        "expr": "10 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:psychologist的定时任务",
@@ -177,7 +177,7 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776650400000,
+        "nextRunAtMs": 1776615000000,
         "consecutiveErrors": 1,
         "lastRunAtMs": 1776542953097,
         "lastRunStatus": "error",
@@ -195,10 +195,10 @@
       "name": "物理学家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776564548591,
+      "updatedAtMs": 1776565991471,
       "schedule": {
         "kind": "cron",
-        "expr": "0 0 * * *",
+        "expr": "5 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:physicist的定时任务",
@@ -206,7 +206,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -215,7 +215,7 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776614400000,
+        "nextRunAtMs": 1776614700000,
         "consecutiveErrors": 0,
         "lastRunAtMs": 1776543253103,
         "lastRunStatus": "ok",
@@ -232,10 +232,10 @@
       "name": "写作助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776564529725,
+      "updatedAtMs": 1776565787990,
       "schedule": {
         "kind": "cron",
-        "expr": "0 0 * * *",
+        "expr": "25 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:writer的定时任务",
@@ -243,7 +243,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -252,7 +252,7 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776614400000,
+        "nextRunAtMs": 1776615900000,
         "consecutiveErrors": 0,
         "lastRunAtMs": 1776543367149,
         "lastRunStatus": "ok",
@@ -269,10 +269,10 @@
       "name": "审稿助手每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776564555273,
+      "updatedAtMs": 1776565794703,
       "schedule": {
         "kind": "cron",
-        "expr": "0 0 * * *",
+        "expr": "30 0 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:CORN:reviewer的定时任务",
@@ -280,7 +280,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -289,7 +289,7 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776614400000,
+        "nextRunAtMs": 1776616200000,
         "consecutiveErrors": 0,
         "lastRunAtMs": 1776543483859,
         "lastRunStatus": "ok",
@@ -343,7 +343,7 @@
       "name": "大管家每日自我更新",
       "enabled": true,
       "createdAtMs": 1776067897486,
-      "updatedAtMs": 1776564509120,
+      "updatedAtMs": 1776565755578,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -354,7 +354,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（memory/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（memory/YYYY-MM-DD/diary.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",

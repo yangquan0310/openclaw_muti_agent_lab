@@ -85,6 +85,7 @@
 | 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
 |------|------|----------|------|----------|
 | 2026-04-19 | 每日自我更新 | MEMORY.md, BOOTSTRAP.md | 成功创建 BOOTSTRAP.md，撰写发展日记 | ~/.openclaw/workspace/academicassistant/memory/2026-04-19/diary.md |
+| 2026-04-19 | 配置重载与脚本更新 | SOUL.md, IDENTITY.md, USER.md, TOOLS.md, MEMORY.md, HEARTBEAT.md, skills/daily_self_update/ | 成功创建每日自我更新脚本，更新技能索引 | ~/.openclaw/workspace/academicassistant/skills/daily_self_update/SKILL.md |
 
 ---
 
@@ -110,7 +111,7 @@
 
 - **v1.0.0** (2026-04-07): 初始版本，基于大管家模板重构
 - **v1.1.0** (2026-04-16): 按新规范更新，不再区分脚本和技能
-- **v8.0.1** (2026-04-19): 每日自我更新，创建 BOOTSTRAP.md，更新事件记忆
+- **v8.0.2** (2026-04-19): 配置重载，创建每日自我更新脚本 daily_self_update，更新技能索引
 
 ---
 
