@@ -60,6 +60,13 @@ __pycache__/
 **/.openclaw/
 **/*.state.json
 
+# 允许 models.json 备份（已脱敏，使用环境变量引用）
+!/agents/
+/agents/*/
+!/agents/*/agent/
+/agents/*/agent/*
+!/agents/*/agent/models.json
+
 # 排除IDE配置文件
 .vscode/
 .idea/
