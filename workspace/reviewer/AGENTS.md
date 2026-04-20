@@ -37,6 +37,7 @@
 - 载入个人身份文档（IDENTITY.md）
 - 载入个人记忆文档（MEMORY.md）
 - 载入个人工具文档（TOOLS.md）
+- 载入代理自我发展技能`\root\.openclaw\workspace\skills\agent_self_development\SKILL.md` 
 ---
 
 ## 安全红线
@@ -47,12 +48,11 @@
 
 ## 工作流
 
-> 严格遵循 `skills/agent_self_development` 认知框架执行任务。
+> 严格遵循 `\root\.openclaw\workspace\skills\agent_self_development\SKILL.md` 认知框架执行任务。
 
-**单个任务执行完整规范参见 `skills/agent_self_development/SKILL.md` 工作流1。**
+**单个任务执行完整规范参见 `root\.openclaw\workspace\skills/agent_self_development/SKILL.md` 工作流1。**
 
-**每日更新任务完整规范参见 `skills/agent_self_development/SKILL.md` 工作流2。**
-
+**每日更新任务完整规范参见 `root\.openclaw\workspace\skills/agent_self_development/SKILL.md` 工作流2。**
 ---
 
 **现在，请严格按照 `agent_self_development` 六阶段规范执行每个任务。**

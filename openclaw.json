@@ -463,7 +463,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.14",
-    "lastTouchedAt": "2026-04-19T12:45:03.732Z"
+    "lastTouchedAt": "2026-04-20T10:59:55.917Z"
   },
   "plugins": {
     "entries": {
@@ -475,13 +475,6 @@
       },
       "openclaw-lark": {
         "enabled": true
-      },
-      "memory-core": {
-        "config": {
-          "dreaming": {
-            "enabled": true
-          }
-        }
       },
       "memory-wiki": {
         "enabled": true
@@ -509,6 +502,17 @@
       },
       "qqbot": {
         "enabled": true
+      },
+      "memory-core": {
+        "enabled": true,
+        "config": {
+          "dreaming": {
+            "enabled": true
+          }
+        }
+      },
+      "memory-lancedb": {
+        "enabled": false
       }
     },
     "installs": {
@@ -567,6 +571,13 @@
         "installPath": "/root/.openclaw/extensions/memory-tencentdb",
         "version": "0.2.0",
         "installedAt": "2026-04-19T12:44:18.000Z"
+      },
+      "memory-core": {
+        "source": "path",
+        "spec": "memory-core",
+        "sourcePath": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.4.14_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0_@napi-rs+canvas@0.1.99_@t_301ed012d3fecfe3e2337cb93aa6e57a/node_modules/openclaw/dist/extensions/memory-core",
+        "installPath": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.4.14_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0_@napi-rs+canvas@0.1.99_@t_301ed012d3fecfe3e2337cb93aa6e57a/node_modules/openclaw/dist/extensions/memory-core",
+        "installedAt": "2026-04-20T10:58:29.652Z"
       }
     },
     "allow": [
@@ -574,14 +585,22 @@
       "browser",
       "ddingtalk",
       "lightclawbot",
-      "memory-core",
       "memory-wiki",
       "openclaw-lark",
       "openclaw-plugin-yuanbao",
       "openclaw-weixin",
       "qqbot",
-      "wecom"
-    ]
+      "wecom",
+      "memory-core"
+    ],
+    "load": {
+      "paths": [
+        "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.4.14_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0_@napi-rs+canvas@0.1.99_@t_301ed012d3fecfe3e2337cb93aa6e57a/node_modules/openclaw/dist/extensions/memory-core"
+      ]
+    },
+    "slots": {
+      "memory": "memory-core"
+    }
   },
   "browser": {
     "enabled": true,
@@ -611,45 +630,6 @@
           {
             "id": "kimi-for-coding",
             "name": "kimi for coding"
-          }
-        ]
-      },
-      "tencenttokenplan": {
-        "baseUrl": "https://api.lkeap.cloud.tencent.com/plan/v3",
-        "apiKey": "${TOKENHUB_PLAN_API_KEY}",
-        "api": "openai-completions",
-        "models": [
-          {
-            "id": "tc-code-latest",
-            "name": "自动",
-            "input": [
-              "text",
-              "image"
-            ]
-          },
-          {
-            "id": "hunyuan-2.0-instruct",
-            "name": "Tencent HY 2.0 Instruct"
-          },
-          {
-            "id": "hunyuan-2.0-thinking",
-            "name": "Tencent HY 2.0 Think"
-          },
-          {
-            "id": "minimax-m2.5",
-            "name": "MiniMax-M2.5"
-          },
-          {
-            "id": "kimi-k2.5",
-            "name": "Kimi-K2.5",
-            "input": [
-              "text",
-              "image"
-            ]
-          },
-          {
-            "id": "glm-5",
-            "name": "GLM-5"
           }
         ]
       }

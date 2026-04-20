@@ -60,9 +60,9 @@ routes:
 ```
 [cron:每日自我更新] 触发
     ↓
-1. 阅读当日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）
+1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）
     ↓
-2. 撰写/完善发展日记（diary/YYYY-MM-DD.md）
+2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）
     ↓
 3. 阅读核心自我与配置文件
    ├── MEMORY.md（核心自我认知）

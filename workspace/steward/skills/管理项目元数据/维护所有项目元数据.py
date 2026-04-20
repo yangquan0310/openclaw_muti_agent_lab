@@ -47,6 +47,47 @@ def get_project_documents(project_path):
     
     return documents
 
+def deduplicate_documents(documents):
+    """去重：基于 title + path 去重，保留第一个"""
+    seen = {}
+    unique_docs = []
+    duplicates = []
+    
+    for doc in documents:
+        key = f"{doc.get('title', '')}|{doc.get('path', '')}"
+        if key in seen:
+            duplicates.append(doc)
+        else:
+            seen[key] = True
+            unique_docs.append(doc)
+    
+    return unique_docs, duplicates
+
+def deduplicate_cloud_mappings(cloud_mappings):
+    """去重：基于 platform + cloud_id 去重"""
+    seen = {}
+    unique_mappings = {}
+    
+    for doc_name, doc_info in cloud_mappings.items():
+        if "cloud" not in doc_info:
+            unique_mappings[doc_name] = doc_info
+            continue
+            
+        unique_clouds = []
+        for cloud in doc_info["cloud"]:
+            key = f"{cloud.get('platform', '')}|{cloud.get('cloud_id', '')}"
+            if key not in seen:
+                seen[key] = True
+                unique_clouds.append(cloud)
+        
+        if unique_clouds:
+            doc_info["cloud"] = unique_clouds
+            unique_mappings[doc_name] = doc_info
+        else:
+            unique_mappings[doc_name] = doc_info
+    
+    return unique_mappings
+
 def update_project_metadata(project_name):
     """更新单个项目的元数据"""
     project_path = os.path.join(PROJECTS_DIR, project_name)
@@ -73,6 +114,18 @@ def update_project_metadata(project_name):
         except Exception as e:
             print(f"  ⚠️  读取现有元数据失败: {e}")
     
+    # 获取当前文档列表并去重
+    current_documents = get_project_documents(project_path)
+    unique_docs, duplicates = deduplicate_documents(current_documents)
+    
+    if duplicates:
+        print(f"  🔄 去重: 移除 {len(duplicates)} 个重复文档")
+    
+    # 去重云文档映射
+    cloud_mappings = existing_metadata.get("cloud_doc_mappings", {})
+    if cloud_mappings:
+        cloud_mappings = deduplicate_cloud_mappings(cloud_mappings)
+    
     # 创建新的元数据
     current_time = datetime.now().isoformat()
     created_date = existing_metadata.get("created_date", datetime.now().strftime("%Y-%m-%d"))
@@ -85,9 +138,9 @@ def update_project_metadata(project_name):
         "version": existing_metadata.get("version", "v1"),
         "description": existing_metadata.get("description", f"{project_name}项目"),
         "directories": get_project_directories(project_path),
-        "documents": get_project_documents(project_path),
+        "documents": unique_docs,
         "tags": existing_metadata.get("tags", []),
-        "cloud_doc_mappings": existing_metadata.get("cloud_doc_mappings", {})
+        "cloud_doc_mappings": cloud_mappings
     }
     
     # 保存元数据

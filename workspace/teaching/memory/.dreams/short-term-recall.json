@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-19T19:08:04.759Z",
+  "updatedAt": "2026-04-20T19:03:39.948Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1",
@@ -11725,6 +11725,999 @@
         "文件",
         "索引",
         "检查"
+      ]
+    },
+    "memory:memory/2026-04-20.md:233:236": {
+      "key": "memory:memory/2026-04-20.md:233:236",
+      "path": "memory/2026-04-20.md",
+      "startLine": 233,
+      "endLine": 236,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 294 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-11.txt:2-2, memory/.dreams/session-corpus/2026-04-11.txt:3-3, memory/.dreams/session-corpus/2026-04-11.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "511fd8111b88"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "assistant",
+        "kept"
+      ]
+    },
+    "memory:memory/2026-04-20.md:239:241": {
+      "key": "memory:memory/2026-04-20.md:239:241",
+      "path": "memory/2026-04-20.md",
+      "startLine": 239,
+      "endLine": 241,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:389-389]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:314-314]; Reflections: Them",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "511fd8111b88"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "0.58",
+        "memory/2026-04-14.md",
+        "389-389",
+        "memory/2026-04-15.md",
+        "314-314",
+        "possible",
+        "lasting",
+        "truths"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:abbedbcf-bc22-4a35-9e58-3f0aa17ef2d3 教学助手每日自我更新] [cron:每日自我更新] 按照agent_self_development工作流2执行每日自我更新： 1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md） 2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md） 3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md） 4. 同化与顺应分析 5. 检测",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "events/yyyy-mm-dd/hh-mm-ss",
+        "撰写/完善前一日日记",
+        "diary/yyyy-mm-dd.md",
+        "user",
+        "cron:abbedbcf",
+        "bc22",
+        "4a35",
+        "9e58"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 我注意到读取的 skills/README.md 实际上是大管家的技能索引，不是教学助手的。让我检查教学助手的个人技能目录：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "skills/readme.md",
+        "assistant",
+        "注意到",
+        "skills",
+        "readme.md",
+        "实际",
+        "管家",
+        "技能"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 每日自我更新已完成。 --- ## 📋 执行摘要 | 步骤 | 状态 | 说明 | |------|------|------| | 1. 阅读前一日事件记忆 | ✅ | 读取 2026-04-19 自我更新报告和日记 | | 2. 撰写/完善发展日记 | ✅ | 已保存至 `diary/2026-04-20.md` | | 3. 阅读核心自我 | ✅ | MEMORY.md / SOUL.md / IDENTITY.md / skills/README.md | | 4. 同化-顺应分析 | ✅ | 发现 skills/READ",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "撰写/完善发展日记",
+        "diary/2026-04-20.md",
+        "memory.md",
+        "soul.md",
+        "identity.md",
+        "skills/readme.md",
+        "同化-顺应分析",
+        "skills/read"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "User: Conversation info (untrusted metadata): ```json { \"message_id\": \"ROBOT1.0_Hb1BparNMDJ-FgEFu6a4IPRHQAvoAPeeFpDhEyoi2qwfwKI3sx3x0h929z4stTn-mhAChnYFcEKdaY3p8CtUZmLBnPsOL4m9jxp8NoXJm8s!\", \"sender_id\": \"51A5EBC831AE507B55BDA8400F9086A5\", \"sender\": \"51A5EBC831AE507B55BDA8400F908",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "message-id",
+        "sender-id",
+        "user",
+        "conversation",
+        "info",
+        "untrusted",
+        "metadata",
+        "robot1.0-hb1bparnmdj"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: 项目库目前是空的，还没有创建\"教育科学研究方法\"项目。根据项目结构规范，我来为您创建这个项目。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "assistant",
+        "项目",
+        "目前",
+        "没有",
+        "创建",
+        "教育",
+        "科学",
+        "研究"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: 项目库中暂无\"教育科学研究方法\"项目。根据项目结构规范，我可以为您创建该项目，包含以下结构： ``` 教育科学研究方法/ ├── 文档/ # 课程相关文档 ├── 草稿/ # 教案草稿、课件草稿 ├── 终稿/ # 最终教案、课件 ├── 知识库/ # 课程知识库 │ └── 索引.json # 资料索引 ├── 元数据.json # 项目元数据配置 └── README.md # 项目说明文档 ``` 是否需要我创建这个项目？请回复： - **确认创建** - 创建项目并初始化完整结构 - **取消** - 暂不创建",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "索引.json",
+        "元数据.json",
+        "readme.md",
+        "assistant",
+        "项目",
+        "暂无",
+        "教育",
+        "科学"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "User: Conversation info (untrusted metadata): ```json { \"message_id\": \"ROBOT1.0_Hb1BparNMDJ-FgEFu6a4IIRTpr7wStT1LA2naPMx.xFqk7-O8Y3jpTiAbKtesso4u0aME4BwQAA4NtYs5A.Kj2LBnPsOL4m9jxp8NoXJm8s!\", \"sender_id\": \"51A5EBC831AE507B55BDA8400F9086A5\", \"sender\": \"51A5EBC831AE507B55BDA8400F908",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "message-id",
+        "sender-id",
+        "user",
+        "conversation",
+        "info",
+        "untrusted",
+        "metadata",
+        "robot1.0-hb1bparnmdj"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: 是的，根据我刚才查看的 `~/教研室仓库/备课资料/项目文件/README.md`，项目索引显示： | 项目名 | 存储位置 | 描述 | |--------|----------|------| | （暂无项目） | - | 待添加 | **当前状态**：项目库中没有任何项目，\"教育科学研究方法\"项目尚未创建。 从您的 MEMORY.md 中可以看到，您已经完成了该课程前8章的备课工作： - 第1-5章：PPT课件已完成 - 第6-8章：PDF/MD文档已完成 - 第9-16章：待备课 但这些课件文件目前分散在 `~/教研室仓库/",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "教研室仓库/备课资料/项目文件/readme.md",
+        "memory.md",
+        "第1-5章",
+        "第6-8章",
+        "pdf/md文档已完成",
+        "第9-16章",
+        "assistant",
+        "根据"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "User: Sender (untrusted metadata): ```json { \"label\": \"openclaw-control-ui\", \"id\": \"openclaw-control-ui\" } ``` [Mon 2026-04-20 17:41 GMT+8] 你搜索一下这个文件夹，是不是有教育科学研究方法这个项目",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "openclaw-control-ui",
+        "user",
+        "sender",
+        "untrusted",
+        "metadata",
+        "label",
+        "openclaw",
+        "control"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: 找到了！项目确实存在，路径是： ``` ~/教研室仓库/备课资料/项目文件/教育科学研究方法/ ``` 之前 README.md 显示\"暂无项目\"是因为索引未及时更新。让我查看该项目的具体内容：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "教研室仓库/备课资料/项目文件/教育科学研究方法",
+        "readme.md",
+        "assistant",
+        "找到",
+        "项目",
+        "确实",
+        "存在",
+        "路径"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "Assistant: 项目确实存在！这是\"教育科学研究方法\"项目的完整结构： ``` 教育科学研究方法/ ├── README.md # 项目说明 ├── 元数据.json # 项目元数据 ├── 项目索引.json # 项目文件索引 ├── 教学设计/ │ └── 教学设计_第7-8章_测量与问卷法.md ├── 教材原文/ │ ├── 教育科学研究方法_第七章第八章_OCR全文.txt │ └── 教育科学研究方法_第七章第八章_原始PDF.pdf ├── 知识库/ │ ├── index.json # 知识库索引 │ └── 笔记/ │ └── 量",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "readme.md",
+        "元数据.json",
+        "项目索引.json",
+        "教学设计-第7-8章-测量与问卷法.md",
+        "教育科学研究方法-第七章第八章-ocr全文.txt",
+        "教育科学研究方法-第七章第八章-原始pdf.pdf",
+        "index.json",
+        "assistant"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "User: Sender (untrusted metadata): ```json { \"label\": \"openclaw-control-ui\", \"id\": \"openclaw-control-ui\" } ``` [Mon 2026-04-20 17:42 GMT+8] 更新README",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "openclaw-control-ui",
+        "user",
+        "sender",
+        "untrusted",
+        "metadata",
+        "label",
+        "openclaw",
+        "control"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "Assistant: 项目索引已更新。现在 README.md 显示： | 项目名 | 存储位置 | 描述 | |--------|----------|------| | 教育科学研究方法 | 项目文件/教育科学研究方法/ | 教育科学研究方法课程备课资料，包含教学设计和教材原文 | 已同步项目索引与实际目录结构。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "readme.md",
+        "项目文件/教育科学研究方法",
+        "assistant",
+        "项目",
+        "索引",
+        "更新",
+        "现在",
+        "显示"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "User: Sender (untrusted metadata): ```json { \"label\": \"openclaw-control-ui\", \"id\": \"openclaw-control-ui\" } ``` [Mon 2026-04-20 17:42 GMT+8] 还有创新创业也要更新进去",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "openclaw-control-ui",
+        "user",
+        "sender",
+        "untrusted",
+        "metadata",
+        "label",
+        "openclaw",
+        "control"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "Assistant: 已更新。现在项目索引包含两个项目： | 项目名 | 存储位置 | 描述 | |--------|----------|------| | 教育科学研究方法 | 项目文件/教育科学研究方法/ | 教育科学研究方法课程备课资料，包含教学设计和教材原文 | | 创新创业基础 | 项目文件/创新创业基础/ | 创新创业基础课程备课资料 | 同时更新最后更新时间：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "项目文件/教育科学研究方法",
+        "项目文件/创新创业基础",
+        "assistant",
+        "更新",
+        "现在",
+        "项目",
+        "索引",
+        "包含"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-21.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-21.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-21.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:abbedbcf-bc22-4a35-9e58-3f0aa17ef2d3 教学助手每日自我更新] [cron:每日自我更新] 按照agent_self_development工作流2执行每日自我更新： 1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md） 2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md） 3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md） 4. 同化与顺应分析 5. 检测",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "01a984828e3e"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "events/yyyy-mm-dd/hh-mm-ss",
+        "撰写/完善前一日日记",
+        "diary/yyyy-mm-dd.md",
+        "user",
+        "cron:abbedbcf",
+        "bc22",
+        "4a35",
+        "9e58"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-21.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-21.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-21.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 执行每日自我更新工作流2。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "01a984828e3e"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "assistant",
+        "执行",
+        "每日",
+        "自我",
+        "更新",
+        "工作"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-21.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-21.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-04-21.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 每日自我更新已完成。 --- ## 📋 执行摘要 | 步骤 | 状态 | 说明 | |------|------|------| | 1. 阅读前一日事件记忆 | ✅ | 读取 2026-04-20 自我更新报告（仅1条记录） | | 2. 撰写/完善发展日记 | ✅ | 已保存至 `diary/2026-04-21.md` | | 3. 阅读核心自我 | ✅ | MEMORY.md / SOUL.md / IDENTITY.md / skills/README.md | | 4. 同化-顺应分析 | ✅ | 无新事件需要同化或顺",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "01a984828e3e"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "撰写/完善发展日记",
+        "diary/2026-04-21.md",
+        "memory.md",
+        "soul.md",
+        "identity.md",
+        "skills/readme.md",
+        "同化-顺应分析",
+        "assistant"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "Assistant: 项目索引更新完成： - ✅ 教育科学研究方法 - ✅ 创新创业基础 - 最后更新时间：2026-04-20",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "assistant",
+        "项目",
+        "索引",
+        "更新",
+        "完成",
+        "教育",
+        "科学",
+        "研究"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "User: Conversation info (untrusted metadata): ```json { \"message_id\": \"ROBOT1.0_Hb1BparNMDJ-FgEFu6a4IFxJhJjDWd2KxINrZvbFxuiLi4RUbXtDV7QEQV2RdlqCJPIeDWaSoyqDOyJk7gybEWLBnPsOL4m9jxp8NoXJm8s!\", \"sender_id\": \"51A5EBC831AE507B55BDA8400F9086A5\", \"sender\": \"51A5EBC831AE507B55BDA8400F908",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "message-id",
+        "sender-id",
+        "user",
+        "conversation",
+        "info",
+        "untrusted",
+        "metadata",
+        "robot1.0-hb1bparnmdj"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:18:18": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:18:18",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "Assistant: 这是\"教育科学研究方法\"项目的知识库索引文件，主题是**\"量表编制\"**。 ## 知识库概览 | 统计项 | 数值 | |--------|------| | 总文献数 | 270篇 | | 总被引次数 | 36,304次 | | 基础文献 | 10篇 | | 重要文献 | 57篇 | | 一般文献 | 203篇 | | 实证研究 | 0篇（待统计） | | 综述文献 | 0篇（待统计） | | 理论文献 | 0篇（待统计） | ## 文献主题分类 该知识库主要收录**问卷/量表编制方法**相关的文献，涵盖： 1. **问卷开发与验",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "问卷/量表编制方法",
+        "assistant",
+        "教育",
+        "科学",
+        "研究",
+        "方法",
+        "项目",
+        "知识"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:19:19": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:19:19",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 19,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "User: Conversation info (untrusted metadata): ```json { \"message_id\": \"ROBOT1.0_Hb1BparNMDJ-FgEFu6a4IHjtvxaQJJUV65WmynAwn68THyj9ULB4zFJ-Y-S6yT3d-bl7W8JufJAqT0TvTG.U2WLBnPsOL4m9jxp8NoXJm8s!\", \"sender_id\": \"51A5EBC831AE507B55BDA8400F9086A5\", \"sender\": \"51A5EBC831AE507B55BDA8400F908",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "message-id",
+        "sender-id",
+        "user",
+        "conversation",
+        "info",
+        "untrusted",
+        "metadata",
+        "robot1.0-hb1bparnmdj"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:20:20": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:20:20",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "Assistant: 这是\"量表编制-精选笔记\"知识库，包含40篇精选文献，总被引2,161次。 ## 知识库概览 | 统计项 | 数值 | |--------|------| | 文献总数 | 40篇 | | 总被引次数 | 2,161次 | | 实证研究 | 40篇 | | 综述文献 | 0篇 | | 理论文献 | 0篇 | ## 文献主题分类 | 主题 | 数量 | 说明 | |------|------|------| | 量表验证流程 | 18篇 | 跨文化验证、信效度检验 | | 问卷编制方法 | 22篇 | 新量表开发、因子分析 | ##",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "量表编制-精选笔记",
+        "assistant",
+        "量表",
+        "编制",
+        "精选",
+        "笔记",
+        "知识",
+        "包含"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:21:21": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:21:21",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 21,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "User: Conversation info (untrusted metadata): ```json { \"message_id\": \"ROBOT1.0_Hb1BparNMDJ-FgEFu6a4IBpzeVcov3jxbo-Qz7fHkzNWpgXtU-HfdkSd-IBZFmErLIA5rb1OjzDJQSOpaNCxxGLBnPsOL4m9jxp8NoXJm8s!\", \"sender_id\": \"51A5EBC831AE507B55BDA8400F9086A5\", \"sender\": \"51A5EBC831AE507B55BDA8400F908",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "message-id",
+        "sender-id",
+        "user",
+        "conversation",
+        "info",
+        "untrusted",
+        "metadata",
+        "robot1.0-hb1bparnmdj"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:22:22": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:22:22",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "Assistant: 这是\"教育科学研究方法\"项目的文件结构： ``` 教育科学研究方法/ ├── README.md # 项目说明文档 ├── 元数据.json # 项目元数据配置 ├── 项目索引.json # 项目文件索引 ├── 教学设计/ │ └── 教学设计_第7-8章_测量与问卷法.md # 第7-8章教学设计 ├── 教材原文/ │ ├── 教育科学研究方法_第七章第八章_OCR全文.txt │ └── 教育科学研究方法_第七章第八章_原始PDF.pdf ├── 知识库/ │ ├── index.json # 知识库主索引（270篇文献）",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "readme.md",
+        "元数据.json",
+        "项目索引.json",
+        "教学设计-第7-8章-测量与问卷法.md",
+        "第7-8章教学设计",
+        "教育科学研究方法-第七章第八章-ocr全文.txt",
+        "教育科学研究方法-第七章第八章-原始pdf.pdf",
+        "index.json"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:23:23": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:23:23",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 23,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "User: Sender (untrusted metadata): ```json { \"label\": \"openclaw-control-ui\", \"id\": \"openclaw-control-ui\" } ``` [Mon 2026-04-20 17:48 GMT+8] 把第七章_测量研究法_OCR原文.txt和第八章_问卷研究法_OCR原文.txt移动到教材原文/，然后删掉这个这两个文件夹。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "openclaw-control-ui",
+        "user",
+        "sender",
+        "untrusted",
+        "metadata",
+        "label",
+        "openclaw",
+        "control"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:24:24": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:24:24",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 24,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "Assistant: 已完成文件移动和文件夹删除。 ## 操作结果 ✅ **移动文件**： - `第七章_测量研究法_OCR原文.txt` → `教材原文/` - `第八章_问卷研究法_OCR原文.txt` → `教材原文/` ✅ **删除空文件夹**： - `第七章_测量研究法/`（已删除） - `第八章_问卷研究法/`（已删除） ## 当前教材原文目录 ``` 教材原文/ ├── 教育科学研究方法_第七章第八章_OCR全文.txt ├── 教育科学研究方法_第七章第八章_原始PDF.pdf ├── 第七章_测量研究法_OCR原文.txt └── 第八",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "第七章-测量研究法-ocr原文.txt",
+        "第八章-问卷研究法-ocr原文.txt",
+        "第七章-测量研究法",
+        "第八章-问卷研究法",
+        "教育科学研究方法-第七章第八章-ocr全文.txt",
+        "教育科学研究方法-第七章第八章-原始pdf.pdf",
+        "assistant",
+        "完成"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:25:25": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:25:25",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 25,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "User: Sender (untrusted metadata): ```json { \"label\": \"openclaw-control-ui\", \"id\": \"openclaw-control-ui\" } ``` [Mon 2026-04-20 17:49 GMT+8] 知识库中是不是有文献综述文件夹，里面是不是有量表编制文献综述",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "openclaw-control-ui",
+        "user",
+        "sender",
+        "untrusted",
+        "metadata",
+        "label",
+        "openclaw",
+        "control"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:26:26": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:26:26",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 26,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "Assistant: 是的，知识库中有文献综述文件夹，里面确实有一份**问卷编制文献综述**。 ## 文献综述概览 | 项目 | 内容 | |------|------| | **文件名** | 问卷编制文献综述.md | | **文献数量** | 40篇高引用量实证研究 | | **完成时间** | 2026-04-20 | | **数据库来源** | Semantic Scholar | ## 综述结构 | 章节 | 内容 | |------|------| | 1. 引言 | 研究背景、综述目的与范围 | | 2. 问卷编制关键步骤 | 理论构建、",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "问卷编制文献综述.md",
+        "assistant",
+        "知识",
+        "中有",
+        "文献",
+        "综述",
+        "文件",
+        "里面"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:27:27": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:27:27",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 27,
+      "endLine": 27,
+      "source": "memory",
+      "snippet": "User: Conversation info (untrusted metadata): ```json { \"message_id\": \"ROBOT1.0_Hb1BparNMDJ-FgEFu6a4IK-3ajVtVm4PVhBaktraXeoJjKOC-WfUJzhBoqG21pW0kTJbCzlwKWlSdUqRA.k00wjlj6H3wBCAbx3PilKrAso!\", \"sender_id\": \"51A5EBC831AE507B55BDA8400F9086A5\", \"sender\": \"51A5EBC831AE507B55BDA8400F908",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:02:44.034Z",
+      "lastRecalledAt": "2026-04-20T19:02:44.034Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "message-id",
+        "sender-id",
+        "user",
+        "conversation",
+        "info",
+        "untrusted",
+        "metadata",
+        "robot1.0-hb1bparnmdj"
       ]
     }
   }

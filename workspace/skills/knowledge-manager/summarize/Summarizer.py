@@ -32,10 +32,9 @@ class Summarizer:
 
         self.base_url = base_url
         self.model = model
-        api_key_env = "TOKENHUB_API_KEY"
-        self.api_key = api_key or os.environ.get('TOKENHUB_API_KEY') or os.environ.get('ARK_API_KEY')
+        self.api_key = api_key or os.environ.get('TOKENHUB_API_KEY')
         if not self.api_key:
-            raise ValueError(f"请设置环境变量 {api_key_env}")
+            raise ValueError(f"请设置环境变量：TOKENHUB_API_KEY 或 其他 API_KEY")
         
         self.use_conversation = use_conversation
         self.conversation_history = []  # 会话历史

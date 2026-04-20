@@ -29,6 +29,7 @@
 | **Agent 事件记录** | ~/.openclaw/workspace/psychologist/events/YYYY-MM-DD/{HH-MM-SS-事件}.md | 详细事件记录（由agent-self-development维护） |
 | 实验室仓库 | ~/实验室仓库/README.md | 实验室仓库 |
 | 实验室项目 | ~/实验室仓库/项目文件/README.md | 实验室各个项目 |
+| 项目元数据 | ~/实验室仓库/项目文件/{项目名}/元数据.json | 项目信息 |
 | 项目知识库 | ~/实验室仓库/项目文件/{项目名}/知识库/index.json | 项目专属文献知识库索引 |
 ---
 

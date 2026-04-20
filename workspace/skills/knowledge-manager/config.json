@@ -1,6 +1,6 @@
 {
   "llm": {
-    "default_provider": "tencent",
+    "default_provider": "tencent_token",
     "providers": {
       "tencent_token": {
         "name": "腾讯云tokenhub",

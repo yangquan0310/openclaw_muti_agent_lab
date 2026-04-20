@@ -6,7 +6,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 会话ID | 任务名称 | 功能描述 | cron状态 |
 |----------|--------|--------|--------|----------|----------|----------|
-| 每日 00:00 | 教学助手（teaching） | `abbedbcf-bc22-4a35-9e58-3f0aa17ef2d3` | `session:CORN:teaching的定时任务` | 每日自我更新 | 按照`agent_self_development`工作流2执行每日自我更新：1.记录发展日记；2.执行自我更新（身份/风格-信念/技能） | enabled |
+| 每日 00:30 | 教学助手（teaching） | `abbedbcf-bc22-4a35-9e58-3f0aa17ef2d3` | `session:CORN:teaching的定时任务` | 每日自我更新 | 按照`agent_self_development`工作流2执行每日自我更新：1.记录发展日记；2.执行自我更新（身份/风格-信念/技能） | enabled |
 
 ---
 ## 表格排序规则
