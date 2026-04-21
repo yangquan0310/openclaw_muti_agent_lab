@@ -72,7 +72,7 @@
 > **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/steward/events/YYYY-MM-DD/HH-MM-SS-{event}.md`
 | 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
 |------|------|----------|------|----------|
-||||
+|||||
 ---
 
 ## 五、程序性记忆(Procedural Memory)

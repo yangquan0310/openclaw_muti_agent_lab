@@ -120,12 +120,25 @@
     },
     "kimicode": {
       "baseUrl": "https://api.kimi.com/coding/v1",
-      "api": "anthropic-messages",
       "apiKey": "sk-kimi-5kXzsbOGzmu05a3mQIrtlgNkRM9VNNVwOIGqvWVNVEUBhwdj59FrjlIPybyfa0tW",
+      "api": "anthropic-messages",
       "models": [
         {
           "id": "kimi-for-coding",
-          "name": "kimi for coding"
+          "name": "kimi for coding",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "anthropic-messages"
         }
       ]
     }

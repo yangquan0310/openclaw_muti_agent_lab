@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-20T19:00:30.917Z",
+  "updatedAt": "2026-04-21T03:07:55.638Z",
   "entries": {
     "memory:memory/2026-04-11.md:6:6": {
       "key": "memory:memory/2026-04-11.md:6:6",
@@ -108118,6 +108118,161 @@
         "重新",
         "当前",
         "版本"
+      ]
+    },
+    "memory:memory/2026-04-20.md:351:352": {
+      "key": "memory:memory/2026-04-20.md:351:352",
+      "path": "memory/2026-04-20.md",
+      "startLine": 351,
+      "endLine": 352,
+      "source": "memory",
+      "snippet": "- \"disabled\": \"已禁用，任务暂停执行\", \"error\": \"执行出错，任务执行失败需要检查\", \"pending\": \"待配置，任务已创建但尚未启用\" } ``` ### 7. 工作记忆归档规则明确 - **只归档completed状态的任务** - 正常完成的任务进入事件记忆 - **killed状态的任务直接删除** - 异常终止的任务不归档 - **修改定时清理任务**：04:00清理时区分归档和删除操作 ### 8. 撰写脚本SOP更新 - **明确子代理执行的上下文要求**： - 技能：子代理需要使用的技能列表 - 密钥：所需的API密钥或访问凭证 - 使用方法：技能的具体使用方法和示例 - 任务要求：明确的任务目标和预期结果 - 执行方案/步骤：详细的执行步骤和流程 - **更新六要素结构模板**：在执行方式章节添加上下文要求 - **更新检查格式章节**：确认子代理执行时提供完整上下文 ## 技术规范总结 ### AGENTS.md 执行规则（v2.0） | 规则 | 内容 | |------|------| | 规则1 | 禁止擅自执行 - 必须等待用户明确批准 | | 规则2 | 计划必须等待确认 | | 规则3 | 简单任务也需要确认 | | 规则4 | 快速响应不需要确认 - 查询类指令直接响应 | [confidence=0.79 evidence=memory/2026-04-10.md:64-94] <!-- openclaw:dreaming:rem:end -->",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-21T03:07:55.638Z",
+      "lastRecalledAt": "2026-04-21T03:07:55.638Z",
+      "queryHashes": [
+        "17ee887caab1"
+      ],
+      "recallDays": [
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "执行方案/步骤",
+        "agents.md",
+        "v2.0",
+        "0.79",
+        "memory/2026-04-10.md",
+        "64-94",
+        "disabled",
+        "禁用"
+      ]
+    },
+    "memory:memory/2026-04-20.md:351:353": {
+      "key": "memory:memory/2026-04-20.md:351:353",
+      "path": "memory/2026-04-20.md",
+      "startLine": 351,
+      "endLine": 353,
+      "source": "memory",
+      "snippet": "- \"disabled\": \"已禁用，任务暂停执行\", \"error\": \"执行出错，任务执行失败需要检查\", \"pending\": \"待配置，任务已创建但尚未启用\" } ``` ### 7. 工作记忆归档规则明确 - **只归档completed状态的任务** - 正常完成的任务进入事件记忆 - **killed状态的任务直接删除** - 异常终止的任务不归档 - **修改定时清理任务**：04:00清理时区分归档和删除操作 ### 8. 撰写脚本SOP更新 - **明确子代理执行的上下文要求**： - 技能：子代理需要使用的技能列表 - 密钥：所需的API密钥或访问凭证 - 使用方法：技能的具体使用方法和示例 - 任务要求：明确的任务目标和预期结果 - 执行方案/步骤：详细的执行步骤和流程 - **更新六要素结构模板**：在执行方式章节添加上下文要求 - **更新检查格式章节**：确认子代理执行时提供完整上下文 ## 技术规范总结 ### AGENTS.md 执行规则（v2.0） | 规则 | 内容 | |------|------| | 规则1 | 禁止擅自执行 - 必须等待用户明确批准 | | 规则2 | 计划必须等待确认 | | 规则3 | 简单任务也需要确认 | | 规则4 | 快速响应不需要确认 - 查询类指令直接响应 | [confidence=0.79 evidence=memory/2026-04-10.md:64-94] <!-- openclaw:dreaming:rem:end -->",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-21T03:07:55.638Z",
+      "lastRecalledAt": "2026-04-21T03:07:55.638Z",
+      "queryHashes": [
+        "17ee887caab1"
+      ],
+      "recallDays": [
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "执行方案/步骤",
+        "agents.md",
+        "v2.0",
+        "0.79",
+        "memory/2026-04-10.md",
+        "64-94",
+        "disabled",
+        "禁用"
+      ]
+    },
+    "memory:memory/2026-04-20.md:175:192": {
+      "key": "memory:memory/2026-04-20.md:175:192",
+      "path": "memory/2026-04-20.md",
+      "startLine": 175,
+      "endLine": 192,
+      "source": "memory",
+      "snippet": "- evidence: memory/.dreams/session-corpus/2026-04-17.txt:54-54 - recalls: 0 - status: staged - Candidate: Assistant: 现在我来删除 feishu-doc-manager 技能目录，并从 MEMORY.md 中移除对应的条件-行动规则。 - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-17.txt:55-55 - recalls: 0 - status: staged - Candidate: Assistant: ✅ **删除完成！** **操作结果：** 1. **技能目录已删除**：`~/.openclaw/workspace/steward/skills/feishu-doc-manager/` 2. **条件-行动规则已移除**：从 MEMORY.md 中删除了 \"需要上传/更新云文档 → 优先使用 feishu-doc-manager 技能\" 这条规则 **MEMORY.md 已更新**，版本历史已记录此次变更。 - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-17.txt:56-56 - recalls: 0 - status: staged - Candidate: User: System: [2026-04-17 00:54:",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-21T03:07:55.638Z",
+      "lastRecalledAt": "2026-04-21T03:07:55.638Z",
+      "queryHashes": [
+        "17ee887caab1"
+      ],
+      "recallDays": [
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "54-54",
+        "feishu-doc-manager",
+        "memory.md",
+        "中移除对应的条件-行动规则",
+        "0.58",
+        "55-55",
+        "条件-行动规则已移除",
+        "需要上传/更新云文档"
+      ]
+    },
+    "memory:memory/2026-04-20.md:350:351": {
+      "key": "memory:memory/2026-04-20.md:350:351",
+      "path": "memory/2026-04-20.md",
+      "startLine": 350,
+      "endLine": 351,
+      "source": "memory",
+      "snippet": "- - evidence: memory/.dreams/session-corpus/2026-04-15.txt:65-65 - recalls: 0 - status: staged - Candidate: Assistant: 让我查看 README.md 和脚本内容： - confidence: 0.00 - evidence: memory/.dreams/session-corpus/2026-04-15.txt:66-66 - recalls: 0 - status: staged - Candidate: Assistant: 现在查看脚本内容： - confidence: 0.00 - evidence: memory/.dreams/session-corpus/2026-04-15.txt:67-67 - recalls: 0 - status: staged - Candidate: Assistant: 脚本似乎卡在拉取代码的步骤。让我终止这个进程，然后手动执行 Git 操作： - confidence: 0.00 - evidence: memory/.dreams/session-corpus/2026-04-15.txt:73-73 - recalls: 0 - status: staged - Candidate: Assistant: ✅ 代码已成功提交！由于网络连接问题，推送远程仓库暂时失败，但本地更改已保存。 ### 自动提交完成摘要 | 项目 | 状态 | |------|-- [confidence=0.89 evidence=m",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-21T03:07:55.638Z",
+      "lastRecalledAt": "2026-04-21T03:07:55.638Z",
+      "queryHashes": [
+        "17ee887caab1"
+      ],
+      "recallDays": [
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "网络",
+        "65-65",
+        "readme.md",
+        "0.00",
+        "66-66",
+        "67-67",
+        "73-73",
+        "0.89"
+      ]
+    },
+    "memory:memory/2026-04-20.md:210:227": {
+      "key": "memory:memory/2026-04-20.md:210:227",
+      "path": "memory/2026-04-20.md",
+      "startLine": 210,
+      "endLine": 227,
+      "source": "memory",
+      "snippet": "- evidence: memory/.dreams/session-corpus/2026-04-17.txt:62-62 - recalls: 0 - status: staged - Candidate: Assistant: 现在更新公共技能目录的 README.md，添加新创建的技能包： - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-17.txt:63-63 - recalls: 0 - status: staged - Candidate: Assistant: 已完成 `agent_self_development` 技能包的完整创建！ ## 创建结果 按照您提供的架构，已在公共技能文件夹成功创建以下文件结构： ``` ~/.openclaw/workspace/skills/agent_self_development/ ├── SKILL.md # 技能包总览 ├── metacognition/ # 元认知模块 │ ├── SKILL.md # 元认知总览 │ ├── planning/ │ │ └── SKILL.md # 计划阶段 │ ├── monitoring/ │ │ └─ - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-17.txt:65-65 - recalls: 0 - status: staged - Candidat",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-21T03:07:55.638Z",
+      "lastRecalledAt": "2026-04-21T03:07:55.638Z",
+      "queryHashes": [
+        "17ee887caab1"
+      ],
+      "recallDays": [
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "62-62",
+        "readme.md",
+        "0.58",
+        "63-63",
+        "agent-self-development",
+        "skill.md",
+        "65-65",
+        "evidence"
       ]
     }
   }

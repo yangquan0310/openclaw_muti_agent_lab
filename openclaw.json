@@ -668,9 +668,19 @@
       "reactionNotifications": "own",
       "typingIndicator": true,
       "resolveSenderNames": true,
-      "requireMention": true,
       "streaming": true,
+      "groupPolicy": "allowlist",
+      "groupAllowFrom": [
+        "oc_cd80162eb81e39f77160a0daab2a6ab8",
+        "oc_1032e70e8854c3bba9df42f38d532536"
+      ],
+      "requireMention": true,
+      "threads": true,
       "accounts": {
+        "default": {
+          "webhookPath": "/feishu/events",
+          "dmPolicy": "pairing"
+        },
         "steward": {
           "appId": "cli_a94178f816b91cc9",
           "appSecret": "${FEISHU_STEWARD_APP_SECRET}"
@@ -706,15 +716,6 @@
         "academicassistant": {
           "appId": "cli_a947bb2b87399cc8",
           "appSecret": "${FEISHU_ACADEMICASSISTANT_APP_SECRET}"
-        },
-        "default": {
-          "webhookPath": "/feishu/events",
-          "dmPolicy": "pairing",
-          "groupPolicy": "allowlist",
-          "groupAllowlist": [
-            "ou_25cf20a1973aecc51f73d8e2800d7f7e",
-            "ou_368fc4e19dc00f24f6291edee49eab10"
-          ]
         }
       }
     },

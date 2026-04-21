@@ -407,7 +407,7 @@
       "enabled": true,
       "deleteAfterRun": false,
       "createdAtMs": 1776698555280,
-      "updatedAtMs": 1776698645841,
+      "updatedAtMs": 1776715500028,
       "schedule": {
         "kind": "cron",
         "expr": "00 04 * * *",
@@ -427,8 +427,15 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776715200000,
-        "runningAtMs": 1776715200005
+        "nextRunAtMs": 1776801600000,
+        "lastRunAtMs": 1776715200020,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300008,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
       }
     }
   ]

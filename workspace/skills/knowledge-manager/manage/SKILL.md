@@ -48,7 +48,7 @@ manager.merge("kb1.json", "kb2.json", "kb3.json").save("merged.json", "合并项
 ```python
 from Manager import Manager
 
-manager = Manager("my_kb.json")
+manager = Manager(kb_path="my_kb.json")
 manager.filter({
     "citations_min": 50,
     "types": ["📊实证", "📖综述"],
@@ -76,6 +76,12 @@ manager.merge("kb1.json", "kb2.json") \
 ---
 
 ## 方法详情
+
+### `__init__(kb_path=None)`
+
+| 参数 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `kb_path` | str | None | 知识库文件路径。为 None 时表示空管理器，用于合并操作 |
 
 ### `merge(*kb_paths, deduplicate=True)`
 
@@ -111,6 +117,8 @@ manager.merge("kb1.json", "kb2.json") \
 |------|------|--------|------|
 | `output_path` | str | 必填 | 输出文件路径：笔记/{主题}.json |
 | `project_name` | str | "" | 项目名称（会更新到知识库中） |
+
+> **注意**：当通过 `Manager(kb_path="...")` 初始化时，`kb_path` 在构造函数中设置；当通过 `Manager()` 空初始化时，用于合并操作。
 
 ### `get_kb()`
 返回当前知识库字典

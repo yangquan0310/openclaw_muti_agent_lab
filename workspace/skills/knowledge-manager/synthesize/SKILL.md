@@ -46,15 +46,18 @@ from search.Searcher import Searcher
 from summarize.Summarizer import Summarizer
 from manager.Manager import Manager
 
-searcher = Searcher()
+# 1. 检索文献
+searcher = Searcher(kb_path="my_kb.json")
 queries = {"研究主题": [{"query": "keywords", "limit": 30}]}
-searcher.search(queries, kb_path="my_kb.json")
+searcher.search(queries)
 
-summarizer = Summarizer()
-summarizer.summarize(kb_path="my_kb.json")
-
-manager=Manager()
+# 2. 筛选并保存笔记
+manager = Manager(kb_path="my_kb.json")
 manager.filter(topic="主题").save("笔记.json")
+
+# 3. 总结文献（基于筛选后的笔记）
+summarizer = Summarizer(kb_path="笔记.json")
+summarizer.summarize()
 ```
 
 ### 2. 使用模板

@@ -38,20 +38,21 @@ Summarizer 类使用 LLM 分析文献内容，自动添加 labels（分类标签
 ```python
 from Summarizer import Summarizer
 
-summarizer = Summarizer()
-kb = summarizer.summarize(kb_path="my_kb.json")
+summarizer = Summarizer(kb_path="my_kb.json")
+kb = summarizer.summarize()
 ```
 
 ---
 
 ## 方法详情
 
-### `summarize(kb_path="index.json", progress_interval=10)`
+### `summarize(progress_interval=10)`
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `kb_path` | str | "index.json" | 知识库文件路径 |
 | `progress_interval` | int | 10 | 进度打印间隔 |
+
+> **注意**：`kb_path` 在初始化 `Summarizer(kb_path="...")` 时设置，不在 `summarize()` 方法中传入。
 
 ---
 

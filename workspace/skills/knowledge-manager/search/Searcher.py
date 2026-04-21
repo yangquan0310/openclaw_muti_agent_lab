@@ -74,6 +74,9 @@ class Searcher:
         """
         kb_data = self._load_kb(kb_path)
         existing_papers = kb_data.get('papers', [])
+        # 建立已有文献的映射（用于合并主题）
+        existing_map = {p.get('paperId'): p for p in existing_papers if p.get('paperId')}
+        
         fields = fields or self.FIELDS
         all_new_papers = []
 
@@ -101,10 +104,21 @@ class Searcher:
                     query, limit, fields, pub_types, **params
                 )
                 for p in papers:
-                    p['topic'] = [topic]
-                    p['labels'] = {"type": "", "importance": "", "JCR": ""}
-                all_new_papers.extend(papers)
-                print(f"    获取 {len(papers)} 篇")
+                    pid = p.get('paperId')
+                    if pid and pid in existing_map:
+                        # 已有文献：合并主题，保留原有 labels
+                        existing_paper = existing_map[pid]
+                        existing_topics = set(existing_paper.get('topic', []))
+                        existing_topics.add(topic)
+                        existing_paper['topic'] = list(existing_topics)
+                        # 不覆盖 labels，保留已有值
+                    else:
+                        # 新文献：设置主题和空 labels
+                        p['topic'] = [topic]
+                        p['labels'] = {"type": "", "importance": "", "JCR": ""}
+                        all_new_papers.append(p)
+                
+                print(f"    获取 {len(papers)} 篇（新文献: {len([p for p in papers if p.get('paperId') not in existing_map])} 篇）")
                 time.sleep(0.5)
 
         if deduplicate:

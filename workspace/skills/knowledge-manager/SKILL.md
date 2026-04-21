@@ -48,27 +48,27 @@ tools:
 - 检索
 ```python
 from search.Searcher import Searcher
-searcher = Searcher()
+searcher = Searcher(kb_path="my_kb.json")
 queries = {
     "自传体记忆": [
         {"query": "autobiographical memory | personal memory", "limit": 30}
     ]
 }
-searcher.search(queries, kb_path="my_kb.json")
+searcher.search(queries)
 ```
 
-### 2. 总结文献
-```python
-from summarize.Summarizer import Summarizer
-summarizer = Summarizer()
-summarizer.summarize(kb_path="my_kb.json")
-```
-
-### 3. 导出笔记
+### 2. 管理知识库（筛选并保存笔记）
 ```python
 from manage.Manager import Manager
-manager = Manager("my_kb.json")
+manager = Manager(kb_path="my_kb.json")
 manager.filter({"citations_min": 50}).save("笔记.json")
+```
+
+### 3. 总结文献（基于筛选后的笔记）
+```python
+from summarize.Summarizer import Summarizer
+summarizer = Summarizer(kb_path="笔记.json")
+kb = summarizer.summarize()
 ```
 ### 4. 撰写文献综述
 - 读取`笔记.json`每篇notes
