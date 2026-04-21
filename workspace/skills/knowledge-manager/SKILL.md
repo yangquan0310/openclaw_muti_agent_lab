@@ -48,31 +48,43 @@ tools:
 - 检索
 ```python
 from search.Searcher import Searcher
+# 初始化时绑定知识库路径
 searcher = Searcher(kb_path="my_kb.json")
 queries = {
     "自传体记忆": [
         {"query": "autobiographical memory | personal memory", "limit": 30}
     ]
 }
+# 方法调用时不再传知识库路径
 searcher.search(queries)
+searcher.update()
 ```
 
 ### 2. 管理知识库（筛选并保存笔记）
 ```python
 from manage.Manager import Manager
-manager = Manager(kb_path="my_kb.json")
-manager.filter({"citations_min": 50}).save("笔记.json")
+# 初始化时绑定知识库路径
+manager = Manager("my_kb.json")
+# 筛选后无参保存到绑定的路径
+manager.filter({"citations_min": 50}).save()
 ```
 
 ### 3. 总结文献（基于筛选后的笔记）
 ```python
 from summarize.Summarizer import Summarizer
+# 初始化时绑定知识库路径
 summarizer = Summarizer(kb_path="笔记.json")
+# 方法调用时不再传知识库路径
 kb = summarizer.summarize()
 ```
-### 4. 撰写文献综述
-- 读取`笔记.json`每篇notes
-- 按照模板进行攥写
+
+### 4. 检查参考文献
+```python
+from synthesize.ReferenceChecker import ReferenceChecker
+# 初始化时绑定一个或多个知识库
+checker = ReferenceChecker("kb1.json", "kb2.json")
+# 方法调用时只传文档路径
+checker.check_references("综述文档.md")
 ```
 ---
 
@@ -90,4 +102,5 @@ kb = summarizer.summarize()
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 3.1.0 | 2026-04-22 | 统一风格：初始化时绑定知识库/笔记，方法调用时不再传知识库或笔记 |
 | 3.0.0 | 2026-04-15 | 按面向对象思路重构，拆分为四个独立子模块 |

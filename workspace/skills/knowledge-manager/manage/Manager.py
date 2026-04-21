@@ -20,12 +20,13 @@ class Manager:
 
     def __init__(self, kb_path: Optional[str] = None):
         """
-        初始化管理器
+        初始化管理器（绑定知识库路径）
         Args:
-            kb_path: 可选，初始知识库文件路径
+            kb_path: 知识库文件路径。为 None 时表示空管理器，用于合并操作
         """
         self._kb_data = None
         self._current_papers = []
+        self.kb_path = kb_path
         if kb_path:
             self.load(kb_path)
 
@@ -39,26 +40,32 @@ class Manager:
         print(f"已加载知识库: {kb_path}, 共 {len(self._current_papers)} 篇论文")
         return self
 
-    def save(self, output_path: str, project_name: str = "") -> str:
+    def save(self, output_path: Optional[str] = None, project_name: str = "") -> str:
         """
         保存当前知识库数据到文件
         Args:
-            output_path: 输出文件路径
+            output_path: 输出文件路径（默认使用绑定的 kb_path）
             project_name: 项目名称（会更新到知识库中）
         """
         if self._kb_data is None:
             raise ValueError("没有可保存的知识库数据，请先加载或合并数据")
+        
+        # 确定保存路径
+        save_path = output_path or self.kb_path
+        if not save_path:
+            raise ValueError("未指定输出路径，且未绑定 kb_path")
+        
         # 更新统计和元数据
         self._kb_data['papers'] = self._current_papers
         self._kb_data['statistics'] = self._compute_statistics(self._current_papers)
         self._kb_data['updated_at'] = datetime.now().isoformat()
         if project_name:
             self._kb_data['project'] = project_name
-        os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
-        with open(output_path, 'w', encoding='utf-8') as f:
+        os.makedirs(os.path.dirname(os.path.abspath(save_path)), exist_ok=True)
+        with open(save_path, 'w', encoding='utf-8') as f:
             json.dump(self._kb_data, f, ensure_ascii=False, indent=2)
-        print(f"知识库已保存至: {output_path}")
-        return output_path
+        print(f"知识库已保存至: {save_path}")
+        return save_path
 
     # ==================== 核心功能 ====================
 
@@ -291,8 +298,9 @@ if __name__ == "__main__":
                 sys.exit(1)
         
         print(f"正在合并 {len(args.kb_paths)} 个知识库...")
-        manager = Manager()
+        manager = Manager()  # 空管理器用于合并
         manager.merge(*args.kb_paths, deduplicate=not args.no_deduplicate)
+        # 合并操作必须指定输出路径（空管理器无绑定路径）
         manager.save(args.output, args.project)
         print(f"完成! 输出: {args.output}")
     
@@ -337,8 +345,10 @@ if __name__ == "__main__":
         
         print(f"正在筛选知识库...")
         manager = Manager(args.kb_path)
-        manager.filter(conditions).save(args.output)
-        print(f"完成! 输出: {args.output}")
+        # 使用绑定的路径保存（无参save）
+        save_path = args.output or args.kb_path
+        manager.filter(conditions).save(save_path)
+        print(f"完成! 输出: {save_path}")
     
     elif args.command == "info":
         if not os.path.exists(args.kb_path):

@@ -12,25 +12,30 @@ from typing import Dict, List, Tuple, Optional
 
 class ReferenceChecker:
     """
-    参考文献检查与修复类
+    参考文献检查与修复类（初始化时绑定知识库路径）
     
-    核心方法: check_references(doc_path, **kwargs)
+    核心方法: check_references(doc_path)
     """
     
-    def __init__(self):
+    def __init__(self, *kb_paths: str):
+        """
+        初始化引用检查器（绑定一个或多个知识库路径）
+        Args:
+            *kb_paths: 知识库文件路径（可传入多个）
+        """
+        self.kb_paths = list(kb_paths) if kb_paths else []
         self.citation_map = {}
         self.citation_text_map = {}
         self.dsam_pattern = re.compile(r'DSAM_\d+')
         self.content = ""
         self.knowledge_bases = {}
     
-    def check_references(self, doc_path: str, **kwargs) -> Dict:
+    def check_references(self, doc_path: str) -> Dict:
         """
-        核心方法：检查参考文献（使用**kwargs支持多个知识库文件）
+        核心方法：检查参考文献（使用初始化时绑定的知识库）
         
         参数:
             doc_path: 待检查的Markdown文档路径
-            **kwargs: 知识库文件路径（如 kb1="path1", kb2="path2"）
             
         返回:
             检查结果字典
@@ -38,7 +43,7 @@ class ReferenceChecker:
         results = {
             "success": False,
             "doc_path": doc_path,
-            "knowledge_bases": kwargs,
+            "knowledge_bases": self.kb_paths,
             "issues": [],
             "stats": {},
             "recommendations": []
@@ -46,7 +51,7 @@ class ReferenceChecker:
         
         try:
             # 步骤1: 加载文件
-            self._load_documents(doc_path, **kwargs)
+            self._load_documents(doc_path)
             
             # 步骤2: 构建引用映射
             self._build_citation_maps()
@@ -76,18 +81,18 @@ class ReferenceChecker:
     
     # ========== 私有辅助方法 ==========
     
-    def _load_documents(self, doc_path: str, **kwargs):
-        """加载文档和多个知识库文件"""
+    def _load_documents(self, doc_path: str):
+        """加载文档和初始化时绑定的知识库文件"""
         # 加载Markdown文档
         with open(doc_path, 'r', encoding='utf-8') as f:
             self.content = f.read()
         
-        # 加载所有知识库文件
+        # 加载所有绑定的知识库文件
         self.knowledge_bases = {}
-        for kb_name, kb_path in kwargs.items():
-            if kb_path:
+        for i, kb_path in enumerate(self.kb_paths, 1):
+            if kb_path and os.path.exists(kb_path):
                 with open(kb_path, 'r', encoding='utf-8') as f:
-                    self.knowledge_bases[kb_name] = json.load(f)
+                    self.knowledge_bases[f'kb{i}'] = json.load(f)
     
     def _build_citation_maps(self):
         """从多个知识库构建引用映射"""
@@ -248,17 +253,14 @@ def main():
     
     args = parser.parse_args()
     
-    checker = ReferenceChecker()
-    
-    # 将 --kb 参数转换为 kwargs（kb1, kb2, kb3...）
-    kb_kwargs = {}
-    for i, kb_path in enumerate(args.kb, 1):
-        kb_kwargs[f'kb{i}'] = kb_path
+    # 将 --kb 参数绑定到 ReferenceChecker
+    kb_paths = args.kb if args.kb else []
+    checker = ReferenceChecker(*kb_paths)
     
     # 检查引用
     print("正在检查参考文献...")
-    print(f"已加载 {len(kb_kwargs)} 个知识库文件")
-    results = checker.check_references(args.doc, **kb_kwargs)
+    print(f"已加载 {len(kb_paths)} 个知识库文件")
+    results = checker.check_references(args.doc)
     
     if not results["success"]:
         print(f"检查失败: {results.get('error', '未知错误')}")

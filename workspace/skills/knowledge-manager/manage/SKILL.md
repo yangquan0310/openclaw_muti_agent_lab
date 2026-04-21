@@ -39,6 +39,7 @@ Manager 类提供知识库的合并、筛选、保存功能，支持链式调用
 ```python
 from Manager import Manager
 
+# 空管理器用于合并（不绑定路径）
 manager = Manager()
 manager.merge("kb1.json", "kb2.json", "kb3.json").save("merged.json", "合并项目")
 ```
@@ -48,13 +49,15 @@ manager.merge("kb1.json", "kb2.json", "kb3.json").save("merged.json", "合并项
 ```python
 from Manager import Manager
 
-manager = Manager(kb_path="my_kb.json")
+# 初始化时绑定知识库路径
+manager = Manager("my_kb.json")
+# 筛选后无参保存到绑定的路径
 manager.filter({
     "citations_min": 50,
     "types": ["📊实证", "📖综述"],
     "sort_by": "citationCount",
     "limit": 10
-}).save("filtered.json")
+}).save()
 ```
 
 ### 3. 链式调用：合并 → 筛选 → 保存
@@ -62,6 +65,7 @@ manager.filter({
 ```python
 from Manager import Manager
 
+# 空管理器用于合并
 manager = Manager()
 manager.merge("kb1.json", "kb2.json") \
        .filter({
@@ -82,6 +86,8 @@ manager.merge("kb1.json", "kb2.json") \
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `kb_path` | str | None | 知识库文件路径。为 None 时表示空管理器，用于合并操作 |
+
+> **注意**：初始化时绑定 `kb_path`，后续 `save()` 无参时保存到绑定路径。
 
 ### `merge(*kb_paths, deduplicate=True)`
 
@@ -111,14 +117,14 @@ manager.merge("kb1.json", "kb2.json") \
 | `sort_by` | str | 排序字段（如 `"citationCount"`, `"year"`） |
 | `sort_desc` | bool | 是否降序（默认 True） |
 
-### `save(output_path, project_name="")`
+### `save(output_path=None, project_name="")`
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `output_path` | str | 必填 | 输出文件路径：笔记/{主题}.json |
+| `output_path` | str | None | 输出文件路径（默认使用绑定的 kb_path） |
 | `project_name` | str | "" | 项目名称（会更新到知识库中） |
 
-> **注意**：当通过 `Manager(kb_path="...")` 初始化时，`kb_path` 在构造函数中设置；当通过 `Manager()` 空初始化时，用于合并操作。
+> **注意**：当通过 `Manager(kb_path="...")` 初始化时，`save()` 无参保存到绑定路径；当通过 `Manager()` 空初始化时，必须指定 `output_path`。
 
 ### `get_kb()`
 返回当前知识库字典
@@ -132,6 +138,7 @@ manager.merge("kb1.json", "kb2.json") \
 
 ### 合并知识库
 ```bash
+# 合并多个知识库（空管理器，必须指定输出路径）
 python3 Manager.py merge \
     --inputs kb1.json,kb2.json,kb3.json \
     --output merged.json
@@ -139,7 +146,7 @@ python3 Manager.py merge \
 
 ### 筛选知识库
 ```bash
-# 方式1: 使用命令行参数
+# 方式1: 使用命令行参数（绑定到输入路径，无参保存）
 python3 Manager.py filter \
     --kb-path my_kb.json \
     --output filtered.json \
@@ -149,15 +156,6 @@ python3 Manager.py filter \
     --limit 10
 
 # 方式2: 使用筛选条件JSON文件
-cat > conditions.json << 'EOF'
-{
-    "citations_min": 50,
-    "types": ["📊实证", "📖综述"],
-    "sort_by": "citationCount",
-    "limit": 10
-}
-EOF
-
 python3 Manager.py filter \
     --kb-path my_kb.json \
     --output filtered.json \
@@ -247,4 +245,5 @@ python3 Manager.py info \
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 2.1.0 | 2026-04-22 | 统一风格：初始化时绑定知识库路径，save() 无参保存到绑定路径 |
 | 2.0.0 | 2026-04-14 | 重构为独立 Manager 类 |

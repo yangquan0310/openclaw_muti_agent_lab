@@ -49,14 +49,17 @@ from manager.Manager import Manager
 # 1. 检索文献
 searcher = Searcher(kb_path="my_kb.json")
 queries = {"研究主题": [{"query": "keywords", "limit": 30}]}
+# 方法调用时不再传知识库路径
 searcher.search(queries)
 
 # 2. 筛选并保存笔记
-manager = Manager(kb_path="my_kb.json")
-manager.filter(topic="主题").save("笔记.json")
+manager = Manager("my_kb.json")
+# 筛选后无参保存到绑定的路径
+manager.filter({"topic": "主题"}).save()
 
 # 3. 总结文献（基于筛选后的笔记）
 summarizer = Summarizer(kb_path="笔记.json")
+# 方法调用时不再传知识库路径
 summarizer.summarize()
 ```
 
@@ -115,28 +118,18 @@ print(f"研究结果: {info['findings']}")
 ```python
 from synthesize.ReferenceChecker import ReferenceChecker
 
-checker = ReferenceChecker()
+# 初始化时绑定一个或多个知识库
+checker = ReferenceChecker("kb1.json", "kb2.json")
 
-# 检查参考文献（单个知识库）
-results = checker.check_references(
-    doc_path='综述文档.md',
-    kb1='知识库1.json'
-)
-
-# 检查参考文献（多个知识库）
-results = checker.check_references(
-    doc_path='综述文档.md',
-    kb1='知识库1.json',
-    kb2='知识库2.json',
-    kb3='知识库3.json'
-)
+# 检查参考文献（方法调用时只传文档路径）
+results = checker.check_references("综述文档.md")
 
 # 查看结果
 print(f"DSAM引用: {results['stats']['dsam_total']}")
 print(f"缺失引用: {results['missing_references']}")
 
 # 修复引用（可选）
-fix_result = checker.fix_references('综述文档.md', '修复后的文档.md')
+fix_result = checker.fix_references("综述文档.md", "修复后的文档.md")
 ```
 
 #### 步骤 6：保存文档
@@ -160,13 +153,11 @@ fix_result = checker.fix_references('综述文档.md', '修复后的文档.md')
 #### 核心方法
 
 ```python
-check_references(doc_path, notes_path, notes2_path=None)
+check_references(doc_path)
 ```
 
 **参数:**
 - `doc_path`: 待检查的Markdown文档路径
-- `notes_path`: 第一个笔记JSON文件路径
-- `notes2_path`: 第二个笔记JSON文件路径（可选）
 
 **返回:**
 检查结果字典，包含：
@@ -174,6 +165,8 @@ check_references(doc_path, notes_path, notes2_path=None)
 - `stats`: 统计信息（DSAM引用数、APA引用数、缺失引用数等）
 - `missing_references`: 缺失的引用列表
 - `recommendations`: 修复建议列表
+
+> **注意**：知识库路径在初始化 `ReferenceChecker(kb1, kb2, ...)` 时绑定，不在 `check_references()` 方法中传入。
 
 #### 私有辅助方法
 
@@ -205,19 +198,23 @@ fix_references(doc_path, output_path=None)
 **返回:**
 修复结果字典，包含替换统计信息。
 
+> **注意**：`fix_references` 使用初始化时绑定的知识库映射，无需额外传入。
+
 ---
 
 ## 命令行工具
 
-### 检查参考文献（单个知识库）
+### 检查参考文献（绑定一个知识库）
 ```bash
+# 初始化时绑定知识库，方法调用时只传文档路径
 python3 ReferenceChecker.py \
     --doc 综述文档.md \
     --kb 知识库1.json
 ```
 
-### 检查参考文献（多个知识库）
+### 检查参考文献（绑定多个知识库）
 ```bash
+# 初始化时绑定多个知识库
 python3 ReferenceChecker.py \
     --doc 综述文档.md \
     --kb 知识库1.json \
@@ -227,6 +224,7 @@ python3 ReferenceChecker.py \
 
 ### 检查并修复参考文献
 ```bash
+# 绑定知识库并修复
 python3 ReferenceChecker.py \
     --doc 综述文档.md \
     --kb 知识库1.json \
@@ -272,4 +270,5 @@ DSAM引用总数: 15
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 1.1.0 | 2026-04-22 | 统一风格：初始化时绑定知识库，方法调用时只传文档路径 |
 | 1.0.0 | 2026-04-15 | 初始版本，提供文献综述合成功能 |

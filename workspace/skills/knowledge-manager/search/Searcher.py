@@ -21,7 +21,7 @@ from urllib3.util.retry import Retry
 
 
 class Searcher:
-    """文献检索与知识库管理（路径作为方法参数）"""
+    """文献检索与知识库管理（初始化时绑定知识库路径）"""
 
     # API 端点
     SEARCH_URL = "https://api.semanticscholar.org/graph/v1/paper/search"
@@ -31,8 +31,13 @@ class Searcher:
     FIELDS = "paperId,authors,year,title,venue,citationCount,journal,externalIds,url,abstract"
     PUBLICATION_TYPES = "Review,MetaAnalysis,JournalArticle,Study"
 
-    def __init__(self, api_key: Optional[str] = None):
-        """初始化检索器（不绑定知识库路径）"""
+    def __init__(self, kb_path: str = "index.json", api_key: Optional[str] = None):
+        """初始化检索器（绑定知识库路径）
+        Args:
+            kb_path: 知识库文件路径（默认 index.json）
+            api_key: Semantic Scholar API key（可选，默认从环境变量读取）
+        """
+        self.kb_path = kb_path
         self.api_key = api_key or os.environ.get('SEMANTIC_SCHOLAR_API_KEY')
         if not self.api_key:
             print("警告: 未设置 Semantic Scholar API key，可能受到速率限制")
@@ -50,7 +55,6 @@ class Searcher:
     # ==================== 公共方法 ====================
 
     def search(self, queries: Dict[str, List[Dict]],
-               kb_path: str = "index.json",
                fields: Optional[str] = None,
                deduplicate: bool = True,
                **global_params) -> Dict:
@@ -65,14 +69,13 @@ class Searcher:
                 - venue (可选): 期刊/会议名称
                 - fields_of_study (可选): 研究领域
                 - publication_types (可选): 文献类型，默认使用类属性 PUBLICATION_TYPES
-            kb_path: 知识库文件路径
             fields: 请求字段，默认 FIELDS
             deduplicate: 是否去重
             **global_params: 全局默认参数（会被条件字典中的同名字段覆盖）
         Returns:
             知识库字典（包含 papers 列表）
         """
-        kb_data = self._load_kb(kb_path)
+        kb_data = self._load_kb(self.kb_path)
         existing_papers = kb_data.get('papers', [])
         # 建立已有文献的映射（用于合并主题）
         existing_map = {p.get('paperId'): p for p in existing_papers if p.get('paperId')}
@@ -130,19 +133,18 @@ class Searcher:
         combined = self._deduplicate(combined)
         kb_data['papers'] = combined
         kb_data = self._update_statistics(kb_data)
-        self._save_kb(kb_data, kb_path)
+        self._save_kb(kb_data, self.kb_path)
         return kb_data
 
-    def update(self, kb_path: str = "index.json", fields: Optional[str] = None) -> Dict:
+    def update(self, fields: Optional[str] = None) -> Dict:
         """
         更新知识库中所有论文的元数据（批量获取详情）
         Args:
-            kb_path: 知识库文件路径
             fields: 请求字段，默认 FIELDS
         Returns:
             知识库字典
         """
-        kb_data = self._load_kb(kb_path)
+        kb_data = self._load_kb(self.kb_path)
         papers = kb_data.get('papers', [])
         if not papers:
             print("知识库为空，无需更新")
@@ -168,7 +170,7 @@ class Searcher:
 
         kb_data['papers'] = papers
         kb_data = self._update_statistics(kb_data)
-        self._save_kb(kb_data, kb_path)
+        self._save_kb(kb_data, self.kb_path)
         return kb_data
 
     # ==================== 私有辅助方法 ====================
@@ -357,8 +359,6 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    searcher = Searcher()
-    
     if args.command == "search":
         # 加载检索条件
         if not os.path.exists(args.queries):
@@ -369,9 +369,9 @@ if __name__ == "__main__":
             queries = json.load(f)
         
         print(f"正在检索...")
+        searcher = Searcher(kb_path=args.kb_path)
         kb = searcher.search(
             queries, 
-            kb_path=args.kb_path,
             fields=args.fields,
             deduplicate=not args.no_deduplicate
         )
@@ -379,8 +379,8 @@ if __name__ == "__main__":
     
     elif args.command == "update":
         print(f"正在更新元数据...")
+        searcher = Searcher(kb_path=args.kb_path)
         kb = searcher.update(
-            kb_path=args.kb_path,
             fields=args.fields
         )
         print(f"完成! 知识库: {args.kb_path}, DOI非空: {sum(1 for p in kb['papers'] if p.get('doi'))}")

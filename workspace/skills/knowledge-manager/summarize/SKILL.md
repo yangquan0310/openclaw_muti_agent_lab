@@ -109,6 +109,7 @@ kb = summarizer.summarize()
 
 ### 总结文献
 ```bash
+# 总结文献（初始化时绑定知识库路径）
 python3 Summarizer.py \
     --kb-path my_kb.json \
     --progress-interval 10
@@ -159,4 +160,5 @@ export TOKENHUB_API_KEY="your-tencent-api-key"
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 2.1.0 | 2026-04-22 | 统一风格：初始化时绑定知识库路径，方法调用时不再传知识库路径 |
 | 2.0.0 | 2026-04-14 | 重构为独立 Summarizer 类 |

@@ -14,22 +14,24 @@ from typing import List, Dict, Optional, Any
 
 
 class Summarizer:
-    """文献总结器 - 为知识库中的论文添加 labels 和 notes"""
+    """文献总结器 - 为知识库中的论文添加 labels 和 notes（初始化时绑定知识库路径）"""
 
     def __init__(self,
+                 kb_path: str = "index.json",
                  api_key: Optional[str] = None,
                  base_url: Optional[str] = "https://tokenhub.tencentmaas.com/v1",
                  model: Optional[str] = "deepseek-v3.2",
                  use_conversation: bool = False):
         """
-        初始化 Summarizer
+        初始化 Summarizer（绑定知识库路径）
         Args:
+            kb_path: 知识库文件路径（默认 index.json）
             api_key: API key，默认从config.json和环境变量读取
             base_url: API base URL，默认从config.json读取
             model: 模型名称，默认从config.json读取
             use_conversation: 是否使用会话模式（保留对话历史），默认False
         """
-
+        self.kb_path = kb_path
         self.base_url = base_url
         self.model = model
         self.api_key = api_key or os.environ.get('TOKENHUB_API_KEY')
@@ -75,17 +77,16 @@ class Summarizer:
 
     # ==================== 公共方法 ====================
 
-    def summarize(self, kb_path: str = "index.json", progress_interval: int = 10) -> Dict:
+    def summarize(self, progress_interval: int = 10) -> Dict:
         """
         分析知识库中所有论文，添加 labels 和 notes，保存并返回知识库
         Args:
-            kb_path: 知识库文件路径（默认 index.json）
             progress_interval: 进度打印间隔
         Returns:
             更新后的知识库字典
         """
         # 加载知识库
-        kb_data = self._load_kb(kb_path)
+        kb_data = self._load_kb(self.kb_path)
         papers = kb_data.get('papers', [])
         if not papers:
             print("知识库为空，无需分析")
@@ -110,7 +111,7 @@ class Summarizer:
 
         # 更新统计信息
         kb_data = self._update_statistics(kb_data)
-        self._save_kb(kb_data, kb_path)
+        self._save_kb(kb_data, self.kb_path)
         return kb_data
 
     # ==================== 私有方法 ====================
@@ -254,9 +255,11 @@ if __name__ == "__main__":
         sys.exit(1)
     
     print(f"正在总结文献...")
-    summarizer = Summarizer(use_conversation=args.use_conversation)
-    kb = summarizer.summarize(
+    summarizer = Summarizer(
         kb_path=args.kb_path,
+        use_conversation=args.use_conversation
+    )
+    kb = summarizer.summarize(
         progress_interval=args.progress_interval
     )
     
