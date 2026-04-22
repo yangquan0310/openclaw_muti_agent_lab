@@ -37,7 +37,7 @@ Manager 类提供知识库的合并、筛选、保存功能，支持链式调用
 ### 1. 合并知识库
 
 ```python
-from Manager import Manager
+from manage.Manager import Manager
 
 # 空管理器用于合并（不绑定路径）
 manager = Manager()
@@ -47,7 +47,7 @@ manager.merge("kb1.json", "kb2.json", "kb3.json").save("merged.json", "合并项
 ### 2. 筛选知识库
 
 ```python
-from Manager import Manager
+from manage.Manager import Manager
 
 # 初始化时绑定知识库路径
 manager = Manager("my_kb.json")
@@ -63,7 +63,7 @@ manager.filter({
 ### 3. 链式调用：合并 → 筛选 → 保存
 
 ```python
-from Manager import Manager
+from manage.Manager import Manager
 
 # 空管理器用于合并
 manager = Manager()

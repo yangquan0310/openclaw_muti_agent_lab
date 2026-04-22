@@ -34,10 +34,15 @@ class Searcher:
     def __init__(self, kb_path: str = "index.json", api_key: Optional[str] = None):
         """初始化检索器（绑定知识库路径）
         Args:
-            kb_path: 知识库文件路径（默认 index.json）
+            kb_path: 知识库文件路径（默认 index.json，由调用者传入具体项目路径）
             api_key: Semantic Scholar API key（可选，默认从环境变量读取）
         """
+        # 加载全局配置（API 参数等）
+        config = self._load_config()
+        semantic = config.get("semantic_scholar", {})
+
         self.kb_path = kb_path
+        self.request_interval = semantic.get("request_interval", 0.5)
         self.api_key = api_key or os.environ.get('SEMANTIC_SCHOLAR_API_KEY')
         if not self.api_key:
             print("警告: 未设置 Semantic Scholar API key，可能受到速率限制")
@@ -51,6 +56,19 @@ class Searcher:
         retry = Retry(total=3, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504])
         adapter = HTTPAdapter(max_retries=retry)
         self.session.mount('https://', adapter)
+
+    def _load_config(self) -> Dict:
+        """从 config.json 加载配置"""
+        import json
+        from pathlib import Path
+        config_path = Path(__file__).parent.parent / "config.json"
+        if config_path.exists():
+            try:
+                with open(config_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        return {}
 
     # ==================== 公共方法 ====================
 
@@ -122,7 +140,7 @@ class Searcher:
                         all_new_papers.append(p)
                 
                 print(f"    获取 {len(papers)} 篇（新文献: {len([p for p in papers if p.get('paperId') not in existing_map])} 篇）")
-                time.sleep(0.5)
+                time.sleep(self.request_interval)
 
         if deduplicate:
             before = len(all_new_papers)
@@ -275,7 +293,7 @@ class Searcher:
                 # 过滤None值
                 valid_papers = [p for p in raw_papers if p is not None]
                 all_papers.extend([self._normalize(p) for p in valid_papers])
-                time.sleep(0.5)
+                time.sleep(self.request_interval)
             except Exception as e:
                 print(f"批量获取失败: {e}")
         return all_papers

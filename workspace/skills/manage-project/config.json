@@ -32,11 +32,16 @@
   "storage": {
     "root_path": "/root/实验室仓库/项目文件/",
     "knowledge_base_dir": "知识库/",
+    "knowledge_base_file": "index.json",
     "notes_dir": "知识库/笔记/",
-    "search_queries_dir": "临时数据/检索条件/",
-    "extracted_notes_dir": "临时数据/笔记/",
-    "index_file": "index.json",
     "notes_file_format": "{主题}.json",
-    "log":""
+    "reviews_dir": "知识库/综述/",
+    "reviews_file_format": "{主题}:{类型}.md",
+    "retrieval_report_dir": "知识库/检索报告/",
+    "retrieval_report_file_format": "{主题}.md",
+    "search_queries_dir": "临时数据/检索条件/",
+    "search_queries_file_format": "{检索条件}.json",
+    "extracted_notes_dir": "临时数据/笔记/",
+    "extracted_notes_file_format": "{主题}.md"
   }
 }

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-knowledge-manager MCP Server
-将知识库管理技能暴露为 MCP 工具
+manage-project MCP Server
+将项目管理技能暴露为 MCP 工具
 
 技能模块：
 - search: 检索模块 (Searcher)
 - summarize: 总结模块 (Summarizer)
 - manage: 管理模块 (Manager)
 - synthesize: 综述模块 (Synthesizer)
+- maintainer: 项目整理模块 (Maintainer)
 """
 
 import asyncio
@@ -17,12 +18,12 @@ from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import Tool, TextContent
 
-SKILL_DIR = Path("/root/.openclaw/workspace/skills/knowledge-manager")
+SKILL_DIR = Path(__file__).parent.parent
 
 EXPOSED_TOOLS = [
     {
         "name": "km_root",
-        "description": "知识库管理根路由 - 协调Searcher/Summarizer/Manager/Synthesizer四个子技能",
+        "description": "项目管理根路由 - 协调Searcher/Summarizer/Manager/Synthesizer/Maintainer五个子技能",
         "parameters": {
             "type": "object",
             "properties": {
@@ -151,7 +152,7 @@ class KnowledgeManagerHandler:
         action = args.get("action")
         
         if action == "get_skill_doc":
-            return {"success": True, "skill": "knowledge-manager", "content": self._read_skill_doc()}
+            return {"success": True, "skill": "manage-project", "content": self._read_skill_doc()}
         
         elif action == "get_workflow":
             return {
@@ -160,7 +161,8 @@ class KnowledgeManagerHandler:
                     {"name": "检索文献", "module": "search", "description": "检索并获取论文列表"},
                     {"name": "总结文献", "module": "summarize", "description": "解析摘要并提取结构化笔记"},
                     {"name": "管理知识库", "module": "manage", "description": "知识库合并、筛选、提取"},
-                    {"name": "撰写综述", "module": "synthesize", "description": "将笔记组织成完整综述"}
+                    {"name": "撰写综述", "module": "synthesize", "description": "将笔记组织成完整综述"},
+                    {"name": "整理项目", "module": "maintainer", "description": "自动化整理项目目录结构"}
                 ]
             }
         
@@ -171,7 +173,8 @@ class KnowledgeManagerHandler:
                     {"name": "search", "class": "Searcher", "description": "检索并获取论文列表"},
                     {"name": "summarize", "class": "Summarizer", "description": "解析摘要并提取结构化笔记"},
                     {"name": "manage", "class": "Manager", "description": "知识库合并、筛选、提取"},
-                    {"name": "synthesize", "class": "Synthesizer", "description": "将笔记组织成完整综述"}
+                    {"name": "synthesize", "class": "Synthesizer", "description": "将笔记组织成完整综述"},
+                    {"name": "maintainer", "class": "Maintainer", "description": "自动化整理项目目录结构"}
                 ]
             }
         
@@ -181,7 +184,7 @@ class KnowledgeManagerHandler:
         action = args.get("action")
         
         if action == "get_skill_doc":
-            return {"success": True, "skill": "knowledge-manager/search", "content": self._read_skill_doc("search")}
+            return {"success": True, "skill": "manage-project/search", "content": self._read_skill_doc("search")}
         
         elif action == "search_papers":
             queries = args.get("queries", {})
@@ -205,7 +208,7 @@ class KnowledgeManagerHandler:
         action = args.get("action")
         
         if action == "get_skill_doc":
-            return {"success": True, "skill": "knowledge-manager/summarize", "content": self._read_skill_doc("summarize")}
+            return {"success": True, "skill": "manage-project/summarize", "content": self._read_skill_doc("summarize")}
         
         elif action in ["summarize_kb", "extract_notes"]:
             kb_path = args.get("kb_path", "")
@@ -223,7 +226,7 @@ class KnowledgeManagerHandler:
         action = args.get("action")
         
         if action == "get_skill_doc":
-            return {"success": True, "skill": "knowledge-manager/manage", "content": self._read_skill_doc("manage")}
+            return {"success": True, "skill": "manage-project/manage", "content": self._read_skill_doc("manage")}
         
         elif action == "filter_kb":
             kb_path = args.get("kb_path", "")
@@ -245,7 +248,7 @@ class KnowledgeManagerHandler:
         action = args.get("action")
         
         if action == "get_skill_doc":
-            return {"success": True, "skill": "knowledge-manager/synthesize", "content": self._read_skill_doc("synthesize")}
+            return {"success": True, "skill": "manage-project/synthesize", "content": self._read_skill_doc("synthesize")}
         
         elif action == "write_review":
             notes_path = args.get("notes_path", "")
@@ -258,7 +261,7 @@ class KnowledgeManagerHandler:
         return {"success": False, "error": f"不支持的操作: {action}"}
 
 
-app = Server("knowledge-manager")
+app = Server("manage-project")
 handler = KnowledgeManagerHandler()
 
 

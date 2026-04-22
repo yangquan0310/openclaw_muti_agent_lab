@@ -19,29 +19,64 @@ class Summarizer:
     def __init__(self,
                  kb_path: str = "index.json",
                  api_key: Optional[str] = None,
-                 base_url: Optional[str] = "https://tokenhub.tencentmaas.com/v1",
-                 model: Optional[str] = "deepseek-v3.2",
+                 base_url: Optional[str] = None,
+                 model: Optional[str] = None,
                  use_conversation: bool = False):
         """
         初始化 Summarizer（绑定知识库路径）
         Args:
             kb_path: 知识库文件路径（默认 index.json）
-            api_key: API key，默认从config.json和环境变量读取
-            base_url: API base URL，默认从config.json读取
-            model: 模型名称，默认从config.json读取
+            api_key: API key，默认从 config.json 和环境变量读取
+            base_url: API base URL，默认从 config.json 读取
+            model: 模型名称，默认从 config.json 读取
             use_conversation: 是否使用会话模式（保留对话历史），默认False
         """
+        # 加载 config.json 配置
+        config = self._load_config()
+        llm_config = self._resolve_llm_config(config)
+
         self.kb_path = kb_path
-        self.base_url = base_url
-        self.model = model
-        self.api_key = api_key or os.environ.get('TOKENHUB_API_KEY')
+        self.base_url = base_url or llm_config.get("base_url")
+        self.model = model or llm_config.get("default_model")
+        self.api_key = api_key or os.environ.get(llm_config.get("api_key_env", "TOKENHUB_API_KEY"))
         if not self.api_key:
-            raise ValueError(f"请设置环境变量：TOKENHUB_API_KEY 或 其他 API_KEY")
-        
+            raise ValueError(f"请设置环境变量：{llm_config.get('api_key_env', 'TOKENHUB_API_KEY')} 或传入 api_key")
+
         self.use_conversation = use_conversation
         self.conversation_history = []  # 会话历史
         self._init_openai()
         self._init_system_prompt()
+
+    def _load_config(self) -> Dict:
+        """从 config.json 加载配置"""
+        import json
+        from pathlib import Path
+        config_path = Path(__file__).parent.parent / "config.json"
+        if config_path.exists():
+            try:
+                with open(config_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        return {}
+
+    def _resolve_llm_config(self, config: Dict) -> Dict:
+        """解析 LLM 配置，返回实际使用的 provider 配置"""
+        llm = config.get("llm", {})
+        default_provider = llm.get("default_provider", "kimi").lower()
+        providers = llm.get("providers", {})
+        # 尝试获取默认 provider，如果不存在则取第一个
+        provider_config = providers.get(default_provider)
+        if not provider_config and providers:
+            provider_config = list(providers.values())[0]
+        if not provider_config:
+            # 无配置时的安全默认值
+            return {
+                "base_url": "https://tokenhub.tencentmaas.com/v1",
+                "default_model": "deepseek-v3.2",
+                "api_key_env": "TOKENHUB_API_KEY"
+            }
+        return provider_config
 
     def _init_openai(self):
         try:

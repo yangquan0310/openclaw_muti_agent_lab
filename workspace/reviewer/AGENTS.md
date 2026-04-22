@@ -38,6 +38,7 @@
 - 载入个人记忆文档（MEMORY.md）
 - 载入个人工具文档（TOOLS.md）
 - 载入代理自我发展技能`\root\.openclaw\workspace\skills\agent_self_development\SKILL.md` 
+- 载入项目管理技能`\root\.openclaw\workspace\skills\manage-project\SKILL.md`
 ---
 
 ## 安全红线

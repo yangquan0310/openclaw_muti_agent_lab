@@ -13,46 +13,10 @@ from datetime import datetime
 from pathlib import Path
 
 
-class Project:
-    """项目类，用于管理单个项目的文件整理和元数据维护。"""
+class Maintainer:
+    """项目文件整理类，用于管理单个项目的文件整理和元数据维护。"""
 
-    # 标准目录结构
-    STANDARD_DIRS = {
-        "文档": "文档",
-        "手稿": "手稿",
-        "知识库": "知识库",
-        "笔记": "知识库/笔记",
-        "综述": "知识库/综述",
-        "临时数据": "临时数据",
-        "草稿": "临时数据/草稿",
-        "检索条件": "临时数据/检索条件",
-        "临时笔记": "临时数据/笔记",
-    }
-
-    # 默认检索条件模板
-    DEFAULT_SEARCH_QUERY = {
-        "name": "默认检索",
-        "description": "知识库默认检索条件",
-        "query": {
-            "keywords": [],
-            "tags": [],
-            "date_range": {"start": None, "end": None},
-            "sources": [],
-            "file_types": [".md", ".json", ".txt"]
-        },
-        "filters": {
-            "include_drafts": False,
-            "include_notes": True,
-            "include_reviews": True,
-            "max_results": 100
-        },
-        "output": {
-            "format": "json",
-            "fields": ["title", "path", "created_at", "tags"],
-            "sort_by": "created_at",
-            "sort_order": "desc"
-        }
-    }
+    # 标准目录结构由 _build_standard_dirs() 根据 config.json 动态构建
 
     def __init__(self, project_path: str):
         """
@@ -64,6 +28,9 @@ class Project:
         self.project_path = Path(project_path).resolve()
         self.metadata_path = self.project_path / "元数据.json"
         self.metadata = self._load_metadata()
+        # 加载存储配置
+        self.storage_config = self._load_storage_config()
+        self.standard_dirs = self._build_standard_dirs()
 
     def _load_metadata(self) -> dict:
         """加载现有元数据，如果不存在则返回空字典。"""
@@ -86,9 +53,38 @@ class Project:
             print(f"❌ 保存元数据失败: {e}")
             return False
 
+    def _load_storage_config(self) -> dict:
+        """从 config.json 加载 storage 配置"""
+        config_path = Path(__file__).parent.parent / "config.json"
+        if config_path.exists():
+            try:
+                with open(config_path, "r", encoding="utf-8") as f:
+                    config = json.load(f)
+                    return config.get("storage", {})
+            except Exception as e:
+                print(f"⚠️  读取 config.json 失败: {e}")
+        return {}
+
+    def _build_standard_dirs(self) -> dict:
+        """根据 storage 配置构建标准目录映射"""
+        storage = self.storage_config
+        kb_dir = storage.get("knowledge_base_dir", "知识库").rstrip("/")
+        temp_dir = "临时数据"
+        return {
+            "文档": "文档",
+            "手稿": "手稿",
+            "知识库": kb_dir,
+            "笔记": storage.get("notes_dir", f"{kb_dir}/笔记").rstrip("/"),
+            "综述": storage.get("reviews_dir", f"{kb_dir}/综述").rstrip("/"),
+            "临时数据": temp_dir,
+            "草稿": f"{temp_dir}/草稿",
+            "检索条件": storage.get("search_queries_dir", f"{temp_dir}/检索条件").rstrip("/"),
+            "临时笔记": storage.get("extracted_notes_dir", f"{temp_dir}/笔记").rstrip("/"),
+        }
+
     def ensure_directories(self) -> None:
         """确保标准目录结构存在。"""
-        for dir_name, dir_path in self.STANDARD_DIRS.items():
+        for dir_name, dir_path in self.standard_dirs.items():
             full_path = self.project_path / dir_path
             if not full_path.exists():
                 full_path.mkdir(parents=True, exist_ok=True)
@@ -228,7 +224,7 @@ class Project:
 
         # 构建 directories 结构
         directories = {}
-        for key, dir_path in self.STANDARD_DIRS.items():
+        for key, dir_path in self.standard_dirs.items():
             full_path = self.project_path / dir_path
             if full_path.exists():
                 directories[key] = f"{dir_path}/"
@@ -317,6 +313,7 @@ class Project:
         """根据规则整理单个文件。"""
         name = file_path.name.lower()
         suffix = file_path.suffix.lower()
+        sd = self.standard_dirs
 
         # 判断文件类型并移动
         target_dir = None
@@ -327,25 +324,25 @@ class Project:
         elif suffix == ".md":
             if "backup" in name or "_backup" in name or "备份" in name:
                 # 备份版本
-                target_dir = "临时数据/草稿"
+                target_dir = sd["草稿"]
             elif "综述" in name or "review" in name or "summary" in name:
                 # 综述
-                target_dir = "知识库/综述"
+                target_dir = sd["综述"]
             elif "笔记" in name or "note" in name:
-                # 笔记 - NoteExtractor提取的笔记放到临时数据/笔记
+                # 笔记 - NoteExtractor提取的笔记放到临时笔记目录
                 if "extract" in name or "提取" in name:
-                    target_dir = "临时数据/笔记"
+                    target_dir = sd["临时笔记"]
                 else:
-                    target_dir = "知识库/笔记"
+                    target_dir = sd["笔记"]
             else:
                 # 默认作为手稿
-                target_dir = "手稿"
+                target_dir = sd["手稿"]
         elif suffix == ".json":
             # 检索条件文件
-            target_dir = "临时数据/检索条件"
+            target_dir = sd["检索条件"]
         elif suffix in (".tmp", ".temp", ".log", ".bak"):
             # 中间文件
-            target_dir = "临时数据"
+            target_dir = sd["临时数据"]
 
         if target_dir:
             if dry_run:
@@ -353,124 +350,8 @@ class Project:
             else:
                 self.move_file(str(file_path), target_dir)
 
-    def create_default_search_query(self, query_name="默认检索", **kwargs) -> str:
-        """
-        创建默认检索条件文件。
-
-        Args:
-            query_name: 检索条件名称
-            **kwargs: 自定义参数覆盖默认值
-
-        Returns:
-            str: 检索条件文件路径
-        """
-        import copy
-        query = copy.deepcopy(self.DEFAULT_SEARCH_QUERY)
-        query["name"] = query_name
-        query["created_at"] = datetime.now().isoformat()
-        query["updated_at"] = datetime.now().isoformat()
-
-        # 应用自定义参数
-        if "description" in kwargs:
-            query["description"] = kwargs["description"]
-        if "keywords" in kwargs:
-            query["query"]["keywords"] = kwargs["keywords"]
-        if "tags" in kwargs:
-            query["query"]["tags"] = kwargs["tags"]
-        if "max_results" in kwargs:
-            query["filters"]["max_results"] = kwargs["max_results"]
-
-        # 确保目录存在
-        query_dir = self.project_path / "临时数据/检索条件"
-        query_dir.mkdir(parents=True, exist_ok=True)
-
-        query_path = query_dir / f"{query_name}.json"
-        with open(query_path, "w", encoding="utf-8") as f:
-            json.dump(query, f, ensure_ascii=False, indent=2)
-
-        print(f"✅ 创建检索条件: {query_path}")
-        return str(query_path)
-
-    def load_search_query(self, query_name="默认检索") -> dict:
-        """
-        加载检索条件。
-
-        Args:
-            query_name: 检索条件名称
-
-        Returns:
-            dict: 检索条件字典，不存在则返回 None
-        """
-        query_path = self.project_path / "临时数据/检索条件" / f"{query_name}.json"
-        if not query_path.exists():
-            return None
-        with open(query_path, "r", encoding="utf-8") as f:
-            return json.load(f)
-
-    def save_extracted_note(self, note_title: str, content: str, source: str = "") -> str:
-        """
-        保存 NoteExtractor 提取的笔记。
-
-        Args:
-            note_title: 笔记标题
-            content: 笔记内容
-            source: 提取来源
-
-        Returns:
-            str: 笔记文件路径
-        """
-        note_dir = self.project_path / "临时数据/笔记"
-        note_dir.mkdir(parents=True, exist_ok=True)
-
-        timestamp = datetime.now().isoformat()
-        note_content = f"""# {note_title}
-
-> 提取来源: {source}
-> 提取时间: {timestamp}
-> 提取工具: NoteExtractor
-
-## 内容
-
-{content}
-"""
-
-        note_path = note_dir / f"{note_title}.md"
-        with open(note_path, "w", encoding="utf-8") as f:
-            f.write(note_content)
-
-        print(f"✅ 保存笔记: {note_path}")
-        return str(note_path)
-
-    def list_search_queries(self) -> list:
-        """
-        列出所有检索条件文件。
-
-        Returns:
-            list: 检索条件名称列表
-        """
-        query_dir = self.project_path / "临时数据/检索条件"
-        if not query_dir.exists():
-            return []
-        return [f.stem for f in query_dir.iterdir() if f.suffix == ".json"]
-
-    def list_extracted_notes(self) -> list:
-        """
-        列出所有提取的笔记文件。
-
-        Returns:
-            list: 笔记文件信息列表
-        """
-        note_dir = self.project_path / "临时数据/笔记"
-        if not note_dir.exists():
-            return []
-        return [
-            {"title": f.stem, "path": f"临时数据/笔记/{f.name}"}
-            for f in note_dir.iterdir()
-            if f.suffix == ".md"
-        ]
-
     def __repr__(self) -> str:
-        return f"Project('{self.project_path.name}')"
+        return f"Maintainer('{self.project_path.name}')"
 
 
 def main():
@@ -479,7 +360,18 @@ def main():
     parser.add_argument("project_path", nargs="?", help="项目文件夹路径")
     parser.add_argument("--all", action="store_true", help="整理所有项目")
     parser.add_argument("--dry-run", action="store_true", help="预览模式，不实际执行")
-    parser.add_argument("--projects-dir", default="/root/实验室仓库/项目文件", help="项目根目录")
+    # 尝试从 config.json 读取默认项目根目录
+    config_path = Path(__file__).parent.parent / "config.json"
+    default_projects_dir = "/root/实验室仓库/项目文件"
+    if config_path.exists():
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                config = json.load(f)
+                default_projects_dir = config.get("storage", {}).get("root_path", default_projects_dir)
+        except:
+            pass
+
+    parser.add_argument("--projects-dir", default=default_projects_dir, help="项目根目录")
 
     args = parser.parse_args()
 
@@ -496,15 +388,15 @@ def main():
         print(f"找到 {len(projects)} 个项目\n")
 
         for project_path in projects:
-            project = Project(str(project_path))
-            project.organize(dry_run=args.dry_run)
+            maintainer = Maintainer(str(project_path))
+            maintainer.organize(dry_run=args.dry_run)
 
         print("\n✅ 所有项目整理完成")
 
     elif args.project_path:
         # 整理单个项目
-        project = Project(args.project_path)
-        project.organize(dry_run=args.dry_run)
+        maintainer = Maintainer(args.project_path)
+        maintainer.organize(dry_run=args.dry_run)
 
     else:
         parser.print_help()

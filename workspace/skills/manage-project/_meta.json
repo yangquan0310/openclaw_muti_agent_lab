@@ -1,7 +1,32 @@
 {
   "name": "manage-project",
-  "version": "1.0.0",
-  "author": "大管家",
-  "dependencies": ["python3"],
-  "tools": ["json", "os"]
+  "description": "项目文件自动化整理与学术事务管理工具，支持文献检索、笔记总结、知识库管理、综述撰写和项目文件整理",
+  "version": "3.0.0",
+  "author": "Yang Quan",
+  "created_at": "2026-04-08",
+  "updated_at": "2026-04-22",
+  "emoji": "📚",
+  "triggers": [
+    "检索文献",
+    "更新知识库",
+    "总结笔记",
+    "提取笔记",
+    "整理项目文件",
+    "归档文件",
+    "管理手稿"
+  ],
+  "dependencies": {
+    "bins": [],
+    "python_packages": [
+      "requests",
+      "openai"
+    ]
+  },
+  "environment_variables": [
+    "SEMANTIC_SCHOLAR_API_KEY",
+    "ARK_API_KEY",
+    "LKEAP_API_KEY",
+    "KIMI_API_KEY",
+    "TOKENHUB_API_KEY"
+  ]
 }

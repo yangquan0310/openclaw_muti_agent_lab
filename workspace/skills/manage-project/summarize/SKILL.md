@@ -36,7 +36,7 @@ Summarizer 类使用 LLM 分析文献内容，自动添加 labels（分类标签
 ### 1. 总结文献
 
 ```python
-from Summarizer import Summarizer
+from summarize.Summarizer import Summarizer
 
 summarizer = Summarizer(kb_path="my_kb.json")
 kb = summarizer.summarize()
