@@ -904,12 +904,6 @@
           "Authorization": "03e03d2067a24d7bba38840eb1c20853"
         }
       },
-      "knowledge-manager": {
-        "command": "python3",
-        "args": [
-          "/root/.openclaw/workspace/skills/knowledge-manager/mcp/server.py"
-        ]
-      },
       "agent-self-development": {
         "command": "python3",
         "args": [
@@ -920,6 +914,12 @@
         "command": "python3",
         "args": [
           "/root/.openclaw/workspace/skills/Skill-developer/mcp/server.py"
+        ]
+      },
+      "manage-project": {
+        "command": "python3",
+        "args": [
+          "/root/.openclaw/workspace/skills/manage-project/mcp/server.py"
         ]
       }
     }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-21T19:05:43.731Z",
+  "updatedAt": "2026-04-22T19:04:57.994Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1",
@@ -13046,6 +13046,132 @@
         "自我",
         "更新",
         "完成"
+      ]
+    },
+    "memory:memory/2026-04-22.md:238:241": {
+      "key": "memory:memory/2026-04-22.md:238:241",
+      "path": "memory/2026-04-22.md",
+      "startLine": 238,
+      "endLine": 241,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 166 memories.; confidence: 1.00; evidence: memory/2026-04-14.md:398-401, memory/2026-04-14.md:418-421, memory/2026-04-14.md:403-406; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-22T19:04:12.536Z",
+      "lastRecalledAt": "2026-04-22T19:04:12.536Z",
+      "queryHashes": [
+        "7b7a9134bc2c"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "1.00",
+        "memory/2026-04-14.md",
+        "398-401",
+        "418-421",
+        "403-406",
+        "reflections",
+        "theme",
+        "assistant"
+      ]
+    },
+    "memory:memory/2026-04-22.md:244:246": {
+      "key": "memory:memory/2026-04-22.md:244:246",
+      "path": "memory/2026-04-22.md",
+      "startLine": 244,
+      "endLine": 246,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:404-404]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:254-254]; Reflections: Them",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-22T19:04:12.536Z",
+      "lastRecalledAt": "2026-04-22T19:04:12.536Z",
+      "queryHashes": [
+        "7b7a9134bc2c"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "0.58",
+        "memory/2026-04-14.md",
+        "404-404",
+        "memory/2026-04-15.md",
+        "254-254",
+        "possible",
+        "lasting",
+        "truths"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-23.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-23.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-23.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:c513ab6c-5a06-4393-b94b-5692dcafb5e0 教务助手每日自我更新] [cron:每日自我更新] 按照agent_self_development工作流2执行每日自我更新： 1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md） 2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md） 3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md） 4. 同化与顺应分析 5. 检测",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:04:12.536Z",
+      "lastRecalledAt": "2026-04-22T19:04:12.536Z",
+      "queryHashes": [
+        "104ad850261a"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "events/yyyy-mm-dd/hh-mm-ss",
+        "撰写/完善前一日日记",
+        "diary/yyyy-mm-dd.md",
+        "user",
+        "cron:c513ab6c",
+        "5a06",
+        "b94b",
+        "5692dcafb5e0"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-23.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-23.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-23.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: **教务助手每日自我更新 - 2026-04-23** **执行状态**：✅ 成功完成 **执行摘要**： - 阅读前一日事件记忆（2026-04-22） - 创建发展日记（diary/2026-04-22.md） - 核心自我状态检查：所有配置文件正常 - 同化顺应分析：系统运行稳定，无新结构需求 - 更新触发信号检测：所有维度均无需更新 **文件变更**： - 创建 `diary/2026-04-22.md` - 记录2026-04-22发展日记 - 创建 `events/2026-04-23/00-35-00-self-upd",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:04:12.536Z",
+      "lastRecalledAt": "2026-04-22T19:04:12.536Z",
+      "queryHashes": [
+        "104ad850261a"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "diary/2026-04-22.md",
+        "记录2026-04-22发展日记",
+        "assistant",
+        "助手",
+        "每日",
+        "自我",
+        "更新",
+        "执行"
       ]
     }
   }

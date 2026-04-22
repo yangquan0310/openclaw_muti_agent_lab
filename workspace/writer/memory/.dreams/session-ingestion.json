@@ -183,6 +183,13 @@
       "lineCount": 11,
       "lastContentLine": 11
     },
+    "writer:sessions/3a34fd4a-1a18-4674-9b33-7cf44bbb287c.jsonl": {
+      "mtimeMs": 1776875224967,
+      "size": 91166,
+      "contentHash": "dd7e3ab8c9e5b3d8cba523d0910e96227d96861903865387c88b6bc256b47260",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
     "writer:sessions/50372c8d-7714-43db-a0d5-106d5831e88e.jsonl.deleted.2026-04-11T18-48-42.286Z": {
       "mtimeMs": 1775913147902,
       "size": 340314,
@@ -244,21 +251,21 @@
       "size": 1319227,
       "contentHash": "492fb8bc582e873ccc94279592b45a11fd4b514eb7781ea877ed25c181105870",
       "lineCount": 155,
-      "lastContentLine": 24
+      "lastContentLine": 48
     },
     "writer:sessions/69a00186-38e5-473e-bb40-f5a6395524d2.checkpoint.2090c82b-a865-4ece-8dbd-5643e92ca4a5.jsonl": {
       "mtimeMs": 1776763969494,
       "size": 1850831,
       "contentHash": "71702e7b5230c548ff000c20a154bfe6aee002695bc319eef86ac280c7e03768",
       "lineCount": 206,
-      "lastContentLine": 24
+      "lastContentLine": 48
     },
-    "writer:sessions/69a00186-38e5-473e-bb40-f5a6395524d2.jsonl": {
+    "writer:sessions/69a00186-38e5-473e-bb40-f5a6395524d2.jsonl.reset.2026-04-22T03-02-29.433Z": {
       "mtimeMs": 1776778403719,
       "size": 2235452,
       "contentHash": "93ed7edf110f6d45171471d41d17ebad486327b56043f170585d432ddb662032",
       "lineCount": 233,
-      "lastContentLine": 24
+      "lastContentLine": 48
     },
     "writer:sessions/6ebdaa79-cb92-441d-81f0-6d207fd56c92.jsonl": {
       "mtimeMs": 1776529618906,
@@ -372,6 +379,13 @@
       "lineCount": 9,
       "lastContentLine": 9
     },
+    "writer:sessions/94e08b80-a500-4e8b-8de0-82603ff0b699-topic-omt_1a82b7480e8f9ce6.jsonl": {
+      "mtimeMs": 1776868544037,
+      "size": 939523,
+      "contentHash": "d36f9a3612a24c501a3044c8d03c5fe8c1cc638fee6d3b31d20a2785f5a91d8b",
+      "lineCount": 85,
+      "lastContentLine": 24
+    },
     "writer:sessions/9509ab3a-5d58-4eff-be43-da9b3a57109e.jsonl.reset.2026-04-14T13-40-08.282Z": {
       "mtimeMs": 1776068537573,
       "size": 1138906,
@@ -398,7 +412,7 @@
       "size": 509592,
       "contentHash": "3f6be386d6dac1ec140a56ddd7940e8382228ed0de2ab0bef112404780d185f8",
       "lineCount": 138,
-      "lastContentLine": 48
+      "lastContentLine": 72
     },
     "writer:sessions/97081047-7620-48b9-93b8-b3a14422e510.jsonl.deleted.2026-04-11T18-48-33.501Z": {
       "mtimeMs": 1775920211436,
@@ -664,14 +678,14 @@
       "size": 609398,
       "contentHash": "9d6be5616103297ef3d2813f9d4f392b4fe4056f403ef9751233daaf0d31ae26",
       "lineCount": 98,
-      "lastContentLine": 48
+      "lastContentLine": 72
     },
     "writer:sessions/fb1f2bd5-38a0-4e7e-9400-da289d73a2b9.jsonl.reset.2026-04-21T02-47-50.896Z": {
       "mtimeMs": 1776702934164,
       "size": 1131547,
       "contentHash": "8e46c8448db549d508d6634053bae09eb9c14f412f7b524b93042894fe4288cc",
       "lineCount": 178,
-      "lastContentLine": 48
+      "lastContentLine": 72
     }
   },
   "seenMessages": {
@@ -2140,7 +2154,31 @@
       "4a78fe1cef2f70a84a4ca82340749228e26dbf54",
       "1823c234a1a46e5b4de86b40febd7adde0a17578",
       "f83a01f760d2be6f67ff3f178d921e1b51a5b72f",
-      "0111660a2258f8dfce8d6b6b674d6e2d6cdfc749"
+      "0111660a2258f8dfce8d6b6b674d6e2d6cdfc749",
+      "1ea4cf839b202ae3418f044b921c83b6b13f72c0",
+      "272df8a22c3d8942f2ad8783a2a8c5814df673d6",
+      "34546752e23a2ee5eaaa0243ce4afecd3394dcee",
+      "dd5df11a12e2a7a92d2dfa1dce6150ba0b35126c",
+      "98c834d00348db12f1be8677a0d9750848282d1f",
+      "3f7a9ea7f1b7875ae0ed1523b28538106f332aa0",
+      "b3abf4203ca9061986d780423f9dc7503b67835c",
+      "9ea63da794ae854b49226c674869b7e52e7923ac",
+      "f9e270aa6e8cf60acfcfd984832cd3e4cdb01978",
+      "41a76d2d7c7c443ee4e857a95e5e4d88b72f4a5a",
+      "988c7c1858a5c960c51e912a591cd47402c577bb",
+      "eac640ca189b1b36c79dc6a404dbd29862cb850e",
+      "d78fefae4342cf2dcc76021b99419106ca203397",
+      "5c97f1a558220c62af1c68b8d9ccc2357dc14b63",
+      "e5e9fc929c11a72fc3fb74c23d5604ff7c3af7fc",
+      "4a986ff38c10df903b9e6d78062ad70d094d85dc",
+      "c96619efc38fa82097e18bcfd0c4074a8f4f50f5",
+      "320d03182a8fd7388b163b9c7ffff82970e6f8c6",
+      "3c73bdc1f3ec09b0f827710c591d77524a25acdf",
+      "1be11db125679813365869067918daf0a1b6a419",
+      "e0c8a6dd29ac3045fa1fab7feacb902474bf6313",
+      "63c84ebfab933a7729ec48c7c3bdeaf51f1f1678",
+      "f303ce6bd6cb198debc66d8471e55c846512edbf",
+      "2bb2d0b253bbb0dc40815243b3a3b040b538b6d6"
     ],
     "writer:c9472bfe-4d9d-436f-a386-9b64f6fa27fb": [
       "20c9f2ee1435d0ac1eaa4a7eaabd75dc38d5e04a",
@@ -2194,7 +2232,31 @@
       "e364996959c335d0e7a7062c09b2960faf47b667",
       "6a07f1c89c99c36de8a84a445acb55abb045f20a",
       "335ac26ccda9459c43e7cae420dd2b6e8ace5732",
-      "d6fd4271477beb137270bd27cc31c1f95933d38c"
+      "d6fd4271477beb137270bd27cc31c1f95933d38c",
+      "af8695c6b37607b296884ae015395cc42438a5ca",
+      "6df8b401cb928a95b3e60f4b940d8b424c4a8e91",
+      "baa81c0bd4390d475b09fc988f3687c343d346cf",
+      "44341a2c342c817b71f59cf8a8bcf6077271590e",
+      "a4ce799458ae3135bae5a97ee54243bd590e8bfe",
+      "8df7e878e519b720d5cec4acea142762dd6faa0c",
+      "a09650f8da6f42f62dd40343d1f864e125410b71",
+      "f6f70027e6457405bf7b8c731b5abb8f6f535cc3",
+      "b37ec32b27c72902cdc8ac9da97dfda8a037c239",
+      "cbf0b2803e5946cb2f4a75b21e10493deaf9b410",
+      "f5405a534c00fc314afd443868484dc63a8c995f",
+      "48f6cd68805e1242ce1bcd55797bc186573b9663",
+      "490d7cb0800b824461cac89231f42f3fa48bd1bb",
+      "1132aec514bd186dd977c75f4e25dc37f5fe113a",
+      "5a5fc23adaacb355d8d1451c8e5b0bca3bf0639c",
+      "0f06c9e986d1d28b26e47ede2cdd464ad7361344",
+      "763090e6921343dac693940d2e14de56d004792f",
+      "612ef76f58852424637ec3d4fc6016446d4e8142",
+      "f3bd8bb5cbc0c267571e0914c2521a0b399aaaff",
+      "fa268bd4049505dee8394be34625841a92c38042",
+      "0c9a63a85791435dacbf8785830e8b025e05d026",
+      "16f742076c0eecc3a4fafed76bbb6b0f8cdfa0ac",
+      "2b4fd217ab3d901150a689e8ec6d564a12fe0732",
+      "9caf85bcc36b581a1d68bf0f2d51ec7b28d971e9"
     ],
     "writer:fb1f2bd5-38a0-4e7e-9400-da289d73a2b9": [
       "60e0b4c5be63fe17df55dfbb1da14ffaacd51eca",
@@ -2244,7 +2306,31 @@
       "fbc67cd6d7a30c08a1f5add8368012542b4fd80d",
       "46d4e6486fe53c73532590038bbb293d72972a34",
       "2c402342c52e8326f767add3fed2d4777ad77d54",
-      "6b0e831872340434b5f8df0366e296ed67deff5f"
+      "6b0e831872340434b5f8df0366e296ed67deff5f",
+      "7517a5d39c84bee422a29e3ca2f95d8302d90760",
+      "fa022b158c4ad18886b3fc193f84b17035d49a39",
+      "56dffb20e23451c954273b420a3474094b8f973f",
+      "7b049aa7e13ea86ce182a3106f8f2ecac807b7bc",
+      "0e9d5e17e936e6d88235000109b53c84ff44838f",
+      "9429ee53334a376ce79a474bc0bdd62339164905",
+      "43cc70db1969be892d1e190eb14ff6b42ada9c68",
+      "4457c45c9c756c48203b27a5ddc94df4f7dc1ebb",
+      "b5a217913b0b3fb9342af977ba1918eb2b3de42f",
+      "e3fa8e3e66d84886d2b1d5ca383aaed68c45ea23",
+      "9478243682f2ebaddba9fe5439e1a113df8983fa",
+      "301b84360d624aa0c7200a8f1a1237ce6bef5d26",
+      "6343c35db92447eb1859b90d767972edededbc98",
+      "be64490db105046964cd601af563753ec6408ffd",
+      "dabb3eb986703e4aa8cff1e8f2a3b9d6c74b7159",
+      "f73a45bfd800287cbf470fce1d30bfbd0792df1e",
+      "66563e01363a014f29b1ab7674bc5ab23028b250",
+      "069c909978895ca841f50ec47ddb842197d242a3",
+      "23c4a3a19d920636c49d97ec4ae2a8aa846370f5",
+      "1e8a07db155e9b7196c6d2810ad3538b611eb7a3",
+      "3536e81bd238f656f4cd4cb21f0d900911e28d33",
+      "04be3462cb6fcd0a2dc854d4e982b88ee120ca90",
+      "190c00abcf7d2a28c33bf1b0a3280afdb7701477",
+      "68476756994b8e8065301292bf4714273f24a64f"
     ],
     "writer:69a00186-38e5-473e-bb40-f5a6395524d2.checkpoint.1f50649d-33bc-4841-865e-bc75c2190312": [
       "8867be5bcc234d4c14c4d7e46e94272e39a5b155",
@@ -2270,7 +2356,31 @@
       "5f38ce58e2a433bb7942e2770b5ee74528d07d19",
       "34ae48d52e05ae3f24288eab70754a761e47ffba",
       "db3e2c8bc51a0c983bf9ae026e6e75b49af5a279",
-      "5acbdc748c95b4ed6fd5468388aa244d4b59d483"
+      "5acbdc748c95b4ed6fd5468388aa244d4b59d483",
+      "efb73a62a401ce48eeb5459f8e37bc940da16908",
+      "b48e1d430ae57905457f379d2d6526fb3cf2efcc",
+      "8965817c3f88f9d305f46736c24d0506010da452",
+      "dd8e9e4f9b58fcb6ac27a77aedf9060d08efb519",
+      "b114fe1c28415a0d816913894ee0f843903518eb",
+      "0129a804f28c662dc8048f63f49731f7d04e87d2",
+      "6c06d92e9a398f80771a02242eac466901d8ed8f",
+      "6d49c7ec0d9211a6ef73f53177297190da3b03d2",
+      "5a115fba4838f239a3aaf64941f2cea61bb72900",
+      "829be2b732dd964e2bcca4460a9602f267b558ce",
+      "d93bc8f586988c373a02575686704f39cc209368",
+      "65e305baf2561e47bcd700fc336159887287ef43",
+      "a0745380275a8686bd77bab1760d22f6e99d2b53",
+      "992aa3d9788e5462a4cd155ff8f2c333932fa43a",
+      "bf64c00bffb5b341086cd15da77251f724aadfaf",
+      "37d2d7a71c0ff0aabd60742af5f2185cf3ab16c5",
+      "63b7dfdfbe3bf7793a236c8d2fb03a1c1905bea0",
+      "11b0fdced082156cba11a1b1f79405ed0fc662d6",
+      "ded7bf555aef43ae1a6fb7d2ef31c94f7f01541b",
+      "61561500105cf603537d4ba34d265176281b8123",
+      "72cadbb3134021e5c10d9127f561eca9680758ab",
+      "40c94e793be615859ba4c165297a8f45eb87522a",
+      "e42ef91988f368c2f7c613a62dc53fbb2982f1d8",
+      "4a6c9349e7eb797d186a0674ab4ff5d227de8474"
     ],
     "writer:69a00186-38e5-473e-bb40-f5a6395524d2.checkpoint.2090c82b-a865-4ece-8dbd-5643e92ca4a5": [
       "5d5ce03333b9cbdb0a2d832316f2a079b783c4f6",
@@ -2296,7 +2406,31 @@
       "338e4c7de0986d469a1763cd7c9aa79a29ab342f",
       "f43400423bf9e0f977cebab18c07ab3740670970",
       "a120d6c89c7722be87926bc50f936df92fc39aba",
-      "2472ebf999baa4b60cd3178c0d70a8a956030998"
+      "2472ebf999baa4b60cd3178c0d70a8a956030998",
+      "d930adf7cc89171ce79994e229645b618f1cd66b",
+      "d2c09b068ea2e9b2c8ae0eb854c0479146826b3d",
+      "804fd02779e33543d84d54780834bcdb0a799c80",
+      "90176a2cb8e06660c73a1cbfa5c4feed10aa8879",
+      "376554f159a46eae5a63eabb261d9af4bdcf92d0",
+      "77b0288cbc1bd8f8e6c3c660652c84e18631c82f",
+      "4fdd712ff4fa86c98e4af93adadc3acc1636d354",
+      "4c63a86e89a19f134e1553fa1bff13deaa9d89ce",
+      "406aeb8538e2ed123464caa4baecdbfe83086b03",
+      "af6ced673924e2bbf66ca9a0474df3cd03404ae4",
+      "24d374f940589ebf35c0e95bc84e8da196d14716",
+      "237491ae4b8674abe3a3be8bd0088db8f079eae1",
+      "e1566b3a491574f481b7fe124f50f9305ab68e73",
+      "98cc76f95735f5ca23a554b48c6745f8e6bc6130",
+      "ae88a1192b0842cf6c00b8000ffb18bb79405a20",
+      "951dcc4237745d60226709aaed761d2478def258",
+      "19852ba052ac559448c98bb4b430234d6500503d",
+      "2fbe9749871cbf651d8bdcebd607922b3a1e9de3",
+      "b04ef648a1b4c1badcadbc9c6eee1d37d8a3f7f8",
+      "0380ac41b31ae3e7d22645f2d823c6ee07d631f2",
+      "6b7d0bc0a4735ae21f516905471792216a5faa84",
+      "7167e2ea053cb41b74b86f134f2a02ca9bf1e594",
+      "bdd9bd7ae5acd026a06ba44b4b7686cb5406d646",
+      "376428923142e2159a4410b5c5cfd52b800e3e75"
     ],
     "writer:69a00186-38e5-473e-bb40-f5a6395524d2": [
       "879b6d3f10c5f616e2b75fbb3e6da9bb00cd34a4",
@@ -2322,11 +2456,65 @@
       "374fb452274a7f6b555c1242892d40fc1d2d0723",
       "968d582f0d5cd945b309b8e4c96c8376304905bc",
       "79f76a9bdb95129a4eafff5ff4e284f7f81691c2",
-      "e3feb8f6fff4b0a463e3b32e727588cbe1838429"
+      "e3feb8f6fff4b0a463e3b32e727588cbe1838429",
+      "3dfa19156a771b5510a3f4c54065bb9ecd9e6f7a",
+      "c985dadb944366910f8405fe2f95a7171dbeaf2a",
+      "e7a32153e30482e0faf0ca9e6182d90eb383d38e",
+      "14d64b7433bc18453f24f7e7d8d175be0716bf39",
+      "05bc03864ffff03b28fb191ca986ffaa81b9cc5d",
+      "84f99c445ff0739b1bc855f6061392d2a4ff10c3",
+      "53f454ef42423d69363927e14ed80f182a42a498",
+      "71ac654f6a8d9e447c7f37bd228eeec74a5e46e7",
+      "68849235e30e30d0b5a2954d69b8566e311b19eb",
+      "269b7254590647451bdc98535cb1a564441f6c4a",
+      "a5886a6b875ab550df58004b88046bfb3589cfa1",
+      "282725056bd545a604c05f75c5e88da69ebe6c3c",
+      "e157d8b5e6e5af2378fd5f0cbec2138f6eef58b4",
+      "d630c461543eb3fcee3cd83c5bf8981f62891b1b",
+      "6290cab4d7d6ed095d665e2e8f949dc13825a03f",
+      "95c4530651c885b0cdb0bb820e37f376836a181c",
+      "76db91c2dde33fbce56e27d850ad78167d10a599",
+      "3b84e9a38f3cd3c359e0f3f8f272b48b4e69c51d",
+      "bb752dd44df5cc7a44194370b3d53ca408d8fb58",
+      "52598d892c21bd6fa9c99419689c33e43bc76c77",
+      "3b0dbc83b4f4de088bfa6061e9cc9a40ca8398d2",
+      "24bb06c3ad36d57c23353f638ec4a368246874ab",
+      "9464b8fe674b74092d17203e87bd54221d0334e4",
+      "1e57b7e004e5cbd5c71f2888d2fe26a63a7ebbd8"
     ],
     "writer:f2f5dc3a-20d3-46e9-aebf-8119413ec4b4": [
       "ad3b730434002de099cddb0f113b6e420c8eee90",
       "09a36bf8862eb58d2b00136f6f2c6b7b4719277f"
+    ],
+    "writer:3a34fd4a-1a18-4674-9b33-7cf44bbb287c": [
+      "15add197e0f54a4992fd295140ec3fdfb3d15e67",
+      "ff1f68e95de66e1adf3106421a9dc67416b12c6a"
+    ],
+    "writer:94e08b80-a500-4e8b-8de0-82603ff0b699-topic-omt_1a82b7480e8f9ce6": [
+      "33410dc5dccc9bd5b4286a6ce0596a41721533d5",
+      "e2b14cf342106cb6d4406fae6fb327161cdad589",
+      "1dcc10af733555a246a2208b09d521afdb078d41",
+      "76e05213af12c7bf24936e34b5cac75d1277b763",
+      "796c08f2220c5023c23153977a4f839735597484",
+      "db54fd6f530ebeddfa6ea1765a461c86e27c58e0",
+      "35ef3ac0730e8d26e4cffaa5b4328ef846892ac7",
+      "5571adbe60863700d8acb089e73c02b637d23436",
+      "c8aa4e4a0d65358b2ac3d6160355e7952b465bb7",
+      "6691ce37f4a3ba3ca7178ca99341288241bbbd2a",
+      "95a6a3c42e6a3ad0ac733da7c60a73fcaa1d029d",
+      "8d056b6bf20a5e9d21dd5a45c9c9695086fd8364",
+      "b295b4e81e8c9fe9e2d0e1da4af94040f92e9339",
+      "f503a3b9bb8f0ecb657d373926d4b4a89c30de32",
+      "daff9beed2b5f7e2c7492c1bcb074875670c2638",
+      "b77b77e6aa424bf6dd9a7d1a3b479714d2680d2b",
+      "231331fc96a785b3c75ebec580be4bfb3a289680",
+      "cd8f4fe2e1aa0087382b3e3703e16deec0613c85",
+      "957a9beae5a4d04a7a8c4adfcab5ef0780ea865a",
+      "53fd47ea27bf8ec2bf1e6abf612e6017573fab41",
+      "4c0a47a1e3dc21fa28f06e99087f1d456ced0cc3",
+      "b1fdcb9e35462376a8adb5c859ca6a52e2bd8667",
+      "baf860c4e36b8face0ab539f47be50656b5eccc8",
+      "6f7490f55d1d602db973e487fc88ab760035c62a"
     ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-21T19:04:24.154Z",
+  "updatedAt": "2026-04-22T19:03:28.252Z",
   "entries": {
     "memory:memory/2026-04-11.md:6:7": {
       "key": "memory:memory/2026-04-11.md:6:7",
@@ -11483,6 +11483,164 @@
         "任务",
         "完成",
         "以下"
+      ]
+    },
+    "memory:memory/2026-04-22.md:123:126": {
+      "key": "memory:memory/2026-04-22.md:123:126",
+      "path": "memory/2026-04-22.md",
+      "startLine": 123,
+      "endLine": 126,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 92 memories.; confidence: 1.00; evidence: memory/2026-04-14.md:313-316, memory/2026-04-14.md:393-396, memory/2026-04-14.md:383-386; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-22T19:02:30.435Z",
+      "lastRecalledAt": "2026-04-22T19:02:30.435Z",
+      "queryHashes": [
+        "7b7a9134bc2c"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "1.00",
+        "memory/2026-04-14.md",
+        "313-316",
+        "393-396",
+        "383-386",
+        "reflections",
+        "theme",
+        "assistant"
+      ]
+    },
+    "memory:memory/2026-04-22.md:129:131": {
+      "key": "memory:memory/2026-04-22.md:129:131",
+      "path": "memory/2026-04-22.md",
+      "startLine": 129,
+      "endLine": 131,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:319-319]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:324-324]; Reflections: Them",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-22T19:02:30.435Z",
+      "lastRecalledAt": "2026-04-22T19:02:30.435Z",
+      "queryHashes": [
+        "7b7a9134bc2c"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "0.58",
+        "memory/2026-04-14.md",
+        "319-319",
+        "memory/2026-04-15.md",
+        "324-324",
+        "possible",
+        "lasting",
+        "truths"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-23.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-23.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-23.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:ee863158-efe4-4c4a-99a7-66466ac874c6 审稿助手每日自我更新] [cron:每日自我更新] 按照agent_self_development工作流2执行每日自我更新： 1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md） 2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md） 3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md） 4. 同化与顺应分析 5. 检测",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:02:30.435Z",
+      "lastRecalledAt": "2026-04-22T19:02:30.435Z",
+      "queryHashes": [
+        "104ad850261a"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "events/yyyy-mm-dd/hh-mm-ss",
+        "撰写/完善前一日日记",
+        "diary/yyyy-mm-dd.md",
+        "user",
+        "cron:ee863158",
+        "efe4",
+        "4c4a",
+        "99a7"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-23.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-23.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-23.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Now I'll execute the daily self-update workflow. Based on my analysis: **Step 1-2: Review previous day (2026-04-22)** - Only 1 event: 00-25-00-self-update.md (self-update task itself) - No substantive tasks executed, system in maintenance mode **Step 3: Read core self*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:02:30.435Z",
+      "lastRecalledAt": "2026-04-22T19:02:30.435Z",
+      "queryHashes": [
+        "104ad850261a"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "self-update",
+        "1-2",
+        "00-25-00-self-update.md",
+        "assistant",
+        "now",
+        "i'll",
+        "execute",
+        "the"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-23.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-23.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-04-23.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 每日自我更新任务已完成。以下是执行摘要： --- ## 每日自我更新执行摘要 - 2026-04-23 **任务ID**: ee863158-efe4-4c4a-99a7-66466ac874c6 **执行时间**: 00:27 (Asia/Shanghai) ### 完成项目 1. ✅ 阅读前一日事件记忆（2026-04-22：仅1个自我更新事件） 2. ✅ 撰写前一日日记（diary/2026-04-22.md） 3. ✅ 阅读核心自我配置文件（MEMORY.md / SOUL.md / IDENTITY.md / skills",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:02:30.435Z",
+      "lastRecalledAt": "2026-04-22T19:02:30.435Z",
+      "queryHashes": [
+        "104ad850261a"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "asia/shanghai",
+        "diary/2026-04-22.md",
+        "memory.md",
+        "soul.md",
+        "identity.md",
+        "assistant",
+        "每日",
+        "自我"
       ]
     }
   }
