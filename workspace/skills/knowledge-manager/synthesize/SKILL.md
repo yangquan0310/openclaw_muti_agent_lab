@@ -75,10 +75,21 @@ summarizer.summarize()
 
 ```python
 from synthesize.NoteExtractor import NoteExtractor
+from scripts.manage_project import Project
+
+# 初始化项目
+project = Project("/path/to/project")
 
 # 提取笔记信息
 extractor = NoteExtractor()
 info = extractor.extract('/path/to/笔记.json')
+
+# 保存提取的笔记到临时数据/笔记/
+note_path = project.save_extracted_note(
+    note_title="提取笔记",
+    content=str(info),
+    source="/path/to/笔记.json"
+)
 
 # 查看提取结果
 print(f"文献数量: {info['count']}")
@@ -133,9 +144,9 @@ fix_result = checker.fix_references("综述文档.md", "修复后的文档.md")
 ```
 
 #### 步骤 6：保存文档
-- 草稿：`~/实验室仓库/项目文件/{项目名}/草稿/{标题}/{标题}_v{version}.md`
+- 草稿：`~/实验室仓库/项目文件/{项目名}/临时数据/草稿/{标题}/{标题}_v{version}.md`
 - 终稿：`~/实验室仓库/项目文件/{项目名}/知识库/综述/{标题}.md`
-- 修改：先移动`~/实验室仓库/项目文件/{项目名}/知识库/综述/{标题}.md`至草稿文件夹并命名{标题}_v{version}.md，然后再创建新的{标题}.md
+- 修改：先移动`~/实验室仓库/项目文件/{项目名}/知识库/综述/{标题}.md`至临时数据/草稿文件夹并命名{标题}_v{version}.md，然后再创建新的{标题}.md
 
 #### 步骤 7：管理元数据
 - 在项目元数据.json中file中记录文献综述信息:

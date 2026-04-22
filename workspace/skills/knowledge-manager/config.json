@@ -1,16 +1,27 @@
 {
   "llm": {
-    "default_provider": "tencent_token",
+    "default_provider": "Kimi",
     "providers": {
+      "kimi": {
+        "name": "Kimi",
+        "base_url": "https://api.moonshot.cn/v1",
+        "default_model": "moonshot-v1-8k",
+        "api_key_env": "KIMI_API_KEY",
+        "api_key": "",
+        "timeout": 30,
+        "temperature": 0.3,
+        "max_tokens": 2000
+      },
       "tencent_token": {
         "name": "腾讯云tokenhub",
         "base_url": "https://tokenhub.tencentmaas.com/v1",
         "default_model": "deepseek-v3.2",
         "api_key_env": "TOKENHUB_API_KEY",
+        "api_key": "",
         "timeout": 30,
         "temperature": 0.3,
         "max_tokens": 2000
-      }      
+      }
     }
   },
   "semantic_scholar": {
@@ -22,12 +33,10 @@
     "root_path": "/root/实验室仓库/项目文件/",
     "knowledge_base_dir": "知识库/",
     "notes_dir": "知识库/笔记/",
+    "search_queries_dir": "临时数据/检索条件/",
+    "extracted_notes_dir": "临时数据/笔记/",
     "index_file": "index.json",
-    "notes_file_format": "{主题}.json"
-  },
-  "log": {
-    "log_root": "/root/实验室仓库/日志文件/",
-    "log_file_format": "%Y-%m-%d/%H-%M-%S-心理学家-{任务类型}.md",
-    "auto_logging": true
+    "notes_file_format": "{主题}.json",
+    "log":""
   }
 }
