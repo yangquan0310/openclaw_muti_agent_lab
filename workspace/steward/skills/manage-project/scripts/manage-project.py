@@ -374,24 +374,57 @@ class Project:
         # 扫描旧"草稿"目录，移动到 临时数据/草稿/
         old_draft_dir = os.path.join(self.project_path, "草稿")
         if os.path.exists(old_draft_dir):
-            for item in os.listdir(old_draft_dir):
-                item_path = os.path.join(old_draft_dir, item)
-                if os.path.isfile(item_path) and not item.startswith('.'):
-                    if self.move_file(f"草稿/{item}", "临时数据/草稿/"):
-                        results["moved_to_drafts"].append(item)
+            for root, dirs, files in os.walk(old_draft_dir):
+                for item in files:
+                    item_path = os.path.join(root, item)
+                    rel_path = os.path.relpath(item_path, old_draft_dir)
+                    if os.path.isfile(item_path) and not item.startswith('.'):
+                        if self.move_file(os.path.join("草稿", rel_path), "临时数据/草稿/"):
+                            results["moved_to_drafts"].append(rel_path)
+                # 处理完成后删除空草稿目录
+                if os.path.exists(old_draft_dir):
+                    try:
+                        shutil.rmtree(old_draft_dir)
+                        print(f"  删除空目录: 草稿/")
+                    except Exception as e:
+                        print(f"  ⚠️  删除草稿目录失败: {e}")
+                break
         
         # 扫描旧"终稿"目录，移动md到手稿，其他到文档
         old_final_dir = os.path.join(self.project_path, "终稿")
         if os.path.exists(old_final_dir):
-            for item in os.listdir(old_final_dir):
-                item_path = os.path.join(old_final_dir, item)
-                if os.path.isfile(item_path) and not item.startswith('.'):
-                    if item.endswith('.md'):
-                        if self.move_file(f"终稿/{item}", "手稿/"):
-                            results["moved_to_manuscripts"].append(item)
-                    else:
-                        if self.move_file(f"终稿/{item}", "文档/"):
-                            results["moved_to_documents"].append(item)
+            for root, dirs, files in os.walk(old_final_dir):
+                for item in files:
+                    item_path = os.path.join(root, item)
+                    rel_path = os.path.relpath(item_path, old_final_dir)
+                    if os.path.isfile(item_path) and not item.startswith('.'):
+                        if item.endswith('.md'):
+                            if self.move_file(os.path.join("终稿", rel_path), "手稿/"):
+                                results["moved_to_manuscripts"].append(rel_path)
+                        else:
+                            if self.move_file(os.path.join("终稿", rel_path), "文档/"):
+                                results["moved_to_documents"].append(rel_path)
+                # 处理子目录中的文件
+                for dir_name in dirs:
+                    dir_path = os.path.join(root, dir_name)
+                    for sub_item in os.listdir(dir_path):
+                        sub_item_path = os.path.join(dir_path, sub_item)
+                        sub_rel_path = os.path.relpath(sub_item_path, old_final_dir)
+                        if os.path.isfile(sub_item_path) and not sub_item.startswith('.'):
+                            if sub_item.endswith('.md'):
+                                if self.move_file(os.path.join("终稿", sub_rel_path), "手稿/"):
+                                    results["moved_to_manuscripts"].append(sub_rel_path)
+                            else:
+                                if self.move_file(os.path.join("终稿", sub_rel_path), "文档/"):
+                                    results["moved_to_documents"].append(sub_rel_path)
+                # 处理完成后删除空终稿目录
+                if os.path.exists(old_final_dir):
+                    try:
+                        shutil.rmtree(old_final_dir)
+                        print(f"  删除空目录: 终稿/")
+                    except Exception as e:
+                        print(f"  ⚠️  删除终稿目录失败: {e}")
+                break
         
         # 更新元数据
         self.update_metadata()

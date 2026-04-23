@@ -76,7 +76,7 @@
       "size": 340516,
       "contentHash": "9195e762c299adef7ba3981dcdc4b48f3301f3e84fd49c886d2e984207aac2ef",
       "lineCount": 61,
-      "lastContentLine": 48
+      "lastContentLine": 61
     },
     "psychologist:sessions/1742f0d6-4d8d-45d3-bd62-5a8f9146bf53.jsonl.reset.2026-04-08T13-25-09.651Z": {
       "mtimeMs": 1775654704427,
@@ -911,12 +911,19 @@
       "lineCount": 3,
       "lastContentLine": 3
     },
+    "psychologist:sessions/cc69da51-a241-4100-801c-3402fcd2845e.jsonl": {
+      "mtimeMs": 1776960960232,
+      "size": 52757,
+      "contentHash": "020339bcf415396c98c80895ff6ac06501cc3ae77f7aa5413e552f1ffad8abff",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
     "psychologist:sessions/cc978da1-e896-41b8-bcda-1837c8eae3f9.jsonl.reset.2026-04-21T02-38-37.453Z": {
       "mtimeMs": 1776703411388,
       "size": 1382135,
       "contentHash": "0788ca00cac3db39ad254f20b9f42b4901870cffae4b9f14b5f4479a6b0eb8d7",
       "lineCount": 328,
-      "lastContentLine": 72
+      "lastContentLine": 302
     },
     "psychologist:sessions/d12b4e3d-de35-4aab-ad3d-d7ea4026a93a.jsonl.deleted.2026-04-09T16-41-40.117Z": {
       "mtimeMs": 1775739933243,
@@ -6092,7 +6099,31 @@
       "77e913a75eecc222be201f717b10bc30279dc559",
       "215bf0dd809e18d3ad2c6d3a8e52e78381dfa440",
       "9af01f9a5ac9cca9d1c09b51f8644a64b6fd0e4c",
-      "44fa217d6168426c88a6d5bd8f070c54a2341322"
+      "44fa217d6168426c88a6d5bd8f070c54a2341322",
+      "f58c002185431ca53cfd5e1b398b677bb6c7b6a5",
+      "d2571e05709f00190eee80dca1eb7a61e6d97f15",
+      "ee0312571edfff673a9269a6a01d17cd41cf5327",
+      "80a8ff4621acb2b62c2a630912a577f353fdf093",
+      "dbfa48fa6fddb75982ee12bdd929b51913e462e6",
+      "1b10729ba86685a6354e0903148cc15c1c9fc01f",
+      "4856737d01b7b2763f0c63b6853db8a941d253d4",
+      "f8cf2700c9ca3947d69cdb384ad6e1121d1a90d7",
+      "704703ae4e4cea4c10c9822e36fe733e04ada8d3",
+      "a3f0b0646eda744389ce5d1d1e99880929171051",
+      "f60177bf12a195ecbbf35d54a9490fe99d831c89",
+      "219a1750e1e4973d7d2a239e16b57bdc967c6d34",
+      "89e8c42723c88b737e4d36f5899b4a2084e89588",
+      "cb4a994b93d53ee28f394c96baea8af27209be54",
+      "518f2b2d7b6dd728cda42a03658970ca824c6771",
+      "486c9f4e5d3b0a34aba6a856de293d286f2dcd84",
+      "0c7fe1b93ae4449d364b4cea14a6072409f15605",
+      "b7e6fe13f7361c0adfe97c40300e832e313f285d",
+      "cfc84c73faf72b84bfbd6e7f301ccf33bdbe08e8",
+      "b35cf813386f83fbbc98f527ca41640b21fb6365",
+      "9fe8db4c1a4ab9b3109d7fecebcf0ed97dc56014",
+      "599e1009ab9b971e5d3b6b6e3aa7bca4c2500427",
+      "6d1842be702c47c0a454d547ede21d031d3cb0ea",
+      "41f0276b8f0d6c740ba7e3e98f3d889a9e9d463e"
     ],
     "psychologist:ef3197ee-206e-457f-adff-13d83165d3b6": [
       "a355fb77cd50924b9bd80a972ad83a0a6cf053b4",
@@ -6150,7 +6181,20 @@
       "a36e993d4cb82d81c94f20aca502a097d7bb20fb",
       "ef4f8c36c8e32ba5e0efbc9fc4595166126b31cd",
       "f7bded50a9cab84ce578befa76ee3452fbaa9c46",
-      "91558440c7d408e52bd8ba6d3438e9e955af0fa8"
+      "91558440c7d408e52bd8ba6d3438e9e955af0fa8",
+      "620015ebf4ca4c9cbf7c78fc942ff8a94b506a4f",
+      "c84b1125d8be3f54d11669d27eaf61f01edbc6db",
+      "b1c68cc394b84ed987867f600004c6d2e105f81e",
+      "2a3ab6736582dc6e8de24edb4925118c2d1c65de",
+      "21103c018efc84602d1edd4ce4ba9f091157aea6",
+      "8430cbffc8a276a21af78bfe45d83083f4dbc293",
+      "fe658f0e80aaa2964efccfbc292c0613dcc74e50",
+      "f3e5c669d7cc9cdd2d6cc8a51226f8ac73b70e46",
+      "3828e1a3ef015ac03c4f84972ea52551078c0e4e",
+      "cd39d04b8e80fb6386004ecb298c0f55943ebfa0",
+      "1143a614fc122aeb747a7c1ef0fdd95bd3039ebd",
+      "dde7fa7434dbc8a211e1b2ae84f09f3af85bbd74",
+      "d19e006d4d89c5e1a7cd672374267ab14cbf3f7c"
     ],
     "psychologist:e0636484-a9be-4186-8521-ba39050cf0bb": [
       "fa5c453721bf248cf398b403926d9a91c6125557",
@@ -6160,6 +6204,10 @@
       "7b6150f18c456bc7fc1615b744cfc134ac5d388d",
       "18e7e59d97bc8575f8b38fbe4848ffefaf3fc013",
       "b4a387b36ce09f6eaf70fce2176d19e9bb8d8693"
+    ],
+    "psychologist:cc69da51-a241-4100-801c-3402fcd2845e": [
+      "22910549c3e2a92d72b78806cff0c3c4b67eb45e",
+      "a9b14ff9578bf870d5bdb08d0cb578d58cc76a3f"
     ]
   }
 }

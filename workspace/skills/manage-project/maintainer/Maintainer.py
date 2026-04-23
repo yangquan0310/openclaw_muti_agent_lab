@@ -254,9 +254,9 @@ class Maintainer:
             "tags": kwargs.get("tags", self.metadata.get("tags", [])),
         })
 
-        # 保留已有的 cloud_doc_mappings、notes、knowledge_base
-        if "cloud_doc_mappings" not in self.metadata:
-            self.metadata["cloud_doc_mappings"] = {}
+        # 保留已有的 markdown、notes、knowledge_base
+        if "markdown" not in self.metadata:
+            self.metadata["markdown"] = {}
         if "notes" not in self.metadata:
             self.metadata["notes"] = {}
         if "knowledge_base" not in self.metadata:

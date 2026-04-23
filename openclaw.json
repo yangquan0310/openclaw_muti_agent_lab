@@ -22,41 +22,8 @@
         "agentDir": "/root/.openclaw/agents/steward/agent",
         "tools": {
           "alsoAllow": [
-            "feishu_bitable_app",
-            "feishu_bitable_app_table",
-            "feishu_bitable_app_table_field",
-            "feishu_bitable_app_table_record",
-            "feishu_bitable_app_table_view",
-            "feishu_calendar_calendar",
-            "feishu_calendar_event",
-            "feishu_calendar_event_attendee",
-            "feishu_calendar_freebusy",
-            "feishu_chat",
-            "feishu_chat_members",
-            "feishu_create_doc",
-            "feishu_doc_comments",
-            "feishu_doc_media",
-            "feishu_drive_file",
-            "feishu_fetch_doc",
-            "feishu_get_user",
-            "feishu_im_bot_image",
-            "feishu_im_user_fetch_resource",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_message",
-            "feishu_im_user_search_messages",
-            "feishu_oauth",
-            "feishu_oauth_batch_auth",
-            "feishu_search_doc_wiki",
-            "feishu_search_user",
-            "feishu_sheet",
-            "feishu_task_comment",
-            "feishu_task_subtask",
-            "feishu_task_task",
-            "feishu_task_tasklist",
-            "feishu_update_doc",
-            "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "agent_self_development",
+            "manage-project"
           ]
         }
       },
@@ -67,41 +34,8 @@
         "agentDir": "/root/.openclaw/agents/mathematician/agent",
         "tools": {
           "alsoAllow": [
-            "feishu_bitable_app",
-            "feishu_bitable_app_table",
-            "feishu_bitable_app_table_field",
-            "feishu_bitable_app_table_record",
-            "feishu_bitable_app_table_view",
-            "feishu_calendar_calendar",
-            "feishu_calendar_event",
-            "feishu_calendar_event_attendee",
-            "feishu_calendar_freebusy",
-            "feishu_chat",
-            "feishu_chat_members",
-            "feishu_create_doc",
-            "feishu_doc_comments",
-            "feishu_doc_media",
-            "feishu_drive_file",
-            "feishu_fetch_doc",
-            "feishu_get_user",
-            "feishu_im_bot_image",
-            "feishu_im_user_fetch_resource",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_message",
-            "feishu_im_user_search_messages",
-            "feishu_oauth",
-            "feishu_oauth_batch_auth",
-            "feishu_search_doc_wiki",
-            "feishu_search_user",
-            "feishu_sheet",
-            "feishu_task_comment",
-            "feishu_task_subtask",
-            "feishu_task_task",
-            "feishu_task_tasklist",
-            "feishu_update_doc",
-            "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "agent_self_development",
+            "manage-project"
           ]
         }
       },
@@ -112,41 +46,8 @@
         "agentDir": "/root/.openclaw/agents/physicist/agent",
         "tools": {
           "alsoAllow": [
-            "feishu_bitable_app",
-            "feishu_bitable_app_table",
-            "feishu_bitable_app_table_field",
-            "feishu_bitable_app_table_record",
-            "feishu_bitable_app_table_view",
-            "feishu_calendar_calendar",
-            "feishu_calendar_event",
-            "feishu_calendar_event_attendee",
-            "feishu_calendar_freebusy",
-            "feishu_chat",
-            "feishu_chat_members",
-            "feishu_create_doc",
-            "feishu_doc_comments",
-            "feishu_doc_media",
-            "feishu_drive_file",
-            "feishu_fetch_doc",
-            "feishu_get_user",
-            "feishu_im_bot_image",
-            "feishu_im_user_fetch_resource",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_message",
-            "feishu_im_user_search_messages",
-            "feishu_oauth",
-            "feishu_oauth_batch_auth",
-            "feishu_search_doc_wiki",
-            "feishu_search_user",
-            "feishu_sheet",
-            "feishu_task_comment",
-            "feishu_task_subtask",
-            "feishu_task_task",
-            "feishu_task_tasklist",
-            "feishu_update_doc",
-            "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "agent_self_development",
+            "manage-project"
           ]
         }
       },
@@ -157,41 +58,8 @@
         "agentDir": "/root/.openclaw/agents/psychologist/agent",
         "tools": {
           "alsoAllow": [
-            "feishu_bitable_app",
-            "feishu_bitable_app_table",
-            "feishu_bitable_app_table_field",
-            "feishu_bitable_app_table_record",
-            "feishu_bitable_app_table_view",
-            "feishu_calendar_calendar",
-            "feishu_calendar_event",
-            "feishu_calendar_event_attendee",
-            "feishu_calendar_freebusy",
-            "feishu_chat",
-            "feishu_chat_members",
-            "feishu_create_doc",
-            "feishu_doc_comments",
-            "feishu_doc_media",
-            "feishu_drive_file",
-            "feishu_fetch_doc",
-            "feishu_get_user",
-            "feishu_im_bot_image",
-            "feishu_im_user_fetch_resource",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_message",
-            "feishu_im_user_search_messages",
-            "feishu_oauth",
-            "feishu_oauth_batch_auth",
-            "feishu_search_doc_wiki",
-            "feishu_search_user",
-            "feishu_sheet",
-            "feishu_task_comment",
-            "feishu_task_subtask",
-            "feishu_task_task",
-            "feishu_task_tasklist",
-            "feishu_update_doc",
-            "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "agent_self_development",
+            "manage-project"
           ]
         }
       },
@@ -202,41 +70,8 @@
         "agentDir": "/root/.openclaw/agents/writer/agent",
         "tools": {
           "alsoAllow": [
-            "feishu_bitable_app",
-            "feishu_bitable_app_table",
-            "feishu_bitable_app_table_field",
-            "feishu_bitable_app_table_record",
-            "feishu_bitable_app_table_view",
-            "feishu_calendar_calendar",
-            "feishu_calendar_event",
-            "feishu_calendar_event_attendee",
-            "feishu_calendar_freebusy",
-            "feishu_chat",
-            "feishu_chat_members",
-            "feishu_create_doc",
-            "feishu_doc_comments",
-            "feishu_doc_media",
-            "feishu_drive_file",
-            "feishu_fetch_doc",
-            "feishu_get_user",
-            "feishu_im_bot_image",
-            "feishu_im_user_fetch_resource",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_message",
-            "feishu_im_user_search_messages",
-            "feishu_oauth",
-            "feishu_oauth_batch_auth",
-            "feishu_search_doc_wiki",
-            "feishu_search_user",
-            "feishu_sheet",
-            "feishu_task_comment",
-            "feishu_task_subtask",
-            "feishu_task_task",
-            "feishu_task_tasklist",
-            "feishu_update_doc",
-            "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "agent_self_development",
+            "manage-project"
           ]
         }
       },
@@ -247,41 +82,8 @@
         "agentDir": "/root/.openclaw/agents/reviewer/agent",
         "tools": {
           "alsoAllow": [
-            "feishu_bitable_app",
-            "feishu_bitable_app_table",
-            "feishu_bitable_app_table_field",
-            "feishu_bitable_app_table_record",
-            "feishu_bitable_app_table_view",
-            "feishu_calendar_calendar",
-            "feishu_calendar_event",
-            "feishu_calendar_event_attendee",
-            "feishu_calendar_freebusy",
-            "feishu_chat",
-            "feishu_chat_members",
-            "feishu_create_doc",
-            "feishu_doc_comments",
-            "feishu_doc_media",
-            "feishu_drive_file",
-            "feishu_fetch_doc",
-            "feishu_get_user",
-            "feishu_im_bot_image",
-            "feishu_im_user_fetch_resource",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_message",
-            "feishu_im_user_search_messages",
-            "feishu_oauth",
-            "feishu_oauth_batch_auth",
-            "feishu_search_doc_wiki",
-            "feishu_search_user",
-            "feishu_sheet",
-            "feishu_task_comment",
-            "feishu_task_subtask",
-            "feishu_task_task",
-            "feishu_task_tasklist",
-            "feishu_update_doc",
-            "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "agent_self_development",
+            "manage-project"
           ]
         }
       },
@@ -292,41 +94,8 @@
         "agentDir": "/root/.openclaw/agents/teachingassistant/agent",
         "tools": {
           "alsoAllow": [
-            "feishu_bitable_app",
-            "feishu_bitable_app_table",
-            "feishu_bitable_app_table_field",
-            "feishu_bitable_app_table_record",
-            "feishu_bitable_app_table_view",
-            "feishu_calendar_calendar",
-            "feishu_calendar_event",
-            "feishu_calendar_event_attendee",
-            "feishu_calendar_freebusy",
-            "feishu_chat",
-            "feishu_chat_members",
-            "feishu_create_doc",
-            "feishu_doc_comments",
-            "feishu_doc_media",
-            "feishu_drive_file",
-            "feishu_fetch_doc",
-            "feishu_get_user",
-            "feishu_im_bot_image",
-            "feishu_im_user_fetch_resource",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_message",
-            "feishu_im_user_search_messages",
-            "feishu_oauth",
-            "feishu_oauth_batch_auth",
-            "feishu_search_doc_wiki",
-            "feishu_search_user",
-            "feishu_sheet",
-            "feishu_task_comment",
-            "feishu_task_subtask",
-            "feishu_task_task",
-            "feishu_task_tasklist",
-            "feishu_update_doc",
-            "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "agent_self_development",
+            "manage-project"
           ]
         }
       },
@@ -337,41 +106,8 @@
         "agentDir": "/root/.openclaw/agents/studentaffairsassistant/agent",
         "tools": {
           "alsoAllow": [
-            "feishu_bitable_app",
-            "feishu_bitable_app_table",
-            "feishu_bitable_app_table_field",
-            "feishu_bitable_app_table_record",
-            "feishu_bitable_app_table_view",
-            "feishu_calendar_calendar",
-            "feishu_calendar_event",
-            "feishu_calendar_event_attendee",
-            "feishu_calendar_freebusy",
-            "feishu_chat",
-            "feishu_chat_members",
-            "feishu_create_doc",
-            "feishu_doc_comments",
-            "feishu_doc_media",
-            "feishu_drive_file",
-            "feishu_fetch_doc",
-            "feishu_get_user",
-            "feishu_im_bot_image",
-            "feishu_im_user_fetch_resource",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_message",
-            "feishu_im_user_search_messages",
-            "feishu_oauth",
-            "feishu_oauth_batch_auth",
-            "feishu_search_doc_wiki",
-            "feishu_search_user",
-            "feishu_sheet",
-            "feishu_task_comment",
-            "feishu_task_subtask",
-            "feishu_task_task",
-            "feishu_task_tasklist",
-            "feishu_update_doc",
-            "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "agent_self_development",
+            "manage-project"
           ]
         }
       },
@@ -382,41 +118,8 @@
         "agentDir": "/root/.openclaw/agents/academicassistant/agent",
         "tools": {
           "alsoAllow": [
-            "feishu_bitable_app",
-            "feishu_bitable_app_table",
-            "feishu_bitable_app_table_field",
-            "feishu_bitable_app_table_record",
-            "feishu_bitable_app_table_view",
-            "feishu_calendar_calendar",
-            "feishu_calendar_event",
-            "feishu_calendar_event_attendee",
-            "feishu_calendar_freebusy",
-            "feishu_chat",
-            "feishu_chat_members",
-            "feishu_create_doc",
-            "feishu_doc_comments",
-            "feishu_doc_media",
-            "feishu_drive_file",
-            "feishu_fetch_doc",
-            "feishu_get_user",
-            "feishu_im_bot_image",
-            "feishu_im_user_fetch_resource",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_message",
-            "feishu_im_user_search_messages",
-            "feishu_oauth",
-            "feishu_oauth_batch_auth",
-            "feishu_search_doc_wiki",
-            "feishu_search_user",
-            "feishu_sheet",
-            "feishu_task_comment",
-            "feishu_task_subtask",
-            "feishu_task_task",
-            "feishu_task_tasklist",
-            "feishu_update_doc",
-            "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "agent_self_development",
+            "manage-project"
           ]
         }
       }
@@ -462,8 +165,8 @@
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.4.14",
-    "lastTouchedAt": "2026-04-20T10:59:55.917Z"
+    "lastTouchedVersion": "2026.4.15",
+    "lastTouchedAt": "2026-04-23T12:06:28.159Z"
   },
   "plugins": {
     "entries": {
@@ -479,29 +182,8 @@
       "memory-wiki": {
         "enabled": true
       },
-      "ddingtalk": {
-        "enabled": false
-      },
-      "wecom": {
-        "enabled": false
-      },
-      "openclaw-plugin-yuanbao": {
-        "enabled": false
-      },
-      "openclaw-weixin": {
-        "enabled": true
-      },
-      "lightclawbot": {
-        "enabled": true
-      },
       "adp-openclaw": {
         "enabled": false
-      },
-      "memory-tencentdb": {
-        "enabled": false
-      },
-      "qqbot": {
-        "enabled": true
       },
       "memory-core": {
         "enabled": true,
@@ -513,6 +195,27 @@
       },
       "memory-lancedb": {
         "enabled": false
+      },
+      "ddingtalk": {
+        "enabled": false
+      },
+      "wecom": {
+        "enabled": false
+      },
+      "openclaw-plugin-yuanbao": {
+        "enabled": false
+      },
+      "openclaw-weixin": {
+        "enabled": true
+      },
+      "lightclawbot": {
+        "enabled": true
+      },
+      "memory-tencentdb": {
+        "enabled": false
+      },
+      "qqbot": {
+        "enabled": true
       }
     },
     "installs": {
@@ -523,41 +226,6 @@
         "version": "2026.4.7",
         "installedAt": "2026-04-13T14:19:07.117Z"
       },
-      "ddingtalk": {
-        "source": "npm",
-        "spec": "@largezhou/ddingtalk@2.0.1",
-        "installPath": "/root/.openclaw/extensions/ddingtalk",
-        "version": "2.0.1",
-        "installedAt": "2026-04-19T12:43:29.000Z"
-      },
-      "wecom": {
-        "source": "npm",
-        "spec": "@mocrane/wecom@2026.3.24",
-        "installPath": "/root/.openclaw/extensions/wecom",
-        "version": "2026.3.24",
-        "installedAt": "2026-04-19T12:43:35.000Z"
-      },
-      "openclaw-plugin-yuanbao": {
-        "source": "npm",
-        "spec": "openclaw-plugin-yuanbao@2.10.0",
-        "installPath": "/root/.openclaw/extensions/openclaw-plugin-yuanbao",
-        "version": "2.10.0",
-        "installedAt": "2026-04-19T12:43:40.000Z"
-      },
-      "openclaw-weixin": {
-        "source": "npm",
-        "spec": "@tencent-weixin/openclaw-weixin@2.1.8",
-        "installPath": "/root/.openclaw/extensions/openclaw-weixin",
-        "version": "2.1.8",
-        "installedAt": "2026-04-19T12:43:44.000Z"
-      },
-      "lightclawbot": {
-        "source": "npm",
-        "spec": "lightclawbot@1.1.2",
-        "installPath": "/root/.openclaw/extensions/lightclawbot",
-        "version": "1.1.2",
-        "installedAt": "2026-04-19T12:43:47.000Z"
-      },
       "adp-openclaw": {
         "source": "npm",
         "spec": "adp-openclaw@0.0.77",
@@ -565,19 +233,54 @@
         "version": "0.0.77",
         "installedAt": "2026-04-19T12:43:49.000Z"
       },
-      "memory-tencentdb": {
-        "source": "npm",
-        "spec": "@tencentdb-agent-memory/memory-tencentdb@0.2.0",
-        "installPath": "/root/.openclaw/extensions/memory-tencentdb",
-        "version": "0.2.0",
-        "installedAt": "2026-04-19T12:44:18.000Z"
-      },
       "memory-core": {
         "source": "path",
         "spec": "memory-core",
         "sourcePath": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.4.14_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0_@napi-rs+canvas@0.1.99_@t_301ed012d3fecfe3e2337cb93aa6e57a/node_modules/openclaw/dist/extensions/memory-core",
         "installPath": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.4.14_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0_@napi-rs+canvas@0.1.99_@t_301ed012d3fecfe3e2337cb93aa6e57a/node_modules/openclaw/dist/extensions/memory-core",
         "installedAt": "2026-04-20T10:58:29.652Z"
+      },
+      "ddingtalk": {
+        "source": "npm",
+        "spec": "@largezhou/ddingtalk@2.0.1",
+        "installPath": "/root/.openclaw/extensions/ddingtalk",
+        "version": "2.0.1",
+        "installedAt": "2026-04-23T12:04:48.000Z"
+      },
+      "wecom": {
+        "source": "npm",
+        "spec": "@mocrane/wecom@2026.3.24",
+        "installPath": "/root/.openclaw/extensions/wecom",
+        "version": "2026.3.24",
+        "installedAt": "2026-04-23T12:04:53.000Z"
+      },
+      "openclaw-plugin-yuanbao": {
+        "source": "npm",
+        "spec": "openclaw-plugin-yuanbao@2.10.0",
+        "installPath": "/root/.openclaw/extensions/openclaw-plugin-yuanbao",
+        "version": "2.10.0",
+        "installedAt": "2026-04-23T12:04:59.000Z"
+      },
+      "openclaw-weixin": {
+        "source": "npm",
+        "spec": "@tencent-weixin/openclaw-weixin@2.1.9",
+        "installPath": "/root/.openclaw/extensions/openclaw-weixin",
+        "version": "2.1.9",
+        "installedAt": "2026-04-23T12:05:03.000Z"
+      },
+      "lightclawbot": {
+        "source": "npm",
+        "spec": "lightclawbot@1.1.2",
+        "installPath": "/root/.openclaw/extensions/lightclawbot",
+        "version": "1.1.2",
+        "installedAt": "2026-04-23T12:05:05.000Z"
+      },
+      "memory-tencentdb": {
+        "source": "npm",
+        "spec": "@tencentdb-agent-memory/memory-tencentdb@0.2.2",
+        "installPath": "/root/.openclaw/extensions/memory-tencentdb",
+        "version": "0.2.2",
+        "installedAt": "2026-04-23T12:05:35.000Z"
       }
     },
     "allow": [
@@ -585,13 +288,13 @@
       "browser",
       "ddingtalk",
       "lightclawbot",
+      "memory-core",
       "memory-wiki",
       "openclaw-lark",
       "openclaw-plugin-yuanbao",
       "openclaw-weixin",
       "qqbot",
-      "wecom",
-      "memory-core"
+      "wecom"
     ],
     "load": {
       "paths": [
