@@ -60,16 +60,25 @@ class Project:
 
     def _load_metadata(self):
         """加载现有元数据"""
+        # 优先从根目录加载
         if os.path.exists(self.metadata_path):
             try:
                 with open(self.metadata_path, 'r', encoding='utf-8') as f:
                     return json.load(f)
             except Exception as e:
                 print(f"⚠️  读取现有元数据失败: {e}")
+        # 兼容旧位置：临时数据/元数据.json
+        old_metadata_path = os.path.join(self.project_path, "临时数据", "元数据.json")
+        if os.path.exists(old_metadata_path):
+            try:
+                with open(old_metadata_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"⚠️  读取旧位置元数据失败: {e}")
         return {}
 
     def _save_metadata(self):
-        """保存元数据到文件"""
+        """保存元数据到文件（始终保存到根目录）"""
         try:
             with open(self.metadata_path, 'w', encoding='utf-8') as f:
                 json.dump(self.metadata, f, ensure_ascii=False, indent=2)
@@ -327,12 +336,12 @@ class Project:
         # 确保标准目录存在
         self.ensure_directories()
         
-        # 扫描项目根目录下的文件（不包括标准目录）
+        # 扫描项目根目录下的文件（不包括标准目录和元数据）
         for item in os.listdir(self.project_path):
             item_path = os.path.join(self.project_path, item)
             
-            # 跳过标准目录和隐藏文件
-            if item.startswith('.') or item in ["文档", "手稿", "知识库", "临时数据"]:
+            # 跳过标准目录、隐藏文件和元数据
+            if item.startswith('.') or item in ["文档", "手稿", "知识库", "临时数据", "元数据.json"]:
                 continue
             
             if os.path.isfile(item_path):
@@ -426,7 +435,7 @@ class Project:
                         print(f"  ⚠️  删除终稿目录失败: {e}")
                 break
         
-        # 更新元数据
+        # 更新元数据（始终保存到根目录）
         self.update_metadata()
         
         # 打印整理报告

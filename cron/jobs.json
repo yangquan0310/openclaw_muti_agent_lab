@@ -330,7 +330,8 @@
         "lastStatus": "ok",
         "lastDurationMs": 323048,
         "lastDeliveryStatus": "delivered",
-        "lastDelivered": true
+        "lastDelivered": true,
+        "runningAtMs": 1777046400004
       },
       "deleteAfterRun": false
     },
@@ -406,7 +407,7 @@
       "enabled": true,
       "deleteAfterRun": false,
       "createdAtMs": 1776698555280,
-      "updatedAtMs": 1776888071780,
+      "updatedAtMs": 1776974478905,
       "schedule": {
         "kind": "cron",
         "expr": "00 04 * * *",
@@ -426,15 +427,14 @@
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1776974400000,
-        "lastRunAtMs": 1776888000006,
+        "nextRunAtMs": 1777060800000,
+        "lastRunAtMs": 1776974400007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 71774,
+        "lastDurationMs": 78898,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1776974400001
+        "lastDelivered": true
       }
     }
   ]
