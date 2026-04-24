@@ -121,3 +121,8 @@
 | v7.2.0 | 2026-04-07 | 添加初始化原则实体,强调安全原则、版本控制、本地文件管理、云文档管理、日志管理 | 大管家(子代理) |
 | v7.1.0 | 2026-04-06 | 重构陈述性记忆结构,创建"实体记忆:实验室"和"实体记忆:技能包" | 大管家 |
 | v7.0.0 | 2026-04-05 | 基于心理学记忆理论 + 面向对象设计思想重构 | 大管家 |
+
+## Promoted From Short-Term Memory (2026-04-25)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-21.md:118:133 -->
+- - Candidate: User: Sender (untrusted metadata): ```json { "label": "openclaw-control-ui", "id": "openclaw-control-ui" } ``` [Sun 2026-04-19 11:38 GMT+8] semantic-scholar也已经被知识库管理替代了。 把知识库管理的根目录SKILL.md和四个SKILL.md注册到内置mcp，还有agent自我发展也是 - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-19.txt:284-284 - recalls: 0 - status: staged - Candidate: Assistant: 我理解您的需求了。您希望将以下技能通过 MCP 方式暴露出来，让其他 MCP 客户端可以调用： 1. **knowledge-manager** (知识库管理) - 包含根目录和 4 个子模块 2. **agent_self_development** (Agent 自我发展) 让我先查看这些技能的结构，然后创建 MCP 服务器包装器： - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-19.txt:285-285 - recalls: 0 - status: staged - Candidate: Assistant: 现在我理解了。这些技能都是**纯文档规范**技能，没有代码实现，通过读取 SKILL.md 来指导 Agent 行为。 您希望将它们注册为 MCP 服务器，让其他 MCP 客户端也能调用这些能力。让我创建 MCP 服务器包装器： - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-19.txt:286-286 - recalls: 0 - status: staged - Candidate: Assistant: 现在将这个 MCP 服务器注册到 OpenClaw 配置中： [score=0.809 recalls=3 avg=1.000 source=memory/2026-04-21.md:118-133]

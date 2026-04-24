@@ -923,7 +923,7 @@
       "size": 1382135,
       "contentHash": "0788ca00cac3db39ad254f20b9f42b4901870cffae4b9f14b5f4479a6b0eb8d7",
       "lineCount": 328,
-      "lastContentLine": 302
+      "lastContentLine": 328
     },
     "psychologist:sessions/d12b4e3d-de35-4aab-ad3d-d7ea4026a93a.jsonl.deleted.2026-04-09T16-41-40.117Z": {
       "mtimeMs": 1775739933243,
@@ -945,6 +945,13 @@
       "contentHash": "95e35df4de5dffaf4236cbcb69d3b96cd6d6856a17a54bf0f7c6456ffadb8d5b",
       "lineCount": 35,
       "lastContentLine": 35
+    },
+    "psychologist:sessions/d51fe4cb-75b5-4983-b039-e08b178210bc.jsonl": {
+      "mtimeMs": 1777047392301,
+      "size": 65791,
+      "contentHash": "f21ae157c4ca303cd2c589707d5aa8d769820d12d54f86d3ac8a31f189104e7c",
+      "lineCount": 2,
+      "lastContentLine": 2
     },
     "psychologist:sessions/d6810996-9284-4b00-9118-ee0218cf2458.jsonl.deleted.2026-04-11T19-48-11.112Z": {
       "mtimeMs": 1775935518577,
@@ -6208,6 +6215,10 @@
     "psychologist:cc69da51-a241-4100-801c-3402fcd2845e": [
       "22910549c3e2a92d72b78806cff0c3c4b67eb45e",
       "a9b14ff9578bf870d5bdb08d0cb578d58cc76a3f"
+    ],
+    "psychologist:d51fe4cb-75b5-4983-b039-e08b178210bc": [
+      "b953525475570abf94b296d0eaca1adfdb64c478",
+      "c0ef67588da22cc0065ff36e86247c6fe0b26951"
     ]
   }
 }
