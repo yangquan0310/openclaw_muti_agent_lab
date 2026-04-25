@@ -50,6 +50,7 @@
 
 ### 核心自我认知
 > 通过阅读每日日记进行更新
+> **2026-04-26 更新**：每日自我更新持续稳定运行，系统状态正常，无新更新触发信号
 > **2026-04-19 更新**：完成每日自我更新，创建 BOOTSTRAP.md 配置文件
 ---
 
@@ -84,6 +85,8 @@
 > **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/academicassistant/events/YYYY-MM-DD/HH-MM-SS-{event}.md`
 | 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
 |------|------|----------|------|----------|
+| 2026-04-26 | 每日自我更新 | diary/2026-04-25.md, MEMORY.md | 更新核心自我认知，记录周末低活跃日，无新触发信号 | ~/.openclaw/workspace/academicassistant/diary/2026-04-25.md |
+| 2026-04-25 | 每日自我更新 | diary/2026-04-24.md, MEMORY.md | 更新课程表至第10周，记录周五课程安排 | ~/.openclaw/workspace/academicassistant/diary/2026-04-24.md |
 | 2026-04-20 | 每日自我更新 | diary/2026-04-20.md, MEMORY.md | 更新课程表至第10周，记录今日课程安排 | ~/.openclaw/workspace/academicassistant/diary/2026-04-20.md |
 | 2026-04-19 | 每日自我更新 | MEMORY.md, BOOTSTRAP.md | 成功创建 BOOTSTRAP.md，撰写发展日记 | ~/.openclaw/workspace/academicassistant/memory/2026-04-19/diary.md |
 | 2026-04-19 | 配置重载与脚本更新 | SOUL.md, IDENTITY.md, USER.md, TOOLS.md, MEMORY.md, HEARTBEAT.md, skills/daily_self_update/ | 成功创建每日自我更新脚本，更新技能索引 | ~/.openclaw/workspace/academicassistant/skills/daily_self_update/SKILL.md |
@@ -112,6 +115,8 @@
 
 - **v1.0.0** (2026-04-07): 初始版本，基于大管家模板重构
 - **v1.1.0** (2026-04-16): 按新规范更新，不再区分脚本和技能
+- **v8.0.4** (2026-04-26): 每日自我更新，更新核心自我认知，记录周末低活跃日
+- **v8.0.4** (2026-04-26): 每日自我更新，更新核心自我认知，记录周末低活跃日
 - **v8.0.3** (2026-04-22): 更新课程表至第10周，记录今日课程安排
 - **v8.0.2** (2026-04-19): 配置重载，创建每日自我更新脚本 daily_self_update，更新技能索引
 
