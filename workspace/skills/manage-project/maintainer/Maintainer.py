@@ -354,12 +354,249 @@ class Maintainer:
         return f"Maintainer('{self.project_path.name}')"
 
 
+class MetadataManager:
+    """元数据管理类，通过参数输入修改元数据，不直接编辑文件。"""
+
+    def __init__(self, project_path: str):
+        """
+        初始化元数据管理器。
+
+        Args:
+            project_path: 项目文件夹路径
+        """
+        self.project_path = Path(project_path).resolve()
+        self.metadata_path = self.project_path / "元数据.json"
+        self._data = self._load()
+
+    def _load(self) -> dict:
+        """加载现有元数据，如果不存在则返回空字典。"""
+        if self.metadata_path.exists():
+            try:
+                with open(self.metadata_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"⚠️  读取现有元数据失败: {e}")
+        return {}
+
+    def _save(self) -> bool:
+        """保存元数据到文件。"""
+        try:
+            with open(self.metadata_path, "w", encoding="utf-8") as f:
+                json.dump(self._data, f, ensure_ascii=False, indent=2)
+            os.chmod(self.metadata_path, 0o644)
+            return True
+        except Exception as e:
+            print(f"❌ 保存元数据失败: {e}")
+            return False
+
+    # ---- 查询方法 ----
+
+    def get(self, key: str, default=None):
+        """获取指定字段的值。"""
+        return self._data.get(key, default)
+
+    def to_dict(self) -> dict:
+        """获取完整的元数据字典副本。"""
+        return dict(self._data)
+
+    # ---- 基础字段修改 ----
+
+    def set_title(self, title: str) -> "MetadataManager":
+        """设置项目标题。"""
+        self._data["title"] = title
+        return self
+
+    def set_description(self, description: str) -> "MetadataManager":
+        """设置项目描述。"""
+        self._data["description"] = description
+        return self
+
+    def set_status(self, status: str) -> "MetadataManager":
+        """设置项目状态。"""
+        self._data["status"] = status
+        return self
+
+    def set_version(self, version: str) -> "MetadataManager":
+        """设置版本号。"""
+        self._data["version"] = version
+        return self
+
+    def set_created_date(self, date: str) -> "MetadataManager":
+        """设置创建日期。"""
+        self._data["created_date"] = date
+        return self
+
+    # ---- tags 操作 ----
+
+    def set_tags(self, tags: list) -> "MetadataManager":
+        """设置标签列表（覆盖）。"""
+        self._data["tags"] = list(tags)
+        return self
+
+    def add_tag(self, tag: str) -> "MetadataManager":
+        """添加单个标签。"""
+        if "tags" not in self._data:
+            self._data["tags"] = []
+        if tag not in self._data["tags"]:
+            self._data["tags"].append(tag)
+        return self
+
+    def remove_tag(self, tag: str) -> "MetadataManager":
+        """移除指定标签。"""
+        if "tags" in self._data and tag in self._data["tags"]:
+            self._data["tags"].remove(tag)
+        return self
+
+    # ---- documents 操作 ----
+
+    def set_documents(self, documents: list) -> "MetadataManager":
+        """设置文档列表（覆盖）。"""
+        self._data["documents"] = list(documents)
+        return self
+
+    def add_document(self, title: str, path: str, version: str = "v1", doc_type: str = "user_uploaded") -> "MetadataManager":
+        """添加单个文档。"""
+        if "documents" not in self._data:
+            self._data["documents"] = []
+        # 去重：相同 title + path 替换，否则追加
+        doc = {"title": title, "version": version, "path": path, "type": doc_type}
+        for i, existing in enumerate(self._data["documents"]):
+            if existing.get("title") == title and existing.get("path") == path:
+                self._data["documents"][i] = doc
+                return self
+        self._data["documents"].append(doc)
+        return self
+
+    def remove_document(self, title: str, path: str = None) -> "MetadataManager":
+        """移除指定文档。path 为 None 时按 title 匹配。"""
+        if "documents" not in self._data:
+            return self
+        if path is None:
+            self._data["documents"] = [d for d in self._data["documents"] if d.get("title") != title]
+        else:
+            self._data["documents"] = [
+                d for d in self._data["documents"]
+                if not (d.get("title") == title and d.get("path") == path)
+            ]
+        return self
+
+    # ---- directories 操作 ----
+
+    def set_directories(self, directories: dict) -> "MetadataManager":
+        """设置目录结构（覆盖）。"""
+        self._data["directories"] = dict(directories)
+        return self
+
+    def add_directory(self, key: str, dir_path: str) -> "MetadataManager":
+        """添加或更新单个目录映射。"""
+        if "directories" not in self._data:
+            self._data["directories"] = {}
+        self._data["directories"][key] = dir_path
+        return self
+
+    def remove_directory(self, key: str) -> "MetadataManager":
+        """移除指定目录映射。"""
+        if "directories" in self._data and key in self._data["directories"]:
+            del self._data["directories"][key]
+        return self
+
+    # ---- markdown 操作 ----
+
+    def set_markdown(self, filename: str, local_path: str, cloud: list = None) -> "MetadataManager":
+        """设置单个 markdown 文件元数据。"""
+        if "markdown" not in self._data:
+            self._data["markdown"] = {}
+        self._data["markdown"][filename] = {
+            "local_path": local_path,
+            "cloud": cloud if cloud is not None else []
+        }
+        return self
+
+    def remove_markdown(self, filename: str) -> "MetadataManager":
+        """移除指定 markdown 元数据。"""
+        if "markdown" in self._data and filename in self._data["markdown"]:
+            del self._data["markdown"][filename]
+        return self
+
+    # ---- notes 操作 ----
+
+    def set_note(self, filename: str, local_path: str, created_at: str = None, description: str = "") -> "MetadataManager":
+        """设置单个笔记元数据。"""
+        if "notes" not in self._data:
+            self._data["notes"] = {}
+        self._data["notes"][filename] = {
+            "local_path": local_path,
+            "created_at": created_at or datetime.now().strftime("%Y-%m-%d"),
+            "description": description
+        }
+        return self
+
+    def remove_note(self, filename: str) -> "MetadataManager":
+        """移除指定笔记元数据。"""
+        if "notes" in self._data and filename in self._data["notes"]:
+            del self._data["notes"][filename]
+        return self
+
+    # ---- knowledge_base 操作 ----
+
+    def set_knowledge_base(self, index_file: str = None, description: str = None) -> "MetadataManager":
+        """设置知识库元数据。"""
+        if "knowledge_base" not in self._data:
+            self._data["knowledge_base"] = {}
+        if index_file is not None:
+            self._data["knowledge_base"]["index_file"] = index_file
+        if description is not None:
+            self._data["knowledge_base"]["description"] = description
+        self._data["knowledge_base"]["updated_at"] = datetime.now().strftime("%Y-%m-%d")
+        return self
+
+    # ---- 通用操作 ----
+
+    def set_field(self, key: str, value) -> "MetadataManager":
+        """通用方法：设置任意字段。"""
+        self._data[key] = value
+        return self
+
+    def update(self, **kwargs) -> "MetadataManager":
+        """批量更新多个字段。"""
+        for key, value in kwargs.items():
+            self._data[key] = value
+        return self
+
+    def delete_field(self, key: str) -> "MetadataManager":
+        """删除指定字段。"""
+        if key in self._data:
+            del self._data[key]
+        return self
+
+    def save(self) -> bool:
+        """保存所有修改到元数据.json文件。"""
+        return self._save()
+
+    def __repr__(self) -> str:
+        return f"MetadataManager('{self.project_path.name}')"
+
+
 def main():
     """命令行入口。"""
     parser = argparse.ArgumentParser(description="项目文件自动化整理工具")
     parser.add_argument("project_path", nargs="?", help="项目文件夹路径")
     parser.add_argument("--all", action="store_true", help="整理所有项目")
     parser.add_argument("--dry-run", action="store_true", help="预览模式，不实际执行")
+
+    # 元数据管理参数（不直接编辑元数据.json）
+    meta_group = parser.add_argument_group("元数据管理（不直接编辑文件）")
+    meta_group.add_argument("--meta-title", help="设置项目标题")
+    meta_group.add_argument("--meta-desc", "--meta-description", dest="meta_description", help="设置项目描述")
+    meta_group.add_argument("--meta-status", help="设置项目状态")
+    meta_group.add_argument("--meta-version", help="设置版本号")
+    meta_group.add_argument("--meta-tags", help="设置标签列表（逗号分隔）")
+    meta_group.add_argument("--meta-add-tag", action="append", default=[], help="添加单个标签")
+    meta_group.add_argument("--meta-rm-tag", action="append", default=[], help="移除单个标签")
+    meta_group.add_argument("--meta-set", action="append", default=[], metavar="KEY=VALUE", help="通用字段设置")
+    meta_group.add_argument("--meta-save", action="store_true", help="保存元数据修改到文件")
+    meta_group.add_argument("--meta-show", action="store_true", help="显示当前元数据")
+
     # 尝试从 config.json 读取默认项目根目录
     config_path = Path(__file__).parent.parent / "config.json"
     default_projects_dir = "/root/实验室仓库/项目文件"
@@ -374,6 +611,45 @@ def main():
     parser.add_argument("--projects-dir", default=default_projects_dir, help="项目根目录")
 
     args = parser.parse_args()
+
+    # 元数据管理模式
+    meta_args_provided = (
+        args.meta_title or args.meta_description or args.meta_status or
+        args.meta_version or args.meta_tags or args.meta_add_tag or
+        args.meta_rm_tag or args.meta_set or args.meta_show
+    )
+
+    if meta_args_provided and args.project_path:
+        mm = MetadataManager(args.project_path)
+
+        if args.meta_title:
+            mm.set_title(args.meta_title)
+        if args.meta_description:
+            mm.set_description(args.meta_description)
+        if args.meta_status:
+            mm.set_status(args.meta_status)
+        if args.meta_version:
+            mm.set_version(args.meta_version)
+        if args.meta_tags:
+            mm.set_tags([t.strip() for t in args.meta_tags.split(",")])
+        for tag in args.meta_add_tag:
+            mm.add_tag(tag.strip())
+        for tag in args.meta_rm_tag:
+            mm.remove_tag(tag.strip())
+        for item in args.meta_set:
+            if "=" in item:
+                key, value = item.split("=", 1)
+                mm.set_field(key.strip(), value.strip())
+
+        if args.meta_show:
+            print(json.dumps(mm.to_dict(), ensure_ascii=False, indent=2))
+
+        if args.meta_save or not args.meta_show:
+            if mm.save():
+                print("✅ 元数据已保存")
+            else:
+                print("❌ 元数据保存失败")
+        return
 
     if args.all:
         # 整理所有项目

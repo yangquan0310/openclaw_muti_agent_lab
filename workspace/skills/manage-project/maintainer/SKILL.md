@@ -24,12 +24,13 @@ Maintainer 类负责自动化整理项目目录结构、归档中间文件、管
 | 移动单个文件 | [`move_file()`](#2-移动文件) |
 | 重命名文件夹 | [`rename_folder()`](#3-重命名文件夹) |
 | 更新项目元数据 | [`update_metadata()`](#4-更新元数据) |
+| 通过参数修改元数据（不直接编辑文件） | [`MetadataManager`](#5-元数据管理器) |
 
 ## 文件说明
 
 | 文件 | 功能 |
 |------|------|
-| `Maintainer.py` | 项目文件整理主类 |
+| `Maintainer.py` | 项目文件整理主类 + 元数据管理器 |
 | `数据结构.md` | 项目元数据结构说明 |
 
 ---
@@ -109,6 +110,49 @@ maintainer.update_metadata(
 )
 ```
 
+### 5. 元数据管理器（不直接编辑文件）
+
+```python
+from maintainer.Maintainer import MetadataManager
+
+mm = MetadataManager("/path/to/project")
+
+# 链式调用修改多个字段
+mm.set_title("新标题").set_description("新描述").add_tag("AI")
+
+# 修改标签
+mm.set_tags(["学术", "写作"])
+mm.add_tag("新标签").remove_tag("旧标签")
+
+# 修改文档列表
+mm.add_document("论文", "文档/论文.docx", version="v2")
+mm.remove_document("旧文档")
+
+# 修改目录结构
+mm.add_directory("实验数据", "知识库/实验数据/")
+
+# 修改 markdown 映射
+mm.set_markdown("论文.md", "手稿/论文.md", cloud=[{"platform": "feishu", "cloud_url": "https://..."}])
+
+# 修改笔记
+mm.set_note("笔记1.json", "知识库/笔记/笔记1.json", description="重要笔记")
+
+# 修改知识库
+mm.set_knowledge_base(index_file="知识库/index.json", description="项目知识库")
+
+# 通用字段设置
+mm.set_field("custom_key", "custom_value")
+mm.update(status="completed", priority="high")
+
+# 保存到文件
+mm.save()
+
+# 查看当前元数据
+print(mm.to_dict())
+```
+
+**设计原则**：所有修改先在内存中进行，通过 `save()` 统一落盘，避免直接编辑 `元数据.json` 文件。
+
 ---
 
 ## 方法详情
@@ -166,6 +210,36 @@ maintainer.update_metadata(
 
 **返回**: `list` 文档/手稿信息列表
 
+### MetadataManager 方法
+
+| 方法 | 参数 | 说明 |
+|------|------|------|
+| `get(key, default)` | key, default=None | 获取指定字段值 |
+| `to_dict()` | - | 获取完整元数据字典 |
+| `set_title(title)` | str | 设置项目标题 |
+| `set_description(description)` | str | 设置项目描述 |
+| `set_status(status)` | str | 设置项目状态 |
+| `set_version(version)` | str | 设置版本号 |
+| `set_tags(tags)` | list | 设置标签列表（覆盖） |
+| `add_tag(tag)` | str | 添加单个标签 |
+| `remove_tag(tag)` | str | 移除标签 |
+| `set_documents(docs)` | list | 设置文档列表（覆盖） |
+| `add_document(title, path, ...)` | title, path, version, doc_type | 添加文档 |
+| `remove_document(title, path)` | title, path=None | 移除文档 |
+| `add_directory(key, path)` | str, str | 添加目录映射 |
+| `remove_directory(key)` | str | 移除目录映射 |
+| `set_markdown(filename, local_path, cloud)` | str, str, list | 设置 markdown 元数据 |
+| `remove_markdown(filename)` | str | 移除 markdown 元数据 |
+| `set_note(filename, local_path, ...)` | str, str, created_at, description | 设置笔记元数据 |
+| `remove_note(filename)` | str | 移除笔记元数据 |
+| `set_knowledge_base(index_file, description)` | str, str | 设置知识库元数据 |
+| `set_field(key, value)` | str, any | 通用字段设置 |
+| `update(**kwargs)` | - | 批量更新字段 |
+| `delete_field(key)` | str | 删除字段 |
+| `save()` | - | 保存到 `元数据.json` |
+
+所有修改方法都返回 `self`，支持链式调用。
+
 ---
 
 ## 标准目录结构
@@ -214,6 +288,44 @@ python3 maintainer/Maintainer.py --all --projects-dir /custom/projects/dir
 | `--all` | 整理所有项目 |
 | `--dry-run` | 预览模式，不实际执行 |
 | `--projects-dir` | 项目根目录（默认: /root/实验室仓库/项目文件） |
+
+### 元数据管理命令行
+
+```bash
+# 修改标题和描述（自动保存）
+python3 maintainer/Maintainer.py /path/to/project --meta-title "新项目" --meta-desc "项目描述"
+
+# 设置状态和版本
+python3 maintainer/Maintainer.py /path/to/project --meta-status "completed" --meta-version "v2"
+
+# 设置标签
+python3 maintainer/Maintainer.py /path/to/project --meta-tags "AI,写作,学术"
+
+# 添加/移除标签
+python3 maintainer/Maintainer.py /path/to/project --meta-add-tag "新标签" --meta-rm-tag "旧标签"
+
+# 通用字段设置
+python3 maintainer/Maintainer.py /path/to/project --meta-set "priority=high" --meta-set "owner=张三"
+
+# 仅预览修改（不保存）
+python3 maintainer/Maintainer.py /path/to/project --meta-title "测试" --meta-show
+
+# 显式保存
+python3 maintainer/Maintainer.py /path/to/project --meta-title "测试" --meta-save
+```
+
+| 参数 | 说明 |
+|------|------|
+| `--meta-title` | 设置项目标题 |
+| `--meta-desc` / `--meta-description` | 设置项目描述 |
+| `--meta-status` | 设置项目状态 |
+| `--meta-version` | 设置版本号 |
+| `--meta-tags` | 设置标签（逗号分隔） |
+| `--meta-add-tag` | 添加标签（可多次使用） |
+| `--meta-rm-tag` | 移除标签（可多次使用） |
+| `--meta-set KEY=VALUE` | 通用字段设置（可多次使用） |
+| `--meta-show` | 显示当前元数据 |
+| `--meta-save` | 显式保存到文件 |
 
 ---
 

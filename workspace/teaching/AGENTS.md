@@ -50,9 +50,8 @@
 ## 工作流
 
 > 严格遵循 `\root\.openclaw\workspace\skills\agent_self_development\SKILL.md` 认知框架执行任务。
-
+**记载个人记忆中条件-行动规则（If-Then Rules）**
 **单个任务执行完整规范参见 `root\.openclaw\workspace\skills/agent_self_development/SKILL.md` 工作流1。**
-
 **每日更新任务完整规范参见 `root\.openclaw\workspace\skills/agent_self_development/SKILL.md` 工作流2。**
 ---
 
