@@ -145,12 +145,29 @@
 
 ---
 
-## 🤖 Agent自我发展机制（agent_self_development v1.1.0）
+## 🤖 Agent自我发展机制（agent_self_development v1.2.0）
 
 > 基于皮亚杰认知发展理论 + Baddeley 工作记忆模型构建的 Agent 自我进化系统
-> **v1.2.0 更新**：存储结构分离，events/ 和 diary/ 独立于 memory-core
+> **v1.2.0 更新**：统一使用命名会话，取消一次性任务区分
+> **v1.1.0 更新**：存储结构分离，events/ 和 diary/ 独立于 memory-core
 
-### 存储结构分离（v1.2.0 重要更新）
+### 命名会话机制（v1.2.0 重要更新）
+
+所有任务统一使用命名会话（通过 `sessionTarget` 指定），不再区分一次性任务和持久会话：
+
+| 机制 | 说明 |
+|------|------|
+| **命名会话** | 通过 `sessionTarget` 指定，如 `session:CORN:agentId`、`session:PROJECT:xxx` |
+| **上下文共享** | 创建命名会话前，先检查工作记忆中的活跃会话清单，复用共享上下文的会话 |
+| **统一追踪** | 所有命名会话都在工作记忆中追踪，不再区分是否需要追踪 |
+
+**命名会话复用规则**：
+1. 读取 MEMORY.md 中的「当前活跃任务看板」和「活跃会话清单」
+2. 检查是否存在与当前任务共享上下文的命名会话（相同项目/领域/任务类型）
+3. 若存在且状态为 `active` 或 `paused` → **复用该会话**
+4. 若不存在 → **创建新命名会话**
+
+### 存储结构分离（v1.1.0 更新）
 
 为避免与 OpenClaw 核心记忆系统（memory-core）冲突，Agent 自我发展机制采用完全分离的存储结构：
 
@@ -349,6 +366,15 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 3.2.2 (2026-04-26)
+- **统一命名会话机制**：agent_self_development 全面改用命名会话
+  - 取消一次性任务和持久会话的区分，所有任务统一使用命名会话
+  - 计划阶段添加上下文共享检查：创建前先检查工作记忆，复用共享上下文的命名会话
+  - 更新所有 Agent 的 MEMORY.md 表格格式（新增任务ID列）和会话ID格式
+  - 同步更新 working_memory、planning、monitoring、subagent_tracker、memory_table 模块
+- **修复重复定义**：清理 physicist 和 studentaffairsassistant MEMORY.md 中的重复「活跃会话清单」
+- **更新版本历史**：所有技能模块版本号同步更新
+
 ### 版本 3.2.1 (2026-04-19)
 - **存储结构分离**：agent_self_development 与 memory-core 完全分离
   - 新增 `events/` 目录：存放详细事件记录（`events/YYYY-MM-DD/HH-MM-SS-{event}.md`）
@@ -423,7 +449,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新**: 2026-04-19 18:42:00  
-**系统版本**: v3.2.1  
+**最后更新**: 2026-04-26 16:09:00  
+**系统版本**: v3.2.2  
 **运行状态**: ✅ 正常运行  
 **备份状态**: ✅ 自动执行中
