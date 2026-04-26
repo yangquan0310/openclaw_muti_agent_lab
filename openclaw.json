@@ -1,7 +1,7 @@
 {
   "agents": {
     "defaults": {
-      "workspace": "/root/.openclaw/workspace/steward",
+      "workspace": "/root/.openclaw/workspace/",
       "compaction": {
         "mode": "safeguard"
       },
@@ -15,6 +15,18 @@
       }
     },
     "list": [
+      {
+        "id": "main",
+        "name": "main",
+        "workspace": "/root/.openclaw/workspace/",
+        "agentDir": "/root/.openclaw/agents/main/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
       {
         "id": "steward",
         "name": "steward",
@@ -122,7 +134,115 @@
             "manage-project"
           ]
         }
-      }
+      },
+      {
+        "id": "steward",
+        "name": "steward",
+        "workspace": "/root/.openclaw/workspace/steward",
+        "agentDir": "/root/.openclaw/agents/steward/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
+      {
+        "id": "mathematician",
+        "name": "mathematician",
+        "workspace": "/root/.openclaw/workspace/mathematician",
+        "agentDir": "/root/.openclaw/agents/mathematician/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
+      {
+        "id": "physicist",
+        "name": "physicist",
+        "workspace": "/root/.openclaw/workspace/physicist",
+        "agentDir": "/root/.openclaw/agents/physicist/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
+      {
+        "id": "psychologist",
+        "name": "psychologist",
+        "workspace": "/root/.openclaw/workspace/psychologist",
+        "agentDir": "/root/.openclaw/agents/psychologist/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
+      {
+        "id": "writer",
+        "name": "writer",
+        "workspace": "/root/.openclaw/workspace/writer",
+        "agentDir": "/root/.openclaw/agents/writer/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
+      {
+        "id": "reviewer",
+        "name": "reviewer",
+        "workspace": "/root/.openclaw/workspace/reviewer",
+        "agentDir": "/root/.openclaw/agents/reviewer/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
+      {
+        "id": "teachingassistant",
+        "name": "TeachingAssistant",
+        "workspace": "/root/.openclaw/workspace/teaching",
+        "agentDir": "/root/.openclaw/agents/teachingassistant/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
+      {
+        "id": "studentaffairsassistant",
+        "name": "studentaffairsassistant",
+        "workspace": "/root/.openclaw/workspace/studentaffairsassistant",
+        "agentDir": "/root/.openclaw/agents/studentaffairsassistant/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
+      {
+        "id": "academicassistant",
+        "name": "academicassistant",
+        "workspace": "/root/.openclaw/workspace/academicassistant",
+        "agentDir": "/root/.openclaw/agents/academicassistant/agent",
+        "tools": {
+          "alsoAllow": [
+            "agent_self_development",
+            "manage-project"
+          ]
+        }
+      },
     ]
   },
   "gateway": {

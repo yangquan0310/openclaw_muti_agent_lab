@@ -401,19 +401,19 @@
     },
     {
       "id": "b6a6b07d-384d-43fb-ab80-0b713e8a8289",
-      "agentId": "steward",
+      "agentId": "main",
       "sessionKey": "agent:steward:main",
       "name": "每日凌晨自动提交推送Git",
       "enabled": true,
       "deleteAfterRun": false,
       "createdAtMs": 1776698555280,
-      "updatedAtMs": 1777061010219,
+      "updatedAtMs": 1777165520771,
       "schedule": {
         "kind": "cron",
         "expr": "00 04 * * *",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "session:CORN:steward的定时任务",
+      "sessionTarget": "session:CORN:main的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
@@ -421,21 +421,20 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "announce",
+        "mode": "none",
         "channel": "feishu",
         "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
         "bestEffort": false
       },
       "state": {
-        "nextRunAtMs": 1777147200000,
-        "lastRunAtMs": 1777060800010,
+        "lastRunAtMs": 1777147200008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 210209,
+        "lastDurationMs": 109357,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true,
-        "runningAtMs": 1777147200002
+        "nextRunAtMs": 1777233600000
       }
     }
   ]
