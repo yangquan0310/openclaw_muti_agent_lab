@@ -70,7 +70,7 @@ routes:
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `task_description` | string | ✅ | 待执行任务的详细描述 |
-| `available_agents` | list | ✅ | 可用子代理列表及其能力 |
+| `available_sessions` | list | ✅ | 可用会话列表及其能力 |
 | `constraints` | object | ❌ | 时间、资源等约束条件 |
 
 ### 输出结果

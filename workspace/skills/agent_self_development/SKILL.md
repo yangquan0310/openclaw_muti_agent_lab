@@ -3,7 +3,7 @@ name: agent_self_development
 description: >
   Agent 自我发展技能包。基于皮亚杰认知发展理论，将自我发展分为元认知、工作记忆、同化与顺应三大维度，
   提供纯文档规范指导 Agent 理解、构建和迭代自身的元认知能力。
-version: 1.0.0
+version: 1.1.0
 author: 大管家
 dependencies: []
 exports:
@@ -30,7 +30,7 @@ routes:
 | `SKILL.md` | 根路由 / 总控 | 技能包总览，提供模块索引和典型工作流 |
 | `_meta.json` | 技能元数据 | 机器可读的技能名称、版本、触发词、依赖 |
 | `metacognition/SKILL.md` | 元认知模块路由 | 计划、监控、调节三阶段闭环 |
-| `working_memory/SKILL.md` | 工作记忆模块路由 | 活跃任务和子代理状态管理 |
+| `working_memory/SKILL.md` | 工作记忆模块路由 | 活跃任务和会话状态管理 |
 | `assimilation_accommodation/SKILL.md` | 同化顺应模块路由 | 通过日记记录实现自我更新 |
 | `README.md` | 人类可读说明 | 项目概述（如需要可额外创建） |
 
@@ -128,6 +128,8 @@ routes:
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
+| v1.2.0 | 2026-04-26 | 统一使用命名会话，取消一次性任务区分；所有模块同步更新 |
+| v1.1.0 | 2026-04-26 | 将"持久会话"改为"命名会话"，更新 working_memory、planning、monitoring、subagent_tracker、memory_table 模块 |
 | v1.0.0 | 2026-04-17 | 初始版本，创建完整目录结构和标准化文档规范 |
 
 ---
