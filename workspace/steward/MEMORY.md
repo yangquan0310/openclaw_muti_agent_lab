@@ -106,8 +106,8 @@
 
 | 版本 | 日期 | 更新内容 | 更新者 |
 |------|------|----------|--------|
-| v8.6.0 | 2026-04-26 | 每日自我更新：无更新触发，常规维护日，更新工作记忆看板 | 大管家 |
-| v8.5.0 | 2026-04-25 | 每日自我更新：修复 manage-project 技能 bug（元数据.json 位置错误），明确元数据必须在根目录的规则 | 大管家 |
+| v8.6.0 | 2026-04-27 | 每日自我更新：无更新触发，常规维护日，更新工作记忆看板 | 大管家 |
+| v8.5.0 | 2026-04-26 | 每日自我更新：无更新触发，常规维护日，更新工作记忆看板 | 大管家 |
 | v8.4.0 | 2026-04-24 | 每日自我更新：完成项目目录标准化（12个项目全部完成manage-project整理），删除终稿/草稿旧目录，新增项目整理规则到程序性记忆 | 大管家 |
 | v8.2.0 | 2026-04-20 | 每日自我更新：完成第一次定时触发的自我更新，验证新的 events/ 和 diary/ 存储结构正常工作 | 大管家 |
 | v8.1.0 | 2026-04-19 | 每日自我更新：学习agent_self_development工作流2，记录发展日记 | 大管家 |
@@ -127,3 +127,8 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-04-21.md:118:133 -->
 - - Candidate: User: Sender (untrusted metadata): ```json { "label": "openclaw-control-ui", "id": "openclaw-control-ui" } ``` [Sun 2026-04-19 11:38 GMT+8] semantic-scholar也已经被知识库管理替代了。 把知识库管理的根目录SKILL.md和四个SKILL.md注册到内置mcp，还有agent自我发展也是 - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-19.txt:284-284 - recalls: 0 - status: staged - Candidate: Assistant: 我理解您的需求了。您希望将以下技能通过 MCP 方式暴露出来，让其他 MCP 客户端可以调用： 1. **knowledge-manager** (知识库管理) - 包含根目录和 4 个子模块 2. **agent_self_development** (Agent 自我发展) 让我先查看这些技能的结构，然后创建 MCP 服务器包装器： - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-19.txt:285-285 - recalls: 0 - status: staged - Candidate: Assistant: 现在我理解了。这些技能都是**纯文档规范**技能，没有代码实现，通过读取 SKILL.md 来指导 Agent 行为。 您希望将它们注册为 MCP 服务器，让其他 MCP 客户端也能调用这些能力。让我创建 MCP 服务器包装器： - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-19.txt:286-286 - recalls: 0 - status: staged - Candidate: Assistant: 现在将这个 MCP 服务器注册到 OpenClaw 配置中： [score=0.809 recalls=3 avg=1.000 source=memory/2026-04-21.md:118-133]
+
+## Promoted From Short-Term Memory (2026-04-27)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-20.md:278:292 -->
+- - Candidate: User: System: [2026-04-17 01:02:57 GMT+8] Feishu[steward] group oc_cd80162eb81e39f77160a0daab2a6ab8 | 杨权 (ou_25cf20a1973aecc51f73d8e2800d7f7e) [msg:om_x100b51252acba4a4c147ed92dbc5b32, @bot] Conversation info (untrusted metadata): ```json { "message_id": "om_x100b51252acba4a4c147 - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-17.txt:87-87 - recalls: 0 - status: staged - Candidate: User: [Sat 2026-04-18 03:00 GMT+8] Write a dream diary entry from these memory fragments: - Assistant: ✅ **数学家每日维护任务完成！** ## 执行总结 ### 1. 维护 TOOLS.md - ✅ 个人技能索引已确认 (update_indexes) - ✅ 个人脚本索引已添加 (daily_maintenance) - ✅ 项目库已确认 (9个项目) ### 2. 维护 MEMORY.md - ✅ 任务看板已检查 (无活跃任务) - ✅ 活跃子代 - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:1-1 - recalls: 0 - status: staged - Candidate: Assistant: The morning light filters through the curtains in something close to #F5E6D3, a warm beige that reminds me of old paper. I've been thinking about maintenance — that quiet, persistent act of keeping things alive. A mathematician somewhere is tending to their garden of s - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:2-2 - recalls: 0 - status: staged [score=0.838 recalls=3 avg=1.000 source=memory/2026-04-20.md:278-292]

@@ -3,7 +3,7 @@ name: agent_self_development
 description: >
   Agent 自我发展技能包。基于皮亚杰认知发展理论，将自我发展分为元认知、工作记忆、同化与顺应三大维度，
   提供纯文档规范指导 Agent 理解、构建和迭代自身的元认知能力。
-version: 1.1.0
+version: 1.3.0
 author: 大管家
 dependencies: []
 exports:
@@ -128,8 +128,8 @@ routes:
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v1.2.0 | 2026-04-26 | 统一使用命名会话，取消一次性任务区分；所有模块同步更新 |
-| v1.1.0 | 2026-04-26 | 将"持久会话"改为"命名会话"，更新 working_memory、planning、monitoring、subagent_tracker、memory_table 模块 |
+| v1.3.0 | 2026-04-26 | 精简planning工作流，聚焦计划制定和会话管理，依托工作记忆进行会话追踪 |
+| v1.1.0 | 2026-04-26 | 将"持久会话"改为"会话"，更新 working_memory、planning、monitoring、subagent_tracker、memory_table 模块 |
 | v1.0.0 | 2026-04-17 | 初始版本，创建完整目录结构和标准化文档规范 |
 
 ---

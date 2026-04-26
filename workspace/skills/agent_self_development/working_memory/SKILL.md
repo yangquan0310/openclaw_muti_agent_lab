@@ -1,7 +1,7 @@
 ---
 name: working_memory
 description: >
-  工作记忆模块。管理当前活跃任务和**命名会话**状态，基于 Baddeley 工作记忆模型设计。一次性任务执行完即销毁，无需追踪。
+  工作记忆模块。管理当前活跃任务和**会话**状态，基于 Baddeley 工作记忆模型设计。
 version: 1.0.0
 author: 大管家
 dependencies: []
@@ -16,10 +16,10 @@ routes:
 
 # working_memory
 
-> 工作记忆模块 - 管理当前活跃任务和**命名会话**状态
+> 工作记忆模块 - 管理当前活跃任务和**会话**状态
 > 基于 Baddeley 工作记忆模型
 >
-> **追踪范围**：只追踪命名会话（通过 `sessionTarget` 指定，如 `session:CORN:agentId` 或 `session:PROJECT:xxx`）。一次性任务（无命名会话）执行完即销毁，无需在工作记忆中追踪。
+> **追踪范围**：只追踪会话（通过 `sessionTarget` 指定，如 `session:CORN:agentId` 或 `session:PROJECT:xxx`）。
 
 ---
 
@@ -107,7 +107,7 @@ killed → 直接删除
 |------|------|------|------|
 | `operation` | string | ✅ | 操作类型：create / update / archive / cleanup |
 | `task_data` | object | ✅ (create/update) | 任务数据 |
-| `session_id` | string | ✅ (create/update) | 命名会话唯一标识（sessionKey），如 `session:CORN:agentId` |
+| `session_id` | string | ✅ (create/update) | 会话唯一标识（sessionKey），如 `session:CORN:agentId` |
 
 ### 输出结果
 
@@ -137,7 +137,7 @@ killed → 直接删除
 | [sessionKey] | [类型] | [任务] | [状态] | [时间] | [时间] | [备注] |
 ```
 
-> **说明**：会话ID用于追踪命名会话（通过 `sessionTarget` 指定）。所有任务都使用命名会话，不再区分一次性任务。会话ID即 `sessionKey`（如 `session:CORN:agentId`、`session:PROJECT:xxx`）。
+> **说明**：会话ID用于追踪会话（通过 `sessionTarget` 指定）。所有任务都使用会话，不再区分一次性任务。会话ID即 `sessionKey`（如 `session:CORN:agentId`、`session:PROJECT:xxx`）。
 
 ---
 
@@ -157,7 +157,7 @@ assimilation_accommodation (长期)
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v1.3.0 | 2026-04-26 | 统一使用命名会话，取消一次性任务区分；更新核心数据结构表格格式 |
+| v1.3.0 | 2026-04-26 | 统一使用会话，取消一次性任务区分；更新核心数据结构表格格式 |
 | v1.2.0 | 2026-04-19 | 更新存储路径：memory/ → events/ |
 | v1.1.0 | 2026-04-19 | 添加定时任务配置章节，规范定时清理流程 |
 | v1.0.0 | 2026-04-17 | 初始版本，标准化文档规范 |
