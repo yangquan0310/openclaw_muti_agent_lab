@@ -18,7 +18,7 @@ const { createAssimilationModule } = require('./assimilation');
 module.exports = {
   id: 'agent-self-development',
   name: 'Agent Self-Development',
-  version: '1.0.0',
+  version: '1.0.1',
 
   register(api) {
     // 非运行时加载（discovery/setup-only/cli-metadata）跳过副作用
