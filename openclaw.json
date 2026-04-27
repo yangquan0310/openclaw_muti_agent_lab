@@ -251,9 +251,6 @@
       },
       "agent-self-development": {
         "enabled": true,
-        "hooks": {
-          "allowConversationAccess": true
-        },
         "config": {
           "metacognition": {
             "enabled": true,
@@ -342,6 +339,14 @@
         "installPath": "/root/.openclaw/extensions/memory-tencentdb",
         "version": "0.2.2",
         "installedAt": "2026-04-27T04:00:14.000Z"
+      },
+      "agent-self-development": {
+        "source": "path",
+        "spec": "agent-self-development",
+        "sourcePath": "/root/.openclaw/extensions/agent-self-development",
+        "installPath": "/root/.openclaw/extensions/agent-self-development",
+        "version": "1.0.0",
+        "installedAt": "2026-04-27T05:31:00.000Z"
       }
     },
     "allow": [
