@@ -248,6 +248,35 @@
       },
       "qqbot": {
         "enabled": true
+      },
+      "agent-self-development": {
+        "enabled": true,
+        "hooks": {
+          "allowConversationAccess": true
+        },
+        "config": {
+          "metacognition": {
+            "enabled": true,
+            "planning": true,
+            "monitoring": true,
+            "regulation": true
+          },
+          "workingMemory": {
+            "enabled": true,
+            "trackSubagents": true,
+            "autoArchive": true
+          },
+          "assimilation": {
+            "enabled": true,
+            "dailyCron": "0 0 * * *",
+            "autoUpdate": false,
+            "updateThreshold": 0.8
+          },
+          "llm": {
+            "model": "kimi-for-coding",
+            "provider": "kimicode"
+          }
+        }
       }
     },
     "installs": {
@@ -327,7 +356,8 @@
       "openclaw-plugin-yuanbao",
       "openclaw-weixin",
       "qqbot",
-      "wecom"
+      "wecom",
+      "agent-self-development"
     ],
     "load": {
       "paths": []
