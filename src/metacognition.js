@@ -37,9 +37,15 @@ export function createMetacognitionModule({ api, config, state, logger }) {
         const runId = ctx.runId;
         if (!runId) return;
 
+        // 阶段1：任务决策 — 简单任务跳过元认知
+        const prompt = event.prompt || '';
+        if (!shouldUseMetacognition(prompt)) {
+          logger.debug(`[Meta][Planning] 简单任务，跳过计划生成: ${prompt.slice(0, 50)}`);
+          return;
+        }
+
         let plan = await state.get(`plan:${runId}`);
         if (!plan) {
-          const prompt = event.prompt || '';
           const items = generatePlanItems(prompt);
           const sessionAssignments = assignSessions(items, prompt);
           plan = {
@@ -83,6 +89,7 @@ ${plan.sessionAssignments.map(a => `  步骤${a.step}: ${a.sessionId} — ${a.pu
     }
 
     // ── Monitoring: llm_output ──
+    // 插件只记录计划和输出，Agent 自行分析偏差
     if (monitoringEnabled) {
       api.on('llm_output', async (event, ctx) => {
         const runId = ctx.runId;
@@ -92,12 +99,9 @@ ${plan.sessionAssignments.map(a => `  步骤${a.step}: ${a.sessionId} — ${a.pu
         if (!plan) return;
 
         const output = event.output || event.text || '';
-        const deviation = detectDeviation(plan, output);
-
-        if (deviation.significant) {
-          await state.set(`deviation:${runId}`, deviation);
-          logger.warn(`[Meta][Monitoring] 偏差检测: ${deviation.reason}`);
-        }
+        // 记录输出供 Agent 参考，不自行判断偏差
+        await state.set(`output:${runId}`, output);
+        logger.debug(`[Meta][Monitoring] 输出已记录，runId=${runId}`);
       });
     }
 
@@ -134,6 +138,15 @@ ${plan.sessionAssignments.map(a => `  步骤${a.step}: ${a.sessionId} — ${a.pu
   }
 
   // ─────────── 辅助函数 ───────────
+
+  function shouldUseMetacognition(prompt) {
+    const simplePatterns = [
+      /^(查询|搜索|查找|什么是|怎么|如何)/i,
+      /^(现在几点|今天日期|天气)/i,
+      /^(\s*\/?\s*)/  // 空消息或纯命令前缀
+    ];
+    return !simplePatterns.some(p => p.test(prompt.trim()));
+  }
 
   function detectDeviation(plan, output) {
     const outputLower = (output || '').toLowerCase();

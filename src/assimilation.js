@@ -25,6 +25,10 @@
 
 import cron from 'node-cron';
 import { getToday, getYesterday, getNow, callLLM } from './utils.js';
+import {
+  readIdentityFile, readSoulFile, readMemoryFile, readSkillsIndex,
+  appendIdentityNote, appendSoulBelief, appendSkillEntry, appendMemoryNote
+} from './files.js';
 
 export function createAssimilationModule({ api, config, state, logger, llmConfig }) {
   const enabled = config?.enabled !== false;
@@ -131,39 +135,44 @@ export function createAssimilationModule({ api, config, state, logger, llmConfig
     const yesterday = getYesterday();
     const lastProcessed = await state.get('assim:lastProcessedDate');
 
-    // 确定要处理的日期：优先处理昨天，如已处理则跳过
     let targetDate = yesterday;
     if (lastProcessed === targetDate) {
       logger.debug(`[Assim] 日期 ${targetDate} 已处理，跳过`);
       return;
     }
 
-    // 如果跳过了某天（系统休眠导致 cron 未执行），仍然处理昨天（而非跳过）
-    // 昨天的数据在昨天的 getToday() 下已记录
     logger.info(`[Assim] 开始每日自我更新: 处理日期 ${targetDate}`);
 
     try {
       const events = (await state.get(`events:${targetDate}`)) || [];
       logger.info(`[Assim] 事件数: ${events.length} (日期: ${targetDate})`);
 
+      // 生成日记（插件负责基础设施）
       const diary = await generateDiary(targetDate, events);
       await state.set(`diary:${targetDate}`, diary);
       logger.info(`[Assim] 日记已生成`);
 
+      // 读取核心自我文件（插件负责文件读写基础设施）
       const coreSelf = await loadCoreSelf();
-      const analysis = analyzeAssimilation(diary, coreSelf);
-      await state.set(`analysis:${targetDate}`, analysis);
-      logger.info(`[Assim] 分析完成: ${analysis.summary}`);
+      await state.set(`core_self:${targetDate}`, coreSelf);
+      logger.info(`[Assim] 核心自我文件已载入`);
 
-      for (const signal of analysis.signals) {
-        if (signal.confidence >= updateThreshold) {
-          if (autoUpdate) {
-            await applyUpdate(signal, coreSelf);
+      // 插件提供日记和核心自我给 Agent，Agent 自行分析同化/顺应
+      // 如 autoUpdate=true，插件执行简单的关键词信号自动更新
+      if (autoUpdate) {
+        const signals = detectSignals(diary);
+        for (const signal of signals) {
+          if (signal.confidence >= updateThreshold) {
+            await applyUpdate(signal);
             logger.info(`[Assim] 自动更新: ${signal.type}`);
-          } else {
-            await state.append(`pending_updates:${targetDate}`, signal);
-            logger.info(`[Assim] 待确认更新信号: ${signal.type}`);
           }
+        }
+      } else {
+        // 仅记录关键词提示，Agent 自行评估和决定
+        const hints = extractHints(diary);
+        if (hints.length > 0) {
+          await state.set(`assim_hints:${targetDate}`, hints);
+          logger.info(`[Assim] 已准备 ${hints.length} 条同化/顺应提示，等待 Agent 分析`);
         }
       }
 
@@ -201,78 +210,60 @@ export function createAssimilationModule({ api, config, state, logger, llmConfig
   }
 
   async function loadCoreSelf() {
-    return {
-      identity: (await state.get('core:identity')) || {},
-      soul: (await state.get('core:soul')) || {},
-      skills: (await state.get('core:skills')) || []
-    };
+    const [identity, soul, memory, skills] = await Promise.all([
+      readIdentityFile(),
+      readSoulFile(),
+      readMemoryFile(),
+      readSkillsIndex()
+    ]);
+    return { identity, soul, memory, skills };
   }
 
-  function analyzeAssimilation(diary, coreSelf) {
+  // 简单的关键词信号检测（低置信度，仅用于 autoUpdate 模式）
+  function detectSignals(diary) {
     const text = (diary.raw || diary.reflection || '').toLowerCase();
     const signals = [];
-
     const checks = [
       { keywords: ['学会', '掌握', '新技能'], type: 'skills', desc: '检测到新技能习得' },
       { keywords: ['角色', '身份', '负责'], type: 'identity', desc: '检测到角色变化' },
       { keywords: ['应该', '更重要', '改变方式', '风格'], type: 'style_beliefs', desc: '检测到价值观/风格调整' },
       { keywords: ['无法', '超出', '边界', '极限'], type: 'core_self', desc: '检测到能力边界变化' }
     ];
-
     for (const check of checks) {
       if (check.keywords.some(k => text.includes(k))) {
-        signals.push({
-          type: check.type,
-          description: check.desc,
-          confidence: 0.75,
-          recommendedAction: `${check.type}_update`
-        });
+        signals.push({ type: check.type, description: check.desc, confidence: 0.75 });
       }
     }
-
-    return {
-      date: getToday(),
-      assimilation: signals.filter(s => s.confidence < 0.8).length,
-      accommodation: signals.filter(s => s.confidence >= 0.8).length,
-      signals,
-      summary: `同化=${signals.filter(s => s.confidence < 0.8).length}, 顺应=${signals.filter(s => s.confidence >= 0.8).length}, 信号=${signals.length}`
-    };
+    return signals;
   }
 
-  async function applyUpdate(signal, coreSelf) {
+  // 提取提示给 Agent（autoUpdate=false 时使用）
+  function extractHints(diary) {
+    const text = (diary.raw || diary.reflection || '').toLowerCase();
+    const hints = [];
+    if (['学会', '掌握', '新技能'].some(k => text.includes(k))) hints.push({ type: 'skills', hint: '日记中提到新技能，请评估是否需要更新 skills/README.md' });
+    if (['角色', '身份', '负责'].some(k => text.includes(k))) hints.push({ type: 'identity', hint: '日记中提到角色变化，请评估是否需要更新 IDENTITY.md' });
+    if (['应该', '更重要', '改变方式', '风格'].some(k => text.includes(k))) hints.push({ type: 'style_beliefs', hint: '日记中提到风格/价值观调整，请评估是否需要更新 SOUL.md' });
+    if (['无法', '超出', '边界', '极限'].some(k => text.includes(k))) hints.push({ type: 'core_self', hint: '日记中提到能力边界，请评估是否需要更新 MEMORY.md 或 IDENTITY.md' });
+    return hints;
+  }
+
+  async function applyUpdate(signal) {
     const now = getNow();
-
     switch (signal.type) {
-      case 'skills': {
-        const skills = coreSelf.skills;
-        skills.push({ name: '新习得技能', learnedAt: now, source: 'assimilation' });
-        await state.set('core:skills', skills);
+      case 'skills':
+        await appendSkillEntry('新习得技能', now);
         break;
-      }
-      case 'identity': {
-        const identity = coreSelf.identity;
-        identity.lastUpdated = now;
-        identity.notes = (identity.notes || '') + `\n[${now}] ${signal.description}`;
-        await state.set('core:identity', identity);
+      case 'identity':
+        await appendIdentityNote(signal.description, now);
         break;
-      }
-      case 'style_beliefs': {
-        const soul = coreSelf.soul;
-        soul.lastUpdated = now;
-        soul.beliefs = (soul.beliefs || []);
-        soul.beliefs.push(signal.description);
-        await state.set('core:soul', soul);
+      case 'style_beliefs':
+        await appendSoulBelief(signal.description, now);
         break;
-      }
-      case 'core_self': {
-        const identity = coreSelf.identity;
-        identity.boundaries = identity.boundaries || {};
-        identity.boundaries.lastUpdated = now;
-        await state.set('core:identity', identity);
+      case 'core_self':
+        await appendMemoryNote(signal.description, now);
         break;
-      }
     }
-
     await state.append(`updates:${getToday()}`, { time: now, type: signal.type, description: signal.description });
   }
 
