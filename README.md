@@ -206,9 +206,9 @@ npm install
 openclaw plugins install ./openclaw-agent-self-development
 
 # 方式二：从 GitHub Release 下载 .tgz 后安装
-# 1. 从 Release 页面下载 openclaw-agent-self-development-1.2.2.tgz
+# 1. 从 Release 页面下载 openclaw-agent-self-development-1.2.3.tgz
 # 2. 执行安装（如旧版本存在，加 --force 强制覆盖）
-openclaw plugins install ./openclaw-agent-self-development-1.2.2.tgz --force
+openclaw plugins install ./openclaw-agent-self-development-1.2.3.tgz --force
 
 # 方式三：开发模式链接（免复制，代码修改即时生效）
 openclaw plugins install -l ./openclaw-agent-self-development
@@ -224,7 +224,7 @@ openclaw gateway restart
 
 ```bash
 # 重新下载最新 Release 的 .tgz 后强制覆盖安装
-openclaw plugins install ./openclaw-agent-self-development-1.2.2.tgz --force
+openclaw plugins install ./openclaw-agent-self-development-1.2.3.tgz --force
 
 # 或从本地源码路径强制覆盖（开发时常用）
 openclaw plugins install ./openclaw-agent-self-development --force
@@ -245,7 +245,31 @@ openclaw gateway restart
 
 ### 安装后配置
 
-#### 1. Agent 工具白名单
+#### 1. Cron 定时任务（必需）
+
+本插件**不内置定时器**。每日自我更新需要通过 OpenClaw 的 cron 机制触发。
+
+请在 `~/.openclaw/cron/jobs.json` 中添加每日自我更新任务：
+
+```json
+{
+  "jobs": [
+    {
+      "id": "daily-self-update",
+      "schedule": "0 0 * * *",
+      "timezone": "Asia/Shanghai",
+      "message": "[cron:每日自我更新]"
+    }
+  ]
+}
+```
+
+重启 Gateway 后生效：
+```bash
+openclaw gateway restart
+```
+
+#### 2. Agent 工具白名单
 
 安装后需将插件 ID 添加到 Agent 的 `tools.alsoAllow`，否则 Agent 无法调用插件功能：
 

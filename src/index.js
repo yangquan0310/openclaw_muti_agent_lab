@@ -14,7 +14,7 @@ import { createAssimilationModule } from './assimilation.js';
 export default definePluginEntry({
   id: 'agent-self-development',
   name: 'Agent Self-Development',
-  version: '1.2.2',
+  version: '1.2.3',
 
   register(api) {
     if (api.registrationMode && api.registrationMode !== 'full') {
@@ -26,7 +26,7 @@ export default definePluginEntry({
     const state = new PluginState(pluginId);
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] Agent Self-Development Plugin v1.2.2 activated`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v1.2.3 activated`);
 
     // 检查 conversation hooks 权限
     const entries = api.config?.plugins?.entries?.[pluginId];
@@ -36,11 +36,7 @@ export default definePluginEntry({
 
     const metacognition = createMetacognitionModule({ api, config: config.metacognition, state, logger });
     const workingMemory = createWorkingMemoryModule({ api, config: config.workingMemory, state, logger });
-    const llmConfig = {
-      ...config.llm,
-      apiKey: config.llm?.apiKey
-    };
-    const assimilation = createAssimilationModule({ api, config: config.assimilation, state, logger, llmConfig });
+    const assimilation = createAssimilationModule({ api, config: config.assimilation, state, logger });
 
     metacognition.register();
     workingMemory.register();
