@@ -154,7 +154,7 @@ openclaw-agent-self-development/
 
 ```bash
 # 1. 下载并安装插件
-openclaw plugins install https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/download/v1.2.3/openclaw-agent-self-development-1.2.3.tgz --force
+openclaw plugins install https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/download/v1.2.3/openclaw-agent-self-development-1.2.4.tgz --force
 
 # 2. 启用插件
 openclaw plugins enable agent-self-development
@@ -269,4 +269,4 @@ openclaw gateway restart
 
 ---
 
-*版本: 1.2.3*
+*版本: 1.2.4*

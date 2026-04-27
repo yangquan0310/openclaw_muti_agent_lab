@@ -14,7 +14,7 @@ import { createAssimilationModule } from './assimilation.js';
 export default definePluginEntry({
   id: 'agent-self-development',
   name: 'Agent Self-Development',
-  version: '1.2.3',
+  version: '1.2.4',
 
   register(api) {
     if (api.registrationMode && api.registrationMode !== 'full') {
@@ -26,7 +26,7 @@ export default definePluginEntry({
     const state = new PluginState(pluginId);
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] Agent Self-Development Plugin v1.2.3 activated`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v1.2.4 activated`);
 
     // 检查 conversation hooks 权限
     const entries = api.config?.plugins?.entries?.[pluginId];
