@@ -19,7 +19,7 @@ import { createAssimilationModule } from './assimilation.js';
 export default definePluginEntry({
   id: 'agent-self-development',
   name: 'Agent Self-Development',
-  version: '1.0.1',
+  version: '1.1.0',
 
   register(api) {
     // 非运行时加载（discovery/setup-only/cli-metadata）跳过副作用
@@ -33,7 +33,7 @@ export default definePluginEntry({
     const logger = api.logger || console;
 
     logger.info(`[${pluginId}] ╔════════════════════════════════════════════════════════════╗`);
-    logger.info(`[${pluginId}] ║  Agent Self-Development Plugin v1.0.1 已激活               ║`);
+    logger.info(`[${pluginId}] ║  Agent Self-Development Plugin v1.1.0 已激活               ║`);
     logger.info(`[${pluginId}] ║  基于皮亚杰认知发展理论 · 钩子驱动                         ║`);
     logger.info(`[${pluginId}] ╚════════════════════════════════════════════════════════════╝`);
 
