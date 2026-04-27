@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "extensions": ["./src/index.js"],
   "minVersion": "2026.4.0",
+  "skills": ["skills"],
   "configSchema": {
     "type": "object",
     "properties": {
