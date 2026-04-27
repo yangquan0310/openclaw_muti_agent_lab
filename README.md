@@ -189,18 +189,26 @@ openclaw-agent-self-development/
 
 ## 安装与卸载
 
+> **⚠️ 安装前必读**
+> 1. **备份配置**：`cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.bak`
+> 2. **清理旧版本**：如果之前安装过，先删除旧目录或加 `--force` 覆盖
+> 3. **安装依赖**：本插件依赖 `node-cron`，如果 `.tgz` 未包含 `node_modules`，安装后需在插件目录运行 `npm install`
+> 4. **配置白名单**：安装后需手动将 `agent-self-development` 添加到 Agent 的 `tools.alsoAllow`
+
 本插件通过 **GitHub Release** 发布，不依赖 npm。
 
 ### 安装
 
 ```bash
 # 方式一：从本地源码目录安装（开发/自建）
+# 先进入插件目录安装依赖
+npm install
 openclaw plugins install ./openclaw-agent-self-development
 
 # 方式二：从 GitHub Release 下载 .tgz 后安装
 # 1. 从 Release 页面下载 openclaw-agent-self-development-1.1.0.tgz
-# 2. 执行安装
-openclaw plugins install ./openclaw-agent-self-development-1.1.0.tgz
+# 2. 执行安装（如旧版本存在，加 --force 强制覆盖）
+openclaw plugins install ./openclaw-agent-self-development-1.1.0.tgz --force
 
 # 方式三：开发模式链接（免复制，代码修改即时生效）
 openclaw plugins install -l ./openclaw-agent-self-development
@@ -233,6 +241,54 @@ openclaw plugins uninstall agent-self-development
 
 # 重启 Gateway
 openclaw gateway restart
+```
+
+### 安装后配置
+
+#### 1. Agent 工具白名单
+
+安装后需将插件 ID 添加到 Agent 的 `tools.alsoAllow`，否则 Agent 无法调用插件功能：
+
+```json
+{
+  "agents": {
+    "list": [
+      {
+        "id": "main",
+        "tools": {
+          "alsoAllow": ["agent-self-development"]
+        }
+      }
+    ]
+  }
+}
+```
+
+#### 2. Hooks 权限
+
+本插件使用了 `llm_output`、`before_agent_finalize`、`agent_end` 等 **Conversation Hook**，需在 `openclaw.json` 中设置：
+
+```json
+{
+  "plugins": {
+    "entries": {
+      "agent-self-development": {
+        "enabled": true,
+        "hooks": {
+          "allowConversationAccess": true
+        }
+      }
+    }
+  }
+}
+```
+
+#### 3. 清理无效路径
+
+如果之前有通过 `plugins.load.paths` 加载旧版本，运行以下命令清理：
+
+```bash
+openclaw doctor --fix
 ```
 
 ---
