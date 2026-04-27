@@ -15,7 +15,7 @@ const SKILLS_DIR = path.join(__dirname, '../skills');
 const SKILL_MAP = {
   planning: 'metacognition/planning/SKILL.md',
   monitoring: 'metacognition/monitoring/SKILL.md',
-  regulation: 'metacognition/regulation/SKILL.md',
+
   working_memory: 'working_memory/SKILL.md',
   assimilation: 'assimilation_accommodation/SKILL.md'
 };

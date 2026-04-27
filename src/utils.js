@@ -25,53 +25,6 @@ export function getNow() {
 }
 
 /**
- * 调用外部 LLM（插件未暴露 LLM API，需自行 HTTP 调用）
- *
- * 支持 OpenAI 兼容格式（Kimi、OpenAI 等）
- */
-export async function callLLM(prompt, config = {}) {
-  const provider = config.provider || 'kimicode';
-  const model = config.model || 'kimi-for-coding';
-
-  if (provider === 'kimicode' || provider === 'openai-compatible') {
-    const apiKey = config.apiKey;
-    const baseUrl = config.baseUrl || 'https://api.kimi.com/coding/v1';
-
-    if (!apiKey) {
-      throw new Error('LLM API Key 未设置，请在插件配置中提供 llm.apiKey');
-    }
-
-    const response = await fetch(`${baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model,
-        messages: [
-          { role: 'system', content: '你是 Agent 自我发展系统的分析引擎。' },
-          { role: 'user', content: prompt }
-        ],
-        max_tokens: 2048,
-        temperature: 0.3
-      })
-    });
-
-    if (!response.ok) {
-      const text = await response.text();
-      throw new Error(`LLM 调用失败: ${response.status} ${text}`);
-    }
-
-    const data = await response.json();
-    // OpenAI 兼容格式优先（Kimi、OpenAI、Azure 等）
-    return data.choices?.[0]?.message?.content || data.content?.[0]?.text || '';
-  }
-
-  throw new Error(`不支持的 Provider: ${provider}`);
-}
-
-/**
  * 根据任务内容推断会话类型
  */
 export function inferSessionType(prompt) {

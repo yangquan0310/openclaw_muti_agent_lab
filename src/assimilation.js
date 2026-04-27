@@ -7,7 +7,7 @@
  * 注意：每日定时任务由用户在 ~/.openclaw/cron/jobs.json 中配置，插件不管理定时器。
  */
 
-import { getToday, getYesterday } from './utils.js';
+import { getYesterday } from './utils.js';
 import { loadSkill } from './skills-loader.js';
 
 export function createAssimilationModule({ api, config, state, logger }) {

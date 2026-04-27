@@ -17,7 +17,7 @@
           "enabled": { "type": "boolean", "default": true },
           "planning": { "type": "boolean", "default": true },
           "monitoring": { "type": "boolean", "default": true },
-          "regulation": { "type": "boolean", "default": true }
+
         }
       },
       "workingMemory": {
@@ -31,19 +31,10 @@
       "assimilation": {
         "type": "object",
         "properties": {
-          "enabled": { "type": "boolean", "default": true },
-          "dailyCron": { "type": "string", "default": "0 0 * * *" },
-          "autoUpdate": { "type": "boolean", "default": false },
-          "updateThreshold": { "type": "number", "default": 0.8 }
+          "enabled": { "type": "boolean", "default": true }
         }
       },
-      "llm": {
-        "type": "object",
-        "properties": {
-          "model": { "type": "string", "default": "kimi-for-coding" },
-          "provider": { "type": "string", "default": "kimicode" }
-        }
-      }
+
     }
   }
 }
