@@ -52,6 +52,25 @@ export class PluginState {
   }
 
   async _persist() {
-    await fs.writeFile(this.stateFile, JSON.stringify(this.cache, null, 2), 'utf-8');
+    const lockFile = this.stateFile + '.lock';
+    const maxRetries = 5;
+    for (let i = 0; i < maxRetries; i++) {
+      try {
+        await fs.writeFile(lockFile, Date.now().toString(), { flag: 'wx' });
+        try {
+          await fs.writeFile(this.stateFile, JSON.stringify(this.cache, null, 2), 'utf-8');
+        } finally {
+          await fs.unlink(lockFile).catch(() => {});
+        }
+        return;
+      } catch (err) {
+        if (err.code === 'EEXIST') {
+          await new Promise(r => setTimeout(r, 50 * (i + 1)));
+          continue;
+        }
+        throw err;
+      }
+    }
+    throw new Error('State file persist failed: unable to acquire lock');
   }
 }

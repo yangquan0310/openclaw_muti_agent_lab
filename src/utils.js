@@ -102,11 +102,12 @@ export function assignSessions(planItems, prompt) {
     const needsSession = index > 0 && needsSessionKeywords.some(k => itemLower.includes(k));
 
     if (needsSession) {
-      // 生成会话标识：取步骤前10个字符，替换空格为下划线
+      // 生成会话标识：取步骤前10个字符 + 随机后缀，避免冲突
       const taskSlug = item.slice(0, 10).trim().replace(/\s+/g, '_').replace(/[^\w\u4e00-\u9fa5]/g, '');
+      const randomSuffix = Math.random().toString(36).slice(2, 6);
       assignments.push({
         step: index + 1,
-        sessionId: `session:${sessionType}:${taskSlug}`,
+        sessionId: `session:${sessionType}:${taskSlug}_${randomSuffix}`,
         purpose: item
       });
     }

@@ -19,7 +19,7 @@ import { createAssimilationModule } from './assimilation.js';
 export default definePluginEntry({
   id: 'agent-self-development',
   name: 'Agent Self-Development',
-  version: '1.1.1',
+  version: '1.1.2',
 
   register(api) {
     // 非运行时加载（discovery/setup-only/cli-metadata）跳过副作用
@@ -32,17 +32,20 @@ export default definePluginEntry({
     const state = new PluginState(pluginId);
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] ╔════════════════════════════════════════════════════════════╗`);
-    logger.info(`[${pluginId}] ║  Agent Self-Development Plugin v1.1.1 已激活               ║`);
-    logger.info(`[${pluginId}] ║  基于皮亚杰认知发展理论 · 钩子驱动                         ║`);
-    logger.info(`[${pluginId}] ╚════════════════════════════════════════════════════════════╝`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v1.1.2 activated`);
+
+    // 检查 conversation hooks 权限
+    const entries = api.config?.plugins?.entries?.[pluginId];
+    if (entries?.hooks?.allowConversationAccess !== true) {
+      logger.warn(`[${pluginId}] ⚠️ plugins.entries.${pluginId}.hooks.allowConversationAccess 未启用，元认知监控可能无法工作`);
+    }
 
     // 初始化三大模块
     const metacognition = createMetacognitionModule({ api, config: config.metacognition, state, logger });
     const workingMemory = createWorkingMemoryModule({ api, config: config.workingMemory, state, logger });
     const llmConfig = {
       ...config.llm,
-      apiKey: config.llm?.apiKey || process.env.KIMICODE_API_KEY
+      apiKey: config.llm?.apiKey
     };
     const assimilation = createAssimilationModule({ api, config: config.assimilation, state, logger, llmConfig });
 

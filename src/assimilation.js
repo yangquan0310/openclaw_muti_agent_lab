@@ -93,18 +93,22 @@ export function createAssimilationModule({ api, config, state, logger, llmConfig
   }
 
   function startFallbackTimer() {
-    const now = new Date();
-    const tomorrow = new Date(now);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    tomorrow.setHours(0, 0, 0, 0);
-    const msUntilMidnight = tomorrow - now;
+    const CHECK_INTERVAL = 5 * 60 * 1000; // 每 5 分钟检查一次
+    let lastCheckedDate = null;
 
-    logger.info(`[Assim] 下次更新: ${tomorrow.toISOString()} (还有 ${Math.round(msUntilMidnight / 1000)} 秒)`);
+    logger.info(`[Assim] 启动回退定时器 (每 ${CHECK_INTERVAL / 60000} 分钟检查)`);
 
-    fallbackTimer = setTimeout(() => {
-      runDailyUpdate();
-      fallbackInterval = setInterval(runDailyUpdate, 24 * 60 * 60 * 1000);
-    }, msUntilMidnight);
+    fallbackInterval = setInterval(() => {
+      const now = new Date();
+      const shNow = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }));
+      const currentDateStr = shNow.toISOString().split('T')[0];
+
+      // 只在日期切换后的第一次检查执行（00:00 ~ 00:05 之间）
+      if (currentDateStr !== lastCheckedDate && shNow.getHours() === 0 && shNow.getMinutes() < 5) {
+        lastCheckedDate = currentDateStr;
+        runDailyUpdate().catch(err => logger.error(`[Assim] 定时更新失败: ${err.message}`));
+      }
+    }, CHECK_INTERVAL);
   }
 
   function stopDailyTimer() {
@@ -123,8 +127,19 @@ export function createAssimilationModule({ api, config, state, logger, llmConfig
   }
 
   async function runDailyUpdate() {
-    // 每日更新应处理昨日事件（因为 00:00 执行时，今日刚开始，事件为空）
-    const targetDate = getYesterday();
+    const today = getToday();
+    const yesterday = getYesterday();
+    const lastProcessed = await state.get('assim:lastProcessedDate');
+
+    // 确定要处理的日期：优先处理昨天，如已处理则跳过
+    let targetDate = yesterday;
+    if (lastProcessed === targetDate) {
+      logger.debug(`[Assim] 日期 ${targetDate} 已处理，跳过`);
+      return;
+    }
+
+    // 如果跳过了某天（系统休眠导致 cron 未执行），仍然处理昨天（而非跳过）
+    // 昨天的数据在昨天的 getToday() 下已记录
     logger.info(`[Assim] 开始每日自我更新: 处理日期 ${targetDate}`);
 
     try {
@@ -151,6 +166,8 @@ export function createAssimilationModule({ api, config, state, logger, llmConfig
           }
         }
       }
+
+      await state.set('assim:lastProcessedDate', targetDate);
     } catch (err) {
       logger.error(`[Assim] 每日更新失败: ${err.message}`);
     }

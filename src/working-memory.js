@@ -118,13 +118,19 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
         const sessions = await state.get(`session_list:${runId}`, []);
         const completedSessions = sessions.filter(s => s.status === 'completed');
         const killedSessions = sessions.filter(s => s.status === 'killed');
+        const pausedSessions = sessions.filter(s => s.status === 'paused');
 
         // killed 直接删除，不归档
         if (killedSessions.length > 0) {
           logger.debug(`[WM] 删除 killed 会话: ${killedSessions.length}`);
         }
 
-        if (completedSessions.length === 0 && sessions.length === 0) {
+        // paused 保留到下次运行，不删除不归档
+        if (pausedSessions.length > 0) {
+          logger.debug(`[WM] 保留 paused 会话: ${pausedSessions.length}`);
+        }
+
+        if (completedSessions.length === 0 && killedSessions.length === 0 && pausedSessions.length === 0) {
           await state.set(`wm:${runId}:tools`, null);
           await state.set(`session_list:${runId}`, null);
           return;
@@ -147,7 +153,7 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
         await state.set(`wm:${runId}:tools`, null);
         await state.set(`session_list:${runId}`, null);
 
-        logger.info(`[WM] 归档: runId=${runId}, completed=${completedSessions.length}, killed=${killedSessions.length}`);
+        logger.debug(`[WM] 归档: runId=${runId}, completed=${completedSessions.length}, killed=${killedSessions.length}`);
       });
     }
   }
