@@ -60,43 +60,56 @@ __pycache__/
 **/.openclaw/
 **/*.state.json
 
-# 允许 models.json 备份（已脱敏，使用环境变量引用）
-!/agents/
-/agents/*/
-!/agents/*/agent/
-/agents/*/agent/*
-!/agents/*/agent/models.json
-
 # 排除IDE配置文件
 .vscode/
 .idea/
 
+# ============================================
 # 允许需要备份的文件
+# ============================================
 !/README.md
 !/requirements.txt
 !/.gitignore
 !/openclaw.json
 !/workspace/
+!/agents/
 !/cron/
-!/cron/jobs.json
+!/extensions/
 
-# 排除 cron 运行记录
+# ============================================
+# Cron 目录
+# ============================================
 /cron/runs/
-/workspace/skills/.skills_store_lock.json
+
+# ============================================
+# Agents 目录
+# ============================================
+/agents/*/
+!/agents/*/agent/
+/agents/*/agent/*
+!/agents/*/agent/models.json
 
 # ============================================
 # Skills 目录 - 只保留自己写的三个技能
 # ============================================
 /workspace/skills/*/
+/workspace/skills/.skills_store_lock.json
 !/workspace/skills/Skill-developer/
 !/workspace/skills/agent_self_development/
 !/workspace/skills/manage-project/
 !/workspace/skills/README.md
 
 # ============================================
+# Workspace 其他目录
+# ============================================
+/workspace/events/
+
+# ============================================
 # Extensions 目录 - 只保留目录结构，忽略所有插件内容
 # 以后自己写的插件再手动添加例外
 # ============================================
 /extensions/*/
+/extensions/package.json
+/extensions/package-lock.json
 !/extensions/README.md
 !/extensions/.gitkeep
