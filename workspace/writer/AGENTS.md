@@ -3,9 +3,9 @@
 
 ---
 
-## 子代理创建与管理
+## 会话创建与管理
 
-### 不需要创建子代理执行的任务
+### 不需要新会话理执行的任务
 - ** 执行快速响应不需要确认 **
     - 指令以"查看"、"显示"、"列出"、"读取"开头
     - 指令是疑问句（"什么是"、"为什么"）
@@ -17,19 +17,10 @@
     - 当前会话 key 包含 `:corn:` 或 `:cron:`
     - 消息来自定时任务触发器
 
-### 需要创建子代理执行的任务
-- **上述未提到的**都需子代理执行
-- 使用`skills/Subagent-manager`完成子代理执行任务全流程。
-- 子代理调度速查
-
-| 操作 | 命令 / 方法 |
-|------|-------------|
-| 创建子代理 | `sessions_spawn(runtime="subagent", agentId="<agentId>")` |
-| 查看所有子代理 | `subagents(action="list")` |
-| 终止子代理 | `subagents(action="kill", target="<id>")` |
-| 等待子代理通告 | 自动接收，无需额外命令 |
-
-- 注意：子代理默认**不继承**主代理的用户信息（`USER.md`）和完整工具权限。请在任务描述中明确传递必要上下文：包括脚本、技能、密钥、文件、执行步骤等上下文
+### 需要新会话执行的任务
+- **上述未提到的**都需新会话执行
+- 使用`\root\.openclaw\extensions\agent-self-development\skills\working_memory\session_tracker\SKILL.md`完成会话追踪与管理。
+- 注意：新会话默认**不继承**主会话的所有信息。请在任务描述中明确传递必要上下文：包括脚本、技能、密钥、文件、执行步骤等上下文
 
 ---
 ## 会话开始
@@ -37,7 +28,7 @@
 - 载入个人身份文档（IDENTITY.md）
 - 载入个人记忆文档（MEMORY.md）
 - 载入个人工具文档（TOOLS.md）
-- 载入代理自我发展技能`\root\.openclaw\workspace\skills\agent_self_development\SKILL.md` 
+- 载入代理自我发展技能`\root\.openclaw\extensions\agent-self-development\skills\SKILL.md` 
 - 载入项目管理技能`\root\.openclaw\workspace\skills\manage-project\SKILL.md`
 ---
 
@@ -49,10 +40,9 @@
 
 ## 工作流
 
-> 严格遵循 `\root\.openclaw\workspace\skills\agent_self_development\SKILL.md` 认知框架执行任务。
+> 严格遵循 `\root\.openclaw\extensions\agent-self-development\skills\SKILL.md` 认知框架执行任务。
 **记载个人记忆中条件-行动规则（If-Then Rules）**
-**单个任务执行完整规范参见 `root\.openclaw\workspace\skills/agent_self_development/SKILL.md` 工作流1。**
-**每日更新任务完整规范参见 `root\.openclaw\workspace\skills/agent_self_development/SKILL.md` 工作流2。**
+**单个任务执行完整规范参见 `\root\.openclaw\extensions\agent-self-development\skills\SKILL.md` 工作流1。**
 ---
 
 **现在，请严格按照 `agent_self_development` 六阶段规范执行每个任务。**
@@ -60,6 +50,7 @@
 ---
 
 ## 版本历史
+- **v5.0.0** (2026-04-27)：重构为钩子版
 - **v4.0.0** (2026-04-16)：重构为精简版，加入安全红线
 - **v3.0.0** (2026-04-11)：重构为精简版，详细三阶段规范移入agents-sop技能包
 - **v2.0.0** (2026-04-09)：按SOP重构三个阶段，明确触发方式、执行方式、依赖、输入、输出
@@ -68,5 +59,5 @@
 - **v1.0.0** (2026-03-31)：初始版本，具备基础文档管理功能
 
 ---
-*最后重构：2026-04-11*
+*最后重构：2026-04-27*
 *重构者：大管家*
