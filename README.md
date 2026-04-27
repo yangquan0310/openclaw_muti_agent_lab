@@ -154,21 +154,25 @@ openclaw-agent-self-development/
 
 ```bash
 # 1. 下载并安装插件
-openclaw plugins install https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/download/v1.2.3/openclaw-agent-self-development-1.2.4.tgz --force
+openclaw plugins install https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/download/v1.2.4/openclaw-agent-self-development-1.2.4.tgz --force
 
 # 2. 启用插件
 openclaw plugins enable agent-self-development
 
 # 3. 配置 cron（必需）
-# 编辑 ~/.openclaw/cron/jobs.json，添加每日自我更新任务
+# 创建 ~/.openclaw/cron/jobs.json，添加每日自我更新任务
+# 如果不存在 cron 目录，先创建
+mkdir -p ~/.openclaw/cron
 cat > ~/.openclaw/cron/jobs.json << 'EOF'
 {
   "jobs": [
     {
       "id": "daily-self-update",
+      "name": "每日自我更新",
       "schedule": "0 0 * * *",
       "timezone": "Asia/Shanghai",
-      "message": "[cron:每日自我更新]"
+      "message": "[cron:每日自我更新]",
+      "enabled": true
     }
   ]
 }
@@ -183,6 +187,104 @@ EOF
 # 6. 重启 Gateway
 openclaw gateway restart
 ```
+
+---
+
+## CRON 配置详解
+
+本插件**不内置任何定时器**，每日自我更新完全依赖 OpenClaw 的 cron 机制触发。
+
+### jobs.json 文件位置
+
+```
+~/.openclaw/cron/jobs.json
+```
+
+如果目录不存在，手动创建：
+```bash
+mkdir -p ~/.openclaw/cron
+```
+
+### 最小配置
+
+```json
+{
+  "jobs": [
+    {
+      "id": "daily-self-update",
+      "name": "每日自我更新",
+      "schedule": "0 0 * * *",
+      "timezone": "Asia/Shanghai",
+      "message": "[cron:每日自我更新]",
+      "enabled": true
+    }
+  ]
+}
+```
+
+### 字段说明
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `id` | string | ✅ | 任务唯一标识 |
+| `name` | string | ❌ | 任务名称（便于识别） |
+| `schedule` | string | ✅ | Cron 表达式，如 `0 0 * * *`（每天 00:00） |
+| `timezone` | string | ❌ | 时区，默认 UTC。建议设为 `Asia/Shanghai` |
+| `message` | string | ✅ | 触发时发送给 Agent 的消息。必须包含 `[cron:每日自我更新]` |
+| `enabled` | boolean | ❌ | 是否启用，默认 `true` |
+
+### 常用 schedule 示例
+
+| 需求 | Cron 表达式 |
+|------|------------|
+| 每天 00:00 | `0 0 * * *` |
+| 每天 08:00 | `0 8 * * *` |
+| 每周一 00:00 | `0 0 * * 1` |
+| 每 6 小时 | `0 */6 * * *` |
+
+### 多个任务
+
+```json
+{
+  "jobs": [
+    {
+      "id": "daily-self-update",
+      "schedule": "0 0 * * *",
+      "timezone": "Asia/Shanghai",
+      "message": "[cron:每日自我更新]",
+      "enabled": true
+    },
+    {
+      "id": "weekly-review",
+      "schedule": "0 9 * * 1",
+      "timezone": "Asia/Shanghai",
+      "message": "[cron:每周回顾]",
+      "enabled": true
+    }
+  ]
+}
+```
+
+### 验证 cron 是否生效
+
+```bash
+# 查看已配置的 cron 任务
+openclaw cron list
+
+# 手动触发测试（不会等待定时器）
+openclaw cron run daily-self-update
+```
+
+### 故障排查
+
+| 现象 | 原因 | 解决 |
+|------|------|------|
+| 到点未触发 | Gateway 未重启 | `openclaw gateway restart` |
+| 时区不对 | 未设置 `timezone` | 添加 `"timezone": "Asia/Shanghai"` |
+| 插件未响应 | message 不匹配 | 确保包含 `[cron:每日自我更新]` |
+| jobs.json 被覆盖 | 安装插件时重置 | 备份后重新写入 |
+
+---
 
 ### 配置示例（openclaw.json）
 
