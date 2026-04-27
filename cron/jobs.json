@@ -205,8 +205,8 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日仓库检查]\n使用manage-project技能维护实验室仓库项目文件夹：\n1. 遍历 ~/实验室仓库/项目文件/ 下所有项目\n2. 对每个项目执行 Maintainer.organize() 自动整理文件：\n   - 创建标准目录结构（文档/手稿/知识库/笔记/综述/临时数据/草稿/检索条件/临时笔记）\n   - 按规则移动文件：\n     * .docx/.pdf/.txt → 不移动（用户文档）\n     * .md（备份）→ 临时数据/草稿/\n     * .md（综述）→ 知识库/综述/\n     * .md（笔记/提取）→ 临时数据/笔记/\n     * .md（其他）→ 手稿/\n     * .json → 临时数据/检索条件/\n     * 临时文件 → 临时数据/\n   - 注意：元数据.json 不移动，保留在项目根目录\n3. 对每个项目执行 Maintainer.update_metadata() 更新元数据：\n   - 自动扫描并更新 directories/documents/markdown/notes/reviews\n   - 自动迁移旧格式（manuscripts→markdown, cloud_doc_mappings→markdown.cloud）\n   - 更新 updated_at 时间戳\n4. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-project-update.md\n\n详细规范参见：skills/manage-project/SKILL.md",
-        "timeoutSeconds": 600
+        "message": "[cron:每日仓库检查]\n使用公共技能 manage-project 维护实验室仓库项目文件夹：\n1. 遍历 ~/实验室仓库/项目文件/ 下所有项目\n2. 对每个项目执行 maintainer/Maintainer.py 自动整理文件：\n   - 创建标准目录结构（文档/手稿/知识库/笔记/综述/临时数据/草稿）\n   - 按规则移动文件：\n     * .docx/.pdf/.txt → 文档/\n     * .md（论文/手稿）→ 手稿/\n     * 综述文件 → 知识库/综述/\n     * 笔记文件 → 知识库/笔记/\n     * 备份/中间文件 → 临时数据/草稿/\n   - 处理旧目录迁移：\n     * 旧\"草稿\"目录内容 → 临时数据/草稿/\n     * 旧\"终稿\"目录中的md → 手稿/\n     * 旧\"终稿\"目录中的其他文件 → 文档/\n3. 执行 update_metadata() 更新元数据（扫描目录结构、更新 updated_at）\n4. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-repo-check.md\n\n详细规范参见：~/.openclaw/workspace/skills/manage-project/SKILL.md",
+        "timeoutSeconds": 300
       },
       "delivery": {
         "mode": "announce",

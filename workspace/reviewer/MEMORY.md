@@ -75,6 +75,8 @@
 |------|------|----------|------|----------|
 | 2026-04-19 | 每日维护任务 | TOOLS.md, MEMORY.md | 已完成 | /root/.openclaw/workspace/reviewer/events/2026-04-19/00-00-00-heartbeat-cron_reviewer_每日维护任务.log |
 | 2026-04-19 | 每日自我更新 | diary.md, MEMORY.md | 已完成 | /root/.openclaw/workspace/reviewer/events/2026-04-19/diary.md |
+| 2026-04-28 | 每日自我更新 | 核心自我审查 | 已完成 | /root/.openclaw/workspace/reviewer/events/2026-04-28/00-46-00-self-update.md |
+| 2026-04-27 | 每日自我更新 | 核心自我审查 | 已完成 | /root/.openclaw/workspace/reviewer/events/2026-04-27/00-25-00-self-update.md |
 | 2026-04-21 | 每日自我更新 | 核心自我审查 | 已完成 | /root/.openclaw/workspace/reviewer/events/2026-04-21/00-25-00-self-update.md |
 | 2026-04-20 | 每日自我更新 | 核心自我审查 | 已完成 | /root/.openclaw/workspace/reviewer/events/2026-04-20/00-30-00-self-update.md |
 ---

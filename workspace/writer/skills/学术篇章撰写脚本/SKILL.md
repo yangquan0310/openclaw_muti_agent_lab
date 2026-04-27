@@ -57,10 +57,24 @@
    - 汇总引用文献，去重排序
    - 按照APA 7th格式生成参考文献列表
 
-7. **保存文档**
-   - 终稿：`~/实验室仓库/项目文件/{项目名}/手稿/{标题}.md`（始终保留最新版本）
-   - 修改稿：`~/实验室仓库/项目文件/{项目名}/手稿/{标题}.md`（始终保留最新版本）
-   - 草稿：`~/实验室仓库/项目文件/{项目名}/临时数据/草稿/{标题}/{标题}_v{version}.md`（保存历史版本）
+7. **版本控制与保存**
+   - 使用 `maintainer.archive_to_drafts()` 进行版本控制：
+     ```bash
+     # 命令行方式归档当前版本
+     python3 maintainer/Maintainer.py /path/to/project archive 论文.md
+     
+     # 指定标题和版本
+     python3 maintainer/Maintainer.py /path/to/project archive 论文.md --title "实验报告" --version v3
+     
+     # 预览模式
+     python3 maintainer/Maintainer.py /path/to/project archive 论文.md --dry-run
+     ```
+   - 归档规则：
+     - 旧版本自动归档到 `临时数据/草稿/{标题}/`
+     - 命名格式：`{标题}_v{version}.md`
+     - 版本号自动递增（扫描现有版本取最大值+1）
+   - 保存最新版本到 `手稿/` 目录
+   - 更新项目元数据
 
 ## 输出
 - 学术篇章文档（Markdown格式）

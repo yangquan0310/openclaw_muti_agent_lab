@@ -163,6 +163,11 @@ python3 maintainer/Maintainer.py --all
 
 # 预览模式（不实际执行）
 python3 maintainer/Maintainer.py /path/to/project --dry-run
+
+# 归档文件到草稿目录
+python3 maintainer/Maintainer.py /path/to/project archive 论文.md
+python3 maintainer/Maintainer.py /path/to/project archive 论文.md --title "实验报告" --version v3
+python3 maintainer/Maintainer.py /path/to/project archive 论文.md --dry-run
 ```
 
 ---
