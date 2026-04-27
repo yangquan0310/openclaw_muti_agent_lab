@@ -1,21 +1,12 @@
 /**
- * 工作记忆模块
+ * 工作记忆模块 —— 纯钩子框架
  *
- * 官方 Hook 映射:
- *   before_tool_call → 会话启动追踪（OpenClaw 中通过 agent/subagent 工具创建会话）
- *   after_tool_call  → 记录工具执行结果，更新会话状态
- *   agent_end        → 归档本次运行的会话历史（completed 归档，killed 删除）
- *
- * 技能文档要求:
- *   - 维护「当前活跃任务看板」和「活跃会话清单」
- *   - 会话状态: active / paused / completed / killed
- *   - completed → 归档到事件记忆后删除
- *   - killed → 直接删除，不归档
- *
- * Handler 签名: async (event, ctx) => { ... }
+ * 插件职责：记录事件和会话状态供 Agent 参考；在 agent_end 时注入 working_memory skill
+ * Agent 职责：自行阅读 skill、管理工作记忆、决定归档策略
  */
 
 import { getToday, getNow } from './utils.js';
+import { loadSkill } from './skills-loader.js';
 
 export function createWorkingMemoryModule({ api, config, state, logger }) {
   const enabled = config?.enabled !== false;
@@ -38,7 +29,6 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
         if (!isSpawnTool) return;
 
         const runId = ctx.runId;
-        // OpenClaw 中通过 agent/subagent 工具创建会话，直接使用工具参数中的 id/name 作为会话标识
         const sessionId = event.params?.id || event.params?.name || `sub-${Date.now()}`;
 
         const entry = {
@@ -53,8 +43,6 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
         };
 
         await state.append(`wm:${runId}:tools`, entry);
-
-        // 同时维护活跃会话清单（技能文档要求的表格结构）
         await state.append(`session_list:${runId}`, {
           sessionId,
           role: event.params?.role || '助手',
@@ -99,7 +87,6 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
           timestamp: getNow()
         });
 
-        // 更新会话清单中的状态
         const sessions = await state.get(`session_list:${runId}`, []);
         const updated = sessions.map(s =>
           s.sessionId === sessionId ? { ...s, status, lastActive: getNow() } : s
@@ -109,7 +96,7 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
     });
 
     // ── 归档: agent_end ──
-    // 技能文档要求: completed → 归档到事件记忆后删除; killed → 直接删除，不归档
+    // 注入 working_memory skill，提醒 Agent 如何归档
     if (autoArchive) {
       api.on('agent_end', async (event, ctx) => {
         const runId = ctx.runId;
@@ -120,23 +107,14 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
         const killedSessions = sessions.filter(s => s.status === 'killed');
         const pausedSessions = sessions.filter(s => s.status === 'paused');
 
-        // killed 直接删除，不归档
         if (killedSessions.length > 0) {
           logger.debug(`[WM] 删除 killed 会话: ${killedSessions.length}`);
         }
-
-        // paused 保留到下次运行，不删除不归档
         if (pausedSessions.length > 0) {
           logger.debug(`[WM] 保留 paused 会话: ${pausedSessions.length}`);
         }
 
-        if (completedSessions.length === 0 && killedSessions.length === 0 && pausedSessions.length === 0) {
-          await state.set(`wm:${runId}:tools`, null);
-          await state.set(`session_list:${runId}`, null);
-          return;
-        }
-
-        // 只归档 completed 任务到事件记忆表
+        // 归档 completed 任务到事件记忆表
         for (const session of completedSessions) {
           const archive = {
             runId,
@@ -154,6 +132,14 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
         await state.set(`session_list:${runId}`, null);
 
         logger.debug(`[WM] 归档: runId=${runId}, completed=${completedSessions.length}, killed=${killedSessions.length}`);
+
+        // 注入 working_memory skill，提醒 Agent 检查工作记忆
+        const workingMemorySkill = await loadSkill('working_memory');
+        if (workingMemorySkill) {
+          return {
+            prependSystemContext: `${workingMemorySkill}\n\n【Agent 职责】本次运行已结束，请根据上方 working_memory skill 检查是否需要更新「当前活跃任务看板」和「活跃会话清单」。\n`
+          };
+        }
       });
     }
   }

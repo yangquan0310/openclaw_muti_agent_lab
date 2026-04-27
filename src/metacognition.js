@@ -1,13 +1,12 @@
 /**
- * 元认知模块 —— 纯提醒框架
+ * 元认知模块 —— 纯钩子框架
  *
- * 插件职责：为 Agent 提供计划建议和进度追踪基础设施
- * Agent 职责：自行判断偏差、决定是否 revise、管理执行节奏
- *
- * 不涉及：偏差判断、强制 revise、置信度评估
+ * 插件职责：在合适的时机将对应的 skill 文档注入 Agent 的 system context
+ * Agent 职责：自行阅读 skill、判断偏差、决定是否 revise
  */
 
 import { generatePlanItems, assignSessions } from './utils.js';
+import { loadSkill } from './skills-loader.js';
 
 export function createMetacognitionModule({ api, config, state, logger }) {
   const enabled = config?.enabled !== false;
@@ -23,6 +22,7 @@ export function createMetacognitionModule({ api, config, state, logger }) {
     logger.info('[Meta] 注册元认知 Hooks');
 
     // ── Planning: before_prompt_build ──
+    // 复杂任务时注入 planning skill + 计划建议
     if (planningEnabled) {
       api.on('before_prompt_build', async (event, ctx) => {
         const runId = ctx.runId;
@@ -55,32 +55,34 @@ export function createMetacognitionModule({ api, config, state, logger }) {
           return `${i + 1}. ${s}${sessionHint}`;
         }).join('\n');
 
-        let sessionGuide = '';
-        if (plan.sessionAssignments?.length > 0) {
-          sessionGuide = `
-【会话管理指引】
-- 以下步骤建议创建独立会话执行
-- 复用规则：执行前检查工作记忆中的「活跃会话清单」，若已存在相同标识则复用
-- 向会话发送消息时，直接使用其会话ID调用 session_send
-${plan.sessionAssignments.map(a => `  步骤${a.step}: ${a.sessionId} — ${a.purpose}`).join('\n')}
-`;
-        }
+        const planningSkill = await loadSkill('planning');
 
         return {
-          prependSystemContext: `【执行计划建议】请根据以下步骤执行，完成一步后主动报告进度。\n${planLines}\n${sessionGuide}\n【Agent 职责】请自行判断是否需要偏离计划，如需变更请先说明理由。\n`
+          prependSystemContext: `${planningSkill}\n\n【当前执行计划】\n${planLines}\n\n【Agent 职责】请根据上方 skill 指导自行制定和执行计划。如需偏离计划请先说明理由。\n`
         };
       }, { priority: 50 });
     }
 
     // ── Monitoring: llm_output ──
-    // 插件仅记录输出供 Agent 参考，不自行判断偏差
+    // 注入 monitoring skill，Agent 自行阅读并判断偏差
     if (monitoringEnabled) {
       api.on('llm_output', async (event, ctx) => {
         const runId = ctx.runId;
         if (!runId) return;
+
         const output = event.output || event.text || '';
         await state.set(`output:${runId}`, output);
-        logger.debug(`[Meta] 输出已记录，runId=${runId}`);
+
+        const monitoringSkill = await loadSkill('monitoring');
+        if (!monitoringSkill) return;
+
+        // 仅在计划存在时注入监控 skill（避免简单任务也被注入）
+        const plan = await state.get(`plan:${runId}`);
+        if (!plan) return;
+
+        return {
+          prependSystemContext: `${monitoringSkill}\n\n【Agent 职责】请根据上方 monitoring skill 自行检查当前输出是否与计划一致，识别偏差或阻塞。\n`
+        };
       });
     }
 

@@ -1,14 +1,13 @@
 /**
- * 同化顺应模块 —— 纯提醒框架
+ * 同化顺应模块 —— 纯钩子框架
  *
- * 插件职责：每日定时提醒 Agent 进行自我更新
- * Agent 职责：自行回顾事件、生成日记、分析同化/顺应、更新核心自我文件
- *
- * 不涉及：文件读写、LLM 调用、偏差判断、置信度评估
+ * 插件职责：每日定时触发，将 assimilation skill 注入 Agent 的 system context
+ * Agent 职责：自行阅读 skill、回顾事件、撰写日记、分析同化/顺应、更新文件
  */
 
 import cron from 'node-cron';
 import { getToday, getYesterday } from './utils.js';
+import { loadSkill } from './skills-loader.js';
 
 export function createAssimilationModule({ api, config, state, logger }) {
   const enabled = config?.enabled !== false;
@@ -30,7 +29,7 @@ export function createAssimilationModule({ api, config, state, logger }) {
     }
 
     // ── 提醒注入: before_prompt_build ──
-    // 如果今日有待处理的自我更新提醒，注入 system context
+    // 如果今日有待处理的自我更新提醒，注入 assimilation skill
     api.on('before_prompt_build', async (event, ctx) => {
       const runId = ctx.runId;
       if (!runId) return;
@@ -39,12 +38,14 @@ export function createAssimilationModule({ api, config, state, logger }) {
       const today = getToday();
       if (reminderDate !== today) return;
 
+      const assimilationSkill = await loadSkill('assimilation');
+      if (!assimilationSkill) return;
+
       const yesterday = getYesterday();
       const events = (await state.get(`events:${yesterday}`)) || [];
-      const eventCount = events.length;
 
       return {
-        prependSystemContext: `【自我发展提醒】\n昨日（${yesterday}）共有 ${eventCount} 条事件记录。\n如尚未进行，请在合适时机回顾昨日事件、撰写发展日记，并决定是否需要更新核心自我文件（IDENTITY.md / SOUL.md / MEMORY.md / skills）。\n`
+        prependSystemContext: `${assimilationSkill}\n\n【昨日事件摘要】昨日（${yesterday}）共有 ${events.length} 条事件记录。\n【Agent 职责】请根据上方 assimilation skill 自行回顾事件、撰写日记、分析同化/顺应，并决定是否需要更新核心自我文件。\n`
       };
     }, { priority: 40 });
   }
