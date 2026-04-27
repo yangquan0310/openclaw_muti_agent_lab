@@ -4,6 +4,7 @@
   "version": "1.1.0",
   "description": "OpenClaw plugin for agent self-development based on Piaget's cognitive development theory",
   "main": "src/index.js",
+  "type": "native",
   "extensions": ["./src/index.js"],
   "minVersion": "2026.4.0",
   "skills": ["skills"],

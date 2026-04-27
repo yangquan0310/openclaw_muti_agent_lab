@@ -34,7 +34,8 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
     if (trackSubagents) {
       api.on('before_tool_call', async (event, ctx) => {
         const toolName = event.toolName;
-        if (toolName !== 'agent' && toolName !== 'subagent') return;
+        const isSpawnTool = toolName === 'sessions_spawn' || toolName === 'agent' || toolName === 'subagent';
+        if (!isSpawnTool) return;
 
         const runId = ctx.runId;
         // OpenClaw 中通过 agent/subagent 工具创建会话，直接使用工具参数中的 id/name 作为会话标识
@@ -85,7 +86,8 @@ export function createWorkingMemoryModule({ api, config, state, logger }) {
         });
       }
 
-      if (toolName === 'agent' || toolName === 'subagent') {
+      const isSpawnTool = toolName === 'sessions_spawn' || toolName === 'agent' || toolName === 'subagent';
+      if (isSpawnTool) {
         const sessionId = event.params?.id || event.params?.name;
         const status = isError ? 'killed' : 'completed';
 
