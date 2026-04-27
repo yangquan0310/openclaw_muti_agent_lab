@@ -1,27 +1,39 @@
 /**
  * 同化顺应模块
- * 
+ *
  * OpenClaw 没有 cron:* hook，使用 api.registerService() 启动后台定时器，
  * 每日 00:00 执行自我更新。
- * 
+ *
+ * 技能文档要求:
+ *   - 每日 00:00 (Asia/Shanghai) 执行
+ *   - 读取前一日事件记忆
+ *   - 撰写发展日记
+ *   - 阅读核心自我与配置文件
+ *   - 同化与顺应分析
+ *   - 检测更新信号并执行更新
+ *   - 记录更新日志
+ *
  * 官方 registerService 签名:
  *   api.registerService({
  *     id: "my-service",
  *     start: (ctx) => { ... },
  *     stop: (ctx) => { ... }
  *   });
- * 
+ *
  * Handler 签名: async (event, ctx) => { ... }
  */
 
-const { getToday, getNow, callLLM } = require('./utils');
+const cron = require('node-cron');
+const { getToday, getYesterday, getNow, callLLM } = require('./utils');
 
-function createAssimilationModule({ api, config, state, logger }) {
+function createAssimilationModule({ api, config, state, logger, llmConfig }) {
   const enabled = config?.enabled !== false;
   const autoUpdate = config?.autoUpdate === true;
   const updateThreshold = config?.updateThreshold || 0.8;
 
-  let timer = null;
+  let cronJob = null;
+  let fallbackTimer = null;
+  let fallbackInterval = null;
 
   function register() {
     if (!enabled) {
@@ -64,6 +76,23 @@ function createAssimilationModule({ api, config, state, logger }) {
   function startDailyTimer() {
     stopDailyTimer();
 
+    const cronExpr = config?.dailyCron || '0 0 * * *';
+    logger.info(`[Assim] 启动每日更新定时器: ${cronExpr} (Asia/Shanghai)`);
+
+    try {
+      cronJob = cron.schedule(cronExpr, () => {
+        runDailyUpdate().catch(err => logger.error(`[Assim] 定时更新失败: ${err.message}`));
+      }, {
+        scheduled: true,
+        timezone: 'Asia/Shanghai'
+      });
+    } catch (err) {
+      logger.warn(`[Assim] node-cron 启动失败: ${err.message}，回退到原生定时器`);
+      startFallbackTimer();
+    }
+  }
+
+  function startFallbackTimer() {
     const now = new Date();
     const tomorrow = new Date(now);
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -72,35 +101,43 @@ function createAssimilationModule({ api, config, state, logger }) {
 
     logger.info(`[Assim] 下次更新: ${tomorrow.toISOString()} (还有 ${Math.round(msUntilMidnight / 1000)} 秒)`);
 
-    timer = setTimeout(() => {
+    fallbackTimer = setTimeout(() => {
       runDailyUpdate();
-      timer = setInterval(runDailyUpdate, 24 * 60 * 60 * 1000);
+      fallbackInterval = setInterval(runDailyUpdate, 24 * 60 * 60 * 1000);
     }, msUntilMidnight);
   }
 
   function stopDailyTimer() {
-    if (timer) {
-      clearTimeout(timer);
-      clearInterval(timer);
-      timer = null;
+    if (cronJob) {
+      cronJob.stop();
+      cronJob = null;
+    }
+    if (fallbackTimer) {
+      clearTimeout(fallbackTimer);
+      fallbackTimer = null;
+    }
+    if (fallbackInterval) {
+      clearInterval(fallbackInterval);
+      fallbackInterval = null;
     }
   }
 
   async function runDailyUpdate() {
-    const today = getToday();
-    logger.info(`[Assim] 开始每日自我更新: ${today}`);
+    // 每日更新应处理昨日事件（因为 00:00 执行时，今日刚开始，事件为空）
+    const targetDate = getYesterday();
+    logger.info(`[Assim] 开始每日自我更新: 处理日期 ${targetDate}`);
 
     try {
-      const events = (await state.get(`events:${today}`)) || [];
-      logger.info(`[Assim] 今日事件数: ${events.length}`);
+      const events = (await state.get(`events:${targetDate}`)) || [];
+      logger.info(`[Assim] 事件数: ${events.length} (日期: ${targetDate})`);
 
-      const diary = await generateDiary(today, events);
-      await state.set(`diary:${today}`, diary);
+      const diary = await generateDiary(targetDate, events);
+      await state.set(`diary:${targetDate}`, diary);
       logger.info(`[Assim] 日记已生成`);
 
       const coreSelf = await loadCoreSelf();
       const analysis = analyzeAssimilation(diary, coreSelf);
-      await state.set(`analysis:${today}`, analysis);
+      await state.set(`analysis:${targetDate}`, analysis);
       logger.info(`[Assim] 分析完成: ${analysis.summary}`);
 
       for (const signal of analysis.signals) {
@@ -109,7 +146,7 @@ function createAssimilationModule({ api, config, state, logger }) {
             await applyUpdate(signal, coreSelf);
             logger.info(`[Assim] 自动更新: ${signal.type}`);
           } else {
-            await state.append(`pending_updates:${today}`, signal);
+            await state.append(`pending_updates:${targetDate}`, signal);
             logger.info(`[Assim] 待确认更新信号: ${signal.type}`);
           }
         }
@@ -137,8 +174,8 @@ function createAssimilationModule({ api, config, state, logger }) {
         '要求: 总结核心认知变化，识别是否有新技能、角色或价值观的调整信号。只输出反思段落。'
       ].join('\n');
 
-      const llmConfig = { provider: 'kimicode', model: 'kimi-for-coding' };
-      const reflection = await callLLM(prompt, llmConfig);
+      const safeLLMConfig = llmConfig || { provider: 'kimicode', model: 'kimi-for-coding' };
+      const reflection = await callLLM(prompt, safeLLMConfig);
       return { date, events, reflection, raw: reflection };
     } catch (err) {
       logger.warn(`[Assim] LLM 日记生成失败: ${err.message}`);

@@ -137,7 +137,7 @@ killed → 直接删除
 | [sessionKey] | [类型] | [任务] | [状态] | [时间] | [时间] | [备注] |
 ```
 
-> **说明**：会话ID用于追踪会话（通过 `sessionTarget` 指定）。所有任务都使用会话，不再区分一次性任务。会话ID即 `sessionKey`（如 `session:CORN:agentId`、`session:PROJECT:xxx`）。
+> **说明**：所有任务都使用会话，不再区分一次性任务。会话ID即 `sessionKey`（如 `session:CORN:agentId`、`session:PROJECT:xxx`）。
 
 ---
 

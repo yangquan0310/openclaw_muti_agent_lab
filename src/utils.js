@@ -2,8 +2,29 @@
  * 工具函数
  */
 
-function getToday() {
-  return new Date().toISOString().split('T')[0];
+/**
+ * 获取指定时区的当前日期（YYYY-MM-DD）
+ * 默认 Asia/Shanghai，避免服务器时区不一致导致日期错误
+ */
+function getToday(timezone = 'Asia/Shanghai') {
+  const formatter = new Intl.DateTimeFormat('en-CA', {
+    timeZone: timezone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  });
+  return formatter.format(new Date());
+}
+
+/**
+ * 获取指定时区的昨天日期（YYYY-MM-DD）
+ */
+function getYesterday(timezone = 'Asia/Shanghai') {
+  const today = getToday(timezone);
+  const [year, month, day] = today.split('-').map(Number);
+  const date = new Date(year, month - 1, day);
+  date.setDate(date.getDate() - 1);
+  return date.toISOString().split('T')[0];
 }
 
 function getNow() {
@@ -12,20 +33,22 @@ function getNow() {
 
 /**
  * 调用外部 LLM（插件未暴露 LLM API，需自行 HTTP 调用）
+ *
+ * 支持 OpenAI 兼容格式（Kimi、OpenAI 等）
  */
 async function callLLM(prompt, config = {}) {
   const provider = config.provider || 'kimicode';
   const model = config.model || 'kimi-for-coding';
 
-  if (provider === 'kimicode') {
-    const apiKey = process.env.KIMICODE_API_KEY;
+  if (provider === 'kimicode' || provider === 'openai-compatible') {
+    const apiKey = process.env.KIMICODE_API_KEY || config.apiKey;
     const baseUrl = config.baseUrl || 'https://api.kimi.com/coding/v1';
 
     if (!apiKey) {
       throw new Error('环境变量 KIMICODE_API_KEY 未设置');
     }
 
-    const response = await fetch(`${baseUrl}/messages`, {
+    const response = await fetch(`${baseUrl}/chat/completions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -48,10 +71,55 @@ async function callLLM(prompt, config = {}) {
     }
 
     const data = await response.json();
-    return data.content?.[0]?.text || data.choices?.[0]?.message?.content || '';
+    // OpenAI 兼容格式优先（Kimi、OpenAI、Azure 等）
+    return data.choices?.[0]?.message?.content || data.content?.[0]?.text || '';
   }
 
   throw new Error(`不支持的 Provider: ${provider}`);
+}
+
+/**
+ * 根据任务内容推断会话类型
+ */
+function inferSessionType(prompt) {
+  const p = (prompt || '').toLowerCase();
+  if (p.includes('项目') || p.includes('project') || p.includes('开发') || p.includes('代码')) return 'PROJECT';
+  if (p.includes('研究') || p.includes('调研') || p.includes('文献') || p.includes('research')) return 'RESEARCH';
+  if (p.includes('定时') || p.includes('cron') || p.includes('schedule')) return 'CORN';
+  if (p.includes('写作') || p.includes('撰写') || p.includes('报告') || p.includes('论文')) return 'WRITING';
+  return 'TASK';
+}
+
+/**
+ * 为计划步骤分配建议的会话标识
+ * 格式: session:{TYPE}:{任务标识}
+ * 例: session:PROJECT:博士论文、session:TASK:文献检索
+ * 注: 此标识用于指导 Agent 创建会话时的命名/ID选择，OpenClaw 中通过 agent/subagent 工具创建会话后直接以该 ID 通信
+ */
+function assignSessions(planItems, prompt) {
+  const sessionType = inferSessionType(prompt);
+  const assignments = [];
+
+  // 通常第一个步骤由主代理直接执行，后续需要独立上下文的步骤分配会话
+  const needsSessionKeywords = ['检索', '搜索', '调研', '分析', '编写', '开发', '实现', '测试', '验证', '撰写', '设计'];
+
+  planItems.forEach((item, index) => {
+    const itemLower = item.toLowerCase();
+    // 判断该步骤是否需要独立会话（含特定关键词且非第一步）
+    const needsSession = index > 0 && needsSessionKeywords.some(k => itemLower.includes(k));
+
+    if (needsSession) {
+      // 生成会话标识：取步骤前10个字符，替换空格为下划线
+      const taskSlug = item.slice(0, 10).trim().replace(/\s+/g, '_').replace(/[^\w\u4e00-\u9fa5]/g, '');
+      assignments.push({
+        step: index + 1,
+        sessionId: `session:${sessionType}:${taskSlug}`,
+        purpose: item
+      });
+    }
+  });
+
+  return assignments;
 }
 
 function generatePlanItems(prompt) {
@@ -98,7 +166,10 @@ function generatePlanItems(prompt) {
 
 module.exports = {
   getToday,
+  getYesterday,
   getNow,
   callLLM,
-  generatePlanItems
+  generatePlanItems,
+  inferSessionType,
+  assignSessions
 };

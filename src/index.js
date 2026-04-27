@@ -39,7 +39,7 @@ module.exports = {
     // 初始化三大模块
     const metacognition = createMetacognitionModule({ api, config: config.metacognition, state, logger });
     const workingMemory = createWorkingMemoryModule({ api, config: config.workingMemory, state, logger });
-    const assimilation = createAssimilationModule({ api, config: config.assimilation, state, logger });
+    const assimilation = createAssimilationModule({ api, config: config.assimilation, state, logger, llmConfig: config.llm });
 
     // 注册所有 Hooks 和服务
     metacognition.register();

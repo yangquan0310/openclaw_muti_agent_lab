@@ -16,8 +16,8 @@
   "author": "Yang Quan",
   "license": "MIT",
   "openclaw": {
-    "plugin": true,
     "minVersion": "2026.4.0",
+    "extensions": ["./src/index.js"],
     "slots": [],
     "configSchema": {
       "type": "object",
@@ -59,11 +59,12 @@
     }
   },
   "scripts": {
-    "setup": "node scripts/install.js",
-    "setup:dry": "node scripts/install.js --dry-run",
-    "uninstall": "node scripts/install.js --uninstall"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "node-cron": "^3.0.3"
-  }
+  },
+  "bundledDependencies": [
+    "node-cron"
+  ]
 }
