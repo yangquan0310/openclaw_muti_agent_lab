@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Verify syntax
-        run: node -e "require('./src/index.js')"
+        run: node --check src/index.js
 
       - name: Pack
         run: npm pack

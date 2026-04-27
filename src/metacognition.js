@@ -14,9 +14,9 @@
  *   ctx.runId / ctx.agentId / ctx.sessionKey / ctx.logger
  */
 
-const { generatePlanItems, assignSessions } = require('./utils');
+import { generatePlanItems, assignSessions } from './utils.js';
 
-function createMetacognitionModule({ api, config, state, logger }) {
+export function createMetacognitionModule({ api, config, state, logger }) {
   const enabled = config?.enabled !== false;
   const planningEnabled = enabled && config?.planning !== false;
   const monitoringEnabled = enabled && config?.monitoring !== false;
@@ -179,5 +179,3 @@ ${plan.sessionAssignments.map(a => `  步骤${a.step}: ${a.sessionId} — ${a.pu
 
   return { register };
 }
-
-module.exports = { createMetacognitionModule };

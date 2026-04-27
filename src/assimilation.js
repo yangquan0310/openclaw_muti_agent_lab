@@ -23,10 +23,10 @@
  * Handler 签名: async (event, ctx) => { ... }
  */
 
-const cron = require('node-cron');
-const { getToday, getYesterday, getNow, callLLM } = require('./utils');
+import cron from 'node-cron';
+import { getToday, getYesterday, getNow, callLLM } from './utils.js';
 
-function createAssimilationModule({ api, config, state, logger, llmConfig }) {
+export function createAssimilationModule({ api, config, state, logger, llmConfig }) {
   const enabled = config?.enabled !== false;
   const autoUpdate = config?.autoUpdate === true;
   const updateThreshold = config?.updateThreshold || 0.8;
@@ -261,5 +261,3 @@ function createAssimilationModule({ api, config, state, logger, llmConfig }) {
 
   return { register };
 }
-
-module.exports = { createAssimilationModule };

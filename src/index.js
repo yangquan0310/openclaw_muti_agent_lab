@@ -1,21 +1,22 @@
 /**
  * OpenClaw Agent Self-Development Plugin
- * 
+ *
  * 遵循 OpenClaw 官方 SDK 规范：
- * - 导出 { id, name, register(api) }
+ * - 使用 definePluginEntry 定义插件入口
  * - 使用 api.pluginConfig 读取配置
  * - 使用 api.logger 输出日志
  * - 使用 api.on(name, (event, ctx) => {}, opts) 注册钩子
- * 
+ *
  * 参考: https://docs.openclaw.ac.cn/plugins/sdk-overview
  */
 
-const { PluginState } = require('./state');
-const { createMetacognitionModule } = require('./metacognition');
-const { createWorkingMemoryModule } = require('./working-memory');
-const { createAssimilationModule } = require('./assimilation');
+import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
+import { PluginState } from './state.js';
+import { createMetacognitionModule } from './metacognition.js';
+import { createWorkingMemoryModule } from './working-memory.js';
+import { createAssimilationModule } from './assimilation.js';
 
-module.exports = {
+export default definePluginEntry({
   id: 'agent-self-development',
   name: 'Agent Self-Development',
   version: '1.0.1',
@@ -32,7 +33,7 @@ module.exports = {
     const logger = api.logger || console;
 
     logger.info(`[${pluginId}] ╔════════════════════════════════════════════════════════════╗`);
-    logger.info(`[${pluginId}] ║  Agent Self-Development Plugin v1.0.0 已激活               ║`);
+    logger.info(`[${pluginId}] ║  Agent Self-Development Plugin v1.0.1 已激活               ║`);
     logger.info(`[${pluginId}] ║  基于皮亚杰认知发展理论 · 钩子驱动                         ║`);
     logger.info(`[${pluginId}] ╚════════════════════════════════════════════════════════════╝`);
 
@@ -48,4 +49,4 @@ module.exports = {
 
     logger.info(`[${pluginId}] 全部模块已注册`);
   }
-};
+});

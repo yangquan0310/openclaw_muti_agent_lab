@@ -15,9 +15,9 @@
  * Handler 签名: async (event, ctx) => { ... }
  */
 
-const { getToday, getNow } = require('./utils');
+import { getToday, getNow } from './utils.js';
 
-function createWorkingMemoryModule({ api, config, state, logger }) {
+export function createWorkingMemoryModule({ api, config, state, logger }) {
   const enabled = config?.enabled !== false;
   const trackSubagents = enabled && config?.trackSubagents !== false;
   const autoArchive = enabled && config?.autoArchive !== false;
@@ -160,5 +160,3 @@ function createWorkingMemoryModule({ api, config, state, logger }) {
 
   return { register };
 }
-
-module.exports = { createWorkingMemoryModule };

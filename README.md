@@ -133,6 +133,12 @@ Agent **每天自我进化**的流程，固定在北京时间每天 00:00 触发
 - [Hooks](https://docs.openclaw.ai/plugins/hooks)
 - [Plugin API](https://github.com/openclaw/openclaw/blob/main/docs/tools/plugin.md)
 
+> **导入约定**：本插件使用官方推荐的 ESM 入口方式
+> ```js
+> import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
+> export default definePluginEntry({ id, name, register(api) { ... } });
+> ```
+
 ---
 
 ## 文件结构
@@ -140,15 +146,19 @@ Agent **每天自我进化**的流程，固定在北京时间每天 00:00 触发
 ```
 openclaw-agent-self-development/
 ├── openclaw.plugin.json      # Native plugin manifest (id / name / version / main / configSchema)
-├── package.json              # npm 包配置 (openclaw.extensions / bundledDependencies)
+├── package.json              # npm 包配置 (type: module / openclaw.extensions / bundledDependencies)
 ├── README.md
-└── src/
-    ├── index.js              # 插件入口: { id, name, register(api) }
-    ├── state.js              # 插件状态管理（JSON 文件）
-    ├── utils.js              # 工具函数 + LLM HTTP 调用 + 会话分配
-    ├── metacognition.js      # before_prompt_build / llm_output / before_agent_finalize / agent_end
-    ├── working-memory.js     # before_tool_call / after_tool_call / agent_end
-    └── assimilation.js       # registerService 后台定时服务
+├── src/
+│   ├── index.js              # 插件入口: export default definePluginEntry({ register(api) })
+│   ├── state.js              # 插件状态管理（JSON 文件）
+│   ├── utils.js              # 工具函数 + LLM HTTP 调用 + 会话分配
+│   ├── metacognition.js      # before_prompt_build / llm_output / before_agent_finalize / agent_end
+│   ├── working-memory.js     # before_tool_call / after_tool_call / agent_end
+│   └── assimilation.js       # registerService 后台定时服务
+└── skills/                   # 技能文档（原始文档规范）
+    ├── metacognition/
+    ├── working_memory/
+    └── assimilation_accommodation/
 ```
 
 ---

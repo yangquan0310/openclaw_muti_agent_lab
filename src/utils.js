@@ -2,11 +2,7 @@
  * 工具函数
  */
 
-/**
- * 获取指定时区的当前日期（YYYY-MM-DD）
- * 默认 Asia/Shanghai，避免服务器时区不一致导致日期错误
- */
-function getToday(timezone = 'Asia/Shanghai') {
+export function getToday(timezone = 'Asia/Shanghai') {
   const formatter = new Intl.DateTimeFormat('en-CA', {
     timeZone: timezone,
     year: 'numeric',
@@ -16,10 +12,7 @@ function getToday(timezone = 'Asia/Shanghai') {
   return formatter.format(new Date());
 }
 
-/**
- * 获取指定时区的昨天日期（YYYY-MM-DD）
- */
-function getYesterday(timezone = 'Asia/Shanghai') {
+export function getYesterday(timezone = 'Asia/Shanghai') {
   const today = getToday(timezone);
   const [year, month, day] = today.split('-').map(Number);
   const date = new Date(year, month - 1, day);
@@ -27,7 +20,7 @@ function getYesterday(timezone = 'Asia/Shanghai') {
   return date.toISOString().split('T')[0];
 }
 
-function getNow() {
+export function getNow() {
   return new Date().toISOString();
 }
 
@@ -36,7 +29,7 @@ function getNow() {
  *
  * 支持 OpenAI 兼容格式（Kimi、OpenAI 等）
  */
-async function callLLM(prompt, config = {}) {
+export async function callLLM(prompt, config = {}) {
   const provider = config.provider || 'kimicode';
   const model = config.model || 'kimi-for-coding';
 
@@ -81,7 +74,7 @@ async function callLLM(prompt, config = {}) {
 /**
  * 根据任务内容推断会话类型
  */
-function inferSessionType(prompt) {
+export function inferSessionType(prompt) {
   const p = (prompt || '').toLowerCase();
   if (p.includes('项目') || p.includes('project') || p.includes('开发') || p.includes('代码')) return 'PROJECT';
   if (p.includes('研究') || p.includes('调研') || p.includes('文献') || p.includes('research')) return 'RESEARCH';
@@ -96,7 +89,7 @@ function inferSessionType(prompt) {
  * 例: session:PROJECT:博士论文、session:TASK:文献检索
  * 注: 此标识用于指导 Agent 创建会话时的命名/ID选择，OpenClaw 中通过 agent/subagent 工具创建会话后直接以该 ID 通信
  */
-function assignSessions(planItems, prompt) {
+export function assignSessions(planItems, prompt) {
   const sessionType = inferSessionType(prompt);
   const assignments = [];
 
@@ -122,7 +115,7 @@ function assignSessions(planItems, prompt) {
   return assignments;
 }
 
-function generatePlanItems(prompt) {
+export function generatePlanItems(prompt) {
   const p = (prompt || '').toLowerCase();
   if (p.includes('代码') || p.includes('开发') || p.includes('实现')) {
     return [
@@ -163,13 +156,3 @@ function generatePlanItems(prompt) {
     '归档任务记录'
   ];
 }
-
-module.exports = {
-  getToday,
-  getYesterday,
-  getNow,
-  callLLM,
-  generatePlanItems,
-  inferSessionType,
-  assignSessions
-};

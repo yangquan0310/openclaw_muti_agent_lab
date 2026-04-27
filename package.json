@@ -2,6 +2,7 @@
   "name": "openclaw-agent-self-development",
   "version": "1.0.1",
   "description": "OpenClaw plugin for agent self-development based on Piaget's cognitive development theory",
+  "type": "module",
   "main": "src/index.js",
   "engines": {
     "node": ">=18.0.0"
@@ -58,6 +59,11 @@
       }
     }
   },
+  "files": [
+    "src/",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
