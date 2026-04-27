@@ -1,17 +1,10 @@
 /**
- * 元认知模块
+ * 元认知模块 —— 纯提醒框架
  *
- * 官方 Hook 映射:
- *   before_prompt_build   → 计划 + 注入: 生成执行计划并注入 system context
- *                         （新插件推荐用 before_prompt_build 替代已废弃的 before_agent_start）
- *   llm_output            → 监控 (Monitoring): 分析输出与计划的偏差
- *   before_agent_finalize → 调节 (Regulation): 偏差大时请求 revise
- *   agent_end             → 清理状态
+ * 插件职责：为 Agent 提供计划建议和进度追踪基础设施
+ * Agent 职责：自行判断偏差、决定是否 revise、管理执行节奏
  *
- * 依赖: plugins.entries.<id>.hooks.allowConversationAccess = true
- *
- * Handler 签名: async (event, ctx) => { ... }
- *   ctx.runId / ctx.agentId / ctx.sessionKey / ctx.logger
+ * 不涉及：偏差判断、强制 revise、置信度评估
  */
 
 import { generatePlanItems, assignSessions } from './utils.js';
@@ -20,7 +13,6 @@ export function createMetacognitionModule({ api, config, state, logger }) {
   const enabled = config?.enabled !== false;
   const planningEnabled = enabled && config?.planning !== false;
   const monitoringEnabled = enabled && config?.monitoring !== false;
-  const regulationEnabled = enabled && config?.regulation !== false;
 
   function register() {
     if (!enabled) {
@@ -30,17 +22,15 @@ export function createMetacognitionModule({ api, config, state, logger }) {
 
     logger.info('[Meta] 注册元认知 Hooks');
 
-    // ── Planning + Prompt Injection: before_prompt_build ──
-    // 官方推荐新插件使用 before_prompt_build 替代 before_agent_start
+    // ── Planning: before_prompt_build ──
     if (planningEnabled) {
       api.on('before_prompt_build', async (event, ctx) => {
         const runId = ctx.runId;
         if (!runId) return;
 
-        // 阶段1：任务决策 — 简单任务跳过元认知
         const prompt = event.prompt || '';
         if (!shouldUseMetacognition(prompt)) {
-          logger.debug(`[Meta][Planning] 简单任务，跳过计划生成: ${prompt.slice(0, 50)}`);
+          logger.debug(`[Meta] 简单任务，跳过计划: ${prompt.slice(0, 50)}`);
           return;
         }
 
@@ -53,76 +43,44 @@ export function createMetacognitionModule({ api, config, state, logger }) {
             prompt: prompt.slice(0, 500),
             items,
             sessionAssignments,
-            createdAt: Date.now(),
-            stage: 'monitoring'
+            createdAt: Date.now()
           };
           await state.set(`plan:${runId}`, plan);
-          logger.debug(`[Meta][Planning] runId=${runId}, steps=${plan.items.length}, sessions=${sessionAssignments.length}`);
+          logger.debug(`[Meta] 计划生成: ${plan.items.length} 步`);
         }
 
-        // 构建带会话分配提示的计划文本
         const planLines = plan.items.map((s, i) => {
           const assign = plan.sessionAssignments?.find(a => a.step === i + 1);
           const sessionHint = assign ? ` [建议会话: ${assign.sessionId}]` : '';
           return `${i + 1}. ${s}${sessionHint}`;
         }).join('\n');
 
-        // 如果存在会话分配，追加会话管理指引
         let sessionGuide = '';
         if (plan.sessionAssignments?.length > 0) {
           sessionGuide = `
 【会话管理指引】
-- 以下步骤建议创建独立会话执行，创建后记录其会话ID到工作记忆
-- 复用规则：执行前检查工作记忆中的「活跃会话清单」，若已存在相同标识的会话则复用，不再创建
-- 会话标识格式: session:{TYPE}:{任务标识}
-- 向会话发送消息时，直接使用其会话ID作为参数调用 session_send
+- 以下步骤建议创建独立会话执行
+- 复用规则：执行前检查工作记忆中的「活跃会话清单」，若已存在相同标识则复用
+- 向会话发送消息时，直接使用其会话ID调用 session_send
 ${plan.sessionAssignments.map(a => `  步骤${a.step}: ${a.sessionId} — ${a.purpose}`).join('\n')}
 `;
         }
 
-        logger.debug(`[Meta][PromptBuild] 注入计划到 runId=${runId}`);
-
         return {
-          prependSystemContext: `【执行计划】请严格按照以下步骤执行，完成一步后主动报告进度。若发现偏离计划，请立即说明。\n${planLines}\n${sessionGuide}\n`
+          prependSystemContext: `【执行计划建议】请根据以下步骤执行，完成一步后主动报告进度。\n${planLines}\n${sessionGuide}\n【Agent 职责】请自行判断是否需要偏离计划，如需变更请先说明理由。\n`
         };
       }, { priority: 50 });
     }
 
     // ── Monitoring: llm_output ──
-    // 插件只记录计划和输出，Agent 自行分析偏差
+    // 插件仅记录输出供 Agent 参考，不自行判断偏差
     if (monitoringEnabled) {
       api.on('llm_output', async (event, ctx) => {
         const runId = ctx.runId;
         if (!runId) return;
-
-        const plan = await state.get(`plan:${runId}`);
-        if (!plan) return;
-
         const output = event.output || event.text || '';
-        // 记录输出供 Agent 参考，不自行判断偏差
         await state.set(`output:${runId}`, output);
-        logger.debug(`[Meta][Monitoring] 输出已记录，runId=${runId}`);
-      });
-    }
-
-    // ── Regulation: before_agent_finalize ──
-    if (regulationEnabled) {
-      api.on('before_agent_finalize', async (event, ctx) => {
-        const runId = ctx.runId;
-        if (!runId) return;
-
-        const deviation = await state.get(`deviation:${runId}`);
-        if (!deviation?.significant) return;
-
-        logger.info(`[Meta][Regulation] 请求 revise: ${deviation.reason}`);
-
-        // 清除偏差标记，防止无限循环
-        await state.set(`deviation:${runId}`, null);
-
-        return {
-          action: 'revise',
-          reason: `元认知调节: ${deviation.reason}\n建议调整: ${deviation.adjustment}`
-        };
+        logger.debug(`[Meta] 输出已记录，runId=${runId}`);
       });
     }
 
@@ -130,64 +88,18 @@ ${plan.sessionAssignments.map(a => `  步骤${a.step}: ${a.sessionId} — ${a.pu
     api.on('agent_end', async (event, ctx) => {
       const runId = ctx.runId;
       if (!runId) return;
-
       await state.set(`plan:${runId}`, null);
-      await state.set(`deviation:${runId}`, null);
+      await state.set(`output:${runId}`, null);
       logger.debug(`[Meta] 清理状态: runId=${runId}`);
     });
   }
 
-  // ─────────── 辅助函数 ───────────
-
   function shouldUseMetacognition(prompt) {
     const simplePatterns = [
       /^(查询|搜索|查找|什么是|怎么|如何)/i,
-      /^(现在几点|今天日期|天气)/i,
-      /^(\s*\/?\s*)/  // 空消息或纯命令前缀
+      /^(现在几点|今天日期|天气)/i
     ];
     return !simplePatterns.some(p => p.test(prompt.trim()));
-  }
-
-  function detectDeviation(plan, output) {
-    const outputLower = (output || '').toLowerCase();
-    let currentStep = 0;
-    let completedSteps = 0;
-
-    for (let i = 0; i < plan.items.length; i++) {
-      const keyword = plan.items[i].slice(0, 10).toLowerCase();
-      if (outputLower.includes(keyword) || outputLower.includes(`步骤${i + 1}`) || outputLower.includes(`step ${i + 1}`)) {
-        currentStep = i + 1;
-      }
-      // 检查是否报告完成了该步骤
-      const completionSignals = ['完成', 'done', 'finished', '已执行', '已处理', 'ok'];
-      if (completionSignals.some(s => outputLower.includes(`${s}步骤${i + 1}`) || outputLower.includes(`步骤${i + 1}${s}`))) {
-        completedSteps++;
-      }
-    }
-
-    const errorSignals = ['错误', '失败', '无法', 'exception', 'error', 'failed', 'cannot'];
-    const hasError = errorSignals.some(s => outputLower.includes(s));
-    const blocked = outputLower.includes('阻塞') || outputLower.includes('等待') || outputLower.includes('blocked') || outputLower.includes('waiting');
-    const offTrack = outputLower.includes('偏离') || outputLower.includes('变更') || outputLower.includes('调整方案') || outputLower.includes('改用');
-
-    const significant = hasError || blocked || offTrack;
-
-    return {
-      expected: `步骤 ${currentStep}/${plan.items.length}`,
-      actual: `已完成 ${completedSteps}/${plan.items.length} 步`,
-      significant,
-      reason: hasError ? '输出中包含错误信号'
-        : blocked ? '任务可能阻塞'
-        : offTrack ? '检测到方案偏离或工具变更'
-        : '无明显偏差',
-      adjustment: hasError
-        ? '请检查错误原因，尝试修复或回退到上一个稳定状态。'
-        : blocked
-        ? '识别阻塞原因，尝试替代方案。'
-        : offTrack
-        ? '请回归原计划，如需变更方案请先向用户说明。'
-        : '继续按原计划执行。'
-    };
   }
 
   return { register };
