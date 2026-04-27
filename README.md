@@ -1,6 +1,6 @@
 # OpenClaw 多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-v3.2.1-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-v3.2.3-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-9%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -366,6 +366,10 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 3.2.3 (2026-04-27)
+- **安全审计**：定期扫描仓库硬编码敏感信息，确保无API Key泄露
+- **README更新**：同步版本号、时间戳、运行状态
+
 ### 版本 3.2.2 (2026-04-26)
 - **统一命名会话机制**：agent_self_development 全面改用命名会话
   - 取消一次性任务和持久会话的区分，所有任务统一使用命名会话
@@ -449,7 +453,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新**: 2026-04-26 16:09:00  
-**系统版本**: v3.2.2  
+**最后更新**: 2026-04-27 12:21:00  
+**系统版本**: v3.2.3  
 **运行状态**: ✅ 正常运行  
 **备份状态**: ✅ 自动执行中

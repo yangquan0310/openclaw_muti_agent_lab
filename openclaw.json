@@ -134,115 +134,7 @@
             "manage-project"
           ]
         }
-      },
-      {
-        "id": "steward",
-        "name": "steward",
-        "workspace": "/root/.openclaw/workspace/steward",
-        "agentDir": "/root/.openclaw/agents/steward/agent",
-        "tools": {
-          "alsoAllow": [
-            "agent_self_development",
-            "manage-project"
-          ]
-        }
-      },
-      {
-        "id": "mathematician",
-        "name": "mathematician",
-        "workspace": "/root/.openclaw/workspace/mathematician",
-        "agentDir": "/root/.openclaw/agents/mathematician/agent",
-        "tools": {
-          "alsoAllow": [
-            "agent_self_development",
-            "manage-project"
-          ]
-        }
-      },
-      {
-        "id": "physicist",
-        "name": "physicist",
-        "workspace": "/root/.openclaw/workspace/physicist",
-        "agentDir": "/root/.openclaw/agents/physicist/agent",
-        "tools": {
-          "alsoAllow": [
-            "agent_self_development",
-            "manage-project"
-          ]
-        }
-      },
-      {
-        "id": "psychologist",
-        "name": "psychologist",
-        "workspace": "/root/.openclaw/workspace/psychologist",
-        "agentDir": "/root/.openclaw/agents/psychologist/agent",
-        "tools": {
-          "alsoAllow": [
-            "agent_self_development",
-            "manage-project"
-          ]
-        }
-      },
-      {
-        "id": "writer",
-        "name": "writer",
-        "workspace": "/root/.openclaw/workspace/writer",
-        "agentDir": "/root/.openclaw/agents/writer/agent",
-        "tools": {
-          "alsoAllow": [
-            "agent_self_development",
-            "manage-project"
-          ]
-        }
-      },
-      {
-        "id": "reviewer",
-        "name": "reviewer",
-        "workspace": "/root/.openclaw/workspace/reviewer",
-        "agentDir": "/root/.openclaw/agents/reviewer/agent",
-        "tools": {
-          "alsoAllow": [
-            "agent_self_development",
-            "manage-project"
-          ]
-        }
-      },
-      {
-        "id": "teachingassistant",
-        "name": "TeachingAssistant",
-        "workspace": "/root/.openclaw/workspace/teaching",
-        "agentDir": "/root/.openclaw/agents/teachingassistant/agent",
-        "tools": {
-          "alsoAllow": [
-            "agent_self_development",
-            "manage-project"
-          ]
-        }
-      },
-      {
-        "id": "studentaffairsassistant",
-        "name": "studentaffairsassistant",
-        "workspace": "/root/.openclaw/workspace/studentaffairsassistant",
-        "agentDir": "/root/.openclaw/agents/studentaffairsassistant/agent",
-        "tools": {
-          "alsoAllow": [
-            "agent_self_development",
-            "manage-project"
-          ]
-        }
-      },
-      {
-        "id": "academicassistant",
-        "name": "academicassistant",
-        "workspace": "/root/.openclaw/workspace/academicassistant",
-        "agentDir": "/root/.openclaw/agents/academicassistant/agent",
-        "tools": {
-          "alsoAllow": [
-            "agent_self_development",
-            "manage-project"
-          ]
-        }
-      },
+      }
     ]
   },
   "gateway": {
@@ -285,8 +177,8 @@
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.4.15",
-    "lastTouchedAt": "2026-04-23T12:06:28.159Z"
+    "lastTouchedVersion": "2026.4.21",
+    "lastTouchedAt": "2026-04-27T04:01:00.508Z"
   },
   "plugins": {
     "entries": {
@@ -314,7 +206,17 @@
         }
       },
       "memory-lancedb": {
-        "enabled": false
+        "enabled": true,
+        "config": {
+          "embedding": {
+            "apiKey": "${KIMICODE_API_KEY}",
+            "baseUrl": "https://api.moonshot.cn/v1",
+            "model": "moonshot-v1-8k",
+            "dimensions": 1536
+          },
+          "autoCapture": true,
+          "autoRecall": true
+        }
       },
       "ddingtalk": {
         "enabled": false
@@ -365,42 +267,42 @@
         "spec": "@largezhou/ddingtalk@2.0.1",
         "installPath": "/root/.openclaw/extensions/ddingtalk",
         "version": "2.0.1",
-        "installedAt": "2026-04-23T12:04:48.000Z"
+        "installedAt": "2026-04-27T03:59:29.000Z"
       },
       "wecom": {
         "source": "npm",
         "spec": "@mocrane/wecom@2026.3.24",
         "installPath": "/root/.openclaw/extensions/wecom",
         "version": "2026.3.24",
-        "installedAt": "2026-04-23T12:04:53.000Z"
+        "installedAt": "2026-04-27T03:59:36.000Z"
       },
       "openclaw-plugin-yuanbao": {
         "source": "npm",
         "spec": "openclaw-plugin-yuanbao@2.10.0",
         "installPath": "/root/.openclaw/extensions/openclaw-plugin-yuanbao",
         "version": "2.10.0",
-        "installedAt": "2026-04-23T12:04:59.000Z"
+        "installedAt": "2026-04-27T03:59:41.000Z"
       },
       "openclaw-weixin": {
         "source": "npm",
         "spec": "@tencent-weixin/openclaw-weixin@2.1.9",
         "installPath": "/root/.openclaw/extensions/openclaw-weixin",
         "version": "2.1.9",
-        "installedAt": "2026-04-23T12:05:03.000Z"
+        "installedAt": "2026-04-27T03:59:46.000Z"
       },
       "lightclawbot": {
         "source": "npm",
         "spec": "lightclawbot@1.1.2",
         "installPath": "/root/.openclaw/extensions/lightclawbot",
         "version": "1.1.2",
-        "installedAt": "2026-04-23T12:05:05.000Z"
+        "installedAt": "2026-04-27T03:59:48.000Z"
       },
       "memory-tencentdb": {
         "source": "npm",
         "spec": "@tencentdb-agent-memory/memory-tencentdb@0.2.2",
         "installPath": "/root/.openclaw/extensions/memory-tencentdb",
         "version": "0.2.2",
-        "installedAt": "2026-04-23T12:05:35.000Z"
+        "installedAt": "2026-04-27T04:00:14.000Z"
       }
     },
     "allow": [
@@ -409,6 +311,7 @@
       "ddingtalk",
       "lightclawbot",
       "memory-core",
+      "memory-lancedb",
       "memory-wiki",
       "openclaw-lark",
       "openclaw-plugin-yuanbao",
@@ -417,9 +320,7 @@
       "wecom"
     ],
     "load": {
-      "paths": [
-        "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.4.14_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0_@napi-rs+canvas@0.1.99_@t_301ed012d3fecfe3e2337cb93aa6e57a/node_modules/openclaw/dist/extensions/memory-core"
-      ]
+      "paths": []
     },
     "slots": {
       "memory": "memory-core"

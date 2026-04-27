@@ -71,7 +71,6 @@ __pycache__/
 .vscode/
 .idea/
 
-
 # 允许需要备份的文件
 !/README.md
 !/requirements.txt
@@ -83,4 +82,21 @@ __pycache__/
 
 # 排除 cron 运行记录
 /cron/runs/
-/worspace/skills/.skills_store_lock.json
+/workspace/skills/.skills_store_lock.json
+
+# ============================================
+# Skills 目录 - 只保留自己写的三个技能
+# ============================================
+/workspace/skills/*/
+!/workspace/skills/Skill-developer/
+!/workspace/skills/agent_self_development/
+!/workspace/skills/manage-project/
+!/workspace/skills/README.md
+
+# ============================================
+# Extensions 目录 - 只保留目录结构，忽略所有插件内容
+# 以后自己写的插件再手动添加例外
+# ============================================
+/extensions/*/
+!/extensions/README.md
+!/extensions/.gitkeep
