@@ -1,26 +1,17 @@
 /**
- * 元认知模块
- * 
- * 官方 Hook 映射:
- *   before_agent_start    → 计划 (Planning): 解析 prompt，生成执行计划存入 state
- *   before_prompt_build   → 注入计划: 将计划注入 system context
- *   llm_output            → 监控 (Monitoring): 分析输出与计划的偏差
- *   before_agent_finalize → 调节 (Regulation): 偏差大时请求 revise
- *   agent_end             → 清理状态
- * 
- * 依赖: plugins.entries.<id>.hooks.allowConversationAccess = true
- * 
- * Handler 签名: async (event, ctx) => { ... }
- *   ctx.runId / ctx.agentId / ctx.sessionKey / ctx.logger
+ * 元认知模块 —— 纯钩子框架
+ *
+ * 插件职责：在合适的时机将对应的 skill 文档注入 Agent 的 system context
+ * Agent 职责：自行阅读 skill、判断偏差、决定是否 revise
  */
 
-const { generatePlanItems } = require('./utils');
+import { generatePlanItems, assignSessions } from './utils.js';
+import { loadSkill } from './skills-loader.js';
 
-function createMetacognitionModule({ api, config, state, logger }) {
+export function createMetacognitionModule({ api, config, state, logger }) {
   const enabled = config?.enabled !== false;
   const planningEnabled = enabled && config?.planning !== false;
   const monitoringEnabled = enabled && config?.monitoring !== false;
-  const regulationEnabled = enabled && config?.regulation !== false;
 
   function register() {
     if (!enabled) {
@@ -30,80 +21,67 @@ function createMetacognitionModule({ api, config, state, logger }) {
 
     logger.info('[Meta] 注册元认知 Hooks');
 
-    // ── Planning: before_agent_start ──
-    if (planningEnabled) {
-      api.on('before_agent_start', async (event, ctx) => {
-        const runId = ctx.runId;
-        const prompt = event.prompt || '';
-
-        const plan = {
-          runId,
-          prompt: prompt.slice(0, 500),
-          items: generatePlanItems(prompt),
-          createdAt: Date.now(),
-          stage: 'monitoring'
-        };
-
-        await state.set(`plan:${runId}`, plan);
-        logger.debug(`[Meta][Planning] runId=${runId}, steps=${plan.items.length}`);
-      }, { priority: 50 });
-    }
-
-    // ── Prompt Injection: before_prompt_build ──
+    // ── Planning: before_prompt_build ──
+    // 复杂任务时注入 planning skill + 计划建议
     if (planningEnabled) {
       api.on('before_prompt_build', async (event, ctx) => {
         const runId = ctx.runId;
         if (!runId) return;
 
-        const plan = await state.get(`plan:${runId}`);
-        if (!plan) return;
+        const prompt = event.prompt || '';
+        if (!shouldUseMetacognition(prompt)) {
+          logger.debug(`[Meta] 简单任务，跳过计划: ${prompt.slice(0, 50)}`);
+          return;
+        }
 
-        const planText = plan.items.map((s, i) => `${i + 1}. ${s}`).join('\n');
+        let plan = await state.get(`plan:${runId}`);
+        if (!plan) {
+          const items = generatePlanItems(prompt);
+          const sessionAssignments = assignSessions(items, prompt);
+          plan = {
+            runId,
+            prompt: prompt.slice(0, 500),
+            items,
+            sessionAssignments,
+            createdAt: Date.now()
+          };
+          await state.set(`plan:${runId}`, plan);
+          logger.debug(`[Meta] 计划生成: ${plan.items.length} 步`);
+        }
 
-        logger.debug(`[Meta][PromptBuild] 注入计划到 runId=${runId}`);
+        const planLines = plan.items.map((s, i) => {
+          const assign = plan.sessionAssignments?.find(a => a.step === i + 1);
+          const sessionHint = assign ? ` [建议会话: ${assign.sessionId}]` : '';
+          return `${i + 1}. ${s}${sessionHint}`;
+        }).join('\n');
+
+        const planningSkill = await loadSkill('planning');
 
         return {
-          prependSystemContext: `【执行计划】请严格按照以下步骤执行，完成一步后主动报告进度。若发现偏离计划，请立即说明。\n${planText}\n`
+          prependSystemContext: `${planningSkill}\n\n【当前执行计划】\n${planLines}\n\n【Agent 职责】请根据上方 skill 指导自行制定和执行计划。如需偏离计划请先说明理由。\n`
         };
-      });
+      }, { priority: 50 });
     }
 
     // ── Monitoring: llm_output ──
+    // 注入 monitoring skill，Agent 自行阅读并判断偏差
     if (monitoringEnabled) {
       api.on('llm_output', async (event, ctx) => {
         const runId = ctx.runId;
         if (!runId) return;
 
+        const output = event.output || event.text || '';
+        await state.set(`output:${runId}`, output);
+
+        const monitoringSkill = await loadSkill('monitoring');
+        if (!monitoringSkill) return;
+
+        // 仅在计划存在时注入监控 skill（避免简单任务也被注入）
         const plan = await state.get(`plan:${runId}`);
         if (!plan) return;
 
-        const output = event.output || event.text || '';
-        const deviation = detectDeviation(plan, output);
-
-        if (deviation.significant) {
-          await state.set(`deviation:${runId}`, deviation);
-          logger.warn(`[Meta][Monitoring] 偏差检测: ${deviation.reason}`);
-        }
-      });
-    }
-
-    // ── Regulation: before_agent_finalize ──
-    if (regulationEnabled) {
-      api.on('before_agent_finalize', async (event, ctx) => {
-        const runId = ctx.runId;
-        if (!runId) return;
-
-        const deviation = await state.get(`deviation:${runId}`);
-        if (!deviation?.significant) return;
-
-        logger.info(`[Meta][Regulation] 请求 revise: ${deviation.reason}`);
-
-        // 清除偏差标记，防止无限循环
-        await state.set(`deviation:${runId}`, null);
-
         return {
-          action: 'revise',
-          reason: `元认知调节: ${deviation.reason}\n建议调整: ${deviation.adjustment}`
+          prependSystemContext: `${monitoringSkill}\n\n【Agent 职责】请根据上方 monitoring skill 自行检查当前输出是否与计划一致，识别偏差或阻塞。\n`
         };
       });
     }
@@ -112,45 +90,19 @@ function createMetacognitionModule({ api, config, state, logger }) {
     api.on('agent_end', async (event, ctx) => {
       const runId = ctx.runId;
       if (!runId) return;
-
       await state.set(`plan:${runId}`, null);
-      await state.set(`deviation:${runId}`, null);
+      await state.set(`output:${runId}`, null);
       logger.debug(`[Meta] 清理状态: runId=${runId}`);
     });
   }
 
-  // ─────────── 辅助函数 ───────────
-
-  function detectDeviation(plan, output) {
-    const outputLower = (output || '').toLowerCase();
-    let currentStep = 0;
-
-    for (let i = 0; i < plan.items.length; i++) {
-      const keyword = plan.items[i].slice(0, 10).toLowerCase();
-      if (outputLower.includes(keyword) || outputLower.includes(`步骤${i + 1}`)) {
-        currentStep = i + 1;
-      }
-    }
-
-    const errorSignals = ['错误', '失败', '无法', 'exception', 'error', 'failed', 'cannot'];
-    const hasError = errorSignals.some(s => outputLower.includes(s));
-    const blocked = outputLower.includes('阻塞') || outputLower.includes('等待');
-    const significant = hasError || blocked;
-
-    return {
-      expected: `步骤 ${currentStep}/${plan.items.length}`,
-      actual: '由单次 llm_output 推断',
-      significant,
-      reason: hasError ? '输出中包含错误信号' : blocked ? '任务可能阻塞' : '无明显偏差',
-      adjustment: hasError
-        ? '请检查错误原因，尝试修复或回退到上一个稳定状态。'
-        : blocked
-        ? '识别阻塞原因，尝试替代方案。'
-        : '继续按原计划执行。'
-    };
+  function shouldUseMetacognition(prompt) {
+    const simplePatterns = [
+      /^(查询|搜索|查找|什么是|怎么|如何)/i,
+      /^(现在几点|今天日期|天气)/i
+    ];
+    return !simplePatterns.some(p => p.test(prompt.trim()));
   }
 
   return { register };
 }
-
-module.exports = { createMetacognitionModule };

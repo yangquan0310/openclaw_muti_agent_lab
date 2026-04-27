@@ -1,5 +1,5 @@
 ---
-name: subagent_tracker
+name: session_tracker
 description: >
   工作记忆会话追踪。创建、更新和追踪**会话**任务状态，管理会话生命周期。
 version: 1.0.0
@@ -14,12 +14,12 @@ exports:
   - tracking_procedures
 ---
 
-# subagent_tracker
+# session_tracker
 
 > 工作记忆 - 会话追踪
 > 创建、更新和追踪**会话**任务状态
 > 
-> **注意**：所有任务都使用会话，通过 `sessionTarget` 指定。
+> **注意**：所有任务都使用会话。创建会话后直接使用其 ID 通信。
 
 ---
 
@@ -47,7 +47,7 @@ exports:
      - 状态为 `active` 或 `paused`
    - **复用规则**：
      - 若存在共享上下文的会话 → **复用该会话**，不创建新会话
-     - 若不存在共享上下文的会话 → **创建新会话**（通过 `sessionTarget` 指定）
+     - 若不存在共享上下文的会话 → **创建新会话**（通过 agent/subagent 工具创建）
 
 2. 主代理制定计划
 3. 在「当前活跃任务看板」添加记录
@@ -55,7 +55,7 @@ exports:
    | 任务ID | 项目 | 任务描述 | 会话ID | 状态 | 创建时间 | 最后更新 | 备注 |
    | [T001] | [项目] | [任务] | [待分配] | active | [现在] | [现在] | [计划ID] |
    ```
-4. 创建会话（通过 `sessionTarget` 指定，如 `session:PROJECT:xxx`）
+4. 创建会话（如 `session:PROJECT:xxx`）
 5. 获取会话ID
 6. 更新「会话ID」字段
 7. 在「活跃会话清单」添加记录
@@ -141,13 +141,13 @@ exports:
 
 ```
 metacognition/planning
-    └── 调用 subagent_tracker 创建任务记录
+    └── 调用 session_tracker 创建任务记录
 
 metacognition/monitoring
-    └── 调用 subagent_tracker 更新状态
+    └── 调用 session_tracker 更新状态
 
 metacognition/regulation
-    └── 调用 subagent_tracker 修改状态 (paused/active)
+    └── 调用 session_tracker 修改状态 (paused/active)
 ```
 
 ---

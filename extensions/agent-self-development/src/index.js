@@ -1,27 +1,22 @@
 /**
  * OpenClaw Agent Self-Development Plugin
- * 
- * 遵循 OpenClaw 官方 SDK 规范：
- * - 导出 { id, name, register(api) }
- * - 使用 api.pluginConfig 读取配置
- * - 使用 api.logger 输出日志
- * - 使用 api.on(name, (event, ctx) => {}, opts) 注册钩子
- * 
- * 参考: https://docs.openclaw.ac.cn/plugins/sdk-overview
+ *
+ * 纯钩子框架 —— 只注入提醒，不涉及操作。
+ * Agent 自行决策：偏差判断、文件读写、同化顺应分析、置信度评估。
  */
 
-const { PluginState } = require('./state');
-const { createMetacognitionModule } = require('./metacognition');
-const { createWorkingMemoryModule } = require('./working-memory');
-const { createAssimilationModule } = require('./assimilation');
+import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
+import { PluginState } from './state.js';
+import { createMetacognitionModule } from './metacognition.js';
+import { createWorkingMemoryModule } from './working-memory.js';
+import { createAssimilationModule } from './assimilation.js';
 
-module.exports = {
+export default definePluginEntry({
   id: 'agent-self-development',
   name: 'Agent Self-Development',
-  version: '1.0.0',
+  version: '1.2.6',
 
   register(api) {
-    // 非运行时加载（discovery/setup-only/cli-metadata）跳过副作用
     if (api.registrationMode && api.registrationMode !== 'full') {
       return;
     }
@@ -31,21 +26,22 @@ module.exports = {
     const state = new PluginState(pluginId);
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] ╔════════════════════════════════════════════════════════════╗`);
-    logger.info(`[${pluginId}] ║  Agent Self-Development Plugin v1.0.0 已激活               ║`);
-    logger.info(`[${pluginId}] ║  基于皮亚杰认知发展理论 · 钩子驱动                         ║`);
-    logger.info(`[${pluginId}] ╚════════════════════════════════════════════════════════════╝`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v1.2.6 activated`);
 
-    // 初始化三大模块
+    // 检查 conversation hooks 权限
+    const entries = api.config?.plugins?.entries?.[pluginId];
+    if (entries?.hooks?.allowConversationAccess !== true) {
+      logger.warn(`[${pluginId}] ⚠️ allowConversationAccess 未启用，元认知功能可能无法工作`);
+    }
+
     const metacognition = createMetacognitionModule({ api, config: config.metacognition, state, logger });
     const workingMemory = createWorkingMemoryModule({ api, config: config.workingMemory, state, logger });
     const assimilation = createAssimilationModule({ api, config: config.assimilation, state, logger });
 
-    // 注册所有 Hooks 和服务
     metacognition.register();
     workingMemory.register();
     assimilation.register();
 
     logger.info(`[${pluginId}] 全部模块已注册`);
   }
-};
+});

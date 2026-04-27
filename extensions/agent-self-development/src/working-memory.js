@@ -1,17 +1,14 @@
 /**
- * 工作记忆模块
- * 
- * 官方 Hook 映射:
- *   before_tool_call → 子代理启动追踪（OpenClaw 中子代理通过 agent/subagent 工具创建）
- *   after_tool_call  → 记录工具执行结果
- *   agent_end        → 归档本次运行的工具调用历史
- * 
- * Handler 签名: async (event, ctx) => { ... }
+ * 工作记忆模块 —— 纯钩子框架
+ *
+ * 插件职责：记录事件和会话状态供 Agent 参考；在 agent_end 时注入 working_memory skill
+ * Agent 职责：自行阅读 skill、管理工作记忆、决定归档策略
  */
 
-const { getToday, getNow } = require('./utils');
+import { getToday, getNow } from './utils.js';
+import { loadSkill } from './skills-loader.js';
 
-function createWorkingMemoryModule({ api, config, state, logger }) {
+export function createWorkingMemoryModule({ api, config, state, logger }) {
   const enabled = config?.enabled !== false;
   const trackSubagents = enabled && config?.trackSubagents !== false;
   const autoArchive = enabled && config?.autoArchive !== false;
@@ -24,27 +21,39 @@ function createWorkingMemoryModule({ api, config, state, logger }) {
 
     logger.info('[WM] 注册工作记忆 Hooks');
 
-    // ── 子代理追踪: before_tool_call ──
+    // ── 会话追踪: before_tool_call ──
     if (trackSubagents) {
       api.on('before_tool_call', async (event, ctx) => {
         const toolName = event.toolName;
-        if (toolName !== 'agent' && toolName !== 'subagent') return;
+        const isSpawnTool = toolName === 'sessions_spawn' || toolName === 'agent' || toolName === 'subagent';
+        if (!isSpawnTool) return;
 
         const runId = ctx.runId;
-        const subagentId = event.params?.id || event.params?.name || `sub-${Date.now()}`;
+        const sessionId = event.params?.id || event.params?.name || `sub-${Date.now()}`;
 
         const entry = {
           type: 'subagent_spawn',
-          subagentId,
+          sessionId,
           parentRunId: runId,
           purpose: event.params?.purpose || event.params?.instruction || '',
           model: event.params?.model || 'default',
           toolName,
+          status: 'active',
           timestamp: getNow()
         };
 
         await state.append(`wm:${runId}:tools`, entry);
-        logger.debug(`[WM] 追踪子代理: ${subagentId} (parent=${runId})`);
+        await state.append(`session_list:${runId}`, {
+          sessionId,
+          role: event.params?.role || '助手',
+          task: entry.purpose,
+          status: 'active',
+          createdAt: getNow(),
+          lastActive: getNow(),
+          parentRunId: runId
+        });
+
+        logger.debug(`[WM] 追踪会话: ${sessionId} (parent=${runId})`);
       });
     }
 
@@ -65,39 +74,72 @@ function createWorkingMemoryModule({ api, config, state, logger }) {
         });
       }
 
-      if (toolName === 'agent' || toolName === 'subagent') {
+      const isSpawnTool = toolName === 'sessions_spawn' || toolName === 'agent' || toolName === 'subagent';
+      if (isSpawnTool) {
+        const sessionId = event.params?.id || event.params?.name;
+        const status = isError ? 'killed' : 'completed';
+
         await state.append(`wm:${runId}:tools`, {
           type: 'subagent_complete',
-          subagentId: event.params?.id || event.params?.name,
+          sessionId,
           resultSummary: summarizeResult(result),
+          status,
           timestamp: getNow()
         });
+
+        const sessions = await state.get(`session_list:${runId}`, []);
+        const updated = sessions.map(s =>
+          s.sessionId === sessionId ? { ...s, status, lastActive: getNow() } : s
+        );
+        await state.set(`session_list:${runId}`, updated);
       }
     });
 
     // ── 归档: agent_end ──
+    // 注入 working_memory skill，提醒 Agent 如何归档
     if (autoArchive) {
       api.on('agent_end', async (event, ctx) => {
         const runId = ctx.runId;
         if (!runId) return;
 
-        const toolHistory = await state.get(`wm:${runId}:tools`, []);
-        if (toolHistory.length === 0) {
-          await state.set(`wm:${runId}:tools`, null);
-          return;
+        const sessions = await state.get(`session_list:${runId}`, []);
+        const completedSessions = sessions.filter(s => s.status === 'completed');
+        const killedSessions = sessions.filter(s => s.status === 'killed');
+        const pausedSessions = sessions.filter(s => s.status === 'paused');
+
+        if (killedSessions.length > 0) {
+          logger.debug(`[WM] 删除 killed 会话: ${killedSessions.length}`);
+        }
+        if (pausedSessions.length > 0) {
+          logger.debug(`[WM] 保留 paused 会话: ${pausedSessions.length}`);
         }
 
-        const archive = {
-          runId,
-          archivedAt: getNow(),
-          toolCount: toolHistory.length,
-          tools: toolHistory
-        };
+        // 归档 completed 任务到事件记忆表
+        for (const session of completedSessions) {
+          const archive = {
+            runId,
+            sessionId: session.sessionId,
+            archivedAt: getNow(),
+            task: session.task,
+            role: session.role,
+            status: 'completed',
+            toolCount: (await state.get(`wm:${runId}:tools`, [])).filter(t => t.sessionId === session.sessionId).length
+          };
+          await state.append(`memory_table:${getToday()}`, archive);
+        }
 
-        await state.append(`memory_table:${getToday()}`, archive);
         await state.set(`wm:${runId}:tools`, null);
+        await state.set(`session_list:${runId}`, null);
 
-        logger.info(`[WM] 归档: runId=${runId}, tools=${toolHistory.length}`);
+        logger.debug(`[WM] 归档: runId=${runId}, completed=${completedSessions.length}, killed=${killedSessions.length}`);
+
+        // 注入 working_memory skill，提醒 Agent 检查工作记忆
+        const workingMemorySkill = await loadSkill('working_memory');
+        if (workingMemorySkill) {
+          return {
+            prependSystemContext: `${workingMemorySkill}\n\n【Agent 职责】本次运行已结束，请根据上方 working_memory skill 检查是否需要更新「当前活跃任务看板」和「活跃会话清单」。\n`
+          };
+        }
       });
     }
   }
@@ -112,5 +154,3 @@ function createWorkingMemoryModule({ api, config, state, logger }) {
 
   return { register };
 }
-
-module.exports = { createWorkingMemoryModule };

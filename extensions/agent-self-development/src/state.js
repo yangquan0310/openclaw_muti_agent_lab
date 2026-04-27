@@ -1,15 +1,15 @@
 /**
  * 插件状态管理
- * 
+ *
  * OpenClaw 插件没有暴露内存/存储 API，因此插件自行在文件系统中
  * 维护状态。状态目录: ~/.openclaw/plugin-state/
  */
 
-const fs = require('fs').promises;
-const path = require('path');
-const os = require('os');
+import fs from 'fs/promises';
+import path from 'path';
+import os from 'os';
 
-class PluginState {
+export class PluginState {
   constructor(pluginId) {
     this.pluginId = pluginId;
     this.baseDir = path.join(os.homedir(), '.openclaw', 'plugin-state');
@@ -52,8 +52,25 @@ class PluginState {
   }
 
   async _persist() {
-    await fs.writeFile(this.stateFile, JSON.stringify(this.cache, null, 2), 'utf-8');
+    const lockFile = this.stateFile + '.lock';
+    const maxRetries = 5;
+    for (let i = 0; i < maxRetries; i++) {
+      try {
+        await fs.writeFile(lockFile, Date.now().toString(), { flag: 'wx' });
+        try {
+          await fs.writeFile(this.stateFile, JSON.stringify(this.cache, null, 2), 'utf-8');
+        } finally {
+          await fs.unlink(lockFile).catch(() => {});
+        }
+        return;
+      } catch (err) {
+        if (err.code === 'EEXIST') {
+          await new Promise(r => setTimeout(r, 50 * (i + 1)));
+          continue;
+        }
+        throw err;
+      }
+    }
+    throw new Error('State file persist failed: unable to acquire lock');
   }
 }
-
-module.exports = { PluginState };

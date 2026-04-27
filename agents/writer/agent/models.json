@@ -42,7 +42,7 @@
           "maxTokens": 32768
         }
       ],
-      "apiKey": "${KIMI_API_KEY}"
+      "apiKey": "KIMI_API_KEY"
     },
     "kimicode": {
       "baseUrl": "https://api.kimi.com/coding/v1",

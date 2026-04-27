@@ -61,6 +61,20 @@
 | 系统异常 | 查看日志 → 诊断 → 修复 |
 | 需要更新系统 | 检查兼容性 → 备份 → 更新 → 验证 |
 | 用户请求查看状态 | 使用 openclaw status / doctor |
+| **安装 agent-self-development 插件** | **使用 `openclaw plugins install /root/openclaw-agent-self-development-1.0.0.tgz`** |
+| **验证插件安装** | **使用 `openclaw plugins inspect agent-self-development --json`** |
+
+## 插件资源
+
+### agent-self-development 插件
+- **下载地址**: https://github.com/yangquan0310/openclaw_muti_agent_lab/releases
+- **文件名格式**: `openclaw-agent-self-development-{版本}.tgz`
+- **安装命令**: `openclaw plugins install /path/to/openclaw-agent-self-development-{版本}.tgz`
+- **验证命令**: `openclaw plugins inspect agent-self-development --json`
+
+> ⚠️ **版本更新注意**: 插件随版本更新，安装前请确认最新版本号
+> - 查看最新版本: https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/latest
+> - 当前已知版本: v1.0.0 (2026-04-27)
 
 ---
 

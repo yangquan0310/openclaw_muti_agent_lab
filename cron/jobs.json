@@ -16,7 +16,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "message": "[cron:每日自我更新]\n按照同化顺应模块执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n插件已自动注入同化顺应 skill，请根据 skill 指导执行工作流2",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -43,7 +43,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "message": "[cron:每日自我更新]\n按照同化顺应模块执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n插件已自动注入同化顺应 skill，请根据 skill 指导执行工作流2",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -70,7 +70,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "message": "[cron:每日自我更新]\n按照同化顺应模块执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n插件已自动注入同化顺应 skill，请根据 skill 指导执行工作流2",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -97,7 +97,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "message": "[cron:每日自我更新]\n按照同化顺应模块执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n插件已自动注入同化顺应 skill，请根据 skill 指导执行工作流2",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -124,7 +124,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "message": "[cron:每日自我更新]\n按照同化顺应模块执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n插件已自动注入同化顺应 skill，请根据 skill 指导执行工作流2",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -151,7 +151,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "message": "[cron:每日自我更新]\n按照同化顺应模块执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n插件已自动注入同化顺应 skill，请根据 skill 指导执行工作流2",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -178,7 +178,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "message": "[cron:每日自我更新]\n按照同化顺应模块执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n插件已自动注入同化顺应 skill，请根据 skill 指导执行工作流2",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -232,7 +232,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "message": "[cron:每日自我更新]\n按照同化顺应模块执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n插件已自动注入同化顺应 skill，请根据 skill 指导执行工作流2",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -259,7 +259,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "[cron:每日自我更新]\n按照agent_self_development工作流2执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n详细规范参见：skills/agent_self_development/assimilation_accommodation/SKILL.md 工作流2",
+        "message": "[cron:每日自我更新]\n按照同化顺应模块执行每日自我更新：\n1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md）\n2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md）\n3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md）\n4. 同化与顺应分析\n5. 检测更新触发信号（自我认知/角色/风格-信念/技能）\n6. 执行相应更新\n7. 记录更新日志到 events/YYYY-MM-DD/HH-MM-SS-self-update.md\n\n插件已自动注入同化顺应 skill，请根据 skill 指导执行工作流2",
         "timeoutSeconds": 600
       },
       "delivery": {

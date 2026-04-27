@@ -188,7 +188,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.21",
-    "lastTouchedAt": "2026-04-27T04:01:00.508Z"
+    "lastTouchedAt": "2026-04-27T08:47:30.387Z"
   },
   "plugins": {
     "entries": {
@@ -250,30 +250,7 @@
         "enabled": true
       },
       "agent-self-development": {
-        "enabled": true,
-        "config": {
-          "metacognition": {
-            "enabled": true,
-            "planning": true,
-            "monitoring": true,
-            "regulation": true
-          },
-          "workingMemory": {
-            "enabled": true,
-            "trackSubagents": true,
-            "autoArchive": true
-          },
-          "assimilation": {
-            "enabled": true,
-            "dailyCron": "0 0 * * *",
-            "autoUpdate": false,
-            "updateThreshold": 0.8
-          },
-          "llm": {
-            "model": "kimi-for-coding",
-            "provider": "kimicode"
-          }
-        }
+        "enabled": true
       }
     },
     "installs": {
@@ -341,12 +318,11 @@
         "installedAt": "2026-04-27T04:00:14.000Z"
       },
       "agent-self-development": {
-        "source": "path",
-        "spec": "agent-self-development",
-        "sourcePath": "/root/.openclaw/extensions/agent-self-development",
+        "source": "archive",
+        "sourcePath": "/root/openclaw-agent-self-development-1.2.6.tgz",
         "installPath": "/root/.openclaw/extensions/agent-self-development",
-        "version": "1.0.0",
-        "installedAt": "2026-04-27T05:31:00.000Z"
+        "version": "1.2.6",
+        "installedAt": "2026-04-27T08:47:26.313Z"
       }
     },
     "allow": [
@@ -673,23 +649,32 @@
           "Authorization": "03e03d2067a24d7bba38840eb1c20853"
         }
       },
-      "agent-self-development": {
-        "command": "python3",
-        "args": [
-          "/root/.openclaw/workspace/skills/agent_self_development/mcp/server.py"
-        ]
-      },
-      "skill-developer": {
-        "command": "python3",
-        "args": [
-          "/root/.openclaw/workspace/skills/Skill-developer/mcp/server.py"
-        ]
-      },
       "manage-project": {
         "command": "python3",
         "args": [
           "/root/.openclaw/workspace/skills/manage-project/mcp/server.py"
         ]
+      }
+    }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "src": {
+          "enabled": true
+        }
+      },
+      "installs": {
+        "src": {
+          "hooks": [
+            "src"
+          ],
+          "source": "archive",
+          "sourcePath": "/root/openclaw-agent-self-development-1.0.1-fixed2.tgz",
+          "installPath": "/root/.openclaw/hooks/src",
+          "installedAt": "2026-04-27T07:09:37.501Z"
+        }
       }
     }
   }

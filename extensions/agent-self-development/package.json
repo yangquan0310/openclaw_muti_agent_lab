@@ -1,7 +1,8 @@
 {
   "name": "openclaw-agent-self-development",
-  "version": "1.0.0",
+  "version": "1.2.6",
   "description": "OpenClaw plugin for agent self-development based on Piaget's cognitive development theory",
+  "type": "module",
   "main": "src/index.js",
   "engines": {
     "node": ">=18.0.0"
@@ -16,54 +17,17 @@
   "author": "Yang Quan",
   "license": "MIT",
   "openclaw": {
-    "plugin": true,
     "minVersion": "2026.4.0",
-    "slots": [],
-    "configSchema": {
-      "type": "object",
-      "properties": {
-        "metacognition": {
-          "type": "object",
-          "properties": {
-            "enabled": { "type": "boolean", "default": true },
-            "planning": { "type": "boolean", "default": true },
-            "monitoring": { "type": "boolean", "default": true },
-            "regulation": { "type": "boolean", "default": true }
-          }
-        },
-        "workingMemory": {
-          "type": "object",
-          "properties": {
-            "enabled": { "type": "boolean", "default": true },
-            "trackSubagents": { "type": "boolean", "default": true },
-            "autoArchive": { "type": "boolean", "default": true }
-          }
-        },
-        "assimilation": {
-          "type": "object",
-          "properties": {
-            "enabled": { "type": "boolean", "default": true },
-            "dailyCron": { "type": "string", "default": "0 0 * * *" },
-            "autoUpdate": { "type": "boolean", "default": false },
-            "updateThreshold": { "type": "number", "default": 0.8 }
-          }
-        },
-        "llm": {
-          "type": "object",
-          "properties": {
-            "model": { "type": "string", "default": "kimi-for-coding" },
-            "provider": { "type": "string", "default": "kimicode" }
-          }
-        }
-      }
-    }
+    "extensions": ["./src/index.js"]
   },
+  "files": [
+    "src/",
+    "skills/",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
   "scripts": {
-    "setup": "node scripts/install.js",
-    "setup:dry": "node scripts/install.js --dry-run",
-    "uninstall": "node scripts/install.js --uninstall"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "node-cron": "^3.0.3"
-  }
+  "dependencies": {}
 }
