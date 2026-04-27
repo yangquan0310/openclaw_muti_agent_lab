@@ -139,7 +139,8 @@ Agent **每天自我进化**的流程，固定在北京时间每天 00:00 触发
 
 ```
 openclaw-agent-self-development/
-├── package.json              # openclaw.extensions / configSchema / dependencies
+├── openclaw.plugin.json      # Native plugin manifest (id / name / version / main / configSchema)
+├── package.json              # npm 包配置 (openclaw.extensions / bundledDependencies)
 ├── README.md
 └── src/
     ├── index.js              # 插件入口: { id, name, register(api) }
