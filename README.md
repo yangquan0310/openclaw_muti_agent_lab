@@ -189,13 +189,20 @@ openclaw-agent-self-development/
 
 ## 安装与卸载
 
+本插件通过 **GitHub Release** 发布，不依赖 npm。
+
 ### 安装
 
 ```bash
-# 从本地目录安装
+# 方式一：从本地源码目录安装（开发/自建）
 openclaw plugins install ./openclaw-agent-self-development
 
-# 或开发模式链接（免复制，代码修改即时生效）
+# 方式二：从 GitHub Release 下载 .tgz 后安装
+# 1. 从 Release 页面下载 openclaw-agent-self-development-1.0.1.tgz
+# 2. 执行安装
+openclaw plugins install ./openclaw-agent-self-development-1.0.1.tgz
+
+# 方式三：开发模式链接（免复制，代码修改即时生效）
 openclaw plugins install -l ./openclaw-agent-self-development
 
 # 启用插件
@@ -208,14 +215,11 @@ openclaw gateway restart
 ### 更新
 
 ```bash
-# 方式一：从本地路径强制覆盖更新（开发/测试常用）
-openclaw plugins install ./openclaw-agent-self-development --force
-
-# 方式二：从 release .tgz 更新
+# 重新下载最新 Release 的 .tgz 后强制覆盖安装
 openclaw plugins install ./openclaw-agent-self-development-1.0.1.tgz --force
 
-# 方式三：发布到 npm 后，使用 update 命令
-openclaw plugins update agent-self-development
+# 或从本地源码路径强制覆盖（开发时常用）
+openclaw plugins install ./openclaw-agent-self-development --force
 
 # 重启 Gateway
 openclaw gateway restart
