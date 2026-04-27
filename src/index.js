@@ -40,7 +40,11 @@ export default definePluginEntry({
     // 初始化三大模块
     const metacognition = createMetacognitionModule({ api, config: config.metacognition, state, logger });
     const workingMemory = createWorkingMemoryModule({ api, config: config.workingMemory, state, logger });
-    const assimilation = createAssimilationModule({ api, config: config.assimilation, state, logger, llmConfig: config.llm });
+    const llmConfig = {
+      ...config.llm,
+      apiKey: config.llm?.apiKey || process.env.KIMICODE_API_KEY
+    };
+    const assimilation = createAssimilationModule({ api, config: config.assimilation, state, logger, llmConfig });
 
     // 注册所有 Hooks 和服务
     metacognition.register();

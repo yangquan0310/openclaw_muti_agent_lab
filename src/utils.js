@@ -34,11 +34,11 @@ export async function callLLM(prompt, config = {}) {
   const model = config.model || 'kimi-for-coding';
 
   if (provider === 'kimicode' || provider === 'openai-compatible') {
-    const apiKey = process.env.KIMICODE_API_KEY || config.apiKey;
+    const apiKey = config.apiKey;
     const baseUrl = config.baseUrl || 'https://api.kimi.com/coding/v1';
 
     if (!apiKey) {
-      throw new Error('环境变量 KIMICODE_API_KEY 未设置');
+      throw new Error('LLM API Key 未设置，请在插件配置中提供 llm.apiKey');
     }
 
     const response = await fetch(`${baseUrl}/chat/completions`, {
