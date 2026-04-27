@@ -205,6 +205,22 @@ openclaw plugins enable agent-self-development
 openclaw gateway restart
 ```
 
+### 更新
+
+```bash
+# 方式一：从本地路径强制覆盖更新（开发/测试常用）
+openclaw plugins install ./openclaw-agent-self-development --force
+
+# 方式二：从 release .tgz 更新
+openclaw plugins install ./openclaw-agent-self-development-1.0.1.tgz --force
+
+# 方式三：发布到 npm 后，使用 update 命令
+openclaw plugins update agent-self-development
+
+# 重启 Gateway
+openclaw gateway restart
+```
+
 ### 卸载
 
 ```bash
