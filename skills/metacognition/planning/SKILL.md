@@ -3,7 +3,7 @@ name: planning
 description: >
   元认知计划子模块。操作 Plan 对象，管理任务上下文、工作空间和阶段化执行。
   核心原则：Plan 制定后必须先汇报给用户，用户确认后才能执行。
-version: 2.2.0
+version: 2.0.1
 author: 大管家
 dependencies:
   - ../../working_memory/session
@@ -131,22 +131,26 @@ destroyed（销毁）
    - 分析用户原始输入（Plan.prompt）
    - 识别核心诉求和隐含需求
 
-2. **完善任务上下文**（修改 `Plan.context`）
+2. **加载个人记忆配置**
+   - 读取 `memory.md` 中的条件-行动规则
+   - 判断用户任务是否满足某条规则的「条件」（关键词匹配）
+
+3. **完善任务上下文**（修改 `Plan.context`）
    - `goal`：用一句话明确最终交付物
    - `constraints`：列出所有已知约束（时间、资源、规范）
    - `successCriteria`：定义可验证的验收标准
 
-3. **规划阶段**（修改 `Plan.execution.phases`）
+4. **规划阶段**（修改 `Plan.execution.phases`）
    - 每个阶段必须有明确的 `goal`（"达成XX"而非"做XX"）
    - 为需要独立上下文的阶段分配任务空间（`sessionId` + `taskFamily`）
    - 定义每阶段的预期 `outputs`
    - 确定阶段间的依赖关系
 
-4. **准备汇报**（确保 Plan 完整）
+5. **准备汇报**（确保 Plan 完整）
    - 检查 context、workspace、execution 三个部分是否完整
    - 确认任务空间分配合理（同任务族复用）
 
-5. **向用户汇报**
+6. **向用户汇报**
    ```markdown
    📋 **计划汇报**
 
@@ -164,7 +168,7 @@ destroyed（销毁）
    **计划已制定完毕，请确认或提出修改意见。**
    ```
 
-6. **更新状态**
+7. **更新状态**
    - `Plan.status = "pending_approval"`
    - 保存 Plan 到持久化存储
 
@@ -267,6 +271,7 @@ destroyed（销毁）
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
+| v2.0.1 | 2026-04-28 | 工作流新增"加载个人记忆配置"步骤，制定 Plan 时需参考 memory.md 条件-行动规则 |
 | v2.2.0 | 2026-04-28 | 增加"汇报 → 确认 → 执行"强制流程，状态机增加 pending_approval |
 | v2.1.0 | 2026-04-28 | Plan 重构为上下文语境：context + workspace + execution |
 | v2.0.0 | 2026-04-28 | 面向对象重构 |

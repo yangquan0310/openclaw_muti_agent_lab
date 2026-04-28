@@ -15,7 +15,7 @@ import { SkillLoader } from './skills-loader.js';
 export default definePluginEntry({
   id: 'agent-self-development',
   name: 'Agent Self-Development',
-  version: '2.0.0',
+  version: '2.0.1',
 
   register(api) {
     if (api.registrationMode && api.registrationMode !== 'full') {
@@ -28,7 +28,7 @@ export default definePluginEntry({
     const skillLoader = new SkillLoader();
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] Agent Self-Development Plugin v2.0.0 activated`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v2.0.1 activated`);
 
     // 检查 conversation hooks 权限
     const entries = api.config?.plugins?.entries?.[pluginId];
