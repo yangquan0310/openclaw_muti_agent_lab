@@ -3,7 +3,7 @@ name: agent_self_development
 description: >
   Agent 自我发展技能包。基于皮亚杰认知发展理论，将自我发展分为元认知、工作记忆、同化与顺应三大维度，
   提供纯文档规范指导 Agent 理解、构建和迭代自身的元认知能力。
-version: 1.3.0
+version: 2.0.0
 author: 大管家
 dependencies: []
 exports:
