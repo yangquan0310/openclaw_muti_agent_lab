@@ -295,7 +295,7 @@ openclaw-agent-self-development/
 
 ```bash
 # 1. 安装插件
-openclaw plugins install https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/download/v1.2.4/openclaw-agent-self-development-1.2.6.tgz --force
+openclaw plugins install https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/download/v2.0.0/openclaw-agent-self-development-2.0.0.tgz --force
 
 # 2. 启用
 openclaw plugins enable agent-self-development
