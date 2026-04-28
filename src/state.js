@@ -2,17 +2,19 @@
  * 插件状态管理
  *
  * OpenClaw 插件没有暴露内存/存储 API，因此插件自行在文件系统中
- * 维护状态。状态目录: ~/.openclaw/plugin-state/
+ * 维护状态。状态目录: <plugin-root>/state/
  */
 
 import fs from 'fs/promises';
 import path from 'path';
-import os from 'os';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export class PluginState {
   constructor(pluginId) {
     this.pluginId = pluginId;
-    this.baseDir = path.join(os.homedir(), '.openclaw', 'plugin-state');
+    this.baseDir = path.join(__dirname, '..', 'state');
     this.stateFile = path.join(this.baseDir, `${pluginId}.json`);
     this.cache = null;
     this.initialized = false;
