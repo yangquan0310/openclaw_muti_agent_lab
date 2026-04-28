@@ -2,7 +2,7 @@
 name: metacognition
 description: >
   元认知模块路由。提供计划、监控、调节三个子模块的索引。Agent 通过阅读本文件了解可调用的子模块及其对象关系。
-version: 2.0.0
+version: 2.0.1
 author: 大管家
 dependencies:
   - ../working_memory
@@ -214,6 +214,7 @@ Metacognition.Regulator 调节中 ──→ WorkingMemory.Session 暂停/恢复
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
+| v2.0.1 | 2026-04-28 | 计划工作流新增加载个人记忆配置 memory.md 步骤 |
 | v2.0.0 | 2026-04-28 | 面向对象重构，明确 Plan/Monitor/Regulator 三个对象及其属性 |
 | v1.0.0 | 2026-04-17 | 初始版本 |
 

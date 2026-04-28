@@ -132,11 +132,15 @@ export class MetacognitionModule {
   约束：${context.constraints.join(' / ')}
   验收：${context.successCriteria.join(' / ')}
 
+▸ 个人记忆配置：
+  制定 Plan 前，请加载 ${'`'}memory.md${'`'} 中的条件-行动规则。
+  若用户任务满足某条规则的条件，请在 Plan 中执行对应的行动（添加约束、阶段、验收标准等）。
+
 ▸ 建议阶段（可参考，可增删改）：
 ${phaseLines}
 
 【Agent 职责 - 必做】
-1. 根据上方 planning skill 和用户任务，制定完整 Plan
+1. 根据上方 planning skill、用户任务和个人记忆配置（memory.md 条件-行动规则），制定完整 Plan
 2. 向用户汇报 Plan 内容（目标、阶段、任务空间分配、验收标准）
 3. 明确告知用户"计划已制定，请确认或提出修改意见"
 4. 汇报完成后，将 Plan.status 更新为 "pending_approval"
