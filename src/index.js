@@ -7,9 +7,10 @@
 
 import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
 import { PluginState } from './state.js';
-import { createMetacognitionModule } from './metacognition.js';
-import { createWorkingMemoryModule } from './working-memory.js';
-import { createAssimilationModule } from './assimilation.js';
+import { MetacognitionModule } from './metacognition.js';
+import { WorkingMemoryModule } from './working-memory.js';
+import { PersonalityModule } from './assimilation.js';
+import { SkillLoader } from './skills-loader.js';
 
 export default definePluginEntry({
   id: 'agent-self-development',
@@ -24,9 +25,10 @@ export default definePluginEntry({
     const pluginId = 'agent-self-development';
     const config = api.pluginConfig || {};
     const state = new PluginState(pluginId);
+    const skillLoader = new SkillLoader();
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] Agent Self-Development Plugin v1.2.6 activated`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v2.0.0 activated`);
 
     // 检查 conversation hooks 权限
     const entries = api.config?.plugins?.entries?.[pluginId];
@@ -34,14 +36,20 @@ export default definePluginEntry({
       logger.warn(`[${pluginId}] ⚠️ allowConversationAccess 未启用，元认知功能可能无法工作`);
     }
 
-    const metacognition = createMetacognitionModule({ api, config: config.metacognition, state, logger });
-    const workingMemory = createWorkingMemoryModule({ api, config: config.workingMemory, state, logger });
-    const assimilation = createAssimilationModule({ api, config: config.assimilation, state, logger });
+    const metacognition = new MetacognitionModule({
+      api, config: config.metacognition, state, skillLoader, logger
+    });
+    const workingMemory = new WorkingMemoryModule({
+      api, config: config.workingMemory, state, skillLoader, logger
+    });
+    const personality = new PersonalityModule({
+      api, config: config.personality || config.assimilation, state, skillLoader, logger
+    });
 
     metacognition.register();
     workingMemory.register();
-    assimilation.register();
+    personality.register();
 
-    logger.info(`[${pluginId}] 全部模块已注册`);
+    logger.info(`[${pluginId}] 全部模块已注册（元认知 / 工作记忆 / 人格）`);
   }
 });

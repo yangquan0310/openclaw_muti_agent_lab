@@ -9,11 +9,11 @@ dependencies: []
 exports:
   - metacognition
   - working_memory
-  - assimilation_accommodation
+  - personality
 routes:
   - metacognition/
   - working_memory/
-  - assimilation_accommodation/
+  - personality/
 ---
 
 # agent_self_development
@@ -31,7 +31,7 @@ routes:
 | `_meta.json` | 技能元数据 | 机器可读的技能名称、版本、触发词、依赖 |
 | `metacognition/SKILL.md` | 元认知模块路由 | 计划、监控、调节三阶段闭环 |
 | `working_memory/SKILL.md` | 工作记忆模块路由 | 活跃任务和会话状态管理 |
-| `assimilation_accommodation/SKILL.md` | 同化顺应模块路由 | 通过日记记录实现自我更新 |
+| `personality/SKILL.md` | 同化顺应模块路由 | 通过日记记录实现自我更新 |
 | `README.md` | 人类可读说明 | 项目概述（如需要可额外创建） |
 
 ---
@@ -62,7 +62,7 @@ routes:
 ```
 每日定时
     ↓
-[记录日记] assimilation_accommodation/diary/SKILL.md
+[记录日记] personality/diary/SKILL.md
     ↓
 [阅读核心自我] MEMORY.md(核心自我认知) / SOUL.md / IDENTITY.md / skills/README.md
     ↓

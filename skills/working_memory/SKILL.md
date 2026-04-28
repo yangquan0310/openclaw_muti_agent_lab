@@ -1,103 +1,212 @@
 ---
 name: working_memory
 description: >
-  工作记忆模块。管理当前活跃任务和**会话**状态，基于 Baddeley 工作记忆模型设计。
-version: 1.0.0
+  工作记忆模块路由。管理 Event（事件）、Memory（记忆）、Session（会话）三个对象。基于 Baddeley 工作记忆模型设计。
+version: 2.0.0
 author: 大管家
 dependencies: []
 exports:
-  - memory_table_schema
-  - subagent_tracker_schema
-  - state_definitions
+  - memory_object
+  - session_object
 routes:
-  - memory_table/
-  - subagent_tracker/
+  - memory/
+  - session/
 ---
 
 # working_memory
 
-> 工作记忆模块 - 管理当前活跃任务和**会话**状态
-> 基于 Baddeley 工作记忆模型
->
-> **追踪范围**：只追踪会话（通过 `sessionTarget` 指定，如 `session:CORN:agentId` 或 `session:PROJECT:xxx`）。
+> 工作记忆模块 - 管理短期认知资源
+> 包含 Event（事件对象）、Memory（记忆对象）、Session（会话对象）
 
 ---
 
 ## 文件说明
 
-| 文件 | 功能 | 说明 |
+本文件为模块路由，索引以下子模块。Agent 通过阅读本文件了解可调用的子模块及其操作的对象：
+
+| 文件 | 子模块 | 功能 | 操作对象 |
+|------|--------|------|----------|
+| `SKILL.md` | 本文件 | 模块路由，索引子模块 | WorkingMemory |
+| `memory/SKILL.md` | 记忆 | 维护看板、追踪表、归档 | Memory 对象 |
+| `session/SKILL.md` | 会话 | 创建、更新、追踪会话状态 | Session 对象 |
+
+> **注意**：Event（事件）对象已移动到 `metacognition/regulation/events/SKILL.md`，由 Regulator 对象管理。
+
+---
+
+## 对象
+
+### WorkingMemory（工作记忆对象）
+
+工作记忆对象是三个子对象的容器，负责在 Hook 触发时调度正确的子对象。
+
+#### 属性
+
+| 属性 | 类型 | 说明 |
 |------|------|------|
-| `SKILL.md` | 模块路由 | 工作记忆总览，索引子模块 |
-| `memory_table/SKILL.md` | 记忆表管理 | 维护表格结构和数据完整性 |
-| `subagent_tracker/SKILL.md` | 会话追踪 | 创建、更新和追踪会话任务状态 |
+| `sessions` | Session[] | 当前运行的会话对象列表 |
+| `events` | Event[] | 按日期聚合的事件对象列表 |
+| `memoryTables` | Memory[] | 按日期聚合的记忆对象列表 |
+| `status` | string | 状态：`idle` / `tracking` / `archiving` |
+
+#### 生命周期
+
+```
+idle（空闲）
+    ↓ before_tool_call + 会话工具
+tracking（追踪中，Session 对象激活）
+    ↓ after_tool_call + 报错
+事件记录中（Event 对象激活）
+    ↓ after_tool_call + 会话完成
+会话完成（Session.status = completed）
+    ↓ agent_end + autoArchive
+archiving（归档中，Session → Memory）
+    ↓ 归档完成
+idle
+```
 
 ---
 
-## 定时任务配置
+## 子对象概览
 
-### 定时清理任务
+### Memory（记忆对象）
 
-| 属性 | 配置 |
-|------|------|
-| **执行时间** | `0 0 * * *`（每日 00:00，Asia/Shanghai） |
-| **执行方式** | 主代理执行 |
-| **触发消息** | `[cron:每日自我更新]` 的一部分 |
-| **日志路径** | `events/YYYY-MM-DD/HH-MM-SS-cleanup.md` |
+**操作目标**：维护「当前活跃任务看板」和「活跃会话清单」，管理 completed Session 的归档
 
-### 清理流程
+**属性**：
 
-```
-定时触发（每日00:00）
-    ↓
-1. 扫描「活跃会话清单」
-    ↓
-2. 筛选 `completed` 状态任务
-    ↓
-3. 归档到「事件记忆」表格
-   - 日期: 当前日期
-   - 事件: 会话任务归档
-   - 涉及实体: 会话ID（sessionKey）
-   - 结果: 任务完成
-   - 日志位置: `events/YYYY-MM-DD/HH-MM-SS-completed.md`
-    ↓
-4. 筛选 `killed` 状态任务
-    ↓
-5. 直接删除 `killed` 任务（不归档）
-    ↓
-6. 从清单中删除 `completed` 和 `killed` 任务
-    ↓
-7. 记录清理日志
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `date` | string | 记忆日期（YYYY-MM-DD） |
+| `taskBoard` | Markdown 表格 | 当前活跃任务看板 |
+| `sessionList` | Markdown 表格 | 活跃会话清单 |
+| `archives` | Archive[] | 已完成会话的归档记录数组 |
+| `status` | string | `active` / `cleaning` / `archived` |
+
+**taskBoard 字段结构**：
+
+```markdown
+| 任务ID | 项目 | 任务描述 | 会话ID | 状态 | 创建时间 | 最后更新 | 备注 |
+|--------|------|----------|--------|------|----------|----------|------|
 ```
 
-### 状态说明
+| 字段 | 必填 | 格式 | 示例 |
+|------|------|------|------|
+| 任务ID | 是 | T001, T002... | T001 |
+| 项目 | 是 | 字符串 | 数字化存储与自传体记忆 |
+| 任务描述 | 是 | 字符串 | 文献检索与综述 |
+| 会话ID | 是 | `session:xxx` 或 `agent:xxx` | `session:CORN:steward` |
+| 状态 | 是 | `active`/`paused`/`completed`/`killed` | `active` |
+| 创建时间 | 是 | `YYYY-MM-DD HH:MM` | `2026-04-17 10:30` |
+| 最后更新 | 是 | `YYYY-MM-DD HH:MM` | `2026-04-17 14:00` |
+| 备注 | 否 | 字符串 | 进度50% |
 
-| 状态 | 含义 | 处理方式 |
-|------|------|----------|
-| `active` | 正在执行 | 保留在清单中 |
-| `paused` | 暂停等待 | 保留在清单中 |
-| `completed` | 已完成 | 归档到事件记忆后删除 |
-| `killed` | 被终止 | 直接删除，不归档 |
+**sessionList 字段结构**：
+
+```markdown
+| 会话ID | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 | 备注 |
+|--------|-----------|----------|------|----------|----------|------|
+```
+
+| 字段 | 必填 | 格式 | 示例 |
+|------|------|------|------|
+| 会话ID | 是 | `session:xxx` 或 `agent:xxx` | `session:CORN:steward` |
+| 类型/角色 | 是 | 字符串 | 文献检索助手 |
+| 分配任务 | 是 | 字符串 | 检索自传体记忆相关文献 |
+| 状态 | 是 | `active`/`paused`/`completed`/`killed` | `active` |
+| 创建时间 | 是 | `YYYY-MM-DD HH:MM` | `2026-04-17 10:30` |
+| 最后活跃 | 是 | `YYYY-MM-DD HH:MM` | `2026-04-17 14:00` |
+| 备注 | 否 | 字符串 | 已检索50篇 |
+
+**修改方法**（工作流）：见 `memory/SKILL.md`
+- 表格结构维护（校验完整性）
+- 定时清理（completed → 归档，killed → 删除）
+
+**持久化**：跨 runId，按日聚合到 `memory_table:{YYYY-MM-DD}`
 
 ---
 
-## 工作流
+### Session（会话对象）
+
+**操作目标**：追踪一次 `agent/subagent/sessions_spawn` 工具调用的完整生命周期
+
+**属性**：
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `sessionId` | string | 会话唯一标识（sessionKey） |
+| `role` | string | 会话角色/类型 |
+| `task` | string | 分配的任务描述 |
+| `status` | string | `pending` / `active` / `paused` / `completed` / `killed` |
+| `createdAt` | string | 创建时间（ISO 8601） |
+| `lastActive` | string | 最后活跃时间 |
+| `parentRunId` | string | 所属运行 ID |
+| `toolRecords` | object[] | 该会话的工具调用记录 |
+| `resultSummary` | string | 结果摘要（completed 时填充） |
+| `error` | string | 错误信息（killed 时填充） |
+
+**状态变换**：
+
+```
+不存在
+    ↓ before_tool_call（Agent 调用 agent/subagent/sessions_spawn）
+pending（待激活，已创建但未开始执行）
+    ↓ 开始执行
+active（执行中）
+    ├── 正常完成 → complete(result) → completed
+    ├── 工具报错 → kill(error) → killed
+    └── 主动暂停 → pause() → paused
+        ↓ 恢复
+        返回 active
+
+completed（已完成）
+    ↓ agent_end
+转换为 Archive ──→ Memory.store()
+
+killed（已终止）
+    ↓ agent_end
+直接销毁（不归档）
+```
+
+**状态变换触发**：
+
+| 当前状态 | 触发条件 | 新状态 | 方法 |
+|----------|----------|--------|------|
+| 不存在 | `before_tool_call` + 会话工具 | `pending` | `create()` |
+| `pending` | 开始执行 | `active` | `activate()` |
+| `active` | 成功完成 | `completed` | `complete(result)` |
+| `active` | 执行报错 | `killed` | `kill(error)` |
+| `active` | 主动暂停 | `paused` | `pause()` |
+| `paused` | 恢复执行 | `active` | `activate()` |
+| `completed` | `agent_end` | 销毁 | `toArchive()` → `Memory.store()` |
+| `killed` | `agent_end` | 销毁 | 直接移除 |
+
+**修改方法**（工作流）：见 `session/SKILL.md`
+- 创建会话任务
+- 监控会话
+- 会话完成
+- 会话终止
+
+**持久化**：runId 级，运行结束后 completed 转为 Archive 存入 Memory，killed 直接删除
+
+---
+
+## 工作流（对象协作方法）
 
 ### 工作流1：任务生命周期管理
 
 ```
-创建任务（planning 阶段调用）
+创建任务（planning 阶段调用 session/SKILL.md 修改 Session 对象）
     ↓
-状态更新（monitoring 阶段调用）
+状态更新（monitoring 阶段调用 session/SKILL.md 修改 Session 对象）
     ↓
-完成 / 终止
+完成 / 终止（session/SKILL.md 修改 Session.status）
     ↓
-定时清理（每日 00:00）
+定时清理（每日 00:00 调用 memory/SKILL.md 修改 Memory 对象）
     ↓
-completed → 归档到事件记忆
-killed → 直接删除
+completed Session ──→ Memory.store(Archive)
+killed Session ──→ 直接销毁
 ```
-
----
 
 ## 使用指南
 
@@ -107,48 +216,34 @@ killed → 直接删除
 |------|------|------|------|
 | `operation` | string | ✅ | 操作类型：create / update / archive / cleanup |
 | `task_data` | object | ✅ (create/update) | 任务数据 |
-| `session_id` | string | ✅ (create/update) | 会话唯一标识（sessionKey），如 `session:CORN:agentId` |
+| `session_id` | string | ✅ (update) | 会话唯一标识（sessionKey） |
 
 ### 输出结果
 
 | 输出项 | 格式 | 说明 |
 |--------|------|------|
-| `task_board` | Markdown 表格 | 当前活跃任务看板（含会话ID列） |
-| `session_list` | Markdown 表格 | 活跃会话清单 |
-| `cleanup_log` | Markdown | 清理日志（cleanup 时） |
+| `task_board` | Markdown 表格 | Memory 对象的当前活跃任务看板 |
+| `session_list` | Markdown 表格 | Memory 对象的活跃会话清单 |
+| `cleanup_log` | Markdown | Memory 对象的清理日志 |
 
 ---
 
-## 核心数据结构
+## 状态说明（Session 对象属性参考）
 
-### 当前活跃任务看板
-
-```markdown
-| 任务ID | 项目 | 任务描述 | 会话ID | 状态 | 创建时间 | 最后更新 | 备注 |
-|--------|------|----------|--------|------|----------|----------|------|
-| [T001] | [项目名] | [任务描述] | [sessionKey] | [状态] | [时间] | [时间] | [备注] |
-```
-
-### 活跃会话清单
-
-```markdown
-| 会话ID | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 | 备注 |
-|--------|-----------|----------|------|----------|----------|------|
-| [sessionKey] | [类型] | [任务] | [状态] | [时间] | [时间] | [备注] |
-```
-
-> **说明**：所有任务都使用会话，不再区分一次性任务。会话ID即 `sessionKey`（如 `session:CORN:agentId`、`session:PROJECT:xxx`）。
+| 状态 | 含义 | Memory 对象处理方式 |
+|------|------|---------------------|
+| `active` | 正在执行 | 保留在活跃会话清单 |
+| `paused` | 暂停等待 | 保留在活跃会话清单 |
+| `completed` | 已完成 | 归档到 Memory.archives 后删除 |
+| `killed` | 被终止 | 直接删除，不归档 |
 
 ---
 
-## 与 assimilation_accommodation 的关系
+## 与 Personality 的关系
 
 ```
-working_memory (短期)
-    └── completed 任务
-            ↓ 归档
-assimilation_accommodation (长期)
-    └── 事件记忆表
+WorkingMemory.Event 对象 ──→ Personality.Diary 读取（回顾事件）
+WorkingMemory.Memory.archives ──→ Personality 反思（已完成任务分析）
 ```
 
 ---
@@ -157,10 +252,9 @@ assimilation_accommodation (长期)
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v1.3.0 | 2026-04-26 | 统一使用会话，取消一次性任务区分；更新核心数据结构表格格式 |
-| v1.2.0 | 2026-04-19 | 更新存储路径：memory/ → events/ |
-| v1.1.0 | 2026-04-19 | 添加定时任务配置章节，规范定时清理流程 |
-| v1.0.0 | 2026-04-17 | 初始版本，标准化文档规范 |
+| v2.0.0 | 2026-04-28 | 面向对象重构，明确 Event/Memory/Session 三个对象及其属性 |
+| v1.3.0 | 2026-04-26 | 统一使用会话，取消一次性任务区分 |
+| v1.0.0 | 2026-04-17 | 初始版本 |
 
 ---
 

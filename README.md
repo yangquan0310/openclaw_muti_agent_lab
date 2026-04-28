@@ -2,143 +2,284 @@
 
 OpenClaw 插件 —— Agent 自我发展框架
 
-> **插件定位**：纯钩子框架（Hook Router）。在合适的时机，将 `skills/` 目录下的 skill 文档注入 Agent 的 system context。
-> 
-> **核心原则**：插件只负责"提醒"，Agent 负责"执行"。插件不替 Agent 做决策、不读写 Agent 文件、不管理定时器。
+> **插件定位**：纯钩子框架（Hook Router）。在 Agent 执行任务的特定时机，将 `skills/` 目录下的 skill 文档注入 Agent 的 system context，作为脚手架指导 Agent 行为。
+>
+> **核心原则**：插件只负责"提醒"（注入 skill），Agent 负责"执行"（自行决策、读写文件、管理任务空间）。
 
 ---
 
-## 架构设计
+## 认知发展理论基础
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        Agent (OpenClaw)                      │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
-│  │  阅读 Skill  │  │  自行决策    │  │  读写 IDENTITY.md   │  │
-│  │  制定计划    │  │  判断偏差    │  │  /SOUL.md/MEMORY.md │  │
-│  │  分析同化    │  │  决定更新    │  │  /skills/README.md  │  │
-│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
-                              ↑
-                              │ 注入 skill 文档
-┌─────────────────────────────────────────────────────────────┐
-│                     Plugin (本插件)                          │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐ │
-│  │ metacognition   │  │ working-memory  │  │ assimilation │ │
-│  │ · planning      │  │ · 记录事件      │  │ · 检测 cron  │ │
-│  │ · monitoring    │  │ · 追踪会话      │  │ · 注入 skill │ │
-│  └─────────────────┘  └─────────────────┘  └──────────────┘ │
-└─────────────────────────────────────────────────────────────┘
-```
+本框架的设计根植于三大认知科学理论，将人类认知机制映射为 Agent 的软件架构。
 
-### 职责边界
+### 皮亚杰认知发展理论（Piaget）
 
-| 职责 | 插件 | Agent |
-|------|------|-------|
-| **计划制定** | 注入 `planning` skill | 阅读 skill，自行制定计划 |
-| **偏差检测** | 注入 `monitoring` skill | 阅读 skill，自行判断偏差 |
-| **工作记忆** | 记录事件/会话状态 | 阅读 skill，自行管理看板 |
-| **每日更新** | 检测 cron，注入 `assimilation` skill | 阅读 skill，自行写日记/分析 |
-| **文件读写** | ❌ 不碰 | ✅ 自行读写核心自我文件 |
-| **定时任务** | ❌ 不内置定时器 | ✅ 用户配置 OpenClaw cron |
+皮亚杰认为认知发展通过 **同化（Assimilation）** 与 **顺应（Accommodation）** 的交替作用实现：
+- **同化**：将新经验纳入现有认知图式。Agent 执行日常任务时，新经验被整合到既有技能体系（Skills 对象）和工作信念（Belief 对象）中。
+- **顺应**：当新经验无法被现有图式容纳时，修改图式本身。Agent 遇到全新的任务类型或工作方式时，需要更新能力边界（Self 对象）、角色集（Identity 对象）甚至创建新的技能文档。
+- **平衡（Equilibration）**：同化与顺应的动态平衡驱动认知发展。每日 cron 触发的 Personality 模块正是这一机制的实现——通过回顾昨日事件（WorkingMemory.Event）、撰写发展日记（Diary 对象）、对比核心自我文件（SOUL.md / IDENTITY.md / MEMORY.md），判断当日经验属于同化还是顺应，并执行相应更新。
+
+### Baddeley 工作记忆模型
+
+Baddeley 将工作记忆分为 **语音环路**、**视觉空间画板**、**情景缓冲器** 和 **中央执行系统**。在 Agent 语境下映射为：
+- **中央执行系统** → `WorkingMemoryModule`：协调任务空间的创建、复用、归档和销毁，管理注意力分配（同任务族复用 idle 空间，不同任务族并行）。
+- **情景缓冲器** → `Session`（任务空间）：承载单个任务的完整上下文，是 Agent 执行特定任务时的"内存空间"。
+- **长期记忆接口** → `Memory` 对象：completed 任务空间经归档（Archive）后存入按日聚合的 `memory_table`，成为可回顾的长期记忆。
+
+### Flavell 元认知理论
+
+Flavell 将元认知定义为 **"对认知的认知"**，包含三个核心成分：
+- **元认知知识** → `Plan` 对象：Agent 对"要做什么、用什么做、做到什么程度"的完整上下文理解，不只是步骤列表。
+- **元认知监控** → `Monitor` 对象：每轮 LLM 输出后，系统注入 monitoring skill，Agent 自行检查当前输出是否与 Plan 偏离。
+- **元认知调节** → `Regulator` 对象：当 Monitor 检测到偏差时，Agent 自行生成调节方案（调整 phases、重新汇报、或跳过阶段并说明理由）。
+
+**关键设计**：元认知不是插件替 Agent 做决策，而是插件在正确时机注入 skill 文档，Agent 阅读后自行执行监控与调节。
 
 ---
 
-## 核心业务
+## 三层架构
 
-### 1. 元认知（Metacognition）
+```
+┌─────────────────────────────────────────────┐
+│              用户层（User）                   │
+│  · 下达任务（自然语言）                        │
+│  · 确认/修改/取消 Plan                        │
+│  · 查看执行进度                               │
+│              ↑↓ 自然语言对话                  │
+└─────────────────────────────────────────────┘
+              ↑↓
+┌─────────────────────────────────────────────┐
+│             代理层（Agent）                   │
+│  · 阅读 skill → 制定 Plan → 汇报用户          │
+│  · 用户确认后按 phases 在任务空间中推进         │
+│  · 每轮 LLM 输出后自检偏差                     │
+│  · 任务完成 → 归档产出物                       │
+│              ↑↓ Hook 事件流                   │
+└─────────────────────────────────────────────┘
+              ↑↓
+┌─────────────────────────────────────────────┐
+│           系统层（Plugin/Hooks）              │
+│  before_prompt_build → 注入 planning / 执行上下文 │
+│  llm_output          → 注入 monitoring        │
+│  before_tool_call    → 记录任务空间创建        │
+│  after_tool_call     → 记录事件 / 更新状态     │
+│  agent_end           → 注入 working_memory    │
+└─────────────────────────────────────────────┘
+```
 
-**触发时机**：`before_prompt_build`（任务开始时）、`llm_output`（LLM 输出时）
-
-**插件行为**：
-- 复杂任务：注入 `skills/metacognition/planning/SKILL.md`
-- LLM 输出阶段：注入 `skills/metacognition/monitoring/SKILL.md`
-- 简单查询（如"今天天气"）：跳过，不注入
-
-**Agent 行为**：阅读注入的 skill，自行制定计划、监控执行、判断偏差。
-
-### 2. 工作记忆（Working Memory）
-
-**触发时机**：`before_tool_call`（会话创建前）、`after_tool_call`（工具执行后）、`agent_end`（任务结束时）
-
-**插件行为**：
-- 记录 `sessions_spawn` / `agent` / `subagent` 工具的创建和完成
-- 记录工具错误事件
-- 任务结束时注入 `skills/working_memory/SKILL.md`
-
-**Agent 行为**：阅读注入的 skill，自行管理工作记忆看板。
-
-### 3. 同化顺应（Assimilation & Accommodation）
-
-**触发时机**：`before_prompt_build` 收到 `[cron:每日自我更新]` 消息时
-
-**插件行为**：注入 `skills/assimilation_accommodation/SKILL.md`
-
-**Agent 行为**：阅读 skill，回顾昨日事件、撰写日记、分析同化/顺应、决定是否更新核心自我文件。
+| 层级 | 职责 | 边界 |
+|------|------|------|
+| **用户层** | 自然语言下达任务、确认/修改 Plan、提供反馈 | 不直接操作系统层 |
+| **代理层** | 阅读 skill 自行决策（制定 Plan、执行监控、归档、写日记） | 自行管理 Plan 状态、任务空间、核心自我文件 |
+| **系统层** | 在 Hook 触发时注入对应 skill 文档，记录状态变化 | 只注入 skill，不替 Agent 做决策；不碰 IDENTITY.md/SOUL.md/MEMORY.md |
 
 ---
 
-## 运行逻辑
+## 面向对象模型
+
+框架由三个模块（Module）和一组对象（Object）构成。模块负责 Hook 调度，对象是 Agent 操作的数据实体。
+
+### 元认知模块（MetacognitionModule）
+
+管理 **Plan → Monitor → Regulator** 的闭环。复杂任务时注入 planning skill，active 状态时注入 monitoring skill。
+
+| 对象 | 职责 | 状态机 | 关联 |
+|------|------|--------|------|
+| **Plan** | 完整的任务上下文语境（目标/约束/工作空间/阶段化执行） | `draft → pending_approval → active → completed → destroyed` | 驱动 Session 创建，为 Monitor 提供参照 |
+| **Monitor** | 跟踪 LLM 输出与 Plan 的偏离程度 | `idle → tracking → alert → destroyed` | 引用 Plan，触发 Regulator |
+| **Regulator** | 接收偏差报告，生成并执行调节方案 | `idle → analyzing → executing → completed → destroyed` | 修改 Plan 或回到 draft 重新汇报 |
+
+**Plan 状态转换规则**：
+
+| 当前状态 | 触发条件 | 新状态 |
+|----------|----------|--------|
+| 不存在 | 收到复杂任务 | `draft` |
+| `draft` | Agent 制定完成并汇报 | `pending_approval` |
+| `pending_approval` | 用户确认 | `active` |
+| `pending_approval` | 用户要求修改 | `pending_approval`（重新汇报） |
+| `pending_approval` | 用户取消 | `completed` |
+| `active` | 阶段正常推进 | `active`（currentPhase++） |
+| `active` | 所有 phases 完成 | `completed` |
+| `active` | 重大偏差需重规划 | `draft`（重新汇报） |
+| `completed` | `agent_end` | `destroyed` |
+
+**核心原则**：`draft` 必须汇报，`pending_approval` 必须等待用户确认，只有 `active` 才能执行。
+
+**Plan 对象结构**（Agent 通过 skill 了解完整属性，见 `skills/metacognition/planning/SKILL.md`）：
+
+```json
+{
+  "runId": "uuid",
+  "prompt": "用户原始输入",
+  "status": "draft",
+  "context": { "goal": "", "constraints": [], "successCriteria": [] },
+  "workspace": { "sessions": [], "artifacts": [], "tools": [] },
+  "execution": { "phases": [], "currentPhase": 0 }
+}
+```
+
+> **工作流详情**：见 `skills/metacognition/planning/SKILL.md`（制定并汇报、处理确认、阶段化执行、任务空间管理）。
+
+### 工作记忆模块（WorkingMemoryModule）
+
+管理 **Session → Event → Archive → Memory** 的全生命周期。任务空间跨 runId 复用，completed 归档，killed 销毁。
+
+| 对象 | 职责 | 生命周期 | 持久化 |
+|------|------|----------|--------|
+| **Session** | 执行特定任务的内存空间 | `pending → active → completed/killed/paused`；completed → `idle`（可复用）；killed → 销毁 | `session_list:{runId}`（运行级）+ `working_memory:active_sessions`（全局索引） |
+| **Event** | 工具调用错误记录 | 按日累积 | `events:{YYYY-MM-DD}` |
+| **ToolRecord** | 工具调用创建/完成记录 | runId 级 | `wm:{runId}:tools` |
+| **Archive** | completed Session 的归档记录 | 日期级 | `memory_table:{YYYY-MM-DD}` |
+| **Memory** | 按日聚合的归档记录集合 | 长期保留 | `memory_table:{YYYY-MM-DD}` |
+
+**Session 状态转换**：
 
 ```
-用户发送消息
-    ↓
-before_prompt_build
-    ├── 简单查询 → 跳过
-    └── 复杂任务 → 注入 planning skill
-        ↓
-Agent 收到 planning skill + 计划建议
-    ↓
-Agent 自行制定计划、创建会话、执行任务
-    ↓
-llm_output（每轮输出）
-    └── 注入 monitoring skill
-        ↓
-Agent 收到 monitoring skill，自行检查偏差
-    ↓
-before_agent_finalize / agent_end
-    └── 注入 working_memory skill
-        ↓
-Agent 收到 working_memory skill，自行归档任务
-    ↓
-次日 00:00 cron 触发 [cron:每日自我更新]
-    ↓
-before_prompt_build 检测到 cron 消息
-    └── 注入 assimilation skill
-        ↓
-Agent 收到 assimilation skill，自行回顾/日记/更新
+不存在 → before_tool_call → pending → 开始执行 → active
+  ├─ 正常完成 → completed → agent_end → Archive → Memory + idle
+  ├─ 工具报错 → killed → agent_end → 销毁
+  └─ 主动暂停 → paused → 恢复 → active
+```
+
+**任务空间复用规则**：同一 `taskFamily`（CODE/RESEARCH/ANALYSIS/WRITING/TEST/DESIGN/TASK）的后续任务复用 idle 空间，标识格式 `session:{TYPE}:{任务族}`。
+
+> **工作流详情**：见 `skills/working_memory/session/SKILL.md`（创建/监控/完成/终止）和 `skills/working_memory/memory/SKILL.md`（归档/清理）。
+
+### 人格模块（PersonalityModule）
+
+基于皮亚杰同化/顺应理论，每日 cron 触发时驱动 Agent 回顾昨日事件、撰写发展日记、更新核心自我文件。
+
+| 对象 | 职责 | 对应文件 |
+|------|------|----------|
+| **Personality** | 容器，驱动每日更新流程 | — |
+| **Diary** | 撰写日记、提取更新触发信号 | `diary/YYYY-MM-DD.md` |
+| **Belief** | 工作信念与风格 | `SOUL.md` |
+| **Self** | 能力边界与责任边界 | `MEMORY.md` |
+| **Identity** | 角色集与社会身份 | `IDENTITY.md` |
+| **Skills** | 个人技能体系 | `skills/README.md` |
+
+**Personality 生命周期**：
+
+```
+idle → cron 触发 → reflecting（Diary 撰写）
+  → updating（对比核心自我，检测变化信号）
+    ├── 自我认知变化 → Self 更新
+    ├── 角色变化 → Identity 更新
+    ├── 信念调整 → Belief 更新
+    └── 技能变化 → Skills 更新
+  → syncing → idle
+```
+
+**同化 vs 顺应判定**：
+- **同化**：原有内容的细化 → 调用子对象的 update 方法
+- **顺应**：新结构的出现 → 调用子对象的 create 方法
+
+> **工作流详情**：见 `skills/personality/SKILL.md`（任务工作流六阶段闭环、每日同化与顺应）。
+
+### 模块协作关系
+
+```
+Metacognition.Plan ──→ WorkingMemory.Session 创建/复用
+Metacognition.Monitor ──→ WorkingMemory.Session 状态同步
+Metacognition.Regulator ──→ WorkingMemory.Session 暂停/恢复
+
+WorkingMemory.Session.completed ──→ WorkingMemory.Archive ──→ Memory
+WorkingMemory.Event ──→ Personality.Diary（每日回顾）
+WorkingMemory.Memory.archives ──→ Personality（反思已完成任务）
 ```
 
 ---
 
-## 文件结构
+## 系统层：Hook 注入映射
+
+| Hook | 条件 | 注入 skill | 操作对象 |
+|------|------|------------|----------|
+| `before_prompt_build` | 复杂任务 + Plan 不存在/draft | `planning` | Plan |
+| `before_prompt_build` | Plan pending_approval | `planning` | Plan |
+| `before_prompt_build` | Plan active | 执行上下文（当前阶段提醒） | Plan |
+| `llm_output` | Plan active | `monitoring` | Monitor |
+| `before_tool_call` | 会话工具调用 | —（仅记录） | Session |
+| `after_tool_call` | 任意 | —（仅记录错误/状态） | Event / Session |
+| `agent_end` | 任意 | `working_memory` | Memory |
+| `before_prompt_build` | cron 消息 | `personality` | Personality |
+
+---
+
+## 职责边界
+
+| 职责 | 用户层 | 代理层 | 系统层 |
+|------|--------|--------|--------|
+| 下达任务 | ✅ | — | — |
+| 确认/修改 Plan | ✅ | — | — |
+| 制定 Plan | — | ✅ 阅读 skill 自行制定 | ✅ 注入 planning skill |
+| 汇报 Plan | — | ✅ | — |
+| 执行监控 | — | ✅ 阅读 skill 自行检查 | ✅ 注入 monitoring skill |
+| 任务空间管理 | — | ✅ 自行决定复用/创建 | ✅ 记录状态变化 |
+| 每日自我更新 | — | ✅ 阅读 skill 自行写日记 | ✅ 注入 personality skill |
+| 核心文件读写 | — | ✅ 自行读写 | ❌ 不碰 |
+| 定时任务 | — | — | ❌ 不内置定时器（用户配置 OpenClaw cron） |
+
+---
+
+## 技术实现
+
+### 源码结构
 
 ```
 openclaw-agent-self-development/
-├── openclaw.plugin.json          # 插件 manifest（id / type / skills / configSchema）
-├── package.json                  # npm 包配置（ESM / files / 无依赖）
-├── HOOK.md                       # Hook 事件声明（OpenClaw 安装器必需）
+├── openclaw.plugin.json          # 插件 manifest
+├── package.json                  # npm 包配置（ESM）
+├── HOOK.md                       # Hook 事件声明
 ├── README.md                     # 本文档
 ├── src/
-│   ├── index.js                  # 插件入口：注册三大模块
-│   ├── metacognition.js          # before_prompt_build / llm_output / agent_end
-│   ├── working-memory.js         # before_tool_call / after_tool_call / agent_end
-│   ├── assimilation.js           # before_prompt_build（检测 cron 消息）
-│   ├── skills-loader.js          # 根据名称读取 skills/ 目录下的 SKILL.md
-│   ├── state.js                  # JSON 文件状态管理（带文件锁）
-│   ├── utils.js                  # 工具函数（日期、计划模板、会话分配）
-│   └── HOOK.md                   # Hook 声明（随源码分发）
-└── skills/                       # Skill 文档（插件注入的内容源）
-    ├── assimilation_accommodation/
-    │   └── SKILL.md              # 每日自我更新：日记、同化顺应、文件更新
+│   ├── index.js                  # 插件入口：依赖注入，创建并注册三大模块
+│   ├── metacognition.js          # MetacognitionModule（Plan/M/Regulator 调度）
+│   ├── working-memory.js         # WorkingMemoryModule（Session 生命周期）
+│   ├── assimilation.js           # PersonalityModule（cron 检测 / skill 注入）
+│   ├── skills-loader.js          # SkillLoader（带缓存）
+│   ├── state.js                  # PluginState（并发安全 JSON 持久化）
+│   └── utils.js                  # 工具函数（日期、Plan 模板、任务族推断）
+└── skills/                       # Skill 文档（面向对象结构）
     ├── metacognition/
-    │   ├── planning/SKILL.md     # 任务计划制定与会话管理
-    │   ├── monitoring/SKILL.md   # 执行监控与偏差检测
-    │   └── regulation/SKILL.md   # 调节与修正
+    │   ├── SKILL.md              # 模块路由：Plan / Monitor / Regulator
+    │   ├── planning/SKILL.md     # Plan 对象操作指南
+    │   ├── monitoring/SKILL.md   # Monitor 对象操作指南
+    │   └── regulation/SKILL.md   # Regulator 对象操作指南
     ├── working_memory/
-    │   └── SKILL.md              # 工作记忆管理与任务归档
+    │   ├── SKILL.md              # 模块路由：Session / Memory
+    │   ├── memory/SKILL.md       # Memory 对象操作指南
+    │   └── session/SKILL.md      # Session 对象操作指南
+    ├── personality/
+    │   ├── SKILL.md              # 模块路由：Belief / Self / Identity / Skills / Diary
+    │   ├── belief/SKILL.md       # Belief 对象操作指南
+    │   ├── self/SKILL.md         # Self 对象操作指南
+    │   ├── identity/SKILL.md     # Identity 对象操作指南
+    │   ├── skills/SKILL.md       # Skills 对象操作指南
+    │   └── diary/SKILL.md        # Diary 对象操作指南
     └── _meta.json                # Skill 元数据索引
 ```
+
+### 面向对象类设计
+
+| 类 | 职责 | 方法 |
+|---|------|------|
+| `PluginState` | JSON 文件状态管理（并发安全） | `get()`, `set()`, `append()`, `_persist()` |
+| `SkillLoader` | Skill 文件加载与缓存 | `load()`, `clearCache()`, `getAvailableSkills()` |
+| `MetacognitionModule` | 元认知闭环调度 | `onBeforePromptBuild()`, `onLlmOutput()`, `onAgentEnd()` |
+| `WorkingMemoryModule` | 任务空间生命周期管理 | `onBeforeToolCall()`, `onAfterToolCall()`, `onAgentEnd()` |
+| `PersonalityModule` | 每日自我更新触发 | `onBeforePromptBuild()` |
+
+### 状态存储键空间
+
+| 键 | 类型 | 生命周期 | 说明 |
+|----|------|----------|------|
+| `plan:{runId}` | Plan | runId | 当前运行的 Plan |
+| `output:{runId}` | string | runId | Monitor 引用的最新 LLM 输出 |
+| `session_list:{runId}` | Session[] | runId | 本次运行的任务空间快照 |
+| `wm:{runId}:tools` | ToolRecord[] | runId | 本次运行的工具记录 |
+| `events:{YYYY-MM-DD}` | Event[] | 日期 | 按日累积的错误事件 |
+| `memory_table:{YYYY-MM-DD}` | Archive[] | 日期 | 按日累积的 completed 归档 |
+| `working_memory:active_sessions` | Session[] | 全局 | 全局活跃任务空间索引（Memory Table 管理中心） |
 
 ---
 
@@ -153,15 +294,13 @@ openclaw-agent-self-development/
 ### 步骤
 
 ```bash
-# 1. 下载并安装插件
+# 1. 安装插件
 openclaw plugins install https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/download/v1.2.4/openclaw-agent-self-development-1.2.6.tgz --force
 
-# 2. 启用插件
+# 2. 启用
 openclaw plugins enable agent-self-development
 
 # 3. 配置 cron（必需）
-# 创建 ~/.openclaw/cron/jobs.json，添加每日自我更新任务
-# 如果不存在 cron 目录，先创建
 mkdir -p ~/.openclaw/cron
 cat > ~/.openclaw/cron/jobs.json << 'EOF'
 {
@@ -178,115 +317,13 @@ cat > ~/.openclaw/cron/jobs.json << 'EOF'
 }
 EOF
 
-# 4. 配置 Agent 白名单
-# 编辑 ~/.openclaw/openclaw.json，在 agents.list[].tools.alsoAllow 中添加插件 ID
+# 4. 编辑 ~/.openclaw/openclaw.json 配置 Agent 白名单与 hooks 权限
 
-# 5. 配置 hooks 权限
-# 编辑 ~/.openclaw/openclaw.json，确保 allowConversationAccess = true
-
-# 6. 重启 Gateway
+# 5. 重启 Gateway
 openclaw gateway restart
 ```
 
----
-
-## CRON 配置详解
-
-本插件**不内置任何定时器**，每日自我更新完全依赖 OpenClaw 的 cron 机制触发。
-
-### jobs.json 文件位置
-
-```
-~/.openclaw/cron/jobs.json
-```
-
-如果目录不存在，手动创建：
-```bash
-mkdir -p ~/.openclaw/cron
-```
-
-### 最小配置
-
-```json
-{
-  "jobs": [
-    {
-      "id": "daily-self-update",
-      "name": "每日自我更新",
-      "schedule": "0 0 * * *",
-      "timezone": "Asia/Shanghai",
-      "message": "[cron:每日自我更新]",
-      "enabled": true
-    }
-  ]
-}
-```
-
-### 字段说明
-
-| 字段 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| `id` | string | ✅ | 任务唯一标识 |
-| `name` | string | ❌ | 任务名称（便于识别） |
-| `schedule` | string | ✅ | Cron 表达式，如 `0 0 * * *`（每天 00:00） |
-| `timezone` | string | ❌ | 时区，默认 UTC。建议设为 `Asia/Shanghai` |
-| `message` | string | ✅ | 触发时发送给 Agent 的消息。必须包含 `[cron:每日自我更新]` |
-| `enabled` | boolean | ❌ | 是否启用，默认 `true` |
-
-### 常用 schedule 示例
-
-| 需求 | Cron 表达式 |
-|------|------------|
-| 每天 00:00 | `0 0 * * *` |
-| 每天 08:00 | `0 8 * * *` |
-| 每周一 00:00 | `0 0 * * 1` |
-| 每 6 小时 | `0 */6 * * *` |
-
-### 多个任务
-
-```json
-{
-  "jobs": [
-    {
-      "id": "daily-self-update",
-      "schedule": "0 0 * * *",
-      "timezone": "Asia/Shanghai",
-      "message": "[cron:每日自我更新]",
-      "enabled": true
-    },
-    {
-      "id": "weekly-review",
-      "schedule": "0 9 * * 1",
-      "timezone": "Asia/Shanghai",
-      "message": "[cron:每周回顾]",
-      "enabled": true
-    }
-  ]
-}
-```
-
-### 验证 cron 是否生效
-
-```bash
-# 查看已配置的 cron 任务
-openclaw cron list
-
-# 手动触发测试（不会等待定时器）
-openclaw cron run daily-self-update
-```
-
-### 故障排查
-
-| 现象 | 原因 | 解决 |
-|------|------|------|
-| 到点未触发 | Gateway 未重启 | `openclaw gateway restart` |
-| 时区不对 | 未设置 `timezone` | 添加 `"timezone": "Asia/Shanghai"` |
-| 插件未响应 | message 不匹配 | 确保包含 `[cron:每日自我更新]` |
-| jobs.json 被覆盖 | 安装插件时重置 | 备份后重新写入 |
-
----
-
-### 配置示例（openclaw.json）
+### 配置示例
 
 ```json
 {
@@ -294,9 +331,7 @@ openclaw cron run daily-self-update
     "list": [
       {
         "id": "main",
-        "tools": {
-          "alsoAllow": ["agent-self-development"]
-        }
+        "tools": { "alsoAllow": ["agent-self-development"] }
       }
     ]
   },
@@ -304,23 +339,11 @@ openclaw cron run daily-self-update
     "entries": {
       "agent-self-development": {
         "enabled": true,
-        "hooks": {
-          "allowConversationAccess": true
-        },
+        "hooks": { "allowConversationAccess": true },
         "config": {
-          "metacognition": {
-            "enabled": true,
-            "planning": true,
-            "monitoring": true
-          },
-          "workingMemory": {
-            "enabled": true,
-            "trackSubagents": true,
-            "autoArchive": true
-          },
-          "assimilation": {
-            "enabled": true
-          }
+          "metacognition": { "enabled": true, "planning": true, "monitoring": true },
+          "workingMemory": { "enabled": true, "trackSubagents": true, "autoArchive": true },
+          "personality": { "enabled": true }
         }
       }
     }
@@ -328,36 +351,30 @@ openclaw cron run daily-self-update
 }
 ```
 
----
-
-## 配置项
+### 配置项
 
 | 配置项 | 类型 | 默认值 | 说明 |
 |--------|------|--------|------|
 | `metacognition.enabled` | boolean | `true` | 元认知模块总开关 |
-| `metacognition.planning` | boolean | `true` | 计划阶段（注入 planning skill） |
-| `metacognition.monitoring` | boolean | `true` | 监控阶段（注入 monitoring skill） |
+| `metacognition.planning` | boolean | `true` | 计划阶段（draft → pending_approval → active） |
+| `metacognition.monitoring` | boolean | `true` | 监控阶段（仅 active 状态注入 monitoring） |
 | `workingMemory.enabled` | boolean | `true` | 工作记忆模块总开关 |
-| `workingMemory.trackSubagents` | boolean | `true` | 追踪会话创建/完成 |
-| `workingMemory.autoArchive` | boolean | `true` | 任务结束时注入 working_memory skill |
-| `assimilation.enabled` | boolean | `true` | 同化顺应模块总开关（检测 cron 消息） |
+| `workingMemory.trackSubagents` | boolean | `true` | 追踪任务空间创建/完成 |
+| `workingMemory.autoArchive` | boolean | `true` | 任务结束时 Archive → Memory 归档 |
+| `personality.enabled` | boolean | `true` | 人格模块总开关（cron 检测） |
+
+> **向后兼容**：`config.assimilation` 仍可工作，内部映射到 `personality`。
 
 ---
 
 ## 验证
 
 ```bash
-# 查看插件列表
 openclaw plugins list
-
-# 查看插件详情
 openclaw plugins inspect agent-self-development --json
-
-# 查看钩子列表
 openclaw hooks list
-
-# 查看 cron 任务
 openclaw cron list
+openclaw cron run daily-self-update   # 手动触发每日更新测试
 ```
 
 ---
@@ -371,4 +388,4 @@ openclaw gateway restart
 
 ---
 
-*版本: 1.2.6*
+*版本: 2.0.0*

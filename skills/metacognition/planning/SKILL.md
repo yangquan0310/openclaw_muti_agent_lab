@@ -1,116 +1,248 @@
 ---
 name: planning
 description: >
-  元认知计划阶段。任务执行前的系统性规划，包括目标澄清、任务拆解、资源分配和计划文档化。
-version: 1.3.0
+  元认知计划子模块。操作 Plan 对象，管理任务上下文、工作空间和阶段化执行。
+  核心原则：Plan 制定后必须先汇报给用户，用户确认后才能执行。
+version: 2.2.0
 author: 大管家
 dependencies:
-  - ../../working_memory/subagent_tracker
+  - ../../working_memory/session
 exports:
-  - task_plan_template
-  - subtask_decomposition_rules
+  - plan_object
+  - plan_workflows
 ---
 
 # planning
 
-> 元认知 - 计划阶段
-> 任务拆解与执行计划制定
+> 元认知子模块 - 计划
+> Plan 不是步骤列表，而是一套完整的上下文语境
+> **必须先汇报，确认后才能执行**
 
 ---
 
-## 文件说明
+## 核心原则
 
-| 文件 | 功能 | 说明 |
+**汇报 → 确认 → 执行**
+
+1. Agent 收到复杂任务后，首先制定完整 Plan
+2. **必须向用户汇报 Plan 内容**，等待用户确认或修改意见
+3. 用户确认后（回复"确认"、"可以"等），将 Plan.status 设为 `active`
+4. 只有 `active` 状态的 Plan 才能进入执行阶段
+5. 如果用户要求修改，修改后重新汇报，再次等待确认
+
+---
+
+## 对象
+
+### Plan（计划对象）
+
+**说明**：Plan 是一套完整的上下文语境，Agent 通过阅读 Plan 了解"要做什么、用什么做、在哪里做、做到什么程度"。
+
+#### 属性
+
+| 属性 | 类型 | 说明 |
 |------|------|------|
-| `SKILL.md` | 开发规范 | 计划阶段的执行规范 |
+| `runId` | string | 所属运行唯一标识 |
+| `prompt` | string | 用户原始输入 |
+| `createdAt` | number | 创建时间戳 |
+| `status` | string | **draft** / **pending_approval** / **active** / **completed** / **destroyed** |
+| `context` | object | **任务上下文**（见下） |
+| `workspace` | object | **工作空间**（见下） |
+| `execution` | object | **执行计划**（见下） |
+
+#### 状态机
+
+```
+draft（草稿）
+    ↓ Agent 制定完成，向用户汇报
+pending_approval（等待用户确认）
+    ├─ 用户确认 → active
+    ├─ 用户修改 → 修改 Plan，回到 pending_approval（重新汇报）
+    └─ 用户取消 → completed
+active（执行中）
+    ↓ 按 phases 逐阶段推进
+    ├─ 正常完成 → completed
+    └─ 重大偏差需重新规划 → draft（重新汇报）
+completed（完成）
+    ↓ agent_end
+destroyed（销毁）
+```
+
+**状态转换规则**：
+
+| 当前状态 | 触发条件 | 新状态 | 操作 |
+|----------|----------|--------|------|
+| 不存在 | 收到复杂任务 | `draft` | 生成 Plan 初始结构 |
+| `draft` | Agent 制定完成并汇报 | `pending_approval` | 等待用户反馈 |
+| `pending_approval` | 用户确认 | `active` | 开始执行 phases |
+| `pending_approval` | 用户要求修改 | `pending_approval` | 修改 Plan，重新汇报 |
+| `pending_approval` | 用户取消 | `completed` | 终止任务 |
+| `active` | 阶段正常推进 | `active` | currentPhase++ |
+| `active` | 所有 phases 完成 | `completed` | 任务完成 |
+| `active` | 重大偏差需重规划 | `draft` | 回到规划阶段重新汇报 |
+| `completed` | `agent_end` | `destroyed` | 清理状态 |
+
+#### context（任务上下文）
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `goal` | string | 任务目标：最终要达成什么 |
+| `constraints` | string[] | 约束条件：时间、资源、规范等限制 |
+| `successCriteria` | string[] | 验收标准：什么算"完成" |
+
+#### workspace（工作空间）
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `sessions` | Session[] | 已创建的任务空间列表 |
+| `artifacts` | string[] | 已产出的文档/文件列表 |
+| `tools` | string[] | 可用的工具列表 |
+
+#### execution（执行计划）
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `phases` | Phase[] | 阶段列表 |
+| `currentPhase` | number | 当前阶段索引（从0开始） |
+
+#### Phase（阶段对象）
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `id` | string | 阶段标识 |
+| `name` | string | 阶段名称 |
+| `goal` | string | 阶段目标 |
+| `sessionId` | string \| null | 分配的任务空间 |
+| `taskFamily` | string | 任务族 |
+| `outputs` | string[] | 阶段预期产出 |
+| `status` | string | `pending` / `active` / `completed` / `skipped` |
 
 ---
 
 ## 工作流
 
-### 工作流1：制定完整任务计划
+### 工作流1：制定 Plan 并汇报（draft → pending_approval）
+
+**说明**：Agent 收到复杂任务后，首先制定完整 Plan，然后**必须向用户汇报**。
 
 **步骤**：
-1. **目标澄清与约束识别**
-   - 明确任务的最终交付物
-   - 识别时间、资源、能力等约束条件
-   - 识别任务间的依赖关系
 
-2. **任务层级拆解**
-   - 将复杂任务拆分为可管理的子任务
-   - 控制粒度：每个子任务可在合理时间内完成
-   - 定义边界：明确子任务的输入、输出和验收标准
+1. **理解用户意图**
+   - 分析用户原始输入（Plan.prompt）
+   - 识别核心诉求和隐含需求
 
-3. **会话分配**
-   - 确定是否需要创建会话
-   - 会话格式：`session:{TYPE}:{任务标识}`
-     - 示例：`session:PROJECT:博士论文`、`session:TASK:文献检索`
-   - 选择完成任务所需的工具/技能
-   - 估算各子任务的执行时间
+2. **完善任务上下文**（修改 `Plan.context`）
+   - `goal`：用一句话明确最终交付物
+   - `constraints`：列出所有已知约束（时间、资源、规范）
+   - `successCriteria`：定义可验证的验收标准
 
-4. **创建任务看板记录**
-   - 调用 `working_memory/subagent_tracker/SKILL.md` 创建记录
-   - 状态设为 `active`
+3. **规划阶段**（修改 `Plan.execution.phases`）
+   - 每个阶段必须有明确的 `goal`（"达成XX"而非"做XX"）
+   - 为需要独立上下文的阶段分配任务空间（`sessionId` + `taskFamily`）
+   - 定义每阶段的预期 `outputs`
+   - 确定阶段间的依赖关系
 
-5. **制定执行计划**
-   - 确定子任务的执行优先级和顺序
-   - 定义关键里程碑和验收节点
+4. **准备汇报**（确保 Plan 完整）
+   - 检查 context、workspace、execution 三个部分是否完整
+   - 确认任务空间分配合理（同任务族复用）
 
-6. **汇报计划**
-   - 整合上述内容形成完整计划方案
-```markdown
-📋 **执行计划**
-- 目标：…
-- 子任务：① … → ② … → ③ …
-- 会话：`session:XXX:xxx`
-- 任务看板预览：
-- 成功标准：…
-- **计划已制定完成，请确认是否可以开始执行？**
-```
+5. **向用户汇报**
+   ```markdown
+   📋 **计划汇报**
+
+   ▸ 任务目标：[goal]
+   ▸ 约束条件：[constraints]
+   ▸ 验收标准：[successCriteria]
+
+   ▸ 执行阶段：
+     1. [阶段名] — [目标] [任务空间]
+     2. [阶段名] — [目标] [任务空间]
+     ...
+
+   ▸ 预期产出：[artifacts]
+
+   **计划已制定完毕，请确认或提出修改意见。**
+   ```
+
+6. **更新状态**
+   - `Plan.status = "pending_approval"`
+   - 保存 Plan 到持久化存储
 
 ---
 
-## 会话管理
+### 工作流2：处理用户确认/修改（pending_approval）
 
-会话管理依托于工作记忆中的「当前活跃任务看板」和「活跃会话清单」。
+**说明**：用户看到汇报后，可能确认、修改或取消。Agent 据此更新 Plan 状态。
 
-### 创建会话流程
+**用户确认时**：
+1. 读取用户确认消息
+2. `Plan.status = "active"`
+3. 开始执行 phases（进入工作流3）
+
+**用户修改时**：
+1. 读取用户修改意见
+2. 修改 Plan 的相应部分（context、phases、workspace 等）
+3. 重新向用户汇报修改后的 Plan
+4. 保持 `Plan.status = "pending_approval"`
+
+**用户取消时**：
+1. 读取取消原因
+2. `Plan.status = "completed"`
+3. 说明取消原因，结束任务
+
+---
+
+### 工作流3：阶段化执行（active）
+
+**说明**：Plan 已确认，按 execution.phases 逐阶段推进。
+
+**步骤**：
 
 ```
-1. 检查工作记忆 → 读取 MEMORY.md「活跃会话清单」
-   ↓
-2. 复用或创建 → 存在则复用，不存在则创建
-   ↓
-3. 记录到工作记忆 → 更新「当前活跃任务看板」和「活跃会话清单」
-   ↓
-4. 后续通过 sessions_send 进行对话
+读取 Plan.execution.currentPhase → 获取当前阶段
+    ↓
+读取 Plan.execution.phases[currentPhase]
+    ↓
+执行任务
+    ├── 需要任务空间？→ 检查 workspace.sessions
+    │   ├── 存在且 idle → 复用（status = active）
+    │   └── 不存在 → 创建新 Session
+    │       └── 加入 workspace.sessions
+    ↓
+阶段目标达成？
+    ├── 是 → phase.status = completed，currentPhase++
+    │        产出物记录到 workspace.artifacts
+    │        相关 Session 标记 idle
+    └── 否 → 继续当前阶段
+    ↓
+所有 phases 完成？
+    ├── 是 → Plan.status = completed
+    └── 否 → 继续下一阶段
 ```
 
-### 工作记忆记录格式
+**阶段完成标准**：
+- 阶段 `goal` 已达成
+- 阶段 `outputs` 已产出并记录到 `workspace.artifacts`
+- 相关任务空间已正确处理
 
-**当前活跃任务看板**：
-```markdown
-| 任务ID | 项目 | 任务描述 | 会话ID | 状态 | 创建时间 | 最后更新 | 备注 |
-|--------|------|----------|--------|------|----------|----------|------|
-| T001 | 博士论文 | 博士论文写作 | session:PROJECT:博士论文 | active | 2026-04-26 | 2026-04-26 | 会话 |
-```
+---
 
-**活跃会话清单**：
-```markdown
-| 会话ID | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 | 备注 |
-|--------|-----------|----------|------|----------|----------|------|
-| session:PROJECT:博士论文 | 会话 | 博士论文写作 | active | 2026-04-26 | 2026-04-26 | 用于send |
-```
+### 工作流4：任务空间管理
 
-### 会话生命周期
+**复用规则**：
+- 同一 `taskFamily` 的阶段优先复用同一 idle 任务空间
+- 不同 `taskFamily` 必须创建独立任务空间（并行执行）
+- 任务空间标识格式：`session:{TYPE}:{任务族}`
 
-| 阶段 | 操作 | 工具 |
-|------|------|------|
-| 创建 | 创建子代理并记录到工作记忆 | `sessions_spawn` + 更新 MEMORY.md |
-| 对话 | 向会话发送消息 | `sessions_send` |
-| 监控 | 检查会话状态 | `subagents action=list` |
-| 完成 | 更新状态为 completed | 更新 MEMORY.md |
-| 清理 | 归档或删除 | 定时任务 |
+**生命周期**：
+
+| 阶段 | 操作 | 修改的 Plan 属性 |
+|------|------|-----------------|
+| 创建 | `sessions_spawn` + 加入 workspace.sessions | `workspace.sessions[].status = active` |
+| 复用 | 复用 idle Session | `workspace.sessions[].status = active` |
+| 执行 | 在 Session 中完成任务 | `workspace.artifacts` 增加产出 |
+| 释放 | Session 标记 idle | `workspace.sessions[].status = idle` |
+| 销毁 | 从 workspace.sessions 移除 | 不再使用 |
 
 ---
 
@@ -120,18 +252,14 @@ exports:
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
-| `task_name` | string | ✅ | 任务名称 |
-| `deliverables` | list | ✅ | 最终交付物清单 |
-| `deadline` | string | ❌ | 截止时间 |
-| `session_target` | string | ❌ | 会话标识 |
-| `dependencies` | list | ❌ | 任务间依赖关系 |
+| `task_description` | string | ✅ | 用户任务描述 |
 
 ### 输出结果
 
 | 输出项 | 格式 | 说明 |
 |--------|------|------|
-| `task_plan` | Markdown | 结构化任务计划文档 |
-| `memory_record` | Markdown 表格 | 写入工作记忆的任务看板记录 |
+| `plan_report` | Markdown | 向用户汇报的 Plan 内容 |
+| `plan_status_update` | string | 状态变更（draft → pending_approval → active） |
 
 ---
 
@@ -139,9 +267,9 @@ exports:
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v1.3.0 | 2026-04-26 | 精简工作流，聚焦计划制定和会话管理 |
-| v1.2.0 | 2026-04-26 | 添加会话生命周期管理 |
-| v1.1.0 | 2026-04-26 | 统一使用会话 |
+| v2.2.0 | 2026-04-28 | 增加"汇报 → 确认 → 执行"强制流程，状态机增加 pending_approval |
+| v2.1.0 | 2026-04-28 | Plan 重构为上下文语境：context + workspace + execution |
+| v2.0.0 | 2026-04-28 | 面向对象重构 |
 | v1.0.0 | 2026-04-17 | 初始版本 |
 
 ---
