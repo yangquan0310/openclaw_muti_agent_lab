@@ -188,7 +188,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.21",
-    "lastTouchedAt": "2026-04-27T10:33:06.883Z"
+    "lastTouchedAt": "2026-04-28T11:08:02.352Z"
   },
   "plugins": {
     "entries": {
@@ -250,7 +250,22 @@
         "enabled": true
       },
       "agent-self-development": {
-        "enabled": true
+        "enabled": true,
+        "config": {
+          "metacognition": {
+            "enabled": true,
+            "planning": true,
+            "monitoring": true
+          },
+          "workingMemory": {
+            "enabled": true,
+            "trackSubagents": true,
+            "autoArchive": true
+          },
+          "personality": {
+            "enabled": true
+          }
+        }
       },
       "deepseek": {
         "enabled": true
@@ -322,10 +337,10 @@
       },
       "agent-self-development": {
         "source": "archive",
-        "sourcePath": "/root/openclaw-agent-self-development-1.2.6.tgz",
+        "sourcePath": "/root/openclaw-agent-self-development-2.0.2.tgz",
         "installPath": "/root/.openclaw/extensions/agent-self-development",
-        "version": "1.2.6",
-        "installedAt": "2026-04-27T08:47:26.313Z"
+        "version": "2.0.2",
+        "installedAt": "2026-04-28T11:07:57.691Z"
       }
     },
     "allow": [
@@ -673,27 +688,6 @@
         "args": [
           "/root/.openclaw/workspace/skills/manage-project/mcp/server.py"
         ]
-      }
-    }
-  },
-  "hooks": {
-    "internal": {
-      "enabled": true,
-      "entries": {
-        "src": {
-          "enabled": true
-        }
-      },
-      "installs": {
-        "src": {
-          "hooks": [
-            "src"
-          ],
-          "source": "archive",
-          "sourcePath": "/root/openclaw-agent-self-development-1.0.1-fixed2.tgz",
-          "installPath": "/root/.openclaw/hooks/src",
-          "installedAt": "2026-04-27T07:09:37.501Z"
-        }
       }
     }
   }

@@ -1,9 +1,4 @@
 # MEMORY.md
-
-> 基于心理学记忆理论 + **面向对象设计思想** 构建
-> - 工作记忆:追踪当前活跃的会话任务状态
-> - 陈述性记忆:语义网络形式存储
-> - 程序性记忆:脚本形式存储
 > 版本:v8.0.1
 > 最后更新:2026-04-19
 
@@ -11,46 +6,24 @@
 
 ## 工作记忆(Working Memory)
 
-> 基于 Baddeley 工作记忆理论构建
-> 用于追踪当前活跃的会话任务状态
-> 按 AGENTS.md 元认知行为规范要求,严格遵循「计划→监控→调节」闭环
-> 结构由大管家维护
-> 内容由各代理维护
-
 ### 当前活跃任务看板
 
 | 任务ID | 项目 | 任务描述 | 会话ID | 状态 | 创建时间 | 最后更新 | 备注 |
 |--------|------|----------|--------|------|----------|----------|------|
 | T001 | 每日自我更新 | 执行工作流2每日自我更新 | session:CORN:physicist的定时任务 | active | 2026-04-27 00:00 | 2026-04-27 00:00 | 定时任务，每日00:00执行 |
 
-
+---
 ### 活跃会话清单
 
 | 会话ID | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 | 备注 |
 |--------|-----------|----------|------|----------|----------|------|
 | session:CORN:physicist的定时任务 | 定时任务 | 每日自我更新 | active | 2026-04-27 00:00 | 2026-04-27 00:00 | 工作流2执行同化顺应分析 |
-
+---
 
 ### 工作记忆使用规则
 
-> 详细规范参见 `skills/agent_self_development/working_memory/SKILL.md`
+> 详细规范参见 `\root\.openclaw\extensions\agent-self-development\skills\working_memory\SKILL.md`
 > 本文件仅记录代理特定的实践细节
-
-#### 代理特定规则
-- 为每个任务分配唯一任务ID（格式：T001, T002, ...）
-- **创建命名会话前**：先检查「活跃会话清单」，复用共享上下文的命名会话
-- 发现偏离计划超过 10% → 暂停并更新状态为`paused`，请求用户指示
-- **所有任务都使用命名会话**（通过 `sessionTarget` 指定），不再区分一次性任务
-
-#### 定时清理
-- **执行时间**：每日 00:00（Asia/Shanghai）
-- **执行方式**：主代理执行
-- **任务内容**：
-  1. 扫描「活跃会话清单」
-  2. 将 `completed` 状态任务归档到「事件记忆」
-  3. 直接删除 `killed` 状态任务（不归档）
-  4. 从清单中删除已处理的任务
-  5. 记录清理日志
 
 ---
 
@@ -63,17 +36,6 @@
 
 ### 知识网络
 
-
----
-
-### 事件记忆(Event Memory)
-
-> 记录关键事件及其时间线索引,包含事件详细日志位置
-
-> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/physicist/events/YYYY-MM-DD/HH-MM-SS-{event}.md`
-| 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
-|------|------|----------|------|----------|
-||||
 ---
 
 ## 五、程序性记忆(Procedural Memory)
@@ -101,3 +63,10 @@
 
 *最后更新: 2026-04-19*  
 *更新者: 物理学家*
+
+## Promoted From Short-Term Memory (2026-04-29)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-21.md:159:161 -->
+- - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:289-289]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:404-404]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:144-146 [score=0.909 recalls=0 avg=0.620 source=memory/2026-04-21.md:8-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:154:156 -->
+- - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:289-289]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:404-404]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:144-146 [score=0.896 recalls=0 avg=0.620 source=memory/2026-04-22.md:33-35]

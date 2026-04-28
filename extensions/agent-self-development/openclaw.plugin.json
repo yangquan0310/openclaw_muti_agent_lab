@@ -1,7 +1,7 @@
 {
   "id": "agent-self-development",
   "name": "Agent Self-Development",
-  "version": "1.2.6",
+  "version": "2.0.2",
   "description": "OpenClaw plugin for agent self-development based on Piaget's cognitive development theory",
   "main": "src/index.js",
   "type": "native",
@@ -16,8 +16,7 @@
         "properties": {
           "enabled": { "type": "boolean", "default": true },
           "planning": { "type": "boolean", "default": true },
-          "monitoring": { "type": "boolean", "default": true },
-
+          "monitoring": { "type": "boolean", "default": true }
         }
       },
       "workingMemory": {
@@ -28,13 +27,19 @@
           "autoArchive": { "type": "boolean", "default": true }
         }
       },
-      "assimilation": {
+      "personality": {
         "type": "object",
         "properties": {
           "enabled": { "type": "boolean", "default": true }
         }
       },
-
+      "assimilation": {
+        "type": "object",
+        "description": "向后兼容，内部映射到 personality",
+        "properties": {
+          "enabled": { "type": "boolean", "default": true }
+        }
+      }
     }
   }
 }

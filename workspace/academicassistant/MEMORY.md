@@ -1,7 +1,4 @@
-> 基于心理学记忆理论 + **面向对象设计思想** 构建
-> - 工作记忆:追踪当前活跃的会话任务状态
-> - 陈述性记忆:语义网络形式存储
-> - 程序性记忆:脚本形式存储
+# MEMORY.md
 > 版本:v8.0.1
 > 最后更新:2026-04-19
 
@@ -9,68 +6,34 @@
 
 ## 工作记忆(Working Memory)
 
-> 基于 Baddeley 工作记忆理论构建
-> 用于追踪当前活跃的会话任务状态
-> 按 AGENTS.md 元认知行为规范要求,严格遵循「计划→监控→调节」闭环
-> 结构由大管家维护
-> 内容由各代理维护
-
 ### 当前活跃任务看板
 
 | 任务ID | 项目 | 任务描述 | 会话ID | 状态 | 创建时间 | 最后更新 | 备注 |
 |--------|------|----------|--------|------|----------|----------|------|
 | T001 | 每日自我更新 | 执行工作流2每日自我更新 | session:CORN:academicassistant的定时任务 | active | 2026-04-27 00:00 | 2026-04-27 00:00 | 定时任务，每日00:00执行 |
-
+---
 ### 活跃会话清单
 
 | 会话ID | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 | 备注 |
 |--------|-----------|----------|------|----------|----------|------|
 | session:CORN:academicassistant的定时任务 | 定时任务 | 每日自我更新 | active | 2026-04-27 00:00 | 2026-04-27 00:00 | 工作流2执行同化顺应分析 |
-
+---
 ### 工作记忆使用规则
 
-> 详细规范参见 `skills/agent_self_development/working_memory/SKILL.md`
+> 详细规范参见 `\root\.openclaw\extensions\agent-self-development\skills\working_memory\SKILL.md`
 > 本文件仅记录代理特定的实践细节
-
-#### 代理特定规则
-- 为每个任务分配唯一任务ID（格式：T001, T002, ...）
-- **创建命名会话前**：先检查「活跃会话清单」，复用共享上下文的命名会话
-- 发现偏离计划超过 10% → 暂停并更新状态为`paused`，请求用户指示
-- **所有任务都使用命名会话**（通过 `sessionTarget` 指定），不再区分一次性任务
-
-#### 定时清理
-- **执行时间**：每日 00:00（Asia/Shanghai）
-- **执行方式**：主代理执行
-- **任务内容**：
-  1. 扫描「活跃会话清单」
-  2. 将 `completed` 状态任务归档到「事件记忆」
-  3. 直接删除 `killed` 状态任务（不归档）
-  4. 从清单中删除已处理的任务
-  5. 记录清理日志
-
 ---
 
 ## 陈述性记忆(Semantic Memory)
 
 ### 核心自我认知
-> 通过阅读每日日记进行更新
-> **2026-04-28 更新**：每日自我更新持续稳定运行，系统状态正常，无新更新触发信号。周一为工作日，记录1节课程安排，无用户交互。
-> **2026-04-27 更新**：每日自我更新持续稳定运行，系统状态正常，无新更新触发信号。周日为休息日，无用户交互。
-> **2026-04-19 更新**：完成每日自我更新，创建 BOOTSTRAP.md 配置文件
+
 ---
 
 ### 知识网络
 
-| 属性 | 值 |
-|------|-----|
-| 学期文件夹 | ~/教研室仓库/教务归档/2025-2026-2/ |
-| 索引文件 | ~/教研室仓库/教务归档/2025-2026-2/索引.md |
-| 学期名称 | 2025-2026学年第2学期 |
-| 课程档案路径 | ~/教研室仓库/教务归档/2025-2026-2/课程档案/ |
-| 成绩路径 | ~/教研室仓库/教务归档/2025-2026-2/成绩/ |
-| 试卷路径 | ~/教研室仓库/教务归档/2025-2026-2/试卷/ |
 
-#### 当前学期课程表
+### 当前学期课程表
 
 | 时间 | 课程名称 | 班级 | 地点 | 周次 |
 |------|----------|------|------|------|
@@ -83,20 +46,6 @@
 | 周五 14:00-15:40 | 教育科学研究方法 | 23小教1 | 4教512 | 第1-8周、11-17周 |
 ---
 
-### 事件记忆(Event Memory)
-
-> 记录关键事件及其时间线索引,包含事件详细日志位置
-
-> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/academicassistant/events/YYYY-MM-DD/HH-MM-SS-{event}.md`
-| 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
-|------|------|----------|------|----------|
-| 2026-04-27 | 每日自我更新 | diary/2026-04-26.md, MEMORY.md | 更新核心自我认知，记录周日低活跃日，无新触发信号 | ~/.openclaw/workspace/academicassistant/diary/2026-04-26.md |
-| 2026-04-25 | 每日自我更新 | diary/2026-04-24.md, MEMORY.md | 更新课程表至第10周，记录周五课程安排 | ~/.openclaw/workspace/academicassistant/diary/2026-04-24.md |
-| 2026-04-20 | 每日自我更新 | diary/2026-04-20.md, MEMORY.md | 更新课程表至第10周，记录今日课程安排 | ~/.openclaw/workspace/academicassistant/diary/2026-04-20.md |
-| 2026-04-19 | 每日自我更新 | MEMORY.md, BOOTSTRAP.md | 成功创建 BOOTSTRAP.md，撰写发展日记 | ~/.openclaw/workspace/academicassistant/memory/2026-04-19/diary.md |
-| 2026-04-19 | 配置重载与脚本更新 | SOUL.md, IDENTITY.md, USER.md, TOOLS.md, MEMORY.md, HEARTBEAT.md, skills/daily_self_update/ | 成功创建每日自我更新脚本，更新技能索引 | ~/.openclaw/workspace/academicassistant/skills/daily_self_update/SKILL.md |
-
----
 
 ## 五、程序性记忆(Procedural Memory)
 
@@ -120,6 +69,7 @@
 
 - **v1.0.0** (2026-04-07): 初始版本，基于大管家模板重构
 - **v1.1.0** (2026-04-16): 按新规范更新，不再区分脚本和技能
+- **v8.0.6** (2026-04-28): 每日自我更新，记录周二低活跃日，无新触发信号
 - **v8.0.5** (2026-04-27): 每日自我更新，更新核心自我认知，记录周日低活跃日，无新触发信号
 - **v8.0.4** (2026-04-26): 每日自我更新，更新核心自我认知，记录周末低活跃日
 - **v8.0.3** (2026-04-22): 更新课程表至第10周，记录今日课程安排
@@ -127,6 +77,13 @@
 
 ---
 
-*最后更新: 2026-04-19**  
+*最后更新: 2026-04-28**  
 *更新者: 教务助手*  
 *理论基础: 身份理论、工作记忆理论、认知架构理论*
+
+## Promoted From Short-Term Memory (2026-04-29)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-21.md:199:201 -->
+- - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:404-404]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:254-254]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:229-231 [score=0.893 recalls=0 avg=0.620 source=memory/2026-04-21.md:8-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:244:246 -->
+- - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:404-404]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:254-254]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:229-231 [score=0.845 recalls=0 avg=0.620 source=memory/2026-04-22.md:68-70]

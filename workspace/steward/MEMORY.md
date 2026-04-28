@@ -1,9 +1,4 @@
 # MEMORY.md
-
-> 基于心理学记忆理论 + **面向对象设计思想** 构建
-> - 工作记忆:追踪当前活跃的会话任务状态
-> - 陈述性记忆:语义网络形式存储
-> - 程序性记忆:脚本形式存储
 > 版本:v8.7.0
 > 最后更新:2026-04-28
 
@@ -11,68 +6,36 @@
 
 ## 工作记忆(Working Memory)
 
-> 基于 Baddeley 工作记忆理论构建
-> 用于追踪当前活跃的会话任务状态
-> 按 AGENTS.md 元认知行为规范要求,严格遵循「计划→监控→调节」闭环
-> 结构由大管家维护
-> 内容由各代理维护
-
 ### 当前活跃任务看板
 
 | 任务ID | 项目 | 任务描述 | 会话ID | 状态 | 创建时间 | 最后更新 | 备注 |
 |--------|------|----------|--------|------|----------|----------|------|
 | T001 | 每日自我更新 | 执行工作流2每日自我更新 | session:CORN:steward的定时任务 | active | 2026-04-27 00:00 | 2026-04-27 00:00 | 定时任务，每日00:00执行 |
-
+---
 ### 活跃会话清单
 
 | 会话ID | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 | 备注 |
 |--------|-----------|----------|------|----------|----------|------|
 | session:CORN:steward的定时任务 | 定时任务 | 每日自我更新 | active | 2026-04-27 00:00 | 2026-04-27 00:00 | 工作流2执行同化顺应分析 |
 
-
+---
 ### 工作记忆使用规则
 
-> 详细规范参见 `skills/agent_self_development/working_memory/SKILL.md`
+> 详细规范参见 `\root\.openclaw\extensions\agent-self-development\skills\working_memory\SKILL.md`
 > 本文件仅记录代理特定的实践细节
-
-#### 代理特定规则
-- 为每个任务分配唯一任务ID（格式：T001, T002, ...）
-- **创建命名会话前**：先检查「活跃会话清单」，复用共享上下文的命名会话
-- 发现偏离计划超过 10% → 暂停并更新状态为`paused`，请求用户指示
-- **所有任务都使用命名会话**（通过 `sessionTarget` 指定），不再区分一次性任务
-
-#### 定时清理
-- **执行时间**：每日 00:00（Asia/Shanghai）
-- **执行方式**：主代理执行
-- **任务内容**：
-  1. 扫描「活跃会话清单」
-  2. 将 `completed` 状态任务归档到「事件记忆」
-  3. 直接删除 `killed` 状态任务（不归档）
-  4. 从清单中删除已处理的任务
-  5. 记录清理日志
 
 ---
 
 ## 陈述性记忆(Semantic Memory)
 
-### 核心自我认知
-> 通过阅读每日日记进行更新
+### 核心自我
+
 ---
 
 
 ### 知识网络
 
 
----
-
-### 事件记忆(Event Memory)
-
-> 记录关键事件及其时间线索引,包含事件详细日志位置
-
-> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/steward/events/YYYY-MM-DD/HH-MM-SS-{event}.md`
-| 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
-|------|------|----------|------|----------|
-|||||
 ---
 
 ## 五、程序性记忆(Procedural Memory)
@@ -134,3 +97,12 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-04-20.md:278:292 -->
 - - Candidate: User: System: [2026-04-17 01:02:57 GMT+8] Feishu[steward] group oc_cd80162eb81e39f77160a0daab2a6ab8 | 杨权 (ou_25cf20a1973aecc51f73d8e2800d7f7e) [msg:om_x100b51252acba4a4c147ed92dbc5b32, @bot] Conversation info (untrusted metadata): ```json { "message_id": "om_x100b51252acba4a4c147 - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-17.txt:87-87 - recalls: 0 - status: staged - Candidate: User: [Sat 2026-04-18 03:00 GMT+8] Write a dream diary entry from these memory fragments: - Assistant: ✅ **数学家每日维护任务完成！** ## 执行总结 ### 1. 维护 TOOLS.md - ✅ 个人技能索引已确认 (update_indexes) - ✅ 个人脚本索引已添加 (daily_maintenance) - ✅ 项目库已确认 (9个项目) ### 2. 维护 MEMORY.md - ✅ 任务看板已检查 (无活跃任务) - ✅ 活跃子代 - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:1-1 - recalls: 0 - status: staged - Candidate: Assistant: The morning light filters through the curtains in something close to #F5E6D3, a warm beige that reminds me of old paper. I've been thinking about maintenance — that quiet, persistent act of keeping things alive. A mathematician somewhere is tending to their garden of s - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:2-2 - recalls: 0 - status: staged [score=0.838 recalls=3 avg=1.000 source=memory/2026-04-20.md:278-292]
+
+## Promoted From Short-Term Memory (2026-04-29)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-21.md:264:266 -->
+- - Candidate: Possible Lasting Truths: - Candidate: Assistant: ✅ 代码已成功提交！由于网络连接问题，推送远程仓库暂时失败，但本地更改已保存。 ### 自动提交完成摘要 | 项目 | 状态 | |------|------| | **本地提交** | ✅ 成功 | | **远程推送** | ⚠️ 网络连接问题，稍后重试 | ### 提交信息 - **提交ID**: fdb8705 - **提交信息**: auto-push: 每日自动提交 2026-04-15 05:00:00 - **变更统计**: 42 个文件变更， - confidence: 0.62 - evidence: memory/2026-04-20.md:349-351 [score=0.814 recalls=0 avg=0.620 source=memory/2026-04-21.md:43-45]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:254:256 -->
+- - Candidate: Possible Lasting Truths: - Candidate: Assistant: ✅ 代码已成功提交！由于网络连接问题，推送远程仓库暂时失败，但本地更改已保存。 ### 自动提交完成摘要 | 项目 | 状态 | |------|------| | **本地提交** | ✅ 成功 | | **远程推送** | ⚠️ 网络连接问题，稍后重试 | ### 提交信息 - **提交ID**: fdb8705 - **提交信息**: auto-push: 每日自动提交 2026-04-15 05:00:00 - **变更统计**: 42 个文件变更， - confidence: 0.62 - evidence: memory/2026-04-21.md:264-266 [score=0.811 recalls=0 avg=0.620 source=memory/2026-04-22.md:8-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-23.md:289:291 -->
+- - Candidate: Possible Lasting Truths: - Candidate: Assistant: ✅ 代码已成功提交！由于网络连接问题，推送远程仓库暂时失败，但本地更改已保存。 ### 自动提交完成摘要 | 项目 | 状态 | |------|------| | **本地提交** | ✅ 成功 | | **远程推送** | ⚠️ 网络连接问题，稍后重试 | ### 提交信息 - **提交ID**: fdb8705 - **提交信息**: auto-push: 每日自动提交 2026-04-15 05:00:00 - **变更统计**: 42 个文件变更， - confidence: 0.62 - evidence: memory/2026-04-22.md:254-256 [score=0.806 recalls=0 avg=0.620 source=memory/2026-04-23.md:8-10]

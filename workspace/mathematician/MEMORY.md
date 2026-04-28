@@ -1,21 +1,10 @@
 # MEMORY.md
-
-> 基于心理学记忆理论 + **面向对象设计思想** 构建
-> - 工作记忆:追踪当前活跃的会话任务状态
-> - 陈述性记忆:语义网络形式存储
-> - 程序性记忆:脚本形式存储
 > 版本:v8.0.1
 > 最后更新:2026-04-19
 
 ---
 
 ## 工作记忆(Working Memory)
-
-> 基于 Baddeley 工作记忆理论构建
-> 用于追踪当前活跃的会话任务状态
-> 按 AGENTS.md 元认知行为规范要求,严格遵循「计划→监控→调节」闭环
-> 结构由大管家维护
-> 内容由各代理维护
 
 ### 当前活跃任务看板
 
@@ -33,25 +22,8 @@
 
 ### 工作记忆使用规则
 
-> 详细规范参见 `skills/agent_self_development/working_memory/SKILL.md`
+> 详细规范参见 `\root\.openclaw\extensions\agent-self-development\skills\working_memory\SKILL.md`
 > 本文件仅记录代理特定的实践细节
-
-#### 代理特定规则
-- 为每个任务分配唯一任务ID（格式：T001, T002, ...）
-- **创建命名会话前**：先检查「活跃会话清单」，复用共享上下文的命名会话
-- 发现偏离计划超过 10% → 暂停并更新状态为`paused`，请求用户指示
-- **所有任务都使用命名会话**（通过 `sessionTarget` 指定），不再区分一次性任务
-
-#### 定时清理
-- **执行时间**：每日 00:00（Asia/Shanghai）
-- **执行方式**：主代理执行
-- **任务内容**：
-  1. 扫描「活跃会话清单」
-  2. 将 `completed` 状态任务归档到「事件记忆」
-  3. 直接删除 `killed` 状态任务（不归档）
-  4. 从清单中删除已处理的任务
-  5. 记录清理日志
-
 ---
 
 ## 陈述性记忆(Semantic Memory)
@@ -61,20 +33,6 @@
 ---
 
 ### 知识网络
-
----
-
-### 事件记忆(Event Memory)
-
-> 记录关键事件及其时间线索引,包含事件详细日志位置
-
-> **新规范**：事件记忆按日期归档到 `~/.openclaw/workspace/mathematician/events/YYYY-MM-DD/HH-MM-SS-{event}.md`
-| 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
-|------|------|----------|------|----------|
-| 2026-04-19 | 每日维护任务 | 数学家 | 已完成 | events/2026-04-19/00-34-00-每日维护任务.md |
-| 2026-04-19 | 每日自我更新 | 数学家 | 同化阶段，无结构性更新 | events/2026-04-19/04-21-00-self-update.md |
-| 2026-04-20 | 每日自我更新 | 数学家 | 同化阶段，无结构性更新 | events/2026-04-20/00-01-00-self-update.md |
-| 2026-04-22 | 每日自我更新 | 数学家 | 同化阶段，无结构性更新 | events/2026-04-22/00-11-00-self-update.md |
 
 ---
 
@@ -102,3 +60,16 @@
 | v1.0.0 | 2026-04-07 | 完全重构，采用大管家模板结构，保留数学家专属内容 | 大管家 |
 | v3.2.0 | 2026-04-06 | 按照记忆管理规范重构 | 数学家 |
 | v3.1.0 | 2026-04-05 | 重构任务脚本定义 | 数学家 |
+
+## Promoted From Short-Term Memory (2026-04-29)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-21.md:174:176 -->
+- - Candidate: Possible Lasting Truths: Possible Lasting Truths: Assistant: ✅ **数学家每日维护任务完成！** ## 执行总结 ### 1. 维护 TOOLS.md - ✅ 个人技能索引已确认 (update_indexes) - ✅ 个人脚本索引已添加 (daily_maintenance) - ✅ 项目库已确认 (9个项目) ### 2. 维护 MEMORY.md - ✅ 任务看板已检查 (无活跃任务) - ✅ 活跃子代理清单已检查 (无活跃子代理) - ✅ 事件记忆已添加今日维护记录 ### 3. 工 - confidence: 0.62 - evidence: memory/2026-04-20.md:169-171 [score=0.875 recalls=0 avg=0.620 source=memory/2026-04-21.md:8-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:204:206 -->
+- - Candidate: Possible Lasting Truths: Possible Lasting Truths: Assistant: ✅ **数学家每日维护任务完成！** ## 执行总结 ### 1. 维护 TOOLS.md - ✅ 个人技能索引已确认 (update_indexes) - ✅ 个人脚本索引已添加 (daily_maintenance) - ✅ 项目库已确认 (9个项目) ### 2. 维护 MEMORY.md - ✅ 任务看板已检查 (无活跃任务) - ✅ 活跃子代理清单已检查 (无活跃子代理) - ✅ 事件记忆已添加今日维护记录 ### 3. 工 - confidence: 0.62 - evidence: memory/2026-04-20.md:169-171 [score=0.845 recalls=0 avg=0.620 source=memory/2026-04-22.md:53-55]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-23.md:154:156 -->
+- - Candidate: Possible Lasting Truths: Possible Lasting Truths: Assistant: ✅ **数学家每日维护任务完成！** ## 执行总结 ### 1. 维护 TOOLS.md - ✅ 个人技能索引已确认 (update_indexes) - ✅ 个人脚本索引已添加 (daily_maintenance) - ✅ 项目库已确认 (9个项目) ### 2. 维护 MEMORY.md - ✅ 任务看板已检查 (无活跃任务) - ✅ 活跃子代理清单已检查 (无活跃子代理) - ✅ 事件记忆已添加今日维护记录 ### 3. 工 - confidence: 0.62 - evidence: memory/2026-04-20.md:169-171 [score=0.834 recalls=0 avg=0.620 source=memory/2026-04-23.md:78-80]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-24.md:124:126 -->
+- <!-- openclaw:dreaming:light:start --> [score=0.816 recalls=0 avg=0.620 source=memory/2026-04-24.md:2-2]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-25.md:159:161 -->
+- - Candidate: Possible Lasting Truths: ## Light Sleep <!-- openclaw:dreaming:light:start --> - Candidate: Reflections: Theme: `assistant` kept surfacing across 80 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-14.txt:2-2, memory/.dreams/session-corpus/2026-04-14.t - confidence: 0.62 - evidence: memory/2026-04-24.md:124-126 [score=0.810 recalls=0 avg=0.620 source=memory/2026-04-25.md:8-10]

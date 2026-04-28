@@ -924,9 +924,16 @@ class Maintainer:
         if os.path.exists(manuscript_dir):
             for filename in os.listdir(manuscript_dir):
                 if filename.endswith('.md'):
+                    # 保留现有的 cloud 数据
+                    existing_cloud = []
+                    if "markdown" in self.metadata and filename in self.metadata["markdown"]:
+                        existing_entry = self.metadata["markdown"][filename]
+                        if "cloud" in existing_entry:
+                            existing_cloud = existing_entry["cloud"]
+                    
                     markdown[filename] = {
                         "local_path": f"手稿/{filename}",
-                        "cloud": []
+                        "cloud": existing_cloud
                     }
         
         # 扫描笔记
