@@ -9,7 +9,7 @@ import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
 import { PluginState } from './state.js';
 import { MetacognitionModule } from './metacognition.js';
 import { WorkingMemoryModule } from './working-memory.js';
-import { PersonalityModule } from './assimilation.js';
+import { PersonalityModule } from './personality.js';
 import { SkillLoader } from './skills-loader.js';
 
 export default definePluginEntry({
