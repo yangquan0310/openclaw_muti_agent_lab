@@ -16,8 +16,7 @@
         "properties": {
           "enabled": { "type": "boolean", "default": true },
           "planning": { "type": "boolean", "default": true },
-          "monitoring": { "type": "boolean", "default": true },
-
+          "monitoring": { "type": "boolean", "default": true }
         }
       },
       "workingMemory": {
@@ -40,8 +39,7 @@
         "properties": {
           "enabled": { "type": "boolean", "default": true }
         }
-      },
-
+      }
     }
   }
 }

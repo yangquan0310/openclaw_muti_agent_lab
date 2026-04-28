@@ -15,7 +15,7 @@ import { SkillLoader } from './skills-loader.js';
 export default definePluginEntry({
   id: 'agent-self-development',
   name: 'Agent Self-Development',
-  version: '1.2.6',
+  version: '2.0.0',
 
   register(api) {
     if (api.registrationMode && api.registrationMode !== 'full') {
