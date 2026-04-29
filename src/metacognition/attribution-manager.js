@@ -5,8 +5,8 @@
 
 export class AttributionManager {
   constructor(stateAdapter, flowAdapter) {
-    this.state = stateAdapter;
-    this.flow = flowAdapter;
+    this.stateAdapter = stateAdapter;
+    this.flowAdapter = flowAdapter;
   }
 
   /**
@@ -20,7 +20,7 @@ export class AttributionManager {
       createdAt: Date.now(),
       ...attributionData
     };
-    await this.state.saveAttribution(runId, deviationId, attribution);
+    await this.stateAdapter.saveAttribution(runId, deviationId, attribution);
     return attribution;
   }
 
@@ -28,7 +28,7 @@ export class AttributionManager {
    * 完成归因分析
    */
   async completeAttribution(runId, deviationId, rootCause, adjustmentPlan) {
-    const attribution = await this.state.getAttribution(runId, deviationId);
+    const attribution = await this.stateAdapter.getAttribution(runId, deviationId);
     if (!attribution) return null;
 
     attribution.status = 'completed';
@@ -36,7 +36,7 @@ export class AttributionManager {
     attribution.rootCause = rootCause;
     attribution.adjustmentPlan = adjustmentPlan;
 
-    await this.state.saveAttribution(runId, deviationId, attribution);
+    await this.stateAdapter.saveAttribution(runId, deviationId, attribution);
     return attribution;
   }
 
@@ -44,14 +44,14 @@ export class AttributionManager {
    * 执行调节方案
    */
   async applyAdjustment(runId, deviationId, executionResult) {
-    const attribution = await this.state.getAttribution(runId, deviationId);
+    const attribution = await this.stateAdapter.getAttribution(runId, deviationId);
     if (!attribution) return null;
 
     attribution.status = 'executed';
     attribution.executedAt = Date.now();
     attribution.executionResult = executionResult;
 
-    await this.state.saveAttribution(runId, deviationId, attribution);
+    await this.stateAdapter.saveAttribution(runId, deviationId, attribution);
     return attribution;
   }
 }

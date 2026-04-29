@@ -5,7 +5,6 @@
  * Agent 自行决策：偏差判断、文件读写、同化顺应分析、置信度评估
  */
 
-import { PluginState } from './common/state.js';
 import { MetacognitionModule } from './metacognition/module.js';
 import { WorkingMemoryModule } from './working-memory/module.js';
 import { PersonalityModule } from './personality/module.js';
@@ -40,7 +39,6 @@ export default {
     }
 
     const config = api.pluginConfig || {};
-    const state = new PluginState(pluginId);
     const skillLoader = new SkillLoader();
     const logger = api.logger || console;
 
@@ -56,7 +54,7 @@ export default {
     const runtime = api.runtime || {};
     const stateAdapter = new StateAdapter(runtime.state);
     const taskAdapter = new TaskAdapter(runtime.tasks);
-    const flowAdapter = new FlowAdapter(runtime.tasks?.flow);
+    const flowAdapter = new FlowAdapter(runtime.flow);
     const memoryAdapter = new MemoryAdapter(runtime.memory);
     const logAdapter = new LogAdapter(runtime.log);
 
@@ -69,15 +67,15 @@ export default {
     const diaryManager = new DiaryManager(memoryAdapter);
 
     const metacognition = new MetacognitionModule({
-      api, config: config.metacognition, state, skillLoader, logger,
+      api, config: config.metacognition, stateAdapter, skillLoader, logger,
       planManager, deviationManager, attributionManager
     });
     const workingMemory = new WorkingMemoryModule({
-      api, config: config.workingMemory, state, skillLoader, logger,
+      api, config: config.workingMemory, stateAdapter, skillLoader, logger,
       sessionManager, eventManager
     });
     const personality = new PersonalityModule({
-      api, config: config.personality || config.assimilation, state, skillLoader, logger,
+      api, config: config.personality || config.assimilation, stateAdapter, skillLoader, logger,
       eventManager, diaryManager
     });
 

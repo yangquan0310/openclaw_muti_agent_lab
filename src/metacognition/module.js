@@ -15,12 +15,15 @@
 import { generatePlan, assignSessionsToPhases } from '../common/utils.js';
 
 export class MetacognitionModule {
-  constructor({ api, config, state, skillLoader, logger }) {
+  constructor({ api, config, stateAdapter, skillLoader, logger, planManager, deviationManager, attributionManager }) {
     this.api = api;
     this.config = config || {};
-    this.state = state;
+    this.stateAdapter = stateAdapter;
     this.skillLoader = skillLoader;
     this.logger = logger;
+    this.planManager = planManager;
+    this.deviationManager = deviationManager;
+    this.attributionManager = attributionManager;
     this.enabled = this.config.enabled !== false;
     this.planningEnabled = this.enabled && this.config.planning !== false;
     this.monitoringEnabled = this.enabled && this.config.monitoring !== false;
@@ -68,7 +71,7 @@ export class MetacognitionModule {
       return;
     }
 
-    let plan = await this.state.get(`plan:${runId}`);
+    let plan = await this.stateAdapter.getPlan(runId);
 
     // ── 阶段一：Plan 不存在，生成新 Plan ──
     if (!plan) {
@@ -86,7 +89,7 @@ export class MetacognitionModule {
           currentPhase: 0
         }
       };
-      await this.state.set(`plan:${runId}`, plan);
+      await this.stateAdapter.savePlan(runId, plan);
       this.logger.debug(`[Meta] Plan 生成[${plan.status}]: ${phases.length} 阶段`);
     }
 
@@ -231,9 +234,9 @@ ${phaseInfo}
     if (!runId) return;
 
     const output = event.output || event.text || '';
-    await this.state.set(`output:${runId}`, output);
+    await this.stateAdapter.savePlan(runId, { output });
 
-    const plan = await this.state.get(`plan:${runId}`);
+    const plan = await this.stateAdapter.getPlan(runId);
     if (!plan || plan.status !== 'active') return;
 
     const monitoringSkill = await this.skillLoader.load('monitoring');
@@ -252,8 +255,7 @@ ${phaseInfo}
   async onAgentEnd(event, ctx) {
     const runId = ctx.runId;
     if (!runId) return;
-    await this.state.set(`plan:${runId}`, null);
-    await this.state.set(`output:${runId}`, null);
+    await this.stateAdapter.savePlan(runId, null);
     this.logger.debug(`[Meta] 清理状态: runId=${runId}`);
   }
 

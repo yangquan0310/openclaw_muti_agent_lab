@@ -5,7 +5,7 @@
 
 export class DeviationManager {
   constructor(stateAdapter) {
-    this.state = stateAdapter;
+    this.stateAdapter = stateAdapter;
   }
 
   /**
@@ -19,7 +19,7 @@ export class DeviationManager {
       createdAt: Date.now(),
       ...deviationData
     };
-    await this.state.saveDeviation(runId, phaseId, deviation);
+    await this.stateAdapter.saveDeviation(runId, phaseId, deviation);
     return deviation;
   }
 
@@ -27,14 +27,14 @@ export class DeviationManager {
    * 代理确认偏差后更新状态
    */
   async acknowledgeDeviation(runId, phaseId, agentAcknowledgment) {
-    const deviation = await this.state.getDeviation(runId, phaseId);
+    const deviation = await this.stateAdapter.getDeviation(runId, phaseId);
     if (!deviation) return null;
 
     deviation.status = 'acknowledged';
     deviation.acknowledgedAt = Date.now();
     deviation.agentAcknowledgment = agentAcknowledgment;
 
-    await this.state.saveDeviation(runId, phaseId, deviation);
+    await this.stateAdapter.saveDeviation(runId, phaseId, deviation);
     return deviation;
   }
 
@@ -42,14 +42,14 @@ export class DeviationManager {
    * 偏差已解决
    */
   async resolveDeviation(runId, phaseId, resolution) {
-    const deviation = await this.state.getDeviation(runId, phaseId);
+    const deviation = await this.stateAdapter.getDeviation(runId, phaseId);
     if (!deviation) return null;
 
     deviation.status = 'resolved';
     deviation.resolvedAt = Date.now();
     deviation.resolution = resolution;
 
-    await this.state.saveDeviation(runId, phaseId, deviation);
+    await this.stateAdapter.saveDeviation(runId, phaseId, deviation);
     return deviation;
   }
 
@@ -57,6 +57,6 @@ export class DeviationManager {
    * 获取当前 run 的所有偏差
    */
   async listDeviations(runId) {
-    return this.state.listDeviationsByRunId(runId);
+    return this.stateAdapter.listDeviationsByRunId(runId);
   }
 }

@@ -9,7 +9,7 @@ export class FlowAdapter {
   }
 
   async createPlanFlow(plan) {
-    return this.flow.createManaged({
+    return this.flow.create({
       controllerId: 'agent-self-development/planning',
       goal: plan.context.goal,
       currentStep: 'draft',
@@ -47,9 +47,16 @@ export class FlowAdapter {
 
   async getByRunId(runId) {
     // TODO: lookup flow by runId
+    return null;
   }
 
   async getByPhase(phaseId) {
     // TODO: lookup flow by phaseId
+    return null;
+  }
+
+  async runSubtask(flowId, phase) {
+    // TODO: implement subtask execution
+    return null;
   }
 }

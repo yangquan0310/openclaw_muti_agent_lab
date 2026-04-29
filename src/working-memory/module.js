@@ -15,12 +15,14 @@
 import { getToday, getNow, inferTaskFamily } from '../common/utils.js';
 
 export class WorkingMemoryModule {
-  constructor({ api, config, state, skillLoader, logger }) {
+  constructor({ api, config, stateAdapter, skillLoader, logger, sessionManager, eventManager }) {
     this.api = api;
     this.config = config || {};
-    this.state = state;
+    this.stateAdapter = stateAdapter;
     this.skillLoader = skillLoader;
     this.logger = logger;
+    this.sessionManager = sessionManager;
+    this.eventManager = eventManager;
     this.enabled = this.config.enabled !== false;
     this.trackSubagents = this.enabled && this.config.trackSubagents !== false;
     this.autoArchive = this.enabled && this.config.autoArchive !== false;
@@ -84,8 +86,8 @@ export class WorkingMemoryModule {
       timestamp: getNow()
     };
 
-    await this.state.append(`wm:${runId}:tools`, entry);
-    await this.state.append(`session_list:${runId}`, {
+    await this.stateAdapter.saveSession(`wm:${runId}:tools`, entry);
+    await this.stateAdapter.saveSession(`session_list:${runId}`, {
       sessionId,
       taskFamily,
       role: event.params?.role || '助手',
@@ -112,7 +114,7 @@ export class WorkingMemoryModule {
 
     const isError = result && (result.error || result.status === 'error');
     if (isError) {
-      await this.state.append(`events:${getToday()}`, {
+      await this.eventManager.recordEvent({
         time: getNow(),
         type: 'tool_error',
         runId,
@@ -126,7 +128,7 @@ export class WorkingMemoryModule {
       const sessionId = event.params?.id || event.params?.name;
       const status = isError ? 'killed' : 'completed';
 
-      await this.state.append(`wm:${runId}:tools`, {
+      await this.stateAdapter.saveSession(`wm:${runId}:tools`, {
         type: 'subagent_complete',
         sessionId,
         resultSummary: this.summarizeResult(result),
@@ -135,11 +137,11 @@ export class WorkingMemoryModule {
       });
 
       // 更新本次运行中的任务空间状态
-      const sessions = await this.state.get(`session_list:${runId}`, []);
+      const sessions = await this.stateAdapter.getSession(`session_list:${runId}`) || [];
       const updated = sessions.map(s =>
         s.sessionId === sessionId ? { ...s, status, lastActive: getNow() } : s
       );
-      await this.state.set(`session_list:${runId}`, updated);
+      await this.stateAdapter.saveSession(`session_list:${runId}`, updated);
 
       // 同步更新全局活跃任务空间索引
       const taskFamily = sessions.find(s => s.sessionId === sessionId)?.taskFamily;
@@ -159,7 +161,7 @@ export class WorkingMemoryModule {
     const runId = ctx.runId;
     if (!runId) return;
 
-    const sessions = await this.state.get(`session_list:${runId}`, []);
+    const sessions = await this.stateAdapter.getSession(`session_list:${runId}`) || [];
     const completedSessions = sessions.filter(s => s.status === 'completed');
     const killedSessions = sessions.filter(s => s.status === 'killed');
     const pausedSessions = sessions.filter(s => s.status === 'paused');
@@ -181,9 +183,16 @@ export class WorkingMemoryModule {
         task: session.task,
         role: session.role,
         status: 'completed',
-        toolCount: (await this.state.get(`wm:${runId}:tools`, [])).filter(t => t.sessionId === session.sessionId).length
+        toolCount: (await this.stateAdapter.getSession(`wm:${runId}:tools`) || []).filter(t => t.sessionId === session.sessionId).length
       };
-      await this.state.append(`memory_table:${getToday()}`, archive);
+      
+      // 使用 MemoryAdapter 归档
+      await this.eventManager.recordEvent({
+        type: 'session_archive',
+        data: archive,
+        tags: ['archive', session.taskFamily],
+        date: new Date()
+      });
 
       // 回到 idle 状态，供后续同任务族复用
       await this._updateActiveSession(session.sessionId, session.taskFamily, 'idle');
@@ -195,8 +204,8 @@ export class WorkingMemoryModule {
     }
 
     // 清理本次运行的临时数据
-    await this.state.set(`wm:${runId}:tools`, null);
-    await this.state.set(`session_list:${runId}`, null);
+    await this.stateAdapter.deleteSession(`wm:${runId}:tools`);
+    await this.stateAdapter.deleteSession(`session_list:${runId}`);
 
     this.logger.debug(`[WM] 任务空间归档: runId=${runId}, completed=${completedSessions.length}, killed=${killedSessions.length}`);
 
@@ -215,7 +224,7 @@ export class WorkingMemoryModule {
    * Memory Table 作为任务空间的集中管理中心
    */
   async _updateActiveSession(sessionId, taskFamily, status) {
-    const activeSessions = await this.state.get('working_memory:active_sessions', []);
+    const activeSessions = await this.stateAdapter.getSession('working_memory:active_sessions') || [];
     const existingIndex = activeSessions.findIndex(s => s.sessionId === sessionId);
 
     if (existingIndex >= 0) {
@@ -234,16 +243,16 @@ export class WorkingMemoryModule {
       });
     }
 
-    await this.state.set('working_memory:active_sessions', activeSessions);
+    await this.stateAdapter.saveSession('working_memory:active_sessions', activeSessions);
   }
 
   /**
    * 从全局活跃索引中移除任务空间
    */
   async _removeActiveSession(sessionId) {
-    const activeSessions = await this.state.get('working_memory:active_sessions', []);
+    const activeSessions = await this.stateAdapter.getSession('working_memory:active_sessions') || [];
     const updated = activeSessions.filter(s => s.sessionId !== sessionId);
-    await this.state.set('working_memory:active_sessions', updated);
+    await this.stateAdapter.saveSession('working_memory:active_sessions', updated);
   }
 
   /**

@@ -1,12 +1,12 @@
 /**
  * PlanManager — 计划管理器
- * 组合 StateAdapter + TaskFlowAdapter，管理 Plan 全生命周期
+ * 组合 StateAdapter + FlowAdapter，管理 Plan 全生命周期
  */
 
 export class PlanManager {
-  constructor(state, taskFlow) {
-    this.state = state;
-    this.taskFlow = taskFlow;
+  constructor(stateAdapter, flowAdapter) {
+    this.stateAdapter = stateAdapter;
+    this.flowAdapter = flowAdapter;
   }
 
   async createPlan(prompt) {
@@ -20,39 +20,39 @@ export class PlanManager {
       execution: { phases: [], currentPhase: 0 }
     };
 
-    await this.state.savePlan(runId, plan);
-    await this.taskFlow.createPlanFlow(plan);
+    await this.stateAdapter.savePlan(runId, plan);
+    await this.flowAdapter.createPlanFlow(plan);
 
     return plan;
   }
 
   async approvePlan(runId) {
-    const plan = await this.state.getPlan(runId);
+    const plan = await this.stateAdapter.getPlan(runId);
     if (!plan) throw new Error('Plan not found');
 
     plan.status = 'active';
-    await this.state.savePlan(runId, plan);
+    await this.stateAdapter.savePlan(runId, plan);
 
-    const flow = await this.taskFlow.getByRunId(runId);
-    await this.taskFlow.advancePhase(flow.flowId, plan.execution.phases[0]);
+    const flow = await this.flowAdapter.getByRunId(runId);
+    await this.flowAdapter.advancePhase(flow.flowId, plan.execution.phases[0]);
   }
 
   async completePhase(runId, phaseIndex) {
-    const plan = await this.state.getPlan(runId);
+    const plan = await this.stateAdapter.getPlan(runId);
     if (!plan) throw new Error('Plan not found');
 
     plan.execution.phases[phaseIndex].status = 'completed';
     plan.execution.currentPhase = phaseIndex + 1;
 
-    await this.state.savePlan(runId, plan);
+    await this.stateAdapter.savePlan(runId, plan);
 
     if (plan.execution.currentPhase >= plan.execution.phases.length) {
       plan.status = 'completed';
-      await this.state.savePlan(runId, plan);
+      await this.stateAdapter.savePlan(runId, plan);
     } else {
       const nextPhase = plan.execution.phases[plan.execution.currentPhase];
-      const flow = await this.taskFlow.getByRunId(runId);
-      await this.taskFlow.advancePhase(flow.flowId, nextPhase);
+      const flow = await this.flowAdapter.getByRunId(runId);
+      await this.flowAdapter.advancePhase(flow.flowId, nextPhase);
     }
   }
 }

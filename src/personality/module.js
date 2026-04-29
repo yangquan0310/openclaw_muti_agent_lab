@@ -10,12 +10,14 @@
 import { getYesterday } from '../common/utils.js';
 
 export class PersonalityModule {
-  constructor({ api, config, state, skillLoader, logger }) {
+  constructor({ api, config, stateAdapter, skillLoader, logger, eventManager, diaryManager }) {
     this.api = api;
     this.config = config || {};
-    this.state = state;
+    this.stateAdapter = stateAdapter;
     this.skillLoader = skillLoader;
     this.logger = logger;
+    this.eventManager = eventManager;
+    this.diaryManager = diaryManager;
     this.enabled = this.config.enabled !== false;
   }
 
@@ -47,7 +49,7 @@ export class PersonalityModule {
     }
 
     const yesterday = getYesterday();
-    const events = (await this.state.get(`events:${yesterday}`)) || [];
+    const events = await this.eventManager.queryEventLog(yesterday);
 
     return {
       prependSystemContext: `${personalitySkill}\n\n【昨日事件摘要】昨日（${yesterday}）共有 ${events.length} 条事件记录。\n【Agent 职责】请根据上方 personality skill 自行回顾事件、撰写日记、分析同化/顺应，并决定是否需要更新核心自我文件。\n`
