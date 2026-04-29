@@ -26,6 +26,27 @@ export class MemoryAdapter {
     });
   }
 
+  // EventLog — 按日聚合的事件列表
+  async appendEventLog(date, event) {
+    const key = `event:${date}`;
+    const existing = (await this.memory.get?.(key)) || [];
+    existing.push(event);
+    await this.memory.set?.(key, existing);
+  }
+
+  async getEventLog(date) {
+    return this.memory.get?.(`event:${date}`) || [];
+  }
+
+  // Diary
+  async saveDiary(date, diary) {
+    await this.memory.set?.(`diary:${date}`, diary);
+  }
+
+  async getDiary(date) {
+    return this.memory.get?.(`diary:${date}`);
+  }
+
   async queryHistory(options) {
     return this.memory.query({
       type: options.type,

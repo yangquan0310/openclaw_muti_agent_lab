@@ -1,6 +1,6 @@
 /**
  * FlowAdapter — 任务流适配器
- * 封装核心 Flow，实现计划工作流管理
+ * 封装核心 Flow API，实现计划工作流管理
  */
 
 export class FlowAdapter {
@@ -23,30 +23,26 @@ export class FlowAdapter {
   }
 
   async advancePhase(flowId, phase) {
-    const flow = await this.taskFlow.get(flowId);
-    await this.taskFlow.update({
+    const f = await this.flow.get(flowId);
+    await this.flow.update({
       flowId,
-      expectedRevision: flow.revision,
+      expectedRevision: f.revision,
       currentStep: phase.id,
       stateJson: {
-        ...flow.stateJson,
-        currentPhase: flow.stateJson.currentPhase + 1
+        ...f.stateJson,
+        currentPhase: f.stateJson.currentPhase + 1
       }
     });
   }
 
   async waitForApproval(flowId) {
-    const flow = await this.taskFlow.get(flowId);
-    await this.taskFlow.setWaiting({
+    const f = await this.flow.get(flowId);
+    await this.flow.setWaiting({
       flowId,
-      expectedRevision: flow.revision,
+      expectedRevision: f.revision,
       currentStep: 'pending_approval',
       waitJson: { kind: 'user_confirm', reason: 'Plan pending approval' }
     });
-  }
-
-  async runSubtask(flowId, phase) {
-    // TODO: implement subtask execution via TaskFlow
   }
 
   async getByRunId(runId) {

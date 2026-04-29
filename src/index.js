@@ -13,14 +13,18 @@ import { SkillLoader } from './common/skills-loader.js';
 
 // v3 adapters
 import { StateAdapter } from './common/adapters/state-adapter.js';
-import { TaskFlowAdapter } from './common/adapters/taskflow-adapter.js';
+import { TaskAdapter } from './common/adapters/task-adapter.js';
+import { FlowAdapter } from './common/adapters/flow-adapter.js';
 import { MemoryAdapter } from './common/adapters/memory-adapter.js';
 import { LogAdapter } from './common/adapters/log-adapter.js';
 
 // v3 managers
 import { PlanManager } from './metacognition/plan-manager.js';
+import { DeviationManager } from './metacognition/deviation-manager.js';
+import { AttributionManager } from './metacognition/attribution-manager.js';
 import { SessionManager } from './working-memory/session-manager.js';
-import { ArchiveManager } from './personality/archive-manager.js';
+import { EventManager } from './personality/event-manager.js';
+import { DiaryManager } from './personality/diary-manager.js';
 
 const pluginId = 'openclaw-agent-self-development';
 
@@ -51,26 +55,30 @@ export default {
     // v3: 初始化核心系统适配器
     const runtime = api.runtime || {};
     const stateAdapter = new StateAdapter(runtime.state);
-    const taskFlowAdapter = new TaskFlowAdapter(runtime.tasks?.flow);
+    const taskAdapter = new TaskAdapter(runtime.tasks);
+    const flowAdapter = new FlowAdapter(runtime.tasks?.flow);
     const memoryAdapter = new MemoryAdapter(runtime.memory);
     const logAdapter = new LogAdapter(runtime.log);
 
     // v3: 初始化业务管理器
-    const planManager = new PlanManager(stateAdapter, taskFlowAdapter);
-    const sessionManager = new SessionManager(stateAdapter, taskFlowAdapter, runtime.sessions);
-    const archiveManager = new ArchiveManager(memoryAdapter, logAdapter);
+    const planManager = new PlanManager(stateAdapter, flowAdapter);
+    const deviationManager = new DeviationManager(stateAdapter);
+    const attributionManager = new AttributionManager(stateAdapter, flowAdapter);
+    const sessionManager = new SessionManager(stateAdapter, flowAdapter, runtime.sessions);
+    const eventManager = new EventManager(stateAdapter, memoryAdapter);
+    const diaryManager = new DiaryManager(memoryAdapter);
 
     const metacognition = new MetacognitionModule({
       api, config: config.metacognition, state, skillLoader, logger,
-      planManager
+      planManager, deviationManager, attributionManager
     });
     const workingMemory = new WorkingMemoryModule({
       api, config: config.workingMemory, state, skillLoader, logger,
-      sessionManager
+      sessionManager, eventManager
     });
     const personality = new PersonalityModule({
       api, config: config.personality || config.assimilation, state, skillLoader, logger,
-      archiveManager
+      eventManager, diaryManager
     });
 
     metacognition.register();
