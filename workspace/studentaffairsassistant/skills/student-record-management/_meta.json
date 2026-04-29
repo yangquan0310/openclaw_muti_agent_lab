@@ -1,0 +1,17 @@
+{
+  "name": "student-record-management",
+  "version": "1.0.0",
+  "description": "学生档案管理技能 - 创建、分类、存储、检索学生档案",
+  "author": "studentaffairsassistant",
+  "triggers": [
+    "学生档案",
+    "创建学生",
+    "学生信息",
+    "档案管理",
+    "学生记录"
+  ],
+  "dependencies": [],
+  "environment": {
+    "storage_path": "~/教研室仓库/学生工作/学生档案/"
+  }
+}

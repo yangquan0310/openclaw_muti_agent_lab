@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-28T19:02:26.047Z",
+  "updatedAt": "2026-04-29T19:03:01.430Z",
   "entries": {
     "memory:memory/2026-04-13.md:4:7": {
       "key": "memory:memory/2026-04-13.md:4:7",
@@ -44721,9 +44721,9 @@
         "386-389",
         "版本号更新到v6.9",
         "390-391",
-        "possible",
-        "lasting",
-        "truths"
+        "0.62",
+        "memory/2026-04-20.md",
+        "329-331"
       ],
       "promotedAt": "2026-04-28T19:02:26.047Z"
     },
@@ -49738,12 +49738,12 @@
       "source": "memory",
       "snippet": "Reflections: Theme: `assistant` kept surfacing across 637 memories.; confidence: 1.00; evidence: memory/2026-04-14.md:293-296, memory/2026-04-14.md:358-361, memory/2026-04-14.md:413-416; note: reflection",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-22T19:01:52.625Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "7b7a9134bc2c"
       ],
@@ -49753,7 +49753,8 @@
         "2026-04-26",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "1.00",
@@ -49769,17 +49770,17 @@
     "memory:memory/2026-04-22.md:229:231": {
       "key": "memory:memory/2026-04-22.md:229:231",
       "path": "memory/2026-04-22.md",
-      "startLine": 188,
-      "endLine": 190,
+      "startLine": 229,
+      "endLine": 231,
       "source": "memory",
-      "snippet": "- Candidate: Possible Lasting Truths: ✅ 已完成: **文献综述更新**; 从25篇扩展到28篇; 新增实证研究3篇、综述1篇; 总引用次数332次 [confidence=0.58 evidence=memory/2026-04-14.md:386-389]; ✅ 已完成: 字数约15,000字; 版本号更新到v6.9 [confidence=0.58 evidence=memory/2026-04-14.md:390-391]; 7个主题文献综述任务: **Created Subagents**: [confidence=0.58 evi - confidence: 0.62 - evidence: memory/2026-04-20.md:329-331",
+      "snippet": "Possible Lasting Truths: ✅ 已完成: **文献综述更新**; 从25篇扩展到28篇; 新增实证研究3篇、综述1篇; 总引用次数332次 [confidence=0.58 evidence=memory/2026-04-14.md:386-389]; ✅ 已完成: 字数约15,000字; 版本号更新到v6.9 [confidence=0.58 evidence=memory/2026-04-14.md:390-391]; 7个主题文献综述任务: **Created Subagents**: [confidence=0.58 evi",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-22T19:01:52.625Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "7b7a9134bc2c"
       ],
@@ -49789,7 +49790,8 @@
         "2026-04-26",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "0.58",
@@ -49811,12 +49813,12 @@
       "source": "memory",
       "snippet": "当前状态: 已读取第1章研究背景和第2章综述完整内容; 已制定修改清单（本地路径：`~/实验室仓库/项目文件/数字化存储与自传体记忆/终稿/修改清单.md`）; 修改清单已同步到飞书云文档（doc_id: OFQdd04OSohCbHxmyMEcJ82engb）",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-22T19:01:52.625Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "7b7a9134bc2c"
       ],
@@ -49826,7 +49828,8 @@
         "2026-04-26",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "doc-id",
@@ -49847,12 +49850,12 @@
       "source": "memory",
       "snippet": "已完成修改: ✅ T001：修改2.3.2回归\"痕迹\"问题（2026-04-22 17:36）; ✅ T002：修改2.4聚焦\"痕迹\"性质（2026-04-22 17:41）",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-22T19:01:52.625Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "7b7a9134bc2c"
       ],
@@ -49862,7 +49865,8 @@
         "2026-04-26",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "修改2.3.2回归",
@@ -49883,12 +49887,12 @@
       "source": "memory",
       "snippet": "待执行任务（按优先级排序）: ⏳ T003：重构2.4.2编码转变逻辑推导（P1）; ⏳ T004：重构2.4.1理论整合论证（P2）; ⏳ T005：补充2.1.1个人语义记忆（P3）; ⏳ T006：补充2.2.1建构性情景模拟（P3）",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-22T19:01:52.625Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "7b7a9134bc2c"
       ],
@@ -49898,7 +49902,8 @@
         "2026-04-26",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "重构2.4.2编码转变逻辑推导",
@@ -49919,12 +49924,12 @@
       "source": "memory",
       "snippet": "待执行任务（按优先级排序）: ⏳ T007：补充2.3.1扩展心智理论（P3）; ⏳ T008：明确\"语义化\"操作化定义（P0）; ⏳ T009：界定\"默认语义化\"（P0）; ⏳ T010：界定\"外部辅助记忆\"操作性定义（P0）",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-22T19:01:52.625Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "7b7a9134bc2c"
       ],
@@ -49934,7 +49939,8 @@
         "2026-04-26",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "补充2.3.1扩展心智理论",
@@ -49955,17 +49961,19 @@
       "source": "memory",
       "snippet": "待执行任务（按优先级排序）: ⏳ T011：分类\"认知卸载\"（P0）; ⏳ T012：补充第1章范式转换讨论（P6）; ⏳ T013：明确创新点层次（P6）; ⏳ T014：统一题目表述（P6）",
       "recallCount": 0,
-      "dailyCount": 1,
+      "dailyCount": 2,
       "groundedCount": 0,
-      "totalScore": 0.62,
+      "totalScore": 1.24,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-22T19:01:52.625Z",
-      "lastRecalledAt": "2026-04-22T19:01:52.625Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "7b7a9134bc2c"
       ],
       "recallDays": [
-        "2026-04-22"
+        "2026-04-22",
+        "2026-04-30",
+        "2026-04-29"
       ],
       "conceptTags": [
         "执行",
@@ -55478,12 +55486,12 @@
       "source": "memory",
       "snippet": "Reflections: Theme: `assistant` kept surfacing across 401 memories.; confidence: 1.00; evidence: memory/2026-04-14.md:363-366, memory/2026-04-15.md:233-236, memory/2026-04-15.md:213-216; note: reflection",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-23T19:02:03.966Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "b7fd25b71b44"
       ],
@@ -55492,7 +55500,8 @@
         "2026-04-26",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "1.00",
@@ -55508,17 +55517,17 @@
     "memory:memory/2026-04-23.md:224:226": {
       "key": "memory:memory/2026-04-23.md:224:226",
       "path": "memory/2026-04-23.md",
-      "startLine": 203,
-      "endLine": 205,
+      "startLine": 224,
+      "endLine": 226,
       "source": "memory",
-      "snippet": "- Candidate: Possible Lasting Truths: ✅ 已完成: **文献综述更新**; 从25篇扩展到28篇; 新增实证研究3篇、综述1篇; 总引用次数332次 [confidence=0.58 evidence=memory/2026-04-14.md:386-389]; ✅ 已完成: 字数约15,000字; 版本号更新到v6.9 [confidence=0.58 evidence=memory/2026-04-14.md:390-391]; 7个主题文献综述任务: **Created Subagents**: [confidence=0.58 evi - confidence: 0.62 - evidence: memory/2026-04-21.md:324-326",
+      "snippet": "Possible Lasting Truths: ✅ 已完成: **文献综述更新**; 从25篇扩展到28篇; 新增实证研究3篇、综述1篇; 总引用次数332次 [confidence=0.58 evidence=memory/2026-04-14.md:386-389]; ✅ 已完成: 字数约15,000字; 版本号更新到v6.9 [confidence=0.58 evidence=memory/2026-04-14.md:390-391]; 7个主题文献综述任务: **Created Subagents**: [confidence=0.58 evi",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-23T19:02:03.966Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "b7fd25b71b44"
       ],
@@ -55527,7 +55536,8 @@
         "2026-04-26",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "0.58",
@@ -62758,12 +62768,12 @@
       "source": "memory",
       "snippet": "Reflections: Theme: `assistant` kept surfacing across 497 memories.; confidence: 1.00; evidence: memory/2026-04-14.md:363-366, memory/2026-04-15.md:208-211, memory/2026-04-16.md:208-211; note: reflection",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-24T19:03:19.585Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "409c33906af9"
       ],
@@ -62771,7 +62781,8 @@
         "2026-04-24",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "1.00",
@@ -62792,12 +62803,12 @@
       "source": "memory",
       "snippet": "Possible Lasting Truths: - Candidate: Assistant: 每日自我更新任务已完成。以下是执行摘要： --- ## 每日自我更新执行摘要 (2026-04-20 00:25) ### ✅ 执行步骤 | 步骤 | 操作 | 状态 | |------|------|------| | 1 | 阅读前一日事件记忆 | ✅ 完成 | | 2 | 撰写/完善前一日日记 | ✅ 完成 | | 3 | 阅读核心自我配置文件 | ✅ 完成 | | 4 | 同化与顺应分析 | ✅ 完成 | | 5 | 检测更新触发信号 | ✅ 完成",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-24T19:03:19.585Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "409c33906af9"
       ],
@@ -62805,7 +62816,8 @@
         "2026-04-24",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "撰写/完善前一日日记",
@@ -65187,12 +65199,12 @@
       "source": "memory",
       "snippet": "Reflections: Theme: `assistant` kept surfacing across 506 memories.; confidence: 1.00; evidence: memory/2026-04-14.md:363-366, memory/2026-04-15.md:208-211, memory/2026-04-17.md:278-281; note: reflection",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-25T19:01:45.198Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "90c0a0f693f1"
       ],
@@ -65200,7 +65212,8 @@
         "2026-04-25",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "1.00",
@@ -65221,12 +65234,12 @@
       "source": "memory",
       "snippet": "Possible Lasting Truths: - Candidate: Assistant: 每日自我更新任务已完成。以下是执行摘要： --- ## 每日自我更新执行摘要 (2026-04-20 00:25) ### ✅ 执行步骤 | 步骤 | 操作 | 状态 | |------|------|------| | 1 | 阅读前一日事件记忆 | ✅ 完成 | | 2 | 撰写/完善前一日日记 | ✅ 完成 | | 3 | 阅读核心自我配置文件 | ✅ 完成 | | 4 | 同化与顺应分析 | ✅ 完成 | | 5 | 检测更新触发信号 | ✅ 完成",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-25T19:01:45.198Z",
-      "lastRecalledAt": "2026-04-28T19:02:26.047Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "90c0a0f693f1"
       ],
@@ -65234,7 +65247,8 @@
         "2026-04-25",
         "2026-04-28",
         "2026-04-27",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-04-30"
       ],
       "conceptTags": [
         "撰写/完善前一日日记",
@@ -66839,19 +66853,21 @@
       "source": "memory",
       "snippet": "Reflections: Theme: `assistant` kept surfacing across 521 memories.; confidence: 1.00; evidence: memory/2026-04-14.md:363-366, memory/2026-04-15.md:208-211, memory/2026-04-18.md:328-331; note: reflection",
       "recallCount": 0,
-      "dailyCount": 2,
+      "dailyCount": 3,
       "groundedCount": 0,
-      "totalScore": 1.24,
+      "totalScore": 1.8599999999999999,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-26T19:02:28.085Z",
-      "lastRecalledAt": "2026-04-27T19:02:27.138Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "9b4c3d373463"
       ],
       "recallDays": [
         "2026-04-26",
         "2026-04-28",
-        "2026-04-27"
+        "2026-04-27",
+        "2026-04-30",
+        "2026-04-29"
       ],
       "conceptTags": [
         "1.00",
@@ -66872,19 +66888,21 @@
       "source": "memory",
       "snippet": "Possible Lasting Truths: - Candidate: Assistant: 每日自我更新任务已完成。以下是执行摘要： --- ## 每日自我更新执行摘要 (2026-04-20 00:25) ### ✅ 执行步骤 | 步骤 | 操作 | 状态 | |------|------|------| | 1 | 阅读前一日事件记忆 | ✅ 完成 | | 2 | 撰写/完善前一日日记 | ✅ 完成 | | 3 | 阅读核心自我配置文件 | ✅ 完成 | | 4 | 同化与顺应分析 | ✅ 完成 | | 5 | 检测更新触发信号 | ✅ 完成",
       "recallCount": 0,
-      "dailyCount": 2,
+      "dailyCount": 3,
       "groundedCount": 0,
-      "totalScore": 1.24,
+      "totalScore": 1.8599999999999999,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-26T19:02:28.085Z",
-      "lastRecalledAt": "2026-04-27T19:02:27.138Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "9b4c3d373463"
       ],
       "recallDays": [
         "2026-04-26",
         "2026-04-28",
-        "2026-04-27"
+        "2026-04-27",
+        "2026-04-30",
+        "2026-04-29"
       ],
       "conceptTags": [
         "撰写/完善前一日日记",
@@ -66905,19 +66923,21 @@
       "source": "memory",
       "snippet": "子代理管理教训: **错误**：之前创建的子代理未正确记录完整会话Key到工作记忆; **旧记录**：仅记录简称\"子代理bc1603d1\"，无法直接定位会话; **正确做法**：必须记录完整会话Key，如 `agent:writer:subagent:283c7d62-6724-4988-a59f-d6fe86373c26`",
       "recallCount": 0,
-      "dailyCount": 2,
+      "dailyCount": 3,
       "groundedCount": 0,
-      "totalScore": 1.24,
+      "totalScore": 1.8599999999999999,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-26T19:02:28.085Z",
-      "lastRecalledAt": "2026-04-27T19:02:27.138Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "9b4c3d373463"
       ],
       "recallDays": [
         "2026-04-26",
         "2026-04-28",
-        "2026-04-27"
+        "2026-04-27",
+        "2026-04-30",
+        "2026-04-29"
       ],
       "conceptTags": [
         "代理",
@@ -66938,19 +66958,21 @@
       "source": "memory",
       "snippet": "子代理创建与清理: **创建时间**：2026-04-26 09:43（旧）、13:53（新）; **清理时间**：2026-04-26 14:03; **清理操作**：kill两个子代理，移除定时任务; **结果**：所有毕业论文修改子代理已清理",
       "recallCount": 0,
-      "dailyCount": 2,
+      "dailyCount": 3,
       "groundedCount": 0,
-      "totalScore": 1.24,
+      "totalScore": 1.8599999999999999,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-26T19:02:28.085Z",
-      "lastRecalledAt": "2026-04-27T19:02:27.138Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "9b4c3d373463"
       ],
       "recallDays": [
         "2026-04-26",
         "2026-04-28",
-        "2026-04-27"
+        "2026-04-27",
+        "2026-04-30",
+        "2026-04-29"
       ],
       "conceptTags": [
         "代理",
@@ -66971,19 +66993,21 @@
       "source": "memory",
       "snippet": "工作记忆规范: 子代理任务追踪表必须记录完整会话Key; 活跃会话清单必须记录完整会话Key; 废弃子代理标记为\"killed\"或\"已废弃\"; 定时清理任务每日00:00执行",
       "recallCount": 0,
-      "dailyCount": 2,
+      "dailyCount": 3,
       "groundedCount": 0,
-      "totalScore": 1.24,
+      "totalScore": 1.8599999999999999,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-26T19:02:28.085Z",
-      "lastRecalledAt": "2026-04-27T19:02:27.138Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "9b4c3d373463"
       ],
       "recallDays": [
         "2026-04-26",
         "2026-04-28",
-        "2026-04-27"
+        "2026-04-27",
+        "2026-04-30",
+        "2026-04-29"
       ],
       "conceptTags": [
         "工作",
@@ -67004,19 +67028,21 @@
       "source": "memory",
       "snippet": "文件管理规范: 手稿目录始终保留最新版本（只有一个文档）; 历史版本保存到临时数据/草稿/目录; 使用Maintainer类更新元数据，不直接编辑元数据.json",
       "recallCount": 0,
-      "dailyCount": 2,
+      "dailyCount": 3,
       "groundedCount": 0,
-      "totalScore": 1.24,
+      "totalScore": 1.8599999999999999,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-26T19:02:28.085Z",
-      "lastRecalledAt": "2026-04-27T19:02:27.138Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "9b4c3d373463"
       ],
       "recallDays": [
         "2026-04-26",
         "2026-04-28",
-        "2026-04-27"
+        "2026-04-27",
+        "2026-04-30",
+        "2026-04-29"
       ],
       "conceptTags": [
         "历史版本保存到临时数据/草稿/目录",
@@ -67037,19 +67063,21 @@
       "source": "memory",
       "snippet": "元数据更新: 第4章云文档链接更新为：https://rcn6m8d4auap.feishu.cn/docx/ZhNKdgH9Co6UbIx4EGhcdUTbnTd; 第6章云文档链接更新为：https://rcn6m8d4auap.feishu.cn/docx/WiLMdOxG1o7pmoxDBENcGJ3Cndb; 第8章云文档链接：https://rcn6m8d4auap.feishu.cn/docx/Y0LKdh1mao1SidxLKbScXUXVn8f; 第9章云文档链接：https://rcn6m8d4auap.feishu.cn/docx/",
       "recallCount": 0,
-      "dailyCount": 2,
+      "dailyCount": 3,
       "groundedCount": 0,
-      "totalScore": 1.24,
+      "totalScore": 1.8599999999999999,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-26T19:02:28.085Z",
-      "lastRecalledAt": "2026-04-27T19:02:27.138Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
       "queryHashes": [
         "9b4c3d373463"
       ],
       "recallDays": [
         "2026-04-26",
         "2026-04-28",
-        "2026-04-27"
+        "2026-04-27",
+        "2026-04-30",
+        "2026-04-29"
       ],
       "conceptTags": [
         "rcn6m8d4auap.feishu.cn/docx",
@@ -82956,6 +82984,961 @@
         "条件",
         "行动",
         "规则"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:53:53": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:53:53",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 53,
+      "endLine": 53,
+      "source": "memory",
+      "snippet": "Assistant: 本地文件实际大小是 50,811 字节，与云端 40,899 字节接近。之前的 16,513 可能是读取时的截断。让我重新读取完整内容进行比较。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "本地",
+        "文件",
+        "实际",
+        "大小",
+        "50,811",
+        "40,899",
+        "接近"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:54:54": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:54:54",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 54,
+      "endLine": 54,
+      "source": "memory",
+      "snippet": "Assistant: 本地文件实际大小是 50,811 字节，与云端 40,899 字节接近。让我进行详细比较分析。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "本地",
+        "文件",
+        "实际",
+        "大小",
+        "50,811",
+        "40,899",
+        "接近"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:55:55": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:55:55",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 55,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "Assistant: 我发现差异了！主要差异在标题格式： **本地版本**： ``` 第2章 综述 2.1 自传体记忆 2.1.1 自传体记忆的概念 ``` **云端版本**： ``` # 第2章 综述 ## 2.1 自传体记忆 ### 2.1.1 自传体记忆的概念与操作性定义 ``` **关键差异**： 1. **标题格式**：本地使用纯文本标题，云端使用 Markdown 标题格式（#、##、###） 2. **节标题**：云端 2.1.1 标题为\"自传体记忆的概念与操作性定义\"，本地为\"自传体记忆的概念\" 让我检查内容是否还有其他差异。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "2.1",
+        "2.1.1",
+        "assistant",
+        "发现",
+        "差异",
+        "主要",
+        "标题",
+        "格式"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:56:56": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:56:56",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 56,
+      "endLine": 56,
+      "source": "memory",
+      "snippet": "Assistant: 经过详细比较，发现以下差异： ## 差异分析报告 ### 1. 标题格式差异（主要差异） | 项目 | 本地版本 | 云端版本 | |------|---------|---------| | **章节标题** | `第2章 综述` | `# 第2章 综述` | | **一级节标题** | `2.1 自传体记忆` | `## 2.1 自传体记忆` | | **二级节标题** | `2.1.1 自传体记忆的概念` | `### 2.1.1 自传体记忆的概念与操作性定义` | **差异说明**： - 本地使用纯文本标题，云端使用 Mar",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "2.1",
+        "2.1.1",
+        "assistant",
+        "经过",
+        "详细",
+        "比较",
+        "发现",
+        "以下"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:57:57": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:57:57",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 57,
+      "endLine": 57,
+      "source": "memory",
+      "snippet": "User: 查看修改清单，计划一下第二章的修改计划",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "user",
+        "查看",
+        "修改",
+        "清单",
+        "计划",
+        "一下",
+        "第二章"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:58:58": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:58:58",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 58,
+      "endLine": 58,
+      "source": "memory",
+      "snippet": "Assistant: 我需要先读取修改清单，了解第二章的修改要求，然后制定修改计划。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "需要",
+        "先读",
+        "修改",
+        "清单",
+        "了解",
+        "第二章",
+        "要求"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:59:59": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:59:59",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 59,
+      "endLine": 59,
+      "source": "memory",
+      "snippet": "Assistant: 已读取修改清单。现在制定第2章的详细修改计划。 ## 第2章修改计划 ### 一、修改清单摘要 根据修改清单，第2章需要以下修改： | 位置 | 问题 | 修改建议 | |------|------|----------| | **2.1.1 末段** | 四个追问收尾悬空，缺少研究方法落点 | 增加一句：\"这些追问并非纯粹的概念游戏，而是直接决定了后续实验的设计逻辑——它们将转化为关于编码、保持和提取的可检验问题。\" | | **2.4.1 全节** | 各小节（2.4.2-2.4.5）之间逻辑串联弱，因果链不突出 | 在每小节末",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "2.1.1",
+        "2.4.1",
+        "2.4.2-2.4.5",
+        "assistant",
+        "修改",
+        "清单",
+        "现在",
+        "制定"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:60:60": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:60:60",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 60,
+      "endLine": 60,
+      "source": "memory",
+      "snippet": "User: 需要先备份。修改2.4小节，需要查阅项目中的文献综述（不知道位置看元数据.json)，然后针对性的修改2.4小节。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "备份",
+        "修改2.4小节",
+        "不知道位置看元数据.json",
+        "然后针对性的修改2.4小节",
+        "user",
+        "需要",
+        "修改",
+        "2.4"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:61:61": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:61:61",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 61,
+      "endLine": 61,
+      "source": "memory",
+      "snippet": "Assistant: 收到，先备份，然后查阅文献综述，针对性修改2.4小节。 **步骤1**: 备份当前版本",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "备份",
+        "针对性修改2.4小节",
+        "assistant",
+        "收到",
+        "然后",
+        "查阅",
+        "文献",
+        "综述"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:62:62": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:62:62",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 62,
+      "endLine": 62,
+      "source": "memory",
+      "snippet": "Assistant: 备份完成！现在查阅相关文献综述。根据元数据，与2.4小节相关的综述有：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "备份",
+        "与2.4小节相关的综述有",
+        "assistant",
+        "完成",
+        "现在",
+        "查阅",
+        "相关",
+        "文献"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:63:63": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:63:63",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 63,
+      "endLine": 63,
+      "source": "memory",
+      "snippet": "Assistant: 文献综述内容很长，我已获取了关于数字化存储与自传体记忆的详细研究现状。现在让我查阅与2.4小节更相关的综述内容，特别是关于工作自我、AMEDIA模型和痕迹转化理论的部分。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "现在让我查阅与2.4小节更相关的综述内容",
+        "assistant",
+        "文献",
+        "综述",
+        "内容",
+        "获取",
+        "关于",
+        "数字"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:64:64": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:64:64",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 64,
+      "endLine": 64,
+      "source": "memory",
+      "snippet": "Assistant: 我已经查阅了相关文献综述。现在基于文献内容，制定2.4小节的针对性修改计划。 ## 2.4小节修改计划 ### 一、文献综述核心发现 基于查阅的文献，2.4小节需要整合以下关键理论： | 理论/模型 | 核心内容 | 文献来源 | |----------|---------|---------| | **痕迹转化理论** | 记忆从感知细节向语义核心演变 | Xue (2022); McWilliams et al. (2022) | | **AMEDIA模型** | 电子媒介通过6个维度改变记忆编码、存储与检索 | Hutmach",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "制定2.4小节的针对性修改计划",
+        "2.4小节修改计划",
+        "2.4小节需要整合以下关键理论",
+        "理论/模型",
+        "assistant",
+        "已经",
+        "查阅",
+        "相关"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:65:65": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:65:65",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 65,
+      "endLine": 65,
+      "source": "memory",
+      "snippet": "User: System: [2026-04-27 00:05:58 GMT+8] Feishu[writer] group oc_cd80162eb81e39f77160a0daab2a6ab8 | 杨权 (ou_e3e57ccd6e6d847502fbc0f8198fe363) [msg:om_x100b51d7309100a0c2b0b79d0315fe0, @bot] 任务结束，写事件吧",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "user",
+        "system",
+        "gmt",
+        "feishu",
+        "writer",
+        "group",
+        "bot",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:66:66": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:66:66",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 66,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "Assistant: 老板，任务已结束，现在写事件记录。 首先读取事件记录模板：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "老板",
+        "任务",
+        "结束",
+        "现在",
+        "事件",
+        "记录",
+        "首先"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:67:67": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:67:67",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 67,
+      "endLine": 67,
+      "source": "memory",
+      "snippet": "Assistant: 现在创建事件记录文件：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "现在",
+        "创建",
+        "事件",
+        "记录",
+        "文件"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:68:68": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:68:68",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 68,
+      "endLine": 68,
+      "source": "memory",
+      "snippet": "Assistant: 老板，事件记录已创建： --- ## ✅ 事件记录完成 | 属性 | 值 | |------|-----| | **文件路径** | `~/workspace/writer/events/2026-04-26/博士毕业论文第1章修改事件.md` | | **记录时间** | 2026-04-27 00:05 | | **任务ID** | T001 | --- ## 📋 事件记录摘要 ### 主要问题 1. **计划制定不规范** - 未先读取文档就制定计划 2. **命名会话管理混乱** - 创建多个子代理导致冲突 3. **擅自",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "老板",
+        "事件",
+        "记录",
+        "创建",
+        "完成",
+        "属性",
+        "文件"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-30.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-30.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-30.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:9f0b6136-7486-4817-9ff1-9788c6059d11 写作助手每日自我更新] [cron:每日自我更新] 按照同化顺应模块执行每日自我更新： 1. 阅读前一日事件记忆（events/YYYY-MM-DD/HH-MM-SS-{event}.md） 2. 撰写/完善前一日日记（diary/YYYY-MM-DD.md） 3. 阅读核心自我（MEMORY.md核心自我认知/SOUL.md/IDENTITY.md/skills/README.md） 4. 同化与顺应分析 5. 检测更新触发信号（自我认知/角色/风格-信念",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "cf3cd2e1e340"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "events/yyyy-mm-dd/hh-mm-ss",
+        "撰写/完善前一日日记",
+        "diary/yyyy-mm-dd.md",
+        "自我认知/角色/风格-信念",
+        "user",
+        "cron",
+        "9f0b6136",
+        "9ff1"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-30.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-30.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-30.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 每日自我更新任务已完成。 **执行摘要**： - 回顾日期：2026-04-29 - 事件记录：1个（系统定时任务执行） - 日记撰写：已创建 `diary/2026-04-29.md` - 核心自我文件：稳定，无需更新 - 更新日志：已记录至 `events/2026-04-30/00-20-00-self-update.md` - MEMORY.md版本：更新至 v2.2.6 **结论**：2026-04-29为待命日，无新任务执行，无用户交互，15条If-Then规则保持稳定，系统处于待命状态，等待老板分配具体任务。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "cf3cd2e1e340"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "diary/2026-04-29.md",
+        "memory.md版本",
+        "v2.2.6",
+        "2026-04-29为待命日",
+        "15条if-then规则保持稳定",
+        "assistant",
+        "每日",
+        "自我"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:69:69": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:69:69",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 69,
+      "endLine": 69,
+      "source": "memory",
+      "snippet": "User: 2.4小节应该增加实证而不是理论。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "2.4小节应该增加实证而不是理论",
+        "user",
+        "2.4",
+        "小节",
+        "应该",
+        "增加",
+        "实证",
+        "而不是"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:70:70": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:70:70",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 70,
+      "endLine": 70,
+      "source": "memory",
+      "snippet": "Assistant: 收到，2.4小节应该增加实证内容而非理论。让我重新制定修改计划。 ## 重新分析：2.4小节实证内容增补 ### 一、当前2.4小节内容分析 当前2.4小节主要是理论推演（工作自我视角），缺少实证支撑。根据文献综述，可以补充以下实证研究： ### 二、可补充的实证研究 | 研究 | 发现 | 可补充位置 | |------|------|----------| | **Henkel (2014)** | 拍照导致记忆细节下降（拍照效应） | 2.4.2 编码转变 | | **Sparrow et al. (2011)** | Goo",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "2.4小节应该增加实证内容而非理论",
+        "2.4小节实证内容增补",
+        "当前2.4小节内容分析",
+        "当前2.4小节主要是理论推演",
+        "2.4.2",
+        "assistant",
+        "收到",
+        "2.4"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:71:71": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:71:71",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 71,
+      "endLine": 71,
+      "source": "memory",
+      "snippet": "User: 查看笔记相关笔记，是否还有实证研究。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "user",
+        "查看",
+        "笔记",
+        "相关",
+        "是否",
+        "还有",
+        "实证",
+        "研究"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:72:72": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:72:72",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 72,
+      "endLine": 72,
+      "source": "memory",
+      "snippet": "Assistant: 我需要查看项目中的笔记，寻找更多实证研究来支撑2.4小节的修改。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "寻找更多实证研究来支撑2.4小节的修改",
+        "assistant",
+        "需要",
+        "查看",
+        "项目",
+        "中的",
+        "笔记",
+        "寻找"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:73:73": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:73:73",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 73,
+      "endLine": 73,
+      "source": "memory",
+      "snippet": "Assistant: 笔记内容非常丰富！我发现了更多实证研究。让我继续查看其他相关笔记。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "笔记",
+        "内容",
+        "非常",
+        "丰富",
+        "发现",
+        "更多",
+        "实证"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:74:74": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:74:74",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 74,
+      "endLine": 74,
+      "source": "memory",
+      "snippet": "Assistant: 我已经查看了笔记中的实证研究。现在基于所有查阅的文献，重新制定2.4小节的实证增补计划。 ## 2.4小节实证增补计划（修订版） ### 一、新增可补充的实证研究 基于笔记查阅，发现以下可直接补充的实证研究： | 研究 | 核心发现 | 适用位置 | |------|---------|----------| | **Grinschgl et al. (2020)** | 认知卸载提升即时表现但损害后续记忆；明确目标可抵消负面影响 | 2.4.2 编码转变 | | **Gilbert et al. (2018)** | 个体显著偏向",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "重新制定2.4小节的实证增补计划",
+        "2.4小节实证增补计划",
+        "2.4.2",
+        "assistant",
+        "已经",
+        "查看",
+        "笔记",
+        "中的"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:75:75": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:75:75",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 75,
+      "endLine": 75,
+      "source": "memory",
+      "snippet": "Assistant: 收到，开始执行修改。 **步骤1**: 备份当前版本（已完成，v2已归档） **步骤2**: 开始修改2.4小节，增加实证内容 让我先读取2.4小节的完整内容，确定插入位置。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "备份",
+        "开始修改2.4小节",
+        "让我先读取2.4小节的完整内容",
+        "assistant",
+        "收到",
+        "开始",
+        "执行",
+        "修改"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:76:76": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:76:76",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 76,
+      "endLine": 76,
+      "source": "memory",
+      "snippet": "Assistant: 文件路径可能有误，让我重新确认。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "文件",
+        "路径",
+        "可能",
+        "重新",
+        "确认"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:77:77": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:77:77",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 77,
+      "endLine": 77,
+      "source": "memory",
+      "snippet": "Assistant: 奇怪，第2章文件不在手稿目录中。让我检查是否在其他位置。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "奇怪",
+        "文件",
+        "不在",
+        "手稿",
+        "目录",
+        "检查",
+        "是否"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:78:78": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:78:78",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 78,
+      "endLine": 78,
+      "source": "memory",
+      "snippet": "Assistant: 第2章文件不在手稿目录中，但在草稿目录中有备份。让我检查云端是否有最新版本需要同步，或者从草稿目录恢复。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "备份",
+        "assistant",
+        "文件",
+        "不在",
+        "手稿",
+        "目录",
+        "但在",
+        "草稿"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:79:79": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:79:79",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 79,
+      "endLine": 79,
+      "source": "memory",
+      "snippet": "Assistant: 已读取2.4小节完整内容。现在开始执行修改，增加实证内容。 **修改计划执行**： 由于2.4小节内容较长，我将分步骤进行修改，在每个子节末尾增加实证段落。 **步骤1**: 修改2.4.2 内容编码的转变 - 增加实证证据",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "已读取2.4小节完整内容",
+        "由于2.4小节内容较长",
+        "修改2.4.2",
+        "assistant",
+        "2.4",
+        "小节",
+        "完整",
+        "内容"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:80:80": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:80:80",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 80,
+      "endLine": 80,
+      "source": "memory",
+      "snippet": "Assistant: 修改完成！现在将修改后的文件保存到手稿目录。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-29T19:02:41.391Z",
+      "lastRecalledAt": "2026-04-29T19:02:41.391Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-30",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "assistant",
+        "修改",
+        "完成",
+        "现在",
+        "文件",
+        "保存",
+        "手稿",
+        "目录"
       ]
     }
   }

@@ -70,3 +70,8 @@
 - - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:289-289]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:404-404]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:144-146 [score=0.909 recalls=0 avg=0.620 source=memory/2026-04-21.md:8-10]
 <!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:154:156 -->
 - - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:289-289]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:404-404]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:144-146 [score=0.896 recalls=0 avg=0.620 source=memory/2026-04-22.md:33-35]
+
+## Promoted From Short-Term Memory (2026-04-30)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-25.md:144:146 -->
+- - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:404-404]; Reflections: Theme: `assistant` kept surfacing across 78 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-11 - confidence: 0.62 - evidence: memory/2026-04-24.md:124-126 [score=0.849 recalls=0 avg=0.620 source=memory/2026-04-25.md:8-10]

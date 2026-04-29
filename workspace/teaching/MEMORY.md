@@ -102,3 +102,8 @@
 - - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:389-389]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:314-314]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:239-241 [score=0.875 recalls=0 avg=0.620 source=memory/2026-04-21.md:8-10]
 <!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:369:371 -->
 - - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:389-389]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:314-314]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:239-241 [score=0.845 recalls=0 avg=0.620 source=memory/2026-04-22.md:88-90]
+
+## Promoted From Short-Term Memory (2026-04-30)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-26.md:139:141 -->
+- - Candidate: Possible Lasting Truths: - Candidate: Assistant: --- # 每日自我更新报告 - 2026-04-19 20:00 ## ✅ 执行完成 ### 📊 执行摘要 | 步骤 | 状态 | 说明 | |------|------|------| | 1. 阅读当日事件记忆 | ✅ | 读取定时任务日志（1条记录） | | 2. 撰写发展日记 | ✅ | 日记已存在于 `events/2026-04-19/diary.md` | | 3. 阅读核心自我 | ✅ | 4个核心文件已读取 | | 4. 同化-顺应分析 - confidence: 0.62 - evidence: memory/2026-04-25.md:129-131 [score=0.866 recalls=0 avg=0.620 source=memory/2026-04-26.md:8-10]

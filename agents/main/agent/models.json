@@ -51,7 +51,20 @@
       "models": [
         {
           "id": "kimi-for-coding",
-          "name": "kimi for coding"
+          "name": "kimi for coding",
+          "api": "anthropic-messages",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 8192
         }
       ]
     },

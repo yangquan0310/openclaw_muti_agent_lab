@@ -47,7 +47,9 @@ skills/
 
 | 技能名称 | 触发示例 | 描述 | 路径 |
 |---------|---------|------|------|
-| *暂无个人技能* | - | - | - |
+| student-record-management | 学生档案、创建学生、学生信息 | 学生档案管理技能 - 创建、分类、存储、检索学生档案 | skills/student-record-management/ |
+| academic-counseling | 学业辅导、学习问题、辅导记录 | 学业辅导记录技能 - 记录学业问题、制定辅导计划、跟踪辅导效果 | skills/academic-counseling/ |
+| club-activity-management | 社团活动、社团管理、活动记录 | 社团活动管理技能 - 记录社团活动计划、管理社团成员、生成活动总结 | skills/club-activity-management/ |
 
 ---
 
@@ -60,4 +62,4 @@ skills/
 ---
 
 *维护者：学工助手（studentaffairsassistant）*
-*最后更新：2026-04-19*
+*最后更新：2026-04-30*

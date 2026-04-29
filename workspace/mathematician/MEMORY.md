@@ -10,14 +10,14 @@
 
 | 任务ID | 项目 | 任务描述 | 会话ID | 状态 | 创建时间 | 最后更新 | 备注 |
 |--------|------|----------|--------|------|----------|----------|------|
-| T001 | 每日自我更新 | 执行工作流2每日自我更新 | session:CORN:mathematician的定时任务 | active | 2026-04-27 00:00 | 2026-04-27 00:00 | 定时任务，每日00:00执行 |
+| T001 | 每日自我更新 | 执行工作流2每日自我更新 | session:CORN:mathematician的定时任务 | active | 2026-04-27 00:00 | 2026-04-30 00:05 | 定时任务，每日00:00执行 |
 
 
 ### 活跃会话清单
 
 | 会话ID | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 | 备注 |
 |--------|-----------|----------|------|----------|----------|------|
-| session:CORN:mathematician的定时任务 | 定时任务 | 每日自我更新 | active | 2026-04-27 00:00 | 2026-04-27 00:00 | 工作流2执行同化顺应分析 |
+| session:CORN:mathematician的定时任务 | 定时任务 | 每日自我更新 | active | 2026-04-27 00:00 | 2026-04-30 00:05 | 工作流2执行同化顺应分析 |
 
 
 ### 工作记忆使用规则
@@ -73,3 +73,8 @@
 - <!-- openclaw:dreaming:light:start --> [score=0.816 recalls=0 avg=0.620 source=memory/2026-04-24.md:2-2]
 <!-- openclaw-memory-promotion:memory:memory/2026-04-25.md:159:161 -->
 - - Candidate: Possible Lasting Truths: ## Light Sleep <!-- openclaw:dreaming:light:start --> - Candidate: Reflections: Theme: `assistant` kept surfacing across 80 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-14.txt:2-2, memory/.dreams/session-corpus/2026-04-14.t - confidence: 0.62 - evidence: memory/2026-04-24.md:124-126 [score=0.810 recalls=0 avg=0.620 source=memory/2026-04-25.md:8-10]
+
+## Promoted From Short-Term Memory (2026-04-30)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-26.md:144:146 -->
+- - Candidate: Possible Lasting Truths: ## Light Sleep <!-- openclaw:dreaming:light:start --> - Candidate: Reflections: Theme: `assistant` kept surfacing across 80 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-14.txt:2-2, memory/.dreams/session-corpus/2026-04-14.t - confidence: 0.62 - evidence: memory/2026-04-24.md:124-126 [score=0.847 recalls=0 avg=0.620 source=memory/2026-04-26.md:48-50]

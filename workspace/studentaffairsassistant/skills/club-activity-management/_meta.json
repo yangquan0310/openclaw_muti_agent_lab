@@ -1,0 +1,19 @@
+{
+  "name": "club-activity-management",
+  "version": "1.0.0",
+  "description": "社团活动管理技能 - 记录社团活动计划、管理社团成员、记录活动过程、生成活动总结",
+  "author": "studentaffairsassistant",
+  "triggers": [
+    "社团活动",
+    "社团管理",
+    "活动记录",
+    "社团成员",
+    "活动总结"
+  ],
+  "dependencies": [
+    "student-record-management"
+  ],
+  "environment": {
+    "storage_path": "~/教研室仓库/学生工作/社团活动/"
+  }
+}

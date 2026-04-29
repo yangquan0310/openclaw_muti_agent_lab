@@ -69,6 +69,7 @@
 
 - **v1.0.0** (2026-04-07): 初始版本，基于大管家模板重构
 - **v1.1.0** (2026-04-16): 按新规范更新，不再区分脚本和技能
+- **v8.0.7** (2026-04-29): 每日自我更新，记录周三低活跃日，无新触发信号
 - **v8.0.6** (2026-04-28): 每日自我更新，记录周二低活跃日，无新触发信号
 - **v8.0.5** (2026-04-27): 每日自我更新，更新核心自我认知，记录周日低活跃日，无新触发信号
 - **v8.0.4** (2026-04-26): 每日自我更新，更新核心自我认知，记录周末低活跃日
@@ -77,7 +78,7 @@
 
 ---
 
-*最后更新: 2026-04-28**  
+*最后更新: 2026-04-29**  
 *更新者: 教务助手*  
 *理论基础: 身份理论、工作记忆理论、认知架构理论*
 
@@ -87,3 +88,8 @@
 - - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:404-404]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:254-254]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:229-231 [score=0.893 recalls=0 avg=0.620 source=memory/2026-04-21.md:8-10]
 <!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:244:246 -->
 - - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:404-404]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:254-254]; Reflections: Them - confidence: 0.62 - evidence: memory/2026-04-20.md:229-231 [score=0.845 recalls=0 avg=0.620 source=memory/2026-04-22.md:68-70]
+
+## Promoted From Short-Term Memory (2026-04-30)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-25.md:154:156 -->
+- - Candidate: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:254-254]; Reflections: Theme: `assistant` kept surfacing across 150 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-1 - confidence: 0.62 - evidence: memory/2026-04-24.md:159-161 [score=0.849 recalls=0 avg=0.620 source=memory/2026-04-25.md:8-10]
