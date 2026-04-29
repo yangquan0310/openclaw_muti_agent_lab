@@ -444,10 +444,11 @@ openclaw-agent-self-development/
 │   │       └── skills-registry.js # 技能注册表
 │   ├── common/                   # 公共组件
 │   │   ├── adapters/             # 核心系统适配器
-│   │   │   ├── state-adapter.js      # StateAdapter
-│   │   │   ├── taskflow-adapter.js   # TaskFlowAdapter
-│   │   │   ├── memory-adapter.js     # MemoryAdapter
-│   │   │   └── log-adapter.js        # LogAdapter
+│   │   │   ├── state-adapter.js  # StateAdapter
+│   │   │   ├── task-adapter.js   # TaskFlowAdapter
+│   │   │   ├── flow-adapter.js   # FlowAdapter
+│   │   │   ├── memory-adapter.js # MemoryAdapter
+│   │   │   └── log-adapter.js    # LogAdapter
 │   │   ├── skills-loader.js      # SkillLoader（带缓存）
 │   │   ├── state.js              # PluginState（向后兼容，v2.x 迁移用）
 │   │   └── utils.js              # 工具函数（日期、任务族推断）
@@ -461,7 +462,8 @@ openclaw-agent-self-development/
 | `PluginState` | JSON 文件状态管理（并发安全，向后兼容） | `get()`, `set()`, `append()`, `_persist()` |
 | `SkillLoader` | Skill 文件加载与缓存 | `load()`, `clearCache()`, `getAvailableSkills()` |
 | `StateAdapter` | 核心 State API 适配 | `transaction()`, `savePlan()`, `getPlan()`, `saveSession()`, `getSession()`, `saveDeviation()`, `getDeviation()`, `saveAttribution()`, `getAttribution()` |
-| `TaskFlowAdapter` | 核心 TaskFlow API 适配 | `createPlanFlow()`, `advancePhase()`, `waitForApproval()`, `runSubtask()`, `getByRunId()`, `getByPhase()` |
+| `TaskAdapter` | 核心 Task API 适配 | `createPlanFlow()`, `advancePhase()`, `waitForApproval()`, `runSubtask()`, `getByRunId()`, `getByPhase()` |
+| `FlowAdapter` | 核心 Flow API 适配 |  |
 | `MemoryAdapter` | 核心 Memory API 适配 | `archiveSession()`, `logEvent()`, `queryHistory()` |
 | `LogAdapter` | 核心 Log API 适配 | `write()`, `read()`, `query()` |
 | `PlanManager` | 计划业务逻辑 | `createPlan()`, `approvePlan()`, `completePhase()` |
