@@ -271,8 +271,9 @@ Plugin (Hook Handler)
 | 管理器 | 核心方法 | 职责 |
 |--------|---------|------|
 | **PlanManager** | `createPlan()`, `approvePlan()`, `completePhase()` | 计划创建、用户确认、阶段推进 |
+| **PlanManager** | `createPlan()`, `approvePlan()`, `completePhase()` | 计划创建、用户确认、阶段推进 |
 | **SessionManager** | `createSession()`, `releaseSession()`, `destroySession()` | 会话创建/复用、释放、销毁 |
-| **ArchiveManager** | `archivePlan()`, `dailySummary()` | 归档、日报生成 |
+
 
 ### 3. 元认知模块（MetacognitionModule）
 

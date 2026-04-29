@@ -1,15 +1,15 @@
 /**
- * TaskFlowAdapter — 任务流适配器
- * 封装核心 TaskFlow，实现计划工作流管理
+ * FlowAdapter — 任务流适配器
+ * 封装核心 Flow，实现计划工作流管理
  */
 
-export class TaskFlowAdapter {
-  constructor(taskFlowAPI) {
-    this.taskFlow = taskFlowAPI;
+export class FlowAdapter {
+  constructor(flowAPI) {
+    this.flow = flowAPI;
   }
 
   async createPlanFlow(plan) {
-    return this.taskFlow.createManaged({
+    return this.flow.createManaged({
       controllerId: 'agent-self-development/planning',
       goal: plan.context.goal,
       currentStep: 'draft',
