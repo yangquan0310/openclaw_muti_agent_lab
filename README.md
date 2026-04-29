@@ -276,44 +276,19 @@ Plugin (Hook Handler)
 
 ### 3. 元认知模块（MetacognitionModule）
 
-管理 **Plan / Deviation / Attribution** 的闭环。复杂任务时注入 planning skill，active 状态时注入 monitoring skill。
+管理 **Plan / Monitor / Regulation** 的闭环。复杂任务时注入 planning skill，active 状态时注入 monitoring skill。
 
-**Plan 对象**（Agent 通过 skill 了解完整属性，见 `metacognition/planning/SKILL.md`）：
+| 对象 | 职责 | 状态机 | 关联 |
+|------|------|--------|------|
+| **Plan** | 完整的任务上下文语境（目标/约束/工作空间/阶段化执行） | `draft → pending_approval → active → completed → destroyed` | 驱动 Session 创建，为 Deviation 提供参照 |
+| **Deviation** | 记录代理对偏差的认知（预期 vs 实际 vs 差距） | `detected → acknowledged → resolved` | 引用 Plan.successCriteria，触发 Attribution |
+| **Attribution** | 记录代理对偏差的归因（根因 + 调节方案） | `analyzing → completed → executed` | 引用 Deviation，修改 Plan 或 Session |
 
-```json
-{
-  "runId": "uuid",
-  "prompt": "用户原始输入",
-  "status": "draft",
-  "context": {
-    "goal": "任务目标",
-    "constraints": ["约束条件"],
-    "successCriteria": ["成功标准：创建/修改哪些文档"]
-  },
-  "workspace": {
-    "sessions": [],
-    "artifacts": ["预期产出文档"],
-    "tools": ["所用工具"],
-    "skills": ["所用技能"]
-  },
-  "execution": {
-    "phases": [
-      {
-        "id": "phase1",
-        "name": "子任务名称",
-        "goal": "子任务目标",
-        "sessionId": "session:CODE:task-family",
-        "taskFamily": "CODE",
-        "tools": ["所需工具"],
-        "skills": ["所需技能"],
-        "outputs": ["产出文档"],
-        "status": "pending"
-      }
-    ],
-    "currentPhase": 0
-  }
-}
-```
+> **工作流详情**：见 `metacognition/planning/SKILL.md`（制定并汇报、处理确认、阶段化执行、任务空间管理）
+> **工作流详情**：见 `metacognition/monitoring/SKILL.md`（偏差检测与认知）
+> **工作流详情**：见 `metacognition/regulation/SKILL.md`（归因分析与调节）
+
+#### **Plan 对象**
 
 **Plan 状态转换规则**：
 
@@ -328,18 +303,6 @@ Plugin (Hook Handler)
 | `active` | 所有 phases 完成 | `completed` |
 | `active` | 重大偏差需重规划 | `draft`（重新汇报） |
 | `completed` | `agent_end` | `destroyed` |
-
-**核心原则**：`draft` 必须汇报，`pending_approval` 必须等待用户确认，只有 `active` 才能执行。
-
-| 对象 | 职责 | 状态机 | 关联 |
-|------|------|--------|------|
-| **Plan** | 完整的任务上下文语境（目标/约束/工作空间/阶段化执行） | `draft → pending_approval → active → completed → destroyed` | 驱动 Session 创建，为 Deviation 提供参照 |
-| **Deviation** | 记录代理对偏差的认知（预期 vs 实际 vs 差距） | `detected → acknowledged → resolved` | 引用 Plan.successCriteria，触发 Attribution |
-| **Attribution** | 记录代理对偏差的归因（根因 + 调节方案） | `analyzing → completed → executed` | 引用 Deviation，修改 Plan 或 Session |
-
-> **工作流详情**：见 `metacognition/planning/SKILL.md`（制定并汇报、处理确认、阶段化执行、任务空间管理）
-> **工作流详情**：见 `metacognition/monitoring/SKILL.md`（偏差检测与认知）
-> **工作流详情**：见 `metacognition/regulation/SKILL.md`（归因分析与调节）
 
 ### 4. 工作记忆模块（WorkingMemoryModule）
 
@@ -420,29 +383,6 @@ Personality.Event（任务执行事件）──→ EventLog（按日聚合）─
 | `after_tool_call` | 任意 | —（仅记录事件/状态） | Event | State.saveEvent() |
 | `agent_end` | 任意 | `personality` | Event | State.events → Memory.eventlog |
 | `before_prompt_build` | cron 消息 | `personality` | Diary | Memory.queryEventLog() |
-
----
-
-## 职责边界
-
-| 职责 | 用户层 | 代理层 | 插件层 | 系统底层 |
-|------|--------|--------|--------|----------|
-| 下达任务 | ✅ | — | — | — |
-| 审核 Plan | ✅ | — | — | — |
-| 确认/修改 Plan | ✅ | — | — | — |
-| 判断任务完成 | ✅ | — | — | — |
-| 制定 Plan（含子任务分解、工具/技能、成功标准） | — | ✅ 阅读 skill 自行制定 | ✅ 注入 planning skill | ✅ 提供 TaskFlow API |
-| 汇报 Plan | — | ✅ | — | — |
-| 执行监控 | — | ✅ 阅读 skill 自行检查 | ✅ 注入 monitoring skill | ✅ 提供 State API |
-| 偏差认知 | — | ✅ 阅读 skill 自行判断 | ✅ 注入 monitoring skill | ✅ 提供 State API |
-| 归因调节 | — | ✅ 阅读 skill 自行分析 | ✅ 注入 regulation skill | ✅ 提供 State API |
-| 管理 Session（任务族） | — | ✅ 自行决定复用/创建 | ✅ 记录状态变更 | ✅ 提供 State API |
-| 每日自我更新 | — | ✅ 阅读 skill 自行写日记 | ✅ 注入 personality skill | ✅ 提供 Memory API |
-| 攥写日记原料（EventLog） | — | ✅ 自行撰写 | ✅ 注入 personality skill | ✅ 提供 Memory API |
-| 核心文件读写 | — | ✅ 自行读写 | ✅ 不碰 | ✅ 不碰 |
-| 定时任务 | — | — | ✅ 不内置定时器（用户配置 OpenClaw cron） | ✅ 提供 cron 基础设施 |
-| 状态记录 | — | ✅ 上报状态 | ✅ 接收并写入系统 | ✅ 提供持久化 |
-| 流程注入 | — | ✅ 接收并执行 | ✅ 注入无可争议的流程 | ✅ 提供 Hook 机制 |
 
 ---
 
@@ -538,16 +478,6 @@ openclaw-agent-self-development/
 
 | 键 | 类型 | 生命周期 | 说明 |
 |----|------|----------|------|
-| `plan:{runId}` | Plan | runId | 当前运行的 Plan（State API） |
-| `output:{runId}` | string | runId | Monitor 引用的最新 LLM 输出（State API） |
-| `session_list:{runId}` | Session[] | runId | 本次运行的任务空间快照（State API） |
-| `wm:{runId}:tools` | ToolRecord[] | runId | 本次运行的工具记录（State API） |
-| `events:{YYYY-MM-DD}` | Event[] | 日期 | 按日累积的错误事件（Memory API） |
-| `memory_table:{YYYY-MM-DD}` | Archive[] | 日期 | 按日累积的 completed 归档（Memory API，向后兼容） |
-| `working_memory:active_sessions` | Session[] | 全局 | 全局活跃任务空间索引（State API） |
-| `taskflow:{flowId}` | Flow | 长期 | 核心 TaskFlow 实例（TaskFlow API） |
-| `logs:{YYYY-MM-DD}` | LogEntry[] | 日期 | 按日累积的日志（Log API） |
-| `session:{TYPE}:{任务族}` | Session | 长期 | 任务族会话（Session API） |
 
 ---
 
