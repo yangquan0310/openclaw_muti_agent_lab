@@ -5,17 +5,20 @@
  * Agent 自行决策：偏差判断、文件读写、同化顺应分析、置信度评估
  */
 
-import { MetacognitionModule } from './metacognition/module.js';
-import { WorkingMemoryModule } from './working-memory/module.js';
-import { PersonalityModule } from './personality/module.js';
-import { SkillLoader } from './common/skills-loader.js';
+import { dirname } from 'path';
 
-// v3 adapters
 import { StateAdapter } from './common/adapters/state-adapter.js';
 import { TaskAdapter } from './common/adapters/task-adapter.js';
 import { FlowAdapter } from './common/adapters/flow-adapter.js';
 import { MemoryAdapter } from './common/adapters/memory-adapter.js';
 import { LogAdapter } from './common/adapters/log-adapter.js';
+import { HookAdapter } from './common/adapters/hook-adapter.js';
+import { CronAdapter } from './common/adapters/cron-adapter.js';
+
+import { MetacognitionModule } from './metacognition/module.js';
+import { WorkingMemoryModule } from './working-memory/module.js';
+import { PersonalityModule } from './personality/module.js';
+import { SkillLoader } from './common/skills-loader.js';
 
 // v3 managers
 import { PlanManager } from './metacognition/plan-manager.js';
@@ -52,19 +55,28 @@ export default {
       logger.warn(`[${pluginId}] ⚠️ allowConversationAccess / allowPromptInjection 未启用，元认知功能可能无法工作`);
     }
 
-    // v3: 初始化核心系统适配器
+    // B方案：使用聚合 JSON 文件，参照 OpenClaw 核心文件格式
     const runtime = api.runtime || {};
-    const stateAdapter = new StateAdapter(runtime.state);
-    const taskAdapter = new TaskAdapter(runtime.tasks);
-    const flowAdapter = new FlowAdapter(runtime.flow);
-    const memoryAdapter = new MemoryAdapter(runtime.memory);
-    const logAdapter = new LogAdapter(runtime.log);
+    const baseDir = runtime.state?.resolveStateDir
+      ? dirname(runtime.state.resolveStateDir())
+      : '/root/.openclaw';
+
+    const stateAdapter = new StateAdapter(null, { dir: `${baseDir}/state/agent-self-development` });
+    const taskAdapter = new TaskAdapter(null, { dir: `${baseDir}/tasks/agent-self-development` });
+    const flowAdapter = new FlowAdapter(null, { dir: `${baseDir}/flows/agent-self-development` });
+    const memoryAdapter = new MemoryAdapter(null, { dir: `${baseDir}/memory/agent-self-development` });
+    const logAdapter = new LogAdapter(null, { dir: `${baseDir}/logs/agent-self-development` });
+    const hookAdapter = new HookAdapter(null, { dir: `${baseDir}/hooks/agent-self-development` });
+    const cronAdapter = new CronAdapter({ path: `${baseDir}/cron/jobs.json` });
+
+    // 初始化 Hook 目录结构（HOOK.md + handler.ts）
+    hookAdapter.init().catch(e => logger.warn(`[${pluginId}] Hook 初始化失败:`, e.message));
 
     // v3: 初始化业务管理器
     const planManager = new PlanManager(stateAdapter, flowAdapter);
     const deviationManager = new DeviationManager(stateAdapter);
     const attributionManager = new AttributionManager(stateAdapter, flowAdapter);
-    const sessionManager = new SessionManager(stateAdapter, flowAdapter, runtime.sessions);
+    const sessionManager = new SessionManager(stateAdapter, flowAdapter, null);
     const eventManager = new EventManager(stateAdapter, memoryAdapter);
     const diaryManager = new DiaryManager(memoryAdapter);
 

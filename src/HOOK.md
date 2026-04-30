@@ -5,7 +5,7 @@ metadata:
   {
     "openclaw":
       {
-        "events": ["before_prompt_build", "llm_output", "before_agent_finalize", "agent_end", "before_tool_call", "after_tool_call", "gateway_start", "gateway_stop"],
+        "events": ["before_prompt_build", "llm_output", "agent_end", "before_tool_call", "after_tool_call", "gateway_start", "gateway_stop"],
       },
   }
 ---
@@ -43,11 +43,6 @@ multi-step tasks.
 
 Monitors the LLM output against the current plan. Detects errors, blocked
 states, or off-track behavior and stores deviation signals.
-
-### `before_agent_finalize`
-
-If a significant deviation was recorded during the run, returns a revision
-action with the reason and suggested adjustment.
 
 ### `agent_end`
 
