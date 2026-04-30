@@ -65,7 +65,10 @@ export default {
     const taskAdapter = new TaskAdapter(null, { dir: `${baseDir}/tasks/agent-self-development` });
     const flowAdapter = new FlowAdapter(null, { dir: `${baseDir}/flows/agent-self-development` });
     const memoryAdapter = new MemoryAdapter(null, { dir: `${baseDir}/memory/agent-self-development` });
-    const logAdapter = new LogAdapter(null, { dir: `${baseDir}/logs/agent-self-development` });
+    const logAdapter = new LogAdapter(null, { 
+      dir: `${baseDir}/logs`, 
+      agentId: 'agent-self-development' 
+    });
     const hookAdapter = new HookAdapter(null, { dir: `${baseDir}/hooks/agent-self-development` });
     const cronAdapter = new CronAdapter({ path: `${baseDir}/cron/jobs.json` });
 

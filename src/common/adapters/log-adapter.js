@@ -1,12 +1,12 @@
 /**
- * LogAdapter — 日志适配器（B方案：纯文件系统）
- * 基于文本文件持久化，支持结构化 JSONL 格式
+ * LogAdapter — 日志适配器（按代理分文件版）
+ * 基于文本文件持久化，每个代理独立文件 ~/.openclaw/logs/{agentId}.log
  */
 
 import { writeFileSync, readFileSync, existsSync, mkdirSync, appendFileSync } from 'fs';
 import { join } from 'path';
 
-const DEFAULT_LOGS_DIR = '/root/.openclaw/logs/agent-self-development';
+const DEFAULT_LOGS_DIR = '/root/.openclaw/logs';
 
 function ensureDir(dir) {
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
@@ -16,8 +16,9 @@ export class LogAdapter {
   constructor(api, options = {}) {
     this.api = api; // 可为 null
     this.dir = options.dir || DEFAULT_LOGS_DIR;
-    this.logFile = options.logFile || join(this.dir, 'plugin.log');
-    this.jsonlFile = options.jsonlFile || join(this.dir, 'events.jsonl');
+    this.agentId = options.agentId || 'agent-self-development';
+    this.logFile = join(this.dir, `${this.agentId}.log`);
+    this.jsonlFile = join(this.dir, `${this.agentId}.jsonl`);
     this._ensureFiles();
   }
 

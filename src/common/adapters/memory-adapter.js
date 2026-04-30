@@ -1,79 +1,104 @@
 /**
- * MemoryAdapter — 记忆存储适配器（聚合 JSON 文件版）
- * 使用 ~/.openclaw/memory/agent-self-development/{type}.json
+ * MemoryAdapter — 记忆存储适配器（SQLite 版）
+ * 使用 ~/.openclaw/memory/agent-self-development/memory.db
  */
 
-import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
-import { dirname } from 'path';
+import { join } from 'path';
 
-const DEFAULT_DIR = '/root/.openclaw/memory/agent-self-development';
+const DEFAULT_DIR = '/root/.openclaw/memory';
 
-function ensureDir(dir) {
-  try { mkdirSync(dir, { recursive: true }); } catch {}
-}
-
-function loadJson(path) {
-  if (!existsSync(path)) return {};
-  try {
-    return JSON.parse(readFileSync(path, 'utf8'));
-  } catch {
-    return {};
+// 动态导入 better-sqlite3（兼容 ESM）
+let Database;
+async function getDatabase() {
+  if (!Database) {
+    const module = await import('better-sqlite3');
+    Database = module.default || module;
   }
-}
-
-function saveJson(path, data) {
-  ensureDir(dirname(path));
-  writeFileSync(path, JSON.stringify(data, null, 2), 'utf8');
+  return Database;
 }
 
 export class MemoryAdapter {
   constructor(api, options = {}) {
     this.api = api;
     this.dir = options.dir || DEFAULT_DIR;
-    ensureDir(this.dir);
+    this.dbPath = join(this.dir, 'agent-self-development', 'memory.db');
+    this._db = null;
   }
 
-  _file(type) {
-    return `${this.dir}/${type}.json`;
+  async _init() {
+    const Database = await getDatabase();
+    const db = new Database(this.dbPath);
+    db.exec(`
+      CREATE TABLE IF NOT EXISTS archives (
+        id TEXT PRIMARY KEY,
+        type TEXT NOT NULL,
+        data TEXT NOT NULL,
+        tags TEXT,
+        archived_at TEXT
+      );
+      CREATE TABLE IF NOT EXISTS events (
+        id TEXT PRIMARY KEY,
+        type TEXT NOT NULL,
+        data TEXT NOT NULL,
+        tags TEXT,
+        logged_at TEXT
+      );
+      CREATE TABLE IF NOT EXISTS eventlogs (
+        date TEXT PRIMARY KEY,
+        events TEXT NOT NULL
+      );
+      CREATE TABLE IF NOT EXISTS diaries (
+        date TEXT PRIMARY KEY,
+        content TEXT NOT NULL
+      );
+    `);
+    db.close();
+  }
+
+  async _getDb() {
+    if (!this._db) {
+      const Database = await getDatabase();
+      this._db = new Database(this.dbPath);
+    }
+    return this._db;
   }
 
   async archiveSession(session) {
+    await this._init();
     const id = session.sessionId || `session-${Date.now()}`;
     const record = {
       type: 'session',
-      data: session,
-      tags: [session.status, session.taskFamily],
-      archivedAt: new Date().toISOString()
+      data: JSON.stringify(session),
+      tags: JSON.stringify([session.status, session.taskFamily]),
+      archived_at: new Date().toISOString()
     };
-    if (this.api?.archive) await this.api.archive(record);
-    const path = this._file('archives');
-    const data = loadJson(path);
-    data[id] = record;
-    saveJson(path, data);
+    if (this.api?.archive) await this.api.archive({ type: 'session', data: session, tags: [session.status, session.taskFamily], date: new Date() });
+    const db = await this._getDb();
+    db.prepare('INSERT OR REPLACE INTO archives (id, type, data, tags, archived_at) VALUES (?, ?, ?, ?, ?)').run(id, record.type, record.data, record.tags, record.archived_at);
   }
 
   async logEvent(event) {
+    await this._init();
     const id = event.eventId || `event-${Date.now()}`;
     const record = {
-      type: 'event',
-      data: event,
-      tags: [event.type, event.severity || 'info'],
-      loggedAt: new Date().toISOString()
+      type: event.type || 'event',
+      data: JSON.stringify(event),
+      tags: JSON.stringify([event.type, event.severity || 'info']),
+      logged_at: new Date().toISOString()
     };
-    if (this.api?.archive) await this.api.archive(record);
-    const path = this._file('events');
-    const data = loadJson(path);
-    data[id] = record;
-    saveJson(path, data);
+    if (this.api?.archive) await this.api.archive({ type: 'event', data: event, tags: [event.type, event.severity || 'info'], date: new Date() });
+    const db = await this._getDb();
+    db.prepare('INSERT OR REPLACE INTO events (id, type, data, tags, logged_at) VALUES (?, ?, ?, ?, ?)').run(id, record.type, record.data, record.tags, record.logged_at);
   }
 
   async appendEventLog(date, event) {
-    const path = this._file('eventlogs');
-    const data = loadJson(path);
-    if (!data[date]) data[date] = [];
-    data[date].push(event);
-    if (this.api?.set) await this.api.set(`event:${date}`, data[date]);
-    saveJson(path, data);
+    await this._init();
+    const db = await this._getDb();
+    const existing = db.prepare('SELECT events FROM eventlogs WHERE date = ?').get(date);
+    const events = existing ? JSON.parse(existing.events) : [];
+    events.push(event);
+    db.prepare('INSERT OR REPLACE INTO eventlogs (date, events) VALUES (?, ?)').run(date, JSON.stringify(events));
+    if (this.api?.set) await this.api.set(`event:${date}`, events);
   }
 
   async getEventLog(date) {
@@ -81,15 +106,17 @@ export class MemoryAdapter {
       const mem = await this.api.get(`event:${date}`);
       if (mem && Array.isArray(mem)) return mem;
     }
-    return loadJson(this._file('eventlogs'))[date] || [];
+    await this._init();
+    const db = await this._getDb();
+    const row = db.prepare('SELECT events FROM eventlogs WHERE date = ?').get(date);
+    return row ? JSON.parse(row.events) : [];
   }
 
   async saveDiary(date, diary) {
     if (this.api?.set) await this.api.set(`diary:${date}`, diary);
-    const path = this._file('diaries');
-    const data = loadJson(path);
-    data[date] = diary;
-    saveJson(path, data);
+    await this._init();
+    const db = await this._getDb();
+    db.prepare('INSERT OR REPLACE INTO diaries (date, content) VALUES (?, ?)').run(date, JSON.stringify(diary));
   }
 
   async getDiary(date) {
@@ -97,25 +124,26 @@ export class MemoryAdapter {
       const mem = await this.api.get(`diary:${date}`);
       if (mem) return mem;
     }
-    return loadJson(this._file('diaries'))[date] || null;
+    await this._init();
+    const db = await this._getDb();
+    const row = db.prepare('SELECT content FROM diaries WHERE date = ?').get(date);
+    return row ? JSON.parse(row.content) : null;
   }
 
   async queryHistory(options) {
+    await this._init();
     const results = [];
-    const types = options.type ? [options.type] : ['archives', 'events', 'eventlogs', 'diaries'];
-    for (const type of types) {
-      const data = loadJson(this._file(type));
-      for (const record of Object.values(data)) {
-        if (options.tags && !options.tags.some(t => (record.tags || []).includes(t))) continue;
-        if (options.dateRange) {
-          const date = new Date(record.archivedAt || record.loggedAt || record.updatedAt || 0);
-          const start = new Date(options.dateRange.start);
-          const end = new Date(options.dateRange.end);
-          if (date < start || date > end) continue;
-        }
-        results.push(record.data || record);
-      }
+    const db = await this._getDb();
+    
+    if (!options.type || options.type === 'archives') {
+      const rows = db.prepare('SELECT data FROM archives').all();
+      results.push(...rows.map(r => JSON.parse(r.data)));
     }
+    if (!options.type || options.type === 'events') {
+      const rows = db.prepare('SELECT data FROM events').all();
+      results.push(...rows.map(r => JSON.parse(r.data)));
+    }
+    
     return results;
   }
 }
