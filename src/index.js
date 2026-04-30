@@ -25,7 +25,7 @@ import { PlanManager } from './metacognition/plan-manager.js';
 import { DeviationManager } from './metacognition/deviation-manager.js';
 import { AttributionManager } from './metacognition/attribution-manager.js';
 import { SessionManager } from './working-memory/session-manager.js';
-import { EventManager } from './personality/event-manager.js';
+import { EventManager } from './common/event-manager.js';
 import { DiaryManager } from './personality/diary-manager.js';
 
 const pluginId = 'agent-self-development';
@@ -33,7 +33,7 @@ const pluginId = 'agent-self-development';
 export default {
   id: pluginId,
   name: 'Agent Self-Development',
-  version: '3.1.3',
+  version: '3.2.0',
   description: 'OpenClaw plugin for agent self-development based on Piaget\'s cognitive development theory',
 
   register(api) {
@@ -45,7 +45,7 @@ export default {
     const skillLoader = new SkillLoader();
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] Agent Self-Development Plugin v3.1.3 activated`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v3.2.0 activated`);
 
     // 检查 conversation hooks 权限
     // OpenClaw 2026.4.21 版本使用 allowPromptInjection 控制对话访问

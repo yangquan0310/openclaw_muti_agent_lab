@@ -42,9 +42,9 @@ export class PersonalityModule {
     const isDailyUpdate = prompt.includes('[cron:每日自我更新]') || prompt.includes('每日自我更新');
     if (!isDailyUpdate) return;
 
-    const personalitySkill = await this.skillLoader.load('assimilation');
+    const personalitySkill = await this.skillLoader.load('development');
     if (!personalitySkill) {
-      this.logger.warn('[Personality] personality skill 未找到');
+      this.logger.warn('[Personality] development skill 未找到');
       return;
     }
 
@@ -52,7 +52,7 @@ export class PersonalityModule {
     const events = await this.eventManager.queryEventLog(yesterday);
 
     return {
-      prependSystemContext: `${personalitySkill}\n\n【昨日事件摘要】昨日（${yesterday}）共有 ${events.length} 条事件记录。\n【Agent 职责】请根据上方 personality skill 自行回顾事件、撰写日记、分析同化/顺应，并决定是否需要更新核心自我文件。\n`
+      prependSystemContext: `${personalitySkill}\n\n【回顾上下文】昨日（${yesterday}）共有 ${events.length} 条事件记录。\n【Agent 职责】请根据上方 personality skill 自行回顾事件、撰写日记、分析同化/顺应，并决定是否需要更新人格文件（SOUL.md / IDENTITY.md / skills/README.md）。\n`
     };
   }
 }

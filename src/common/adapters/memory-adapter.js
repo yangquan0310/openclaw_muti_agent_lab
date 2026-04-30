@@ -1,11 +1,11 @@
 /**
  * MemoryAdapter — 记忆存储适配器（使用已有数据库）
- * 使用 ~/.openclaw/memory/main.sqlite（系统主数据库）
+ * 使用 ~/.openclaw/memory/{agentId}.sqlite（每个 Agent 独立数据库）
  */
 
 import { join } from 'path';
 
-const DEFAULT_DB = '/root/.openclaw/memory/main.sqlite';
+const DEFAULT_DB = '/root/.openclaw/memory/{agentId}.sqlite';
 
 // 动态导入 better-sqlite3（兼容 ESM）
 let Database;
