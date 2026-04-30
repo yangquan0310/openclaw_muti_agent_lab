@@ -25,7 +25,7 @@ import { SessionManager } from './working-memory/session-manager.js';
 import { EventManager } from './personality/event-manager.js';
 import { DiaryManager } from './personality/diary-manager.js';
 
-const pluginId = 'openclaw-agent-self-development';
+const pluginId = 'agent-self-development';
 
 export default {
   id: pluginId,
@@ -45,9 +45,11 @@ export default {
     logger.info(`[${pluginId}] Agent Self-Development Plugin v3.0.0 activated`);
 
     // 检查 conversation hooks 权限
+    // OpenClaw 2026.4.21 版本使用 allowPromptInjection 控制对话访问
     const entries = api.config?.plugins?.entries?.[pluginId];
-    if (entries?.hooks?.allowConversationAccess !== true) {
-      logger.warn(`[${pluginId}] ⚠️ allowConversationAccess 未启用，元认知功能可能无法工作`);
+    const hooks = entries?.hooks || {};
+    if (hooks.allowConversationAccess !== true && hooks.allowPromptInjection !== true) {
+      logger.warn(`[${pluginId}] ⚠️ allowConversationAccess / allowPromptInjection 未启用，元认知功能可能无法工作`);
     }
 
     // v3: 初始化核心系统适配器
