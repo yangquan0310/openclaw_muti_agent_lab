@@ -33,7 +33,7 @@ const pluginId = 'agent-self-development';
 export default {
   id: pluginId,
   name: 'Agent Self-Development',
-  version: '3.1.0',
+  version: '3.1.1',
   description: 'OpenClaw plugin for agent self-development based on Piaget\'s cognitive development theory',
 
   register(api) {
@@ -45,7 +45,7 @@ export default {
     const skillLoader = new SkillLoader();
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] Agent Self-Development Plugin v3.1.0 activated`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v3.1.1 activated`);
 
     // 检查 conversation hooks 权限
     // OpenClaw 2026.4.21 版本使用 allowPromptInjection 控制对话访问
@@ -61,11 +61,19 @@ export default {
       ? dirname(runtime.state.resolveStateDir())
       : '/root/.openclaw';
 
+    // 获取当前代理ID
+    const agentId = api.agentId || 'main';
+    
+    // 使用当前代理的数据库文件
+    // 使用已有的系统数据库
     const stateAdapter = new StateAdapter(null, { dir: `${baseDir}/state/agent-self-development` });
-    const taskAdapter = new TaskAdapter(null, { dir: `${baseDir}/tasks/agent-self-development` });
-    const flowAdapter = new FlowAdapter(null, { dir: `${baseDir}/flows/agent-self-development` });
-    const memoryAdapter = new MemoryAdapter(null, { dir: `${baseDir}/memory/agent-self-development` });
-    const logAdapter = new LogAdapter(null, { dir: `${baseDir}/logs`, agentId: 'agent-self-development' });
+    const taskAdapter = new TaskAdapter(null, { dbPath: `${baseDir}/tasks/runs.sqlite` });
+    const flowAdapter = new FlowAdapter(null, { dbPath: `${baseDir}/flows/registry.sqlite` });
+    const memoryAdapter = new MemoryAdapter(null, { dbPath: `${baseDir}/memory/${agentId}.sqlite` });
+    const logAdapter = new LogAdapter(null, { 
+      dir: `${baseDir}/logs`, 
+      agentId: agentId 
+    });
     const hookAdapter = new HookAdapter(null, { dir: `${baseDir}/hooks/agent-self-development` });
     const cronAdapter = new CronAdapter({ path: `${baseDir}/cron/jobs.json` });
 

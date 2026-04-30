@@ -1,11 +1,9 @@
 /**
  * TaskAdapter — 任务适配器（SQLite 版）
- * 使用 ~/.openclaw/tasks/agent-self-development/tasks.db
+ * 使用 ~/.openclaw/tasks/{agentId}.sqlite
  */
 
 import { join } from 'path';
-
-const DEFAULT_DIR = '/root/.openclaw/tasks';
 
 // 动态导入 better-sqlite3（兼容 ESM）
 let Database;
@@ -20,8 +18,8 @@ async function getDatabase() {
 export class TaskAdapter {
   constructor(api, options = {}) {
     this.api = api;
-    this.dir = options.dir || DEFAULT_DIR;
-    this.dbPath = join(this.dir, 'agent-self-development', 'tasks.db');
+    this.dbPath = options.dbPath || '/root/.openclaw/tasks/runs.sqlite';
+    this.tablePrefix = options.tablePrefix || 'asd_';
     this._db = null;
   }
 
@@ -29,7 +27,7 @@ export class TaskAdapter {
     const Database = await getDatabase();
     const db = new Database(this.dbPath);
     db.exec(`
-      CREATE TABLE IF NOT EXISTS tasks (
+      CREATE TABLE IF NOT EXISTS ${this.tablePrefix}tasks (
         id TEXT PRIMARY KEY,
         data TEXT NOT NULL,
         created_at TEXT,
@@ -53,7 +51,7 @@ export class TaskAdapter {
     const record = { ...task, id: taskId, createdAt: task.createdAt || new Date().toISOString(), updatedAt: new Date().toISOString() };
     if (this.api?.create) await this.api.create(record);
     const db = await this._getDb();
-    db.prepare('INSERT OR REPLACE INTO tasks (id, data, created_at, updated_at) VALUES (?, ?, ?, ?)').run(taskId, JSON.stringify(record), record.createdAt, record.updatedAt);
+    db.prepare(`INSERT OR REPLACE INTO ${this.tablePrefix}tasks (id, data, created_at, updated_at) VALUES (?, ?, ?, ?)`).run(taskId, JSON.stringify(record), record.createdAt, record.updatedAt);
     return record;
   }
 
@@ -64,7 +62,7 @@ export class TaskAdapter {
     }
     await this._init();
     const db = await this._getDb();
-    const row = db.prepare('SELECT data FROM tasks WHERE id = ?').get(taskId);
+    const row = db.prepare(`SELECT data FROM ${this.tablePrefix}tasks WHERE id = ?`).get(taskId);
     return row ? JSON.parse(row.data) : null;
   }
 
@@ -74,7 +72,7 @@ export class TaskAdapter {
     const updated = { ...existing, ...updates, updatedAt: new Date().toISOString() };
     if (this.api?.update) await this.api.update(taskId, updates);
     const db = await this._getDb();
-    db.prepare('UPDATE tasks SET data = ?, updated_at = ? WHERE id = ?').run(JSON.stringify(updated), updated.updatedAt, taskId);
+    db.prepare(`UPDATE ${this.tablePrefix}tasks SET data = ?, updated_at = ? WHERE id = ?`).run(JSON.stringify(updated), updated.updatedAt, taskId);
     return updated;
   }
 
@@ -82,13 +80,13 @@ export class TaskAdapter {
     if (this.api?.delete) await this.api.delete(taskId);
     await this._init();
     const db = await this._getDb();
-    db.prepare('DELETE FROM tasks WHERE id = ?').run(taskId);
+    db.prepare(`DELETE FROM ${this.tablePrefix}tasks WHERE id = ?`).run(taskId);
   }
 
   async listTasks() {
     await this._init();
     const db = await this._getDb();
-    const rows = db.prepare('SELECT data FROM tasks').all();
+    const rows = db.prepare(`SELECT data FROM ${this.tablePrefix}tasks`).all();
     return rows.map(r => JSON.parse(r.data));
   }
 }
