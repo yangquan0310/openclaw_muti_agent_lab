@@ -33,7 +33,7 @@ const pluginId = 'agent-self-development';
 export default {
   id: pluginId,
   name: 'Agent Self-Development',
-  version: '3.2.0',
+  version: '3.2.1',
   description: 'OpenClaw plugin for agent self-development based on Piaget\'s cognitive development theory',
 
   register(api) {
@@ -45,7 +45,7 @@ export default {
     const skillLoader = new SkillLoader();
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] Agent Self-Development Plugin v3.2.0 activated`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v3.2.1 activated`);
 
     // 检查 conversation hooks 权限
     // OpenClaw 2026.4.21 版本使用 allowPromptInjection 控制对话访问
