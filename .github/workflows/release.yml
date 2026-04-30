@@ -32,15 +32,15 @@ jobs:
       - name: Repack without package/ prefix
         run: |
           mkdir -p _extract
-          tar xzf openclaw-agent-self-development-*.tgz -C _extract --strip-components=1
-          rm openclaw-agent-self-development-*.tgz
+          tar xzf agent-self-development-*.tgz -C _extract --strip-components=1
+          rm agent-self-development-*.tgz
           cd _extract
-          tar czf ../openclaw-agent-self-development-$(node -p "require('../package.json').version").tgz .
+          tar czf ../agent-self-development-$(node -p "require('../package.json').version").tgz .
           cd ..
           rm -rf _extract
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: openclaw-agent-self-development-*.tgz
+          files: agent-self-development-*.tgz
           generate_release_notes: true

@@ -1,4 +1,4 @@
-# openclaw-agent-self-development
+# agent-self-development
 
 OpenClaw 插件 — Agent 自我发展框架
 
@@ -581,7 +581,7 @@ Event（regulation 阶段撰写）──→ EventLog（按日聚合）──→ 
 ### 源码结构（按模块组织）
 
 ```
-openclaw-agent-self-development/
+agent-self-development/
 ├── openclaw.plugin.json          # 插件 manifest
 ├── package.json                  # npm 包配置（ESM）
 ├── README.md                     # 本文档
@@ -678,7 +678,7 @@ openclaw-agent-self-development/
 
 ```bash
 # 1. 安装插件
-openclaw plugins install https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/download/v3.2.0/openclaw-agent-self-development-3.2.0.tgz --force
+openclaw plugins install https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/download/v3.2.0/agent-self-development-3.2.0.tgz --force
 
 # 2. 启用
 openclaw plugins enable agent-self-development
