@@ -1,86 +1,154 @@
 /**
- * StateAdapter — 状态存储适配器
- * 隔离核心 State API 变化，提供统一接口
+ * StateAdapter — 状态存储适配器（聚合 JSON 文件版）
+ * 使用 ~/.openclaw/state/agent-self-development/{type}.json
  */
 
+import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
+import { dirname } from 'path';
+
+const DEFAULT_DIR = '/root/.openclaw/state/agent-self-development';
+
+function ensureDir(dir) {
+  try { mkdirSync(dir, { recursive: true }); } catch {}
+}
+
+function loadJson(path) {
+  if (!existsSync(path)) return {};
+  try {
+    return JSON.parse(readFileSync(path, 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
+function saveJson(path, data) {
+  ensureDir(dirname(path));
+  writeFileSync(path, JSON.stringify(data, null, 2), 'utf8');
+}
+
 export class StateAdapter {
-  constructor(stateAPI) {
-    this.state = stateAPI;
+  constructor(api, options = {}) {
+    this.api = api;
+    this.dir = options.dir || DEFAULT_DIR;
+    ensureDir(this.dir);
   }
 
-  async transaction(operations) {
-    return this.state.transaction(operations);
+  _file(type) {
+    return `${this.dir}/${type}.json`;
+  }
+
+  _get(type, key) {
+    const data = loadJson(this._file(type));
+    return data[key];
+  }
+
+  _set(type, key, value) {
+    const path = this._file(type);
+    const data = loadJson(path);
+    if (value === null || value === undefined) {
+      delete data[key];
+    } else {
+      data[key] = value;
+    }
+    saveJson(path, data);
+  }
+
+  _list(type, prefix) {
+    const data = loadJson(this._file(type));
+    return Object.entries(data)
+      .filter(([k]) => !prefix || k.startsWith(prefix))
+      .map(([, v]) => v);
   }
 
   // Plan
   async savePlan(runId, plan) {
-    await this.state.set(`plan:${runId}`, plan);
+    if (this.api?.set) await this.api.set(`plan:${runId}`, plan);
+    this._set('plans', runId, plan);
   }
 
   async getPlan(runId) {
-    return this.state.get(`plan:${runId}`);
+    if (this.api?.get) {
+      const mem = await this.api.get(`plan:${runId}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('plans', runId);
   }
 
   // Session
   async saveSession(sessionId, session) {
-    await this.state.set(`session:${sessionId}`, session);
+    if (this.api?.set) await this.api.set(`session:${sessionId}`, session);
+    this._set('sessions', sessionId, session);
   }
 
   async getSession(sessionId) {
-    return this.state.get(`session:${sessionId}`);
+    if (this.api?.get) {
+      const mem = await this.api.get(`session:${sessionId}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('sessions', sessionId);
   }
 
   async deleteSession(sessionId) {
-    await this.state.set(`session:${sessionId}`, null);
+    if (this.api?.set) await this.api.set(`session:${sessionId}`, null);
+    this._set('sessions', sessionId, null);
   }
 
   // Deviation
   async saveDeviation(runId, phaseId, deviation) {
-    await this.state.set(`deviation:${runId}:${phaseId}`, deviation);
+    const key = `${runId}:${phaseId}`;
+    if (this.api?.set) await this.api.set(`deviation:${key}`, deviation);
+    this._set('deviations', key, deviation);
   }
 
   async getDeviation(runId, phaseId) {
-    return this.state.get(`deviation:${runId}:${phaseId}`);
+    const key = `${runId}:${phaseId}`;
+    if (this.api?.get) {
+      const mem = await this.api.get(`deviation:${key}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('deviations', key);
   }
 
   async listDeviationsByRunId(runId) {
-    const keys = await this.state.keys?.() || [];
-    const prefix = `deviation:${runId}:`;
-    const deviationKeys = keys.filter(k => k.startsWith(prefix));
-    const deviations = await Promise.all(
-      deviationKeys.map(k => this.state.get(k))
-    );
-    return deviations.filter(Boolean);
+    return this._list('deviations', `${runId}:`);
   }
 
   // Attribution
   async saveAttribution(runId, deviationId, attribution) {
-    await this.state.set(`attribution:${runId}:${deviationId}`, attribution);
+    const key = `${runId}:${deviationId}`;
+    if (this.api?.set) await this.api.set(`attribution:${key}`, attribution);
+    this._set('attributions', key, attribution);
   }
 
   async getAttribution(runId, deviationId) {
-    return this.state.get(`attribution:${runId}:${deviationId}`);
+    const key = `${runId}:${deviationId}`;
+    if (this.api?.get) {
+      const mem = await this.api.get(`attribution:${key}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('attributions', key);
   }
 
-  // Event（临时存储，agent_end 时转移到 Memory）
+  // Event
   async saveEvent(eventId, event) {
-    await this.state.set(`event:${eventId}`, event);
+    if (this.api?.set) await this.api.set(`event:${eventId}`, event);
+    this._set('events', eventId, event);
   }
 
   async getEvent(eventId) {
-    return this.state.get(`event:${eventId}`);
+    if (this.api?.get) {
+      const mem = await this.api.get(`event:${eventId}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('events', eventId);
   }
 
   async deleteEvent(eventId) {
-    await this.state.set(`event:${eventId}`, null);
+    if (this.api?.set) await this.api.set(`event:${eventId}`, null);
+    this._set('events', eventId, null);
   }
 
   async listEvents() {
-    const keys = await this.state.keys?.() || [];
-    const eventKeys = keys.filter(k => k.startsWith('event:'));
-    const events = await Promise.all(
-      eventKeys.map(k => this.state.get(k))
-    );
-    return events.filter(Boolean);
+    return this._list('events');
   }
 }

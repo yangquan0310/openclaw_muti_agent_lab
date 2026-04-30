@@ -5,18 +5,35 @@
  * Agent 自行决策：偏差判断、文件读写、同化顺应分析、置信度评估
  */
 
-import { PluginState } from './state.js';
-import { MetacognitionModule } from './metacognition.js';
-import { WorkingMemoryModule } from './working-memory.js';
-import { PersonalityModule } from './personality.js';
-import { SkillLoader } from './skills-loader.js';
+import { dirname } from 'path';
 
-const pluginId = 'openclaw-agent-self-development';
+import { StateAdapter } from './common/adapters/state-adapter.js';
+import { TaskAdapter } from './common/adapters/task-adapter.js';
+import { FlowAdapter } from './common/adapters/flow-adapter.js';
+import { MemoryAdapter } from './common/adapters/memory-adapter.js';
+import { LogAdapter } from './common/adapters/log-adapter.js';
+import { HookAdapter } from './common/adapters/hook-adapter.js';
+import { CronAdapter } from './common/adapters/cron-adapter.js';
+
+import { MetacognitionModule } from './metacognition/module.js';
+import { WorkingMemoryModule } from './working-memory/module.js';
+import { PersonalityModule } from './personality/module.js';
+import { SkillLoader } from './common/skills-loader.js';
+
+// v3 managers
+import { PlanManager } from './metacognition/plan-manager.js';
+import { DeviationManager } from './metacognition/deviation-manager.js';
+import { AttributionManager } from './metacognition/attribution-manager.js';
+import { SessionManager } from './working-memory/session-manager.js';
+import { EventManager } from './personality/event-manager.js';
+import { DiaryManager } from './personality/diary-manager.js';
+
+const pluginId = 'agent-self-development';
 
 export default {
   id: pluginId,
   name: 'Agent Self-Development',
-  version: '2.0.2',
+  version: '3.1.0',
   description: 'OpenClaw plugin for agent self-development based on Piaget\'s cognitive development theory',
 
   register(api) {
@@ -25,26 +42,55 @@ export default {
     }
 
     const config = api.pluginConfig || {};
-    const state = new PluginState(pluginId);
     const skillLoader = new SkillLoader();
     const logger = api.logger || console;
 
-    logger.info(`[${pluginId}] Agent Self-Development Plugin v2.0.2 activated`);
+    logger.info(`[${pluginId}] Agent Self-Development Plugin v3.1.0 activated`);
 
     // 检查 conversation hooks 权限
+    // OpenClaw 2026.4.21 版本使用 allowPromptInjection 控制对话访问
     const entries = api.config?.plugins?.entries?.[pluginId];
-    if (entries?.hooks?.allowConversationAccess !== true) {
-      logger.warn(`[${pluginId}] ⚠️ allowConversationAccess 未启用，元认知功能可能无法工作`);
+    const hooks = entries?.hooks || {};
+    if (hooks.allowConversationAccess !== true && hooks.allowPromptInjection !== true) {
+      logger.warn(`[${pluginId}] ⚠️ allowConversationAccess / allowPromptInjection 未启用，元认知功能可能无法工作`);
     }
 
+    // B方案：使用聚合 JSON 文件，参照 OpenClaw 核心文件格式
+    const runtime = api.runtime || {};
+    const baseDir = runtime.state?.resolveStateDir
+      ? dirname(runtime.state.resolveStateDir())
+      : '/root/.openclaw';
+
+    const stateAdapter = new StateAdapter(null, { dir: `${baseDir}/state/agent-self-development` });
+    const taskAdapter = new TaskAdapter(null, { dir: `${baseDir}/tasks/agent-self-development` });
+    const flowAdapter = new FlowAdapter(null, { dir: `${baseDir}/flows/agent-self-development` });
+    const memoryAdapter = new MemoryAdapter(null, { dir: `${baseDir}/memory/agent-self-development` });
+    const logAdapter = new LogAdapter(null, { dir: `${baseDir}/logs`, agentId: 'agent-self-development' });
+    const hookAdapter = new HookAdapter(null, { dir: `${baseDir}/hooks/agent-self-development` });
+    const cronAdapter = new CronAdapter({ path: `${baseDir}/cron/jobs.json` });
+
+    // 初始化 Hook 目录结构（HOOK.md + handler.ts）
+    hookAdapter.init().catch(e => logger.warn(`[${pluginId}] Hook 初始化失败:`, e.message));
+
+    // v3: 初始化业务管理器
+    const planManager = new PlanManager(stateAdapter, flowAdapter);
+    const deviationManager = new DeviationManager(stateAdapter);
+    const attributionManager = new AttributionManager(stateAdapter, flowAdapter);
+    const sessionManager = new SessionManager(stateAdapter, flowAdapter, null);
+    const eventManager = new EventManager(stateAdapter, memoryAdapter);
+    const diaryManager = new DiaryManager(memoryAdapter);
+
     const metacognition = new MetacognitionModule({
-      api, config: config.metacognition, state, skillLoader, logger
+      api, config: config.metacognition, stateAdapter, skillLoader, logger,
+      planManager, deviationManager, attributionManager
     });
     const workingMemory = new WorkingMemoryModule({
-      api, config: config.workingMemory, state, skillLoader, logger
+      api, config: config.workingMemory, stateAdapter, skillLoader, logger,
+      sessionManager, eventManager
     });
     const personality = new PersonalityModule({
-      api, config: config.personality || config.assimilation, state, skillLoader, logger
+      api, config: config.personality || config.assimilation, stateAdapter, skillLoader, logger,
+      eventManager, diaryManager
     });
 
     metacognition.register();
