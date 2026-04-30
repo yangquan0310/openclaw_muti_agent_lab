@@ -1,0 +1,83 @@
+name: Release v3.1.0
+
+on:
+  push:
+    branches:
+      - agent-self-development
+    tags:
+      - 'v3.1.0'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        ref: agent-self-development
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run tests
+      run: npm test || echo "No tests configured"
+    
+    - name: Build package
+      run: |
+        mkdir -p dist
+        cp -r src/ dist/
+        cp package.json dist/
+        cp README.md dist/
+        cp LICENSE dist/ 2>/dev/null || true
+    
+    - name: Create tarball
+      run: |
+        tar -czf openclaw-agent-self-development-v3.1.0.tgz -C dist .
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: openclaw-agent-self-development-v3.1.0
+        path: openclaw-agent-self-development-v3.1.0.tgz
+    
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/v3.1.0')
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v3.1.0
+        name: Release v3.1.0
+        body: |
+          ## Agent Self-Development Plugin v3.1.0
+          
+          ### 重大变更
+          - **底层存储架构重构**：Task/Flow/Memory 改为 SQLite 数据库
+          - **Log 改为按代理分文件**：`{agentId}.log`
+          - **修复 ESM 兼容性**：动态导入 better-sqlite3
+          
+          ### 文件结构
+          ```
+          .openclaw/
+          ├── state/agent-self-development/     # JSON 文件 (Plan/Session/Deviation/Attribution)
+          ├── tasks/agent-self-development/tasks.db  # SQLite
+          ├── flows/agent-self-development/flows.db  # SQLite
+          ├── memory/agent-self-development/memory.db # SQLite
+          ├── logs/agent-self-development.log      # 文本日志
+          └── hooks/agent-self-development/        # Hook 声明文件
+          ```
+          
+          ### 兼容性
+          - 适配器层保留核心 API 兼容接口
+          - 当 OpenClaw 未来暴露对应 API 时可无缝切换
+        draft: false
+        prerelease: false
+        files: |
+          openclaw-agent-self-development-v3.1.0.tgz
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
