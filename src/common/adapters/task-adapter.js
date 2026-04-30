@@ -1,6 +1,6 @@
 /**
  * TaskAdapter — 任务适配器（SQLite 版）
- * 使用 ~/.openclaw/tasks/{agentId}.sqlite
+ * 使用 ~/.openclaw/tasks/runs.sqlite
  */
 
 import { join } from 'path';

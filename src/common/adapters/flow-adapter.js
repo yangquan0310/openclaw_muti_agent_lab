@@ -1,6 +1,6 @@
 /**
  * FlowAdapter — 任务流适配器（SQLite 版）
- * 使用 ~/.openclaw/flows/{agentId}.sqlite
+ * 使用 ~/.openclaw/flows/registry.sqlite
  */
 
 import { join } from 'path';
