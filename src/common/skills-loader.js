@@ -9,7 +9,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DEFAULT_SKILLS_DIR = path.join(__dirname, '../../skills');
+const DEFAULT_SKILLS_DIR = path.join(__dirname, '..');
 
 export class SkillLoader {
   constructor(skillsDir) {
@@ -18,8 +18,8 @@ export class SkillLoader {
       planning: 'metacognition/planning/SKILL.md',
       monitoring: 'metacognition/monitoring/SKILL.md',
       regulation: 'metacognition/regulation/SKILL.md',
-      working_memory: 'working_memory/SKILL.md',
-      assimilation: 'personality/SKILL.md'
+      working_memory: 'working-memory/SKILL.md',
+      development: 'personality/SKILL.md'
     };
     this._cache = new Map();
   }
