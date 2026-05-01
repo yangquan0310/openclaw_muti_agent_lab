@@ -55,11 +55,8 @@ export default {
       logger.warn(`[${pluginId}] ⚠️ allowConversationAccess / allowPromptInjection 未启用，元认知功能可能无法工作`);
     }
 
-    // B方案：使用聚合 JSON 文件，参照 OpenClaw 核心文件格式
-    const runtime = api.runtime || {};
-    const baseDir = runtime.state?.resolveStateDir
-      ? dirname(runtime.state.resolveStateDir())
-      : '/root/.openclaw';
+    // 修复：直接使用 ~/.openclaw 作为基础目录，避免 resolveStateDir 返回错误路径
+    const baseDir = '/root/.openclaw';
 
     // 获取当前代理ID
     const agentId = api.agentId || 'main';

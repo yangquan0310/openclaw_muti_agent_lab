@@ -747,3 +747,13 @@ openclaw gateway restart
 | `personality.enabled` | boolean | `true` | 人格模块总开关（cron 检测） |
 
 > **向后兼容**：`config.development` 仍可工作，内部映射到 `personality`
+
+---
+
+## 版本历史
+
+| 版本 | 日期 | 变更内容 |
+|------|------|----------|
+| **v3.2.1** | 2026-05-01 | 修复 `baseDir` 路径解析 bug：`runtime.state.resolveStateDir` 返回路径被错误取 `dirname()`，导致 state 等目录落在 `/root/state/` 而非规定的 `/root/.openclaw/state/`。修复后固定使用 `/root/.openclaw` 作为基础目录。 |
+| v3.2.1 | 2026-04-29 | 插件版本号同步更新 |
+| v3.1.3 | 2026-04-?? | 重构底层存储架构，Task/Flow/Memory 改为 SQLite，Log 改为按代理分文件 |
