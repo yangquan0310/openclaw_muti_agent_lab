@@ -53,7 +53,7 @@
           "id": "kimi-for-coding",
           "name": "kimi for coding",
           "api": "anthropic-messages",
-          "reasoning": false,
+          "reasoning": true,
           "input": [
             "text"
           ],
@@ -149,6 +149,7 @@
         {
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash",
+          "contextWindow": 256000,
           "reasoning": false,
           "input": [
             "text"
@@ -159,13 +160,38 @@
             "cacheRead": 0,
             "cacheWrite": 0
           },
-          "contextWindow": 200000,
           "maxTokens": 8192,
           "api": "openai-completions"
         },
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek V4 Pro",
+          "reasoning": true,
+          "contextWindow": 256000,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        }
+      ],
+      "apiKey": "DEEPSEEK_API_KEY"
+    },
+    "moonshot": {
+      "baseUrl": "https://api.moonshot.cn/v1",
+      "apiKey": "sk-r07vpkrxPZbspM2cHg1cUZ6zadIJX53Hm34SHMLNNRBBcvix",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "kimi-k2-thinking",
+          "name": "Kimi K2 Thinking",
+          "contextWindow": 256000,
           "reasoning": false,
           "input": [
             "text"
@@ -176,12 +202,240 @@
             "cacheRead": 0,
             "cacheWrite": 0
           },
-          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "openai-completions",
+          "compat": {
+            "supportsUsageInStreaming": true
+          }
+        },
+        {
+          "id": "kimi-k2-thinking-turbo",
+          "name": "Kimi K2 Thinking Turbo",
+          "contextWindow": 256000,
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions",
+          "compat": {
+            "supportsUsageInStreaming": true
+          }
+        },
+        {
+          "id": "kimi-k2.5",
+          "name": "Kimi K2.5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 256000,
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions",
+          "compat": {
+            "supportsUsageInStreaming": true
+          }
+        },
+        {
+          "id": "moonshot-v1-128k",
+          "name": "Moonshot V1 128K",
+          "contextWindow": 256000,
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions",
+          "compat": {
+            "supportsUsageInStreaming": true
+          }
+        },
+        {
+          "id": "kimi-k2.6",
+          "name": "Kimi K2.6",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 256000,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions",
+          "compat": {
+            "supportsUsageInStreaming": true
+          }
+        }
+      ]
+    },
+    "tencenttokenplan": {
+      "baseUrl": "https://api.lkeap.cloud.tencent.com/plan/v3/v1",
+      "apiKey": "sk-tp-D2jSnAa6gwRYWxYWkpe3RJYDLvdX5df6fxOUSbLHch7Mt0NU",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "tc-code-latest",
+          "name": "自动",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 256000,
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "hunyuan-2.0-instruct",
+          "name": "Tencent HY 2.0 Instruct",
+          "contextWindow": 256000,
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "hunyuan-2.0-thinking",
+          "name": "Tencent HY 2.0 Think",
+          "contextWindow": 256000,
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "minimax-m2.5",
+          "name": "MiniMax-M2.5",
+          "contextWindow": 256000,
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "minimax-m2.7",
+          "name": "MiniMax-M2.7",
+          "reasoning": true,
+          "contextWindow": 256000,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "kimi-k2.5",
+          "name": "Kimi-K2.5",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 256000,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "glm-5",
+          "name": "GLM-5",
+          "contextWindow": 256000,
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "glm-5.1",
+          "name": "GLM-5.1",
+          "reasoning": true,
+          "contextWindow": 256000,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "maxTokens": 8192,
           "api": "openai-completions"
         }
-      ],
-      "apiKey": "DEEPSEEK_API_KEY"
+      ]
     }
   }
 }

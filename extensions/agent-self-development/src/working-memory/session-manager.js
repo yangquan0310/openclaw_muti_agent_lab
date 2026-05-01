@@ -7,17 +7,19 @@ export class SessionManager {
   constructor(stateAdapter, flowAdapter, sessionAPI) {
     this.stateAdapter = stateAdapter;
     this.flowAdapter = flowAdapter;
-    this.sessionAPI = sessionAPI;
+    this.sessionAPI = sessionAPI; // 可能为 undefined
   }
 
   async createSession(phase, taskFamily) {
     const sessionId = `session:${taskFamily}:${taskFamily}`;
 
-    const existingSession = await this.sessionAPI.get(sessionId);
-    if (existingSession && existingSession.status === 'idle') {
-      existingSession.status = 'active';
-      await this.sessionAPI.update(sessionId, existingSession);
-      return existingSession;
+    if (this.sessionAPI) {
+      const existingSession = await this.sessionAPI.get(sessionId);
+      if (existingSession && existingSession.status === 'idle') {
+        existingSession.status = 'active';
+        await this.sessionAPI.update(sessionId, existingSession);
+        return existingSession;
+      }
     }
 
     const existing = await this.stateAdapter.getSession(sessionId);
@@ -35,7 +37,9 @@ export class SessionManager {
     };
 
     await this.stateAdapter.saveSession(sessionId, session);
-    await this.sessionAPI.create(sessionId, session);
+    if (this.sessionAPI) {
+      await this.sessionAPI.create(sessionId, session);
+    }
 
     const flow = await this.flowAdapter.getByPhase(phase.id);
     if (flow) {
@@ -50,12 +54,16 @@ export class SessionManager {
     if (session) {
       session.status = 'idle';
       await this.stateAdapter.saveSession(sessionId, session);
-      await this.sessionAPI.update(sessionId, { status: 'idle' });
+      if (this.sessionAPI) {
+        await this.sessionAPI.update(sessionId, { status: 'idle' });
+      }
     }
   }
 
   async destroySession(sessionId) {
     await this.stateAdapter.deleteSession(sessionId);
-    await this.sessionAPI.destroy(sessionId);
+    if (this.sessionAPI) {
+      await this.sessionAPI.destroy(sessionId);
+    }
   }
 }

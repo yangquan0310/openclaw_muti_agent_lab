@@ -28,11 +28,6 @@
 
 ## 陈述性记忆(Semantic Memory)
 
-### 核心自我认知
-
----
-
-
 ### 知识网络
 
 ---
@@ -98,3 +93,8 @@
 - - Candidate: Possible Lasting Truths: - 步骤6: 新增检索报告文档管理规范（创建文件.md、控制版本.md、映射云文档.md） - 输出要求: 参考文献使用APA格式 ### 4. 安全规范执行 - API Key未暴露在公开文档中，仅使用"需要API Key"描述性文字 ## 经验沉淀 - 文档结构应遵循SOP规范，检索概况需包含详细检索记录和复现说明 - 敏感信息（API Key）必须从公开文档中移除 - 版本控制需严格执行：终稿不带版本号，草稿按文档名创建文件夹 --- *归档时间: 2026-04-09 19:56* ## 2026 - confidence: 0.62 - evidence: memory/2026-04-22.md:313-315 [score=0.882 recalls=0 avg=0.620 source=memory/2026-04-25.md:193-195]
 <!-- openclaw-memory-promotion:memory:memory/2026-04-26.md:264:266 -->
 - - Candidate: Possible Lasting Truths: - 步骤6: 新增检索报告文档管理规范（创建文件.md、控制版本.md、映射云文档.md） - 输出要求: 参考文献使用APA格式 ### 4. 安全规范执行 - API Key未暴露在公开文档中，仅使用"需要API Key"描述性文字 ## 经验沉淀 - 文档结构应遵循SOP规范，检索概况需包含详细检索记录和复现说明 - 敏感信息（API Key）必须从公开文档中移除 - 版本控制需严格执行：终稿不带版本号，草稿按文档名创建文件夹 --- *归档时间: 2026-04-09 19:56* ## 2026 - confidence: 0.62 - evidence: memory/2026-04-23.md:424-426 [score=0.815 recalls=0 avg=0.620 source=memory/2026-04-26.md:123-125]
+
+## Promoted From Short-Term Memory (2026-05-02)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-27.md:174:176 -->
+- - Candidate: Possible Lasting Truths: - 步骤6: 新增检索报告文档管理规范（创建文件.md、控制版本.md、映射云文档.md） - 输出要求: 参考文献使用APA格式 ### 4. 安全规范执行 - API Key未暴露在公开文档中，仅使用"需要API Key"描述性文字 ## 经验沉淀 - 文档结构应遵循SOP规范，检索概况需包含详细检索记录和复现说明 - 敏感信息（API Key）必须从公开文档中移除 - 版本控制需严格执行：终稿不带版本号，草稿按文档名创建文件夹 --- *归档时间: 2026-04-09 19:56* ## 2026 - confidence: 0.62 - evidence: memory/2026-04-24.md:429-431 [score=0.878 recalls=0 avg=0.620 source=memory/2026-04-27.md:138-140]

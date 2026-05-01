@@ -29,11 +29,6 @@
 
 ## 陈述性记忆(Semantic Memory)
 
-### 核心自我认知
-
----
-
-
 ### 课程记忆
 
 #### 教育科学研究方法
@@ -107,3 +102,8 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-04-26.md:139:141 -->
 - - Candidate: Possible Lasting Truths: - Candidate: Assistant: --- # 每日自我更新报告 - 2026-04-19 20:00 ## ✅ 执行完成 ### 📊 执行摘要 | 步骤 | 状态 | 说明 | |------|------|------| | 1. 阅读当日事件记忆 | ✅ | 读取定时任务日志（1条记录） | | 2. 撰写发展日记 | ✅ | 日记已存在于 `events/2026-04-19/diary.md` | | 3. 阅读核心自我 | ✅ | 4个核心文件已读取 | | 4. 同化-顺应分析 - confidence: 0.62 - evidence: memory/2026-04-25.md:129-131 [score=0.866 recalls=0 avg=0.620 source=memory/2026-04-26.md:8-10]
+
+## Promoted From Short-Term Memory (2026-05-02)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-27.md:149:151 -->
+- - Candidate: Possible Lasting Truths: - Candidate: Assistant: --- # 每日自我更新报告 - 2026-04-19 20:00 ## ✅ 执行完成 ### 📊 执行摘要 | 步骤 | 状态 | 说明 | |------|------|------| | 1. 阅读当日事件记忆 | ✅ | 读取定时任务日志（1条记录） | | 2. 撰写发展日记 | ✅ | 日记已存在于 `events/2026-04-19/diary.md` | | 3. 阅读核心自我 | ✅ | 4个核心文件已读取 | | 4. 同化-顺应分析 - confidence: 0.62 - evidence: memory/2026-04-25.md:129-131 [score=0.878 recalls=0 avg=0.620 source=memory/2026-04-27.md:58-60]

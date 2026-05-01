@@ -119,34 +119,22 @@ export class MetacognitionModule {
    * draft 状态：要求 Agent 制定 Plan 并向用户汇报
    */
   _buildDraftContext(planningSkill, plan) {
-    const { context, execution } = plan;
-    const phaseLines = execution.phases.map((ph, i) => {
-      const sessionHint = ph.sessionId ? ` [任务空间: ${ph.sessionId}]` : '';
-      return `  ${i + 1}. ${ph.name} — ${ph.goal}${sessionHint}`;
-    }).join('\n');
+    const { execution, workspace } = plan;
+    const assignedSessions = execution.phases.filter(ph => ph.sessionId).length;
 
     const draftContext = `
-【Plan 草稿 - 请制定并汇报】
+【Plan 状态】draft — 需制定并汇报
 
-▸ 用户任务：${plan.prompt.slice(0, 200)}
+【可用上下文】
+- 阶段总数：${execution.phases.length}，已分配任务空间：${assignedSessions}
+- 当前状态：status = "draft"，currentPhase = 0
+- 可用工具：${workspace.tools.join(' / ') || '无'}
 
-▸ 建议上下文（可参考，也可根据实际调整）：
-  目标：${context.goal}
-  约束：${context.constraints.join(' / ')}
-  验收：${context.successCriteria.join(' / ')}
-
-▸ 个人记忆配置：
-  制定 Plan 前，请加载 ${'`'}memory.md${'`'} 中的条件-行动规则。
-  若用户任务满足某条规则的条件，请在 Plan 中执行对应的行动（添加约束、阶段、验收标准等）。
-
-▸ 建议阶段（可参考，可增删改）：
-${phaseLines}
-
-【Agent 职责 - 必做】
-1. 根据上方 planning skill、用户任务和个人记忆配置（memory.md 条件-行动规则），制定完整 Plan
-2. 向用户汇报 Plan 内容（目标、阶段、任务空间分配、验收标准）
-3. 明确告知用户"计划已制定，请确认或提出修改意见"
-4. 汇报完成后，将 Plan.status 更新为 "pending_approval"
+【执行指导】
+1. 载入 ~/.openclaw/workspace/{agent}/MEMORY.md 中的条件-行动规则
+2. 检查「活跃会话清单」，判断是否需要复用现有会话
+3. 制定完整 Plan 后向用户汇报，等待确认
+4. 汇报完成后，通知插件将 status 更新为 "pending_approval"
 `;
 
     return {
@@ -186,39 +174,33 @@ ${phaseLines}
    * active 状态：注入执行上下文
    */
   _buildExecutionContext(plan) {
-    const { context, execution, workspace } = plan;
+    const { execution, workspace } = plan;
     const currentPhase = execution.phases[execution.currentPhase];
+    const completedCount = execution.phases.filter(ph => ph.status === 'completed').length;
 
     let phaseInfo = '';
     if (currentPhase) {
       const sessionHint = currentPhase.sessionId
-        ? `（任务空间: ${currentPhase.sessionId}）`
+        ? `，分配会话：${currentPhase.sessionId}`
         : '';
-      phaseInfo = `
-▸ 当前阶段 (${execution.currentPhase + 1}/${execution.phases.length})：
-  名称：${currentPhase.name}
-  目标：${currentPhase.goal}
-  状态：${currentPhase.status}
-  ${sessionHint}
-  预期产出：${currentPhase.outputs.join(' / ') || '无'}
-`;
+      phaseInfo = `当前阶段：${execution.currentPhase + 1}/${execution.phases.length}（ID: ${currentPhase.id}）${sessionHint}`;
     } else {
-      phaseInfo = '\n▸ 所有阶段已完成\n';
+      phaseInfo = '所有阶段已完成';
     }
 
     const execContext = `
-【执行上下文 - 继续推进】
+【Plan 状态】active — 按阶段推进
 
-▸ 任务目标：${context.goal}
-▸ 验收标准：${context.successCriteria.join(' / ')}
-${phaseInfo}
-▸ 已产出：${workspace.artifacts.join(' / ') || '无'}
+【当前上下文】
+- ${phaseInfo}
+- 已完成阶段：${completedCount} 个
+- 已产出物数量：${workspace.artifacts.length}
 
-【Agent 职责】
-1. 按当前阶段目标推进任务
-2. 阶段完成后更新 phase.status = "completed"，currentPhase++
-3. 产出物记录到 workspace.artifacts
-4. 如需调节 Plan（跳过阶段、新增阶段等），先说明理由并更新 Plan
+【执行指导】
+1. 当前阶段已确认，按目标推进
+2. 阶段完成后通知插件：phase.status = "completed"，currentPhase++
+3. 产出物追加到 workspace.artifacts
+4. 如需调节 Plan，先说明理由并通知插件更新
 `;
 
     return {
@@ -244,7 +226,7 @@ ${phaseInfo}
 
     const currentPhase = plan.execution.phases[plan.execution.currentPhase];
     const phaseHint = currentPhase
-      ? `当前阶段：${currentPhase.name}（${currentPhase.goal}）`
+      ? `当前阶段：${currentPhase.id}，分配会话：${currentPhase.sessionId || '无'}`
       : '所有阶段已完成';
 
     return {

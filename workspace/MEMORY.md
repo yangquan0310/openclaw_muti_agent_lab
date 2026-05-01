@@ -16,16 +16,12 @@
 ---
 ### 工作记忆使用规则
 
-> 详细规范参见 `\root\.openclaw\extensions\agent-self-development\skills\working_memory\SKILL.md`
+> 详细规范参见 `agent-self-development` 插件自动注入的 working-memory skill
 > 本文件仅记录代理特定的实践细节
 ---
 
 
 ## 陈述性记忆(Semantic Memory)
-
-### 核心自我认知
-系统管理员，负责 OpenClaw 系统维护
----
 
 ### 知识网络
 
@@ -34,19 +30,6 @@
 - **文件名格式**: `openclaw-agent-self-development-{版本}.tgz`
 - **安装命令**: `openclaw plugins install /path/to/openclaw-agent-self-development-{版本}.tgz`
 - **验证命令**: `openclaw plugins inspect agent-self-development --json`
-
-> ⚠️ **版本更新注意**: 插件随版本更新，安装前请确认最新版本号
-> - 查看最新版本: https://github.com/yangquan0310/openclaw_muti_agent_lab/releases/latest
-> - 当前已知版本: v1.0.0 (2026-04-27)
----
-
-### 事件记忆(Event Memory)
-
-> 记录关键系统事件及其时间线索引
-
-| 日期 | 事件 | 涉及实体 | 结果 | 日志位置 |
-|------|------|----------|------|----------|
-|||||
 
 ---
 
@@ -72,10 +55,11 @@
 
 | 版本 | 日期 | 更新内容 | 更新者 |
 |------|------|----------|--------|
+| v1.2.0 | 2026-05-01 | 修复过期路径引用，更新 agent-self-development 为自动注入式 | 系统管理员 |
 | v1.1.0 | 2026-04-28 | 用户重新更新记忆文档 | 系统管理员 |
 | v1.0.0 | 2026-04-26 | 初始版本，作为系统管理员创建 | 系统管理员 |
 
 ---
 
-*最后重构: 2026-04-28*
+*最后重构: 2026-05-01*
 *重构者: 系统管理员*

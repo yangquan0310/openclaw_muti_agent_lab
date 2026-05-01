@@ -19,7 +19,6 @@
 
 ### 需要新会话执行的任务
 - **上述未提到的**都需新会话执行
-- 使用`\root\.openclaw\extensions\agent-self-development\skills\working_memory\session_tracker\SKILL.md`完成会话追踪与管理。
 - 注意：新会话默认**不继承**主会话的所有信息。请在任务描述中明确传递必要上下文：包括脚本、技能、密钥、文件、执行步骤等上下文
 
 ---
@@ -28,8 +27,9 @@
 - 载入个人身份文档（IDENTITY.md）
 - 载入个人记忆文档（MEMORY.md）
 - 载入个人工具文档（TOOLS.md）
-- 载入代理自我发展技能`\root\.openclaw\extensions\agent-self-development\skills\SKILL.md` 
-- 载入项目管理技能`\root\.openclaw\workspace\skills\manage-project\SKILL.md`
+- 载入项目管理技能`/root/.openclaw/workspace/skills/manage-project/SKILL.md`
+
+> **说明**：`agent-self-development` 插件已改为自动注入式，其元认知技能（planning / monitoring / regulation / working-memory / personality）会在对应时机自动注入，无需手动载入。
 ---
 
 ## 安全红线
@@ -40,9 +40,11 @@
 
 ## 工作流
 
-> 严格遵循 `\root\.openclaw\extensions\agent-self-development\skills\SKILL.md` 认知框架执行任务。
+> 严格遵循 `agent-self-development` 插件的认知框架执行任务。
+> 该插件会在 `before_prompt_build`、`llm_output`、`agent_end` 等时机自动注入对应技能。
+
 **记载个人记忆中条件-行动规则（If-Then Rules）**
-**单个任务执行完整规范参见 `\root\.openclaw\extensions\agent-self-development\skills\SKILL.md` 工作流1。**
+**单个任务执行完整规范参见插件注入的 planning skill 工作流指导。**
 ---
 
 **现在，请严格按照 `agent_self_development` 六阶段规范执行每个任务。**
@@ -50,6 +52,7 @@
 ---
 
 ## 版本历史
+- **v6.0.0** (2026-05-01)：修复过期路径引用，更新 agent-self-development 为自动注入式说明
 - **v5.0.0** (2026-04-27)：重构为钩子版
 - **v4.0.0** (2026-04-16)：重构为精简版，加入安全红线
 - **v3.0.0** (2026-04-11)：重构为精简版，详细三阶段规范移入agents-sop技能包

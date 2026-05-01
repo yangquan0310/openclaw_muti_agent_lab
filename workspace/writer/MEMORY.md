@@ -28,8 +28,7 @@
 
 ## 陈述性记忆(Semantic Memory)
 
-### 核心自我认知
-> 通过阅读每日日记进行更新
+### 知识网络
 ---
 
 ## 程序性记忆(Procedural Memory)
@@ -65,6 +64,7 @@
 
 | 版本 | 日期 | 更新内容 | 更新者 |
 |------|------|----------|--------|
+| v2.2.7 | 2026-05-01 | 每日自我更新：2026-04-30为连续第二日待命日，无新任务执行，规则保持稳定，核心自我文件无需更新 | 写作助手 |
 | v2.2.6 | 2026-04-30 | 每日自我更新：2026-04-29为待命日，无新任务执行，规则保持稳定，核心自我文件无需更新 | 写作助手 |
 | v2.2.5 | 2026-04-28 | 每日自我更新：2026-04-27为修复日，无新任务执行，规则已固化待验证 | 写作助手 |
 | v2.2.4 | 2026-04-27 | 每日自我更新：基于2026-04-26第1章修改失败事件，补充5条If-Then规则（计划制定前置条件、会话复用规范、工作记忆记录规范、上下文传递规范、用户情绪响应） | 写作助手 |
@@ -89,3 +89,13 @@
 - - Candidate: Possible Lasting Truths: ✅ 已完成: **文献综述更新**; 从25篇扩展到28篇; 新增实证研究3篇、综述1篇; 总引用次数332次 [confidence=0.58 evidence=memory/2026-04-14.md:386-389]; ✅ 已完成: 字数约15,000字; 版本号更新到v6.9 [confidence=0.58 evidence=memory/2026-04-14.md:390-391]; 7个主题文献综述任务: **Created Subagents**: [confidence=0.58 evi - confidence: 0.62 - evidence: memory/2026-04-21.md:324-326 [score=0.806 recalls=0 avg=0.620 source=memory/2026-04-23.md:203-205]
 <!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:229:231 -->
 - - Candidate: Possible Lasting Truths: ✅ 已完成: **文献综述更新**; 从25篇扩展到28篇; 新增实证研究3篇、综述1篇; 总引用次数332次 [confidence=0.58 evidence=memory/2026-04-14.md:386-389]; ✅ 已完成: 字数约15,000字; 版本号更新到v6.9 [confidence=0.58 evidence=memory/2026-04-14.md:390-391]; 7个主题文献综述任务: **Created Subagents**: [confidence=0.58 evi - confidence: 0.62 - evidence: memory/2026-04-20.md:329-331 [score=0.801 recalls=0 avg=0.620 source=memory/2026-04-22.md:188-190]
+
+## Promoted From Short-Term Memory (2026-05-01)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-25.md:284:286 -->
+- - Candidate: Possible Lasting Truths: - Candidate: Assistant: 每日自我更新任务已完成。以下是执行摘要： --- ## 每日自我更新执行摘要 (2026-04-20 00:25) ### ✅ 执行步骤 | 步骤 | 操作 | 状态 | |------|------|------| | 1 | 阅读前一日事件记忆 | ✅ 完成 | | 2 | 撰写/完善前一日日记 | ✅ 完成 | | 3 | 阅读核心自我配置文件 | ✅ 完成 | | 4 | 同化与顺应分析 | ✅ 完成 | | 5 | 检测更新触发信号 | ✅ 完成 - confidence: 0.62 - evidence: memory/2026-04-24.md:269-271 [score=0.869 recalls=0 avg=0.620 source=memory/2026-04-25.md:8-10]
+
+## Promoted From Short-Term Memory (2026-05-02)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-26.md:324:326 -->
+- - Candidate: Possible Lasting Truths: - Candidate: Assistant: 每日自我更新任务已完成。以下是执行摘要： --- ## 每日自我更新执行摘要 (2026-04-20 00:25) ### ✅ 执行步骤 | 步骤 | 操作 | 状态 | |------|------|------| | 1 | 阅读前一日事件记忆 | ✅ 完成 | | 2 | 撰写/完善前一日日记 | ✅ 完成 | | 3 | 阅读核心自我配置文件 | ✅ 完成 | | 4 | 同化与顺应分析 | ✅ 完成 | | 5 | 检测更新触发信号 | ✅ 完成 - confidence: 0.62 - evidence: memory/2026-04-24.md:269-271 [score=0.869 recalls=0 avg=0.620 source=memory/2026-04-26.md:123-125]

@@ -1,6 +1,6 @@
 {
-  "name": "openclaw-agent-self-development",
-  "version": "3.0.0",
+  "name": "agent-self-development",
+  "version": "3.2.1",
   "description": "OpenClaw plugin for agent self-development based on Piaget's cognitive development theory",
   "type": "module",
   "main": "src/index.js",
@@ -18,16 +18,19 @@
   "license": "MIT",
   "openclaw": {
     "minVersion": "2026.4.0",
-    "extensions": ["./src/index.js"]
+    "extensions": [
+      "./src/index.js"
+    ]
   },
   "files": [
     "src/",
-    "skills/",
     "openclaw.plugin.json",
     "README.md"
   ],
   "scripts": {
     "test": "node --test test/**/*.test.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "better-sqlite3": "^12.9.0"
+  }
 }

@@ -1,62 +1,148 @@
 /**
- * FlowAdapter — 任务流适配器
- * 封装核心 Flow API，实现计划工作流管理
+ * FlowAdapter — 任务流适配器（SQLite 版）
+ * 使用 ~/.openclaw/flows/registry.sqlite
  */
 
+import { join } from 'path';
+
+// 动态导入 better-sqlite3（兼容 ESM）
+let Database;
+async function getDatabase() {
+  if (!Database) {
+    const module = await import('better-sqlite3');
+    Database = module.default || module;
+  }
+  return Database;
+}
+
 export class FlowAdapter {
-  constructor(flowAPI) {
-    this.flow = flowAPI;
+  constructor(api, options = {}) {
+    this.api = api;
+    this.dbPath = options.dbPath || '/root/.openclaw/flows/registry.sqlite';
+    this.tablePrefix = options.tablePrefix || 'asd_';
+    this._db = null;
+  }
+
+  async _init() {
+    const Database = await getDatabase();
+    const db = new Database(this.dbPath);
+    db.exec(`
+      CREATE TABLE IF NOT EXISTS ${this.tablePrefix}flows (
+        flow_id TEXT PRIMARY KEY,
+        data TEXT NOT NULL,
+        created_at INTEGER,
+        updated_at INTEGER
+      );
+    `);
+    db.close();
+  }
+
+  async _getDb() {
+    if (!this._db) {
+      const Database = await getDatabase();
+      this._db = new Database(this.dbPath);
+    }
+    return this._db;
   }
 
   async createPlanFlow(plan) {
-    return this.flow.create({
+    await this._init();
+    const flowId = `plan-${plan.runId}`;
+    const flow = {
+      flowId,
       controllerId: 'agent-self-development/planning',
-      goal: plan.context.goal,
+      goal: plan.context?.goal || '',
       currentStep: 'draft',
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      revision: 1,
       stateJson: {
         plan,
-        phases: plan.execution.phases,
+        phases: plan.execution?.phases || [],
         currentPhase: 0,
         status: 'draft'
       }
-    });
+    };
+    if (this.api?.create) await this.api.create(flow);
+    const db = await this._getDb();
+    db.prepare(`INSERT OR REPLACE INTO ${this.tablePrefix}flows (flow_id, data, created_at, updated_at) VALUES (?, ?, ?, ?)`).run(flowId, JSON.stringify(flow), flow.createdAt, flow.updatedAt);
+    return flow;
+  }
+
+  async get(flowId) {
+    if (this.api?.get) {
+      const apiResult = await this.api.get(flowId);
+      if (apiResult) return apiResult;
+    }
+    await this._init();
+    const db = await this._getDb();
+    const row = db.prepare(`SELECT data FROM ${this.tablePrefix}flows WHERE flow_id = ?`).get(flowId);
+    return row ? JSON.parse(row.data) : null;
   }
 
   async advancePhase(flowId, phase) {
-    const f = await this.flow.get(flowId);
-    await this.flow.update({
-      flowId,
-      expectedRevision: f.revision,
-      currentStep: phase.id,
-      stateJson: {
-        ...f.stateJson,
-        currentPhase: f.stateJson.currentPhase + 1
-      }
-    });
+    await this._init();
+    const db = await this._getDb();
+    const row = db.prepare(`SELECT data FROM ${this.tablePrefix}flows WHERE flow_id = ?`).get(flowId);
+    if (!row) {
+      return null;
+    }
+    const flow = JSON.parse(row.data);
+    flow.currentStep = phase.id || flow.currentStep;
+    flow.updatedAt = Date.now();
+    flow.revision = (flow.revision || 1) + 1;
+    flow.stateJson.currentPhase = (flow.stateJson.currentPhase || 0) + 1;
+    if (this.api?.update) {
+      await this.api.update({ flowId, expectedRevision: flow.revision - 1, currentStep: flow.currentStep, stateJson: flow.stateJson });
+    }
+    db.prepare(`UPDATE ${this.tablePrefix}flows SET data = ?, updated_at = ? WHERE flow_id = ?`).run(JSON.stringify(flow), flow.updatedAt, flowId);
+    return flow;
   }
 
   async waitForApproval(flowId) {
-    const f = await this.flow.get(flowId);
-    await this.flow.setWaiting({
-      flowId,
-      expectedRevision: f.revision,
-      currentStep: 'pending_approval',
-      waitJson: { kind: 'user_confirm', reason: 'Plan pending approval' }
-    });
+    await this._init();
+    const db = await this._getDb();
+    const row = db.prepare(`SELECT data FROM ${this.tablePrefix}flows WHERE flow_id = ?`).get(flowId);
+    if (!row) {
+      return null;
+    }
+    const flow = JSON.parse(row.data);
+    flow.currentStep = 'pending_approval';
+    flow.updatedAt = Date.now();
+    flow.revision = (flow.revision || 1) + 1;
+    flow.stateJson.status = 'pending_approval';
+    if (this.api?.setWaiting) {
+      await this.api.setWaiting({ flowId, expectedRevision: flow.revision - 1, currentStep: 'pending_approval', waitJson: { kind: 'user_confirm', reason: 'Plan pending approval' } });
+    }
+    db.prepare(`UPDATE ${this.tablePrefix}flows SET data = ?, updated_at = ? WHERE flow_id = ?`).run(JSON.stringify(flow), flow.updatedAt, flowId);
+    return flow;
   }
 
   async getByRunId(runId) {
-    // TODO: lookup flow by runId
+    await this._init();
+    const db = await this._getDb();
+    const rows = db.prepare(`SELECT data FROM ${this.tablePrefix}flows`).all();
+    for (const row of rows) {
+      const flow = JSON.parse(row.data);
+      if (flow.stateJson?.plan?.runId === runId) return flow;
+    }
     return null;
   }
 
   async getByPhase(phaseId) {
-    // TODO: lookup flow by phaseId
+    await this._init();
+    const db = await this._getDb();
+    const rows = db.prepare(`SELECT data FROM ${this.tablePrefix}flows`).all();
+    for (const row of rows) {
+      const flow = JSON.parse(row.data);
+      const phases = flow.stateJson?.phases || [];
+      if (phases.some(p => p.id === phaseId)) return flow;
+    }
     return null;
   }
 
   async runSubtask(flowId, phase) {
-    // TODO: implement subtask execution
+    console.log(`[FlowAdapter] runSubtask: ${flowId} phase=${phase?.id}`);
     return null;
   }
 }

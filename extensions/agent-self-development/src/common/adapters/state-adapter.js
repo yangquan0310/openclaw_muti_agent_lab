@@ -1,196 +1,154 @@
 /**
- * StateAdapter — 状态存储适配器
- * 隔离核心 State API 变化，提供统一接口
- * 状态持久化到 /root/.openclaw/state/agent-self-development/
+ * StateAdapter — 状态存储适配器（聚合 JSON 文件版）
+ * 使用 ~/.openclaw/state/agent-self-development/{type}.json
  */
 
-import { writeFileSync, readFileSync, existsSync, mkdirSync, readdirSync, unlinkSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
+import { dirname } from 'path';
 
-const STATE_DIR = '/root/.openclaw/state/agent-self-development';
+const DEFAULT_DIR = '/root/.openclaw/state/agent-self-development';
 
-function ensureDir() {
-  if (!existsSync(STATE_DIR)) {
-    mkdirSync(STATE_DIR, { recursive: true });
+function ensureDir(dir) {
+  try { mkdirSync(dir, { recursive: true }); } catch {}
+}
+
+function loadJson(path) {
+  if (!existsSync(path)) return {};
+  try {
+    return JSON.parse(readFileSync(path, 'utf8'));
+  } catch {
+    return {};
   }
 }
 
-function getPath(key) {
-  ensureDir();
-  // 将 key 中的特殊字符替换为安全文件名
-  const safeKey = key.replace(/[^a-zA-Z0-9_-]/g, '_');
-  return join(STATE_DIR, `${safeKey}.json`);
+function saveJson(path, data) {
+  ensureDir(dirname(path));
+  writeFileSync(path, JSON.stringify(data, null, 2), 'utf8');
 }
 
 export class StateAdapter {
-  constructor(stateAPI) {
-    this.state = stateAPI;
+  constructor(api, options = {}) {
+    this.api = api;
+    this.dir = options.dir || DEFAULT_DIR;
+    ensureDir(this.dir);
   }
 
-  async transaction(operations) {
-    return this.state.transaction(operations);
+  _file(type) {
+    return `${this.dir}/${type}.json`;
   }
 
-  // 持久化辅助方法
-  _saveToFile(key, data) {
-    const path = getPath(key);
-    if (data === null || data === undefined) {
-      if (existsSync(path)) {
-        unlinkSync(path);
-      }
-      return;
+  _get(type, key) {
+    const data = loadJson(this._file(type));
+    return data[key];
+  }
+
+  _set(type, key, value) {
+    const path = this._file(type);
+    const data = loadJson(path);
+    if (value === null || value === undefined) {
+      delete data[key];
+    } else {
+      data[key] = value;
     }
-    writeFileSync(path, JSON.stringify(data, null, 2), 'utf8');
+    saveJson(path, data);
   }
 
-  _loadFromFile(key) {
-    const path = getPath(key);
-    if (!existsSync(path)) return undefined;
-    try {
-      const content = readFileSync(path, 'utf8');
-      return JSON.parse(content);
-    } catch {
-      return undefined;
-    }
-  }
-
-  _deleteFile(key) {
-    const path = getPath(key);
-    if (existsSync(path)) {
-      unlinkSync(path);
-    }
-  }
-
-  _listFiles(prefix) {
-    ensureDir();
-    const files = readdirSync(STATE_DIR);
-    const safePrefix = prefix.replace(/[^a-zA-Z0-9_-]/g, '_');
-    return files
-      .filter(f => f.startsWith(safePrefix) && f.endsWith('.json'))
-      .map(f => join(STATE_DIR, f));
+  _list(type, prefix) {
+    const data = loadJson(this._file(type));
+    return Object.entries(data)
+      .filter(([k]) => !prefix || k.startsWith(prefix))
+      .map(([, v]) => v);
   }
 
   // Plan
   async savePlan(runId, plan) {
-    const key = `plan:${runId}`;
-    await this.state.set(key, plan);
-    this._saveToFile(key, plan);
+    if (this.api?.set) await this.api.set(`plan:${runId}`, plan);
+    this._set('plans', runId, plan);
   }
 
   async getPlan(runId) {
-    const key = `plan:${runId}`;
-    const memory = await this.state.get(key);
-    if (memory !== undefined) return memory;
-    return this._loadFromFile(key);
+    if (this.api?.get) {
+      const mem = await this.api.get(`plan:${runId}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('plans', runId);
   }
 
   // Session
   async saveSession(sessionId, session) {
-    const key = `session:${sessionId}`;
-    await this.state.set(key, session);
-    this._saveToFile(key, session);
+    if (this.api?.set) await this.api.set(`session:${sessionId}`, session);
+    this._set('sessions', sessionId, session);
   }
 
   async getSession(sessionId) {
-    const key = `session:${sessionId}`;
-    const memory = await this.state.get(key);
-    if (memory !== undefined) return memory;
-    return this._loadFromFile(key);
+    if (this.api?.get) {
+      const mem = await this.api.get(`session:${sessionId}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('sessions', sessionId);
   }
 
   async deleteSession(sessionId) {
-    const key = `session:${sessionId}`;
-    await this.state.set(key, null);
-    this._deleteFile(key);
+    if (this.api?.set) await this.api.set(`session:${sessionId}`, null);
+    this._set('sessions', sessionId, null);
   }
 
   // Deviation
   async saveDeviation(runId, phaseId, deviation) {
-    const key = `deviation:${runId}:${phaseId}`;
-    await this.state.set(key, deviation);
-    this._saveToFile(key, deviation);
+    const key = `${runId}:${phaseId}`;
+    if (this.api?.set) await this.api.set(`deviation:${key}`, deviation);
+    this._set('deviations', key, deviation);
   }
 
   async getDeviation(runId, phaseId) {
-    const key = `deviation:${runId}:${phaseId}`;
-    const memory = await this.state.get(key);
-    if (memory !== undefined) return memory;
-    return this._loadFromFile(key);
+    const key = `${runId}:${phaseId}`;
+    if (this.api?.get) {
+      const mem = await this.api.get(`deviation:${key}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('deviations', key);
   }
 
   async listDeviationsByRunId(runId) {
-    const keys = await this.state.keys?.() || [];
-    const prefix = `deviation:${runId}:`;
-    const deviationKeys = keys.filter(k => k.startsWith(prefix));
-    
-    // 同时从文件加载
-    const filePaths = this._listFiles(prefix);
-    const fileKeys = filePaths.map(p => {
-      const basename = p.replace(STATE_DIR + '/', '').replace('.json', '');
-      // 还原 key 格式
-      return basename.replace(/_/g, ':');
-    });
-    
-    const allKeys = [...new Set([...deviationKeys, ...fileKeys])];
-    const deviations = await Promise.all(
-      allKeys.map(k => this.getDeviation(
-        k.split(':')[1], 
-        k.split(':')[2]
-      ))
-    );
-    return deviations.filter(Boolean);
+    return this._list('deviations', `${runId}:`);
   }
 
   // Attribution
   async saveAttribution(runId, deviationId, attribution) {
-    const key = `attribution:${runId}:${deviationId}`;
-    await this.state.set(key, attribution);
-    this._saveToFile(key, attribution);
+    const key = `${runId}:${deviationId}`;
+    if (this.api?.set) await this.api.set(`attribution:${key}`, attribution);
+    this._set('attributions', key, attribution);
   }
 
   async getAttribution(runId, deviationId) {
-    const key = `attribution:${runId}:${deviationId}`;
-    const memory = await this.state.get(key);
-    if (memory !== undefined) return memory;
-    return this._loadFromFile(key);
+    const key = `${runId}:${deviationId}`;
+    if (this.api?.get) {
+      const mem = await this.api.get(`attribution:${key}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('attributions', key);
   }
 
-  // Event（临时存储，agent_end 时转移到 Memory）
+  // Event
   async saveEvent(eventId, event) {
-    const key = `event:${eventId}`;
-    await this.state.set(key, event);
-    this._saveToFile(key, event);
+    if (this.api?.set) await this.api.set(`event:${eventId}`, event);
+    this._set('events', eventId, event);
   }
 
   async getEvent(eventId) {
-    const key = `event:${eventId}`;
-    const memory = await this.state.get(key);
-    if (memory !== undefined) return memory;
-    return this._loadFromFile(key);
+    if (this.api?.get) {
+      const mem = await this.api.get(`event:${eventId}`);
+      if (mem !== undefined && mem !== null) return mem;
+    }
+    return this._get('events', eventId);
   }
 
   async deleteEvent(eventId) {
-    const key = `event:${eventId}`;
-    await this.state.set(key, null);
-    this._deleteFile(key);
+    if (this.api?.set) await this.api.set(`event:${eventId}`, null);
+    this._set('events', eventId, null);
   }
 
   async listEvents() {
-    const keys = await this.state.keys?.() || [];
-    const prefix = 'event:';
-    const eventKeys = keys.filter(k => k.startsWith(prefix));
-    
-    // 同时从文件加载
-    const filePaths = this._listFiles(prefix);
-    const fileKeys = filePaths.map(p => {
-      const basename = p.replace(STATE_DIR + '/', '').replace('.json', '');
-      return basename.replace(/_/g, ':');
-    });
-    
-    const allKeys = [...new Set([...eventKeys, ...fileKeys])];
-    const events = await Promise.all(
-      allKeys.map(k => this.getEvent(k.replace(/^event:/, '')))
-    );
-    return events.filter(Boolean);
+    return this._list('events');
   }
 }

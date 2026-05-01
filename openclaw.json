@@ -12,7 +12,40 @@
       },
       "model": {
         "primary": "kimicode/kimi-for-coding"
-      }
+      },
+      "skills": [
+        "agent-browser-clawdbot",
+        "docx-cn",
+        "docx-generator",
+        "excel-xlsx",
+        "find-skills",
+        "github",
+        "ima-skills",
+        "manage-project",
+        "memory-hygiene",
+        "openclaw-tavily-search",
+        "pdf",
+        "pdf-generator",
+        "pdf-processing",
+        "pptx-2",
+        "pptx-generator",
+        "scihub-paper-downloader",
+        "Skill-developer",
+        "skillhub-preference",
+        "summarize",
+        "tencentcloud-lighthouse-skill",
+        "tencent-cos-skill",
+        "tencent-docs",
+        "tencent-meeting-skill",
+        "web-tools-guide",
+        "zotero",
+        "zotero-local-pdf-import",
+        "zotero-scholar",
+        "zotero-vectorize"
+      ],
+      "userTimezone": "Asia/Shanghai",
+      "thinkingDefault": "off",
+      "verboseDefault": "off"
     },
     "list": [
       {
@@ -20,6 +53,36 @@
         "name": "main",
         "workspace": "/root/.openclaw/workspace/",
         "agentDir": "/root/.openclaw/agents/main/agent",
+        "skills": [
+          "agent-browser-clawdbot",
+          "docx-cn",
+          "docx-generator",
+          "excel-xlsx",
+          "find-skills",
+          "github",
+          "ima-skills",
+          "manage-project",
+          "memory-hygiene",
+          "openclaw-tavily-search",
+          "pdf",
+          "pdf-generator",
+          "pdf-processing",
+          "pptx-2",
+          "pptx-generator",
+          "scihub-paper-downloader",
+          "Skill-developer",
+          "skillhub-preference",
+          "summarize",
+          "tencentcloud-lighthouse-skill",
+          "tencent-cos-skill",
+          "tencent-docs",
+          "tencent-meeting-skill",
+          "web-tools-guide",
+          "zotero",
+          "zotero-local-pdf-import",
+          "zotero-scholar",
+          "zotero-vectorize"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
@@ -33,12 +96,39 @@
         "name": "steward",
         "workspace": "/root/.openclaw/workspace/steward",
         "agentDir": "/root/.openclaw/agents/steward/agent",
+        "skills": [
+          "find-skills",
+          "skillhub-preference",
+          "manage-project",
+          "docx-cn",
+          "docx-generator",
+          "pdf",
+          "pdf-generator",
+          "pdf-processing",
+          "pptx-2",
+          "pptx-generator",
+          "tencent-docs",
+          "excel-xlsx",
+          "web-tools-guide",
+          "openclaw-tavily-search",
+          "ima-skills",
+          "tencentcloud-lighthouse-skill",
+          "tencent-cos-skill",
+          "tencent-meeting-skill",
+          "github",
+          "memory-hygiene",
+          "Skill-developer",
+          "agent-browser-clawdbot"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
             "manage-project",
             "Skill-developer"
-          ]
+          ],
+          "elevated": {
+            "enabled": false
+          }
         }
       },
       {
@@ -46,12 +136,35 @@
         "name": "mathematician",
         "workspace": "/root/.openclaw/workspace/mathematician",
         "agentDir": "/root/.openclaw/agents/mathematician/agent",
+        "skills": [
+          "find-skills",
+          "skillhub-preference",
+          "zotero",
+          "zotero-vectorize",
+          "zotero-local-pdf-import",
+          "zotero-scholar",
+          "scihub-paper-downloader",
+          "summarize",
+          "manage-project",
+          "pdf",
+          "pdf-processing",
+          "docx-cn",
+          "docx-generator",
+          "web-tools-guide",
+          "openclaw-tavily-search",
+          "feishu-create-doc",
+          "feishu-update-doc",
+          "feishu-fetch-doc"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
             "manage-project",
             "Skill-developer"
-          ]
+          ],
+          "elevated": {
+            "enabled": false
+          }
         }
       },
       {
@@ -59,12 +172,35 @@
         "name": "physicist",
         "workspace": "/root/.openclaw/workspace/physicist",
         "agentDir": "/root/.openclaw/agents/physicist/agent",
+        "skills": [
+          "find-skills",
+          "skillhub-preference",
+          "zotero",
+          "zotero-vectorize",
+          "zotero-local-pdf-import",
+          "zotero-scholar",
+          "scihub-paper-downloader",
+          "summarize",
+          "manage-project",
+          "pdf",
+          "pdf-processing",
+          "docx-cn",
+          "docx-generator",
+          "web-tools-guide",
+          "openclaw-tavily-search",
+          "feishu-create-doc",
+          "feishu-update-doc",
+          "feishu-fetch-doc"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
             "manage-project",
             "Skill-developer"
-          ]
+          ],
+          "elevated": {
+            "enabled": false
+          }
         }
       },
       {
@@ -72,12 +208,35 @@
         "name": "psychologist",
         "workspace": "/root/.openclaw/workspace/psychologist",
         "agentDir": "/root/.openclaw/agents/psychologist/agent",
+        "skills": [
+          "find-skills",
+          "skillhub-preference",
+          "zotero",
+          "zotero-vectorize",
+          "zotero-local-pdf-import",
+          "zotero-scholar",
+          "scihub-paper-downloader",
+          "summarize",
+          "manage-project",
+          "pdf",
+          "pdf-processing",
+          "docx-cn",
+          "docx-generator",
+          "web-tools-guide",
+          "openclaw-tavily-search",
+          "feishu-create-doc",
+          "feishu-update-doc",
+          "feishu-fetch-doc"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
             "manage-project",
             "Skill-developer"
-          ]
+          ],
+          "elevated": {
+            "enabled": false
+          }
         }
       },
       {
@@ -85,12 +244,34 @@
         "name": "writer",
         "workspace": "/root/.openclaw/workspace/writer",
         "agentDir": "/root/.openclaw/agents/writer/agent",
+        "skills": [
+          "find-skills",
+          "skillhub-preference",
+          "docx-cn",
+          "docx-generator",
+          "pdf",
+          "pdf-generator",
+          "pdf-processing",
+          "pptx-2",
+          "pptx-generator",
+          "tencent-docs",
+          "excel-xlsx",
+          "summarize",
+          "zotero",
+          "manage-project",
+          "feishu-create-doc",
+          "feishu-update-doc",
+          "feishu-fetch-doc"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
             "manage-project",
             "Skill-developer"
-          ]
+          ],
+          "elevated": {
+            "enabled": false
+          }
         }
       },
       {
@@ -98,12 +279,34 @@
         "name": "reviewer",
         "workspace": "/root/.openclaw/workspace/reviewer",
         "agentDir": "/root/.openclaw/agents/reviewer/agent",
+        "skills": [
+          "find-skills",
+          "skillhub-preference",
+          "docx-cn",
+          "docx-generator",
+          "pdf",
+          "pdf-generator",
+          "pdf-processing",
+          "pptx-2",
+          "pptx-generator",
+          "tencent-docs",
+          "excel-xlsx",
+          "summarize",
+          "zotero",
+          "manage-project",
+          "feishu-create-doc",
+          "feishu-update-doc",
+          "feishu-fetch-doc"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
             "manage-project",
             "Skill-developer"
-          ]
+          ],
+          "elevated": {
+            "enabled": false
+          }
         }
       },
       {
@@ -111,12 +314,34 @@
         "name": "TeachingAssistant",
         "workspace": "/root/.openclaw/workspace/teaching",
         "agentDir": "/root/.openclaw/agents/teachingassistant/agent",
+        "skills": [
+          "find-skills",
+          "skillhub-preference",
+          "manage-project",
+          "docx-cn",
+          "docx-generator",
+          "pdf",
+          "pdf-generator",
+          "pdf-processing",
+          "pptx-2",
+          "pptx-generator",
+          "tencent-docs",
+          "excel-xlsx",
+          "summarize",
+          "zotero",
+          "feishu-create-doc",
+          "feishu-update-doc",
+          "feishu-fetch-doc"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
             "manage-project",
             "Skill-developer"
-          ]
+          ],
+          "elevated": {
+            "enabled": false
+          }
         }
       },
       {
@@ -124,12 +349,32 @@
         "name": "studentaffairsassistant",
         "workspace": "/root/.openclaw/workspace/studentaffairsassistant",
         "agentDir": "/root/.openclaw/agents/studentaffairsassistant/agent",
+        "skills": [
+          "find-skills",
+          "skillhub-preference",
+          "docx-cn",
+          "docx-generator",
+          "pdf",
+          "pdf-generator",
+          "pdf-processing",
+          "pptx-2",
+          "pptx-generator",
+          "tencent-docs",
+          "excel-xlsx",
+          "summarize",
+          "feishu-create-doc",
+          "feishu-update-doc",
+          "feishu-fetch-doc"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
             "manage-project",
             "Skill-developer"
-          ]
+          ],
+          "elevated": {
+            "enabled": false
+          }
         }
       },
       {
@@ -137,12 +382,32 @@
         "name": "academicassistant",
         "workspace": "/root/.openclaw/workspace/academicassistant",
         "agentDir": "/root/.openclaw/agents/academicassistant/agent",
+        "skills": [
+          "find-skills",
+          "skillhub-preference",
+          "docx-cn",
+          "docx-generator",
+          "pdf",
+          "pdf-generator",
+          "pdf-processing",
+          "pptx-2",
+          "pptx-generator",
+          "tencent-docs",
+          "excel-xlsx",
+          "summarize",
+          "feishu-create-doc",
+          "feishu-update-doc",
+          "feishu-fetch-doc"
+        ],
         "tools": {
           "alsoAllow": [
             "agent_self_development",
             "manage-project",
             "Skill-developer"
-          ]
+          ],
+          "elevated": {
+            "enabled": false
+          }
         }
       }
     ]
@@ -173,7 +438,11 @@
   },
   "tools": {
     "profile": "full",
-    "deny": []
+    "deny": [],
+    "elevated": {
+      "enabled": true,
+      "allowFrom": {}
+    }
   },
   "skills": {
     "install": {
@@ -188,7 +457,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.21",
-    "lastTouchedAt": "2026-04-29T17:51:08.648Z"
+    "lastTouchedAt": "2026-05-01T08:55:34.311Z"
   },
   "plugins": {
     "entries": {
@@ -272,6 +541,9 @@
       },
       "deepseek": {
         "enabled": true
+      },
+      "moonshot": {
+        "enabled": true
       }
     },
     "installs": {
@@ -340,10 +612,10 @@
       },
       "agent-self-development": {
         "source": "archive",
-        "sourcePath": "/root/openclaw-integration-design/openclaw-agent-self-development-3.0.0.tgz",
+        "sourcePath": "/tmp/agent-self-development-3.2.1.tgz",
         "installPath": "/root/.openclaw/extensions/agent-self-development",
-        "version": "3.0.0",
-        "installedAt": "2026-04-29T17:24:50.818Z"
+        "version": "3.2.1",
+        "installedAt": "2026-04-30T16:58:06.767Z"
       }
     },
     "allow": [
@@ -360,7 +632,8 @@
       "qqbot",
       "wecom",
       "agent-self-development",
-      "deepseek"
+      "deepseek",
+      "moonshot"
     ],
     "load": {
       "paths": []
@@ -398,7 +671,7 @@
             "id": "kimi-for-coding",
             "name": "kimi for coding",
             "api": "anthropic-messages",
-            "reasoning": false,
+            "reasoning": true,
             "input": [
               "text"
             ],
@@ -420,11 +693,113 @@
         "models": [
           {
             "id": "deepseek-v4-flash",
-            "name": "DeepSeek V4 Flash"
+            "name": "DeepSeek V4 Flash",
+            "contextWindow": 256000
           },
           {
             "id": "deepseek-v4-pro",
-            "name": "DeepSeek V4 Pro"
+            "name": "DeepSeek V4 Pro",
+            "reasoning": true,
+            "contextWindow": 256000
+          }
+        ]
+      },
+      "moonshot": {
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "apiKey": "${KIMI_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "kimi-k2-thinking",
+            "name": "Kimi K2 Thinking",
+            "contextWindow": 256000
+          },
+          {
+            "id": "kimi-k2-thinking-turbo",
+            "name": "Kimi K2 Thinking Turbo",
+            "contextWindow": 256000
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "input": [
+              "text",
+              "image"
+            ],
+            "contextWindow": 256000
+          },
+          {
+            "id": "moonshot-v1-128k",
+            "name": "Moonshot V1 128K",
+            "contextWindow": 256000
+          },
+          {
+            "id": "kimi-k2.6",
+            "name": "Kimi K2.6",
+            "input": [
+              "text",
+              "image"
+            ],
+            "reasoning": true,
+            "contextWindow": 256000
+          }
+        ]
+      },
+      "tencenttokenplan": {
+        "baseUrl": "https://api.lkeap.cloud.tencent.com/plan/v3",
+        "apiKey": "${TENCENTTOKENPLAN_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "tc-code-latest",
+            "name": "自动",
+            "input": [
+              "text",
+              "image"
+            ],
+            "contextWindow": 256000
+          },
+          {
+            "id": "hunyuan-2.0-instruct",
+            "name": "Tencent HY 2.0 Instruct",
+            "contextWindow": 256000
+          },
+          {
+            "id": "hunyuan-2.0-thinking",
+            "name": "Tencent HY 2.0 Think",
+            "contextWindow": 256000
+          },
+          {
+            "id": "minimax-m2.5",
+            "name": "MiniMax-M2.5",
+            "contextWindow": 256000
+          },
+          {
+            "id": "minimax-m2.7",
+            "name": "MiniMax-M2.7",
+            "reasoning": true,
+            "contextWindow": 256000
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi-K2.5",
+            "input": [
+              "text",
+              "image"
+            ],
+            "reasoning": true,
+            "contextWindow": 256000
+          },
+          {
+            "id": "glm-5",
+            "name": "GLM-5",
+            "contextWindow": 256000
+          },
+          {
+            "id": "glm-5.1",
+            "name": "GLM-5.1",
+            "reasoning": true,
+            "contextWindow": 256000
           }
         ]
       }
