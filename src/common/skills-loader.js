@@ -15,7 +15,6 @@ export class SkillLoader {
   constructor(skillsDir) {
     this.skillsDir = skillsDir || DEFAULT_SKILLS_DIR;
     this.skillMap = {
-      assessment: 'metacognition/assessment/SKILL.md',
       planning: 'metacognition/planning/SKILL.md',
       monitoring: 'metacognition/monitoring/SKILL.md',
       regulation: 'metacognition/regulation/SKILL.md',

@@ -29,7 +29,6 @@ export class MetacognitionModule {
     this.deviationManager = deviationManager;
     this.attributionManager = attributionManager;
     this.enabled = this.config.enabled !== false;
-    this.assessmentEnabled = this.enabled && this.config.assessment !== false;
     this.planningEnabled = this.enabled && this.config.planning !== false;
     this.monitoringEnabled = this.enabled && this.config.monitoring !== false;
   }
@@ -41,22 +40,15 @@ export class MetacognitionModule {
     }
 
     this.logger.info('[Meta] 注册元认知 Hooks');
-    this._registerAssessment();
     this._registerPlanning();
     this._registerMonitoring();
     this._registerCleanup();
   }
 
-  // ── 任务评估: before_prompt_build（无 task 时）──
-  _registerAssessment() {
-    if (!this.assessmentEnabled) return;
-    this.api.on('before_prompt_build', this.onBeforePromptBuild.bind(this), { priority: 55 });
-  }
-
-  // ── Plan 制定与确认: before_prompt_build（有 task 时）──
+  // ── Plan 制定与确认: before_prompt_build ──
   _registerPlanning() {
     if (!this.planningEnabled) return;
-    // planning 逻辑已合并到 onBeforePromptBuild，priority 55 统一处理
+    this.api.on('before_prompt_build', this.onBeforePromptBuild.bind(this), { priority: 55 });
   }
 
   // ── 监控: llm_output ──
@@ -119,13 +111,13 @@ export class MetacognitionModule {
 
     const task = await this._getTask(runId);
 
-    // ── 阶段一：无 task → 注入 assessment skill ──
+    // ── 阶段一：无 task → 注入 planning skill（评估阶段）──
     if (!task) {
-      const assessmentSkill = await this.skillLoader.load('assessment');
-      if (!assessmentSkill) return;
-      this.logger.debug(`[Meta] 注入 assessment skill: runId=${runId}`);
+      const planningSkill = await this.skillLoader.load('planning');
+      if (!planningSkill) return;
+      this.logger.debug(`[Meta] 注入 planning skill（评估阶段）: runId=${runId}`);
       return {
-        prependSystemContext: `${assessmentSkill}\n\n【当前状态】本次会话尚无 task。请根据上方 assessment skill 评估用户任务复杂度，决定是否需要制定 Plan。\n`
+        prependSystemContext: `${planningSkill}\n\n【当前状态】本次会话尚无 task。请根据上方 planning skill 中的"职责 A：任务评估"章节，评估用户任务复杂度，决定是否需要制定 Plan。\n`
       };
     }
 
