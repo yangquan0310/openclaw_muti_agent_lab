@@ -3,7 +3,7 @@ name: monitoring
 description: >
   元认知监控子模块。指导 Agent 在 Plan active 阶段检测偏差并创建 Deviation 对象。
   核心原则：发现预期与实际的差距时，创建 Deviation 记录并触发调节。
-version: 3.0.0
+version: 3.3.0
 injected_at: llm_output
 module: metacognition
 ---
@@ -22,15 +22,14 @@ module: metacognition
 
 | 时机 | 插件已完成的操作 | 存储位置 |
 |------|-----------------|----------|
-| 每次 LLM 输出后 | 缓存最新输出到 Plan | `~/.openclaw/state/agent-self-development/plans.json` |
-| 注入前 | 读取当前 Plan，确认 status === `"active"` | 同上 |
+| 每次 LLM 输出后 | 缓存最新输出到 task.plan | `task:{runId}.plan`（统一 task JSON） |
+| 注入前 | 读取当前 task，确认 status === `"active"` | 同上 |
 
 ---
 
 ## 核心对象：Deviation（偏差记录）
 
-**存储位置**：`~/.openclaw/state/agent-self-development/deviations.json`  
-**存储键**：`{runId}:{phaseId}`
+**存储位置**：`task:{runId}.event.deviations`（统一 task JSON 内）
 
 ```json
 {
@@ -81,7 +80,8 @@ module: metacognition
    - 确定 `type`：`progress`（进度）/ `quality`（质量）/ `resource`（资源）/ `goal`（目标）
    - 确定 `severity`：`minor` / `major` / `critical`
    - 撰写 `description`：描述预期是什么、实际是什么、差距在哪里
-   - 通知插件保存 Deviation：`deviationManager.createDeviation(runId, phaseId, deviationData)`
+   - 将 Deviation 追加到 `task.event.deviations`
+   - 通知插件更新 task（插件通过 `stateAdapter.saveTask()` 保存）
    - Deviation 保存后，**触发 regulation**（请求注入 regulation skill）
 
 4. **阶段完成判定**
@@ -93,7 +93,7 @@ module: metacognition
 **插件已自动完成的**（执行层，无需你操作）：
 - 已缓存本次 LLM 输出到 Plan
 - 已确认 Plan.status 为 `"active"` 才注入本 skill
-- 已通过 `deviationManager.createDeviation()` 保存 Deviation 记录
+- 已将 Deviation 追加到 `task.event.deviations`，并通过 `stateAdapter.saveTask()` 保存
 
 **你可以参考的上下文**（注入时附加在 skill 下方）：
 - 当前阶段索引和 ID
