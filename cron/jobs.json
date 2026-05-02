@@ -27,7 +27,6 @@
     {
       "id": "b6a6b07d-384d-43fb-ab80-0b713e8a8289",
       "agentId": "main",
-      "sessionKey": "agent:steward:main",
       "name": "每日凌晨自动提交推送Git",
       "enabled": true,
       "deleteAfterRun": false,
@@ -37,18 +36,23 @@
         "expr": "00 04 * * *",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "session:CORN:main的定时任务",
+      "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
         "message": "执行每日Git自动推送任务 \n打开.openclaw，\n查看更新，修改README.md；\n核查所有推送文件是否存在硬编码 API Key，使用系统变量替换；\n将本地任务同步给development，然后推送到development分支；\n日志路径：events/YYYY-MM-DD/HH-MM-SS-git-push.md",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "none",
         "channel": "feishu",
         "to": "oc_cd80162eb81e39f77160a0daab2a6ab8",
         "bestEffort": false
+      },
+      "failureAlert": {
+        "after": 1,
+        "channel": "feishu",
+        "to": "oc_cd80162eb81e39f77160a0daab2a6ab8"
       },
       "state": {}
     },
