@@ -22,9 +22,8 @@ module: metacognition
 
 | 时机 | 插件已完成的操作 | 存储位置 |
 |------|-----------------|----------|
-| 收到复杂任务后 | 通过 `generatePlan()` 生成 Plan 模板（含 context、workspace、execution） | 内存 |
-| 收到复杂任务后 | 通过 `assignSessionsToPhases()` 推断 sessionType 并预分配任务空间 | 内存 |
-| Plan 生成后 | 保存到统一 task JSON：`task:{runId}.plan` | `~/.openclaw/state/agent-self-development/tasks.json` |
+| 用户确认需要 Plan 后 | 插件创建 task JSON 并生成 Plan 模板 | `state/tasks/{runId}.json` |
+| Agent 制定 Plan 时 | Agent 自行完善 context、phases、约束条件 | 内存 |
 
 当前 Plan 状态由插件维护在统一 task JSON 中，Agent 负责理解状态并做出正确决策，**无需直接操作存储文件**。
 
@@ -78,14 +77,14 @@ module: metacognition
 |------|------|------|-----------|
 | `runId` | string | 本次运行唯一标识 | 插件注入 |
 | `status` | string | `draft` / `pending_approval` / `active` / `completed` / `revising` | **由 Agent 决策后通知插件更新** |
-| `plan.prompt` | string | 用户原始输入（截断500字） | 插件在 `before_prompt_build` 时填充 |
-| `plan.context.goal` | string | 任务目标：最终要达成什么 | 插件预生成，Agent 可调整 |
-| `plan.context.constraints` | string[] | 约束条件 | 插件预生成，Agent 可增删 |
-| `plan.context.successCriteria` | string[] | 验收标准 | 插件预生成，Agent 可调整 |
+| `plan.prompt` | string | 用户原始输入（截断500字） | 插件创建 task 时填充 |
+| `plan.context.goal` | string | 任务目标：最终要达成什么 | Agent 制定 Plan 时填写 |
+| `plan.context.constraints` | string[] | 约束条件 | Agent 制定 Plan 时填写 |
+| `plan.context.successCriteria` | string[] | 验收标准 | Agent 制定 Plan 时填写 |
 | `plan.workspace.sessions` | object[] | 已创建的任务空间列表 | 插件在阶段执行时维护 |
 | `plan.workspace.artifacts` | string[] | 已产出的文档/文件列表 | Agent 在阶段完成后追加 |
-| `plan.workspace.tools` | string[] | 可用工具列表 | 插件根据任务类型预配置 |
-| `plan.execution.phases` | object[] | 阶段列表 | 插件预生成，Agent 可增删改 |
+| `plan.workspace.tools` | string[] | 可用工具列表 | Agent 根据任务类型选择 |
+| `plan.execution.phases` | object[] | 阶段列表 | Agent 制定 Plan 时设计 |
 | `plan.execution.currentPhase` | number | 当前阶段索引 | 插件在阶段推进时维护 |
 | `event.deviations` | object[] | 偏差记录列表 | Monitoring 阶段自动追加 |
 | `event.attributions` | object[] | 归因分析列表 | Regulation 阶段 Agent 填写 |
@@ -143,10 +142,8 @@ module: metacognition
    - （插件通过 `stateAdapter.saveTask()` 执行实际存储更新）
 
 **插件已自动完成的**（执行层，无需你操作）：
-- 已通过 `generatePlan()` 根据任务类型生成 Plan 模板
-- 已通过 `assignSessionsToPhases()` 推断 sessionType 和 taskFamily
-- 已保存到统一 task JSON：`task:{runId}.plan`
-- 已根据 `inferTaskFamily()` 规则为阶段预分配 `sessionId`
+- 已根据用户 prompt 生成 Plan 模板（含 context、workspace、execution）
+- 已保存到 `state/tasks/{runId}.json`
 
 **你可以参考的上下文**（注入时附加在 skill 下方）：
 - task.status（draft / pending_approval / active）
@@ -245,5 +242,6 @@ completed（完成）
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v3.3.0 | 2026-04-29 | 适配统一 task JSON：Plan 存储在 task.plan 中；状态流转增加 revising；移除 destroyed 状态；所有状态操作改为 stateAdapter.saveTask() |
+| v3.4.0 | 2026-04-29 | 延迟创建：Plan 不再预生成，Agent 评估 + 用户确认后才创建 task |
+| v3.3.0 | 2026-04-29 | 适配统一 task JSON：Plan 存储在 task.plan 中；状态流转增加 revising；移除 destroyed 状态 |
 | v3.0.0 | 2026-04-29 | v3 重构：对象操作移交插件层，skill 变为纯 Agent 指导文档 |

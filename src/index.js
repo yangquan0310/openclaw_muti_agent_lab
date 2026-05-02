@@ -31,7 +31,7 @@ const pluginId = 'agent-self-development';
 export default {
   id: pluginId,
   name: 'Agent Self-Development',
-  version: '3.3.0',
+  version: '3.4.0',
   description: 'OpenClaw plugin for agent self-development based on Piaget\'s cognitive development theory',
 
   register(api) {

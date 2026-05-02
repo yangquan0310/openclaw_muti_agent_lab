@@ -60,22 +60,9 @@ export class WorkingMemoryModule {
     this.api.on('agent_end', this.onAgentEnd.bind(this), { priority: 40 });
   }
 
-  // ── 辅助：获取或创建 task JSON ──
-  async _getOrCreateTask(runId) {
-    let task = await this.stateAdapter.getTask(runId);
-    if (!task) {
-      task = {
-        runId,
-        status: 'active',
-        createdAt: getNow(),
-        updatedAt: getNow(),
-        plan: {},
-        event: { status: 'draft', deviations: [], attributions: [], planRevisions: [], outcome: {} },
-        sessionIds: [],
-        tools: []
-      };
-    }
-    return task;
+  // ── 辅助：获取 task JSON（不自动创建）──
+  async _getTask(runId) {
+    return this.stateAdapter.getTask(runId);
   }
 
   async _saveTask(task) {
@@ -107,12 +94,12 @@ export class WorkingMemoryModule {
       lastActive: getNow()
     });
 
-    // 把 sessionId 关联到当前 task
-    const task = await this._getOrCreateTask(runId);
-    if (!task.sessionIds.includes(sessionId)) {
+    // 把 sessionId 关联到当前 task（如果 task 存在）
+    const task = await this._getTask(runId);
+    if (task && !task.sessionIds.includes(sessionId)) {
       task.sessionIds.push(sessionId);
+      await this._saveTask(task);
     }
-    await this._saveTask(task);
 
     // 更新全局活跃任务空间索引
     await this._updateActiveSession(sessionId, taskFamily, 'active');
@@ -128,7 +115,8 @@ export class WorkingMemoryModule {
     const result = event.result;
     const toolName = event.toolName;
 
-    const task = await this._getOrCreateTask(runId);
+    const task = await this._getTask(runId);
+    if (!task) return;
 
     const isError = result && (result.error || result.status === 'error');
     if (isError) {
@@ -178,7 +166,11 @@ export class WorkingMemoryModule {
     const runId = ctx.runId;
     if (!runId) return;
 
-    const task = await this._getOrCreateTask(runId);
+    const task = await this._getTask(runId);
+    if (!task) {
+      this.logger.debug(`[WM] runId=${runId} 无 task，跳过归档`);
+      return;
+    }
 
     // 遍历本次任务关联的 sessions
     const completedSessions = [];
