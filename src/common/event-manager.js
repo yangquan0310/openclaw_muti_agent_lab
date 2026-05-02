@@ -1,6 +1,8 @@
 /**
  * EventManager — 事件业务逻辑
- * 管理 Event 对象：记录各阶段执行事件，agent_end 时聚合到 EventLog
+ * 跨模块数据管道：agent_end 时将 task:{runId}.event 聚合到 Memory EventLog
+ *
+ * v3.3.0: 事件统一存储在 task:{runId}.event 中，不再使用独立的 event.json
  */
 
 export class EventManager {
@@ -10,43 +12,24 @@ export class EventManager {
   }
 
   /**
-   * 记录单次事件（存 State，临时）
-   */
-  async recordEvent(eventData) {
-    const eventId = `evt-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-    const event = {
-      eventId,
-      timestamp: Date.now(),
-      ...eventData
-    };
-    await this.stateAdapter.saveEvent(eventId, event);
-    return event;
-  }
-
-  /**
-   * 获取单个事件
-   */
-  async getEvent(eventId) {
-    return this.stateAdapter.getEvent(eventId);
-  }
-
-  /**
-   * agent_end 时：把 State 中所有 Event 聚合到 Memory EventLog
+   * agent_end 时：把 task:{runId}.event 聚合到 Memory EventLog
    */
   async aggregateEvents(runId) {
-    const events = await this.stateAdapter.listEvents();
-    const date = new Date().toISOString().slice(0, 10);
-
-    for (const event of events) {
-      await this.memoryAdapter.appendEventLog(date, {
-        ...event,
-        runId,
-        aggregatedAt: Date.now()
-      });
-      await this.stateAdapter.deleteEvent(event.eventId);
+    const task = await this.stateAdapter.getTask(runId);
+    if (!task || !task.event) {
+      return { transferred: 0, date: null };
     }
 
-    return { transferred: events.length, date };
+    const date = new Date().toISOString().slice(0, 10);
+    const eventLog = {
+      runId,
+      event: task.event,
+      aggregatedAt: Date.now()
+    };
+
+    await this.memoryAdapter.appendEventLog(date, eventLog);
+
+    return { transferred: 1, date, event: task.event };
   }
 
   /**

@@ -6,23 +6,21 @@
  * - 同一任务族的 Agent 在同一会话中处理任务
  * - Agent 是软件，在任务空间中执行任务
  * - 支持并行：一个 Agent 可同时持有多个任务空间
- * - Memory Table 是任务空间的集中管理中心
  *
- * 插件职责：追踪任务空间生命周期，记录事件，在 agent_end 时更新任务空间状态
+ * 插件职责：追踪任务空间生命周期，在 agent_end 时更新 task JSON 和全局索引
  * Agent 职责：自行阅读 skill、管理任务空间看板、决定复用/创建/销毁策略
  */
 
 import { getToday, getNow, inferTaskFamily } from '../common/utils.js';
 
 export class WorkingMemoryModule {
-  constructor({ api, config, stateAdapter, skillLoader, logger, sessionManager, eventManager }) {
+  constructor({ api, config, stateAdapter, skillLoader, logger, sessionManager }) {
     this.api = api;
     this.config = config || {};
     this.stateAdapter = stateAdapter;
     this.skillLoader = skillLoader;
     this.logger = logger;
     this.sessionManager = sessionManager;
-    this.eventManager = eventManager;
     this.enabled = this.config.enabled !== false;
     this.trackSubagents = this.enabled && this.config.trackSubagents !== false;
     this.autoArchive = this.enabled && this.config.autoArchive !== false;
@@ -60,9 +58,31 @@ export class WorkingMemoryModule {
     this.api.on('agent_end', this.onAgentEnd.bind(this));
   }
 
+  // ── 辅助：获取或创建 task JSON ──
+  async _getOrCreateTask(runId) {
+    let task = await this.stateAdapter.getTask(runId);
+    if (!task) {
+      task = {
+        runId,
+        status: 'active',
+        createdAt: getNow(),
+        updatedAt: getNow(),
+        plan: {},
+        event: { status: 'draft', deviations: [], attributions: [], planRevisions: [], outcome: {} },
+        sessionIds: [],
+        tools: []
+      };
+    }
+    return task;
+  }
+
+  async _saveTask(task) {
+    task.updatedAt = getNow();
+    await this.stateAdapter.saveTask(task.runId, task);
+  }
+
   /**
    * 追踪任务空间创建
-   * 当 Agent 调用 agent/subagent/sessions_spawn 时，注册一个新的任务空间
    */
   async onBeforeToolCall(event, ctx) {
     const toolName = event.toolName;
@@ -74,31 +94,25 @@ export class WorkingMemoryModule {
     const purpose = event.params?.purpose || event.params?.instruction || '';
     const taskFamily = inferTaskFamily(purpose);
 
-    const entry = {
-      type: 'subagent_spawn',
-      sessionId,
-      taskFamily,
-      parentRunId: runId,
-      purpose,
-      model: event.params?.model || 'default',
-      toolName,
-      status: 'active',
-      timestamp: getNow()
-    };
-
-    await this.stateAdapter.saveSession(`wm:${runId}:tools`, entry);
-    await this.stateAdapter.saveSession(`session_list:${runId}`, {
+    // 保存 Session 到全局
+    await this.stateAdapter.saveSession(sessionId, {
       sessionId,
       taskFamily,
       role: event.params?.role || '助手',
       task: purpose,
       status: 'active',
       createdAt: getNow(),
-      lastActive: getNow(),
-      parentRunId: runId
+      lastActive: getNow()
     });
 
-    // 更新全局活跃任务空间索引（Memory Table 管理中心）
+    // 把 sessionId 关联到当前 task
+    const task = await this._getOrCreateTask(runId);
+    if (!task.sessionIds.includes(sessionId)) {
+      task.sessionIds.push(sessionId);
+    }
+    await this._saveTask(task);
+
+    // 更新全局活跃任务空间索引
     await this._updateActiveSession(sessionId, taskFamily, 'active');
 
     this.logger.debug(`[WM] 创建任务空间: ${sessionId} (taskFamily=${taskFamily}, parent=${runId})`);
@@ -112,12 +126,13 @@ export class WorkingMemoryModule {
     const result = event.result;
     const toolName = event.toolName;
 
+    const task = await this._getOrCreateTask(runId);
+
     const isError = result && (result.error || result.status === 'error');
     if (isError) {
-      await this.eventManager.recordEvent({
+      task.tools.push({
         time: getNow(),
         type: 'tool_error',
-        runId,
         toolName,
         summary: String(result.error || 'unknown error').slice(0, 200)
       });
@@ -128,7 +143,7 @@ export class WorkingMemoryModule {
       const sessionId = event.params?.id || event.params?.name;
       const status = isError ? 'killed' : 'completed';
 
-      await this.stateAdapter.saveSession(`wm:${runId}:tools`, {
+      task.tools.push({
         type: 'subagent_complete',
         sessionId,
         resultSummary: this.summarizeResult(result),
@@ -136,92 +151,79 @@ export class WorkingMemoryModule {
         timestamp: getNow()
       });
 
-      // 更新本次运行中的任务空间状态
-      const sessions = await this.stateAdapter.getSession(`session_list:${runId}`) || [];
-      const updated = sessions.map(s =>
-        s.sessionId === sessionId ? { ...s, status, lastActive: getNow() } : s
-      );
-      await this.stateAdapter.saveSession(`session_list:${runId}`, updated);
+      // 更新 Session 状态
+      const session = await this.stateAdapter.getSession(sessionId);
+      if (session) {
+        session.status = status;
+        session.lastActive = getNow();
+        await this.stateAdapter.saveSession(sessionId, session);
+      }
 
       // 同步更新全局活跃任务空间索引
-      const taskFamily = sessions.find(s => s.sessionId === sessionId)?.taskFamily;
+      const taskFamily = session?.taskFamily;
       if (taskFamily) {
         await this._updateActiveSession(sessionId, taskFamily, status);
       }
     }
+
+    await this._saveTask(task);
   }
 
   /**
-   * 归档 completed 任务空间，更新全局索引
-   * - completed → 归档到 Memory Table + 标记为 idle（可复用）
-   * - killed → 从全局索引移除
-   * - paused → 保留在全局索引中
+   * 归档 completed 任务空间，更新 task JSON 状态
    */
   async onAgentEnd(event, ctx) {
     const runId = ctx.runId;
     if (!runId) return;
 
-    const sessions = await this.stateAdapter.getSession(`session_list:${runId}`) || [];
-    const completedSessions = sessions.filter(s => s.status === 'completed');
-    const killedSessions = sessions.filter(s => s.status === 'killed');
-    const pausedSessions = sessions.filter(s => s.status === 'paused');
+    const task = await this._getOrCreateTask(runId);
 
-    if (killedSessions.length > 0) {
-      this.logger.debug(`[WM] 销毁 killed 任务空间: ${killedSessions.length}`);
-    }
-    if (pausedSessions.length > 0) {
-      this.logger.debug(`[WM] 保留 paused 任务空间: ${pausedSessions.length}`);
-    }
+    // 遍历本次任务关联的 sessions
+    const completedSessions = [];
+    const killedSessions = [];
+    const pausedSessions = [];
 
-    // completed 任务空间：归档 + 标记为 idle（可复用）
-    for (const session of completedSessions) {
-      const archive = {
-        runId,
-        sessionId: session.sessionId,
-        taskFamily: session.taskFamily,
-        archivedAt: getNow(),
-        task: session.task,
-        role: session.role,
-        status: 'completed',
-        toolCount: (await this.stateAdapter.getSession(`wm:${runId}:tools`) || []).filter(t => t.sessionId === session.sessionId).length
-      };
-      
-      // 使用 MemoryAdapter 归档
-      await this.eventManager.recordEvent({
-        type: 'session_archive',
-        data: archive,
-        tags: ['archive', session.taskFamily],
-        date: new Date()
-      });
+    for (const sessionId of task.sessionIds) {
+      const session = await this.stateAdapter.getSession(sessionId);
+      if (!session) continue;
 
-      // 回到 idle 状态，供后续同任务族复用
-      await this._updateActiveSession(session.sessionId, session.taskFamily, 'idle');
+      if (session.status === 'completed') {
+        completedSessions.push(session);
+        // 回到 idle 状态，供后续同任务族复用
+        await this._updateActiveSession(sessionId, session.taskFamily, 'idle');
+      } else if (session.status === 'killed') {
+        killedSessions.push(session);
+        await this._removeActiveSession(sessionId);
+      } else if (session.status === 'paused') {
+        pausedSessions.push(session);
+      }
     }
 
-    // killed 任务空间：从全局索引移除
-    for (const session of killedSessions) {
-      await this._removeActiveSession(session.sessionId);
-    }
+    // 更新 task.event.outcome
+    task.event.outcome = {
+      archivedAt: getNow(),
+      completedSessions: completedSessions.map(s => s.sessionId),
+      killedSessions: killedSessions.map(s => s.sessionId),
+      pausedSessions: pausedSessions.map(s => s.sessionId),
+      toolCount: task.tools.length
+    };
+    task.event.status = 'completed';
+    task.status = 'completed';
+    await this._saveTask(task);
 
-    // 清理本次运行的临时数据
-    await this.stateAdapter.deleteSession(`wm:${runId}:tools`);
-    await this.stateAdapter.deleteSession(`session_list:${runId}`);
+    this.logger.debug(`[WM] 任务归档: runId=${runId}, completed=${completedSessions.length}, killed=${killedSessions.length}`);
 
-    this.logger.debug(`[WM] 任务空间归档: runId=${runId}, completed=${completedSessions.length}, killed=${killedSessions.length}`);
-
-    // 注入 working_memory skill，提醒 Agent 检查任务空间看板
+    // 注入 working_memory skill
     const workingMemorySkill = await this.skillLoader.load('working_memory');
     if (workingMemorySkill) {
       return {
-        prependSystemContext: `${workingMemorySkill}\n\n【Agent 职责】本次运行已结束，请根据上方 working_memory skill 检查「当前活跃任务空间看板」和「任务空间复用策略」。completed 的任务空间已标记为 idle，可供同任务族后续复用。\n`
+        prependSystemContext: `${workingMemorySkill}\n\n【Agent 职责】本次运行已结束。completed 的任务空间已标记为 idle，可供同任务族后续复用。请检查「活跃会话清单」状态。\n`
       };
     }
   }
 
   /**
    * 更新全局活跃任务空间索引
-   * 键: working_memory:active_sessions
-   * Memory Table 作为任务空间的集中管理中心
    */
   async _updateActiveSession(sessionId, taskFamily, status) {
     const activeSessions = await this.stateAdapter.getSession('working_memory:active_sessions') || [];

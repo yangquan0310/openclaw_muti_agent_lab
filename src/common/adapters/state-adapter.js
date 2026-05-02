@@ -1,6 +1,9 @@
 /**
- * StateAdapter — 状态存储适配器（聚合 JSON 文件版）
+ * StateAdapter — 状态存储适配器（统一 task JSON 版）
  * 使用 ~/.openclaw/state/agent-self-development/{type}.json
+ *
+ * 统一设计：一个任务一个 JSON（task:{runId}），包含 Plan + Event + Sessions + Tools
+ * Session 全局管理（sessions.json）
  */
 
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
@@ -60,21 +63,32 @@ export class StateAdapter {
       .map(([, v]) => v);
   }
 
-  // Plan
-  async savePlan(runId, plan) {
-    if (this.api?.set) await this.api.set(`plan:${runId}`, plan);
-    this._set('plans', runId, plan);
+  // ── Task（统一聚合 JSON）──
+
+  async saveTask(runId, task) {
+    if (this.api?.set) await this.api.set(`task:${runId}`, task);
+    this._set('tasks', runId, task);
   }
 
-  async getPlan(runId) {
+  async getTask(runId) {
     if (this.api?.get) {
-      const mem = await this.api.get(`plan:${runId}`);
+      const mem = await this.api.get(`task:${runId}`);
       if (mem !== undefined && mem !== null) return mem;
     }
-    return this._get('plans', runId);
+    return this._get('tasks', runId);
   }
 
-  // Session
+  async deleteTask(runId) {
+    if (this.api?.set) await this.api.set(`task:${runId}`, null);
+    this._set('tasks', runId, null);
+  }
+
+  async listTasks() {
+    return this._list('tasks');
+  }
+
+  // ── Session（全局，跨任务复用）──
+
   async saveSession(sessionId, session) {
     if (this.api?.set) await this.api.set(`session:${sessionId}`, session);
     this._set('sessions', sessionId, session);
@@ -93,62 +107,12 @@ export class StateAdapter {
     this._set('sessions', sessionId, null);
   }
 
-  // Deviation
-  async saveDeviation(runId, phaseId, deviation) {
-    const key = `${runId}:${phaseId}`;
-    if (this.api?.set) await this.api.set(`deviation:${key}`, deviation);
-    this._set('deviations', key, deviation);
+  async listSessions() {
+    return this._list('sessions');
   }
 
-  async getDeviation(runId, phaseId) {
-    const key = `${runId}:${phaseId}`;
-    if (this.api?.get) {
-      const mem = await this.api.get(`deviation:${key}`);
-      if (mem !== undefined && mem !== null) return mem;
-    }
-    return this._get('deviations', key);
-  }
-
-  async listDeviationsByRunId(runId) {
-    return this._list('deviations', `${runId}:`);
-  }
-
-  // Attribution
-  async saveAttribution(runId, deviationId, attribution) {
-    const key = `${runId}:${deviationId}`;
-    if (this.api?.set) await this.api.set(`attribution:${key}`, attribution);
-    this._set('attributions', key, attribution);
-  }
-
-  async getAttribution(runId, deviationId) {
-    const key = `${runId}:${deviationId}`;
-    if (this.api?.get) {
-      const mem = await this.api.get(`attribution:${key}`);
-      if (mem !== undefined && mem !== null) return mem;
-    }
-    return this._get('attributions', key);
-  }
-
-  // Event
-  async saveEvent(eventId, event) {
-    if (this.api?.set) await this.api.set(`event:${eventId}`, event);
-    this._set('events', eventId, event);
-  }
-
-  async getEvent(eventId) {
-    if (this.api?.get) {
-      const mem = await this.api.get(`event:${eventId}`);
-      if (mem !== undefined && mem !== null) return mem;
-    }
-    return this._get('events', eventId);
-  }
-
-  async deleteEvent(eventId) {
-    if (this.api?.set) await this.api.set(`event:${eventId}`, null);
-    this._set('events', eventId, null);
-  }
-
-  async listEvents() {
-    return this._list('events');
+  async listSessionsByStatus(status) {
+    const all = await this.listSessions();
+    return all.filter(s => s.status === status);
   }
 }

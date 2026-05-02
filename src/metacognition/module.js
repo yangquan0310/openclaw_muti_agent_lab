@@ -5,14 +5,15 @@
  * Agent 职责：自行阅读 skill、判断偏差、决定是否 revise
  *
  * Plan 状态机：
- *   draft → pending_approval → active → completed → destroyed
+ *   draft → pending_approval → active → completed
  *   ├─ draft: 生成 Plan，Agent 制定并汇报
  *   ├─ pending_approval: 等待用户确认（Agent 处理反馈）
- *   ├─ active: 用户确认后按 phases 执行
- *   └─ completed: 所有 phases 完成
+ *   └─ active: 用户确认后按 phases 执行
+ *
+ * 数据统一存储在 task:{runId} JSON 中，不再使用独立的 plan.json
  */
 
-import { generatePlan, assignSessionsToPhases } from '../common/utils.js';
+import { generatePlan, assignSessionsToPhases, getNow } from '../common/utils.js';
 
 export class MetacognitionModule {
   constructor({ api, config, stateAdapter, skillLoader, logger, planManager, deviationManager, attributionManager }) {
@@ -56,6 +57,31 @@ export class MetacognitionModule {
   }
 
   /**
+   * 获取或创建 task JSON（统一存储）
+   */
+  async _getOrCreateTask(runId) {
+    let task = await this.stateAdapter.getTask(runId);
+    if (!task) {
+      task = {
+        runId,
+        status: 'draft',
+        createdAt: getNow(),
+        updatedAt: getNow(),
+        plan: {},
+        event: { status: 'draft', deviations: [], attributions: [], planRevisions: [], outcome: {} },
+        sessionIds: [],
+        tools: []
+      };
+    }
+    return task;
+  }
+
+  async _saveTask(task) {
+    task.updatedAt = getNow();
+    await this.stateAdapter.saveTask(task.runId, task);
+  }
+
+  /**
    * before_prompt_build 三阶段逻辑：
    * 1. draft / null → 注入 planning skill，要求制定 Plan 并汇报
    * 2. pending_approval → 注入 planning skill，处理用户确认/修改
@@ -71,17 +97,15 @@ export class MetacognitionModule {
       return;
     }
 
-    let plan = await this.stateAdapter.getPlan(runId);
+    let task = await this._getOrCreateTask(runId);
 
     // ── 阶段一：Plan 不存在，生成新 Plan ──
-    if (!plan) {
+    if (!task.plan || !task.plan.execution) {
       const planTemplate = generatePlan(prompt);
       const phases = assignSessionsToPhases(planTemplate.execution.phases, prompt);
-      plan = {
-        runId,
+      task.plan = {
         prompt: prompt.slice(0, 500),
         createdAt: Date.now(),
-        status: 'draft',
         context: planTemplate.context,
         workspace: planTemplate.workspace,
         execution: {
@@ -89,25 +113,25 @@ export class MetacognitionModule {
           currentPhase: 0
         }
       };
-      await this.stateAdapter.savePlan(runId, plan);
-      this.logger.debug(`[Meta] Plan 生成[${plan.status}]: ${phases.length} 阶段`);
+      task.status = 'draft';
+      await this._saveTask(task);
+      this.logger.debug(`[Meta] Plan 生成[draft]: ${phases.length} 阶段`);
     }
 
-    // ── 阶段二：根据 Plan.status 注入不同的 skill ──
+    const plan = task.plan;
+
+    // ── 阶段二：根据 task.status 注入不同的 skill ──
     const planningSkill = await this.skillLoader.load('planning');
 
-    if (plan.status === 'draft') {
-      // Agent 需要制定完整 Plan 并向用户汇报
+    if (task.status === 'draft') {
       return this._buildDraftContext(planningSkill, plan);
     }
 
-    if (plan.status === 'pending_approval') {
-      // Agent 需要处理用户的确认/修改反馈
+    if (task.status === 'pending_approval') {
       return this._buildPendingApprovalContext(planningSkill, plan);
     }
 
-    if (plan.status === 'active') {
-      // 计划已确认，注入执行上下文帮助 Agent 继续执行
+    if (task.status === 'active') {
       return this._buildExecutionContext(plan);
     }
 
@@ -154,14 +178,14 @@ export class MetacognitionModule {
 【Agent 职责 - 必做】
 1. 读取用户反馈内容
 2. 如果用户确认（"确认"、"可以"、"开始执行"等）：
-   - 将 Plan.status 更新为 "active"
+   - 将 task.status 更新为 "active"
    - 开始按 phases 执行
 3. 如果用户要求修改：
-   - 修改 Plan.context / Plan.execution.phases
+   - 修改 task.plan.context / task.plan.execution.phases
    - 重新向用户汇报修改后的 Plan
-   - 保持 Plan.status 为 "pending_approval"
+   - 保持 task.status 为 "pending_approval"
 4. 如果用户取消任务：
-   - 将 Plan.status 更新为 "completed"
+   - 将 task.status 更新为 "completed"
    - 说明取消原因
 `;
 
@@ -199,7 +223,7 @@ export class MetacognitionModule {
 【执行指导】
 1. 当前阶段已确认，按目标推进
 2. 阶段完成后通知插件：phase.status = "completed"，currentPhase++
-3. 产出物追加到 workspace.artifacts
+3. 产出物追加到 task.plan.workspace.artifacts
 4. 如需调节 Plan，先说明理由并通知插件更新
 `;
 
@@ -209,22 +233,25 @@ export class MetacognitionModule {
   }
 
   /**
-   * llm_output：仅在 Plan active 时注入 monitoring skill
+   * llm_output：仅在 task.status === 'active' 时注入 monitoring skill
    */
   async onLlmOutput(event, ctx) {
     const runId = ctx.runId;
     if (!runId) return;
 
     const output = event.output || event.text || '';
-    await this.stateAdapter.savePlan(runId, { output });
 
-    const plan = await this.stateAdapter.getPlan(runId);
-    if (!plan || plan.status !== 'active') return;
+    const task = await this._getOrCreateTask(runId);
+    task.plan = task.plan || {};
+    task.plan.output = output;
+    await this._saveTask(task);
+
+    if (task.status !== 'active') return;
 
     const monitoringSkill = await this.skillLoader.load('monitoring');
     if (!monitoringSkill) return;
 
-    const currentPhase = plan.execution.phases[plan.execution.currentPhase];
+    const currentPhase = task.plan.execution?.phases?.[task.plan.execution?.currentPhase];
     const phaseHint = currentPhase
       ? `当前阶段：${currentPhase.id}，分配会话：${currentPhase.sessionId || '无'}`
       : '所有阶段已完成';
@@ -237,8 +264,12 @@ export class MetacognitionModule {
   async onAgentEnd(event, ctx) {
     const runId = ctx.runId;
     if (!runId) return;
-    await this.stateAdapter.savePlan(runId, null);
-    this.logger.debug(`[Meta] 清理状态: runId=${runId}`);
+    const task = await this.stateAdapter.getTask(runId);
+    if (task) {
+      task.status = 'completed';
+      await this._saveTask(task);
+    }
+    this.logger.debug(`[Meta] 任务状态更新为 completed: runId=${runId}`);
   }
 
   _shouldUseMetacognition(prompt) {

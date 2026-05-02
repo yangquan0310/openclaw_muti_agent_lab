@@ -82,11 +82,10 @@ export default {
     });
     const workingMemory = new WorkingMemoryModule({
       api, config: config.workingMemory, stateAdapter, skillLoader, logger,
-      sessionManager, eventManager
+      sessionManager
     });
     const personality = new PersonalityModule({
-      api, config: config.personality || config.assimilation, stateAdapter, skillLoader, logger,
-      eventManager
+      api, config: config.personality || config.assimilation, stateAdapter, skillLoader, logger
     });
 
     metacognition.register();

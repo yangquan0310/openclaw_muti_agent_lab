@@ -7,30 +7,14 @@
  * 核心原则：Plugin asks, Agent decides, Plugin records
  */
 
-import { getYesterday } from '../common/utils.js';
-
 export class PersonalityModule {
-  constructor({ api, config, stateAdapter, skillLoader, logger, eventManager }) {
+  constructor({ api, config, stateAdapter, skillLoader, logger }) {
     this.api = api;
     this.config = config || {};
     this.stateAdapter = stateAdapter;
     this.skillLoader = skillLoader;
     this.logger = logger;
-    this.eventManager = eventManager;
     this.enabled = this.config.enabled !== false;
-  }
-
-  /**
-   * 注册人格模块相关的 hooks
-   */
-  register() {
-    if (!this.enabled) {
-      this.logger.info('[Personality] 人格模块已禁用');
-      return;
-    }
-
-    this.logger.info('[Personality] 注册人格模块 Hook');
-    this.api.on('before_prompt_build', this.onBeforePromptBuild.bind(this), { priority: 40 });
   }
 
   /**

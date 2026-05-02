@@ -1,6 +1,8 @@
 /**
  * DeviationManager — 偏差认知业务逻辑
  * 在 monitoring 阶段管理 Deviation 对象的生命周期
+ *
+ * v3.3.0: 适配统一 task JSON，偏差存储在 task:{runId}.event.deviations
  */
 
 export class DeviationManager {
@@ -8,48 +10,74 @@ export class DeviationManager {
     this.stateAdapter = stateAdapter;
   }
 
+  async _getTask(runId) {
+    return this.stateAdapter.getTask(runId);
+  }
+
+  async _saveTask(task) {
+    return this.stateAdapter.saveTask(task.runId, task);
+  }
+
   /**
    * 创建新的偏差记录
    */
   async createDeviation(runId, phaseId, deviationData) {
+    const task = await this._getTask(runId);
+    if (!task) throw new Error('Task not found');
+
     const deviation = {
+      deviationId: `dev-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       runId,
       phaseId,
       status: 'detected',
       createdAt: Date.now(),
       ...deviationData
     };
-    await this.stateAdapter.saveDeviation(runId, phaseId, deviation);
+
+    task.event = task.event || { deviations: [], attributions: [], planRevisions: [], outcome: {} };
+    task.event.deviations = task.event.deviations || [];
+    task.event.deviations.push(deviation);
+    task.updatedAt = Date.now();
+
+    await this._saveTask(task);
     return deviation;
   }
 
   /**
    * 代理确认偏差后更新状态
    */
-  async acknowledgeDeviation(runId, phaseId, agentAcknowledgment) {
-    const deviation = await this.stateAdapter.getDeviation(runId, phaseId);
+  async acknowledgeDeviation(runId, deviationId, agentAcknowledgment) {
+    const task = await this._getTask(runId);
+    if (!task || !task.event || !task.event.deviations) return null;
+
+    const deviation = task.event.deviations.find(d => d.deviationId === deviationId);
     if (!deviation) return null;
 
     deviation.status = 'acknowledged';
     deviation.acknowledgedAt = Date.now();
     deviation.agentAcknowledgment = agentAcknowledgment;
+    task.updatedAt = Date.now();
 
-    await this.stateAdapter.saveDeviation(runId, phaseId, deviation);
+    await this._saveTask(task);
     return deviation;
   }
 
   /**
    * 偏差已解决
    */
-  async resolveDeviation(runId, phaseId, resolution) {
-    const deviation = await this.stateAdapter.getDeviation(runId, phaseId);
+  async resolveDeviation(runId, deviationId, resolution) {
+    const task = await this._getTask(runId);
+    if (!task || !task.event || !task.event.deviations) return null;
+
+    const deviation = task.event.deviations.find(d => d.deviationId === deviationId);
     if (!deviation) return null;
 
     deviation.status = 'resolved';
     deviation.resolvedAt = Date.now();
     deviation.resolution = resolution;
+    task.updatedAt = Date.now();
 
-    await this.stateAdapter.saveDeviation(runId, phaseId, deviation);
+    await this._saveTask(task);
     return deviation;
   }
 
@@ -57,6 +85,7 @@ export class DeviationManager {
    * 获取当前 run 的所有偏差
    */
   async listDeviations(runId) {
-    return this.stateAdapter.listDeviationsByRunId(runId);
+    const task = await this._getTask(runId);
+    return task?.event?.deviations || [];
   }
 }
