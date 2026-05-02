@@ -61,7 +61,10 @@ export default {
     
     // 使用当前代理的数据库文件
     // 使用已有的系统数据库
-    const stateAdapter = new StateAdapter(null, { dir: `${baseDir}/state/agent-self-development` });
+    const stateAdapter = new StateAdapter(null, {
+      dir: `${baseDir}/state/agent-self-development`,
+      maxArchivedTasks: config.archive?.maxArchivedTasks
+    });
     const taskAdapter = new TaskAdapter(null, { dbPath: `${baseDir}/tasks/runs.sqlite` });
     const flowAdapter = new FlowAdapter(null, { dbPath: `${baseDir}/flows/registry.sqlite` });
     const memoryAdapter = new MemoryAdapter(null, { dbPath: `${baseDir}/memory/${agentId}.sqlite` });

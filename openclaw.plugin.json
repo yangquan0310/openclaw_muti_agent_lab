@@ -7,7 +7,7 @@
   "type": "native",
   "extensions": ["./src/index.js"],
   "minVersion": "2026.4.0",
-  "skills": ["skills"],
+  "skills": [],
   "configSchema": {
     "type": "object",
     "properties": {
@@ -32,6 +32,13 @@
         "type": "object",
         "properties": {
           "enabled": { "type": "boolean", "default": true }
+        }
+      },
+      "archive": {
+        "type": "object",
+        "description": "已完成任务归档配置",
+        "properties": {
+          "maxArchivedTasks": { "type": "number", "default": 50, "description": "archive/ 目录保留的最大已完成任务数" }
         }
       },
       "assimilation": {

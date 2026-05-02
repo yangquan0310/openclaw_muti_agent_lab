@@ -39,6 +39,7 @@ export class StateAdapter {
   constructor(api, options = {}) {
     this.api = api;
     this.dir = options.dir || DEFAULT_DIR;
+    this.maxArchivedTasks = options.maxArchivedTasks || MAX_ARCHIVED_TASKS;
     ensureDir(this.dir);
     ensureDir(join(this.dir, TASKS_DIR));
     ensureDir(join(this.dir, ARCHIVE_DIR));
@@ -170,7 +171,7 @@ export class StateAdapter {
       })
       .sort((a, b) => new Date(a.archivedAt).getTime() - new Date(b.archivedAt).getTime());
 
-    if (files.length <= MAX_ARCHIVED_TASKS) return;
+    if (files.length <= this.maxArchivedTasks) return;
 
     const toDelete = files.slice(0, files.length - MAX_ARCHIVED_TASKS);
     for (const item of toDelete) {
