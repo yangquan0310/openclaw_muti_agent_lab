@@ -595,13 +595,15 @@ agent-self-development/
 
 ### 状态存储键空间
 
-| 键 | 类型 | 生命周期 | 说明 |
-|----|------|----------|------|
-| `task:{runId}` | Task | runId | 统一任务 JSON：plan + event + sessions + tools（`state/`） |
-| `session:{sessionId}` | Session | 长期 | 任务空间（`state/`） |
-| `working_memory:active_sessions` | Session[] | 全局 | 全局活跃任务空间索引（`state/`） |
-| `flow:{flowId}` | Flow | 长期 | Flow 实例（`flows/`） |
-| `logs:{YYYY-MM-DD}` | LogEntry[] | 日期 | 按日累积的日志（`logs/`） |
+| 键 | 存储域 | 类型 | 生命周期 | 说明 |
+|----|--------|------|----------|------|
+| `task:{runId}` | State (插件) | Task | runId | 统一任务 JSON：plan + event + sessions + tools（`state/tasks/{runId}.json`） |
+| `session:{sessionId}` | State (插件) | Session | 长期 | 任务空间（`state/sessions.json`） |
+| `working_memory:active_sessions` | State (插件) | Session[] | 全局 | 全局活跃任务空间索引（`state/sessions.json`） |
+| `flow:{flowId}` | Flow | Flow | 长期 | Flow 工作流实例（`flows/registry.sqlite`） |
+| `task:{runId}` | Task (核心) | TaskRecord | runId | 任务元数据（`tasks/runs.sqlite`） |
+| `eventlog:{YYYY-MM-DD}` | Memory | EventLog | 日期 | 按日聚合的事件（`memory/{agentId}.sqlite`） |
+| `logs:{YYYY-MM-DD}` | Log | LogEntry[] | 日期 | 按日累积的日志（`logs/{agentId}.log`） |
 
 ---
 
