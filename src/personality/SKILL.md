@@ -1,206 +1,154 @@
 ---
 name: development
 description: >
-  人格发展模块。指导 Agent 在每日 cron 触发时回顾昨日事件、撰写发展日记、
-  分析同化/顺应并决定是否需要更新人格文件。
-version: 3.0.0
-injected_at: before_prompt_build（cron 每日自我更新触发时）
+  人格发展模块。指导 Agent 在每次任务完成后，基于本次事件的
+  偏差、归因和结果，分析同化/顺应对 6 个维度的影响，决定是否需要更新人格文件。
+version: 3.3.0
+injected_at: agent_end（任务完成后）
 module: personality
 ---
 
-# Personality — 每日自我发展与人格更新
+# Personality — 任务级自我发展与人格更新
 
 > 人格模块 - Agent 的持续自我发展系统
 > 基于皮亚杰认知发展理论：同化（强化现有）/ 顺应（重构更新）
-> **每日回顾 → 撰写日记 → 分析影响 → 决定更新**
+> **单次任务回顾 → 分析影响 → 决定更新**
 
 ---
 
 ## 注入上下文
 
-本 skill 在 **`before_prompt_build`** 触发时注入，触发条件为用户消息包含 **`[cron:每日自我更新]`**。此时插件已完成以下操作：
+本 skill 在 **`agent_end`** 触发时注入，触发条件为本次任务的 `task.event.status === 'completed'`。此时插件已完成以下操作：
 
-| 时机 | 插件已完成的操作 | 存储位置 |
+| 时机 | 插件已完成的操作 | 数据来源 |
 |------|-----------------|----------|
-| 注入前 | 通过 `eventManager.queryEventLog(yesterday)` 查询昨日事件 | `~/.openclaw/memory/{agentId}.sqlite`（`asd_eventlogs` 表） |
-| 注入前 | 通过 `diaryManager.getDiary(yesterday)` 查询昨日日记 | 同上（`asd_diaries` 表） |
+| 注入前 | 聚合本次任务的 Event 到 Memory | `task:{runId}.event` |
+| 注入前 | 归档所有 completed 的 Session | `task:{runId}.sessionIds` → 全局索引 |
 
-昨日事件和日记已由插件读取并附加在上下文里。
+本次任务的 Event 摘要（偏差、归因、计划修订、产出）已由插件附加在上下文里。
 
 ---
 
-## 核心对象（底层存储形态）
+## 核心对象
 
-### EventLog（按日聚合的事件日志）
+### Event（单次任务的事件聚合）
 
-**存储位置**：`~/.openclaw/memory/{agentID}.sqlite`  
-**表名**：`asd_eventlogs`  
-**主键**：`date`（格式：`YYYY-MM-DD`）
+**存储位置**：`~/.openclaw/state/agent-self-development/tasks.json`（临时）→ `~/.openclaw/memory/{agentId}.sqlite`（归档）
 
 ```json
 {
-  "date": "2026-04-28",
-  "events": [
-    {
-      "eventId": "evt-1714291200000-a1b2c3",
-      "timestamp": 1714291200000,
-      "time": "2026-04-28T10:00:00.000Z",
-      "type": "tool_error",
-      "runId": "uuid",
-      "toolName": "editor",
-      "summary": "文件写入失败：权限不足"
-    }
-  ]
+  "status": "completed",
+  "deviations": [
+    { "deviationId": "dev-xxx", "severity": "minor|major|critical", "type": "plan|tool|session", "description": "..." }
+  ],
+  "attributions": [
+    { "attributionId": "attr-xxx", "rootCause": "...", "adjustmentPlan": "..." }
+  ],
+  "planRevisions": [
+    { "phaseId": "...", "reason": "...", "changes": [...] }
+  ],
+  "outcome": {
+    "archivedAt": "...",
+    "completedSessions": ["..."],
+    "killedSessions": ["..."],
+    "toolCount": 5
+  }
 }
-```
-
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `eventId` | string | 事件唯一标识 |
-| `timestamp` | number | 事件时间戳（ms） |
-| `type` | string | 事件类型：`tool_error`、`session_archive`、`task_complete` 等 |
-| `summary` | string | 事件摘要（限 200 字） |
-| `data` | object | 事件详细数据（视类型而定） |
-
-### Diary（发展日记）
-
-**存储位置**：`~/.openclaw/memory/{agentID}.sqlite`  
-**表名**：`asd_diaries`  
-**主键**：`date`（格式：`YYYY-MM-DD`）
-
-同时会在工作空间的 `diary/` 目录下保存一份 Markdown 副本，格式如下：
-
-```markdown
-# YYYY-MM-DD 发展日记
-
-## 一、今日关键事件回顾
-## 二、自我认知审视
-## 三、同化与顺应分析
-## 四、更新触发检测
-## 五、执行的更新
-## 六、今日总结
 ```
 
 ### 人格文件（由 Agent 直接维护）
 
 以下文件位于 Agent 工作空间（`~/.openclaw/workspace/{agent_id}/`），**由 Agent 直接读写**，不是通过插件 Adapter 管理。
 
-| 文件 | 人格成分 | 内容 |
+| 维度 | 对应文件 | 内容 |
 |------|---------|------|
-| `SOUL.md` | **自我 + 风格 + 信念** | 核心自我认知、能力边界、存在意义；交互/文档/代码/任务执行风格；工作信念、价值观优先级 |
-| `IDENTITY.md` | **身份** | 核心身份（自我概念、能力边界）、社会身份（群体归属、同事网络）、角色身份（角色集、期望、行为）、身份边界（能力边界、责任边界） |
-| `skills/README.md` | **技能** | 个人技能索引、技能规范、使用方式 |
-
-> **注**：`MEMORY.md` 仅保留程序性记忆（If-Then 条件-行动规则），是 Agent 的技术记忆存储，不直接作为人格成分文件。
+| **自我** | `SOUL.md` | 核心自我认知、能力边界、存在意义 |
+| **风格** | `SOUL.md` | 交互/文档/代码/任务执行风格 |
+| **信念** | `SOUL.md` | 工作信念、价值观优先级 |
+| **身份** | `IDENTITY.md` | 核心身份、社会身份、角色身份、身份边界 |
+| **技能** | `skills/README.md` | 个人技能索引、技能规范、使用方式 |
+| **程序性记忆** | `MEMORY.md` | If-Then 条件-行动规则 |
 
 ---
 
 ## Agent 职责
 
-### 职责：每日自我更新流程
+### 职责：任务级自我更新流程
 
-**触发条件**：`[cron:每日自我更新]` 消息
-
-> **前置说明**：昨日事件由 Agent 在 `regulation` 阶段撰写并保存到 `asd_eventlogs`。本 skill 只负责**回顾和分析**，不负责撰写原始事件。
+**触发条件**：`agent_end` 且本次任务 `event.status === 'completed'`
 
 **你需要做的**（决策层）：
 
-1. **回顾昨日事件**
-   - 阅读插件附加的昨日事件列表（来自 `asd_eventlogs`）
-   - 事件已由 regulation 阶段分类为：成功经验 / 失败/挫折 / 常规操作
+1. **回顾本次任务事件**
+   - 阅读插件附加的 Event 摘要
+   - 分类：成功经验 / 失败/挫折 / 常规操作 / 计划修订
 
-2. **撰写/完善发展日记**
-   - 如果昨日已有日记（`diaryManager.getDiary()` 返回非空），阅读并补充
-   - 如果无日记，新建一篇
-   - 日记内容应包含：
-     - 昨日主要事件概述
-     - 成功经验总结
-     - 失败/挫折反思
-     - 对五个人格成分的影响初步判断
+2. **6 维度同化/顺应分析**
 
-3. **分析同化/顺应影响**
+   对每条重要偏差或计划修订，阅读对应的人格文件，判断事件与文件中现有内容的**兼容关系**：
 
-   对每条重要事件，阅读对应的人格文件，判断事件与文件中现有内容的**兼容关系**：
+   | 维度 | 对应文件 | 同化（兼容）| 顺应（冲突/扩展）|
+   |------|---------|------------|----------------|
+   | **自我** | `SOUL.md` | 成功经验丰富自我效能感 | 遭遇能力盲区，重新定义"我能做什么" |
+   | **风格** | `SOUL.md` | 同类任务强化既有风格 | 新渠道/新用户群体要求调整风格 |
+   | **信念** | `SOUL.md` | 事件符合现有信念 → 确认并强化 | 事件与现有信念冲突 → 更新信念部分 |
+   | **身份** | `IDENTITY.md` | 事件在现有角色范围内完成 → 强化角色认同 | 新角色被赋予、边界需扩展 → 更新角色集 |
+   | **技能** | `skills/README.md` | 现有技能成功处理 → 记录使用经验 | 需新技能或现有技能升级 → 更新索引 |
+   | **程序性记忆** | `MEMORY.md` | 规则有效 → 确认并保留 | 规则失效/未覆盖 → 新增/修改 If-Then |
 
-   | 人格成分 | 对应文件 | 对比内容 | 同化（兼容）| 顺应（冲突）|
-   |---------|---------|---------|------------|------------|
-   | **自我** | `SOUL.md` | 核心自我认知、能力边界、存在意义 | 成功经验丰富自我效能感 | 遭遇能力盲区，重新定义"我能做什么" |
-   | **风格** | `SOUL.md` | 交互/文档/代码/任务执行风格 | 同类任务强化既有风格 | 新渠道/新用户群体要求调整风格 |
-   | **信念** | `SOUL.md` | 工作信念、价值观优先级 | 事件符合现有信念 → 确认并强化 | 事件与现有信念冲突或价值观需重排 → 更新 `SOUL.md` 信念部分 |
-   | **身份** | `IDENTITY.md` | 角色集、身份边界、能力/责任边界 | 事件在现有角色范围内完成 → 强化角色认同 | 新角色被赋予、能力/责任边界需扩展 → 更新 `IDENTITY.md` |
-   | **技能** | `skills/README.md` | 技能索引、技能规范 | 现有技能成功处理事件 → 记录使用经验 | 需新技能或现有技能需升级 → 更新 `skills/README.md` 索引 |
+   **同化示例**：
+   - "Git 推送成功" → 符合现有工作流 → 同化
+   - "按 monitoring skill 检测到偏差并修正" → 符合现有规则 → 同化
 
-   **同化示例**（来自 regulation 阶段已撰写的事件）：
-   - "Git 推送成功" → 符合现有工作流 → 同化（正常执行流程）
-   - "自我更新完成" → 符合工作流2规范 → 同化
+   **顺应示例**：
+   - "老板指出元数据.json 不应移到临时数据/" → 与现有 manage-project 技能冲突 → 顺应（修复脚本、更新 If-Then 规则）
+   - "发现新类型任务需要新的处理方式" → 现有规则未覆盖 → 顺应（新增 If-Then 规则）
 
-   **顺应示例**（来自 regulation 阶段已撰写的事件）：
-   - "老板指出元数据.json 不应移到临时数据/" → 与现有 manage-project 技能冲突 → 顺应（修复脚本、更新 If-Then 规则到 `MEMORY.md` 程序性记忆）
-   - "发现新类型任务需要新的处理方式" → 现有 If-Then 规则未覆盖 → 顺应（新增规则到 `MEMORY.md` 程序性记忆）
-
-4. **更新触发检测**
+3. **更新触发检测**
 
    逐条检查以下触发条件（满足任一即需更新对应文件）：
 
    | 文件 | 触发条件 | 更新内容 |
    |------|---------|---------|
-   | `SOUL.md` | 自我/风格/信念 任一维度在 3+ 事件中被强化或挑战 | 强化：补充实例；挑战：修改 `SOUL.md` 对应段落 |
-   | `IDENTITY.md` | 新角色被赋予、现有角色期望变化、能力/责任边界扩展 | 新增/修改角色集、更新身份边界表 |
-   | `skills/README.md` | 新技能创建、现有技能升级/修复、技能结构变化 | 更新技能索引表、补充技能说明 |
+   | `SOUL.md` | 自我/风格/信念 任一维度在 2+ 事件中被强化或挑战 | 强化：补充实例；挑战：修改对应段落 |
+   | `IDENTITY.md` | 新角色被赋予、现有角色期望变化、边界扩展 | 新增/修改角色集、更新身份边界表 |
+   | `skills/README.md` | 新技能创建、现有技能升级/修复 | 更新技能索引表、补充说明 |
+   | `MEMORY.md` | If-Then 规则失效、未覆盖新场景 | 新增/修改/删除条件-行动规则 |
 
    **判定流程**：
    1. 读取对应人格文件的当前内容
    2. 将事件与文件中现有规则/描述对比
    3. 判断：兼容（同化）/ 冲突（顺应）/ 无关
    4. 若为顺应，确定需要修改的具体段落
-   5. 评估修改范围：微调（补充一句话）/ 中调（新增一个段落或规则）/ 重构（重写一个章节）
+   5. 评估修改范围：微调（补充一句话）/ 中调（新增段落或规则）/ 重构（重写章节）
 
-5. **执行更新**
+4. **执行更新**
 
    若更新触发检测通过，执行以下操作：
 
    1. **编辑对应人格文件**
-      - 使用文件编辑工具直接修改 `SOUL.md`、`IDENTITY.md`、`MEMORY.md` 或 `skills/README.md`
+      - 使用文件编辑工具直接修改 `SOUL.md`、`IDENTITY.md`、`skills/README.md`、`MEMORY.md`
       - 遵循文件现有的 Markdown 格式和结构
-      - 修改后更新文件的版本历史（添加版本号、日期、更新内容、更新者）
+      - 修改后更新文件的版本历史（添加版本号、日期、更新内容）
 
    2. **同步到仓库**（如适用）
-      - 若修改了版本控制的文件，执行 git add / commit / push
-      - 版本确定时推送到 `main` 分支，日常修改推送到 `development` 分支
-
-   3. **记录更新到日记**
-      - 在日记的"执行的更新"章节记录具体修改
-      - 包括：修改的文件、修改的位置、修改的原因
+      - 若修改了版本控制的文件，执行 git add / commit
+      - 版本确定时推送到 `main` 分支，日常修改推送到 `dev` 分支
 
    若无触发信号：
-   - 确认日记已完整撰写
-   - 在日记的"更新触发检测"中标注"无触发"
+   - 在思考过程中标注"无触发"
    - 无需修改人格文件
-
-**插件已自动完成的**（执行层，无需你操作）：
-- 已通过 `eventManager.queryEventLog(yesterday)` 从 SQLite `asd_eventlogs` 表读取昨日事件
-- 事件在运行期间已通过 `eventManager.recordEvent()` 从 State 聚合到 Memory
-
-**你需要自己完成的**（Agent 直接操作文件）：
-- 撰写/保存日记到 `diary/YYYY-MM-DD.md`
-- 读取并修改人格文件（`SOUL.md`、`IDENTITY.md`、`skills/README.md`）
-- 如需更新 If-Then 规则，同步修改 `MEMORY.md` 程序性记忆
-
-**你可以参考的上下文**（注入时附加在 skill 下方）：
-- 昨日日期
-- 昨日事件数量统计
-- 事件列表摘要
+   - **不撰写日记**（v3.3.0 已移除日记系统）
 
 ---
 
 ## 决策检查点
 
-每日自我更新流程结束时，请确认：
+任务级自我更新流程结束时，请确认：
 
-- [ ] 昨日所有重要事件是否已回顾并分类（成功/失败/常规）？
-- [ ] 发展日记是否已撰写（六段式格式）并保存到 `diary/YYYY-MM-DD.md`？
-- [ ] 五个人格成分是否都已对照实际文件评估影响类型？
-- [ ] 是否存在顺应信号（与 `SOUL.md`/`IDENTITY.md`/`skills/README.md` 现有内容冲突）？
+- [ ] 本次任务的所有偏差和计划修订是否已回顾？
+- [ ] 6 个人格维度是否都已对照实际文件评估影响类型？
+- [ ] 是否存在顺应信号（与现有文件内容冲突）？
 - [ ] 若需更新人格文件，是否已明确修改的具体段落和理由？
 - [ ] 人格文件修改后是否已更新版本历史？
 
@@ -209,17 +157,15 @@ module: personality
 ## 状态流转
 
 ```
-cron 触发 [每日自我更新]
-    ↓ 插件注入本 skill + 昨日事件
-Agent 回顾事件
+agent_end 触发
+    ↓ 插件注入本 skill + 本次 Event 摘要
+Agent 回顾本次事件
     ↓
-撰写/完善日记（保存到 diary/YYYY-MM-DD.md）
-    ↓
-分析同化/顺应影响（对照 SOUL.md / IDENTITY.md / skills/README.md）
+6 维度同化/顺应分析（对照 SOUL.md / IDENTITY.md / skills/README.md / MEMORY.md）
     ↓
 检查更新触发信号？
-    ├─ 有信号 → 编辑对应人格文件 → 更新版本历史 → git commit/push → 记录到日记
-    └─ 无信号 → 在日记标注"无触发" → 结束
+    ├─ 有信号 → 编辑对应人格文件 → 更新版本历史 → git commit
+    └─ 无信号 → 标注"无触发" → 结束
 ```
 
 ---
@@ -228,10 +174,11 @@ Agent 回顾事件
 
 | Skill | 注入时机 | 职责边界 |
 |-------|---------|---------|
-| `planning` | `before_prompt_build` | 在制定 Plan 时加载 `MEMORY.md` 中的 If-Then 条件-行动规则 |
-| `monitoring` | `llm_output` | 检测偏差并创建 Deviation 对象，触发 regulation |
-| `regulation` | Deviation 创建后 | 归因分析并撰写 Event，为每日回顾提供素材 |
-| `working_memory` | `agent_end` | 在运行结束时归档 session，管理任务空间复用 |
+| `planning` | `before_prompt_build` | 制定 Plan，加载 `MEMORY.md` 规则 |
+| `monitoring` | `llm_output` | 检测偏差并记录到 `task.event.deviations` |
+| `regulation` | Deviation 创建后 | 归因分析并记录到 `task.event.attributions` |
+| `working_memory` | `agent_end` | 归档 session，管理任务空间复用 |
+| `development` | `agent_end`（WM 之后）| 分析同化/顺应，更新人格文件 |
 
 ---
 
@@ -239,4 +186,5 @@ Agent 回顾事件
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v3.0.0 | 2026-04-29 | v3 重构：对象操作移交插件层，skill 变为纯 Agent 指导文档；同化顺应分析与实际人格文件（SOUL.md/IDENTITY.md/MEMORY.md/skills/README.md）紧密对应，Agent 直接读写人格文件 |
+| v3.3.0 | 2026-04-29 | 移除 cron/日记系统；改为 agent_end 单次任务分析；扩展为 6 维度（新增程序性记忆）；基于 `task.event` 而非昨日事件日志 |
+| v3.0.0 | 2026-04-29 | v3 重构：对象操作移交插件层，skill 变为纯 Agent 指导文档 |
