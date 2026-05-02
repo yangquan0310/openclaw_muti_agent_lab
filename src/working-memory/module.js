@@ -14,13 +14,14 @@
 import { getToday, getNow, inferTaskFamily } from '../common/utils.js';
 
 export class WorkingMemoryModule {
-  constructor({ api, config, stateAdapter, skillLoader, logger, sessionManager }) {
+  constructor({ api, config, stateAdapter, skillLoader, logger, sessionManager, eventManager }) {
     this.api = api;
     this.config = config || {};
     this.stateAdapter = stateAdapter;
     this.skillLoader = skillLoader;
     this.logger = logger;
     this.sessionManager = sessionManager;
+    this.eventManager = eventManager;
     this.enabled = this.config.enabled !== false;
     this.trackSubagents = this.enabled && this.config.trackSubagents !== false;
     this.autoArchive = this.enabled && this.config.autoArchive !== false;
@@ -55,7 +56,8 @@ export class WorkingMemoryModule {
   // ── 归档与状态更新: agent_end ──
   _registerArchive() {
     if (!this.autoArchive) return;
-    this.api.on('agent_end', this.onAgentEnd.bind(this));
+    // priority 40 > Personality 30，确保 WM 先完成 aggregateEvents
+    this.api.on('agent_end', this.onAgentEnd.bind(this), { priority: 40 });
   }
 
   // ── 辅助：获取或创建 task JSON ──
@@ -210,6 +212,12 @@ export class WorkingMemoryModule {
     task.event.status = 'completed';
     task.status = 'completed';
     await this._saveTask(task);
+
+    // 聚合事件到 Memory
+    if (this.eventManager) {
+      const aggResult = await this.eventManager.aggregateEvents(runId);
+      this.logger.debug(`[WM] 事件聚合: runId=${runId}, transferred=${aggResult.transferred}`);
+    }
 
     this.logger.debug(`[WM] 任务归档: runId=${runId}, completed=${completedSessions.length}, killed=${killedSessions.length}`);
 

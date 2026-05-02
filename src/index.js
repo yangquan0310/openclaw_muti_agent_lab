@@ -82,7 +82,7 @@ export default {
     });
     const workingMemory = new WorkingMemoryModule({
       api, config: config.workingMemory, stateAdapter, skillLoader, logger,
-      sessionManager
+      sessionManager, eventManager
     });
     const personality = new PersonalityModule({
       api, config: config.personality || config.assimilation, stateAdapter, skillLoader, logger

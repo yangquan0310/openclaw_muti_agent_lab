@@ -24,8 +24,6 @@ metadata:
             "agent_end",
             "before_tool_call",
             "after_tool_call",
-            "gateway_start",
-            "gateway_stop",
           ],
       },
   }
@@ -41,11 +39,9 @@ This file exists for discovery and documentation purposes.
 
 - before_prompt_build: inject planning / monitoring skill
 - llm_output: monitor deviation from plan
-- agent_end: cleanup run state, archive sessions
+- agent_end: aggregate events, archive sessions, trigger personality update
 - before_tool_call: record session spawn
 - after_tool_call: record tool result / session completion
-- gateway_start: start daily assimilation cron
-- gateway_stop: stop cron
 `;
 
 const HANDLER_TS_TEMPLATE = `
