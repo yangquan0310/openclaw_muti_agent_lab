@@ -221,6 +221,12 @@ export class WorkingMemoryModule {
 
     this.logger.debug(`[WM] 任务归档: runId=${runId}, completed=${completedSessions.length}, killed=${killedSessions.length}`);
 
+    // 将 completed task 移至 archive，保留最近 50 个
+    const archived = await this.stateAdapter.archiveTask(runId);
+    if (archived) {
+      this.logger.debug(`[WM] Task 已归档: runId=${runId} → archive/tasks_archive.json`);
+    }
+
     // 注入 working_memory skill
     const workingMemorySkill = await this.skillLoader.load('working_memory');
     if (workingMemorySkill) {
