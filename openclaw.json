@@ -2,6 +2,9 @@
   "agents": {
     "defaults": {
       "workspace": "/root/.openclaw/workspace/",
+      "userTimezone": "Asia/Shanghai",
+      "thinkingDefault": "low",
+      "verboseDefault": "on",
       "compaction": {
         "mode": "safeguard"
       },
@@ -11,7 +14,7 @@
         }
       },
       "model": {
-        "primary": "kimicode/kimi-for-coding"
+        "primary": "deepseek/deepseek-v4-flash"
       },
       "skills": [
         "agent-browser-clawdbot",
@@ -42,10 +45,7 @@
         "zotero-local-pdf-import",
         "zotero-scholar",
         "zotero-vectorize"
-      ],
-      "userTimezone": "Asia/Shanghai",
-      "thinkingDefault": "off",
-      "verboseDefault": "off"
+      ]
     },
     "list": [
       {
@@ -457,190 +457,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.21",
-    "lastTouchedAt": "2026-05-01T08:55:34.311Z"
-  },
-  "plugins": {
-    "entries": {
-      "browser": {
-        "enabled": true
-      },
-      "feishu": {
-        "enabled": false
-      },
-      "openclaw-lark": {
-        "enabled": true
-      },
-      "memory-wiki": {
-        "enabled": true
-      },
-      "adp-openclaw": {
-        "enabled": false
-      },
-      "memory-core": {
-        "enabled": true,
-        "config": {
-          "dreaming": {
-            "enabled": true
-          }
-        }
-      },
-      "memory-lancedb": {
-        "enabled": true,
-        "config": {
-          "embedding": {
-            "apiKey": "${KIMICODE_API_KEY}",
-            "baseUrl": "https://api.moonshot.cn/v1",
-            "model": "moonshot-v1-8k",
-            "dimensions": 1536
-          },
-          "autoCapture": true,
-          "autoRecall": true
-        }
-      },
-      "ddingtalk": {
-        "enabled": false
-      },
-      "wecom": {
-        "enabled": false
-      },
-      "openclaw-plugin-yuanbao": {
-        "enabled": false
-      },
-      "openclaw-weixin": {
-        "enabled": true
-      },
-      "lightclawbot": {
-        "enabled": true
-      },
-      "memory-tencentdb": {
-        "enabled": false
-      },
-      "qqbot": {
-        "enabled": true
-      },
-      "agent-self-development": {
-        "enabled": true,
-        "config": {
-          "metacognition": {
-            "enabled": true,
-            "planning": true,
-            "monitoring": true
-          },
-          "workingMemory": {
-            "enabled": true,
-            "trackSubagents": true,
-            "autoArchive": true
-          },
-          "personality": {
-            "enabled": true
-          }
-        },
-        "hooks": {
-          "allowPromptInjection": true
-        }
-      },
-      "deepseek": {
-        "enabled": true
-      },
-      "moonshot": {
-        "enabled": true
-      }
-    },
-    "installs": {
-      "openclaw-lark": {
-        "source": "archive",
-        "sourcePath": "/tmp/openclaw-lark-N9KP1g/larksuite-openclaw-lark-2026.4.7.tgz",
-        "installPath": "/root/.openclaw/extensions/openclaw-lark",
-        "version": "2026.4.7",
-        "installedAt": "2026-04-13T14:19:07.117Z"
-      },
-      "adp-openclaw": {
-        "source": "npm",
-        "spec": "adp-openclaw@0.0.77",
-        "installPath": "/root/.openclaw/extensions/adp-openclaw",
-        "version": "0.0.77",
-        "installedAt": "2026-04-19T12:43:49.000Z"
-      },
-      "memory-core": {
-        "source": "path",
-        "spec": "memory-core",
-        "sourcePath": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.4.14_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0_@napi-rs+canvas@0.1.99_@t_301ed012d3fecfe3e2337cb93aa6e57a/node_modules/openclaw/dist/extensions/memory-core",
-        "installPath": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.4.14_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0_@napi-rs+canvas@0.1.99_@t_301ed012d3fecfe3e2337cb93aa6e57a/node_modules/openclaw/dist/extensions/memory-core",
-        "installedAt": "2026-04-20T10:58:29.652Z"
-      },
-      "ddingtalk": {
-        "source": "npm",
-        "spec": "@largezhou/ddingtalk@2.0.1",
-        "installPath": "/root/.openclaw/extensions/ddingtalk",
-        "version": "2.0.1",
-        "installedAt": "2026-04-27T03:59:29.000Z"
-      },
-      "wecom": {
-        "source": "npm",
-        "spec": "@mocrane/wecom@2026.3.24",
-        "installPath": "/root/.openclaw/extensions/wecom",
-        "version": "2026.3.24",
-        "installedAt": "2026-04-27T03:59:36.000Z"
-      },
-      "openclaw-plugin-yuanbao": {
-        "source": "npm",
-        "spec": "openclaw-plugin-yuanbao@2.10.0",
-        "installPath": "/root/.openclaw/extensions/openclaw-plugin-yuanbao",
-        "version": "2.10.0",
-        "installedAt": "2026-04-27T03:59:41.000Z"
-      },
-      "openclaw-weixin": {
-        "source": "npm",
-        "spec": "@tencent-weixin/openclaw-weixin@2.1.9",
-        "installPath": "/root/.openclaw/extensions/openclaw-weixin",
-        "version": "2.1.9",
-        "installedAt": "2026-04-27T03:59:46.000Z"
-      },
-      "lightclawbot": {
-        "source": "npm",
-        "spec": "lightclawbot@1.1.2",
-        "installPath": "/root/.openclaw/extensions/lightclawbot",
-        "version": "1.1.2",
-        "installedAt": "2026-04-27T03:59:48.000Z"
-      },
-      "memory-tencentdb": {
-        "source": "npm",
-        "spec": "@tencentdb-agent-memory/memory-tencentdb@0.2.2",
-        "installPath": "/root/.openclaw/extensions/memory-tencentdb",
-        "version": "0.2.2",
-        "installedAt": "2026-04-27T04:00:14.000Z"
-      },
-      "agent-self-development": {
-        "source": "archive",
-        "sourcePath": "/tmp/agent-self-development-3.2.1.tgz",
-        "installPath": "/root/.openclaw/extensions/agent-self-development",
-        "version": "3.2.1",
-        "installedAt": "2026-04-30T16:58:06.767Z"
-      }
-    },
-    "allow": [
-      "adp-openclaw",
-      "browser",
-      "ddingtalk",
-      "lightclawbot",
-      "memory-core",
-      "memory-lancedb",
-      "memory-wiki",
-      "openclaw-lark",
-      "openclaw-plugin-yuanbao",
-      "openclaw-weixin",
-      "qqbot",
-      "wecom",
-      "agent-self-development",
-      "deepseek",
-      "moonshot"
-    ],
-    "load": {
-      "paths": []
-    },
-    "slots": {
-      "memory": "memory-core"
-    }
+    "lastTouchedAt": "2026-05-02T10:47:11.555Z"
   },
   "browser": {
     "enabled": true,
@@ -1080,6 +897,121 @@
           "/root/.openclaw/workspace/skills/manage-project/mcp/server.py"
         ]
       }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "browser": {
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": false
+      },
+      "openclaw-lark": {
+        "enabled": true
+      },
+      "memory-wiki": {
+        "enabled": true
+      },
+      "adp-openclaw": {
+        "enabled": false
+      },
+      "memory-core": {
+        "enabled": true,
+        "config": {
+          "dreaming": {
+            "enabled": true
+          }
+        }
+      },
+      "memory-lancedb": {
+        "enabled": false,
+        "config": {
+          "embedding": {
+            "apiKey": "${KIMICODE_API_KEY}",
+            "baseUrl": "https://api.moonshot.cn/v1",
+            "model": "moonshot-v1-8k",
+            "dimensions": 1536
+          },
+          "autoCapture": true,
+          "autoRecall": true
+        }
+      },
+      "ddingtalk": {
+        "enabled": false
+      },
+      "wecom": {
+        "enabled": false
+      },
+      "openclaw-plugin-yuanbao": {
+        "enabled": false
+      },
+      "openclaw-weixin": {
+        "enabled": true
+      },
+      "lightclawbot": {
+        "enabled": true
+      },
+      "memory-tencentdb": {
+        "enabled": false
+      },
+      "qqbot": {
+        "enabled": true
+      },
+      "agent-self-development": {
+        "enabled": true,
+        "config": {
+          "metacognition": {
+            "enabled": true,
+            "planning": true,
+            "monitoring": true
+          },
+          "workingMemory": {
+            "enabled": true,
+            "trackSubagents": true,
+            "autoArchive": true
+          },
+          "personality": {
+            "enabled": true
+          },
+          "archive": {
+            "maxArchivedTasks": 50
+          }
+        },
+        "hooks": {
+          "allowPromptInjection": true,
+          "allowConversationAccess": true
+        }
+      },
+      "deepseek": {
+        "enabled": true
+      },
+      "moonshot": {
+        "enabled": true
+      }
+    },
+    "allow": [
+      "adp-openclaw",
+      "browser",
+      "ddingtalk",
+      "lightclawbot",
+      "memory-core",
+      "memory-lancedb",
+      "memory-wiki",
+      "openclaw-lark",
+      "openclaw-plugin-yuanbao",
+      "openclaw-weixin",
+      "qqbot",
+      "wecom",
+      "agent-self-development",
+      "deepseek",
+      "moonshot"
+    ],
+    "load": {
+      "paths": []
+    },
+    "slots": {
+      "memory": "memory-core"
     }
   }
 }

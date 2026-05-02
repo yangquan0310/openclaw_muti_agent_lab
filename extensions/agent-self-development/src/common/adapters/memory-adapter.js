@@ -113,24 +113,6 @@ export class MemoryAdapter {
     return row ? JSON.parse(row.events) : [];
   }
 
-  async saveDiary(date, diary) {
-    if (this.api?.set) await this.api.set(`diary:${date}`, diary);
-    await this._init();
-    const db = await this._getDb();
-    db.prepare(`INSERT OR REPLACE INTO ${this.tablePrefix}diaries (date, content) VALUES (?, ?)`).run(date, JSON.stringify(diary));
-  }
-
-  async getDiary(date) {
-    if (this.api?.get) {
-      const mem = await this.api.get(`diary:${date}`);
-      if (mem) return mem;
-    }
-    await this._init();
-    const db = await this._getDb();
-    const row = db.prepare(`SELECT content FROM ${this.tablePrefix}diaries WHERE date = ?`).get(date);
-    return row ? JSON.parse(row.content) : null;
-  }
-
   async queryHistory(options) {
     await this._init();
     const results = [];

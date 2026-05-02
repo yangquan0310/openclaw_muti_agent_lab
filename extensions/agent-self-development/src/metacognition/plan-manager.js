@@ -1,6 +1,8 @@
 /**
  * PlanManager — 计划管理器
  * 组合 StateAdapter + FlowAdapter，管理 Plan 全生命周期
+ *
+ * v3.3.0: 适配统一 task JSON，所有 Plan 数据通过 task:{runId}.plan 存取
  */
 
 export class PlanManager {
@@ -9,50 +11,75 @@ export class PlanManager {
     this.flowAdapter = flowAdapter;
   }
 
+  async _getTask(runId) {
+    return this.stateAdapter.getTask(runId);
+  }
+
+  async _saveTask(task) {
+    return this.stateAdapter.saveTask(task.runId, task);
+  }
+
   async createPlan(prompt) {
     const runId = crypto.randomUUID();
-    const plan = {
+    const task = {
       runId,
-      prompt,
       status: 'draft',
-      context: { goal: '', constraints: [], successCriteria: [] },
-      workspace: { sessions: [], artifacts: [], tools: [], skills: [] },
-      execution: { phases: [], currentPhase: 0 }
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      plan: {
+        prompt,
+        status: 'draft',
+        context: { goal: '', constraints: [], successCriteria: [] },
+        workspace: { sessions: [], artifacts: [], tools: [], skills: [] },
+        execution: { phases: [], currentPhase: 0 }
+      },
+      event: { status: 'draft', deviations: [], attributions: [], planRevisions: [], outcome: {} },
+      sessionIds: [],
+      tools: []
     };
 
-    await this.stateAdapter.savePlan(runId, plan);
-    await this.flowAdapter.createPlanFlow(plan);
+    await this._saveTask(task);
+    await this.flowAdapter.createPlanFlow(task.plan);
 
-    return plan;
+    return task;
   }
 
   async approvePlan(runId) {
-    const plan = await this.stateAdapter.getPlan(runId);
-    if (!plan) throw new Error('Plan not found');
+    const task = await this._getTask(runId);
+    if (!task) throw new Error('Task not found');
 
-    plan.status = 'active';
-    await this.stateAdapter.savePlan(runId, plan);
+    task.status = 'active';
+    task.plan.status = 'active';
+    task.updatedAt = Date.now();
+    await this._saveTask(task);
 
     const flow = await this.flowAdapter.getByRunId(runId);
-    await this.flowAdapter.advancePhase(flow.flowId, plan.execution.phases[0]);
+    if (flow && task.plan.execution.phases[0]) {
+      await this.flowAdapter.advancePhase(flow.flowId, task.plan.execution.phases[0]);
+    }
   }
 
   async completePhase(runId, phaseIndex) {
-    const plan = await this.stateAdapter.getPlan(runId);
-    if (!plan) throw new Error('Plan not found');
+    const task = await this._getTask(runId);
+    if (!task) throw new Error('Task not found');
 
+    const plan = task.plan;
     plan.execution.phases[phaseIndex].status = 'completed';
     plan.execution.currentPhase = phaseIndex + 1;
+    task.updatedAt = Date.now();
 
-    await this.stateAdapter.savePlan(runId, plan);
+    await this._saveTask(task);
 
     if (plan.execution.currentPhase >= plan.execution.phases.length) {
+      task.status = 'completed';
       plan.status = 'completed';
-      await this.stateAdapter.savePlan(runId, plan);
+      await this._saveTask(task);
     } else {
       const nextPhase = plan.execution.phases[plan.execution.currentPhase];
       const flow = await this.flowAdapter.getByRunId(runId);
-      await this.flowAdapter.advancePhase(flow.flowId, nextPhase);
+      if (flow) {
+        await this.flowAdapter.advancePhase(flow.flowId, nextPhase);
+      }
     }
   }
 }

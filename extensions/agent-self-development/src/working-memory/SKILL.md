@@ -3,7 +3,7 @@ name: working_memory
 description: >
   工作记忆模块。指导 Agent 在运行结束时检查任务空间看板、复用策略和归档状态。
   核心原则：completed 的任务空间标记为 idle 供复用，killed 的任务空间清理释放。
-version: 3.0.0
+version: 3.3.0
 injected_at: agent_end
 module: working_memory
 ---
@@ -22,11 +22,11 @@ module: working_memory
 
 | 时机 | 插件已完成的操作 | 存储位置 |
 |------|-----------------|----------|
-| 运行结束时 | 遍历本次运行的所有 Session | `~/.openclaw/state/agent-self-development/sessions.json`（键：`session_list:{runId}`） |
+| 运行结束时 | 遍历本次 task 关联的所有 Session | `task:{runId}.sessionIds`（统一 task JSON） |
 | completed Session | 归档到 Memory SQLite（`asd_archives` 表） | `~/.openclaw/memory/{agentId}.sqlite` |
-| completed Session | 标记为 `idle`（全局活跃索引） | `~/.openclaw/state/agent-self-development/sessions.json`（键：`working_memory:active_sessions`） |
+| completed Session | 标记为 `idle`（全局活跃索引） | `state:working_memory:active_sessions` |
 | killed Session | 从全局活跃索引移除 | 同上 |
-| 清理 | 删除本次运行的临时数据 | `wm:{runId}:tools`、`session_list:{runId}` |
+| 清理 | 更新 task.status = 'completed'，event.status = 'completed' | `task:{runId}`（统一 task JSON） |
 
 当前运行已结束，插件已完成所有存储层面的清理和归档。
 
@@ -107,7 +107,7 @@ module: working_memory
 - 已通过 `stateAdapter.saveSession('working_memory:active_sessions', ...)` 更新全局索引
 - 已通过 `memoryAdapter.archiveSession()` 将 completed Session 写入 SQLite `asd_archives` 表
 - 已从全局索引移除 killed Session
-- 已清理本次运行的临时状态键（`wm:{runId}:tools`、`session_list:{runId}`）
+- 已更新 `task:{runId}` 中的 status、event.outcome、sessionIds
 
 **你可以参考的上下文**（注入时附加在 skill 下方）：
 - 本次运行中创建/复用/完成的 Session 列表
@@ -169,4 +169,5 @@ before_tool_call（sessions_spawn/agent/subagent）
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v3.0.0 | 2026-04-29 | v3 重构：对象操作移交插件层，skill 变为纯 Agent 指导文档，紧密关联 sessions.json 和 SQLite `asd_archives` 存储 |
+| v3.3.0 | 2026-04-29 | 适配统一 task JSON：session 列表从 task.sessionIds 读取；移除 `wm:{runId}:tools` 和 `session_list:{runId}` 引用 |
+| v3.0.0 | 2026-04-29 | v3 重构：对象操作移交插件层，skill 变为纯 Agent 指导文档 |

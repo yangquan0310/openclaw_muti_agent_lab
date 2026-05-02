@@ -3,7 +3,7 @@ name: monitoring
 description: >
   元认知监控子模块。指导 Agent 在 Plan active 阶段检测偏差并创建 Deviation 对象。
   核心原则：发现预期与实际的差距时，创建 Deviation 记录并触发调节。
-version: 3.0.0
+version: 3.3.0
 injected_at: llm_output
 module: metacognition
 ---
@@ -22,15 +22,14 @@ module: metacognition
 
 | 时机 | 插件已完成的操作 | 存储位置 |
 |------|-----------------|----------|
-| 每次 LLM 输出后 | 缓存最新输出到 Plan | `~/.openclaw/state/agent-self-development/plans.json` |
-| 注入前 | 读取当前 Plan，确认 status === `"active"` | 同上 |
+| 每次 LLM 输出后 | 缓存最新输出到 task.plan | `task:{runId}.plan`（统一 task JSON） |
+| 注入前 | 读取当前 task，确认 status === `"active"` | 同上 |
 
 ---
 
 ## 核心对象：Deviation（偏差记录）
 
-**存储位置**：`~/.openclaw/state/agent-self-development/deviations.json`  
-**存储键**：`{runId}:{phaseId}`
+**存储位置**：`task:{runId}.event.deviations`（统一 task JSON 内）
 
 ```json
 {
@@ -81,7 +80,8 @@ module: metacognition
    - 确定 `type`：`progress`（进度）/ `quality`（质量）/ `resource`（资源）/ `goal`（目标）
    - 确定 `severity`：`minor` / `major` / `critical`
    - 撰写 `description`：描述预期是什么、实际是什么、差距在哪里
-   - 通知插件保存 Deviation：`deviationManager.createDeviation(runId, phaseId, deviationData)`
+   - 将 Deviation 追加到 `task.event.deviations`
+   - 通知插件更新 task（插件通过 `stateAdapter.saveTask()` 保存）
    - Deviation 保存后，**触发 regulation**（请求注入 regulation skill）
 
 4. **阶段完成判定**
@@ -93,7 +93,7 @@ module: metacognition
 **插件已自动完成的**（执行层，无需你操作）：
 - 已缓存本次 LLM 输出到 Plan
 - 已确认 Plan.status 为 `"active"` 才注入本 skill
-- 已通过 `deviationManager.createDeviation()` 保存 Deviation 记录
+- 已将 Deviation 追加到 `task.event.deviations`，并通过 `stateAdapter.saveTask()` 保存
 
 **你可以参考的上下文**（注入时附加在 skill 下方）：
 - 当前阶段索引和 ID
@@ -139,6 +139,78 @@ active（Plan 执行中）
     │             返回 monitoring 继续追踪
     └─ 阶段完成 → 通知插件 currentPhase++
 ```
+
+---
+
+## 自反性：工作记忆看板更新
+
+当 Plan 从 `pending_approval` 进入 `active` 时（用户同意执行计划后），你需要在执行前更新自己的工作记忆看板。
+
+### 当前活跃任务看板
+
+在你的 MEMORY.md 中维护以下表格：
+
+```markdown
+### 当前活跃任务看板
+
+| 任务ID | 项目 | 任务描述 | 会话ID | 状态 | 创建时间 | 最后更新 | 备注 |
+|--------|------|----------|--------|------|----------|----------|------|
+| {runId} | {project} | {taskDescription} | {sessionId} | active | {createdAt} | {updatedAt} | {notes} |
+```
+
+**字段说明**：
+
+| 字段 | 必填 | 说明 |
+|------|------|------|
+| `任务ID` | ✅ | 本次运行的 `runId` |
+| `项目` | ✅ | 任务所属项目/类别 |
+| `任务描述` | ✅ | Plan 的核心目标描述（一句话） |
+| `会话ID` | ✅ | 负责执行本次任务的 Session ID |
+| `状态` | ✅ | `active` / `paused` / `completed` / `killed` |
+| `创建时间` | ✅ | Plan 创建时间（ISO 格式） |
+| `最后更新` | ✅ | 本行最后修改时间（ISO 格式） |
+| `备注` | 可选 | 特殊说明（如"命名会话，长期复用"） |
+
+**添加时机**：Plan 变为 `active` 时，在看板中新增一行。
+**更新时机**：任务状态变化时（如 paused / completed / killed），更新对应行的状态字段。
+**删除时机**：任务归档到 Memory 后，从看板中删除或标记为 `completed`。
+
+### 活跃会话清单
+
+在你的 MEMORY.md 中维护以下表格：
+
+```markdown
+### 活跃会话清单
+
+| 会话ID | 类型/角色 | 分配任务 | 状态 | 创建时间 | 最后活跃 | 备注 |
+|--------|-----------|----------|------|----------|----------|------|
+| {sessionId} | {role} | {taskDescription} | {status} | {createdAt} | {lastActive} | {notes} |
+```
+
+**字段说明**：
+
+| 字段 | 必填 | 说明 |
+|------|------|------|
+| `会话ID` | ✅ | Session 的完整标识符 |
+| `类型/角色` | ✅ | 会话承担的角色（如"论文修改专家"） |
+| `分配任务` | ✅ | 当前分配的任务描述 |
+| `状态` | ✅ | `active` / `idle` / `killed` |
+| `创建时间` | ✅ | 会话创建时间（ISO 格式） |
+| `最后活跃` | ✅ | 最后使用时间（ISO 格式） |
+| `备注` | 可选 | 特殊说明 |
+
+**添加时机**：创建新会话或复用会话执行任务时，在清单中新增/更新一行。
+**复用检查**：创建会话前，先检查活跃会话清单。若存在同类任务的 `idle` 会话，优先复用。
+**删除时机**：会话 `killed` 后，从清单中删除。
+
+### 执行前自检查清单
+
+更新完工作记忆看板后，请确认：
+
+- [ ] 当前活跃任务看板中已记录本次任务（runId、会话ID、状态=active）
+- [ ] 活跃会话清单中已更新/添加负责会话
+- [ ] 是否存在其他 `active` 任务冲突？（如有，暂停或排队）
+- [ ] 是否复用了已有的 `idle` 会话？（避免重复创建）
 
 ---
 

@@ -63,3 +63,12 @@
 
 *最后重构: 2026-05-01*
 *重构者: 系统管理员*
+
+## Promoted From Short-Term Memory (2026-05-03)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-27.md:148:148 -->
+- **时间**: 2026-04-27 13:50 - 14:13 GMT+8 [score=0.835 recalls=0 avg=0.620 source=memory/2026-04-27.md:148-148]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-27.md:150:150 -->
+- **问题描述**: [score=0.835 recalls=0 avg=0.620 source=memory/2026-04-27.md:150-150]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-29.md:35:35 -->
+- *Flush time: 2026-04-29 00:12 Asia/Shanghai* [score=0.829 recalls=0 avg=0.620 source=memory/2026-04-29.md:35-35]

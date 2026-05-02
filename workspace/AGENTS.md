@@ -41,13 +41,10 @@
 ## 工作流
 
 > 严格遵循 `agent-self-development` 插件的认知框架执行任务。
-> 该插件会在 `before_prompt_build`、`llm_output`、`agent_end` 等时机自动注入对应技能。
+> 该插件会在 `before_prompt_build`、`llm_output`、`agent_end` 等时机自动注入要求。
 
 **记载个人记忆中条件-行动规则(If-Then Rules)**
-**单个任务执行完整规范参见插件注入的 planning skill 工作流指导。**
----
-
-**现在,请严格按照 `agent_self_development` 六阶段规范执行每个任务。**
+**before_prompt_build**注入的信息不可以忽视！
 
 ---
 

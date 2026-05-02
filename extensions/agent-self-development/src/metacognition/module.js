@@ -4,15 +4,19 @@
  * 插件职责：在合适的时机将对应的 skill 文档注入 Agent 的 system context
  * Agent 职责：自行阅读 skill、判断偏差、决定是否 revise
  *
+ * v3.4.0 变更：
+ * - 移除插件自动创建 task JSON，改为 Agent 评估 + 用户确认后延迟创建
+ * - 新增 assessment 阶段：before_prompt_build（无 task）→ 注入 assessment skill
+ * - llm_output 检测 [NEED_PLAN] 标记后创建 task，再注入 planning skill
+ *
  * Plan 状态机：
- *   draft → pending_approval → active → completed → destroyed
- *   ├─ draft: 生成 Plan，Agent 制定并汇报
- *   ├─ pending_approval: 等待用户确认（Agent 处理反馈）
- *   ├─ active: 用户确认后按 phases 执行
- *   └─ completed: 所有 phases 完成
+ *   draft → pending_approval → active → completed
+ *   ├─ draft: Agent 制定并汇报 Plan
+ *   ├─ pending_approval: 等待用户确认
+ *   └─ active: 用户确认后按 phases 执行
  */
 
-import { generatePlan, assignSessionsToPhases } from '../common/utils.js';
+import { generatePlan, assignSessionsToPhases, getNow } from '../common/utils.js';
 
 export class MetacognitionModule {
   constructor({ api, config, stateAdapter, skillLoader, logger, planManager, deviationManager, attributionManager }) {
@@ -41,83 +45,100 @@ export class MetacognitionModule {
     this._registerCleanup();
   }
 
+  // ── Plan 制定与确认: before_prompt_build ──
   _registerPlanning() {
     if (!this.planningEnabled) return;
-    this.api.on('before_prompt_build', this.onBeforePromptBuild.bind(this), { priority: 50 });
+    this.api.on('before_prompt_build', this.onBeforePromptBuild.bind(this), { priority: 55 });
   }
 
+  // ── 监控: llm_output ──
   _registerMonitoring() {
     if (!this.monitoringEnabled) return;
     this.api.on('llm_output', this.onLlmOutput.bind(this));
   }
 
+  // ── 清理: agent_end ──
   _registerCleanup() {
     this.api.on('agent_end', this.onAgentEnd.bind(this));
   }
 
-  /**
-   * before_prompt_build 三阶段逻辑：
-   * 1. draft / null → 注入 planning skill，要求制定 Plan 并汇报
-   * 2. pending_approval → 注入 planning skill，处理用户确认/修改
-   * 3. active → 注入执行上下文 + monitoring
-   */
-  async onBeforePromptBuild(event, ctx) {
-    const runId = ctx.runId;
-    if (!runId) return;
+  async _getTask(runId) {
+    return this.stateAdapter.getTask(runId);
+  }
 
-    const prompt = event.prompt || '';
-    if (!this._shouldUseMetacognition(prompt)) {
-      this.logger.debug(`[Meta] 简单任务，跳过计划: ${prompt.slice(0, 50)}`);
-      return;
-    }
+  async _saveTask(task) {
+    task.updatedAt = getNow();
+    await this.stateAdapter.saveTask(task.runId, task);
+  }
 
-    let plan = await this.stateAdapter.getPlan(runId);
-
-    // ── 阶段一：Plan 不存在，生成新 Plan ──
-    if (!plan) {
-      const planTemplate = generatePlan(prompt);
-      const phases = assignSessionsToPhases(planTemplate.execution.phases, prompt);
-      plan = {
-        runId,
+  async _createTask(runId, prompt) {
+    const planTemplate = generatePlan(prompt);
+    const phases = assignSessionsToPhases(planTemplate.execution.phases, prompt);
+    const task = {
+      runId,
+      status: 'draft',
+      createdAt: getNow(),
+      updatedAt: getNow(),
+      plan: {
         prompt: prompt.slice(0, 500),
         createdAt: Date.now(),
-        status: 'draft',
         context: planTemplate.context,
         workspace: planTemplate.workspace,
         execution: {
           phases,
           currentPhase: 0
         }
-      };
-      await this.stateAdapter.savePlan(runId, plan);
-      this.logger.debug(`[Meta] Plan 生成[${plan.status}]: ${phases.length} 阶段`);
-    }
-
-    // ── 阶段二：根据 Plan.status 注入不同的 skill ──
-    const planningSkill = await this.skillLoader.load('planning');
-
-    if (plan.status === 'draft') {
-      // Agent 需要制定完整 Plan 并向用户汇报
-      return this._buildDraftContext(planningSkill, plan);
-    }
-
-    if (plan.status === 'pending_approval') {
-      // Agent 需要处理用户的确认/修改反馈
-      return this._buildPendingApprovalContext(planningSkill, plan);
-    }
-
-    if (plan.status === 'active') {
-      // 计划已确认，注入执行上下文帮助 Agent 继续执行
-      return this._buildExecutionContext(plan);
-    }
-
-    // completed 或其他状态，不注入
-    return null;
+      },
+      event: { status: 'draft', deviations: [], attributions: [], planRevisions: [], outcome: {} },
+      sessionIds: [],
+      tools: []
+    };
+    await this._saveTask(task);
+    this.logger.debug(`[Meta] Task 创建[draft]: ${phases.length} 阶段`);
+    return task;
   }
 
   /**
-   * draft 状态：要求 Agent 制定 Plan 并向用户汇报
+   * before_prompt_build 逻辑：
+   * 1. 无 task → 注入 assessment skill（Agent 评估 + 询问用户）
+   * 2. task=draft → 注入 planning skill（制定 Plan）
+   * 3. task=pending_approval → 注入 planning skill（处理用户反馈）
+   * 4. task=active → 注入执行上下文 + monitoring
    */
+  async onBeforePromptBuild(event, ctx) {
+    const runId = ctx.runId;
+    if (!runId) return;
+
+    const task = await this._getTask(runId);
+
+    // ── 阶段一：无 task → 注入 planning skill（评估阶段）──
+    if (!task) {
+      const planningSkill = await this.skillLoader.load('planning');
+      if (!planningSkill) return;
+      this.logger.debug(`[Meta] 注入 planning skill（评估阶段）: runId=${runId}`);
+      return {
+        prependSystemContext: `${planningSkill}\n\n【当前状态】本次会话尚无 task。请根据上方 planning skill 中的"职责 A：任务评估"章节，评估用户任务复杂度，决定是否需要制定 Plan。\n`
+      };
+    }
+
+    // ── 阶段二：根据 task.status 注入不同的 skill ──
+    const planningSkill = await this.skillLoader.load('planning');
+
+    if (task.status === 'draft') {
+      return this._buildDraftContext(planningSkill, task.plan);
+    }
+
+    if (task.status === 'pending_approval') {
+      return this._buildPendingApprovalContext(planningSkill, task.plan);
+    }
+
+    if (task.status === 'active') {
+      return this._buildExecutionContext(task.plan);
+    }
+
+    return null;
+  }
+
   _buildDraftContext(planningSkill, plan) {
     const { execution, workspace } = plan;
     const assignedSessions = execution.phases.filter(ph => ph.sessionId).length;
@@ -142,9 +163,6 @@ export class MetacognitionModule {
     };
   }
 
-  /**
-   * pending_approval 状态：处理用户确认/修改
-   */
   _buildPendingApprovalContext(planningSkill, plan) {
     const pendingContext = `
 【Plan 待确认 - 处理用户反馈】
@@ -154,14 +172,14 @@ export class MetacognitionModule {
 【Agent 职责 - 必做】
 1. 读取用户反馈内容
 2. 如果用户确认（"确认"、"可以"、"开始执行"等）：
-   - 将 Plan.status 更新为 "active"
+   - 将 task.status 更新为 "active"
    - 开始按 phases 执行
 3. 如果用户要求修改：
-   - 修改 Plan.context / Plan.execution.phases
+   - 修改 task.plan.context / task.plan.execution.phases
    - 重新向用户汇报修改后的 Plan
-   - 保持 Plan.status 为 "pending_approval"
+   - 保持 task.status 为 "pending_approval"
 4. 如果用户取消任务：
-   - 将 Plan.status 更新为 "completed"
+   - 将 task.status 更新为 "completed"
    - 说明取消原因
 `;
 
@@ -170,9 +188,6 @@ export class MetacognitionModule {
     };
   }
 
-  /**
-   * active 状态：注入执行上下文
-   */
   _buildExecutionContext(plan) {
     const { execution, workspace } = plan;
     const currentPhase = execution.phases[execution.currentPhase];
@@ -199,7 +214,7 @@ export class MetacognitionModule {
 【执行指导】
 1. 当前阶段已确认，按目标推进
 2. 阶段完成后通知插件：phase.status = "completed"，currentPhase++
-3. 产出物追加到 workspace.artifacts
+3. 产出物追加到 task.plan.workspace.artifacts
 4. 如需调节 Plan，先说明理由并通知插件更新
 `;
 
@@ -209,43 +224,64 @@ export class MetacognitionModule {
   }
 
   /**
-   * llm_output：仅在 Plan active 时注入 monitoring skill
+   * llm_output：
+   * 1. 检测 [NEED_PLAN] 标记 → 创建 task → 注入 planning skill
+   * 2. task=active → 注入 monitoring skill
    */
   async onLlmOutput(event, ctx) {
     const runId = ctx.runId;
     if (!runId) return;
 
     const output = event.output || event.text || '';
-    await this.stateAdapter.savePlan(runId, { output });
 
-    const plan = await this.stateAdapter.getPlan(runId);
-    if (!plan || plan.status !== 'active') return;
+    // ── 检测 [NEED_PLAN] 标记 ──
+    const needPlan = output.includes('[NEED_PLAN]');
+    let task = await this._getTask(runId);
 
-    const monitoringSkill = await this.skillLoader.load('monitoring');
-    if (!monitoringSkill) return;
+    if (needPlan && !task) {
+      const prompt = event.prompt || '';
+      task = await this._createTask(runId, prompt);
 
-    const currentPhase = plan.execution.phases[plan.execution.currentPhase];
-    const phaseHint = currentPhase
-      ? `当前阶段：${currentPhase.id}，分配会话：${currentPhase.sessionId || '无'}`
-      : '所有阶段已完成';
+      // 注入 planning skill，让 Agent 在同一次回复中继续制定 Plan
+      const planningSkill = await this.skillLoader.load('planning');
+      if (planningSkill) {
+        const draftContext = this._buildDraftContext(planningSkill, task.plan);
+        this.logger.debug(`[Meta] 检测到 [NEED_PLAN]，创建 task 并注入 planning skill: runId=${runId}`);
+        return draftContext;
+      }
+    }
 
-    return {
-      prependSystemContext: `${monitoringSkill}\n\n【监控上下文】${phaseHint}\n\n【Agent 职责】请根据上方 monitoring skill 检查当前输出是否与 Plan 一致。关注：阶段目标是否达成、产出物是否完整、任务空间是否正常推进。\n`
-    };
+    // ── 保存 output 到 task（如果 task 存在）──
+    if (task) {
+      task.plan = task.plan || {};
+      task.plan.output = output;
+      await this._saveTask(task);
+    }
+
+    // ── task=active → 注入 monitoring skill ──
+    if (task && task.status === 'active') {
+      const monitoringSkill = await this.skillLoader.load('monitoring');
+      if (!monitoringSkill) return;
+
+      const currentPhase = task.plan.execution?.phases?.[task.plan.execution?.currentPhase];
+      const phaseHint = currentPhase
+        ? `当前阶段：${currentPhase.id}，分配会话：${currentPhase.sessionId || '无'}`
+        : '所有阶段已完成';
+
+      return {
+        prependSystemContext: `${monitoringSkill}\n\n【监控上下文】${phaseHint}\n\n【Agent 职责】请根据上方 monitoring skill 检查当前输出是否与 Plan 一致。关注：阶段目标是否达成、产出物是否完整、任务空间是否正常推进。\n`
+      };
+    }
   }
 
   async onAgentEnd(event, ctx) {
     const runId = ctx.runId;
     if (!runId) return;
-    await this.stateAdapter.savePlan(runId, null);
-    this.logger.debug(`[Meta] 清理状态: runId=${runId}`);
-  }
-
-  _shouldUseMetacognition(prompt) {
-    const simplePatterns = [
-      /^(查询|搜索|查找|什么是|怎么|如何)/i,
-      /^(现在几点|今天日期|天气)/i
-    ];
-    return !simplePatterns.some(p => p.test(prompt.trim()));
+    const task = await this.stateAdapter.getTask(runId);
+    if (task) {
+      task.status = 'completed';
+      await this._saveTask(task);
+    }
+    this.logger.debug(`[Meta] 任务状态更新为 completed: runId=${runId}`);
   }
 }

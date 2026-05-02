@@ -1,23 +1,19 @@
 /**
  * 人格模块 —— 面向对象封装
  *
- * 插件职责：当 Agent 收到 cron 触发的每日自我更新消息时，注入 personality skill
- * Agent 职责：自行阅读 skill、回顾事件、撰写日记、分析同化/顺应、更新核心自我文件
+ * 插件职责：在 agent_end 时读取 task JSON，注入 development skill 指导人格更新
+ * Agent 职责：自行阅读 skill、判断同化/顺应、决定是否更新人格文件
  *
- * 注意：每日定时任务由用户在 ~/.openclaw/cron/jobs.json 中配置，插件不管理定时器。
+ * 核心原则：Plugin asks, Agent decides, Plugin records
  */
 
-import { getYesterday } from '../common/utils.js';
-
 export class PersonalityModule {
-  constructor({ api, config, stateAdapter, skillLoader, logger, eventManager, diaryManager }) {
+  constructor({ api, config, stateAdapter, skillLoader, logger }) {
     this.api = api;
     this.config = config || {};
     this.stateAdapter = stateAdapter;
     this.skillLoader = skillLoader;
     this.logger = logger;
-    this.eventManager = eventManager;
-    this.diaryManager = diaryManager;
     this.enabled = this.config.enabled !== false;
   }
 
@@ -31,28 +27,37 @@ export class PersonalityModule {
     }
 
     this.logger.info('[Personality] 注册人格模块 Hook');
-    this.api.on('before_prompt_build', this.onBeforePromptBuild.bind(this), { priority: 40 });
+    this.api.on('agent_end', this.onAgentEnd.bind(this), { priority: 30 });
   }
 
   /**
-   * 检测 cron 每日自我更新触发消息，注入 personality skill
+   * agent_end 时：读取 task JSON 的 event，注入 development skill 指导人格更新
    */
-  async onBeforePromptBuild(event, ctx) {
-    const prompt = event.prompt || '';
-    const isDailyUpdate = prompt.includes('[cron:每日自我更新]') || prompt.includes('每日自我更新');
-    if (!isDailyUpdate) return;
+  async onAgentEnd(event, ctx) {
+    const runId = ctx.runId;
+    if (!runId) return;
 
-    const personalitySkill = await this.skillLoader.load('development');
-    if (!personalitySkill) {
+    const task = await this.stateAdapter.getTask(runId);
+    if (!task || !task.event || task.event.status !== 'completed') {
+      this.logger.debug(`[Personality] runId=${runId} 无 completed event，跳过人格更新`);
+      return;
+    }
+
+    const developmentSkill = await this.skillLoader.load('development');
+    if (!developmentSkill) {
       this.logger.warn('[Personality] development skill 未找到');
       return;
     }
 
-    const yesterday = getYesterday();
-    const events = await this.eventManager.queryEventLog(yesterday);
+    const eventSummary = {
+      deviations: task.event.deviations || [],
+      attributions: task.event.attributions || [],
+      planRevisions: task.event.planRevisions || [],
+      outcome: task.event.outcome || {}
+    };
 
     return {
-      prependSystemContext: `${personalitySkill}\n\n【回顾上下文】昨日（${yesterday}）共有 ${events.length} 条事件记录。\n【Agent 职责】请根据上方 personality skill 自行回顾事件、撰写日记、分析同化/顺应，并决定是否需要更新人格文件（SOUL.md / IDENTITY.md / skills/README.md）。\n`
+      prependSystemContext: `${developmentSkill}\n\n【任务回顾】本次运行（${runId}）已完成。\n【Event 摘要】\n- 偏差记录：${eventSummary.deviations.length} 条\n- 归因记录：${eventSummary.attributions.length} 条\n- 计划修订：${eventSummary.planRevisions.length} 次\n【Agent 职责】请根据上方 development skill，分析本次任务经验对 6 个维度的影响（自我、风格、信念、身份、技能、程序性记忆），自行决定是否需要更新人格文件。\n`
     };
   }
 }

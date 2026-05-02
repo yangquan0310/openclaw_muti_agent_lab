@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-01T19:04:55.046Z",
+  "updatedAt": "2026-05-02T19:01:43.269Z",
   "entries": {
     "memory:memory/2026-04-11.md:6:7": {
       "key": "memory:memory/2026-04-11.md:6:7",
@@ -320,11 +320,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:2:2": {
@@ -350,13 +350,13 @@
       ],
       "conceptTags": [
         "tools.md",
-        "assistant",
         "收到",
         "指令",
         "我来",
         "更新",
         "个人",
-        "存储"
+        "存储",
+        "位置"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:3:3": {
@@ -383,12 +383,12 @@
       "conceptTags": [
         "tools.md",
         "openclaw/workspace/reviewer/temp",
-        "assistant",
         "完成",
         "更新",
         "私人",
         "存储",
-        "位置"
+        "位置",
+        "表格"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:4:4": {
@@ -416,11 +416,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:5:5": {
@@ -445,14 +445,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "任务",
         "需要",
         "查看",
         "项目",
         "中的",
-        "学术"
+        "学术",
+        "论文"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:6:6": {
@@ -478,13 +478,13 @@
       ],
       "conceptTags": [
         "实验室仓库/项目文件/审稿学习/文档",
-        "assistant",
         "老板",
         "我在",
         "系统",
         "没有",
         "找到",
-        "学术"
+        "学术",
+        "论文"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:7:7": {
@@ -514,9 +514,9 @@
         "sender-id",
         "conversation-label",
         "oc-cd80162eb81e39f771",
-        "user",
-        "system",
-        "gmt"
+        "gmt",
+        "exec",
+        "failed"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:8:8": {
@@ -542,13 +542,13 @@
       ],
       "conceptTags": [
         "agents.md",
-        "assistant",
         "收到",
         "按照",
         "要求",
         "制定",
         "计划",
-        "方案"
+        "方案",
+        "我先"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:9:9": {
@@ -574,13 +574,13 @@
       ],
       "conceptTags": [
         "agents.md",
-        "assistant",
         "根据",
         "要求",
         "需要",
         "制定",
         "计划",
-        "方案"
+        "方案",
+        "我先"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:10:10": {
@@ -605,14 +605,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "老板",
         "查看",
         "项目",
         "文件",
         "没有",
         "找到",
-        "学术"
+        "学术",
+        "论文"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:11:11": {
@@ -640,11 +640,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:12:12": {
@@ -669,7 +669,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "重新",
         "检查",
         "项目",
@@ -698,14 +697,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "找到",
         "现在",
         "学生",
         "论文",
         "修改",
         "项目",
-        "查看"
+        "查看",
+        "内容"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:14:14": {
@@ -731,13 +730,13 @@
       ],
       "conceptTags": [
         "asia/shanghai",
-        "user",
         "cron",
         "31d48b54",
         "1a1c",
         "4ec0",
         "bcbe",
-        "2bd8d0001b24"
+        "2bd8d0001b24",
+        "助手"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:15:15": {
@@ -764,12 +763,12 @@
       "conceptTags": [
         "memory.md",
         "2026-04-05-公告执行",
-        "assistant",
         "根据",
         "内容",
         "执行",
         "工作",
-        "记忆"
+        "记忆",
+        "维护"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:16:16": {
@@ -796,12 +795,12 @@
       "conceptTags": [
         "2026-04-11条目",
         "2026-04-05-公告执行",
-        "assistant",
         "工作",
         "记忆",
         "维护",
         "完成",
-        "执行"
+        "执行",
+        "摘要"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:17:17": {
@@ -829,11 +828,11 @@
         "1/1",
         "auto-announce",
         "busy-poll",
-        "user",
         "sat",
         "gmt",
-        "subagent",
-        "context"
+        "context",
+        "running",
+        "depth"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:18:18": {
@@ -858,7 +857,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "需要",
         "查找",
         "正确",
@@ -889,14 +887,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "论文",
         "内容",
         "完成",
         "现在",
         "开始",
         "按照",
-        "清单"
+        "清单",
+        "进行"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:20:20": {
@@ -921,14 +919,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "开始",
         "撰写",
         "意见",
         "根据",
         "清单",
-        "检查"
+        "检查",
+        "论文"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:21:21": {
@@ -956,11 +954,11 @@
         "1/1",
         "auto-announce",
         "busy-poll",
-        "user",
         "sat",
         "gmt",
-        "subagent",
-        "context"
+        "context",
+        "running",
+        "depth"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:22:22": {
@@ -985,7 +983,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "论文",
         "文件",
         "路径",
@@ -1016,7 +1013,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "使用",
         "正确",
         "路径",
@@ -1047,7 +1043,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "找到",
         "论文",
         "文件",
@@ -1076,14 +1071,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "论文",
         "完毕",
         "现在",
         "已经",
         "获取",
         "内容",
-        "检查"
+        "检查",
+        "清单"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:26:26": {
@@ -1108,14 +1103,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "开始",
         "撰写",
         "意见",
         "根据",
         "论文",
-        "内容"
+        "内容",
+        "清单"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:27:27": {
@@ -1143,11 +1138,11 @@
         "1/1",
         "auto-announce",
         "busy-poll",
-        "user",
         "sat",
         "gmt",
-        "subagent",
-        "context"
+        "context",
+        "running",
+        "depth"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:28:28": {
@@ -1172,14 +1167,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "已经",
         "论文",
         "内容",
         "按照",
         "清单",
-        "检查"
+        "检查",
+        "撰写"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:29:29": {
@@ -1207,11 +1202,11 @@
         "1/1",
         "auto-announce",
         "busy-poll",
-        "user",
         "sat",
         "gmt",
-        "subagent",
-        "context"
+        "context",
+        "running",
+        "depth"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:30:30": {
@@ -1236,7 +1231,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "论文",
         "文件",
         "路径",
@@ -1267,14 +1261,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "已经",
         "论文",
         "文件",
         "清单",
         "脚本",
-        "继续"
+        "继续",
+        "管理"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:32:32": {
@@ -1299,14 +1293,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "已经",
         "获取",
         "所有",
         "必要",
         "信息",
-        "按照"
+        "按照",
+        "清单"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:33:33": {
@@ -1332,13 +1326,13 @@
       ],
       "conceptTags": [
         "asia/shanghai",
-        "user",
         "cron",
         "8d60078e",
         "ccc5",
         "4f1a",
         "b7d6",
-        "36da4b4dd4fe"
+        "36da4b4dd4fe",
+        "每日"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:34:34": {
@@ -1363,14 +1357,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "脚本",
         "执行",
         "成功",
         "检测",
         "项目",
         "检查",
-        "目录"
+        "目录",
+        "路径"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:35:35": {
@@ -1396,13 +1390,13 @@
       ],
       "conceptTags": [
         "yyyy-mm-dd",
-        "assistant",
         "项目",
         "目录",
         "存在",
         "名称",
         "没有",
-        "使用"
+        "使用",
+        "yyyy"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:36:36": {
@@ -1429,12 +1423,12 @@
       "conceptTags": [
         "yyyy-mm-dd",
         "memory.md",
-        "assistant",
         "我看到",
         "问题",
         "项目",
         "目录",
-        "名称"
+        "名称",
+        "没有"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:37:37": {
@@ -1459,7 +1453,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "脚本",
         "执行",
         "成功",
@@ -1492,12 +1485,12 @@
       "conceptTags": [
         "asia/shanghai",
         "tools.md",
-        "assistant",
         "每日",
         "索引",
         "维护",
         "任务",
-        "完成"
+        "完成",
+        "以下"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:1:1": {
@@ -1523,13 +1516,13 @@
       ],
       "conceptTags": [
         "asia/shanghai",
-        "user",
         "cron",
         "31d48b54",
         "1a1c",
         "4ec0",
         "bcbe",
-        "2bd8d0001b24"
+        "2bd8d0001b24",
+        "助手"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:2:2": {
@@ -1555,13 +1548,13 @@
       ],
       "conceptTags": [
         "工作记忆维护-任务归档",
-        "assistant",
         "工作",
         "记忆",
         "维护",
         "脚本",
         "执行",
-        "完成"
+        "完成",
+        "结果"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:3:3": {
@@ -1589,11 +1582,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:4:4": {
@@ -1619,13 +1612,13 @@
       ],
       "conceptTags": [
         "tools.md",
-        "assistant",
         "收到",
         "老板",
         "我来",
         "检查",
         "更新",
-        "我的"
+        "我的",
+        "工作"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:5:5": {
@@ -1651,13 +1644,13 @@
       ],
       "conceptTags": [
         "tools.md",
-        "assistant",
         "根据",
         "规范",
         "需要",
         "检查",
         "创建",
-        "以下"
+        "以下",
+        "私人"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:6:6": {
@@ -1683,13 +1676,13 @@
       ],
       "conceptTags": [
         "openclaw/wo",
-        "assistant",
         "工作",
         "空间",
         "结构",
         "更新",
         "完成",
-        "助手"
+        "助手",
+        "报告"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:7:7": {
@@ -1720,8 +1713,8 @@
         "update-tools.sh",
         "每日维护.sh",
         "维护工作记忆.sh",
-        "assistant",
-        "当前"
+        "当前",
+        "scripts"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:8:8": {
@@ -1749,11 +1742,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:9:9": {
@@ -1779,13 +1772,13 @@
       ],
       "conceptTags": [
         "skill.md",
-        "assistant",
         "收到",
         "老板",
         "立即",
         "检查",
         "整理",
-        "我的"
+        "我的",
+        "scripts"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:10:10": {
@@ -1816,8 +1809,8 @@
         "每日维护.sh",
         "维护工作记忆.sh",
         "s1-论文审稿.md",
-        "assistant",
-        "根据"
+        "根据",
+        "老板"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:11:11": {
@@ -1842,7 +1835,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "移动",
         "完成",
         "现在",
@@ -1877,10 +1869,10 @@
         "update-tools.js",
         "update-tools.sh",
         "每日维护.sh",
-        "assistant",
         "文件",
         "整理",
-        "完成"
+        "完成",
+        "助手"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:13:13": {
@@ -1908,11 +1900,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:14:14": {
@@ -1939,12 +1931,12 @@
       "conceptTags": [
         "skill.md",
         "readme.md",
-        "assistant",
         "收到",
         "老板",
         "立即",
         "按照",
-        "结构"
+        "结构",
+        "重新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:15:15": {
@@ -1969,14 +1961,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "开始",
         "按照",
         "结构",
         "重组",
         "文件",
-        "创建"
+        "创建",
+        "skills"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:1:1": {
@@ -2003,11 +1995,11 @@
         "tools.md",
         "memory.md",
         "root/教研室仓库/日志文件",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:2:2": {
@@ -2036,9 +2028,9 @@
         "user-authored",
         "session-key",
         "session-id",
-        "user",
         "mon",
-        "gmt"
+        "gmt",
+        "openclaw"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:3:3": {
@@ -2066,10 +2058,10 @@
         "个人技能/脚本索引完整",
         "memory.md",
         "已升级到v3.5.2",
-        "assistant",
         "助手",
         "每日",
-        "维护"
+        "维护",
+        "任务"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:4:4": {
@@ -2096,11 +2088,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:5:5": {
@@ -2127,11 +2119,11 @@
         "tools.md",
         "memory.md",
         "技能/脚本检查",
-        "assistant",
         "助手",
         "每日",
         "维护",
-        "状态"
+        "状态",
+        "核查"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:6:6": {
@@ -2158,11 +2150,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:7:7": {
@@ -2187,13 +2179,13 @@
       ],
       "conceptTags": [
         "每日维护/每日维护.sh",
-        "assistant",
         "助手",
         "任务",
         "状态",
         "核查",
         "结果",
-        "异常"
+        "异常",
+        "cron"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:8:8": {
@@ -2220,11 +2212,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:9:9": {
@@ -2251,11 +2243,11 @@
         "asia/shanghai",
         "维护tools.md",
         "memory.md",
-        "assistant",
         "助手",
         "任务",
         "修复",
-        "完成"
+        "完成",
+        "cron"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:10:10": {
@@ -2282,11 +2274,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:11:11": {
@@ -2314,10 +2306,10 @@
         "heartbeat.md",
         "tools.md",
         "memory.md",
-        "assistant",
         "助手",
         "心跳",
-        "任务"
+        "任务",
+        "核查"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:12:12": {
@@ -2344,11 +2336,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:13:13": {
@@ -2375,11 +2367,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:14:14": {
@@ -2403,14 +2395,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "助手",
         "心跳",
         "任务",
         "日志",
         "路径",
         "修改",
-        "完成"
+        "完成",
+        "更新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:15:15": {
@@ -2437,11 +2429,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:16:16": {
@@ -2467,12 +2459,12 @@
       "conceptTags": [
         "tools.md",
         "实验室仓库/日志文件/readme.md",
-        "assistant",
         "助手",
         "日志",
         "路径",
         "核查",
-        "结果"
+        "结果",
+        "配置"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:17:17": {
@@ -2501,9 +2493,9 @@
         "busy-poll",
         "asia/shanghai",
         "tools.md",
-        "user",
         "mon",
-        "gmt"
+        "gmt",
+        "context"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:18:18": {
@@ -2532,9 +2524,9 @@
         "memory.md更新",
         "版本升级到v3.5.2",
         "维护scripts/skills/temp目录结构",
-        "assistant",
         "助手",
-        "每日"
+        "每日",
+        "维护"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:19:19": {
@@ -2561,11 +2553,11 @@
         "tools.md",
         "memory.md",
         "root/教研室仓库/日志文件",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:20:20": {
@@ -2592,11 +2584,11 @@
         "tools.md",
         "更新个人技能/脚本索引",
         "memory.md",
-        "assistant",
         "助手",
         "每日",
         "维护",
-        "任务"
+        "任务",
+        "执行"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:39:39": {
@@ -2621,14 +2613,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "找到",
         "项目",
         "存在",
         "包含",
         "学生",
         "论文",
-        "确认"
+        "确认",
+        "文件"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:40:40": {
@@ -2653,14 +2645,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "找到",
         "项目",
         "学生",
         "论文",
         "修改",
         "包含",
-        "标题"
+        "标题",
+        "文件"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:41:41": {
@@ -2688,11 +2680,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:42:42": {
@@ -2717,14 +2709,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "学习",
         "项目",
         "创建",
         "模板",
         "文件",
-        "论文"
+        "论文",
+        "检查"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:43:43": {
@@ -2751,12 +2743,12 @@
       "conceptTags": [
         "实验室仓库/项目文件/审稿学习/模板",
         "审稿论文检查清单.md",
-        "assistant",
         "完成",
         "创建",
         "内容",
         "文件",
-        "实验"
+        "实验",
+        "仓库"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:44:44": {
@@ -2784,11 +2776,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:45:45": {
@@ -2813,14 +2805,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "需要",
         "下载",
         "心理",
         "学报",
         "官方",
-        "指南"
+        "指南",
+        "报告"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:46:46": {
@@ -2845,7 +2837,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "看到",
         "下载",
         "关键",
@@ -2875,14 +2866,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "文件",
         "进制",
         "格式",
         "无法",
         "直接",
         "尝试",
-        "下载"
+        "下载",
+        "其他"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:48:48": {
@@ -2907,14 +2898,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "基于",
         "心理",
         "学报",
         "官方",
         "指南",
         "要求",
-        "我来"
+        "我来",
+        "重新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:49:49": {
@@ -2940,13 +2931,13 @@
       ],
       "conceptTags": [
         "v2.0.0",
-        "assistant",
         "完成",
         "基于",
         "心理",
         "学报",
         "官方",
-        "指南"
+        "指南",
+        "重新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:50:50": {
@@ -2974,11 +2965,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:51:51": {
@@ -3004,13 +2995,13 @@
       ],
       "conceptTags": [
         "我查看一下我的memory.md中的程序性记忆部分",
-        "assistant",
         "查看",
         "一下",
         "我的",
         "memory.md",
         "中的",
-        "程序"
+        "程序",
+        "记忆"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:16:16": {
@@ -3035,7 +3026,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "移动",
         "技能",
         "文件",
@@ -3064,7 +3054,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "创建",
         "scripts",
         "文件",
@@ -3093,7 +3082,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "移动",
         "脚本",
         "文件"
@@ -3123,7 +3111,6 @@
       "conceptTags": [
         "skill.md",
         "readme.md",
-        "assistant",
         "技能",
         "创建"
       ]
@@ -3152,7 +3139,6 @@
       "conceptTags": [
         "skill.md",
         "readme.md",
-        "assistant",
         "scripts",
         "创建"
       ]
@@ -3179,7 +3165,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "验证",
         "最终",
         "结构"
@@ -3214,7 +3199,7 @@
         "readme.md",
         "daily-maintenance",
         "每日维护.sh",
-        "assistant"
+        "整理"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:23:23": {
@@ -3242,11 +3227,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:24:24": {
@@ -3274,11 +3259,11 @@
         "skill.md",
         "readme.md",
         "heartbeat.md",
-        "assistant",
         "收到",
         "老板",
         "立即",
-        "检查"
+        "检查",
+        "我的"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:25:25": {
@@ -3307,10 +3292,10 @@
         "scripts/每日维护.sh",
         "skills/daily-maintenance/每日维护.sh",
         "readme.md",
-        "assistant",
         "发现",
         "问题",
-        "中的"
+        "中的",
+        "脚本"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:26:26": {
@@ -3338,11 +3323,11 @@
         "skills/daily-maintenance",
         "skill.md",
         "readme.md",
-        "assistant",
         "现在",
         "检查",
         "完善",
-        "skills"
+        "skills",
+        "daily-maintenance"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:27:27": {
@@ -3368,13 +3353,13 @@
       ],
       "conceptTags": [
         "skill.md",
-        "assistant",
         "基本",
         "完整",
         "更新",
         "添加",
         "任务",
-        "关联"
+        "关联",
+        "信息"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:28:28": {
@@ -3400,7 +3385,6 @@
       ],
       "conceptTags": [
         "readme.md",
-        "assistant",
         "现在",
         "检查",
         "创建",
@@ -3432,11 +3416,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:22:22": {
@@ -3463,11 +3447,11 @@
         "asia/shanghai",
         "维护tools.md",
         "维护memory.md",
-        "assistant",
         "助手",
         "任务",
         "迁移",
-        "完成"
+        "完成",
+        "openclaw"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-13.txt:23:23": {
@@ -3494,11 +3478,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/2026-04-14.md:313:316": {
@@ -3529,8 +3513,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:319:319": {
@@ -3587,12 +3571,12 @@
       "conceptTags": [
         "根据我的memory.md",
         "tools.md",
-        "assistant",
         "根据",
         "我的",
         "memory.md",
         "程序",
-        "记忆"
+        "记忆",
+        "procedural"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:53:53": {
@@ -3620,11 +3604,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:54:54": {
@@ -3650,13 +3634,13 @@
       ],
       "conceptTags": [
         "删除tools.md中的无效脚本索引",
-        "assistant",
         "收到",
         "删除",
         "tools.md",
         "中的",
         "无效",
-        "脚本"
+        "脚本",
+        "索引"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:55:55": {
@@ -3684,11 +3668,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:56:56": {
@@ -3714,13 +3698,13 @@
       ],
       "conceptTags": [
         "删除tools.md中的无效脚本索引",
-        "assistant",
         "收到",
         "删除",
         "tools.md",
         "中的",
         "无效",
-        "脚本"
+        "脚本",
+        "索引"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:57:57": {
@@ -3746,13 +3730,13 @@
       ],
       "conceptTags": [
         "删除tools.md中的无效索引",
-        "assistant",
         "现在",
         "了解",
         "数据",
         "格式",
         "开始",
-        "执行"
+        "执行",
+        "删除"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:58:58": {
@@ -3777,7 +3761,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "删除",
         "无效",
         "索引",
@@ -3809,14 +3792,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "创建",
         "论文",
         "脚本",
         "现在",
         "意见",
         "文件",
-        "开始"
+        "开始",
+        "审查"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:60:60": {
@@ -3841,14 +3824,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "已经",
         "完整",
         "阅读",
         "一篇",
         "论文",
         "现在",
-        "根据"
+        "根据",
+        "检查"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:61:61": {
@@ -3874,7 +3857,6 @@
       ],
       "conceptTags": [
         "现在更新元数据.json",
-        "assistant",
         "现在",
         "更新",
         "数据",
@@ -3905,13 +3887,13 @@
       ],
       "conceptTags": [
         "现在创建管理元数据.md文件",
-        "assistant",
         "完成",
         "一篇",
         "论文",
         "现在",
         "创建",
-        "管理"
+        "管理",
+        "数据"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:63:63": {
@@ -3937,13 +3919,13 @@
       ],
       "conceptTags": [
         "已删除tools.md中的s2",
-        "assistant",
         "完成",
         "以下",
         "执行",
         "结果",
         "删除",
-        "无效"
+        "无效",
+        "索引"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:64:64": {
@@ -3969,13 +3951,13 @@
       ],
       "conceptTags": [
         "openclaw-control-ui",
-        "user",
         "sender",
         "untrusted",
         "metadata",
         "label",
         "openclaw",
-        "control"
+        "control",
+        "sat"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:29:29": {
@@ -4003,11 +3985,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:30:30": {
@@ -4034,12 +4016,12 @@
       "conceptTags": [
         "heartbeat.md",
         "skill.md",
-        "assistant",
         "收到",
         "老板",
         "立即",
         "检查",
-        "我的"
+        "我的",
+        "每日"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:31:31": {
@@ -4065,13 +4047,13 @@
       ],
       "conceptTags": [
         "skill.md",
-        "assistant",
         "发现",
         "问题",
         "脚本",
         "位置",
         "当前",
-        "指向"
+        "指向",
+        "的是"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:32:32": {
@@ -4098,12 +4080,12 @@
       "conceptTags": [
         "heartbeat.md",
         "skill.md",
-        "assistant",
         "修正",
         "现在",
         "中的",
         "脚本",
-        "位置"
+        "位置",
+        "正确"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:33:33": {
@@ -4133,9 +4115,9 @@
         "readme.md",
         "每日维护.sh",
         "heartbeat.md",
-        "assistant",
         "技能",
-        "文件"
+        "文件",
+        "结构"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:34:34": {
@@ -4163,11 +4145,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:35:35": {
@@ -4196,10 +4178,10 @@
         "readme.md",
         "技能/脚本索引指向",
         "skill.md",
-        "assistant",
         "收到",
         "老板",
-        "立即"
+        "立即",
+        "检查"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:36:36": {
@@ -4227,11 +4209,11 @@
         "tools.md",
         "readme.md",
         "skill.md",
-        "assistant",
         "发现",
         "中的",
         "私人",
-        "存储"
+        "存储",
+        "位置"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:37:37": {
@@ -4257,13 +4239,13 @@
       ],
       "conceptTags": [
         "readme.md",
-        "assistant",
         "现在",
         "更新",
         "私人",
         "存储",
         "位置",
-        "确保"
+        "确保",
+        "指向"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:38:38": {
@@ -4290,12 +4272,12 @@
       "conceptTags": [
         "tools.md",
         "readme.md",
-        "assistant",
         "更新",
         "完成",
         "助手",
         "维护",
-        "报告"
+        "报告",
+        "私人"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:39:39": {
@@ -4323,11 +4305,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:40:40": {
@@ -4353,13 +4335,13 @@
       ],
       "conceptTags": [
         "memory.md",
-        "assistant",
         "收到",
         "老板",
         "立即",
         "检查",
         "整理",
-        "我的"
+        "我的",
+        "程序"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:41:41": {
@@ -4385,13 +4367,13 @@
       ],
       "conceptTags": [
         "scripts/paper-review",
-        "assistant",
         "我看到",
         "程序",
         "记忆",
         "中有",
         "一个",
-        "详细"
+        "详细",
+        "论文"
       ]
     },
     "memory:memory/2026-04-14.md:393:396": {
@@ -4422,8 +4404,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:399:399": {
@@ -4479,13 +4461,13 @@
       ],
       "conceptTags": [
         "tools.md已更新",
-        "assistant",
         "用户",
         "发送",
         "终止",
         "指令",
         "需要",
-        "停止"
+        "停止",
+        "当前"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:66:66": {
@@ -4511,13 +4493,13 @@
       ],
       "conceptTags": [
         "openclaw-control-ui",
-        "user",
         "sender",
         "untrusted",
         "metadata",
         "label",
         "openclaw",
-        "control"
+        "control",
+        "sat"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:67:67": {
@@ -4542,14 +4524,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "任务",
         "终止",
         "当前",
         "状态",
         "一篇",
         "论文",
-        "完成"
+        "完成",
+        "剩余"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:68:68": {
@@ -4577,11 +4559,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:69:69": {
@@ -4606,14 +4588,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "脚本",
         "文件",
         "移动",
         "memory.md",
         "程序",
-        "记忆"
+        "记忆",
+        "一节"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:70:70": {
@@ -4639,13 +4621,13 @@
       ],
       "conceptTags": [
         "现在我将s1脚本添加到memory.md的程序性记忆脚本一节中",
-        "assistant",
         "现在",
         "脚本",
         "添加",
         "memory.md",
         "程序",
-        "记忆"
+        "记忆",
+        "一节"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:71:71": {
@@ -4673,11 +4655,11 @@
         "备份",
         "已将s1脚本添加到memory.md的程序性记忆脚本一节中",
         "memory.md",
-        "assistant",
         "完成",
         "脚本",
         "添加",
-        "程序"
+        "程序",
+        "记忆"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:72:72": {
@@ -4705,11 +4687,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:73:73": {
@@ -4735,13 +4717,13 @@
       ],
       "conceptTags": [
         "让我检查一下是否符合撰写脚本.md的结构要求",
-        "assistant",
         "检查",
         "一下",
         "是否",
         "符合",
         "撰写",
-        "脚本"
+        "脚本",
+        "结构"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:74:74": {
@@ -4767,13 +4749,13 @@
       ],
       "conceptTags": [
         "根据撰写脚本.md的格式规范",
-        "assistant",
         "发现",
         "问题",
         "根据",
         "撰写",
         "脚本",
-        "格式"
+        "格式",
+        "规范"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:75:75": {
@@ -4799,13 +4781,13 @@
       ],
       "conceptTags": [
         "现在s1脚本完全符合撰写脚本.md的结构要求",
-        "assistant",
         "修正",
         "现在",
         "脚本",
         "完全",
         "符合",
-        "撰写"
+        "撰写",
+        "结构"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:76:76": {
@@ -4833,11 +4815,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:77:77": {
@@ -4863,13 +4845,13 @@
       ],
       "conceptTags": [
         "按条目整理到审稿清单.md中",
-        "assistant",
         "收到",
         "需要",
         "查看",
         "学习",
         "项目",
-        "文件"
+        "文件",
+        "中的"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:42:42": {
@@ -4896,12 +4878,12 @@
       "conceptTags": [
         "scripts/paper-review/s1-论文审稿.md",
         "memory.md",
-        "assistant",
         "scripts",
         "paper-review",
         "论文",
         "已经有",
-        "完整"
+        "完整",
+        "内容"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:43:43": {
@@ -4926,14 +4908,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "文件",
         "内容",
         "截断",
         "安全",
         "方式",
         "整个",
-        "程序"
+        "程序",
+        "记忆"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:44:44": {
@@ -4962,10 +4944,10 @@
         "skill.md",
         "scripts/paper-review/skill.md",
         "scripts/pa",
-        "assistant",
         "完成",
         "整理",
-        "助手"
+        "助手",
+        "程序"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:45:45": {
@@ -4993,11 +4975,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:46:46": {
@@ -5025,11 +5007,11 @@
         "tools.md",
         "memory.md",
         "skills/daily-maintenance/每日维护.sh",
-        "assistant",
         "收到",
         "老板",
         "立即",
-        "更新"
+        "更新",
+        "我的"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:47:47": {
@@ -5054,14 +5036,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "脚本",
         "内容",
         "需要",
         "完全",
         "符合",
         "老板",
-        "要求"
+        "要求",
+        "更新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:48:48": {
@@ -5088,12 +5070,12 @@
       "conceptTags": [
         "skill.md",
         "readme.md",
-        "assistant",
         "更新",
         "每日",
         "维护",
         "脚本",
-        "现在"
+        "现在",
+        "对应"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:49:49": {
@@ -5120,12 +5102,12 @@
       "conceptTags": [
         "tools.md",
         "memory.md",
-        "assistant",
         "完成",
         "更新",
         "助手",
         "每日",
-        "维护"
+        "维护",
+        "任务"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:50:50": {
@@ -5153,11 +5135,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:51:51": {
@@ -5182,7 +5164,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "老板",
         "立即",
@@ -5220,8 +5201,8 @@
         "update-tools",
         "paper-review",
         "memory.md",
-        "assistant",
-        "每日"
+        "每日",
+        "维护"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:53:53": {
@@ -5249,11 +5230,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:54:54": {
@@ -5278,7 +5259,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "老板",
         "立即",
@@ -5310,13 +5290,13 @@
       ],
       "conceptTags": [
         "这个.doc文件是二进制格式",
-        "assistant",
         "这个",
         "doc",
         "文件",
         "进制",
         "格式",
-        "无法"
+        "无法",
+        "直接"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:79:79": {
@@ -5341,14 +5321,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "文件",
         "进制",
         "格式",
         "无法",
         "直接",
         "尝试",
-        "使用"
+        "使用",
+        "web-fetch"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:80:80": {
@@ -5373,14 +5353,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "文件",
         "进制",
         "格式",
         "无法",
         "直接",
         "解析",
-        "尝试"
+        "尝试",
+        "使用"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:81:81": {
@@ -5408,11 +5388,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:82:82": {
@@ -5438,13 +5418,13 @@
       ],
       "conceptTags": [
         "然后处理这个.doc文件",
-        "assistant",
         "收到",
         "需要",
         "心理",
         "学报",
         "指南",
-        "整理"
+        "整理",
+        "清单"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:83:83": {
@@ -5469,14 +5449,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "文件",
         "进制",
         "格式",
         "无法",
         "直接",
         "解析",
-        "尝试"
+        "尝试",
+        "使用"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:84:84": {
@@ -5501,14 +5481,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "文件",
         "进制",
         "格式",
         "无法",
         "直接",
         "解析",
-        "尝试"
+        "尝试",
+        "使用"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:85:85": {
@@ -5533,14 +5513,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "发现",
         "问题",
         "doc",
         "文件",
         "进制",
         "格式",
-        "无法"
+        "无法",
+        "直接"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:86:86": {
@@ -5565,14 +5545,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "转换",
         "成功",
         "现在",
         "使用",
         "pandoc",
         "docx",
-        "文件"
+        "文件",
+        "markdown"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:87:87": {
@@ -5600,11 +5580,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:88:88": {
@@ -5629,7 +5609,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "转换",
         "完成",
         "现在",
@@ -5661,13 +5640,13 @@
       ],
       "conceptTags": [
         "审稿清单.md",
-        "assistant",
         "成功",
         "提取",
         "心理",
         "学报",
         "指南",
-        "内容"
+        "内容",
+        "现在"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:90:90": {
@@ -5695,11 +5674,11 @@
         "审稿清单.md",
         "按条目整理到审稿清单.md",
         "root/实验室仓库/项目",
-        "assistant",
         "完成",
         "成功",
         "心理",
-        "学报"
+        "学报",
+        "指南"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:55:55": {
@@ -5724,7 +5703,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "清理",
         "完成",
         "验证"
@@ -5759,7 +5737,7 @@
         "soul.md",
         "tools.md",
         "user.md",
-        "assistant"
+        "清理"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:57:57": {
@@ -5787,11 +5765,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:58:58": {
@@ -5818,12 +5796,12 @@
       "conceptTags": [
         "tools.md",
         "memory.md",
-        "assistant",
         "收到",
         "老板",
         "立即",
         "核查",
-        "我的"
+        "我的",
+        "每日"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:59:59": {
@@ -5850,12 +5828,12 @@
       "conceptTags": [
         "tools.md",
         "memory.md",
-        "assistant",
         "对比",
         "分析",
         "要求",
         "内容",
-        "当前"
+        "当前",
+        "脚本"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:60:60": {
@@ -5882,7 +5860,6 @@
       "conceptTags": [
         "skill.md",
         "readme.md",
-        "assistant",
         "现在",
         "更新",
         "反映",
@@ -5912,14 +5889,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "执行",
         "更新",
         "每日",
         "维护",
         "任务",
-        "进行"
+        "进行",
+        "验证"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:62:62": {
@@ -5944,14 +5921,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "执行",
         "完成",
         "发现",
         "问题",
         "整数",
         "表达",
-        "错误"
+        "错误",
+        "修复"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:63:63": {
@@ -5979,11 +5956,11 @@
         "tools.md",
         "readme.md",
         "memory.m",
-        "assistant",
         "核查",
         "完成",
         "每日",
-        "维护"
+        "维护",
+        "任务"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:64:64": {
@@ -6011,11 +5988,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:65:65": {
@@ -6043,11 +6020,11 @@
         "通常200-300字",
         "3-5个反映核心内容的词汇",
         "引言/问题提出",
-        "assistant",
         "根据",
         "我的",
         "知识",
-        "一篇"
+        "一篇",
+        "标准"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:66:66": {
@@ -6075,11 +6052,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:67:67": {
@@ -6104,14 +6081,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "角度",
         "我来",
         "分析",
         "部分",
         "目的",
         "写作",
-        "要点"
+        "要点",
+        "实证"
       ]
     },
     "memory:memory/2026-04-14.md:383:386": {
@@ -6142,8 +6119,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:389:389": {
@@ -6230,8 +6207,7 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "no-reply",
-        "assistant"
+        "no-reply"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:93:93": {
@@ -6259,11 +6235,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:94:94": {
@@ -6289,13 +6265,13 @@
       ],
       "conceptTags": [
         "agents.md",
-        "assistant",
         "收到",
         "按照",
         "流程",
         "使用",
         "代理",
-        "执行"
+        "执行",
+        "学生"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:95:95": {
@@ -6321,13 +6297,13 @@
       ],
       "conceptTags": [
         "网关",
-        "assistant",
         "代理",
         "创建",
         "遇到",
         "问题",
         "只有",
-        "个子"
+        "个子",
+        "成功"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:96:96": {
@@ -6355,11 +6331,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:97:97": {
@@ -6384,14 +6360,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "停止",
         "任务",
         "终止",
         "之前",
         "创建",
-        "代理"
+        "代理",
+        "清理"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:98:98": {
@@ -6416,7 +6392,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "终止",
         "代理",
         "现在",
@@ -6447,14 +6422,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "任务",
         "终止",
         "代理",
         "agent:reviewer:subagent:d0c237ec",
         "3cd6",
         "457d",
-        "86b3"
+        "86b3",
+        "647a701c2b8e"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:100:100": {
@@ -6484,9 +6459,9 @@
         "user-authored",
         "session-key",
         "session-id",
-        "user",
         "sat",
-        "gmt"
+        "gmt",
+        "openclaw"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:101:101": {
@@ -6511,8 +6486,7 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "no-reply",
-        "assistant"
+        "no-reply"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:102:102": {
@@ -6540,11 +6514,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:103:103": {
@@ -6570,13 +6544,13 @@
       ],
       "conceptTags": [
         "已在soul.md的交互风格中添加",
-        "assistant",
         "完成",
         "soul.md",
         "交互",
         "风格",
         "添加",
-        "准确"
+        "准确",
+        "代理"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:104:104": {
@@ -6604,11 +6578,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "queued",
         "messages",
         "while",
-        "was"
+        "was",
+        "busy"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:105:105": {
@@ -6634,13 +6608,13 @@
       ],
       "conceptTags": [
         "已在soul.md的交互风格中添加",
-        "assistant",
         "完成",
         "soul.md",
         "交互",
         "风格",
         "添加",
-        "准确"
+        "准确",
+        "代理"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:106:106": {
@@ -6666,13 +6640,13 @@
       ],
       "conceptTags": [
         "已在soul.md的交互风格中添加",
-        "assistant",
         "完成",
         "soul.md",
         "交互",
         "风格",
         "添加",
-        "准确"
+        "准确",
+        "代理"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:107:107": {
@@ -6700,11 +6674,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:108:108": {
@@ -6732,11 +6706,11 @@
         "gb/t",
         "7714-2005",
         "著者-出版年制",
-        "assistant",
         "收到",
         "我来",
         "整理",
-        "著者"
+        "著者",
+        "出版"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:109:109": {
@@ -6764,11 +6738,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:110:110": {
@@ -6797,10 +6771,10 @@
         "7714-2005",
         "著者-出版年制的缩进要求",
         "45-67",
-        "assistant",
         "关于",
         "著者",
-        "出版"
+        "出版",
+        "要求"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:111:111": {
@@ -6828,11 +6802,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:112:112": {
@@ -6860,11 +6834,11 @@
         "gb/t",
         "7714-2005",
         "著者-出版年制的斜体使用",
-        "assistant",
         "关于",
         "著者",
         "出版",
-        "斜体"
+        "斜体",
+        "使用"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:113:113": {
@@ -6892,11 +6866,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:114:114": {
@@ -6921,14 +6895,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "合并",
         "任务",
         "每日",
         "维护",
         "执行",
-        "我先"
+        "我先",
+        "查看"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:115:115": {
@@ -6954,13 +6928,13 @@
       ],
       "conceptTags": [
         "并更新heartbeat.md",
-        "assistant",
         "现在",
         "创建",
         "合并",
         "每日",
         "维护",
-        "脚本"
+        "脚本",
+        "更新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-14.txt:1:1": {
@@ -6988,11 +6962,11 @@
         "tools.md",
         "memory.md",
         "root/教研室仓库/日志文件",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-14.txt:2:2": {
@@ -7017,14 +6991,14 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "我来",
         "执行",
         "助手",
         "每日",
         "维护",
         "任务",
-        "查看"
+        "查看",
+        "一下"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-14.txt:3:3": {
@@ -7049,7 +7023,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "看看",
         "哪些",
         "维护",
@@ -7079,7 +7052,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "看到",
         "每日",
         "维护",
@@ -7108,7 +7080,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "执行",
         "每日",
@@ -7142,11 +7113,11 @@
         "tools.md",
         "memory.md",
         "root/实验室仓库/日志文件/2026-04",
-        "assistant",
         "每日",
         "维护",
         "任务",
-        "执行"
+        "执行",
+        "完成"
       ]
     },
     "memory:memory/2026-04-14.md:373:376": {
@@ -7177,8 +7148,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:379:379": {
@@ -7236,11 +7207,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:117:117": {
@@ -7265,7 +7236,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "正在",
         "执行",
         "完成",
@@ -7298,12 +7268,12 @@
       "conceptTags": [
         "更新heartbeat.md",
         "清理completed/kil",
-        "assistant",
         "完成",
         "任务",
         "合并",
         "每日",
-        "维护"
+        "维护",
+        "执行"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:68:68": {
@@ -7329,13 +7299,13 @@
       ],
       "conceptTags": [
         "asia/shanghai",
-        "user",
         "cron",
         "8d60078e",
         "ccc5",
         "4f1a",
         "b7d6",
-        "36da4b4dd4fe"
+        "36da4b4dd4fe",
+        "每日"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:69:69": {
@@ -7362,12 +7332,12 @@
       "conceptTags": [
         "asia/shanghai",
         "根据heartbeat.md最新配置",
-        "assistant",
         "每日",
         "索引",
         "维护",
         "任务",
-        "执行"
+        "执行",
+        "完成"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:70:70": {
@@ -7395,11 +7365,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:71:71": {
@@ -7424,7 +7394,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "检查",
         "助手",
         "每日",
@@ -7455,7 +7424,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "检查",
         "脚本",
         "文件",
@@ -7485,7 +7453,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "脚本",
         "文件",
         "存在",
@@ -7518,13 +7485,13 @@
       ],
       "conceptTags": [
         "heartbeat.md",
-        "assistant",
         "助手",
         "每日",
         "维护",
         "任务",
         "配置",
-        "检查"
+        "检查",
+        "完成"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:75:75": {
@@ -7552,11 +7519,11 @@
         "message-id",
         "sender-id",
         "conversation-label",
-        "user",
         "conversation",
         "info",
         "untrusted",
-        "metadata"
+        "metadata",
+        "sender"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-12.txt:76:76": {
@@ -7581,7 +7548,6 @@
         "2026-04-13"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "立即",
         "执行",
@@ -7613,13 +7579,13 @@
       ],
       "conceptTags": [
         "tools.md",
-        "assistant",
         "每日",
         "维护",
         "任务",
         "执行",
         "完成",
-        "摘要"
+        "摘要",
+        "状态"
       ]
     },
     "memory:memory/2026-04-14.md:363:366": {
@@ -7650,8 +7616,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:369:369": {
@@ -7712,8 +7678,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:359:359": {
@@ -7774,8 +7740,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:349:349": {
@@ -7836,8 +7802,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:344:344": {
@@ -7898,8 +7864,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:334:334": {
@@ -7962,8 +7928,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:324:324": {
@@ -8025,8 +7991,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-14.md:314:314": {
@@ -8086,8 +8052,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:324:324": {
@@ -8148,8 +8114,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:334:334": {
@@ -8210,8 +8176,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:329:329": {
@@ -8269,11 +8235,11 @@
         "tools.md",
         "memory.md",
         "root/教研室仓库/日志文件",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-15.txt:2:2": {
@@ -8298,14 +8264,14 @@
         "2026-04-14"
       ],
       "conceptTags": [
-        "assistant",
         "我来",
         "执行",
         "助手",
         "每日",
         "维护",
         "任务",
-        "首先"
+        "首先",
+        "查看"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-15.txt:3:3": {
@@ -8331,7 +8297,6 @@
       ],
       "conceptTags": [
         "update-tools",
-        "assistant",
         "现在",
         "查看",
         "一下",
@@ -8364,10 +8329,10 @@
         "tools.md",
         "memory-maintenance",
         "memory.md",
-        "assistant",
         "好的",
         "我来",
-        "执行"
+        "执行",
+        "助手"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-15.txt:5:5": {
@@ -8393,7 +8358,6 @@
       ],
       "conceptTags": [
         "update-tools",
-        "assistant",
         "检查",
         "一下",
         "脚本",
@@ -8423,13 +8387,13 @@
       ],
       "conceptTags": [
         "tools.md",
-        "assistant",
         "我看到",
         "这个",
         "脚本",
         "旧版",
         "结构",
-        "设计"
+        "设计",
+        "检查"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-15.txt:7:7": {
@@ -8454,14 +8418,14 @@
         "2026-04-14"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "我来",
         "执行",
         "维护",
         "任务",
         "首先",
-        "检查"
+        "检查",
+        "一下"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-15.txt:8:8": {
@@ -8487,7 +8451,6 @@
       ],
       "conceptTags": [
         "memory-maintenance",
-        "assistant",
         "现在",
         "我来",
         "执行",
@@ -8519,13 +8482,13 @@
       ],
       "conceptTags": [
         "memory.md",
-        "assistant",
         "好的",
         "我看到",
         "已经",
         "最新",
         "状态",
-        "没有"
+        "没有",
+        "需要"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-15.txt:10:10": {
@@ -8550,7 +8513,6 @@
         "2026-04-14"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "创建",
         "详细",
@@ -8582,12 +8544,12 @@
       "conceptTags": [
         "tools.md",
         "memory.md",
-        "assistant",
         "助手",
         "每日",
         "维护",
         "任务",
-        "执行"
+        "执行",
+        "完成"
       ]
     },
     "memory:memory/2026-04-15.md:313:316": {
@@ -8618,8 +8580,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:319:319": {
@@ -8680,8 +8642,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:309:309": {
@@ -8742,8 +8704,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:304:304": {
@@ -8804,8 +8766,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:299:299": {
@@ -8866,8 +8828,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:289:289": {
@@ -8928,8 +8890,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:279:279": {
@@ -8990,8 +8952,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:274:274": {
@@ -9051,8 +9013,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:264:264": {
@@ -9111,8 +9073,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:259:259": {
@@ -9172,8 +9134,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-15.md:254:254": {
@@ -9233,8 +9195,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-16.md:254:254": {
@@ -9290,11 +9252,11 @@
         "tools.md",
         "memory.md",
         "root/教研室仓库/日志文件/心跳任务/cron-r",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:2:2": {
@@ -9318,14 +9280,14 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "开始",
         "执行",
         "每日",
         "维护",
         "任务",
         "依次",
-        "检查"
+        "检查",
+        "各个"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:3:3": {
@@ -9349,7 +9311,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "我来",
         "更新",
@@ -9383,11 +9344,11 @@
         "asia/shanghai",
         "tools.md",
         "memory.md",
-        "assistant",
         "每日",
         "维护",
         "任务",
-        "执行"
+        "执行",
+        "完成"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:5:5": {
@@ -9415,10 +9376,10 @@
         "检查你们的tools.md",
         "公共技能文件夹已经移动到了/root",
         "openclaw/workspace/skills",
-        "user",
         "sender",
         "untrusted",
-        "metadata"
+        "metadata",
+        "label"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:6:6": {
@@ -9443,13 +9404,13 @@
       ],
       "conceptTags": [
         "tools.md",
-        "assistant",
         "收到",
         "指令",
         "正在",
         "检查",
         "更新",
-        "符合"
+        "符合",
+        "新的"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:7:7": {
@@ -9476,11 +9437,11 @@
         "tools.md",
         "openclaw/workspace/skills",
         "paper-review",
-        "assistant",
         "根据",
         "检查",
         "结果",
-        "需要"
+        "需要",
+        "更新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:8:8": {
@@ -9508,10 +9469,10 @@
         "readme.md",
         "paper-review",
         "tools.md",
-        "assistant",
         "确认",
         "公共",
-        "技能"
+        "技能",
+        "文件"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:9:9": {
@@ -9535,7 +9496,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "重新",
         "文件",
         "精确",
@@ -9563,7 +9523,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "更新",
         "每次",
         "修改",
@@ -9591,7 +9550,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "更新",
         "公共",
@@ -9621,7 +9579,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "文件",
         "末尾",
         "精确",
@@ -9649,7 +9606,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "write",
         "整个",
         "文件"
@@ -9679,11 +9635,11 @@
         "tools.md",
         "memory.md",
         "paper-review",
-        "assistant",
         "规范",
         "更新",
         "完成",
-        "现在"
+        "现在",
+        "中的"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:15:15": {
@@ -9707,7 +9663,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "更新",
         "最后",
@@ -9735,7 +9690,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "添加",
         "本次",
@@ -9765,7 +9719,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "所有",
         "更新",
         "完成",
@@ -9798,11 +9751,11 @@
         "tools.md",
         "openclaw/workspace/skills",
         "openclaw/work",
-        "assistant",
         "更新",
         "完成",
         "规范",
-        "以下"
+        "以下",
+        "修改"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:19:19": {
@@ -9830,10 +9783,10 @@
         "检查你们的tools.md",
         "公共技能文件夹已经移动到了/root",
         "openclaw/workspace/skills",
-        "user",
         "sender",
         "untrusted",
-        "metadata"
+        "metadata",
+        "label"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:20:20": {
@@ -9858,13 +9811,13 @@
       ],
       "conceptTags": [
         "tools.md",
-        "assistant",
         "收到",
         "指令",
         "正在",
         "检查",
         "更新",
-        "符合"
+        "符合",
+        "新的"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:21:21": {
@@ -9893,9 +9846,9 @@
         "paper-review",
         "update-tools",
         "readme.md",
-        "assistant",
         "根据",
-        "检查"
+        "检查",
+        "结果"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:22:22": {
@@ -9920,13 +9873,13 @@
       ],
       "conceptTags": [
         "paper-review",
-        "assistant",
         "现在",
         "更新",
         "个人",
         "技能",
         "索引",
-        "说明"
+        "说明",
+        "确保"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:23:23": {
@@ -9950,14 +9903,14 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "已经",
         "正确",
         "现在",
         "检查",
         "确认",
         "所有",
-        "更新"
+        "更新",
+        "完成"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:24:24": {
@@ -9981,7 +9934,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "所有",
         "更新",
         "完成",
@@ -10014,11 +9966,11 @@
         "tools.md",
         "paper-review",
         "openclaw/w",
-        "assistant",
         "检查",
         "完成",
         "确认",
-        "符合"
+        "符合",
+        "规范"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:26:26": {
@@ -10046,10 +9998,10 @@
         "memory.md",
         "将所有completed/killed状态的任务归档到",
         "剔除所有completed/kille",
-        "user",
         "cron:ee863158",
         "efe4",
-        "4c4a"
+        "4c4a",
+        "99a7"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:27:27": {
@@ -10073,7 +10025,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "每日",
         "维护",
@@ -10106,12 +10057,12 @@
       "conceptTags": [
         "ima-skills",
         "zotero-scholar",
-        "assistant",
         "检查",
         "公共",
         "技能",
         "文件",
-        "发现"
+        "发现",
+        "新增"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:29:29": {
@@ -10169,11 +10120,11 @@
         "我发现tools.md中的路径仍然是",
         "openclaw/skills",
         "openclaw/workspace/skills",
-        "assistant",
         "发现",
         "tools.md",
         "中的",
-        "路径"
+        "路径",
+        "仍然是"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:31:31": {
@@ -10198,13 +10149,13 @@
       ],
       "conceptTags": [
         "首先检查当前tools.md是否有项目表",
-        "assistant",
         "现在",
         "添加",
         "项目",
         "首先",
         "检查",
-        "当前"
+        "当前",
+        "tools.md"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:32:32": {
@@ -10230,12 +10181,12 @@
       "conceptTags": [
         "openclaw/skills",
         "openclaw/workspace/skills",
-        "assistant",
         "发现",
         "公共",
         "技能",
         "索引",
-        "中的"
+        "中的",
+        "路径"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:33:33": {
@@ -10261,12 +10212,12 @@
       "conceptTags": [
         "tools.md",
         "memory.md",
-        "assistant",
         "更新",
         "完成",
         "现在",
         "最后",
-        "日期"
+        "日期",
+        "添加"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:34:34": {
@@ -10290,7 +10241,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "生成",
         "日志",
@@ -10323,9 +10273,9 @@
         "ima-skills",
         "zotero-scholar",
         "memory-main",
-        "assistant",
         "所有",
-        "维护"
+        "维护",
+        "任务"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:36:36": {
@@ -10353,10 +10303,10 @@
         "memory.md",
         "将所有completed/killed状态的任务归档到",
         "剔除所有completed/kille",
-        "user",
         "cron:ee863158",
         "efe4",
-        "4c4a"
+        "4c4a",
+        "99a7"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:37:37": {
@@ -10380,7 +10330,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "每日",
         "维护",
@@ -10417,8 +10366,8 @@
         "paper-review",
         "memory-maintenance",
         "update-tools",
-        "assistant",
-        "检查"
+        "检查",
+        "完成"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:39:39": {
@@ -10449,7 +10398,7 @@
         "tools.md",
         "memory.md",
         "find-skills",
-        "assistant"
+        "重要"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-16.txt:40:40": {
@@ -10473,7 +10422,6 @@
         "2026-04-16"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "生成",
         "日志",
@@ -10507,8 +10455,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-17.md:184:186": {
@@ -10566,12 +10514,12 @@
       "conceptTags": [
         "asia/shanghai",
         "tools.md",
-        "assistant",
         "所有",
         "维护",
         "任务",
         "完成",
-        "以下"
+        "以下",
+        "执行"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-17.txt:1:1": {
@@ -10599,10 +10547,10 @@
         "memory.md",
         "将所有completed/killed状态的任务归档到",
         "剔除所有completed/kille",
-        "user",
         "cron:ee863158",
         "efe4",
-        "4c4a"
+        "4c4a",
+        "99a7"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-17.txt:2:2": {
@@ -10626,14 +10574,14 @@
         "2026-04-17"
       ],
       "conceptTags": [
-        "assistant",
         "由于",
         "授权",
         "问题",
         "使用",
         "本地",
         "文件",
-        "系统"
+        "系统",
+        "维护"
       ]
     },
     "memory:memory/2026-04-18.md:238:241": {
@@ -10663,8 +10611,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-18.md:244:246": {
@@ -10724,10 +10672,10 @@
         "memory.md",
         "将所有completed/killed状态的任务归档到",
         "剔除所有completed/kille",
-        "user",
         "cron:ee863158",
         "efe4",
-        "4c4a"
+        "4c4a",
+        "99a7"
       ]
     },
     "memory:memory/2026-04-19.md:213:216": {
@@ -10758,8 +10706,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-19.md:219:221": {
@@ -10822,8 +10770,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-19.md:239:241": {
@@ -10882,11 +10830,11 @@
         "memory/yyyy-mm-dd/hh-mm-ss",
         "撰写/完善发展日记",
         "memory/yyyy-mm-dd/diary.md",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-19.txt:3:3": {
@@ -10914,10 +10862,10 @@
         "memory.md维护",
         "memory-maintenance",
         "paper-review",
-        "assistant",
         "根据",
         "资料",
-        "现在"
+        "现在",
+        "开始"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-19.txt:4:4": {
@@ -10946,9 +10894,9 @@
         "identity.md",
         "skills/readme.md",
         "tools.md",
-        "assistant",
         "阅读",
-        "核心"
+        "核心",
+        "自我"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-19.txt:5:5": {
@@ -10974,12 +10922,12 @@
       "conceptTags": [
         "读取heartbeat-cron日志",
         "memory/2026-04-19/diary.md",
-        "assistant",
         "每日",
         "自我",
         "更新",
         "执行",
-        "完成"
+        "完成",
+        "摘要"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-19.txt:6:6": {
@@ -11005,12 +10953,12 @@
       "conceptTags": [
         "message-id",
         "om-x100b5177b58bbca4b30",
-        "user",
-        "system",
         "gmt",
         "feishu",
         "reviewer",
-        "group"
+        "group",
+        "bot",
+        "conversation"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-19.txt:7:7": {
@@ -11037,11 +10985,11 @@
         "readme.md",
         "auto-push",
         "update-tools",
-        "assistant",
         "老板",
         "发现",
         "问题",
-        "标题"
+        "标题",
+        "错误"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-19.txt:8:8": {
@@ -11066,13 +11014,13 @@
       ],
       "conceptTags": [
         "reply-to",
-        "user",
-        "system",
         "gmt",
         "feishu",
         "reviewer",
         "group",
-        "bot"
+        "bot",
+        "conversation",
+        "info"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-19.txt:9:9": {
@@ -11097,7 +11045,6 @@
       ],
       "conceptTags": [
         "readme.md",
-        "assistant",
         "收到",
         "我来",
         "修正",
@@ -11127,14 +11074,14 @@
         "2026-04-19"
       ],
       "conceptTags": [
-        "assistant",
         "完成",
         "修正",
         "主要",
         "修改",
         "内容",
         "标题",
-        "管家"
+        "管家",
+        "steward"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-20.txt:1:1": {
@@ -11162,11 +11109,11 @@
         "events/yyyy-mm-dd/hh-mm-ss",
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-20.txt:2:2": {
@@ -11192,13 +11139,13 @@
       ],
       "conceptTags": [
         "events/2026-04",
-        "assistant",
         "根据",
         "资料",
         "现在",
         "开始",
         "执行",
-        "每日"
+        "每日",
+        "自我"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-20.txt:3:3": {
@@ -11224,13 +11171,13 @@
       ],
       "conceptTags": [
         "撰写/完善前一日日记",
-        "assistant",
         "每日",
         "自我",
         "更新",
         "执行",
         "完成",
-        "摘要"
+        "摘要",
+        "步骤"
       ]
     },
     "memory:memory/2026-04-20.md:173:176": {
@@ -11266,8 +11213,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-20.md:179:181": {
@@ -11332,11 +11279,11 @@
         "events/yyyy-mm-dd/hh-mm-ss",
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-21.txt:2:2": {
@@ -11367,8 +11314,8 @@
         "soul.md",
         "identity.md",
         "skills/readme.md",
-        "assistant",
-        "每日"
+        "每日",
+        "自我"
       ]
     },
     "memory:memory/2026-04-21.md:163:166": {
@@ -11404,8 +11351,8 @@
         "5-5",
         "reflections",
         "theme",
-        "assistant",
-        "kept"
+        "kept",
+        "surfacing"
       ]
     },
     "memory:memory/2026-04-21.md:169:171": {
@@ -11471,11 +11418,11 @@
         "events/yyyy-mm-dd/hh-mm-ss",
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-22.txt:2:2": {
@@ -11501,13 +11448,13 @@
       ],
       "conceptTags": [
         "diary/2026-04-21.md",
-        "assistant",
         "每日",
         "自我",
         "更新",
         "任务",
         "完成",
-        "以下"
+        "以下",
+        "执行"
       ]
     },
     "memory:memory/2026-04-22.md:123:126": {
@@ -11544,7 +11491,7 @@
         "383-386",
         "reflections",
         "theme",
-        "assistant"
+        "kept"
       ]
     },
     "memory:memory/2026-04-22.md:129:131": {
@@ -11610,11 +11557,11 @@
         "events/yyyy-mm-dd/hh-mm-ss",
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-23.txt:2:2": {
@@ -11642,11 +11589,11 @@
         "self-update",
         "1-2",
         "00-25-00-self-update.md",
-        "assistant",
         "now",
         "i'll",
         "execute",
-        "the"
+        "self",
+        "update"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-23.txt:3:3": {
@@ -11676,9 +11623,9 @@
         "memory.md",
         "soul.md",
         "identity.md",
-        "assistant",
         "每日",
-        "自我"
+        "自我",
+        "更新"
       ]
     },
     "memory:memory/2026-04-23.md:88:91": {
@@ -11715,7 +11662,7 @@
         "328-331",
         "reflections",
         "theme",
-        "assistant"
+        "kept"
       ]
     },
     "memory:memory/2026-04-23.md:94:96": {
@@ -11780,11 +11727,11 @@
         "events/yyyy-mm-dd/hh-mm-ss",
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-24.txt:2:2": {
@@ -11810,13 +11757,13 @@
       ],
       "conceptTags": [
         "diary/2026-04-23.md",
-        "assistant",
         "每日",
         "自我",
         "更新",
         "任务",
         "完成",
-        "执行"
+        "执行",
+        "摘要"
       ]
     },
     "memory:memory/2026-04-24.md:83:86": {
@@ -11918,11 +11865,11 @@
         "events/yyyy-mm-dd/hh-mm-ss",
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-25.txt:2:2": {
@@ -11952,9 +11899,9 @@
         "soul.md",
         "identity.md",
         "skills/readme.md",
-        "assistant",
         "每日",
-        "自我"
+        "自我",
+        "更新"
       ]
     },
     "memory:memory/2026-04-25.md:93:96": {
@@ -11965,12 +11912,12 @@
       "source": "memory",
       "snippet": "Reflections: Theme: `assistant` kept surfacing across 26 memories.; confidence: 0.93; evidence: memory/2026-04-14.md:318-321, memory/2026-04-15.md:248-251, memory/2026-04-17.md:178-181; note: reflection",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-25T19:02:18.540Z",
-      "lastRecalledAt": "2026-05-01T19:04:28.913Z",
+      "lastRecalledAt": "2026-05-02T19:01:39.992Z",
       "queryHashes": [
         "90c0a0f693f1"
       ],
@@ -11981,7 +11928,8 @@
         "2026-04-29",
         "2026-04-30",
         "2026-05-01",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-03"
       ],
       "conceptTags": [
         "0.93",
@@ -12002,12 +11950,12 @@
       "source": "memory",
       "snippet": "Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:324-324]; Reflections: Theme: `assistant` kept surfacing across 171 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-1",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-25T19:02:18.540Z",
-      "lastRecalledAt": "2026-05-01T19:04:28.913Z",
+      "lastRecalledAt": "2026-05-02T19:01:39.992Z",
       "queryHashes": [
         "90c0a0f693f1"
       ],
@@ -12018,7 +11966,8 @@
         "2026-04-29",
         "2026-04-30",
         "2026-05-01",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-03"
       ],
       "conceptTags": [
         "0.58",
@@ -12057,11 +12006,11 @@
         "events/yyyy-mm-dd/hh-mm-ss",
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-26.txt:2:2": {
@@ -12086,14 +12035,14 @@
         "2026-04-25"
       ],
       "conceptTags": [
-        "assistant",
         "现在",
         "开始",
         "执行",
         "每日",
         "自我",
         "更新",
-        "流程"
+        "流程",
+        "步骤"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-26.txt:3:3": {
@@ -12120,12 +12069,12 @@
       "conceptTags": [
         "撰写/完善前一日日记",
         "diary/2026-04-25.md",
-        "assistant",
         "步骤",
         "撰写",
         "完善",
         "一日",
-        "日记"
+        "日记",
+        "diary"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-26.txt:4:4": {
@@ -12184,12 +12133,12 @@
       "conceptTags": [
         "diary/2026-04-25.md",
         "events/2026",
-        "assistant",
         "每日",
         "自我",
         "更新",
         "任务",
-        "完成"
+        "完成",
+        "执行"
       ]
     },
     "memory:memory/2026-04-26.md:118:121": {
@@ -12200,12 +12149,12 @@
       "source": "memory",
       "snippet": "Reflections: Theme: `assistant` kept surfacing across 26 memories.; confidence: 0.91; evidence: memory/2026-04-14.md:318-321, memory/2026-04-15.md:248-251, memory/2026-04-18.md:238-241; note: reflection",
       "recallCount": 0,
-      "dailyCount": 5,
+      "dailyCount": 6,
       "groundedCount": 0,
-      "totalScore": 3.1,
+      "totalScore": 3.72,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-26T19:02:56.806Z",
-      "lastRecalledAt": "2026-05-01T19:04:28.913Z",
+      "lastRecalledAt": "2026-05-02T19:01:39.992Z",
       "queryHashes": [
         "9b4c3d373463"
       ],
@@ -12216,7 +12165,8 @@
         "2026-04-30",
         "2026-04-29",
         "2026-05-01",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-03"
       ],
       "conceptTags": [
         "0.91",
@@ -12237,12 +12187,12 @@
       "source": "memory",
       "snippet": "Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:324-324]; Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:31",
       "recallCount": 0,
-      "dailyCount": 5,
+      "dailyCount": 6,
       "groundedCount": 0,
-      "totalScore": 3.1,
+      "totalScore": 3.72,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-26T19:02:56.806Z",
-      "lastRecalledAt": "2026-05-01T19:04:28.913Z",
+      "lastRecalledAt": "2026-05-02T19:01:39.992Z",
       "queryHashes": [
         "9b4c3d373463"
       ],
@@ -12253,7 +12203,8 @@
         "2026-04-30",
         "2026-04-29",
         "2026-05-01",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-03"
       ],
       "conceptTags": [
         "0.58",
@@ -12291,11 +12242,11 @@
         "events/yyyy-mm-dd/hh-mm-ss",
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
-        "user",
         "cron:ee863158",
         "efe4",
         "4c4a",
-        "99a7"
+        "99a7",
+        "66466ac874c6"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-27.txt:2:2": {
@@ -12326,8 +12277,8 @@
         "identity.md",
         "skills/readme.md",
         "个人技能管理策略和bootstrap.md状态维持现状",
-        "assistant",
-        "每日"
+        "每日",
+        "自我"
       ]
     },
     "memory:memory/2026-04-27.md:123:126": {
@@ -12338,12 +12289,12 @@
       "source": "memory",
       "snippet": "Reflections: Theme: `assistant` kept surfacing across 24 memories.; confidence: 0.98; evidence: memory/2026-04-19.md:213-216, memory/2026-04-19.md:233-236, memory/.dreams/session-corpus/2026-04-19.txt:3-3; note: reflection",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-27T19:02:50.429Z",
-      "lastRecalledAt": "2026-05-01T19:04:28.913Z",
+      "lastRecalledAt": "2026-05-02T19:01:39.992Z",
       "queryHashes": [
         "6c24d11cf4d7"
       ],
@@ -12352,7 +12303,8 @@
         "2026-04-27",
         "2026-05-01",
         "2026-04-30",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-03"
       ],
       "conceptTags": [
         "0.98",
@@ -12362,7 +12314,7 @@
         "3-3",
         "reflections",
         "theme",
-        "assistant"
+        "kept"
       ]
     },
     "memory:memory/2026-04-27.md:129:131": {
@@ -12373,12 +12325,12 @@
       "source": "memory",
       "snippet": "Possible Lasting Truths: Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-14.md:319-319]; Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-15.md:32",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-27T19:02:50.429Z",
-      "lastRecalledAt": "2026-05-01T19:04:28.913Z",
+      "lastRecalledAt": "2026-05-02T19:01:39.992Z",
       "queryHashes": [
         "6c24d11cf4d7"
       ],
@@ -12387,7 +12339,8 @@
         "2026-04-27",
         "2026-05-01",
         "2026-04-30",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-03"
       ],
       "conceptTags": [
         "0.58",
@@ -12426,10 +12379,10 @@
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
         "自我认知/角色/风格-信念",
-        "user",
         "cron:ee863158",
         "efe4",
-        "4c4a"
+        "4c4a",
+        "99a7"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-28.txt:2:2": {
@@ -12456,12 +12409,12 @@
       "conceptTags": [
         "今天是2026-04-28",
         "需要回顾2026-04-27的事件",
-        "assistant",
         "现在",
         "开始",
         "执行",
         "每日",
-        "自我"
+        "自我",
+        "更新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-28.txt:3:3": {
@@ -12488,12 +12441,12 @@
       "conceptTags": [
         "撰写/完善前一日日记",
         "diary/2026-04-27.md",
-        "assistant",
         "步骤",
         "撰写",
         "完善",
         "一日",
-        "日记"
+        "日记",
+        "diary"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-28.txt:4:4": {
@@ -12518,7 +12471,6 @@
         "2026-04-27"
       ],
       "conceptTags": [
-        "assistant",
         "步骤",
         "阅读",
         "核心",
@@ -12550,13 +12502,13 @@
       ],
       "conceptTags": [
         "events/目录结构正确",
-        "assistant",
         "步骤",
         "同化",
         "顺应",
         "分析",
         "assimilation",
-        "原有"
+        "原有",
+        "内容"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-28.txt:6:6": {
@@ -12582,13 +12534,13 @@
       ],
       "conceptTags": [
         "diary/2026-04-27.md",
-        "assistant",
         "每日",
         "自我",
         "更新",
         "完成",
         "以下",
-        "执行"
+        "执行",
+        "摘要"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-28.txt:7:7": {
@@ -12613,7 +12565,6 @@
         "2026-04-28"
       ],
       "conceptTags": [
-        "user",
         "重新",
         "更新",
         "你的",
@@ -12647,9 +12598,9 @@
         "v8.0.0",
         "条件-行动规则表为空",
         "if-then",
-        "assistant",
         "好的",
-        "老板"
+        "老板",
+        "已经"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-29.txt:1:1": {
@@ -12678,10 +12629,10 @@
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
         "自我认知/角色/风格-信念",
-        "user",
         "cron:ee863158",
         "efe4",
-        "4c4a"
+        "4c4a",
+        "99a7"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-29.txt:2:2": {
@@ -12706,14 +12657,14 @@
         "2026-04-28"
       ],
       "conceptTags": [
-        "assistant",
         "收到",
         "每日",
         "自我",
         "更新",
         "任务",
         "按照",
-        "工作"
+        "工作",
+        "执行"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-29.txt:3:3": {
@@ -12739,13 +12690,13 @@
       ],
       "conceptTags": [
         "撰写/完善前一日日记",
-        "assistant",
         "步骤",
         "撰写",
         "完善",
         "一日",
         "日记",
-        "事件"
+        "事件",
+        "现在"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-29.txt:4:4": {
@@ -12770,7 +12721,6 @@
         "2026-04-28"
       ],
       "conceptTags": [
-        "assistant",
         "步骤",
         "阅读",
         "核心",
@@ -12800,14 +12750,14 @@
         "2026-04-28"
       ],
       "conceptTags": [
-        "assistant",
         "步骤",
         "同化",
         "顺应",
         "分析",
         "assimilation",
         "稳定",
-        "结构"
+        "结构",
+        "核心"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-29.txt:6:6": {
@@ -12832,14 +12782,14 @@
         "2026-04-28"
       ],
       "conceptTags": [
-        "assistant",
         "步骤",
         "执行",
         "更新",
         "基于",
         "分析",
         "今日",
-        "核心"
+        "核心",
+        "自我"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-29.txt:7:7": {
@@ -12866,12 +12816,12 @@
       "conceptTags": [
         "diary/2026-04-28.md",
         "events/2026",
-        "assistant",
         "每日",
         "自我",
         "更新",
         "完成",
-        "执行"
+        "执行",
+        "摘要"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-30.txt:1:1": {
@@ -12900,10 +12850,10 @@
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
         "自我认知/角色/风格-信念",
-        "user",
         "cron:ee863158",
         "efe4",
-        "4c4a"
+        "4c4a",
+        "99a7"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-30.txt:2:2": {
@@ -12933,9 +12883,9 @@
         "soul.md",
         "identity.md",
         "skills/readme.md",
-        "assistant",
         "每日",
-        "自我"
+        "自我",
+        "更新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-01.txt:1:1": {
@@ -12964,10 +12914,10 @@
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
         "自我认知/角色/风格-信念",
-        "user",
         "cron:ee863158",
         "efe4",
-        "4c4a"
+        "4c4a",
+        "99a7"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-01.txt:2:2": {
@@ -12997,9 +12947,9 @@
         "soul.md",
         "identity.md",
         "skills/readme.md",
-        "assistant",
         "每日",
-        "自我"
+        "自我",
+        "更新"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-02.txt:1:1": {
@@ -13028,10 +12978,10 @@
         "撰写/完善前一日日记",
         "diary/yyyy-mm-dd.md",
         "自我认知/角色/风格-信念",
-        "user",
         "cron:ee863158",
         "efe4",
-        "4c4a"
+        "4c4a",
+        "99a7"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-02.txt:2:2": {
@@ -13061,9 +13011,9 @@
         "soul.md",
         "identity.md",
         "skills/readme.m",
-        "assistant",
         "每日",
-        "自我"
+        "自我",
+        "更新"
       ]
     }
   }
