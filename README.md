@@ -600,7 +600,7 @@ agent-self-development/
 | `task:{runId}` | Task | runId | 统一任务 JSON：plan + event + sessions + tools（`state/`） |
 | `session:{sessionId}` | Session | 长期 | 任务空间（`state/`） |
 | `working_memory:active_sessions` | Session[] | 全局 | 全局活跃任务空间索引（`state/`） |
-| `taskflow:{flowId}` | Flow | 长期 | Flow 实例（`flows/`） |
+| `flow:{flowId}` | Flow | 长期 | Flow 实例（`flows/`） |
 | `logs:{YYYY-MM-DD}` | LogEntry[] | 日期 | 按日累积的日志（`logs/`） |
 
 ---
