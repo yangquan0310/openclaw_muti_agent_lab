@@ -88,7 +88,7 @@ export default {
       sessionManager, eventManager
     });
     const personality = new PersonalityModule({
-      api, config: config.personality || config.assimilation, stateAdapter, skillLoader, logger
+      api, config: config.personality, stateAdapter, skillLoader, logger
     });
 
     metacognition.register();
