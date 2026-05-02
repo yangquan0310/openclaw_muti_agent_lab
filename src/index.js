@@ -13,7 +13,6 @@ import { FlowAdapter } from './common/adapters/flow-adapter.js';
 import { MemoryAdapter } from './common/adapters/memory-adapter.js';
 import { LogAdapter } from './common/adapters/log-adapter.js';
 import { HookAdapter } from './common/adapters/hook-adapter.js';
-import { CronAdapter } from './common/adapters/cron-adapter.js';
 
 import { MetacognitionModule } from './metacognition/module.js';
 import { WorkingMemoryModule } from './working-memory/module.js';
@@ -26,7 +25,6 @@ import { DeviationManager } from './metacognition/deviation-manager.js';
 import { AttributionManager } from './metacognition/attribution-manager.js';
 import { SessionManager } from './working-memory/session-manager.js';
 import { EventManager } from './common/event-manager.js';
-import { DiaryManager } from './personality/diary-manager.js';
 
 const pluginId = 'agent-self-development';
 
@@ -72,19 +70,12 @@ export default {
       agentId: agentId 
     });
     const hookAdapter = new HookAdapter(null, { dir: `${baseDir}/hooks/agent-self-development` });
-    const cronAdapter = new CronAdapter({ path: `${baseDir}/cron/jobs.json` });
-
-    // 初始化 Hook 目录结构（HOOK.md + handler.ts）
-    hookAdapter.init().catch(e => logger.warn(`[${pluginId}] Hook 初始化失败:`, e.message));
-
     // v3: 初始化业务管理器
     const planManager = new PlanManager(stateAdapter, flowAdapter);
     const deviationManager = new DeviationManager(stateAdapter);
     const attributionManager = new AttributionManager(stateAdapter, flowAdapter);
     const sessionManager = new SessionManager(stateAdapter, flowAdapter, null);
     const eventManager = new EventManager(stateAdapter, memoryAdapter);
-    const diaryManager = new DiaryManager(memoryAdapter);
-
     const metacognition = new MetacognitionModule({
       api, config: config.metacognition, stateAdapter, skillLoader, logger,
       planManager, deviationManager, attributionManager
@@ -95,7 +86,7 @@ export default {
     });
     const personality = new PersonalityModule({
       api, config: config.personality || config.assimilation, stateAdapter, skillLoader, logger,
-      eventManager, diaryManager
+      eventManager
     });
 
     metacognition.register();
