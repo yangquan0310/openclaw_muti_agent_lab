@@ -218,6 +218,11 @@ lark-cli im +messages-send --user-id ou_xxx --video ./video.mp4 --video-cover ./
 lark-cli im +messages-send --user-id ou_xxx --audio ./voice.ogg
 
 > ⚠️ **语音消息格式要求**：飞书语音消息需要 **OPUS in OGG** 格式，不支持 MP3。使用 `ffmpeg -i input.mp3 -acodec libopus -ac 1 -ar 16000 output.ogg` 转换。
+>
+> **自动化脚本**：`~/.openclaw/skills/feishu-voice/scripts/send_voice.py`
+> ```bash
+> python3 ~/.openclaw/skills/feishu-voice/scripts/send_voice.py <mp3_path> [open_id]
+> ```
 
 # 回复消息
 lark-cli im +messages-reply --message-id om_xxx --text "回复内容"
