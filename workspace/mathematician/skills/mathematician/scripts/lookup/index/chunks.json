@@ -1,0 +1,1098 @@
+[
+  {
+    "id": "statistics_000",
+    "file": "statistics.md",
+    "heading": "统计分析指南",
+    "level": 1,
+    "content_preview": "> 统计分析方法的详细说明\n\n---",
+    "full_content": "> 统计分析方法的详细说明\n\n---"
+  },
+  {
+    "id": "statistics_001",
+    "file": "statistics.md",
+    "heading": "1.1 集中趋势",
+    "level": 3,
+    "content_preview": "| 指标 | 说明 | 命令 |\n|------|------|------|\n| 均值 | 数据的算术平均 | `describe` |\n| 中位数 | 排序后位于中间的数 | `describe` |\n| 众数 | 出现次数最多的数 | `describe` |",
+    "full_content": "| 指标 | 说明 | 命令 |\n|------|------|------|\n| 均值 | 数据的算术平均 | `describe` |\n| 中位数 | 排序后位于中间的数 | `describe` |\n| 众数 | 出现次数最多的数 | `describe` |"
+  },
+  {
+    "id": "statistics_002",
+    "file": "statistics.md",
+    "heading": "1.2 离散程度",
+    "level": 3,
+    "content_preview": "| 指标 | 说明 | 命令 |\n|------|------|------|\n| 方差 | 各数据与均值偏差平方的平均 | `describe` |\n| 标准差 | 方差的平方根 | `describe` |\n| 极差 | 最大值与最小值之差 | `describe` |\n| 四分位距 | Q3 - Q1 | `describe` |",
+    "full_content": "| 指标 | 说明 | 命令 |\n|------|------|------|\n| 方差 | 各数据与均值偏差平方的平均 | `describe` |\n| 标准差 | 方差的平方根 | `describe` |\n| 极差 | 最大值与最小值之差 | `describe` |\n| 四分位距 | Q3 - Q1 | `describe` |"
+  },
+  {
+    "id": "statistics_003",
+    "file": "statistics.md",
+    "heading": "1.3 分布形状",
+    "level": 3,
+    "content_preview": "| 指标 | 说明 | 正态参考 |\n|------|------|----------|\n| 偏度 | 对称性度量 | ≈ 0 |\n| 峰度 | 尖峰/平坦程度 | ≈ 0 |\n\n**示例**：\n\n```bash\npython3 scripts/statistics.py describe --data \"1,2,3,4,5,6,7,8,9,10\"\n```\n\n输出：\n```json\n{\n  \"n...",
+    "full_content": "| 指标 | 说明 | 正态参考 |\n|------|------|----------|\n| 偏度 | 对称性度量 | ≈ 0 |\n| 峰度 | 尖峰/平坦程度 | ≈ 0 |\n\n**示例**：\n\n```bash\npython3 scripts/statistics.py describe --data \"1,2,3,4,5,6,7,8,9,10\"\n```\n\n输出：\n```json\n{\n  \"n\": 10,\n  \"mean\": 5.5,\n  \"median\": 5.5,\n  \"std\": 3.027,\n  \"var\": 9.167,\n  \"min\": 1,\n  \"max\": 10,\n  \"q1\": 3.25,\n  \"q3\": 7.75,\n  \"iqr\": 4.5,\n  \"skewness\": 0,\n  \"kurtosis\": -1.2\n}\n```\n\n---"
+  },
+  {
+    "id": "statistics_004",
+    "file": "statistics.md",
+    "heading": "独立样本 t 检验",
+    "level": 4,
+    "content_preview": "比较两个独立组的均值差异。\n\n```bash\npython3 scripts/statistics.py ttest --s1 \"5,6,7,8,9\" --s2 \"7,8,9,10,11\"\n```\n\n**结果解读**：\n- $p < 0.05$：两组均值显著不同\n- $p \\geq 0.05$：两组均值无显著差异",
+    "full_content": "比较两个独立组的均值差异。\n\n```bash\npython3 scripts/statistics.py ttest --s1 \"5,6,7,8,9\" --s2 \"7,8,9,10,11\"\n```\n\n**结果解读**：\n- $p < 0.05$：两组均值显著不同\n- $p \\geq 0.05$：两组均值无显著差异"
+  },
+  {
+    "id": "statistics_005",
+    "file": "statistics.md",
+    "heading": "配对样本 t 检验",
+    "level": 4,
+    "content_preview": "比较同一组样本前后两次测量的差异。\n\n```bash\npython3 scripts/statistics.py ttest --s1 \"100,102,98,105,101\" --s2 \"110,112,108,115,111\" --paired\n```",
+    "full_content": "比较同一组样本前后两次测量的差异。\n\n```bash\npython3 scripts/statistics.py ttest --s1 \"100,102,98,105,101\" --s2 \"110,112,108,115,111\" --paired\n```"
+  },
+  {
+    "id": "statistics_006",
+    "file": "statistics.md",
+    "heading": "2.2 卡方检验",
+    "level": 3,
+    "content_preview": "检验观测频数与期望频数的差异。\n\n```bash",
+    "full_content": "检验观测频数与期望频数的差异。\n\n```bash"
+  },
+  {
+    "id": "statistics_007",
+    "file": "statistics.md",
+    "heading": "拟合优度检验",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py chi2 --observed \"30,25,20,25\" --expected \"25,25,25,25\"",
+    "full_content": "python3 scripts/statistics.py chi2 --observed \"30,25,20,25\" --expected \"25,25,25,25\""
+  },
+  {
+    "id": "statistics_008",
+    "file": "statistics.md",
+    "heading": "独立性检验（列联表）",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py chi2 --observed \"20,30,25,35\" --expected \"25,25,25,25\"\n```",
+    "full_content": "python3 scripts/statistics.py chi2 --observed \"20,30,25,35\" --expected \"25,25,25,25\"\n```"
+  },
+  {
+    "id": "statistics_009",
+    "file": "statistics.md",
+    "heading": "2.3 ANOVA（方差分析）",
+    "level": 3,
+    "content_preview": "比较三个或更多组的均值。\n\n```bash\npython3 scripts/statistics.py anova --groups \"10,12,14;15,16,17;20,22,24\"\n```\n\n---",
+    "full_content": "比较三个或更多组的均值。\n\n```bash\npython3 scripts/statistics.py anova --groups \"10,12,14;15,16,17;20,22,24\"\n```\n\n---"
+  },
+  {
+    "id": "statistics_010",
+    "file": "statistics.md",
+    "heading": "3.1 相关系数",
+    "level": 3,
+    "content_preview": "| 方法 | 适用范围 | 取值范围 |\n|------|----------|----------|\n| Pearson | 线性关系，正态分布 | [-1, 1] |\n| Spearman | 单调关系，秩次数据 | [-1, 1] |\n| Kendall | 秩次数据，小样本 | [-1, 1] |",
+    "full_content": "| 方法 | 适用范围 | 取值范围 |\n|------|----------|----------|\n| Pearson | 线性关系，正态分布 | [-1, 1] |\n| Spearman | 单调关系，秩次数据 | [-1, 1] |\n| Kendall | 秩次数据，小样本 | [-1, 1] |"
+  },
+  {
+    "id": "statistics_011",
+    "file": "statistics.md",
+    "heading": "3.2 相关性强度",
+    "level": 3,
+    "content_preview": "| 相关系数 | 相关强度 |\n|----------|----------|\n| \\|r\\| < 0.3 | 弱相关 |\n| 0.3 ≤ \\|r\\| < 0.7 | 中等相关 |\n| \\|r\\| ≥ 0.7 | 强相关 |\n\n**示例**：\n\n```bash\npython3 scripts/statistics.py corr --x \"1,2,3,4,5,6,7,8,9,10\" --y \"2,...",
+    "full_content": "| 相关系数 | 相关强度 |\n|----------|----------|\n| \\|r\\| < 0.3 | 弱相关 |\n| 0.3 ≤ \\|r\\| < 0.7 | 中等相关 |\n| \\|r\\| ≥ 0.7 | 强相关 |\n\n**示例**：\n\n```bash\npython3 scripts/statistics.py corr --x \"1,2,3,4,5,6,7,8,9,10\" --y \"2,4,6,8,10,12,14,16,18,20\" --method pearson\n```\n\n---"
+  },
+  {
+    "id": "statistics_012",
+    "file": "statistics.md",
+    "heading": "4.1 一元线性回归",
+    "level": 3,
+    "content_preview": "模型：$y = \\beta_0 + \\beta_1 x + \\varepsilon$\n\n```bash\npython3 scripts/statistics.py regress --x \"1,2,3,4,5,6,7,8,9,10\" --y \"2.1,4.0,5.9,8.1,10.2,12.0,13.9,15.8,18.1,20.0\"\n```\n\n**输出解读**：\n- `slope` ($\\bet...",
+    "full_content": "模型：$y = \\beta_0 + \\beta_1 x + \\varepsilon$\n\n```bash\npython3 scripts/statistics.py regress --x \"1,2,3,4,5,6,7,8,9,10\" --y \"2.1,4.0,5.9,8.1,10.2,12.0,13.9,15.8,18.1,20.0\"\n```\n\n**输出解读**：\n- `slope` ($\\beta_1$)：斜率，x 每增加 1 个单位，y 平均变化 $\\beta_1$\n- `intercept` ($\\beta_0$)：截距\n- `r_squared` ($R^2$)：决定系数，模型解释的方差比例\n- `p_value`：斜率显著性检验的 p 值"
+  },
+  {
+    "id": "statistics_013",
+    "file": "statistics.md",
+    "heading": "4.2 回归诊断",
+    "level": 3,
+    "content_preview": "检查回归假设：\n\n1. **线性假设**：残差 vs 拟合值图应无明显模式\n2. **独立性**：残差应相互独立\n3. **同方差性**：残差方差应恒定\n4. **正态性**：残差应近似正态分布\n\n---",
+    "full_content": "检查回归假设：\n\n1. **线性假设**：残差 vs 拟合值图应无明显模式\n2. **独立性**：残差应相互独立\n3. **同方差性**：残差方差应恒定\n4. **正态性**：残差应近似正态分布\n\n---"
+  },
+  {
+    "id": "statistics_014",
+    "file": "statistics.md",
+    "heading": "5.1 趋势分解",
+    "level": 3,
+    "content_preview": "时间序列 = 趋势 + 季节 + 残差\n\n**分析方法**：\n- 移动平均法\n- 指数平滑法\n- 分解法",
+    "full_content": "时间序列 = 趋势 + 季节 + 残差\n\n**分析方法**：\n- 移动平均法\n- 指数平滑法\n- 分解法"
+  },
+  {
+    "id": "statistics_015",
+    "file": "statistics.md",
+    "heading": "5.2 ARIMA 模型",
+    "level": 3,
+    "content_preview": "ARIMA(p, d, q)：\n- p：自回归项数\n- d：差分阶数\n- q：移动平均项数",
+    "full_content": "ARIMA(p, d, q)：\n- p：自回归项数\n- d：差分阶数\n- q：移动平均项数"
+  },
+  {
+    "id": "statistics_016",
+    "file": "statistics.md",
+    "heading": "5.3 预测评估",
+    "level": 3,
+    "content_preview": "| 指标 | 说明 |\n|------|------|\n| MAE | 平均绝对误差 |\n| MSE | 均方误差 |\n| RMSE | 均方根误差 |\n| MAPE | 平均绝对百分比误差 |\n\n---",
+    "full_content": "| 指标 | 说明 |\n|------|------|\n| MAE | 平均绝对误差 |\n| MSE | 均方误差 |\n| RMSE | 均方根误差 |\n| MAPE | 平均绝对百分比误差 |\n\n---"
+  },
+  {
+    "id": "statistics_017",
+    "file": "statistics.md",
+    "heading": "6.1 常用非参数检验",
+    "level": 3,
+    "content_preview": "| 检验 | 对应参数检验 | 用途 |\n|------|--------------|------|\n| Mann-Whitney U | 独立样本 t 检验 | 两组比较 |\n| Wilcoxon 符号秩 | 配对 t 检验 | 配对比较 |\n| Kruskal-Wallis | ANOVA | 多组比较 |\n| Spearman 相关 | Pearson 相关 | 相关性 |",
+    "full_content": "| 检验 | 对应参数检验 | 用途 |\n|------|--------------|------|\n| Mann-Whitney U | 独立样本 t 检验 | 两组比较 |\n| Wilcoxon 符号秩 | 配对 t 检验 | 配对比较 |\n| Kruskal-Wallis | ANOVA | 多组比较 |\n| Spearman 相关 | Pearson 相关 | 相关性 |"
+  },
+  {
+    "id": "statistics_018",
+    "file": "statistics.md",
+    "heading": "6.2 正态性检验",
+    "level": 3,
+    "content_preview": "```bash\npython3 scripts/statistics.py normality --data \"1,2,3,4,5,6,7,8,9,10\" --method shapiro\n```\n\n**方法说明**：\n- `shapiro`：Shapiro-Wilk 检验，样本量 < 5000\n- `kstest`：Kolmogorov-Smirnov 检验\n- `normaltest`：D'A...",
+    "full_content": "```bash\npython3 scripts/statistics.py normality --data \"1,2,3,4,5,6,7,8,9,10\" --method shapiro\n```\n\n**方法说明**：\n- `shapiro`：Shapiro-Wilk 检验，样本量 < 5000\n- `kstest`：Kolmogorov-Smirnov 检验\n- `normaltest`：D'Agostino-Pearson 检验\n\n---"
+  },
+  {
+    "id": "statistics_019",
+    "file": "statistics.md",
+    "heading": "7.1 正态分布",
+    "level": 3,
+    "content_preview": "概率密度函数：\n$$f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}$$\n\n**置信区间**：\n- 68% 置信区间：$\\mu \\pm \\sigma$\n- 95% 置信区间：$\\mu \\pm 1.96\\sigma$\n- 99% 置信区间：$\\mu \\pm 2.58\\sigma$",
+    "full_content": "概率密度函数：\n$$f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}$$\n\n**置信区间**：\n- 68% 置信区间：$\\mu \\pm \\sigma$\n- 95% 置信区间：$\\mu \\pm 1.96\\sigma$\n- 99% 置信区间：$\\mu \\pm 2.58\\sigma$"
+  },
+  {
+    "id": "statistics_020",
+    "file": "statistics.md",
+    "heading": "7.2 t 分布",
+    "level": 3,
+    "content_preview": "用于小样本（$n < 30$）的均值估计和假设检验。\n\n自由度为 $n-1$ 时，$t$ 分布近似正态分布。",
+    "full_content": "用于小样本（$n < 30$）的均值估计和假设检验。\n\n自由度为 $n-1$ 时，$t$ 分布近似正态分布。"
+  },
+  {
+    "id": "statistics_021",
+    "file": "statistics.md",
+    "heading": "7.3 卡方分布",
+    "level": 3,
+    "content_preview": "$k$ 个标准正态随机变量平方和的分布。\n\n用于：\n- 方差估计\n- 拟合优度检验\n- 独立性检验",
+    "full_content": "$k$ 个标准正态随机变量平方和的分布。\n\n用于：\n- 方差估计\n- 拟合优度检验\n- 独立性检验"
+  },
+  {
+    "id": "statistics_022",
+    "file": "statistics.md",
+    "heading": "7.4 F 分布",
+    "level": 3,
+    "content_preview": "两个卡方分布之比。\n\n用于：\n- 方差比较\n- ANOVA\n\n---",
+    "full_content": "两个卡方分布之比。\n\n用于：\n- 方差比较\n- ANOVA\n\n---"
+  },
+  {
+    "id": "statistics_023",
+    "file": "statistics.md",
+    "heading": "8.1 常用效应量",
+    "level": 3,
+    "content_preview": "| 检验 | 效应量 | 计算公式 |\n|------|--------|----------|\n| t 检验 | Cohen's d | $\\frac{\\bar{x}_1 - \\bar{x}_2}{s_p}$ |\n| ANOVA | $\\eta^2$ | $\\frac{SS_{between}}{SS_{total}}$ |\n| 卡方检验 | Cramer's V | $\\sqrt{\\frac{...",
+    "full_content": "| 检验 | 效应量 | 计算公式 |\n|------|--------|----------|\n| t 检验 | Cohen's d | $\\frac{\\bar{x}_1 - \\bar{x}_2}{s_p}$ |\n| ANOVA | $\\eta^2$ | $\\frac{SS_{between}}{SS_{total}}$ |\n| 卡方检验 | Cramer's V | $\\sqrt{\\frac{\\chi^2}{n(k-1)}}$ |\n| 相关 | r | Pearson 相关系数 |"
+  },
+  {
+    "id": "statistics_024",
+    "file": "statistics.md",
+    "heading": "8.2 Cohen's d 解释",
+    "level": 3,
+    "content_preview": "| \\|d\\| | 效应大小 |\n|-------|----------|\n| < 0.2 | 微不足道 |\n| 0.2 - 0.5 | 小 |\n| 0.5 - 0.8 | 中 |\n| > 0.8 | 大 |\n\n---",
+    "full_content": "| \\|d\\| | 效应大小 |\n|-------|----------|\n| < 0.2 | 微不足道 |\n| 0.2 - 0.5 | 小 |\n| 0.5 - 0.8 | 中 |\n| > 0.8 | 大 |\n\n---"
+  },
+  {
+    "id": "statistics_025",
+    "file": "statistics.md",
+    "heading": "9.1 均值估计",
+    "level": 3,
+    "content_preview": "$$n = \\left(\\frac{Z_{\\alpha/2} \\cdot \\sigma}{E}\\right)^2$$\n\n其中：\n- $Z_{\\alpha/2}$：置信水平对应的 Z 值\n- $\\sigma$：总体标准差（估计）\n- $E$：允许误差",
+    "full_content": "$$n = \\left(\\frac{Z_{\\alpha/2} \\cdot \\sigma}{E}\\right)^2$$\n\n其中：\n- $Z_{\\alpha/2}$：置信水平对应的 Z 值\n- $\\sigma$：总体标准差（估计）\n- $E$：允许误差"
+  },
+  {
+    "id": "statistics_026",
+    "file": "statistics.md",
+    "heading": "9.2 比例估计",
+    "level": 3,
+    "content_preview": "$$n = \\frac{Z_{\\alpha/2}^2 \\cdot p(1-p)}{E^2}$$\n\n其中 $p$ 为总体比例（估计）。\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*",
+    "full_content": "$$n = \\frac{Z_{\\alpha/2}^2 \\cdot p(1-p)}{E^2}$$\n\n其中 $p$ 为总体比例（估计）。\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  },
+  {
+    "id": "math-tools_027",
+    "file": "math-tools.md",
+    "heading": "数学工具指南",
+    "level": 1,
+    "content_preview": "> 常用数学工具和库的详细说明\n\n---",
+    "full_content": "> 常用数学工具和库的详细说明\n\n---"
+  },
+  {
+    "id": "math-tools_028",
+    "file": "math-tools.md",
+    "heading": "1.1 基本运算",
+    "level": 3,
+    "content_preview": "| 运算 | 命令 | 示例 |\n|------|------|------|\n| 加法 | `add` | `python3 scripts/calculate.py basic 3 5 add` → 8 |\n| 减法 | `sub` | `python3 scripts/calculate.py basic 10 4 sub` → 6 |\n| 乘法 | `mul` | `python3 scr...",
+    "full_content": "| 运算 | 命令 | 示例 |\n|------|------|------|\n| 加法 | `add` | `python3 scripts/calculate.py basic 3 5 add` → 8 |\n| 减法 | `sub` | `python3 scripts/calculate.py basic 10 4 sub` → 6 |\n| 乘法 | `mul` | `python3 scripts/calculate.py basic 6 7 mul` → 42 |\n| 除法 | `div` | `python3 scripts/calculate.py basic 20 4 div` → 5 |\n| 幂运算 | `pow` | `python3 scripts/calculate.py basic 2 8 pow` → 256 |\n| 取模 | `mod` | `python3 scripts/calculate.py basic 17 5 mod` → 2 |"
+  },
+  {
+    "id": "math-tools_029",
+    "file": "math-tools.md",
+    "heading": "1.2 矩阵运算",
+    "level": 3,
+    "content_preview": "| 运算 | 命令 | 说明 |\n|------|------|------|\n| 转置 | `transpose` | `python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --op transpose` |\n| 逆矩阵 | `inverse` | `python3 scripts/calculate.py matrix --A '[[...",
+    "full_content": "| 运算 | 命令 | 说明 |\n|------|------|------|\n| 转置 | `transpose` | `python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --op transpose` |\n| 逆矩阵 | `inverse` | `python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --op inverse` |\n| 行列式 | `det` | `python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --op det` |\n| 特征值 | `eigen` | `python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --op eigen` |\n| 矩阵乘法 | `multiply` | `python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --B '[[5,6],[7,8]]' --op multiply` |\n| 矩阵加法 | `add` | `python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --B '[[5,6],[7,8]]' --op add` |\n\n---"
+  },
+  {
+    "id": "math-tools_030",
+    "file": "math-tools.md",
+    "heading": "2.1 数值积分",
+    "level": 3,
+    "content_preview": "**方法说明**：\n\n| 方法 | 适用场景 | 精度 |\n|------|----------|------|\n| `quad` | 一般函数，高精度要求 | 高 |\n| `simpson` | 平滑函数，中等精度 | 中 |\n| `trapezoid` | 粗略估计，快速计算 | 低 |\n\n**示例**：\n\n```bash",
+    "full_content": "**方法说明**：\n\n| 方法 | 适用场景 | 精度 |\n|------|----------|------|\n| `quad` | 一般函数，高精度要求 | 高 |\n| `simpson` | 平滑函数，中等精度 | 中 |\n| `trapezoid` | 粗略估计，快速计算 | 低 |\n\n**示例**：\n\n```bash"
+  },
+  {
+    "id": "math-tools_031",
+    "file": "math-tools.md",
+    "heading": "积分 x^2 从 0 到 1",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py integrate --func \"x**2\" --a 0 --b 1 --method quad",
+    "full_content": "python3 scripts/calculate.py integrate --func \"x**2\" --a 0 --b 1 --method quad"
+  },
+  {
+    "id": "math-tools_032",
+    "file": "math-tools.md",
+    "heading": "积分 sin(x) 从 0 到 π",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py integrate --func \"np.sin(x)\" --a 0 --b 3.14159 --method quad",
+    "full_content": "python3 scripts/calculate.py integrate --func \"np.sin(x)\" --a 0 --b 3.14159 --method quad"
+  },
+  {
+    "id": "math-tools_033",
+    "file": "math-tools.md",
+    "heading": "积分 e^(-x^2) 从 -∞ 到 ∞",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py integrate --func \"np.exp(-x**2)\" --a -1000 --b 1000 --method quad\n```",
+    "full_content": "python3 scripts/calculate.py integrate --func \"np.exp(-x**2)\" --a -1000 --b 1000 --method quad\n```"
+  },
+  {
+    "id": "math-tools_034",
+    "file": "math-tools.md",
+    "heading": "2.2 微分方程求解",
+    "level": 3,
+    "content_preview": "**常用方法**：\n\n| 方法 | 说明 |\n|------|------|\n| `RK45` | 4-5阶龙格-库塔，默认方法 |\n| `RK23` | 2-3阶龙格-库塔，高精度 |\n| `DOP853` | 8阶Dormand-Prince |\n\n**示例**：\n\n```bash",
+    "full_content": "**常用方法**：\n\n| 方法 | 说明 |\n|------|------|\n| `RK45` | 4-5阶龙格-库塔，默认方法 |\n| `RK23` | 2-3阶龙格-库塔，高精度 |\n| `DOP853` | 8阶Dormand-Prince |\n\n**示例**：\n\n```bash"
+  },
+  {
+    "id": "math-tools_035",
+    "file": "math-tools.md",
+    "heading": "dy/dt = -y, y(0) = 1",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py ode --func \"-y[0]\" --y0 \"1\" --t0 0 --t1 5 --method RK45",
+    "full_content": "python3 scripts/calculate.py ode --func \"-y[0]\" --y0 \"1\" --t0 0 --t1 5 --method RK45"
+  },
+  {
+    "id": "math-tools_036",
+    "file": "math-tools.md",
+    "heading": "dy/dt = t*y, y(0) = 1",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py ode --func \"t*y[0]\" --y0 \"1\" --t0 0 --t1 2 --method RK45\n```\n\n---",
+    "full_content": "python3 scripts/calculate.py ode --func \"t*y[0]\" --y0 \"1\" --t0 0 --t1 2 --method RK45\n```\n\n---"
+  },
+  {
+    "id": "math-tools_037",
+    "file": "math-tools.md",
+    "heading": "3.1 求根运算",
+    "level": 3,
+    "content_preview": "**方法对比**：\n\n| 方法 | 适用场景 | 需要区间 |\n|------|----------|----------|\n| `bisection` | 连续函数，有区间 | 是 |\n| `newton` | 导数已知，收敛快 | 否 |\n| `brentq` | 通用，高效稳定 | 是 |\n| `fsolve` | 非线性方程组 | 否 |\n\n**示例**：\n\n```bash",
+    "full_content": "**方法对比**：\n\n| 方法 | 适用场景 | 需要区间 |\n|------|----------|----------|\n| `bisection` | 连续函数，有区间 | 是 |\n| `newton` | 导数已知，收敛快 | 否 |\n| `brentq` | 通用，高效稳定 | 是 |\n| `fsolve` | 非线性方程组 | 否 |\n\n**示例**：\n\n```bash"
+  },
+  {
+    "id": "math-tools_038",
+    "file": "math-tools.md",
+    "heading": "求 x^2 - 2 = 0 的根",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py root --func \"x**2-2\" --x0 \"0,2\" --method bisection",
+    "full_content": "python3 scripts/calculate.py root --func \"x**2-2\" --x0 \"0,2\" --method bisection"
+  },
+  {
+    "id": "math-tools_039",
+    "file": "math-tools.md",
+    "heading": "求 x^3 - x - 1 = 0 的根",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py root --func \"x**3-x-1\" --x0 \"1,2\" --method brentq\n```",
+    "full_content": "python3 scripts/calculate.py root --func \"x**3-x-1\" --x0 \"1,2\" --method brentq\n```"
+  },
+  {
+    "id": "math-tools_040",
+    "file": "math-tools.md",
+    "heading": "3.2 插值",
+    "level": 3,
+    "content_preview": "**方法说明**：\n\n| 方法 | 特点 |\n|------|------|\n| `linear` | 线性插值，速度快 |\n| `cubic` | 三次样条插值，平滑 |\n\n**示例**：\n\n```bash",
+    "full_content": "**方法说明**：\n\n| 方法 | 特点 |\n|------|------|\n| `linear` | 线性插值，速度快 |\n| `cubic` | 三次样条插值，平滑 |\n\n**示例**：\n\n```bash"
+  },
+  {
+    "id": "math-tools_041",
+    "file": "math-tools.md",
+    "heading": "已知点 (0,0), (1,1), (2,4)，求 x=1.5 时的 y 值",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py interp --x \"0,1,2\" --y \"0,1,4\" --xe \"1.5\" --method cubic\n```\n\n---",
+    "full_content": "python3 scripts/calculate.py interp --x \"0,1,2\" --y \"0,1,4\" --xe \"1.5\" --method cubic\n```\n\n---"
+  },
+  {
+    "id": "math-tools_042",
+    "file": "math-tools.md",
+    "heading": "4.1 复杂度等级",
+    "level": 3,
+    "content_preview": "| 复杂度 | 名称 | 示例算法 |\n|--------|------|----------|\n| $O(1)$ | 常数时间 | 数组索引 |\n| $O(\\log n)$ | 对数时间 | 二分查找 |\n| $O(n)$ | 线性时间 | 遍历数组 |\n| $O(n \\log n)$ | 线性对数时间 | 快速排序 |\n| $O(n^2)$ | 平方时间 | 冒泡排序 |\n| $O(2^n)$...",
+    "full_content": "| 复杂度 | 名称 | 示例算法 |\n|--------|------|----------|\n| $O(1)$ | 常数时间 | 数组索引 |\n| $O(\\log n)$ | 对数时间 | 二分查找 |\n| $O(n)$ | 线性时间 | 遍历数组 |\n| $O(n \\log n)$ | 线性对数时间 | 快速排序 |\n| $O(n^2)$ | 平方时间 | 冒泡排序 |\n| $O(2^n)$ | 指数时间 | 递归斐波那契 |\n| $O(n!)$ | 阶乘时间 | 全排列 |"
+  },
+  {
+    "id": "math-tools_043",
+    "file": "math-tools.md",
+    "heading": "4.2 分析方法",
+    "level": 3,
+    "content_preview": "1. **循环分析**：找出最内层操作的执行次数\n2. **递归树**：展开递归调用，统计各层工作量\n3. **主定理**：$T(n) = aT(n/b) + f(n)$ 形式\n\n---",
+    "full_content": "1. **循环分析**：找出最内层操作的执行次数\n2. **递归树**：展开递归调用，统计各层工作量\n3. **主定理**：$T(n) = aT(n/b) + f(n)$ 形式\n\n---"
+  },
+  {
+    "id": "math-tools_044",
+    "file": "math-tools.md",
+    "heading": "5.1 函数绘图",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "math-tools_045",
+    "file": "math-tools.md",
+    "heading": "绘制 sin(x)",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py function --func \"np.sin(x)\" --x0 0 --x1 6.28 --title \"sin(x)\"",
+    "full_content": "python3 scripts/visualize.py function --func \"np.sin(x)\" --x0 0 --x1 6.28 --title \"sin(x)\""
+  },
+  {
+    "id": "math-tools_046",
+    "file": "math-tools.md",
+    "heading": "绘制高斯函数",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py function --func \"np.exp(-x**2)\" --x0 -5 --x1 5 --title \"Gaussian\"",
+    "full_content": "python3 scripts/visualize.py function --func \"np.exp(-x**2)\" --x0 -5 --x1 5 --title \"Gaussian\""
+  },
+  {
+    "id": "math-tools_047",
+    "file": "math-tools.md",
+    "heading": "绘制多个函数",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py multi --x \"0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1\" \\\n    --y \"0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1\" \\\n    --y2 \"0,0.05,0.2,0.45,0.8,1.25,1.8,2.45,3.2,4.05,5\" \\\n    --l...",
+    "full_content": "python3 scripts/visualize.py multi --x \"0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1\" \\\n    --y \"0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1\" \\\n    --y2 \"0,0.05,0.2,0.45,0.8,1.25,1.8,2.45,3.2,4.05,5\" \\\n    --labels \"linear,quadratic\"\n```"
+  },
+  {
+    "id": "math-tools_048",
+    "file": "math-tools.md",
+    "heading": "5.2 数据可视化",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "math-tools_049",
+    "file": "math-tools.md",
+    "heading": "散点图",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py scatter --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --title \"线性关系\"",
+    "full_content": "python3 scripts/visualize.py scatter --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --title \"线性关系\""
+  },
+  {
+    "id": "math-tools_050",
+    "file": "math-tools.md",
+    "heading": "直方图",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py histogram --data \"1,2,2,3,3,3,4,4,5\" --bins 5",
+    "full_content": "python3 scripts/visualize.py histogram --data \"1,2,2,3,3,3,4,4,5\" --bins 5"
+  },
+  {
+    "id": "math-tools_051",
+    "file": "math-tools.md",
+    "heading": "柱状图",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py bar --categories \"A,B,C,D\" --values \"10,20,15,25\"\n```\n\n---",
+    "full_content": "python3 scripts/visualize.py bar --categories \"A,B,C,D\" --values \"10,20,15,25\"\n```\n\n---"
+  },
+  {
+    "id": "math-tools_052",
+    "file": "math-tools.md",
+    "heading": "6.1 数值微分",
+    "level": 3,
+    "content_preview": "前向差分：$f'(x) \\approx \\frac{f(x+h) - f(x)}{h}$\n\n后向差分：$f'(x) \\approx \\frac{f(x) - f(x-h)}{h}$\n\n中心差分：$f'(x) \\approx \\frac{f(x+h) - f(x-h)}{2h}$",
+    "full_content": "前向差分：$f'(x) \\approx \\frac{f(x+h) - f(x)}{h}$\n\n后向差分：$f'(x) \\approx \\frac{f(x) - f(x-h)}{h}$\n\n中心差分：$f'(x) \\approx \\frac{f(x+h) - f(x-h)}{2h}$"
+  },
+  {
+    "id": "math-tools_053",
+    "file": "math-tools.md",
+    "heading": "6.2 数值积分",
+    "level": 3,
+    "content_preview": "矩形公式：$\\int_a^b f(x)dx \\approx (b-a)f(\\frac{a+b}{2})$\n\n梯形公式：$\\int_a^b f(x)dx \\approx \\frac{b-a}{2}[f(a)+f(b)]$\n\n辛普森公式：$\\int_a^b f(x)dx \\approx \\frac{b-a}{6}[f(a)+4f(\\frac{a+b}{2})+f(b)]$",
+    "full_content": "矩形公式：$\\int_a^b f(x)dx \\approx (b-a)f(\\frac{a+b}{2})$\n\n梯形公式：$\\int_a^b f(x)dx \\approx \\frac{b-a}{2}[f(a)+f(b)]$\n\n辛普森公式：$\\int_a^b f(x)dx \\approx \\frac{b-a}{6}[f(a)+4f(\\frac{a+b}{2})+f(b)]$"
+  },
+  {
+    "id": "math-tools_054",
+    "file": "math-tools.md",
+    "heading": "6.3 拉普拉斯变换",
+    "level": 3,
+    "content_preview": "| $f(t)$ | $F(s)$ |\n|---------|---------|\n| $\\delta(t)$ | $1$ |\n| $u(t)$ | $\\frac{1}{s}$ |\n| $t$ | $\\frac{1}{s^2}$ |\n| $e^{at}$ | $\\frac{1}{s-a}$ |\n| $\\sin(\\omega t)$ | $\\frac{\\omega}{s^2+\\omega^2}$ |...",
+    "full_content": "| $f(t)$ | $F(s)$ |\n|---------|---------|\n| $\\delta(t)$ | $1$ |\n| $u(t)$ | $\\frac{1}{s}$ |\n| $t$ | $\\frac{1}{s^2}$ |\n| $e^{at}$ | $\\frac{1}{s-a}$ |\n| $\\sin(\\omega t)$ | $\\frac{\\omega}{s^2+\\omega^2}$ |\n| $\\cos(\\omega t)$ | $\\frac{s}{s^2+\\omega^2}$ |\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  },
+  {
+    "id": "concept-writing-guide_055",
+    "file": "concept-writing-guide.md",
+    "heading": "如何撰写数学概念文档",
+    "level": 1,
+    "content_preview": "> 规范数学概念的撰写格式，包括定义、公理、定理、证明和应用\n\n---",
+    "full_content": "> 规范数学概念的撰写格式，包括定义、公理、定理、证明和应用\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_056",
+    "file": "concept-writing-guide.md",
+    "heading": "一、数学概念文档的标准结构",
+    "level": 2,
+    "content_preview": "一个完整的数学概念文档应包含以下章节：\n\n```\n1. 概述\n2. 定义（Definition）\n3. 公理与假设（Axioms & Assumptions）\n4. 核心定理（Theorems）\n5. 证明（Proofs）\n6. 推论与引理（Corollaries & Lemmas）\n7. 应用（Applications）\n8. 示例（Examples）\n9. 局限性与发展历史\n10. 参考文献\n...",
+    "full_content": "一个完整的数学概念文档应包含以下章节：\n\n```\n1. 概述\n2. 定义（Definition）\n3. 公理与假设（Axioms & Assumptions）\n4. 核心定理（Theorems）\n5. 证明（Proofs）\n6. 推论与引理（Corollaries & Lemmas）\n7. 应用（Applications）\n8. 示例（Examples）\n9. 局限性与发展历史\n10. 参考文献\n```\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_057",
+    "file": "concept-writing-guide.md",
+    "heading": "2.1 定义（Definition）",
+    "level": 3,
+    "content_preview": "**定义**是数学概念的基石，必须精确、无歧义。",
+    "full_content": "**定义**是数学概念的基石，必须精确、无歧义。"
+  },
+  {
+    "id": "concept-writing-guide_058",
+    "file": "concept-writing-guide.md",
+    "heading": "格式规范",
+    "level": 4,
+    "content_preview": "```markdown\n**定义 (Definition)**\n\n设/令/称 **[概念名称]** 为 **[满足的条件]**，记作 **[符号表示]**。\n\n形式化表达：\n设 $S$ 是一个集合，若对于任意 $x \\in S$，满足性质 $P(x)$，则称 $S$ 为一个 **[名称]**。\n```",
+    "full_content": "```markdown\n**定义 (Definition)**\n\n设/令/称 **[概念名称]** 为 **[满足的条件]**，记作 **[符号表示]**。\n\n形式化表达：\n设 $S$ 是一个集合，若对于任意 $x \\in S$，满足性质 $P(x)$，则称 $S$ 为一个 **[名称]**。\n```"
+  },
+  {
+    "id": "concept-writing-guide_059",
+    "file": "concept-writing-guide.md",
+    "heading": "写作原则",
+    "level": 4,
+    "content_preview": "| 原则 | 说明 | 示例 |\n|------|------|------|\n| **精确性** | 使用精确的数学语言 | 用\"$\\forall$\"、\"$\\exists$\"代替\"任意\"、\"存在\" |\n| **完备性** | 充分描述概念的本质特征 | 定义群时需包含运算、单位元、逆元 |\n| **独立性** | 定义项不应冗余 | 不重复已有概念的可推出性质 |\n| **无循环** | 避免用...",
+    "full_content": "| 原则 | 说明 | 示例 |\n|------|------|------|\n| **精确性** | 使用精确的数学语言 | 用\"$\\forall$\"、\"$\\exists$\"代替\"任意\"、\"存在\" |\n| **完备性** | 充分描述概念的本质特征 | 定义群时需包含运算、单位元、逆元 |\n| **独立性** | 定义项不应冗余 | 不重复已有概念的可推出性质 |\n| **无循环** | 避免用被定义概念自身定义 | 不能用\"概率\"定义\"概率空间\" |\n| **承前启后** | 明确指出与其他概念的关系 | 说明是新概念的推广或特殊情形 |"
+  },
+  {
+    "id": "concept-writing-guide_060",
+    "file": "concept-writing-guide.md",
+    "heading": "示例",
+    "level": 4,
+    "content_preview": "**好的定义**：\n> 设 $G$ 是一个非空集合，并在其上定义二元运算 $\\cdot: G \\times G \\to G$。若运算满足：\n> 1. **结合律**：$\\forall a, b, c \\in G, (a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)$\n> 2. **单位元**：$\\exists e \\in G, \\forall a \\in G, a ...",
+    "full_content": "**好的定义**：\n> 设 $G$ 是一个非空集合，并在其上定义二元运算 $\\cdot: G \\times G \\to G$。若运算满足：\n> 1. **结合律**：$\\forall a, b, c \\in G, (a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)$\n> 2. **单位元**：$\\exists e \\in G, \\forall a \\in G, a \\cdot e = e \\cdot a = a$\n> 3. **逆元**：$\\forall a \\in G, \\exists a^{-1} \\in G, a \\cdot a^{-1} = a^{-1} \\cdot a = e$\n>\n> 则称 $(G, \\cdot)$ 为一个**群**。\n\n**需避免的定义**：\n> 群是一个有很多好性质的代数结构。（太模糊）\n>\n> 群是一个满足结合律、有单位元和逆元的集合。（缺少运算的明确说明）\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_061",
+    "file": "concept-writing-guide.md",
+    "heading": "2.2 公理与假设（Axioms & Assumptions）",
+    "level": 3,
+    "content_preview": "**公理**是不证自明的陈述，**假设/前提条件**是研究特定问题时人为设定的条件。",
+    "full_content": "**公理**是不证自明的陈述，**假设/前提条件**是研究特定问题时人为设定的条件。"
+  },
+  {
+    "id": "concept-writing-guide_062",
+    "file": "concept-writing-guide.md",
+    "heading": "格式规范",
+    "level": 4,
+    "content_preview": "```markdown\n**公理 (Axiom)**\n\n[A1] **[公理名称]**：**[陈述]**\n\n**假设 (Assumptions)**\n\n- **[H1]**：**[具体假设内容]**\n- **[H2]**：**[具体假设内容]**\n```",
+    "full_content": "```markdown\n**公理 (Axiom)**\n\n[A1] **[公理名称]**：**[陈述]**\n\n**假设 (Assumptions)**\n\n- **[H1]**：**[具体假设内容]**\n- **[H2]**：**[具体假设内容]**\n```"
+  },
+  {
+    "id": "concept-writing-guide_063",
+    "file": "concept-writing-guide.md",
+    "heading": "公理与假设的区别",
+    "level": 4,
+    "content_preview": "| 类型 | 性质 | 示例 |\n|------|------|------|\n| 公理 | 普遍接受、不证自明 | 欧几里得第五公设 |\n| 假设 | 特定情境下设定 | $f$ 在 $[a,b]$ 上连续 |\n| 约束 | 限制概念适用范围 | $p$ 为素数 |",
+    "full_content": "| 类型 | 性质 | 示例 |\n|------|------|------|\n| 公理 | 普遍接受、不证自明 | 欧几里得第五公设 |\n| 假设 | 特定情境下设定 | $f$ 在 $[a,b]$ 上连续 |\n| 约束 | 限制概念适用范围 | $p$ 为素数 |"
+  },
+  {
+    "id": "concept-writing-guide_064",
+    "file": "concept-writing-guide.md",
+    "heading": "示例",
+    "level": 4,
+    "content_preview": "**公理示例**（概率论）：\n> **[A1] 非负性**：对于任意事件 $A$，$P(A) \\geq 0$。\n>\n> **[A2] 归一化**：$P(\\Omega) = 1$，其中 $\\Omega$ 为样本空间。\n>\n> **[A3] 可加性**：对于互不相容的事件 $A_1, A_2, \\ldots$，有\n> $$P\\left(\\bigcup_{i=1}^{\\infty} A_i\\right)...",
+    "full_content": "**公理示例**（概率论）：\n> **[A1] 非负性**：对于任意事件 $A$，$P(A) \\geq 0$。\n>\n> **[A2] 归一化**：$P(\\Omega) = 1$，其中 $\\Omega$ 为样本空间。\n>\n> **[A3] 可加性**：对于互不相容的事件 $A_1, A_2, \\ldots$，有\n> $$P\\left(\\bigcup_{i=1}^{\\infty} A_i\\right) = \\sum_{i=1}^{\\infty} P(A_i)$$\n\n**假设示例**（微分方程）：\n> 假设函数 $f(x, y)$ 在区域 $D \\subset \\mathbb{R}^2$ 上满足：\n> - **[H1]** $f$ 对 $y$ 满足 Lipschitz 条件\n> - **[H2]** $f$ 连续\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_065",
+    "file": "concept-writing-guide.md",
+    "heading": "2.3 核心定理（Theorems）",
+    "level": 3,
+    "content_preview": "**定理**是经过严格证明的重要命题。",
+    "full_content": "**定理**是经过严格证明的重要命题。"
+  },
+  {
+    "id": "concept-writing-guide_066",
+    "file": "concept-writing-guide.md",
+    "heading": "格式规范",
+    "level": 4,
+    "content_preview": "```markdown\n**定理 [编号]（[定理名称]）**\n\n若 **[条件]**，则 **[结论]**。\n\n形式化：\n$$\\forall x \\in S, P(x) \\Rightarrow Q(x)$$\n```",
+    "full_content": "```markdown\n**定理 [编号]（[定理名称]）**\n\n若 **[条件]**，则 **[结论]**。\n\n形式化：\n$$\\forall x \\in S, P(x) \\Rightarrow Q(x)$$\n```"
+  },
+  {
+    "id": "concept-writing-guide_067",
+    "file": "concept-writing-guide.md",
+    "heading": "定理分类",
+    "level": 4,
+    "content_preview": "| 类型 | 英文 | 含义 | 重要程度 |\n|------|------|------|----------|\n| 定理 | Theorem | 重要命题，经过严格证明 | 高 |\n| 命题 | Proposition | 正确但相对次要的命题 | 中 |\n| 引理 | Lemma | 为证明其他定理的辅助命题 | 辅助 |\n| 推论 | Corollary | 由定理直接推出的命题 | 附属...",
+    "full_content": "| 类型 | 英文 | 含义 | 重要程度 |\n|------|------|------|----------|\n| 定理 | Theorem | 重要命题，经过严格证明 | 高 |\n| 命题 | Proposition | 正确但相对次要的命题 | 中 |\n| 引理 | Lemma | 为证明其他定理的辅助命题 | 辅助 |\n| 推论 | Corollary | 由定理直接推出的命题 | 附属 |\n| 断言 | Claim | 证明中临时使用的小命题 | 临时 |"
+  },
+  {
+    "id": "concept-writing-guide_068",
+    "file": "concept-writing-guide.md",
+    "heading": "示例",
+    "level": 4,
+    "content_preview": "**定理示例**：\n> **定理 3.1（均值定理）**\n>\n> 若函数 $f$ 在闭区间 $[a,b]$ 上连续，在开区间 $(a,b)$ 上可导，则存在 $c \\in (a,b)$ 使得\n> $$f'(c) = \\frac{f(b) - f(a)}{b - a}$$\n\n**引理示例**：\n> **引理 4.2**\n>\n> 设 $f_n$ 是 $[0,1]$ 上的函数序列，若 $\\sum \\|f...",
+    "full_content": "**定理示例**：\n> **定理 3.1（均值定理）**\n>\n> 若函数 $f$ 在闭区间 $[a,b]$ 上连续，在开区间 $(a,b)$ 上可导，则存在 $c \\in (a,b)$ 使得\n> $$f'(c) = \\frac{f(b) - f(a)}{b - a}$$\n\n**引理示例**：\n> **引理 4.2**\n>\n> 设 $f_n$ 是 $[0,1]$ 上的函数序列，若 $\\sum \\|f_n\\|_{\\infty}$ 收敛，则 $\\sum f_n$ 在 $[0,1]$ 上一致收敛。\n\n**推论示例**：\n> **推论 3.2**\n>\n> 由定理 3.1，若 $f(a) = f(b)$，则存在 $c \\in (a,b)$ 使得 $f'(c) = 0$。\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_069",
+    "file": "concept-writing-guide.md",
+    "heading": "2.4 证明（Proof）",
+    "level": 3,
+    "content_preview": "**证明**是展示命题真实性的逻辑推理过程。",
+    "full_content": "**证明**是展示命题真实性的逻辑推理过程。"
+  },
+  {
+    "id": "concept-writing-guide_070",
+    "file": "concept-writing-guide.md",
+    "heading": "格式规范",
+    "level": 4,
+    "content_preview": "```markdown\n**证明**。\n\n[证明步骤]\n\n$\\square$（证毕符号）\n```",
+    "full_content": "```markdown\n**证明**。\n\n[证明步骤]\n\n$\\square$（证毕符号）\n```"
+  },
+  {
+    "id": "concept-writing-guide_071",
+    "file": "concept-writing-guide.md",
+    "heading": "常用证明方法",
+    "level": 4,
+    "content_preview": "| 方法 | 适用场景 | 格式 |\n|------|----------|------|\n| **直接证明** | 条件直接推出结论 | 从条件出发，通过逻辑推理得到结论 |\n| **反证法** | 证明某命题为真 | 假设其否定为真，推出矛盾 |\n| **数学归纳法** | 与自然数相关的命题 | 基例 + 归纳假设 + 归纳步 |\n| **构造性证明** | 存在性命题 | 给出具体构造方法...",
+    "full_content": "| 方法 | 适用场景 | 格式 |\n|------|----------|------|\n| **直接证明** | 条件直接推出结论 | 从条件出发，通过逻辑推理得到结论 |\n| **反证法** | 证明某命题为真 | 假设其否定为真，推出矛盾 |\n| **数学归纳法** | 与自然数相关的命题 | 基例 + 归纳假设 + 归纳步 |\n| **构造性证明** | 存在性命题 | 给出具体构造方法 |\n| **等价性证明** | 证明 $A \\Leftrightarrow B$ | 证明 $A \\Rightarrow B$ 和 $B \\Rightarrow A$ |\n| ** contrapositive** | 证明 $A \\Rightarrow B$ | 证明 $\\neg B \\Rightarrow \\neg A$ |"
+  },
+  {
+    "id": "concept-writing-guide_072",
+    "file": "concept-writing-guide.md",
+    "heading": "证明写作规范",
+    "level": 4,
+    "content_preview": "1. **逻辑清晰**：每一步推理都要有依据\n2. **符号一致**：全文符号使用保持一致\n3. **量纲检查**：物理量的证明需检查量纲\n4. **完整性**：不跳过关键步骤\n5. **可读性**：复杂证明应分步说明",
+    "full_content": "1. **逻辑清晰**：每一步推理都要有依据\n2. **符号一致**：全文符号使用保持一致\n3. **量纲检查**：物理量的证明需检查量纲\n4. **完整性**：不跳过关键步骤\n5. **可读性**：复杂证明应分步说明"
+  },
+  {
+    "id": "concept-writing-guide_073",
+    "file": "concept-writing-guide.md",
+    "heading": "示例",
+    "level": 4,
+    "content_preview": "**直接证明示例**：\n> **证明**。\n>\n> 设 $x, y \\in \\mathbb{R}$，且 $x < y$。由实数的稠密性，对于任意 $\\varepsilon > 0$，存在 $z$ 使得\n> $$x < z < y \\quad \\text{且} \\quad z - x < \\varepsilon$$\n> 取 $\\varepsilon = \\frac{y-x}{2}$，则 $z = x...",
+    "full_content": "**直接证明示例**：\n> **证明**。\n>\n> 设 $x, y \\in \\mathbb{R}$，且 $x < y$。由实数的稠密性，对于任意 $\\varepsilon > 0$，存在 $z$ 使得\n> $$x < z < y \\quad \\text{且} \\quad z - x < \\varepsilon$$\n> 取 $\\varepsilon = \\frac{y-x}{2}$，则 $z = x + \\frac{y-x}{2}$ 满足 $x < z < y$。\n>\n> $\\square$\n\n**反证法示例**：\n> **证明**（$\\sqrt{2}$ 是无理数）。\n>\n> 假设 $\\sqrt{2}$ 是有理数，则可写成 $\\sqrt{2} = \\frac{p}{q}$，其中 $p, q$ 为互质整数，$q \\neq 0$。\n>\n> 两边平方得 $2 = \\frac{p^2}{q^2}$，即 $p^2 = 2q^2$。\n>\n> 因此 $p^2$ 是偶数，故 $p$ 是偶数，设 $p = 2k$。\n>\n> 代入得 $(2k)^2 = 2q^2$，即 $4k^2 = 2q^2$，故 $q^2 = 2k^2$。\n>\n> 因此 $q^2$ 也是偶数，故 $q$ 是偶数。\n>\n> 这与 $p, q$ 互质矛盾。\n>\n> $\\square$\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_074",
+    "file": "concept-writing-guide.md",
+    "heading": "2.5 应用（Applications）",
+    "level": 3,
+    "content_preview": "说明概念在实际问题中的应用。",
+    "full_content": "说明概念在实际问题中的应用。"
+  },
+  {
+    "id": "concept-writing-guide_075",
+    "file": "concept-writing-guide.md",
+    "heading": "格式规范",
+    "level": 4,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "concept-writing-guide_076",
+    "file": "concept-writing-guide.md",
+    "heading": "应用领域 1：**[领域名称]**",
+    "level": 3,
+    "content_preview": "**问题描述**：\n[具体问题]\n\n**数学建模**：\n[建立数学模型]\n\n**求解方法**：\n[应用本概念的方法]\n\n**结果解释**：\n[结果的现实意义]\n```",
+    "full_content": "**问题描述**：\n[具体问题]\n\n**数学建模**：\n[建立数学模型]\n\n**求解方法**：\n[应用本概念的方法]\n\n**结果解释**：\n[结果的现实意义]\n```"
+  },
+  {
+    "id": "concept-writing-guide_077",
+    "file": "concept-writing-guide.md",
+    "heading": "示例",
+    "level": 4,
+    "content_preview": "**应用示例**（群的应用——密码学）：\n> ### 应用：RSA 加密算法\n>\n> **问题描述**：设计一种公开密钥加密系统，使得：\n> - 加密密钥可以公开\n> - 解密密钥只有接收方知道\n>\n> **数学建模**：\n> 选取两个大素数 $p, q$，计算 $n = pq$ 和 $\\phi(n) = (p-1)(q-1)$。\n> 选择整数 $e$ 满足 $\\gcd(e, \\phi(n)) =...",
+    "full_content": "**应用示例**（群的应用——密码学）：\n> ### 应用：RSA 加密算法\n>\n> **问题描述**：设计一种公开密钥加密系统，使得：\n> - 加密密钥可以公开\n> - 解密密钥只有接收方知道\n>\n> **数学建模**：\n> 选取两个大素数 $p, q$，计算 $n = pq$ 和 $\\phi(n) = (p-1)(q-1)$。\n> 选择整数 $e$ 满足 $\\gcd(e, \\phi(n)) = 1$，公钥为 $(e, n)$。\n>\n> **求解方法**：\n> 利用欧拉定理，若 $m$ 与 $n$ 互质，则\n> $$m^{\\phi(n)} \\equiv 1 \\pmod{n}$$\n> 解密密钥 $d$ 满足 $ed \\equiv 1 \\pmod{\\phi(n)}$。\n>\n> **结果解释**：\n> 加密信息 $c = m^e \\bmod n$，解密 $m = c^d \\bmod n$。安全性基于大数分解的困难性。\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_078",
+    "file": "concept-writing-guide.md",
+    "heading": "2.6 示例（Examples）",
+    "level": 3,
+    "content_preview": "通过具体例子帮助理解抽象概念。",
+    "full_content": "通过具体例子帮助理解抽象概念。"
+  },
+  {
+    "id": "concept-writing-guide_079",
+    "file": "concept-writing-guide.md",
+    "heading": "格式规范",
+    "level": 4,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "concept-writing-guide_080",
+    "file": "concept-writing-guide.md",
+    "heading": "示例 [编号]",
+    "level": 3,
+    "content_preview": "**示例 [名称]**\n\n**题目**：**[具体例子]**\n\n**解答**：\n1. 验证定义条件\n2. 应用理论\n3. 得出结论\n\n**结果**：\n$$[具体结果]$$\n```",
+    "full_content": "**示例 [名称]**\n\n**题目**：**[具体例子]**\n\n**解答**：\n1. 验证定义条件\n2. 应用理论\n3. 得出结论\n\n**结果**：\n$$[具体结果]$$\n```"
+  },
+  {
+    "id": "concept-writing-guide_081",
+    "file": "concept-writing-guide.md",
+    "heading": "示例",
+    "level": 4,
+    "content_preview": "> ### 示例 1：验证集合构成群\n>\n> **题目**：判断 $(\\mathbb{Z}, +)$ 是否构成群。\n>\n> **解答**：\n> 1. **闭合性**：$\\forall a, b \\in \\mathbb{Z}, a + b \\in \\mathbb{Z}$ ✓\n> 2. **结合律**：$(a + b) + c = a + (b + c)$ ✓\n> 3. **单位元**：$0$ 是单位...",
+    "full_content": "> ### 示例 1：验证集合构成群\n>\n> **题目**：判断 $(\\mathbb{Z}, +)$ 是否构成群。\n>\n> **解答**：\n> 1. **闭合性**：$\\forall a, b \\in \\mathbb{Z}, a + b \\in \\mathbb{Z}$ ✓\n> 2. **结合律**：$(a + b) + c = a + (b + c)$ ✓\n> 3. **单位元**：$0$ 是单位元，$a + 0 = a$ ✓\n> 4. **逆元**：$-a$ 是 $a$ 的逆元，$a + (-a) = 0$ ✓\n>\n> **结论**：$(\\mathbb{Z}, +)$ 构成一个阿贝尔群。\n>\n> ### 示例 2：验证集合不构成群\n>\n> **题目**：判断 $(\\mathbb{N}, -)$ 是否构成群。\n>\n> **解答**：\n> 取 $a = 1, b = 2$，则 $a - b = -1 \\notin \\mathbb{N}$，不满足闭合性。\n>\n> **结论**：$(\\mathbb{N}, -)$ 不构成群。\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_082",
+    "file": "concept-writing-guide.md",
+    "heading": "3.1 层级关系图",
+    "level": 3,
+    "content_preview": "```\n        ┌─────────────┐\n        │   公理/公设  │  （不证自明）\n        └──────┬──────┘\n               │ 推出\n        ┌──────▼──────┐\n        │    定义      │  （概念基石）\n        └──────┬──────┘\n               │ 建立在...",
+    "full_content": "```\n        ┌─────────────┐\n        │   公理/公设  │  （不证自明）\n        └──────┬──────┘\n               │ 推出\n        ┌──────▼──────┐\n        │    定义      │  （概念基石）\n        └──────┬──────┘\n               │ 建立在...之上\n        ┌──────▼──────┐\n        │    引理      │  （辅助命题）\n        └──────┬──────┘\n               │ 用于证明\n        ┌──────▼──────┐\n        │    定理      │  （核心命题）\n        └──────┬──────┘\n               │ 直接推出\n        ┌──────▼──────┐\n        │    推论      │  （附属命题）\n        └─────────────┘\n```"
+  },
+  {
+    "id": "concept-writing-guide_083",
+    "file": "concept-writing-guide.md",
+    "heading": "3.2 关系描述模板",
+    "level": 3,
+    "content_preview": "```markdown\n**关系描述**：\n\n- 本概念**推广**了 [更特殊概念]：当 [添加约束条件] 时，可还原为 [特殊情形]\n- 本概念**与** [相关概念] **的关系**：...\n- [定理A]**是**[定理B]的**特例**：当 [条件] 时...\n```",
+    "full_content": "```markdown\n**关系描述**：\n\n- 本概念**推广**了 [更特殊概念]：当 [添加约束条件] 时，可还原为 [特殊情形]\n- 本概念**与** [相关概念] **的关系**：...\n- [定理A]**是**[定理B]的**特例**：当 [条件] 时...\n```"
+  },
+  {
+    "id": "concept-writing-guide_084",
+    "file": "concept-writing-guide.md",
+    "heading": "示例",
+    "level": 4,
+    "content_preview": "> **关系描述**：\n>\n> - **群**推广了**半群**：当半群满足单位元和逆元条件时，成为群\n> - **欧几里得空间**是**度量空间**的特殊情形：当度量由欧氏距离定义时\n> - **均值定理**是**拉格朗日中值定理**的特殊情形：当 $f(a) = f(b)$ 时\n\n---",
+    "full_content": "> **关系描述**：\n>\n> - **群**推广了**半群**：当半群满足单位元和逆元条件时，成为群\n> - **欧几里得空间**是**度量空间**的特殊情形：当度量由欧氏距离定义时\n> - **均值定理**是**拉格朗日中值定理**的特殊情形：当 $f(a) = f(b)$ 时\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_085",
+    "file": "concept-writing-guide.md",
+    "heading": "四、文档格式模板",
+    "level": 2,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "concept-writing-guide_086",
+    "file": "concept-writing-guide.md",
+    "heading": "[概念名称]",
+    "level": 1,
+    "content_preview": "> [一句概括概念本质的话]\n\n---",
+    "full_content": "> [一句概括概念本质的话]\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_087",
+    "file": "concept-writing-guide.md",
+    "heading": "概述",
+    "level": 2,
+    "content_preview": "[简要介绍概念的历史背景、意义和应用领域]",
+    "full_content": "[简要介绍概念的历史背景、意义和应用领域]"
+  },
+  {
+    "id": "concept-writing-guide_088",
+    "file": "concept-writing-guide.md",
+    "heading": "[主定义]",
+    "level": 3,
+    "content_preview": "**[定义 X.Y]**（[定义名称]）\n\n[精确定义，使用数学符号]",
+    "full_content": "**[定义 X.Y]**（[定义名称]）\n\n[精确定义，使用数学符号]"
+  },
+  {
+    "id": "concept-writing-guide_089",
+    "file": "concept-writing-guide.md",
+    "heading": "[相关定义]",
+    "level": 3,
+    "content_preview": "**[定义 X.Z]**（[相关概念名称]）\n\n[定义内容]",
+    "full_content": "**[定义 X.Z]**（[相关概念名称]）\n\n[定义内容]"
+  },
+  {
+    "id": "concept-writing-guide_090",
+    "file": "concept-writing-guide.md",
+    "heading": "公理与假设",
+    "level": 2,
+    "content_preview": "**公理**：\n- **[A1]**：[公理内容]\n- **[A2]**：[公理内容]\n\n**基本假设**：\n- **[H1]**：[假设内容]\n- **[H2]**：[假设内容]",
+    "full_content": "**公理**：\n- **[A1]**：[公理内容]\n- **[A2]**：[公理内容]\n\n**基本假设**：\n- **[H1]**：[假设内容]\n- **[H2]**：[假设内容]"
+  },
+  {
+    "id": "concept-writing-guide_091",
+    "file": "concept-writing-guide.md",
+    "heading": "核心定理",
+    "level": 2,
+    "content_preview": "**定理 X.1**（[定理名称]）\n\n若 [条件]，则 [结论]。\n\n**证明**。\n[详细证明]\n$\\square$",
+    "full_content": "**定理 X.1**（[定理名称]）\n\n若 [条件]，则 [结论]。\n\n**证明**。\n[详细证明]\n$\\square$"
+  },
+  {
+    "id": "concept-writing-guide_092",
+    "file": "concept-writing-guide.md",
+    "heading": "推论",
+    "level": 2,
+    "content_preview": "**推论 X.1**（[推论名称]）\n\n[由定理直接推出的结论]\n\n**证明**。\n[证明（通常简短）]\n$\\square$",
+    "full_content": "**推论 X.1**（[推论名称]）\n\n[由定理直接推出的结论]\n\n**证明**。\n[证明（通常简短）]\n$\\square$"
+  },
+  {
+    "id": "concept-writing-guide_093",
+    "file": "concept-writing-guide.md",
+    "heading": "[应用领域 1]",
+    "level": 3,
+    "content_preview": "[具体应用]",
+    "full_content": "[具体应用]"
+  },
+  {
+    "id": "concept-writing-guide_094",
+    "file": "concept-writing-guide.md",
+    "heading": "示例 1：[示例名称]",
+    "level": 3,
+    "content_preview": "**题目**：[具体问题]\n\n**解答**：\n1. [步骤1]\n2. [步骤2]\n\n**结论**：[结果]",
+    "full_content": "**题目**：[具体问题]\n\n**解答**：\n1. [步骤1]\n2. [步骤2]\n\n**结论**：[结果]"
+  },
+  {
+    "id": "concept-writing-guide_095",
+    "file": "concept-writing-guide.md",
+    "heading": "局限性",
+    "level": 2,
+    "content_preview": "- [局限性1]\n- [局限性2]",
+    "full_content": "- [局限性1]\n- [局限性2]"
+  },
+  {
+    "id": "concept-writing-guide_096",
+    "file": "concept-writing-guide.md",
+    "heading": "发展历史",
+    "level": 2,
+    "content_preview": "| 时间 | 人物 | 贡献 |\n|------|------|------|\n| 年份 | 人物 | 描述 |",
+    "full_content": "| 时间 | 人物 | 贡献 |\n|------|------|------|\n| 年份 | 人物 | 描述 |"
+  },
+  {
+    "id": "concept-writing-guide_097",
+    "file": "concept-writing-guide.md",
+    "heading": "参考文献",
+    "level": 2,
+    "content_preview": "1. [文献1]\n2. [文献2]\n```\n\n---",
+    "full_content": "1. [文献1]\n2. [文献2]\n```\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_098",
+    "file": "concept-writing-guide.md",
+    "heading": "五、质量检查清单",
+    "level": 2,
+    "content_preview": "完成数学概念文档后，检查以下要点：",
+    "full_content": "完成数学概念文档后，检查以下要点："
+  },
+  {
+    "id": "concept-writing-guide_099",
+    "file": "concept-writing-guide.md",
+    "heading": "定义检查",
+    "level": 3,
+    "content_preview": "- [ ] 定义语言精确、无歧义\n- [ ] 使用了正确的数学符号（$\\forall$, $\\exists$, $\\in$, etc.）\n- [ ] 定义项完整、不冗余\n- [ ] 没有循环定义",
+    "full_content": "- [ ] 定义语言精确、无歧义\n- [ ] 使用了正确的数学符号（$\\forall$, $\\exists$, $\\in$, etc.）\n- [ ] 定义项完整、不冗余\n- [ ] 没有循环定义"
+  },
+  {
+    "id": "concept-writing-guide_100",
+    "file": "concept-writing-guide.md",
+    "heading": "公理/假设检查",
+    "level": 3,
+    "content_preview": "- [ ] 公理是公认成立的基本事实\n- [ ] 假设条件明确、不矛盾\n- [ ] 假设适用范围清晰",
+    "full_content": "- [ ] 公理是公认成立的基本事实\n- [ ] 假设条件明确、不矛盾\n- [ ] 假设适用范围清晰"
+  },
+  {
+    "id": "concept-writing-guide_101",
+    "file": "concept-writing-guide.md",
+    "heading": "定理检查",
+    "level": 3,
+    "content_preview": "- [ ] 定理条件清晰\n- [ ] 结论明确\n- [ ] 定理编号连续、可引用",
+    "full_content": "- [ ] 定理条件清晰\n- [ ] 结论明确\n- [ ] 定理编号连续、可引用"
+  },
+  {
+    "id": "concept-writing-guide_102",
+    "file": "concept-writing-guide.md",
+    "heading": "证明检查",
+    "level": 3,
+    "content_preview": "- [ ] 逻辑推理每步有依据\n- [ ] 没有跳步\n- [ ] 使用正确的证明方法\n- [ ] 结尾有 $\\square$ 符号",
+    "full_content": "- [ ] 逻辑推理每步有依据\n- [ ] 没有跳步\n- [ ] 使用正确的证明方法\n- [ ] 结尾有 $\\square$ 符号"
+  },
+  {
+    "id": "concept-writing-guide_103",
+    "file": "concept-writing-guide.md",
+    "heading": "格式检查",
+    "level": 3,
+    "content_preview": "- [ ] LaTeX 公式正确渲染\n- [ ] 符号全文一致\n- [ ] 章节结构清晰\n- [ ] 有足够的示例\n\n---",
+    "full_content": "- [ ] LaTeX 公式正确渲染\n- [ ] 符号全文一致\n- [ ] 章节结构清晰\n- [ ] 有足够的示例\n\n---"
+  },
+  {
+    "id": "concept-writing-guide_104",
+    "file": "concept-writing-guide.md",
+    "heading": "定义常用表达",
+    "level": 3,
+    "content_preview": "| 含义 | 表达方式 |\n|------|----------|\n| 引入概念 | \"设...称...为...\"、\"令...称为...\" |\n| 符号表示 | \"记作\"、\"记为\"、\"记为 $\\neq$\" |\n| 满足条件 | \"若...则...\"、\"满足...\" |\n| 性质描述 | \"对任意...都有...\"、\"存在...使得...\" |",
+    "full_content": "| 含义 | 表达方式 |\n|------|----------|\n| 引入概念 | \"设...称...为...\"、\"令...称为...\" |\n| 符号表示 | \"记作\"、\"记为\"、\"记为 $\\neq$\" |\n| 满足条件 | \"若...则...\"、\"满足...\" |\n| 性质描述 | \"对任意...都有...\"、\"存在...使得...\" |"
+  },
+  {
+    "id": "concept-writing-guide_105",
+    "file": "concept-writing-guide.md",
+    "heading": "证明常用表达",
+    "level": 3,
+    "content_preview": "| 含义 | 表达方式 |\n|------|----------|\n| 因为 | \"由于\"、\"由题设\"、\"根据\" |\n| 所以 | \"因此\"、\"故\"、\"从而\"、\"可得\" |\n| 证明完成 | \"$\\square$\"、\"证毕\" |\n| 假设否定 | \"反设\"、\"假设不然\" |\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*",
+    "full_content": "| 含义 | 表达方式 |\n|------|----------|\n| 因为 | \"由于\"、\"由题设\"、\"根据\" |\n| 所以 | \"因此\"、\"故\"、\"从而\"、\"可得\" |\n| 证明完成 | \"$\\square$\"、\"证毕\" |\n| 假设否定 | \"反设\"、\"假设不然\" |\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  },
+  {
+    "id": "guide_106",
+    "file": "guide.md",
+    "heading": "Mathematician 使用指南",
+    "level": 1,
+    "content_preview": "> 数学不说谎。数学推导是最终的真理检验。\n\n---",
+    "full_content": "> 数学不说谎。数学推导是最终的真理检验。\n\n---"
+  },
+  {
+    "id": "guide_107",
+    "file": "guide.md",
+    "heading": "一、概述",
+    "level": 2,
+    "content_preview": "Mathematician 是实验室的数学家角色，专注于数学分析与统计建模。",
+    "full_content": "Mathematician 是实验室的数学家角色，专注于数学分析与统计建模。"
+  },
+  {
+    "id": "guide_108",
+    "file": "guide.md",
+    "heading": "核心能力",
+    "level": 3,
+    "content_preview": "| 能力 | 说明 |\n|------|------|\n| 数学建模 | 微分方程、优化问题、统计模型 |\n| 统计分析 | 假设检验、回归分析、时间序列 |\n| 算法设计 | 复杂度分析、数值算法 |\n| 数值计算 | 精确数值模拟和计算 |\n| 证明验证 | 数学定理和推导验证 |\n| 数据可视化 | 统计图表和数学图形 |\n\n---",
+    "full_content": "| 能力 | 说明 |\n|------|------|\n| 数学建模 | 微分方程、优化问题、统计模型 |\n| 统计分析 | 假设检验、回归分析、时间序列 |\n| 算法设计 | 复杂度分析、数值算法 |\n| 数值计算 | 精确数值模拟和计算 |\n| 证明验证 | 数学定理和推导验证 |\n| 数据可视化 | 统计图表和数学图形 |\n\n---"
+  },
+  {
+    "id": "guide_109",
+    "file": "guide.md",
+    "heading": "二、触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下关键词时触发：\n\n**数学建模相关**\n- 数学建模、微分方程、偏微分方程、常微分方程\n- 优化问题、线性规划、非线性规划、动态规划\n- 随机过程、随机微分方程\n\n**统计分析相关**\n- 统计分析、假设检验、回归分析\n- 时间序列、ARIMA、预测模型\n- 方差分析、协方差分析\n\n**算法与计算相关**\n- 算法复杂度、大O表示法、复杂度分析\n- 数值计算、数值模拟、数值积分\n- ...",
+    "full_content": "当用户提到以下关键词时触发：\n\n**数学建模相关**\n- 数学建模、微分方程、偏微分方程、常微分方程\n- 优化问题、线性规划、非线性规划、动态规划\n- 随机过程、随机微分方程\n\n**统计分析相关**\n- 统计分析、假设检验、回归分析\n- 时间序列、ARIMA、预测模型\n- 方差分析、协方差分析\n\n**算法与计算相关**\n- 算法复杂度、大O表示法、复杂度分析\n- 数值计算、数值模拟、数值积分\n- 插值、拟合、求根\n\n**证明与推导相关**\n- 数学证明、定理验证\n- 推导验证、公式推导\n\n**可视化相关**\n- 数据可视化、统计图表\n- 数学函数绘图\n\n---"
+  },
+  {
+    "id": "guide_110",
+    "file": "guide.md",
+    "heading": "3.1 数学建模工作流程",
+    "level": 3,
+    "content_preview": "```\n问题理解 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n```\n\n1. **问题理解**：明确问题类型、约束条件、目标函数\n2. **假设条件**：列出所有假设，确保合理性\n3. **模型选择**：选择合适的数学模型（微分方程、优化模型等）\n4. **求解验证**：使用数值方法或解析方法求解\n5. **结果解释**：验证结果物理意义，检查一致性",
+    "full_content": "```\n问题理解 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n```\n\n1. **问题理解**：明确问题类型、约束条件、目标函数\n2. **假设条件**：列出所有假设，确保合理性\n3. **模型选择**：选择合适的数学模型（微分方程、优化模型等）\n4. **求解验证**：使用数值方法或解析方法求解\n5. **结果解释**：验证结果物理意义，检查一致性"
+  },
+  {
+    "id": "guide_111",
+    "file": "guide.md",
+    "heading": "3.2 统计分析工作流程",
+    "level": 3,
+    "content_preview": "```\n数据收集 → 探索性分析 → 模型建立 → 假设检验 → 结论推断\n```\n\n1. **数据收集**：确保数据质量、代表性\n2. **探索性分析**：描述统计、可视化检查\n3. **模型建立**：选择合适的统计模型\n4. **假设检验**：进行显著性检验\n5. **结论推断**：基于检验结果做出推断",
+    "full_content": "```\n数据收集 → 探索性分析 → 模型建立 → 假设检验 → 结论推断\n```\n\n1. **数据收集**：确保数据质量、代表性\n2. **探索性分析**：描述统计、可视化检查\n3. **模型建立**：选择合适的统计模型\n4. **假设检验**：进行显著性检验\n5. **结论推断**：基于检验结果做出推断"
+  },
+  {
+    "id": "guide_112",
+    "file": "guide.md",
+    "heading": "3.3 数值计算工作流程",
+    "level": 3,
+    "content_preview": "```\n问题定义 → 方法选择 → 误差估计 → 计算实现 → 结果验证\n```\n\n1. **问题定义**：明确计算目标、精度要求\n2. **方法选择**：选择合适的数值方法\n3. **误差估计**：评估截断误差和舍入误差\n4. **计算实现**：编写或使用计算程序\n5. **结果验证**：量纲检查、已知解验证\n\n---",
+    "full_content": "```\n问题定义 → 方法选择 → 误差估计 → 计算实现 → 结果验证\n```\n\n1. **问题定义**：明确计算目标、精度要求\n2. **方法选择**：选择合适的数值方法\n3. **误差估计**：评估截断误差和舍入误差\n4. **计算实现**：编写或使用计算程序\n5. **结果验证**：量纲检查、已知解验证\n\n---"
+  },
+  {
+    "id": "guide_113",
+    "file": "guide.md",
+    "heading": "4.1 核心原则",
+    "level": 3,
+    "content_preview": "1. **先假设后验证**：任何结论必须有数学推导支撑\n2. **量纲检查**：所有计算必须先检查量纲一致性\n3. **误差传播**：数值结果必须报告不确定度\n4. **可视化验证**：数据必须画图确认模式",
+    "full_content": "1. **先假设后验证**：任何结论必须有数学推导支撑\n2. **量纲检查**：所有计算必须先检查量纲一致性\n3. **误差传播**：数值结果必须报告不确定度\n4. **可视化验证**：数据必须画图确认模式"
+  },
+  {
+    "id": "guide_114",
+    "file": "guide.md",
+    "heading": "4.2 学术诚信原则",
+    "level": 3,
+    "content_preview": "1. **文献检索必须使用文献检索工具**：不能编造假文献\n2. **数学证明必须严谨**：每一步推导都要逻辑严密，不能跳过关键步骤\n3. **数据来源可追溯**：所有使用的数据必须标明来源",
+    "full_content": "1. **文献检索必须使用文献检索工具**：不能编造假文献\n2. **数学证明必须严谨**：每一步推导都要逻辑严密，不能跳过关键步骤\n3. **数据来源可追溯**：所有使用的数据必须标明来源"
+  },
+  {
+    "id": "guide_115",
+    "file": "guide.md",
+    "heading": "4.3 表达规范",
+    "level": 3,
+    "content_preview": "1. **使用 LaTeX 格式**：数学公式使用 LaTeX 表示\n2. **步骤清晰**：每一步推导都要有依据\n3. **符号一致**：全文符号使用保持一致\n\n---",
+    "full_content": "1. **使用 LaTeX 格式**：数学公式使用 LaTeX 表示\n2. **步骤清晰**：每一步推导都要有依据\n3. **符号一致**：全文符号使用保持一致\n\n---"
+  },
+  {
+    "id": "guide_116",
+    "file": "guide.md",
+    "heading": "5.1 命令行工具",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "guide_117",
+    "file": "guide.md",
+    "heading": "列出所有工具",
+    "level": 1,
+    "content_preview": "python3 scripts/lookup.py --list",
+    "full_content": "python3 scripts/lookup.py --list"
+  },
+  {
+    "id": "guide_118",
+    "file": "guide.md",
+    "heading": "搜索相关工具",
+    "level": 1,
+    "content_preview": "python3 scripts/lookup.py --search regression",
+    "full_content": "python3 scripts/lookup.py --search regression"
+  },
+  {
+    "id": "guide_119",
+    "file": "guide.md",
+    "heading": "查看工具详情",
+    "level": 1,
+    "content_preview": "python3 scripts/lookup.py --info calculate\n```",
+    "full_content": "python3 scripts/lookup.py --info calculate\n```"
+  },
+  {
+    "id": "guide_120",
+    "file": "guide.md",
+    "heading": "5.2 数值计算示例",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "guide_121",
+    "file": "guide.md",
+    "heading": "基本运算",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py basic 10 5 mul",
+    "full_content": "python3 scripts/calculate.py basic 10 5 mul"
+  },
+  {
+    "id": "guide_122",
+    "file": "guide.md",
+    "heading": "矩阵运算",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --op inverse",
+    "full_content": "python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --op inverse"
+  },
+  {
+    "id": "guide_123",
+    "file": "guide.md",
+    "heading": "数值积分",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py integrate --func \"x**2\" --a 0 --b 1 --method quad",
+    "full_content": "python3 scripts/calculate.py integrate --func \"x**2\" --a 0 --b 1 --method quad"
+  },
+  {
+    "id": "guide_124",
+    "file": "guide.md",
+    "heading": "微分方程求解",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py ode --func \"t,y[0]\" --y0 \"1\" --t0 0 --t1 10",
+    "full_content": "python3 scripts/calculate.py ode --func \"t,y[0]\" --y0 \"1\" --t0 0 --t1 10"
+  },
+  {
+    "id": "guide_125",
+    "file": "guide.md",
+    "heading": "求根",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py root --func \"x**2-2\" --x0 \"0,2\" --method bisection\n```",
+    "full_content": "python3 scripts/calculate.py root --func \"x**2-2\" --x0 \"0,2\" --method bisection\n```"
+  },
+  {
+    "id": "guide_126",
+    "file": "guide.md",
+    "heading": "5.3 可视化示例",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "guide_127",
+    "file": "guide.md",
+    "heading": "函数图像",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py function --func \"np.sin(x)\" --x0 0 --x1 2*np.pi --title \"sin(x)\"",
+    "full_content": "python3 scripts/visualize.py function --func \"np.sin(x)\" --x0 0 --x1 2*np.pi --title \"sin(x)\""
+  },
+  {
+    "id": "guide_128",
+    "file": "guide.md",
+    "heading": "散点图",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py scatter --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --title \"线性关系\"",
+    "full_content": "python3 scripts/visualize.py scatter --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --title \"线性关系\""
+  },
+  {
+    "id": "guide_129",
+    "file": "guide.md",
+    "heading": "直方图",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py histogram --data \"1,2,2,3,3,3,4,4,5\" --bins 5\n```",
+    "full_content": "python3 scripts/visualize.py histogram --data \"1,2,2,3,3,3,4,4,5\" --bins 5\n```"
+  },
+  {
+    "id": "guide_130",
+    "file": "guide.md",
+    "heading": "5.4 统计分析示例",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "guide_131",
+    "file": "guide.md",
+    "heading": "描述性统计",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py describe --data \"1,2,3,4,5,6,7,8,9,10\"",
+    "full_content": "python3 scripts/statistics.py describe --data \"1,2,3,4,5,6,7,8,9,10\""
+  },
+  {
+    "id": "guide_132",
+    "file": "guide.md",
+    "heading": "t检验",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py ttest --s1 \"1,2,3,4,5\" --s2 \"3,4,5,6,7\"",
+    "full_content": "python3 scripts/statistics.py ttest --s1 \"1,2,3,4,5\" --s2 \"3,4,5,6,7\""
+  },
+  {
+    "id": "guide_133",
+    "file": "guide.md",
+    "heading": "相关性分析",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py corr --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --method pearson",
+    "full_content": "python3 scripts/statistics.py corr --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --method pearson"
+  },
+  {
+    "id": "guide_134",
+    "file": "guide.md",
+    "heading": "线性回归",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py regress --x \"1,2,3,4,5\" --y \"2.1,4.2,5.9,8.1,10.2\"\n```\n\n---",
+    "full_content": "python3 scripts/statistics.py regress --x \"1,2,3,4,5\" --y \"2.1,4.2,5.9,8.1,10.2\"\n```\n\n---"
+  },
+  {
+    "id": "guide_135",
+    "file": "guide.md",
+    "heading": "六、模板",
+    "level": 2,
+    "content_preview": "分析报告模板：`assets/templates/report_template.md`\n\n---",
+    "full_content": "分析报告模板：`assets/templates/report_template.md`\n\n---"
+  },
+  {
+    "id": "guide_136",
+    "file": "guide.md",
+    "heading": "七、质量检查",
+    "level": 2,
+    "content_preview": "完成分析后，检查以下要点：\n\n- [ ] 量纲一致性\n- [ ] 结果物理意义合理\n- [ ] 误差范围合理\n- [ ] 可视化图表清晰\n- [ ] 结论有统计依据\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*",
+    "full_content": "完成分析后，检查以下要点：\n\n- [ ] 量纲一致性\n- [ ] 结果物理意义合理\n- [ ] 误差范围合理\n- [ ] 可视化图表清晰\n- [ ] 结论有统计依据\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  }
+]

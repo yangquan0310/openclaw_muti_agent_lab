@@ -1,0 +1,55 @@
+{
+  "llm": {
+    "default_provider": "deepseek",
+    "providers": {
+      "kimi": {
+        "name": "Kimi",
+        "base_url": "https://api.moonshot.cn/v1",
+        "default_model": "moonshot-v1-8k",
+        "api_key_env": "KIMI_API_KEY",
+        "timeout": 30,
+        "temperature": 0.3,
+        "max_tokens": 5000
+      },
+      "deepseek": {
+        "name": "deepseek",
+        "base_url": "https://api.deepseek.com/v1",
+        "default_model": "deepseek-v4-flash",
+        "api_key_env": "DEEPSEEK_API_KEY",
+        "timeout": 30,
+        "temperature": 0.3,
+        "max_tokens": 5000
+      },
+      "tencent_token": {
+        "name": "腾讯云tokenhub",
+        "base_url": "https://tokenhub.tencentmaas.com/v1",
+        "default_model": "deepseek-v3.2",
+        "api_key_env": "TOKENHUB_API_KEY",
+        "timeout": 30,
+        "temperature": 0.3,
+        "max_tokens": 5000
+      }
+    }
+  },
+  "semantic_scholar": {
+    "api_key_env": "SEMANTIC_SCHOLAR_API_KEY",
+    "request_interval": 0.5,
+    "default_limit": 20
+  },
+  "storage": {
+    "knowledge_base_dir": "knowledge/",
+    "knowledge_base_file": "index.json",
+    "note_dir": "knowledge/note/",
+    "notes_file_format": "笔记_{topic}.md",
+    "review_dir": "knowledge/review/",
+    "reviews_file_format": "综述_{topic}.md",
+    "retrieval_report_dir": "knowledge/retrieval_report/",
+    "retrieval_report_file_format": "{topic}.md",
+    "search_query_dir": "knowledge/search_query/",
+    "search_queries_file_format": "{query}.json",
+    "draft_dir": "temp/draft/",
+    "skills_dir": "skills/",
+    "topic_subset_dir": "knowledge/topic/",
+    "topic_subset_file_format": "{topic}.json"
+  }
+}

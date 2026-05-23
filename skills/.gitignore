@@ -1,0 +1,25 @@
+# ~/.openclaw/skills/.gitignore
+# 全局共享技能目录
+
+# 排除所有内容
+*
+
+# 允许必要文件
+!.gitignore
+!.skills_store_lock.json
+
+# 允许自研核心技能
+!skill-developer/
+!skill-developer/**/
+!skill-developer/**
+!research-assistant/
+!research-assistant/**/
+!research-assistant/**
+
+
+# 排除缓存文件（即使在允许的目录内）
+__pycache__/
+*.pyc
+*.pyo
+*.cache
+node_modules/

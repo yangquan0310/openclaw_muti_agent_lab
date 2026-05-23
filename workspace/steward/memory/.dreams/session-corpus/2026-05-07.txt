@@ -1,0 +1,5 @@
+[steward/sessions/steward/b39bdf39-f9f2-45bc-89a0-daa5f61a9b44.jsonl#L5] User: 这是一条测试，没问题回复没问题
+[steward/sessions/steward/b39bdf39-f9f2-45bc-89a0-daa5f61a9b44.jsonl#L7] Assistant: 没问题
+[steward/sessions/steward/b39bdf39-f9f2-45bc-89a0-daa5f61a9b44.jsonl#L8] User: openclaw最新版更新了什么？
+[steward/sessions/steward/b39bdf39-f9f2-45bc-89a0-daa5f61a9b44.jsonl#L15] Assistant: 当前版本：**OpenClaw 2026.5.6** (c97b9f7) --- ## 最新版本更新摘要 ### 2026.5.6（最新） **主要修复：** - **Doctor/OpenAI 配置**：修复 `doctor --fix` 时可能错误修改 OpenAI 模型配置的问题 - **插件请求头**：清理第三方符号元数据，避免 SDK 拒绝有效的插件请求 - **调试代理**：修复请求重放时的请求头处理问题 - **Web Fetch**：修复超时后正确返回工具错误，避免 Gateway 工具通道保持活
+[steward/sessions/steward/b39bdf39-f9f2-45bc-89a0-daa5f61a9b44.jsonl#L15] Assistant: **Slack**：线程消息保持、Socket Mode 错误日志 - **WhatsApp**：响应性能优化、登录流程改进、Channel/Newsletter 消息目标支持 - **Feishu**：修复话题会话路由 - **Matrix**：审批消息重试、实时预览验证 ### 2026.5.4 - **Google Meet 实时语音**：支持通过 Twilio 拨号加入会议，使用实时 Gemini 语音桥接 - 大量性能优化和平台适配改进 --- 📋 **当前系统状态**：你正在运行 **2026.5.

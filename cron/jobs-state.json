@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "jobs": {
+    "b6a6b07d-384d-43fb-ab80-0b713e8a8289": {
+      "updatedAtMs": 1779519239636,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"00 04 * * *\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "lastRunAtMs": 1779519013855,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 225781,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0,
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "lastDelivered": true,
+        "nextRunAtMs": 1779566400000
+      }
+    },
+    "dc7447e5-7fcf-4c64-8079-e811456af6ed": {
+      "updatedAtMs": 1779476452802,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 3 * * *\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1779562800000,
+        "lastRunAtMs": 1779476400040,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 52762,
+        "lastDeliveryStatus": "not-requested",
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0
+      }
+    }
+  }
+}

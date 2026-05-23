@@ -1,0 +1,60 @@
+---
+name: {skill-name}
+description: >
+  {description}
+version: 1.0.0
+author: Yang Quan
+---
+
+# {skill-name}
+
+> {brief description}
+
+---
+
+## 核心原则
+
+1. **原则1**：{说明}
+2. **原则2**：{说明}
+3. **原则3**：{说明}
+
+---
+
+## 边界条件
+
+| 边界 | 说明 |
+|------|------|
+| ✅ 能做 | {说明} |
+| ❌ 不能做 | {说明} |
+
+---
+
+## 快速调用
+
+```bash
+# {说明}
+{command}
+```
+
+---
+
+## 指南导航
+
+| 指南 | 位置 |
+|------|------|
+| 使用指南 | [references/guide.md](references/guide.md) |
+| {其他指南} | [references/{guide}.md](references/{guide}.md) |
+
+---
+
+## {其他内容}
+
+{按需添加}
+
+---
+
+## 版本历史
+
+| 版本 | 日期 | 更新 |
+|------|------|------|
+| 1.0.0 | {YYYY-MM-DD} | 初始版本 |

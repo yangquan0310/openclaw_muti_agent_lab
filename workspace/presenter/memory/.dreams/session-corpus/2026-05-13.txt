@@ -1,0 +1,4 @@
+[presenter/sessions/presenter/a1b9cf10-a0b8-4eaf-9fc7-07dea98d9ee7.jsonl#L5] User: 查看你的工作空间技能，
+[presenter/sessions/presenter/a1b9cf10-a0b8-4eaf-9fc7-07dea98d9ee7.jsonl#L13] Assistant: 当前工作空间技能如下： **1. course-presenter**（本地技能） - 功能：生成大学课程PPT，基于王雅欣老师的教学风格 - 资产：包含 `template.pptx`（空白风格模板）和 `reference.pptx`（参考课程） - 视觉风格：深蓝学术主题，16:9比例，阿里巴巴普惠体 + Times New Roman 字体组合 - 页面类型：封面页、目录页、章节分隔页、概念定义页、分类页、步骤页、对比页、文字页、习题页 - 技术栈：python-pptx **2. task-di
+[presenter/sessions/presenter/a1b9cf10-a0b8-4eaf-9fc7-07dea98d9ee7.jsonl#L14] User: 阅读pptx-generator，进一步提升这个技能。
+[presenter/sessions/presenter/a1b9cf10-a0b8-4eaf-9fc7-07dea98d9ee7.jsonl#L21] Assistant: 已阅读完 pptx-generator。现在让我对比分析并提升 course-presenter 技能。 **核心差异分析：** - pptx-generator：通用风格，从零构建，类封装，表格/图片/总结页完善 - course-presenter：课程专用，基于模板克隆，装饰元素系统，页脚规范，但缺少类封装和表格/总结页类型 我将把 pptx-generator 的**类封装结构、表格支持、总结页、更清晰的代码组织**融入 course-presenter，同时**保留其模板克隆策略和课程视觉系统*

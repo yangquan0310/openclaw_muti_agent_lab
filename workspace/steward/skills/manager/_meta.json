@@ -1,0 +1,11 @@
+{
+  "name": "manager",
+  "version": "3.2.3",
+  "description": "大管家唯一管理技能入口，涵盖论文、课程、程序、知识库、任务派发等所有管理场景。",
+  "entry_point": "references/index.md",
+  "triggers": [],
+  "scripts": {
+    "maintainer": "scripts/maintainer/Maintainer.py"
+  },
+  "author": "Yang Quan"
+}

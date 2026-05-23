@@ -1,0 +1,830 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/root/.openclaw/workspace/",
+      "userTimezone": "Asia/Shanghai",
+      "thinkingDefault": "adaptive",
+      "verboseDefault": "full",
+      "reasoningDefault": "stream",
+      "compaction": {
+        "mode": "safeguard",
+        "model": "minimax/MiniMax-M2.7",
+        "postCompactionSections": [
+          "安全红线",
+          "工作原则"
+        ]
+      },
+      "sandbox": {
+        "browser": {
+          "enabled": false
+        }
+      },
+      "model": {
+        "primary": "minimax/MiniMax-M2.7-highspeed",
+        "fallbacks": [
+          "minimax/MiniMax-M2.7",
+          "deepseek/deepseek-v4-flash"
+        ]
+      },
+      "imageModel": {
+        "primary": "minimax/MiniMax-VL-01"
+      },
+      "imageGenerationModel": {
+        "primary": "minimax/image-01"
+      },
+      "musicGenerationModel": {
+        "primary": "minimax/music-2.6"
+      },
+      "videoGenerationModel": {
+        "primary": "minimax/MiniMax-Hailuo-2.3"
+      },
+      "memorySearch": {
+        "provider": "openai",
+        "model": "jina-embeddings-v4",
+        "remote": {
+          "baseUrl": "https://api.jina.ai/v1",
+          "apiKey": "${JINA_API_KEY}"
+        }
+      }
+    },
+    "list": [
+      {
+        "id": "steward",
+        "name": "steward",
+        "workspace": "/root/.openclaw/workspace/steward",
+        "agentDir": "/root/.openclaw/agents/steward/agent"
+      },
+      {
+        "id": "mathematician",
+        "name": "mathematician",
+        "workspace": "/root/.openclaw/workspace/mathematician",
+        "agentDir": "/root/.openclaw/agents/mathematician/agent"
+      },
+      {
+        "id": "physicist",
+        "name": "physicist",
+        "workspace": "/root/.openclaw/workspace/physicist",
+        "agentDir": "/root/.openclaw/agents/physicist/agent"
+      },
+      {
+        "id": "psychologist",
+        "name": "psychologist",
+        "workspace": "/root/.openclaw/workspace/psychologist",
+        "agentDir": "/root/.openclaw/agents/psychologist/agent"
+      },
+      {
+        "id": "programmer",
+        "name": "programmer",
+        "workspace": "/root/.openclaw/workspace/programmer",
+        "agentDir": "/root/.openclaw/agents/programmer/agent"
+      },
+      {
+        "id": "writer",
+        "name": "writer",
+        "workspace": "/root/.openclaw/workspace/writer",
+        "agentDir": "/root/.openclaw/agents/writer/agent"
+      },
+      {
+        "id": "reviewer",
+        "name": "reviewer",
+        "workspace": "/root/.openclaw/workspace/reviewer",
+        "agentDir": "/root/.openclaw/agents/reviewer/agent"
+      },
+      {
+        "id": "instructor",
+        "name": "instructor",
+        "workspace": "/root/.openclaw/workspace/instructor",
+        "agentDir": "/root/.openclaw/agents/instructor/agent"
+      },
+      {
+        "id": "presenter",
+        "name": "presenter",
+        "workspace": "/root/.openclaw/workspace/presenter",
+        "agentDir": "/root/.openclaw/agents/presenter/agent"
+      },
+      {
+        "id": "auditor",
+        "name": "auditor",
+        "workspace": "/root/.openclaw/workspace/auditor",
+        "agentDir": "/root/.openclaw/agents/auditor/agent"
+      }
+    ]
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    },
+    "port": 18098,
+    "bind": "lan",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowedOrigins": [
+        "http://101.43.20.69:18098"
+      ],
+      "allowInsecureAuth": true,
+      "dangerouslyDisableDeviceAuth": true,
+      "basePath": "/estqvr"
+    },
+    "http": {
+      "endpoints": {
+        "chatCompletions": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "full",
+    "deny": [
+      "feishu_im_user_message"
+    ],
+    "elevated": {
+      "enabled": true,
+      "allowFrom": {}
+    },
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "minimax"
+      }
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    },
+    "entries": {
+      "summarize": {
+        "enabled": false
+      },
+      "1password": {
+        "enabled": false
+      },
+      "apple-notes": {
+        "enabled": false
+      },
+      "apple-reminders": {
+        "enabled": false
+      },
+      "bear-notes": {
+        "enabled": false
+      },
+      "blogwatcher": {
+        "enabled": false
+      },
+      "blucli": {
+        "enabled": false
+      },
+      "camsnap": {
+        "enabled": false
+      },
+      "coding-agent": {
+        "enabled": false
+      },
+      "discord": {
+        "enabled": false
+      },
+      "eightctl": {
+        "enabled": false
+      },
+      "gemini": {
+        "enabled": false
+      },
+      "gifgrep": {
+        "enabled": false
+      },
+      "gog": {
+        "enabled": false
+      },
+      "goplaces": {
+        "enabled": false
+      },
+      "himalaya": {
+        "enabled": false
+      },
+      "imsg": {
+        "enabled": false
+      },
+      "model-usage": {
+        "enabled": false
+      },
+      "nano-pdf": {
+        "enabled": false
+      },
+      "notion": {
+        "enabled": false
+      },
+      "openai-whisper": {
+        "enabled": false
+      },
+      "openai-whisper-api": {
+        "enabled": false
+      },
+      "openhue": {
+        "enabled": false
+      },
+      "oracle": {
+        "enabled": false
+      },
+      "ordercli": {
+        "enabled": false
+      },
+      "peekaboo": {
+        "enabled": false
+      },
+      "sag": {
+        "enabled": false
+      },
+      "session-logs": {
+        "enabled": false
+      },
+      "sherpa-onnx-tts": {
+        "enabled": false
+      },
+      "slack": {
+        "enabled": false
+      },
+      "songsee": {
+        "enabled": false
+      },
+      "sonoscli": {
+        "enabled": false
+      },
+      "spotify-player": {
+        "enabled": false
+      },
+      "things-mac": {
+        "enabled": false
+      },
+      "trello": {
+        "enabled": false
+      },
+      "voice-call": {
+        "enabled": false
+      },
+      "wacli": {
+        "enabled": false
+      },
+      "xurl": {
+        "enabled": false
+      },
+      "ima-skill": {
+        "enabled": false
+      },
+      "obsidian": {
+        "enabled": false
+      },
+      "zotero-scholar": {
+        "enabled": false
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-05-21T07:56:20.818Z",
+    "lastRunVersion": "2026.5.19",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.5.20",
+    "lastTouchedAt": "2026-05-22T15:49:41.237Z"
+  },
+  "browser": {
+    "enabled": true,
+    "executablePath": "/root/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome",
+    "noSandbox": true,
+    "defaultProfile": "user",
+    "profiles": {
+      "user": {
+        "cdpUrl": "http://localhost:9222",
+        "driver": "existing-session",
+        "attachOnly": true,
+        "color": "#4285F4",
+        "userDataDir": "/root/.openclaw/browser-existing-session"
+      }
+    },
+    "ssrfPolicy": {
+      "dangerouslyAllowPrivateNetwork": true
+    }
+  },
+  "models": {
+    "providers": {
+      "kimicode": {
+        "baseUrl": "https://api.kimi.com/coding/v1",
+        "api": "anthropic-messages",
+        "apiKey": "${KIMICODE_API_KEY}",
+        "models": [
+          {
+            "id": "kimi-for-coding",
+            "name": "kimi for coding",
+            "api": "anthropic-messages",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 256000,
+            "maxTokens": 25600
+          }
+        ]
+      },
+      "deepseek": {
+        "baseUrl": "https://api.deepseek.com/anthropic",
+        "apiKey": "${DEEPSEEK_API_KEY}",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "deepseek-v4-flash",
+            "name": "DeepSeek V4 Flash",
+            "contextWindow": 1000000,
+            "maxTokens": 384000,
+            "cost": {
+              "input": 0.14,
+              "output": 0.28,
+              "cacheRead": 0.028,
+              "cacheWrite": 0
+            }
+          },
+          {
+            "id": "deepseek-v4-pro",
+            "name": "DeepSeek V4 Pro",
+            "reasoning": true,
+            "contextWindow": 1000000,
+            "maxTokens": 384000,
+            "cost": {
+              "input": 1.74,
+              "output": 3.48,
+              "cacheRead": 0.145,
+              "cacheWrite": 0
+            }
+          }
+        ]
+      },
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "${MINIMAX_API_KEY}",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7",
+            "reasoning": true,
+            "contextWindow": 204800,
+            "maxTokens": 20480,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "MiniMax-M2.7-highspeed",
+            "name": "MiniMax M2.7 Highspeed",
+            "reasoning": true,
+            "contextWindow": 204800,
+            "maxTokens": 20480,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
+            "reasoning": true,
+            "contextWindow": 204800,
+            "maxTokens": 20480,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "MiniMax-M2.5-highspeed",
+            "name": "MiniMax M2.5 Highspeed",
+            "reasoning": true,
+            "contextWindow": 204800,
+            "maxTokens": 20480,
+            "input": [
+              "text"
+            ]
+          }
+        ]
+      },
+      "glmcode": {
+        "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+        "apiKey": "${ZAI_API_KEY}",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "GLM-5.1",
+            "name": "GLM-5.1",
+            "reasoning": true,
+            "contextWindow": 204800,
+            "maxTokens": 20480
+          },
+          {
+            "id": "GLM-5-Turbo",
+            "name": "GLM-5-Turbo",
+            "reasoning": true,
+            "contextWindow": 204800,
+            "maxTokens": 20480
+          }
+        ]
+      }
+    },
+    "mode": "merge"
+  },
+  "channels": {
+    "openclaw-weixin": {
+      "accounts": {},
+      "streaming": false
+    },
+    "qqbot": {
+      "enabled": true,
+      "streaming": false,
+      "accounts": {
+        "yangquan": {
+          "appId": "1903464819",
+          "clientSecret": "${QQBOT_YANGQUAN_CLIENT_SECRET}"
+        },
+        "wangyaxin": {
+          "appId": "1903742138",
+          "clientSecret": "${QQBOT_WANGYAXIN_CLIENT_SECRET}"
+        }
+      }
+    },
+    "feishu": {
+      "enabled": true,
+      "domain": "feishu",
+      "connectionMode": "websocket",
+      "reactionNotifications": "own",
+      "typingIndicator": true,
+      "resolveSenderNames": true,
+      "streaming": true,
+      "groupPolicy": "open",
+      "requireMention": true,
+      "threads": true,
+      "accounts": {
+        "default": {
+          "webhookPath": "/feishu/events",
+          "dmPolicy": "pairing"
+        },
+        "steward": {
+          "appId": "cli_a94178f816b91cc9",
+          "appSecret": "${FEISHU_STEWARD_APP_SECRET}"
+        },
+        "physicist": {
+          "appId": "cli_a94177ba8778dcb6",
+          "appSecret": "${FEISHU_PHYSICIST_APP_SECRET}"
+        },
+        "mathematician": {
+          "appId": "cli_a941705ac4f89cc2",
+          "appSecret": "${FEISHU_MATHEMATICIAN_APP_SECRET}"
+        },
+        "psychologist": {
+          "appId": "cli_a94170cfbcf8dccb",
+          "appSecret": "${FEISHU_PSYCHOLOGIST_APP_SECRET}"
+        },
+        "writer": {
+          "appId": "cli_a941713c73389cd3",
+          "appSecret": "${FEISHU_WRITER_APP_SECRET}"
+        },
+        "reviewer": {
+          "appId": "cli_a9417171c5385cd3",
+          "appSecret": "${FEISHU_REVIEWER_APP_SECRET}"
+        },
+        "programmer": {
+          "appId": "cli_aa8aa3b7a3b89bc1",
+          "appSecret": "${FEISHU_PROGRAMMER_APP_SECRET}"
+        },
+        "instructor": {
+          "appId": "cli_a947bed63d785cdd",
+          "appSecret": "${FEISHU_TEACHINGASSISTANT_APP_SECRET}"
+        },
+        "presenter": {
+          "appId": "cli_a947bb11a2741cdb",
+          "appSecret": "${FEISHU_STUDENTAFFAIRSASSISTANT_APP_SECRET}"
+        },
+        "auditor": {
+          "appId": "cli_a947bb2b87399cc8",
+          "appSecret": "${FEISHU_ACADEMICASSISTANT_APP_SECRET}"
+        }
+      }
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "steward",
+      "match": {
+        "channel": "qqbot",
+        "accountId": "yangquan"
+      }
+    },
+    {
+      "agentId": "steward",
+      "match": {
+        "channel": "qqbot",
+        "accountId": "wangyaxin"
+      }
+    },
+    {
+      "agentId": "steward",
+      "match": {
+        "channel": "feishu",
+        "accountId": "steward"
+      }
+    },
+    {
+      "agentId": "mathematician",
+      "match": {
+        "channel": "feishu",
+        "accountId": "mathematician"
+      }
+    },
+    {
+      "agentId": "physicist",
+      "match": {
+        "channel": "feishu",
+        "accountId": "physicist"
+      }
+    },
+    {
+      "agentId": "psychologist",
+      "match": {
+        "channel": "feishu",
+        "accountId": "psychologist"
+      }
+    },
+    {
+      "agentId": "programmer",
+      "match": {
+        "channel": "feishu",
+        "accountId": "programmer"
+      }
+    },
+    {
+      "agentId": "writer",
+      "match": {
+        "channel": "feishu",
+        "accountId": "writer"
+      }
+    },
+    {
+      "agentId": "reviewer",
+      "match": {
+        "channel": "feishu",
+        "accountId": "reviewer"
+      }
+    },
+    {
+      "agentId": "instructor",
+      "match": {
+        "channel": "feishu",
+        "accountId": "instructor"
+      }
+    },
+    {
+      "agentId": "presenter",
+      "match": {
+        "channel": "feishu",
+        "accountId": "presenter"
+      }
+    },
+    {
+      "agentId": "auditor",
+      "match": {
+        "channel": "feishu",
+        "accountId": "auditor"
+      }
+    }
+  ],
+  "secrets": {
+    "providers": {
+      "lark-secrets": {
+        "source": "file",
+        "path": "~/.openclaw/credentials/lark.secrets.json"
+      }
+    }
+  },
+  "mcp": {
+    "servers": {
+      "tencent-docs": {
+        "url": "https://docs.qq.com/openapi/mcp",
+        "headers": {
+          "Authorization": "${TENCENT_QQ_AUTHORIZATION}"
+        }
+      },
+      "tencent-docengine": {
+        "url": "https://docs.qq.com/api/v6/doc/mcp",
+        "headers": {
+          "Authorization": "${TENCENT_QQ_AUTHORIZATION}"
+        }
+      },
+      "tencent-sheetengine": {
+        "url": "https://docs.qq.com/api/v6/sheet/mcp",
+        "headers": {
+          "Authorization": "${TENCENT_QQ_AUTHORIZATION}"
+        }
+      },
+      "research-assistant": {
+        "command": "python3",
+        "args": [
+          "/root/.openclaw/workspace/skills/research-assistant/mcp/server.py"
+        ]
+      },
+      "exa": {
+        "command": "python3",
+        "args": [
+          "/root/.openclaw/mcp/exa/server.py"
+        ],
+        "env": {
+          "EXA_API_KEY": "${EXA_API_KEY}"
+        }
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "browser": {
+        "enabled": true
+      },
+      "active-memory": {
+        "enabled": true,
+        "config": {
+          "agents": [
+            "steward",
+            "mathematician",
+            "physicist",
+            "psychologist",
+            "programmer",
+            "writer",
+            "reviewer",
+            "instructor",
+            "presenter",
+            "auditor"
+          ],
+          "queryMode": "recent",
+          "promptStyle": "balanced",
+          "timeoutMs": 15000
+        }
+      },
+      "memory-wiki": {
+        "enabled": true,
+        "config": {
+          "vaultMode": "isolated",
+          "vault": {
+            "path": "~/.openclaw/wiki",
+            "renderMode": "obsidian"
+          },
+          "bridge": {
+            "enabled": false,
+            "readMemoryArtifacts": true,
+            "indexDreamReports": true,
+            "indexDailyNotes": true,
+            "indexMemoryRoot": true,
+            "followMemoryEvents": true
+          },
+          "search": {
+            "backend": "shared",
+            "corpus": "all"
+          }
+        }
+      },
+      "memory-core": {
+        "enabled": true,
+        "config": {
+          "dreaming": {
+            "enabled": true
+          }
+        }
+      },
+      "openclaw-weixin": {
+        "enabled": true
+      },
+      "deepseek": {
+        "enabled": true
+      },
+      "moonshot": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "baseUrl": "https://api.moonshot.cn/v1",
+            "apiKey": "${MOONSHOT_API_KEY}",
+            "model": "kimi-k2.6"
+          }
+        }
+      },
+      "qqbot": {
+        "enabled": true
+      },
+      "openclaw-lark": {
+        "enabled": true
+      },
+      "exa": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "${EXA_API_KEY}",
+            "baseUrl": "https://api.exa.ai"
+          }
+        }
+      },
+      "tavily": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "${TAVILY_API_KEY}",
+            "baseUrl": "https://api.tavily.com"
+          }
+        }
+      },
+      "zai": {
+        "enabled": true
+      },
+      "minimax": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "${MINIMAX_API_KEY}",
+            "region": "cn"
+          }
+        }
+      },
+      "document-extract": {
+        "enabled": true
+      },
+      "agent-self-development": {
+        "enabled": true,
+        "hooks": {
+          "allowConversationAccess": true
+        }
+      }
+    },
+    "allow": [
+      "browser",
+      "deepseek",
+      "document-extract",
+      "exa",
+      "active-memory",
+      "memory-core",
+      "memory-wiki",
+      "minimax",
+      "moonshot",
+      "openclaw-lark",
+      "openclaw-weixin",
+      "qqbot",
+      "tavily",
+      "zai",
+      "agent-self-development"
+    ],
+    "load": {
+      "paths": []
+    },
+    "slots": {
+      "memory": "memory-core"
+    },
+    "bundledDiscovery": "compat"
+  },
+  "messages": {
+    "groupChat": {
+      "visibleReplies": true
+    },
+    "tts": {
+      "auto": "inbound",
+      "provider": "minimax",
+      "providers": {
+        "minimax": {
+          "apiKey": "${MINIMAX_API_KEY}",
+          "model": "speech-2.8-hd",
+          "voiceId": "English_expressive_narrator",
+          "speed": 1,
+          "vol": 1,
+          "pitch": 0
+        }
+      }
+    }
+  },
+  "commands": {
+    "ownerAllowFrom": [
+      "feishu:ou_b341ae5dfcb556fe77beb1508f6d6ad5"
+    ]
+  },
+  "auth": {
+    "profiles": {}
+  },
+  "proxy": {
+    "enabled": true,
+    "proxyUrl": "http://127.0.0.1:9981",
+    "loopbackMode": "gateway-only"
+  }
+}

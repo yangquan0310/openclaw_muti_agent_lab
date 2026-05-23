@@ -1,0 +1,41 @@
+# {skill-name}
+
+{Description}
+
+---
+
+## 快速开始
+
+```bash
+python3 scripts/main.py --input <value>
+```
+
+---
+
+## 目录结构
+
+```
+{skill-name}/
+├── SKILL.md              # 技能导航
+├── README.md             # 本文件
+├── _meta.json            # 元数据
+├── assets/               # 静态资源
+│   └── templates/         # 模板文件
+├── scripts/              # Python 项目
+│   ├── main.py           # 入口
+│   └── *.py              # 模块
+└── references/           # 详细指南
+```
+
+---
+
+## 使用场景
+
+- 场景一：{description}
+- 场景二：{description}
+
+---
+
+## 更新日志
+
+- v1.0.0 ({date}): 初始版本

@@ -1,0 +1,1546 @@
+{
+  "pageCounts": {
+    "entity": 12,
+    "concept": 0,
+    "source": 6,
+    "synthesis": 24,
+    "report": 19
+  },
+  "claimCount": 2,
+  "claimHealth": {
+    "freshness": {
+      "fresh": 2,
+      "aging": 0,
+      "stale": 0,
+      "unknown": 0
+    },
+    "contested": 0,
+    "lowConfidence": 0,
+    "missingEvidence": 0
+  },
+  "contradictionClusters": [],
+  "pages": [
+    {
+      "id": "entity.auditor",
+      "title": "督导（Auditor）",
+      "kind": "entity",
+      "path": "entities/auditor.md",
+      "aliases": [
+        "督导",
+        "教务助手",
+        "Auditor",
+        "academicassistant"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "教学目标与课程标准对齐性审核",
+        "教学内容准确性、前沿性核查",
+        "课件呈现质量与规范检查",
+        "教学流程逻辑性与时间分配审核",
+        "评价方案与目标一致性审查",
+        "跨环节一致性检查"
+      ],
+      "notEnoughFor": [
+        "教学内容创作",
+        "课件制作",
+        "教学目标初始制定",
+        "文档组织与归档"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.auditor",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T22:01:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.instructor",
+      "title": "教员（Instructor）",
+      "kind": "entity",
+      "path": "entities/instructor.md",
+      "aliases": [
+        "教员",
+        "教学助手",
+        "Instructor",
+        "teachingassistant"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "教学目标制定与学情分析",
+        "教学内容架构与知识脉络梳理",
+        "学科素材收集与案例设计",
+        "教学重难点提炼与突破策略",
+        "前序/后续课程知识衔接设计"
+      ],
+      "notEnoughFor": [
+        "课件制作与视觉排版",
+        "教学质量终审",
+        "教学效果评估",
+        "文档组织与归档"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.instructor",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T22:01:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.mathematician",
+      "title": "数学家（Mathematician）",
+      "kind": "entity",
+      "path": "entities/mathematician.md",
+      "aliases": [
+        "数学家",
+        "Mathematician"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "数学建模与微分方程",
+        "统计分析与假设检验",
+        "回归分析与时间序列",
+        "算法设计与复杂度分析",
+        "数值计算与精确模拟",
+        "数学定理证明验证"
+      ],
+      "notEnoughFor": [
+        "物理机制深层解释",
+        "心理现象主观体验解释",
+        "文学性表达与修辞创作",
+        "文档组织与归档管理",
+        "代码工程实现"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.mathematician",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T14:11:47.308Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.openclaw-gateway",
+      "title": "OpenClaw 系统架构",
+      "kind": "entity",
+      "path": "entities/openclaw-gateway.md",
+      "aliases": [
+        "OpenClaw",
+        "网关"
+      ],
+      "sourceIds": [
+        "source.openclaw-docs",
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "system",
+      "canonicalId": "openclaw.main.gateway",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-10T18:20:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.physicist",
+      "title": "物理学家（Physicist）",
+      "kind": "entity",
+      "path": "entities/physicist.md",
+      "aliases": [
+        "物理学家",
+        "Physicist"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "物理建模与理论分析",
+        "数学推导与解析求解",
+        "交叉学科研究框架构建",
+        "模型验证与实验预测",
+        "物理文献关键思想提取",
+        "公式推导与数学模型化"
+      ],
+      "notEnoughFor": [
+        "心理学实验设计与执行",
+        "复杂统计分析与假设检验",
+        "论文全文撰写",
+        "复杂软件开发",
+        "文档组织与归档"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.physicist",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T14:11:47.285Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.presenter",
+      "title": "呈现师（Presenter）",
+      "kind": "entity",
+      "path": "entities/presenter.md",
+      "aliases": [
+        "呈现师",
+        "学工助手",
+        "Presenter",
+        "studentaffairsassistant"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "课件结构设计与页面规划",
+        "教学内容可视化与排版优化",
+        "图表、图示、信息图制作",
+        "教学媒体素材整合",
+        "呈现逻辑与节奏设计"
+      ],
+      "notEnoughFor": [
+        "教学内容原创",
+        "教学质量终审",
+        "教学目标制定",
+        "文档组织与归档"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.presenter",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T22:01:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.programmer",
+      "title": "程序员（Programmer）",
+      "kind": "entity",
+      "path": "entities/programmer.md",
+      "aliases": [
+        "程序员",
+        "代码专家",
+        "Developer"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "代码开发、重构与审查",
+        "Bug 排查与性能优化",
+        "技术架构设计与方案评审",
+        "工程实践与工具开发"
+      ],
+      "notEnoughFor": [
+        "系统运维（生产环境部署操作）",
+        "内容创作（论文、营销文案）",
+        "专业学科分析（数学、物理、心理）",
+        "日常教务/教学/学工事务"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.programmer",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T14:11:47.355Z",
+      "claimCount": 2,
+      "topClaims": [
+        {
+          "text": "programmer 不直接操作生产环境部署",
+          "status": "supported",
+          "confidence": 1,
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "path": "IDENTITY.md",
+              "lines": "能力边界",
+              "note": "明确声明不操作生产环境"
+            }
+          ],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-12T14:11:47.355Z"
+        },
+        {
+          "text": "programmer 是 agent-self-development 插件的主要维护者",
+          "status": "supported",
+          "confidence": 0.95,
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "path": "MEMORY.md",
+              "lines": "T002",
+              "note": "v4.0.0 元认知框架重构由 programmer 负责架构设计"
+            }
+          ],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-12T14:11:47.355Z"
+        }
+      ]
+    },
+    {
+      "id": "entity.psychologist",
+      "title": "心理学家（Psychologist）",
+      "kind": "entity",
+      "path": "entities/psychologist.md",
+      "aliases": [
+        "心理学家",
+        "Psychologist"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "心理学理论审核与评估",
+        "实验设计与方案制定",
+        "研究方法学审查",
+        "研究伦理评估",
+        "统计方法建议",
+        "文献评述与综合"
+      ],
+      "notEnoughFor": [
+        "复杂数学建模",
+        "物理建模与推导",
+        "论文全文撰写",
+        "代码开发与编程",
+        "文档组织与归档"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.psychologist",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T14:08:17.810Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.reviewer",
+      "title": "审稿助手（Reviewer）",
+      "kind": "entity",
+      "path": "entities/reviewer.md",
+      "aliases": [
+        "审稿助手",
+        "Reviewer"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "研究方法论评估",
+        "统计审计与验证",
+        "论证逻辑审查",
+        "文档格式规范检查",
+        "研究伦理审查",
+        "建设性反馈提供"
+      ],
+      "notEnoughFor": [
+        "内容创作与论文撰写",
+        "研究方案设计",
+        "发表决策制定",
+        "代码开发",
+        "文档组织与归档"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.reviewer",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T14:11:47.251Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.steward",
+      "title": "大管家（Steward）",
+      "kind": "entity",
+      "path": "entities/steward.md",
+      "aliases": [
+        "大管家",
+        "Steward"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "文档管理与分类归档",
+        "项目目录创建与整理",
+        "版本控制与变更记录",
+        "知识库维护与检索",
+        "云文档同步（飞书/腾讯文档）",
+        "多Agent任务调度与协调"
+      ],
+      "notEnoughFor": [
+        "内容创作（论文撰写）",
+        "数据分析与统计计算",
+        "学术理论解释与观点输出",
+        "代码开发与编程",
+        "教学/教务/学工事务"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.steward",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T14:11:47.208Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.writer",
+      "title": "写作助手（Writer）",
+      "kind": "entity",
+      "path": "entities/writer.md",
+      "aliases": [
+        "写作助手",
+        "Writer"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "学术论文撰写",
+        "文献综述写作",
+        "学术报告撰写",
+        "摘要与引言编写",
+        "引用管理与参考文献",
+        "内容整合与风格统一"
+      ],
+      "notEnoughFor": [
+        "数据分析与统计计算",
+        "实验设计",
+        "原创理论提出",
+        "代码编写",
+        "文档组织与归档"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "agent",
+      "canonicalId": "agent.writer",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T14:11:47.332Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "entity.yangquan0310",
+      "title": "杨权（实验室负责人）",
+      "kind": "entity",
+      "path": "entities/yangquan0310.md",
+      "aliases": [
+        "杨权",
+        "老板",
+        "实验室负责人"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [
+        "实验室科研方向决策",
+        "论文项目总体规划",
+        "多Agent任务分配与调度",
+        "最终审核与确认"
+      ],
+      "notEnoughFor": [
+        "不直接执行具体技术任务"
+      ],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "entityType": "user",
+      "canonicalId": "user.yangquan0310",
+      "privacyTier": "private",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T02:15:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.claim-health",
+      "title": "Claim Health",
+      "kind": "report",
+      "path": "reports/2026-05-17-18-40-33-claim-health.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T02:07:51.766Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.contradictions",
+      "title": "Contradictions",
+      "kind": "report",
+      "path": "reports/2026-05-17-18-40-33-contradictions.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T02:07:51.766Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.low-confidence",
+      "title": "Low Confidence",
+      "kind": "report",
+      "path": "reports/2026-05-17-18-40-33-low-confidence.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T02:07:51.766Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.person-agent-directory",
+      "title": "Person Agent Directory",
+      "kind": "report",
+      "path": "reports/2026-05-17-18-40-33-person-agent-directory.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T14:07:31.761Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.relationship-graph",
+      "title": "Relationship Graph",
+      "kind": "report",
+      "path": "reports/2026-05-17-18-40-33-relationship-graph.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T02:07:51.766Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.provenance-coverage",
+      "title": "Provenance Coverage",
+      "kind": "report",
+      "path": "reports/2026-05-18-11-12-15-provenance-coverage.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T04:52:01.785Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.open-questions",
+      "title": "Open Questions",
+      "kind": "report",
+      "path": "reports/2026-05-19-18-25-37-open-questions.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-18T11:48:06.745Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.privacy-review",
+      "title": "Privacy Review",
+      "kind": "report",
+      "path": "reports/2026-05-19-18-25-37-privacy-review.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-18T11:48:06.745Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.lint",
+      "title": "Lint Report",
+      "kind": "report",
+      "path": "reports/2026-05-19-22-54-14-lint.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.stale-pages",
+      "title": "Stale Pages",
+      "kind": "report",
+      "path": "reports/2026-05-20-23-34-38-stale-pages.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-20T15:34:38.375Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.claim-health",
+      "title": "Claim Health",
+      "kind": "report",
+      "path": "reports/claim-health.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.contradictions",
+      "title": "Contradictions",
+      "kind": "report",
+      "path": "reports/contradictions.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.low-confidence",
+      "title": "Low Confidence",
+      "kind": "report",
+      "path": "reports/low-confidence.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.open-questions",
+      "title": "Open Questions",
+      "kind": "report",
+      "path": "reports/open-questions.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.person-agent-directory",
+      "title": "Person Agent Directory",
+      "kind": "report",
+      "path": "reports/person-agent-directory.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.privacy-review",
+      "title": "Privacy Review",
+      "kind": "report",
+      "path": "reports/privacy-review.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.provenance-coverage",
+      "title": "Provenance Coverage",
+      "kind": "report",
+      "path": "reports/provenance-coverage.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.relationship-graph",
+      "title": "Relationship Graph",
+      "kind": "report",
+      "path": "reports/relationship-graph.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.stale-pages",
+      "title": "Stale Pages",
+      "kind": "report",
+      "path": "reports/stale-pages.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.conda",
+      "title": "Conda 环境管理",
+      "kind": "source",
+      "path": "sources/conda.md",
+      "aliases": [],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T11:05:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.openclaw-env",
+      "title": "openclaw-env",
+      "kind": "source",
+      "path": "sources/openclaw-env.md",
+      "aliases": [
+        "环境变量配置"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T10:55:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.openclaw-system",
+      "title": "openclaw-system",
+      "kind": "source",
+      "path": "sources/openclaw-system.md",
+      "aliases": [
+        "OpenClaw系统目录"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T10:22:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.openclaw-workspace",
+      "title": "openclaw-workspace",
+      "kind": "source",
+      "path": "sources/openclaw-workspace.md",
+      "aliases": [
+        "Agent工作空间"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T10:22:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.programming-languages",
+      "title": "系统编程语言",
+      "kind": "source",
+      "path": "sources/programming-languages.md",
+      "aliases": [],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T11:10:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.repository",
+      "title": "仓库",
+      "kind": "source",
+      "path": "sources/repository.md",
+      "aliases": [
+        "仓库"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T10:17:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "Agent Memory 设计哲学与架构",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-17-18-40-33-Agent-Memory-设计哲学与架构.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "agent-memory",
+      "title": "Agent Memory（智能体记忆系统）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-17-18-40-33-agent-memory.md",
+      "aliases": [],
+      "sourceIds": [
+        "syntheses/2026-05-21-10-42-53-memory.md",
+        "entities/openclaw-gateway.md",
+        "sources/openclaw-workspace.md"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-16T02:30",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.协作演化",
+      "title": "从学生论文修改到项目管理体系的演化",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化.md",
+      "aliases": [
+        "协作演化",
+        "管理技能演化"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T09:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.agents-template",
+      "title": "Agent 行为规范模板（AGENTS.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-agents.md",
+      "aliases": [
+        "AGENTS.md",
+        "Agent行为规范",
+        "技能转化规则"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concepts.bootstrap",
+      "title": "BOOTSTRAP Agent初始化模板",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-bootstrap.md",
+      "aliases": [
+        "BOOTSTRAP.md",
+        "初始化模板",
+        "Agent创建"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T08:24:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.course-project",
+      "title": "课程项目",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-course-project.md",
+      "aliases": [
+        "课程",
+        "course"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concepts.heartbeat",
+      "title": "HEARTBEAT 心跳任务模板",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-heartbeat.md",
+      "aliases": [],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T08:24:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.identity-template",
+      "title": "IDENTITY 身份模板（IDENTITY.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-identity.md",
+      "aliases": [
+        "IDENTITY.md",
+        "身份模板",
+        "能力边界"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.if-then-rule-standard",
+      "title": "If-Then 规则修改标准",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-if-then-rule-standard.md",
+      "aliases": [],
+      "sourceIds": [
+        "source.workspace-steward"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-18T11:44:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.repository",
+      "title": "仓库",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-repository.md",
+      "aliases": [
+        "repository",
+        "仓库",
+        "repository"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.soul-template",
+      "title": "SOUL 人格模板（SOUL.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-soul.md",
+      "aliases": [
+        "SOUL.md",
+        "人格模板",
+        "灵魂文档"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-15T16:56:14.945Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.thesis-project",
+      "title": "论文项目",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-thesis-project.md",
+      "aliases": [
+        "论文项目",
+        "thesis"
+      ],
+      "sourceIds": [
+        "source.openclaw-readme"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.tools-template",
+      "title": "TOOLS 工具配置模板（TOOLS.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-tools.md",
+      "aliases": [
+        "TOOLS.md",
+        "工具配置",
+        "工具索引"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.user-template",
+      "title": "USER 用户画像模板（USER.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-user.md",
+      "aliases": [
+        "USER.md",
+        "用户画像",
+        "用户偏好"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.多agent协作案例-学生论文修改项目",
+      "title": "多Agent协作案例：学生论文修改项目",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-多agent协作案例-学生论文修改项目.md",
+      "aliases": [],
+      "sourceIds": [
+        "file:///root/实验室仓库/学生论文修改/TODO.md"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-09T08:31:31.212Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.program-project",
+      "title": "程序项目",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-22-53-22-program-project.md",
+      "aliases": [
+        "程序",
+        "program"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.project",
+      "title": "项目",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-22-53-22-project.md",
+      "aliases": [
+        "项目",
+        "project"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T08:52:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "三方协作实践：代理领取任务与执行流程",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-20-23-34-38-三方协作实践-代理领取任务与执行流程.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.教育科学研究方法-多代理协作总结",
+      "title": "教育科学研究方法-多代理协作总结",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-20-23-47-31-教育科学研究方法-多代理协作总结.md",
+      "aliases": [],
+      "sourceIds": [
+        "syntheses/教育科学研究方法-多代理协作总结.md"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-20T15:47:31.525Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.memory-template",
+      "title": "MEMORY 记忆模板（MEMORY.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-21-10-42-53-memory.md",
+      "aliases": [
+        "MEMORY.md",
+        "记忆模板",
+        "If-Then规则"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-21T08:12:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "多Agent管理与单Agent记忆进化体系",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "认知范式与精细化注入词研究体系",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.category-theory-framework",
+      "title": "范畴论框架",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-23-10-30-00-category-theory-framework.md",
+      "aliases": [
+        "范畴论",
+        "category theory",
+        "皮亚杰范畴论",
+        "同化顺应",
+        "assimilation accommodation"
+      ],
+      "sourceIds": [
+        "source.ch01-piaget-development-algorithm"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T10:35:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "最优化概念 — 亲子关系与友谊质量对焦虑共同作用研究",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-23-10-30-00-最优化概念-亲子关系与友谊质量对焦虑共同作用研究.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    }
+  ]
+}

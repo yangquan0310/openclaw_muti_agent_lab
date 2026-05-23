@@ -1,0 +1,10 @@
+{
+  "name": "reviewer",
+  "version": "1.1.0",
+  "description": "审稿技能 - 期刊论文、学位论文、开源论文、项目申请书等各类学术文稿的质量审查",
+  "author": "Yang Quan",
+  "created": "2026-05-20",
+  "tags": ["review", "academic", "thesis", "journal", "paper"],
+  "supersedes": ["thesis-reviewer"],
+  "note": "整合原 thesis-reviewer 技能，作为统一的审稿入口"
+}

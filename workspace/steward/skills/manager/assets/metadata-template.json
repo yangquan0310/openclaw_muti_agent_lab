@@ -1,0 +1,31 @@
+{
+  "course": {
+    "name": "实验心理学",
+    "code": "PSY202",
+    "credits": 3,
+    "hours": 48,
+    "semester": "2025-spring",
+    "instructor": "杨权",
+    "department": "心理学系"
+  },
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "导论",
+      "hours": 4,
+      "status": "pending",
+      "currentRound": "v1"
+    }
+  ],
+  "team": {
+    "instructor": "instructor",
+    "psychologist": "psychologist",
+    "presenter": "presenter",
+    "auditor": "auditor",
+    "steward": "steward"
+  },
+  "archive": {
+    "current": "2025-spring",
+    "history": []
+  }
+}

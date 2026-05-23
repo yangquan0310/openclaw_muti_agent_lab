@@ -1,0 +1,14 @@
+{
+  "name": "{skill-name}",
+  "version": "1.0.0",
+  "description": "{description}",
+  "entry_point": "scripts/main.py",
+  "triggers": [
+    "{trigger-keyword-1}",
+    "{trigger-keyword-2}"
+  ],
+  "dependencies": [],
+  "author": "Yang Quan",
+  "created": "{date}",
+  "updated": "{date}"
+}

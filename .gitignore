@@ -1,0 +1,168 @@
+# 默认排除所有文件
+/*
+
+# 但保留 git-secrets 配置
+!.gitallowed
+
+# 排除敏感文件
+.env
+*.key
+*.secret
+*.pem
+*.env*
+credentials.json
+credentials/
+tokens.json
+qqbot/data/credential-backup-*.json
+
+# 排除备份文件
+*.bak
+*.backup
+*.old
+*.tmp
+*.tmp.md
+*.backup.*
+*.bak.*
+
+# 排除临时文件夹
+*/temp/
+*/tmp/
+temp/
+tmp/
+
+# 排除测试文件
+*test_*.json
+*test_*.md
+
+# 排除日志和缓存文件
+*.log
+*.cache
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 排除OpenClaw内部文件
+.openclaw
+node_modules/
+.cache/
+*.db
+sessions/
+devices/
+openclaw-*/
+subagents/
+exec-approvals.json
+identity/
+venv/
+*/venv/
+*/sessions/
+*.db-journal
+*.pyc
+__pycache__/
+.pytest_cache/
+**/.openclaw/
+**/*.state.json
+
+# 排除IDE配置文件
+.vscode/
+.idea/
+
+# 排除数据库
+*.db-shm
+*.db-wal
+
+# ============================================
+# 允许需要备份的文件
+# ============================================
+!/README.md
+!/requirements.txt
+!/.gitignore
+!/openclaw.json
+!/workspace/
+!/agents/
+!/cron/
+!/plugins/
+!/wiki/
+
+# ============================================
+# Cron 目录
+# ============================================
+/cron/runs/
+
+# ============================================
+# Agents 目录 - 实验室7个代理只保留 models.json
+# ============================================
+/agents/*/
+!/agents/steward/
+!/agents/steward/agent/
+/agents/steward/agent/*
+!/agents/steward/agent/models.json
+!/agents/programmer/
+!/agents/programmer/agent/
+/agents/programmer/agent/*
+!/agents/programmer/agent/models.json
+!/agents/mathematician/
+!/agents/mathematician/agent/
+/agents/mathematician/agent/*
+!/agents/mathematician/agent/models.json
+!/agents/physicist/
+!/agents/physicist/agent/
+/agents/physicist/agent/*
+!/agents/physicist/agent/models.json
+!/agents/psychologist/
+!/agents/psychologist/agent/
+/agents/psychologist/agent/*
+!/agents/psychologist/agent/models.json
+!/agents/writer/
+!/agents/writer/agent/
+/agents/writer/agent/*
+!/agents/writer/agent/models.json
+!/agents/reviewer/
+!/agents/reviewer/agent/
+/agents/reviewer/agent/*
+!/agents/reviewer/agent/models.json
+
+# 教研室3个代理完全不追踪（覆盖上面的取消排除）
+/agents/teaching/
+/agents/academicassistant/
+/agents/studentaffairsassistant/
+
+# ============================================
+# Workspace 目录 - 只追踪实验室7个代理
+# ============================================
+# 排除教研室3个代理
+/workspace/teaching/
+/workspace/academicassistant/
+/workspace/studentaffairsassistant/
+
+# 排除所有代理的内部文件和临时文件
+/workspace/*/.openclaw/
+/workspace/*/temp/
+/workspace/*/.env
+
+# ============================================
+# Skills 目录（全局共享技能）
+# ============================================
+# 排除所有，只允许自研核心技能
+!skills/
+/skills/*
+!/skills/.gitignore
+!/skills/.skills_store_lock.json
+!/skills/research-assistant/
+!/skills/research-assistant/**/
+!/skills/research-assistant/**
+!/skills/task-dispatcher/
+!/skills/task-dispatcher/**/
+!/skills/task-dispatcher/**
+/skills/**/__pycache__/
+/skills/**/*.pyc
+/skills/**/*.pyo
+/skills/**/*.cache
+/skills/**/node_modules/!/skills/skill-developer/
+!/skills/skill-developer/**/
+!/skills/skill-developer/**
+!/skills/skill-developer/
+!/skills/skill-developer/**/
+!/skills/skill-developer/**

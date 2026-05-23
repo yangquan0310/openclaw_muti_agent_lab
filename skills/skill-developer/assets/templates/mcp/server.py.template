@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+"""
+{skill-name} MCP Server
+通过 MCP 暴露 {skill-name} 的工具方法
+"""
+
+import asyncio
+import json
+from pathlib import Path
+from mcp.server import Server
+from mcp.server.stdio import stdio_server
+from mcp.types import Tool, TextContent
+
+SKILL_DIR = Path("/root/.openclaw/skills/{skill-name}")
+
+EXPOSED_TOOLS = [
+    {
+        "name": "{skill-name}_do_something",
+        "description": "执行 {skill-name} 的某个操作",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["do_something"],
+                    "description": "要执行的操作"
+                }
+            },
+            "required": ["action"]
+        }
+    }
+]
+
+
+class {SkillName}Handler:
+    """处理 {skill-name} 请求"""
+
+    def __init__(self):
+        self.skill_dir = SKILL_DIR
+
+    async def handle_do_something(self, args: dict) -> dict:
+        """执行某个操作"""
+        return {"success": True, "message": "操作完成"}
+
+
+app = Server("{skill-name}")
+handler = {SkillName}Handler()
+
+
+@app.list_tools()
+async def list_tools() -> list[Tool]:
+    return [
+        Tool(
+            name=t["name"],
+            description=t["description"],
+            inputSchema=t["parameters"]
+        )
+        for t in EXPOSED_TOOLS
+    ]
+
+
+@app.call_tool()
+async def call_tool(name: str, arguments: dict) -> list[TextContent]:
+    action = arguments.get("action")
+    if action == "do_something":
+        result = await handler.handle_do_something(arguments)
+    else:
+        result = {"success": False, "error": f"未知操作: {action}"}
+    return [TextContent(type="text", text=json.dumps(result, ensure_ascii=False))]
+
+
+async def main():
+    async with stdio_server(server=app) as (read_stream, write_stream):
+        await app.run(read_stream, write_stream, app.create_initialization_options())
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
