@@ -214,6 +214,11 @@ lark-cli im +messages-send --user-id ou_xxx --file ./report.pdf
 # 发送视频
 lark-cli im +messages-send --user-id ou_xxx --video ./video.mp4 --video-cover ./cover.jpg
 
+# 发送语音消息（需先转换格式，见下方说明）
+lark-cli im +messages-send --user-id ou_xxx --audio ./voice.ogg
+
+> ⚠️ **语音消息格式要求**：飞书语音消息需要 **OPUS in OGG** 格式，不支持 MP3。使用 `ffmpeg -i input.mp3 -acodec libopus -ac 1 -ar 16000 output.ogg` 转换。
+
 # 回复消息
 lark-cli im +messages-reply --message-id om_xxx --text "回复内容"
 
@@ -313,63 +318,6 @@ lark-cli api POST /open-apis/im/v1/messages --dry-run
 | `-o, --output <path>` | 输出文件路径（用于二进制响应） |
 | `--dry-run` | 试运行，不实际发送请求 |
 | `-q <expr>` | jq 表达式过滤 JSON 输出 |
-
-### 飞书语音消息发送（feishu-voice）
-
-> 将 TTS 生成的 MP3 转换为飞书原生语音消息气泡（非文件附件）
-
-**脚本路径**：`~/.openclaw/workspace/steward/skills/feishu-voice/scripts/send_voice.py`
-
-**依赖**：ffmpeg, python3 标准库（urllib, json, subprocess）
-
-**工作流程**：
-```
-MP3 → ffmpeg 转换(OGG/Opus) → 上传飞书 → 获取 file_key → 发送 msg_type=audio → 语音气泡
-```
-
-**命令格式**：
-```bash
-python3 ~/.openclaw/workspace/steward/skills/feishu-voice/scripts/send_voice.py <mp3_path> [open_id] [--duration MS]
-```
-
-**示例**：
-```bash
-# 发送 TTS 生成的 MP3（自动使用老板 open_id）
-python3 ~/.openclaw/workspace/steward/skills/feishu-voice/scripts/send_voice.py \
-  /root/.openclaw/media/outbound/voice-1779549735396---0f659d43-a6dc-4f69-9141-48ed8846ab41.mp3
-
-# 指定接收者
-python3 ~/.openclaw/workspace/steward/skills/feishu-voice/scripts/send_voice.py \
-  /path/to/audio.mp3 ou_25cf20a1973aecc51f73d8e2800d7f7e
-
-# 指定时长
-python3 ~/.openclaw/workspace/steward/skills/feishu-voice/scripts/send_voice.py \
-  /path/to/audio.mp3 --duration 10000
-```
-
-**Python 调用**：
-```python
-import sys
-sys.path.insert(0, '~/.openclaw/workspace/steward/skills/feishu-voice/scripts')
-from send_voice import send_feishu_voice
-
-result = send_feishu_voice(
-    audio_path="/root/.openclaw/media/outbound/tts.mp3",
-    open_id="ou_25cf20a1973aecc51f73d8e2800d7f7e"
-)
-```
-
-**飞书 API 端点**：
-| 步骤 | 端点 | 方法 |
-|------|------|------|
-| 获取 token | `https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal` | POST |
-| 上传文件 | `https://open.feishu.cn/open-apis/im/v1/files?file_type=opus` | POST |
-| 发送语音 | `https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=open_id` | POST |
-
-**注意事项**：
-- 飞书要求音频格式：**OPUS in OGG**，必须用 `ffmpeg -acodec libopus -ac 1 -ar 16000` 转换
-- `duration` 参数单位：**毫秒**
-- 凭证自动从 `~/.openclaw/openclaw.json` 和 `~/.openclaw/.env` 读取
 
 ---
 
