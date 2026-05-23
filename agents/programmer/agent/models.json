@@ -1,0 +1,407 @@
+{
+  "providers": {
+    "deepseek": {
+      "baseUrl": "https://api.deepseek.com/anthropic",
+      "api": "anthropic-messages",
+      "models": [
+        {
+          "id": "deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "cost": {
+            "input": 0.14,
+            "output": 0.28,
+            "cacheRead": 0.028,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "reasoning": true,
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "cost": {
+            "input": 1.74,
+            "output": 3.48,
+            "cacheRead": 0.145,
+            "cacheWrite": 0
+          }
+        }
+      ],
+      "apiKey": "DEEPSEEK_API_KEY"
+    },
+    "kimicode": {
+      "baseUrl": "https://api.kimi.com/coding/v1",
+      "api": "anthropic-messages",
+      "apiKey": "${KIMI_API_KEY}",
+      "models": [
+        {
+          "id": "kimi-for-coding",
+          "name": "kimi for coding",
+          "api": "anthropic-messages",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 25600
+        }
+      ]
+    },
+    "minimax": {
+      "baseUrl": "https://api.minimax.io/anthropic",
+      "api": "anthropic-messages",
+      "authHeader": true,
+      "models": [
+        {
+          "id": "MiniMax-M2.7",
+          "name": "MiniMax M2.7",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "name": "MiniMax M2.7 Highspeed",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "MiniMax-M2.5",
+          "name": "MiniMax M2.5",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "MiniMax-M2.5-highspeed",
+          "name": "MiniMax M2.5 Highspeed",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        }
+      ],
+      "apiKey": "MINIMAX_API_KEY"
+    },
+    "glmcode": {
+      "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+      "apiKey": "${ZAI_API_LEY}",
+      "api": "anthropic-messages",
+      "models": [
+        {
+          "id": "GLM-5.1",
+          "name": "GLM-5.1",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480
+        },
+        {
+          "id": "GLM-5-Turbo",
+          "name": "GLM-5-Turbo",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480
+        }
+      ]
+    },
+    "kimi": {
+      "baseUrl": "https://api.kimi.com/coding/",
+      "api": "anthropic-messages",
+      "headers": {
+        "User-Agent": "claude-code/0.1.0"
+      },
+      "models": [
+        {
+          "id": "kimi-for-coding",
+          "name": "Kimi Code",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 32768
+        },
+        {
+          "id": "kimi-code",
+          "name": "Kimi Code (legacy kimi-code)",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 32768
+        },
+        {
+          "id": "k2p5",
+          "name": "Kimi Code (legacy k2p5)",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 32768
+        }
+      ],
+      "apiKey": "KIMICODE_API_KEY"
+    },
+    "minimax-cn": {
+      "baseUrl": "https://api.minimaxi.com/anthropic",
+      "api": "anthropic-messages",
+      "authHeader": true,
+      "models": [
+        {
+          "id": "MiniMax-M2.7",
+          "name": "MiniMax M2.7",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "name": "MiniMax M2.7 Highspeed",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "MiniMax-M2.5",
+          "name": "MiniMax M2.5",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "MiniMax-M2.5-highspeed",
+          "name": "MiniMax M2.5 Highspeed",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        }
+      ],
+      "apiKey": "MINIMAX_API_KEY"
+    },
+    "moonshot": {
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "kimi-k2.6",
+          "name": "Kimi K2.6",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.95,
+            "output": 4,
+            "cacheRead": 0.16,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 262144
+        },
+        {
+          "id": "kimi-k2.5",
+          "name": "Kimi K2.5",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.6,
+            "output": 3,
+            "cacheRead": 0.1,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 262144
+        },
+        {
+          "id": "kimi-k2-thinking",
+          "name": "Kimi K2 Thinking",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 262144
+        },
+        {
+          "id": "kimi-k2-thinking-turbo",
+          "name": "Kimi K2 Thinking Turbo",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 262144
+        },
+        {
+          "id": "kimi-k2-turbo",
+          "name": "Kimi K2 Turbo",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 16384
+        }
+      ],
+      "apiKey": "MOONSHOT_API_KEY"
+    },
+    "minimax-portal": {
+      "baseUrl": "https://api.minimax.io/anthropic",
+      "api": "anthropic-messages",
+      "authHeader": true,
+      "models": [
+        {
+          "id": "MiniMax-M2.7",
+          "name": "MiniMax M2.7",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "name": "MiniMax M2.7 Highspeed",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.6,
+            "output": 2.4,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
+        }
+      ],
+      "apiKey": "MINIMAX_API_KEY"
+    },
+    "minimax-portal-cn": {
+      "baseUrl": "https://api.minimax.io/anthropic",
+      "api": "anthropic-messages",
+      "authHeader": true,
+      "models": [
+        {
+          "id": "MiniMax-M2.7",
+          "name": "MiniMax M2.7",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "name": "MiniMax M2.7 Highspeed",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.6,
+            "output": 2.4,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
+        }
+      ],
+      "apiKey": "MINIMAX_API_KEY"
+    }
+  }
+}

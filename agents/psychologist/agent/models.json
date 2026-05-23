@@ -1,0 +1,129 @@
+{
+  "providers": {
+    "deepseek": {
+      "baseUrl": "https://api.deepseek.com/anthropic",
+      "api": "anthropic-messages",
+      "models": [
+        {
+          "id": "deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "cost": {
+            "input": 0.14,
+            "output": 0.28,
+            "cacheRead": 0.028,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "reasoning": true,
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "cost": {
+            "input": 1.74,
+            "output": 3.48,
+            "cacheRead": 0.145,
+            "cacheWrite": 0
+          }
+        }
+      ],
+      "apiKey": "${DEEPSEEK_API_KEY}"
+    },
+    "kimicode": {
+      "baseUrl": "https://api.kimi.com/coding/v1",
+      "api": "anthropic-messages",
+      "apiKey": "${KIMI_API_KEY}",
+      "models": [
+        {
+          "id": "kimi-for-coding",
+          "name": "kimi for coding",
+          "api": "anthropic-messages",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 25600
+        }
+      ]
+    },
+    "minimax": {
+      "baseUrl": "https://api.minimax.io/anthropic",
+      "api": "anthropic-messages",
+      "authHeader": true,
+      "models": [
+        {
+          "id": "MiniMax-M2.7",
+          "name": "MiniMax M2.7",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "name": "MiniMax M2.7 Highspeed",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "MiniMax-M2.5",
+          "name": "MiniMax M2.5",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "MiniMax-M2.5-highspeed",
+          "name": "MiniMax M2.5 Highspeed",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ]
+        }
+      ],
+      "apiKey": "${MINIMAX_API_KEY}"
+    },
+    "glmcode": {
+      "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+      "apiKey": "${ZAI_API_LEY}",
+      "api": "anthropic-messages",
+      "models": [
+        {
+          "id": "GLM-5.1",
+          "name": "GLM-5.1",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480
+        },
+        {
+          "id": "GLM-5-Turbo",
+          "name": "GLM-5-Turbo",
+          "reasoning": true,
+          "contextWindow": 204800,
+          "maxTokens": 20480
+        }
+      ]
+    }
+  }
+}
