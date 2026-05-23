@@ -74,7 +74,7 @@ python3 scripts/selfcheck.py /path/to/skill
 
 ```bash
 git add .
-git commit -m "更新 {技能名}：{更新内容}"
+git commit -m "更新 {{技能名}}：{{更新内容}}"
 ```
 
 ---
