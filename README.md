@@ -48,28 +48,16 @@
 ### OpenClaw系统目录
 ```
 .openclaw/                          # OpenClaw 根目录（Git仓库根目录）
-├── README.md                          # 本说明文件
+├── README.md                          # 本说明文件（需同步更新）
 ├── .gitignore                         # Git忽略规则
 ├── .gitallowed                        # Git允许规则（secrets豁免）
 ├── requirements.txt                   # Python依赖文件
 ├── openclaw.json                      # OpenClaw主配置文件
-├── openclaw.json.bak*                 # 配置文件备份
-├── .env                               # 环境变量（敏感，勿推）
-├── agents/                            # Agent配置目录
-│   ├── steward/agent/models.json      # 大管家模型配置
-│   ├── programmer/agent/models.json  # 程序员模型配置
-│   ├── mathematician/agent/models.json # 数学家模型配置
-│   ├── physicist/agent/models.json   # 物理学家模型配置
-│   ├── psychologist/agent/models.json # 心理学家模型配置
-│   ├── reviewer/agent/models.json     # 审稿助手模型配置
-│   ├── writer/agent/models.json      # 写作助手模型配置
-│   ├── auditor/agent/models.json     # 审计员模型配置
-│   └── instructor/agent/models.json   # 讲师模型配置
-├── cron/                              # 定时任务配置
-│   ├── jobs.json                      # 定时任务列表
-│   └── jobs-state.json                # 任务运行状态
+├── cron/                              # 定时任务
+│   ├── jobs.json                      # 任务列表
+│   └── jobs-state.json                # 运行状态
 ├── workspace/                         # Agent工作空间（10个）
-│   ├── programmer/                    # 程序员工作空间
+│   ├── programmer/                    # 程序员
 │   │   ├── AGENTS.md                  # 任务生命周期行为规范
 │   │   ├── SOUL.md                    # 核心自我认知与价值观
 │   │   ├── IDENTITY.md                # 核心身份与能力边界
@@ -77,23 +65,23 @@
 │   │   ├── USER.md                    # 用户画像与偏好
 │   │   ├── HEARTBEAT.md               # 定时任务与心跳配置
 │   │   ├── MEMORY.md                  # 工作记忆与If-Then规则
-│   │   ├── DREAMS.md                  # 梦境日记(memory-core dreaming)
+│   │   ├── DREAMS.md                  # 梦境日记
 │   │   ├── memory/                    # 记忆存储（dreaming子目录）
 │   │   │   ├── dreaming/
 │   │   │   │   ├── light/             # Light phase 报告
 │   │   │   │   ├── deep/              # Deep phase 报告
 │   │   │   │   └── rem/               # REM phase 报告
-│   │   │   └── .dreams/               # 机器状态(corpus/ingestion/recall)
+│   │   │   └── .dreams/               # 机器状态
 │   │   ├── skills/                    # 代理专属技能
 │   │   └── temp/                      # 临时文件
-│   ├── steward/                       # 大管家工作空间
-│   ├── mathematician/                 # 数学家工作空间
-│   ├── physicist/                     # 物理学家工作空间
-│   ├── psychologist/                  # 心理学家工作空间
-│   ├── reviewer/                      # 审稿助手工作空间
-│   ├── writer/                        # 写作助手工作空间
-│   ├── auditor/                       # 审计员工作空间
-│   └── instructor/                    # 讲师工作空间
+│   ├── steward/                       # 大管家
+│   ├── mathematician/                 # 数学家
+│   ├── physicist/                     # 物理学家
+│   ├── psychologist/                  # 心理学家
+│   ├── reviewer/                      # 审稿助手
+│   ├── writer/                        # 写作助手
+│   ├── auditor/                       # 审计员
+│   └── instructor/                    # 讲师
 ├── skills/                            # 公共技能库（自研核心技能）
 │   ├── .gitignore                     # Skills目录git规则
 │   ├── skill-developer/               # 技能开发工程化
@@ -104,16 +92,8 @@
 │   ├── sources/                       # 来源页面
 │   ├── syntheses/                    # 综合分析页面
 │   └── reports/                       # 报告页面
-├── plugins/                           # 插件目录
-├── mcp/                               # MCP服务配置
-├── feishu/                            # 飞书集成配置
-├── qqbot/                             # QQ机器人配置
-├── hooks/                             # Git钩子脚本
-├── logs/                              # 日志目录
-├── state/                             # 状态目录
-└── tasks/                             # 任务队列目录
+└── plugins/                           # 插件目录
 ```
-
 ## 📄 论文项目管理
 
 本系统围绕科研论文写作设计了**多代理写作体系**,由大管家(项目管理)、三位领域专家(文献综述)、写作助手(论文撰写)、审稿助手(质量审查)协同完成论文从立项到投稿的全流程。
@@ -140,6 +120,7 @@
 ├── .agentignore           # 可见性控制文件
 │
 ├── uploads/               # 用户上传的原始材料(Agent 只读)
+│   ├── markdown/          # 解析后的md文件
 │   └── *.docx / *.pdf / *.txt
 │
 ├── manuscripts/           # 论文草稿(写作助手撰写,审稿助手审查)
@@ -159,11 +140,11 @@
 │   └── retrieval_report/  # 检索报告
 │
 ├── temp/                  # 临时文件和归档草稿
-│   └── draft/             # 旧版本归档
 │
-└── .agent/                # 元数据层(隐藏目录)
+└── .agents/                # 元数据层(隐藏目录)
     ├── events/            # 事件流
-    ├── decisions/         # 决策存档
+    ├── agents/         # 决策存档
+    ├── skills/         # 决策存档
     └── tasks/             # 任务索引
 ```
 
@@ -205,7 +186,7 @@
 - `docs/` 是「输出层」,经用户确认的最终论文
 - 文件从 `manuscripts/` 到 `docs/` 必须经过用户确认(`[APPROVED]`)
 
-### 大管家整理(thesis-manager v2.0.0)
+### 大管家整理(manager v2.0.0)
 
 大管家负责整理论文项目目录,按需执行。整理前需向用户确认特殊文件保护需求。
 
@@ -223,15 +204,15 @@
 | 备份文件 | 含 backup/备份/old/旧 | temp/draft/ |
 | 中间文件 | .tmp/.temp/.log/.bak | temp/ |
 
-### 写作助手撰写规范(thesis-writer)
+### 写作助手撰写规范(writer)
 
 **三层递进写作**:
 
 | 层级 | 核心规则 | 详细参考 |
 |------|----------|----------|
-| **句子** | 主语为实体名词;动词精确;定义与论述分离;禁用隐喻/口语/文学 | thesis-writer/references/sentence.md |
-| **段落** | 主题句点明论点;选择明确结构;论点-证据-推理可辨;300-500 字 | thesis-writer/references/paragraph.md |
-| **篇章** | 引言-主体-结论闭环;段间有逻辑过渡;篇尾回应篇首 | thesis-writer/references/chapter.md |
+| **句子** | 主语为实体名词;动词精确;定义与论述分离;禁用隐喻/口语/文学 | writer/references/sentence.md |
+| **段落** | 主题句点明论点;选择明确结构;论点-证据-推理可辨;300-500 字 | writer/references/paragraph.md |
+| **篇章** | 引言-主体-结论闭环;段间有逻辑过渡;篇尾回应篇首 | writer/references/chapter.md |
 
 **修改方法论**:建立论证地图 → 创建修改清单 → 汇报确认 → 逐章执行 → 终极核查
 
@@ -240,7 +221,7 @@
 - **他人推测**:其他研究者对证据的解释 + 归因到研究者 + 弱语气
 - **本研究推测**:本研究对自数据的解释 + "提示/可能/支持" + "本研究"主语
 
-### 审稿助手审查清单(thesis-reviewer)
+### 审稿助手审查清单(reviewer)
 
 基于《心理学报》审稿指南的 8 维度检查清单:
 
