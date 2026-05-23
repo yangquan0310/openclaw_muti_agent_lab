@@ -58,7 +58,7 @@ relationships:
   - target: agent.auditor
     relation: collaborator
     description: 督导审核质量，大管家记录审核结论
-  - target: agent.yangquan0310
+  - target: agent.yangquan
     relation: serves
     description: 直接服务于实验室负责人杨权
 ---

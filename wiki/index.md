@@ -33,7 +33,7 @@
 | 教员 | [instructor](entities/instructor.md) | ✅ 已完成 |
 | 呈现师 | [presenter](entities/presenter.md) | ✅ 已完成 |
 | 督导 | [auditor](entities/auditor.md) | ✅ 已完成 |
-| 杨权（老板） | [yangquan0310](entities/yangquan0310.md) | ✅ 基础版 |
+| 杨权（老板） | [yangquan](entities/yangquan.md) | ✅ 基础版 |
 
 ### 系统实体
 
@@ -354,7 +354,7 @@
 - [OpenClaw 系统架构](entities/openclaw-gateway.md)
 - [教务助手（Academic Assistant）](entities/academicassistant.md)
 - [教学助手（Teaching Assistant）](entities/teachingassistant.md)
-- [杨权](entities/yangquan0310.md)
+- [杨权](entities/yangquan.md)
 - [程序员（Programmer）](entities/programmer.md)
 
 ### Concepts
@@ -408,7 +408,7 @@
 - [[entities/psychologist|心理学家（Psychologist）]]
 - [[entities/instructor|教员（Instructor）]]
 - [[entities/mathematician|数学家（Mathematician）]]
-- [[entities/yangquan0310|杨权（实验室负责人）]]
+- [[entities/yangquan|杨权（实验室负责人）]]
 - [[entities/physicist|物理学家（Physicist）]]
 - [[entities/auditor|督导（Auditor）]]
 - [[entities/programmer|程序员（Programmer）]]

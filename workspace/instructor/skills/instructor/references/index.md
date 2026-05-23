@@ -12,6 +12,7 @@
 | [教案写作指南](lesson-plan-guide.md) | 教案结构、写作规范、模板 |
 | [教学素材收集指南](teaching-material-guide.md) | 案例、数据、文献、前沿进展 |
 | [知识脉络梳理指南](knowledge-mapping-guide.md) | 知识框架、逻辑衔接 |
+| [王雅欣老师教案指南](wang-yaxin-lesson-plan-guide.md) | 上传PPT生成教案的六部分结构规范 |
 
 ---
 

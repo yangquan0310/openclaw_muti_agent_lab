@@ -1,7 +1,9 @@
 ---
 name: physicist
 description: >
-  物理建模与理论分析技能。用于物理建模、理论分析、公式推导、交叉学科研究、模型验证等场景。
+  physicist的实践技能。
+  当需要进行物理建模、理论分析、公式推导、交叉学科研究、模型验证时激活。
+  负责物理建模与理论分析。
 version: 1.1.0
 author: Yang Quan
 metadata:

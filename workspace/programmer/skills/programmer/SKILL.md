@@ -1,8 +1,9 @@
 ---
 name: programmer
 description: >
-  当用户要求编写代码、修复 Bug、重构优化、技术设计、OOP 问题、全栈开发时触发。
-  程序员的核心技能，涵盖代码开发、Bug 排查、重构优化、技术设计、全栈开发。
+  programmer的实践技能。
+  当需要编写代码、修复Bug、重构优化、技术设计、OOP问题、全栈开发时激活。
+  负责代码开发、Bug排查、重构优化、技术设计、全栈开发。
 version: 1.0.0
 author: Yang Quan
 metadata:

@@ -38,10 +38,22 @@
 
 每次会话开始时,按顺序加载:
 
-1. **载入个人灵魂文档**(`SOUL.md`)
-2. **载入个人身份文档**(`IDENTITY.md`)
-3. **载入个人记忆文档**(`MEMORY.md`)
-4. **载入个人工具文档**(`TOOLS.md`)
+### 大管家(steward)
+1. **载入条件-行动规则**(`MEMORY.md`)
+2. **载入工作记忆**(`MEMORY.md`)
+3. **载入 manager 技能**(`skills/manager/SKILL.md`)
+
+### 其他代理
+每个代理首次会话或接收任务时,加载对应实践技能:
+- **auditor**: `skills/auditor/SKILL.md`
+- **instructor**: `skills/instructor/SKILL.md`
+- **mathematician**: `skills/mathematician/SKILL.md`
+- **physicist**: `skills/physicist/SKILL.md`
+- **presenter**: `skills/presenter/SKILL.md`
+- **programmer**: `skills/programmer/SKILL.md`
+- **psychologist**: `skills/psychologist/SKILL.md`
+- **reviewer**: `skills/reviewer/SKILL.md`
+- **writer**: `skills/writer/SKILL.md`
 
 ---
 
@@ -59,6 +71,7 @@
 
 ## 五、版本历史
 
+- **v9.3.0** (2026-05-23):会话加载分为大管家(manager)和其他代理(实践技能)
 - **v9.2.0** (2026-05-21):manager技能移至第11条,前面按语义相似归组
 - **v9.1.0** (2026-05-21):重排11条原则,语义相似归组
 - **v9.0.0** (2026-05-21):工作原则扩展为11条

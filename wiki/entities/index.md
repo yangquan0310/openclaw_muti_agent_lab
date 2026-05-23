@@ -10,7 +10,7 @@
 - [[entities/psychologist|心理学家（Psychologist）]]
 - [[entities/instructor|教员（Instructor）]]
 - [[entities/mathematician|数学家（Mathematician）]]
-- [[entities/yangquan0310|杨权（实验室负责人）]]
+- [[entities/yangquan|杨权（实验室负责人）]]
 - [[entities/physicist|物理学家（Physicist）]]
 - [[entities/auditor|督导（Auditor）]]
 - [[entities/programmer|程序员（Programmer）]]

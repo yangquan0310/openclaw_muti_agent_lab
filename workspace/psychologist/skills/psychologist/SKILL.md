@@ -1,7 +1,8 @@
 ---
 name: psychologist
 description: >
-  当用户提到心理学相关工作时触发。
+  psychologist的实践技能。
+  当需要进行心理学相关工作时激活。
   包含三个子身份：心理督导师、心理咨询师、心理科学家。
 version: 3.0.0
 author: Yang Quan

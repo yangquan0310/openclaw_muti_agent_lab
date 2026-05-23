@@ -22,8 +22,7 @@
       "model": {
         "primary": "minimax/MiniMax-M2.7-highspeed",
         "fallbacks": [
-          "minimax/MiniMax-M2.7",
-          "deepseek/deepseek-v4-flash"
+          "minimax/MiniMax-M2.7"
         ]
       },
       "imageModel": {
@@ -295,7 +294,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.20",
-    "lastTouchedAt": "2026-05-22T15:49:41.237Z"
+    "lastTouchedAt": "2026-05-23T10:42:22.230Z"
   },
   "browser": {
     "enabled": true,
@@ -764,7 +763,7 @@
         "enabled": true
       },
       "agent-self-development": {
-        "enabled": true,
+        "enabled": false,
         "hooks": {
           "allowConversationAccess": true
         }
