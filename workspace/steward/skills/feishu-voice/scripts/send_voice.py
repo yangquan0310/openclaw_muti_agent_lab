@@ -17,54 +17,11 @@ import json
 import os
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 # 默认配置
 DEFAULT_OPEN_ID = "ou_25cf20a1973aecc51f73d8e2800d7f7e"
-FEISHU_API_BASE = "https://open.feishu.cn/open-apis"
 TMP_DIR = "/tmp"
-
-
-def get_env(key: str) -> str:
-    """从环境变量或配置文件获取凭证"""
-    if key == "APP_ID":
-        # 从 openclaw.json 读取
-        oc_path = Path.home() / ".openclaw" / "openclaw.json"
-        if oc_path.exists():
-            try:
-                with open(oc_path) as f:
-                    data = json.load(f)
-                return data.get("channels", {}).get("feishu", {}).get("accounts", {}).get("steward", {}).get("appId", "")
-            except Exception:
-                pass
-    elif key == "APP_SECRET":
-        # 从 .env 读取
-        env_path = Path.home() / ".openclaw" / ".env"
-        if env_path.exists():
-            for line in env_path.read_text().splitlines():
-                if line.startswith("FEISHU_STEWARD_APP_SECRET="):
-                    return line.split("=", 1)[1].strip()
-    return ""
-
-
-def get_tenant_token(app_id: str, app_secret: str) -> str:
-    """获取 tenant_access_token"""
-    import urllib.request
-
-    url = f"{FEISHU_API_BASE}/auth/v3/tenant_access_token/internal"
-    payload = json.dumps({"app_id": app_id, "app_secret": app_secret}).encode()
-    req = urllib.request.Request(
-        url,
-        data=payload,
-        headers={"Content-Type": "application/json"},
-        method="POST"
-    )
-    with urllib.request.urlopen(req, timeout=10) as resp:
-        data = json.loads(resp.read())
-    if data.get("code") != 0:
-        raise RuntimeError(f"获取 token 失败: {data.get('msg')}")
-    return data["tenant_access_token"]
 
 
 def convert_to_opus(mp3_path: str, output_path: str = None) -> tuple[str, int]:
@@ -72,6 +29,8 @@ def convert_to_opus(mp3_path: str, output_path: str = None) -> tuple[str, int]:
     将 MP3 转换为 OGG/Opus 格式
     返回: (output_path, duration_ms)
     """
+    import json
+
     if output_path is None:
         output_path = os.path.join(TMP_DIR, f"voice_{os.getpid()}.ogg")
 
@@ -97,95 +56,10 @@ def convert_to_opus(mp3_path: str, output_path: str = None) -> tuple[str, int]:
     return output_path, duration_ms
 
 
-def upload_file(token: str, file_path: str, file_name: str, duration_ms: int) -> str:
-    """
-    上传文件到飞书，返回 file_key
-    """
-    import urllib.request
-    import urllib.parse
-
-    url = f"{FEISHU_API_BASE}/im/v1/files?file_type=opus"
-    boundary = "----WebKitFormBoundary" + os.urandom(16).hex()
-
-    # 读取文件
-    with open(file_path, "rb") as f:
-        file_data = f.read()
-    file_size = len(file_data)
-
-    # 构建 multipart body
-    body_parts = [
-        f'--{boundary}\r\nContent-Disposition: form-data; name="file_type"\r\n\r\nopus',
-        f'--{boundary}\r\nContent-Disposition: form-data; name="file_name"\r\n\r\n{file_name}',
-        f'--{boundary}\r\nContent-Disposition: form-data; name="duration"\r\n\r\n{duration_ms}',
-        f'--{boundary}\r\nContent-Disposition: form-data; name="purpose"\r\n\r\nbot',
-        f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="{file_name}"\r\nContent-Type: audio/ogg\r\n\r\n',
-    ]
-
-    body = b""
-    for part in body_parts:
-        if part.endswith(b"\r\n\r\n"):
-            body += part.encode() + file_data + b"\r\n"
-        else:
-            body += part.encode() + b"\r\n"
-    body += f"--{boundary}--\r\n".encode()
-
-    req = urllib.request.Request(
-        url,
-        data=body,
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": f"multipart/form-data; boundary={boundary}",
-        },
-        method="POST"
-    )
-
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        data = json.loads(resp.read())
-
-    if data.get("code") != 0:
-        raise RuntimeError(f"上传文件失败: {data.get('msg')}")
-
-    return data["data"]["file_key"]
-
-
-def send_audio_message(token: str, open_id: str, file_key: str, duration_ms: int) -> dict:
-    """
-    发送语音消息
-    """
-    import urllib.request
-
-    url = f"{FEISHU_API_BASE}/im/v1/messages?receive_id_type=open_id"
-    payload = json.dumps({
-        "receive_id": open_id,
-        "msg_type": "audio",
-        "content": json.dumps({
-            "file_key": file_key,
-            "duration": duration_ms
-        })
-    }).encode()
-
-    req = urllib.request.Request(
-        url,
-        data=payload,
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-        },
-        method="POST"
-    )
-
-    with urllib.request.urlopen(req, timeout=10) as resp:
-        data = json.loads(resp.read())
-
-    if data.get("code") != 0:
-        raise RuntimeError(f"发送消息失败: {data.get('msg')}")
-
-    return data["data"]
-
-
 def send_feishu_voice(audio_path: str, open_id: str = DEFAULT_OPEN_ID, duration_ms: int = None) -> dict:
     """
     发送飞书语音消息的完整流程
+    使用 lark-cli 处理上传和发送（更简洁）
 
     Args:
         audio_path: MP3 文件路径
@@ -195,32 +69,45 @@ def send_feishu_voice(audio_path: str, open_id: str = DEFAULT_OPEN_ID, duration_
     Returns:
         包含 message_id, chat_id 等信息的字典
     """
-    app_id = get_env("APP_ID")
-    app_secret = get_env("APP_SECRET")
-
-    if not app_id or not app_secret:
-        raise RuntimeError("无法获取飞书凭证，请检查配置")
-
-    # 1. 转换格式
-    opus_path, calculated_duration = convert_to_opus(audio_path)
-    duration = duration_ms or calculated_duration
+    # 1. 转换格式到源文件同一目录（lark-cli 需要相对路径）
+    audio_dir = os.path.dirname(os.path.abspath(audio_path)) or "."
+    audio_basename = os.path.basename(audio_path)
+    # 转换后的文件与源文件同目录，后缀改为 .ogg
+    opus_path = os.path.join(audio_dir, audio_basename.rsplit(".", 1)[0] + ".ogg")
+    opus_path, calculated_duration = convert_to_opus(audio_path, opus_path)
 
     try:
-        # 2. 获取 token
-        token = get_tenant_token(app_id, app_secret)
+        # 2. 使用 lark-cli 发送语音消息（从文件所在目录运行）
+        # lark-cli 要求 --audio 使用相对路径
+        orig_cwd = os.getcwd()
+        try:
+            os.chdir(audio_dir)
+            result = subprocess.run(
+                [
+                    "lark-cli", "im", "+messages-send",
+                    "--user-id", open_id,
+                    "--audio", "./" + os.path.basename(opus_path)
+                ],
+                capture_output=True, text=True, check=True
+            )
+        finally:
+            os.chdir(orig_cwd)
 
-        # 3. 上传文件
-        file_key = upload_file(
-            token, opus_path,
-            os.path.basename(audio_path).replace(".mp3", ".ogg"),
-            duration
-        )
+        import json
+        output = result.stdout.strip()
+        try:
+            data = json.loads(output)
+        except json.JSONDecodeError:
+            # lark-cli 有时会输出非JSON（如警告）
+            data = {"raw": output}
 
-        # 4. 发送语音消息
-        result = send_audio_message(token, open_id, file_key, duration)
-
-        print(f"✅ 语音消息发送成功: message_id={result.get('message_id')}", file=sys.stderr)
-        return result
+        if data.get("ok"):
+            msg_data = data.get("data", {})
+            print(f"✅ 语音消息发送成功: message_id={msg_data.get('message_id')}", file=sys.stderr)
+            return msg_data
+        else:
+            error_msg = data.get("error", {}).get("message", output)
+            raise RuntimeError(f"发送失败: {error_msg}")
 
     finally:
         # 清理临时文件
