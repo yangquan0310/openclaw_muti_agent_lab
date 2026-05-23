@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-23T14:16:02.730Z",
+  "updatedAt": "2026-05-23T15:40:13.230Z",
   "entries": {
     "memory:memory/2026-04-11.md:6:6": {
       "key": "memory:memory/2026-04-11.md:6:6",
@@ -244271,13 +244271,13 @@
       "endLine": 116,
       "source": "memory",
       "snippet": "| 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪",
-      "recallCount": 15,
+      "recallCount": 18,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 7.558996960520744,
+      "totalScore": 8.973020771145823,
       "maxScore": 0.536318339407444,
       "firstRecalledAt": "2026-05-23T10:44:33.105Z",
-      "lastRecalledAt": "2026-05-23T14:10:58.189Z",
+      "lastRecalledAt": "2026-05-23T15:33:58.891Z",
       "queryHashes": [
         "896cea64aab9",
         "52ea4c80b48b",
@@ -244293,7 +244293,9 @@
         "be14dab3d40d",
         "25419f335452",
         "487f4fd64426",
-        "7d1eb655e4e3"
+        "7d1eb655e4e3",
+        "69728ea687e6",
+        "f28aba2c79a0"
       ],
       "recallDays": [
         "2026-05-23"
@@ -244339,6 +244341,37 @@
         "mcp-server",
         "f-string",
         "skill-name"
+      ]
+    },
+    "memory:memory/2026-05-15.md:1:45": {
+      "key": "memory:memory/2026-05-15.md:1:45",
+      "path": "memory/2026-05-15.md",
+      "startLine": 1,
+      "endLine": 45,
+      "source": "memory",
+      "snippet": "import zipfile import shutil import re v16_path = '/root/仓库/维护老板信息/uploads/杨权-华中师范大学-心理学_v16.docx' unpack_dir = '/root/仓库/维护老板信息/temp/unpacked_v18' shutil.rmtree(unpack_dir, ignore_errors=True) with zipfile.ZipFile(v16_path, 'r') as z: z.extractall(unpack_dir) xml_path = unpack_dir + '/word/document.xml' with open(xml_path, 'r', encoding='utf-8') as f: content = f.read() # Find the merged table tables = re.findall(r'<w:tbl[^>]*>.*?</w:tbl>', content, re.DOTALL) if len(tables) >= 1: tbl = tables[0] # Get all rows rows = re.findall(r'<w:tr[^>]*>.*?</w:tr>', tbl, re.DOTALL) print(f\"Total rows: {len(rows)}\") # The first 5 rows are from table 1 (keep as i",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4337942451238632,
+      "maxScore": 0.4337942451238632,
+      "firstRecalledAt": "2026-05-23T15:40:13.230Z",
+      "lastRecalledAt": "2026-05-23T15:40:13.230Z",
+      "queryHashes": [
+        "8667eeb67a2a"
+      ],
+      "recallDays": [
+        "2026-05-23"
+      ],
+      "conceptTags": [
+        "v16-path",
+        "unpack-dir",
+        "root/仓库/维护老板信息/temp/unpacked-v18",
+        "shutil.rmtree",
+        "ignore-errors",
+        "zipfile.zipfile",
+        "z.extractall",
+        "xml-path"
       ]
     }
   }

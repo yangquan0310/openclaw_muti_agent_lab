@@ -805,10 +805,11 @@
         "minimax": {
           "apiKey": "${MINIMAX_API_KEY}",
           "model": "speech-2.8-hd",
-          "voiceId": "English_expressive_narrator",
+          "voiceId": "male-qn-jingying",
           "speed": 1,
           "vol": 1,
-          "pitch": 0
+          "pitch": 0,
+          "baseUrl": "https://api.minimaxi.com"
         }
       }
     }
