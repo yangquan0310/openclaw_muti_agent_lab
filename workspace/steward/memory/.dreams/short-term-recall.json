@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-23T14:10:58.189Z",
+  "updatedAt": "2026-05-23T14:16:02.730Z",
   "entries": {
     "memory:memory/2026-04-11.md:6:6": {
       "key": "memory:memory/2026-04-11.md:6:6",
@@ -182873,25 +182873,27 @@
       "endLine": 26,
       "source": "memory",
       "snippet": "# Memory Flush — 2026-05-12 ## Session: 三个项目管理技能修复与规范对齐 ### 1. program-manager 技能创建与修复 - 用户纠正了我的身份边界理解：\"不编写数据分析代码，但要编写工具代码\" - 大管家可以编写文件管理、目录整理等工具脚本，不应推给 programmer - 基于 thesis-manager 的 Maintainer.py 实现了 ProgramMaintainer.py（完整工具代码） - 补充了 README.md、_meta.json、scripts/maintainer/__init__.py - 结构已符合 skill-developer 规范 ### 2. course-manager 技能修复 - 修复前缺失：README.md、_meta.json、scripts/ 代码 - 添加 YAML frontmatter 到 SKILL.md - 新建 README.md（功能说明 + 目录结构 + 使用方式） - 新建 _meta.json（triggers/dependencies/entry_point） - 新建 scripts/maintainer/__init__.py 和 CourseMaintainer.py - 验证：模块导入成功，wiki_lint 通过 ### 3. 协作演化合成文档 - 创建 `wiki/syntheses/多agent协作案例-从实践到规范的演化.md` - 核心脉络：学生论文修改项目（2026-05-09）→ TODO模板标准化 → .agen",
-      "recallCount": 5,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5,
+      "totalScore": 5.502874577045441,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-12T04:38:16.336Z",
-      "lastRecalledAt": "2026-05-22T15:37:47.617Z",
+      "lastRecalledAt": "2026-05-23T14:16:02.730Z",
       "queryHashes": [
         "85bf61e312f0",
         "205b1cd17457",
         "3671db61ee16",
         "8b91d136f398",
-        "d439e537e4c3"
+        "d439e537e4c3",
+        "60357cc06af9"
       ],
       "recallDays": [
         "2026-05-12",
         "2026-05-14",
         "2026-05-13",
-        "2026-05-22"
+        "2026-05-22",
+        "2026-05-23"
       ],
       "conceptTags": [
         "program-manager",
