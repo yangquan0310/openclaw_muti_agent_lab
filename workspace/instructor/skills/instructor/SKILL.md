@@ -102,9 +102,9 @@ instructor/
 ## 快速检索
 
 ```bash
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+lookup search --skill instructor <关键词>       # 搜索指南
+lookup list --skill instructor          # 列出所有指南
+lookup index --skill instructor                  # 重建索引
 ```
 
 ## 版本历史

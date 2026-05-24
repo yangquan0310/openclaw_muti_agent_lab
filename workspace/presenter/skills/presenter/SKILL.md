@@ -120,9 +120,9 @@ presenter parse --input script.md
 presenter validate --input script.md
 
 # 快速检索
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+lookup search --skill presenter <关键词>       # 搜索指南
+lookup list --skill presenter          # 列出所有指南
+lookup index --skill presenter                  # 重建索引
 ```
 
 ---

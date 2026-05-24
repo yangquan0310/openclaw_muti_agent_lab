@@ -76,9 +76,9 @@ metadata:
 ### 快速检索
 
 ```bash
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list        # 列出所有指南
-python3 -m scripts.lookup.indexer                 # 重建索引
+lookup search --skill psychologist <关键词>       # 搜索指南
+lookup list --skill psychologist        # 列出所有指南
+lookup index --skill psychologist                 # 重建索引
 ```
 
 ---
@@ -188,9 +188,9 @@ python3 -m scripts.lookup.indexer                 # 重建索引
 python3 scripts/selfcheck.py
 
 # 快速检索
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+lookup search --skill psychologist <关键词>       # 搜索指南
+lookup list --skill psychologist          # 列出所有指南
+lookup index --skill psychologist                  # 重建索引
 ```
 
 ---

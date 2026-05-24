@@ -15,7 +15,7 @@ metadata:
 # writer（通用写作技能）
 
 > **通用写作技能**：不绑定任何领域，适用于一切写作任务。
-> **核心结构**：指南下沉至 references/，模板存放于 assets/templates/，快速检索用 scripts/lookup/
+> **核心结构**：指南下沉至 references/，模板存放于 assets/templates/，快速检索用 lookup search --skill writer
 
 ---
 
@@ -181,9 +181,9 @@ metadata:
 python3 scripts/selfcheck.py --file <path> --level <sentence|paragraph|chapter>
 
 # 快速检索
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+lookup search --skill writer <关键词>       # 搜索指南
+lookup list --skill writer          # 列出所有指南
+lookup index --skill writer                  # 重建索引
 ```
 
 ---

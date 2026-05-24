@@ -150,9 +150,9 @@ metadata:
 
 ```bash
 # 快速检索指南内容
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+lookup search --skill reviewer <关键词>       # 搜索指南
+lookup list --skill reviewer          # 列出所有指南
+lookup index --skill reviewer                  # 重建索引
 
 # 审稿清单辅助
 python3 scripts/review_checklist.py <论文文件>
@@ -179,9 +179,9 @@ python3 scripts/review_checklist.py <论文文件>
 ## 快速检索
 
 ```bash
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+lookup search --skill reviewer <关键词>       # 搜索指南
+lookup list --skill reviewer          # 列出所有指南
+lookup index --skill reviewer                  # 重建索引
 ```
 
 ## 版本历史

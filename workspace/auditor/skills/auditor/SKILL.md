@@ -127,9 +127,9 @@ python3 scripts/audit.py --mode report --task <任务ID>
 ## 快速检索
 
 ```bash
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+lookup search --skill auditor <关键词>       # 搜索指南
+lookup list --skill auditor          # 列出所有指南
+lookup index --skill auditor                  # 重建索引
 ```
 
 ## 版本历史

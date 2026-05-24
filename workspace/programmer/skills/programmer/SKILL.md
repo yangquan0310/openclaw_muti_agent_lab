@@ -81,29 +81,22 @@ metadata:
 
 | 脚本 | 命令 |
 |------|------|
-| 索引构建 | `python3 -m scripts.lookup.indexer` |
-| 搜索 | `python3 -m scripts.lookup.searcher <关键词>` |
-| 列出文件 | `python3 -m scripts.lookup.searcher --list` |
-
-**脚本结构**：
-```
-scripts/lookup/
-├── __init__.py
-├── indexer.py      # 索引构建器
-├── searcher.py     # 搜索引擎
-└── index/          # 索引数据（manifest.json + chunks.json）
-```
+| 索引构建 | `lookup index --skill programmer` |
+| 搜索 | `lookup search --skill programmer <关键词>` |
+| 列出文件 | `lookup list --skill programmer` |
 
 **搜索示例**：
 ```bash
 # 构建索引（首次使用或更新文档后）
-python3 -m scripts.lookup.indexer
+lookup index --skill programmer
 
 # 搜索
-python3 -m scripts.lookup.searcher "什么是多态"
-python3 -m scripts.lookup.searcher "docker 部署"
-python3 -m scripts.lookup.searcher "单元测试 怎么写"
+lookup search --skill programmer "什么是多态"
+lookup search --skill programmer "docker 部署"
+lookup search --skill programmer "单元测试 怎么写"
 ```
+
+**索引位置**：`references/` 同级 `index/`（自动生成）
 ## 模板资源
 
 | 模板 | 用途 |

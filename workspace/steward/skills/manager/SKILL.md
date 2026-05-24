@@ -65,7 +65,7 @@ metadata:
 python3 scripts/maintainer/Maintainer.py --help
 
 # 搜索 guide
-python3 -m scripts.lookup.searcher <关键词>
+lookup search --skill manager <关键词>
 ```
 
 ---
