@@ -104,28 +104,26 @@ metadata:
 
 ---
 
-## 命令行（CLI）
+
+
+## 快速调用
 
 ```bash
-# PPT 编译
-presenter compile --input script.md --output out.pptx --template template
+# 演示制作
+presenter create --topic "AI趋势" --style 科技
+presenter outline --topic "产品介绍"
 
-# PPT Layout 列表
-presenter list --template template
+# 构建索引
+lookup index -r /root/.openclaw/workspace/presenter/skills/presenter/references \
+  -m /root/.openclaw/workspace/presenter/skills/presenter/index/manifest.json \
+  -c /root/.openclaw/workspace/presenter/skills/presenter/index/chunks.json
 
-# PPT 脚本解析
-presenter parse --input script.md
+# 搜索指南
+lookup search -i /root/.openclaw/workspace/presenter/skills/presenter/index/manifest.json <关键词>
 
-# PPT 脚本验证
-presenter validate --input script.md
-
-# 快速检索
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+# 查看帮助
+presenter --help
 ```
-
----
 
 ## 版本历史
 
@@ -138,27 +136,3 @@ python3 -m scripts.lookup.indexer                  # 重建索引
 | 1.2.0 | 2026-05-21 | 新增脚本编写（PPT脚本、视角脚本）和Python工具使用职责 |
 | 1.1.0 | 2026-05-21 | 扩展至全部视觉传达：UI视觉、品牌视觉、文档排版 |
 | 1.0.0 | 2026-05-20 | 初始版本，整合 PPT、图片、图表为唯一可视化技能 |
-
-## 命令行（CLI）
-
-```bash
-# 演示制作
-presenter create --topic "AI趋势" --style 科技
-presenter outline --topic "产品介绍"
-
-# 查看帮助
-presenter --help
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/presenter/skills/presenter/references -m /root/.openclaw/workspace/presenter/skills/presenter/index/manifest.json -c /root/.openclaw/workspace/presenter/skills/presenter/index/chunks.json
-
-# 搜索指南
-lookup search -i /root/.openclaw/workspace/presenter/skills/presenter/index/manifest.json <关键词>
-
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/presenter/skills/presenter/index/manifest.json
-```

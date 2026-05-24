@@ -89,17 +89,21 @@ metadata:
 ## 快速调用
 
 ```bash
-# 初始化审核任务
-python3 scripts/audit.py --mode init --task <任务ID>
+# 审计检查
+auditor --type financial --file report.pdf
+auditor --type compliance --dir ./docs
 
-# 执行审核
-python3 scripts/audit.py --mode audit --input <文件路径>
+# 构建索引
+lookup index -r /root/.openclaw/workspace/auditor/skills/auditor/references \
+  -m /root/.openclaw/workspace/auditor/skills/auditor/index/manifest.json \
+  -c /root/.openclaw/workspace/auditor/skills/auditor/index/chunks.json
 
-# 生成审核报告
-python3 scripts/audit.py --mode report --task <任务ID>
+# 搜索指南
+lookup search -i /root/.openclaw/workspace/auditor/skills/auditor/index/manifest.json <关键词>
+
+# 查看帮助
+auditor --help
 ```
-
----
 
 ## 模块导航
 
@@ -140,27 +144,3 @@ python3 -m scripts.lookup.indexer                  # 重建索引
 | 1.2.0 | 2026-05-23 | 新增"核心原则"和"边界条件"章节，对齐代理实践技能体系规范 |
 | 1.1.0 | 2026-05-21 | 新增 lookup 快速检索 |
 | 1.0.0 | 2026-05-21 | 初始版本，包含6个指南文档 |
-
-## 命令行（CLI）
-
-```bash
-# 审计检查
-auditor --type financial --file report.pdf
-auditor --type compliance --dir ./docs
-
-# 查看帮助
-auditor --help
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/auditor/skills/auditor/references -m /root/.openclaw/workspace/auditor/skills/auditor/index/manifest.json -c /root/.openclaw/workspace/auditor/skills/auditor/index/chunks.json
-
-# 搜索指南
-lookup search -i /root/.openclaw/workspace/auditor/skills/auditor/index/manifest.json <关键词>
-
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/auditor/skills/auditor/index/manifest.json
-```

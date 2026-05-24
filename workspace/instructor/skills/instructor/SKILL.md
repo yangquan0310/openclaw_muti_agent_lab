@@ -107,6 +107,27 @@ python3 -m scripts.lookup.searcher --list          # 列出所有指南
 python3 -m scripts.lookup.indexer                  # 重建索引
 ```
 
+
+
+## 快速调用
+
+```bash
+# 教学设计
+instructor plan --topic "机器学习" --level 初级
+instructor outline --topic "深度学习"
+
+# 构建索引
+lookup index -r /root/.openclaw/workspace/instructor/skills/instructor/references \
+  -m /root/.openclaw/workspace/instructor/skills/instructor/index/manifest.json \
+  -c /root/.openclaw/workspace/instructor/skills/instructor/index/chunks.json
+
+# 搜索指南
+lookup search -i /root/.openclaw/workspace/instructor/skills/instructor/index/manifest.json <关键词>
+
+# 查看帮助
+instructor --help
+```
+
 ## 版本历史
 
 | 版本 | 日期 | 更新 |
@@ -114,27 +135,3 @@ python3 -m scripts.lookup.indexer                  # 重建索引
 | 1.2.0 | 2026-05-23 | 补充边界条件章节（能做什么/不能做什么） |
 | 1.1.0 | 2026-05-21 | 新增 lookup 快速检索 |
 | 1.0.0 | 2026-05-21 | 初始版本，包含课程设计、教案写作、素材收集、知识脉络四大指南 |
-
-## 命令行（CLI）
-
-```bash
-# 教学设计
-instructor plan --topic "机器学习" --level 初级
-instructor outline --topic "深度学习"
-
-# 查看帮助
-instructor --help
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/instructor/skills/instructor/references -m /root/.openclaw/workspace/instructor/skills/instructor/index/manifest.json -c /root/.openclaw/workspace/instructor/skills/instructor/index/chunks.json
-
-# 搜索指南
-lookup search -i /root/.openclaw/workspace/instructor/skills/instructor/index/manifest.json <关键词>
-
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/instructor/skills/instructor/index/manifest.json
-```

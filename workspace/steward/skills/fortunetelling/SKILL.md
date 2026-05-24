@@ -78,30 +78,6 @@ fortunetelling/
 ## 快速调用
 
 ```bash
-# 八字排盘（阳历）
-python3 scripts/bazi.py 1990 5 15 14 --gender 男
-
-# 八字排盘（阴历）
-python3 scripts/bazi.py 1990 5 15 14 --gender 男 --lunar
-
-# 大运流年分析
-python3 scripts/fate.py 1998 7 16 9 --gender 女
-
-# 指定时间点的流年流月流日流时
-python3 scripts/fate.py 1998 7 16 9 --gender 女 --type timing --target 2026-5-20-17
-```
-
----
-
-## 版本历史
-
-| 版本 | 日期 | 更新 |
-|------|------|------|
-| 1.0.0 | 2026-05-20 | 初始版本 |
-
-## 命令行（CLI）
-
-```bash
 # 八字排盘
 fortunetelling bazi 1990 5 15 10 --gender 男
 
@@ -111,19 +87,20 @@ fortunetelling lunar 1990 4 15 10
 # 运势分析
 fortunetelling fate 1990 5 15 10 --gender 男 --type timing
 
-# 查看帮助
-fortunetelling -h
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/steward/skills/fortunetelling/references -m /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json -c /root/.openclaw/workspace/steward/skills/fortunetelling/index/chunks.json
+# 构建索引
+lookup index -r /root/.openclaw/workspace/steward/skills/fortunetelling/references \
+  -m /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json \
+  -c /root/.openclaw/workspace/steward/skills/fortunetelling/index/chunks.json
 
 # 搜索指南
 lookup search -i /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json <关键词>
 
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json
+# 查看帮助
+fortunetelling -h
 ```
+
+## 版本历史
+
+| 版本 | 日期 | 更新 |
+|------|------|------|
+| 1.0.0 | 2026-05-20 | 初始版本 |

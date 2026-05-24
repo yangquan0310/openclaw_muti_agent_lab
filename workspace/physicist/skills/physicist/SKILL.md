@@ -70,13 +70,26 @@ metadata:
 
 ## 快速调用
 
-| 命令 | 说明 |
-|------|------|
-| `python3 -m scripts.lookup.indexer` | 构建索引 |
-| `python3 -m scripts.lookup.searcher <关键词>` | 搜索指南 |
-| `python3 -m scripts.lookup.searcher --list` | 列出已索引文件 |
+```bash
+# 数值计算
+physicist calculate basic 1 2 add
+physicist calculate matrix --A '[[1,2],[3,4]]' --op inverse
+physicist calculate integrate --func 'x**2' --a 0 --b 1
 
----
+# 物理可视化
+physicist visualize function --func 'sin(x)' --xmin 0 --xmax 3.14
+
+# 构建索引
+lookup index -r /root/.openclaw/workspace/physicist/skills/physicist/references \
+  -m /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json \
+  -c /root/.openclaw/workspace/physicist/skills/physicist/index/chunks.json
+
+# 搜索指南
+lookup search -i /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json <关键词>
+
+# 查看帮助
+physicist -h
+```
 
 ## 指南导航
 
@@ -99,30 +112,3 @@ metadata:
 | 1.2.0 | 2026-05-23 | 修复指南中模板路径引用 |
 | 1.1.0 | 2026-05-23 | 补充边界条件章节，优化指南路由 |
 | 1.0.0 | 2026-05-23 | 初始版本 |
-
-## 命令行（CLI）
-
-```bash
-# 数值计算
-physicist calculate basic 1 2 add
-physicist calculate matrix --A '[[1,2],[3,4]]' --op inverse
-
-# 物理可视化
-physicist visualize function --func 'sin(x)' --xmin 0 --xmax 3.14
-
-# 查看帮助
-physicist -h
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/physicist/skills/physicist/references -m /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json -c /root/.openclaw/workspace/physicist/skills/physicist/index/chunks.json
-
-# 搜索指南
-lookup search -i /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json <关键词>
-
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json
-```

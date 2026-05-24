@@ -136,22 +136,16 @@ Run `sessions_spawn` with the task as a detailed prompt. The sub-agent announces
 - **Evidence over claims** — verify before declaring success
 - **Frequent commits** — after each green test
 
-## 命令行（CLI）
+
+
+## 快速调用
 
 ```bash
-# 查看帮助
-superpowers --help
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/programmer/skills/superpowers/references -m /root/.openclaw/workspace/programmer/skills/superpowers/index/manifest.json -c /root/.openclaw/workspace/programmer/skills/superpowers/index/chunks.json
+# 构建索引
+lookup index -r /root/.openclaw/workspace/programmer/skills/superpowers/references \
+  -m /root/.openclaw/workspace/programmer/skills/superpowers/index/manifest.json \
+  -c /root/.openclaw/workspace/programmer/skills/superpowers/index/chunks.json
 
 # 搜索指南
 lookup search -i /root/.openclaw/workspace/programmer/skills/superpowers/index/manifest.json <关键词>
-
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/programmer/skills/superpowers/index/manifest.json
 ```

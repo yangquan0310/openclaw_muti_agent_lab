@@ -239,6 +239,27 @@ python3 -m scripts.lookup.indexer                  # 重建索引
 
 ---
 
+
+
+## 快速调用
+
+```bash
+# 自检文章
+writer --file essay.md
+writer --file essay.md --level sentence
+
+# 构建索引
+lookup index -r /root/.openclaw/workspace/writer/skills/writer/references \
+  -m /root/.openclaw/workspace/writer/skills/writer/index/manifest.json \
+  -c /root/.openclaw/workspace/writer/skills/writer/index/chunks.json
+
+# 搜索指南
+lookup search -i /root/.openclaw/workspace/writer/skills/writer/index/manifest.json <关键词>
+
+# 查看帮助
+writer --help
+```
+
 ## 版本历史
 
 | 版本 | 日期 | 更新 |
@@ -254,27 +275,3 @@ python3 -m scripts.lookup.indexer                  # 重建索引
 ---
 
 *维护者：杨权*
-
-## 命令行（CLI）
-
-```bash
-# 自检文章
-writer --file essay.md
-writer --file essay.md --level sentence
-
-# 查看帮助
-writer --help
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/writer/skills/writer/references -m /root/.openclaw/workspace/writer/skills/writer/index/manifest.json -c /root/.openclaw/workspace/writer/skills/writer/index/chunks.json
-
-# 搜索指南
-lookup search -i /root/.openclaw/workspace/writer/skills/writer/index/manifest.json <关键词>
-
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/writer/skills/writer/index/manifest.json
-```

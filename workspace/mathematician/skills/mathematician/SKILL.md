@@ -56,16 +56,29 @@ metadata:
 
 ## 快速调用
 
-| 命令 | 说明 |
-|------|------|
-| `python3 scripts/calculate.py --help` | 计算工具帮助（基本运算、矩阵、微积分、求根） |
-| `python3 scripts/statistics.py --help` | 统计工具帮助（描述统计、假设检验、回归） |
-| `python3 scripts/visualize.py --help` | 可视化工具帮助（函数图、散点图、直方图） |
-| `cd scripts && python3 -m lookup --list` | 列出所有可用工具 |
-| `cd scripts && python3 -m lookup --search <关键词>` | 搜索相关工具 |
-| `cd scripts && python3 -m lookup --info <工具名>` | 查看工具详情 |
+```bash
+# 数值计算
+mathematician calculate basic 1 2 add
+mathematician calculate matrix --A '[[1,2],[3,4]]' --op inverse
+mathematician calculate integrate --func 'x**2' --a 0 --b 1
 
----
+# 统计分析
+mathematician statistics describe --data 1,2,3,4,5
+
+# 数据可视化
+mathematician visualize function --func 'x**2' --xmin -10 --xmax 10
+
+# 构建索引
+lookup index -r /root/.openclaw/workspace/mathematician/skills/mathematician/references \
+  -m /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json \
+  -c /root/.openclaw/workspace/mathematician/skills/mathematician/index/chunks.json
+
+# 搜索指南
+lookup search -i /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json <关键词>
+
+# 查看帮助
+mathematician -h
+```
 
 ## 指南导航
 
@@ -123,35 +136,3 @@ metadata:
 |------|------|------|
 | 1.1.0 | 2026-05-23 | 增加边界条件章节，对齐实践技能体系规范 |
 | 1.0.0 | 2026-05-23 | 初始版本 |
-
-## 命令行（CLI）
-
-```bash
-# 数值计算
-mathematician calculate basic 1 2 add
-mathematician calculate matrix --A '[[1,2],[3,4]]' --op inverse
-mathematician calculate integrate --func 'x**2' --a 0 --b 1
-
-# 统计分析
-mathematician statistics describe --data 1,2,3,4,5
-mathematician statistics ttest --a 5.0 --b 5.5 --n1 10 --n2 10
-
-# 数据可视化
-mathematician visualize function --func 'x**2' --xmin -10 --xmax 10
-
-# 查看帮助
-mathematician -h
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/mathematician/skills/mathematician/references -m /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json -c /root/.openclaw/workspace/mathematician/skills/mathematician/index/chunks.json
-
-# 搜索指南
-lookup search -i /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json <关键词>
-
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json
-```

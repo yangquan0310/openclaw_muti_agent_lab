@@ -184,16 +184,20 @@ python3 -m scripts.lookup.indexer                 # 重建索引
 ## 快速调用
 
 ```bash
-# 自检
-python3 scripts/selfcheck.py
+# 心理分析
+psychologist analyze --text "文本内容"
 
-# 快速检索
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+# 构建索引
+lookup index -r /root/.openclaw/workspace/psychologist/skills/psychologist/references \
+  -m /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json \
+  -c /root/.openclaw/workspace/psychologist/skills/psychologist/index/chunks.json
+
+# 搜索指南
+lookup search -i /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json <关键词>
+
+# 查看帮助
+psychologist --help
 ```
-
----
 
 ## 版本历史
 
@@ -204,27 +208,3 @@ python3 -m scripts.lookup.indexer                  # 重建索引
 | 2.1.0 | 2026-05-21 | 新增 lookup 快速检索 |
 | 2.0.0 | 2026-05-21 | 升级为psychologist技能包：心理督导师+心理咨询师+心理科学家 |
 | 1.0.0 | 2026-05-20 | 初始版本：心理督导师 |
-
-## 命令行（CLI）
-
-```bash
-# 心理分析
-psychologist analyze --text "文本内容"
-psychologist support --type anxiety
-
-# 查看帮助
-psychologist --help
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/psychologist/skills/psychologist/references -m /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json -c /root/.openclaw/workspace/psychologist/skills/psychologist/index/chunks.json
-
-# 搜索指南
-lookup search -i /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json <关键词>
-
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json
-```

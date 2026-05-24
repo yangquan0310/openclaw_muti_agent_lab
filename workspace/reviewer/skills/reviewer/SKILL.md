@@ -149,16 +149,21 @@ metadata:
 ## 快速调用
 
 ```bash
-# 快速检索指南内容
-python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
-python3 -m scripts.lookup.searcher --list          # 列出所有指南
-python3 -m scripts.lookup.indexer                  # 重建索引
+# 审稿清单
+reviewer --type thesis paper.pdf
+reviewer -t journal paper.pdf --output review.md
 
-# 审稿清单辅助
-python3 scripts/review_checklist.py <论文文件>
+# 构建索引
+lookup index -r /root/.openclaw/workspace/reviewer/skills/reviewer/references \
+  -m /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json \
+  -c /root/.openclaw/workspace/reviewer/skills/reviewer/index/chunks.json
+
+# 搜索指南
+lookup search -i /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json <关键词>
+
+# 查看帮助
+reviewer --help
 ```
-
----
 
 ## 模块导航
 
@@ -192,27 +197,3 @@ python3 -m scripts.lookup.indexer                  # 重建索引
 | 1.2.0 | 2026-05-23 | 按代理实践技能体系重构：核心理念→核心原则、增加边界条件、快速调用 |
 | 1.1.0 | 2026-05-21 | 新增 lookup 快速检索 |
 | 1.0.0 | 2026-05-20 | 初始版本，整合各类审稿需求 |
-
-## 命令行（CLI）
-
-```bash
-# 审稿清单
-reviewer --type thesis paper.pdf
-reviewer -t journal paper.pdf --output review.md
-
-# 查看帮助
-reviewer --help
-```
-
-## 文档检索
-
-```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/reviewer/skills/reviewer/references -m /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json -c /root/.openclaw/workspace/reviewer/skills/reviewer/index/chunks.json
-
-# 搜索指南
-lookup search -i /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json <关键词>
-
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json
-```
