@@ -13,20 +13,20 @@ from typing import Any
 
 
 class ReferencesSearcher:
-    def __init__(self, index_dir: Path):
+    def __init__(self, index_dir: Path, manifest_path: Path = None):
         self.index_dir = index_dir
+        self._manifest_path = manifest_path or (index_dir / "manifest.json")
         self._load_index()
 
     def _load_index(self):
-        manifest_path = self.index_dir / "manifest.json"
         chunks_path = self.index_dir / "chunks.json"
 
-        if not manifest_path.exists():
+        if not self._manifest_path.exists():
             raise FileNotFoundError(
-                f"manifest.json 不存在: {manifest_path}"
+                f"文件不存在: {self._manifest_path}"
             )
 
-        with open(manifest_path, 'r', encoding='utf-8') as f:
+        with open(self._manifest_path, 'r', encoding='utf-8') as f:
             self.manifest = json.load(f)
 
         if chunks_path.exists():
@@ -120,20 +120,17 @@ def main():
 
     manifest_path = Path(args.index).resolve()
     if not manifest_path.exists():
-        print(f"Error: manifest.json 不存在: {manifest_path}")
+        print(f"Error: 文件不存在: {manifest_path}")
         return 1
     if manifest_path.is_dir():
         print(f"Error: --index 需要是 manifest.json 文件，不是目录")
-        return 1
-    if manifest_path.name != "manifest.json":
-        print(f"Error: --index 需要是 manifest.json 文件路径")
         return 1
     index_dir = manifest_path.parent
 
     skill_title = index_dir.parent.name.title()
 
     try:
-        searcher = ReferencesSearcher(index_dir)
+        searcher = ReferencesSearcher(index_dir, manifest_path)
     except FileNotFoundError as e:
         print(f"Error: {e}")
         return 1

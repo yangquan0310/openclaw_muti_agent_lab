@@ -171,10 +171,12 @@ def build_chunks(references_dir: Path, manifest: dict[str, Any]) -> list[dict[st
 
 def main():
     parser = argparse.ArgumentParser(description='构建 References 索引')
-    parser.add_argument('--references', '-r', required=True,
+    parser.add_argument('-r', '--references', required=True,
                         help='references 目录路径')
-    parser.add_argument('--index', '-i',
-                        help='输出索引目录路径（默认：<references>/../index）')
+    parser.add_argument('-m', '--manifest',
+                        help='manifest.json 输出路径')
+    parser.add_argument('-c', '--chunks',
+                        help='chunks.json 输出路径')
     args = parser.parse_args()
 
     references_dir = Path(args.references).resolve()
@@ -182,23 +184,25 @@ def main():
         print(f"Error: references 目录不存在: {references_dir}")
         return 1
 
-    index_dir = Path(args.index).resolve() if args.index else references_dir.parent / "index"
-    index_dir.mkdir(parents=True, exist_ok=True)
-
     skill_name = references_dir.parent.name
+
+    # manifest 路径
+    manifest_path = Path(args.manifest).resolve() if args.manifest else references_dir.parent / "index" / "manifest.json"
+    chunks_path = Path(args.chunks).resolve() if args.chunks else manifest_path.parent / "chunks.json"
 
     print(f"【{skill_name}】索引构建")
     print(f"  来源: {references_dir}")
-    print(f"  输出: {index_dir}")
+    print(f"  manifest: {manifest_path}")
+    print(f"  chunks: {chunks_path}")
+
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
 
     manifest = scan_references(references_dir)
     chunks = build_chunks(references_dir, manifest)
 
-    manifest_path = index_dir / "manifest.json"
     with open(manifest_path, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
-    chunks_path = index_dir / "chunks.json"
     with open(chunks_path, 'w', encoding='utf-8') as f:
         json.dump(chunks, f, ensure_ascii=False, indent=2)
 
