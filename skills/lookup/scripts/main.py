@@ -3,9 +3,9 @@
 lookup - 中央 References 搜索与索引工具
 
 Usage:
-    lookup search -i <index> <query>          搜索指南
-    lookup index  -r <references> [-i <path>] 构建索引
-    lookup list   -i <index>                  列出已索引文件
+    lookup search -i <manifest.json> <query>   搜索指南
+    lookup index  -r <references> [-i <index_dir>] 构建索引
+    lookup list   -i <manifest.json>           列出已索引文件
 """
 
 import sys
@@ -46,15 +46,14 @@ def main():
         description='lookup - 中央 References 搜索与索引工具',
         usage='lookup <command> [options]\n\n'
               'Commands:\n'
-              '  search -i <index> <query>   搜索指南\n'
-              '  index  -r <references> [-i]  构建索引\n'
-              '  list   -i <index>            列出已索引文件\n\n'
+              '  search -i <manifest.json> <query>  搜索指南\n'
+              '  index  -r <references> [-i <index>目录]  构建索引\n'
+              '  list   -i <manifest.json>          列出已索引文件\n\n'
               'Examples:\n'
-              '  lookup search -i ./skill/index 工作流\n'
+              '  lookup search -i ./skill/index/manifest.json 工作流\n'
               '  lookup index  -r ./skill/references\n'
-              '  lookup list   -i ~/.openclaw/skills/lark-base/index\n'
-              '  lookup index  -r ./skill/references -i /tmp/my-index\n'
-              '  lookup search -i /tmp/my-index/manifest.json 工作流\n',
+              '  lookup list   -i ~/.openclaw/skills/lark-base/index/manifest.json\n'
+              '  lookup index  -r ./skill/references -i /tmp/my-index',
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
     subparsers = parser.add_subparsers(dest='command', required=True)
@@ -63,7 +62,7 @@ def main():
     p_search = subparsers.add_parser('search', help='搜索指南')
     p_search.add_argument('query', nargs='?', help='搜索关键词')
     p_search.add_argument('-i', '--index', required=True,
-                          help='索引目录路径（或 manifest.json 路径）')
+                          help='manifest.json 文件路径')
     p_search.add_argument('--files-only', '-f', action='store_true',
                           help='只显示文件匹配')
     p_search.add_argument('--list', '-l', action='store_true',
@@ -81,7 +80,7 @@ def main():
     # lookup list
     p_list = subparsers.add_parser('list', help='列出已索引文件')
     p_list.add_argument('-i', '--index', required=True,
-                        help='索引目录路径（或 manifest.json 路径）')
+                        help='manifest.json 文件路径')
 
     args = parser.parse_args()
 

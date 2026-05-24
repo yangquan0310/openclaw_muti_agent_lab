@@ -118,15 +118,17 @@ def main():
                         help='返回结果数（默认 5）')
     args = parser.parse_args()
 
-    idx_path = Path(args.index)
-    # 如果传的是 manifest.json，取其父目录
-    if idx_path.name == "manifest.json":
-        index_dir = idx_path.parent
-    elif idx_path.is_dir():
-        index_dir = idx_path
-    else:
-        print(f"Error: 路径不存在: {idx_path}")
+    manifest_path = Path(args.index).resolve()
+    if not manifest_path.exists():
+        print(f"Error: manifest.json 不存在: {manifest_path}")
         return 1
+    if manifest_path.is_dir():
+        print(f"Error: --index 需要是 manifest.json 文件，不是目录")
+        return 1
+    if manifest_path.name != "manifest.json":
+        print(f"Error: --index 需要是 manifest.json 文件路径")
+        return 1
+    index_dir = manifest_path.parent
 
     skill_title = index_dir.parent.name.title()
 
