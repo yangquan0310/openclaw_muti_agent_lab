@@ -62,35 +62,29 @@ metadata:
 
 ```bash
 # 项目整理
-manager organize /root/data/disk/仓库/my-project
-manager organize --all --dry-run
+manager maintainer organize /root/data/disk/仓库/my-project
+manager maintainer organize --all --dry-run
 
 # 同步模板
-manager sync-templates /root/data/disk/仓库/my-project
+manager maintainer sync-templates /root/data/disk/仓库/my-project
 
 # 检查更新
-manager check-updates /root/data/disk/仓库/my-project
-manager check-updates --all
+manager maintainer check-updates /root/data/disk/仓库/my-project
+manager maintainer check-updates --all
 
 # 维护元数据
-manager maintain /root/data/disk/仓库/my-project
+manager maintainer maintain /root/data/disk/仓库/my-project
 
 # 移动文件
-manager move /root/data/disk/仓库/my-project uploads/file.pdf manuscripts/
+manager maintainer move /root/data/disk/仓库/my-project uploads/file.pdf manuscripts/
 
 # 元数据管理
-manager meta /root/data/disk/仓库/my-project --show
-manager meta /root/data/disk/仓库/my-project --title "新标题" --tags "AI,Python"
-
-# 构建索引
-lookup index -r /root/.openclaw/workspace/steward/skills/manager/references -m /root/.openclaw/workspace/steward/skills/manager/index/manifest.json -c /root/.openclaw/workspace/steward/skills/manager/index/chunks.json
-
-# 搜索指南
-lookup search -i /root/.openclaw/workspace/steward/skills/manager/index/manifest.json <关键词>
+manager maintainer meta /root/data/disk/仓库/my-project --show
+manager maintainer meta /root/data/disk/仓库/my-project --title "新标题" --tags "AI,Python"
 
 # 查看帮助
-manager -h
-manager organize --help
+manager maintainer --help
+manager maintainer organize --help
 ```
 
 ## 版本历史
