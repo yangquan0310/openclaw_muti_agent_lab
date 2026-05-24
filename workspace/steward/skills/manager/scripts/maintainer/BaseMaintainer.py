@@ -300,6 +300,48 @@ class BaseMaintainer:
         'program': '程序项目',
     }
 
+    # 子类可覆盖的角色列表（决定 README 分工表格显示哪些 Agent）
+    TEAM_AGENTS = []
+
+    def _generate_team_division_table(self):
+        """从 assets/agents/ 目录解析角色文件，生成团队分工表格"""
+        skill_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        agents_dir = os.path.join(skill_dir, 'assets', 'agents')
+
+        lines = ['## 团队分工\n', '| 角色 | 核心职责 | 适用项目 |', '|------|----------|---------|']
+        for agent in self.TEAM_AGENTS:
+            agent_path = os.path.join(agents_dir, f'{agent}.md')
+            if os.path.exists(agent_path):
+                with open(agent_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+
+                # 解析角色名（第一行 # xxx（xxx））
+                name_cn = ''
+                first_line = content.split('\n')[0].strip()
+                if first_line.startswith('#'):
+                    parts = first_line.lstrip('#').strip().split('（')
+                    if len(parts) == 2:
+                        name_cn = parts[0].strip()
+
+                # 解析角色定位（从 blockquote）
+                role_desc = ''
+                for line in content.split('\n')[:10]:
+                    if line.startswith('>') and '角色定位' in line:
+                        role_desc = line.split('角色定位：')[-1].strip().rstrip('>')
+                        break
+
+                # 解析适用项目
+                applicable = ''
+                for line in content.split('\n')[:10]:
+                    if line.startswith('>') and '适用项目' in line:
+                        applicable = line.split('适用项目：')[-1].strip().rstrip('>')
+                        break
+
+                role_name = name_cn or agent
+                lines.append(f'| {role_name} | {role_desc} | {applicable} |')
+
+        return '\n'.join(lines)
+
     def _get_template_replacements(self):
         """获取模板占位符替换字典"""
         project_type_label = self.TEMPLATE_LABELS.get(

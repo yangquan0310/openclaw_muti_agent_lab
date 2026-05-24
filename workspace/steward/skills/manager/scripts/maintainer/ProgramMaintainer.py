@@ -23,6 +23,14 @@ class ProgramMaintainer(BaseMaintainer):
     # ──────────────────────────────
     PROJECT_TYPE = 'program'
 
+    TEAM_AGENTS = [
+        'architect',
+        'developer',
+        'product-manager',
+        'reviewer',
+        'steward',
+    ]
+
     EXTRA_DIRS = [
         'agents',
         'src',
@@ -69,14 +77,16 @@ class ProgramMaintainer(BaseMaintainer):
         return {'title': '', 'content': ''}
 
     def _get_readme_custom_content(self):
-        """README.md 个性内容"""
-        return '''
+        """README.md 个性内容（包含开发流程 + 团队分工）"""
+        workflow = '''
 ## 开发流程
 
 ```
 需求分析 → 设计 → 编码 → 测试 → 部署
 ```
 '''
+        team_table = self._generate_team_division_table()
+        return workflow + '\n' + team_table
 
     def _get_skill_custom_content(self):
         """HANDBOOK.md 个性内容"""

@@ -23,6 +23,14 @@ class CourseMaintainer(BaseMaintainer):
     # ──────────────────────────────
     PROJECT_TYPE = 'course'
 
+    TEAM_AGENTS = [
+        'instructor',
+        'psychologist',
+        'presenter',
+        'auditor',
+        'steward',
+    ]
+
     EXTRA_DIRS = [
         'syllabus',
         'chapters',
@@ -65,14 +73,16 @@ class CourseMaintainer(BaseMaintainer):
         return {'title': '', 'content': ''}
 
     def _get_readme_custom_content(self):
-        """README.md 个性内容"""
-        return '''
+        """README.md 个性内容（包含流程 + 团队分工）"""
+        workflow = '''
 ## 备课流程
 
 ```
 v1(需求分析) → v2(内容框架) → v3(学术前沿) → v4(课件脚本) → v5(审校) → v6(终稿) → v7(收工)
 ```
 '''
+        team_table = self._generate_team_division_table()
+        return workflow + '\n' + team_table
 
     def _get_skill_custom_content(self):
         """HANDBOOK.md 个性内容"""

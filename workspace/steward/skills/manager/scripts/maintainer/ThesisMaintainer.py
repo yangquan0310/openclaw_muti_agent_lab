@@ -25,6 +25,15 @@ class ThesisMaintainer(BaseMaintainer):
     # ──────────────────────────────
     PROJECT_TYPE = 'thesis'
 
+    TEAM_AGENTS = [
+        'mathematician',
+        'physicist',
+        'psychologist',
+        'writer',
+        'reviewer',
+        'steward',
+    ]
+
     EXTRA_DIRS = [
         'knowledge',
         'knowledge/note',
@@ -119,14 +128,16 @@ class ThesisMaintainer(BaseMaintainer):
         return {'title': '', 'content': ''}
 
     def _get_readme_custom_content(self):
-        """README.md 个性内容"""
-        return '''
+        """README.md 个性内容（包含工作流 + 团队分工）"""
+        workflow = '''
 ## 论文工作流
 
 ```
 开题报告 → 文献综述 → 研究设计 → 数据收集 → 论文撰写 → 审稿修改 → 定稿
 ```
 '''
+        team_table = self._generate_team_division_table()
+        return workflow + '\n' + team_table
 
     def _get_skill_custom_content(self):
         """HANDBOOK.md 个性内容"""
@@ -253,7 +264,7 @@ ch{两位数字} v{轮次}: {简要说明}
 
         loaded = []
 
-        # 加载角色模板到 .agentsagents/
+        # 加载角色模板到 .agents/agents/
         agents_src = os.path.join(assets_dir, "agents")
         agents_dst = os.path.join(self.project_path, ".agents", "agents")
         if os.path.exists(agents_src):
@@ -265,7 +276,7 @@ ch{两位数字} v{轮次}: {简要说明}
                         if not dry_run:
                             os.makedirs(agents_dst, exist_ok=True)
                             shutil.copy2(src, dst)
-                        loaded.append(f".agentsagents/{filename}")
+                        loaded.append(f".agents/agents/{filename}")
 
         return loaded
 
