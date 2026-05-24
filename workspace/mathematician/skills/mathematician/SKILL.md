@@ -1,125 +1,29 @@
 ---
 name: mathematician
 description: >
-  mathematician的实践技能。
-  当需要进行数学建模、微分方程求解、优化问题、统计分析、假设检验、回归分析、时间序列分析、算法复杂度分析、数值计算、证明验证、数据可视化时激活。
-  负责数学分析与统计建模。
-version: 1.1.0
-author: Yang Quan
-metadata:
-  openclaw:
-    emoji: 🔢
-    requires:
-      bins: ["python3"]
+  mathematician 技能的参考资料索引。
 ---
 
-# Mathematician: 数学分析与统计建模
+## 命令行（CLI）
 
-> 数学不说谎。数学推导是最终的真理检验。
+```bash
+# 构建索引（references 文档有更新时执行）
+lookup index -r /root/.openclaw/workspace/mathematician/skills/mathematician/references -m /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json -c /root/.openclaw/workspace/mathematician/skills/mathematician/index/chunks.json
 
----
+# 搜索
+lookup search -i /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json <关键词>
 
-## 核心原则
+# 列出已索引文件
+lookup list -i /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json
+```
 
-1. **先假设后验证**：任何结论必须有数学推导支撑
-2. **量纲检查**：所有计算必须先检查量纲一致性
-3. **误差传播**：数值结果必须报告不确定度
-4. **可视化验证**：数据必须画图确认模式
-5. **文献检索必须使用文献检索工具**：不能编造假文献
-6. **数学证明必须严谨**：每一步推导都要逻辑严密，不能跳过关键步骤
+## 索引文件
 
----
-
-## 边界条件
-
-### 能做什么
-
-| 领域 | 说明 |
-|------|------|
-| 数学建模 | 微分方程、优化问题、统计模型 |
-| 统计分析 | 假设检验、回归分析、时间序列 |
-| 算法设计 | 复杂度分析、数值算法 |
-| 数值计算 | 精确数值模拟和计算 |
-| 证明验证 | 数学定理和推导验证 |
-| 数据可视化 | 统计图表和数学图形 |
-
-### 不能做什么
-
-| 领域 | 说明 |
-|------|------|
-| ❌ 物理机制解释 | 不提供物理过程的深层机制解释 |
-| ❌ 心理现象解释 | 不提供心理过程的主观体验解释 |
-| ❌ 文学创作 | 不进行文学性表达和修辞创作 |
-| ❌ 文档管理 | 不负责文档的组织和归档 |
-
----
-
-## 快速调用
-
-| 命令 | 说明 |
-|------|------|
-| `python3 scripts/calculate.py --help` | 计算工具帮助（基本运算、矩阵、微积分、求根） |
-| `python3 scripts/statistics.py --help` | 统计工具帮助（描述统计、假设检验、回归） |
-| `python3 scripts/visualize.py --help` | 可视化工具帮助（函数图、散点图、直方图） |
-| `cd scripts && python3 -m lookup --list` | 列出所有可用工具 |
-| `cd scripts && python3 -m lookup --search <关键词>` | 搜索相关工具 |
-| `cd scripts && python3 -m lookup --info <工具名>` | 查看工具详情 |
-
----
-
-## 指南导航
-
-| 指南 | 位置 | 说明 |
-|------|------|------|
-| 使用指南 | [references/guide.md](references/guide.md) | 技能使用说明、工作流程、工具示例 |
-| 数学工具 | [guides/math-tools.md](guides/math-tools.md) | 数值计算、矩阵运算、微积分、算法复杂度 |
-| 统计指南 | [guides/statistics.md](guides/statistics.md) | 描述统计、假设检验、回归分析、时间序列 |
-| 概念写作 | [guides/concept-writing-guide.md](guides/concept-writing-guide.md) | 数学概念文档的撰写规范 |
-| 模板 | [assets/templates/](assets/templates/) | 报告模板、公式模板 |
-
----
-
-## 触发条件
-
-当用户提到以下关键词时触发：
-
-**数学建模相关**
-- 数学建模、微分方程、偏微分方程、常微分方程
-- 优化问题、线性规划、非线性规划、动态规划
-- 随机过程、随机微分方程
-
-**统计分析相关**
-- 统计分析、假设检验、回归分析
-- 时间序列、ARIMA、预测模型
-- 方差分析、协方差分析
-
-**算法与计算相关**
-- 算法复杂度、大O表示法、复杂度分析
-- 数值计算、数值模拟、数值积分
-- 插值、拟合、求根
-
-**证明与推导相关**
-- 数学证明、定理验证
-- 推导验证、公式推导
-
-**可视化相关**
-- 数据可视化、统计图表
-- 数学函数绘图
-
----
-
-## 快速开始
-
-1. **明确问题类型**：确定是建模、统计、计算还是证明
-2. **选择方法**：参考指南选择合适的数学方法
-3. **执行计算**：使用脚本或直接计算
-4. **验证结果**：检查量纲、一致性、可视化验证
-
----
+- manifest: `/root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json`
+- chunks: `/root/.openclaw/workspace/mathematician/skills/mathematician/index/chunks.json`
 
 ## 版本历史
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
-| 1.1.0 | 2026-05-23 | 增加边界条件章节，对齐实践技能体系规范 |
-| 1.0.0 | 2026-05-23 | 初始版本 |
+| 1.0.0 | 2026-05-24 | 初始版本 |
