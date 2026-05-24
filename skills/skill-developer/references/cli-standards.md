@@ -1,10 +1,10 @@
 # CLI 规范
 
-> 所有技能必须提供命令行入口，格式统一为 `{技能名} {模块} {方法} {参数}`。
+> 所有技能必须提供命令行入口，格式统一，结构可预期。
 
 ---
 
-## 格式规范
+## 一、格式规范
 
 ### 标准格式
 
@@ -12,44 +12,52 @@
 {技能名} {模块} [子模块] [方法] [参数...]
 ```
 
-| 组成部分 | 规范 | 示例 |
+| 组成部分 | 要求 | 说明 |
 |----------|------|------|
-| **技能名** | 必须与 `project.name` 完全一致，全小写，禁止大写/驼峰 | `fortunetelling` |
-| **模块** | 顶层功能分组，全小写 | `bazi`、`calculate`、`maintainer` |
-| **子模块** | 可选，模块内的子功能 | `basic`（在 calculate 下） |
-| **方法** | 可选，具体操作或算法 | `add`、`inverse` |
-| **参数** | 位置参数在前，选项参数在后 | `1990 5 15 10 --gender 男` |
+| **技能名** | 必须与 `project.name` 完全一致，**全小写** | 大写/驼峰违反 Shell 命令规范 |
+| **模块** | 顶层功能分组，**全小写**，一个技能 1-5 个模块 | 按功能自然划分，非堆砌 |
+| **子模块** | 可选，模块内再细分，**全小写** | 层次过深（>2层）说明模块划分有问题 |
+| **方法** | 可选，具体操作，**全小写** | 无方法时模块即操作 |
+| **参数** | 位置参数在前，选项参数在后，`--` 引导 | 选项名**全小写** |
 
-### 错误示例
+### 命名禁令
 
 ```bash
-# ❌ 技能名大写
+# ❌ 大写技能名
 FortuneTelling bazi 1990 5 15
 
-# ❌ 子命令大写
-fortunetelling Bazi 1990 5 15
-
-# ❌ 驼峰子命令
+# ❌ 驼峰/中划线子命令
 fortunetelling calculateMatrix
-
-# ❌ 中划线（shell 会报错）
 fortunetelling lunar-convert
+
+# ❌ 大写选项
+fortunetelling bazi 1990 5 15 --Gender 男
 ```
+
+### 选项设计原则
+
+- 布尔标志用 `--flag`（无值），状态用 `--key value`
+- 选项名尽量**短**（1-2词），全小写
+- **禁止**缩写歧义选项（如 `-t` 既 `--type` 又 `--title`）
 
 ---
 
-## CLI 实现方式
+## 二、实现方式
 
-当前有 **3 种实现方式**，优先级顺序：
+有 3 种实现方式，按复杂度选用：
 
-### 方式 1：Shell Wrapper → main.py（推荐）
-
-通过 `/usr/local/bin/{技能名}` wrapper 调用 `scripts/main.py`，由 main.py 分发到各模块。
+### 方式 1：单脚本（单模块技能）
 
 ```
-/usr/local/bin/fortunetelling  →  scripts/main.py  →  bazi / lunar / fate
-/usr/local/bin/physicist       →  scripts/main.py  →  calculate / visualize
-/usr/local/bin/mathematician   →  scripts/main.py  →  calculate / statistics / visualize
+scripts/main.py  →  直接实现全部功能
+```
+
+适用于功能简单、无需子命令分发的技能。
+
+### 方式 2：Shell Wrapper + main.py 分发（推荐）
+
+```
+/usr/local/bin/{技能名}  →  scripts/main.py  →  各模块
 ```
 
 wrapper 写法：
@@ -58,240 +66,91 @@ wrapper 写法：
 exec python3 /path/to/skills/{skill}/scripts/main.py "$@"
 ```
 
-### 方式 2：Shell Wrapper → 独立脚本（单模块技能）
+main.py 路由格式：
+```python
+def main() -> int:
+    subcmd = sys.argv[1] if len(sys.argv) > 1 else "help"
+    del sys.argv[1]
 
-wrapper 直接指向单模块脚本（无 main.py 分发）。
-
-```
-/usr/local/bin/reviewer  →  scripts/review_checklist.py
-/usr/local/bin/writer     →  scripts/selfcheck.py
+    if subcmd == "模块A":
+        return 模块A_main()
+    elif subcmd == "模块B":
+        return 模块B_main()
+    else:
+        print_help()
+        return 1
 ```
 
 ### 方式 3：带子包的 main.py
 
-presenter 的 main.py 在 `scripts/ppt/main.py`，wrapper 指向它。
-
+`scripts/` 下有子包时，wrapper 指向子包的 main.py：
 ```
-/usr/local/bin/presenter  →  scripts/ppt/main.py  →  list / extend / compile
+scripts/ppt/main.py  →  list / extend / compile
 ```
 
 ---
 
-## entry_points 声明（TODO）
+## 三、SKILL.md 声明规范
 
-所有技能应在 `pyproject.toml` 中声明 `entry_points`，实现 `skill-developer init` 后可自动生成：
-
-```toml
-[project.scripts]
-fortunetelling = "scripts.main:main"
-mathematician = "scripts.main:main"
-physicist = "scripts.main:main"
-reviewer = "scripts.main:review_checklist_main"
-writer = "scripts.main:selfcheck_main"
-manager = "scripts.main:main"
-presenter = "scripts.ppt.main:main"
-```
-
-> 当前状态：均未配置 pyproject.toml，依赖 /usr/local/bin/ wrapper 临时解决。
-
----
-
-## CLI 声明（SKILL.md）
-
-每个技能的 SKILL.md 必须在 `## 命令行（CLI）` 或 `## 快速调用` 章节中声明 CLI，格式如下：
+每个技能的 SKILL.md 必须包含 `## 快速调用` 章节，格式：
 
 ```markdown
-## 命令行（CLI）
+## 快速调用
 
 ```bash
-# 技能说明
+# 功能说明
 {技能名} {模块} [参数...]
+
+# 功能说明
 {技能名} {模块} {子模块} [参数...]
 ```
 ```
 
----
-
-## 技能名 模块 方法 参数（参考表）
-
-> 用于快速查阅各技能的 CLI 结构。空格分隔，`<>` 包裹必选参数，`[]` 包裹可选。
-
-### fortunetelling
-
-| 技能名 | 模块 | 方法 | 参数 |
-|--------|------|------|------|
-| fortunetelling | bazi | — | `<year> <month> <day> <hour> [--gender 男\|女]` |
-| fortunetelling | lunar | — | `<year> <month> <day> <hour>` |
-| fortunetelling | fate | — | `<year> <month> <day> <hour> [--gender 男\|女] [--type timing]` |
-
-```bash
-fortunetelling bazi 1990 5 15 10 --gender 男
-fortunetelling lunar 1990 4 15 10
-fortunetelling fate 1990 5 15 10 --gender 男 --type timing
-```
-
-### mathematician
-
-| 技能名 | 模块 | 子模块 | 方法 | 参数 |
-|--------|------|--------|------|------|
-| mathematician | calculate | basic | — | `<a> <b> <add\|sub\|mul\|div\|pow\|mod>` |
-| mathematician | calculate | matrix | — | `--A <json> [--B <json>] --op <transpose\|inverse\|det\|eigen\|multiply\|add\|subtract>` |
-| mathematician | calculate | integrate | — | `--func <expr> --a <float> --b <float> [--method quad\|simpson\|trapezoid]` |
-| mathematician | calculate | ode | — | `--func <expr> --y0 <json> --t0 <float> --t1 <float> [--method RK45]` |
-| mathematician | calculate | root | — | `--func <expr> --x0 <json> [--method bisection\|newton\|brentq\|fsolve]` |
-| mathematician | calculate | interp | — | `--x <floats> --y <floats> --xe <floats> [--method linear\|cubic]` |
-| mathematician | statistics | describe | — | `--data <floats>` |
-| mathematician | visualize | function | — | `--func <expr> --xmin <float> --xmax <float>` |
-
-```bash
-mathematician calculate basic 1 2 add
-mathematician calculate matrix --A '[[1,2],[3,4]]' --op inverse
-mathematician calculate integrate --func 'x**2' --a 0 --b 1
-mathematician statistics describe --data 1,2,3,4,5
-mathematician visualize function --func 'x**2' --xmin -10 --xmax 10
-```
-
-### physicist
-
-| 技能名 | 模块 | 子模块 | 方法 | 参数 |
-|--------|------|--------|------|------|
-| physicist | calculate | basic | — | `<a> <b> <add\|sub\|mul\|div\|pow>` |
-| physicist | calculate | matrix | — | `--A <json> --op <det\|inv\|eig\|trace\|norm>` |
-| physicist | calculate | integrate | — | `--func <expr> --a <float> --b <float> [--method quad\|trapz]` |
-| physicist | calculate | ode | — | `--func <expr> --y0 <json> --t0 <float> --t1 <float> [--method RK45]` |
-| physicist | visualize | function | — | `--func <expr> --x0 <float> --x1 <expr> [--title <str>]` |
-| physicist | visualize | phase | — | `--func <expr> --y0 <json> --t0 <float> --t1 <float>` |
-| physicist | visualize | field | — | `--potential <expr> --x-range <json> --y-range <json>` |
-| physicist | visualize | surface | — | `--func <expr> --x-range <json> --y-range <json>` |
-
-```bash
-physicist calculate basic 10 5 add
-physicist calculate matrix --A '[[1,2],[3,4]]' --op det
-physicist calculate integrate --func 'x**2' --a 0 --b 1
-physicist visualize function --func 'np.sin(x)' --x0 0 --x1 '2*np.pi'
-physicist visualize phase --func '[y[1],-y[0]]' --y0 '[[0,1],[0,2]]' --t0 0 --t1 20
-physicist visualize field --potential '1/np.sqrt(x**2+y**2)' --x-range '[-3,3]' --y-range '[-3,3]'
-```
-
-### reviewer
-
-| 技能名 | 模块 | 方法 | 参数 |
-|--------|------|------|------|
-| reviewer | review | — | `--type <thesis\|journal\|opensource\|course\|proposal> [--output <path>] [paper]` |
-
-```bash
-reviewer review --type thesis paper.pdf
-reviewer review -t journal paper.pdf --output review.md
-```
-
-### writer
-
-| 技能名 | 模块 | 方法 | 参数 |
-|--------|------|------|------|
-| writer | selfcheck | — | `--file <path> [--level <sentence\|paragraph\|chapter\|all>]` |
-
-```bash
-writer selfcheck --file essay.md
-writer selfcheck --file essay.md --level sentence
-```
-
-### manager
-
-| 技能名 | 模块 | 子模块 | 方法 | 参数 |
-|--------|------|--------|------|------|
-| manager | init | — | — | `<path> --type thesis\|course\|program` |
-| manager | organize | — | — | `[<project_path>] [--dry-run]` |
-| manager | sync | — | — | `[<project_path>] [--dry-run]` |
-| manager | check-updates | — | — | `[<project_path>]` |
-
-```bash
-# 初始化新项目
-manager init /root/data/disk/仓库/my-project --type thesis
-
-# 整理项目文件
-manager organize /root/data/disk/仓库/my-project
-manager organize --dry-run
-
-# 同步模板
-manager sync /root/data/disk/仓库/my-project
-
-# 检查更新
-manager check-updates /root/data/disk/仓库/my-project
-```
-
-### presenter
-
-| 技能名 | 模块 | 方法 | 参数 |
-|--------|------|------|------|
-| presenter | list | — | `--template <name>` |
-| presenter | extend | — | `--template <name> --add <layout1> <layout2>...` |
-| presenter | compile | — | `--input <script.md> --output <out.pptx> --template <name>` |
-
-```bash
-presenter list --template template
-presenter extend --template template --add timeline flowchart
-presenter compile --input script.md --output out.pptx --template template
-```
+**原则**：
+- 必选参数用具体值示例，可选参数用 `[...]` 包裹
+- 每个命令前应有简短说明
+- 只写**常用命令**，不堆砌所有变体
 
 ---
 
-## lookup 命令规范（lookup!）
+## 四、CLI 表格式（规范说明，非命令堆砌）
 
-`lookup` 是 OpenClaw 内置工具，通过 `SKILL.md` 引用时使用 `lookup!` 标记。
+| 规范项 | 要求 |
+|--------|------|
+| 命令数 | 一个技能不超过 **7 个**顶层命令（含子模块命令） |
+| 层次深度 | `{技能} {模块} {子模块}` 最多 **3 层**，超过说明设计有问题 |
+| 选项数 | 单个命令选项不超过 **5 个**，超过说明命令职责不清 |
+| 布尔标志 | 优先使用 `--flag` 而非 `--flag true/false` |
 
-```markdown
-### lookup! 搜索
+---
 
-\`\`\`bash
+## 五、entry_points 声明
+
+技能应在 `pyproject.toml` 中声明 `entry_points`，实现全局命令：
+
+```toml
+[project.scripts]
+{技能名} = "scripts.main:main"
+```
+
+声明后 `pip install -e .` 或 `pnpm add -g` 可自动生成命令。不依赖 wrapper。
+
+---
+
+## 六、lookup 命令
+
+`lookup` 是 OpenClaw 内置工具，不在 `scripts/` 中实现。
+
+SKILL.md 中的 lookup 索引写法：
+```bash
+# 构建索引
 lookup index -r <references_path> -m <manifest_path> -c <chunks_path>
+
+# 搜索
 lookup search -i <manifest_path> <关键词>
+
+# 列出
 lookup list -i <manifest_path>
-\`\`\`
-```
-
-**注意**：`lookup` 不是技能脚本，不需要在 `scripts/` 中实现。
-
----
-
-## 子命令路由规范（main.py）
-
-多模块技能必须使用 `main.py` 统一分发：
-
-```python
-#!/usr/bin/env python3
-"""技能名 CLI 统一入口。"""
-
-import sys
-from pathlib import Path
-
-_SKILL_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_SKILL_ROOT))
-
-from scripts.模块A import main as 模块A_main
-from scripts.模块B import main as 模块B_main
-
-
-def main() -> int:
-    if len(sys.argv) < 2:
-        print_help()
-        return 0
-
-    subcmd = sys.argv[1]
-    del sys.argv[1]          # 必须删除子命令本身
-
-    if subcmd == "模块A":
-        sys.argv[0] = "<技能名> 模块A"
-        return 模块A_main()
-    elif subcmd == "模块B":
-        sys.argv[0] = "<技能名> 模块B"
-        return 模块B_main()
-    else:
-        print(f"Error: 未知子命令 '{subcmd}'")
-        return 1
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
 ```
 
 ---
