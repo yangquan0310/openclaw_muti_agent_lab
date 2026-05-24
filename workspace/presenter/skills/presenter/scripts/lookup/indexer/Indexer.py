@@ -208,8 +208,8 @@ def build_chunks(references_dir: Path, manifest: dict[str, Any]) -> list[dict[st
 def main():
     """主入口"""
     # 获取 skill 根目录
-    script_dir = Path(__file__).parent
-    skill_dir = script_dir.parent.parent
+    script_dir = Path(__file__).parent.parent
+    skill_dir = script_dir.parent
     references_dir = skill_dir / "references"
     output_dir = script_dir / "index"
     

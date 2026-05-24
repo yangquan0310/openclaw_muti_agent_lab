@@ -217,8 +217,8 @@ def main():
     args = parser.parse_args()
     
     # 获取 skill 目录
-    script_dir = Path(__file__).parent
-    skill_dir = script_dir.parent.parent
+    script_dir = Path(__file__).parent.parent
+    skill_dir = script_dir.parent
     
     # 检查索引
     index_dir = script_dir / "index"
