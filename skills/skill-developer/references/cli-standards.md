@@ -199,20 +199,24 @@ writer selfcheck --file essay.md --level sentence
 
 | 技能名 | 模块 | 子模块 | 方法 | 参数 |
 |--------|------|--------|------|------|
-| manager | maintainer | organize | — | `[<project_path>] [--all] [--dry-run] [--projects-dir <path>]` |
-| manager | maintainer | sync-templates | — | `[<project_path>] [--all] [--dry-run]` |
-| manager | maintainer | check-updates | — | `[<project_path>] [--all] [--projects-dir <path>]` |
-| manager | maintainer | maintain | — | `[<project_path>] [--all] [--dry-run]` |
-| manager | maintainer | move | — | `<project_path> <file> <target> [--new-name <name>] [--overwrite]` |
-| manager | maintainer | meta | — | `<project_path> [--show] [--title <title>] [--tags <tags>] [...]` |
+| manager | init | — | — | `<path> --type thesis\|course\|program` |
+| manager | organize | — | — | `[<project_path>] [--dry-run]` |
+| manager | sync | — | — | `[<project_path>] [--dry-run]` |
+| manager | check-updates | — | — | `[<project_path>]` |
 
 ```bash
-manager maintainer organize /root/data/disk/仓库/my-project
-manager maintainer organize --all --dry-run
-manager maintainer sync-templates /root/data/disk/仓库/my-project
-manager maintainer check-updates /root/data/disk/仓库/my-project
-manager maintainer meta /root/data/disk/仓库/my-project --show
-manager maintainer meta /root/data/disk/仓库/my-project --title "新标题" --tags "AI,Python"
+# 初始化新项目
+manager init /root/data/disk/仓库/my-project --type thesis
+
+# 整理项目文件
+manager organize /root/data/disk/仓库/my-project
+manager organize --dry-run
+
+# 同步模板
+manager sync /root/data/disk/仓库/my-project
+
+# 检查更新
+manager check-updates /root/data/disk/仓库/my-project
 ```
 
 ### presenter
