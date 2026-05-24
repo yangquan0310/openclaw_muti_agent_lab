@@ -12,9 +12,6 @@ dependencies = [
     "beautifulsoup4>=4.12",
 ]
 
-[project.scripts]
-research-assistant = "scripts.main:main"
-
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["scripts*"]

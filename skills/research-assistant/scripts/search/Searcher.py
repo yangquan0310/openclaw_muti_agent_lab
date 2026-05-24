@@ -102,6 +102,9 @@ class Searcher:
         all_new_papers = []
 
         for topic, conditions in queries.items():
+            if topic.startswith("_"):
+                # 跳过元信息键（如 _schema、_说明）
+                continue
             print(f"\n【主题: {topic}】")
             for idx, cond in enumerate(conditions, 1):
                 query = cond.get('query')

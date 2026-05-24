@@ -94,28 +94,33 @@ skill-developer init my-skill "我的新技能" --emoji 📦
 lark-cli im +messages-send --user-id ou_xxx --text "hello"
 ```
 
-### pyproject.toml 必须包含 entry_points
+### 入口方式：shell wrapper（推荐）
 
-每个技能必须声明 `project.scripts` 入口点，否则无法以命令方式调用：
-
-```toml
-[project.scripts]
-{技能名} = "{package}.{module}:main"
-
-# 示例（research-assistant）
-[project.scripts]
-research-assistant = "scripts.main:main"
-```
-
-安装方式：
+由于多个技能可能有同名 `scripts` 包，pip 的 `project.scripts` entry_points 会导致包名冲突。
+**推荐在 /usr/local/bin/ 创建 shell wrapper**：
 
 ```bash
-cd ~/.openclaw/skills/{skill-name}
-pip install -e .
-
-# 之后全局可用
-{skill-name} --help
+#!/bin/bash
+# /usr/local/bin/{技能名}
+exec python3 /root/.openclaw/skills/{skill-name}/scripts/main.py "$@"
 ```
+
+创建后：
+
+```bash
+chmod +x /usr/local/bin/{技能名}
+# 之后全局可用
+{技能名} --help
+{技能名} {子命令} --arg value
+```
+
+每次技能更新入口文件 `scripts/main.py` 后无需重新安装，shell wrapper 自动生效。
+
+### 注意事项
+
+- 必须包含 `sys.path.insert(0, str(Path(__file__).parent.parent))` 确保模块搜索路径正确
+- 主入口函数必须定义为 `main(argv=None) -> int`，支持 pip entry_points 和 shell wrapper 两种方式
+- `if __name__ == "__main__": sys.exit(main())` 放文件末尾
 
 ### 禁止形式
 
