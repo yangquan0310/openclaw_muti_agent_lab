@@ -175,3 +175,18 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/perfectionism|完美主义（Perfectionism）]]
+- [[concepts/psychological-resilience|心理弹性（Psychological Resilience）]]
+- [[concepts/self-compassion|自我同情（Self-Compassion）]]
+- [[concepts/self-control|自我控制（Self-Control）]]
+- [[concepts/fomo|错失焦虑（Fear of Missing Out, FoMO）]]
+
+### Related Pages
+
+- [[concepts/social-comparison|社会比较（Social Comparison）]]
+<!-- openclaw:wiki:related:end -->

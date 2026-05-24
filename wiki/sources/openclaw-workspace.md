@@ -88,6 +88,6 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
-- [[syntheses/2026-05-17-18-40-33-agent-memory|Agent Memory（智能体记忆系统）]]
+- [[syntheses/2026-05-17-18-40-33-如何设计agent-memory-智能体记忆系统|Agent Memory（智能体记忆系统）]]
 - [[sources/openclaw-system|openclaw-system]]
 <!-- openclaw:wiki:related:end -->

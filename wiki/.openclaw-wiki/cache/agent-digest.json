@@ -1,25 +1,1281 @@
 {
   "pageCounts": {
     "entity": 12,
-    "concept": 0,
+    "concept": 52,
     "source": 6,
-    "synthesis": 24,
-    "report": 19
+    "synthesis": 23,
+    "report": 20
   },
-  "claimCount": 2,
+  "claimCount": 16,
   "claimHealth": {
     "freshness": {
-      "fresh": 2,
+      "fresh": 16,
       "aging": 0,
       "stale": 0,
       "unknown": 0
     },
     "contested": 0,
     "lowConfidence": 0,
-    "missingEvidence": 0
+    "missingEvidence": 14
   },
   "contradictionClusters": [],
   "pages": [
+    {
+      "id": "concept.academic-procrastination",
+      "title": "学业拖延（Academic Procrastination）",
+      "kind": "concept",
+      "path": "concepts/academic-procrastination.md",
+      "aliases": [
+        "学业拖延行为",
+        "Academic Delay"
+      ],
+      "sourceIds": [
+        "source.错失焦虑与学业拖延_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.anger-rumination",
+      "title": "愤怒反刍（Anger Rumination）",
+      "kind": "concept",
+      "path": "concepts/anger-rumination.md",
+      "aliases": [
+        "愤怒反刍思维",
+        "Anger Rumination"
+      ],
+      "sourceIds": [
+        "source.领悟社会支持_文献综述补充"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.autobiographical-memory-function",
+      "title": "自传体记忆功能（Autobiographical Memory Function）",
+      "kind": "concept",
+      "path": "concepts/autobiographical-memory-function.md",
+      "aliases": [
+        "自传体记忆功能",
+        "Memory Function"
+      ],
+      "sourceIds": [
+        "source.数字化存储与自传体记忆_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.autobiographical-memory",
+      "title": "自传体记忆（Autobiographical Memory）",
+      "kind": "concept",
+      "path": "concepts/autobiographical-memory.md",
+      "aliases": [
+        "自传记忆",
+        "Autobiographical Memory"
+      ],
+      "sourceIds": [
+        "source.数字化存储与自传体记忆_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.buffering-hypothesis",
+      "title": "缓冲假设（Buffering Hypothesis）",
+      "kind": "concept",
+      "path": "concepts/buffering-hypothesis.md",
+      "aliases": [
+        "情绪稳定性缓冲假设",
+        "Emotional Stability Buffering Hypothesis"
+      ],
+      "sourceIds": [
+        "source.跨期选择的年龄差异_文献综述_v3"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.career-construction-theory",
+      "title": "职业建构理论（Career Construction Theory）",
+      "kind": "concept",
+      "path": "concepts/career-construction-theory.md",
+      "aliases": [
+        "职业建构",
+        "Career Construction"
+      ],
+      "sourceIds": [
+        "source.生成式AI创意工作者_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.cognitive-behavioral-therapy-for-insomnia",
+      "title": "失眠认知行为治疗（Cognitive Behavioral Therapy for Insomnia, CBT-I）",
+      "kind": "concept",
+      "path": "concepts/cognitive-behavioral-therapy-for-insomnia.md",
+      "aliases": [
+        "CBT-I",
+        "失眠认知行为疗法"
+      ],
+      "sourceIds": [
+        "source.负性思维与睡眠质量_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.cognitive-load",
+      "title": "认知负荷（Cognitive Load）",
+      "kind": "concept",
+      "path": "concepts/cognitive-load.md",
+      "aliases": [
+        "认知负荷理论",
+        "Cognitive Load Theory"
+      ],
+      "sourceIds": [
+        "source.课堂拍照行为_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.collective-memory",
+      "title": "集体记忆（Collective Memory）",
+      "kind": "concept",
+      "path": "concepts/collective-memory.md",
+      "aliases": [
+        "社会记忆",
+        "Social Memory"
+      ],
+      "sourceIds": [
+        "source.数字化存储与自传体记忆_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.common-factors-theory",
+      "title": "共同因素理论（Common Factors Theory）",
+      "kind": "concept",
+      "path": "concepts/common-factors-theory.md",
+      "aliases": [
+        "共同因素模型",
+        "Common Factors Model"
+      ],
+      "sourceIds": [
+        "source.心理治疗适宜性与治疗期待_研究现状"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.creative-worker",
+      "title": "创意工作者（Creative Worker）",
+      "kind": "concept",
+      "path": "concepts/creative-worker.md",
+      "aliases": [
+        "创意从业者",
+        "Cultural Labourer"
+      ],
+      "sourceIds": [
+        "source.生成式AI创意工作者_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.default-mode-network",
+      "title": "默认模式网络（Default Mode Network, DMN）",
+      "kind": "concept",
+      "path": "concepts/default-mode-network.md",
+      "aliases": [
+        "DMN",
+        "默认网络"
+      ],
+      "sourceIds": [
+        "source.负性思维与睡眠质量_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.delay-discounting",
+      "title": "延迟折扣（Delay Discounting）",
+      "kind": "concept",
+      "path": "concepts/delay-discounting.md",
+      "aliases": [
+        "时间折扣",
+        "Temporal Discounting"
+      ],
+      "sourceIds": [
+        "source.跨期选择的年龄差异_文献综述_v3"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.digital-memory",
+      "title": "数字记忆（Digital Memory）",
+      "kind": "concept",
+      "path": "concepts/digital-memory.md",
+      "aliases": [
+        "数字化存储",
+        "Digital Storage"
+      ],
+      "sourceIds": [
+        "source.数字化存储与自传体记忆_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.fomo",
+      "title": "错失焦虑（Fear of Missing Out, FoMO）",
+      "kind": "concept",
+      "path": "concepts/fomo.md",
+      "aliases": [
+        "错失恐惧",
+        "Fear of Missing Out"
+      ],
+      "sourceIds": [
+        "source.错失焦虑与学业拖延_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.generative-ai",
+      "title": "生成式人工智能（Generative AI）",
+      "kind": "concept",
+      "path": "concepts/generative-ai.md",
+      "aliases": [
+        "GenAI",
+        "生成式AI"
+      ],
+      "sourceIds": [
+        "source.生成式AI创意工作者_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.hyperarousal-model",
+      "title": "过度觉醒模型（Hyperarousal Model）",
+      "kind": "concept",
+      "path": "concepts/hyperarousal-model.md",
+      "aliases": [
+        "过度觉醒模型",
+        "失眠过度觉醒理论"
+      ],
+      "sourceIds": [
+        "source.负性思维与睡眠质量_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.influencer-marketing",
+      "title": "影响者营销（Influencer Marketing）",
+      "kind": "concept",
+      "path": "concepts/influencer-marketing.md",
+      "aliases": [
+        "KOL营销",
+        "网红营销"
+      ],
+      "sourceIds": [
+        "source.准社会关系对消费意愿的影响_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.intertemporal-choice",
+      "title": "跨期选择（Intertemporal Choice）",
+      "kind": "concept",
+      "path": "concepts/intertemporal-choice.md",
+      "aliases": [
+        "时间折扣",
+        "Delay Discounting"
+      ],
+      "sourceIds": [
+        "source.跨期选择的年龄差异_文献综述_v3"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.life-story-interview",
+      "title": "生命故事访谈法（Life Story Interview）",
+      "kind": "concept",
+      "path": "concepts/life-story-interview.md",
+      "aliases": [
+        "生命史访谈",
+        "Life History Interview"
+      ],
+      "sourceIds": [
+        "source.生成式AI创意工作者_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.meaning-making",
+      "title": "意义建构（Meaning-Making）",
+      "kind": "concept",
+      "path": "concepts/meaning-making.md",
+      "aliases": [
+        "意义赋予",
+        "Sensemaking"
+      ],
+      "sourceIds": [
+        "source.生成式AI创意工作者_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.memory-offloading",
+      "title": "记忆外包（Memory Offloading）",
+      "kind": "concept",
+      "path": "concepts/memory-offloading.md",
+      "aliases": [
+        "认知外包",
+        "Cognitive Offloading"
+      ],
+      "sourceIds": [
+        "source.数字化存储与自传体记忆_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.mobile-phone-policy",
+      "title": "手机政策（Mobile Phone Policy）",
+      "kind": "concept",
+      "path": "concepts/mobile-phone-policy.md",
+      "aliases": [
+        "手机使用政策",
+        "手机管理规定"
+      ],
+      "sourceIds": [
+        "source.课堂拍照行为_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.multitasking",
+      "title": "多任务行为（Multitasking Behavior）",
+      "kind": "concept",
+      "path": "concepts/multitasking.md",
+      "aliases": [
+        "多任务",
+        "Media Multitasking"
+      ],
+      "sourceIds": [
+        "source.课堂拍照行为_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.need-threat-model",
+      "title": "需求威胁模型（Need-Threat Model）",
+      "kind": "concept",
+      "path": "concepts/need-threat-model.md",
+      "aliases": [
+        "需求-威胁模型",
+        "排斥需求威胁模型"
+      ],
+      "sourceIds": [
+        "source.领悟社会支持_文献综述补充"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.occupational-self-efficacy",
+      "title": "职业自我效能（Occupational Self-Efficacy）",
+      "kind": "concept",
+      "path": "concepts/occupational-self-efficacy.md",
+      "aliases": [
+        "职业自我效验感",
+        "Vocational Self-Efficacy"
+      ],
+      "sourceIds": [
+        "source.生成式AI创意工作者_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.occupational-well-being",
+      "title": "职业幸福感（Occupational Well-Being）",
+      "kind": "concept",
+      "path": "concepts/occupational-well-being.md",
+      "aliases": [
+        "工作幸福感",
+        "Job Well-Being"
+      ],
+      "sourceIds": [
+        "source.生成式AI创意工作者_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.parasocial-relationship",
+      "title": "准社会关系（Parasocial Relationship）",
+      "kind": "concept",
+      "path": "concepts/parasocial-relationship.md",
+      "aliases": [
+        "准社会互动",
+        "Parasocial Interaction"
+      ],
+      "sourceIds": [
+        "source.准社会关系对消费意愿的影响_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.perceived-social-support",
+      "title": "领悟社会支持（Perceived Social Support）",
+      "kind": "concept",
+      "path": "concepts/perceived-social-support.md",
+      "aliases": [
+        "感知社会支持",
+        "Perceived Support"
+      ],
+      "sourceIds": [
+        "source.领悟社会支持_文献综述补充"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.perfectionism",
+      "title": "完美主义（Perfectionism）",
+      "kind": "concept",
+      "path": "concepts/perfectionism.md",
+      "aliases": [
+        "完美主义人格",
+        "Multidimensional Perfectionism"
+      ],
+      "sourceIds": [
+        "source.错失焦虑与学业拖延_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.photo-taking-impairment-effect",
+      "title": "拍照损害效应（Photo-Taking Impairment Effect）",
+      "kind": "concept",
+      "path": "concepts/photo-taking-impairment-effect.md",
+      "aliases": [
+        "拍照记忆损害效应",
+        "Photo-Taking Impairment"
+      ],
+      "sourceIds": [
+        "source.课堂拍照行为_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.psychological-resilience",
+      "title": "心理弹性（Psychological Resilience）",
+      "kind": "concept",
+      "path": "concepts/psychological-resilience.md",
+      "aliases": [
+        "心理韧性",
+        "Resilience"
+      ],
+      "sourceIds": [
+        "source.错失焦虑与学业拖延_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.rejection-sensitivity",
+      "title": "拒绝敏感性（Rejection Sensitivity）",
+      "kind": "concept",
+      "path": "concepts/rejection-sensitivity.md",
+      "aliases": [
+        "拒绝敏感度",
+        "Rejection Sensitivity"
+      ],
+      "sourceIds": [
+        "source.领悟社会支持_文献综述补充"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.repetitive-negative-thinking",
+      "title": "重复性消极思维（Repetitive Negative Thinking, RNT）",
+      "kind": "concept",
+      "path": "concepts/repetitive-negative-thinking.md",
+      "aliases": [
+        "重复性负性思维",
+        "RNT"
+      ],
+      "sourceIds": [
+        "source.负性思维与睡眠质量_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.rumination",
+      "title": "反刍思维（Rumination）",
+      "kind": "concept",
+      "path": "concepts/rumination.md",
+      "aliases": [
+        "重复性消极思维",
+        "Repetitive Negative Thinking (RNT)"
+      ],
+      "sourceIds": [
+        "source.负性思维与睡眠质量_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.self-compassion",
+      "title": "自我同情（Self-Compassion）",
+      "kind": "concept",
+      "path": "concepts/self-compassion.md",
+      "aliases": [
+        "自我慈悲",
+        "自我关怀",
+        "Self-Kindness"
+      ],
+      "sourceIds": [
+        "source.错失焦虑与学业拖延_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.self-continuity",
+      "title": "自我连续性（Self-Continuity）",
+      "kind": "concept",
+      "path": "concepts/self-continuity.md",
+      "aliases": [
+        "自我同一性",
+        "Self-Identity"
+      ],
+      "sourceIds": [
+        "source.跨期选择的年龄差异_文献综述_v3"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.self-control",
+      "title": "自我控制（Self-Control）",
+      "kind": "concept",
+      "path": "concepts/self-control.md",
+      "aliases": [
+        "自控力",
+        "自我调节",
+        "Self-Regulation"
+      ],
+      "sourceIds": [
+        "source.错失焦虑与学业拖延_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.self-determination-theory",
+      "title": "自我决定理论（Self-Determination Theory, SDT）",
+      "kind": "concept",
+      "path": "concepts/self-determination-theory.md",
+      "aliases": [
+        "自决理论",
+        "SDT"
+      ],
+      "sourceIds": [
+        "source.课堂拍照行为_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.sleep-quality",
+      "title": "睡眠质量（Sleep Quality）",
+      "kind": "concept",
+      "path": "concepts/sleep-quality.md",
+      "aliases": [
+        "睡眠",
+        "Sleep"
+      ],
+      "sourceIds": [
+        "source.负性思维与睡眠质量_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.social-comparison",
+      "title": "社会比较（Social Comparison）",
+      "kind": "concept",
+      "path": "concepts/social-comparison.md",
+      "aliases": [
+        "社会比较理论",
+        "Social Comparison Theory"
+      ],
+      "sourceIds": [
+        "source.错失焦虑与学业拖延_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.social-exclusion",
+      "title": "社会排斥（Social Exclusion）",
+      "kind": "concept",
+      "path": "concepts/social-exclusion.md",
+      "aliases": [
+        "社会拒绝",
+        "Ostracism"
+      ],
+      "sourceIds": [
+        "source.领悟社会支持_文献综述补充"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.socioemotional-selectivity-theory",
+      "title": "社会情绪选择理论（Socioemotional Selectivity Theory）",
+      "kind": "concept",
+      "path": "concepts/socioemotional-selectivity-theory.md",
+      "aliases": [
+        "SST",
+        "Social Emotional Selectivity Theory"
+      ],
+      "sourceIds": [
+        "source.跨期选择的年龄差异_文献综述_v3"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.stress-buffering-model",
+      "title": "压力缓冲模型（Stress-Buffering Model）",
+      "kind": "concept",
+      "path": "concepts/stress-buffering-model.md",
+      "aliases": [
+        "压力缓冲假说",
+        "Buffering Hypothesis"
+      ],
+      "sourceIds": [
+        "source.领悟社会支持_文献综述补充"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.thematic-analysis",
+      "title": "主题分析（Thematic Analysis）",
+      "kind": "concept",
+      "path": "concepts/thematic-analysis.md",
+      "aliases": [
+        "主题分析法",
+        "Thematic Analysis"
+      ],
+      "sourceIds": [
+        "source.生成式AI创意工作者_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.therapeutic-matching",
+      "title": "治疗匹配（Therapeutic Matching）",
+      "kind": "concept",
+      "path": "concepts/therapeutic-matching.md",
+      "aliases": [
+        "患者-治疗匹配",
+        "Patient-Treatment Matching"
+      ],
+      "sourceIds": [
+        "source.心理治疗适宜性与治疗期待_研究现状"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.transactive-memory-system",
+      "title": "交互记忆系统（Transactive Memory System, TMS）",
+      "kind": "concept",
+      "path": "concepts/transactive-memory-system.md",
+      "aliases": [
+        "交互记忆",
+        "Transactive Memory"
+      ],
+      "sourceIds": [
+        "source.数字化存储与自传体记忆_文献综述"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.treatment-expectation",
+      "title": "治疗期待（Treatment Expectation）",
+      "kind": "concept",
+      "path": "concepts/treatment-expectation.md",
+      "aliases": [
+        "治疗预期",
+        "Outcome Expectation"
+      ],
+      "sourceIds": [
+        "source.心理治疗适宜性与治疗期待_研究现状"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.treatment-preference",
+      "title": "治疗偏好（Treatment Preference）",
+      "kind": "concept",
+      "path": "concepts/treatment-preference.md",
+      "aliases": [
+        "治疗选择偏好",
+        "Treatment Choice"
+      ],
+      "sourceIds": [
+        "source.心理治疗适宜性与治疗期待_研究现状"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.working-alliance",
+      "title": "治疗联盟（Working Alliance）",
+      "kind": "concept",
+      "path": "concepts/working-alliance.md",
+      "aliases": [
+        "工作联盟",
+        "Therapeutic Alliance"
+      ],
+      "sourceIds": [
+        "source.心理治疗适宜性与治疗期待_研究现状"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.optimization-methodology",
+      "title": "最优化方法：函数逼近与响应面分析",
+      "kind": "concept",
+      "path": "concepts/最优化.md",
+      "aliases": [
+        "最优化",
+        "optimization",
+        "函数逼近",
+        "响应面分析",
+        "RSA",
+        "polynomial approximation"
+      ],
+      "sourceIds": [
+        "source.piaget-development-algorithm"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T11:02:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.category-theory-framework",
+      "title": "范畴论框架",
+      "kind": "concept",
+      "path": "concepts/范畴论.md",
+      "aliases": [
+        "范畴论",
+        "category theory",
+        "皮亚杰范畴论",
+        "同化顺应",
+        "assimilation accommodation"
+      ],
+      "sourceIds": [
+        "source.ch01-piaget-development-algorithm"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T11:02:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
     {
       "id": "entity.auditor",
       "title": "督导（Auditor）",
@@ -138,33 +1394,6 @@
       "privacyTier": "private",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-05-12T14:11:47.308Z",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "entity.openclaw-gateway",
-      "title": "OpenClaw 系统架构",
-      "kind": "entity",
-      "path": "entities/openclaw-gateway.md",
-      "aliases": [
-        "OpenClaw",
-        "网关"
-      ],
-      "sourceIds": [
-        "source.openclaw-docs",
-        "source.system-config"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "entity",
-      "entityType": "system",
-      "canonicalId": "openclaw.main.gateway",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-10T18:20:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -440,6 +1669,23 @@
       "topClaims": []
     },
     {
+      "id": "wangyaxin",
+      "title": "王雅欣 (Wang Yaxin)",
+      "kind": "entity",
+      "path": "entities/wangyaxin.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "entity.writer",
       "title": "写作助手（Writer）",
       "kind": "entity",
@@ -480,17 +1726,19 @@
       "topClaims": []
     },
     {
-      "id": "entity.yangquan0310",
+      "id": "entity.yangquan",
       "title": "杨权（实验室负责人）",
       "kind": "entity",
-      "path": "entities/yangquan0310.md",
+      "path": "entities/yangquan.md",
       "aliases": [
         "杨权",
         "老板",
         "实验室负责人"
       ],
       "sourceIds": [
-        "source.system-config"
+        "source.system-config",
+        "source.warehouse",
+        "source.yangquan-cv"
       ],
       "questions": [],
       "contradictions": [],
@@ -507,10 +1755,10 @@
       "topRelationships": [],
       "pageType": "entity",
       "entityType": "user",
-      "canonicalId": "user.yangquan0310",
+      "canonicalId": "user.yangquan",
       "privacyTier": "private",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T02:15:00+08:00",
+      "lastTouchedAt": "2026-05-23T19:15:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -718,7 +1966,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "lastTouchedAt": "2026-05-24T04:08:15.012Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -738,6 +1986,24 @@
       "pageType": "report",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.lint",
+      "title": "Lint Report",
+      "kind": "report",
+      "path": "reports/lint.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
       "claimCount": 0,
       "topClaims": []
     },
@@ -832,7 +2098,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "lastTouchedAt": "2026-05-24T04:08:15.012Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -870,7 +2136,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "lastTouchedAt": "2026-05-24T03:57:08.635Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1009,45 +2275,6 @@
       "topClaims": []
     },
     {
-      "title": "Agent Memory 设计哲学与架构",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-17-18-40-33-Agent-Memory-设计哲学与架构.md",
-      "aliases": [],
-      "sourceIds": [],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "freshnessLevel": "unknown",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "agent-memory",
-      "title": "Agent Memory（智能体记忆系统）",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-17-18-40-33-agent-memory.md",
-      "aliases": [],
-      "sourceIds": [
-        "syntheses/2026-05-21-10-42-53-memory.md",
-        "entities/openclaw-gateway.md",
-        "sources/openclaw-workspace.md"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-16T02:30",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
       "id": "synthesis.协作演化",
       "title": "从学生论文修改到项目管理体系的演化",
       "kind": "synthesis",
@@ -1072,87 +2299,15 @@
       "topClaims": []
     },
     {
-      "id": "concept.agents-template",
-      "title": "Agent 行为规范模板（AGENTS.md）",
+      "id": "agent-memory",
+      "title": "Agent Memory（智能体记忆系统）",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-agents.md",
-      "aliases": [
-        "AGENTS.md",
-        "Agent行为规范",
-        "技能转化规则"
-      ],
-      "sourceIds": [
-        "source.system-config"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concepts.bootstrap",
-      "title": "BOOTSTRAP Agent初始化模板",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-bootstrap.md",
-      "aliases": [
-        "BOOTSTRAP.md",
-        "初始化模板",
-        "Agent创建"
-      ],
-      "sourceIds": [
-        "source.system-config"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T08:24:00+08:00",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concept.course-project",
-      "title": "课程项目",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-course-project.md",
-      "aliases": [
-        "课程",
-        "course"
-      ],
-      "sourceIds": [
-        "source.system-config"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concepts.heartbeat",
-      "title": "HEARTBEAT 心跳任务模板",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-heartbeat.md",
+      "path": "syntheses/2026-05-17-18-40-33-如何设计agent-memory-智能体记忆系统.md",
       "aliases": [],
       "sourceIds": [
-        "source.system-config"
+        "syntheses/2026-05-21-10-42-53-memory.md",
+        "entities/openclaw-gateway.md",
+        "sources/openclaw-workspace.md"
       ],
       "questions": [],
       "contradictions": [],
@@ -1162,177 +2317,23 @@
       "topRelationships": [],
       "pageType": "concept",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T08:24:00+08:00",
+      "lastTouchedAt": "2026-05-16T02:30",
       "claimCount": 0,
       "topClaims": []
     },
     {
-      "id": "concept.identity-template",
-      "title": "IDENTITY 身份模板（IDENTITY.md）",
+      "title": "Agent Memory 设计哲学与架构",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-identity.md",
-      "aliases": [
-        "IDENTITY.md",
-        "身份模板",
-        "能力边界"
-      ],
-      "sourceIds": [
-        "source.system-config"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concept.if-then-rule-standard",
-      "title": "If-Then 规则修改标准",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-if-then-rule-standard.md",
+      "path": "syntheses/2026-05-17-18-40-33-如何设计agent-memory.md",
       "aliases": [],
-      "sourceIds": [
-        "source.workspace-steward"
-      ],
+      "sourceIds": [],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
       "notEnoughFor": [],
       "relationshipCount": 0,
       "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-18T11:44:00+08:00",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concept.repository",
-      "title": "仓库",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-repository.md",
-      "aliases": [
-        "repository",
-        "仓库",
-        "repository"
-      ],
-      "sourceIds": [
-        "source.system-config"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concept.soul-template",
-      "title": "SOUL 人格模板（SOUL.md）",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-soul.md",
-      "aliases": [
-        "SOUL.md",
-        "人格模板",
-        "灵魂文档"
-      ],
-      "sourceIds": [
-        "source.system-config"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-15T16:56:14.945Z",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concept.thesis-project",
-      "title": "论文项目",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-thesis-project.md",
-      "aliases": [
-        "论文项目",
-        "thesis"
-      ],
-      "sourceIds": [
-        "source.openclaw-readme"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concept.tools-template",
-      "title": "TOOLS 工具配置模板（TOOLS.md）",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-tools.md",
-      "aliases": [
-        "TOOLS.md",
-        "工具配置",
-        "工具索引"
-      ],
-      "sourceIds": [
-        "source.system-config"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concept.user-template",
-      "title": "USER 用户画像模板（USER.md）",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-19-18-25-37-user.md",
-      "aliases": [
-        "USER.md",
-        "用户画像",
-        "用户偏好"
-      ],
-      "sourceIds": [
-        "source.system-config"
-      ],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "pageType": "concept",
-      "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
+      "freshnessLevel": "unknown",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1358,10 +2359,275 @@
       "topClaims": []
     },
     {
+      "id": "concepts.bootstrap",
+      "title": "BOOTSTRAP Agent初始化模板",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何初始化agent.md",
+      "aliases": [
+        "BOOTSTRAP.md",
+        "初始化模板",
+        "Agent创建"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T08:24:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.agents-template",
+      "title": "Agent 行为规范模板（AGENTS.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何攥写agents配置文件.md",
+      "aliases": [
+        "AGENTS.md",
+        "Agent行为规范",
+        "技能转化规则"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.identity-template",
+      "title": "IDENTITY 身份模板（IDENTITY.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何攥写identity配置文件.md",
+      "aliases": [
+        "IDENTITY.md",
+        "身份模板",
+        "能力边界"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-23T14:06:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.if-then-rule-standard",
+      "title": "If-Then 规则修改标准",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何攥写if-then规则.md",
+      "aliases": [],
+      "sourceIds": [
+        "source.workspace-steward"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-18T11:44:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.soul-template",
+      "title": "SOUL 人格模板（SOUL.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何攥写soul配置文件.md",
+      "aliases": [
+        "SOUL.md",
+        "人格模板",
+        "灵魂文档"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-15T16:56:14.945Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.tools-template",
+      "title": "TOOLS 工具配置模板（TOOLS.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何攥写tools配置文件.md",
+      "aliases": [
+        "TOOLS.md",
+        "工具配置",
+        "工具索引"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.user-template",
+      "title": "USER 用户画像模板（USER.md）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何攥写user配置文件.md",
+      "aliases": [
+        "USER.md",
+        "用户画像",
+        "用户偏好"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T03:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.thesis-project",
+      "title": "论文项目",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何管理论文项目.md",
+      "aliases": [
+        "论文项目",
+        "thesis"
+      ],
+      "sourceIds": [
+        "source.openclaw-readme"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.course-project",
+      "title": "课程项目",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何管理课程项目.md",
+      "aliases": [
+        "课程",
+        "course"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.repository",
+      "title": "仓库",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何配置仓库.md",
+      "aliases": [
+        "repository",
+        "仓库",
+        "repository"
+      ],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T09:54:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concepts.heartbeat",
+      "title": "HEARTBEAT 心跳任务模板",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-19-18-25-37-如何配置心跳任务.md",
+      "aliases": [],
+      "sourceIds": [
+        "source.system-config"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-12T08:24:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "concept.program-project",
       "title": "程序项目",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-19-22-53-22-program-project.md",
+      "path": "syntheses/2026-05-19-22-53-22-如何管理程序项目.md",
       "aliases": [
         "程序",
         "program"
@@ -1385,7 +2651,7 @@
       "id": "concept.project",
       "title": "项目",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-19-22-53-22-project.md",
+      "path": "syntheses/2026-05-19-22-53-22-如何管理项目.md",
       "aliases": [
         "项目",
         "project"
@@ -1408,7 +2674,7 @@
     {
       "title": "三方协作实践：代理领取任务与执行流程",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-20-23-34-38-三方协作实践-代理领取任务与执行流程.md",
+      "path": "syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md",
       "aliases": [],
       "sourceIds": [],
       "questions": [],
@@ -1425,7 +2691,7 @@
       "id": "synthesis.教育科学研究方法-多代理协作总结",
       "title": "教育科学研究方法-多代理协作总结",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-20-23-47-31-教育科学研究方法-多代理协作总结.md",
+      "path": "syntheses/2026-05-20-23-47-31-教育科学研究方法-多代理如何协作.md",
       "aliases": [],
       "sourceIds": [
         "syntheses/教育科学研究方法-多代理协作总结.md"
@@ -1446,7 +2712,7 @@
       "id": "concept.memory-template",
       "title": "MEMORY 记忆模板（MEMORY.md）",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-21-10-42-53-memory.md",
+      "path": "syntheses/2026-05-21-10-42-53-如何攥写memory配置文件.md",
       "aliases": [
         "MEMORY.md",
         "记忆模板",
@@ -1468,9 +2734,9 @@
       "topClaims": []
     },
     {
-      "title": "多Agent管理与单Agent记忆进化体系",
+      "title": "如何用语音回复用户",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md",
+      "path": "syntheses/2026-05-23-23-50-00-如何用语音回复用户.md",
       "aliases": [],
       "sourceIds": [],
       "questions": [],
@@ -1484,35 +2750,13 @@
       "topClaims": []
     },
     {
-      "title": "认知范式与精细化注入词研究体系",
+      "id": "synthesis.团体心理辅导-樊富珉",
+      "title": "团体心理辅导-樊富珉",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md",
+      "path": "syntheses/团体心理辅导-樊富珉.md",
       "aliases": [],
-      "sourceIds": [],
-      "questions": [],
-      "contradictions": [],
-      "bestUsedFor": [],
-      "notEnoughFor": [],
-      "relationshipCount": 0,
-      "topRelationships": [],
-      "freshnessLevel": "unknown",
-      "claimCount": 0,
-      "topClaims": []
-    },
-    {
-      "id": "concept.category-theory-framework",
-      "title": "范畴论框架",
-      "kind": "synthesis",
-      "path": "syntheses/2026-05-23-10-30-00-category-theory-framework.md",
-      "aliases": [
-        "范畴论",
-        "category theory",
-        "皮亚杰范畴论",
-        "同化顺应",
-        "assimilation accommodation"
-      ],
       "sourceIds": [
-        "source.ch01-piaget-development-algorithm"
+        "deepseek_markdown_20260521_023f62---adf29835-aacd-4fd5-a224-c53cb7b2584a"
       ],
       "questions": [],
       "contradictions": [],
@@ -1520,27 +2764,126 @@
       "notEnoughFor": [],
       "relationshipCount": 0,
       "topRelationships": [],
-      "pageType": "concept",
+      "pageType": "synthesis",
+      "confidence": 0.95,
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T10:35:00+08:00",
-      "claimCount": 0,
-      "topClaims": []
+      "lastTouchedAt": "2026-05-24T03:57:08.172Z",
+      "claimCount": 8,
+      "topClaims": [
+        {
+          "text": "《团体心理辅导》由樊富珉、何瑾编著，华东师范大学出版社出版",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        },
+        {
+          "text": "团体发展经历初期阶段、转换阶段、工作阶段、结束阶段四个时期",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        },
+        {
+          "text": "团体辅导具有教育、发展、预防、治疗四大功能",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        },
+        {
+          "text": "团体辅导场所需满足舒适性、功能性、保密性、互动性、非干扰性五个要求",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        },
+        {
+          "text": "团体辅导常用技术包括倾听、复述、反映、澄清、提问、总结等",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        }
+      ]
     },
     {
-      "title": "最优化概念 — 亲子关系与友谊质量对焦虑共同作用研究",
+      "id": "synthesis.团体辅导方案写作规范",
+      "title": "团体辅导方案写作规范",
       "kind": "synthesis",
-      "path": "syntheses/2026-05-23-10-30-00-最优化概念-亲子关系与友谊质量对焦虑共同作用研究.md",
+      "path": "syntheses/团体辅导方案写作规范.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "团体心理辅导-樊富珉-2026-05-24"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
       "notEnoughFor": [],
       "relationshipCount": 0,
       "topRelationships": [],
-      "freshnessLevel": "unknown",
-      "claimCount": 0,
-      "topClaims": []
+      "pageType": "synthesis",
+      "confidence": 0.9,
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-24T04:08:14.609Z",
+      "claimCount": 6,
+      "topClaims": [
+        {
+          "text": "单元结构应包含暖身、主题、讨论、总结四个环节",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T04:08:14.609Z"
+        },
+        {
+          "text": "常用测量工具包括自我效能量表、人际交往能力问卷、情绪智力量表等",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T04:08:14.609Z"
+        },
+        {
+          "text": "效果评估应包含前测和后测量表对比",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T04:08:14.609Z"
+        },
+        {
+          "text": "每项活动应包含名称、目的、时间、规则四要素",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T04:08:14.609Z"
+        },
+        {
+          "text": "目标应包含认知、情感、行为三个维度",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T04:08:14.609Z"
+        }
+      ]
     }
   ]
 }

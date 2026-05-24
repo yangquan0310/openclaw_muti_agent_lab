@@ -170,3 +170,10 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/parasocial-relationship|准社会关系（Parasocial Relationship）]]
+<!-- openclaw:wiki:related:end -->

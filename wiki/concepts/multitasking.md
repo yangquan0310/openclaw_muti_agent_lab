@@ -173,3 +173,16 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/mobile-phone-policy|手机政策（Mobile Phone Policy）]]
+- [[concepts/cognitive-load|认知负荷（Cognitive Load）]]
+
+### Related Pages
+
+- [[concepts/photo-taking-impairment-effect|拍照损害效应（Photo-Taking Impairment Effect）]]
+- [[concepts/self-determination-theory|自我决定理论（Self-Determination Theory, SDT）]]
+<!-- openclaw:wiki:related:end -->

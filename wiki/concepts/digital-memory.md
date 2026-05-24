@@ -168,3 +168,17 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/transactive-memory-system|交互记忆系统（Transactive Memory System, TMS）]]
+- [[concepts/autobiographical-memory|自传体记忆（Autobiographical Memory）]]
+- [[concepts/memory-offloading|记忆外包（Memory Offloading）]]
+- [[concepts/collective-memory|集体记忆（Collective Memory）]]
+
+### Related Pages
+
+- [[concepts/autobiographical-memory-function|自传体记忆功能（Autobiographical Memory Function）]]
+<!-- openclaw:wiki:related:end -->

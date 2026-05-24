@@ -168,3 +168,18 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/socioemotional-selectivity-theory|社会情绪选择理论（Socioemotional Selectivity Theory）]]
+- [[concepts/autobiographical-memory|自传体记忆（Autobiographical Memory）]]
+- [[concepts/autobiographical-memory-function|自传体记忆功能（Autobiographical Memory Function）]]
+- [[concepts/intertemporal-choice|跨期选择（Intertemporal Choice）]]
+
+### Related Pages
+
+- [[concepts/delay-discounting|延迟折扣（Delay Discounting）]]
+- [[concepts/buffering-hypothesis|缓冲假设（Buffering Hypothesis）]]
+<!-- openclaw:wiki:related:end -->

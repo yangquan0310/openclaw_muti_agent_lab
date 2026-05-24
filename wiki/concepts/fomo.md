@@ -159,3 +159,19 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/multitasking|多任务行为（Multitasking Behavior）]]
+- [[concepts/academic-procrastination|学业拖延（Academic Procrastination）]]
+- [[concepts/perfectionism|完美主义（Perfectionism）]]
+- [[concepts/social-comparison|社会比较（Social Comparison）]]
+- [[concepts/self-control|自我控制（Self-Control）]]
+
+### Related Pages
+
+- [[concepts/psychological-resilience|心理弹性（Psychological Resilience）]]
+- [[concepts/self-compassion|自我同情（Self-Compassion）]]
+<!-- openclaw:wiki:related:end -->

@@ -168,3 +168,16 @@ SST预测：老年人感知时间有限→应更偏好即时收益→折扣率�
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/socioemotional-selectivity-theory|社会情绪选择理论（Socioemotional Selectivity Theory）]]
+
+### Related Pages
+
+- [[concepts/delay-discounting|延迟折扣（Delay Discounting）]]
+- [[concepts/self-continuity|自我连续性（Self-Continuity）]]
+- [[concepts/intertemporal-choice|跨期选择（Intertemporal Choice）]]
+<!-- openclaw:wiki:related:end -->

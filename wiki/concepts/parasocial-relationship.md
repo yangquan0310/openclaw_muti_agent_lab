@@ -156,3 +156,10 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/influencer-marketing|影响者营销（Influencer Marketing）]]
+<!-- openclaw:wiki:related:end -->

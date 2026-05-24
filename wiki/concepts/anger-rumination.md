@@ -170,3 +170,19 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/rumination|反刍思维（Rumination）]]
+- [[concepts/rejection-sensitivity|拒绝敏感性（Rejection Sensitivity）]]
+- [[concepts/social-exclusion|社会排斥（Social Exclusion）]]
+- [[concepts/repetitive-negative-thinking|重复性消极思维（Repetitive Negative Thinking, RNT）]]
+- [[concepts/perceived-social-support|领悟社会支持（Perceived Social Support）]]
+
+### Related Pages
+
+- [[concepts/stress-buffering-model|压力缓冲模型（Stress-Buffering Model）]]
+- [[concepts/need-threat-model|需求威胁模型（Need-Threat Model）]]
+<!-- openclaw:wiki:related:end -->

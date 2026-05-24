@@ -171,3 +171,18 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/fomo|错失焦虑（Fear of Missing Out, FoMO）]]
+
+### Related Pages
+
+- [[concepts/academic-procrastination|学业拖延（Academic Procrastination）]]
+- [[concepts/perfectionism|完美主义（Perfectionism）]]
+- [[concepts/psychological-resilience|心理弹性（Psychological Resilience）]]
+- [[concepts/self-compassion|自我同情（Self-Compassion）]]
+- [[concepts/self-control|自我控制（Self-Control）]]
+<!-- openclaw:wiki:related:end -->

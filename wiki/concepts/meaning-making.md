@@ -177,3 +177,19 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/creative-worker|创意工作者（Creative Worker）]]
+- [[concepts/generative-ai|生成式人工智能（Generative AI）]]
+- [[concepts/occupational-well-being|职业幸福感（Occupational Well-Being）]]
+- [[concepts/career-construction-theory|职业建构理论（Career Construction Theory）]]
+
+### Related Pages
+
+- [[concepts/thematic-analysis|主题分析（Thematic Analysis）]]
+- [[concepts/life-story-interview|生命故事访谈法（Life Story Interview）]]
+- [[concepts/occupational-self-efficacy|职业自我效能（Occupational Self-Efficacy）]]
+<!-- openclaw:wiki:related:end -->

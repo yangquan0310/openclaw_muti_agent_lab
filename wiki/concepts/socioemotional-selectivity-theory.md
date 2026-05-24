@@ -171,3 +171,16 @@ SST预测老年人折扣率更高（更偏好即时），但实证发现多数�
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/buffering-hypothesis|缓冲假设（Buffering Hypothesis）]]
+- [[concepts/self-continuity|自我连续性（Self-Continuity）]]
+- [[concepts/intertemporal-choice|跨期选择（Intertemporal Choice）]]
+
+### Related Pages
+
+- [[concepts/delay-discounting|延迟折扣（Delay Discounting）]]
+<!-- openclaw:wiki:related:end -->

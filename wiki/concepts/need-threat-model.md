@@ -175,3 +175,17 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/stress-buffering-model|压力缓冲模型（Stress-Buffering Model）]]
+- [[concepts/rejection-sensitivity|拒绝敏感性（Rejection Sensitivity）]]
+- [[concepts/social-exclusion|社会排斥（Social Exclusion）]]
+
+### Related Pages
+
+- [[concepts/anger-rumination|愤怒反刍（Anger Rumination）]]
+- [[concepts/perceived-social-support|领悟社会支持（Perceived Social Support）]]
+<!-- openclaw:wiki:related:end -->

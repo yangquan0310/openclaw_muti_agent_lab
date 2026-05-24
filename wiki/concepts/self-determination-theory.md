@@ -168,3 +168,17 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/treatment-preference|治疗偏好（Treatment Preference）]]
+
+### Related Pages
+
+- [[concepts/multitasking|多任务行为（Multitasking Behavior）]]
+- [[concepts/mobile-phone-policy|手机政策（Mobile Phone Policy）]]
+- [[concepts/photo-taking-impairment-effect|拍照损害效应（Photo-Taking Impairment Effect）]]
+- [[concepts/cognitive-load|认知负荷（Cognitive Load）]]
+<!-- openclaw:wiki:related:end -->

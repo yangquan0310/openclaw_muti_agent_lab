@@ -170,3 +170,13 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/common-factors-theory|共同因素理论（Common Factors Theory）]]
+- [[concepts/treatment-preference|治疗偏好（Treatment Preference）]]
+- [[concepts/treatment-expectation|治疗期待（Treatment Expectation）]]
+- [[concepts/working-alliance|治疗联盟（Working Alliance）]]
+<!-- openclaw:wiki:related:end -->

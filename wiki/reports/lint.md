@@ -9,10 +9,11 @@ status: active
 
 ## Generated
 <!-- openclaw:wiki:lint:start -->
-- Errors: 44
-- Warnings: 63
+- Errors: 42
+- Warnings: 175
 
 ### Errors
+- `entities/wangyaxin.md`: Missing `pageType` frontmatter.
 - `reports/2026-05-17-18-40-33-claim-health.md`: Duplicate page id `report.claim-health`.
 - `reports/2026-05-17-18-40-33-contradictions.md`: Duplicate page id `report.contradictions`.
 - `reports/2026-05-17-18-40-33-low-confidence.md`: Duplicate page id `report.low-confidence`.
@@ -21,9 +22,11 @@ status: active
 - `reports/2026-05-18-11-12-15-provenance-coverage.md`: Duplicate page id `report.provenance-coverage`.
 - `reports/2026-05-19-18-25-37-open-questions.md`: Duplicate page id `report.open-questions`.
 - `reports/2026-05-19-18-25-37-privacy-review.md`: Duplicate page id `report.privacy-review`.
+- `reports/2026-05-19-22-54-14-lint.md`: Duplicate page id `report.lint`.
 - `reports/2026-05-20-23-34-38-stale-pages.md`: Duplicate page id `report.stale-pages`.
 - `reports/claim-health.md`: Duplicate page id `report.claim-health`.
 - `reports/contradictions.md`: Duplicate page id `report.contradictions`.
+- `reports/lint.md`: Duplicate page id `report.lint`.
 - `reports/low-confidence.md`: Duplicate page id `report.low-confidence`.
 - `reports/open-questions.md`: Duplicate page id `report.open-questions`.
 - `reports/person-agent-directory.md`: Duplicate page id `report.person-agent-directory`.
@@ -31,34 +34,143 @@ status: active
 - `reports/provenance-coverage.md`: Duplicate page id `report.provenance-coverage`.
 - `reports/relationship-graph.md`: Duplicate page id `report.relationship-graph`.
 - `reports/stale-pages.md`: Duplicate page id `report.stale-pages`.
-- `syntheses/2026-05-17-18-40-33-Agent-Memory-设计哲学与架构.md`: Missing `id` frontmatter.
-- `syntheses/2026-05-17-18-40-33-Agent-Memory-设计哲学与架构.md`: Missing `pageType` frontmatter.
-- `syntheses/2026-05-17-18-40-33-agent-memory.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-agents.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-course-project.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-heartbeat.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-identity.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-if-then-rule-standard.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-repository.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-soul.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-thesis-project.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-tools.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-18-25-37-user.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-22-53-22-program-project.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-19-22-53-22-project.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-20-23-34-38-三方协作实践-代理领取任务与执行流程.md`: Missing `id` frontmatter.
-- `syntheses/2026-05-20-23-34-38-三方协作实践-代理领取任务与执行流程.md`: Missing `pageType` frontmatter.
-- `syntheses/2026-05-21-10-42-53-memory.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md`: Missing `id` frontmatter.
-- `syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md`: Missing `pageType` frontmatter.
-- `syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md`: Missing `id` frontmatter.
-- `syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md`: Missing `pageType` frontmatter.
-- `syntheses/2026-05-23-10-30-00-category-theory-framework.md`: Expected pageType `synthesis`, found `concept`.
-- `syntheses/2026-05-23-10-30-00-最优化概念-亲子关系与友谊质量对焦虑共同作用研究.md`: Missing `id` frontmatter.
-- `syntheses/2026-05-23-10-30-00-最优化概念-亲子关系与友谊质量对焦虑共同作用研究.md`: Missing `pageType` frontmatter.
+- `syntheses/2026-05-17-18-40-33-如何设计agent-memory-智能体记忆系统.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Missing `id` frontmatter.
+- `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Missing `pageType` frontmatter.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何攥写agents配置文件.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何攥写identity配置文件.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何攥写if-then规则.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何攥写soul配置文件.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何攥写tools配置文件.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何攥写user配置文件.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何管理论文项目.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何管理课程项目.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何配置仓库.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-18-25-37-如何配置心跳任务.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-22-53-22-如何管理程序项目.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-19-22-53-22-如何管理项目.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Missing `id` frontmatter.
+- `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Missing `pageType` frontmatter.
+- `syntheses/2026-05-21-10-42-53-如何攥写memory配置文件.md`: Expected pageType `synthesis`, found `concept`.
+- `syntheses/2026-05-23-23-50-00-代理实践技能体系总结.md`: Missing `id` frontmatter.
+- `syntheses/2026-05-23-23-50-00-代理实践技能体系总结.md`: Missing `pageType` frontmatter.
 
 ### Warnings
+- `concepts/anger-rumination.md`: Broken wikilink target `concepts/aggression`.
+- `concepts/anger-rumination.md`: Broken wikilink target `concepts/emotion-regulation`.
+- `concepts/autobiographical-memory-function.md`: Broken wikilink target `concepts/life-narrative`.
+- `concepts/autobiographical-memory-function.md`: Broken wikilink target `concepts/social-sharing`.
+- `concepts/autobiographical-memory-function.md`: Broken wikilink target `concepts/self-guidance`.
+- `concepts/autobiographical-memory.md`: Broken wikilink target `concepts/life-narrative`.
+- `concepts/buffering-hypothesis.md`: Broken wikilink target `concepts/emotion-regulation`.
+- `concepts/career-construction-theory.md`: Broken wikilink target `concepts/career-adaptation`.
+- `concepts/career-construction-theory.md`: Broken wikilink target `concepts/life-narrative`.
+- `concepts/cognitive-behavioral-therapy-for-insomnia.md`: Broken wikilink target `concepts/insomnia`.
+- `concepts/cognitive-behavioral-therapy-for-insomnia.md`: Broken wikilink target `concepts/stimulus-control`.
+- `concepts/cognitive-load.md`: Page freshness needs review (missing updatedAt).
+- `concepts/cognitive-load.md`: Broken wikilink target `concepts/working-memory`.
+- `concepts/cognitive-load.md`: Broken wikilink target `concepts/distracted-attention`.
+- `concepts/cognitive-load.md`: Broken wikilink target `concepts/learning-performance`.
+- `concepts/collective-memory.md`: Broken wikilink target `concepts/social-identity`.
+- `concepts/collective-memory.md`: Broken wikilink target `concepts/cultural-memory`.
+- `concepts/collective-memory.md`: Broken wikilink target `concepts/memory-politics`.
+- `concepts/common-factors-theory.md`: Broken wikilink target `concepts/placebo-effect`.
+- `concepts/creative-worker.md`: Broken wikilink target `concepts/career-identity`.
+- `concepts/default-mode-network.md`: Broken wikilink target `concepts/anxiety`.
+- `concepts/default-mode-network.md`: Broken wikilink target `concepts/medial-prefrontal-cortex`.
+- `concepts/default-mode-network.md`: Broken wikilink target `concepts/precuneus`.
+- `concepts/delay-discounting.md`: Broken wikilink target `concepts/impulsivity`.
+- `concepts/delay-discounting.md`: Broken wikilink target `concepts/time-perception`.
+- `concepts/digital-memory.md`: Broken wikilink target `concepts/external-memory`.
+- `concepts/digital-memory.md`: Broken wikilink target `concepts/digital-storage`.
+- `concepts/fomo.md`: Broken wikilink target `concepts/smartphone-addiction`.
+- `concepts/fomo.md`: Broken wikilink target `concepts/loneliness`.
+- `concepts/generative-ai.md`: Broken wikilink target `concepts/career-identity`.
+- `concepts/generative-ai.md`: Broken wikilink target `concepts/technological-anxiety`.
+- `concepts/hyperarousal-model.md`: Broken wikilink target `concepts/insomnia`.
+- `concepts/hyperarousal-model.md`: Broken wikilink target `concepts/hpa-axis`.
+- `concepts/influencer-marketing.md`: Broken wikilink target `concepts/source-credibility`.
+- `concepts/influencer-marketing.md`: Broken wikilink target `concepts/consumer-trust`.
+- `concepts/influencer-marketing.md`: Broken wikilink target `concepts/social-proof`.
+- `concepts/influencer-marketing.md`: Broken wikilink target `concepts/meaning-transfer`.
+- `concepts/life-story-interview.md`: Broken wikilink target `concepts/narrative-analysis`.
+- `concepts/life-story-interview.md`: Broken wikilink target `concepts/life-narrative`.
+- `concepts/life-story-interview.md`: Broken wikilink target `concepts/self-narrative`.
+- `concepts/meaning-making.md`: Broken wikilink target `concepts/life-narrative`.
+- `concepts/meaning-making.md`: Broken wikilink target `concepts/post-traumatic-growth`.
+- `concepts/meaning-making.md`: Broken wikilink target `concepts/sensemaking`.
+- `concepts/meaning-making.md`: Broken wikilink target `concepts/meaning-in-life`.
+- `concepts/memory-offloading.md`: Broken wikilink target `concepts/external-memory`.
+- `concepts/memory-offloading.md`: Broken wikilink target `concepts/metamemory`.
+- `concepts/mobile-phone-policy.md`: Broken wikilink target `concepts/digital-literacy`.
+- `concepts/mobile-phone-policy.md`: Broken wikilink target `concepts/academic-performance`.
+- `concepts/multitasking.md`: Broken wikilink target `concepts/attention-resumption`.
+- `concepts/multitasking.md`: Broken wikilink target `concepts/distracted-attention`.
+- `concepts/need-threat-model.md`: Broken wikilink target `concepts/social-pain`.
+- `concepts/need-threat-model.md`: Broken wikilink target `concepts/social-withdrawal`.
+- `concepts/occupational-self-efficacy.md`: Broken wikilink target `concepts/self-efficacy`.
+- `concepts/occupational-self-efficacy.md`: Broken wikilink target `concepts/social-cognitive-career-theory`.
+- `concepts/occupational-self-efficacy.md`: Broken wikilink target `concepts/career-identity`.
+- `concepts/occupational-well-being.md`: Broken wikilink target `concepts/burnout`.
+- `concepts/parasocial-relationship.md`: Broken wikilink target `concepts/parasocial-breakup`.
+- `concepts/parasocial-relationship.md`: Broken wikilink target `concepts/social-presence`.
+- `concepts/parasocial-relationship.md`: Broken wikilink target `concepts/source-credibility`.
+- `concepts/parasocial-relationship.md`: Broken wikilink target `concepts/consumer-trust`.
+- `concepts/perceived-social-support.md`: Broken wikilink target `concepts/social-support`.
+- `concepts/perceived-social-support.md`: Broken wikilink target `concepts/belongingness`.
+- `concepts/perfectionism.md`: Broken wikilink target `concepts/self-criticism`.
+- `concepts/photo-taking-impairment-effect.md`: Broken wikilink target `concepts/external-memory`.
+- `concepts/photo-taking-impairment-effect.md`: Broken wikilink target `concepts/attention-distribution`.
+- `concepts/photo-taking-impairment-effect.md`: Broken wikilink target `concepts/encoding`.
+- `concepts/psychological-resilience.md`: Broken wikilink target `concepts/emotion-regulation`.
+- `concepts/psychological-resilience.md`: Broken wikilink target `concepts/social-support`.
+- `concepts/psychological-resilience.md`: Broken wikilink target `concepts/post-traumatic-growth`.
+- `concepts/rejection-sensitivity.md`: Broken wikilink target `concepts/attachment-anxiety`.
+- `concepts/rejection-sensitivity.md`: Broken wikilink target `concepts/hostile-attribution-bias`.
+- `concepts/repetitive-negative-thinking.md`: Broken wikilink target `concepts/worry`.
+- `concepts/repetitive-negative-thinking.md`: Broken wikilink target `concepts/depression`.
+- `concepts/rumination.md`: Broken wikilink target `concepts/worry`.
+- `concepts/rumination.md`: Broken wikilink target `concepts/depression`.
+- `concepts/self-compassion.md`: Broken wikilink target `concepts/self-criticism`.
+- `concepts/self-compassion.md`: Broken wikilink target `concepts/emotion-regulation`.
+- `concepts/self-compassion.md`: Broken wikilink target `concepts/mindfulness`.
+- `concepts/self-continuity.md`: Broken wikilink target `concepts/life-narrative`.
+- `concepts/self-continuity.md`: Broken wikilink target `concepts/future-self`.
+- `concepts/self-control.md`: Broken wikilink target `concepts/impulsivity`.
+- `concepts/self-control.md`: Broken wikilink target `concepts/executive-function`.
+- `concepts/self-determination-theory.md`: Broken wikilink target `concepts/intrinsic-motivation`.
+- `concepts/self-determination-theory.md`: Broken wikilink target `concepts/extrinsic-motivation`.
+- `concepts/self-determination-theory.md`: Broken wikilink target `concepts/autonomy`.
+- `concepts/self-determination-theory.md`: Broken wikilink target `concepts/competence`.
+- `concepts/self-determination-theory.md`: Broken wikilink target `concepts/relatedness`.
+- `concepts/social-comparison.md`: Broken wikilink target `concepts/upward-comparison`.
+- `concepts/social-comparison.md`: Broken wikilink target `concepts/downward-comparison`.
+- `concepts/social-comparison.md`: Broken wikilink target `concepts/envy`.
+- `concepts/social-comparison.md`: Broken wikilink target `concepts/self-esteem`.
+- `concepts/social-exclusion.md`: Broken wikilink target `concepts/social-pain`.
+- `concepts/socioemotional-selectivity-theory.md`: Broken wikilink target `concepts/emotion-regulation`.
+- `concepts/stress-buffering-model.md`: Broken wikilink target `concepts/social-support`.
+- `concepts/stress-buffering-model.md`: Broken wikilink target `concepts/coping`.
+- `concepts/thematic-analysis.md`: Broken wikilink target `concepts/qualitative-analysis`.
+- `concepts/thematic-analysis.md`: Broken wikilink target `concepts/narrative-analysis`.
+- `concepts/thematic-analysis.md`: Broken wikilink target `concepts/grounded-theory`.
+- `concepts/thematic-analysis.md`: Broken wikilink target `concepts/content-analysis`.
+- `concepts/therapeutic-matching.md`: Broken wikilink target `concepts/patient-centered-care`.
+- `concepts/transactive-memory-system.md`: Broken wikilink target `concepts/external-memory`.
+- `concepts/transactive-memory-system.md`: Broken wikilink target `concepts/knowledge-sharing`.
+- `concepts/transactive-memory-system.md`: Broken wikilink target `concepts/group-performance`.
+- `concepts/treatment-expectation.md`: Broken wikilink target `concepts/placebo-effect`.
+- `concepts/treatment-expectation.md`: Broken wikilink target `concepts/change-readiness`.
+- `concepts/treatment-preference.md`: Broken wikilink target `concepts/patient-centered-care`.
+- `concepts/working-alliance.md`: Broken wikilink target `concepts/alliance-rupture`.
+- `concepts/working-alliance.md`: Broken wikilink target `concepts/therapeutic-relationship`.
+- `concepts/范畴论.md`: Broken wikilink target `syntheses/2026-05-21-10-42-53-memory`.
+- `concepts/范畴论.md`: Broken wikilink target `syntheses/2026-05-19-18-25-37-identity`.
+- `concepts/范畴论.md`: Broken wikilink target `syntheses/2026-05-19-18-25-37-soul`.
+- `entities/wangyaxin.md`: Non-source page is missing `sourceIds` provenance.
+- `entities/wangyaxin.md`: Page freshness needs review (missing updatedAt).
+- `entities/yangquan.md`: Broken wikilink target `entity.wangyaxin`.
 - `reports/2026-05-19-18-25-37-open-questions.md`: Broken wikilink target `syntheses/论文审稿项目`.
 - `reports/2026-05-20-23-34-38-stale-pages.md`: Broken wikilink target `syntheses/三方协作实践-代理领取任务与执行流程`.
 - `sources/openclaw-env.md`: Broken wikilink target `concepts/agents`.
@@ -67,9 +179,6 @@ status: active
 - `sources/openclaw-workspace.md`: Broken wikilink target `concepts/identity`.
 - `sources/repository.md`: Broken wikilink target `concepts/repository`.
 - `sources/repository.md`: Broken wikilink target `concepts/project`.
-- `syntheses/2026-05-17-18-40-33-Agent-Memory-设计哲学与架构.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-17-18-40-33-Agent-Memory-设计哲学与架构.md`: Page freshness needs review (missing updatedAt).
-- `syntheses/2026-05-17-18-40-33-agent-memory.md`: Broken wikilink target `syntheses/memory`.
 - `syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化.md`: Broken wikilink target `syntheses/多agent协作案例-学生论文修改项目`.
 - `syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化.md`: Broken wikilink target `syntheses/project`.
 - `syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化.md`: Broken wikilink target `syntheses/thesis-project`.
@@ -77,61 +186,61 @@ status: active
 - `syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化.md`: Broken wikilink target `syntheses/program-project`.
 - `syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化.md`: Broken wikilink target `syntheses/project`.
 - `syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化.md`: Broken wikilink target `syntheses/agent-self-development`.
-- `syntheses/2026-05-19-18-25-37-agents.md`: Broken wikilink target `syntheses/soul`.
-- `syntheses/2026-05-19-18-25-37-agents.md`: Broken wikilink target `syntheses/identity`.
-- `syntheses/2026-05-19-18-25-37-agents.md`: Broken wikilink target `syntheses/memory`.
-- `syntheses/2026-05-19-18-25-37-agents.md`: Broken wikilink target `syntheses/tools`.
-- `syntheses/2026-05-19-18-25-37-agents.md`: Broken wikilink target `syntheses/heartbeat`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/identity`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/soul`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/user`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/tools`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/memory`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/heartbeat`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/agents`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/identity`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/soul`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/user`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/tools`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/memory`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/heartbeat`.
-- `syntheses/2026-05-19-18-25-37-bootstrap.md`: Broken wikilink target `syntheses/agents`.
-- `syntheses/2026-05-19-18-25-37-course-project.md`: Broken wikilink target `syntheses/project`.
-- `syntheses/2026-05-19-18-25-37-course-project.md`: Broken wikilink target `syntheses/repository`.
-- `syntheses/2026-05-19-18-25-37-repository.md`: Broken wikilink target `syntheses/project`.
-- `syntheses/2026-05-19-18-25-37-thesis-project.md`: Broken wikilink target `syntheses/project`.
-- `syntheses/2026-05-19-18-25-37-thesis-project.md`: Broken wikilink target `syntheses/repository`.
-- `syntheses/2026-05-19-18-25-37-tools.md`: Broken wikilink target `syntheses/heartbeat`.
-- `syntheses/2026-05-19-22-53-22-program-project.md`: Broken wikilink target `syntheses/project`.
-- `syntheses/2026-05-19-22-53-22-program-project.md`: Broken wikilink target `syntheses/repository`.
-- `syntheses/2026-05-19-22-53-22-project.md`: Broken wikilink target `syntheses/thesis-project`.
-- `syntheses/2026-05-19-22-53-22-project.md`: Broken wikilink target `syntheses/course-project`.
-- `syntheses/2026-05-19-22-53-22-project.md`: Broken wikilink target `syntheses/program-project`.
-- `syntheses/2026-05-19-22-53-22-project.md`: Broken wikilink target `syntheses/project`.
-- `syntheses/2026-05-19-22-53-22-project.md`: Broken wikilink target `syntheses/thesis-project`.
-- `syntheses/2026-05-19-22-53-22-project.md`: Broken wikilink target `syntheses/course-project`.
-- `syntheses/2026-05-19-22-53-22-project.md`: Broken wikilink target `syntheses/program-project`.
-- `syntheses/2026-05-19-22-53-22-project.md`: Broken wikilink target `syntheses/repository`.
-- `syntheses/2026-05-20-23-34-38-三方协作实践-代理领取任务与执行流程.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-20-23-34-38-三方协作实践-代理领取任务与执行流程.md`: Page freshness needs review (missing updatedAt).
-- `syntheses/2026-05-21-10-42-53-memory.md`: Broken wikilink target `syntheses/agents`.
-- `syntheses/2026-05-21-10-42-53-memory.md`: Broken wikilink target `syntheses/heartbeat`.
-- `syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md`: Page freshness needs review (missing updatedAt).
-- `syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md`: Page freshness needs review (missing updatedAt).
-- `syntheses/2026-05-23-10-30-00-最优化概念-亲子关系与友谊质量对焦虑共同作用研究.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-30-00-最优化概念-亲子关系与友谊质量对焦虑共同作用研究.md`: Page freshness needs review (missing updatedAt).
+- `syntheses/2026-05-17-18-40-33-如何设计agent-memory-智能体记忆系统.md`: Broken wikilink target `syntheses/memory`.
+- `syntheses/2026-05-17-18-40-33-如何设计agent-memory-智能体记忆系统.md`: Broken wikilink target `entities/openclaw-gateway`.
+- `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Non-source page is missing `sourceIds` provenance.
+- `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Page freshness needs review (missing updatedAt).
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/identity`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/soul`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/user`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/tools`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/memory`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/heartbeat`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/agents`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/identity`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/soul`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/user`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/tools`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/memory`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/heartbeat`.
+- `syntheses/2026-05-19-18-25-37-如何初始化agent.md`: Broken wikilink target `syntheses/agents`.
+- `syntheses/2026-05-19-18-25-37-如何攥写agents配置文件.md`: Broken wikilink target `syntheses/soul`.
+- `syntheses/2026-05-19-18-25-37-如何攥写agents配置文件.md`: Broken wikilink target `syntheses/identity`.
+- `syntheses/2026-05-19-18-25-37-如何攥写agents配置文件.md`: Broken wikilink target `syntheses/memory`.
+- `syntheses/2026-05-19-18-25-37-如何攥写agents配置文件.md`: Broken wikilink target `syntheses/tools`.
+- `syntheses/2026-05-19-18-25-37-如何攥写agents配置文件.md`: Broken wikilink target `syntheses/heartbeat`.
+- `syntheses/2026-05-19-18-25-37-如何攥写tools配置文件.md`: Broken wikilink target `syntheses/heartbeat`.
+- `syntheses/2026-05-19-18-25-37-如何攥写tools配置文件.md`: Broken wikilink target `entities/openclaw-gateway`.
+- `syntheses/2026-05-19-18-25-37-如何管理论文项目.md`: Broken wikilink target `syntheses/project`.
+- `syntheses/2026-05-19-18-25-37-如何管理论文项目.md`: Broken wikilink target `syntheses/repository`.
+- `syntheses/2026-05-19-18-25-37-如何管理课程项目.md`: Broken wikilink target `syntheses/project`.
+- `syntheses/2026-05-19-18-25-37-如何管理课程项目.md`: Broken wikilink target `syntheses/repository`.
+- `syntheses/2026-05-19-18-25-37-如何配置仓库.md`: Broken wikilink target `syntheses/project`.
+- `syntheses/2026-05-19-22-53-22-如何管理程序项目.md`: Broken wikilink target `syntheses/project`.
+- `syntheses/2026-05-19-22-53-22-如何管理程序项目.md`: Broken wikilink target `syntheses/repository`.
+- `syntheses/2026-05-19-22-53-22-如何管理项目.md`: Broken wikilink target `syntheses/thesis-project`.
+- `syntheses/2026-05-19-22-53-22-如何管理项目.md`: Broken wikilink target `syntheses/course-project`.
+- `syntheses/2026-05-19-22-53-22-如何管理项目.md`: Broken wikilink target `syntheses/program-project`.
+- `syntheses/2026-05-19-22-53-22-如何管理项目.md`: Broken wikilink target `syntheses/project`.
+- `syntheses/2026-05-19-22-53-22-如何管理项目.md`: Broken wikilink target `syntheses/thesis-project`.
+- `syntheses/2026-05-19-22-53-22-如何管理项目.md`: Broken wikilink target `syntheses/course-project`.
+- `syntheses/2026-05-19-22-53-22-如何管理项目.md`: Broken wikilink target `syntheses/program-project`.
+- `syntheses/2026-05-19-22-53-22-如何管理项目.md`: Broken wikilink target `syntheses/repository`.
+- `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Non-source page is missing `sourceIds` provenance.
+- `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Page freshness needs review (missing updatedAt).
+- `syntheses/2026-05-21-10-42-53-如何攥写memory配置文件.md`: Broken wikilink target `syntheses/agents`.
+- `syntheses/2026-05-21-10-42-53-如何攥写memory配置文件.md`: Broken wikilink target `syntheses/heartbeat`.
+- `syntheses/2026-05-23-23-50-00-代理实践技能体系总结.md`: Non-source page is missing `sourceIds` provenance.
+- `syntheses/2026-05-23-23-50-00-代理实践技能体系总结.md`: Page freshness needs review (missing updatedAt).
 
 ### Quality Follow-Up
-- `syntheses/2026-05-17-18-40-33-Agent-Memory-设计哲学与架构.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-20-23-34-38-三方协作实践-代理领取任务与执行流程.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-30-00-最优化概念-亲子关系与友谊质量对焦虑共同作用研究.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-17-18-40-33-Agent-Memory-设计哲学与架构.md`: Page freshness needs review (missing updatedAt).
-- `syntheses/2026-05-20-23-34-38-三方协作实践-代理领取任务与执行流程.md`: Page freshness needs review (missing updatedAt).
-- `syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md`: Page freshness needs review (missing updatedAt).
-- `syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md`: Page freshness needs review (missing updatedAt).
-- `syntheses/2026-05-23-10-30-00-最优化概念-亲子关系与友谊质量对焦虑共同作用研究.md`: Page freshness needs review (missing updatedAt).
+- `entities/wangyaxin.md`: Non-source page is missing `sourceIds` provenance.
+- `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Non-source page is missing `sourceIds` provenance.
+- `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Non-source page is missing `sourceIds` provenance.
+- `syntheses/2026-05-23-23-50-00-代理实践技能体系总结.md`: Non-source page is missing `sourceIds` provenance.
+- `concepts/cognitive-load.md`: Page freshness needs review (missing updatedAt).
+- `entities/wangyaxin.md`: Page freshness needs review (missing updatedAt).
+- `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Page freshness needs review (missing updatedAt).
+- `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Page freshness needs review (missing updatedAt).
+- `syntheses/2026-05-23-23-50-00-代理实践技能体系总结.md`: Page freshness needs review (missing updatedAt).
 <!-- openclaw:wiki:lint:end -->

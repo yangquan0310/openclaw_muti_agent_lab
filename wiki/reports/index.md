@@ -7,6 +7,7 @@
 - [[reports/2026-05-17-18-40-33-contradictions|Contradictions]]
 - [[reports/contradictions|Contradictions]]
 - [[reports/2026-05-19-22-54-14-lint|Lint Report]]
+- [[reports/lint|Lint Report]]
 - [[reports/2026-05-17-18-40-33-low-confidence|Low Confidence]]
 - [[reports/low-confidence|Low Confidence]]
 - [[reports/2026-05-19-18-25-37-open-questions|Open Questions]]

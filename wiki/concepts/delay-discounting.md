@@ -167,3 +167,15 @@ $$AUC = \frac{1}{n-1} \sum_{i=1}^{n-1} \frac{V_i + V_{i+1}}{2}(t_{i+1} - t_i)$$
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/academic-procrastination|学业拖延（Academic Procrastination）]]
+- [[concepts/socioemotional-selectivity-theory|社会情绪选择理论（Socioemotional Selectivity Theory）]]
+- [[concepts/buffering-hypothesis|缓冲假设（Buffering Hypothesis）]]
+- [[concepts/self-control|自我控制（Self-Control）]]
+- [[concepts/self-continuity|自我连续性（Self-Continuity）]]
+- [[concepts/intertemporal-choice|跨期选择（Intertemporal Choice）]]
+<!-- openclaw:wiki:related:end -->

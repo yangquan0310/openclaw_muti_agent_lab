@@ -172,3 +172,20 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/academic-procrastination|学业拖延（Academic Procrastination）]]
+- [[concepts/delay-discounting|延迟折扣（Delay Discounting）]]
+- [[concepts/intertemporal-choice|跨期选择（Intertemporal Choice）]]
+- [[concepts/fomo|错失焦虑（Fear of Missing Out, FoMO）]]
+
+### Related Pages
+
+- [[concepts/perfectionism|完美主义（Perfectionism）]]
+- [[concepts/psychological-resilience|心理弹性（Psychological Resilience）]]
+- [[concepts/social-comparison|社会比较（Social Comparison）]]
+- [[concepts/self-compassion|自我同情（Self-Compassion）]]
+<!-- openclaw:wiki:related:end -->

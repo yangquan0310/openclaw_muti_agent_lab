@@ -59,3 +59,10 @@ related_entities:
 | 日期 | 更新内容 | 更新者 |
 |------|----------|--------|
 | 2026-05-23 | 初始创建，补充仓库检索信息 | steward |
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[entities/yangquan|杨权（实验室负责人）]]
+<!-- openclaw:wiki:related:end -->

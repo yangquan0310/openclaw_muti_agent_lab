@@ -177,3 +177,17 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/anger-rumination|愤怒反刍（Anger Rumination）]]
+- [[concepts/social-exclusion|社会排斥（Social Exclusion）]]
+- [[concepts/need-threat-model|需求威胁模型（Need-Threat Model）]]
+
+### Related Pages
+
+- [[concepts/stress-buffering-model|压力缓冲模型（Stress-Buffering Model）]]
+- [[concepts/perceived-social-support|领悟社会支持（Perceived Social Support）]]
+<!-- openclaw:wiki:related:end -->

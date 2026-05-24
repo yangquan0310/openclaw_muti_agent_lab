@@ -159,3 +159,17 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/cognitive-behavioral-therapy-for-insomnia|失眠认知行为治疗（Cognitive Behavioral Therapy for Insomnia, CBT-I）]]
+- [[concepts/academic-procrastination|学业拖延（Academic Procrastination）]]
+- [[concepts/perfectionism|完美主义（Perfectionism）]]
+- [[concepts/anger-rumination|愤怒反刍（Anger Rumination）]]
+- [[concepts/sleep-quality|睡眠质量（Sleep Quality）]]
+- [[concepts/hyperarousal-model|过度觉醒模型（Hyperarousal Model）]]
+- [[concepts/repetitive-negative-thinking|重复性消极思维（Repetitive Negative Thinking, RNT）]]
+- [[concepts/default-mode-network|默认模式网络（Default Mode Network, DMN）]]
+<!-- openclaw:wiki:related:end -->

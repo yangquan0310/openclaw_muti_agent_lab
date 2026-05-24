@@ -167,3 +167,18 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/photo-taking-impairment-effect|拍照损害效应（Photo-Taking Impairment Effect）]]
+- [[concepts/digital-memory|数字记忆（Digital Memory）]]
+
+### Related Pages
+
+- [[concepts/transactive-memory-system|交互记忆系统（Transactive Memory System, TMS）]]
+- [[concepts/autobiographical-memory|自传体记忆（Autobiographical Memory）]]
+- [[concepts/autobiographical-memory-function|自传体记忆功能（Autobiographical Memory Function）]]
+- [[concepts/collective-memory|集体记忆（Collective Memory）]]
+<!-- openclaw:wiki:related:end -->

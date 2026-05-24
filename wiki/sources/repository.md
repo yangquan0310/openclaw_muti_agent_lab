@@ -74,6 +74,6 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
-- [[syntheses/2026-05-19-18-25-37-repository|仓库]]
-- [[syntheses/2026-05-19-22-53-22-project|项目]]
+- [[syntheses/2026-05-19-18-25-37-如何配置仓库|仓库]]
+- [[syntheses/2026-05-19-22-53-22-如何管理项目|项目]]
 <!-- openclaw:wiki:related:end -->

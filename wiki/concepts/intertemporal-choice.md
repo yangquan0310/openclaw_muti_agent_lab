@@ -171,3 +171,13 @@ $$V = A / (1 + kD)^s$$
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/delay-discounting|延迟折扣（Delay Discounting）]]
+- [[concepts/socioemotional-selectivity-theory|社会情绪选择理论（Socioemotional Selectivity Theory）]]
+- [[concepts/buffering-hypothesis|缓冲假设（Buffering Hypothesis）]]
+- [[concepts/self-continuity|自我连续性（Self-Continuity）]]
+<!-- openclaw:wiki:related:end -->

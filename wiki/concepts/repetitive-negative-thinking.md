@@ -167,3 +167,17 @@ aliases:
 
 *最后更新：2026-05-23*
 *更新者：心理学家（psychologist）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[concepts/rumination|反刍思维（Rumination）]]
+- [[concepts/sleep-quality|睡眠质量（Sleep Quality）]]
+
+### Related Pages
+
+- [[concepts/cognitive-behavioral-therapy-for-insomnia|失眠认知行为治疗（Cognitive Behavioral Therapy for Insomnia, CBT-I）]]
+- [[concepts/hyperarousal-model|过度觉醒模型（Hyperarousal Model）]]
+- [[concepts/default-mode-network|默认模式网络（Default Mode Network, DMN）]]
+<!-- openclaw:wiki:related:end -->
