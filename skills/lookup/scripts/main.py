@@ -27,11 +27,11 @@ def cmd_search(args):
         sys.argv.append(args.query)
     if args.skill:
         sys.argv.extend(['--skill', args.skill])
-    if args.files_only:
+    if getattr(args, 'files_only', False):
         sys.argv.extend(['--files-only'])
-    if args.list:
+    if getattr(args, 'list', False):
         sys.argv.extend(['--list'])
-    if args.top:
+    if getattr(args, 'top', None):
         sys.argv.extend(['--top', str(args.top)])
     return searcher_main()
 

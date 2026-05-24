@@ -104,14 +104,26 @@ class ReferencesSearcher:
 
 
 def resolve_skill_root(skill_name: str) -> Path | None:
-    """尝试解析技能根目录，支持两种路径格式"""
-    paths = [
-        Path(f"/root/.openclaw/skills/{skill_name}"),
+    """解析技能根目录，支持 skills/ 和 workspace/ 两条路径。
+
+    优先返回有 references/ 子目录的路径（真正的技能）。
+    如果两者都有 references/，优先 workspace/ 路径。
+    """
+    candidates = [
         Path(f"/root/.openclaw/workspace/{skill_name}/skills/{skill_name}"),
+        Path(f"/root/.openclaw/skills/{skill_name}"),
     ]
-    for p in paths:
+
+    # 优先：有 references/ 的路径
+    for p in candidates:
+        if p.exists() and (p / "references").is_dir():
+            return p
+
+    # 备选：第一个存在的路径
+    for p in candidates:
         if p.exists():
             return p
+
     return None
 
 
