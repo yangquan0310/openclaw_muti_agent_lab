@@ -2,7 +2,7 @@
 name: research-assistant
 description: >
   科研文献综述全流程助手。支持文献检索、文献AI总结、知识库管理、主题筛选、笔记导出、文献综述撰写、研究现状撰写。
-version: 5.3.0
+version: 5.4.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -30,7 +30,7 @@ metadata:
 
 | 边界 | 说明 |
 |------|------|
-| ✅ 能做 | 文献检索、AI总结、知识库管理、笔记导出、综述撰写 |
+| ✅ 能做 | 文献检索（多引擎自动路由）、AI总结、知识库管理、笔记导出、综述撰写 |
 | ❌ 不能做 | 直接修改 PDF/PPT 等二进制文件 |
 
 ---
@@ -38,24 +38,25 @@ metadata:
 ## 快速调用
 
 ```bash
-# 检索文献 → index.json
-python3 scripts/search/Searcher.py --queries queries.json --kb-path knowledge/index.json
-
-# 筛选 topic
-python3 scripts/manage/Manager.py filter --kb-path knowledge/index.json \
-    --output knowledge/topic/xxx.json --conditions conditions.json
-
-# AI 总结
-python3 scripts/summarize/Summarizer.py --kb-path knowledge/topic/xxx.json --provider deepseek
-
-# 导出笔记
-python3 scripts/synthesize/Synthesizer.py extract --topic knowledge/topic/xxx.json \
-    --output knowledge/note/笔记_xxx.md
-
-# 检查引用
-python3 scripts/synthesize/Synthesizer.py check --doc knowledge/review/综述.md
+research-assistant search --keyword "深度学习" --limit 20 --year-min 2020
+research-assistant search --keyword "deep learning" --limit 20
+research-assistant summarize --kb-path knowledge/index.json
+research-assistant manage info --kb-path knowledge/index.json
+research-assistant manage merge --inputs a.json,b.json --output merged.json
+research-assistant synthesize check --doc 综述.md --kb knowledge/index.json
 ```
 
+### search 子命令（多态自动路由）
+
+| 参数 | 说明 |
+|------|------|
+| `--keyword TEXT` | 检索关键词，自动判断语言路由 |
+| `--queries FILE` | 高级用法：检索条件 JSON 文件 |
+| `--limit N` | 最大结果数（默认 20）|
+| `--year-min Y` / `--year-max Y` | 发表年份范围 |
+| `--kb-path PATH` | 知识库路径 |
+
+**语言路由**：中文关键词 → CNKI（主）→ SemSch（备）；英文关键词 → SemSch（主）→ Scholar/GS（备）
 ---
 
 ## 快速导航
@@ -106,6 +107,7 @@ python3 scripts/synthesize/Synthesizer.py check --doc knowledge/review/综述.md
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 5.4.0 | 2026-05-24 | CLI 重构：统一 search 命令 + 语言自动路由，移除 cnki/scholar 独立命令；ScholarSearcher 新增；entry_points 全局命令 |
 | 5.3.0 | 2026-05-23 | 按 skill-developer 新标准重构：核心原则、边界条件、快速调用、指南导航 |
 | 5.2.0 | 2026-05-18 | 阶段3新增补充检索步骤 |
 | 5.1.0 | 2026-05-15 | 整合写作指南 |

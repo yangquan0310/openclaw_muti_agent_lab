@@ -1,0 +1,117 @@
+{
+  "_schema": "检索条件文件 | 多主题多轮次检索",
+  "_说明": {
+    "格式": "JSON，键为主题名，值为条件字典列表（每项一轮检索）",
+    "topic": "该检索归属的主题",
+    "source": "使用的检索器（cn=CNKI，en=Semantic Scholar），留空则两者都检索",
+    "query": "检索关键词（必填）",
+    "limit": "最大结果数（默认 20）",
+    "year": "年份范围，格式为 'yyyy-yyyy'，仅英文检索器支持",
+    "minCitationCount": "最小引用量（客户端过滤，仅英文检索器支持）"
+  },
+  "_示例": {
+    "自传体记忆": [
+      {
+        "query": "autobiographical memory",
+        "limit": 30,
+        "year": "2020-2025",
+        "minCitationCount": 10,
+        "source": "en"
+      },
+      {
+        "query": "\"self-memory system\" Conway",
+        "limit": 20,
+        "year": "2010-2024",
+        "source": "en"
+      }
+    ],
+    "深度学习": [
+      {
+        "query": "深度学习",
+        "limit": 30,
+        "source": "cn"
+      },
+      {
+        "query": "deep learning",
+        "limit": 30,
+        "source": "en"
+      }
+    ]
+  },
+  "自传体记忆": [
+    {
+      "query": "autobiographical memory",
+      "limit": 30,
+      "year": "2020-2025",
+      "source": "en"
+    }
+  ],
+  "深度学习": [
+    {
+      "query": "深度学习",
+      "limit": 20,
+      "source": "cn"
+    }
+  ],
+  "机器学习": [
+    {
+      "query": "机器学习",
+      "limit": 20,
+      "source": "cn"
+    },
+    {
+      "query": "machine learning",
+      "limit": 30,
+      "year": "2020-2025",
+      "source": "en"
+    }
+  ],
+  "人工智能": [
+    {
+      "query": "人工智能",
+      "limit": 20,
+      "source": "cn"
+    },
+    {
+      "query": "artificial intelligence",
+      "limit": 30,
+      "source": "en"
+    }
+  ],
+  "数据挖掘": [
+    {
+      "query": "数据挖掘",
+      "limit": 20,
+      "source": "cn"
+    },
+    {
+      "query": "data mining",
+      "limit": 30,
+      "source": "en"
+    }
+  ],
+  "自然语言处理": [
+    {
+      "query": "自然语言处理",
+      "limit": 20,
+      "source": "cn"
+    },
+    {
+      "query": "natural language processing",
+      "limit": 30,
+      "source": "en"
+    }
+  ],
+  "计算机视觉": [
+    {
+      "query": "计算机视觉",
+      "limit": 20,
+      "source": "cn"
+    },
+    {
+      "query": "computer vision",
+      "limit": 30,
+      "source": "en"
+    }
+  ]
+}

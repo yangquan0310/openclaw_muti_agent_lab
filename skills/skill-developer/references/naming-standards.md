@@ -61,4 +61,75 @@
 
 ---
 
+## 命令行（CLI）命名
+
+> 所有技能的 CLI 命令统一格式。
+
+### 格式规范
+
+```
+{技能名} {方法名} {参数}
+```
+
+| 组成部分 | 命名规则 | 示例 |
+|----------|----------|------|
+| **技能名** | 与 `pyproject.toml` 中 `[project.name]` 一致，全小写、单词间横线 | `research-assistant` |
+| **方法名** | 与 CLI subcommand 一致，小写单词 | `search`, `scholar`, `summarize` |
+| **参数** | 遵循 GNU 标准风格（`--long-option`，可选值用 `[]`） | `--keyword "深度学习" --limit 10` |
+
+### 完整示例
+
+```bash
+# research-assistant 技能
+research-assistant search --queries queries.json --kb-path knowledge/index.json
+research-assistant cnki --queries queries.json --kb-path knowledge/index.json
+research-assistant scholar --keyword "deep learning" --limit 20 --year-min 2020
+research-assistant summarize --kb-path knowledge/index.json
+research-assistant manage info --kb-path knowledge/index.json
+
+# skill-developer 技能
+skill-developer init my-skill "我的新技能" --emoji 📦
+
+# lark 系列技能（飞书官方 CLI）
+lark-cli im +messages-send --user-id ou_xxx --text "hello"
+```
+
+### pyproject.toml 必须包含 entry_points
+
+每个技能必须声明 `project.scripts` 入口点，否则无法以命令方式调用：
+
+```toml
+[project.scripts]
+{技能名} = "{package}.{module}:main"
+
+# 示例（research-assistant）
+[project.scripts]
+research-assistant = "scripts.main:main"
+```
+
+安装方式：
+
+```bash
+cd ~/.openclaw/skills/{skill-name}
+pip install -e .
+
+# 之后全局可用
+{skill-name} --help
+```
+
+### 禁止形式
+
+```bash
+# ❌ 禁止：不带技能名前缀
+search --keyword "xxx"          # 缺少技能名
+
+# ❌ 禁止：驼峰/大写
+ResearchAssistant search ...     # 技能名必须全小写
+
+# ❌ 禁止：非子命令形式
+research-assistant --search --keyword "xxx"   # search 应为子命令，非选项
+```
+
+---
+
 *详见 [索引](index.md)*

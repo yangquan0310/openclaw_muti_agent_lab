@@ -8,15 +8,133 @@ Searcher 类负责从 Semantic Scholar 获取文献数据，支持多主题多�
 
 | 需求 | 方法 |
 |------|------|
-| 检索新文献 | [`search()`](#1-检索文献) |
+| 检索新文献（英文） | [`search()`](#1-检索文献) |
+| 检索新文献（中文） | [CNKI 浏览器自动化](#cnki-中文检索) |
 | 更新已有知识库 | [`update()`](#2-更新知识库元数据) |
 
 ## 文件说明
 
 | 文件 | 功能 |
 |------|------|
-| `Searcher.py` | 文献检索主类 |
+| `Searcher.py` | 文献检索主类（英文，Semantic Scholar）|
+| `CNKISearcher.py` | 知网检索主类（中文，浏览器自动化）|
 | `检索报告模板.md` | 检索报告模板 |
+
+---
+
+## CNKI 中文检索（浏览器自动化方案）
+
+> CNKI（中国知网）检索使用**浏览器自动化方案**：
+> 通过 OpenClaw 内置浏览器访问 `search.cnki.com.cn`，抓取渲染后的页面 DOM，解析为标准化文献数据。
+> 不依赖知网 API（KNS8S 接口有反爬限制，直接请求会返回 403）。
+
+### 工作流
+
+```
+AI 代理 + browser 工具
+    ↓  1. browser.navigate(url)
+    ↓  2. browser.snapshot() → 渲染后的页面文本
+CNKISearcher.parse_snapshot(snapshot_text)
+    ↓  提取标题/作者/期刊/年份/关键词/被引数
+BrowserCNKISearcher.normalize_batch()
+    ↓  转为 index.json 标准格式
+BrowserCNKISearcher.merge_to_kb()
+    ↓  写入知识库文件
+```
+
+### 第一步：构造搜索 URL
+
+```python
+from search.CNKISearcher import BrowserCNKISearcher
+
+searcher = BrowserCNKISearcher(kb_path="knowledge/index.json")
+url = searcher.build_search_url(
+    keyword="深度学习",   # 搜索关键词
+    order=0,              # 0=相关度  1=发表时间  2=被引量
+    page=1,               # 页码
+    match="Contains",    # Contains=模糊  Exact=精确
+)
+# → https://search.cnki.com.cn/Search/Result?SearchWord=深度学习&Match=Contains&Order=0&Page=1
+```
+
+### 第二步：浏览器访问并抓取快照
+
+在 OpenClaw 中使用 browser 工具：
+
+```
+# 1. 打开搜索结果页
+browser.navigate(targetUrl="https://search.cnki.com.cn/Search/Result?SearchWord=深度学习&Match=Contains&Order=0&Page=1")
+
+# 2. 等待页面加载完成后获取快照
+browser.snapshot(refs="aria", compact=true, depth=3, maxChars=2000)
+
+# 3. 将 snapshot 返回的原始文本保存为文件（或直接传给 Python）
+```
+
+### 第三步：解析快照并写入知识库
+
+```python
+from search.CNKISearcher import BrowserCNKISearcher
+
+searcher = BrowserCNKISearcher(kb_path="knowledge/index.json")
+
+# 读取浏览器快照文件
+with open("snapshot_cnki.txt", "r", encoding="utf-8") as f:
+    snapshot_text = f.read()
+
+# 解析快照，提取文献列表
+results = searcher.parse_snapshot(snapshot_text, topic="深度学习")
+print(f"解析到 {len(results)} 条 CNKI 文献")
+
+# 标准化并合并到知识库
+papers = searcher.normalize_batch(results, topic="深度学习")
+kb = searcher.merge_to_kb(papers)
+stats = kb["statistics"]
+print(f"知识库：共 {stats['total_count']} 篇（CNKI: {stats['cnki_count']} 篇）")
+```
+
+### 完整 CLI 管道
+
+```bash
+# 保存快照后，一行命令完成解析+写入
+python3 -m scripts.search.CNKISearcher parse \
+    --snapshot snapshot_cnki.txt \
+    --topic "深度学习" \
+    --kb-path knowledge/index.json \
+    --output
+```
+
+### CNKI 快照字段说明
+
+| accessibility tree 特征 | 对应字段 |
+|------------------------|---------|
+| 标题行含 `CNKI文献` | paper.title |
+| 标题行 URL | paper.url |
+| 标题后紧跟的姓名行 | paper.authors |
+| `《期刊名》202X年` | paper.venue + paper.year |
+| `被引（数字）` | paper.citationCount |
+| `下载（数字）` | _cnki_download_count |
+| `/` 分隔的短行 | paper._cnki_keywords |
+| 长段落（>30字）紧跟标题 | paper.abstract |
+
+### 注意事项
+
+- **搜索入口**：`search.cnki.com.cn`（无需登录，结果较全）
+- **翻页**：手动修改 URL 中的 `Page=N`，多页需多次抓取
+- **排序**：`Order=0`（相关度）/ `Order=1`（发表时间）/ `Order=2`（被引量）
+- **精确匹配**：`Match=Exact`，模糊：`Match=Contains`
+- **防反爬**：两次搜索间建议间隔 3-5 秒
+- **抓取限制**：知网对单 IP 请求频率有限制，批量抓取请控制节奏
+
+### 知网 vs Semantic Scholar 对比
+
+| 维度 | CNKI（知网） | Semantic Scholar |
+|------|-------------|-----------------|
+| 内容 | 中文期刊/学位论文/会议等 | 英文为主的全球学术文献 |
+| 入口 | search.cnki.com.cn | api.semanticscholar.org |
+| 抓取方式 | 浏览器 DOM 解析 | REST API（需 API Key） |
+| 数据字段 | 标题/作者/期刊/年份/关键词/被引/下载 | 标题/作者/年份/摘要/DOI/引用量 |
+| 适用场景 | 中文文献调研、文献综述 | 英文前沿研究调研 |
 
 ---
 

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-assistant"
+version = "5.4.0"
+description = "科研文献综述全流程助手"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.28",
+    "beautifulsoup4>=4.12",
+]
+
+[project.scripts]
+research-assistant = "scripts.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scripts*"]
