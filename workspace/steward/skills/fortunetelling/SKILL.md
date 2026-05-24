@@ -7,20 +7,32 @@ description: >
 ## 命令行（CLI）
 
 ```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/steward/skills/fortunetelling/references -m /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json -c /root/.openclaw/workspace/steward/skills/fortunetelling/index/chunks.json
+# 八字排盘
+fortunetelling bazi 1990 5 15 10 --gender 男
 
-# 搜索
-lookup search -i /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json <关键词>
+# 阴历转公历
+fortunetelling lunar 1990 4 15 10
 
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json
+# 运势分析
+fortunetelling fate 1990 5 15 10 --gender 男 --type timing
+
+# 查看帮助
+fortunetelling -h
+fortunetelling bazi --help
+```
+
+## 索引
+
+```bash
+lookup index -r $SKILL_REFS -m $SKILL_INDEX/manifest.json -c $SKILL_INDEX/chunks.json
+lookup search -i $SKILL_INDEX/manifest.json <关键词>
+lookup list -i $SKILL_INDEX/manifest.json
 ```
 
 ## 索引文件
 
-- manifest: `/root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json`
-- chunks: `/root/.openclaw/workspace/steward/skills/fortunetelling/index/chunks.json`
+- manifest: `$SKILL_INDEX/manifest.json`
+- chunks: `$SKILL_INDEX/chunks.json`
 
 ## 版本历史
 

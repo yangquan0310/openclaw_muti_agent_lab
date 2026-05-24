@@ -7,20 +7,27 @@ description: >
 ## 命令行（CLI）
 
 ```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/reviewer/skills/reviewer/references -m /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json -c /root/.openclaw/workspace/reviewer/skills/reviewer/index/chunks.json
+# 审稿清单
+reviewer --type thesis paper.pdf
+reviewer -t journal paper.pdf --output review.md
+reviewer --type opensource --output review.md
 
-# 搜索
-lookup search -i /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json <关键词>
+# 查看帮助
+reviewer --help
+```
 
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json
+## 索引
+
+```bash
+lookup index -r $SKILL_REFS -m $SKILL_INDEX/manifest.json -c $SKILL_INDEX/chunks.json
+lookup search -i $SKILL_INDEX/manifest.json <关键词>
+lookup list -i $SKILL_INDEX/manifest.json
 ```
 
 ## 索引文件
 
-- manifest: `/root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json`
-- chunks: `/root/.openclaw/workspace/reviewer/skills/reviewer/index/chunks.json`
+- manifest: `$SKILL_INDEX/manifest.json`
+- chunks: `$SKILL_INDEX/chunks.json`
 
 ## 版本历史
 

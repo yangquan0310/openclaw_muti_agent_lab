@@ -7,20 +7,35 @@ description: >
 ## 命令行（CLI）
 
 ```bash
-# 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/physicist/skills/physicist/references -m /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json -c /root/.openclaw/workspace/physicist/skills/physicist/index/chunks.json
+# 数值计算
+physicist calculate basic 1 2 add
+physicist calculate matrix --A '[[1,2],[3,4]]' --op inverse
+physicist calculate integrate --func 'x**2' --a 0 --b 1
+physicist calculate ode --func 't,y' --y0 1 --t0 0 --t1 10
 
-# 搜索
-lookup search -i /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json <关键词>
+# 物理可视化
+physicist visualize function --func 'sin(x)' --xmin 0 --xmax 3.14
+physicist visualize phase --func 'y,-x' --y0 1 --t0 0 --t1 20
+physicist visualize field --func 'x,y' --xmin -5 --xmax 5
+physicist visualize surface --func 'sin(sqrt(x**2+y**2))' --xmin -5 --xmax 5
 
-# 列出已索引文件
-lookup list -i /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json
+# 查看帮助
+physicist -h
+physicist calculate --help
+```
+
+## 索引
+
+```bash
+lookup index -r $SKILL_REFS -m $SKILL_INDEX/manifest.json -c $SKILL_INDEX/chunks.json
+lookup search -i $SKILL_INDEX/manifest.json <关键词>
+lookup list -i $SKILL_INDEX/manifest.json
 ```
 
 ## 索引文件
 
-- manifest: `/root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json`
-- chunks: `/root/.openclaw/workspace/physicist/skills/physicist/index/chunks.json`
+- manifest: `$SKILL_INDEX/manifest.json`
+- chunks: `$SKILL_INDEX/chunks.json`
 
 ## 版本历史
 
