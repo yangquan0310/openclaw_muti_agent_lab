@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 References 索引构建器（中央版）
-扫描指定技能的 references 目录，构建索引到该技能的 index/ 目录。
+扫描 references 目录，构建索引到 index/ 目录。
 """
 
 import json
@@ -169,58 +169,23 @@ def build_chunks(references_dir: Path, manifest: dict[str, Any]) -> list[dict[st
     return chunks
 
 
-def resolve_skill_root(skill_name: str) -> Path | None:
-    """解析技能根目录，支持 skills/ 和 workspace/ 两条路径。
-
-    优先返回有 references/ 子目录的路径（真正的技能）。
-    如果两者都有 references/，优先 workspace/ 路径。
-    """
-    candidates = [
-        Path(f"/root/.openclaw/workspace/{skill_name}/skills/{skill_name}"),
-        Path(f"/root/.openclaw/skills/{skill_name}"),
-    ]
-
-    # 优先：有 references/ 的路径
-    for p in candidates:
-        if p.exists() and (p / "references").is_dir():
-            return p
-
-    # 备选：第一个存在的路径
-    for p in candidates:
-        if p.exists():
-            return p
-
-    return None
-
-
 def main():
     parser = argparse.ArgumentParser(description='构建 References 索引')
-    parser.add_argument('--skill',
-                        help='技能名（如 programmer, mathematician）')
-    parser.add_argument('--path',
-                        help='技能根目录路径（与 --skill 二选一）')
+    parser.add_argument('--references', '-r', required=True,
+                        help='references 目录路径')
+    parser.add_argument('--index', '-i',
+                        help='输出索引目录路径（默认：<references>/../index）')
     args = parser.parse_args()
 
-    if not args.skill and not args.path:
-        print("Error: 必须提供 --skill 或 --path")
-        return 1
-    if args.skill and args.path:
-        print("Error: --skill 和 --path 不能同时使用")
+    references_dir = Path(args.references).resolve()
+    if not references_dir.exists():
+        print(f"Error: references 目录不存在: {references_dir}")
         return 1
 
-    if args.path:
-        skill_root = Path(args.path)
-        skill_name = skill_root.name
-    else:
-        skill_root = resolve_skill_root(args.skill)
-        skill_name = args.skill
-        if not skill_root:
-            print(f"Error: 技能目录不存在: {args.skill}")
-            return 1
-
-    references_dir = skill_root / "references"
-    index_dir = skill_root / "index"
+    index_dir = Path(args.index).resolve() if args.index else references_dir.parent / "index"
     index_dir.mkdir(parents=True, exist_ok=True)
+
+    skill_name = references_dir.parent.name
 
     print(f"【{skill_name}】索引构建")
     print(f"  来源: {references_dir}")

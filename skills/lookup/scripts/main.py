@@ -3,11 +3,9 @@
 lookup - 中央 References 搜索与索引工具
 
 Usage:
-    lookup search [--skill <name>] [--path <path>] <query>  搜索指南
-    lookup index --skill <name> | --path <path>            构建索引
-    lookup list [--skill <name>] [--path <path>]          列出已索引文件
-
-    lookup --help                                   显示本帮助
+    lookup search -i <index> <query>          搜索指南
+    lookup index  -r <references> [-i <path>] 构建索引
+    lookup list   -i <index>                  列出已索引文件
 """
 
 import sys
@@ -22,17 +20,13 @@ if str(_sys_path) not in sys.path:
 
 def cmd_search(args):
     from scripts.searcher import main as searcher_main
-    # 重构 sys.argv 传给 searcher
     sys.argv = ['searcher']
     if args.query:
         sys.argv.append(args.query)
-    if getattr(args, 'skill', None):
-        sys.argv.extend(['--skill', args.skill])
-    elif getattr(args, 'path', None):
-        sys.argv.extend(['--path', args.path])
-    if getattr(args, 'files_only', False):
+    sys.argv.extend(['--index', args.index])
+    if args.files_only:
         sys.argv.extend(['--files-only'])
-    if getattr(args, 'list', False):
+    if args.list:
         sys.argv.extend(['--list'])
     if getattr(args, 'top', None):
         sys.argv.extend(['--top', str(args.top)])
@@ -41,39 +35,35 @@ def cmd_search(args):
 
 def cmd_index(args):
     from scripts.indexer import main as indexer_main
-    sys.argv = ['indexer']
-    if args.skill:
-        sys.argv.extend(['--skill', args.skill])
-    elif args.path:
-        sys.argv.extend(['--path', args.path])
+    sys.argv = ['indexer', '--references', args.references]
+    if args.index:
+        sys.argv.extend(['--index', args.index])
     return indexer_main()
 
 
 def main():
     parser = argparse.ArgumentParser(
         description='lookup - 中央 References 搜索与索引工具',
-        usage='lookup <command> [--skill <name>] [options]\n\n'
+        usage='lookup <command> [options]\n\n'
               'Commands:\n'
-              '  search [--skill <name>] <query>   搜索指南\n'
-              '  index --skill <name>              构建索引\n'
-              '  list [--skill <name>]             列出已索引文件\n\n'
+              '  search -i <index> <query>   搜索指南\n'
+              '  index  -r <references> [-i]  构建索引\n'
+              '  list   -i <index>            列出已索引文件\n\n'
               'Examples:\n'
-              '  lookup search --skill programmer 设计模式\n'
-              '  lookup index --skill mathematician\n'
-              '  lookup list --skill programmer\n'
-              '  lookup list                         # 默认 programmer',
+              '  lookup search -i ./skill/index 工作流\n'
+              '  lookup index  -r ./skill/references\n'
+              '  lookup list   -i ~/.openclaw/skills/lark-base/index\n'
+              '  lookup index  -r ./skill/references -i /tmp/my-index\n'
+              '  lookup search -i /tmp/my-index/manifest.json 工作流\n',
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
-
     subparsers = parser.add_subparsers(dest='command', required=True)
 
     # lookup search
     p_search = subparsers.add_parser('search', help='搜索指南')
     p_search.add_argument('query', nargs='?', help='搜索关键词')
-    p_search.add_argument('--skill',
-                          help='技能名（默认 programmer）')
-    p_search.add_argument('--path',
-                          help='技能根目录路径（与 --skill 二选一）')
+    p_search.add_argument('-i', '--index', required=True,
+                          help='索引目录路径（或 manifest.json 路径）')
     p_search.add_argument('--files-only', '-f', action='store_true',
                           help='只显示文件匹配')
     p_search.add_argument('--list', '-l', action='store_true',
@@ -83,17 +73,15 @@ def main():
 
     # lookup index
     p_index = subparsers.add_parser('index', help='构建索引')
-    p_index.add_argument('--skill',
-                         help='技能名（如 programmer, mathematician）')
-    p_index.add_argument('--path',
-                         help='技能根目录路径（与 --skill 二选一）')
+    p_index.add_argument('-r', '--references', required=True,
+                         help='references 目录路径')
+    p_index.add_argument('-i', '--index',
+                          help='输出索引目录路径（默认：<references>/../index）')
 
     # lookup list
     p_list = subparsers.add_parser('list', help='列出已索引文件')
-    p_list.add_argument('--skill',
-                        help='技能名（默认 programmer）')
-    p_list.add_argument('--path',
-                        help='技能根目录路径（与 --skill 二选一）')
+    p_list.add_argument('-i', '--index', required=True,
+                        help='索引目录路径（或 manifest.json 路径）')
 
     args = parser.parse_args()
 
@@ -102,10 +90,8 @@ def main():
     elif args.command == 'index':
         return cmd_index(args)
     elif args.command == 'list':
-        # list 复用 searcher 的 --list 功能
         args.query = None
         args.list = True
-        # 确保 list 命令也有 files_only 属性
         args.files_only = False
         return cmd_search(args)
     else:

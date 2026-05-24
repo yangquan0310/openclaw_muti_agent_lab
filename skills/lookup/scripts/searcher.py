@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 References 搜索引擎（中央版）
-搜索指定技能的索引库。
+直接搜索指定索引库。
 """
 
 import json
@@ -23,7 +23,7 @@ class ReferencesSearcher:
 
         if not manifest_path.exists():
             raise FileNotFoundError(
-                f"索引不存在。请先运行: lookup index --skill <技能名>"
+                f"manifest.json 不存在: {manifest_path}"
             )
 
         with open(manifest_path, 'r', encoding='utf-8') as f:
@@ -103,39 +103,13 @@ class ReferencesSearcher:
         return list(self.manifest.values())
 
 
-def resolve_skill_root(skill_name: str) -> Path | None:
-    """解析技能根目录，支持 skills/ 和 workspace/ 两条路径。
-
-    优先返回有 references/ 子目录的路径（真正的技能）。
-    如果两者都有 references/，优先 workspace/ 路径。
-    """
-    candidates = [
-        Path(f"/root/.openclaw/workspace/{skill_name}/skills/{skill_name}"),
-        Path(f"/root/.openclaw/skills/{skill_name}"),
-    ]
-
-    # 优先：有 references/ 的路径
-    for p in candidates:
-        if p.exists() and (p / "references").is_dir():
-            return p
-
-    # 备选：第一个存在的路径
-    for p in candidates:
-        if p.exists():
-            return p
-
-    return None
-
-
 def main():
     parser = argparse.ArgumentParser(
         description='搜索 References 指南'
     )
     parser.add_argument('query', nargs='?', help='搜索关键词')
-    parser.add_argument('--skill',
-                        help='技能名（默认 programmer）')
-    parser.add_argument('--path',
-                        help='技能根目录路径（与 --skill 二选一）')
+    parser.add_argument('--index', '-i', required=True,
+                        help='索引目录路径（或 manifest.json 路径）')
     parser.add_argument('--files-only', '-f', action='store_true',
                         help='只显示文件匹配')
     parser.add_argument('--list', '-l', action='store_true',
@@ -144,28 +118,22 @@ def main():
                         help='返回结果数（默认 5）')
     args = parser.parse_args()
 
-    if not args.path:
-        skill_arg = args.skill or 'programmer'
-        skill_root = resolve_skill_root(skill_arg)
-        if not skill_root:
-            print(f"Error: 技能目录不存在: {skill_arg}")
-            return 1
-        skill_title = skill_arg.replace('-', ' ').title()
+    idx_path = Path(args.index)
+    # 如果传的是 manifest.json，取其父目录
+    if idx_path.name == "manifest.json":
+        index_dir = idx_path.parent
+    elif idx_path.is_dir():
+        index_dir = idx_path
     else:
-        skill_root = Path(args.path)
-        skill_title = skill_root.name
-        if not skill_root.exists():
-            print(f"Error: 路径不存在: {args.path}")
-            return 1
+        print(f"Error: 路径不存在: {idx_path}")
+        return 1
 
-    index_dir = skill_root / "index"
+    skill_title = index_dir.parent.name.title()
 
     try:
         searcher = ReferencesSearcher(index_dir)
     except FileNotFoundError as e:
         print(f"Error: {e}")
-        index_hint = f"lookup index --path {args.path}" if args.path else f"lookup index --skill {skill_arg}"
-        print(f"\n请先构建索引: {index_hint}")
         return 1
 
     if args.list:
@@ -195,7 +163,7 @@ def main():
     else:
         chunks = searcher.search(args.query, top_k=args.top)
         if not chunks:
-            print("  无匹配内容，尝试 --files-only 扩大范围")
+            print("  无匹配内容，尝试 -f 扩大范围")
             return 0
         for chunk in chunks:
             print(f"  [{chunk['file']}] {chunk['heading']}")
