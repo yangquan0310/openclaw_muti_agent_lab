@@ -61,35 +61,21 @@ metadata:
 ## 快速调用
 
 ```bash
-# 项目整理
-manager maintainer organize /root/data/disk/仓库/my-project
-manager maintainer organize --all --dry-run
+# 初始化新项目
+manager init <path> --type thesis|course|program
+
+# 整理项目文件
+manager organize <project_path> [--dry-run]
 
 # 同步模板
-manager maintainer sync-templates /root/data/disk/仓库/my-project
+manager sync <project_path> [--dry-run]
 
 # 检查更新
-manager maintainer check-updates /root/data/disk/仓库/my-project
-manager maintainer check-updates --all
-
-# 维护元数据
-manager maintainer maintain /root/data/disk/仓库/my-project
-
-# 移动文件
-manager maintainer move /root/data/disk/仓库/my-project uploads/file.pdf manuscripts/
-
-# 元数据管理
-manager maintainer meta /root/data/disk/仓库/my-project --show
-manager maintainer meta /root/data/disk/仓库/my-project --title "新标题" --tags "AI,Python"
+manager check-updates <project_path>
 
 # 查看帮助
-manager maintainer --help
-manager maintainer organize --help
-
-# 构建索引
-lookup! index -r /root/.openclaw/workspace/steward/skills/manager/references \
-  -m /root/.openclaw/workspace/steward/skills/manager/index/manifest.json \
-  -c /root/.openclaw/workspace/steward/skills/manager/index/chunks.json
+manager --help
+manager <command> --help
 
 # 搜索指南
 lookup! search -i /root/.openclaw/workspace/steward/skills/manager/index/manifest.json <关键词>
@@ -99,5 +85,6 @@ lookup! search -i /root/.openclaw/workspace/steward/skills/manager/index/manifes
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 5.1.0 | 2026-05-24 | CLI 精简：6子命令→4（init/organize/sync/check-updates），ABC 架构凝练 |
 | 5.0.0 | 2026-05-22 | 精简：详细工作流下沉到 references/ 各 guide |
 | 4.0.0 | 2026-05-21 | 唯一入口，整合所有子技能 |

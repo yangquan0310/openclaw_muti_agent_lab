@@ -302,6 +302,8 @@ class BaseMaintainer:
 
     # 子类可覆盖的角色列表（决定 README 分工表格显示哪些 Agent）
     TEAM_AGENTS = []
+    WORKFLOW_DESC = ''  # 子类覆盖：README 的工作流描述
+    HANDBOOK_TITLE = ''  # 子类覆盖：HANDBOOK 的标题
 
     def _generate_team_division_table(self):
         """从 assets/agents/ 目录解析角色文件，生成团队分工表格"""
@@ -421,10 +423,36 @@ class BaseMaintainer:
 
     def _get_template_custom_content(self, template_name):
         """
-        获取模板个性化内容（子类覆盖）
-        返回字典，包含 title 和 content 字段
+        获取各模板的个性化内容（模板方法，调用子类实现）
+        返回字典：{title, content}
         """
-        return {"title": "", "content": ""}
+        if template_name == 'README.md':
+            return {'title': '', 'content': self._get_readme_custom_content()}
+        elif template_name == 'HANDBOOK.md':
+            return {'title': self.HANDBOOK_TITLE, 'content': self._get_skill_custom_content()}
+        elif template_name == 'TODO.md':
+            return {'title': '', 'content': self._get_todo_custom_content()}
+        elif template_name == 'METADATA.json':
+            return {'title': '', 'content': self._get_metadata_custom_content()}
+        return {'title': '', 'content': ''}
+
+    def _get_readme_custom_content(self):
+        """README 个性内容：工作流描述 + 团队分工表格"""
+        team_table = self._generate_team_division_table()
+        return (self.WORKFLOW_DESC + '\n' + team_table).strip()
+
+    # 子类覆盖的个性内容方法（基类提供空实现）
+    def _get_skill_custom_content(self):
+        """HANDBOOK 个性内容（子类覆盖）"""
+        return ''
+
+    def _get_todo_custom_content(self):
+        """TODO 个性内容（子类覆盖）"""
+        return ''
+
+    def _get_metadata_custom_content(self):
+        """METADATA 个性字段（子类覆盖）"""
+        return ''
 
 
     def _inject_custom_content(self, content, custom):

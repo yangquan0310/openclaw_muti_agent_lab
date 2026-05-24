@@ -31,6 +31,16 @@ class CourseMaintainer(BaseMaintainer):
         'steward',
     ]
 
+    WORKFLOW_DESC = '''
+## 备课流程
+
+```
+v1(需求分析) → v2(内容框架) → v3(学术前沿) → v4(课件脚本) → v5(审校) → v6(终稿) → v7(收工)
+```
+'''
+
+    HANDBOOK_TITLE = '## 备课流水线'
+
     EXTRA_DIRS = [
         'syllabus',
         'chapters',
@@ -56,33 +66,6 @@ class CourseMaintainer(BaseMaintainer):
         base = super()._get_template_replacements()
         base['project_description'] = f'{self.project_name} 课程备课项目'
         return base
-
-    def _get_template_custom_content(self, template_name):
-        """
-        获取各模板的个性化内容（多态实现）
-        返回字典：{title, content}
-        """
-        if template_name == 'README.md':
-            return {'title': '', 'content': self._get_readme_custom_content()}
-        elif template_name == 'HANDBOOK.md':
-            return {'title': '## 备课流水线', 'content': self._get_skill_custom_content()}
-        elif template_name == 'TODO.md':
-            return {'title': '', 'content': self._get_todo_custom_content()}
-        elif template_name == 'METADATA.json':
-            return {'title': '', 'content': self._get_metadata_custom_content()}
-        return {'title': '', 'content': ''}
-
-    def _get_readme_custom_content(self):
-        """README.md 个性内容（包含流程 + 团队分工）"""
-        workflow = '''
-## 备课流程
-
-```
-v1(需求分析) → v2(内容框架) → v3(学术前沿) → v4(课件脚本) → v5(审校) → v6(终稿) → v7(收工)
-```
-'''
-        team_table = self._generate_team_division_table()
-        return workflow + '\n' + team_table
 
     def _get_skill_custom_content(self):
         """HANDBOOK.md 个性内容"""

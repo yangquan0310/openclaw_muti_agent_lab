@@ -1030,54 +1030,30 @@ def main():
     # 子命令
     subparsers = parser.add_subparsers(dest="command", help="可用命令")
 
-    # 整理命令(默认)
-    organize_parser = subparsers.add_parser("organize", help="整理项目文件(默认命令)")
+    # init - 初始化新项目
+    init_parser = subparsers.add_parser("init", help="初始化新项目")
+    init_parser.add_argument("project_path", help="项目路径（或项目名）")
+    init_parser.add_argument("--type", required=True, choices=["thesis", "course", "program"], help="项目类型")
+
+    # organize - 整理项目文件（默认命令）
+    organize_parser = subparsers.add_parser("organize", help="整理项目文件")
     organize_parser.add_argument("project_path", nargs="?", help="项目路径")
     organize_parser.add_argument("--all", action="store_true", help="整理所有项目")
     organize_parser.add_argument("--dry-run", action="store_true", help="预览模式")
     organize_parser.add_argument("--projects-dir", default="/root/data/disk/仓库", help="项目根目录（默认: /root/data/disk/仓库/）")
 
-    # 模板同步命令
-    sync_parser = subparsers.add_parser("sync-templates", help="同步模板文件（保留 PRIVATE 区块）")
+    # sync - 同步模板
+    sync_parser = subparsers.add_parser("sync", help="同步模板文件（保留 PRIVATE 区块）")
     sync_parser.add_argument("project_path", nargs="?", help="项目路径")
     sync_parser.add_argument("--all", action="store_true", help="同步所有项目")
     sync_parser.add_argument("--dry-run", action="store_true", help="预览模式")
     sync_parser.add_argument("--projects-dir", default="/root/data/disk/仓库", help="项目根目录（默认: /root/data/disk/仓库/）")
 
-    # 检查更新命令
+    # check-updates - 检查更新
     check_parser = subparsers.add_parser("check-updates", help="检查项目文档是否需要更新")
     check_parser.add_argument("project_path", nargs="?", help="项目路径")
     check_parser.add_argument("--all", action="store_true", help="检查所有项目")
     check_parser.add_argument("--projects-dir", default="/root/data/disk/仓库", help="项目根目录（默认: /root/data/disk/仓库/）")
-
-    # 维护命令
-    maintain_parser = subparsers.add_parser("maintain", help="维护项目元数据和结构")
-    maintain_parser.add_argument("project_path", nargs="?", help="项目路径")
-    maintain_parser.add_argument("--all", action="store_true", help="维护所有项目")
-    maintain_parser.add_argument("--dry-run", action="store_true", help="预览模式")
-    maintain_parser.add_argument("--projects-dir", default="/root/data/disk/仓库", help="项目根目录（默认: /root/data/disk/仓库/）")
-
-    # 移动命令
-    move_parser = subparsers.add_parser("move", help="移动文件到标准目录")
-    move_parser.add_argument("project_path", help="项目路径")
-    move_parser.add_argument("file", help="要移动的文件路径(相对项目根目录)")
-    move_parser.add_argument("target", help="目标目录(uploads/manuscripts/knowledge/note/knowledge/review)")
-    move_parser.add_argument("--new-name", help="新文件名(可选)")
-    move_parser.add_argument("--overwrite", action="store_true", help="覆盖已存在文件")
-
-    # 元数据管理参数
-    meta_parser = subparsers.add_parser("meta", help="元数据管理")
-    meta_parser.add_argument("project_path", help="项目路径")
-    meta_parser.add_argument("--title", help="设置项目标题")
-    meta_parser.add_argument("--desc", "--description", help="设置项目描述")
-    meta_parser.add_argument("--status", help="设置项目状态")
-    meta_parser.add_argument("--version", help="设置版本号")
-    meta_parser.add_argument("--tags", help="设置标签(逗号分隔)")
-    meta_parser.add_argument("--add-tag", action="append", help="添加标签")
-    meta_parser.add_argument("--rm-tag", action="append", help="移除标签")
-    meta_parser.add_argument("--set", action="append", help="通用字段设置(KEY=VALUE)")
-    meta_parser.add_argument("--show", action="store_true", help="显示当前元数据")
-    meta_parser.add_argument("--save", action="store_true", help="显式保存")
 
     args = parser.parse_args()
 
@@ -1089,7 +1065,42 @@ def main():
         if not hasattr(args, 'project_path'):
             args.project_path = None
 
-    # 整理模式(默认) — 使用 from_path() 自动路由到正确子类
+    # init - 初始化新项目
+    if args.command == "init":
+        project_path = os.path.expanduser(args.project_path)
+        project_type = args.type
+
+        # 如果只有项目名，自动加上仓库根目录
+        if '/' not in project_path and '\\' not in project_path:
+            project_path = os.path.join('/root/data/disk/仓库', project_path)
+
+        # 创建项目目录
+        if not os.path.exists(project_path):
+            os.makedirs(project_path, exist_ok=True)
+            print(f"📁 创建项目目录: {project_path}")
+        else:
+            print(f"📂 项目目录已存在: {project_path}")
+
+        # 根据类型创建子类实例并初始化
+        from maintainer.ThesisMaintainer import ThesisMaintainer
+        from maintainer.CourseMaintainer import CourseMaintainer
+        from maintainer.ProgramMaintainer import ProgramMaintainer
+        subclass_map = {
+            "thesis": ThesisMaintainer,
+            "course": CourseMaintainer,
+            "program": ProgramMaintainer,
+        }
+        cls = subclass_map.get(project_type)
+        if not cls:
+            print(f"❌ 未知项目类型: {project_type}")
+            return 1
+
+        maintainer = cls(project_path)
+        maintainer.init()
+        print(f"✅ 项目初始化完成: {project_type}")
+        return 0
+
+    # organize - 整理项目文件 — 使用 from_path() 自动路由到正确子类
     if args.command == "organize":
         if args.all:
             projects_dir = args.projects_dir
@@ -1187,7 +1198,7 @@ def main():
             print("错误: 请指定项目路径或使用 --all")
             sys.exit(1)
 
-    if args.command == "sync-templates":
+    if args.command == "sync":
         if args.all:
             projects_dir = args.projects_dir
             if not os.path.exists(projects_dir):
@@ -1207,78 +1218,6 @@ def main():
 
             maintainer = Maintainer.from_path(args.project_path)
             maintainer.sync_templates(dry_run=args.dry_run)
-        return
-
-    # 维护模式 — 使用 from_path() 自动路由到正确子类
-    if args.command == "maintain":
-        if args.all:
-            projects_dir = args.projects_dir
-            if not os.path.exists(projects_dir):
-                print(f"❌ 项目根目录不存在: {projects_dir}")
-                sys.exit(1)
-
-            for project_name in os.listdir(projects_dir):
-                project_path = os.path.join(projects_dir, project_name)
-                if os.path.isdir(project_path) and not project_name.startswith('.'):
-                    print(f"\n📁 维护项目: {project_name}")
-                    maintainer = Maintainer.from_path(project_path)
-                    results = maintainer.maintain(dry_run=args.dry_run)
-        else:
-            if not args.project_path:
-                print("❌ 请指定项目路径或使用 --all")
-                sys.exit(1)
-
-            maintainer = Maintainer.from_path(args.project_path)
-            results = maintainer.maintain(dry_run=args.dry_run)
-        return
-
-    # 移动模式 — 使用 Maintainer(project_path) 直接实例（不需要多态）
-    if args.command == "move":
-        maintainer = Maintainer(args.project_path)
-        result = maintainer.move_file(
-            args.file,
-            args.target,
-            new_name=args.new_name,
-            overwrite=args.overwrite
-        )
-        if result:
-            print(f"✅ 移动成功")
-        else:
-            print("❌ 移动失败")
-        return
-
-    # 元数据管理模式
-    if args.command == "meta":
-        mm = MetadataManager(args.project_path)
-
-        if args.title:
-            mm.set_title(args.title)
-        if args.desc:
-            mm.set_description(args.desc)
-        if args.status:
-            mm.set_status(args.status)
-        if args.version:
-            mm.set_version(args.version)
-        if args.tags:
-            mm.set_tags(args.tags.split(","))
-        if args.add_tag:
-            for tag in args.add_tag:
-                mm.add_tag(tag)
-        if args.rm_tag:
-            for tag in args.rm_tag:
-                mm.remove_tag(tag)
-        if args.set:
-            for setting in args.set:
-                if "=" in setting:
-                    key, value = setting.split("=", 1)
-                    mm.set_field(key.strip(), value.strip())
-
-        if args.show:
-            print(json.dumps(mm.to_dict(), ensure_ascii=False, indent=2))
-
-        if args.save or not args.show:
-            mm.save()
-
         return
 
 

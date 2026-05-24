@@ -31,6 +31,16 @@ class ProgramMaintainer(BaseMaintainer):
         'steward',
     ]
 
+    WORKFLOW_DESC = '''
+## 开发流程
+
+```
+需求分析 → 设计 → 编码 → 测试 → 部署
+```
+'''
+
+    HANDBOOK_TITLE = '## 程序开发流程'
+
     EXTRA_DIRS = [
         'agents',
         'src',
@@ -60,33 +70,6 @@ class ProgramMaintainer(BaseMaintainer):
         base = super()._get_template_replacements()
         base['project_description'] = f'{self.project_name} 程序开发项目'
         return base
-
-    def _get_template_custom_content(self, template_name):
-        """
-        获取各模板的个性化内容（多态实现）
-        返回字典：{title, content}
-        """
-        if template_name == 'README.md':
-            return {'title': '', 'content': self._get_readme_custom_content()}
-        elif template_name == 'HANDBOOK.md':
-            return {'title': '## 程序开发流程', 'content': self._get_skill_custom_content()}
-        elif template_name == 'TODO.md':
-            return {'title': '', 'content': self._get_todo_custom_content()}
-        elif template_name == 'METADATA.json':
-            return {'title': '', 'content': self._get_metadata_custom_content()}
-        return {'title': '', 'content': ''}
-
-    def _get_readme_custom_content(self):
-        """README.md 个性内容（包含开发流程 + 团队分工）"""
-        workflow = '''
-## 开发流程
-
-```
-需求分析 → 设计 → 编码 → 测试 → 部署
-```
-'''
-        team_table = self._generate_team_division_table()
-        return workflow + '\n' + team_table
 
     def _get_skill_custom_content(self):
         """HANDBOOK.md 个性内容"""
