@@ -113,3 +113,8 @@
 *最后重构: 2026-05-21*
 *重构者: 大管家*
 
+
+## Promoted From Short-Term Memory (2026-05-24)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
+- | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]

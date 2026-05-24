@@ -57,6 +57,24 @@
 | curl | HTTP 请求 | `curl -s https://...` |
 | Vim / Nano | 文件编辑 | `vim file.md`, `nano file.md` |
 
+#### mineru 使用方法
+
+> minerU 可将 PDF 转换为 Markdown，适合复杂 PDF（表格、公式、图像）解析
+
+**激活环境**：
+```bash
+conda activate docproc
+```
+
+**基本用法**：
+```bash
+python -m mineru.run --pdf /path/to/file.pdf --output /path/to/output/
+```
+
+**输出**：生成 `{文件名}.md` 文件，包含解析后的 Markdown 内容
+
+**适用场景**：学术论文、含表格/公式的复杂文档、多栏排版 PDF
+
 ## OpenClaw 常用命令
 
 ### 服务管理
@@ -223,6 +241,8 @@ lark-cli im +messages-send --user-id ou_xxx --audio ./voice.ogg
 > ```bash
 > python3 ~/.openclaw/skills/feishu-voice/scripts/send_voice.py <mp3_path> [open_id]
 > ```
+
+---
 
 # 回复消息
 lark-cli im +messages-reply --message-id om_xxx --text "回复内容"
