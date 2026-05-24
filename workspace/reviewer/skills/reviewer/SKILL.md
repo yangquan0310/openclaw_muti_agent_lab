@@ -154,12 +154,12 @@ reviewer --type thesis paper.pdf
 reviewer -t journal paper.pdf --output review.md
 
 # 构建索引
-lookup index -r /root/.openclaw/workspace/reviewer/skills/reviewer/references \
+lookup! index -r /root/.openclaw/workspace/reviewer/skills/reviewer/references \
   -m /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json \
   -c /root/.openclaw/workspace/reviewer/skills/reviewer/index/chunks.json
 
 # 搜索指南
-lookup search -i /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json <关键词>
+lookup! search -i /root/.openclaw/workspace/reviewer/skills/reviewer/index/manifest.json <关键词>
 
 # 查看帮助
 reviewer --help

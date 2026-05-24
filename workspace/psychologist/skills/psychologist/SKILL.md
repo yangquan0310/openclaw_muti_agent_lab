@@ -185,13 +185,13 @@ python3 -m scripts.lookup.indexer                 # 重建索引
 
 ```bash
 # 构建索引（references 文档有更新时执行）
-lookup index -r /root/.openclaw/workspace/psychologist/skills/psychologist/references -m /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json -c /root/.openclaw/workspace/psychologist/skills/psychologist/index/chunks.json
+lookup! index -r /root/.openclaw/workspace/psychologist/skills/psychologist/references -m /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json -c /root/.openclaw/workspace/psychologist/skills/psychologist/index/chunks.json
 
 # 搜索指南
-lookup search -i /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json <关键词>
+lookup! search -i /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json <关键词>
 
 # 列出已索引文件
-lookup list -i /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json
+lookup! list -i /root/.openclaw/workspace/psychologist/skills/psychologist/index/manifest.json
 ```
 
 ## 版本历史

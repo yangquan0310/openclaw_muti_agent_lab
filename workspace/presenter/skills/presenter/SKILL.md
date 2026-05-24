@@ -114,12 +114,12 @@ presenter create --topic "AI趋势" --style 科技
 presenter outline --topic "产品介绍"
 
 # 构建索引
-lookup index -r /root/.openclaw/workspace/presenter/skills/presenter/references \
+lookup! index -r /root/.openclaw/workspace/presenter/skills/presenter/references \
   -m /root/.openclaw/workspace/presenter/skills/presenter/index/manifest.json \
   -c /root/.openclaw/workspace/presenter/skills/presenter/index/chunks.json
 
 # 搜索指南
-lookup search -i /root/.openclaw/workspace/presenter/skills/presenter/index/manifest.json <关键词>
+lookup! search -i /root/.openclaw/workspace/presenter/skills/presenter/index/manifest.json <关键词>
 
 # 查看帮助
 presenter --help

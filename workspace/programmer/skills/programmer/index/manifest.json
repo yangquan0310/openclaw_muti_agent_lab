@@ -1,0 +1,1980 @@
+{
+  "oop-principles-guide": {
+    "file": "oop-principles-guide.md",
+    "title": "OOP 原则",
+    "description": "> 封装、继承、多态详解",
+    "keywords": [
+      "OOP 原则",
+      "Encapsulation",
+      "封装",
+      "核心思想",
+      "目的",
+      "Python 实现",
+      "访问控制",
+      "Inheritance",
+      "继承",
+      "父类",
+      "子类",
+      "使用",
+      "继承类型",
+      "Override",
+      "方法覆盖",
+      "super() 调用父类",
+      "Polymorphism",
+      "多态",
+      "同一接口，不同实现",
+      "输出:",
+      "旺财 says 汪",
+      "咪咪 says 喵",
+      "Duck Typing",
+      "鸭子类型",
+      "ABC",
+      "抽象基类",
+      "大原则的关系",
+      "常见误区",
+      "标记",
+      "`public`"
+    ],
+    "sections": [
+      {
+        "heading": "OOP 原则",
+        "level": 1
+      },
+      {
+        "heading": "一、封装（Encapsulation）",
+        "level": 2
+      },
+      {
+        "heading": "核心思想",
+        "level": 3
+      },
+      {
+        "heading": "目的",
+        "level": 3
+      },
+      {
+        "heading": "Python 实现",
+        "level": 3
+      },
+      {
+        "heading": "访问控制",
+        "level": 3
+      },
+      {
+        "heading": "二、继承（Inheritance）",
+        "level": 2
+      },
+      {
+        "heading": "核心思想",
+        "level": 3
+      },
+      {
+        "heading": "目的",
+        "level": 3
+      },
+      {
+        "heading": "Python 实现",
+        "level": 3
+      },
+      {
+        "heading": "父类",
+        "level": 1
+      },
+      {
+        "heading": "子类",
+        "level": 1
+      },
+      {
+        "heading": "使用",
+        "level": 1
+      },
+      {
+        "heading": "继承类型",
+        "level": 3
+      },
+      {
+        "heading": "方法覆盖（Override）",
+        "level": 3
+      },
+      {
+        "heading": "super() 调用父类",
+        "level": 3
+      },
+      {
+        "heading": "三、多态（Polymorphism）",
+        "level": 2
+      },
+      {
+        "heading": "核心思想",
+        "level": 3
+      },
+      {
+        "heading": "目的",
+        "level": 3
+      },
+      {
+        "heading": "Python 实现",
+        "level": 3
+      },
+      {
+        "heading": "同一接口，不同实现",
+        "level": 1
+      },
+      {
+        "heading": "输出:",
+        "level": 1
+      },
+      {
+        "heading": "旺财 says 汪",
+        "level": 1
+      },
+      {
+        "heading": "咪咪 says 喵",
+        "level": 1
+      },
+      {
+        "heading": "鸭子类型（Duck Typing）",
+        "level": 3
+      },
+      {
+        "heading": "抽象基类（ABC）",
+        "level": 3
+      },
+      {
+        "heading": "三大原则的关系",
+        "level": 2
+      },
+      {
+        "heading": "常见误区",
+        "level": 2
+      }
+    ]
+  },
+  "oop-principles": {
+    "file": "oop-principles.md",
+    "title": "OOP 原则",
+    "description": "> 封装、继承、多态详解",
+    "keywords": [
+      "OOP 原则",
+      "Encapsulation",
+      "封装",
+      "核心思想",
+      "目的",
+      "Python 实现",
+      "访问控制",
+      "Inheritance",
+      "继承",
+      "父类",
+      "子类",
+      "使用",
+      "继承类型",
+      "Override",
+      "方法覆盖",
+      "super() 调用父类",
+      "Polymorphism",
+      "多态",
+      "同一接口，不同实现",
+      "输出:",
+      "旺财 says 汪",
+      "咪咪 says 喵",
+      "Duck Typing",
+      "鸭子类型",
+      "ABC",
+      "抽象基类",
+      "大原则的关系",
+      "常见误区",
+      "标记",
+      "`public`"
+    ],
+    "sections": [
+      {
+        "heading": "OOP 原则",
+        "level": 1
+      },
+      {
+        "heading": "一、封装（Encapsulation）",
+        "level": 2
+      },
+      {
+        "heading": "核心思想",
+        "level": 3
+      },
+      {
+        "heading": "目的",
+        "level": 3
+      },
+      {
+        "heading": "Python 实现",
+        "level": 3
+      },
+      {
+        "heading": "访问控制",
+        "level": 3
+      },
+      {
+        "heading": "二、继承（Inheritance）",
+        "level": 2
+      },
+      {
+        "heading": "核心思想",
+        "level": 3
+      },
+      {
+        "heading": "目的",
+        "level": 3
+      },
+      {
+        "heading": "Python 实现",
+        "level": 3
+      },
+      {
+        "heading": "父类",
+        "level": 1
+      },
+      {
+        "heading": "子类",
+        "level": 1
+      },
+      {
+        "heading": "使用",
+        "level": 1
+      },
+      {
+        "heading": "继承类型",
+        "level": 3
+      },
+      {
+        "heading": "方法覆盖（Override）",
+        "level": 3
+      },
+      {
+        "heading": "super() 调用父类",
+        "level": 3
+      },
+      {
+        "heading": "三、多态（Polymorphism）",
+        "level": 2
+      },
+      {
+        "heading": "核心思想",
+        "level": 3
+      },
+      {
+        "heading": "目的",
+        "level": 3
+      },
+      {
+        "heading": "Python 实现",
+        "level": 3
+      },
+      {
+        "heading": "同一接口，不同实现",
+        "level": 1
+      },
+      {
+        "heading": "输出:",
+        "level": 1
+      },
+      {
+        "heading": "旺财 says 汪",
+        "level": 1
+      },
+      {
+        "heading": "咪咪 says 喵",
+        "level": 1
+      },
+      {
+        "heading": "鸭子类型（Duck Typing）",
+        "level": 3
+      },
+      {
+        "heading": "抽象基类（ABC）",
+        "level": 3
+      },
+      {
+        "heading": "三大原则的关系",
+        "level": 2
+      },
+      {
+        "heading": "常见误区",
+        "level": 2
+      }
+    ]
+  },
+  "coding-standards": {
+    "file": "coding-standards.md",
+    "title": "代码规范",
+    "description": "> 整洁代码原则与实践",
+    "keywords": [
+      "代码规范",
+      "核心原则",
+      "命名规范",
+      "基本原则",
+      "命名好坏对比",
+      "❌ 差：含糊、缩写",
+      "✅ 好：清晰、完整",
+      "❌ 差：类型前缀",
+      "✅ 好：自然命名",
+      "函数设计",
+      "原则",
+      "好 vs 差",
+      "❌ 差：做太多件事",
+      "✅ 好：职责分离",
+      "参数处理",
+      "❌ 差：太多参数",
+      "✅ 好：使用配置对象",
+      "错误处理",
+      "模式",
+      "输入验证",
+      "结果包装",
+      "日志记录",
+      "代码结构",
+      "模块组织",
+      "导入顺序",
+      "标准库",
+      "第三方库",
+      "本地模块",
+      "注释与文档",
+      "示例"
+    ],
+    "sections": [
+      {
+        "heading": "代码规范",
+        "level": 1
+      },
+      {
+        "heading": "核心原则",
+        "level": 2
+      },
+      {
+        "heading": "命名规范",
+        "level": 2
+      },
+      {
+        "heading": "基本原则",
+        "level": 3
+      },
+      {
+        "heading": "命名好坏对比",
+        "level": 3
+      },
+      {
+        "heading": "❌ 差：含糊、缩写",
+        "level": 1
+      },
+      {
+        "heading": "✅ 好：清晰、完整",
+        "level": 1
+      },
+      {
+        "heading": "❌ 差：类型前缀",
+        "level": 1
+      },
+      {
+        "heading": "✅ 好：自然命名",
+        "level": 1
+      },
+      {
+        "heading": "函数设计",
+        "level": 2
+      },
+      {
+        "heading": "原则",
+        "level": 3
+      },
+      {
+        "heading": "好 vs 差",
+        "level": 3
+      },
+      {
+        "heading": "❌ 差：做太多件事",
+        "level": 1
+      },
+      {
+        "heading": "✅ 好：职责分离",
+        "level": 1
+      },
+      {
+        "heading": "参数处理",
+        "level": 3
+      },
+      {
+        "heading": "❌ 差：太多参数",
+        "level": 1
+      },
+      {
+        "heading": "✅ 好：使用配置对象",
+        "level": 1
+      },
+      {
+        "heading": "错误处理",
+        "level": 2
+      },
+      {
+        "heading": "原则",
+        "level": 3
+      },
+      {
+        "heading": "模式",
+        "level": 3
+      },
+      {
+        "heading": "1. 输入验证",
+        "level": 1
+      },
+      {
+        "heading": "2. 结果包装",
+        "level": 1
+      },
+      {
+        "heading": "3. 日志记录",
+        "level": 1
+      },
+      {
+        "heading": "代码结构",
+        "level": 2
+      },
+      {
+        "heading": "模块组织",
+        "level": 3
+      },
+      {
+        "heading": "导入顺序",
+        "level": 3
+      },
+      {
+        "heading": "1. 标准库",
+        "level": 1
+      },
+      {
+        "heading": "2. 第三方库",
+        "level": 1
+      },
+      {
+        "heading": "3. 本地模块",
+        "level": 1
+      },
+      {
+        "heading": "注释与文档",
+        "level": 2
+      },
+      {
+        "heading": "原则",
+        "level": 3
+      },
+      {
+        "heading": "示例",
+        "level": 3
+      },
+      {
+        "heading": "❌ 差：解释代码做什么（代码本身已说明）",
+        "level": 1
+      },
+      {
+        "heading": "增加 i",
+        "level": 1
+      },
+      {
+        "heading": "✅ 好：解释为什么",
+        "level": 1
+      },
+      {
+        "heading": "跳过已处理的用户，从下一个开始",
+        "level": 1
+      },
+      {
+        "heading": "✅ 好：公共接口要文档",
+        "level": 1
+      },
+      {
+        "heading": "代码审查清单",
+        "level": 2
+      }
+    ]
+  },
+  "testing-guide": {
+    "file": "testing-guide.md",
+    "title": "测试指南",
+    "description": "> 软件测试方法与实践",
+    "keywords": [
+      "测试指南",
+      "测试基础知识",
+      "测试分层",
+      "测试金字塔",
+      "单元测试",
+      "什么是单元测试",
+      "FIRST",
+      "单元测试原则",
+      "Python 单元测试示例",
+      "被测函数",
+      "测试类",
+      "单元测试命名",
+      "集成测试",
+      "什么是集成测试",
+      "集成测试示例",
+      "E2E 测试",
+      "什么是 E2E 测试",
+      "Playwright",
+      "E2E 测试示例",
+      "测试策略",
+      "测试策略矩阵",
+      "TDD 开发流程",
+      "测试报告",
+      "测试覆盖率",
+      "pytest + coverage",
+      "覆盖率报告",
+      "CI/CD 中的测试",
+      "github/workflows/test.yml",
+      "常见测试问题",
+      "测试检查清单"
+    ],
+    "sections": [
+      {
+        "heading": "测试指南",
+        "level": 1
+      },
+      {
+        "heading": "测试基础知识",
+        "level": 2
+      },
+      {
+        "heading": "测试分层",
+        "level": 3
+      },
+      {
+        "heading": "测试金字塔",
+        "level": 3
+      },
+      {
+        "heading": "单元测试",
+        "level": 2
+      },
+      {
+        "heading": "什么是单元测试",
+        "level": 3
+      },
+      {
+        "heading": "单元测试原则（FIRST）",
+        "level": 3
+      },
+      {
+        "heading": "Python 单元测试示例",
+        "level": 3
+      },
+      {
+        "heading": "被测函数",
+        "level": 1
+      },
+      {
+        "heading": "测试类",
+        "level": 1
+      },
+      {
+        "heading": "单元测试命名",
+        "level": 3
+      },
+      {
+        "heading": "集成测试",
+        "level": 2
+      },
+      {
+        "heading": "什么是集成测试",
+        "level": 3
+      },
+      {
+        "heading": "集成测试示例",
+        "level": 3
+      },
+      {
+        "heading": "E2E 测试",
+        "level": 2
+      },
+      {
+        "heading": "什么是 E2E 测试",
+        "level": 3
+      },
+      {
+        "heading": "E2E 测试示例（Playwright）",
+        "level": 3
+      },
+      {
+        "heading": "测试策略",
+        "level": 2
+      },
+      {
+        "heading": "测试策略矩阵",
+        "level": 3
+      },
+      {
+        "heading": "TDD 开发流程",
+        "level": 3
+      },
+      {
+        "heading": "测试报告",
+        "level": 2
+      },
+      {
+        "heading": "测试覆盖率",
+        "level": 3
+      },
+      {
+        "heading": "pytest + coverage",
+        "level": 1
+      },
+      {
+        "heading": "覆盖率报告",
+        "level": 1
+      },
+      {
+        "heading": "CI/CD 中的测试",
+        "level": 3
+      },
+      {
+        "heading": ".github/workflows/test.yml",
+        "level": 1
+      },
+      {
+        "heading": "常见测试问题",
+        "level": 2
+      },
+      {
+        "heading": "测试检查清单",
+        "level": 2
+      }
+    ]
+  },
+  "devops-guide": {
+    "file": "devops-guide.md",
+    "title": "运维指南",
+    "description": "> 部署、监控、日志、容器化、CI/CD",
+    "keywords": [
+      "运维指南",
+      "运维核心职责",
+      "Docker",
+      "容器化",
+      "Dockerfile 基础",
+      "基础镜像",
+      "设置工作目录",
+      "复制依赖文件",
+      "安装依赖",
+      "复制源代码",
+      "暴露端口",
+      "启动命令",
+      "Docker Compose",
+      "常用命令",
+      "构建镜像",
+      "运行容器",
+      "查看日志",
+      "进入容器",
+      "停止删除",
+      "K8s",
+      "Kubernetes",
+      "Pod 定义",
+      "Deployment 定义",
+      "部署应用",
+      "查看 pods",
+      "扩缩容",
+      "回滚",
+      "CI/CD 流水线",
+      "GitHub Actions",
+      "github/workflows/deploy.yml"
+    ],
+    "sections": [
+      {
+        "heading": "运维指南",
+        "level": 1
+      },
+      {
+        "heading": "运维核心职责",
+        "level": 2
+      },
+      {
+        "heading": "容器化（Docker）",
+        "level": 2
+      },
+      {
+        "heading": "Dockerfile 基础",
+        "level": 3
+      },
+      {
+        "heading": "基础镜像",
+        "level": 1
+      },
+      {
+        "heading": "设置工作目录",
+        "level": 1
+      },
+      {
+        "heading": "复制依赖文件",
+        "level": 1
+      },
+      {
+        "heading": "安装依赖",
+        "level": 1
+      },
+      {
+        "heading": "复制源代码",
+        "level": 1
+      },
+      {
+        "heading": "暴露端口",
+        "level": 1
+      },
+      {
+        "heading": "启动命令",
+        "level": 1
+      },
+      {
+        "heading": "Docker Compose",
+        "level": 3
+      },
+      {
+        "heading": "常用命令",
+        "level": 3
+      },
+      {
+        "heading": "构建镜像",
+        "level": 1
+      },
+      {
+        "heading": "运行容器",
+        "level": 1
+      },
+      {
+        "heading": "查看日志",
+        "level": 1
+      },
+      {
+        "heading": "进入容器",
+        "level": 1
+      },
+      {
+        "heading": "停止删除",
+        "level": 1
+      },
+      {
+        "heading": "Kubernetes（K8s）",
+        "level": 2
+      },
+      {
+        "heading": "Pod 定义",
+        "level": 3
+      },
+      {
+        "heading": "Deployment 定义",
+        "level": 3
+      },
+      {
+        "heading": "常用命令",
+        "level": 3
+      },
+      {
+        "heading": "部署应用",
+        "level": 1
+      },
+      {
+        "heading": "查看 pods",
+        "level": 1
+      },
+      {
+        "heading": "查看日志",
+        "level": 1
+      },
+      {
+        "heading": "扩缩容",
+        "level": 1
+      },
+      {
+        "heading": "回滚",
+        "level": 1
+      },
+      {
+        "heading": "CI/CD 流水线",
+        "level": 2
+      },
+      {
+        "heading": "GitHub Actions",
+        "level": 3
+      },
+      {
+        "heading": ".github/workflows/deploy.yml",
+        "level": 1
+      },
+      {
+        "heading": "GitLab CI",
+        "level": 3
+      },
+      {
+        "heading": ".gitlab-ci.yml",
+        "level": 1
+      },
+      {
+        "heading": "监控与告警",
+        "level": 2
+      },
+      {
+        "heading": "监控指标（USE 方法）",
+        "level": 3
+      },
+      {
+        "heading": "Prometheus + Grafana",
+        "level": 3
+      },
+      {
+        "heading": "prometheus.yml",
+        "level": 1
+      },
+      {
+        "heading": "告警规则",
+        "level": 3
+      },
+      {
+        "heading": "alert.yml",
+        "level": 1
+      },
+      {
+        "heading": "常用命令",
+        "level": 3
+      },
+      {
+        "heading": "查看服务状态",
+        "level": 1
+      },
+      {
+        "heading": "重启服务",
+        "level": 1
+      },
+      {
+        "heading": "查看资源使用",
+        "level": 1
+      },
+      {
+        "heading": "网络连接",
+        "level": 1
+      },
+      {
+        "heading": "日志管理",
+        "level": 2
+      },
+      {
+        "heading": "日志分层",
+        "level": 3
+      },
+      {
+        "heading": "日志规范",
+        "level": 3
+      },
+      {
+        "heading": "Python 日志配置",
+        "level": 1
+      },
+      {
+        "heading": "使用",
+        "level": 1
+      },
+      {
+        "heading": "ELK Stack",
+        "level": 3
+      },
+      {
+        "heading": "docker-compose.yml 片段",
+        "level": 1
+      },
+      {
+        "heading": "部署流程",
+        "level": 2
+      },
+      {
+        "heading": "部署检查清单",
+        "level": 3
+      },
+      {
+        "heading": "蓝绿部署",
+        "level": 3
+      },
+      {
+        "heading": "滚动更新",
+        "level": 3
+      },
+      {
+        "heading": "回滚操作",
+        "level": 3
+      },
+      {
+        "heading": "Docker Compose 回滚",
+        "level": 1
+      },
+      {
+        "heading": "Kubernetes 回滚",
+        "level": 1
+      },
+      {
+        "heading": "Git 回滚",
+        "level": 1
+      },
+      {
+        "heading": "安全运维",
+        "level": 2
+      },
+      {
+        "heading": "安全检查项",
+        "level": 3
+      },
+      {
+        "heading": "密钥管理",
+        "level": 3
+      },
+      {
+        "heading": "环境变量",
+        "level": 1
+      },
+      {
+        "heading": "Docker Secrets",
+        "level": 1
+      },
+      {
+        "heading": "K8s Secret",
+        "level": 1
+      },
+      {
+        "heading": "故障处理",
+        "level": 2
+      },
+      {
+        "heading": "故障响应流程",
+        "level": 3
+      },
+      {
+        "heading": "常用排查命令",
+        "level": 3
+      },
+      {
+        "heading": "CPU/内存",
+        "level": 1
+      },
+      {
+        "heading": "磁盘",
+        "level": 1
+      },
+      {
+        "heading": "网络",
+        "level": 1
+      },
+      {
+        "heading": "进程",
+        "level": 1
+      },
+      {
+        "heading": "日志",
+        "level": 1
+      }
+    ]
+  },
+  "workflows": {
+    "file": "workflows.md",
+    "title": "programmer 核心工作流",
+    "description": "> programmer 技能的完整工作流程，涵盖代码开发、Bug排查、重构优化、技术设计。",
+    "keywords": [
+      "programmer 核心工作流",
+      "触发条件",
+      "快速开始",
+      "工作流速查",
+      "Q&A",
+      "Q1：代码开发的标准流程？",
+      "Q2：遇到Bug如何排查？",
+      "Q3：什么时候需要重构？",
+      "错误排查",
+      "需求",
+      "OOP问题",
+      "设计原则",
+      "架构设计",
+      "全栈开发",
+      "开发流程",
+      "代码规范",
+      "现象",
+      "程序崩溃",
+      "性能慢",
+      "编译失败",
+      "测试失败"
+    ],
+    "sections": [
+      {
+        "heading": "programmer 核心工作流",
+        "level": 1
+      },
+      {
+        "heading": "触发条件",
+        "level": 2
+      },
+      {
+        "heading": "快速开始",
+        "level": 2
+      },
+      {
+        "heading": "工作流速查",
+        "level": 2
+      },
+      {
+        "heading": "Q&A",
+        "level": 2
+      },
+      {
+        "heading": "Q1：代码开发的标准流程？",
+        "level": 3
+      },
+      {
+        "heading": "Q2：遇到Bug如何排查？",
+        "level": 3
+      },
+      {
+        "heading": "Q3：什么时候需要重构？",
+        "level": 3
+      },
+      {
+        "heading": "错误排查",
+        "level": 2
+      }
+    ]
+  },
+  "product-guide": {
+    "file": "product-guide.md",
+    "title": "产品经理指南",
+    "description": "> 产品需求分析与设计",
+    "keywords": [
+      "产品经理指南",
+      "产品经理核心职责",
+      "需求分析",
+      "需求采集",
+      "需求分类",
+      "需求优先级",
+      "产品设计",
+      "用户故事模板",
+      "功能设计示例",
+      "功能：用户登录",
+      "概述",
+      "用户流程",
+      "需求详情",
+      "异常处理",
+      "PRD 文档结构",
+      "跨部门协作",
+      "常见问题",
+      "职责",
+      "需求文档",
+      "类型",
+      "基础需求",
+      "期望需求",
+      "兴奋需求",
+      "无差别需求",
+      "优先级",
+      "Must",
+      "Should",
+      "Could",
+      "Won't",
+      "字段"
+    ],
+    "sections": [
+      {
+        "heading": "产品经理指南",
+        "level": 1
+      },
+      {
+        "heading": "产品经理核心职责",
+        "level": 2
+      },
+      {
+        "heading": "需求分析",
+        "level": 2
+      },
+      {
+        "heading": "需求采集",
+        "level": 3
+      },
+      {
+        "heading": "需求分类",
+        "level": 3
+      },
+      {
+        "heading": "需求优先级",
+        "level": 3
+      },
+      {
+        "heading": "产品设计",
+        "level": 2
+      },
+      {
+        "heading": "用户故事模板",
+        "level": 3
+      },
+      {
+        "heading": "功能设计示例",
+        "level": 3
+      },
+      {
+        "heading": "功能：用户登录",
+        "level": 2
+      },
+      {
+        "heading": "概述",
+        "level": 3
+      },
+      {
+        "heading": "用户流程",
+        "level": 3
+      },
+      {
+        "heading": "需求详情",
+        "level": 3
+      },
+      {
+        "heading": "异常处理",
+        "level": 3
+      },
+      {
+        "heading": "PRD 文档结构",
+        "level": 2
+      },
+      {
+        "heading": "跨部门协作",
+        "level": 2
+      },
+      {
+        "heading": "常见问题",
+        "level": 2
+      }
+    ]
+  },
+  "fullstack-guide": {
+    "file": "fullstack-guide.md",
+    "title": "全栈开发",
+    "description": "> 全栈开发知识与技术栈概览",
+    "keywords": [
+      "全栈开发",
+      "什么是全栈开发",
+      "技术栈分层",
+      "前端技术",
+      "框架选择",
+      "核心概念",
+      "后端技术",
+      "常见后端框架",
+      "RESTful API 设计",
+      "FastAPI 示例",
+      "API 命名规范",
+      "数据库设计",
+      "SQL vs NoSQL",
+      "基本 SQL",
+      "部署与 DevOps",
+      "Docker 基础",
+      "Dockerfile",
+      "Docker Compose",
+      "CI/CD 流程",
+      "全栈开发检查清单",
+      "框架",
+      "React",
+      "Vue",
+      "Svelte",
+      "语言",
+      "JavaScript",
+      "Python",
+      "Go",
+      "方法",
+      "GET"
+    ],
+    "sections": [
+      {
+        "heading": "全栈开发",
+        "level": 1
+      },
+      {
+        "heading": "什么是全栈开发",
+        "level": 2
+      },
+      {
+        "heading": "技术栈分层",
+        "level": 2
+      },
+      {
+        "heading": "前端技术",
+        "level": 2
+      },
+      {
+        "heading": "框架选择",
+        "level": 3
+      },
+      {
+        "heading": "核心概念",
+        "level": 3
+      },
+      {
+        "heading": "后端技术",
+        "level": 2
+      },
+      {
+        "heading": "常见后端框架",
+        "level": 3
+      },
+      {
+        "heading": "RESTful API 设计",
+        "level": 3
+      },
+      {
+        "heading": "FastAPI 示例",
+        "level": 1
+      },
+      {
+        "heading": "API 命名规范",
+        "level": 3
+      },
+      {
+        "heading": "数据库设计",
+        "level": 2
+      },
+      {
+        "heading": "SQL vs NoSQL",
+        "level": 3
+      },
+      {
+        "heading": "基本 SQL",
+        "level": 3
+      },
+      {
+        "heading": "部署与 DevOps",
+        "level": 2
+      },
+      {
+        "heading": "Docker 基础",
+        "level": 3
+      },
+      {
+        "heading": "Dockerfile",
+        "level": 1
+      },
+      {
+        "heading": "Docker Compose",
+        "level": 3
+      },
+      {
+        "heading": "CI/CD 流程",
+        "level": 3
+      },
+      {
+        "heading": "全栈开发检查清单",
+        "level": 2
+      }
+    ]
+  },
+  "development-workflow": {
+    "file": "development-workflow.md",
+    "title": "开发流程",
+    "description": "> 从需求到交付的最佳实践",
+    "keywords": [
+      "开发流程",
+      "开发流程总览",
+      "需求分析",
+      "理解问题三步法",
+      "需求文档模板",
+      "技术设计",
+      "先设计后编码",
+      "接口设计示例",
+      "定义清晰的接口",
+      "技术方案文档",
+      "编码实现",
+      "代码写作原则",
+      "编码检查清单",
+      "错误处理模式",
+      "不好：裸 except",
+      "好：具体异常 + 处理",
+      "测试验证",
+      "测试金字塔",
+      "单元测试示例",
+      "测试命名规范",
+      "部署交付",
+      "部署检查清单",
+      "Git 提交规范",
+      "格式",
+      "type: feat | fix | docs | style | refactor | test | chore",
+      "示例",
+      "版本号管理",
+      "开发流程核心原则",
+      "原则",
+      "**清晰优于聪明**"
+    ],
+    "sections": [
+      {
+        "heading": "开发流程",
+        "level": 1
+      },
+      {
+        "heading": "开发流程总览",
+        "level": 2
+      },
+      {
+        "heading": "1. 需求分析",
+        "level": 2
+      },
+      {
+        "heading": "理解问题三步法",
+        "level": 3
+      },
+      {
+        "heading": "需求文档模板",
+        "level": 3
+      },
+      {
+        "heading": "2. 技术设计",
+        "level": 2
+      },
+      {
+        "heading": "先设计后编码",
+        "level": 3
+      },
+      {
+        "heading": "接口设计示例",
+        "level": 3
+      },
+      {
+        "heading": "定义清晰的接口",
+        "level": 1
+      },
+      {
+        "heading": "技术方案文档",
+        "level": 3
+      },
+      {
+        "heading": "3. 编码实现",
+        "level": 2
+      },
+      {
+        "heading": "代码写作原则",
+        "level": 3
+      },
+      {
+        "heading": "编码检查清单",
+        "level": 3
+      },
+      {
+        "heading": "错误处理模式",
+        "level": 3
+      },
+      {
+        "heading": "不好：裸 except",
+        "level": 1
+      },
+      {
+        "heading": "好：具体异常 + 处理",
+        "level": 1
+      },
+      {
+        "heading": "4. 测试验证",
+        "level": 2
+      },
+      {
+        "heading": "测试金字塔",
+        "level": 3
+      },
+      {
+        "heading": "单元测试示例",
+        "level": 3
+      },
+      {
+        "heading": "测试命名规范",
+        "level": 3
+      },
+      {
+        "heading": "5. 部署交付",
+        "level": 2
+      },
+      {
+        "heading": "部署检查清单",
+        "level": 3
+      },
+      {
+        "heading": "Git 提交规范",
+        "level": 3
+      },
+      {
+        "heading": "格式",
+        "level": 1
+      },
+      {
+        "heading": "type: feat | fix | docs | style | refactor | test | chore",
+        "level": 1
+      },
+      {
+        "heading": "示例",
+        "level": 1
+      },
+      {
+        "heading": "版本号管理",
+        "level": 3
+      },
+      {
+        "heading": "开发流程核心原则",
+        "level": 2
+      }
+    ]
+  },
+  "oop-guide": {
+    "file": "oop-guide.md",
+    "title": "OOP 指南",
+    "description": "> 面向对象编程核心概念",
+    "keywords": [
+      "OOP 指南",
+      "OOP",
+      "什么是面向对象编程",
+      "大特性",
+      "核心概念",
+      "类与对象",
+      "类：蓝图/模板",
+      "对象：类的实例",
+      "消息传递",
+      "发送消息",
+      "多个对象协作",
+      "面向对象 vs 面向过程",
+      "何时使用 OOP",
+      "入门级",
+      "常见设计模式",
+      "特性",
+      "**封装**",
+      "**继承**",
+      "**多态**",
+      "**抽象**",
+      "维度",
+      "组织单位",
+      "数据管理",
+      "扩展方式",
+      "适用场景",
+      "模式",
+      "单例模式",
+      "工厂模式",
+      "策略模式",
+      "Dog"
+    ],
+    "sections": [
+      {
+        "heading": "OOP 指南",
+        "level": 1
+      },
+      {
+        "heading": "什么是面向对象编程（OOP）",
+        "level": 2
+      },
+      {
+        "heading": "四大特性",
+        "level": 2
+      },
+      {
+        "heading": "核心概念",
+        "level": 2
+      },
+      {
+        "heading": "类与对象",
+        "level": 3
+      },
+      {
+        "heading": "类：蓝图/模板",
+        "level": 1
+      },
+      {
+        "heading": "对象：类的实例",
+        "level": 1
+      },
+      {
+        "heading": "消息传递",
+        "level": 3
+      },
+      {
+        "heading": "发送消息",
+        "level": 1
+      },
+      {
+        "heading": "多个对象协作",
+        "level": 1
+      },
+      {
+        "heading": "面向对象 vs 面向过程",
+        "level": 2
+      },
+      {
+        "heading": "何时使用 OOP",
+        "level": 2
+      },
+      {
+        "heading": "常见设计模式（入门级）",
+        "level": 2
+      }
+    ]
+  },
+  "development-guide": {
+    "file": "development-guide.md",
+    "title": "开发流程",
+    "description": "> 从需求到交付的最佳实践",
+    "keywords": [
+      "开发流程",
+      "开发流程总览",
+      "需求分析",
+      "理解问题三步法",
+      "需求文档模板",
+      "技术设计",
+      "先设计后编码",
+      "接口设计示例",
+      "定义清晰的接口",
+      "技术方案文档",
+      "编码实现",
+      "代码写作原则",
+      "编码检查清单",
+      "错误处理模式",
+      "不好：裸 except",
+      "好：具体异常 + 处理",
+      "测试验证",
+      "测试金字塔",
+      "单元测试示例",
+      "测试命名规范",
+      "部署交付",
+      "部署检查清单",
+      "Git 提交规范",
+      "格式",
+      "type: feat | fix | docs | style | refactor | test | chore",
+      "示例",
+      "版本号管理",
+      "开发流程核心原则",
+      "原则",
+      "**清晰优于聪明**"
+    ],
+    "sections": [
+      {
+        "heading": "开发流程",
+        "level": 1
+      },
+      {
+        "heading": "开发流程总览",
+        "level": 2
+      },
+      {
+        "heading": "1. 需求分析",
+        "level": 2
+      },
+      {
+        "heading": "理解问题三步法",
+        "level": 3
+      },
+      {
+        "heading": "需求文档模板",
+        "level": 3
+      },
+      {
+        "heading": "2. 技术设计",
+        "level": 2
+      },
+      {
+        "heading": "先设计后编码",
+        "level": 3
+      },
+      {
+        "heading": "接口设计示例",
+        "level": 3
+      },
+      {
+        "heading": "定义清晰的接口",
+        "level": 1
+      },
+      {
+        "heading": "技术方案文档",
+        "level": 3
+      },
+      {
+        "heading": "3. 编码实现",
+        "level": 2
+      },
+      {
+        "heading": "代码写作原则",
+        "level": 3
+      },
+      {
+        "heading": "编码检查清单",
+        "level": 3
+      },
+      {
+        "heading": "错误处理模式",
+        "level": 3
+      },
+      {
+        "heading": "不好：裸 except",
+        "level": 1
+      },
+      {
+        "heading": "好：具体异常 + 处理",
+        "level": 1
+      },
+      {
+        "heading": "4. 测试验证",
+        "level": 2
+      },
+      {
+        "heading": "测试金字塔",
+        "level": 3
+      },
+      {
+        "heading": "单元测试示例",
+        "level": 3
+      },
+      {
+        "heading": "测试命名规范",
+        "level": 3
+      },
+      {
+        "heading": "5. 部署交付",
+        "level": 2
+      },
+      {
+        "heading": "部署检查清单",
+        "level": 3
+      },
+      {
+        "heading": "Git 提交规范",
+        "level": 3
+      },
+      {
+        "heading": "格式",
+        "level": 1
+      },
+      {
+        "heading": "type: feat | fix | docs | style | refactor | test | chore",
+        "level": 1
+      },
+      {
+        "heading": "示例",
+        "level": 1
+      },
+      {
+        "heading": "版本号管理",
+        "level": 3
+      },
+      {
+        "heading": "开发流程核心原则",
+        "level": 2
+      }
+    ]
+  },
+  "architecture-guide": {
+    "file": "architecture-guide.md",
+    "title": "架构指南",
+    "description": "> 系统架构、设计模式、微服务架构",
+    "keywords": [
+      "架构指南",
+      "架构核心概念",
+      "架构是什么",
+      "好架构的特征",
+      "系统架构风格",
+      "分层架构",
+      "微服务架构",
+      "事件驱动架构",
+      "设计模式",
+      "创建型模式",
+      "单例模式",
+      "全局唯一实例",
+      "工厂模式",
+      "使用",
+      "结构型模式",
+      "装饰器模式",
+      "Output:",
+      "Calling add",
+      "add returned 3",
+      "行为型模式",
+      "策略模式",
+      "微服务设计",
+      "服务拆分原则",
+      "API 设计",
+      "RESTful API 结构",
+      "GET    /users/{id}      获取用户",
+      "POST   /users           创建用户",
+      "PUT    /users/{id}      更新用户",
+      "DELETE /users/{id}      删除用户",
+      "服务间通信"
+    ],
+    "sections": [
+      {
+        "heading": "架构指南",
+        "level": 1
+      },
+      {
+        "heading": "架构核心概念",
+        "level": 2
+      },
+      {
+        "heading": "架构是什么",
+        "level": 3
+      },
+      {
+        "heading": "好架构的特征",
+        "level": 3
+      },
+      {
+        "heading": "系统架构风格",
+        "level": 2
+      },
+      {
+        "heading": "分层架构",
+        "level": 3
+      },
+      {
+        "heading": "微服务架构",
+        "level": 3
+      },
+      {
+        "heading": "事件驱动架构",
+        "level": 3
+      },
+      {
+        "heading": "设计模式",
+        "level": 2
+      },
+      {
+        "heading": "创建型模式",
+        "level": 3
+      },
+      {
+        "heading": "单例模式",
+        "level": 3
+      },
+      {
+        "heading": "全局唯一实例",
+        "level": 1
+      },
+      {
+        "heading": "工厂模式",
+        "level": 3
+      },
+      {
+        "heading": "使用",
+        "level": 1
+      },
+      {
+        "heading": "结构型模式",
+        "level": 3
+      },
+      {
+        "heading": "装饰器模式",
+        "level": 3
+      },
+      {
+        "heading": "Output:",
+        "level": 1
+      },
+      {
+        "heading": "Calling add",
+        "level": 1
+      },
+      {
+        "heading": "add returned 3",
+        "level": 1
+      },
+      {
+        "heading": "行为型模式",
+        "level": 3
+      },
+      {
+        "heading": "策略模式",
+        "level": 3
+      },
+      {
+        "heading": "使用",
+        "level": 1
+      },
+      {
+        "heading": "微服务设计",
+        "level": 2
+      },
+      {
+        "heading": "服务拆分原则",
+        "level": 3
+      },
+      {
+        "heading": "API 设计",
+        "level": 3
+      },
+      {
+        "heading": "RESTful API 结构",
+        "level": 1
+      },
+      {
+        "heading": "GET    /users/{id}      获取用户",
+        "level": 1
+      },
+      {
+        "heading": "POST   /users           创建用户",
+        "level": 1
+      },
+      {
+        "heading": "PUT    /users/{id}      更新用户",
+        "level": 1
+      },
+      {
+        "heading": "DELETE /users/{id}      删除用户",
+        "level": 1
+      },
+      {
+        "heading": "服务间通信",
+        "level": 1
+      },
+      {
+        "heading": "服务间通信",
+        "level": 3
+      },
+      {
+        "heading": "同步通信 (REST/gRPC)",
+        "level": 1
+      },
+      {
+        "heading": "异步通信 (消息队列)",
+        "level": 1
+      },
+      {
+        "heading": "生产者",
+        "level": 1
+      },
+      {
+        "heading": "消费者",
+        "level": 1
+      },
+      {
+        "heading": "数据库设计",
+        "level": 2
+      },
+      {
+        "heading": "数据库选择",
+        "level": 3
+      },
+      {
+        "heading": "读写分离",
+        "level": 3
+      },
+      {
+        "heading": "分库分表",
+        "level": 3
+      },
+      {
+        "heading": "哈希分片",
+        "level": 1
+      },
+      {
+        "heading": "范围分片",
+        "level": 1
+      },
+      {
+        "heading": "架构文档",
+        "level": 2
+      },
+      {
+        "heading": "ADR（架构决策记录）",
+        "level": 3
+      },
+      {
+        "heading": "ADR-001: 使用 PostgreSQL 作为主数据库",
+        "level": 1
+      },
+      {
+        "heading": "状态",
+        "level": 2
+      },
+      {
+        "heading": "背景",
+        "level": 2
+      },
+      {
+        "heading": "决策",
+        "level": 2
+      },
+      {
+        "heading": "理由",
+        "level": 2
+      },
+      {
+        "heading": "后果",
+        "level": 2
+      },
+      {
+        "heading": "系统架构图",
+        "level": 3
+      },
+      {
+        "heading": "架构评审检查清单",
+        "level": 2
+      }
+    ]
+  },
+  "guide": {
+    "file": "guide.md",
+    "title": "使用指南",
+    "description": "> programmer 技能使用说明",
+    "keywords": [
+      "使用指南",
+      "触发条件",
+      "核心原则",
+      "能力范围",
+      "参考资源",
+      "交互流程",
+      "代码开发流程",
+      "问题排查流程",
+      "输出格式",
+      "场景",
+      "代码开发",
+      "Bug 排查",
+      "重构优化",
+      "技术设计",
+      "OOP 问题",
+      "全栈问题",
+      "能力",
+      "✅ 代码开发",
+      "✅ Bug 排查",
+      "✅ 重构优化",
+      "✅ 技术设计",
+      "✅ 工具开发",
+      "✅ 全栈开发",
+      "❌ 系统运维",
+      "❌ 内容创作",
+      "指南",
+      "[OOP 指南](oop-guide.md)",
+      "[OOP 原则](oop-principles.md)",
+      "[全栈开发](fullstack-guide.md)",
+      "[开发流程](development-workflow.md)"
+    ],
+    "sections": [
+      {
+        "heading": "使用指南",
+        "level": 1
+      },
+      {
+        "heading": "触发条件",
+        "level": 2
+      },
+      {
+        "heading": "核心原则",
+        "level": 2
+      },
+      {
+        "heading": "能力范围",
+        "level": 2
+      },
+      {
+        "heading": "参考资源",
+        "level": 2
+      },
+      {
+        "heading": "交互流程",
+        "level": 2
+      },
+      {
+        "heading": "代码开发流程",
+        "level": 3
+      },
+      {
+        "heading": "问题排查流程",
+        "level": 3
+      },
+      {
+        "heading": "输出格式",
+        "level": 2
+      }
+    ]
+  }
+}

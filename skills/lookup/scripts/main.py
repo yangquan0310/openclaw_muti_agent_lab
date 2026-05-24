@@ -18,7 +18,7 @@ if str(_sys_path) not in sys.path:
 
 
 def cmd_search(args):
-    from scripts.searcher import main as searcher_main
+    from scripts.searcher.Searcher import main as searcher_main
     sys.argv = ['searcher']
     if args.query:
         sys.argv.append(args.query)
@@ -33,7 +33,7 @@ def cmd_search(args):
 
 
 def cmd_index(args):
-    from scripts.indexer import main as indexer_main
+    from scripts.indexer.Indexer import main as indexer_main
     sys.argv = ['indexer', '-r', args.references]
     if args.manifest:
         sys.argv.extend(['-m', args.manifest])
@@ -83,7 +83,7 @@ def main():
     elif args.command == 'index':
         return cmd_index(args)
     elif args.command == 'list':
-        from scripts.searcher import main as searcher_main
+        from scripts.searcher.Searcher import main as searcher_main
         sys.argv = ['searcher', '--list', '--index', args.index]
         return searcher_main()
     else:
@@ -92,4 +92,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())

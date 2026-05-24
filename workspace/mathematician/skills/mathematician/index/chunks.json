@@ -1,0 +1,314 @@
+[
+  {
+    "id": "workflows_000",
+    "file": "workflows.md",
+    "heading": "mathematician 核心工作流",
+    "level": 1,
+    "content_preview": "> mathematician 技能的完整工作流程，涵盖数学建模、统计分析、数值计算。\n\n---",
+    "full_content": "> mathematician 技能的完整工作流程，涵盖数学建模、统计分析、数值计算。\n\n---"
+  },
+  {
+    "id": "workflows_001",
+    "file": "workflows.md",
+    "heading": "触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下场景时触发：\n- \"数学建模\"\n- \"微分方程\"\n- \"优化问题\"\n- \"统计分析\"\n- \"假设检验\"\n- \"回归分析\"\n- \"时间序列\"\n- \"算法复杂度\"\n- \"数值计算\"\n- \"公式推导\"\n- \"定理验证\"\n\n---",
+    "full_content": "当用户提到以下场景时触发：\n- \"数学建模\"\n- \"微分方程\"\n- \"优化问题\"\n- \"统计分析\"\n- \"假设检验\"\n- \"回归分析\"\n- \"时间序列\"\n- \"算法复杂度\"\n- \"数值计算\"\n- \"公式推导\"\n- \"定理验证\"\n\n---"
+  },
+  {
+    "id": "workflows_002",
+    "file": "workflows.md",
+    "heading": "快速开始",
+    "level": 2,
+    "content_preview": "- 数学建模：问题理解 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n- 统计分析：数据收集 → 探索性分析 → 模型建立 → 假设检验 → 结论推断\n- 数值计算：问题定义 → 方法选择 → 误差估计 → 计算实现 → 结果验证\n\n---",
+    "full_content": "- 数学建模：问题理解 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n- 统计分析：数据收集 → 探索性分析 → 模型建立 → 假设检验 → 结论推断\n- 数值计算：问题定义 → 方法选择 → 误差估计 → 计算实现 → 结果验证\n\n---"
+  },
+  {
+    "id": "workflows_003",
+    "file": "workflows.md",
+    "heading": "工作流速查",
+    "level": 2,
+    "content_preview": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| 数学建模 | 数学建模流程 | mathematics-guide.md |\n| 概念写作 | 概念写作指南 | concept-writing-guide.md |\n| 统计分析 | 统计分析流程 | statistics-guide.md |\n\n---",
+    "full_content": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| 数学建模 | 数学建模流程 | mathematics-guide.md |\n| 概念写作 | 概念写作指南 | concept-writing-guide.md |\n| 统计分析 | 统计分析流程 | statistics-guide.md |\n\n---"
+  },
+  {
+    "id": "workflows_004",
+    "file": "workflows.md",
+    "heading": "Q1：数学建模的标准流程？",
+    "level": 3,
+    "content_preview": "1. 问题理解：明确问题类型、约束条件、目标函数\n2. 假设条件：列出所有假设，确保合理性\n3. 模型选择：选择合适的数学模型\n4. 求解验证：使用数值或解析方法求解\n5. 结果解释：验证结果物理意义，检查一致性",
+    "full_content": "1. 问题理解：明确问题类型、约束条件、目标函数\n2. 假设条件：列出所有假设，确保合理性\n3. 模型选择：选择合适的数学模型\n4. 求解验证：使用数值或解析方法求解\n5. 结果解释：验证结果物理意义，检查一致性"
+  },
+  {
+    "id": "workflows_005",
+    "file": "workflows.md",
+    "heading": "Q2：统计分析必须注意什么？",
+    "level": 3,
+    "content_preview": "1. 先进行探索性分析（描述统计、可视化）\n2. 选择合适的统计模型\n3. 进行假设检验\n4. 基于检验结果做出推断\n5. 报告不确定度",
+    "full_content": "1. 先进行探索性分析（描述统计、可视化）\n2. 选择合适的统计模型\n3. 进行假设检验\n4. 基于检验结果做出推断\n5. 报告不确定度"
+  },
+  {
+    "id": "workflows_006",
+    "file": "workflows.md",
+    "heading": "Q3：数值计算如何保证质量？",
+    "level": 3,
+    "content_preview": "1. 明确计算目标、精度要求\n2. 评估截断误差和舍入误差\n3. 量纲检查、已知解验证\n4. 报告不确定度\n\n---",
+    "full_content": "1. 明确计算目标、精度要求\n2. 评估截断误差和舍入误差\n3. 量纲检查、已知解验证\n4. 报告不确定度\n\n---"
+  },
+  {
+    "id": "workflows_007",
+    "file": "workflows.md",
+    "heading": "错误排查",
+    "level": 2,
+    "content_preview": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| 结果不合理 | 假设条件错误 | 重新审视假设条件 |\n| 计算不收敛 | 迭代初值不当 | 调整初值或换方法 |\n| 量纲不一致 | 公式推导错误 | 检查每步推导 |\n| 统计结论错误 | 模型选择不当 | 重新选择统计模型 |\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| 结果不合理 | 假设条件错误 | 重新审视假设条件 |\n| 计算不收敛 | 迭代初值不当 | 调整初值或换方法 |\n| 量纲不一致 | 公式推导错误 | 检查每步推导 |\n| 统计结论错误 | 模型选择不当 | 重新选择统计模型 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "guide_008",
+    "file": "guide.md",
+    "heading": "Mathematician 使用指南",
+    "level": 1,
+    "content_preview": "> 数学不说谎。数学推导是最终的真理检验。\n\n---",
+    "full_content": "> 数学不说谎。数学推导是最终的真理检验。\n\n---"
+  },
+  {
+    "id": "guide_009",
+    "file": "guide.md",
+    "heading": "一、概述",
+    "level": 2,
+    "content_preview": "Mathematician 是实验室的数学家角色，专注于数学分析与统计建模。",
+    "full_content": "Mathematician 是实验室的数学家角色，专注于数学分析与统计建模。"
+  },
+  {
+    "id": "guide_010",
+    "file": "guide.md",
+    "heading": "核心能力",
+    "level": 3,
+    "content_preview": "| 能力 | 说明 |\n|------|------|\n| 数学建模 | 微分方程、优化问题、统计模型 |\n| 统计分析 | 假设检验、回归分析、时间序列 |\n| 算法设计 | 复杂度分析、数值算法 |\n| 数值计算 | 精确数值模拟和计算 |\n| 证明验证 | 数学定理和推导验证 |\n| 数据可视化 | 统计图表和数学图形 |\n\n---",
+    "full_content": "| 能力 | 说明 |\n|------|------|\n| 数学建模 | 微分方程、优化问题、统计模型 |\n| 统计分析 | 假设检验、回归分析、时间序列 |\n| 算法设计 | 复杂度分析、数值算法 |\n| 数值计算 | 精确数值模拟和计算 |\n| 证明验证 | 数学定理和推导验证 |\n| 数据可视化 | 统计图表和数学图形 |\n\n---"
+  },
+  {
+    "id": "guide_011",
+    "file": "guide.md",
+    "heading": "二、触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下关键词时触发：\n\n**数学建模相关**\n- 数学建模、微分方程、偏微分方程、常微分方程\n- 优化问题、线性规划、非线性规划、动态规划\n- 随机过程、随机微分方程\n\n**统计分析相关**\n- 统计分析、假设检验、回归分析\n- 时间序列、ARIMA、预测模型\n- 方差分析、协方差分析\n\n**算法与计算相关**\n- 算法复杂度、大O表示法、复杂度分析\n- 数值计算、数值模拟、数值积分\n- ...",
+    "full_content": "当用户提到以下关键词时触发：\n\n**数学建模相关**\n- 数学建模、微分方程、偏微分方程、常微分方程\n- 优化问题、线性规划、非线性规划、动态规划\n- 随机过程、随机微分方程\n\n**统计分析相关**\n- 统计分析、假设检验、回归分析\n- 时间序列、ARIMA、预测模型\n- 方差分析、协方差分析\n\n**算法与计算相关**\n- 算法复杂度、大O表示法、复杂度分析\n- 数值计算、数值模拟、数值积分\n- 插值、拟合、求根\n\n**证明与推导相关**\n- 数学证明、定理验证\n- 推导验证、公式推导\n\n**可视化相关**\n- 数据可视化、统计图表\n- 数学函数绘图\n\n---"
+  },
+  {
+    "id": "guide_012",
+    "file": "guide.md",
+    "heading": "3.1 数学建模工作流程",
+    "level": 3,
+    "content_preview": "```\n问题理解 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n```\n\n1. **问题理解**：明确问题类型、约束条件、目标函数\n2. **假设条件**：列出所有假设，确保合理性\n3. **模型选择**：选择合适的数学模型（微分方程、优化模型等）\n4. **求解验证**：使用数值方法或解析方法求解\n5. **结果解释**：验证结果物理意义，检查一致性",
+    "full_content": "```\n问题理解 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n```\n\n1. **问题理解**：明确问题类型、约束条件、目标函数\n2. **假设条件**：列出所有假设，确保合理性\n3. **模型选择**：选择合适的数学模型（微分方程、优化模型等）\n4. **求解验证**：使用数值方法或解析方法求解\n5. **结果解释**：验证结果物理意义，检查一致性"
+  },
+  {
+    "id": "guide_013",
+    "file": "guide.md",
+    "heading": "3.2 统计分析工作流程",
+    "level": 3,
+    "content_preview": "```\n数据收集 → 探索性分析 → 模型建立 → 假设检验 → 结论推断\n```\n\n1. **数据收集**：确保数据质量、代表性\n2. **探索性分析**：描述统计、可视化检查\n3. **模型建立**：选择合适的统计模型\n4. **假设检验**：进行显著性检验\n5. **结论推断**：基于检验结果做出推断",
+    "full_content": "```\n数据收集 → 探索性分析 → 模型建立 → 假设检验 → 结论推断\n```\n\n1. **数据收集**：确保数据质量、代表性\n2. **探索性分析**：描述统计、可视化检查\n3. **模型建立**：选择合适的统计模型\n4. **假设检验**：进行显著性检验\n5. **结论推断**：基于检验结果做出推断"
+  },
+  {
+    "id": "guide_014",
+    "file": "guide.md",
+    "heading": "3.3 数值计算工作流程",
+    "level": 3,
+    "content_preview": "```\n问题定义 → 方法选择 → 误差估计 → 计算实现 → 结果验证\n```\n\n1. **问题定义**：明确计算目标、精度要求\n2. **方法选择**：选择合适的数值方法\n3. **误差估计**：评估截断误差和舍入误差\n4. **计算实现**：编写或使用计算程序\n5. **结果验证**：量纲检查、已知解验证\n\n---",
+    "full_content": "```\n问题定义 → 方法选择 → 误差估计 → 计算实现 → 结果验证\n```\n\n1. **问题定义**：明确计算目标、精度要求\n2. **方法选择**：选择合适的数值方法\n3. **误差估计**：评估截断误差和舍入误差\n4. **计算实现**：编写或使用计算程序\n5. **结果验证**：量纲检查、已知解验证\n\n---"
+  },
+  {
+    "id": "guide_015",
+    "file": "guide.md",
+    "heading": "4.1 核心原则",
+    "level": 3,
+    "content_preview": "1. **先假设后验证**：任何结论必须有数学推导支撑\n2. **量纲检查**：所有计算必须先检查量纲一致性\n3. **误差传播**：数值结果必须报告不确定度\n4. **可视化验证**：数据必须画图确认模式",
+    "full_content": "1. **先假设后验证**：任何结论必须有数学推导支撑\n2. **量纲检查**：所有计算必须先检查量纲一致性\n3. **误差传播**：数值结果必须报告不确定度\n4. **可视化验证**：数据必须画图确认模式"
+  },
+  {
+    "id": "guide_016",
+    "file": "guide.md",
+    "heading": "4.2 学术诚信原则",
+    "level": 3,
+    "content_preview": "1. **文献检索必须使用文献检索工具**：不能编造假文献\n2. **数学证明必须严谨**：每一步推导都要逻辑严密，不能跳过关键步骤\n3. **数据来源可追溯**：所有使用的数据必须标明来源",
+    "full_content": "1. **文献检索必须使用文献检索工具**：不能编造假文献\n2. **数学证明必须严谨**：每一步推导都要逻辑严密，不能跳过关键步骤\n3. **数据来源可追溯**：所有使用的数据必须标明来源"
+  },
+  {
+    "id": "guide_017",
+    "file": "guide.md",
+    "heading": "4.3 表达规范",
+    "level": 3,
+    "content_preview": "1. **使用 LaTeX 格式**：数学公式使用 LaTeX 表示\n2. **步骤清晰**：每一步推导都要有依据\n3. **符号一致**：全文符号使用保持一致\n\n---",
+    "full_content": "1. **使用 LaTeX 格式**：数学公式使用 LaTeX 表示\n2. **步骤清晰**：每一步推导都要有依据\n3. **符号一致**：全文符号使用保持一致\n\n---"
+  },
+  {
+    "id": "guide_018",
+    "file": "guide.md",
+    "heading": "5.1 命令行工具",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "guide_019",
+    "file": "guide.md",
+    "heading": "列出所有工具",
+    "level": 1,
+    "content_preview": "cd scripts && python3 -m lookup --list",
+    "full_content": "cd scripts && python3 -m lookup --list"
+  },
+  {
+    "id": "guide_020",
+    "file": "guide.md",
+    "heading": "搜索相关工具",
+    "level": 1,
+    "content_preview": "cd scripts && python3 -m lookup --search regression",
+    "full_content": "cd scripts && python3 -m lookup --search regression"
+  },
+  {
+    "id": "guide_021",
+    "file": "guide.md",
+    "heading": "查看工具详情",
+    "level": 1,
+    "content_preview": "cd scripts && python3 -m lookup --info calculate\n```",
+    "full_content": "cd scripts && python3 -m lookup --info calculate\n```"
+  },
+  {
+    "id": "guide_022",
+    "file": "guide.md",
+    "heading": "5.2 数值计算示例",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "guide_023",
+    "file": "guide.md",
+    "heading": "基本运算",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py basic 10 5 mul",
+    "full_content": "python3 scripts/calculate.py basic 10 5 mul"
+  },
+  {
+    "id": "guide_024",
+    "file": "guide.md",
+    "heading": "矩阵运算",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --op inverse",
+    "full_content": "python3 scripts/calculate.py matrix --A '[[1,2],[3,4]]' --op inverse"
+  },
+  {
+    "id": "guide_025",
+    "file": "guide.md",
+    "heading": "数值积分",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py integrate --func \"x**2\" --a 0 --b 1 --method quad",
+    "full_content": "python3 scripts/calculate.py integrate --func \"x**2\" --a 0 --b 1 --method quad"
+  },
+  {
+    "id": "guide_026",
+    "file": "guide.md",
+    "heading": "微分方程求解",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py ode --func \"t,y[0]\" --y0 \"1\" --t0 0 --t1 10",
+    "full_content": "python3 scripts/calculate.py ode --func \"t,y[0]\" --y0 \"1\" --t0 0 --t1 10"
+  },
+  {
+    "id": "guide_027",
+    "file": "guide.md",
+    "heading": "求根",
+    "level": 1,
+    "content_preview": "python3 scripts/calculate.py root --func \"x**2-2\" --x0 \"0,2\" --method bisection\n```",
+    "full_content": "python3 scripts/calculate.py root --func \"x**2-2\" --x0 \"0,2\" --method bisection\n```"
+  },
+  {
+    "id": "guide_028",
+    "file": "guide.md",
+    "heading": "5.3 可视化示例",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "guide_029",
+    "file": "guide.md",
+    "heading": "函数图像",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py function --func \"np.sin(x)\" --x0 0 --x1 2*np.pi --title \"sin(x)\"",
+    "full_content": "python3 scripts/visualize.py function --func \"np.sin(x)\" --x0 0 --x1 2*np.pi --title \"sin(x)\""
+  },
+  {
+    "id": "guide_030",
+    "file": "guide.md",
+    "heading": "散点图",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py scatter --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --title \"线性关系\"",
+    "full_content": "python3 scripts/visualize.py scatter --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --title \"线性关系\""
+  },
+  {
+    "id": "guide_031",
+    "file": "guide.md",
+    "heading": "直方图",
+    "level": 1,
+    "content_preview": "python3 scripts/visualize.py histogram --data \"1,2,2,3,3,3,4,4,5\" --bins 5\n```",
+    "full_content": "python3 scripts/visualize.py histogram --data \"1,2,2,3,3,3,4,4,5\" --bins 5\n```"
+  },
+  {
+    "id": "guide_032",
+    "file": "guide.md",
+    "heading": "5.4 统计分析示例",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "guide_033",
+    "file": "guide.md",
+    "heading": "描述性统计",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py describe --data \"1,2,3,4,5,6,7,8,9,10\"",
+    "full_content": "python3 scripts/statistics.py describe --data \"1,2,3,4,5,6,7,8,9,10\""
+  },
+  {
+    "id": "guide_034",
+    "file": "guide.md",
+    "heading": "t检验",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py ttest --s1 \"1,2,3,4,5\" --s2 \"3,4,5,6,7\"",
+    "full_content": "python3 scripts/statistics.py ttest --s1 \"1,2,3,4,5\" --s2 \"3,4,5,6,7\""
+  },
+  {
+    "id": "guide_035",
+    "file": "guide.md",
+    "heading": "相关性分析",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py corr --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --method pearson",
+    "full_content": "python3 scripts/statistics.py corr --x \"1,2,3,4,5\" --y \"2,4,6,8,10\" --method pearson"
+  },
+  {
+    "id": "guide_036",
+    "file": "guide.md",
+    "heading": "线性回归",
+    "level": 1,
+    "content_preview": "python3 scripts/statistics.py regress --x \"1,2,3,4,5\" --y \"2.1,4.2,5.9,8.1,10.2\"\n```\n\n---",
+    "full_content": "python3 scripts/statistics.py regress --x \"1,2,3,4,5\" --y \"2.1,4.2,5.9,8.1,10.2\"\n```\n\n---"
+  },
+  {
+    "id": "guide_037",
+    "file": "guide.md",
+    "heading": "六、模板",
+    "level": 2,
+    "content_preview": "分析报告模板：`assets/templates/report_template.md`\n\n---",
+    "full_content": "分析报告模板：`assets/templates/report_template.md`\n\n---"
+  },
+  {
+    "id": "guide_038",
+    "file": "guide.md",
+    "heading": "七、质量检查",
+    "level": 2,
+    "content_preview": "完成分析后，检查以下要点：\n\n- [ ] 量纲一致性\n- [ ] 结果物理意义合理\n- [ ] 误差范围合理\n- [ ] 可视化图表清晰\n- [ ] 结论有统计依据\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*",
+    "full_content": "完成分析后，检查以下要点：\n\n- [ ] 量纲一致性\n- [ ] 结果物理意义合理\n- [ ] 误差范围合理\n- [ ] 可视化图表清晰\n- [ ] 结论有统计依据\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  }
+]

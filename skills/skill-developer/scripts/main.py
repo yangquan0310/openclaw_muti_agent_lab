@@ -1,43 +1,43 @@
 #!/usr/bin/env python3
 """skill-developer CLI：技能开发入口。"""
 
-import argparse
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scripts.init import init_skill
+from scripts.skill.Skill import Skill
 
 
-def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description="skill-developer CLI")
-    sub = parser.add_subparsers(dest="command", help="子命令")
+def main() -> int:
+    skill = Skill()
 
-    # init：初始化新技能
-    init_parser = sub.add_parser("init", help="初始化新技能目录结构")
-    init_parser.add_argument("skill-name", help="技能名称（kebab-case）")
-    init_parser.add_argument("description", help="技能描述")
-    init_parser.add_argument("path", nargs="?", help="安装路径（默认 ./技能名）")
-    init_parser.add_argument("emoji", nargs="?", default="📦", help="表情符号（默认 📦）")
-    init_parser.set_defaults(func=_run_init)
-
-    args = parser.parse_args(argv)
-    if not args.command:
-        parser.print_help()
+    if len(sys.argv) < 3:
+        print("用法:")
+        print("  初始化: python scripts/main.py init <skill-name> <description> [path] [emoji]")
+        print("  自检:   python scripts/main.py check <skill-path>")
+        print("示例:")
+        print("  python scripts/main.py init my-skill \"这是一个测试技能\" ./my-skill 📦")
+        print("  python scripts/main.py check ./my-skill")
         return 1
-    return args.func(args)
 
+    cmd = sys.argv[1]
 
-def _run_init(args) -> int:
-    skill_path = args.path or f"./{args.skill_name}"
-    return init_skill(
-        skill_path=skill_path,
-        skill_name=args.skill_name,
-        description=args.description,
-        emoji=args.emoji,
-    )
+    if cmd == "init":
+        name = sys.argv[2]
+        desc = sys.argv[3] if len(sys.argv) > 3 else ""
+        path = sys.argv[4] if len(sys.argv) > 4 else f"./{name}"
+        emoji = sys.argv[5] if len(sys.argv) > 5 else "📦"
+        return skill.initialize(path, name, desc, emoji)
+
+    elif cmd == "check":
+        path = sys.argv[2] if len(sys.argv) > 2 else "."
+        return skill.check(path)
+
+    else:
+        print(f"未知命令: {cmd}")
+        return 1
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())

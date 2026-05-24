@@ -1,1 +1,1 @@
-# programmer skill scripts
+"""lookup 包"""

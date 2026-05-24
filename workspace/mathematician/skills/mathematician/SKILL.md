@@ -69,12 +69,12 @@ mathematician statistics describe --data 1,2,3,4,5
 mathematician visualize function --func 'x**2' --xmin -10 --xmax 10
 
 # 构建索引
-lookup index -r /root/.openclaw/workspace/mathematician/skills/mathematician/references \
+lookup! index -r /root/.openclaw/workspace/mathematician/skills/mathematician/references \
   -m /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json \
   -c /root/.openclaw/workspace/mathematician/skills/mathematician/index/chunks.json
 
 # 搜索指南
-lookup search -i /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json <关键词>
+lookup! search -i /root/.openclaw/workspace/mathematician/skills/mathematician/index/manifest.json <关键词>
 
 # 查看帮助
 mathematician -h

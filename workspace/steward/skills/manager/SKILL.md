@@ -85,6 +85,14 @@ manager maintainer meta /root/data/disk/仓库/my-project --title "新标题" --
 # 查看帮助
 manager maintainer --help
 manager maintainer organize --help
+
+# 构建索引
+lookup! index -r /root/.openclaw/workspace/steward/skills/manager/references \
+  -m /root/.openclaw/workspace/steward/skills/manager/index/manifest.json \
+  -c /root/.openclaw/workspace/steward/skills/manager/index/chunks.json
+
+# 搜索指南
+lookup! search -i /root/.openclaw/workspace/steward/skills/manager/index/manifest.json <关键词>
 ```
 
 ## 版本历史

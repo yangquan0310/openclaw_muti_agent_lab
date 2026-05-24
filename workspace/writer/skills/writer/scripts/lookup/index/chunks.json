@@ -1,6 +1,70 @@
 [
   {
-    "id": "references/guide_000",
+    "id": "references/workflows_000",
+    "file": "workflows.md",
+    "heading": "writer 核心工作流",
+    "level": 1,
+    "content_preview": "> writer 技能的完整工作流程，涵盖全新写作、修改润色、校对审核。\n\n---",
+    "full_content": "> writer 技能的完整工作流程，涵盖全新写作、修改润色、校对审核。\n\n---"
+  },
+  {
+    "id": "references/workflows_001",
+    "file": "workflows.md",
+    "heading": "触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下场景时触发：\n- \"写\"\n- \"写作\"\n- \"撰写\"\n- \"起草\"\n- \"编辑\"\n- \"修改\"\n- \"润色\"\n- \"论文\"\n- \"文章\"\n- \"报告\"\n- \"文档\"\n- \"方案\"\n- \"说明\"\n\n---",
+    "full_content": "当用户提到以下场景时触发：\n- \"写\"\n- \"写作\"\n- \"撰写\"\n- \"起草\"\n- \"编辑\"\n- \"修改\"\n- \"润色\"\n- \"论文\"\n- \"文章\"\n- \"报告\"\n- \"文档\"\n- \"方案\"\n- \"说明\"\n\n---"
+  },
+  {
+    "id": "references/workflows_002",
+    "file": "workflows.md",
+    "heading": "快速开始",
+    "level": 2,
+    "content_preview": "- 全新写作：明确任务 → 建立论证地图 → 执行写作 → 修改核查 → 终稿交付\n- 修改润色：读取原文档 → 建立论证地图 → 创建修改清单 → 汇报确认 → 执行修改\n- 校对审核：格式检查 → 引用核查 → 数字校验 → 最终润色\n\n---",
+    "full_content": "- 全新写作：明确任务 → 建立论证地图 → 执行写作 → 修改核查 → 终稿交付\n- 修改润色：读取原文档 → 建立论证地图 → 创建修改清单 → 汇报确认 → 执行修改\n- 校对审核：格式检查 → 引用核查 → 数字校验 → 最终润色\n\n---"
+  },
+  {
+    "id": "references/workflows_003",
+    "file": "workflows.md",
+    "heading": "工作流速查",
+    "level": 2,
+    "content_preview": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| 全新写作 | 五阶段写作流程 | writing-process-guide.md |\n| 修改润色 | 修改方法论 | modification-guide.md |\n| 句子规范 | 句子标准 | sentence-standards.md |\n| 段落规范 | 段落标准 | paragraph-s...",
+    "full_content": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| 全新写作 | 五阶段写作流程 | writing-process-guide.md |\n| 修改润色 | 修改方法论 | modification-guide.md |\n| 句子规范 | 句子标准 | sentence-standards.md |\n| 段落规范 | 段落标准 | paragraph-standards.md |\n| 引用规范 | 引用标准 | citation-standards.md |\n| 风格指南 | 学术风格 | academic-style-guide.md |\n\n---"
+  },
+  {
+    "id": "references/workflows_004",
+    "file": "workflows.md",
+    "heading": "Q1：全新写作的标准流程？",
+    "level": 3,
+    "content_preview": "1. 明确任务：确认文档类型、核心命题\n2. 建立论证地图：核心论点→子论点→证据\n3. 执行写作：按句子→段落→篇章三层执行\n4. 修改核查：术语→引用→结构→逻辑→表达\n5. 终稿交付：格式校对、最终润色",
+    "full_content": "1. 明确任务：确认文档类型、核心命题\n2. 建立论证地图：核心论点→子论点→证据\n3. 执行写作：按句子→段落→篇章三层执行\n4. 修改核查：术语→引用→结构→逻辑→表达\n5. 终稿交付：格式校对、最终润色"
+  },
+  {
+    "id": "references/workflows_005",
+    "file": "workflows.md",
+    "heading": "Q2：修改文章必须注意什么？",
+    "level": 3,
+    "content_preview": "1. 先读取原文档，建立论证地图\n2. 创建修改清单（优先级：术语→引用→结构→逻辑→表达）\n3. 必须先汇报修改计划，等确认后再执行\n4. 修改后进行终极核查",
+    "full_content": "1. 先读取原文档，建立论证地图\n2. 创建修改清单（优先级：术语→引用→结构→逻辑→表达）\n3. 必须先汇报修改计划，等确认后再执行\n4. 修改后进行终极核查"
+  },
+  {
+    "id": "references/workflows_006",
+    "file": "workflows.md",
+    "heading": "Q3：如何区分证据、推测、解读？",
+    "level": 3,
+    "content_preview": "- 证据层：必须有引用，可被第三方验证\n- 推测层：归因到研究者，用\"研究表明\"等弱语气\n- 解读层：基于本研究，用\"我们认为\"等本研究主语\n\n---",
+    "full_content": "- 证据层：必须有引用，可被第三方验证\n- 推测层：归因到研究者，用\"研究表明\"等弱语气\n- 解读层：基于本研究，用\"我们认为\"等本研究主语\n\n---"
+  },
+  {
+    "id": "references/workflows_007",
+    "file": "workflows.md",
+    "heading": "错误排查",
+    "level": 2,
+    "content_preview": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| 论点不清晰 | 主题句缺失或位置不当 | 补充主题句，放段落首句 |\n| 引用缺失 | 重要主张无文献支持 | 补充文献引用 |\n| 逻辑跳跃 | 论据与论点脱节 | 增加过渡句或补充论据 |\n| 术语不一致 | 同一概念多种表述 | 按术语表统一 |\n\n---\n\n*详见 [索引](inde...",
+    "full_content": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| 论点不清晰 | 主题句缺失或位置不当 | 补充主题句，放段落首句 |\n| 引用缺失 | 重要主张无文献支持 | 补充文献引用 |\n| 逻辑跳跃 | 论据与论点脱节 | 增加过渡句或补充论据 |\n| 术语不一致 | 同一概念多种表述 | 按术语表统一 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "references/guide_008",
     "file": "guide.md",
     "heading": "使用指南",
     "level": 1,
@@ -8,7 +72,7 @@
     "full_content": "> writer 技能使用说明\n\n---"
   },
   {
-    "id": "references/guide_001",
+    "id": "references/guide_009",
     "file": "guide.md",
     "heading": "触发条件",
     "level": 2,
@@ -16,7 +80,7 @@
     "full_content": "当您提到以下场景时触发：\n- 任何写作任务：「写」「写作」「撰写」「起草」\n- 任何修改任务：「编辑」「修改」「润色」\n- 任何文档类型：「论文」「文章」「报告」「文档」「方案」「说明」\n\n---"
   },
   {
-    "id": "references/guide_002",
+    "id": "references/guide_010",
     "file": "guide.md",
     "heading": "核心工作流",
     "level": 2,
@@ -24,7 +88,7 @@
     "full_content": "```\n明确任务 → 建立论证地图 → 执行写作 → 修改核查 → 终稿交付\n```\n\n---"
   },
   {
-    "id": "references/guide_003",
+    "id": "references/guide_011",
     "file": "guide.md",
     "heading": "类型一：全新写作",
     "level": 3,
@@ -32,7 +96,7 @@
     "full_content": "**触发**：用户要求撰写全新文档\n\n**响应步骤**：\n1. 确认文档类型（论文/报告/文档等）\n2. 明确核心命题/目标\n3. 建立篇章结构（引言-主体-结论）\n4. 按三层写作规范执行（句子→段落→篇章）\n5. 确保证据-推测-解读三层区分清晰"
   },
   {
-    "id": "references/guide_004",
+    "id": "references/guide_012",
     "file": "guide.md",
     "heading": "类型二：修改文章",
     "level": 3,
@@ -40,7 +104,7 @@
     "full_content": "**触发**：用户要求修改现有文档\n\n**响应步骤**：\n1. 读取原文档\n2. 建立论证地图（核心命题→论证链→章节定位）\n3. 创建修改清单（按优先级：术语→引用→结构→逻辑→表达）\n4. **汇报计划**（必须先汇报，等确认后再执行）\n5. 逐章执行修改\n6. 终极核查\n\n---"
   },
   {
-    "id": "references/guide_005",
+    "id": "references/guide_013",
     "file": "guide.md",
     "heading": "三层写作规范",
     "level": 2,
@@ -48,7 +112,7 @@
     "full_content": "| 层级 | 核心规则 | 自检 |\n|------|----------|------|\n| **句子** | 主语为实体名词；动词精确；定义与论述分离 | 能否找到明确的主语和动词链？ |\n| **段落** | 主题句点明论点；论点-证据-推理可辨 | 随机指一句，能否判断角色？ |\n| **篇章** | 引言-主体-结论闭环；段间有逻辑过渡 | 能否一句话概括章节论证目标？ |\n\n---"
   },
   {
-    "id": "references/guide_006",
+    "id": "references/guide_014",
     "file": "guide.md",
     "heading": "证据-推测-解读三层区分",
     "level": 2,
@@ -56,7 +120,7 @@
     "full_content": "| 层 | 语气 | 引用 | 自检 |\n|----|------|------|------|\n| **事实/证据** | 肯定 | 必须有 | \"可被第三方验证吗？\" |\n| **他人推测** | 弱 | 归因到研究者 | \"是别人的解读吗？\" |\n| **本研究推测** | 弱 | 本研究主语 | \"是我们自己的解读吗？\" |\n\n---"
   },
   {
-    "id": "references/guide_007",
+    "id": "references/guide_015",
     "file": "guide.md",
     "heading": "修改方法论",
     "level": 2,
@@ -1760,7 +1824,175 @@
     "full_content": "1. **写作是迭代**：规划→起草→修改→校对，循环往复\n2. **规划先行**：好的规划减少后期大幅修改\n3. **分阶段检查**：宏观（结构）→微观（细节）\n4. **留出时间**：校对是最后防线，不能省\n\n---\n\n*详见 [索引](index.md)*"
   },
   {
-    "id": "references/workflows/modification-workflow_021",
+    "id": "references/workflows/writing-process-guide_021",
+    "file": "writing-process-guide.md",
+    "heading": "写作过程指南",
+    "level": 1,
+    "content_preview": "> 从任务理解到终稿的系统化写作流程\n\n---",
+    "full_content": "> 从任务理解到终稿的系统化写作流程\n\n---"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_022",
+    "file": "writing-process-guide.md",
+    "heading": "核心理念",
+    "level": 2,
+    "content_preview": "> **写作是迭代过程**，**规划 > 写作 > 修改**，**每个阶段有明确目标**\n\n写作不是一次性输出，而是\"规划→起草→修改\"的迭代循环。\n\n---",
+    "full_content": "> **写作是迭代过程**，**规划 > 写作 > 修改**，**每个阶段有明确目标**\n\n写作不是一次性输出，而是\"规划→起草→修改\"的迭代循环。\n\n---"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_023",
+    "file": "writing-process-guide.md",
+    "heading": "五阶段流程",
+    "level": 2,
+    "content_preview": "```\n阶段1: 理解任务 → 阶段2: 规划 → 阶段3: 起草 → 阶段4: 修改 → 阶段5: 校对\n```\n\n---",
+    "full_content": "```\n阶段1: 理解任务 → 阶段2: 规划 → 阶段3: 起草 → 阶段4: 修改 → 阶段5: 校对\n```\n\n---"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_024",
+    "file": "writing-process-guide.md",
+    "heading": "操作步骤",
+    "level": 3,
+    "content_preview": "1. **细读任务说明**：理解要求回答什么问题\n2. **分解标题**：识别关键词（主题、限制、指令词）\n3. **明确边界**：确定涵盖范围和不涵盖范围",
+    "full_content": "1. **细读任务说明**：理解要求回答什么问题\n2. **分解标题**：识别关键词（主题、限制、指令词）\n3. **明确边界**：确定涵盖范围和不涵盖范围"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_025",
+    "file": "writing-process-guide.md",
+    "heading": "任务分解检查",
+    "level": 3,
+    "content_preview": "```\n任务: \"分析数字技术对青少年自传体记忆的影响\"\n│\n├── 主题: 数字技术、自传体记忆\n├── 限制: 青少年群体\n├── 指令词: 分析（评估、比较、解释）\n└── 边界: 影响 ≠ 原因、机制 ≠ 现象\n```",
+    "full_content": "```\n任务: \"分析数字技术对青少年自传体记忆的影响\"\n│\n├── 主题: 数字技术、自传体记忆\n├── 限制: 青少年群体\n├── 指令词: 分析（评估、比较、解释）\n└── 边界: 影响 ≠ 原因、机制 ≠ 现象\n```"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_026",
+    "file": "writing-process-guide.md",
+    "heading": "常见指令词",
+    "level": 3,
+    "content_preview": "| 指令词 | 要求 |\n|--------|------|\n| 分析 (Analyze) | 分解为组成部分，解释关系 |\n| 评估 (Evaluate) | 判断价值/重要性 |\n| 比较 (Compare) | 找出异同点 |\n| 解释 (Explain) | 阐明原因/机制 |\n| 讨论 (Discuss) | 探索多方面观点 |\n\n---",
+    "full_content": "| 指令词 | 要求 |\n|--------|------|\n| 分析 (Analyze) | 分解为组成部分，解释关系 |\n| 评估 (Evaluate) | 判断价值/重要性 |\n| 比较 (Compare) | 找出异同点 |\n| 解释 (Explain) | 阐明原因/机制 |\n| 讨论 (Discuss) | 探索多方面观点 |\n\n---"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_027",
+    "file": "writing-process-guide.md",
+    "heading": "操作步骤",
+    "level": 3,
+    "content_preview": "1. **广泛阅读**：收集相关文献和资料\n2. **做笔记**：记录关键论点、证据、引用\n3. **批判思考**：评估来源可靠性、识别论点漏洞\n4. **形成论点**：明确你要论证的核心主张",
+    "full_content": "1. **广泛阅读**：收集相关文献和资料\n2. **做笔记**：记录关键论点、证据、引用\n3. **批判思考**：评估来源可靠性、识别论点漏洞\n4. **形成论点**：明确你要论证的核心主张"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_028",
+    "file": "writing-process-guide.md",
+    "heading": "规划产出",
+    "level": 3,
+    "content_preview": "```\n核心论点: [一句话概括]\n│\n├── 论点1: [支持核心论点的子论点]\n│   ├── 证据1\n│   └── 证据2\n├── 论点2\n│   └── ...\n└── 潜在反驳\n    └── 反驳论证\n```",
+    "full_content": "```\n核心论点: [一句话概括]\n│\n├── 论点1: [支持核心论点的子论点]\n│   ├── 证据1\n│   └── 证据2\n├── 论点2\n│   └── ...\n└── 潜在反驳\n    └── 反驳论证\n```"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_029",
+    "file": "writing-process-guide.md",
+    "heading": "结构规划",
+    "level": 3,
+    "content_preview": "**引言**：\n- 背景（1-2句）\n- 研究现状（1-2句）\n- 研究缺口（1句）\n- 研究目的（1句）\n- 核心论点（1句）\n\n**主体**：\n- 按逻辑顺序排列论点\n- 每论点配 2-3 个证据\n- 预期反驳并准备回应\n\n**结论**：\n- 总结核心论点\n- 阐述理论/实践意义\n- 指出研究局限和未来方向\n\n---",
+    "full_content": "**引言**：\n- 背景（1-2句）\n- 研究现状（1-2句）\n- 研究缺口（1句）\n- 研究目的（1句）\n- 核心论点（1句）\n\n**主体**：\n- 按逻辑顺序排列论点\n- 每论点配 2-3 个证据\n- 预期反驳并准备回应\n\n**结论**：\n- 总结核心论点\n- 阐述理论/实践意义\n- 指出研究局限和未来方向\n\n---"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_030",
+    "file": "writing-process-guide.md",
+    "heading": "操作步骤",
+    "level": 3,
+    "content_preview": "1. **自由写作**：不追求完美，先输出内容\n2. **按计划推进**：围绕论点展开\n3. **及时记录引用**：避免后续重复查找\n4. **允许修改计划**：写作中发现新想法很正常",
+    "full_content": "1. **自由写作**：不追求完美，先输出内容\n2. **按计划推进**：围绕论点展开\n3. **及时记录引用**：避免后续重复查找\n4. **允许修改计划**：写作中发现新想法很正常"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_031",
+    "file": "writing-process-guide.md",
+    "heading": "写作顺序",
+    "level": 3,
+    "content_preview": "**常见顺序**（推荐）：\n```\nMethods → Results → Discussion → Introduction → Abstract\n```\n- 先写熟悉的部分建立信心\n- 最后写引言，因为需要全文视野\n\n**可选顺序**：\n- 从引言开始（适合有清晰框架的情况）\n- 从结论开始（适合想好核心论点的情况）",
+    "full_content": "**常见顺序**（推荐）：\n```\nMethods → Results → Discussion → Introduction → Abstract\n```\n- 先写熟悉的部分建立信心\n- 最后写引言，因为需要全文视野\n\n**可选顺序**：\n- 从引言开始（适合有清晰框架的情况）\n- 从结论开始（适合想好核心论点的情况）"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_032",
+    "file": "writing-process-guide.md",
+    "heading": "段落写作",
+    "level": 3,
+    "content_preview": "**每段结构**：\n```\n主题句（论点）\n  ↓\n支撑句1（证据/引用）\n  ↓\n支撑句2（解释/分析）\n  ↓\n过渡句（引入下段）\n```\n\n---",
+    "full_content": "**每段结构**：\n```\n主题句（论点）\n  ↓\n支撑句1（证据/引用）\n  ↓\n支撑句2（解释/分析）\n  ↓\n过渡句（引入下段）\n```\n\n---"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_033",
+    "file": "writing-process-guide.md",
+    "heading": "操作步骤",
+    "level": 3,
+    "content_preview": "1. **搁置草稿**：完成初稿后休息一下\n2. **宏观检查**：结构、论证、逻辑\n3. **微观检查**：句子、词汇、引用\n4. **迭代修改**：每次聚焦一个层面",
+    "full_content": "1. **搁置草稿**：完成初稿后休息一下\n2. **宏观检查**：结构、论证、逻辑\n3. **微观检查**：句子、词汇、引用\n4. **迭代修改**：每次聚焦一个层面"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_034",
+    "file": "writing-process-guide.md",
+    "heading": "宏观检查清单",
+    "level": 3,
+    "content_preview": "| 维度 | 检查项 |\n|------|--------|\n| **结构** | 引言是否提出问题？主体是否回答问题？结论是否总结并回应引言？ |\n| **论证** | 每个论点是否有足够证据支撑？论证链是否完整？ |\n| **逻辑** | 段落之间是否有逻辑过渡？是否有逻辑断层？ |\n| **一致性** | 术语是否统一？格式是否一致？ |",
+    "full_content": "| 维度 | 检查项 |\n|------|--------|\n| **结构** | 引言是否提出问题？主体是否回答问题？结论是否总结并回应引言？ |\n| **论证** | 每个论点是否有足够证据支撑？论证链是否完整？ |\n| **逻辑** | 段落之间是否有逻辑过渡？是否有逻辑断层？ |\n| **一致性** | 术语是否统一？格式是否一致？ |"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_035",
+    "file": "writing-process-guide.md",
+    "heading": "微观检查清单",
+    "level": 3,
+    "content_preview": "| 维度 | 检查项 |\n|------|--------|\n| **句子** | 主语明确？动词精确？定义与论述分离？ |\n| **词汇** | 无口语化？无冗余？术语统一？ |\n| **引用** | 所有引用完整？格式统一？ |\n| **证据** | 证据-推测-解读三层区分？ |\n\n---",
+    "full_content": "| 维度 | 检查项 |\n|------|--------|\n| **句子** | 主语明确？动词精确？定义与论述分离？ |\n| **词汇** | 无口语化？无冗余？术语统一？ |\n| **引用** | 所有引用完整？格式统一？ |\n| **证据** | 证据-推测-解读三层区分？ |\n\n---"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_036",
+    "file": "writing-process-guide.md",
+    "heading": "操作步骤",
+    "level": 3,
+    "content_preview": "1. **格式校对**：检查引用格式、参考文献格式\n2. **语言校对**：拼写、语法、标点\n3. **细节检查**：数字格式、缩写一致性\n4. **最终检查**：通读全文确认流畅",
+    "full_content": "1. **格式校对**：检查引用格式、参考文献格式\n2. **语言校对**：拼写、语法、标点\n3. **细节检查**：数字格式、缩写一致性\n4. **最终检查**：通读全文确认流畅"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_037",
+    "file": "writing-process-guide.md",
+    "heading": "校对清单",
+    "level": 3,
+    "content_preview": "| # | 检查项 |\n|---|--------|\n| 1 | 拼写检查（使用拼写检查器 + 人工检查） |\n| 2 | 语法检查（主谓一致、时态一致） |\n| 3 | 标点检查（无多余空格、无错误标点） |\n| 4 | 引用格式检查（文本引用 + 参考文献列表） |\n| 5 | 数字格式检查（<10 用单词，>10 用数字） |\n| 6 | 缩写首次定义检查 |\n| 7 | 页面格式检查（行距...",
+    "full_content": "| # | 检查项 |\n|---|--------|\n| 1 | 拼写检查（使用拼写检查器 + 人工检查） |\n| 2 | 语法检查（主谓一致、时态一致） |\n| 3 | 标点检查（无多余空格、无错误标点） |\n| 4 | 引用格式检查（文本引用 + 参考文献列表） |\n| 5 | 数字格式检查（<10 用单词，>10 用数字） |\n| 6 | 缩写首次定义检查 |\n| 7 | 页面格式检查（行距、字号、边距） |"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_038",
+    "file": "writing-process-guide.md",
+    "heading": "校对技巧",
+    "level": 3,
+    "content_preview": "1. **倒序检查**：从结论开始读，避免被内容带跑\n2. **大声朗读**：朗读时更容易发现不流畅的地方\n3. **打印检查**：屏幕阅读容易忽略细节错误\n4. **他人校对**：自己看多了容易漏错\n\n---",
+    "full_content": "1. **倒序检查**：从结论开始读，避免被内容带跑\n2. **大声朗读**：朗读时更容易发现不流畅的地方\n3. **打印检查**：屏幕阅读容易忽略细节错误\n4. **他人校对**：自己看多了容易漏错\n\n---"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_039",
+    "file": "writing-process-guide.md",
+    "heading": "建议时间分配",
+    "level": 3,
+    "content_preview": "| 阶段 | 建议时间占比 |\n|------|--------------|\n| 理解任务 | 10% |\n| 规划 | 20% |\n| 起草 | 40% |\n| 修改 | 20% |\n| 校对 | 10% |",
+    "full_content": "| 阶段 | 建议时间占比 |\n|------|--------------|\n| 理解任务 | 10% |\n| 规划 | 20% |\n| 起草 | 40% |\n| 修改 | 20% |\n| 校对 | 10% |"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_040",
+    "file": "writing-process-guide.md",
+    "heading": "常见错误",
+    "level": 3,
+    "content_preview": "| 错误 | 结果 | 修正 |\n|------|------|------|\n| 不规划直接写 | 结构混乱、论证分散 | 先画框架图 |\n| 一次写完不改 | 错误多、质量差 | 留出修改时间 |\n| 一直改不改完 | 永远无法提交 | 设截止日期 |\n| 不校对就提交 | 细节错误影响评分 | 严格执行校对清单 |\n\n---",
+    "full_content": "| 错误 | 结果 | 修正 |\n|------|------|------|\n| 不规划直接写 | 结构混乱、论证分散 | 先画框架图 |\n| 一次写完不改 | 错误多、质量差 | 留出修改时间 |\n| 一直改不改完 | 永远无法提交 | 设截止日期 |\n| 不校对就提交 | 细节错误影响评分 | 严格执行校对清单 |\n\n---"
+  },
+  {
+    "id": "references/workflows/writing-process-guide_041",
+    "file": "writing-process-guide.md",
+    "heading": "本章小结",
+    "level": 2,
+    "content_preview": "1. **写作是迭代**：规划→起草→修改→校对，循环往复\n2. **规划先行**：好的规划减少后期大幅修改\n3. **分阶段检查**：宏观（结构）→微观（细节）\n4. **留出时间**：校对是最后防线，不能省\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "1. **写作是迭代**：规划→起草→修改→校对，循环往复\n2. **规划先行**：好的规划减少后期大幅修改\n3. **分阶段检查**：宏观（结构）→微观（细节）\n4. **留出时间**：校对是最后防线，不能省\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "references/workflows/modification-workflow_042",
     "file": "modification-workflow.md",
     "heading": "修改方法论",
     "level": 1,
@@ -1768,7 +2000,7 @@
     "full_content": "> 修改文章的标准工作流\n\n---"
   },
   {
-    "id": "references/workflows/modification-workflow_022",
+    "id": "references/workflows/modification-workflow_043",
     "file": "modification-workflow.md",
     "heading": "核心工作流",
     "level": 2,
@@ -1776,7 +2008,7 @@
     "full_content": "```\n建立论证地图 → 创建修改清单 → 汇报确认 → 逐章执行 → 终极核查\n```\n\n**任何修改前必须先汇报计划并等待确认。**\n\n---"
   },
   {
-    "id": "references/workflows/modification-workflow_023",
+    "id": "references/workflows/modification-workflow_044",
     "file": "modification-workflow.md",
     "heading": "操作",
     "level": 3,
@@ -1784,7 +2016,7 @@
     "full_content": "1. 用一句话提炼**核心命题**\n2. 绘制**论证链**（若干逻辑环节的递进关系）\n3. 标注**每章在链中的位置**"
   },
   {
-    "id": "references/workflows/modification-workflow_024",
+    "id": "references/workflows/modification-workflow_045",
     "file": "modification-workflow.md",
     "heading": "输出格式",
     "level": 3,
@@ -1792,7 +2024,7 @@
     "full_content": "```\n核心命题：[一句话概括]\n\n论证链：\n  环节1 → 环节2 → 环节3 → ... → 核心命题\n\n章节定位：\n  - 第X章：论证环节X\n  - 第Y章：论证环节Y\n  ...\n```\n\n---"
   },
   {
-    "id": "references/workflows/modification-workflow_025",
+    "id": "references/workflows/modification-workflow_046",
     "file": "modification-workflow.md",
     "heading": "组织层级",
     "level": 3,
@@ -1800,7 +2032,7 @@
     "full_content": "| 层级 | 内容 | 优先级 |\n|------|------|--------|\n| **全局修改** | 术语统一、格式规范 | P0-P1 |\n| **章节修改** | 逻辑结构、论证深度 | P2-P4 |\n| **实验/证据章修改** | 数据报告、方法描述 | P2-P4 |\n| **跨章一致性** | 前后一致、闭环检验 | P3-P5 |"
   },
   {
-    "id": "references/workflows/modification-workflow_026",
+    "id": "references/workflows/modification-workflow_047",
     "file": "modification-workflow.md",
     "heading": "优先级定义",
     "level": 3,
@@ -1808,7 +2040,7 @@
     "full_content": "| 优先级 | 定义 |\n|--------|------|\n| P0 | 术语清洗 |\n| P1 | 引用修复 |\n| P2 | 图表编号 |\n| P3 | 作者名空缺 |\n| P4 | 逻辑深度 |\n| P5 | 段落结构 |\n| P6 | 终极核查 |\n\n---"
   },
   {
-    "id": "references/workflows/modification-workflow_027",
+    "id": "references/workflows/modification-workflow_048",
     "file": "modification-workflow.md",
     "heading": "规则",
     "level": 3,
@@ -1816,7 +2048,7 @@
     "full_content": "**每条修改建议必须能定位到论证链的某一环。**"
   },
   {
-    "id": "references/workflows/modification-workflow_028",
+    "id": "references/workflows/modification-workflow_049",
     "file": "modification-workflow.md",
     "heading": "自检",
     "level": 3,
@@ -1824,7 +2056,7 @@
     "full_content": "逐条问：\"此修改服务于论证链的哪一环？\"\n- 如果无法清晰定位 → 冗余，应删除\n- 如果能定位 → 保留"
   },
   {
-    "id": "references/workflows/modification-workflow_029",
+    "id": "references/workflows/modification-workflow_050",
     "file": "modification-workflow.md",
     "heading": "背景层 vs 核心层",
     "level": 3,
@@ -1832,7 +2064,7 @@
     "full_content": "| 类型 | 说明 |\n|------|------|\n| **核心层** | 直接服务于核心命题的论证链 |\n| **背景层** | 精确边界描述，属于间接服务 |\n\n---"
   },
   {
-    "id": "references/workflows/modification-workflow_030",
+    "id": "references/workflows/modification-workflow_051",
     "file": "modification-workflow.md",
     "heading": "规则",
     "level": 3,
@@ -1840,7 +2072,7 @@
     "full_content": "**必须先汇报计划，等用户确认后再执行。**"
   },
   {
-    "id": "references/workflows/modification-workflow_031",
+    "id": "references/workflows/modification-workflow_052",
     "file": "modification-workflow.md",
     "heading": "汇报内容",
     "level": 3,
@@ -1848,7 +2080,7 @@
     "full_content": "1. 论证地图（步骤一）\n2. 修改清单（步骤二）\n3. 每条修改的定位（步骤三）\n4. 执行顺序\n\n---"
   },
   {
-    "id": "references/workflows/modification-workflow_032",
+    "id": "references/workflows/modification-workflow_053",
     "file": "modification-workflow.md",
     "heading": "顺序",
     "level": 3,
@@ -1856,7 +2088,7 @@
     "full_content": "按优先级从高到低执行：\nP0 → P1 → P2 → P3 → P4 → P5 → P6"
   },
   {
-    "id": "references/workflows/modification-workflow_033",
+    "id": "references/workflows/modification-workflow_054",
     "file": "modification-workflow.md",
     "heading": "自检",
     "level": 3,
@@ -1864,7 +2096,7 @@
     "full_content": "每章修改后：\n- 是否解决了该优先级的问题？\n- 是否引入了新问题？\n\n---"
   },
   {
-    "id": "references/workflows/modification-workflow_034",
+    "id": "references/workflows/modification-workflow_055",
     "file": "modification-workflow.md",
     "heading": "核查维度",
     "level": 3,
@@ -1872,8 +2104,128 @@
     "full_content": "| 维度 | 检查项 |\n|------|--------|\n| **术语** | 全篇统一，无同义词混用 |\n| **引用** | 格式统一，无占位符 |\n| **结构** | 论证闭环，逻辑连贯 |\n| **证据** | 三层区分清晰，无空推 |\n\n---"
   },
   {
-    "id": "references/workflows/modification-workflow_035",
+    "id": "references/workflows/modification-workflow_056",
     "file": "modification-workflow.md",
+    "heading": "本章小结",
+    "level": 2,
+    "content_preview": "1. **论证地图**：核心命题 → 论证链 → 章节定位\n2. **修改清单**：按层级组织（P0-P6）\n3. **论证中心检验**：无法定位 → 冗余\n4. **汇报确认**：必须先汇报，等确认后再执行\n5. **逐章执行**：按优先级执行\n6. **终极核查**：六维度检查\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "1. **论证地图**：核心命题 → 论证链 → 章节定位\n2. **修改清单**：按层级组织（P0-P6）\n3. **论证中心检验**：无法定位 → 冗余\n4. **汇报确认**：必须先汇报，等确认后再执行\n5. **逐章执行**：按优先级执行\n6. **终极核查**：六维度检查\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "references/workflows/modification-guide_057",
+    "file": "modification-guide.md",
+    "heading": "修改方法论",
+    "level": 1,
+    "content_preview": "> 修改文章的标准工作流\n\n---",
+    "full_content": "> 修改文章的标准工作流\n\n---"
+  },
+  {
+    "id": "references/workflows/modification-guide_058",
+    "file": "modification-guide.md",
+    "heading": "核心工作流",
+    "level": 2,
+    "content_preview": "```\n建立论证地图 → 创建修改清单 → 汇报确认 → 逐章执行 → 终极核查\n```\n\n**任何修改前必须先汇报计划并等待确认。**\n\n---",
+    "full_content": "```\n建立论证地图 → 创建修改清单 → 汇报确认 → 逐章执行 → 终极核查\n```\n\n**任何修改前必须先汇报计划并等待确认。**\n\n---"
+  },
+  {
+    "id": "references/workflows/modification-guide_059",
+    "file": "modification-guide.md",
+    "heading": "操作",
+    "level": 3,
+    "content_preview": "1. 用一句话提炼**核心命题**\n2. 绘制**论证链**（若干逻辑环节的递进关系）\n3. 标注**每章在链中的位置**",
+    "full_content": "1. 用一句话提炼**核心命题**\n2. 绘制**论证链**（若干逻辑环节的递进关系）\n3. 标注**每章在链中的位置**"
+  },
+  {
+    "id": "references/workflows/modification-guide_060",
+    "file": "modification-guide.md",
+    "heading": "输出格式",
+    "level": 3,
+    "content_preview": "```\n核心命题：[一句话概括]\n\n论证链：\n  环节1 → 环节2 → 环节3 → ... → 核心命题\n\n章节定位：\n  - 第X章：论证环节X\n  - 第Y章：论证环节Y\n  ...\n```\n\n---",
+    "full_content": "```\n核心命题：[一句话概括]\n\n论证链：\n  环节1 → 环节2 → 环节3 → ... → 核心命题\n\n章节定位：\n  - 第X章：论证环节X\n  - 第Y章：论证环节Y\n  ...\n```\n\n---"
+  },
+  {
+    "id": "references/workflows/modification-guide_061",
+    "file": "modification-guide.md",
+    "heading": "组织层级",
+    "level": 3,
+    "content_preview": "| 层级 | 内容 | 优先级 |\n|------|------|--------|\n| **全局修改** | 术语统一、格式规范 | P0-P1 |\n| **章节修改** | 逻辑结构、论证深度 | P2-P4 |\n| **实验/证据章修改** | 数据报告、方法描述 | P2-P4 |\n| **跨章一致性** | 前后一致、闭环检验 | P3-P5 |",
+    "full_content": "| 层级 | 内容 | 优先级 |\n|------|------|--------|\n| **全局修改** | 术语统一、格式规范 | P0-P1 |\n| **章节修改** | 逻辑结构、论证深度 | P2-P4 |\n| **实验/证据章修改** | 数据报告、方法描述 | P2-P4 |\n| **跨章一致性** | 前后一致、闭环检验 | P3-P5 |"
+  },
+  {
+    "id": "references/workflows/modification-guide_062",
+    "file": "modification-guide.md",
+    "heading": "优先级定义",
+    "level": 3,
+    "content_preview": "| 优先级 | 定义 |\n|--------|------|\n| P0 | 术语清洗 |\n| P1 | 引用修复 |\n| P2 | 图表编号 |\n| P3 | 作者名空缺 |\n| P4 | 逻辑深度 |\n| P5 | 段落结构 |\n| P6 | 终极核查 |\n\n---",
+    "full_content": "| 优先级 | 定义 |\n|--------|------|\n| P0 | 术语清洗 |\n| P1 | 引用修复 |\n| P2 | 图表编号 |\n| P3 | 作者名空缺 |\n| P4 | 逻辑深度 |\n| P5 | 段落结构 |\n| P6 | 终极核查 |\n\n---"
+  },
+  {
+    "id": "references/workflows/modification-guide_063",
+    "file": "modification-guide.md",
+    "heading": "规则",
+    "level": 3,
+    "content_preview": "**每条修改建议必须能定位到论证链的某一环。**",
+    "full_content": "**每条修改建议必须能定位到论证链的某一环。**"
+  },
+  {
+    "id": "references/workflows/modification-guide_064",
+    "file": "modification-guide.md",
+    "heading": "自检",
+    "level": 3,
+    "content_preview": "逐条问：\"此修改服务于论证链的哪一环？\"\n- 如果无法清晰定位 → 冗余，应删除\n- 如果能定位 → 保留",
+    "full_content": "逐条问：\"此修改服务于论证链的哪一环？\"\n- 如果无法清晰定位 → 冗余，应删除\n- 如果能定位 → 保留"
+  },
+  {
+    "id": "references/workflows/modification-guide_065",
+    "file": "modification-guide.md",
+    "heading": "背景层 vs 核心层",
+    "level": 3,
+    "content_preview": "| 类型 | 说明 |\n|------|------|\n| **核心层** | 直接服务于核心命题的论证链 |\n| **背景层** | 精确边界描述，属于间接服务 |\n\n---",
+    "full_content": "| 类型 | 说明 |\n|------|------|\n| **核心层** | 直接服务于核心命题的论证链 |\n| **背景层** | 精确边界描述，属于间接服务 |\n\n---"
+  },
+  {
+    "id": "references/workflows/modification-guide_066",
+    "file": "modification-guide.md",
+    "heading": "规则",
+    "level": 3,
+    "content_preview": "**必须先汇报计划，等用户确认后再执行。**",
+    "full_content": "**必须先汇报计划，等用户确认后再执行。**"
+  },
+  {
+    "id": "references/workflows/modification-guide_067",
+    "file": "modification-guide.md",
+    "heading": "汇报内容",
+    "level": 3,
+    "content_preview": "1. 论证地图（步骤一）\n2. 修改清单（步骤二）\n3. 每条修改的定位（步骤三）\n4. 执行顺序\n\n---",
+    "full_content": "1. 论证地图（步骤一）\n2. 修改清单（步骤二）\n3. 每条修改的定位（步骤三）\n4. 执行顺序\n\n---"
+  },
+  {
+    "id": "references/workflows/modification-guide_068",
+    "file": "modification-guide.md",
+    "heading": "顺序",
+    "level": 3,
+    "content_preview": "按优先级从高到低执行：\nP0 → P1 → P2 → P3 → P4 → P5 → P6",
+    "full_content": "按优先级从高到低执行：\nP0 → P1 → P2 → P3 → P4 → P5 → P6"
+  },
+  {
+    "id": "references/workflows/modification-guide_069",
+    "file": "modification-guide.md",
+    "heading": "自检",
+    "level": 3,
+    "content_preview": "每章修改后：\n- 是否解决了该优先级的问题？\n- 是否引入了新问题？\n\n---",
+    "full_content": "每章修改后：\n- 是否解决了该优先级的问题？\n- 是否引入了新问题？\n\n---"
+  },
+  {
+    "id": "references/workflows/modification-guide_070",
+    "file": "modification-guide.md",
+    "heading": "核查维度",
+    "level": 3,
+    "content_preview": "| 维度 | 检查项 |\n|------|--------|\n| **术语** | 全篇统一，无同义词混用 |\n| **引用** | 格式统一，无占位符 |\n| **结构** | 论证闭环，逻辑连贯 |\n| **证据** | 三层区分清晰，无空推 |\n\n---",
+    "full_content": "| 维度 | 检查项 |\n|------|--------|\n| **术语** | 全篇统一，无同义词混用 |\n| **引用** | 格式统一，无占位符 |\n| **结构** | 论证闭环，逻辑连贯 |\n| **证据** | 三层区分清晰，无空推 |\n\n---"
+  },
+  {
+    "id": "references/workflows/modification-guide_071",
+    "file": "modification-guide.md",
     "heading": "本章小结",
     "level": 2,
     "content_preview": "1. **论证地图**：核心命题 → 论证链 → 章节定位\n2. **修改清单**：按层级组织（P0-P6）\n3. **论证中心检验**：无法定位 → 冗余\n4. **汇报确认**：必须先汇报，等确认后再执行\n5. **逐章执行**：按优先级执行\n6. **终极核查**：六维度检查\n\n---\n\n*详见 [索引](index.md)*",

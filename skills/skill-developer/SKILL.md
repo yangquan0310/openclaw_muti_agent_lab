@@ -24,6 +24,7 @@ metadata:
 2. **目的驱动**：每个技能解决一个问题，而非万能工具
 3. **进化迭代**：技能随使用迭代优化，而非一次性完美
 4. **CLI 规范**：所有技能必须以 `{技能名} {方法名} {参数}` 格式提供命令行入口，并声明 `entry_points`
+5. **方法简洁**：尽可能少建立方法，每一个方法实现一个功能，尽量减少重叠
 
 ---
 
@@ -58,6 +59,9 @@ skill-developer init <skill-name> <description> [path] [emoji]
 | 命名指南 | [references/naming-guide.md](references/naming-guide.md) |
 | 命名规范 | [references/naming-standards.md](references/naming-standards.md) |
 | 指南写作 | [references/guide-writing-guide.md](references/guide-writing-guide.md) |
+| CLI 规范 | [references/cli-standards.md](references/cli-standards.md) |
+| 开发指南 | [references/development-guide.md](references/development-guide.md) |
+| CLI 工作流 | [references/cli-workflow.md](references/cli-workflow.md) |
 | 质量标准 | [references/quality-standards.md](references/quality-standards.md) |
 | 代码规范 | [references/coding-standards.md](references/coding-standards.md) |
 | scripts 规范 | [references/scripts-standards.md](references/scripts-standards.md) |

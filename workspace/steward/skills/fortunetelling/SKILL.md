@@ -88,12 +88,12 @@ fortunetelling lunar 1990 4 15 10
 fortunetelling fate 1990 5 15 10 --gender 男 --type timing
 
 # 构建索引
-lookup index -r /root/.openclaw/workspace/steward/skills/fortunetelling/references \
+lookup! index -r /root/.openclaw/workspace/steward/skills/fortunetelling/references \
   -m /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json \
   -c /root/.openclaw/workspace/steward/skills/fortunetelling/index/chunks.json
 
 # 搜索指南
-lookup search -i /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json <关键词>
+lookup! search -i /root/.openclaw/workspace/steward/skills/fortunetelling/index/manifest.json <关键词>
 
 # 查看帮助
 fortunetelling -h

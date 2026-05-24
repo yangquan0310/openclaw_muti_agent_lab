@@ -1,0 +1,474 @@
+[
+  {
+    "id": "brainstorming_000",
+    "file": "brainstorming.md",
+    "heading": "Brainstorming Reference",
+    "level": 1,
+    "content_preview": "Source: obra/superpowers brainstorming skill",
+    "full_content": "Source: obra/superpowers brainstorming skill"
+  },
+  {
+    "id": "brainstorming_001",
+    "file": "brainstorming.md",
+    "heading": "Checklist (in order)",
+    "level": 2,
+    "content_preview": "1. **Explore project context** — check files, docs, recent commits\n2. **Ask clarifying questions** — one at a time, understand purpose/constraints/success criteria\n3. **Propose 2–3 approaches** — with...",
+    "full_content": "1. **Explore project context** — check files, docs, recent commits\n2. **Ask clarifying questions** — one at a time, understand purpose/constraints/success criteria\n3. **Propose 2–3 approaches** — with trade-offs and recommendation\n4. **Present design** — in sections scaled to complexity, get approval after each section\n5. **Write design doc** — `docs/plans/YYYY-MM-DD-<topic>-design.md` → commit\n6. **Transition** — invoke writing-plans phase"
+  },
+  {
+    "id": "brainstorming_002",
+    "file": "brainstorming.md",
+    "heading": "Rules",
+    "level": 2,
+    "content_preview": "- One question per message only\n- Multiple choice preferred over open-ended\n- Every project goes through this process — no exceptions for \"simple\" ones\n- HARD GATE: Do NOT write code, scaffold, or imp...",
+    "full_content": "- One question per message only\n- Multiple choice preferred over open-ended\n- Every project goes through this process — no exceptions for \"simple\" ones\n- HARD GATE: Do NOT write code, scaffold, or implement anything until design is approved\n- Propose 2–3 approaches before settling, lead with recommendation"
+  },
+  {
+    "id": "brainstorming_003",
+    "file": "brainstorming.md",
+    "heading": "Questions to Ask",
+    "level": 2,
+    "content_preview": "- What are you really trying to do? (purpose)\n- What constraints exist? (time, tech stack, dependencies)\n- What does success look like? (success criteria)\n- What should this NOT do? (scope boundaries)",
+    "full_content": "- What are you really trying to do? (purpose)\n- What constraints exist? (time, tech stack, dependencies)\n- What does success look like? (success criteria)\n- What should this NOT do? (scope boundaries)"
+  },
+  {
+    "id": "brainstorming_004",
+    "file": "brainstorming.md",
+    "heading": "Design Sections to Cover",
+    "level": 2,
+    "content_preview": "- Architecture overview\n- Components and their responsibilities\n- Data flow\n- Error handling approach\n- Testing strategy",
+    "full_content": "- Architecture overview\n- Components and their responsibilities\n- Data flow\n- Error handling approach\n- Testing strategy"
+  },
+  {
+    "id": "brainstorming_005",
+    "file": "brainstorming.md",
+    "heading": "After Design Approval",
+    "level": 2,
+    "content_preview": "- Write design to `docs/plans/YYYY-MM-DD-<topic>-design.md`\n- Commit the design doc\n- Hand off to writing-plans — no other skill, no implementation",
+    "full_content": "- Write design to `docs/plans/YYYY-MM-DD-<topic>-design.md`\n- Commit the design doc\n- Hand off to writing-plans — no other skill, no implementation"
+  },
+  {
+    "id": "finishing-branch_006",
+    "file": "finishing-branch.md",
+    "heading": "Finishing a Development Branch Reference",
+    "level": 1,
+    "content_preview": "Source: obra/superpowers finishing-a-development-branch skill",
+    "full_content": "Source: obra/superpowers finishing-a-development-branch skill"
+  },
+  {
+    "id": "finishing-branch_007",
+    "file": "finishing-branch.md",
+    "heading": "Overview",
+    "level": 2,
+    "content_preview": "Verify tests → Present options → Execute choice.\n\nAnnounce at start: \"I'm using the finishing-a-development-branch skill to complete this work.\"",
+    "full_content": "Verify tests → Present options → Execute choice.\n\nAnnounce at start: \"I'm using the finishing-a-development-branch skill to complete this work.\""
+  },
+  {
+    "id": "finishing-branch_008",
+    "file": "finishing-branch.md",
+    "heading": "Step 1: Verify Tests",
+    "level": 2,
+    "content_preview": "Run the project's test suite. If tests fail — stop. Do not proceed.\n\n```bash",
+    "full_content": "Run the project's test suite. If tests fail — stop. Do not proceed.\n\n```bash"
+  },
+  {
+    "id": "finishing-branch_009",
+    "file": "finishing-branch.md",
+    "heading": "Python",
+    "level": 1,
+    "content_preview": "pytest -q",
+    "full_content": "pytest -q"
+  },
+  {
+    "id": "finishing-branch_010",
+    "file": "finishing-branch.md",
+    "heading": "Node/TS",
+    "level": 1,
+    "content_preview": "pnpm test",
+    "full_content": "pnpm test"
+  },
+  {
+    "id": "finishing-branch_011",
+    "file": "finishing-branch.md",
+    "heading": "Rust",
+    "level": 1,
+    "content_preview": "cargo test",
+    "full_content": "cargo test"
+  },
+  {
+    "id": "finishing-branch_012",
+    "file": "finishing-branch.md",
+    "heading": "Go",
+    "level": 1,
+    "content_preview": "go test ./...\n```\n\nShow failures clearly. Cannot merge/PR until tests pass.",
+    "full_content": "go test ./...\n```\n\nShow failures clearly. Cannot merge/PR until tests pass."
+  },
+  {
+    "id": "finishing-branch_013",
+    "file": "finishing-branch.md",
+    "heading": "Step 2: Determine Base Branch",
+    "level": 2,
+    "content_preview": "```bash\ngit merge-base HEAD main 2>/dev/null || git merge-base HEAD master 2>/dev/null\ngit branch --show-current\n```\n\nOr ask: \"This branch split from main — is that correct?\"",
+    "full_content": "```bash\ngit merge-base HEAD main 2>/dev/null || git merge-base HEAD master 2>/dev/null\ngit branch --show-current\n```\n\nOr ask: \"This branch split from main — is that correct?\""
+  },
+  {
+    "id": "finishing-branch_014",
+    "file": "finishing-branch.md",
+    "heading": "Step 3: Present Options",
+    "level": 2,
+    "content_preview": "Present exactly these 4 options — no extra explanation:\n\n```\nImplementation complete. What would you like to do?\n\n1. Merge back to <base-branch> locally\n2. Push and create a Pull Request\n3. Keep the b...",
+    "full_content": "Present exactly these 4 options — no extra explanation:\n\n```\nImplementation complete. What would you like to do?\n\n1. Merge back to <base-branch> locally\n2. Push and create a Pull Request\n3. Keep the branch as-is (I'll handle it later)\n4. Discard this work\n\nWhich option?\n```"
+  },
+  {
+    "id": "finishing-branch_015",
+    "file": "finishing-branch.md",
+    "heading": "Option 1: Merge Locally",
+    "level": 3,
+    "content_preview": "```bash\ngit checkout <base-branch>\ngit pull\ngit merge <feature-branch>\n<run tests>\ngit branch -d <feature-branch>\n```",
+    "full_content": "```bash\ngit checkout <base-branch>\ngit pull\ngit merge <feature-branch>\n<run tests>\ngit branch -d <feature-branch>\n```"
+  },
+  {
+    "id": "finishing-branch_016",
+    "file": "finishing-branch.md",
+    "heading": "Option 2: Push + PR",
+    "level": 3,
+    "content_preview": "```bash\ngit push -u origin <feature-branch>\ngh pr create --title \"<title>\" --body \"## Summary\n- <bullet 1>\n- <bullet 2>",
+    "full_content": "```bash\ngit push -u origin <feature-branch>\ngh pr create --title \"<title>\" --body \"## Summary\n- <bullet 1>\n- <bullet 2>"
+  },
+  {
+    "id": "finishing-branch_017",
+    "file": "finishing-branch.md",
+    "heading": "Test Plan",
+    "level": 2,
+    "content_preview": "- [ ] <verification step>\"\n```",
+    "full_content": "- [ ] <verification step>\"\n```"
+  },
+  {
+    "id": "finishing-branch_018",
+    "file": "finishing-branch.md",
+    "heading": "Option 3: Keep As-Is",
+    "level": 3,
+    "content_preview": "Report: \"Keeping branch `<name>`. You can return to it later.\"",
+    "full_content": "Report: \"Keeping branch `<name>`. You can return to it later.\""
+  },
+  {
+    "id": "finishing-branch_019",
+    "file": "finishing-branch.md",
+    "heading": "Option 4: Discard",
+    "level": 3,
+    "content_preview": "**Confirm first:**\n```\nThis will permanently delete:\n- Branch <name>\n- All commits since <base-branch>\n\nType 'discard' to confirm.\n```\n\nWait for exact word \"discard\". Then:\n```bash\ngit checkout <base-...",
+    "full_content": "**Confirm first:**\n```\nThis will permanently delete:\n- Branch <name>\n- All commits since <base-branch>\n\nType 'discard' to confirm.\n```\n\nWait for exact word \"discard\". Then:\n```bash\ngit checkout <base-branch>\ngit branch -D <feature-branch>\n```"
+  },
+  {
+    "id": "finishing-branch_020",
+    "file": "finishing-branch.md",
+    "heading": "Quick Reference",
+    "level": 2,
+    "content_preview": "| Option | Merge | Push | Keep Branch | Delete Branch |\n|--------|-------|------|-------------|---------------|\n| 1. Merge locally | ✓ | — | — | ✓ |\n| 2. Create PR | — | ✓ | ✓ | — |\n| 3. Keep as-is | ...",
+    "full_content": "| Option | Merge | Push | Keep Branch | Delete Branch |\n|--------|-------|------|-------------|---------------|\n| 1. Merge locally | ✓ | — | — | ✓ |\n| 2. Create PR | — | ✓ | ✓ | — |\n| 3. Keep as-is | — | — | ✓ | — |\n| 4. Discard | — | — | — | ✓ (force) |"
+  },
+  {
+    "id": "finishing-branch_021",
+    "file": "finishing-branch.md",
+    "heading": "Common Mistakes",
+    "level": 2,
+    "content_preview": "- Skipping test verification before offering options → always verify first\n- Merging without pulling latest base → always `git pull` before merge\n- Deleting branch before confirming PR merged → wait f...",
+    "full_content": "- Skipping test verification before offering options → always verify first\n- Merging without pulling latest base → always `git pull` before merge\n- Deleting branch before confirming PR merged → wait for merge confirmation"
+  },
+  {
+    "id": "tdd_022",
+    "file": "tdd.md",
+    "heading": "Test-Driven Development Reference",
+    "level": 1,
+    "content_preview": "Source: obra/superpowers test-driven-development skill",
+    "full_content": "Source: obra/superpowers test-driven-development skill"
+  },
+  {
+    "id": "tdd_023",
+    "file": "tdd.md",
+    "heading": "The Iron Law",
+    "level": 2,
+    "content_preview": "```\nNO PRODUCTION CODE WITHOUT A FAILING TEST FIRST\n```\n\nWrote code before the test? Delete it. Start over. No exceptions.\n- Don't keep it as \"reference\"\n- Don't \"adapt\" it while writing tests\n- Delet...",
+    "full_content": "```\nNO PRODUCTION CODE WITHOUT A FAILING TEST FIRST\n```\n\nWrote code before the test? Delete it. Start over. No exceptions.\n- Don't keep it as \"reference\"\n- Don't \"adapt\" it while writing tests\n- Delete means delete"
+  },
+  {
+    "id": "tdd_024",
+    "file": "tdd.md",
+    "heading": "RED — Write Failing Test",
+    "level": 3,
+    "content_preview": "Write one minimal test showing what should happen.\n\n**Good:**\n```python\ndef test_retries_failed_operations_three_times():\n    attempts = 0\n    def operation():\n        nonlocal attempts\n        attemp...",
+    "full_content": "Write one minimal test showing what should happen.\n\n**Good:**\n```python\ndef test_retries_failed_operations_three_times():\n    attempts = 0\n    def operation():\n        nonlocal attempts\n        attempts += 1\n        if attempts < 3:\n            raise Exception(\"fail\")\n        return \"success\"\n    result = retry(operation)\n    assert result == \"success\"\n    assert attempts == 3\n```\n\n**Bad:** vague name, tests mocks not real code, multiple behaviours in one test.\n\nRequirements:\n- One behaviour per test\n- Clear descriptive name\n- Real code (no mocks unless unavoidable)"
+  },
+  {
+    "id": "tdd_025",
+    "file": "tdd.md",
+    "heading": "Verify RED — Watch It Fail",
+    "level": 3,
+    "content_preview": "**MANDATORY. Never skip.**\n\nRun the test. Confirm:\n- Test fails (not errors)\n- Failure is expected (\"function not defined\", assertion error)\n- Fails because feature is missing, not because of typos\n\nI...",
+    "full_content": "**MANDATORY. Never skip.**\n\nRun the test. Confirm:\n- Test fails (not errors)\n- Failure is expected (\"function not defined\", assertion error)\n- Fails because feature is missing, not because of typos\n\nIf test passes immediately → you're testing existing behaviour, fix the test."
+  },
+  {
+    "id": "tdd_026",
+    "file": "tdd.md",
+    "heading": "GREEN — Minimal Code",
+    "level": 3,
+    "content_preview": "Write the simplest code to make the test pass. No more. No extras.\n\nDon't:\n- Add options not tested\n- Refactor other code\n- \"Improve\" beyond what the test requires",
+    "full_content": "Write the simplest code to make the test pass. No more. No extras.\n\nDon't:\n- Add options not tested\n- Refactor other code\n- \"Improve\" beyond what the test requires"
+  },
+  {
+    "id": "tdd_027",
+    "file": "tdd.md",
+    "heading": "Verify GREEN — Watch It Pass",
+    "level": 3,
+    "content_preview": "**MANDATORY.**\n\nRun full test suite. Confirm:\n- Target test passes\n- All other tests still pass\n- No new warnings or errors\n\nIf tests fail → fix code, not the test.",
+    "full_content": "**MANDATORY.**\n\nRun full test suite. Confirm:\n- Target test passes\n- All other tests still pass\n- No new warnings or errors\n\nIf tests fail → fix code, not the test."
+  },
+  {
+    "id": "tdd_028",
+    "file": "tdd.md",
+    "heading": "REFACTOR — Clean Up",
+    "level": 3,
+    "content_preview": "After green only:\n- Remove duplication\n- Improve names\n- Extract helpers\n\nKeep tests green throughout. Never add behaviour here.",
+    "full_content": "After green only:\n- Remove duplication\n- Improve names\n- Extract helpers\n\nKeep tests green throughout. Never add behaviour here."
+  },
+  {
+    "id": "tdd_029",
+    "file": "tdd.md",
+    "heading": "Good Test Qualities",
+    "level": 2,
+    "content_preview": "| Quality | Good | Bad |\n|---------|------|-----|\n| Minimal | One thing | \"and\" in name? Split it |\n| Clear | Describes behaviour | `test1`, `test_works` |\n| Shows intent | Demonstrates desired API | ...",
+    "full_content": "| Quality | Good | Bad |\n|---------|------|-----|\n| Minimal | One thing | \"and\" in name? Split it |\n| Clear | Describes behaviour | `test1`, `test_works` |\n| Shows intent | Demonstrates desired API | Hides what code should do |"
+  },
+  {
+    "id": "tdd_030",
+    "file": "tdd.md",
+    "heading": "Why TDD Order Matters",
+    "level": 2,
+    "content_preview": "Tests written after code pass immediately — this proves nothing:\n- Might test wrong thing\n- Might test implementation, not behaviour\n- You never saw it catch the bug\n\nTest-first forces you to see the ...",
+    "full_content": "Tests written after code pass immediately — this proves nothing:\n- Might test wrong thing\n- Might test implementation, not behaviour\n- You never saw it catch the bug\n\nTest-first forces you to see the test fail, proving it actually tests something."
+  },
+  {
+    "id": "tdd_031",
+    "file": "tdd.md",
+    "heading": "Exceptions (ask Rich first)",
+    "level": 2,
+    "content_preview": "- Throwaway prototypes\n- Generated/boilerplate code\n- Configuration files\n\nThinking \"skip TDD just this once\"? That's rationalisation. Don't.",
+    "full_content": "- Throwaway prototypes\n- Generated/boilerplate code\n- Configuration files\n\nThinking \"skip TDD just this once\"? That's rationalisation. Don't."
+  },
+  {
+    "id": "subagent-development_032",
+    "file": "subagent-development.md",
+    "heading": "Subagent-Driven Development Reference",
+    "level": 1,
+    "content_preview": "Source: obra/superpowers subagent-driven-development skill\nAdapted for OpenClaw (sessions_spawn instead of Claude Code Task tool)",
+    "full_content": "Source: obra/superpowers subagent-driven-development skill\nAdapted for OpenClaw (sessions_spawn instead of Claude Code Task tool)"
+  },
+  {
+    "id": "subagent-development_033",
+    "file": "subagent-development.md",
+    "heading": "Core Principle",
+    "level": 2,
+    "content_preview": "Fresh sub-agent per task + two-stage review (spec then quality) = high quality, fast iteration.",
+    "full_content": "Fresh sub-agent per task + two-stage review (spec then quality) = high quality, fast iteration."
+  },
+  {
+    "id": "subagent-development_034",
+    "file": "subagent-development.md",
+    "heading": "OpenClaw Dispatch Pattern",
+    "level": 2,
+    "content_preview": "Use `sessions_spawn` for each role. Pass a structured prompt:\n\n```\nGOAL: [one sentence — what outcome]\nCONTEXT: [plan file path + relevant background]\nFILES: [specific paths to touch]\nCONSTRAINTS: [TD...",
+    "full_content": "Use `sessions_spawn` for each role. Pass a structured prompt:\n\n```\nGOAL: [one sentence — what outcome]\nCONTEXT: [plan file path + relevant background]\nFILES: [specific paths to touch]\nCONSTRAINTS: [TDD mandatory, no scope creep, no untested code]\nVERIFY: [test command + expected output]\nTASK: [paste full task text from plan doc]\n```"
+  },
+  {
+    "id": "subagent-development_035",
+    "file": "subagent-development.md",
+    "heading": "Per-Task Loop",
+    "level": 2,
+    "content_preview": "For each task in the plan:\n\n1. **Dispatch implementer sub-agent** via `sessions_spawn`\n   - Include: full task text, plan file path, TDD constraint\n   - Wait for completion announcement\n\n2. **Dispatch...",
+    "full_content": "For each task in the plan:\n\n1. **Dispatch implementer sub-agent** via `sessions_spawn`\n   - Include: full task text, plan file path, TDD constraint\n   - Wait for completion announcement\n\n2. **Dispatch spec-reviewer sub-agent** via `sessions_spawn`\n   - Include: what was implemented, plan requirements, git diff\n   - Must confirm: code matches spec exactly\n   - If gaps found → dispatch implementer again to fix\n\n3. **Dispatch code-quality reviewer sub-agent** via `sessions_spawn`\n   - Include: git diff, description of implementation\n   - Must approve: clean code, no dead code, DRY, YAGNI\n   - If issues found → dispatch implementer to fix, re-review\n\n4. Mark task complete, move to next task"
+  },
+  {
+    "id": "subagent-development_036",
+    "file": "subagent-development.md",
+    "heading": "After All Tasks Complete",
+    "level": 2,
+    "content_preview": "1. Dispatch final overall reviewer sub-agent (full diff, all tasks)\n2. Fix any critical/important issues found\n3. Hand off to finishing-branch phase",
+    "full_content": "1. Dispatch final overall reviewer sub-agent (full diff, all tasks)\n2. Fix any critical/important issues found\n3. Hand off to finishing-branch phase"
+  },
+  {
+    "id": "subagent-development_037",
+    "file": "subagent-development.md",
+    "heading": "Implementer Sub-Agent Prompt Template",
+    "level": 2,
+    "content_preview": "```\nYou are implementing a coding task. Follow TDD strictly.\n\nPLAN FILE: [path]\nTASK: [task N text verbatim]\n\nCONSTRAINTS:\n- Write failing test FIRST. Run it. Confirm it fails. Then implement.\n- Minim...",
+    "full_content": "```\nYou are implementing a coding task. Follow TDD strictly.\n\nPLAN FILE: [path]\nTASK: [task N text verbatim]\n\nCONSTRAINTS:\n- Write failing test FIRST. Run it. Confirm it fails. Then implement.\n- Minimal implementation only — YAGNI\n- Commit after each green test: git add <files> && git commit -m \"...\"\n- Do NOT change files outside this task's scope\n- Do NOT add features not in the task\n\nVERIFY:\n- Run: [test command]\n- Expected: [expected output]\n\nReport when done: what you implemented, test results, commit SHA.\n```"
+  },
+  {
+    "id": "subagent-development_038",
+    "file": "subagent-development.md",
+    "heading": "Spec-Reviewer Sub-Agent Prompt Template",
+    "level": 2,
+    "content_preview": "```\nYou are reviewing code for spec compliance only.\n\nPLAN FILE: [path]\nTASK BEING REVIEWED: [task N text]\nGIT RANGE: [base_sha..head_sha]\n\nReview ONLY whether the implementation matches the spec.\nRep...",
+    "full_content": "```\nYou are reviewing code for spec compliance only.\n\nPLAN FILE: [path]\nTASK BEING REVIEWED: [task N text]\nGIT RANGE: [base_sha..head_sha]\n\nReview ONLY whether the implementation matches the spec.\nReport:\n- PASS or FAIL\n- Any spec gaps (what was specified but not implemented)\n- Do NOT comment on code style or quality\n```"
+  },
+  {
+    "id": "subagent-development_039",
+    "file": "subagent-development.md",
+    "heading": "Code-Quality Reviewer Sub-Agent Prompt Template",
+    "level": 2,
+    "content_preview": "```\nYou are reviewing code quality only (not spec compliance).\n\nGIT RANGE: [base_sha..head_sha]\nDESCRIPTION: [what was implemented]\n\nReview for:\n- DRY violations\n- Dead code\n- YAGNI violations (unnece...",
+    "full_content": "```\nYou are reviewing code quality only (not spec compliance).\n\nGIT RANGE: [base_sha..head_sha]\nDESCRIPTION: [what was implemented]\n\nReview for:\n- DRY violations\n- Dead code\n- YAGNI violations (unnecessary features)\n- Poor naming\n- Missing error handling\n\nSeverity: Critical / Important / Minor\nReport: approve or list issues by severity.\n```"
+  },
+  {
+    "id": "subagent-development_040",
+    "file": "subagent-development.md",
+    "heading": "Review Severity Actions",
+    "level": 2,
+    "content_preview": "| Severity | Action |\n|----------|--------|\n| Critical | Fix before proceeding — blocks next task |\n| Important | Fix before proceeding |\n| Minor | Note, address later |",
+    "full_content": "| Severity | Action |\n|----------|--------|\n| Critical | Fix before proceeding — blocks next task |\n| Important | Fix before proceeding |\n| Minor | Note, address later |"
+  },
+  {
+    "id": "writing-plans_041",
+    "file": "writing-plans.md",
+    "heading": "Writing Plans Reference",
+    "level": 1,
+    "content_preview": "Source: obra/superpowers writing-plans skill",
+    "full_content": "Source: obra/superpowers writing-plans skill"
+  },
+  {
+    "id": "writing-plans_042",
+    "file": "writing-plans.md",
+    "heading": "Overview",
+    "level": 2,
+    "content_preview": "Write a detailed implementation plan before touching code. Each task must be granular enough\nfor an agent with no project context to execute correctly.\n\nAnnounce at start: \"I'm using the writing-plans...",
+    "full_content": "Write a detailed implementation plan before touching code. Each task must be granular enough\nfor an agent with no project context to execute correctly.\n\nAnnounce at start: \"I'm using the writing-plans skill to create the implementation plan.\""
+  },
+  {
+    "id": "writing-plans_043",
+    "file": "writing-plans.md",
+    "heading": "Plan File Location",
+    "level": 2,
+    "content_preview": "`docs/plans/YYYY-MM-DD-<feature-name>.md`",
+    "full_content": "`docs/plans/YYYY-MM-DD-<feature-name>.md`"
+  },
+  {
+    "id": "writing-plans_044",
+    "file": "writing-plans.md",
+    "heading": "Plan Document Header (required)",
+    "level": 2,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "writing-plans_045",
+    "file": "writing-plans.md",
+    "heading": "[Feature Name] Implementation Plan",
+    "level": 1,
+    "content_preview": "> **For implementer:** Use TDD throughout. Write failing test first. Watch it fail. Then implement.\n\n**Goal:** [One sentence describing what this builds]\n\n**Architecture:** [2–3 sentences about approa...",
+    "full_content": "> **For implementer:** Use TDD throughout. Write failing test first. Watch it fail. Then implement.\n\n**Goal:** [One sentence describing what this builds]\n\n**Architecture:** [2–3 sentences about approach]\n\n**Tech Stack:** [Key technologies/libraries]\n\n---\n```"
+  },
+  {
+    "id": "writing-plans_046",
+    "file": "writing-plans.md",
+    "heading": "Task Granularity",
+    "level": 2,
+    "content_preview": "Each step = one action, 2–5 minutes:\n\n```markdown",
+    "full_content": "Each step = one action, 2–5 minutes:\n\n```markdown"
+  },
+  {
+    "id": "writing-plans_047",
+    "file": "writing-plans.md",
+    "heading": "Task N: [Component Name]",
+    "level": 3,
+    "content_preview": "**Files:**\n- Create: `exact/path/to/file.py`\n- Modify: `exact/path/to/existing.py`\n- Test: `tests/exact/path/to/test_file.py`\n\n**Step 1: Write the failing test**\n[paste exact test code]\n\n**Step 2: Run...",
+    "full_content": "**Files:**\n- Create: `exact/path/to/file.py`\n- Modify: `exact/path/to/existing.py`\n- Test: `tests/exact/path/to/test_file.py`\n\n**Step 1: Write the failing test**\n[paste exact test code]\n\n**Step 2: Run test — confirm it fails**\nCommand: `pytest tests/path/test.py::test_name -v`\nExpected: FAIL — \"function not defined\" or similar\n\n**Step 3: Write minimal implementation**\n[paste exact implementation code]\n\n**Step 4: Run test — confirm it passes**\nCommand: `pytest tests/path/test.py::test_name -v`\nExpected: PASS\n\n**Step 5: Commit**\n`git add <files> && git commit -m \"feat: <description>\"`\n```"
+  },
+  {
+    "id": "writing-plans_048",
+    "file": "writing-plans.md",
+    "heading": "Rules",
+    "level": 2,
+    "content_preview": "- Exact file paths always — no vague references\n- Complete code in plan — not \"add validation here\"\n- Exact commands with expected output\n- DRY, YAGNI, TDD, frequent commits after each green test",
+    "full_content": "- Exact file paths always — no vague references\n- Complete code in plan — not \"add validation here\"\n- Exact commands with expected output\n- DRY, YAGNI, TDD, frequent commits after each green test"
+  },
+  {
+    "id": "writing-plans_049",
+    "file": "writing-plans.md",
+    "heading": "Execution Handoff",
+    "level": 2,
+    "content_preview": "After saving plan, offer:\n\n> \"Plan saved to `docs/plans/<filename>.md`. Two execution options:\n>\n> 1. **Subagent-Driven** — I dispatch a fresh sub-agent per task, review between tasks\n> 2. **Manual** ...",
+    "full_content": "After saving plan, offer:\n\n> \"Plan saved to `docs/plans/<filename>.md`. Two execution options:\n>\n> 1. **Subagent-Driven** — I dispatch a fresh sub-agent per task, review between tasks\n> 2. **Manual** — You run the tasks yourself\n>\n> Which approach?\"\n\nIf Subagent-Driven: proceed to subagent-development phase."
+  },
+  {
+    "id": "systematic-debugging_050",
+    "file": "systematic-debugging.md",
+    "heading": "Systematic Debugging Reference",
+    "level": 1,
+    "content_preview": "Source: obra/superpowers systematic-debugging skill",
+    "full_content": "Source: obra/superpowers systematic-debugging skill"
+  },
+  {
+    "id": "systematic-debugging_051",
+    "file": "systematic-debugging.md",
+    "heading": "The Iron Law",
+    "level": 2,
+    "content_preview": "```\nNO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST\n```\n\nRandom fixes waste time and create new bugs. Symptom fixes are failure.",
+    "full_content": "```\nNO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST\n```\n\nRandom fixes waste time and create new bugs. Symptom fixes are failure."
+  },
+  {
+    "id": "systematic-debugging_052",
+    "file": "systematic-debugging.md",
+    "heading": "When to Use",
+    "level": 2,
+    "content_preview": "Any technical issue:\n- Test failures\n- Bugs in production\n- Unexpected behaviour\n- Performance problems\n- Build failures\n- Integration issues\n\nUse this ESPECIALLY when under time pressure, when \"one q...",
+    "full_content": "Any technical issue:\n- Test failures\n- Bugs in production\n- Unexpected behaviour\n- Performance problems\n- Build failures\n- Integration issues\n\nUse this ESPECIALLY when under time pressure, when \"one quick fix\" seems obvious,\nor when previous fixes didn't work. Rushing guarantees rework."
+  },
+  {
+    "id": "systematic-debugging_053",
+    "file": "systematic-debugging.md",
+    "heading": "The Four Phases",
+    "level": 2,
+    "content_preview": "Complete each phase before proceeding to the next.",
+    "full_content": "Complete each phase before proceeding to the next."
+  },
+  {
+    "id": "systematic-debugging_054",
+    "file": "systematic-debugging.md",
+    "heading": "Phase 1: Root Cause Investigation",
+    "level": 3,
+    "content_preview": "**BEFORE attempting ANY fix:**\n\n1. **Read error messages carefully**\n   - Don't skim past errors or warnings\n   - Read stack traces completely\n   - Note line numbers, file paths, error codes\n\n2. **Rep...",
+    "full_content": "**BEFORE attempting ANY fix:**\n\n1. **Read error messages carefully**\n   - Don't skim past errors or warnings\n   - Read stack traces completely\n   - Note line numbers, file paths, error codes\n\n2. **Reproduce consistently**\n   - Can you trigger it reliably?\n   - What are the exact steps?\n   - If not reproducible → gather more data, don't guess\n\n3. **Check recent changes**\n   - What changed that could cause this?\n   - `git diff`, recent commits, new dependencies, config changes\n\n4. **Gather evidence in multi-component systems**\n\n   When the system has multiple layers (API → service → database, CI → build → signing):\n   \n   Before proposing fixes, add diagnostic instrumentation at each boundary:\n   ```\n   For each component boundary:\n     - Log what data enters\n     - Log what data exits\n     - Verify config/env propagation\n   Run once to see WHERE it breaks, THEN investigate that layer\n   ```\n\n5. **Trace data flow**\n   - Where does the bad value originate?\n   - What called this with the bad value?\n   - Trace up the call stack until you find the source\n   - Fix at source, not at symptom"
+  },
+  {
+    "id": "systematic-debugging_055",
+    "file": "systematic-debugging.md",
+    "heading": "Phase 2: Pattern Analysis",
+    "level": 3,
+    "content_preview": "**Find the pattern before fixing:**\n\n1. Find working examples of similar code in the codebase\n2. Compare against references — read completely, don't skim\n3. List every difference between working and b...",
+    "full_content": "**Find the pattern before fixing:**\n\n1. Find working examples of similar code in the codebase\n2. Compare against references — read completely, don't skim\n3. List every difference between working and broken\n4. Understand all dependencies and assumptions"
+  },
+  {
+    "id": "systematic-debugging_056",
+    "file": "systematic-debugging.md",
+    "heading": "Phase 3: Hypothesis + Testing",
+    "level": 3,
+    "content_preview": "1. Form one clear hypothesis: \"I think X is the root cause because Y\"\n2. Write it down explicitly\n3. Design a minimal test to prove/disprove it\n4. Run the test\n5. If disproved → form new hypothesis, r...",
+    "full_content": "1. Form one clear hypothesis: \"I think X is the root cause because Y\"\n2. Write it down explicitly\n3. Design a minimal test to prove/disprove it\n4. Run the test\n5. If disproved → form new hypothesis, repeat\n6. If proved → proceed to fix"
+  },
+  {
+    "id": "systematic-debugging_057",
+    "file": "systematic-debugging.md",
+    "heading": "Phase 4: Fix + Verification",
+    "level": 3,
+    "content_preview": "1. Fix at root cause, not symptom\n2. Write a test that would have caught this bug\n3. Verify fix works\n4. Verify no regressions (run full test suite)\n5. Commit with clear message explaining root cause",
+    "full_content": "1. Fix at root cause, not symptom\n2. Write a test that would have caught this bug\n3. Verify fix works\n4. Verify no regressions (run full test suite)\n5. Commit with clear message explaining root cause"
+  },
+  {
+    "id": "systematic-debugging_058",
+    "file": "systematic-debugging.md",
+    "heading": "Anti-Patterns",
+    "level": 2,
+    "content_preview": "- **\"Just try this\"** — random fixes without root cause\n- **\"It's probably X\"** — guessing without evidence\n- **\"Quick patch\"** — symptom fix leaving root cause intact\n- **Fixing multiple things at on...",
+    "full_content": "- **\"Just try this\"** — random fixes without root cause\n- **\"It's probably X\"** — guessing without evidence\n- **\"Quick patch\"** — symptom fix leaving root cause intact\n- **Fixing multiple things at once** — makes it impossible to know what worked\n- **Skipping reproduction** — debugging something you can't trigger consistently"
+  }
+]

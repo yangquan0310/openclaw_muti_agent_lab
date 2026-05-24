@@ -249,12 +249,12 @@ writer --file essay.md
 writer --file essay.md --level sentence
 
 # 构建索引
-lookup index -r /root/.openclaw/workspace/writer/skills/writer/references \
+lookup! index -r /root/.openclaw/workspace/writer/skills/writer/references \
   -m /root/.openclaw/workspace/writer/skills/writer/index/manifest.json \
   -c /root/.openclaw/workspace/writer/skills/writer/index/chunks.json
 
 # 搜索指南
-lookup search -i /root/.openclaw/workspace/writer/skills/writer/index/manifest.json <关键词>
+lookup! search -i /root/.openclaw/workspace/writer/skills/writer/index/manifest.json <关键词>
 
 # 查看帮助
 writer --help

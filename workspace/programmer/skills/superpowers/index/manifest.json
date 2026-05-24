@@ -1,0 +1,381 @@
+{
+  "brainstorming": {
+    "file": "brainstorming.md",
+    "title": "Brainstorming Reference",
+    "description": "Source: obra/superpowers brainstorming skill",
+    "keywords": [
+      "Brainstorming Reference",
+      "in order",
+      "Checklist",
+      "Rules",
+      "Questions to Ask",
+      "Design Sections to Cover",
+      "After Design Approval"
+    ],
+    "sections": [
+      {
+        "heading": "Brainstorming Reference",
+        "level": 1
+      },
+      {
+        "heading": "Checklist (in order)",
+        "level": 2
+      },
+      {
+        "heading": "Rules",
+        "level": 2
+      },
+      {
+        "heading": "Questions to Ask",
+        "level": 2
+      },
+      {
+        "heading": "Design Sections to Cover",
+        "level": 2
+      },
+      {
+        "heading": "After Design Approval",
+        "level": 2
+      }
+    ]
+  },
+  "finishing-branch": {
+    "file": "finishing-branch.md",
+    "title": "Finishing a Development Branch Reference",
+    "description": "Source: obra/superpowers finishing-a-development-branch skill",
+    "keywords": [
+      "Finishing a Development Branch Reference",
+      "Overview",
+      "Step 1: Verify Tests",
+      "Python",
+      "Node/TS",
+      "Rust",
+      "Go",
+      "Step 2: Determine Base Branch",
+      "Step 3: Present Options",
+      "Step 4: Execute Choice",
+      "Option 1: Merge Locally",
+      "Option 2: Push + PR",
+      "Test Plan",
+      "Option 3: Keep As-Is",
+      "Option 4: Discard",
+      "Quick Reference",
+      "Common Mistakes",
+      "Option",
+      "1. Merge locally",
+      "2. Create PR",
+      "3. Keep as-is",
+      "4. Discard"
+    ],
+    "sections": [
+      {
+        "heading": "Finishing a Development Branch Reference",
+        "level": 1
+      },
+      {
+        "heading": "Overview",
+        "level": 2
+      },
+      {
+        "heading": "Step 1: Verify Tests",
+        "level": 2
+      },
+      {
+        "heading": "Python",
+        "level": 1
+      },
+      {
+        "heading": "Node/TS",
+        "level": 1
+      },
+      {
+        "heading": "Rust",
+        "level": 1
+      },
+      {
+        "heading": "Go",
+        "level": 1
+      },
+      {
+        "heading": "Step 2: Determine Base Branch",
+        "level": 2
+      },
+      {
+        "heading": "Step 3: Present Options",
+        "level": 2
+      },
+      {
+        "heading": "Step 4: Execute Choice",
+        "level": 2
+      },
+      {
+        "heading": "Option 1: Merge Locally",
+        "level": 3
+      },
+      {
+        "heading": "Option 2: Push + PR",
+        "level": 3
+      },
+      {
+        "heading": "Test Plan",
+        "level": 2
+      },
+      {
+        "heading": "Option 3: Keep As-Is",
+        "level": 3
+      },
+      {
+        "heading": "Option 4: Discard",
+        "level": 3
+      },
+      {
+        "heading": "Quick Reference",
+        "level": 2
+      },
+      {
+        "heading": "Common Mistakes",
+        "level": 2
+      }
+    ]
+  },
+  "tdd": {
+    "file": "tdd.md",
+    "title": "Test-Driven Development Reference",
+    "description": "Source: obra/superpowers test-driven-development skill",
+    "keywords": [
+      "Test-Driven Development Reference",
+      "The Iron Law",
+      "Red-Green-Refactor",
+      "RED — Write Failing Test",
+      "Verify RED — Watch It Fail",
+      "GREEN — Minimal Code",
+      "Verify GREEN — Watch It Pass",
+      "REFACTOR — Clean Up",
+      "Good Test Qualities",
+      "Why TDD Order Matters",
+      "ask Rich first",
+      "Exceptions",
+      "Quality",
+      "Minimal",
+      "Clear",
+      "Shows intent",
+      "test_retries_failed_operations_three_times",
+      "operation",
+      "not"
+    ],
+    "sections": [
+      {
+        "heading": "Test-Driven Development Reference",
+        "level": 1
+      },
+      {
+        "heading": "The Iron Law",
+        "level": 2
+      },
+      {
+        "heading": "Red-Green-Refactor",
+        "level": 2
+      },
+      {
+        "heading": "RED — Write Failing Test",
+        "level": 3
+      },
+      {
+        "heading": "Verify RED — Watch It Fail",
+        "level": 3
+      },
+      {
+        "heading": "GREEN — Minimal Code",
+        "level": 3
+      },
+      {
+        "heading": "Verify GREEN — Watch It Pass",
+        "level": 3
+      },
+      {
+        "heading": "REFACTOR — Clean Up",
+        "level": 3
+      },
+      {
+        "heading": "Good Test Qualities",
+        "level": 2
+      },
+      {
+        "heading": "Why TDD Order Matters",
+        "level": 2
+      },
+      {
+        "heading": "Exceptions (ask Rich first)",
+        "level": 2
+      }
+    ]
+  },
+  "subagent-development": {
+    "file": "subagent-development.md",
+    "title": "Subagent-Driven Development Reference",
+    "description": "Source: obra/superpowers subagent-driven-development skill",
+    "keywords": [
+      "Subagent-Driven Development Reference",
+      "Core Principle",
+      "OpenClaw Dispatch Pattern",
+      "Per-Task Loop",
+      "After All Tasks Complete",
+      "Implementer Sub-Agent Prompt Template",
+      "Spec-Reviewer Sub-Agent Prompt Template",
+      "Code-Quality Reviewer Sub-Agent Prompt Template",
+      "Review Severity Actions",
+      "Severity",
+      "Critical",
+      "Important",
+      "Minor"
+    ],
+    "sections": [
+      {
+        "heading": "Subagent-Driven Development Reference",
+        "level": 1
+      },
+      {
+        "heading": "Core Principle",
+        "level": 2
+      },
+      {
+        "heading": "OpenClaw Dispatch Pattern",
+        "level": 2
+      },
+      {
+        "heading": "Per-Task Loop",
+        "level": 2
+      },
+      {
+        "heading": "After All Tasks Complete",
+        "level": 2
+      },
+      {
+        "heading": "Implementer Sub-Agent Prompt Template",
+        "level": 2
+      },
+      {
+        "heading": "Spec-Reviewer Sub-Agent Prompt Template",
+        "level": 2
+      },
+      {
+        "heading": "Code-Quality Reviewer Sub-Agent Prompt Template",
+        "level": 2
+      },
+      {
+        "heading": "Review Severity Actions",
+        "level": 2
+      }
+    ]
+  },
+  "writing-plans": {
+    "file": "writing-plans.md",
+    "title": "Writing Plans Reference",
+    "description": "Source: obra/superpowers writing-plans skill",
+    "keywords": [
+      "Writing Plans Reference",
+      "Overview",
+      "Plan File Location",
+      "required",
+      "Plan Document Header",
+      "[Feature Name] Implementation Plan",
+      "Task Granularity",
+      "Task N: [Component Name]",
+      "Rules",
+      "Execution Handoff",
+      "not"
+    ],
+    "sections": [
+      {
+        "heading": "Writing Plans Reference",
+        "level": 1
+      },
+      {
+        "heading": "Overview",
+        "level": 2
+      },
+      {
+        "heading": "Plan File Location",
+        "level": 2
+      },
+      {
+        "heading": "Plan Document Header (required)",
+        "level": 2
+      },
+      {
+        "heading": "[Feature Name] Implementation Plan",
+        "level": 1
+      },
+      {
+        "heading": "Task Granularity",
+        "level": 2
+      },
+      {
+        "heading": "Task N: [Component Name]",
+        "level": 3
+      },
+      {
+        "heading": "Rules",
+        "level": 2
+      },
+      {
+        "heading": "Execution Handoff",
+        "level": 2
+      }
+    ]
+  },
+  "systematic-debugging": {
+    "file": "systematic-debugging.md",
+    "title": "Systematic Debugging Reference",
+    "description": "Source: obra/superpowers systematic-debugging skill",
+    "keywords": [
+      "Systematic Debugging Reference",
+      "The Iron Law",
+      "When to Use",
+      "The Four Phases",
+      "Phase 1: Root Cause Investigation",
+      "Phase 2: Pattern Analysis",
+      "Phase 3: Hypothesis + Testing",
+      "Phase 4: Fix + Verification",
+      "Anti-Patterns"
+    ],
+    "sections": [
+      {
+        "heading": "Systematic Debugging Reference",
+        "level": 1
+      },
+      {
+        "heading": "The Iron Law",
+        "level": 2
+      },
+      {
+        "heading": "When to Use",
+        "level": 2
+      },
+      {
+        "heading": "The Four Phases",
+        "level": 2
+      },
+      {
+        "heading": "Phase 1: Root Cause Investigation",
+        "level": 3
+      },
+      {
+        "heading": "Phase 2: Pattern Analysis",
+        "level": 3
+      },
+      {
+        "heading": "Phase 3: Hypothesis + Testing",
+        "level": 3
+      },
+      {
+        "heading": "Phase 4: Fix + Verification",
+        "level": 3
+      },
+      {
+        "heading": "Anti-Patterns",
+        "level": 2
+      }
+    ]
+  }
+}

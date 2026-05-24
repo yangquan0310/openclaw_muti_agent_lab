@@ -64,6 +64,73 @@
     ],
     "category": "references"
   },
+  "references/workflows": {
+    "file": "workflows.md",
+    "title": "writer 核心工作流",
+    "description": "> writer 技能的完整工作流程，涵盖全新写作、修改润色、校对审核。",
+    "keywords": [
+      "writer 核心工作流",
+      "触发条件",
+      "快速开始",
+      "工作流速查",
+      "Q&A",
+      "Q1：全新写作的标准流程？",
+      "Q2：修改文章必须注意什么？",
+      "Q3：如何区分证据、推测、解读？",
+      "错误排查",
+      "需求",
+      "全新写作",
+      "修改润色",
+      "句子规范",
+      "段落规范",
+      "引用规范",
+      "风格指南",
+      "现象",
+      "论点不清晰",
+      "引用缺失",
+      "逻辑跳跃",
+      "术语不一致"
+    ],
+    "sections": [
+      {
+        "heading": "writer 核心工作流",
+        "level": 1
+      },
+      {
+        "heading": "触发条件",
+        "level": 2
+      },
+      {
+        "heading": "快速开始",
+        "level": 2
+      },
+      {
+        "heading": "工作流速查",
+        "level": 2
+      },
+      {
+        "heading": "Q&A",
+        "level": 2
+      },
+      {
+        "heading": "Q1：全新写作的标准流程？",
+        "level": 3
+      },
+      {
+        "heading": "Q2：修改文章必须注意什么？",
+        "level": 3
+      },
+      {
+        "heading": "Q3：如何区分证据、推测、解读？",
+        "level": 3
+      },
+      {
+        "heading": "错误排查",
+        "level": 2
+      }
+    ],
+    "category": "references"
+  },
   "references/guide": {
     "file": "guide.md",
     "title": "使用指南",
@@ -1628,8 +1695,280 @@
     ],
     "category": "references/workflows"
   },
+  "references/workflows/writing-process-guide": {
+    "file": "writing-process-guide.md",
+    "title": "写作过程指南",
+    "description": "> 从任务理解到终稿的系统化写作流程",
+    "keywords": [
+      "写作过程指南",
+      "核心理念",
+      "阶段流程",
+      "阶段1: 理解任务",
+      "操作步骤",
+      "任务分解检查",
+      "常见指令词",
+      "阶段2: 规划",
+      "规划产出",
+      "结构规划",
+      "阶段3: 起草",
+      "写作顺序",
+      "段落写作",
+      "阶段4: 修改",
+      "宏观检查清单",
+      "微观检查清单",
+      "阶段5: 校对",
+      "校对清单",
+      "校对技巧",
+      "时间管理",
+      "建议时间分配",
+      "常见错误",
+      "本章小结",
+      "指令词",
+      "分析 (Analyze)",
+      "评估 (Evaluate)",
+      "比较 (Compare)",
+      "解释 (Explain)",
+      "讨论 (Discuss)",
+      "维度"
+    ],
+    "sections": [
+      {
+        "heading": "写作过程指南",
+        "level": 1
+      },
+      {
+        "heading": "核心理念",
+        "level": 2
+      },
+      {
+        "heading": "五阶段流程",
+        "level": 2
+      },
+      {
+        "heading": "阶段1: 理解任务",
+        "level": 2
+      },
+      {
+        "heading": "操作步骤",
+        "level": 3
+      },
+      {
+        "heading": "任务分解检查",
+        "level": 3
+      },
+      {
+        "heading": "常见指令词",
+        "level": 3
+      },
+      {
+        "heading": "阶段2: 规划",
+        "level": 2
+      },
+      {
+        "heading": "操作步骤",
+        "level": 3
+      },
+      {
+        "heading": "规划产出",
+        "level": 3
+      },
+      {
+        "heading": "结构规划",
+        "level": 3
+      },
+      {
+        "heading": "阶段3: 起草",
+        "level": 2
+      },
+      {
+        "heading": "操作步骤",
+        "level": 3
+      },
+      {
+        "heading": "写作顺序",
+        "level": 3
+      },
+      {
+        "heading": "段落写作",
+        "level": 3
+      },
+      {
+        "heading": "阶段4: 修改",
+        "level": 2
+      },
+      {
+        "heading": "操作步骤",
+        "level": 3
+      },
+      {
+        "heading": "宏观检查清单",
+        "level": 3
+      },
+      {
+        "heading": "微观检查清单",
+        "level": 3
+      },
+      {
+        "heading": "阶段5: 校对",
+        "level": 2
+      },
+      {
+        "heading": "操作步骤",
+        "level": 3
+      },
+      {
+        "heading": "校对清单",
+        "level": 3
+      },
+      {
+        "heading": "校对技巧",
+        "level": 3
+      },
+      {
+        "heading": "时间管理",
+        "level": 2
+      },
+      {
+        "heading": "建议时间分配",
+        "level": 3
+      },
+      {
+        "heading": "常见错误",
+        "level": 3
+      },
+      {
+        "heading": "本章小结",
+        "level": 2
+      }
+    ],
+    "category": "references/workflows"
+  },
   "references/workflows/modification-workflow": {
     "file": "modification-workflow.md",
+    "title": "修改方法论",
+    "description": "> 修改文章的标准工作流",
+    "keywords": [
+      "修改方法论",
+      "核心工作流",
+      "步骤一：建立论证地图",
+      "操作",
+      "输出格式",
+      "步骤二：创建修改清单",
+      "组织层级",
+      "优先级定义",
+      "步骤三：论证中心检验",
+      "规则",
+      "自检",
+      "背景层 vs 核心层",
+      "步骤四：汇报确认",
+      "汇报内容",
+      "步骤五：逐章执行",
+      "顺序",
+      "步骤六：终极核查",
+      "核查维度",
+      "本章小结",
+      "层级",
+      "**全局修改**",
+      "**章节修改**",
+      "**实验/证据章修改**",
+      "**跨章一致性**",
+      "优先级",
+      "P0",
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "sections": [
+      {
+        "heading": "修改方法论",
+        "level": 1
+      },
+      {
+        "heading": "核心工作流",
+        "level": 2
+      },
+      {
+        "heading": "步骤一：建立论证地图",
+        "level": 2
+      },
+      {
+        "heading": "操作",
+        "level": 3
+      },
+      {
+        "heading": "输出格式",
+        "level": 3
+      },
+      {
+        "heading": "步骤二：创建修改清单",
+        "level": 2
+      },
+      {
+        "heading": "组织层级",
+        "level": 3
+      },
+      {
+        "heading": "优先级定义",
+        "level": 3
+      },
+      {
+        "heading": "步骤三：论证中心检验",
+        "level": 2
+      },
+      {
+        "heading": "规则",
+        "level": 3
+      },
+      {
+        "heading": "自检",
+        "level": 3
+      },
+      {
+        "heading": "背景层 vs 核心层",
+        "level": 3
+      },
+      {
+        "heading": "步骤四：汇报确认",
+        "level": 2
+      },
+      {
+        "heading": "规则",
+        "level": 3
+      },
+      {
+        "heading": "汇报内容",
+        "level": 3
+      },
+      {
+        "heading": "步骤五：逐章执行",
+        "level": 2
+      },
+      {
+        "heading": "顺序",
+        "level": 3
+      },
+      {
+        "heading": "自检",
+        "level": 3
+      },
+      {
+        "heading": "步骤六：终极核查",
+        "level": 2
+      },
+      {
+        "heading": "核查维度",
+        "level": 3
+      },
+      {
+        "heading": "本章小结",
+        "level": 2
+      }
+    ],
+    "category": "references/workflows"
+  },
+  "references/workflows/modification-guide": {
+    "file": "modification-guide.md",
     "title": "修改方法论",
     "description": "> 修改文章的标准工作流",
     "keywords": [

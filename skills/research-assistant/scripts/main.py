@@ -8,7 +8,11 @@ from pathlib import Path
 # Fix-01: 添加项目根目录到 path，解决 ModuleNotFoundError
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scripts import Searcher, Summarizer, Manager, Synthesizer
+from scripts.search.Searcher import Searcher as OldSearcher
+from scripts.search import search_by_keyword
+from scripts.summarize.Summarizer import Summarizer
+from scripts.manage.Manager import Manager
+from scripts.synthesize.Synthesizer import Synthesizer
 
 
 def main(argv=None) -> int:
@@ -102,7 +106,6 @@ def _run_search(args) -> int:
     import json
     if args.queries:
         # 模式 1：JSON 条件文件（兼容原有 Searcher）
-        from scripts.search.Searcher import Searcher as OldSearcher
         searcher = OldSearcher(kb_path=args.kb_path)
         with open(args.queries) as f:
             queries = json.load(f)
@@ -120,7 +123,6 @@ def _run_search(args) -> int:
 
     else:
         # 模式 2：关键词（语言自动路由）
-        from scripts.search import search_by_keyword
         results = search_by_keyword(
             keyword=args.keyword,
             kb_path=args.kb_path,

@@ -1,6 +1,6 @@
 # scripts 规范
 
-> 技能的 `scripts/` 目录是一个完整的 Python 子项目，必须满足以下结构与编码规范。
+> 技能的 `scripts/` 目录是一个独立 CLI 应用集合，必须满足以下结构与编码规范。
 
 ---
 
@@ -10,12 +10,10 @@
 skills/<name>/
 ├── SKILL.md
 ├── scripts/
-│   ├── __init__.py          # 暴露子模块的公开接口
 │   ├── main.py              # CLI 统一入口（可选，仅多子命令时必需）
-│   ├── {module}.py          # 每个模块一个 .py 文件
 │   └── {module}/            # 可选：模块内部子包
 │       ├── __init__.py
-│       └── {sub}.py
+│       └── {class}.py
 ├── references/
 └── assets/
 ```
@@ -26,13 +24,13 @@ skills/<name>/
 
 ---
 
-## `scripts/` 是独立 Python 项目
+## `scripts/` 是独立应用目录
 
-`scripts/` 不是一个松散的脚本集合，而是一个**有包的 Python 项目**：
+`scripts/` 是**独立 Python 应用集合**，不是包：
 
-- `__init__.py` 必须存在（空文件即可），使 `scripts` 成为包
-- 所有相对导入基于 `scripts/` 的位置
-- `scripts/main.py` 通过 `sys.path.insert` 指向技能根目录：
+- **不需要** `__init__.py`
+- **不需要** `sys.path` 操作
+- 直接用 `python3 /path/to/scripts/main.py` 或 wrapper 调用
 
 ```python
 import sys
@@ -182,22 +180,6 @@ if __name__ == '__main__':
 1. **`del sys.argv[1]`** — 必须删除子命令本身，否则子模块的 argparse 会把子命令当作成位置参数
 2. **`sys.argv[0]` 重命名** — 保持错误信息的可读性（如 `fortunetelling bazi: error: ...`）
 3. **`raise SystemExit(main())`** — 不在 `__main__` 层调用 `sys.exit()`
-
----
-
-## `__init__.py` 规范
-
-`scripts/__init__.py` 用于暴露公开接口，示例：
-
-```python
-"""scripts 包的公共接口。"""
-
-from scripts.bazi  import main as bazi_main
-from scripts.lunar import main as lunar_main
-from scripts.fate  import main as fate_main
-
-__all__ = ['bazi_main', 'lunar_main', 'fate_main']
-```
 
 ---
 

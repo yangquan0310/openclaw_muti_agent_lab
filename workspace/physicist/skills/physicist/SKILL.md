@@ -80,12 +80,12 @@ physicist calculate integrate --func 'x**2' --a 0 --b 1
 physicist visualize function --func 'sin(x)' --xmin 0 --xmax 3.14
 
 # 构建索引
-lookup index -r /root/.openclaw/workspace/physicist/skills/physicist/references \
+lookup! index -r /root/.openclaw/workspace/physicist/skills/physicist/references \
   -m /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json \
   -c /root/.openclaw/workspace/physicist/skills/physicist/index/chunks.json
 
 # 搜索指南
-lookup search -i /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json <关键词>
+lookup! search -i /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json <关键词>
 
 # 查看帮助
 physicist -h

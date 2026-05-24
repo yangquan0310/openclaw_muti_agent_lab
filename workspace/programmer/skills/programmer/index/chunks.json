@@ -1,0 +1,2418 @@
+[
+  {
+    "id": "oop-principles-guide_000",
+    "file": "oop-principles-guide.md",
+    "heading": "OOP 原则",
+    "level": 1,
+    "content_preview": "> 封装、继承、多态详解\n\n---",
+    "full_content": "> 封装、继承、多态详解\n\n---"
+  },
+  {
+    "id": "oop-principles-guide_001",
+    "file": "oop-principles-guide.md",
+    "heading": "核心思想",
+    "level": 3,
+    "content_preview": "把数据和方法包在一起，对外隐藏实现细节，只暴露必要的接口。",
+    "full_content": "把数据和方法包在一起，对外隐藏实现细节，只暴露必要的接口。"
+  },
+  {
+    "id": "oop-principles-guide_002",
+    "file": "oop-principles-guide.md",
+    "heading": "目的",
+    "level": 3,
+    "content_preview": "- **数据保护**：防止外部随意修改内部状态\n- **接口简化**：隐藏复杂逻辑，提供简单调用方式\n- **模块独立**：内部修改不影响外部调用方",
+    "full_content": "- **数据保护**：防止外部随意修改内部状态\n- **接口简化**：隐藏复杂逻辑，提供简单调用方式\n- **模块独立**：内部修改不影响外部调用方"
+  },
+  {
+    "id": "oop-principles-guide_003",
+    "file": "oop-principles-guide.md",
+    "heading": "Python 实现",
+    "level": 3,
+    "content_preview": "```python\nclass BankAccount:\n    def __init__(self, balance: float):\n        # `_` 前缀表示受保护，不应直接访问\n        self._balance = balance\n    \n    def deposit(self, amount: float) -> None:\n        if amount <...",
+    "full_content": "```python\nclass BankAccount:\n    def __init__(self, balance: float):\n        # `_` 前缀表示受保护，不应直接访问\n        self._balance = balance\n    \n    def deposit(self, amount: float) -> None:\n        if amount <= 0:\n            raise ValueError(\"存款金额必须为正\")\n        self._balance += amount\n    \n    def withdraw(self, amount: float) -> None:\n        if amount <= 0:\n            raise ValueError(\"取款金额必须为正\")\n        if amount > self._balance:\n            raise ValueError(\"余额不足\")\n        self._balance -= amount\n    \n    def get_balance(self) -> float:\n        return self._balance\n```"
+  },
+  {
+    "id": "oop-principles-guide_004",
+    "file": "oop-principles-guide.md",
+    "heading": "访问控制",
+    "level": 3,
+    "content_preview": "| 标记 | 含义 | Python 实现 |\n|------|------|-------------|\n| `public` | 公开 | `self.name` |\n| `protected` | 子类可见 | `self._name` |\n| `private` | 仅自身可见 | `self.__name` |\n\n---",
+    "full_content": "| 标记 | 含义 | Python 实现 |\n|------|------|-------------|\n| `public` | 公开 | `self.name` |\n| `protected` | 子类可见 | `self._name` |\n| `private` | 仅自身可见 | `self.__name` |\n\n---"
+  },
+  {
+    "id": "oop-principles-guide_005",
+    "file": "oop-principles-guide.md",
+    "heading": "核心思想",
+    "level": 3,
+    "content_preview": "子类复用父类的属性和方法，不需要重复代码。",
+    "full_content": "子类复用父类的属性和方法，不需要重复代码。"
+  },
+  {
+    "id": "oop-principles-guide_006",
+    "file": "oop-principles-guide.md",
+    "heading": "目的",
+    "level": 3,
+    "content_preview": "- **代码复用**：子类复用父类逻辑\n- **is-a 关系**：子类是父类的一种\n- **统一接口**：子类和父类有相同的接口",
+    "full_content": "- **代码复用**：子类复用父类逻辑\n- **is-a 关系**：子类是父类的一种\n- **统一接口**：子类和父类有相同的接口"
+  },
+  {
+    "id": "oop-principles-guide_007",
+    "file": "oop-principles-guide.md",
+    "heading": "Python 实现",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "oop-principles-guide_008",
+    "file": "oop-principles-guide.md",
+    "heading": "父类",
+    "level": 1,
+    "content_preview": "class Animal:\n    def __init__(self, name: str):\n        self.name = name\n    \n    def speak(self) -> str:\n        raise NotImplementedError",
+    "full_content": "class Animal:\n    def __init__(self, name: str):\n        self.name = name\n    \n    def speak(self) -> str:\n        raise NotImplementedError"
+  },
+  {
+    "id": "oop-principles-guide_009",
+    "file": "oop-principles-guide.md",
+    "heading": "子类",
+    "level": 1,
+    "content_preview": "class Dog(Animal):\n    def speak(self) -> str:\n        return \"汪\"\n\nclass Cat(Animal):\n    def speak(self) -> str:\n        return \"喵\"",
+    "full_content": "class Dog(Animal):\n    def speak(self) -> str:\n        return \"汪\"\n\nclass Cat(Animal):\n    def speak(self) -> str:\n        return \"喵\""
+  },
+  {
+    "id": "oop-principles-guide_010",
+    "file": "oop-principles-guide.md",
+    "heading": "使用",
+    "level": 1,
+    "content_preview": "animals = [Dog(\"旺财\"), Cat(\"咪咪\")]\nfor a in animals:\n    print(f\"{a.name}: {a.speak()}\")\n```",
+    "full_content": "animals = [Dog(\"旺财\"), Cat(\"咪咪\")]\nfor a in animals:\n    print(f\"{a.name}: {a.speak()}\")\n```"
+  },
+  {
+    "id": "oop-principles-guide_011",
+    "file": "oop-principles-guide.md",
+    "heading": "继承类型",
+    "level": 3,
+    "content_preview": "| 类型 | 说明 | 示例 |\n|------|------|代价|\n| 单继承 | 一个父类 | `class Dog(Animal)` |\n| 多继承 | 多个父类 | `class A(B, C)` |\n| 多层继承 | 祖孙类 | `class A(B), class B(C)` |",
+    "full_content": "| 类型 | 说明 | 示例 |\n|------|------|代价|\n| 单继承 | 一个父类 | `class Dog(Animal)` |\n| 多继承 | 多个父类 | `class A(B, C)` |\n| 多层继承 | 祖孙类 | `class A(B), class B(C)` |"
+  },
+  {
+    "id": "oop-principles-guide_012",
+    "file": "oop-principles-guide.md",
+    "heading": "方法覆盖（Override）",
+    "level": 3,
+    "content_preview": "子类重写父类方法：\n\n```python\nclass Animal:\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):  # 覆盖父类方法\n        return \"汪汪\"\n```",
+    "full_content": "子类重写父类方法：\n\n```python\nclass Animal:\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):  # 覆盖父类方法\n        return \"汪汪\"\n```"
+  },
+  {
+    "id": "oop-principles-guide_013",
+    "file": "oop-principles-guide.md",
+    "heading": "super() 调用父类",
+    "level": 3,
+    "content_preview": "```python\nclass Cat(Animal):\n    def __init__(self, name: str, color: str):\n        super().__init__(name)  # 调用父类 __init__\n        self.color = color\n```\n\n---",
+    "full_content": "```python\nclass Cat(Animal):\n    def __init__(self, name: str, color: str):\n        super().__init__(name)  # 调用父类 __init__\n        self.color = color\n```\n\n---"
+  },
+  {
+    "id": "oop-principles-guide_014",
+    "file": "oop-principles-guide.md",
+    "heading": "核心思想",
+    "level": 3,
+    "content_preview": "同一接口，不同实现。调用方不需要知道具体是哪个子类。",
+    "full_content": "同一接口，不同实现。调用方不需要知道具体是哪个子类。"
+  },
+  {
+    "id": "oop-principles-guide_015",
+    "file": "oop-principles-guide.md",
+    "heading": "目的",
+    "level": 3,
+    "content_preview": "- **解耦**：调用方依赖抽象，不依赖具体实现\n- **扩展**：新增子类不影响现有代码\n- **灵活**：同一套逻辑处理多种类型",
+    "full_content": "- **解耦**：调用方依赖抽象，不依赖具体实现\n- **扩展**：新增子类不影响现有代码\n- **灵活**：同一套逻辑处理多种类型"
+  },
+  {
+    "id": "oop-principles-guide_016",
+    "file": "oop-principles-guide.md",
+    "heading": "Python 实现",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "oop-principles-guide_017",
+    "file": "oop-principles-guide.md",
+    "heading": "同一接口，不同实现",
+    "level": 1,
+    "content_preview": "def make_them_speak(animals: list[Animal]) -> None:\n    for a in animals:\n        print(a.speak())  # 调用的是实际对象的方法\n\nmake_them_speak([Dog(\"旺财\"), Cat(\"咪咪\")])",
+    "full_content": "def make_them_speak(animals: list[Animal]) -> None:\n    for a in animals:\n        print(a.speak())  # 调用的是实际对象的方法\n\nmake_them_speak([Dog(\"旺财\"), Cat(\"咪咪\")])"
+  },
+  {
+    "id": "oop-principles-guide_018",
+    "file": "oop-principles-guide.md",
+    "heading": "咪咪 says 喵",
+    "level": 1,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "oop-principles-guide_019",
+    "file": "oop-principles-guide.md",
+    "heading": "鸭子类型（Duck Typing）",
+    "level": 3,
+    "content_preview": "Python 的多态不依赖显式继承，只要对象有相应方法即可：\n\n```python\nclass Duck:\n    def swim(self):\n        return \"鸭子游泳\"\n\nclass Fish:\n    def swim(self):  # 也有 swim 方法\n        return \"鱼游泳\"\n\ndef let_them_swim(thing):\n    print...",
+    "full_content": "Python 的多态不依赖显式继承，只要对象有相应方法即可：\n\n```python\nclass Duck:\n    def swim(self):\n        return \"鸭子游泳\"\n\nclass Fish:\n    def swim(self):  # 也有 swim 方法\n        return \"鱼游泳\"\n\ndef let_them_swim(thing):\n    print(thing.swim())\n\nlet_them_swim(Duck())  # 鸭子游泳\nlet_them_swim(Fish())  # 鱼游泳\n```"
+  },
+  {
+    "id": "oop-principles-guide_020",
+    "file": "oop-principles-guide.md",
+    "heading": "抽象基类（ABC）",
+    "level": 3,
+    "content_preview": "定义必须被子类实现的方法：\n\n```python\nfrom abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self) -> float:\n        pass\n\nclass Rectangle(Shape):\n    def __init__(self, width: flo...",
+    "full_content": "定义必须被子类实现的方法：\n\n```python\nfrom abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self) -> float:\n        pass\n\nclass Rectangle(Shape):\n    def __init__(self, width: float, height: float):\n        self.width = width\n        self.height = height\n    \n    def area(self) -> float:\n        return self.width * self.height\n```\n\n---"
+  },
+  {
+    "id": "oop-principles-guide_021",
+    "file": "oop-principles-guide.md",
+    "heading": "三大原则的关系",
+    "level": 2,
+    "content_preview": "```\n        封装\n     ┌────┴────┐\n     │         │\n     ▼         ▼\n   继承  ←→  多态\n     │         │\n     └────┴─────┘\n         │\n         ▼\n      抽象\n```\n\n- **封装**是基础，把数据和方法绑在一起\n- **继承**复用代码，建立 is-a 关系\n- ...",
+    "full_content": "```\n        封装\n     ┌────┴────┐\n     │         │\n     ▼         ▼\n   继承  ←→  多态\n     │         │\n     └────┴─────┘\n         │\n         ▼\n      抽象\n```\n\n- **封装**是基础，把数据和方法绑在一起\n- **继承**复用代码，建立 is-a 关系\n- **多态**统一接口，灵活扩展\n\n---"
+  },
+  {
+    "id": "oop-principles-guide_022",
+    "file": "oop-principles-guide.md",
+    "heading": "常见误区",
+    "level": 2,
+    "content_preview": "| 误区 | 正确做法 |\n|------|----------|\n| 滥用继承 | 优先组合，继承层次不超过 3 层 |\n| 过度封装 | 平衡数据保护和可用性 |\n| 假多态 | 使用抽象基类确保接口一致 |\n\n---\n\n*详见 [OOP 指南](oop-guide.md)*\n*详见 [索引](index.md)*",
+    "full_content": "| 误区 | 正确做法 |\n|------|----------|\n| 滥用继承 | 优先组合，继承层次不超过 3 层 |\n| 过度封装 | 平衡数据保护和可用性 |\n| 假多态 | 使用抽象基类确保接口一致 |\n\n---\n\n*详见 [OOP 指南](oop-guide.md)*\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "oop-principles_023",
+    "file": "oop-principles.md",
+    "heading": "OOP 原则",
+    "level": 1,
+    "content_preview": "> 封装、继承、多态详解\n\n---",
+    "full_content": "> 封装、继承、多态详解\n\n---"
+  },
+  {
+    "id": "oop-principles_024",
+    "file": "oop-principles.md",
+    "heading": "核心思想",
+    "level": 3,
+    "content_preview": "把数据和方法包在一起，对外隐藏实现细节，只暴露必要的接口。",
+    "full_content": "把数据和方法包在一起，对外隐藏实现细节，只暴露必要的接口。"
+  },
+  {
+    "id": "oop-principles_025",
+    "file": "oop-principles.md",
+    "heading": "目的",
+    "level": 3,
+    "content_preview": "- **数据保护**：防止外部随意修改内部状态\n- **接口简化**：隐藏复杂逻辑，提供简单调用方式\n- **模块独立**：内部修改不影响外部调用方",
+    "full_content": "- **数据保护**：防止外部随意修改内部状态\n- **接口简化**：隐藏复杂逻辑，提供简单调用方式\n- **模块独立**：内部修改不影响外部调用方"
+  },
+  {
+    "id": "oop-principles_026",
+    "file": "oop-principles.md",
+    "heading": "Python 实现",
+    "level": 3,
+    "content_preview": "```python\nclass BankAccount:\n    def __init__(self, balance: float):\n        # `_` 前缀表示受保护，不应直接访问\n        self._balance = balance\n    \n    def deposit(self, amount: float) -> None:\n        if amount <...",
+    "full_content": "```python\nclass BankAccount:\n    def __init__(self, balance: float):\n        # `_` 前缀表示受保护，不应直接访问\n        self._balance = balance\n    \n    def deposit(self, amount: float) -> None:\n        if amount <= 0:\n            raise ValueError(\"存款金额必须为正\")\n        self._balance += amount\n    \n    def withdraw(self, amount: float) -> None:\n        if amount <= 0:\n            raise ValueError(\"取款金额必须为正\")\n        if amount > self._balance:\n            raise ValueError(\"余额不足\")\n        self._balance -= amount\n    \n    def get_balance(self) -> float:\n        return self._balance\n```"
+  },
+  {
+    "id": "oop-principles_027",
+    "file": "oop-principles.md",
+    "heading": "访问控制",
+    "level": 3,
+    "content_preview": "| 标记 | 含义 | Python 实现 |\n|------|------|-------------|\n| `public` | 公开 | `self.name` |\n| `protected` | 子类可见 | `self._name` |\n| `private` | 仅自身可见 | `self.__name` |\n\n---",
+    "full_content": "| 标记 | 含义 | Python 实现 |\n|------|------|-------------|\n| `public` | 公开 | `self.name` |\n| `protected` | 子类可见 | `self._name` |\n| `private` | 仅自身可见 | `self.__name` |\n\n---"
+  },
+  {
+    "id": "oop-principles_028",
+    "file": "oop-principles.md",
+    "heading": "核心思想",
+    "level": 3,
+    "content_preview": "子类复用父类的属性和方法，不需要重复代码。",
+    "full_content": "子类复用父类的属性和方法，不需要重复代码。"
+  },
+  {
+    "id": "oop-principles_029",
+    "file": "oop-principles.md",
+    "heading": "目的",
+    "level": 3,
+    "content_preview": "- **代码复用**：子类复用父类逻辑\n- **is-a 关系**：子类是父类的一种\n- **统一接口**：子类和父类有相同的接口",
+    "full_content": "- **代码复用**：子类复用父类逻辑\n- **is-a 关系**：子类是父类的一种\n- **统一接口**：子类和父类有相同的接口"
+  },
+  {
+    "id": "oop-principles_030",
+    "file": "oop-principles.md",
+    "heading": "Python 实现",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "oop-principles_031",
+    "file": "oop-principles.md",
+    "heading": "父类",
+    "level": 1,
+    "content_preview": "class Animal:\n    def __init__(self, name: str):\n        self.name = name\n    \n    def speak(self) -> str:\n        raise NotImplementedError",
+    "full_content": "class Animal:\n    def __init__(self, name: str):\n        self.name = name\n    \n    def speak(self) -> str:\n        raise NotImplementedError"
+  },
+  {
+    "id": "oop-principles_032",
+    "file": "oop-principles.md",
+    "heading": "子类",
+    "level": 1,
+    "content_preview": "class Dog(Animal):\n    def speak(self) -> str:\n        return \"汪\"\n\nclass Cat(Animal):\n    def speak(self) -> str:\n        return \"喵\"",
+    "full_content": "class Dog(Animal):\n    def speak(self) -> str:\n        return \"汪\"\n\nclass Cat(Animal):\n    def speak(self) -> str:\n        return \"喵\""
+  },
+  {
+    "id": "oop-principles_033",
+    "file": "oop-principles.md",
+    "heading": "使用",
+    "level": 1,
+    "content_preview": "animals = [Dog(\"旺财\"), Cat(\"咪咪\")]\nfor a in animals:\n    print(f\"{a.name}: {a.speak()}\")\n```",
+    "full_content": "animals = [Dog(\"旺财\"), Cat(\"咪咪\")]\nfor a in animals:\n    print(f\"{a.name}: {a.speak()}\")\n```"
+  },
+  {
+    "id": "oop-principles_034",
+    "file": "oop-principles.md",
+    "heading": "继承类型",
+    "level": 3,
+    "content_preview": "| 类型 | 说明 | 示例 |\n|------|------|代价|\n| 单继承 | 一个父类 | `class Dog(Animal)` |\n| 多继承 | 多个父类 | `class A(B, C)` |\n| 多层继承 | 祖孙类 | `class A(B), class B(C)` |",
+    "full_content": "| 类型 | 说明 | 示例 |\n|------|------|代价|\n| 单继承 | 一个父类 | `class Dog(Animal)` |\n| 多继承 | 多个父类 | `class A(B, C)` |\n| 多层继承 | 祖孙类 | `class A(B), class B(C)` |"
+  },
+  {
+    "id": "oop-principles_035",
+    "file": "oop-principles.md",
+    "heading": "方法覆盖（Override）",
+    "level": 3,
+    "content_preview": "子类重写父类方法：\n\n```python\nclass Animal:\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):  # 覆盖父类方法\n        return \"汪汪\"\n```",
+    "full_content": "子类重写父类方法：\n\n```python\nclass Animal:\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):  # 覆盖父类方法\n        return \"汪汪\"\n```"
+  },
+  {
+    "id": "oop-principles_036",
+    "file": "oop-principles.md",
+    "heading": "super() 调用父类",
+    "level": 3,
+    "content_preview": "```python\nclass Cat(Animal):\n    def __init__(self, name: str, color: str):\n        super().__init__(name)  # 调用父类 __init__\n        self.color = color\n```\n\n---",
+    "full_content": "```python\nclass Cat(Animal):\n    def __init__(self, name: str, color: str):\n        super().__init__(name)  # 调用父类 __init__\n        self.color = color\n```\n\n---"
+  },
+  {
+    "id": "oop-principles_037",
+    "file": "oop-principles.md",
+    "heading": "核心思想",
+    "level": 3,
+    "content_preview": "同一接口，不同实现。调用方不需要知道具体是哪个子类。",
+    "full_content": "同一接口，不同实现。调用方不需要知道具体是哪个子类。"
+  },
+  {
+    "id": "oop-principles_038",
+    "file": "oop-principles.md",
+    "heading": "目的",
+    "level": 3,
+    "content_preview": "- **解耦**：调用方依赖抽象，不依赖具体实现\n- **扩展**：新增子类不影响现有代码\n- **灵活**：同一套逻辑处理多种类型",
+    "full_content": "- **解耦**：调用方依赖抽象，不依赖具体实现\n- **扩展**：新增子类不影响现有代码\n- **灵活**：同一套逻辑处理多种类型"
+  },
+  {
+    "id": "oop-principles_039",
+    "file": "oop-principles.md",
+    "heading": "Python 实现",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "oop-principles_040",
+    "file": "oop-principles.md",
+    "heading": "同一接口，不同实现",
+    "level": 1,
+    "content_preview": "def make_them_speak(animals: list[Animal]) -> None:\n    for a in animals:\n        print(a.speak())  # 调用的是实际对象的方法\n\nmake_them_speak([Dog(\"旺财\"), Cat(\"咪咪\")])",
+    "full_content": "def make_them_speak(animals: list[Animal]) -> None:\n    for a in animals:\n        print(a.speak())  # 调用的是实际对象的方法\n\nmake_them_speak([Dog(\"旺财\"), Cat(\"咪咪\")])"
+  },
+  {
+    "id": "oop-principles_041",
+    "file": "oop-principles.md",
+    "heading": "咪咪 says 喵",
+    "level": 1,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "oop-principles_042",
+    "file": "oop-principles.md",
+    "heading": "鸭子类型（Duck Typing）",
+    "level": 3,
+    "content_preview": "Python 的多态不依赖显式继承，只要对象有相应方法即可：\n\n```python\nclass Duck:\n    def swim(self):\n        return \"鸭子游泳\"\n\nclass Fish:\n    def swim(self):  # 也有 swim 方法\n        return \"鱼游泳\"\n\ndef let_them_swim(thing):\n    print...",
+    "full_content": "Python 的多态不依赖显式继承，只要对象有相应方法即可：\n\n```python\nclass Duck:\n    def swim(self):\n        return \"鸭子游泳\"\n\nclass Fish:\n    def swim(self):  # 也有 swim 方法\n        return \"鱼游泳\"\n\ndef let_them_swim(thing):\n    print(thing.swim())\n\nlet_them_swim(Duck())  # 鸭子游泳\nlet_them_swim(Fish())  # 鱼游泳\n```"
+  },
+  {
+    "id": "oop-principles_043",
+    "file": "oop-principles.md",
+    "heading": "抽象基类（ABC）",
+    "level": 3,
+    "content_preview": "定义必须被子类实现的方法：\n\n```python\nfrom abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self) -> float:\n        pass\n\nclass Rectangle(Shape):\n    def __init__(self, width: flo...",
+    "full_content": "定义必须被子类实现的方法：\n\n```python\nfrom abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self) -> float:\n        pass\n\nclass Rectangle(Shape):\n    def __init__(self, width: float, height: float):\n        self.width = width\n        self.height = height\n    \n    def area(self) -> float:\n        return self.width * self.height\n```\n\n---"
+  },
+  {
+    "id": "oop-principles_044",
+    "file": "oop-principles.md",
+    "heading": "三大原则的关系",
+    "level": 2,
+    "content_preview": "```\n        封装\n     ┌────┴────┐\n     │         │\n     ▼         ▼\n   继承  ←→  多态\n     │         │\n     └────┴─────┘\n         │\n         ▼\n      抽象\n```\n\n- **封装**是基础，把数据和方法绑在一起\n- **继承**复用代码，建立 is-a 关系\n- ...",
+    "full_content": "```\n        封装\n     ┌────┴────┐\n     │         │\n     ▼         ▼\n   继承  ←→  多态\n     │         │\n     └────┴─────┘\n         │\n         ▼\n      抽象\n```\n\n- **封装**是基础，把数据和方法绑在一起\n- **继承**复用代码，建立 is-a 关系\n- **多态**统一接口，灵活扩展\n\n---"
+  },
+  {
+    "id": "oop-principles_045",
+    "file": "oop-principles.md",
+    "heading": "常见误区",
+    "level": 2,
+    "content_preview": "| 误区 | 正确做法 |\n|------|----------|\n| 滥用继承 | 优先组合，继承层次不超过 3 层 |\n| 过度封装 | 平衡数据保护和可用性 |\n| 假多态 | 使用抽象基类确保接口一致 |\n\n---\n\n*详见 [OOP 指南](oop-guide.md)*\n*详见 [索引](index.md)*",
+    "full_content": "| 误区 | 正确做法 |\n|------|----------|\n| 滥用继承 | 优先组合，继承层次不超过 3 层 |\n| 过度封装 | 平衡数据保护和可用性 |\n| 假多态 | 使用抽象基类确保接口一致 |\n\n---\n\n*详见 [OOP 指南](oop-guide.md)*\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "coding-standards_046",
+    "file": "coding-standards.md",
+    "heading": "代码规范",
+    "level": 1,
+    "content_preview": "> 整洁代码原则与实践\n\n---",
+    "full_content": "> 整洁代码原则与实践\n\n---"
+  },
+  {
+    "id": "coding-standards_047",
+    "file": "coding-standards.md",
+    "heading": "核心原则",
+    "level": 2,
+    "content_preview": "**好代码的标准**：\n1. 可读（别人能理解）\n2. 可维护（改起来容易）\n3. 可测试（能验证正确性）\n\n---",
+    "full_content": "**好代码的标准**：\n1. 可读（别人能理解）\n2. 可维护（改起来容易）\n3. 可测试（能验证正确性）\n\n---"
+  },
+  {
+    "id": "coding-standards_048",
+    "file": "coding-standards.md",
+    "heading": "基本原则",
+    "level": 3,
+    "content_preview": "| 对象 | 规范 | 示例 |\n|------|------|------|\n| 变量 | 小写 + 下划线 / 驼峰 | `user_name`, `userName` |\n| 常量 | 全大写 + 下划线 | `MAX_RETRY_COUNT` |\n| 函数 | 动词/动宾短语 | `get_user()`, `send_email()` |\n| 类 | 名词，PascalCase | `U...",
+    "full_content": "| 对象 | 规范 | 示例 |\n|------|------|------|\n| 变量 | 小写 + 下划线 / 驼峰 | `user_name`, `userName` |\n| 常量 | 全大写 + 下划线 | `MAX_RETRY_COUNT` |\n| 函数 | 动词/动宾短语 | `get_user()`, `send_email()` |\n| 类 | 名词，PascalCase | `UserService`, `OrderController` |\n| 文件 | 小写 + 横线/下划线 | `user_service.py`, `order_controller.py` |"
+  },
+  {
+    "id": "coding-standards_049",
+    "file": "coding-standards.md",
+    "heading": "命名好坏对比",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "coding-standards_050",
+    "file": "coding-standards.md",
+    "heading": "❌ 差：含糊、缩写",
+    "level": 1,
+    "content_preview": "def calc(u, n, d):\n    pass",
+    "full_content": "def calc(u, n, d):\n    pass"
+  },
+  {
+    "id": "coding-standards_051",
+    "file": "coding-standards.md",
+    "heading": "✅ 好：清晰、完整",
+    "level": 1,
+    "content_preview": "def calculate_user_order_discount(user_id: int, order_id: int, discount: float):\n    pass",
+    "full_content": "def calculate_user_order_discount(user_id: int, order_id: int, discount: float):\n    pass"
+  },
+  {
+    "id": "coding-standards_052",
+    "file": "coding-standards.md",
+    "heading": "❌ 差：类型前缀",
+    "level": 1,
+    "content_preview": "strUserName = \"张三\"\nintCount = 10",
+    "full_content": "strUserName = \"张三\"\nintCount = 10"
+  },
+  {
+    "id": "coding-standards_053",
+    "file": "coding-standards.md",
+    "heading": "✅ 好：自然命名",
+    "level": 1,
+    "content_preview": "user_name = \"张三\"\ncount = 10\n```\n\n---",
+    "full_content": "user_name = \"张三\"\ncount = 10\n```\n\n---"
+  },
+  {
+    "id": "coding-standards_054",
+    "file": "coding-standards.md",
+    "heading": "原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **单一职责** | 一个函数只做一件事 |\n| **参数少** | 最好 ≤ 3 个 |\n| **返回值明确** | 要么返回值，要么抛异常，不要两者都做 |",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **单一职责** | 一个函数只做一件事 |\n| **参数少** | 最好 ≤ 3 个 |\n| **返回值明确** | 要么返回值，要么抛异常，不要两者都做 |"
+  },
+  {
+    "id": "coding-standards_055",
+    "file": "coding-standards.md",
+    "heading": "好 vs 差",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "coding-standards_056",
+    "file": "coding-standards.md",
+    "heading": "❌ 差：做太多件事",
+    "level": 1,
+    "content_preview": "def process_user(user):\n    validate(user)\n    save_to_db(user)\n    send_email(user)\n    update_stats(user)",
+    "full_content": "def process_user(user):\n    validate(user)\n    save_to_db(user)\n    send_email(user)\n    update_stats(user)"
+  },
+  {
+    "id": "coding-standards_057",
+    "file": "coding-standards.md",
+    "heading": "✅ 好：职责分离",
+    "level": 1,
+    "content_preview": "def validate_user(user):\n    pass\n\ndef create_user(user):\n    validate_user(user)\n    save_to_db(user)\n    notify_user_created(user)\n\ndef notify_user_created(user):\n    send_email(user)\n    update_sta...",
+    "full_content": "def validate_user(user):\n    pass\n\ndef create_user(user):\n    validate_user(user)\n    save_to_db(user)\n    notify_user_created(user)\n\ndef notify_user_created(user):\n    send_email(user)\n    update_stats(user)\n```"
+  },
+  {
+    "id": "coding-standards_058",
+    "file": "coding-standards.md",
+    "heading": "参数处理",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "coding-standards_059",
+    "file": "coding-standards.md",
+    "heading": "❌ 差：太多参数",
+    "level": 1,
+    "content_preview": "def create_user(name, email, age, phone, address, city, country, zipcode):\n    pass",
+    "full_content": "def create_user(name, email, age, phone, address, city, country, zipcode):\n    pass"
+  },
+  {
+    "id": "coding-standards_060",
+    "file": "coding-standards.md",
+    "heading": "✅ 好：使用配置对象",
+    "level": 1,
+    "content_preview": "@dataclass\nclass UserCreateParams:\n    name: str\n    email: str\n    age: int\n\ndef create_user(params: UserCreateParams):\n    pass\n```\n\n---",
+    "full_content": "@dataclass\nclass UserCreateParams:\n    name: str\n    email: str\n    age: int\n\ndef create_user(params: UserCreateParams):\n    pass\n```\n\n---"
+  },
+  {
+    "id": "coding-standards_061",
+    "file": "coding-standards.md",
+    "heading": "原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **早失败** | 输入验证前置 |\n| **具体异常** | 不抛裸 Exception |\n| **记录日志** | 异常要记录上下文 |",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **早失败** | 输入验证前置 |\n| **具体异常** | 不抛裸 Exception |\n| **记录日志** | 异常要记录上下文 |"
+  },
+  {
+    "id": "coding-standards_062",
+    "file": "coding-standards.md",
+    "heading": "模式",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "coding-standards_063",
+    "file": "coding-standards.md",
+    "heading": "1. 输入验证",
+    "level": 1,
+    "content_preview": "def divide(a: float, b: float) -> float:\n    if b == 0:\n        raise ValueError(\"除数不能为零\")\n    return a / b",
+    "full_content": "def divide(a: float, b: float) -> float:\n    if b == 0:\n        raise ValueError(\"除数不能为零\")\n    return a / b"
+  },
+  {
+    "id": "coding-standards_064",
+    "file": "coding-standards.md",
+    "heading": "2. 结果包装",
+    "level": 1,
+    "content_preview": "def get_user(user_id: int) -> Result[User]:\n    user = db.find_user(user_id)\n    if not user:\n        return Result.error(f\"User {user_id} not found\")\n    return Result.ok(user)",
+    "full_content": "def get_user(user_id: int) -> Result[User]:\n    user = db.find_user(user_id)\n    if not user:\n        return Result.error(f\"User {user_id} not found\")\n    return Result.ok(user)"
+  },
+  {
+    "id": "coding-standards_065",
+    "file": "coding-standards.md",
+    "heading": "3. 日志记录",
+    "level": 1,
+    "content_preview": "try:\n    process_order(order)\nexcept OrderError as e:\n    logger.error(f\"Order processing failed: {e}\", exc_info=True)\n    raise\n```\n\n---",
+    "full_content": "try:\n    process_order(order)\nexcept OrderError as e:\n    logger.error(f\"Order processing failed: {e}\", exc_info=True)\n    raise\n```\n\n---"
+  },
+  {
+    "id": "coding-standards_066",
+    "file": "coding-standards.md",
+    "heading": "模块组织",
+    "level": 3,
+    "content_preview": "```\nproject/\n├── models/          # 数据模型\n│   ├── __init__.py\n│   └── user.py\n├── services/        # 业务逻辑\n│   ├── __init__.py\n│   └── user_service.py\n├── repositories/     # 数据访问\n│   ├── __init__.py\n│ ...",
+    "full_content": "```\nproject/\n├── models/          # 数据模型\n│   ├── __init__.py\n│   └── user.py\n├── services/        # 业务逻辑\n│   ├── __init__.py\n│   └── user_service.py\n├── repositories/     # 数据访问\n│   ├── __init__.py\n│   └── user_repository.py\n├── api/             # 接口层\n│   ├── __init__.py\n│   └── user_api.py\n└── utils/           # 工具函数\n    ├── __init__.py\n    └── validators.py\n```"
+  },
+  {
+    "id": "coding-standards_067",
+    "file": "coding-standards.md",
+    "heading": "导入顺序",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "coding-standards_068",
+    "file": "coding-standards.md",
+    "heading": "1. 标准库",
+    "level": 1,
+    "content_preview": "import os\nfrom typing import List, Optional",
+    "full_content": "import os\nfrom typing import List, Optional"
+  },
+  {
+    "id": "coding-standards_069",
+    "file": "coding-standards.md",
+    "heading": "2. 第三方库",
+    "level": 1,
+    "content_preview": "import numpy as np\nfrom pydantic import BaseModel",
+    "full_content": "import numpy as np\nfrom pydantic import BaseModel"
+  },
+  {
+    "id": "coding-standards_070",
+    "file": "coding-standards.md",
+    "heading": "3. 本地模块",
+    "level": 1,
+    "content_preview": "from models import User\nfrom services import UserService\n```\n\n---",
+    "full_content": "from models import User\nfrom services import UserService\n```\n\n---"
+  },
+  {
+    "id": "coding-standards_071",
+    "file": "coding-standards.md",
+    "heading": "原则",
+    "level": 3,
+    "content_preview": "| 类型 | 何时写 |\n|------|--------|\n| **为什么** | 业务逻辑复杂、做了不直观的选择 |\n| **接口文档** | 公共 API 要写 docstring |\n| **TODO** | 有已知问题待后续处理 |",
+    "full_content": "| 类型 | 何时写 |\n|------|--------|\n| **为什么** | 业务逻辑复杂、做了不直观的选择 |\n| **接口文档** | 公共 API 要写 docstring |\n| **TODO** | 有已知问题待后续处理 |"
+  },
+  {
+    "id": "coding-standards_072",
+    "file": "coding-standards.md",
+    "heading": "示例",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "coding-standards_073",
+    "file": "coding-standards.md",
+    "heading": "增加 i",
+    "level": 1,
+    "content_preview": "i += 1",
+    "full_content": "i += 1"
+  },
+  {
+    "id": "coding-standards_074",
+    "file": "coding-standards.md",
+    "heading": "跳过已处理的用户，从下一个开始",
+    "level": 1,
+    "content_preview": "i += 1",
+    "full_content": "i += 1"
+  },
+  {
+    "id": "coding-standards_075",
+    "file": "coding-standards.md",
+    "heading": "✅ 好：公共接口要文档",
+    "level": 1,
+    "content_preview": "def calculate_discount(user: User, order: Order) -> float:\n    \"\"\"\n    计算用户订单折扣。\n    \n    Args:\n        user: 用户对象\n        order: 订单对象\n    \n    Returns:\n        折扣金额（0-1 之间的小数）\n    \n    Raises:\n      ...",
+    "full_content": "def calculate_discount(user: User, order: Order) -> float:\n    \"\"\"\n    计算用户订单折扣。\n    \n    Args:\n        user: 用户对象\n        order: 订单对象\n    \n    Returns:\n        折扣金额（0-1 之间的小数）\n    \n    Raises:\n        ValueError: 用户或订单无效\n    \"\"\"\n    pass\n```\n\n---"
+  },
+  {
+    "id": "coding-standards_076",
+    "file": "coding-standards.md",
+    "heading": "代码审查清单",
+    "level": 2,
+    "content_preview": "| 检查项 | 说明 |\n|--------|------|\n| 命名 | 变量/函数/类名是否清晰 |\n| 职责 | 函数是否只做一件事 |\n| 错误 | 错误处理是否完善 |\n| 测试 | 关键逻辑是否有测试 |\n| 安全 | 是否有注入、越权风险 |\n| 性能 | 是否有明显性能问题 |\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "| 检查项 | 说明 |\n|--------|------|\n| 命名 | 变量/函数/类名是否清晰 |\n| 职责 | 函数是否只做一件事 |\n| 错误 | 错误处理是否完善 |\n| 测试 | 关键逻辑是否有测试 |\n| 安全 | 是否有注入、越权风险 |\n| 性能 | 是否有明显性能问题 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "testing-guide_077",
+    "file": "testing-guide.md",
+    "heading": "测试指南",
+    "level": 1,
+    "content_preview": "> 软件测试方法与实践\n\n---",
+    "full_content": "> 软件测试方法与实践\n\n---"
+  },
+  {
+    "id": "testing-guide_078",
+    "file": "testing-guide.md",
+    "heading": "测试分层",
+    "level": 3,
+    "content_preview": "```\n┌─────────────────┐\n│   E2E 测试       │  ← 少量，代表性场景\n├─────────────────┤\n│   集成测试       │  ← 适量，模块间协作\n├─────────────────┤\n│   单元测试       │  ← 大量，函数/类级别\n└─────────────────┘\n```",
+    "full_content": "```\n┌─────────────────┐\n│   E2E 测试       │  ← 少量，代表性场景\n├─────────────────┤\n│   集成测试       │  ← 适量，模块间协作\n├─────────────────┤\n│   单元测试       │  ← 大量，函数/类级别\n└─────────────────┘\n```"
+  },
+  {
+    "id": "testing-guide_079",
+    "file": "testing-guide.md",
+    "heading": "测试金字塔",
+    "level": 3,
+    "content_preview": "```\n           /\\\n          /  \\       E2E (End-to-End)\n         /----\\      UI 交互、完整流程\n        /      \\     \n       /--------\\    集成测试\n      /          \\   模块间交互\n     /____________\\  单元测试\n    覆盖最多   ...",
+    "full_content": "```\n           /\\\n          /  \\       E2E (End-to-End)\n         /----\\      UI 交互、完整流程\n        /      \\     \n       /--------\\    集成测试\n      /          \\   模块间交互\n     /____________\\  单元测试\n    覆盖最多        覆盖最少\n```\n\n---"
+  },
+  {
+    "id": "testing-guide_080",
+    "file": "testing-guide.md",
+    "heading": "什么是单元测试",
+    "level": 3,
+    "content_preview": "对代码的最小单位（函数、方法、类）进行测试。",
+    "full_content": "对代码的最小单位（函数、方法、类）进行测试。"
+  },
+  {
+    "id": "testing-guide_081",
+    "file": "testing-guide.md",
+    "heading": "单元测试原则（FIRST）",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **F**ast | 测试要快 |\n| **I**ndependent | 测试之间相互独立 |\n| **R**epeatable | 测试结果可重复 |\n| **S**elf-validating | 测试自己判断通过/失败 |\n| **T**imely | 测试要及时写（测试驱动） |",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **F**ast | 测试要快 |\n| **I**ndependent | 测试之间相互独立 |\n| **R**epeatable | 测试结果可重复 |\n| **S**elf-validating | 测试自己判断通过/失败 |\n| **T**imely | 测试要及时写（测试驱动） |"
+  },
+  {
+    "id": "testing-guide_082",
+    "file": "testing-guide.md",
+    "heading": "Python 单元测试示例",
+    "level": 3,
+    "content_preview": "```python\nimport pytest",
+    "full_content": "```python\nimport pytest"
+  },
+  {
+    "id": "testing-guide_083",
+    "file": "testing-guide.md",
+    "heading": "被测函数",
+    "level": 1,
+    "content_preview": "def add(a: int, b: int) -> int:\n    return a + b\n\ndef divide(a: float, b: float) -> float:\n    if b == 0:\n        raise ValueError(\"除数不能为零\")\n    return a / b",
+    "full_content": "def add(a: int, b: int) -> int:\n    return a + b\n\ndef divide(a: float, b: float) -> float:\n    if b == 0:\n        raise ValueError(\"除数不能为零\")\n    return a / b"
+  },
+  {
+    "id": "testing-guide_084",
+    "file": "testing-guide.md",
+    "heading": "测试类",
+    "level": 1,
+    "content_preview": "class TestMathOperations:\n    def test_add_positive(self):\n        assert add(1, 2) == 3\n    \n    def test_add_negative(self):\n        assert add(-1, -2) == -3\n    \n    def test_add_zero(self):\n      ...",
+    "full_content": "class TestMathOperations:\n    def test_add_positive(self):\n        assert add(1, 2) == 3\n    \n    def test_add_negative(self):\n        assert add(-1, -2) == -3\n    \n    def test_add_zero(self):\n        assert add(0, 0) == 0\n    \n    def test_divide_success(self):\n        assert divide(6, 2) == 3\n    \n    def test_divide_by_zero(self):\n        with pytest.raises(ValueError, match=\"除数不能为零\"):\n            divide(1, 0)\n```"
+  },
+  {
+    "id": "testing-guide_085",
+    "file": "testing-guide.md",
+    "heading": "单元测试命名",
+    "level": 3,
+    "content_preview": "```\ntest_{被测函数}_{场景}_{预期结果}\n\ntest_user_create_success\ntest_user_create_duplicate_email\ntest_user_delete_not_found\n```\n\n---",
+    "full_content": "```\ntest_{被测函数}_{场景}_{预期结果}\n\ntest_user_create_success\ntest_user_create_duplicate_email\ntest_user_delete_not_found\n```\n\n---"
+  },
+  {
+    "id": "testing-guide_086",
+    "file": "testing-guide.md",
+    "heading": "什么是集成测试",
+    "level": 3,
+    "content_preview": "测试多个模块/组件协同工作的正确性。",
+    "full_content": "测试多个模块/组件协同工作的正确性。"
+  },
+  {
+    "id": "testing-guide_087",
+    "file": "testing-guide.md",
+    "heading": "集成测试示例",
+    "level": 3,
+    "content_preview": "```python\nimport pytest\nfrom app import create_app\nfrom db import init_db, seed_test_data\n\n@pytest.fixture\ndef client():\n    \"\"\"测试客户端 fixture\"\"\"\n    app = create_app({\"TESTING\": True})\n    with app.te...",
+    "full_content": "```python\nimport pytest\nfrom app import create_app\nfrom db import init_db, seed_test_data\n\n@pytest.fixture\ndef client():\n    \"\"\"测试客户端 fixture\"\"\"\n    app = create_app({\"TESTING\": True})\n    with app.test_client() as client:\n        yield client\n\n@pytest.fixture\ndef auth_token(client):\n    \"\"\"获取认证 token\"\"\"\n    response = client.post(\"/api/login\", json={\n        \"email\": \"test@example.com\",\n        \"password\": \"test123\"\n    })\n    return response.json[\"token\"]\n\ndef test_create_order_with_auth(client, auth_token):\n    \"\"\"测试带认证的创建订单\"\"\"\n    response = client.post(\n        \"/api/orders\",\n        headers={\"Authorization\": f\"Bearer {auth_token}\"},\n        json={\"product_id\": 1, \"quantity\": 2}\n    )\n    assert response.status_code == 201\n    assert response.json[\"product_id\"] == 1\n```\n\n---"
+  },
+  {
+    "id": "testing-guide_088",
+    "file": "testing-guide.md",
+    "heading": "什么是 E2E 测试",
+    "level": 3,
+    "content_preview": "模拟真实用户行为，测试完整的产品流程。",
+    "full_content": "模拟真实用户行为，测试完整的产品流程。"
+  },
+  {
+    "id": "testing-guide_089",
+    "file": "testing-guide.md",
+    "heading": "E2E 测试示例（Playwright）",
+    "level": 3,
+    "content_preview": "```python\nfrom playwright.sync_api import sync_playwright\n\ndef test_user_login_flow():\n    with sync_playwright() as p:\n        browser = p.chromium.launch()\n        page = browser.new_page()\n        ...",
+    "full_content": "```python\nfrom playwright.sync_api import sync_playwright\n\ndef test_user_login_flow():\n    with sync_playwright() as p:\n        browser = p.chromium.launch()\n        page = browser.new_page()\n        \n        # 访问登录页\n        page.goto(\"https://example.com/login\")\n        \n        # 填写表单\n        page.fill(\"#email\", \"user@example.com\")\n        page.fill(\"#password\", \"password123\")\n        \n        # 点击登录\n        page.click(\"#login-button\")\n        \n        # 验证跳转\n        page.wait_for_url(\"**/dashboard\")\n        assert page.is_visible(\"#welcome-message\")\n        \n        browser.close()\n```\n\n---"
+  },
+  {
+    "id": "testing-guide_090",
+    "file": "testing-guide.md",
+    "heading": "测试策略矩阵",
+    "level": 3,
+    "content_preview": "| 测试类型 | 覆盖内容 | 工具 |\n|----------|----------|------|\n| 单元测试 | 函数、类、方法 | pytest, JUnit |\n| 集成测试 | 模块间接口 | pytest, Postman |\n| E2E 测试 | 完整用户流程 | Playwright, Selenium |\n| 性能测试 | 响应时间、并发 | locust, JMeter |...",
+    "full_content": "| 测试类型 | 覆盖内容 | 工具 |\n|----------|----------|------|\n| 单元测试 | 函数、类、方法 | pytest, JUnit |\n| 集成测试 | 模块间接口 | pytest, Postman |\n| E2E 测试 | 完整用户流程 | Playwright, Selenium |\n| 性能测试 | 响应时间、并发 | locust, JMeter |\n| 安全测试 | 漏洞、注入 | OWASP ZAP |"
+  },
+  {
+    "id": "testing-guide_091",
+    "file": "testing-guide.md",
+    "heading": "TDD 开发流程",
+    "level": 3,
+    "content_preview": "```\n1. 写一个失败的测试  → RED\n2. 写最少的代码通过   → GREEN  \n3. 重构代码          → REFACTOR\n4. 重复\n```\n\n---",
+    "full_content": "```\n1. 写一个失败的测试  → RED\n2. 写最少的代码通过   → GREEN  \n3. 重构代码          → REFACTOR\n4. 重复\n```\n\n---"
+  },
+  {
+    "id": "testing-guide_092",
+    "file": "testing-guide.md",
+    "heading": "测试覆盖率",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "testing-guide_093",
+    "file": "testing-guide.md",
+    "heading": "pytest + coverage",
+    "level": 1,
+    "content_preview": "pytest --cov=src --cov-report=html tests/",
+    "full_content": "pytest --cov=src --cov-report=html tests/"
+  },
+  {
+    "id": "testing-guide_094",
+    "file": "testing-guide.md",
+    "heading": "覆盖率报告",
+    "level": 1,
+    "content_preview": "Coverage.py: platform linux, Python 3.x.x\nName                      Stmts   Miss  Cover\n-------------------------------------------------\nsrc/models/user.py           50      5    90%\nsrc/services/ord...",
+    "full_content": "Coverage.py: platform linux, Python 3.x.x\nName                      Stmts   Miss  Cover\n-------------------------------------------------\nsrc/models/user.py           50      5    90%\nsrc/services/order.py        80     15    81%\n-------------------------------------------------\nTOTAL                      130     20    85%\n```"
+  },
+  {
+    "id": "testing-guide_095",
+    "file": "testing-guide.md",
+    "heading": "CI/CD 中的测试",
+    "level": 3,
+    "content_preview": "```yaml",
+    "full_content": "```yaml"
+  },
+  {
+    "id": "testing-guide_096",
+    "file": "testing-guide.md",
+    "heading": ".github/workflows/test.yml",
+    "level": 1,
+    "content_preview": "- name: Run Tests\n  run: |\n    pytest tests/ --cov=src --junitxml=report.xml\n  \n- name: Upload Coverage\n  uses: codecov/codecov-action@v3\n```\n\n---",
+    "full_content": "- name: Run Tests\n  run: |\n    pytest tests/ --cov=src --junitxml=report.xml\n  \n- name: Upload Coverage\n  uses: codecov/codecov-action@v3\n```\n\n---"
+  },
+  {
+    "id": "testing-guide_097",
+    "file": "testing-guide.md",
+    "heading": "常见测试问题",
+    "level": 2,
+    "content_preview": "| 问题 | 原因 | 解决方案 |\n|------|------|----------|\n| 测试太慢 | IO 操作多 | Mock 外部依赖 |\n| 测试不稳定 | 依赖顺序 | 使用 fixture |\n| 测试难维护 | 断言太具体 | 分离数据与逻辑 |\n| 覆盖率低 | 没写测试 | 补充测试用例 |\n\n---",
+    "full_content": "| 问题 | 原因 | 解决方案 |\n|------|------|----------|\n| 测试太慢 | IO 操作多 | Mock 外部依赖 |\n| 测试不稳定 | 依赖顺序 | 使用 fixture |\n| 测试难维护 | 断言太具体 | 分离数据与逻辑 |\n| 覆盖率低 | 没写测试 | 补充测试用例 |\n\n---"
+  },
+  {
+    "id": "testing-guide_098",
+    "file": "testing-guide.md",
+    "heading": "测试检查清单",
+    "level": 2,
+    "content_preview": "| 阶段 | 检查项 |\n|------|--------|\n| 编写前 | 明确测试目标、准备测试数据 |\n| 编写时 | 遵循 FIRST 原则、命名清晰 |\n| 编写后 | 检查覆盖率、审查测试逻辑 |\n| 运行时 | 确认测试通过、无警告 |\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "| 阶段 | 检查项 |\n|------|--------|\n| 编写前 | 明确测试目标、准备测试数据 |\n| 编写时 | 遵循 FIRST 原则、命名清晰 |\n| 编写后 | 检查覆盖率、审查测试逻辑 |\n| 运行时 | 确认测试通过、无警告 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "devops-guide_099",
+    "file": "devops-guide.md",
+    "heading": "运维指南",
+    "level": 1,
+    "content_preview": "> 部署、监控、日志、容器化、CI/CD\n\n---",
+    "full_content": "> 部署、监控、日志、容器化、CI/CD\n\n---"
+  },
+  {
+    "id": "devops-guide_100",
+    "file": "devops-guide.md",
+    "heading": "运维核心职责",
+    "level": 2,
+    "content_preview": "| 职责 | 说明 |\n|------|------|\n| 部署发布 | 应用打包、上线、回滚 |\n| 监控告警 | 系统监控、性能指标、异常告警 |\n| 日志管理 | 日志收集、分析、存储 |\n| 容器编排 | Docker、K8s 服务管理 |\n| 自动化 | CI/CD 流水线、基础设施即代码 |\n\n---",
+    "full_content": "| 职责 | 说明 |\n|------|------|\n| 部署发布 | 应用打包、上线、回滚 |\n| 监控告警 | 系统监控、性能指标、异常告警 |\n| 日志管理 | 日志收集、分析、存储 |\n| 容器编排 | Docker、K8s 服务管理 |\n| 自动化 | CI/CD 流水线、基础设施即代码 |\n\n---"
+  },
+  {
+    "id": "devops-guide_101",
+    "file": "devops-guide.md",
+    "heading": "Dockerfile 基础",
+    "level": 3,
+    "content_preview": "```dockerfile",
+    "full_content": "```dockerfile"
+  },
+  {
+    "id": "devops-guide_102",
+    "file": "devops-guide.md",
+    "heading": "基础镜像",
+    "level": 1,
+    "content_preview": "FROM node:18-alpine",
+    "full_content": "FROM node:18-alpine"
+  },
+  {
+    "id": "devops-guide_103",
+    "file": "devops-guide.md",
+    "heading": "设置工作目录",
+    "level": 1,
+    "content_preview": "WORKDIR /app",
+    "full_content": "WORKDIR /app"
+  },
+  {
+    "id": "devops-guide_104",
+    "file": "devops-guide.md",
+    "heading": "复制依赖文件",
+    "level": 1,
+    "content_preview": "COPY package*.json ./",
+    "full_content": "COPY package*.json ./"
+  },
+  {
+    "id": "devops-guide_105",
+    "file": "devops-guide.md",
+    "heading": "安装依赖",
+    "level": 1,
+    "content_preview": "RUN npm ci --only=production",
+    "full_content": "RUN npm ci --only=production"
+  },
+  {
+    "id": "devops-guide_106",
+    "file": "devops-guide.md",
+    "heading": "复制源代码",
+    "level": 1,
+    "content_preview": "COPY . .",
+    "full_content": "COPY . ."
+  },
+  {
+    "id": "devops-guide_107",
+    "file": "devops-guide.md",
+    "heading": "暴露端口",
+    "level": 1,
+    "content_preview": "EXPOSE 3000",
+    "full_content": "EXPOSE 3000"
+  },
+  {
+    "id": "devops-guide_108",
+    "file": "devops-guide.md",
+    "heading": "启动命令",
+    "level": 1,
+    "content_preview": "CMD [\"npm\", \"start\"]\n```",
+    "full_content": "CMD [\"npm\", \"start\"]\n```"
+  },
+  {
+    "id": "devops-guide_109",
+    "file": "devops-guide.md",
+    "heading": "Docker Compose",
+    "level": 3,
+    "content_preview": "```yaml\nversion: '3.8'\nservices:\n  app:\n    build: .\n    ports:\n      - \"3000:3000\"\n    environment:\n      - NODE_ENV=production\n      - DB_HOST=db\n    depends_on:\n      - db\n      - redis\n    restart...",
+    "full_content": "```yaml\nversion: '3.8'\nservices:\n  app:\n    build: .\n    ports:\n      - \"3000:3000\"\n    environment:\n      - NODE_ENV=production\n      - DB_HOST=db\n    depends_on:\n      - db\n      - redis\n    restart: unless-stopped\n\n  db:\n    image: postgres:15\n    volumes:\n      - db-data:/var/lib/postgresql/data\n    environment:\n      POSTGRES_DB: myapp\n      POSTGRES_USER: user\n      POSTGRES_PASSWORD_FILE: /run/secrets/db_password\n    restart: unless-stopped\n\n  redis:\n    image: redis:7-alpine\n    volumes:\n      - redis-data:/data\n    restart: unless-stopped\n\nvolumes:\n  db-data:\n  redis-data:\n```"
+  },
+  {
+    "id": "devops-guide_110",
+    "file": "devops-guide.md",
+    "heading": "常用命令",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "devops-guide_111",
+    "file": "devops-guide.md",
+    "heading": "构建镜像",
+    "level": 1,
+    "content_preview": "docker build -t myapp:latest .",
+    "full_content": "docker build -t myapp:latest ."
+  },
+  {
+    "id": "devops-guide_112",
+    "file": "devops-guide.md",
+    "heading": "运行容器",
+    "level": 1,
+    "content_preview": "docker run -d -p 3000:3000 --name myapp myapp:latest",
+    "full_content": "docker run -d -p 3000:3000 --name myapp myapp:latest"
+  },
+  {
+    "id": "devops-guide_113",
+    "file": "devops-guide.md",
+    "heading": "查看日志",
+    "level": 1,
+    "content_preview": "docker logs -f myapp",
+    "full_content": "docker logs -f myapp"
+  },
+  {
+    "id": "devops-guide_114",
+    "file": "devops-guide.md",
+    "heading": "进入容器",
+    "level": 1,
+    "content_preview": "docker exec -it myapp sh",
+    "full_content": "docker exec -it myapp sh"
+  },
+  {
+    "id": "devops-guide_115",
+    "file": "devops-guide.md",
+    "heading": "停止删除",
+    "level": 1,
+    "content_preview": "docker stop myapp && docker rm myapp\n```\n\n---",
+    "full_content": "docker stop myapp && docker rm myapp\n```\n\n---"
+  },
+  {
+    "id": "devops-guide_116",
+    "file": "devops-guide.md",
+    "heading": "Pod 定义",
+    "level": 3,
+    "content_preview": "```yaml\napiVersion: v1\nkind: Pod\nmetadata:\n  name: myapp-pod\n  labels:\n    app: myapp\nspec:\n  containers:\n  - name: myapp\n    image: myapp:latest\n    ports:\n    - containerPort: 3000\n    resources:\n  ...",
+    "full_content": "```yaml\napiVersion: v1\nkind: Pod\nmetadata:\n  name: myapp-pod\n  labels:\n    app: myapp\nspec:\n  containers:\n  - name: myapp\n    image: myapp:latest\n    ports:\n    - containerPort: 3000\n    resources:\n      limits:\n        memory: \"128Mi\"\n        cpu: \"500m\"\n    livenessProbe:\n      httpGet:\n        path: /health\n        port: 3000\n      initialDelaySeconds: 3\n      periodSeconds: 10\n```"
+  },
+  {
+    "id": "devops-guide_117",
+    "file": "devops-guide.md",
+    "heading": "Deployment 定义",
+    "level": 3,
+    "content_preview": "```yaml\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: myapp-deployment\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: myapp\n  template:\n    metadata:\n      labels:\n        app: m...",
+    "full_content": "```yaml\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: myapp-deployment\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: myapp\n  template:\n    metadata:\n      labels:\n        app: myapp\n    spec:\n      containers:\n      - name: myapp\n        image: myapp:latest\n        ports:\n        - containerPort: 3000\n        env:\n        - name: DB_HOST\n          value: \"mysql-service\"\n```"
+  },
+  {
+    "id": "devops-guide_118",
+    "file": "devops-guide.md",
+    "heading": "常用命令",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "devops-guide_119",
+    "file": "devops-guide.md",
+    "heading": "部署应用",
+    "level": 1,
+    "content_preview": "kubectl apply -f deployment.yaml",
+    "full_content": "kubectl apply -f deployment.yaml"
+  },
+  {
+    "id": "devops-guide_120",
+    "file": "devops-guide.md",
+    "heading": "查看 pods",
+    "level": 1,
+    "content_preview": "kubectl get pods",
+    "full_content": "kubectl get pods"
+  },
+  {
+    "id": "devops-guide_121",
+    "file": "devops-guide.md",
+    "heading": "查看日志",
+    "level": 1,
+    "content_preview": "kubectl logs -f pod/myapp-pod",
+    "full_content": "kubectl logs -f pod/myapp-pod"
+  },
+  {
+    "id": "devops-guide_122",
+    "file": "devops-guide.md",
+    "heading": "扩缩容",
+    "level": 1,
+    "content_preview": "kubectl scale deployment myapp --replicas=5",
+    "full_content": "kubectl scale deployment myapp --replicas=5"
+  },
+  {
+    "id": "devops-guide_123",
+    "file": "devops-guide.md",
+    "heading": "回滚",
+    "level": 1,
+    "content_preview": "kubectl rollout undo deployment/myapp\n```\n\n---",
+    "full_content": "kubectl rollout undo deployment/myapp\n```\n\n---"
+  },
+  {
+    "id": "devops-guide_124",
+    "file": "devops-guide.md",
+    "heading": "GitHub Actions",
+    "level": 3,
+    "content_preview": "```yaml",
+    "full_content": "```yaml"
+  },
+  {
+    "id": "devops-guide_125",
+    "file": "devops-guide.md",
+    "heading": ".github/workflows/deploy.yml",
+    "level": 1,
+    "content_preview": "name: Deploy\n\non:\n  push:\n    branches: [main]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Run Tests\n        run: npm ci && npm test\n\n  build:\n...",
+    "full_content": "name: Deploy\n\non:\n  push:\n    branches: [main]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Run Tests\n        run: npm ci && npm test\n\n  build:\n    needs: test\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Build Docker Image\n        run: docker build -t myapp:${{ github.sha }} .\n\n  deploy:\n    needs: build\n    runs-on: ubuntu-latest\n    steps:\n      - name: Deploy to Server\n        run: |\n          docker stop myapp || true\n          docker run -d -p 3000:3000 --name myapp myapp:${{ github.sha }}\n```"
+  },
+  {
+    "id": "devops-guide_126",
+    "file": "devops-guide.md",
+    "heading": "GitLab CI",
+    "level": 3,
+    "content_preview": "```yaml",
+    "full_content": "```yaml"
+  },
+  {
+    "id": "devops-guide_127",
+    "file": "devops-guide.md",
+    "heading": ".gitlab-ci.yml",
+    "level": 1,
+    "content_preview": "stages:\n  - test\n  - build\n  - deploy\n\ntest:\n  stage: test\n  script:\n    - npm ci\n    - npm test\n\nbuild:\n  stage: build\n  script:\n    - docker build -t myapp:$CI_COMMIT_SHA .\n  only:\n    - main\n\ndeplo...",
+    "full_content": "stages:\n  - test\n  - build\n  - deploy\n\ntest:\n  stage: test\n  script:\n    - npm ci\n    - npm test\n\nbuild:\n  stage: build\n  script:\n    - docker build -t myapp:$CI_COMMIT_SHA .\n  only:\n    - main\n\ndeploy:\n  stage: deploy\n  script:\n    - docker-compose up -d\n  only:\n    - main\n```\n\n---"
+  },
+  {
+    "id": "devops-guide_128",
+    "file": "devops-guide.md",
+    "heading": "监控指标（USE 方法）",
+    "level": 3,
+    "content_preview": "| 类型 | 指标 | 说明 |\n|------|------|------|\n| 利用率 | CPU %、内存 % | 资源使用程度 |\n| 饱和度 | 队列深度、延迟 | 资源排队情况 |\n| 错误率 | 5xx 错误、失败率 | 系统异常 |",
+    "full_content": "| 类型 | 指标 | 说明 |\n|------|------|------|\n| 利用率 | CPU %、内存 % | 资源使用程度 |\n| 饱和度 | 队列深度、延迟 | 资源排队情况 |\n| 错误率 | 5xx 错误、失败率 | 系统异常 |"
+  },
+  {
+    "id": "devops-guide_129",
+    "file": "devops-guide.md",
+    "heading": "Prometheus + Grafana",
+    "level": 3,
+    "content_preview": "```yaml",
+    "full_content": "```yaml"
+  },
+  {
+    "id": "devops-guide_130",
+    "file": "devops-guide.md",
+    "heading": "prometheus.yml",
+    "level": 1,
+    "content_preview": "global:\n  scrape_interval: 15s\n\nscrape_configs:\n  - job_name: 'myapp'\n    static_configs:\n      - targets: ['myapp:3000']\n```",
+    "full_content": "global:\n  scrape_interval: 15s\n\nscrape_configs:\n  - job_name: 'myapp'\n    static_configs:\n      - targets: ['myapp:3000']\n```"
+  },
+  {
+    "id": "devops-guide_131",
+    "file": "devops-guide.md",
+    "heading": "告警规则",
+    "level": 3,
+    "content_preview": "```yaml",
+    "full_content": "```yaml"
+  },
+  {
+    "id": "devops-guide_132",
+    "file": "devops-guide.md",
+    "heading": "alert.yml",
+    "level": 1,
+    "content_preview": "groups:\n  - name: myapp\n    rules:\n      - alert: HighErrorRate\n        expr: rate(http_requests_total{status=~\"5..\"}[5m]) > 0.05\n        for: 5m\n        labels:\n          severity: critical\n        a...",
+    "full_content": "groups:\n  - name: myapp\n    rules:\n      - alert: HighErrorRate\n        expr: rate(http_requests_total{status=~\"5..\"}[5m]) > 0.05\n        for: 5m\n        labels:\n          severity: critical\n        annotations:\n          summary: \"High error rate detected\"\n```"
+  },
+  {
+    "id": "devops-guide_133",
+    "file": "devops-guide.md",
+    "heading": "常用命令",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "devops-guide_134",
+    "file": "devops-guide.md",
+    "heading": "查看服务状态",
+    "level": 1,
+    "content_preview": "systemctl status myapp",
+    "full_content": "systemctl status myapp"
+  },
+  {
+    "id": "devops-guide_135",
+    "file": "devops-guide.md",
+    "heading": "重启服务",
+    "level": 1,
+    "content_preview": "sudo systemctl restart myapp",
+    "full_content": "sudo systemctl restart myapp"
+  },
+  {
+    "id": "devops-guide_136",
+    "file": "devops-guide.md",
+    "heading": "查看资源使用",
+    "level": 1,
+    "content_preview": "top / htop\ndf -h\nfree -h",
+    "full_content": "top / htop\ndf -h\nfree -h"
+  },
+  {
+    "id": "devops-guide_137",
+    "file": "devops-guide.md",
+    "heading": "网络连接",
+    "level": 1,
+    "content_preview": "netstat -tlnp | grep 3000\n```\n\n---",
+    "full_content": "netstat -tlnp | grep 3000\n```\n\n---"
+  },
+  {
+    "id": "devops-guide_138",
+    "file": "devops-guide.md",
+    "heading": "日志分层",
+    "level": 3,
+    "content_preview": "```\n应用日志 → 容器日志 → 系统日志 → 日志收集器 → 存储/分析\n```",
+    "full_content": "```\n应用日志 → 容器日志 → 系统日志 → 日志收集器 → 存储/分析\n```"
+  },
+  {
+    "id": "devops-guide_139",
+    "file": "devops-guide.md",
+    "heading": "日志规范",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "devops-guide_140",
+    "file": "devops-guide.md",
+    "heading": "Python 日志配置",
+    "level": 1,
+    "content_preview": "import logging\nimport json\nfrom datetime import datetime\n\nclass JSONFormatter(logging.Formatter):\n    def format(self, record):\n        log_data = {\n            \"timestamp\": datetime.utcnow().isoforma...",
+    "full_content": "import logging\nimport json\nfrom datetime import datetime\n\nclass JSONFormatter(logging.Formatter):\n    def format(self, record):\n        log_data = {\n            \"timestamp\": datetime.utcnow().isoformat(),\n            \"level\": record.levelname,\n            \"message\": record.getMessage(),\n            \"module\": record.module,\n            \"function\": record.funcName,\n            \"line\": record.lineno\n        }\n        if record.exc_info:\n            log_data[\"exception\"] = self.formatException(record.exc_info)\n        return json.dumps(log_data)"
+  },
+  {
+    "id": "devops-guide_141",
+    "file": "devops-guide.md",
+    "heading": "使用",
+    "level": 1,
+    "content_preview": "logger = logging.getLogger(__name__)\nhandler = logging.StreamHandler()\nhandler.setFormatter(JSONFormatter())\nlogger.addHandler(handler)\n```",
+    "full_content": "logger = logging.getLogger(__name__)\nhandler = logging.StreamHandler()\nhandler.setFormatter(JSONFormatter())\nlogger.addHandler(handler)\n```"
+  },
+  {
+    "id": "devops-guide_142",
+    "file": "devops-guide.md",
+    "heading": "ELK Stack",
+    "level": 3,
+    "content_preview": "```yaml",
+    "full_content": "```yaml"
+  },
+  {
+    "id": "devops-guide_143",
+    "file": "devops-guide.md",
+    "heading": "docker-compose.yml 片段",
+    "level": 1,
+    "content_preview": "elasticsearch:\n    image: elasticsearch:8.0\n    environment:\n      - discovery.type=single-node\n    volumes:\n      - es-data:/usr/share/elasticsearch/data\n\n  logstash:\n    image: logstash:8.0\n    volu...",
+    "full_content": "elasticsearch:\n    image: elasticsearch:8.0\n    environment:\n      - discovery.type=single-node\n    volumes:\n      - es-data:/usr/share/elasticsearch/data\n\n  logstash:\n    image: logstash:8.0\n    volumes:\n      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf\n\n  kibana:\n    image: kibana:8.0\n    ports:\n      - \"5601:5601\"\n```\n\n---"
+  },
+  {
+    "id": "devops-guide_144",
+    "file": "devops-guide.md",
+    "heading": "部署检查清单",
+    "level": 3,
+    "content_preview": "| 阶段 | 检查项 |\n|------|--------|\n| 部署前 | 配置正确、备份完成、回滚方案准备 |\n| 部署中 | 监控指标、灰度发布、增量更新 |\n| 部署后 | 健康检查、冒烟测试、监控告警 |",
+    "full_content": "| 阶段 | 检查项 |\n|------|--------|\n| 部署前 | 配置正确、备份完成、回滚方案准备 |\n| 部署中 | 监控指标、灰度发布、增量更新 |\n| 部署后 | 健康检查、冒烟测试、监控告警 |"
+  },
+  {
+    "id": "devops-guide_145",
+    "file": "devops-guide.md",
+    "heading": "蓝绿部署",
+    "level": 3,
+    "content_preview": "```\n旧版本 (蓝) ← 流量 ←→ 新版本 (绿)\n```",
+    "full_content": "```\n旧版本 (蓝) ← 流量 ←→ 新版本 (绿)\n```"
+  },
+  {
+    "id": "devops-guide_146",
+    "file": "devops-guide.md",
+    "heading": "滚动更新",
+    "level": 3,
+    "content_preview": "```\nv1.0 → v1.1:00% → v1.1:50% → v1.1:100% → 旧版本下线\n```",
+    "full_content": "```\nv1.0 → v1.1:00% → v1.1:50% → v1.1:100% → 旧版本下线\n```"
+  },
+  {
+    "id": "devops-guide_147",
+    "file": "devops-guide.md",
+    "heading": "回滚操作",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "devops-guide_148",
+    "file": "devops-guide.md",
+    "heading": "Docker Compose 回滚",
+    "level": 1,
+    "content_preview": "docker-compose down\ndocker-compose -f docker-compose.backup.yml up -d",
+    "full_content": "docker-compose down\ndocker-compose -f docker-compose.backup.yml up -d"
+  },
+  {
+    "id": "devops-guide_149",
+    "file": "devops-guide.md",
+    "heading": "Kubernetes 回滚",
+    "level": 1,
+    "content_preview": "kubectl rollout undo deployment/myapp",
+    "full_content": "kubectl rollout undo deployment/myapp"
+  },
+  {
+    "id": "devops-guide_150",
+    "file": "devops-guide.md",
+    "heading": "Git 回滚",
+    "level": 1,
+    "content_preview": "git revert HEAD\ngit push origin main\n```\n\n---",
+    "full_content": "git revert HEAD\ngit push origin main\n```\n\n---"
+  },
+  {
+    "id": "devops-guide_151",
+    "file": "devops-guide.md",
+    "heading": "安全检查项",
+    "level": 3,
+    "content_preview": "| 项目 | 说明 |\n|------|------|\n| 密钥管理 | 使用 Vault 或环境变量，不硬编码 |\n| 最小权限 | 按需授权，不过度授权 |\n| 网络隔离 | 内网服务不暴露公网 |\n| 日志审计 | 记录所有敏感操作 |",
+    "full_content": "| 项目 | 说明 |\n|------|------|\n| 密钥管理 | 使用 Vault 或环境变量，不硬编码 |\n| 最小权限 | 按需授权，不过度授权 |\n| 网络隔离 | 内网服务不暴露公网 |\n| 日志审计 | 记录所有敏感操作 |"
+  },
+  {
+    "id": "devops-guide_152",
+    "file": "devops-guide.md",
+    "heading": "密钥管理",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "devops-guide_153",
+    "file": "devops-guide.md",
+    "heading": "环境变量",
+    "level": 1,
+    "content_preview": "export DB_PASSWORD=$(vault read -field=password secret/myapp/db)",
+    "full_content": "export DB_PASSWORD=$(vault read -field=password secret/myapp/db)"
+  },
+  {
+    "id": "devops-guide_154",
+    "file": "devops-guide.md",
+    "heading": "Docker Secrets",
+    "level": 1,
+    "content_preview": "echo \"$PASSWORD\" | docker secret create db_password -",
+    "full_content": "echo \"$PASSWORD\" | docker secret create db_password -"
+  },
+  {
+    "id": "devops-guide_155",
+    "file": "devops-guide.md",
+    "heading": "K8s Secret",
+    "level": 1,
+    "content_preview": "kubectl create secret generic db-credentials \\\n  --from-literal=password=$DB_PASSWORD\n```\n\n---",
+    "full_content": "kubectl create secret generic db-credentials \\\n  --from-literal=password=$DB_PASSWORD\n```\n\n---"
+  },
+  {
+    "id": "devops-guide_156",
+    "file": "devops-guide.md",
+    "heading": "故障响应流程",
+    "level": 3,
+    "content_preview": "```\n发现 → 确认 → 通知 → 定位 → 止血 → 恢复 → 复盘\n```",
+    "full_content": "```\n发现 → 确认 → 通知 → 定位 → 止血 → 恢复 → 复盘\n```"
+  },
+  {
+    "id": "devops-guide_157",
+    "file": "devops-guide.md",
+    "heading": "常用排查命令",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "devops-guide_158",
+    "file": "devops-guide.md",
+    "heading": "CPU/内存",
+    "level": 1,
+    "content_preview": "top / htop\nfree -h\nvmstat 1",
+    "full_content": "top / htop\nfree -h\nvmstat 1"
+  },
+  {
+    "id": "devops-guide_159",
+    "file": "devops-guide.md",
+    "heading": "磁盘",
+    "level": 1,
+    "content_preview": "df -h\ndu -sh /var/log/*",
+    "full_content": "df -h\ndu -sh /var/log/*"
+  },
+  {
+    "id": "devops-guide_160",
+    "file": "devops-guide.md",
+    "heading": "网络",
+    "level": 1,
+    "content_preview": "netstat -tlnp\nss -s\nping / curl",
+    "full_content": "netstat -tlnp\nss -s\nping / curl"
+  },
+  {
+    "id": "devops-guide_161",
+    "file": "devops-guide.md",
+    "heading": "进程",
+    "level": 1,
+    "content_preview": "ps aux | grep myapp\npkill -f myapp",
+    "full_content": "ps aux | grep myapp\npkill -f myapp"
+  },
+  {
+    "id": "devops-guide_162",
+    "file": "devops-guide.md",
+    "heading": "日志",
+    "level": 1,
+    "content_preview": "tail -f /var/log/myapp.log\ngrep -r \"ERROR\" /var/log/myapp.log\n```\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "tail -f /var/log/myapp.log\ngrep -r \"ERROR\" /var/log/myapp.log\n```\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "workflows_163",
+    "file": "workflows.md",
+    "heading": "programmer 核心工作流",
+    "level": 1,
+    "content_preview": "> programmer 技能的完整工作流程，涵盖代码开发、Bug排查、重构优化、技术设计。\n\n---",
+    "full_content": "> programmer 技能的完整工作流程，涵盖代码开发、Bug排查、重构优化、技术设计。\n\n---"
+  },
+  {
+    "id": "workflows_164",
+    "file": "workflows.md",
+    "heading": "触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下场景时触发：\n- \"写代码\"\n- \"编写功能\"\n- \"实现需求\"\n- \"修复 bug\"\n- \"报错排查\"\n- \"重构\"\n- \"优化代码\"\n- \"设计架构\"\n- \"技术方案\"\n- \"面向对象\"\n- \"封装、继承、多态\"\n- \"前端、后端、数据库\"\n- \"部署\"\n\n---",
+    "full_content": "当用户提到以下场景时触发：\n- \"写代码\"\n- \"编写功能\"\n- \"实现需求\"\n- \"修复 bug\"\n- \"报错排查\"\n- \"重构\"\n- \"优化代码\"\n- \"设计架构\"\n- \"技术方案\"\n- \"面向对象\"\n- \"封装、继承、多态\"\n- \"前端、后端、数据库\"\n- \"部署\"\n\n---"
+  },
+  {
+    "id": "workflows_165",
+    "file": "workflows.md",
+    "heading": "快速开始",
+    "level": 2,
+    "content_preview": "- 代码开发：理解需求 → 设计接口 → 编写代码 → 验证通过\n- Bug排查：复现问题 → 定位原因 → 修复代码 → 回归测试\n- 重构优化：分析结构 → 逐步重构 → 验证功能 → 优化性能\n\n---",
+    "full_content": "- 代码开发：理解需求 → 设计接口 → 编写代码 → 验证通过\n- Bug排查：复现问题 → 定位原因 → 修复代码 → 回归测试\n- 重构优化：分析结构 → 逐步重构 → 验证功能 → 优化性能\n\n---"
+  },
+  {
+    "id": "workflows_166",
+    "file": "workflows.md",
+    "heading": "工作流速查",
+    "level": 2,
+    "content_preview": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| OOP问题 | OOP指南 | oop-guide.md |\n| 设计原则 | OOP原则 | oop-principles.md |\n| 架构设计 | 架构指南 | architecture-guide.md |\n| 全栈开发 | 全栈开发 | fullstack-guide.md |\n| 开发流程 ...",
+    "full_content": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| OOP问题 | OOP指南 | oop-guide.md |\n| 设计原则 | OOP原则 | oop-principles.md |\n| 架构设计 | 架构指南 | architecture-guide.md |\n| 全栈开发 | 全栈开发 | fullstack-guide.md |\n| 开发流程 | 开发流程 | development-guide.md |\n| 代码规范 | 代码规范 | coding-standards.md |\n\n---"
+  },
+  {
+    "id": "workflows_167",
+    "file": "workflows.md",
+    "heading": "Q1：代码开发的标准流程？",
+    "level": 3,
+    "content_preview": "1. 理解需求：明确输入、输出、边界条件\n2. 设计接口：先定义函数签名和返回值\n3. 编写代码：遵循编码规范\n4. 验证通过：运行测试用例",
+    "full_content": "1. 理解需求：明确输入、输出、边界条件\n2. 设计接口：先定义函数签名和返回值\n3. 编写代码：遵循编码规范\n4. 验证通过：运行测试用例"
+  },
+  {
+    "id": "workflows_168",
+    "file": "workflows.md",
+    "heading": "Q2：遇到Bug如何排查？",
+    "level": 3,
+    "content_preview": "1. 复现问题：确认Bug可重现\n2. 定位原因：查看错误堆栈、添加日志\n3. 修复代码：只改问题点，不扩大改动\n4. 回归测试：确保原有功能不受影响",
+    "full_content": "1. 复现问题：确认Bug可重现\n2. 定位原因：查看错误堆栈、添加日志\n3. 修复代码：只改问题点，不扩大改动\n4. 回归测试：确保原有功能不受影响"
+  },
+  {
+    "id": "workflows_169",
+    "file": "workflows.md",
+    "heading": "Q3：什么时候需要重构？",
+    "level": 3,
+    "content_preview": "- 代码重复超过3次\n- 函数超过50行\n- 嵌套层级超过3层\n- 难以添加新功能\n\n---",
+    "full_content": "- 代码重复超过3次\n- 函数超过50行\n- 嵌套层级超过3层\n- 难以添加新功能\n\n---"
+  },
+  {
+    "id": "workflows_170",
+    "file": "workflows.md",
+    "heading": "错误排查",
+    "level": 2,
+    "content_preview": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| 程序崩溃 | 空指针、数组越界 | 添加空值检查 |\n| 性能慢 | 循环嵌套、重复计算 | 优化算法、使用缓存 |\n| 编译失败 | 语法错误、类型不匹配 | 对照错误信息修改 |\n| 测试失败 | 边界条件未处理 | 补充测试用例 |\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| 程序崩溃 | 空指针、数组越界 | 添加空值检查 |\n| 性能慢 | 循环嵌套、重复计算 | 优化算法、使用缓存 |\n| 编译失败 | 语法错误、类型不匹配 | 对照错误信息修改 |\n| 测试失败 | 边界条件未处理 | 补充测试用例 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "product-guide_171",
+    "file": "product-guide.md",
+    "heading": "产品经理指南",
+    "level": 1,
+    "content_preview": "> 产品需求分析与设计\n\n---",
+    "full_content": "> 产品需求分析与设计\n\n---"
+  },
+  {
+    "id": "product-guide_172",
+    "file": "product-guide.md",
+    "heading": "产品经理核心职责",
+    "level": 2,
+    "content_preview": "| 职责 | 说明 |\n|------|------|\n| 需求分析 | 理解用户问题，转化为产品需求 |\n| 产品设计 | 功能设计、原型设计、交互设计 |\n| 需求文档 | PRD、用户故事、验收标准 |\n| 需求优先级 | 排序与迭代规划 |\n\n---",
+    "full_content": "| 职责 | 说明 |\n|------|------|\n| 需求分析 | 理解用户问题，转化为产品需求 |\n| 产品设计 | 功能设计、原型设计、交互设计 |\n| 需求文档 | PRD、用户故事、验收标准 |\n| 需求优先级 | 排序与迭代规划 |\n\n---"
+  },
+  {
+    "id": "product-guide_173",
+    "file": "product-guide.md",
+    "heading": "需求采集",
+    "level": 3,
+    "content_preview": "```\n用户反馈 → 数据分析 → 竞品分析 → 业务调研 → 老板/战略需求\n```",
+    "full_content": "```\n用户反馈 → 数据分析 → 竞品分析 → 业务调研 → 老板/战略需求\n```"
+  },
+  {
+    "id": "product-guide_174",
+    "file": "product-guide.md",
+    "heading": "需求分类",
+    "level": 3,
+    "content_preview": "| 类型 | 说明 | 示例 |\n|------|------|------|\n| 基础需求 | 必须有的功能 | 用户登录、数据安全 |\n| 期望需求 | 用户期望的功能 | 更快的加载速度 |\n| 兴奋需求 | 超预期的功能 | AI 智能推荐 |\n| 无差别需求 | 有没有无所谓 | 主题皮肤 |",
+    "full_content": "| 类型 | 说明 | 示例 |\n|------|------|------|\n| 基础需求 | 必须有的功能 | 用户登录、数据安全 |\n| 期望需求 | 用户期望的功能 | 更快的加载速度 |\n| 兴奋需求 | 超预期的功能 | AI 智能推荐 |\n| 无差别需求 | 有没有无所谓 | 主题皮肤 |"
+  },
+  {
+    "id": "product-guide_175",
+    "file": "product-guide.md",
+    "heading": "需求优先级",
+    "level": 3,
+    "content_preview": "**Kano 模型**：\n\n```\n               满意度\n                  ↑\n                  │    ✱ 兴奋需求\n                  │   ╱\n                  │  ╱\n                  │ ╱\n                  │╱─────────────→ 必备需求\n    ...",
+    "full_content": "**Kano 模型**：\n\n```\n               满意度\n                  ↑\n                  │    ✱ 兴奋需求\n                  │   ╱\n                  │  ╱\n                  │ ╱\n                  │╱─────────────→ 必备需求\n            ─────┼────────────────→ 线性需求\n                  │\n                  │    ✱ 无差异需求\n                  └─────────────────→\n                          不完善度\n```\n\n**MoSCoW 优先级**：\n\n| 优先级 | 含义 | 交付要求 |\n|--------|------|----------|\n| Must | 必须有 | 这次必须交付 |\n| Should | 应该有 | 尽量交付 |\n| Could | 可以有 | 时间允许才交付 |\n| Won't | 这次不做 | 未来考虑 |\n\n---"
+  },
+  {
+    "id": "product-guide_176",
+    "file": "product-guide.md",
+    "heading": "用户故事模板",
+    "level": 3,
+    "content_preview": "📄 模板位置：[用户故事模板](../assets/templates/用户故事模板.md)",
+    "full_content": "📄 模板位置：[用户故事模板](../assets/templates/用户故事模板.md)"
+  },
+  {
+    "id": "product-guide_177",
+    "file": "product-guide.md",
+    "heading": "功能设计示例",
+    "level": 3,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "product-guide_178",
+    "file": "product-guide.md",
+    "heading": "概述",
+    "level": 3,
+    "content_preview": "支持邮箱/手机号登录，支持第三方 OAuth",
+    "full_content": "支持邮箱/手机号登录，支持第三方 OAuth"
+  },
+  {
+    "id": "product-guide_179",
+    "file": "product-guide.md",
+    "heading": "用户流程",
+    "level": 3,
+    "content_preview": "1. 用户输入账号密码\n2. 系统验证\n3. 登录成功 → 跳转首页\n4. 登录失败 → 提示错误",
+    "full_content": "1. 用户输入账号密码\n2. 系统验证\n3. 登录成功 → 跳转首页\n4. 登录失败 → 提示错误"
+  },
+  {
+    "id": "product-guide_180",
+    "file": "product-guide.md",
+    "heading": "需求详情",
+    "level": 3,
+    "content_preview": "| 字段 | 类型 | 必填 | 校验 |\n|------|------|------|------|\n| 邮箱 | string | 是 | 邮箱格式 |\n| 密码 | string | 是 | 6-20位 |",
+    "full_content": "| 字段 | 类型 | 必填 | 校验 |\n|------|------|------|------|\n| 邮箱 | string | 是 | 邮箱格式 |\n| 密码 | string | 是 | 6-20位 |"
+  },
+  {
+    "id": "product-guide_181",
+    "file": "product-guide.md",
+    "heading": "异常处理",
+    "level": 3,
+    "content_preview": "| 场景 | 提示 |\n|------|------|\n| 账号不存在 | 「该账号未注册」 |\n| 密码错误 | 「密码错误，还能N次」 |\n| 账号被禁用 | 「账号已被禁用」 |\n```\n\n---",
+    "full_content": "| 场景 | 提示 |\n|------|------|\n| 账号不存在 | 「该账号未注册」 |\n| 密码错误 | 「密码错误，还能N次」 |\n| 账号被禁用 | 「账号已被禁用」 |\n```\n\n---"
+  },
+  {
+    "id": "product-guide_182",
+    "file": "product-guide.md",
+    "heading": "PRD 文档结构",
+    "level": 2,
+    "content_preview": "📄 模板位置：[PRD模板](../assets/templates/PRD模板.md)\n\n---",
+    "full_content": "📄 模板位置：[PRD模板](../assets/templates/PRD模板.md)\n\n---"
+  },
+  {
+    "id": "product-guide_183",
+    "file": "product-guide.md",
+    "heading": "跨部门协作",
+    "level": 2,
+    "content_preview": "| 协作方 | 协作内容 |\n|--------|----------|\n| 开发 | PRD 评审、技术方案对齐 |\n| 测试 | 用例评审、测试计划 |\n| 设计 | UI/UX 评审、交互确认 |\n| 运营 | 上线后运营方案 |\n\n---",
+    "full_content": "| 协作方 | 协作内容 |\n|--------|----------|\n| 开发 | PRD 评审、技术方案对齐 |\n| 测试 | 用例评审、测试计划 |\n| 设计 | UI/UX 评审、交互确认 |\n| 运营 | 上线后运营方案 |\n\n---"
+  },
+  {
+    "id": "product-guide_184",
+    "file": "product-guide.md",
+    "heading": "常见问题",
+    "level": 2,
+    "content_preview": "| 问题 | 解决方案 |\n|------|----------|\n| 需求变更频繁 | 建立变更流程，评估影响 |\n| 需求不清晰 | 多问「为什么」，明确用户场景 |\n| 优先级冲突 | 用数据说话，按 MoSCoW 排序 |\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "| 问题 | 解决方案 |\n|------|----------|\n| 需求变更频繁 | 建立变更流程，评估影响 |\n| 需求不清晰 | 多问「为什么」，明确用户场景 |\n| 优先级冲突 | 用数据说话，按 MoSCoW 排序 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "fullstack-guide_185",
+    "file": "fullstack-guide.md",
+    "heading": "全栈开发",
+    "level": 1,
+    "content_preview": "> 全栈开发知识与技术栈概览\n\n---",
+    "full_content": "> 全栈开发知识与技术栈概览\n\n---"
+  },
+  {
+    "id": "fullstack-guide_186",
+    "file": "fullstack-guide.md",
+    "heading": "什么是全栈开发",
+    "level": 2,
+    "content_preview": "一个人能独立完成前端、后端、数据库、部署等全部层面的开发。\n\n---",
+    "full_content": "一个人能独立完成前端、后端、数据库、部署等全部层面的开发。\n\n---"
+  },
+  {
+    "id": "fullstack-guide_187",
+    "file": "fullstack-guide.md",
+    "heading": "技术栈分层",
+    "level": 2,
+    "content_preview": "```\n┌─────────────────────────────────┐\n│          前端 (Frontend)         │\n│   React / Vue / Angular / Svelte │\n├─────────────────────────────────┤\n│          后端 (Backend)          │\n│  Node.js / Pyth...",
+    "full_content": "```\n┌─────────────────────────────────┐\n│          前端 (Frontend)         │\n│   React / Vue / Angular / Svelte │\n├─────────────────────────────────┤\n│          后端 (Backend)          │\n│  Node.js / Python / Go / Java   │\n├─────────────────────────────────┤\n│           数据库 (DB)            │\n│  PostgreSQL / MySQL / MongoDB    │\n├─────────────────────────────────┤\n│           缓存层 (Cache)         │\n│       Redis / Memcached         │\n├─────────────────────────────────┤\n│           消息队列               │\n│     RabbitMQ / Kafka / Redis     │\n├─────────────────────────────────┤\n│            部署 (DevOps)         │\n│   Docker / K8s / CI/CD / Nginx   │\n└─────────────────────────────────┘\n```\n\n---"
+  },
+  {
+    "id": "fullstack-guide_188",
+    "file": "fullstack-guide.md",
+    "heading": "框架选择",
+    "level": 3,
+    "content_preview": "| 框架 | 特点 | 适用场景 |\n|------|------|----------|\n| React | 组件化、灵活 | 中大型应用 |\n| Vue | 上手快、文档好 | 中小型应用 |\n| Svelte | 编译时优化 | 轻量应用 |",
+    "full_content": "| 框架 | 特点 | 适用场景 |\n|------|------|----------|\n| React | 组件化、灵活 | 中大型应用 |\n| Vue | 上手快、文档好 | 中小型应用 |\n| Svelte | 编译时优化 | 轻量应用 |"
+  },
+  {
+    "id": "fullstack-guide_189",
+    "file": "fullstack-guide.md",
+    "heading": "核心概念",
+    "level": 3,
+    "content_preview": "```javascript\n// 组件化\nfunction Button({ label, onClick }) {\n  return <button onClick={onClick}>{label}</button>;\n}\n\n// 状态管理\nconst [count, setCount] = useState(0);\n\n// 生命周期\nuseEffect(() => {\n  // 组件挂载时执...",
+    "full_content": "```javascript\n// 组件化\nfunction Button({ label, onClick }) {\n  return <button onClick={onClick}>{label}</button>;\n}\n\n// 状态管理\nconst [count, setCount] = useState(0);\n\n// 生命周期\nuseEffect(() => {\n  // 组件挂载时执行\n  return () => {\n    // 组件卸载时清理\n  };\n}, []);\n```\n\n---"
+  },
+  {
+    "id": "fullstack-guide_190",
+    "file": "fullstack-guide.md",
+    "heading": "常见后端框架",
+    "level": 3,
+    "content_preview": "| 语言 | 框架 | 特点 |\n|------|------|------|\n| JavaScript | Express / Fastify | 轻量、异步 |\n| Python | FastAPI / Django | 快速开发、性能好 |\n| Go | Gin / Echo | 高性能、并发强 |",
+    "full_content": "| 语言 | 框架 | 特点 |\n|------|------|------|\n| JavaScript | Express / Fastify | 轻量、异步 |\n| Python | FastAPI / Django | 快速开发、性能好 |\n| Go | Gin / Echo | 高性能、并发强 |"
+  },
+  {
+    "id": "fullstack-guide_191",
+    "file": "fullstack-guide.md",
+    "heading": "RESTful API 设计",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "fullstack-guide_192",
+    "file": "fullstack-guide.md",
+    "heading": "FastAPI 示例",
+    "level": 1,
+    "content_preview": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/users/{user_id}\")\ndef get_user(user_id: int):\n    return {\"user_id\": user_id, \"name\": \"张三\"}\n\n@app.post(\"/users\")\ndef create_user(name: str):\n  ...",
+    "full_content": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/users/{user_id}\")\ndef get_user(user_id: int):\n    return {\"user_id\": user_id, \"name\": \"张三\"}\n\n@app.post(\"/users\")\ndef create_user(name: str):\n    return {\"name\": name, \"id\": 1}\n\n@app.put(\"/users/{user_id}\")\ndef update_user(user_id: int, name: str):\n    return {\"user_id\": user_id, \"name\": name}\n\n@app.delete(\"/users/{user_id}\")\ndef delete_user(user_id: int):\n    return {\"success\": True}\n```"
+  },
+  {
+    "id": "fullstack-guide_193",
+    "file": "fullstack-guide.md",
+    "heading": "API 命名规范",
+    "level": 3,
+    "content_preview": "| 方法 | 用途 | 示例 |\n|------|------|------|\n| GET | 获取资源 | `GET /users` |\n| POST | 创建资源 | `POST /users` |\n| PUT | 更新资源 | `PUT /users/1` |\n| DELETE | 删除资源 | `DELETE /users/1` |\n\n---",
+    "full_content": "| 方法 | 用途 | 示例 |\n|------|------|------|\n| GET | 获取资源 | `GET /users` |\n| POST | 创建资源 | `POST /users` |\n| PUT | 更新资源 | `PUT /users/1` |\n| DELETE | 删除资源 | `DELETE /users/1` |\n\n---"
+  },
+  {
+    "id": "fullstack-guide_194",
+    "file": "fullstack-guide.md",
+    "heading": "SQL vs NoSQL",
+    "level": 3,
+    "content_preview": "| 类型 | 代表 | 适用场景 |\n|------|------|----------|\n| 关系型 | PostgreSQL, MySQL | 结构化数据、复杂查询 |\n| 文档型 | MongoDB | 灵活 schema、快速迭代 |\n| KV 型 | Redis | 缓存、session |",
+    "full_content": "| 类型 | 代表 | 适用场景 |\n|------|------|----------|\n| 关系型 | PostgreSQL, MySQL | 结构化数据、复杂查询 |\n| 文档型 | MongoDB | 灵活 schema、快速迭代 |\n| KV 型 | Redis | 缓存、session |"
+  },
+  {
+    "id": "fullstack-guide_195",
+    "file": "fullstack-guide.md",
+    "heading": "基本 SQL",
+    "level": 3,
+    "content_preview": "```sql\n-- 创建表\nCREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  name VARCHAR(100) NOT NULL,\n  email VARCHAR(255) UNIQUE,\n  created_at TIMESTAMP DEFAULT NOW()\n);\n\n-- 查询\nSELECT * FROM users WHERE name LIK...",
+    "full_content": "```sql\n-- 创建表\nCREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  name VARCHAR(100) NOT NULL,\n  email VARCHAR(255) UNIQUE,\n  created_at TIMESTAMP DEFAULT NOW()\n);\n\n-- 查询\nSELECT * FROM users WHERE name LIKE '张%';\n\n-- 关联查询\nSELECT u.name, o.total\nFROM users u\nJOIN orders o ON u.id = o.user_id;\n```\n\n---"
+  },
+  {
+    "id": "fullstack-guide_196",
+    "file": "fullstack-guide.md",
+    "heading": "Docker 基础",
+    "level": 3,
+    "content_preview": "```dockerfile",
+    "full_content": "```dockerfile"
+  },
+  {
+    "id": "fullstack-guide_197",
+    "file": "fullstack-guide.md",
+    "heading": "Dockerfile",
+    "level": 1,
+    "content_preview": "FROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --only=production\nCOPY . .\nEXPOSE 3000\nCMD [\"npm\", \"start\"]\n```",
+    "full_content": "FROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --only=production\nCOPY . .\nEXPOSE 3000\nCMD [\"npm\", \"start\"]\n```"
+  },
+  {
+    "id": "fullstack-guide_198",
+    "file": "fullstack-guide.md",
+    "heading": "Docker Compose",
+    "level": 3,
+    "content_preview": "```yaml\nversion: '3.8'\nservices:\n  app:\n    build: .\n    ports:\n      - \"3000:3000\"\n    depends_on:\n      - db\n      - redis\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_DB: myapp\n  re...",
+    "full_content": "```yaml\nversion: '3.8'\nservices:\n  app:\n    build: .\n    ports:\n      - \"3000:3000\"\n    depends_on:\n      - db\n      - redis\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_DB: myapp\n  redis:\n    image: redis:7-alpine\n```"
+  },
+  {
+    "id": "fullstack-guide_199",
+    "file": "fullstack-guide.md",
+    "heading": "CI/CD 流程",
+    "level": 3,
+    "content_preview": "```\n代码提交 → 单元测试 → 构建镜像 → 集成测试 → 部署\n    │           │           │           │\n    ▼           ▼           ▼           ▼\n  Git Hook   JUnit      Docker      K8s/Nginx\n```\n\n---",
+    "full_content": "```\n代码提交 → 单元测试 → 构建镜像 → 集成测试 → 部署\n    │           │           │           │\n    ▼           ▼           ▼           ▼\n  Git Hook   JUnit      Docker      K8s/Nginx\n```\n\n---"
+  },
+  {
+    "id": "fullstack-guide_200",
+    "file": "fullstack-guide.md",
+    "heading": "全栈开发检查清单",
+    "level": 2,
+    "content_preview": "| 阶段 | 检查项 |\n|------|--------|\n| 前端 | 响应式设计、错误处理、加载状态 |\n| 后端 | 输入验证、错误处理、日志记录 |\n| 数据库 | 索引优化、事务处理、备份策略 |\n| 安全 | 认证授权、输入过滤、HTTPS |\n| 部署 | 环境配置、监控告警、回滚方案 |\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "| 阶段 | 检查项 |\n|------|--------|\n| 前端 | 响应式设计、错误处理、加载状态 |\n| 后端 | 输入验证、错误处理、日志记录 |\n| 数据库 | 索引优化、事务处理、备份策略 |\n| 安全 | 认证授权、输入过滤、HTTPS |\n| 部署 | 环境配置、监控告警、回滚方案 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "development-workflow_201",
+    "file": "development-workflow.md",
+    "heading": "开发流程",
+    "level": 1,
+    "content_preview": "> 从需求到交付的最佳实践\n\n---",
+    "full_content": "> 从需求到交付的最佳实践\n\n---"
+  },
+  {
+    "id": "development-workflow_202",
+    "file": "development-workflow.md",
+    "heading": "开发流程总览",
+    "level": 2,
+    "content_preview": "```\n需求分析 → 技术设计 → 编码实现 → 测试验证 → 部署交付\n    │            │            │            │            │\n    ▼            ▼            ▼            ▼            ▼\n  理解问题    架构设计    写代码      单元测试     上线部署\n```\n\n-...",
+    "full_content": "```\n需求分析 → 技术设计 → 编码实现 → 测试验证 → 部署交付\n    │            │            │            │            │\n    ▼            ▼            ▼            ▼            ▼\n  理解问题    架构设计    写代码      单元测试     上线部署\n```\n\n---"
+  },
+  {
+    "id": "development-workflow_203",
+    "file": "development-workflow.md",
+    "heading": "理解问题三步法",
+    "level": 3,
+    "content_preview": "1. **用户要解决什么问题？**\n2. **现有方案是什么？**\n3. **最佳方案是什么？**",
+    "full_content": "1. **用户要解决什么问题？**\n2. **现有方案是什么？**\n3. **最佳方案是什么？**"
+  },
+  {
+    "id": "development-workflow_204",
+    "file": "development-workflow.md",
+    "heading": "需求文档模板",
+    "level": 3,
+    "content_preview": "📄 模板位置：[需求文档模板](../assets/templates/需求文档模板.md)\n\n---",
+    "full_content": "📄 模板位置：[需求文档模板](../assets/templates/需求文档模板.md)\n\n---"
+  },
+  {
+    "id": "development-workflow_205",
+    "file": "development-workflow.md",
+    "heading": "先设计后编码",
+    "level": 3,
+    "content_preview": "```\n问题定义 → 方案设计 → 接口定义 → 评审 → 编码\n```",
+    "full_content": "```\n问题定义 → 方案设计 → 接口定义 → 评审 → 编码\n```"
+  },
+  {
+    "id": "development-workflow_206",
+    "file": "development-workflow.md",
+    "heading": "接口设计示例",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "development-workflow_207",
+    "file": "development-workflow.md",
+    "heading": "定义清晰的接口",
+    "level": 1,
+    "content_preview": "class UserRepository:\n    def get_by_id(self, user_id: int) -> User | None:\n        \"\"\"根据 ID 获取用户\"\"\"\n        pass\n    \n    def create(self, name: str, email: str) -> User:\n        \"\"\"创建新用户\"\"\"\n        ...",
+    "full_content": "class UserRepository:\n    def get_by_id(self, user_id: int) -> User | None:\n        \"\"\"根据 ID 获取用户\"\"\"\n        pass\n    \n    def create(self, name: str, email: str) -> User:\n        \"\"\"创建新用户\"\"\"\n        pass\n    \n    def update(self, user_id: int, **kwargs) -> User:\n        \"\"\"更新用户信息\"\"\"\n        pass\n    \n    def delete(self, user_id: int) -> bool:\n        \"\"\"删除用户\"\"\"\n        pass\n```"
+  },
+  {
+    "id": "development-workflow_208",
+    "file": "development-workflow.md",
+    "heading": "技术方案文档",
+    "level": 3,
+    "content_preview": "📄 模板位置：[技术方案模板](../assets/templates/技术方案模板.md)\n\n---",
+    "full_content": "📄 模板位置：[技术方案模板](../assets/templates/技术方案模板.md)\n\n---"
+  },
+  {
+    "id": "development-workflow_209",
+    "file": "development-workflow.md",
+    "heading": "代码写作原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **清晰优于聪明** | 代码是给人看的 |\n| **先跑通再优化** | 不要过度设计 |\n| **小步提交** | 每次提交做一件事 |\n| **写好注释** | 解释为什么，不解释是什么 |",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **清晰优于聪明** | 代码是给人看的 |\n| **先跑通再优化** | 不要过度设计 |\n| **小步提交** | 每次提交做一件事 |\n| **写好注释** | 解释为什么，不解释是什么 |"
+  },
+  {
+    "id": "development-workflow_210",
+    "file": "development-workflow.md",
+    "heading": "编码检查清单",
+    "level": 3,
+    "content_preview": "```python\ndef process_order(order_id: int) -> OrderResult:\n    # ✅ 验证输入\n    if order_id <= 0:\n        raise ValueError(\"order_id must be positive\")\n    \n    # ✅ 获取数据\n    order = get_order(order_id)\n  ...",
+    "full_content": "```python\ndef process_order(order_id: int) -> OrderResult:\n    # ✅ 验证输入\n    if order_id <= 0:\n        raise ValueError(\"order_id must be positive\")\n    \n    # ✅ 获取数据\n    order = get_order(order_id)\n    if not order:\n        raise ValueError(f\"Order {order_id} not found\")\n    \n    # ✅ 处理业务逻辑\n    result = OrderProcessor(order).process()\n    \n    # ✅ 记录日志\n    logger.info(f\"Order {order_id} processed: {result.status}\")\n    \n    # ✅ 返回结果\n    return result\n```"
+  },
+  {
+    "id": "development-workflow_211",
+    "file": "development-workflow.md",
+    "heading": "错误处理模式",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "development-workflow_212",
+    "file": "development-workflow.md",
+    "heading": "不好：裸 except",
+    "level": 1,
+    "content_preview": "try:\n    do_something()\nexcept:\n    pass",
+    "full_content": "try:\n    do_something()\nexcept:\n    pass"
+  },
+  {
+    "id": "development-workflow_213",
+    "file": "development-workflow.md",
+    "heading": "好：具体异常 + 处理",
+    "level": 1,
+    "content_preview": "try:\n    result = risky_operation()\nexcept ValueError as e:\n    logger.warning(f\"Invalid input: {e}\")\n    return None\nexcept NetworkError as e:\n    logger.error(f\"Network failed: {e}\")\n    raise  # 重新...",
+    "full_content": "try:\n    result = risky_operation()\nexcept ValueError as e:\n    logger.warning(f\"Invalid input: {e}\")\n    return None\nexcept NetworkError as e:\n    logger.error(f\"Network failed: {e}\")\n    raise  # 重新抛出\n```\n\n---"
+  },
+  {
+    "id": "development-workflow_214",
+    "file": "development-workflow.md",
+    "heading": "测试金字塔",
+    "level": 3,
+    "content_preview": "```\n           /\\\n          /  \\       E2E 测试（少量）\n         /----\\\n        /      \\     集成测试（适量）\n       /--------\\\n      /          \\   单元测试（大量）\n     /____________\\\n```",
+    "full_content": "```\n           /\\\n          /  \\       E2E 测试（少量）\n         /----\\\n        /      \\     集成测试（适量）\n       /--------\\\n      /          \\   单元测试（大量）\n     /____________\\\n```"
+  },
+  {
+    "id": "development-workflow_215",
+    "file": "development-workflow.md",
+    "heading": "单元测试示例",
+    "level": 3,
+    "content_preview": "```python\nimport pytest\n\nclass TestCalculator:\n    def test_add(self):\n        assert add(1, 2) == 3\n    \n    def test_divide_by_zero(self):\n        with pytest.raises(ValueError):\n            divide(...",
+    "full_content": "```python\nimport pytest\n\nclass TestCalculator:\n    def test_add(self):\n        assert add(1, 2) == 3\n    \n    def test_divide_by_zero(self):\n        with pytest.raises(ValueError):\n            divide(1, 0)\n    \n    def test_add_negative(self):\n        assert add(-1, -2) == -3\n```"
+  },
+  {
+    "id": "development-workflow_216",
+    "file": "development-workflow.md",
+    "heading": "测试命名规范",
+    "level": 3,
+    "content_preview": "```\ntest_{方法名}_{场景}_{预期结果}\n\ntest_user_create_success\ntest_user_create_duplicate_email\ntest_user_delete_not_found\n```\n\n---",
+    "full_content": "```\ntest_{方法名}_{场景}_{预期结果}\n\ntest_user_create_success\ntest_user_create_duplicate_email\ntest_user_delete_not_found\n```\n\n---"
+  },
+  {
+    "id": "development-workflow_217",
+    "file": "development-workflow.md",
+    "heading": "部署检查清单",
+    "level": 3,
+    "content_preview": "| 检查项 | 说明 |\n|--------|------|\n| 配置正确 | 环境变量、数据库连接 |\n| 监控到位 | 日志、告警、指标 |\n| 回滚方案 | 如何快速回退 |\n| 文档更新 | API 文档、运维手册 |",
+    "full_content": "| 检查项 | 说明 |\n|--------|------|\n| 配置正确 | 环境变量、数据库连接 |\n| 监控到位 | 日志、告警、指标 |\n| 回滚方案 | 如何快速回退 |\n| 文档更新 | API 文档、运维手册 |"
+  },
+  {
+    "id": "development-workflow_218",
+    "file": "development-workflow.md",
+    "heading": "Git 提交规范",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "development-workflow_219",
+    "file": "development-workflow.md",
+    "heading": "格式",
+    "level": 1,
+    "content_preview": "<type>: <subject>",
+    "full_content": "<type>: <subject>"
+  },
+  {
+    "id": "development-workflow_220",
+    "file": "development-workflow.md",
+    "heading": "示例",
+    "level": 1,
+    "content_preview": "git commit -m \"feat: add user login endpoint\"\ngit commit -m \"fix: handle null pointer in order processor\"\ngit commit -m \"docs: update API documentation\"\n```",
+    "full_content": "git commit -m \"feat: add user login endpoint\"\ngit commit -m \"fix: handle null pointer in order processor\"\ngit commit -m \"docs: update API documentation\"\n```"
+  },
+  {
+    "id": "development-workflow_221",
+    "file": "development-workflow.md",
+    "heading": "版本号管理",
+    "level": 3,
+    "content_preview": "| 场景 | 规则 | 示例 |\n|------|------|------|\n| Bug 修复 | patch | 1.0.0 → 1.0.1 |\n| 新功能 | minor | 1.0.0 → 1.1.0 |\n| 不兼容 | major | 1.0.0 → 2.0.0 |\n\n---",
+    "full_content": "| 场景 | 规则 | 示例 |\n|------|------|------|\n| Bug 修复 | patch | 1.0.0 → 1.0.1 |\n| 新功能 | minor | 1.0.0 → 1.1.0 |\n| 不兼容 | major | 1.0.0 → 2.0.0 |\n\n---"
+  },
+  {
+    "id": "development-workflow_222",
+    "file": "development-workflow.md",
+    "heading": "开发流程核心原则",
+    "level": 2,
+    "content_preview": "1. **理解问题再动手** — 不要急于写代码\n2. **设计优先** — 接口定了，编码就快了\n3. **小步提交** — 每次只改一件事\n4. **测试驱动** — 关键逻辑必须有测试\n5. **持续优化** — 重构是日常，不是项目结尾\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "1. **理解问题再动手** — 不要急于写代码\n2. **设计优先** — 接口定了，编码就快了\n3. **小步提交** — 每次只改一件事\n4. **测试驱动** — 关键逻辑必须有测试\n5. **持续优化** — 重构是日常，不是项目结尾\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "oop-guide_223",
+    "file": "oop-guide.md",
+    "heading": "OOP 指南",
+    "level": 1,
+    "content_preview": "> 面向对象编程核心概念\n\n---",
+    "full_content": "> 面向对象编程核心概念\n\n---"
+  },
+  {
+    "id": "oop-guide_224",
+    "file": "oop-guide.md",
+    "heading": "什么是面向对象编程（OOP）",
+    "level": 2,
+    "content_preview": "一种程序设计范式，通过\"对象\"来组织代码。对象 = 数据（属性）+ 行为（方法）。\n\n---",
+    "full_content": "一种程序设计范式，通过\"对象\"来组织代码。对象 = 数据（属性）+ 行为（方法）。\n\n---"
+  },
+  {
+    "id": "oop-guide_225",
+    "file": "oop-guide.md",
+    "heading": "四大特性",
+    "level": 2,
+    "content_preview": "| 特性 | 说明 |\n|------|------|\n| **封装** | 把数据和方法装进一个单元（类），隐藏内部细节 |\n| **继承** | 子类复用父类的属性和方法 |\n| **多态** | 同一接口，不同实现 |\n| **抽象** | 简化复杂系统，只暴露必要接口 |\n\n---",
+    "full_content": "| 特性 | 说明 |\n|------|------|\n| **封装** | 把数据和方法装进一个单元（类），隐藏内部细节 |\n| **继承** | 子类复用父类的属性和方法 |\n| **多态** | 同一接口，不同实现 |\n| **抽象** | 简化复杂系统，只暴露必要接口 |\n\n---"
+  },
+  {
+    "id": "oop-guide_226",
+    "file": "oop-guide.md",
+    "heading": "类与对象",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "oop-guide_227",
+    "file": "oop-guide.md",
+    "heading": "类：蓝图/模板",
+    "level": 1,
+    "content_preview": "class Dog:\n    def __init__(self, name: str):\n        self.name = name  # 属性\n    \n    def bark(self) -> str:  # 方法\n        return f\"{self.name} says 汪\"",
+    "full_content": "class Dog:\n    def __init__(self, name: str):\n        self.name = name  # 属性\n    \n    def bark(self) -> str:  # 方法\n        return f\"{self.name} says 汪\""
+  },
+  {
+    "id": "oop-guide_228",
+    "file": "oop-guide.md",
+    "heading": "对象：类的实例",
+    "level": 1,
+    "content_preview": "my_dog = Dog(\"旺财\")\nprint(my_dog.bark())  # 旺财 says 汪\n```",
+    "full_content": "my_dog = Dog(\"旺财\")\nprint(my_dog.bark())  # 旺财 says 汪\n```"
+  },
+  {
+    "id": "oop-guide_229",
+    "file": "oop-guide.md",
+    "heading": "消息传递",
+    "level": 3,
+    "content_preview": "对象之间通过调用方法相互通信：\n\n```python",
+    "full_content": "对象之间通过调用方法相互通信：\n\n```python"
+  },
+  {
+    "id": "oop-guide_230",
+    "file": "oop-guide.md",
+    "heading": "发送消息",
+    "level": 1,
+    "content_preview": "result = my_dog.bark()",
+    "full_content": "result = my_dog.bark()"
+  },
+  {
+    "id": "oop-guide_231",
+    "file": "oop-guide.md",
+    "heading": "多个对象协作",
+    "level": 1,
+    "content_preview": "class Owner:\n    def __init__(self, name: str, pet: Dog):\n        self.name = name\n        self.pet = pet\n    \n    def call_pet(self) -> str:\n        return f\"{self.name} calls {self.pet.name}\"\n```\n\n-...",
+    "full_content": "class Owner:\n    def __init__(self, name: str, pet: Dog):\n        self.name = name\n        self.pet = pet\n    \n    def call_pet(self) -> str:\n        return f\"{self.name} calls {self.pet.name}\"\n```\n\n---"
+  },
+  {
+    "id": "oop-guide_232",
+    "file": "oop-guide.md",
+    "heading": "面向对象 vs 面向过程",
+    "level": 2,
+    "content_preview": "| 维度 | 面向过程 | 面向对象 |\n|------|----------|----------|\n| 组织单位 | 函数 | 类/对象 |\n| 数据管理 | 分散 | 封装在对象内 |\n| 扩展方式 | 修改函数 | 添加新类 |\n| 适用场景 | 简单线性任务 | 复杂系统 |\n\n---",
+    "full_content": "| 维度 | 面向过程 | 面向对象 |\n|------|----------|----------|\n| 组织单位 | 函数 | 类/对象 |\n| 数据管理 | 分散 | 封装在对象内 |\n| 扩展方式 | 修改函数 | 添加新类 |\n| 适用场景 | 简单线性任务 | 复杂系统 |\n\n---"
+  },
+  {
+    "id": "oop-guide_233",
+    "file": "oop-guide.md",
+    "heading": "何时使用 OOP",
+    "level": 2,
+    "content_preview": "**适合 OOP**：\n- 复杂业务逻辑，多个实体相互作用\n- 需要复用和继承\n- 需要模拟真实世界实体\n\n**不适合 OOP**：\n- 简单脚本，一次性任务\n- 纯数学计算，无实体概念\n- 函数式更自然的场景\n\n---",
+    "full_content": "**适合 OOP**：\n- 复杂业务逻辑，多个实体相互作用\n- 需要复用和继承\n- 需要模拟真实世界实体\n\n**不适合 OOP**：\n- 简单脚本，一次性任务\n- 纯数学计算，无实体概念\n- 函数式更自然的场景\n\n---"
+  },
+  {
+    "id": "oop-guide_234",
+    "file": "oop-guide.md",
+    "heading": "常见设计模式（入门级）",
+    "level": 2,
+    "content_preview": "| 模式 | 用途 |\n|------|------|\n| 单例模式 | 全局唯一实例 |\n| 工厂模式 | 封装对象创建 |\n| 策略模式 | 多种算法切换 |\n\n---\n\n*详见 [OOP 原则](oop-principles.md)（封装、继承、多态详解）*\n*详见 [索引](index.md)*",
+    "full_content": "| 模式 | 用途 |\n|------|------|\n| 单例模式 | 全局唯一实例 |\n| 工厂模式 | 封装对象创建 |\n| 策略模式 | 多种算法切换 |\n\n---\n\n*详见 [OOP 原则](oop-principles.md)（封装、继承、多态详解）*\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "development-guide_235",
+    "file": "development-guide.md",
+    "heading": "开发流程",
+    "level": 1,
+    "content_preview": "> 从需求到交付的最佳实践\n\n---",
+    "full_content": "> 从需求到交付的最佳实践\n\n---"
+  },
+  {
+    "id": "development-guide_236",
+    "file": "development-guide.md",
+    "heading": "开发流程总览",
+    "level": 2,
+    "content_preview": "```\n需求分析 → 技术设计 → 编码实现 → 测试验证 → 部署交付\n    │            │            │            │            │\n    ▼            ▼            ▼            ▼            ▼\n  理解问题    架构设计    写代码      单元测试     上线部署\n```\n\n-...",
+    "full_content": "```\n需求分析 → 技术设计 → 编码实现 → 测试验证 → 部署交付\n    │            │            │            │            │\n    ▼            ▼            ▼            ▼            ▼\n  理解问题    架构设计    写代码      单元测试     上线部署\n```\n\n---"
+  },
+  {
+    "id": "development-guide_237",
+    "file": "development-guide.md",
+    "heading": "理解问题三步法",
+    "level": 3,
+    "content_preview": "1. **用户要解决什么问题？**\n2. **现有方案是什么？**\n3. **最佳方案是什么？**",
+    "full_content": "1. **用户要解决什么问题？**\n2. **现有方案是什么？**\n3. **最佳方案是什么？**"
+  },
+  {
+    "id": "development-guide_238",
+    "file": "development-guide.md",
+    "heading": "需求文档模板",
+    "level": 3,
+    "content_preview": "📄 模板位置：[需求文档模板](../assets/templates/需求文档模板.md)\n\n---",
+    "full_content": "📄 模板位置：[需求文档模板](../assets/templates/需求文档模板.md)\n\n---"
+  },
+  {
+    "id": "development-guide_239",
+    "file": "development-guide.md",
+    "heading": "先设计后编码",
+    "level": 3,
+    "content_preview": "```\n问题定义 → 方案设计 → 接口定义 → 评审 → 编码\n```",
+    "full_content": "```\n问题定义 → 方案设计 → 接口定义 → 评审 → 编码\n```"
+  },
+  {
+    "id": "development-guide_240",
+    "file": "development-guide.md",
+    "heading": "接口设计示例",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "development-guide_241",
+    "file": "development-guide.md",
+    "heading": "定义清晰的接口",
+    "level": 1,
+    "content_preview": "class UserRepository:\n    def get_by_id(self, user_id: int) -> User | None:\n        \"\"\"根据 ID 获取用户\"\"\"\n        pass\n    \n    def create(self, name: str, email: str) -> User:\n        \"\"\"创建新用户\"\"\"\n        ...",
+    "full_content": "class UserRepository:\n    def get_by_id(self, user_id: int) -> User | None:\n        \"\"\"根据 ID 获取用户\"\"\"\n        pass\n    \n    def create(self, name: str, email: str) -> User:\n        \"\"\"创建新用户\"\"\"\n        pass\n    \n    def update(self, user_id: int, **kwargs) -> User:\n        \"\"\"更新用户信息\"\"\"\n        pass\n    \n    def delete(self, user_id: int) -> bool:\n        \"\"\"删除用户\"\"\"\n        pass\n```"
+  },
+  {
+    "id": "development-guide_242",
+    "file": "development-guide.md",
+    "heading": "技术方案文档",
+    "level": 3,
+    "content_preview": "📄 模板位置：[技术方案模板](../assets/templates/技术方案模板.md)\n\n---",
+    "full_content": "📄 模板位置：[技术方案模板](../assets/templates/技术方案模板.md)\n\n---"
+  },
+  {
+    "id": "development-guide_243",
+    "file": "development-guide.md",
+    "heading": "代码写作原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **清晰优于聪明** | 代码是给人看的 |\n| **先跑通再优化** | 不要过度设计 |\n| **小步提交** | 每次提交做一件事 |\n| **写好注释** | 解释为什么，不解释是什么 |",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **清晰优于聪明** | 代码是给人看的 |\n| **先跑通再优化** | 不要过度设计 |\n| **小步提交** | 每次提交做一件事 |\n| **写好注释** | 解释为什么，不解释是什么 |"
+  },
+  {
+    "id": "development-guide_244",
+    "file": "development-guide.md",
+    "heading": "编码检查清单",
+    "level": 3,
+    "content_preview": "```python\ndef process_order(order_id: int) -> OrderResult:\n    # ✅ 验证输入\n    if order_id <= 0:\n        raise ValueError(\"order_id must be positive\")\n    \n    # ✅ 获取数据\n    order = get_order(order_id)\n  ...",
+    "full_content": "```python\ndef process_order(order_id: int) -> OrderResult:\n    # ✅ 验证输入\n    if order_id <= 0:\n        raise ValueError(\"order_id must be positive\")\n    \n    # ✅ 获取数据\n    order = get_order(order_id)\n    if not order:\n        raise ValueError(f\"Order {order_id} not found\")\n    \n    # ✅ 处理业务逻辑\n    result = OrderProcessor(order).process()\n    \n    # ✅ 记录日志\n    logger.info(f\"Order {order_id} processed: {result.status}\")\n    \n    # ✅ 返回结果\n    return result\n```"
+  },
+  {
+    "id": "development-guide_245",
+    "file": "development-guide.md",
+    "heading": "错误处理模式",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "development-guide_246",
+    "file": "development-guide.md",
+    "heading": "不好：裸 except",
+    "level": 1,
+    "content_preview": "try:\n    do_something()\nexcept:\n    pass",
+    "full_content": "try:\n    do_something()\nexcept:\n    pass"
+  },
+  {
+    "id": "development-guide_247",
+    "file": "development-guide.md",
+    "heading": "好：具体异常 + 处理",
+    "level": 1,
+    "content_preview": "try:\n    result = risky_operation()\nexcept ValueError as e:\n    logger.warning(f\"Invalid input: {e}\")\n    return None\nexcept NetworkError as e:\n    logger.error(f\"Network failed: {e}\")\n    raise  # 重新...",
+    "full_content": "try:\n    result = risky_operation()\nexcept ValueError as e:\n    logger.warning(f\"Invalid input: {e}\")\n    return None\nexcept NetworkError as e:\n    logger.error(f\"Network failed: {e}\")\n    raise  # 重新抛出\n```\n\n---"
+  },
+  {
+    "id": "development-guide_248",
+    "file": "development-guide.md",
+    "heading": "测试金字塔",
+    "level": 3,
+    "content_preview": "```\n           /\\\n          /  \\       E2E 测试（少量）\n         /----\\\n        /      \\     集成测试（适量）\n       /--------\\\n      /          \\   单元测试（大量）\n     /____________\\\n```",
+    "full_content": "```\n           /\\\n          /  \\       E2E 测试（少量）\n         /----\\\n        /      \\     集成测试（适量）\n       /--------\\\n      /          \\   单元测试（大量）\n     /____________\\\n```"
+  },
+  {
+    "id": "development-guide_249",
+    "file": "development-guide.md",
+    "heading": "单元测试示例",
+    "level": 3,
+    "content_preview": "```python\nimport pytest\n\nclass TestCalculator:\n    def test_add(self):\n        assert add(1, 2) == 3\n    \n    def test_divide_by_zero(self):\n        with pytest.raises(ValueError):\n            divide(...",
+    "full_content": "```python\nimport pytest\n\nclass TestCalculator:\n    def test_add(self):\n        assert add(1, 2) == 3\n    \n    def test_divide_by_zero(self):\n        with pytest.raises(ValueError):\n            divide(1, 0)\n    \n    def test_add_negative(self):\n        assert add(-1, -2) == -3\n```"
+  },
+  {
+    "id": "development-guide_250",
+    "file": "development-guide.md",
+    "heading": "测试命名规范",
+    "level": 3,
+    "content_preview": "```\ntest_{方法名}_{场景}_{预期结果}\n\ntest_user_create_success\ntest_user_create_duplicate_email\ntest_user_delete_not_found\n```\n\n---",
+    "full_content": "```\ntest_{方法名}_{场景}_{预期结果}\n\ntest_user_create_success\ntest_user_create_duplicate_email\ntest_user_delete_not_found\n```\n\n---"
+  },
+  {
+    "id": "development-guide_251",
+    "file": "development-guide.md",
+    "heading": "部署检查清单",
+    "level": 3,
+    "content_preview": "| 检查项 | 说明 |\n|--------|------|\n| 配置正确 | 环境变量、数据库连接 |\n| 监控到位 | 日志、告警、指标 |\n| 回滚方案 | 如何快速回退 |\n| 文档更新 | API 文档、运维手册 |",
+    "full_content": "| 检查项 | 说明 |\n|--------|------|\n| 配置正确 | 环境变量、数据库连接 |\n| 监控到位 | 日志、告警、指标 |\n| 回滚方案 | 如何快速回退 |\n| 文档更新 | API 文档、运维手册 |"
+  },
+  {
+    "id": "development-guide_252",
+    "file": "development-guide.md",
+    "heading": "Git 提交规范",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "development-guide_253",
+    "file": "development-guide.md",
+    "heading": "格式",
+    "level": 1,
+    "content_preview": "<type>: <subject>",
+    "full_content": "<type>: <subject>"
+  },
+  {
+    "id": "development-guide_254",
+    "file": "development-guide.md",
+    "heading": "示例",
+    "level": 1,
+    "content_preview": "git commit -m \"feat: add user login endpoint\"\ngit commit -m \"fix: handle null pointer in order processor\"\ngit commit -m \"docs: update API documentation\"\n```",
+    "full_content": "git commit -m \"feat: add user login endpoint\"\ngit commit -m \"fix: handle null pointer in order processor\"\ngit commit -m \"docs: update API documentation\"\n```"
+  },
+  {
+    "id": "development-guide_255",
+    "file": "development-guide.md",
+    "heading": "版本号管理",
+    "level": 3,
+    "content_preview": "| 场景 | 规则 | 示例 |\n|------|------|------|\n| Bug 修复 | patch | 1.0.0 → 1.0.1 |\n| 新功能 | minor | 1.0.0 → 1.1.0 |\n| 不兼容 | major | 1.0.0 → 2.0.0 |\n\n---",
+    "full_content": "| 场景 | 规则 | 示例 |\n|------|------|------|\n| Bug 修复 | patch | 1.0.0 → 1.0.1 |\n| 新功能 | minor | 1.0.0 → 1.1.0 |\n| 不兼容 | major | 1.0.0 → 2.0.0 |\n\n---"
+  },
+  {
+    "id": "development-guide_256",
+    "file": "development-guide.md",
+    "heading": "开发流程核心原则",
+    "level": 2,
+    "content_preview": "1. **理解问题再动手** — 不要急于写代码\n2. **设计优先** — 接口定了，编码就快了\n3. **小步提交** — 每次只改一件事\n4. **测试驱动** — 关键逻辑必须有测试\n5. **持续优化** — 重构是日常，不是项目结尾\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "1. **理解问题再动手** — 不要急于写代码\n2. **设计优先** — 接口定了，编码就快了\n3. **小步提交** — 每次只改一件事\n4. **测试驱动** — 关键逻辑必须有测试\n5. **持续优化** — 重构是日常，不是项目结尾\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "architecture-guide_257",
+    "file": "architecture-guide.md",
+    "heading": "架构指南",
+    "level": 1,
+    "content_preview": "> 系统架构、设计模式、微服务架构\n\n---",
+    "full_content": "> 系统架构、设计模式、微服务架构\n\n---"
+  },
+  {
+    "id": "architecture-guide_258",
+    "file": "architecture-guide.md",
+    "heading": "架构是什么",
+    "level": 3,
+    "content_preview": "架构是**系统的骨架** — 定义组件、组件之间的关系、组件与外部环境交互的原则。",
+    "full_content": "架构是**系统的骨架** — 定义组件、组件之间的关系、组件与外部环境交互的原则。"
+  },
+  {
+    "id": "architecture-guide_259",
+    "file": "architecture-guide.md",
+    "heading": "好架构的特征",
+    "level": 3,
+    "content_preview": "| 特征 | 说明 |\n|------|------|\n| **高内聚** | 每个组件只做一件事 |\n| **低耦合** | 组件之间依赖最小化 |\n| **可扩展** | 新增功能不需要改现有代码 |\n| **可测试** | 组件可以独立测试 |\n| **可部署** | 可以独立部署 |\n\n---",
+    "full_content": "| 特征 | 说明 |\n|------|------|\n| **高内聚** | 每个组件只做一件事 |\n| **低耦合** | 组件之间依赖最小化 |\n| **可扩展** | 新增功能不需要改现有代码 |\n| **可测试** | 组件可以独立测试 |\n| **可部署** | 可以独立部署 |\n\n---"
+  },
+  {
+    "id": "architecture-guide_260",
+    "file": "architecture-guide.md",
+    "heading": "分层架构",
+    "level": 3,
+    "content_preview": "```\n┌─────────────────────────┐\n│       表示层 (UI)        │  ← 用户界面、API 网关\n├─────────────────────────┤\n│       应用层             │  ← 用例、编排、业务流程\n├─────────────────────────┤\n│       领域层            │  ← 业务规...",
+    "full_content": "```\n┌─────────────────────────┐\n│       表示层 (UI)        │  ← 用户界面、API 网关\n├─────────────────────────┤\n│       应用层             │  ← 用例、编排、业务流程\n├─────────────────────────┤\n│       领域层            │  ← 业务规则、实体、值对象\n├─────────────────────────┤\n│       基础设施层         │  ← 数据库、外部服务、文件存储\n└─────────────────────────┘\n```"
+  },
+  {
+    "id": "architecture-guide_261",
+    "file": "architecture-guide.md",
+    "heading": "微服务架构",
+    "level": 3,
+    "content_preview": "```\n┌──────────┐  ┌──────────┐  ┌──────────┐\n│ 用户服务  │  │ 订单服务  │  │ 支付服务  │\n└────┬─────┘  └────┬─────┘  └────┬─────┘\n     │             │             │\n     └─────────────┼─────────────┘\n            ...",
+    "full_content": "```\n┌──────────┐  ┌──────────┐  ┌──────────┐\n│ 用户服务  │  │ 订单服务  │  │ 支付服务  │\n└────┬─────┘  └────┬─────┘  └────┬─────┘\n     │             │             │\n     └─────────────┼─────────────┘\n                   │\n            ┌──────┴──────┐\n            │  API Gateway │\n            └─────────────┘\n```"
+  },
+  {
+    "id": "architecture-guide_262",
+    "file": "architecture-guide.md",
+    "heading": "事件驱动架构",
+    "level": 3,
+    "content_preview": "```\n事件发布者 → 事件总线 → 事件订阅者\n                            ↓\n                    ┌───────────────┐\n                    │  事件处理器   │\n                    └───────────────┘\n```\n\n---",
+    "full_content": "```\n事件发布者 → 事件总线 → 事件订阅者\n                            ↓\n                    ┌───────────────┐\n                    │  事件处理器   │\n                    └───────────────┘\n```\n\n---"
+  },
+  {
+    "id": "architecture-guide_263",
+    "file": "architecture-guide.md",
+    "heading": "创建型模式",
+    "level": 3,
+    "content_preview": "| 模式 | 用途 | 示例 |\n|------|------|------|\n| **单例** | 全局唯一实例 | 数据库连接、配置管理 |\n| **工厂** | 封装对象创建 | 不同支付方式创建 |\n| **建造者** | 分步构建复杂对象 | SQL 查询构建 |",
+    "full_content": "| 模式 | 用途 | 示例 |\n|------|------|------|\n| **单例** | 全局唯一实例 | 数据库连接、配置管理 |\n| **工厂** | 封装对象创建 | 不同支付方式创建 |\n| **建造者** | 分步构建复杂对象 | SQL 查询构建 |"
+  },
+  {
+    "id": "architecture-guide_264",
+    "file": "architecture-guide.md",
+    "heading": "单例模式",
+    "level": 3,
+    "content_preview": "```python\nclass Database:\n    _instance = None\n    \n    def __new__(cls):\n        if cls._instance is None:\n            cls._instance = super().__new__(cls)\n            cls._instance._connected = Fals...",
+    "full_content": "```python\nclass Database:\n    _instance = None\n    \n    def __new__(cls):\n        if cls._instance is None:\n            cls._instance = super().__new__(cls)\n            cls._instance._connected = False\n        return cls._instance\n    \n    def connect(self):\n        if not self._connected:\n            print(\"Connecting to database...\")\n            self._connected = True"
+  },
+  {
+    "id": "architecture-guide_265",
+    "file": "architecture-guide.md",
+    "heading": "全局唯一实例",
+    "level": 1,
+    "content_preview": "db1 = Database()\ndb2 = Database()\nassert db1 is db2  # True\n```",
+    "full_content": "db1 = Database()\ndb2 = Database()\nassert db1 is db2  # True\n```"
+  },
+  {
+    "id": "architecture-guide_266",
+    "file": "architecture-guide.md",
+    "heading": "工厂模式",
+    "level": 3,
+    "content_preview": "```python\nfrom abc import ABC, abstractmethod\n\nclass Payment(ABC):\n    @abstractmethod\n    def pay(self, amount: float) -> bool:\n        pass\n\nclass Alipay(Payment):\n    def pay(self, amount: float) -...",
+    "full_content": "```python\nfrom abc import ABC, abstractmethod\n\nclass Payment(ABC):\n    @abstractmethod\n    def pay(self, amount: float) -> bool:\n        pass\n\nclass Alipay(Payment):\n    def pay(self, amount: float) -> bool:\n        print(f\"Alipay: {amount}\")\n        return True\n\nclass WechatPay(Payment):\n    def pay(self, amount: float) -> bool:\n        print(f\"WechatPay: {amount}\")\n        return True\n\nclass PaymentFactory:\n    @staticmethod\n    def create_payment(method: str) -> Payment:\n        payments = {\n            \"alipay\": Alipay,\n            \"wechat\": WechatPay\n        }\n        return payments[method]()"
+  },
+  {
+    "id": "architecture-guide_267",
+    "file": "architecture-guide.md",
+    "heading": "使用",
+    "level": 1,
+    "content_preview": "payment = PaymentFactory.create_payment(\"alipay\")\npayment.pay(100)\n```",
+    "full_content": "payment = PaymentFactory.create_payment(\"alipay\")\npayment.pay(100)\n```"
+  },
+  {
+    "id": "architecture-guide_268",
+    "file": "architecture-guide.md",
+    "heading": "结构型模式",
+    "level": 3,
+    "content_preview": "| 模式 | 用途 | 示例 |\n|------|------|------|\n| **适配器** | 接口转换 | 旧接口适配新接口 |\n| **装饰器** | 动态增强功能 | 日志增强、缓存 |\n| **代理** | 控制访问 | 延迟加载、权限控制 |",
+    "full_content": "| 模式 | 用途 | 示例 |\n|------|------|------|\n| **适配器** | 接口转换 | 旧接口适配新接口 |\n| **装饰器** | 动态增强功能 | 日志增强、缓存 |\n| **代理** | 控制访问 | 延迟加载、权限控制 |"
+  },
+  {
+    "id": "architecture-guide_269",
+    "file": "architecture-guide.md",
+    "heading": "装饰器模式",
+    "level": 3,
+    "content_preview": "```python\ndef log_calls(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {func.__name__}\")\n        result = func(*args, **kwargs)\n        print(f\"{func.__name__} returned {result}\")\n  ...",
+    "full_content": "```python\ndef log_calls(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {func.__name__}\")\n        result = func(*args, **kwargs)\n        print(f\"{func.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef add(a, b):\n    return a + b\n\nadd(1, 2)"
+  },
+  {
+    "id": "architecture-guide_270",
+    "file": "architecture-guide.md",
+    "heading": "add returned 3",
+    "level": 1,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "architecture-guide_271",
+    "file": "architecture-guide.md",
+    "heading": "行为型模式",
+    "level": 3,
+    "content_preview": "| 模式 | 用途 | 示例 |\n|------|------|------|\n| **策略** | 多种算法切换 | 排序算法、支付方式 |\n| **观察者** | 一对多通知 | 事件监听、订阅 |\n| **命令** | 请求封装 | 撤销/重做 |",
+    "full_content": "| 模式 | 用途 | 示例 |\n|------|------|------|\n| **策略** | 多种算法切换 | 排序算法、支付方式 |\n| **观察者** | 一对多通知 | 事件监听、订阅 |\n| **命令** | 请求封装 | 撤销/重做 |"
+  },
+  {
+    "id": "architecture-guide_272",
+    "file": "architecture-guide.md",
+    "heading": "策略模式",
+    "level": 3,
+    "content_preview": "```python\nfrom abc import ABC, abstractmethod\n\nclass SortStrategy(ABC):\n    @abstractmethod\n    def sort(self, data: list) -> list:\n        pass\n\nclass QuickSort(SortStrategy):\n    def sort(self, data...",
+    "full_content": "```python\nfrom abc import ABC, abstractmethod\n\nclass SortStrategy(ABC):\n    @abstractmethod\n    def sort(self, data: list) -> list:\n        pass\n\nclass QuickSort(SortStrategy):\n    def sort(self, data: list) -> list:\n        return sorted(data)  # 简化\n\nclass BubbleSort(SortStrategy):\n    def sort(self, data: list) -> list:\n        # 简化实现\n        return sorted(data)\n\nclass Sorter:\n    def __init__(self, strategy: SortStrategy):\n        self._strategy = strategy\n    \n    def set_strategy(self, strategy: SortStrategy):\n        self._strategy = strategy\n    \n    def execute(self, data: list) -> list:\n        return self._strategy.sort(data)"
+  },
+  {
+    "id": "architecture-guide_273",
+    "file": "architecture-guide.md",
+    "heading": "使用",
+    "level": 1,
+    "content_preview": "sorter = Sorter(QuickSort())\nsorter.execute([3, 1, 2])\n\nsorter.set_strategy(BubbleSort())\nsorter.execute([3, 1, 2])\n```\n\n---",
+    "full_content": "sorter = Sorter(QuickSort())\nsorter.execute([3, 1, 2])\n\nsorter.set_strategy(BubbleSort())\nsorter.execute([3, 1, 2])\n```\n\n---"
+  },
+  {
+    "id": "architecture-guide_274",
+    "file": "architecture-guide.md",
+    "heading": "服务拆分原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **单一职责** | 每个服务只负责一个业务领域 |\n| **松耦合** | 服务之间通过 API 通信，不共享数据 |\n| **高内聚** | 相关功能放在同一个服务 |",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **单一职责** | 每个服务只负责一个业务领域 |\n| **松耦合** | 服务之间通过 API 通信，不共享数据 |\n| **高内聚** | 相关功能放在同一个服务 |"
+  },
+  {
+    "id": "architecture-guide_275",
+    "file": "architecture-guide.md",
+    "heading": "API 设计",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "architecture-guide_276",
+    "file": "architecture-guide.md",
+    "heading": "服务间通信",
+    "level": 1,
+    "content_preview": "class UserServiceClient:\n    def __init__(self, http_client):\n        self.http = http_client\n    \n    def get_user(self, user_id: int):\n        return self.http.get(f\"/users/{user_id}\")\n    \n    def ...",
+    "full_content": "class UserServiceClient:\n    def __init__(self, http_client):\n        self.http = http_client\n    \n    def get_user(self, user_id: int):\n        return self.http.get(f\"/users/{user_id}\")\n    \n    def create_order(self, user_id: int, order_data: dict):\n        return self.http.post(f\"/users/{user_id}/orders\", order_data)\n```"
+  },
+  {
+    "id": "architecture-guide_277",
+    "file": "architecture-guide.md",
+    "heading": "服务间通信",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "architecture-guide_278",
+    "file": "architecture-guide.md",
+    "heading": "同步通信 (REST/gRPC)",
+    "level": 1,
+    "content_preview": "response = requests.get(\"http://user-service/users/1\")",
+    "full_content": "response = requests.get(\"http://user-service/users/1\")"
+  },
+  {
+    "id": "architecture-guide_279",
+    "file": "architecture-guide.md",
+    "heading": "生产者",
+    "level": 1,
+    "content_preview": "queue.publish(\"order.created\", {\"order_id\": 1, \"user_id\": 1})",
+    "full_content": "queue.publish(\"order.created\", {\"order_id\": 1, \"user_id\": 1})"
+  },
+  {
+    "id": "architecture-guide_280",
+    "file": "architecture-guide.md",
+    "heading": "消费者",
+    "level": 1,
+    "content_preview": "@queue.subscribe(\"order.created\")\ndef handle_order_created(event):\n    user_service.notify_user(event[\"user_id\"])\n```\n\n---",
+    "full_content": "@queue.subscribe(\"order.created\")\ndef handle_order_created(event):\n    user_service.notify_user(event[\"user_id\"])\n```\n\n---"
+  },
+  {
+    "id": "architecture-guide_281",
+    "file": "architecture-guide.md",
+    "heading": "数据库选择",
+    "level": 3,
+    "content_preview": "| 场景 | 推荐 |\n|------|------|\n| 事务性数据 | PostgreSQL / MySQL |\n| 缓存 | Redis |\n| 文档存储 | MongoDB |\n| 搜索 | Elasticsearch |\n| 时序数据 | InfluxDB |",
+    "full_content": "| 场景 | 推荐 |\n|------|------|\n| 事务性数据 | PostgreSQL / MySQL |\n| 缓存 | Redis |\n| 文档存储 | MongoDB |\n| 搜索 | Elasticsearch |\n| 时序数据 | InfluxDB |"
+  },
+  {
+    "id": "architecture-guide_282",
+    "file": "architecture-guide.md",
+    "heading": "读写分离",
+    "level": 3,
+    "content_preview": "```\n写入 ──→ 主库 (Master)\n          │\n          └──→ 从库 (Slave) ──→ 读取\n          └──→ 从库 (Slave) ──→ 读取\n```",
+    "full_content": "```\n写入 ──→ 主库 (Master)\n          │\n          └──→ 从库 (Slave) ──→ 读取\n          └──→ 从库 (Slave) ──→ 读取\n```"
+  },
+  {
+    "id": "architecture-guide_283",
+    "file": "architecture-guide.md",
+    "heading": "分库分表",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "architecture-guide_284",
+    "file": "architecture-guide.md",
+    "heading": "哈希分片",
+    "level": 1,
+    "content_preview": "def get_shard(user_id: int) -> int:\n    return user_id % NUM_SHARDS",
+    "full_content": "def get_shard(user_id: int) -> int:\n    return user_id % NUM_SHARDS"
+  },
+  {
+    "id": "architecture-guide_285",
+    "file": "architecture-guide.md",
+    "heading": "范围分片",
+    "level": 1,
+    "content_preview": "def get_partition(user_id: int) -> int:\n    if user_id < 10000:\n        return 0\n    elif user_id < 50000:\n        return 1\n    else:\n        return 2\n```\n\n---",
+    "full_content": "def get_partition(user_id: int) -> int:\n    if user_id < 10000:\n        return 0\n    elif user_id < 50000:\n        return 1\n    else:\n        return 2\n```\n\n---"
+  },
+  {
+    "id": "architecture-guide_286",
+    "file": "architecture-guide.md",
+    "heading": "ADR（架构决策记录）",
+    "level": 3,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "architecture-guide_287",
+    "file": "architecture-guide.md",
+    "heading": "状态",
+    "level": 2,
+    "content_preview": "已接受",
+    "full_content": "已接受"
+  },
+  {
+    "id": "architecture-guide_288",
+    "file": "architecture-guide.md",
+    "heading": "背景",
+    "level": 2,
+    "content_preview": "需要选择主数据库存储业务数据",
+    "full_content": "需要选择主数据库存储业务数据"
+  },
+  {
+    "id": "architecture-guide_289",
+    "file": "architecture-guide.md",
+    "heading": "决策",
+    "level": 2,
+    "content_preview": "使用 PostgreSQL 作为主数据库",
+    "full_content": "使用 PostgreSQL 作为主数据库"
+  },
+  {
+    "id": "architecture-guide_290",
+    "file": "architecture-guide.md",
+    "heading": "理由",
+    "level": 2,
+    "content_preview": "- 支持 JSON 类型\n- 事务支持完善\n- 社区活跃\n- 性能优秀",
+    "full_content": "- 支持 JSON 类型\n- 事务支持完善\n- 社区活跃\n- 性能优秀"
+  },
+  {
+    "id": "architecture-guide_291",
+    "file": "architecture-guide.md",
+    "heading": "后果",
+    "level": 2,
+    "content_preview": "- 需要管理数据库迁移\n- 需要配置备份策略\n```",
+    "full_content": "- 需要管理数据库迁移\n- 需要配置备份策略\n```"
+  },
+  {
+    "id": "architecture-guide_292",
+    "file": "architecture-guide.md",
+    "heading": "系统架构图",
+    "level": 3,
+    "content_preview": "```text\n┌─────────────────────────────────────────────────┐\n│                   用户端                         │\n└─────────────────────┬───────────────────────────┘\n                      │\n┌─────────────...",
+    "full_content": "```text\n┌─────────────────────────────────────────────────┐\n│                   用户端                         │\n└─────────────────────┬───────────────────────────┘\n                      │\n┌─────────────────────▼───────────────────────────┐\n│                 CDN / Nginx                      │\n└─────────────────────┬───────────────────────────┘\n                      │\n┌─────────────────────▼───────────────────────────┐\n│              API Gateway / Load Balancer         │\n└──────┬──────────────┬───────────────┬───────────┘\n       │              │               │\n┌──────▼────┐ ┌───────▼─────┐ ┌─────▼─────────┐\n│ 用户服务   │ │  订单服务    │ │   支付服务    │\n└───────────┘ └─────────────┘ └───────────────┘\n       │              │               │\n       └──────────────┼───────────────┘\n                      │\n┌─────────────────────▼───────────────────────────┐\n│              Message Queue (Kafka)               │\n└─────────────────────┬───────────────────────────┘\n                      │\n┌─────────────────────▼───────────────────────────┐\n│              Notification Service                │\n└─────────────────────────────────────────────────┘\n```\n\n---"
+  },
+  {
+    "id": "architecture-guide_293",
+    "file": "architecture-guide.md",
+    "heading": "架构评审检查清单",
+    "level": 2,
+    "content_preview": "| 检查项 | 说明 |\n|--------|------|\n| 组件职责清晰 | 每个组件有明确职责 |\n| 接口设计合理 | 接口稳定、版本兼容 |\n| 数据一致性 | 分布式事务处理方案 |\n| 容错设计 | 降级、熔断、超时 |\n| 监控告警 | 日志、指标、链路追踪 |\n| 安全设计 | 认证、授权、加密 |\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "| 检查项 | 说明 |\n|--------|------|\n| 组件职责清晰 | 每个组件有明确职责 |\n| 接口设计合理 | 接口稳定、版本兼容 |\n| 数据一致性 | 分布式事务处理方案 |\n| 容错设计 | 降级、熔断、超时 |\n| 监控告警 | 日志、指标、链路追踪 |\n| 安全设计 | 认证、授权、加密 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "guide_294",
+    "file": "guide.md",
+    "heading": "使用指南",
+    "level": 1,
+    "content_preview": "> programmer 技能使用说明\n\n---",
+    "full_content": "> programmer 技能使用说明\n\n---"
+  },
+  {
+    "id": "guide_295",
+    "file": "guide.md",
+    "heading": "触发条件",
+    "level": 2,
+    "content_preview": "当用户要求以下场景时触发：\n\n| 场景 | 触发关键词 |\n|------|------------|\n| 代码开发 | 写代码、编写功能、实现需求 |\n| Bug 排查 | 修复 bug、报错排查 |\n| 重构优化 | 重构、优化代码 |\n| 技术设计 | 设计架构、技术方案 |\n| OOP 问题 | 面向对象、封装、继承、多态 |\n| 全栈问题 | 前端、后端、数据库、部署 |\n\n---",
+    "full_content": "当用户要求以下场景时触发：\n\n| 场景 | 触发关键词 |\n|------|------------|\n| 代码开发 | 写代码、编写功能、实现需求 |\n| Bug 排查 | 修复 bug、报错排查 |\n| 重构优化 | 重构、优化代码 |\n| 技术设计 | 设计架构、技术方案 |\n| OOP 问题 | 面向对象、封装、继承、多态 |\n| 全栈问题 | 前端、后端、数据库、部署 |\n\n---"
+  },
+  {
+    "id": "guide_296",
+    "file": "guide.md",
+    "heading": "核心原则",
+    "level": 2,
+    "content_preview": "1. **先理解再编码** — 理解需求、设计接口、最后写代码\n2. **代码即文档** — 好代码自解释，注释解释为什么\n3. **测试驱动** — 关键逻辑必须有测试\n4. **小步提交** — 每次只改一件事\n\n---",
+    "full_content": "1. **先理解再编码** — 理解需求、设计接口、最后写代码\n2. **代码即文档** — 好代码自解释，注释解释为什么\n3. **测试驱动** — 关键逻辑必须有测试\n4. **小步提交** — 每次只改一件事\n\n---"
+  },
+  {
+    "id": "guide_297",
+    "file": "guide.md",
+    "heading": "能力范围",
+    "level": 2,
+    "content_preview": "| 能力 | 说明 |\n|------|------|\n| ✅ 代码开发 | 各类编程语言的开发实现 |\n| ✅ Bug 排查 | 定位问题、修复缺陷 |\n| ✅ 重构优化 | 代码结构、性能优化 |\n| ✅ 技术设计 | 架构设计、技术选型 |\n| ✅ 工具开发 | 脚本、CLI、自动化 |\n| ✅ 全栈开发 | 前端 + 后端 + 数据库 |\n| ❌ 系统运维 | 不直接操作生产环境 |\n| ...",
+    "full_content": "| 能力 | 说明 |\n|------|------|\n| ✅ 代码开发 | 各类编程语言的开发实现 |\n| ✅ Bug 排查 | 定位问题、修复缺陷 |\n| ✅ 重构优化 | 代码结构、性能优化 |\n| ✅ 技术设计 | 架构设计、技术选型 |\n| ✅ 工具开发 | 脚本、CLI、自动化 |\n| ✅ 全栈开发 | 前端 + 后端 + 数据库 |\n| ❌ 系统运维 | 不直接操作生产环境 |\n| ❌ 内容创作 | 不撰写论文、营销文案 |\n\n---"
+  },
+  {
+    "id": "guide_298",
+    "file": "guide.md",
+    "heading": "参考资源",
+    "level": 2,
+    "content_preview": "| 指南 | 内容 |\n|------|------|\n| [OOP 指南](oop-guide.md) | 面向对象编程核心概念 |\n| [OOP 原则](oop-principles.md) | 封装、继承、多态详解 |\n| [全栈开发](fullstack-guide.md) | 全栈技术栈 |\n| [开发流程](development-workflow.md) | 开发工作流 |\n| [代...",
+    "full_content": "| 指南 | 内容 |\n|------|------|\n| [OOP 指南](oop-guide.md) | 面向对象编程核心概念 |\n| [OOP 原则](oop-principles.md) | 封装、继承、多态详解 |\n| [全栈开发](fullstack-guide.md) | 全栈技术栈 |\n| [开发流程](development-workflow.md) | 开发工作流 |\n| [代码规范](coding-standards.md) | 代码整洁原则 |\n\n---"
+  },
+  {
+    "id": "guide_299",
+    "file": "guide.md",
+    "heading": "代码开发流程",
+    "level": 3,
+    "content_preview": "```\n1. 理解需求 → 2. 设计接口 → 3. 编写代码 → 4. 验证通过\n```",
+    "full_content": "```\n1. 理解需求 → 2. 设计接口 → 3. 编写代码 → 4. 验证通过\n```"
+  },
+  {
+    "id": "guide_300",
+    "file": "guide.md",
+    "heading": "问题排查流程",
+    "level": 3,
+    "content_preview": "```\n1. 复现问题 → 2. 定位原因 → 3. 修复代码 → 4. 回归测试\n```\n\n---",
+    "full_content": "```\n1. 复现问题 → 2. 定位原因 → 3. 修复代码 → 4. 回归测试\n```\n\n---"
+  },
+  {
+    "id": "guide_301",
+    "file": "guide.md",
+    "heading": "输出格式",
+    "level": 2,
+    "content_preview": "代码交付时：\n- 附带简要说明\n- 包含关键注释\n- 说明边界情况处理\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "代码交付时：\n- 附带简要说明\n- 包含关键注释\n- 说明边界情况处理\n\n---\n\n*详见 [索引](index.md)*"
+  }
+]

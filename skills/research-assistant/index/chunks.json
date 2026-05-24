@@ -1,0 +1,1642 @@
+[
+  {
+    "id": "数据结构_000",
+    "file": "数据结构.md",
+    "heading": "研究助手 - 项目数据结构说明",
+    "level": 1,
+    "content_preview": "> 只保留知识库相关字段，删除项目级文件管理字段",
+    "full_content": "> 只保留知识库相关字段，删除项目级文件管理字段"
+  },
+  {
+    "id": "数据结构_001",
+    "file": "数据结构.md",
+    "heading": "元数据结构",
+    "level": 2,
+    "content_preview": "```json\n{\n  \"project_id\": \"项目名称\",\n  \"title\": \"项目标题\",\n  \"created_date\": \"创建日期\",\n  \"status\": \"active\",\n  \"version\": \"v1\",\n  \"description\": \"项目描述\",\n  \"directories\": {\n    \"uploads\": \"uploads/\",\n    \"manu...",
+    "full_content": "```json\n{\n  \"project_id\": \"项目名称\",\n  \"title\": \"项目标题\",\n  \"created_date\": \"创建日期\",\n  \"status\": \"active\",\n  \"version\": \"v1\",\n  \"description\": \"项目描述\",\n  \"directories\": {\n    \"uploads\": \"uploads/\",\n    \"manuscripts\": \"manuscripts/\",\n    \"knowledge\": \"knowledge/\",\n    \"note\": \"knowledge/note/\",\n    \"review\": \"knowledge/review/\",\n    \"search_query\": \"knowledge/search_query/\",\n    \"retrieval_report\": \"knowledge/retrieval_report/\",\n    \"topic\": \"knowledge/topic/\",\n    \"temp\": \"temp/\",\n    \"draft\": \"temp/draft/\",\n    \"skills\": \"skills/\"\n  },\n  \"tags\": [],\n  \"notes\": {},\n  \"knowledge_base\": {},\n  \"updated_at\": \"2026-05-09T10:00:00\"\n}\n```"
+  },
+  {
+    "id": "数据结构_002",
+    "file": "数据结构.md",
+    "heading": "directories 结构",
+    "level": 2,
+    "content_preview": "```json\n{\n  \"directories\": {\n    \"uploads\": \"uploads/\",\n    \"manuscripts\": \"manuscripts/\",\n    \"knowledge\": \"knowledge/\",\n    \"note\": \"knowledge/note/\",\n    \"review\": \"knowledge/review/\",\n    \"search_...",
+    "full_content": "```json\n{\n  \"directories\": {\n    \"uploads\": \"uploads/\",\n    \"manuscripts\": \"manuscripts/\",\n    \"knowledge\": \"knowledge/\",\n    \"note\": \"knowledge/note/\",\n    \"review\": \"knowledge/review/\",\n    \"search_query\": \"knowledge/search_query/\",\n    \"retrieval_report\": \"knowledge/retrieval_report/\",\n    \"topic\": \"knowledge/topic/\",\n    \"temp\": \"temp/\",\n    \"draft\": \"temp/draft/\",\n    \"skills\": \"skills/\"\n  }\n}\n```\n\n| 字段 | 值类型 | 说明 |\n|------|--------|------|\n| uploads | str | 用户上传文档目录 |\n| manuscripts | str | 论文草稿目录 |\n| knowledge | str | 知识库根目录 |\n| note | str | 笔记文件目录 |\n| review | str | 综述文件目录 |\n| search_query | str | 检索条件存放目录 |\n| retrieval_report | str | 检索报告存放目录 |\n| topic | str | topic 子集存放目录 |\n| temp | str | 临时数据目录 |\n| draft | str | 旧版本归档目录 |\n| skills | str | 项目级技能存放目录 |"
+  },
+  {
+    "id": "数据结构_003",
+    "file": "数据结构.md",
+    "heading": "tags 结构",
+    "level": 2,
+    "content_preview": "```json\n[\"AI降重\", \"提示工程\", \"学术写作\"]\n```",
+    "full_content": "```json\n[\"AI降重\", \"提示工程\", \"学术写作\"]\n```"
+  },
+  {
+    "id": "数据结构_004",
+    "file": "数据结构.md",
+    "heading": "notes 结构",
+    "level": 2,
+    "content_preview": "记录笔记文件（Markdown 格式），不上传云端。\n\n```json\n{\n  \"笔记_自传体记忆.md\": {\n    \"local_path\": \"knowledge/note/笔记_自传体记忆.md\",\n    \"created_at\": \"2026-04-16\",\n    \"description\": \"笔记描述\"\n  }\n}\n```\n\n| 字段 | 值类型 | 说明 |\n|------|...",
+    "full_content": "记录笔记文件（Markdown 格式），不上传云端。\n\n```json\n{\n  \"笔记_自传体记忆.md\": {\n    \"local_path\": \"knowledge/note/笔记_自传体记忆.md\",\n    \"created_at\": \"2026-04-16\",\n    \"description\": \"笔记描述\"\n  }\n}\n```\n\n| 字段 | 值类型 | 说明 |\n|------|--------|------|\n| local_path | str | 本地笔记文件路径 |\n| created_at | str | 创建日期 |\n| description | str | 笔记描述 |"
+  },
+  {
+    "id": "数据结构_005",
+    "file": "数据结构.md",
+    "heading": "knowledge_base 结构",
+    "level": 2,
+    "content_preview": "记录知识库索引信息。\n\n```json\n{\n  \"index_file\": \"knowledge/index.json\",\n  \"description\": \"项目知识库索引\",\n  \"created_at\": \"2026-04-01\",\n  \"updated_at\": \"2026-04-16\"\n}\n```\n\n| 字段 | 值类型 | 说明 |\n|------|--------|------|\n|...",
+    "full_content": "记录知识库索引信息。\n\n```json\n{\n  \"index_file\": \"knowledge/index.json\",\n  \"description\": \"项目知识库索引\",\n  \"created_at\": \"2026-04-01\",\n  \"updated_at\": \"2026-04-16\"\n}\n```\n\n| 字段 | 值类型 | 说明 |\n|------|--------|------|\n| index_file | str | 知识库索引文件路径 |\n| description | str | 知识库描述 |\n| created_at | str | 创建日期 |\n| updated_at | str | 更新日期 |"
+  },
+  {
+    "id": "数据结构_006",
+    "file": "数据结构.md",
+    "heading": "自动更新规则",
+    "level": 2,
+    "content_preview": "| 操作 | 更新字段 |\n|------|----------|\n| search 检索后 | knowledge_base.updated_at |\n| summarize 总结后 | knowledge_base.updated_at |\n| manage 导出笔记后 | notes（新增条目）+ knowledge_base.updated_at |\n| synthesize 生成综述后 ...",
+    "full_content": "| 操作 | 更新字段 |\n|------|----------|\n| search 检索后 | knowledge_base.updated_at |\n| summarize 总结后 | knowledge_base.updated_at |\n| manage 导出笔记后 | notes（新增条目）+ knowledge_base.updated_at |\n| synthesize 生成综述后 | knowledge_base.updated_at |\n| version save 保存版本后 | updated_at（全局） |"
+  },
+  {
+    "id": "manage_007",
+    "file": "manage.md",
+    "heading": "知识库管理模块 (Manager)",
+    "level": 1,
+    "content_preview": "Manager 类提供知识库的合并、筛选、保存功能，支持链式调用，方便进行多步操作。",
+    "full_content": "Manager 类提供知识库的合并、筛选、保存功能，支持链式调用，方便进行多步操作。"
+  },
+  {
+    "id": "manage_008",
+    "file": "manage.md",
+    "heading": "我想...",
+    "level": 3,
+    "content_preview": "| 需求 | 方法 |\n|------|------|\n| 合并知识库 | [`merge()`](#1-合并知识库) |\n| 筛选知识库 | [`filter()`](#2-筛选知识库) |\n| 保存知识库 | [`save()`](#3-保存知识库) |",
+    "full_content": "| 需求 | 方法 |\n|------|------|\n| 合并知识库 | [`merge()`](#1-合并知识库) |\n| 筛选知识库 | [`filter()`](#2-筛选知识库) |\n| 保存知识库 | [`save()`](#3-保存知识库) |"
+  },
+  {
+    "id": "manage_009",
+    "file": "manage.md",
+    "heading": "文件说明",
+    "level": 2,
+    "content_preview": "| 文件 | 功能 |\n|------|------|\n| `Manager.py` | 知识库管理主类 |\n\n---",
+    "full_content": "| 文件 | 功能 |\n|------|------|\n| `Manager.py` | 知识库管理主类 |\n\n---"
+  },
+  {
+    "id": "manage_010",
+    "file": "manage.md",
+    "heading": "1. 合并知识库",
+    "level": 3,
+    "content_preview": "```python\nfrom manage.Manager import Manager",
+    "full_content": "```python\nfrom manage.Manager import Manager"
+  },
+  {
+    "id": "manage_011",
+    "file": "manage.md",
+    "heading": "空管理器用于合并（不绑定路径）",
+    "level": 1,
+    "content_preview": "manager = Manager()\nmanager.merge(\"kb1.json\", \"kb2.json\", \"kb3.json\").save(\"merged.json\", \"合并项目\")\n```",
+    "full_content": "manager = Manager()\nmanager.merge(\"kb1.json\", \"kb2.json\", \"kb3.json\").save(\"merged.json\", \"合并项目\")\n```"
+  },
+  {
+    "id": "manage_012",
+    "file": "manage.md",
+    "heading": "2. 筛选知识库",
+    "level": 3,
+    "content_preview": "```python\nfrom manage.Manager import Manager",
+    "full_content": "```python\nfrom manage.Manager import Manager"
+  },
+  {
+    "id": "manage_013",
+    "file": "manage.md",
+    "heading": "初始化时绑定知识库路径",
+    "level": 1,
+    "content_preview": "manager = Manager(\"my_kb.json\")",
+    "full_content": "manager = Manager(\"my_kb.json\")"
+  },
+  {
+    "id": "manage_014",
+    "file": "manage.md",
+    "heading": "筛选后无参保存到绑定的路径",
+    "level": 1,
+    "content_preview": "manager.filter({\n    \"citations_min\": 50,\n    \"types\": [\"📊实证\", \"📖综述\"],\n    \"sort_by\": \"citationCount\",\n    \"limit\": 10\n}).save()\n```",
+    "full_content": "manager.filter({\n    \"citations_min\": 50,\n    \"types\": [\"📊实证\", \"📖综述\"],\n    \"sort_by\": \"citationCount\",\n    \"limit\": 10\n}).save()\n```"
+  },
+  {
+    "id": "manage_015",
+    "file": "manage.md",
+    "heading": "3. 链式调用：合并 → 筛选 → 保存",
+    "level": 3,
+    "content_preview": "```python\nfrom manage.Manager import Manager",
+    "full_content": "```python\nfrom manage.Manager import Manager"
+  },
+  {
+    "id": "manage_016",
+    "file": "manage.md",
+    "heading": "空管理器用于合并",
+    "level": 1,
+    "content_preview": "manager = Manager()\nmanager.merge(\"kb1.json\", \"kb2.json\") \\\n       .filter({\n           \"citations_min\": 50,\n           \"types\": [\"📊实证\", \"📖综述\"],\n           \"sort_by\": \"citationCount\",\n           \"limi...",
+    "full_content": "manager = Manager()\nmanager.merge(\"kb1.json\", \"kb2.json\") \\\n       .filter({\n           \"citations_min\": 50,\n           \"types\": [\"📊实证\", \"📖综述\"],\n           \"sort_by\": \"citationCount\",\n           \"limit\": 20\n       }) \\\n       .save(\"final_kb.json\", \"最终项目\")\n```\n\n---"
+  },
+  {
+    "id": "manage_017",
+    "file": "manage.md",
+    "heading": "`__init__(kb_path=None)`",
+    "level": 3,
+    "content_preview": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `kb_path` | str | None | 知识库文件路径。为 None 时表示空管理器，用于合并操作 |\n\n> **注意**：初始化时绑定 `kb_path`，后续 `save()` 无参时保存到绑定路径。",
+    "full_content": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `kb_path` | str | None | 知识库文件路径。为 None 时表示空管理器，用于合并操作 |\n\n> **注意**：初始化时绑定 `kb_path`，后续 `save()` 无参时保存到绑定路径。"
+  },
+  {
+    "id": "manage_018",
+    "file": "manage.md",
+    "heading": "`merge(*kb_paths, deduplicate=True)`",
+    "level": 3,
+    "content_preview": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `*kb_paths` | str | 必填 | 知识库文件路径（可传入多个） |\n| `deduplicate` | bool | True | 是否全局去重（基于 paperId） |",
+    "full_content": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `*kb_paths` | str | 必填 | 知识库文件路径（可传入多个） |\n| `deduplicate` | bool | True | 是否全局去重（基于 paperId） |"
+  },
+  {
+    "id": "manage_019",
+    "file": "manage.md",
+    "heading": "`filter(conditions)`",
+    "level": 3,
+    "content_preview": "| 参数 | 类型 | 说明 |\n|------|------|------|\n| `conditions` | Dict | 筛选条件字典 |",
+    "full_content": "| 参数 | 类型 | 说明 |\n|------|------|------|\n| `conditions` | Dict | 筛选条件字典 |"
+  },
+  {
+    "id": "manage_020",
+    "file": "manage.md",
+    "heading": "支持的筛选条件",
+    "level": 4,
+    "content_preview": "| 键 | 类型 | 说明 |\n|----|------|------|\n| `year_min` | int | 最小年份 |\n| `year_max` | int | 最大年份 |\n| `citations_min` | int | 最小引用量 |\n| `citations_max` | int | 最大引用量 |\n| `topics` | List[str] | 主题列表（任意匹配） |\n|...",
+    "full_content": "| 键 | 类型 | 说明 |\n|----|------|------|\n| `year_min` | int | 最小年份 |\n| `year_max` | int | 最大年份 |\n| `citations_min` | int | 最小引用量 |\n| `citations_max` | int | 最大引用量 |\n| `topics` | List[str] | 主题列表（任意匹配） |\n| `types` | List[str] | 文献类型列表（如 `[\"📊实证\", \"📖综述\"]`） |\n| `importance` | List[str] | 重要性列表（如 `[\"🔴奠基\", \"🟡重要\"]`） |\n| `venue` | str | 期刊/会议名称（模糊匹配） |\n| `limit` | int | 返回前 N 篇（需与排序配合） |\n| `sort_by` | str | 排序字段（如 `\"citationCount\"`, `\"year\"`） |\n| `sort_desc` | bool | 是否降序（默认 True） |"
+  },
+  {
+    "id": "manage_021",
+    "file": "manage.md",
+    "heading": "`save(output_path=None, project_name=\"\")`",
+    "level": 3,
+    "content_preview": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `output_path` | str | None | 输出文件路径（默认使用绑定的 kb_path） |\n| `project_name` | str | \"\" | 项目名称（会更新到知识库中） |\n\n> **注意**：当通过 `Manager(kb_path=\"...\")` 初始...",
+    "full_content": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `output_path` | str | None | 输出文件路径（默认使用绑定的 kb_path） |\n| `project_name` | str | \"\" | 项目名称（会更新到知识库中） |\n\n> **注意**：当通过 `Manager(kb_path=\"...\")` 初始化时，`save()` 无参保存到绑定路径；当通过 `Manager()` 空初始化时，必须指定 `output_path`。"
+  },
+  {
+    "id": "manage_022",
+    "file": "manage.md",
+    "heading": "`get_kb()`",
+    "level": 3,
+    "content_preview": "返回当前知识库字典",
+    "full_content": "返回当前知识库字典"
+  },
+  {
+    "id": "manage_023",
+    "file": "manage.md",
+    "heading": "`get_papers()`",
+    "level": 3,
+    "content_preview": "返回当前论文列表\n\n---",
+    "full_content": "返回当前论文列表\n\n---"
+  },
+  {
+    "id": "manage_024",
+    "file": "manage.md",
+    "heading": "合并知识库",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "manage_025",
+    "file": "manage.md",
+    "heading": "合并多个知识库（空管理器，必须指定输出路径）",
+    "level": 1,
+    "content_preview": "python3 Manager.py merge \\\n    --inputs kb1.json,kb2.json,kb3.json \\\n    --output merged.json\n```",
+    "full_content": "python3 Manager.py merge \\\n    --inputs kb1.json,kb2.json,kb3.json \\\n    --output merged.json\n```"
+  },
+  {
+    "id": "manage_026",
+    "file": "manage.md",
+    "heading": "筛选知识库",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "manage_027",
+    "file": "manage.md",
+    "heading": "方式1: 使用命令行参数（绑定到输入路径，无参保存）",
+    "level": 1,
+    "content_preview": "python3 Manager.py filter \\\n    --kb-path my_kb.json \\\n    --output filtered.json \\\n    --citations-min 50 \\\n    --types \"📊实证,📖综述\" \\\n    --sort-by citationCount \\\n    --limit 10",
+    "full_content": "python3 Manager.py filter \\\n    --kb-path my_kb.json \\\n    --output filtered.json \\\n    --citations-min 50 \\\n    --types \"📊实证,📖综述\" \\\n    --sort-by citationCount \\\n    --limit 10"
+  },
+  {
+    "id": "manage_028",
+    "file": "manage.md",
+    "heading": "方式2: 使用筛选条件JSON文件",
+    "level": 1,
+    "content_preview": "python3 Manager.py filter \\\n    --kb-path my_kb.json \\\n    --output filtered.json \\\n    --conditions conditions.json\n```",
+    "full_content": "python3 Manager.py filter \\\n    --kb-path my_kb.json \\\n    --output filtered.json \\\n    --conditions conditions.json\n```"
+  },
+  {
+    "id": "manage_029",
+    "file": "manage.md",
+    "heading": "查看知识库信息",
+    "level": 3,
+    "content_preview": "```bash\npython3 Manager.py info \\\n    --kb-path my_kb.json\n```",
+    "full_content": "```bash\npython3 Manager.py info \\\n    --kb-path my_kb.json\n```"
+  },
+  {
+    "id": "manage_030",
+    "file": "manage.md",
+    "heading": "命令参数",
+    "level": 3,
+    "content_preview": "| 命令 | 参数 | 说明 |\n|------|------|------|\n| `merge` | `--inputs` | 输入知识库文件（逗号分隔） |\n| `merge` | `--output` | 输出文件路径 |\n| `merge` | `--no-deduplicate` | 不去重 |\n| `filter` | `--kb-path` | 输入知识库文件 |\n| `filter...",
+    "full_content": "| 命令 | 参数 | 说明 |\n|------|------|------|\n| `merge` | `--inputs` | 输入知识库文件（逗号分隔） |\n| `merge` | `--output` | 输出文件路径 |\n| `merge` | `--no-deduplicate` | 不去重 |\n| `filter` | `--kb-path` | 输入知识库文件 |\n| `filter` | `--output` | 输出文件路径 |\n| `filter` | `--conditions` | 筛选条件JSON文件 |\n| `filter` | `--year-min` | 最小年份 |\n| `filter` | `--year-max` | 最大年份 |\n| `filter` | `--citations-min` | 最小引用量 |\n| `filter` | `--citations-max` | 最大引用量 |\n| `filter` | `--types` | 文献类型（逗号分隔） |\n| `filter` | `--importance` | 重要性（逗号分隔） |\n| `filter` | `--venue` | 期刊/会议名称 |\n| `filter` | `--sort-by` | 排序字段 |\n| `filter` | `--sort-asc` | 升序排序（默认降序） |\n| `filter` | `--limit` | 返回数量限制 |\n| `info` | `--kb-path` | 知识库文件路径 |\n\n---"
+  },
+  {
+    "id": "manage_031",
+    "file": "manage.md",
+    "heading": "知识库 JSON 结构",
+    "level": 2,
+    "content_preview": "```json\n{\n  \"version\": \"1.0.0\",\n  \"project\": \"项目名称\",\n  \"created_at\": \"2026-04-13T03:33:00\",\n  \"updated_at\": \"2026-04-13T03:33:00\",\n  \"statistics\": {\n    \"total_count\": 38,\n    \"total_citations\": 12345...",
+    "full_content": "```json\n{\n  \"version\": \"1.0.0\",\n  \"project\": \"项目名称\",\n  \"created_at\": \"2026-04-13T03:33:00\",\n  \"updated_at\": \"2026-04-13T03:33:00\",\n  \"statistics\": {\n    \"total_count\": 38,\n    \"total_citations\": 12345,\n    \"foundation_count\": 2,\n    \"important_count\": 6,\n    \"general_count\": 30,\n    \"empirical_count\": 30,\n    \"review_count\": 4,\n    \"theory_count\": 0\n  },\n  \"papers\": [\n    {\n      \"paperId\": \"ff9c8a3d364d027da407dd772be53cb237a349f2\",\n      \"authors\": [\"张敏\", \"李华\", \"王伟\"],\n      \"year\": 2022,\n      \"title\": \"怀旧技术在降低老年人压力水平中的应用效果：系统综述\",\n      \"venue\": \"中国老年学杂志\",\n      \"volume\": \"42\",\n      \"issue\": \"5\",\n      \"pages\": \"1123-1128\",\n      \"doi\": \"10.3969/j.issn.1005-9202.2022.05.032\",\n      \"url\": \"https://example.com/paper_001\",\n      \"abstract\": \"目的：系统评价怀旧技术对降低老年人压力水平的效果。...\",\n      \"topic\": [\"怀旧技术\", \"老年人\", \"压力缓解\"],\n      \"citationCount\": 45,\n      \"labels\": {\n        \"type\": \"📖综述\",\n        \"importance\": \"🔴奠基文献\",\n        \"JCR\": \"\"\n      },\n      \"notes\": {\n        \"研究问题\": \"...\",\n        \"研究结果\": \"...\",\n        \"研究展望\": \"...\"\n      }\n    }\n  ]\n}\n```\n\n---"
+  },
+  {
+    "id": "manage_032",
+    "file": "manage.md",
+    "heading": "版本历史",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 2.1.0 | 2026-04-22 | 统一风格：初始化时绑定知识库路径，save() 无参保存到绑定路径 |\n| 2.0.0 | 2026-04-14 | 重构为独立 Manager 类 |",
+    "full_content": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 2.1.0 | 2026-04-22 | 统一风格：初始化时绑定知识库路径，save() 无参保存到绑定路径 |\n| 2.0.0 | 2026-04-14 | 重构为独立 Manager 类 |"
+  },
+  {
+    "id": "检索报告模板_033",
+    "file": "检索报告模板.md",
+    "heading": "**检索概况**",
+    "level": 2,
+    "content_preview": "- 关键词\n- 筛选标准\n- 搜索过程\n- 搜索引擎\n- 文献最终数量",
+    "full_content": "- 关键词\n- 筛选标准\n- 搜索过程\n- 搜索引擎\n- 文献最终数量"
+  },
+  {
+    "id": "检索报告模板_034",
+    "file": "检索报告模板.md",
+    "heading": "主题分布",
+    "level": 3,
+    "content_preview": "- 适用于多个主题）",
+    "full_content": "- 适用于多个主题）"
+  },
+  {
+    "id": "检索报告模板_035",
+    "file": "检索报告模板.md",
+    "heading": "年份分布",
+    "level": 3,
+    "content_preview": "- 年份：>10年、5-10年、3-5年、3年内",
+    "full_content": "- 年份：>10年、5-10年、3-5年、3年内"
+  },
+  {
+    "id": "检索报告模板_036",
+    "file": "检索报告模板.md",
+    "heading": "主要作者",
+    "level": 3,
+    "content_preview": "- 主要作者",
+    "full_content": "- 主要作者"
+  },
+  {
+    "id": "检索报告模板_037",
+    "file": "检索报告模板.md",
+    "heading": "主要期刊",
+    "level": 3,
+    "content_preview": "- 主要期刊",
+    "full_content": "- 主要期刊"
+  },
+  {
+    "id": "检索报告模板_038",
+    "file": "检索报告模板.md",
+    "heading": "**高引用文献（APA 7th格式）**",
+    "level": 2,
+    "content_preview": "- 按照引用数排序，列出前30篇",
+    "full_content": "- 按照引用数排序，列出前30篇"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_039",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "Guide to Writing a Research Status Review (研究现状撰写指南)",
+    "level": 1,
+    "content_preview": "> 适用场景：学位论文\"国内外研究现状\"章节、项目申请书的文献综述、研究背景章节\n> 版本: v3.0 | 更新: 2026-05-15\n> 关联指南: [Guide_to_Writing_a_Literature_Review.md](./Guide_to_Writing_a_Literature_Review.md)（通用写作方法）\n\n---",
+    "full_content": "> 适用场景：学位论文\"国内外研究现状\"章节、项目申请书的文献综述、研究背景章节\n> 版本: v3.0 | 更新: 2026-05-15\n> 关联指南: [Guide_to_Writing_a_Literature_Review.md](./Guide_to_Writing_a_Literature_Review.md)（通用写作方法）\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_040",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "使用说明",
+    "level": 2,
+    "content_preview": "本指南聚焦\"研究现状\"的**特殊性**。通用写作方法（如何检索、如何阅读、如何引用等）请参阅关联指南。\n\n| 章节 | 内容 | 目标 |\n|------|------|------|\n| **第1章** | 研究现状与文献综述的区别 | 明确何时用研究现状 |\n| **第2章** | 核心结构——问题演进树 | 掌握\"四层递进\"写法 |\n| **第3章** | 整体结构模板 | 搭建完整框架 |...",
+    "full_content": "本指南聚焦\"研究现状\"的**特殊性**。通用写作方法（如何检索、如何阅读、如何引用等）请参阅关联指南。\n\n| 章节 | 内容 | 目标 |\n|------|------|------|\n| **第1章** | 研究现状与文献综述的区别 | 明确何时用研究现状 |\n| **第2章** | 核心结构——问题演进树 | 掌握\"四层递进\"写法 |\n| **第3章** | 整体结构模板 | 搭建完整框架 |\n| **第4章** | 整合应用 | 灵活使用两种写法 |\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_041",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "1.1 什么是研究现状",
+    "level": 3,
+    "content_preview": "\"研究现状\"是学术写作中一种**特殊的文献综述形式**，常见于：\n- 学位论文第2章（文献综述/研究现状）\n- 科研项目申请书的\"国内外研究现状\"\n- 期刊论文引言末尾的\"研究背景\"",
+    "full_content": "\"研究现状\"是学术写作中一种**特殊的文献综述形式**，常见于：\n- 学位论文第2章（文献综述/研究现状）\n- 科研项目申请书的\"国内外研究现状\"\n- 期刊论文引言末尾的\"研究背景\""
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_042",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "1.2 核心区别",
+    "level": 3,
+    "content_preview": "| 维度 | 一般文献综述 | 研究现状 |\n|------|-------------|----------|\n| **核心目标** | 全面评价某一领域的研究 | 展示特定研究问题的**提出与演进过程** |\n| **组织结构** | 按主题/方法/理论分类 | 按**问题的时间演进脉络**（树状结构） |\n| **重点** | 批判性综合现有研究 | 追踪\"谁提出了什么问题→谁修正了→进展成...",
+    "full_content": "| 维度 | 一般文献综述 | 研究现状 |\n|------|-------------|----------|\n| **核心目标** | 全面评价某一领域的研究 | 展示特定研究问题的**提出与演进过程** |\n| **组织结构** | 按主题/方法/理论分类 | 按**问题的时间演进脉络**（树状结构） |\n| **重点** | 批判性综合现有研究 | 追踪\"谁提出了什么问题→谁修正了→进展成什么\" |\n| **篇幅** | 可独立成文（数千至数万字） | 通常是论文的一个章节（2000-5000字） |\n| **结论** | 总结研究空白，提出未来方向 | **自然引出本研究的必要性和创新点** |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_043",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "1.3 核心判断：何时用研究现状？",
+    "level": 3,
+    "content_preview": "**用研究现状，当：**\n- 需要展示一个研究问题的**历史演进**\n- 需要让读者理解\"这个问题是如何发展到今天的\"\n- 需要自然过渡到\"因此我的研究是必要的\"\n\n**用一般文献综述，当：**\n- 需要全面评价某一领域的**当前状态**\n- 需要按主题/方法/理论**分类整理**文献\n- 需要作为**独立文本**存在（如发表综述论文）\n\n---",
+    "full_content": "**用研究现状，当：**\n- 需要展示一个研究问题的**历史演进**\n- 需要让读者理解\"这个问题是如何发展到今天的\"\n- 需要自然过渡到\"因此我的研究是必要的\"\n\n**用一般文献综述，当：**\n- 需要全面评价某一领域的**当前状态**\n- 需要按主题/方法/理论**分类整理**文献\n- 需要作为**独立文本**存在（如发表综述论文）\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_044",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "2.1 树状结构模板",
+    "level": 3,
+    "content_preview": "对于每个核心研究问题，必须按照以下**四层递进**结构展开：\n\n```",
+    "full_content": "对于每个核心研究问题，必须按照以下**四层递进**结构展开：\n\n```"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_045",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "最早提出",
+    "level": 3,
+    "content_preview": "[作者A, 年份] 最先提出了什么问题？\n→ 做了什么研究？\n→ 发现了什么现象？\n→ 这一现象/概念被命名为什么？",
+    "full_content": "[作者A, 年份] 最先提出了什么问题？\n→ 做了什么研究？\n→ 发现了什么现象？\n→ 这一现象/概念被命名为什么？"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_046",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "质疑与修正",
+    "level": 3,
+    "content_preview": "[作者B, 年份] 认为[作者A]的研究存在什么问题？\n→ 做了什么修正/改进？\n→ 发现了什么新的现象/矛盾？\n→ 问题进展成了什么状态？",
+    "full_content": "[作者B, 年份] 认为[作者A]的研究存在什么问题？\n→ 做了什么修正/改进？\n→ 发现了什么新的现象/矛盾？\n→ 问题进展成了什么状态？"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_047",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "补充与发展",
+    "level": 3,
+    "content_preview": "[作者C, 年份] 在[作者B]的基础上做了什么补充？\n→ 提出了什么新理论/模型/方法？\n→ 将研究拓展到了什么新领域/人群/情境？",
+    "full_content": "[作者C, 年份] 在[作者B]的基础上做了什么补充？\n→ 提出了什么新理论/模型/方法？\n→ 将研究拓展到了什么新领域/人群/情境？"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_048",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "最新进展与当前争议",
+    "level": 3,
+    "content_preview": "[作者D, 年份] 目前的研究已经进展到了什么状态？\n→ 还有什么未解决的争议？\n→ 研究空白是什么？\n```",
+    "full_content": "[作者D, 年份] 目前的研究已经进展到了什么状态？\n→ 还有什么未解决的争议？\n→ 研究空白是什么？\n```"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_049",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "2.2 关键写作原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 | 示例 |\n|------|------|------|\n| **\"谁\"优先** | 每句开头先提作者和年份 | \"Kwan等（2010）首次发现...\" |\n| **动词精准** | 用具体动词描述研究动作 | \"提出\"\"修正\"\"补充\"\"拓展\"\"质疑\"\"验证\" |\n| **因果链清晰** | 明确展示问题如何演进 | \"A的发现激发了B的质疑，B通过...方法发现...\" ...",
+    "full_content": "| 原则 | 说明 | 示例 |\n|------|------|------|\n| **\"谁\"优先** | 每句开头先提作者和年份 | \"Kwan等（2010）首次发现...\" |\n| **动词精准** | 用具体动词描述研究动作 | \"提出\"\"修正\"\"补充\"\"拓展\"\"质疑\"\"验证\" |\n| **因果链清晰** | 明确展示问题如何演进 | \"A的发现激发了B的质疑，B通过...方法发现...\" |\n| **空白明确** | 每个问题结尾必须指出空白 | \"目前尚不清楚...\"\"这一问题在...情境下仍未得到验证\" |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_050",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "2.3 完整示例（以\"治疗偏好\"为例）",
+    "level": 3,
+    "content_preview": "**最早提出**：\n> \"Kwan等（2010）在抑郁症治疗研究中首次系统考察了治疗偏好对疗效的影响。他们将被试随机分配至偏好治疗组或非偏好治疗组，发现当患者被分配到与其偏好一致的治疗时，治疗参与度显著提高，临床改善也更明显。这一发现挑战了'疗法均等'假设，提示患者偏好可能是疗效差异的重要来源。\"\n\n**质疑与修正**：\n> \"然而，Williams等（2016）基于14,587名患者的全国横断面...",
+    "full_content": "**最早提出**：\n> \"Kwan等（2010）在抑郁症治疗研究中首次系统考察了治疗偏好对疗效的影响。他们将被试随机分配至偏好治疗组或非偏好治疗组，发现当患者被分配到与其偏好一致的治疗时，治疗参与度显著提高，临床改善也更明显。这一发现挑战了'疗法均等'假设，提示患者偏好可能是疗效差异的重要来源。\"\n\n**质疑与修正**：\n> \"然而，Williams等（2016）基于14,587名患者的全国横断面调查对此提出了质疑。他们发现，虽然大多数患者有明确治疗偏好，但偏好满足与自我报告结果之间的关联并不稳定，可能受治疗设置、疾病严重程度等调节变量影响。这一发现促使研究者从'偏好是否重要'转向'偏好何时重要'。\"\n\n**补充与发展**：\n> \"为将偏好研究从粗粒度走向精细化，Cooper和Norcross（2015）开发了Cooper-Norcross治疗偏好量表（C-NIP），将偏好从单一维度扩展为四个维度。随后，Cooper等（2019）比较了普通公众与心理健康专业人员的治疗师特征偏好，发现两组在指导性维度上存在显著差异。\"\n\n**最新进展**：\n> \"目前，该领域正从'是否匹配'转向'如何匹配'以及'匹配的边界条件'研究。Marziliano等（2021）在晚期癌症患者中发现，偏好匹配效应具有情境依赖性。未来需探索动态匹配策略和跨文化差异。\"\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_051",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "3.1 完整框架",
+    "level": 3,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_052",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "摘要",
+    "level": 2,
+    "content_preview": "- 研究背景的一句话概述\n- 本文梳理的核心问题数量\n- 核心发现的一句话概括\n- 指出的研究空白",
+    "full_content": "- 研究背景的一句话概述\n- 本文梳理的核心问题数量\n- 核心发现的一句话概括\n- 指出的研究空白"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_053",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "研究背景",
+    "level": 3,
+    "content_preview": "（1-2段，从宏观到微观，说明该领域为什么重要）",
+    "full_content": "（1-2段，从宏观到微观，说明该领域为什么重要）"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_054",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "综述目的",
+    "level": 3,
+    "content_preview": "（明确本文要回答什么问题，涵盖什么范围，不涵盖什么）",
+    "full_content": "（明确本文要回答什么问题，涵盖什么范围，不涵盖什么）"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_055",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "研究问题",
+    "level": 2,
+    "content_preview": "（列出3-7个核心问题，每个问题一句话）\n  - 问题1：XXXXXXXXX如何影响YYYYYYYYY？\n  - 问题2：XXXXXXXXX如何作用于YYYYYYYYY？\n  - 问题3：如何根据XXXXXXXXX实现YYYYYYYYY？",
+    "full_content": "（列出3-7个核心问题，每个问题一句话）\n  - 问题1：XXXXXXXXX如何影响YYYYYYYYY？\n  - 问题2：XXXXXXXXX如何作用于YYYYYYYYY？\n  - 问题3：如何根据XXXXXXXXX实现YYYYYYYYY？"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_056",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "问题1：XXXX的提出与演进",
+    "level": 3,
+    "content_preview": "（按\"最早提出→质疑修正→补充发展→最新进展\"四层展开）",
+    "full_content": "（按\"最早提出→质疑修正→补充发展→最新进展\"四层展开）"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_057",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "问题2：XXXX的提出与演进",
+    "level": 3,
+    "content_preview": "（同上）",
+    "full_content": "（同上）"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_058",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "展望",
+    "level": 2,
+    "content_preview": "（基于上述空白，提出未来研究方向，**最后一段自然引出自身研究**）",
+    "full_content": "（基于上述空白，提出未来研究方向，**最后一段自然引出自身研究**）"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_059",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "参考文献",
+    "level": 2,
+    "content_preview": "（APA 7th格式，按字母顺序排列）\n```",
+    "full_content": "（APA 7th格式，按字母顺序排列）\n```"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_060",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "摘要（200-300字）",
+    "level": 4,
+    "content_preview": "**四句话结构**：\n1. **背景句**：XXX领域近年来受到广泛关注...\n2. **目的句**：本文系统梳理了该领域N个核心问题的研究现状...\n3. **发现句**：现有研究已证实...，但仍存在...争议/空白...\n4. **结论句**：未来研究应聚焦于...（自然引出本研究）",
+    "full_content": "**四句话结构**：\n1. **背景句**：XXX领域近年来受到广泛关注...\n2. **目的句**：本文系统梳理了该领域N个核心问题的研究现状...\n3. **发现句**：现有研究已证实...，但仍存在...争议/空白...\n4. **结论句**：未来研究应聚焦于...（自然引出本研究）"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_061",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "研究问题",
+    "level": 4,
+    "content_preview": "列出**3-7个核心问题**，每个问题格式：\n> \"问题N：XXXXXXXXX如何影响/预测/调节YYYYYYYYY？\"\n\n**示例**：\n- 问题1：患者治疗偏好如何影响治疗参与度和疗效？\n- 问题2：治疗期待（结果预期）如何作用于治疗过程与结果？\n- 问题3：如何根据患者特征实现个性化治疗匹配？",
+    "full_content": "列出**3-7个核心问题**，每个问题格式：\n> \"问题N：XXXXXXXXX如何影响/预测/调节YYYYYYYYY？\"\n\n**示例**：\n- 问题1：患者治疗偏好如何影响治疗参与度和疗效？\n- 问题2：治疗期待（结果预期）如何作用于治疗过程与结果？\n- 问题3：如何根据患者特征实现个性化治疗匹配？"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_062",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "国内外研究现状（核心章节，占全文70%篇幅）",
+    "level": 4,
+    "content_preview": "每个问题按**四层递进**展开（见第2章）。",
+    "full_content": "每个问题按**四层递进**展开（见第2章）。"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_063",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "展望（必须自然引出自身研究）",
+    "level": 4,
+    "content_preview": "**写法**：\n1. 总结当前研究空白（2-3点）\n2. 提出未来研究方向（3-5点）\n3. **关键：最后一段必须自然引出您的研究**\n\n**示例**：\n> \"综上所述，现有研究已证实治疗偏好匹配能显著提升治疗参与度，但对偏好动态变化、数字干预环境中的偏好机制、以及中国文化背景下患者治疗偏好的研究仍显不足。本研究旨在通过大样本临床数据（n=2631），首次在中国患者中探讨CFPPS量表与治疗偏好...",
+    "full_content": "**写法**：\n1. 总结当前研究空白（2-3点）\n2. 提出未来研究方向（3-5点）\n3. **关键：最后一段必须自然引出您的研究**\n\n**示例**：\n> \"综上所述，现有研究已证实治疗偏好匹配能显著提升治疗参与度，但对偏好动态变化、数字干预环境中的偏好机制、以及中国文化背景下患者治疗偏好的研究仍显不足。本研究旨在通过大样本临床数据（n=2631），首次在中国患者中探讨CFPPS量表与治疗偏好/期待的关系，以期为个性化心理治疗匹配提供本土化实证依据。\"\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_064",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "4.1 两种写法如何结合",
+    "level": 3,
+    "content_preview": "| 场景 | 推荐结构 |\n|------|----------|\n| **学位论文** | 第2章标题为\"文献综述\"，内部按研究现状的\"问题演进树\"组织 |\n| **期刊论文** | 引言中嵌入小型研究现状（2-3个问题的演进），主体是实证研究 |\n| **项目申请书** | \"国内外研究现状\"章节严格按研究现状的树状结构撰写 |",
+    "full_content": "| 场景 | 推荐结构 |\n|------|----------|\n| **学位论文** | 第2章标题为\"文献综述\"，内部按研究现状的\"问题演进树\"组织 |\n| **期刊论文** | 引言中嵌入小型研究现状（2-3个问题的演进），主体是实证研究 |\n| **项目申请书** | \"国内外研究现状\"章节严格按研究现状的树状结构撰写 |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_065",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "4.2 常见问题（研究现状特有）",
+    "level": 3,
+    "content_preview": "| 问题 | 表现 | 解决方法 |\n|------|------|----------|\n| **只有\"提出\"没有\"演进\"** | \"A研究了X，B研究了Y，C研究了Z\" | 用\"然而\"\"在此基础上\"\"随后\"等连接词展示演进 |\n| **缺少\"质疑\"环节** | 文献之间没有对话关系 | 明确展示谁反对谁、谁修正了谁 |\n| **问题边界模糊** | 一个问题写了5页，涵盖无数子话题 | 每个问...",
+    "full_content": "| 问题 | 表现 | 解决方法 |\n|------|------|----------|\n| **只有\"提出\"没有\"演进\"** | \"A研究了X，B研究了Y，C研究了Z\" | 用\"然而\"\"在此基础上\"\"随后\"等连接词展示演进 |\n| **缺少\"质疑\"环节** | 文献之间没有对话关系 | 明确展示谁反对谁、谁修正了谁 |\n| **问题边界模糊** | 一个问题写了5页，涵盖无数子话题 | 每个问题聚焦单一核心变量或关系 |\n| **引用缺失** | 描述研究发现但不说谁做的 | 每句核心发现必须标注（作者, 年份） |\n| **罗列无分析** | \"A发现X，B发现Y\" | 合并同类发现，提炼共同趋势，指出矛盾 |\n| **结尾突兀** | 综述结束，但没有引出自身研究 | 最后一段必须过渡到\"本研究将...\" |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_066",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "4.3 动词快速参考",
+    "level": 3,
+    "content_preview": "| 阶段 | 推荐动词 |\n|------|----------|\n| **最早提出** | 首次发现、率先提出、开创了、奠定了基础 |\n| **质疑修正** | 对此提出质疑、挑战了、修正了、完善了、补充了 |\n| **补充发展** | 在此基础上、进一步发现、拓展到、深化了、细化了 |\n| **最新进展** | 目前、近年来、最近、当前争议聚焦于、尚未明确 |",
+    "full_content": "| 阶段 | 推荐动词 |\n|------|----------|\n| **最早提出** | 首次发现、率先提出、开创了、奠定了基础 |\n| **质疑修正** | 对此提出质疑、挑战了、修正了、完善了、补充了 |\n| **补充发展** | 在此基础上、进一步发现、拓展到、深化了、细化了 |\n| **最新进展** | 目前、近年来、最近、当前争议聚焦于、尚未明确 |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_067",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "4.4 质量检查清单（研究现状专用）",
+    "level": 3,
+    "content_preview": "- [ ] 是否识别了3-7个核心研究问题？\n- [ ] 每个问题是否按\"最早提出→质疑修正→补充发展→最新进展\"四层展开？\n- [ ] 是否展示了文献之间的对话关系（谁反对谁、谁修正了谁）？\n- [ ] 每个问题的结尾是否明确指出了研究空白？\n- [ ] 展望部分是否自然引出了自身研究？\n- [ ] 所有引用是否使用APA格式（作者, 年份）？\n- [ ] 是否存在\"跑马灯式\"简单罗列？\n\n--...",
+    "full_content": "- [ ] 是否识别了3-7个核心研究问题？\n- [ ] 每个问题是否按\"最早提出→质疑修正→补充发展→最新进展\"四层展开？\n- [ ] 是否展示了文献之间的对话关系（谁反对谁、谁修正了谁）？\n- [ ] 每个问题的结尾是否明确指出了研究空白？\n- [ ] 展望部分是否自然引出了自身研究？\n- [ ] 所有引用是否使用APA格式（作者, 年份）？\n- [ ] 是否存在\"跑马灯式\"简单罗列？\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Research_Status_Review_068",
+    "file": "Guide_to_Writing_a_Research_Status_Review.md",
+    "heading": "版本历史",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 更新内容 |\n|------|------|----------|\n| v3.0 | 2026-05-15 | 聚焦研究现状特殊性，删除与通用指南重复内容 |\n| v2.0 | 2026-05-15 | 整合中文期刊发表要求 |\n| v1.0 | 2026-05-15 | 初始版本 |\n\n---\n\n*最后更新: 2026-05-15*",
+    "full_content": "| 版本 | 日期 | 更新内容 |\n|------|------|----------|\n| v3.0 | 2026-05-15 | 聚焦研究现状特殊性，删除与通用指南重复内容 |\n| v2.0 | 2026-05-15 | 整合中文期刊发表要求 |\n| v1.0 | 2026-05-15 | 初始版本 |\n\n---\n\n*最后更新: 2026-05-15*"
+  },
+  {
+    "id": "synthesize_069",
+    "file": "synthesize.md",
+    "heading": "文献综述合成模块 (Synthesizer)",
+    "level": 1,
+    "content_preview": "Synthesizer 类提供两个功能：\n1. **提取结构化笔记**：从 topic JSON 导出结构化 Markdown 笔记（供代理阅读）\n2. **引用检查与修复**：检查 APA 7th 格式、修复 DSAM 引用",
+    "full_content": "Synthesizer 类提供两个功能：\n1. **提取结构化笔记**：从 topic JSON 导出结构化 Markdown 笔记（供代理阅读）\n2. **引用检查与修复**：检查 APA 7th 格式、修复 DSAM 引用"
+  },
+  {
+    "id": "synthesize_070",
+    "file": "synthesize.md",
+    "heading": "我想...",
+    "level": 3,
+    "content_preview": "| 需求 | 方法 |\n|------|------|\n| 从 topic 导出结构化笔记 | [`extract_notes()`](#提取笔记) |\n| 检查参考文献格式 | [`check_references()`](#检查引用) |\n| 修复 DSAM 引用 | [`fix_references()`](#修复引用) |",
+    "full_content": "| 需求 | 方法 |\n|------|------|\n| 从 topic 导出结构化笔记 | [`extract_notes()`](#提取笔记) |\n| 检查参考文献格式 | [`check_references()`](#检查引用) |\n| 修复 DSAM 引用 | [`fix_references()`](#修复引用) |"
+  },
+  {
+    "id": "synthesize_071",
+    "file": "synthesize.md",
+    "heading": "文件说明",
+    "level": 2,
+    "content_preview": "| 文件 | 功能 |\n|------|------|\n| `Synthesizer.py` | 综述合成主类（提取笔记 + 引用检查） |\n| `ReferenceChecker.py` | 参考文献检查与修复类 |\n\n---",
+    "full_content": "| 文件 | 功能 |\n|------|------|\n| `Synthesizer.py` | 综述合成主类（提取笔记 + 引用检查） |\n| `ReferenceChecker.py` | 参考文献检查与修复类 |\n\n---"
+  },
+  {
+    "id": "synthesize_072",
+    "file": "synthesize.md",
+    "heading": "1. 提取结构化笔记",
+    "level": 3,
+    "content_preview": "```python\nfrom synthesize.Synthesizer import Synthesizer\n\nsynthesizer = Synthesizer()\nresult = synthesizer.extract_notes(\"knowledge/topic/治疗期待.json\",\n                                    \"knowledge/not...",
+    "full_content": "```python\nfrom synthesize.Synthesizer import Synthesizer\n\nsynthesizer = Synthesizer()\nresult = synthesizer.extract_notes(\"knowledge/topic/治疗期待.json\",\n                                    \"knowledge/note/笔记_治疗期待.md\")"
+  },
+  {
+    "id": "synthesize_073",
+    "file": "synthesize.md",
+    "heading": "查看结果",
+    "level": 1,
+    "content_preview": "print(f\"导出: {result['output_path']}\")\nprint(f\"文献数: {result['count']}\")\n```\n\n输出格式：\n```markdown",
+    "full_content": "print(f\"导出: {result['output_path']}\")\nprint(f\"文献数: {result['count']}\")\n```\n\n输出格式：\n```markdown"
+  },
+  {
+    "id": "synthesize_074",
+    "file": "synthesize.md",
+    "heading": "治疗期待 — 文献笔记",
+    "level": 1,
+    "content_preview": "> 生成时间: 2026-05-15 18:30\n> 总文献: 137 篇\n\n---",
+    "full_content": "> 生成时间: 2026-05-15 18:30\n> 总文献: 137 篇\n\n---"
+  },
+  {
+    "id": "synthesize_075",
+    "file": "synthesize.md",
+    "heading": "1. 标题",
+    "level": 2,
+    "content_preview": "**作者**: 作者名, et al.  \n**年份**: 2019  \n**期刊**: 期刊名  \n**引用**: 304  \n**标签**: 📊实证 🟡重要文献",
+    "full_content": "**作者**: 作者名, et al.  \n**年份**: 2019  \n**期刊**: 期刊名  \n**引用**: 304  \n**标签**: 📊实证 🟡重要文献"
+  },
+  {
+    "id": "synthesize_076",
+    "file": "synthesize.md",
+    "heading": "研究问题",
+    "level": 3,
+    "content_preview": "...",
+    "full_content": "..."
+  },
+  {
+    "id": "synthesize_077",
+    "file": "synthesize.md",
+    "heading": "研究方法",
+    "level": 3,
+    "content_preview": "...",
+    "full_content": "..."
+  },
+  {
+    "id": "synthesize_078",
+    "file": "synthesize.md",
+    "heading": "研究结果",
+    "level": 3,
+    "content_preview": "...",
+    "full_content": "..."
+  },
+  {
+    "id": "synthesize_079",
+    "file": "synthesize.md",
+    "heading": "研究结论",
+    "level": 3,
+    "content_preview": "...\n\n---\n```",
+    "full_content": "...\n\n---\n```"
+  },
+  {
+    "id": "synthesize_080",
+    "file": "synthesize.md",
+    "heading": "2. 检查参考文献",
+    "level": 3,
+    "content_preview": "```python\nfrom synthesize.Synthesizer import Synthesizer",
+    "full_content": "```python\nfrom synthesize.Synthesizer import Synthesizer"
+  },
+  {
+    "id": "synthesize_081",
+    "file": "synthesize.md",
+    "heading": "检查综述中的引用格式",
+    "level": 1,
+    "content_preview": "results = synthesizer.check_references(\"knowledge/review/综述.md\")\n\nprint(f\"APA 括号引用: {results['apa_parenthetical']}\")\nprint(f\"APA 叙述引用: {results['apa_narrative']}\")\nprint(f\"非 APA 可疑: {results['non_apa_...",
+    "full_content": "results = synthesizer.check_references(\"knowledge/review/综述.md\")\n\nprint(f\"APA 括号引用: {results['apa_parenthetical']}\")\nprint(f\"APA 叙述引用: {results['apa_narrative']}\")\nprint(f\"非 APA 可疑: {results['non_apa_suspect']}\")\n```"
+  },
+  {
+    "id": "synthesize_082",
+    "file": "synthesize.md",
+    "heading": "3. 修复 DSAM 引用",
+    "level": 3,
+    "content_preview": "```python\nfrom synthesize.Synthesizer import Synthesizer",
+    "full_content": "```python\nfrom synthesize.Synthesizer import Synthesizer"
+  },
+  {
+    "id": "synthesize_083",
+    "file": "synthesize.md",
+    "heading": "绑定知识库路径",
+    "level": 1,
+    "content_preview": "synthesizer = Synthesizer(\"knowledge/topic/治疗期待.json\")",
+    "full_content": "synthesizer = Synthesizer(\"knowledge/topic/治疗期待.json\")"
+  },
+  {
+    "id": "synthesize_084",
+    "file": "synthesize.md",
+    "heading": "修复引用",
+    "level": 1,
+    "content_preview": "fix_result = synthesizer.fix_references(\"knowledge/review/综述.md\",\n                                         \"knowledge/review/综述_修复后.md\")\n```\n\n---",
+    "full_content": "fix_result = synthesizer.fix_references(\"knowledge/review/综述.md\",\n                                         \"knowledge/review/综述_修复后.md\")\n```\n\n---"
+  },
+  {
+    "id": "synthesize_085",
+    "file": "synthesize.md",
+    "heading": "提取笔记",
+    "level": 3,
+    "content_preview": "```python\nextract_notes(topic_path, output_path=None)\n```\n\n**参数:**\n- `topic_path`: topic JSON 文件路径（如 `knowledge/topic/治疗期待.json`）\n- `output_path`: 输出 Markdown 文件路径（默认 `knowledge/note/笔记_{主题}.md`）\n\n**返...",
+    "full_content": "```python\nextract_notes(topic_path, output_path=None)\n```\n\n**参数:**\n- `topic_path`: topic JSON 文件路径（如 `knowledge/topic/治疗期待.json`）\n- `output_path`: 输出 Markdown 文件路径（默认 `knowledge/note/笔记_{主题}.md`）\n\n**返回:**\n```json\n{\"success\": true, \"output_path\": \"...\", \"count\": 137}\n```"
+  },
+  {
+    "id": "synthesize_086",
+    "file": "synthesize.md",
+    "heading": "检查参考文献",
+    "level": 3,
+    "content_preview": "```python\ncheck_references(doc_path)\n```\n\n**参数:**\n- `doc_path`: Markdown 文档路径\n\n**返回:**\n```json\n{\n  \"success\": true,\n  \"apa_parenthetical\": 15,\n  \"apa_narrative\": 8,\n  \"non_apa_suspect\": 2,\n  \"non_apa_...",
+    "full_content": "```python\ncheck_references(doc_path)\n```\n\n**参数:**\n- `doc_path`: Markdown 文档路径\n\n**返回:**\n```json\n{\n  \"success\": true,\n  \"apa_parenthetical\": 15,\n  \"apa_narrative\": 8,\n  \"non_apa_suspect\": 2,\n  \"non_apa_examples\": [\"DSAM_0015\", \"[1]\"],\n  \"check_passed\": false\n}\n```"
+  },
+  {
+    "id": "synthesize_087",
+    "file": "synthesize.md",
+    "heading": "修复引用",
+    "level": 3,
+    "content_preview": "```python\nfix_references(doc_path, output_path=None)\n```\n\n> **注意**：需要先绑定知识库路径（初始化时传入），以获取作者和年份信息。\n\n**参数:**\n- `doc_path`: 输入文档路径\n- `output_path`: 输出文档路径（可选，默认覆盖原文件）\n\n---",
+    "full_content": "```python\nfix_references(doc_path, output_path=None)\n```\n\n> **注意**：需要先绑定知识库路径（初始化时传入），以获取作者和年份信息。\n\n**参数:**\n- `doc_path`: 输入文档路径\n- `output_path`: 输出文档路径（可选，默认覆盖原文件）\n\n---"
+  },
+  {
+    "id": "synthesize_088",
+    "file": "synthesize.md",
+    "heading": "提取笔记",
+    "level": 3,
+    "content_preview": "```bash\npython3 Synthesizer.py extract --topic knowledge/topic/治疗期待.json --output knowledge/note/笔记_治疗期待.md\n```",
+    "full_content": "```bash\npython3 Synthesizer.py extract --topic knowledge/topic/治疗期待.json --output knowledge/note/笔记_治疗期待.md\n```"
+  },
+  {
+    "id": "synthesize_089",
+    "file": "synthesize.md",
+    "heading": "检查引用",
+    "level": 3,
+    "content_preview": "```bash\npython3 Synthesizer.py check --doc knowledge/review/综述.md\n```",
+    "full_content": "```bash\npython3 Synthesizer.py check --doc knowledge/review/综述.md\n```"
+  },
+  {
+    "id": "synthesize_090",
+    "file": "synthesize.md",
+    "heading": "修复引用",
+    "level": 3,
+    "content_preview": "```bash\npython3 Synthesizer.py fix --doc knowledge/review/综述.md --kb knowledge/topic/治疗期待.json --output 修复后的.md\n```\n\n---",
+    "full_content": "```bash\npython3 Synthesizer.py fix --doc knowledge/review/综述.md --kb knowledge/topic/治疗期待.json --output 修复后的.md\n```\n\n---"
+  },
+  {
+    "id": "synthesize_091",
+    "file": "synthesize.md",
+    "heading": "版本历史",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 2.0.0 | 2026-05-15 | **重构：删除 `write_review`（综述由代理人工撰写），新增 `extract_notes`（从 topic.json 导出结构化 Markdown），保留 `check_references` 和 `fix_references`。** |\n| 1.1.0 |...",
+    "full_content": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 2.0.0 | 2026-05-15 | **重构：删除 `write_review`（综述由代理人工撰写），新增 `extract_notes`（从 topic.json 导出结构化 Markdown），保留 `check_references` 和 `fix_references`。** |\n| 1.1.0 | 2026-04-22 | 统一风格：初始化时绑定知识库，方法调用时只传文档路径 |\n| 1.0.0 | 2026-04-15 | 初始版本，提供文献综述合成功能 |"
+  },
+  {
+    "id": "summarize_092",
+    "file": "summarize.md",
+    "heading": "文献总结模块 (Summarizer)",
+    "level": 1,
+    "content_preview": "Summarizer 类使用 LLM 分析文献内容，自动添加 labels（分类标签）和 notes（结构化笔记）字段。",
+    "full_content": "Summarizer 类使用 LLM 分析文献内容，自动添加 labels（分类标签）和 notes（结构化笔记）字段。"
+  },
+  {
+    "id": "summarize_093",
+    "file": "summarize.md",
+    "heading": "我想...",
+    "level": 3,
+    "content_preview": "| 需求 | 方法 |\n|------|------|\n| 总结文献 | [`summarize()`](#1-总结文献) |",
+    "full_content": "| 需求 | 方法 |\n|------|------|\n| 总结文献 | [`summarize()`](#1-总结文献) |"
+  },
+  {
+    "id": "summarize_094",
+    "file": "summarize.md",
+    "heading": "文件说明",
+    "level": 2,
+    "content_preview": "| 文件 | 功能 |\n|------|------|\n| `Summarizer.py` | 文献总结主类 |\n\n---",
+    "full_content": "| 文件 | 功能 |\n|------|------|\n| `Summarizer.py` | 文献总结主类 |\n\n---"
+  },
+  {
+    "id": "summarize_095",
+    "file": "summarize.md",
+    "heading": "1. 总结文献",
+    "level": 3,
+    "content_preview": "```python\nfrom summarize.Summarizer import Summarizer\n\nsummarizer = Summarizer(kb_path=\"my_kb.json\")\nkb = summarizer.summarize()\n```\n\n---",
+    "full_content": "```python\nfrom summarize.Summarizer import Summarizer\n\nsummarizer = Summarizer(kb_path=\"my_kb.json\")\nkb = summarizer.summarize()\n```\n\n---"
+  },
+  {
+    "id": "summarize_096",
+    "file": "summarize.md",
+    "heading": "`summarize(progress_interval=10)`",
+    "level": 3,
+    "content_preview": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `progress_interval` | int | 10 | 进度打印间隔 |\n\n> **注意**：`kb_path` 在初始化 `Summarizer(kb_path=\"...\")` 时设置，不在 `summarize()` 方法中传入。\n\n---",
+    "full_content": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `progress_interval` | int | 10 | 进度打印间隔 |\n\n> **注意**：`kb_path` 在初始化 `Summarizer(kb_path=\"...\")` 时设置，不在 `summarize()` 方法中传入。\n\n---"
+  },
+  {
+    "id": "summarize_097",
+    "file": "summarize.md",
+    "heading": "labels 字段",
+    "level": 3,
+    "content_preview": "```python\n{\n    \"type\": \"📊实证\",  # 或 \"📖综述\" / \"💡理论\" / \"📋待分类\"\n    \"importance\": \"🔴奠基文献\",  # 或 \"🟡重要文献\" / \"🔵一般文献\"\n    \"JCR\": \"\"\n}\n```",
+    "full_content": "```python\n{\n    \"type\": \"📊实证\",  # 或 \"📖综述\" / \"💡理论\" / \"📋待分类\"\n    \"importance\": \"🔴奠基文献\",  # 或 \"🟡重要文献\" / \"🔵一般文献\"\n    \"JCR\": \"\"\n}\n```"
+  },
+  {
+    "id": "summarize_098",
+    "file": "summarize.md",
+    "heading": "实证文献",
+    "level": 4,
+    "content_preview": "```python\n{\n    \"研究问题\": \"...\",\n    \"研究方法\": \"...\",\n    \"研究结果\": \"...\",\n    \"研究结论\": \"...\"\n}\n```",
+    "full_content": "```python\n{\n    \"研究问题\": \"...\",\n    \"研究方法\": \"...\",\n    \"研究结果\": \"...\",\n    \"研究结论\": \"...\"\n}\n```"
+  },
+  {
+    "id": "summarize_099",
+    "file": "summarize.md",
+    "heading": "综述文献",
+    "level": 4,
+    "content_preview": "```python\n{\n    \"研究问题\": \"...\",\n    \"研究结果\": \"...\",\n    \"研究展望\": \"...\"\n}\n```",
+    "full_content": "```python\n{\n    \"研究问题\": \"...\",\n    \"研究结果\": \"...\",\n    \"研究展望\": \"...\"\n}\n```"
+  },
+  {
+    "id": "summarize_100",
+    "file": "summarize.md",
+    "heading": "理论文献",
+    "level": 4,
+    "content_preview": "```python\n{\n    \"研究问题\": \"...\",\n    \"理论观点\": \"...\"\n}\n```",
+    "full_content": "```python\n{\n    \"研究问题\": \"...\",\n    \"理论观点\": \"...\"\n}\n```"
+  },
+  {
+    "id": "summarize_101",
+    "file": "summarize.md",
+    "heading": "待分类",
+    "level": 4,
+    "content_preview": "```python\n{\n    \"说明\": \"...\"\n}\n```\n\n---",
+    "full_content": "```python\n{\n    \"说明\": \"...\"\n}\n```\n\n---"
+  },
+  {
+    "id": "summarize_102",
+    "file": "summarize.md",
+    "heading": "总结文献",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "summarize_103",
+    "file": "summarize.md",
+    "heading": "总结文献（初始化时绑定知识库路径）",
+    "level": 1,
+    "content_preview": "python3 Summarizer.py \\\n    --kb-path my_kb.json \\\n    --progress-interval 10\n```",
+    "full_content": "python3 Summarizer.py \\\n    --kb-path my_kb.json \\\n    --progress-interval 10\n```"
+  },
+  {
+    "id": "summarize_104",
+    "file": "summarize.md",
+    "heading": "命令参数",
+    "level": 3,
+    "content_preview": "| 参数 | 说明 |\n|------|------|\n| `--kb-path` | 知识库文件路径（默认: index.json） |\n| `--progress-interval` | 进度打印间隔（默认: 10） |\n| `--use-conversation` | 使用会话模式（默认不使用） |",
+    "full_content": "| 参数 | 说明 |\n|------|------|\n| `--kb-path` | 知识库文件路径（默认: index.json） |\n| `--progress-interval` | 进度打印间隔（默认: 10） |\n| `--use-conversation` | 使用会话模式（默认不使用） |"
+  },
+  {
+    "id": "summarize_105",
+    "file": "summarize.md",
+    "heading": "输出示例",
+    "level": 3,
+    "content_preview": "```bash\n正在总结文献...\n完成! 知识库: my_kb.json\n  论文总数: 30\n  实证文献: 20\n  综述文献: 8\n  理论文献: 2\n```\n\n---",
+    "full_content": "```bash\n正在总结文献...\n完成! 知识库: my_kb.json\n  论文总数: 30\n  实证文献: 20\n  综述文献: 8\n  理论文献: 2\n```\n\n---"
+  },
+  {
+    "id": "summarize_106",
+    "file": "summarize.md",
+    "heading": "LLM 配置",
+    "level": 3,
+    "content_preview": "```python\n{\n    \"base_url\": \"https://ark.cn-beijing.volces.com/api/v3\",\n    \"default_model\": \"deepseek-v3-2-251201\",\n    \"api_key_env\": \"ARK_API_KEY\"\n}\n```",
+    "full_content": "```python\n{\n    \"base_url\": \"https://ark.cn-beijing.volces.com/api/v3\",\n    \"default_model\": \"deepseek-v3-2-251201\",\n    \"api_key_env\": \"ARK_API_KEY\"\n}\n```"
+  },
+  {
+    "id": "summarize_107",
+    "file": "summarize.md",
+    "heading": "环境变量",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "summarize_108",
+    "file": "summarize.md",
+    "heading": "火山引擎方舟",
+    "level": 1,
+    "content_preview": "export ARK_API_KEY=\"your-ark-api-key\"",
+    "full_content": "export ARK_API_KEY=\"your-ark-api-key\""
+  },
+  {
+    "id": "summarize_109",
+    "file": "summarize.md",
+    "heading": "腾讯云 tokenhub",
+    "level": 1,
+    "content_preview": "export TOKENHUB_API_KEY=\"your-tencent-api-key\"\n```\n\n---",
+    "full_content": "export TOKENHUB_API_KEY=\"your-tencent-api-key\"\n```\n\n---"
+  },
+  {
+    "id": "summarize_110",
+    "file": "summarize.md",
+    "heading": "版本历史",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 2.1.0 | 2026-04-22 | 统一风格：初始化时绑定知识库路径，方法调用时不再传知识库路径 |\n| 2.0.0 | 2026-04-14 | 重构为独立 Summarizer 类 |",
+    "full_content": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 2.1.0 | 2026-04-22 | 统一风格：初始化时绑定知识库路径，方法调用时不再传知识库路径 |\n| 2.0.0 | 2026-04-14 | 重构为独立 Summarizer 类 |"
+  },
+  {
+    "id": "workflows_111",
+    "file": "workflows.md",
+    "heading": "research-assistant 核心工作流",
+    "level": 1,
+    "content_preview": "> 研究助手的核心工作流：检索 → 整理 → 分析 → 撰写 → 检查\n\n---",
+    "full_content": "> 研究助手的核心工作流：检索 → 整理 → 分析 → 撰写 → 检查\n\n---"
+  },
+  {
+    "id": "workflows_112",
+    "file": "workflows.md",
+    "heading": "工作流总览",
+    "level": 2,
+    "content_preview": "```\n阶段1：理解 → 阶段2：检索 → 阶段3：阅读 → 阶段4：撰写 → 阶段5：检查\n```\n\n---",
+    "full_content": "```\n阶段1：理解 → 阶段2：检索 → 阶段3：阅读 → 阶段4：撰写 → 阶段5：检查\n```\n\n---"
+  },
+  {
+    "id": "workflows_113",
+    "file": "workflows.md",
+    "heading": "阶段 1：理解",
+    "level": 2,
+    "content_preview": "**输入**：研究问题\n**输出**：明确的研究主题和范围\n\n阅读《文献综述撰写指南》，明确研究问题边界、检索关键词、综述类型\n\n---",
+    "full_content": "**输入**：研究问题\n**输出**：明确的研究主题和范围\n\n阅读《文献综述撰写指南》，明确研究问题边界、检索关键词、综述类型\n\n---"
+  },
+  {
+    "id": "workflows_114",
+    "file": "workflows.md",
+    "heading": "阶段 2：检索",
+    "level": 2,
+    "content_preview": "**输入**：研究主题 + 关键词\n**输出**：knowledge/index.json\n\n| 检查项 | 标准 |\n|--------|------|\n| 论文数量 | ≥ 目标数量的 80% |\n| 时间范围 | 覆盖近 5-10 年 |\n| 引用格式 | 所有论文有完整 APA 信息 |\n\nCLI：`python3 scripts/search/Searcher.py --queries ...",
+    "full_content": "**输入**：研究主题 + 关键词\n**输出**：knowledge/index.json\n\n| 检查项 | 标准 |\n|--------|------|\n| 论文数量 | ≥ 目标数量的 80% |\n| 时间范围 | 覆盖近 5-10 年 |\n| 引用格式 | 所有论文有完整 APA 信息 |\n\nCLI：`python3 scripts/search/Searcher.py --queries queries.json --kb-path knowledge/index.json`\n\n---"
+  },
+  {
+    "id": "workflows_115",
+    "file": "workflows.md",
+    "heading": "阶段 3：阅读",
+    "level": 2,
+    "content_preview": "**输入**：index.json\n**输出**：knowledge/note/笔记_{topic}.md\n\n| 检查项 | 标准 |\n|--------|------|\n| topic 筛选 | Manager.filter() 保存 topic.json |\n| AI 总结 | Summarizer 补充 notes/labels |\n| 笔记导出 | Synthesizer.extract_...",
+    "full_content": "**输入**：index.json\n**输出**：knowledge/note/笔记_{topic}.md\n\n| 检查项 | 标准 |\n|--------|------|\n| topic 筛选 | Manager.filter() 保存 topic.json |\n| AI 总结 | Summarizer 补充 notes/labels |\n| 笔记导出 | Synthesizer.extract_notes() 生成 Markdown |\n| 补充检索 | Exa/Tavily 补充政策/报告/数据 |\n\n---"
+  },
+  {
+    "id": "workflows_116",
+    "file": "workflows.md",
+    "heading": "阶段 4：撰写",
+    "level": 2,
+    "content_preview": "**输入**：笔记.md + 写作指南\n**输出**：knowledge/review/综述.md\n\n代理阅读笔记，参照写作指南模板撰写\n\n---",
+    "full_content": "**输入**：笔记.md + 写作指南\n**输出**：knowledge/review/综述.md\n\n代理阅读笔记，参照写作指南模板撰写\n\n---"
+  },
+  {
+    "id": "workflows_117",
+    "file": "workflows.md",
+    "heading": "阶段 5：检查",
+    "level": 2,
+    "content_preview": "**输入**：综述.md + topic.json\n**输出**：修正后的综述 + 更新的元数据\n\n| 检查项 | 标准 |\n|--------|------|\n| APA 引用 | Synthesizer.check_references() 无错误 |\n| 元数据 | Maintainer 更新时间戳 |\n\n---",
+    "full_content": "**输入**：综述.md + topic.json\n**输出**：修正后的综述 + 更新的元数据\n\n| 检查项 | 标准 |\n|--------|------|\n| APA 引用 | Synthesizer.check_references() 无错误 |\n| 元数据 | Maintainer 更新时间戳 |\n\n---"
+  },
+  {
+    "id": "workflows_118",
+    "file": "workflows.md",
+    "heading": "数据流图",
+    "level": 2,
+    "content_preview": "```\nqueries.json → Searcher → index.json\n                            ↓\n                    Manager.filter → topic.json\n                            ↓\n                    Summarizer → notes/labels\n     ...",
+    "full_content": "```\nqueries.json → Searcher → index.json\n                            ↓\n                    Manager.filter → topic.json\n                            ↓\n                    Summarizer → notes/labels\n                            ↓\n                    Synthesizer → 笔记.md\n                            ↓\n                    补充检索 → Exa/Tavily → 笔记.md\n                            ↓\n                    代理撰写 → 综述.md\n                            ↓\n                    Synthesizer.check → APA 核查\n                            ↓\n                    Maintainer → 元数据更新\n```\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "search_119",
+    "file": "search.md",
+    "heading": "文献检索模块 (Searcher)",
+    "level": 1,
+    "content_preview": "Searcher 类负责从 Semantic Scholar 获取文献数据，支持多主题多轮检索，每轮可单独设置条件。",
+    "full_content": "Searcher 类负责从 Semantic Scholar 获取文献数据，支持多主题多轮检索，每轮可单独设置条件。"
+  },
+  {
+    "id": "search_120",
+    "file": "search.md",
+    "heading": "我想...",
+    "level": 3,
+    "content_preview": "| 需求 | 方法 |\n|------|------|\n| 检索新文献（英文） | [`search()`](#1-检索文献) |\n| 检索新文献（中文） | [CNKI 浏览器自动化](#cnki-中文检索) |\n| 更新已有知识库 | [`update()`](#2-更新知识库元数据) |",
+    "full_content": "| 需求 | 方法 |\n|------|------|\n| 检索新文献（英文） | [`search()`](#1-检索文献) |\n| 检索新文献（中文） | [CNKI 浏览器自动化](#cnki-中文检索) |\n| 更新已有知识库 | [`update()`](#2-更新知识库元数据) |"
+  },
+  {
+    "id": "search_121",
+    "file": "search.md",
+    "heading": "文件说明",
+    "level": 2,
+    "content_preview": "| 文件 | 功能 |\n|------|------|\n| `Searcher.py` | 文献检索主类（英文，Semantic Scholar）|\n| `CNKISearcher.py` | 知网检索主类（中文，浏览器自动化）|\n| `检索报告模板.md` | 检索报告模板 |\n\n---",
+    "full_content": "| 文件 | 功能 |\n|------|------|\n| `Searcher.py` | 文献检索主类（英文，Semantic Scholar）|\n| `CNKISearcher.py` | 知网检索主类（中文，浏览器自动化）|\n| `检索报告模板.md` | 检索报告模板 |\n\n---"
+  },
+  {
+    "id": "search_122",
+    "file": "search.md",
+    "heading": "CNKI 中文检索（浏览器自动化方案）",
+    "level": 2,
+    "content_preview": "> CNKI（中国知网）检索使用**浏览器自动化方案**：\n> 通过 OpenClaw 内置浏览器访问 `search.cnki.com.cn`，抓取渲染后的页面 DOM，解析为标准化文献数据。\n> 不依赖知网 API（KNS8S 接口有反爬限制，直接请求会返回 403）。",
+    "full_content": "> CNKI（中国知网）检索使用**浏览器自动化方案**：\n> 通过 OpenClaw 内置浏览器访问 `search.cnki.com.cn`，抓取渲染后的页面 DOM，解析为标准化文献数据。\n> 不依赖知网 API（KNS8S 接口有反爬限制，直接请求会返回 403）。"
+  },
+  {
+    "id": "search_123",
+    "file": "search.md",
+    "heading": "工作流",
+    "level": 3,
+    "content_preview": "```\nAI 代理 + browser 工具\n    ↓  1. browser.navigate(url)\n    ↓  2. browser.snapshot() → 渲染后的页面文本\nCNKISearcher.parse_snapshot(snapshot_text)\n    ↓  提取标题/作者/期刊/年份/关键词/被引数\nBrowserCNKISearcher.normalize_bat...",
+    "full_content": "```\nAI 代理 + browser 工具\n    ↓  1. browser.navigate(url)\n    ↓  2. browser.snapshot() → 渲染后的页面文本\nCNKISearcher.parse_snapshot(snapshot_text)\n    ↓  提取标题/作者/期刊/年份/关键词/被引数\nBrowserCNKISearcher.normalize_batch()\n    ↓  转为 index.json 标准格式\nBrowserCNKISearcher.merge_to_kb()\n    ↓  写入知识库文件\n```"
+  },
+  {
+    "id": "search_124",
+    "file": "search.md",
+    "heading": "第一步：构造搜索 URL",
+    "level": 3,
+    "content_preview": "```python\nfrom search.CNKISearcher import BrowserCNKISearcher\n\nsearcher = BrowserCNKISearcher(kb_path=\"knowledge/index.json\")\nurl = searcher.build_search_url(\n    keyword=\"深度学习\",   # 搜索关键词\n    order=0...",
+    "full_content": "```python\nfrom search.CNKISearcher import BrowserCNKISearcher\n\nsearcher = BrowserCNKISearcher(kb_path=\"knowledge/index.json\")\nurl = searcher.build_search_url(\n    keyword=\"深度学习\",   # 搜索关键词\n    order=0,              # 0=相关度  1=发表时间  2=被引量\n    page=1,               # 页码\n    match=\"Contains\",    # Contains=模糊  Exact=精确\n)"
+  },
+  {
+    "id": "search_125",
+    "file": "search.md",
+    "heading": "→ https://search.cnki.com.cn/Search/Result?SearchWord=深度学习&Match=Contains&Order=0&Page=1",
+    "level": 1,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "search_126",
+    "file": "search.md",
+    "heading": "第二步：浏览器访问并抓取快照",
+    "level": 3,
+    "content_preview": "在 OpenClaw 中使用 browser 工具：\n\n```",
+    "full_content": "在 OpenClaw 中使用 browser 工具：\n\n```"
+  },
+  {
+    "id": "search_127",
+    "file": "search.md",
+    "heading": "1. 打开搜索结果页",
+    "level": 1,
+    "content_preview": "browser.navigate(targetUrl=\"https://search.cnki.com.cn/Search/Result?SearchWord=深度学习&Match=Contains&Order=0&Page=1\")",
+    "full_content": "browser.navigate(targetUrl=\"https://search.cnki.com.cn/Search/Result?SearchWord=深度学习&Match=Contains&Order=0&Page=1\")"
+  },
+  {
+    "id": "search_128",
+    "file": "search.md",
+    "heading": "2. 等待页面加载完成后获取快照",
+    "level": 1,
+    "content_preview": "browser.snapshot(refs=\"aria\", compact=true, depth=3, maxChars=2000)",
+    "full_content": "browser.snapshot(refs=\"aria\", compact=true, depth=3, maxChars=2000)"
+  },
+  {
+    "id": "search_129",
+    "file": "search.md",
+    "heading": "3. 将 snapshot 返回的原始文本保存为文件（或直接传给 Python）",
+    "level": 1,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "search_130",
+    "file": "search.md",
+    "heading": "第三步：解析快照并写入知识库",
+    "level": 3,
+    "content_preview": "```python\nfrom search.CNKISearcher import BrowserCNKISearcher\n\nsearcher = BrowserCNKISearcher(kb_path=\"knowledge/index.json\")",
+    "full_content": "```python\nfrom search.CNKISearcher import BrowserCNKISearcher\n\nsearcher = BrowserCNKISearcher(kb_path=\"knowledge/index.json\")"
+  },
+  {
+    "id": "search_131",
+    "file": "search.md",
+    "heading": "读取浏览器快照文件",
+    "level": 1,
+    "content_preview": "with open(\"snapshot_cnki.txt\", \"r\", encoding=\"utf-8\") as f:\n    snapshot_text = f.read()",
+    "full_content": "with open(\"snapshot_cnki.txt\", \"r\", encoding=\"utf-8\") as f:\n    snapshot_text = f.read()"
+  },
+  {
+    "id": "search_132",
+    "file": "search.md",
+    "heading": "解析快照，提取文献列表",
+    "level": 1,
+    "content_preview": "results = searcher.parse_snapshot(snapshot_text, topic=\"深度学习\")\nprint(f\"解析到 {len(results)} 条 CNKI 文献\")",
+    "full_content": "results = searcher.parse_snapshot(snapshot_text, topic=\"深度学习\")\nprint(f\"解析到 {len(results)} 条 CNKI 文献\")"
+  },
+  {
+    "id": "search_133",
+    "file": "search.md",
+    "heading": "标准化并合并到知识库",
+    "level": 1,
+    "content_preview": "papers = searcher.normalize_batch(results, topic=\"深度学习\")\nkb = searcher.merge_to_kb(papers)\nstats = kb[\"statistics\"]\nprint(f\"知识库：共 {stats['total_count']} 篇（CNKI: {stats['cnki_count']} 篇）\")\n```",
+    "full_content": "papers = searcher.normalize_batch(results, topic=\"深度学习\")\nkb = searcher.merge_to_kb(papers)\nstats = kb[\"statistics\"]\nprint(f\"知识库：共 {stats['total_count']} 篇（CNKI: {stats['cnki_count']} 篇）\")\n```"
+  },
+  {
+    "id": "search_134",
+    "file": "search.md",
+    "heading": "完整 CLI 管道",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "search_135",
+    "file": "search.md",
+    "heading": "保存快照后，一行命令完成解析+写入",
+    "level": 1,
+    "content_preview": "python3 -m scripts.search.CNKISearcher parse \\\n    --snapshot snapshot_cnki.txt \\\n    --topic \"深度学习\" \\\n    --kb-path knowledge/index.json \\\n    --output\n```",
+    "full_content": "python3 -m scripts.search.CNKISearcher parse \\\n    --snapshot snapshot_cnki.txt \\\n    --topic \"深度学习\" \\\n    --kb-path knowledge/index.json \\\n    --output\n```"
+  },
+  {
+    "id": "search_136",
+    "file": "search.md",
+    "heading": "CNKI 快照字段说明",
+    "level": 3,
+    "content_preview": "| accessibility tree 特征 | 对应字段 |\n|------------------------|---------|\n| 标题行含 `CNKI文献` | paper.title |\n| 标题行 URL | paper.url |\n| 标题后紧跟的姓名行 | paper.authors |\n| `《期刊名》202X年` | paper.venue + paper.year |\n...",
+    "full_content": "| accessibility tree 特征 | 对应字段 |\n|------------------------|---------|\n| 标题行含 `CNKI文献` | paper.title |\n| 标题行 URL | paper.url |\n| 标题后紧跟的姓名行 | paper.authors |\n| `《期刊名》202X年` | paper.venue + paper.year |\n| `被引（数字）` | paper.citationCount |\n| `下载（数字）` | _cnki_download_count |\n| `/` 分隔的短行 | paper._cnki_keywords |\n| 长段落（>30字）紧跟标题 | paper.abstract |"
+  },
+  {
+    "id": "search_137",
+    "file": "search.md",
+    "heading": "注意事项",
+    "level": 3,
+    "content_preview": "- **搜索入口**：`search.cnki.com.cn`（无需登录，结果较全）\n- **翻页**：手动修改 URL 中的 `Page=N`，多页需多次抓取\n- **排序**：`Order=0`（相关度）/ `Order=1`（发表时间）/ `Order=2`（被引量）\n- **精确匹配**：`Match=Exact`，模糊：`Match=Contains`\n- **防反爬**：两次搜索间建议...",
+    "full_content": "- **搜索入口**：`search.cnki.com.cn`（无需登录，结果较全）\n- **翻页**：手动修改 URL 中的 `Page=N`，多页需多次抓取\n- **排序**：`Order=0`（相关度）/ `Order=1`（发表时间）/ `Order=2`（被引量）\n- **精确匹配**：`Match=Exact`，模糊：`Match=Contains`\n- **防反爬**：两次搜索间建议间隔 3-5 秒\n- **抓取限制**：知网对单 IP 请求频率有限制，批量抓取请控制节奏"
+  },
+  {
+    "id": "search_138",
+    "file": "search.md",
+    "heading": "知网 vs Semantic Scholar 对比",
+    "level": 3,
+    "content_preview": "| 维度 | CNKI（知网） | Semantic Scholar |\n|------|-------------|-----------------|\n| 内容 | 中文期刊/学位论文/会议等 | 英文为主的全球学术文献 |\n| 入口 | search.cnki.com.cn | api.semanticscholar.org |\n| 抓取方式 | 浏览器 DOM 解析 | REST API（...",
+    "full_content": "| 维度 | CNKI（知网） | Semantic Scholar |\n|------|-------------|-----------------|\n| 内容 | 中文期刊/学位论文/会议等 | 英文为主的全球学术文献 |\n| 入口 | search.cnki.com.cn | api.semanticscholar.org |\n| 抓取方式 | 浏览器 DOM 解析 | REST API（需 API Key） |\n| 数据字段 | 标题/作者/期刊/年份/关键词/被引/下载 | 标题/作者/年份/摘要/DOI/引用量 |\n| 适用场景 | 中文文献调研、文献综述 | 英文前沿研究调研 |\n\n---"
+  },
+  {
+    "id": "search_139",
+    "file": "search.md",
+    "heading": "第一步：确定检索条件",
+    "level": 4,
+    "content_preview": "检索条件是一个字典。键是主题，list是检索内容，list的长度是检索次数。每次都应可以设置详细的检索条件，包括检索关键词、检索数量、年份范围、最小引用量、期刊/会议名称、研究领域、文献类型。详见检索规则小节。\n```json\n{\n    \"自传体记忆\": [\n        {\"query\": \"autobiographical memory | personal memory\", \"limit...",
+    "full_content": "检索条件是一个字典。键是主题，list是检索内容，list的长度是检索次数。每次都应可以设置详细的检索条件，包括检索关键词、检索数量、年份范围、最小引用量、期刊/会议名称、研究领域、文献类型。详见检索规则小节。\n```json\n{\n    \"自传体记忆\": [\n        {\"query\": \"autobiographical memory | personal memory\", \"limit\": 30},\n        {\"query\": \"\\\"self-memory system\\\" Conway\", \"year\": \"2010-2025\"},\n        {\"query\": \"autobiographical memory -childhood\", \"minCitationCount\": 50}\n    ],\n    \"数字记忆\": [\n        {\"query\": \"digital memory | Google effect\", \"limit\": 20},\n        {\"query\": \"photo taking memory\", \"year\": \"2020-2025\", \"minCitationCount\": 20}\n    ]\n}\n```"
+  },
+  {
+    "id": "search_140",
+    "file": "search.md",
+    "heading": "第二步：执行检索",
+    "level": 4,
+    "content_preview": "- 使用Searcher完成检索\n```python\nfrom search.Searcher import Searcher",
+    "full_content": "- 使用Searcher完成检索\n```python\nfrom search.Searcher import Searcher"
+  },
+  {
+    "id": "search_141",
+    "file": "search.md",
+    "heading": "初始化时绑定知识库路径",
+    "level": 1,
+    "content_preview": "searcher = Searcher(kb_path=\"my_kb.json\")\nqueries = {\n    \"自传体记忆\": [\n        {\"query\": \"autobiographical memory | personal memory\", \"limit\": 30},\n        {\"query\": \"\\\"self-memory system\\\" Conway\", \"ye...",
+    "full_content": "searcher = Searcher(kb_path=\"my_kb.json\")\nqueries = {\n    \"自传体记忆\": [\n        {\"query\": \"autobiographical memory | personal memory\", \"limit\": 30},\n        {\"query\": \"\\\"self-memory system\\\" Conway\", \"year\": \"2010-2025\"},\n        {\"query\": \"autobiographical memory -childhood\", \"minCitationCount\": 50}\n    ],\n    \"数字记忆\": [\n        {\"query\": \"digital memory | Google effect\", \"limit\": 20},\n        {\"query\": \"photo taking memory\", \"year\": \"2020-2025\", \"minCitationCount\": 20}\n    ]\n}"
+  },
+  {
+    "id": "search_142",
+    "file": "search.md",
+    "heading": "方法调用时不再传知识库路径",
+    "level": 1,
+    "content_preview": "kb = searcher.search(queries)\n```\n- 根据`/knowledge/retrieval_report/{标题}.md`给出检索报告\n- 把检索报告保存在`knowledge/retrieval_report/{标题}.md`中",
+    "full_content": "kb = searcher.search(queries)\n```\n- 根据`/knowledge/retrieval_report/{标题}.md`给出检索报告\n- 把检索报告保存在`knowledge/retrieval_report/{标题}.md`中"
+  },
+  {
+    "id": "search_143",
+    "file": "search.md",
+    "heading": "2. 更新知识库元数据",
+    "level": 3,
+    "content_preview": "```python\nfrom search.Searcher import Searcher",
+    "full_content": "```python\nfrom search.Searcher import Searcher"
+  },
+  {
+    "id": "search_144",
+    "file": "search.md",
+    "heading": "初始化时绑定知识库路径",
+    "level": 1,
+    "content_preview": "searcher = Searcher(kb_path=\"my_kb.json\")",
+    "full_content": "searcher = Searcher(kb_path=\"my_kb.json\")"
+  },
+  {
+    "id": "search_145",
+    "file": "search.md",
+    "heading": "方法调用时不再传知识库路径",
+    "level": 1,
+    "content_preview": "kb = searcher.update()\n```\n\n---",
+    "full_content": "kb = searcher.update()\n```\n\n---"
+  },
+  {
+    "id": "search_146",
+    "file": "search.md",
+    "heading": "`search(queries, fields=None, deduplicate=True, **global_params)`",
+    "level": 3,
+    "content_preview": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `queries` | Dict[str, List[Dict]] | 必填 | 多主题字典，格式 `{主题名: [条件字典列表]}` |\n| `fields` | str | None | 返回字段，默认使用类属性 FIELDS |\n| `deduplicate` | bool | ...",
+    "full_content": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `queries` | Dict[str, List[Dict]] | 必填 | 多主题字典，格式 `{主题名: [条件字典列表]}` |\n| `fields` | str | None | 返回字段，默认使用类属性 FIELDS |\n| `deduplicate` | bool | True | 是否对结果去重（基于 paperId） |\n| `**global_params` | - | - | 全局默认参数（会被条件字典中的同名字段覆盖） |\n\n> **注意**：`kb_path` 在初始化 `Searcher(kb_path=\"...\")` 时设置，不在 `search()` 方法中传入。"
+  },
+  {
+    "id": "search_147",
+    "file": "search.md",
+    "heading": "queries.list中的字典支持的字段",
+    "level": 4,
+    "content_preview": "| 字段 | 类型 | 说明 |\n|------|------|------|\n| `query` | str | **必填**，检索关键词 |\n| `limit` | int | 本次检索数量（默认 20，最大 100） |\n| `year` | str | 年份范围，如 `\"2020-2023\"` |\n| `minCitationCount` | int | **客户端过滤**，最小引用量 |...",
+    "full_content": "| 字段 | 类型 | 说明 |\n|------|------|------|\n| `query` | str | **必填**，检索关键词 |\n| `limit` | int | 本次检索数量（默认 20，最大 100） |\n| `year` | str | 年份范围，如 `\"2020-2023\"` |\n| `minCitationCount` | int | **客户端过滤**，最小引用量 |\n| `venue` | str | 期刊/会议名称 |\n| `fields_of_study` | str | 研究领域 |\n| `publication_types` | str | 文献类型 |"
+  },
+  {
+    "id": "search_148",
+    "file": "search.md",
+    "heading": "`update(fields=None)`",
+    "level": 3,
+    "content_preview": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `fields` | str | None | 请求字段，默认使用类属性 FIELDS |\n\n> **注意**：`kb_path` 在初始化 `Searcher(kb_path=\"...\")` 时设置，不在 `update()` 方法中传入。\n\n---",
+    "full_content": "| 参数 | 类型 | 默认值 | 说明 |\n|------|------|--------|------|\n| `fields` | str | None | 请求字段，默认使用类属性 FIELDS |\n\n> **注意**：`kb_path` 在初始化 `Searcher(kb_path=\"...\")` 时设置，不在 `update()` 方法中传入。\n\n---"
+  },
+  {
+    "id": "search_149",
+    "file": "search.md",
+    "heading": "query语法",
+    "level": 3,
+    "content_preview": "| 语法 | 说明 | 示例 |\n|------|------|------|\n| **空格** | AND 关系（必须同时出现） | `autobiographical memory self` |\n| `\\|` | OR 关系（任一即可） | `autobiographical memory \\| personal memory` |\n| `\\\"\\\"` | 精确短语匹配 | `\\\"self-m...",
+    "full_content": "| 语法 | 说明 | 示例 |\n|------|------|------|\n| **空格** | AND 关系（必须同时出现） | `autobiographical memory self` |\n| `\\|` | OR 关系（任一即可） | `autobiographical memory \\| personal memory` |\n| `\\\"\\\"` | 精确短语匹配 | `\\\"self-memory system\\\"` |\n| `-` | NOT 关系（排除） | `autobiographical memory -childhood` |\n| `()` | 优先级组合 | `(autobiographical \\| personal) memory (self \\| identity)` |\n\n**使用示例**：\n```json\n{\n    \"自传体记忆\": [\n        {\"query\": \"autobiographical memory | personal memory\", \"limit\": 30},\n        {\"query\": \"\\\"self-memory system\\\" Conway\", \"year\": \"2010-2025\"},\n        {\"query\": \"autobiographical memory -childhood\", \"minCitationCount\": 50}\n    ],\n    \"数字记忆\": [\n        {\"query\": \"digital memory | Google effect\", \"limit\": 20},\n        {\"query\": \"photo taking memory\", \"year\": \"2020-2025\", \"minCitationCount\": 20}\n    ]\n}\n```"
+  },
+  {
+    "id": "search_150",
+    "file": "search.md",
+    "heading": "fields_of_study",
+    "level": 3,
+    "content_preview": "| 研究领域 | 说明 |\n|----------|------|\n| `Computer Science` | 计算机科学 |\n| `Medicine` | 医学 |\n| `Chemistry` | 化学 |\n| `Biology` | 生物学 |\n| `Materials Science` | 材料科学 |\n| `Physics` | 物理学 |\n| `Geology` | 地质学 |\n| `...",
+    "full_content": "| 研究领域 | 说明 |\n|----------|------|\n| `Computer Science` | 计算机科学 |\n| `Medicine` | 医学 |\n| `Chemistry` | 化学 |\n| `Biology` | 生物学 |\n| `Materials Science` | 材料科学 |\n| `Physics` | 物理学 |\n| `Geology` | 地质学 |\n| `Psychology` | 心理学 |\n| `Art` | 艺术 |\n| `History` | 历史学 |\n| `Geography` | 地理学 |\n| `Sociology` | 社会学 |\n| `Business` | 商学 |\n| `Political Science` | 政治学 |\n| `Economics` | 经济学 |\n| `Philosophy` | 哲学 |\n| `Mathematics` | 数学 |\n| `Engineering` | 工程学 |\n| `Environmental Science` | 环境科学 |\n| `Agricultural and Food Sciences` | 农业与食品科学 |\n| `Education` | 教育学 |\n| `Law` | 法学 |\n| `Linguistics` | 语言学 |\n\n**使用示例**：\n```json\n{\n    \"自传体记忆\": [\n        {\"query\": \"autobiographical memory\", \"fields_of_study\": \"Psychology\", \"limit\": 30}\n    ]\n}\n```"
+  },
+  {
+    "id": "search_151",
+    "file": "search.md",
+    "heading": "publication_types",
+    "level": 3,
+    "content_preview": "| 文献类型 | 说明 |\n|----------|------|\n| `Review` | 综述 |\n| `JournalArticle` | 期刊论文 |\n| `CaseReport` | 病例报告 |\n| `ClinicalTrial` | 临床试验 |\n| `Conference` | 会议论文 |\n| `Dataset` | 数据集 |\n| `Editorial` | 社论 |\n| `L...",
+    "full_content": "| 文献类型 | 说明 |\n|----------|------|\n| `Review` | 综述 |\n| `JournalArticle` | 期刊论文 |\n| `CaseReport` | 病例报告 |\n| `ClinicalTrial` | 临床试验 |\n| `Conference` | 会议论文 |\n| `Dataset` | 数据集 |\n| `Editorial` | 社论 |\n| `LettersAndComments` | 信件与评论 |\n| `MetaAnalysis` | 元分析 |\n| `News` | 新闻 |\n| `Study` | 研究报告 |\n| `Book` | 书籍 |\n| `BookSection` | 书籍章节 |\n\n**使用示例**：\n```json\n{\n    \"自传体记忆\": [\n        {\"query\": \"autobiographical memory\", \"publication_types\": \"Review,MetaAnalysis\", \"limit\": 30}\n    ]\n}\n```\n---"
+  },
+  {
+    "id": "search_152",
+    "file": "search.md",
+    "heading": "检索文献",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "search_153",
+    "file": "search.md",
+    "heading": "1. 创建检索条件 JSON 文件",
+    "level": 1,
+    "content_preview": "cat > queries.json << 'EOF'\n{\n    \"自传体记忆\": [\n        {\"query\": \"autobiographical memory | personal memory\", \"limit\": 30}\n    ]\n}\nEOF",
+    "full_content": "cat > queries.json << 'EOF'\n{\n    \"自传体记忆\": [\n        {\"query\": \"autobiographical memory | personal memory\", \"limit\": 30}\n    ]\n}\nEOF"
+  },
+  {
+    "id": "search_154",
+    "file": "search.md",
+    "heading": "2. 执行检索（初始化时绑定知识库路径）",
+    "level": 1,
+    "content_preview": "python3 Searcher.py search \\\n    --queries queries.json \\\n    --kb-path my_kb.json\n```",
+    "full_content": "python3 Searcher.py search \\\n    --queries queries.json \\\n    --kb-path my_kb.json\n```"
+  },
+  {
+    "id": "search_155",
+    "file": "search.md",
+    "heading": "更新知识库元数据",
+    "level": 3,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "search_156",
+    "file": "search.md",
+    "heading": "更新元数据（初始化时绑定知识库路径）",
+    "level": 1,
+    "content_preview": "python3 Searcher.py update \\\n    --kb-path my_kb.json\n```",
+    "full_content": "python3 Searcher.py update \\\n    --kb-path my_kb.json\n```"
+  },
+  {
+    "id": "search_157",
+    "file": "search.md",
+    "heading": "命令参数",
+    "level": 3,
+    "content_preview": "| 参数 | 说明 |\n|------|------|\n| `search` | 检索子命令 |\n| `--queries` | 检索条件JSON文件（必填） |\n| `--kb-path` | 知识库文件路径（默认: index.json） |\n| `--fields` | 请求字段（可选） |\n| `--no-deduplicate` | 不去重 |\n| `update` | 更新元数据子命令...",
+    "full_content": "| 参数 | 说明 |\n|------|------|\n| `search` | 检索子命令 |\n| `--queries` | 检索条件JSON文件（必填） |\n| `--kb-path` | 知识库文件路径（默认: index.json） |\n| `--fields` | 请求字段（可选） |\n| `--no-deduplicate` | 不去重 |\n| `update` | 更新元数据子命令 |\n| `--kb-path` | 知识库文件路径（默认: index.json） |\n| `--fields` | 请求字段（可选） |\n\n---"
+  },
+  {
+    "id": "search_158",
+    "file": "search.md",
+    "heading": "config.json 配置",
+    "level": 3,
+    "content_preview": "Searcher 会自动读取 `config.json` 中的 `semantic_scholar` 配置：\n\n```json\n{\n  \"semantic_scholar\": {\n    \"api_key_env\": \"SEMANTIC_SCHOLAR_API_KEY\",\n    \"request_interval\": 0.5\n  }\n}\n```\n\n| 配置项 | 说明 |\n|--------|-...",
+    "full_content": "Searcher 会自动读取 `config.json` 中的 `semantic_scholar` 配置：\n\n```json\n{\n  \"semantic_scholar\": {\n    \"api_key_env\": \"SEMANTIC_SCHOLAR_API_KEY\",\n    \"request_interval\": 0.5\n  }\n}\n```\n\n| 配置项 | 说明 |\n|--------|------|\n| `semantic_scholar.request_interval` | 两次 API 请求之间的间隔（秒） |\n\n> **注意**：`kb_path` 由调用者传入，每个项目的知识库文件路径不同，不在 `config.json` 中配置。"
+  },
+  {
+    "id": "search_159",
+    "file": "search.md",
+    "heading": "环境变量",
+    "level": 3,
+    "content_preview": "```bash\nexport SEMANTIC_SCHOLAR_API_KEY=\"your-semantic-scholar-api-key\"\n```\n\n---",
+    "full_content": "```bash\nexport SEMANTIC_SCHOLAR_API_KEY=\"your-semantic-scholar-api-key\"\n```\n\n---"
+  },
+  {
+    "id": "search_160",
+    "file": "search.md",
+    "heading": "版本历史",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 2.2.0 | 2026-04-22 | 统一风格：初始化时绑定知识库路径，方法调用时不再传知识库路径 |\n| 2.1.0 | 2026-04-14 | 支持字典格式条件列表，每轮可单独设置条件 |\n| 2.0.0 | 2026-04-14 | 重构为独立 Searcher 类 |",
+    "full_content": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 2.2.0 | 2026-04-22 | 统一风格：初始化时绑定知识库路径，方法调用时不再传知识库路径 |\n| 2.1.0 | 2026-04-14 | 支持字典格式条件列表，每轮可单独设置条件 |\n| 2.0.0 | 2026-04-14 | 重构为独立 Searcher 类 |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_161",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "Guide to Writing a Literature Review (文献综述撰写指南)",
+    "level": 1,
+    "content_preview": "> 适用对象：心理学、教育学、医学等社会科学领域研究者\n> 版本: v3.0 | 更新: 2026-05-15\n> 来源: Taylor & Francis 官方写作指南 + EXA检索中文指南 + 学术写作规范\n\n---",
+    "full_content": "> 适用对象：心理学、教育学、医学等社会科学领域研究者\n> 版本: v3.0 | 更新: 2026-05-15\n> 来源: Taylor & Francis 官方写作指南 + EXA检索中文指南 + 学术写作规范\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_162",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "使用说明",
+    "level": 2,
+    "content_preview": "本指南按**写作流程**组织，从准备到完稿共分5个阶段。建议按顺序阅读，每完成一个阶段再进入下一阶段。\n\n| 阶段 | 内容 | 目标 |\n|------|------|------|\n| **阶段1** | 理解篇 | 知道什么是文献综述，判断是否该写 |\n| **阶段2** | 准备篇 | 确定主题、检索文献、筛选文献 |\n| **阶段3** | 阅读篇 | 高效阅读、记录要点、管理文献 |\n...",
+    "full_content": "本指南按**写作流程**组织，从准备到完稿共分5个阶段。建议按顺序阅读，每完成一个阶段再进入下一阶段。\n\n| 阶段 | 内容 | 目标 |\n|------|------|------|\n| **阶段1** | 理解篇 | 知道什么是文献综述，判断是否该写 |\n| **阶段2** | 准备篇 | 确定主题、检索文献、筛选文献 |\n| **阶段3** | 阅读篇 | 高效阅读、记录要点、管理文献 |\n| **阶段4** | 撰写篇 | 组织结构、撰写引言/主体/结论 |\n| **阶段5** | 检查篇 | 排查常见问题、质量把关 |\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_163",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "1.1 什么是文献综述",
+    "level": 3,
+    "content_preview": "文献综述是对某个专题领域进行系统性的文献检索、阅读、归纳整理、综合分析后形成的学术文本。\n\n**核心本质**：英文是 **Literature Review**，重点在 **Review** —— 既有\"回顾\"之意，也有\"评论\"之意。因此，文献综述不仅仅是\"综合\"和\"述评\"，更是对已有文献的**回顾并加以评论**。",
+    "full_content": "文献综述是对某个专题领域进行系统性的文献检索、阅读、归纳整理、综合分析后形成的学术文本。\n\n**核心本质**：英文是 **Literature Review**，重点在 **Review** —— 既有\"回顾\"之意，也有\"评论\"之意。因此，文献综述不仅仅是\"综合\"和\"述评\"，更是对已有文献的**回顾并加以评论**。"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_164",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "1.2 文献综述的5种类型",
+    "level": 3,
+    "content_preview": "| 类型 | 核心特征 | 适用场景 |\n|------|----------|----------|\n| **描述性综述** | 客观描述与总结已有文献 | 快速了解某领域 |\n| **批判性综述** | 在描述基础上展开批判性分析 | 研究论文引言部分 |\n| **综合性综述** | 描述+批判，全面系统 | 学位论文第二章 |\n| **系统性综述** | 严格预注册方案，明确纳入排除标准 |...",
+    "full_content": "| 类型 | 核心特征 | 适用场景 |\n|------|----------|----------|\n| **描述性综述** | 客观描述与总结已有文献 | 快速了解某领域 |\n| **批判性综述** | 在描述基础上展开批判性分析 | 研究论文引言部分 |\n| **综合性综述** | 描述+批判，全面系统 | 学位论文第二章 |\n| **系统性综述** | 严格预注册方案，明确纳入排除标准 | 循证研究 |\n| **范围综述** | 快速描绘研究证据的性质和范围 | 新兴领域 |\n\n> 💡 **学生论文提示**：学生毕业论文中的文献综述主要涉及**专题性综述**（聚焦于某一具体论题，进行微观层面的深入剖析），而非综合性综述（以整个学科为对象）。"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_165",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "1.3 合格标准",
+    "level": 3,
+    "content_preview": "一篇合格的文献综述必须符合**两个标准**：\n\n| 标准 | 要求 |\n|------|------|\n| **知识概述** | 提供当前有关该主题的知识、理论和方法的简明概述，并指出现有研究中存在的潜在差距 |\n| **批判评价** | 提出作者自己的批判性评价和讨论，而非简单罗列他人研究 |",
+    "full_content": "一篇合格的文献综述必须符合**两个标准**：\n\n| 标准 | 要求 |\n|------|------|\n| **知识概述** | 提供当前有关该主题的知识、理论和方法的简明概述，并指出现有研究中存在的潜在差距 |\n| **批判评价** | 提出作者自己的批判性评价和讨论，而非简单罗列他人研究 |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_166",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "1.4 核心误区：文献综述 ≠ 文献堆砌",
+    "level": 3,
+    "content_preview": "**错误写法**：\"论文A发现了X，论文B发现了Y，论文C发现了Z...\"\n\n**正确写法**：\"多项研究发现了X（Author A, 2020；Author B, 2021），但也有研究者对此提出质疑（Author C, 2022），认为该现象可能受Z变量调节。\"\n\n---",
+    "full_content": "**错误写法**：\"论文A发现了X，论文B发现了Y，论文C发现了Z...\"\n\n**正确写法**：\"多项研究发现了X（Author A, 2020；Author B, 2021），但也有研究者对此提出质疑（Author C, 2022），认为该现象可能受Z变量调节。\"\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_167",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "2.1 确定主题",
+    "level": 3,
+    "content_preview": "主题必须**明确且可管理**。如果主题过于宽泛，建议聚焦**最近进展**或**特定子领域**。\n\n确定途径：\n- 咨询导师或专家\n- 查阅相关文献了解热点和前沿\n\n> ⚠️ **重要提示**：如果在CSSCI/SSCI/SCI等权威检索中找不到任何与主题相关或相近的文献，建议**放弃这个题目，重新选题**。",
+    "full_content": "主题必须**明确且可管理**。如果主题过于宽泛，建议聚焦**最近进展**或**特定子领域**。\n\n确定途径：\n- 咨询导师或专家\n- 查阅相关文献了解热点和前沿\n\n> ⚠️ **重要提示**：如果在CSSCI/SSCI/SCI等权威检索中找不到任何与主题相关或相近的文献，建议**放弃这个题目，重新选题**。"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_168",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "检索步骤",
+    "level": 4,
+    "content_preview": "| 步骤 | 操作 |\n|------|------|\n| **Step 1** | 制作核心概念关键词列表（中英文对照） |\n| **Step 2** | 使用多种渠道检索（学术数据库、Google Scholar、参考文献回溯） |\n| **Step 3** | 阅读摘要判断相关性，下载全文 |\n| **Step 4** | 检查文末参考文献列表，\"滚雪球\"式扩展 |",
+    "full_content": "| 步骤 | 操作 |\n|------|------|\n| **Step 1** | 制作核心概念关键词列表（中英文对照） |\n| **Step 2** | 使用多种渠道检索（学术数据库、Google Scholar、参考文献回溯） |\n| **Step 3** | 阅读摘要判断相关性，下载全文 |\n| **Step 4** | 检查文末参考文献列表，\"滚雪球\"式扩展 |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_169",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "\"三位一体\"检索原则",
+    "level": 4,
+    "content_preview": "1. **引证网络追踪**：通过高被引文献延伸检索\n2. **文献时效性筛选**：近五年核心文献占比不低于60%\n3. **权威数据库优先**：CNKI、Web of Science、PubMed、PsycINFO等",
+    "full_content": "1. **引证网络追踪**：通过高被引文献延伸检索\n2. **文献时效性筛选**：近五年核心文献占比不低于60%\n3. **权威数据库优先**：CNKI、Web of Science、PubMed、PsycINFO等"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_170",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "评估标准（四问法）",
+    "level": 4,
+    "content_preview": "- [ ] 是否已阅读该领域所有主要研究和核心理论？\n- [ ] 文献是否可信？（引用量、期刊影响因子、作者权威性）\n- [ ] 文献与领域其他文章的关系？（支持/反对/补充？）\n- [ ] 综述范围是否明确且可管理？",
+    "full_content": "- [ ] 是否已阅读该领域所有主要研究和核心理论？\n- [ ] 文献是否可信？（引用量、期刊影响因子、作者权威性）\n- [ ] 文献与领域其他文章的关系？（支持/反对/补充？）\n- [ ] 综述范围是否明确且可管理？"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_171",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "高水平文献三标准",
+    "level": 4,
+    "content_preview": "1. **作者权威**：学术领域\"大牛\"\n2. **期刊权威**：CSSCI/SSCI检索期刊\n3. **引用率高**：相关文献中引用率上千甚至上万的必须看\n\n---",
+    "full_content": "1. **作者权威**：学术领域\"大牛\"\n2. **期刊权威**：CSSCI/SSCI检索期刊\n3. **引用率高**：相关文献中引用率上千甚至上万的必须看\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_172",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "3.1 三级过滤法",
+    "level": 3,
+    "content_preview": "| 级别 | 方法 | 目标 |\n|------|------|------|\n| **① 标题摘要速览** | 快速浏览 | 初步判断价值 |\n| **② 方法论章节精读** | 深入阅读方法部分 | 了解研究设计 |\n| **③ 核心结论拆解** | 提取主要发现和观点 | 掌握研究贡献 |",
+    "full_content": "| 级别 | 方法 | 目标 |\n|------|------|------|\n| **① 标题摘要速览** | 快速浏览 | 初步判断价值 |\n| **② 方法论章节精读** | 深入阅读方法部分 | 了解研究设计 |\n| **③ 核心结论拆解** | 提取主要发现和观点 | 掌握研究贡献 |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_173",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "3.2 批判性阅读记录表",
+    "level": 3,
+    "content_preview": "每篇文献必须记录以下信息：\n\n| 记录项 | 内容 |\n|--------|------|\n| 基本信息 | 题目、作者、出版信息、年份 |\n| 理论基础 | 基于什么理论 |\n| 研究问题 | 研究了什么 |\n| 研究假设 | 假设是什么 |\n| 样本 | 谁参与了研究 |\n| 工具 | 问卷/量表/仪器 |\n| 模型 | 理论模型/统计模型 |\n| 统计方法 | 用了什么分析方法 |\n| 主要...",
+    "full_content": "每篇文献必须记录以下信息：\n\n| 记录项 | 内容 |\n|--------|------|\n| 基本信息 | 题目、作者、出版信息、年份 |\n| 理论基础 | 基于什么理论 |\n| 研究问题 | 研究了什么 |\n| 研究假设 | 假设是什么 |\n| 样本 | 谁参与了研究 |\n| 工具 | 问卷/量表/仪器 |\n| 模型 | 理论模型/统计模型 |\n| 统计方法 | 用了什么分析方法 |\n| 主要结论 | 核心发现是什么 |\n| 贡献与不足 | 优点和局限 |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_174",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "3.3 文献管理",
+    "level": 3,
+    "content_preview": "- **工具推荐**：EndNote、Zotero、Mendeley\n- **分类方法**：按主题、研究方法、时间顺序、研究结论\n- **可视化**：建立文献关系图谱，实现知识点关联\n\n> 💡 **效率提示**：初期阅读较慢（需理解术语和方法），但随着积累会指数提升。\"好记性不如烂笔头\"——重要文献打印后用荧光笔标注，关键知识点摘录到便签纸订在原文献上。\n\n---",
+    "full_content": "- **工具推荐**：EndNote、Zotero、Mendeley\n- **分类方法**：按主题、研究方法、时间顺序、研究结论\n- **可视化**：建立文献关系图谱，实现知识点关联\n\n> 💡 **效率提示**：初期阅读较慢（需理解术语和方法），但随着积累会指数提升。\"好记性不如烂笔头\"——重要文献打印后用荧光笔标注，关键知识点摘录到便签纸订在原文献上。\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_175",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "4.1 选择组织策略",
+    "level": 3,
+    "content_preview": "| 策略 | 适用场景 | 示例 |\n|------|----------|------|\n| **时间顺序** | 展示理论演进 | 从弗洛伊德到认知行为理论 |\n| **主题分类** | 按子主题组织 | \"治疗偏好\"\"治疗期待\"\"治疗匹配\" |\n| **方法论** | 比较研究方法 | 实验 vs 横断面 vs 纵向研究 |\n| **理论框架** | 按理论流派 | 精神分析 vs 认知 v...",
+    "full_content": "| 策略 | 适用场景 | 示例 |\n|------|----------|------|\n| **时间顺序** | 展示理论演进 | 从弗洛伊德到认知行为理论 |\n| **主题分类** | 按子主题组织 | \"治疗偏好\"\"治疗期待\"\"治疗匹配\" |\n| **方法论** | 比较研究方法 | 实验 vs 横断面 vs 纵向研究 |\n| **理论框架** | 按理论流派 | 精神分析 vs 认知 vs 人本主义 |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_176",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "4.2 标准结构",
+    "level": 3,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_177",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "引言",
+    "level": 2,
+    "content_preview": "- 研究背景（让非专业人士也能理解）\n- 综述范围和边界（涵盖什么、不涵盖什么）\n- 综述目的和意义\n- 研究问题",
+    "full_content": "- 研究背景（让非专业人士也能理解）\n- 综述范围和边界（涵盖什么、不涵盖什么）\n- 综述目的和意义\n- 研究问题"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_178",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "主体",
+    "level": 2,
+    "content_preview": "- 按逻辑顺序对文献进行综述（按主题，不是按论文！）",
+    "full_content": "- 按逻辑顺序对文献进行综述（按主题，不是按论文！）"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_179",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "结论",
+    "level": 2,
+    "content_preview": "- 总结主要发现\n- 指出研究空白\n- 引出自身研究（如果是论文的一部分）",
+    "full_content": "- 总结主要发现\n- 指出研究空白\n- 引出自身研究（如果是论文的一部分）"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_180",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "参考文献",
+    "level": 2,
+    "content_preview": "- APA 7th 格式\n```",
+    "full_content": "- APA 7th 格式\n```"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_181",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "4.3 引言写法",
+    "level": 3,
+    "content_preview": "**功能**：说清楚\"为什么做这个综述\"和\"这个综述要回答什么问题\"。\n\n**示例**：\n> \"心理治疗的有效性已得到广泛证实，但'哪种疗法对哪类患者最有效'仍是该领域最具挑战性的议题。近年来，患者偏好、治疗期待、改变准备度等个体因素逐渐被识别为影响治疗结果的关键变量。本综述旨在系统梳理这些因素的现有研究，明确核心发现、理论框架与研究空白。\"",
+    "full_content": "**功能**：说清楚\"为什么做这个综述\"和\"这个综述要回答什么问题\"。\n\n**示例**：\n> \"心理治疗的有效性已得到广泛证实，但'哪种疗法对哪类患者最有效'仍是该领域最具挑战性的议题。近年来，患者偏好、治疗期待、改变准备度等个体因素逐渐被识别为影响治疗结果的关键变量。本综述旨在系统梳理这些因素的现有研究，明确核心发现、理论框架与研究空白。\""
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_182",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "4.4 主体写法（核心！）",
+    "level": 3,
+    "content_preview": "**黄金法则**：按**主题**组织，不是按**论文**组织。\n\n**每个段落的核心要求**：\n- 围绕一个**核心论点**展开\n- 使用**过渡句**连接不同文献\n- 指出**研究空白**\n- 对比**矛盾发现**并分析原因\n\n**过渡句模板**：\n- \"与A的发现一致，B进一步指出...\"\n- \"然而，C的研究对此提出了质疑...\"\n- \"基于上述发现，D提出了...模型...\"",
+    "full_content": "**黄金法则**：按**主题**组织，不是按**论文**组织。\n\n**每个段落的核心要求**：\n- 围绕一个**核心论点**展开\n- 使用**过渡句**连接不同文献\n- 指出**研究空白**\n- 对比**矛盾发现**并分析原因\n\n**过渡句模板**：\n- \"与A的发现一致，B进一步指出...\"\n- \"然而，C的研究对此提出了质疑...\"\n- \"基于上述发现，D提出了...模型...\""
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_183",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "4.5 结论写法",
+    "level": 3,
+    "content_preview": "**必须包含**：\n1. 总结主要发现\n2. 强调重要性\n3. 指出研究空白\n4. **引出自身研究**（关键！）\n\n**示例**：\n> \"综上所述，现有研究已证实治疗偏好匹配能显著提升治疗参与度，但对偏好动态变化、数字干预环境中的偏好机制、以及跨文化差异的研究仍显不足。本研究旨在通过大样本临床数据（n=2631），在中国文化背景下探讨CFPPS量表与治疗偏好/期待的关系...\"\n\n---",
+    "full_content": "**必须包含**：\n1. 总结主要发现\n2. 强调重要性\n3. 指出研究空白\n4. **引出自身研究**（关键！）\n\n**示例**：\n> \"综上所述，现有研究已证实治疗偏好匹配能显著提升治疗参与度，但对偏好动态变化、数字干预环境中的偏好机制、以及跨文化差异的研究仍显不足。本研究旨在通过大样本临床数据（n=2631），在中国文化背景下探讨CFPPS量表与治疗偏好/期待的关系...\"\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_184",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "5.1 8个常见问题",
+    "level": 3,
+    "content_preview": "| 问题 | 表现 | 解决方法 |\n|------|------|----------|\n| **跑马灯式综述** | 逐篇罗列\"A说了什么，B说了什么\" | 按主题/论点组织 |\n| **缺乏批判性** | 只描述不评价 | 对比矛盾发现，指出空白 |\n| **引用堆砌** | 一段话引用5-6篇文献 | 选1-2篇代表性文献深入讨论 |\n| **范围过宽** | 试图涵盖所有相关文献 | 明...",
+    "full_content": "| 问题 | 表现 | 解决方法 |\n|------|------|----------|\n| **跑马灯式综述** | 逐篇罗列\"A说了什么，B说了什么\" | 按主题/论点组织 |\n| **缺乏批判性** | 只描述不评价 | 对比矛盾发现，指出空白 |\n| **引用堆砌** | 一段话引用5-6篇文献 | 选1-2篇代表性文献深入讨论 |\n| **范围过宽** | 试图涵盖所有相关文献 | 明确纳入/排除标准 |\n| **过时文献** | 大量引用10年前文献 | 优先近5年，经典除外 |\n| **忽略方法学** | 不讨论研究方法差异 | 比较方法论优劣 |\n| **选择偏差** | 只引用支持自己观点的文献 | 全面收集正反证据 |\n| **有述无评** | 只罗列观点，缺乏综合比较 | 建立\"概念桥梁\"，构建对话关系 |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_185",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "5.2 质量检查清单（提交前逐项核对）",
+    "level": 3,
+    "content_preview": "- [ ] 引言是否明确了范围、目的和研究问题？\n- [ ] 主体是否按逻辑结构组织？\n- [ ] 每个段落是否有核心论点，而非简单罗列？\n- [ ] 是否体现了批判性评价？\n- [ ] 是否明确指出了研究空白？\n- [ ] 结论是否总结了主要发现并引出了自身研究？\n- [ ] 引用是否使用APA格式？\n- [ ] 语言是否通俗易懂？\n- [ ] 是否避免了\"逐篇总结论文\"的错误写法？\n- [ ]...",
+    "full_content": "- [ ] 引言是否明确了范围、目的和研究问题？\n- [ ] 主体是否按逻辑结构组织？\n- [ ] 每个段落是否有核心论点，而非简单罗列？\n- [ ] 是否体现了批判性评价？\n- [ ] 是否明确指出了研究空白？\n- [ ] 结论是否总结了主要发现并引出了自身研究？\n- [ ] 引用是否使用APA格式？\n- [ ] 语言是否通俗易懂？\n- [ ] 是否避免了\"逐篇总结论文\"的错误写法？\n- [ ] 是否建立了文献之间的对话关系？"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_186",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "5.3 进阶：研究空白识别",
+    "level": 3,
+    "content_preview": "重点寻找以下空白：\n1. 现有研究提出但未回答的问题\n2. 尚未研究的人群或情境\n3. 跨研究普遍存在的方法学局限\n4. 尚未解决的相互矛盾的发现\n5. 在新发展背景下已显过时的研究\n\n---",
+    "full_content": "重点寻找以下空白：\n1. 现有研究提出但未回答的问题\n2. 尚未研究的人群或情境\n3. 跨研究普遍存在的方法学局限\n4. 尚未解决的相互矛盾的发现\n5. 在新发展背景下已显过时的研究\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_187",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "附录A：文献综述 vs 系统综述",
+    "level": 3,
+    "content_preview": "| 维度 | 文献综述 | 系统综述 |\n|------|----------|----------|\n| 目的 | 梳理并综合研究 | 穷尽性与可复现性 |\n| 方法 | 灵活性较高 | 严格遵循预注册方案 |\n| 检索 | 较宽松 | 明确的检索策略与纳入/排除标准 |\n| 分析 | 综合性分析 | 有时包括 Meta-analysis |",
+    "full_content": "| 维度 | 文献综述 | 系统综述 |\n|------|----------|----------|\n| 目的 | 梳理并综合研究 | 穷尽性与可复现性 |\n| 方法 | 灵活性较高 | 严格遵循预注册方案 |\n| 检索 | 较宽松 | 明确的检索策略与纳入/排除标准 |\n| 分析 | 综合性分析 | 有时包括 Meta-analysis |"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_188",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "附录B：可视化工具",
+    "level": 3,
+    "content_preview": "- **观点矩阵法**：建立表格比较不同研究的核心观点、方法、局限\n- **时间轴梳理法**：展示研究发展脉络\n- **概念地图**：展示知识结构",
+    "full_content": "- **观点矩阵法**：建立表格比较不同研究的核心观点、方法、局限\n- **时间轴梳理法**：展示研究发展脉络\n- **概念地图**：展示知识结构"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_189",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "附录C：文献追踪技巧",
+    "level": 3,
+    "content_preview": "- **顺藤摸瓜**：追踪重要文献的参考文献\n- **反向追踪**：查看谁引用了该文献\n\n---",
+    "full_content": "- **顺藤摸瓜**：追踪重要文献的参考文献\n- **反向追踪**：查看谁引用了该文献\n\n---"
+  },
+  {
+    "id": "Guide_to_Writing_a_Literature_Review_190",
+    "file": "Guide_to_Writing_a_Literature_Review.md",
+    "heading": "版本历史",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 更新内容 |\n|------|------|----------|\n| v3.0 | 2026-05-15 | 按写作流程重组为5个阶段，删除重复内容 |\n| v2.0 | 2026-05-15 | 整合中文期刊发表要求 |\n| v1.0 | 2026-05-15 | 初始版本 |\n\n---\n\n*最后更新: 2026-05-15*",
+    "full_content": "| 版本 | 日期 | 更新内容 |\n|------|------|----------|\n| v3.0 | 2026-05-15 | 按写作流程重组为5个阶段，删除重复内容 |\n| v2.0 | 2026-05-15 | 整合中文期刊发表要求 |\n| v1.0 | 2026-05-15 | 初始版本 |\n\n---\n\n*最后更新: 2026-05-15*"
+  },
+  {
+    "id": "maintainer_191",
+    "file": "maintainer.md",
+    "heading": "元数据维护模块 (Maintainer)",
+    "level": 1,
+    "content_preview": "Maintainer 负责维护项目元数据（时间戳更新）。\n\n> 注意：本项目使用 **Git 进行版本控制**，综述文档的版本历史由 Git 管理，不需要额外的版本归档功能。",
+    "full_content": "Maintainer 负责维护项目元数据（时间戳更新）。\n\n> 注意：本项目使用 **Git 进行版本控制**，综述文档的版本历史由 Git 管理，不需要额外的版本归档功能。"
+  },
+  {
+    "id": "maintainer_192",
+    "file": "maintainer.md",
+    "heading": "快速开始",
+    "level": 2,
+    "content_preview": "| 需求 | 方法 |\n|------|------|\n| 更新知识库时间戳 | [`update_kb_metadata()`](#更新知识库时间戳) |\n| 更新笔记元数据 | [`update_notes_metadata()`](#更新笔记元数据) |",
+    "full_content": "| 需求 | 方法 |\n|------|------|\n| 更新知识库时间戳 | [`update_kb_metadata()`](#更新知识库时间戳) |\n| 更新笔记元数据 | [`update_notes_metadata()`](#更新笔记元数据) |"
+  },
+  {
+    "id": "maintainer_193",
+    "file": "maintainer.md",
+    "heading": "`Maintainer(project_path)`",
+    "level": 3,
+    "content_preview": "元数据维护协调器。\n\n```python\nfrom maintainer.Maintainer import Maintainer\n\nmaintainer = Maintainer(\"~/项目\")",
+    "full_content": "元数据维护协调器。\n\n```python\nfrom maintainer.Maintainer import Maintainer\n\nmaintainer = Maintainer(\"~/项目\")"
+  },
+  {
+    "id": "maintainer_194",
+    "file": "maintainer.md",
+    "heading": "更新知识库时间戳",
+    "level": 1,
+    "content_preview": "maintainer.update_kb_metadata()",
+    "full_content": "maintainer.update_kb_metadata()"
+  },
+  {
+    "id": "maintainer_195",
+    "file": "maintainer.md",
+    "heading": "更新笔记元数据",
+    "level": 1,
+    "content_preview": "maintainer.update_notes_metadata(\"笔记_主题.md\", \"knowledge/note/笔记_主题.md\", \"主题笔记\")\n```",
+    "full_content": "maintainer.update_notes_metadata(\"笔记_主题.md\", \"knowledge/note/笔记_主题.md\", \"主题笔记\")\n```"
+  },
+  {
+    "id": "maintainer_196",
+    "file": "maintainer.md",
+    "heading": "`MetadataManager(project_path)`",
+    "level": 3,
+    "content_preview": "元数据管理器，提供链式调用修改元数据。\n\n```python\nfrom maintainer.Maintainer import MetadataManager\n\nmm = MetadataManager(\"~/项目\")",
+    "full_content": "元数据管理器，提供链式调用修改元数据。\n\n```python\nfrom maintainer.Maintainer import MetadataManager\n\nmm = MetadataManager(\"~/项目\")"
+  },
+  {
+    "id": "maintainer_197",
+    "file": "maintainer.md",
+    "heading": "链式调用",
+    "level": 1,
+    "content_preview": "mm.set_title(\"新项目\").add_tag(\"AI\").update_knowledge_base_timestamp().save()\n```\n\n---",
+    "full_content": "mm.set_title(\"新项目\").add_tag(\"AI\").update_knowledge_base_timestamp().save()\n```\n\n---"
+  },
+  {
+    "id": "maintainer_198",
+    "file": "maintainer.md",
+    "heading": "更新知识库时间戳",
+    "level": 3,
+    "content_preview": "```python\nmaintainer.update_kb_metadata()\n```\n\n由 search/summarize/manage/synthesize 模块在操作完成后调用，自动更新 `metadata.json` 中 `knowledge_base.updated_at` 字段。",
+    "full_content": "```python\nmaintainer.update_kb_metadata()\n```\n\n由 search/summarize/manage/synthesize 模块在操作完成后调用，自动更新 `metadata.json` 中 `knowledge_base.updated_at` 字段。"
+  },
+  {
+    "id": "maintainer_199",
+    "file": "maintainer.md",
+    "heading": "更新笔记元数据",
+    "level": 3,
+    "content_preview": "```python\nmaintainer.update_notes_metadata(note_filename, local_path, description=\"\")\n```\n\n由 manage 模块在导出笔记后调用，自动更新 `metadata.json` 中 `notes` 字段。\n\n---",
+    "full_content": "```python\nmaintainer.update_notes_metadata(note_filename, local_path, description=\"\")\n```\n\n由 manage 模块在导出笔记后调用，自动更新 `metadata.json` 中 `notes` 字段。\n\n---"
+  },
+  {
+    "id": "maintainer_200",
+    "file": "maintainer.md",
+    "heading": "CLI 入口",
+    "level": 2,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "maintainer_201",
+    "file": "maintainer.md",
+    "heading": "更新知识库时间戳",
+    "level": 1,
+    "content_preview": "python3 maintainer/Maintainer.py ~/项目 update-kb",
+    "full_content": "python3 maintainer/Maintainer.py ~/项目 update-kb"
+  },
+  {
+    "id": "maintainer_202",
+    "file": "maintainer.md",
+    "heading": "更新笔记元数据",
+    "level": 1,
+    "content_preview": "python3 maintainer/Maintainer.py ~/项目 update-notes 笔记_主题.md knowledge/note/笔记_主题.md \"描述\"\n```\n\n---",
+    "full_content": "python3 maintainer/Maintainer.py ~/项目 update-notes 笔记_主题.md knowledge/note/笔记_主题.md \"描述\"\n```\n\n---"
+  },
+  {
+    "id": "maintainer_203",
+    "file": "maintainer.md",
+    "heading": "元数据自动更新规则",
+    "level": 2,
+    "content_preview": "| 操作 | 触发模块 | 调用方法 | 更新内容 |\n|------|----------|----------|----------|\n| search 检索后 | `search` | `update_kb_metadata()` | `knowledge_base.updated_at` |\n| summarize 总结后 | `summarize` | `update_kb_metada...",
+    "full_content": "| 操作 | 触发模块 | 调用方法 | 更新内容 |\n|------|----------|----------|----------|\n| search 检索后 | `search` | `update_kb_metadata()` | `knowledge_base.updated_at` |\n| summarize 总结后 | `summarize` | `update_kb_metadata()` | `knowledge_base.updated_at` |\n| manage 导出笔记后 | `manage` | `update_notes_metadata()` | `notes` + `knowledge_base.updated_at` |\n| synthesize 提取笔记后 | `synthesize` | `update_kb_metadata()` | `knowledge_base.updated_at` |\n\n---"
+  },
+  {
+    "id": "maintainer_204",
+    "file": "maintainer.md",
+    "heading": "版本历史",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 3.0.0 | 2026-05-15 | **简化：移除版本归档功能（temp/draft/），因为项目使用 Git 进行版本控制。保留元数据维护功能。** |\n| 2.0.0 | 2026-05-09 | 重构：从项目文件整理转为元数据维护+版本控制 |\n| 1.0.0 | 2026-04-22 | 初始版本，基...",
+    "full_content": "| 版本 | 日期 | 说明 |\n|------|------|------|\n| 3.0.0 | 2026-05-15 | **简化：移除版本归档功能（temp/draft/），因为项目使用 Git 进行版本控制。保留元数据维护功能。** |\n| 2.0.0 | 2026-05-09 | 重构：从项目文件整理转为元数据维护+版本控制 |\n| 1.0.0 | 2026-04-22 | 初始版本，基于面向对象设计重构 |"
+  }
+]

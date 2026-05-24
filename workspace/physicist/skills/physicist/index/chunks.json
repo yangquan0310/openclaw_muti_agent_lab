@@ -1,0 +1,1186 @@
+[
+  {
+    "id": "formula_000",
+    "file": "formula.md",
+    "heading": "公式推导指南",
+    "level": 1,
+    "content_preview": "> 物理公式推导的规范和方法\n\n---",
+    "full_content": "> 物理公式推导的规范和方法\n\n---"
+  },
+  {
+    "id": "formula_001",
+    "file": "formula.md",
+    "heading": "1.1 物理优先",
+    "level": 3,
+    "content_preview": "1. **先有物理图像，再有数学形式**：明确每个量的物理意义\n2. **每一步都有物理依据**：不能纯粹数学操作，要有物理解释\n3. **保持物理直觉**：用物理图像检验中间结果",
+    "full_content": "1. **先有物理图像，再有数学形式**：明确每个量的物理意义\n2. **每一步都有物理依据**：不能纯粹数学操作，要有物理解释\n3. **保持物理直觉**：用物理图像检验中间结果"
+  },
+  {
+    "id": "formula_002",
+    "file": "formula.md",
+    "heading": "1.2 数学严谨",
+    "level": 3,
+    "content_preview": "1. **定义清晰**：每个符号首次出现必须定义\n2. **量纲一致**：等式两边量纲必须相同\n3. **求和约定**：使用爱因斯坦求和约定时明确指标范围\n\n---",
+    "full_content": "1. **定义清晰**：每个符号首次出现必须定义\n2. **量纲一致**：等式两边量纲必须相同\n3. **求和约定**：使用爱因斯坦求和约定时明确指标范围\n\n---"
+  },
+  {
+    "id": "formula_003",
+    "file": "formula.md",
+    "heading": "2.1 基本量纲",
+    "level": 3,
+    "content_preview": "| 物理量 | 量纲 |\n|--------|------|\n| 长度 | L |\n| 质量 | M |\n| 时间 | T |\n| 电流 | I |\n| 温度 | Θ |\n| 物质的量 | N |\n| 发光强度 | J |",
+    "full_content": "| 物理量 | 量纲 |\n|--------|------|\n| 长度 | L |\n| 质量 | M |\n| 时间 | T |\n| 电流 | I |\n| 温度 | Θ |\n| 物质的量 | N |\n| 发光强度 | J |"
+  },
+  {
+    "id": "formula_004",
+    "file": "formula.md",
+    "heading": "2.2 导出量纲",
+    "level": 3,
+    "content_preview": "| 物理量 | 量纲 |\n|--------|------|\n| 速度 | L T⁻¹ |\n| 加速度 | L T⁻² |\n| 力 | M L T⁻² |\n| 能量 | M L² T⁻² |\n| 功率 | M L² T⁻³ |\n| 频率 | T⁻¹ |\n| 电荷 | T I |\n| 电势 | M L² T⁻³ I⁻¹ |",
+    "full_content": "| 物理量 | 量纲 |\n|--------|------|\n| 速度 | L T⁻¹ |\n| 加速度 | L T⁻² |\n| 力 | M L T⁻² |\n| 能量 | M L² T⁻² |\n| 功率 | M L² T⁻³ |\n| 频率 | T⁻¹ |\n| 电荷 | T I |\n| 电势 | M L² T⁻³ I⁻¹ |"
+  },
+  {
+    "id": "formula_005",
+    "file": "formula.md",
+    "heading": "2.3 量纲检查示例",
+    "level": 3,
+    "content_preview": "**动能定理**\n\n$$[E_k] = M L^2 T^{-2}$$\n\n$$[E_k] = \\frac{1}{2} m v^2 = M \\cdot (L T^{-1})^2 = M L^2 T^{-2} \\checkmark$$\n\n**库仑定律**\n\n$$[F] = M L T^{-2}$$\n\n$$[F] = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_1 q_2}{r...",
+    "full_content": "**动能定理**\n\n$$[E_k] = M L^2 T^{-2}$$\n\n$$[E_k] = \\frac{1}{2} m v^2 = M \\cdot (L T^{-1})^2 = M L^2 T^{-2} \\checkmark$$\n\n**库仑定律**\n\n$$[F] = M L T^{-2}$$\n\n$$[F] = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_1 q_2}{r^2} = (M L^3 T^{-4} I^{-2}) \\cdot (T^2 I^2) \\cdot (L^{-2}) = M L T^{-2} \\checkmark$$\n\n---"
+  },
+  {
+    "id": "formula_006",
+    "file": "formula.md",
+    "heading": "3.1 Noether 定理",
+    "level": 3,
+    "content_preview": "| 对称性 | 守恒律 |\n|--------|--------|\n| 时间平移对称性 | 能量守恒 |\n| 空间平移对称性 | 动量守恒 |\n| 空间旋转对称性 | 角动量守恒 |\n| 规范对称性 | 电荷守恒 |\n| Lorentz 对称性 | 能量-动量守恒 |",
+    "full_content": "| 对称性 | 守恒律 |\n|--------|--------|\n| 时间平移对称性 | 能量守恒 |\n| 空间平移对称性 | 动量守恒 |\n| 空间旋转对称性 | 角动量守恒 |\n| 规范对称性 | 电荷守恒 |\n| Lorentz 对称性 | 能量-动量守恒 |"
+  },
+  {
+    "id": "formula_007",
+    "file": "formula.md",
+    "heading": "3.2 对称性检验",
+    "level": 3,
+    "content_preview": "推导完成后，检查：\n- 结果是否满足对应的对称性\n- 极限情况是否回到对称极限\n- 是否与已知守恒律矛盾\n\n---",
+    "full_content": "推导完成后，检查：\n- 结果是否满足对应的对称性\n- 极限情况是否回到对称极限\n- 是否与已知守恒律矛盾\n\n---"
+  },
+  {
+    "id": "formula_008",
+    "file": "formula.md",
+    "heading": "4.1 拉格朗日方法",
+    "level": 3,
+    "content_preview": "**步骤**\n\n1. 选择广义坐标 $q_i$\n2. 计算动能 $T(q_i, \\dot{q}_i)$\n3. 确定势能 $V(q_i)$\n4. 构造拉格朗日量 $L = T - V$\n5. 写出欧拉-拉格朗日方程\n\n$$\\frac{d}{dt}\\left(\\frac{\\partial L}{\\partial \\dot{q}_i}\\right) - \\frac{\\partial L}{\\partia...",
+    "full_content": "**步骤**\n\n1. 选择广义坐标 $q_i$\n2. 计算动能 $T(q_i, \\dot{q}_i)$\n3. 确定势能 $V(q_i)$\n4. 构造拉格朗日量 $L = T - V$\n5. 写出欧拉-拉格朗日方程\n\n$$\\frac{d}{dt}\\left(\\frac{\\partial L}{\\partial \\dot{q}_i}\\right) - \\frac{\\partial L}{\\partial q_i} = 0$$\n\n**示例：谐振子**\n\n1. 广义坐标：$x$\n2. 动能：$T = \\frac{1}{2}m\\dot{x}^2$\n3. 势能：$V = \\frac{1}{2}kx^2$\n4. 拉格朗日量：$L = \\frac{1}{2}m\\dot{x}^2 - \\frac{1}{2}kx^2$\n5. 运动方程：$m\\ddot{x} + kx = 0$"
+  },
+  {
+    "id": "formula_009",
+    "file": "formula.md",
+    "heading": "4.2 哈密顿方法",
+    "level": 3,
+    "content_preview": "**步骤**\n\n1. 计算广义动量 $p_i = \\frac{\\partial L}{\\partial \\dot{q}_i}$\n2. 构造哈密顿量 $H = \\sum_i p_i \\dot{q}_i - L$\n3. 写出正则方程\n\n$$\\dot{q}_i = \\frac{\\partial H}{\\partial p_i}, \\quad \\dot{p}_i = -\\frac{\\partial H}{...",
+    "full_content": "**步骤**\n\n1. 计算广义动量 $p_i = \\frac{\\partial L}{\\partial \\dot{q}_i}$\n2. 构造哈密顿量 $H = \\sum_i p_i \\dot{q}_i - L$\n3. 写出正则方程\n\n$$\\dot{q}_i = \\frac{\\partial H}{\\partial p_i}, \\quad \\dot{p}_i = -\\frac{\\partial H}{\\partial q_i}$$"
+  },
+  {
+    "id": "formula_010",
+    "file": "formula.md",
+    "heading": "4.3 量纲分析构造",
+    "level": 3,
+    "content_preview": "**示例：行星轨道特征尺度**\n\n已知：引力常数 $G$，中心质量 $M$，求特征半径 $R$\n\n1. 构造量纲正确的组合：$[G M] = L^3 T^{-2}$\n2. 引力提供向心力：$G M m / R^2 = m v^2 / R$\n3. 速度量纲：$[v] = L T^{-1}$\n4. 特征时间：$[t] = T$\n5. 特征半径：$R \\sim G M / v^2$\n\n---",
+    "full_content": "**示例：行星轨道特征尺度**\n\n已知：引力常数 $G$，中心质量 $M$，求特征半径 $R$\n\n1. 构造量纲正确的组合：$[G M] = L^3 T^{-2}$\n2. 引力提供向心力：$G M m / R^2 = m v^2 / R$\n3. 速度量纲：$[v] = L T^{-1}$\n4. 特征时间：$[t] = T$\n5. 特征半径：$R \\sim G M / v^2$\n\n---"
+  },
+  {
+    "id": "formula_011",
+    "file": "formula.md",
+    "heading": "5.1 符号约定",
+    "level": 3,
+    "content_preview": "| 含义 | 符号 |\n|------|------|\n| 位置 | $\\mathbf{r}$, $x$, $q$ |\n| 速度 | $\\mathbf{v}$, $\\dot{x}$ |\n| 动量 | $\\mathbf{p}$ |\n| 能量 | $E$, $H$ (哈密顿量) |\n| 拉格朗日量 | $L$, $\\mathcal{L}$ (密度) |\n| 波函数 | $\\psi$, $\\Psi$ |...",
+    "full_content": "| 含义 | 符号 |\n|------|------|\n| 位置 | $\\mathbf{r}$, $x$, $q$ |\n| 速度 | $\\mathbf{v}$, $\\dot{x}$ |\n| 动量 | $\\mathbf{p}$ |\n| 能量 | $E$, $H$ (哈密顿量) |\n| 拉格朗日量 | $L$, $\\mathcal{L}$ (密度) |\n| 波函数 | $\\psi$, $\\Psi$ |\n| 算符 | $\\hat{A}$, $\\hat{H}$ |"
+  },
+  {
+    "id": "formula_012",
+    "file": "formula.md",
+    "heading": "5.2 算符约定",
+    "level": 3,
+    "content_preview": "- 厄米算符：$\\hat{A}^\\dagger = \\hat{A}$，用 $\\dagger$ 表示伴随\n- 对易子：$[\\hat{A}, \\hat{B}] = \\hat{A}\\hat{B} - \\hat{B}\\hat{A}$\n- 对易子：$\\{\\hat{A}, \\hat{B}\\} = \\hat{A}\\hat{B} + \\hat{B}\\hat{A}$ (反对易子)",
+    "full_content": "- 厄米算符：$\\hat{A}^\\dagger = \\hat{A}$，用 $\\dagger$ 表示伴随\n- 对易子：$[\\hat{A}, \\hat{B}] = \\hat{A}\\hat{B} - \\hat{B}\\hat{A}$\n- 对易子：$\\{\\hat{A}, \\hat{B}\\} = \\hat{A}\\hat{B} + \\hat{B}\\hat{A}$ (反对易子)"
+  },
+  {
+    "id": "formula_013",
+    "file": "formula.md",
+    "heading": "5.3 自然单位制",
+    "level": 3,
+    "content_preview": "当使用 $\\hbar = c = 1$ 的自然单位制时：\n- 质量、能量、动量具有相同量纲\n- 长度和时间具有相同量纲\n- 明确标注单位制转换因子\n\n---",
+    "full_content": "当使用 $\\hbar = c = 1$ 的自然单位制时：\n- 质量、能量、动量具有相同量纲\n- 长度和时间具有相同量纲\n- 明确标注单位制转换因子\n\n---"
+  },
+  {
+    "id": "formula_014",
+    "file": "formula.md",
+    "heading": "六、推导文档模板",
+    "level": 2,
+    "content_preview": "使用 [formula_template.md](../assets/templates/formula_template.md) 记录推导过程。\n\n---",
+    "full_content": "使用 [formula_template.md](../assets/templates/formula_template.md) 记录推导过程。\n\n---"
+  },
+  {
+    "id": "formula_015",
+    "file": "formula.md",
+    "heading": "七、常见错误检查",
+    "level": 2,
+    "content_preview": "- [ ] 量纲不一致\n- [ ] 上下指标混乱\n- [ ] 求和约定遗漏\n- [ ] 正则方程写反符号\n- [ ] 忽略了对称性\n- [ ] 边界条件遗漏\n- [ ] 正则动量定义错误\n\n---",
+    "full_content": "- [ ] 量纲不一致\n- [ ] 上下指标混乱\n- [ ] 求和约定遗漏\n- [ ] 正则方程写反符号\n- [ ] 忽略了对称性\n- [ ] 边界条件遗漏\n- [ ] 正则动量定义错误\n\n---"
+  },
+  {
+    "id": "formula_016",
+    "file": "formula.md",
+    "heading": "八、参考资源",
+    "level": 2,
+    "content_preview": "- Goldstein, Classical Mechanics\n- Landau & Lifshitz, Mechanics\n- Sakurai, Modern Quantum Mechanics\n- Weinberg, The Quantum Theory of Fields\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*",
+    "full_content": "- Goldstein, Classical Mechanics\n- Landau & Lifshitz, Mechanics\n- Sakurai, Modern Quantum Mechanics\n- Weinberg, The Quantum Theory of Fields\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  },
+  {
+    "id": "physics-tools-standards_017",
+    "file": "physics-tools-standards.md",
+    "heading": "物理工具指南",
+    "level": 1,
+    "content_preview": "> 常用物理工具和数值计算库\n\n---",
+    "full_content": "> 常用物理工具和数值计算库\n\n---"
+  },
+  {
+    "id": "physics-tools-standards_018",
+    "file": "physics-tools-standards.md",
+    "heading": "1.1 Python 科学计算栈",
+    "level": 3,
+    "content_preview": "| 库 | 用途 | 导入方式 |\n|----|------|----------|\n| NumPy | 数值数组、线性代数 | `import numpy as np` |\n| SciPy | 特殊函数、数值积分、优化 | `import scipy as sp` |\n| SymPy | 符号计算、解析求解 | `import sympy as sp` |\n| mpmath | 高精度浮点运算 ...",
+    "full_content": "| 库 | 用途 | 导入方式 |\n|----|------|----------|\n| NumPy | 数值数组、线性代数 | `import numpy as np` |\n| SciPy | 特殊函数、数值积分、优化 | `import scipy as sp` |\n| SymPy | 符号计算、解析求解 | `import sympy as sp` |\n| mpmath | 高精度浮点运算 | `import mpmath as mp` |"
+  },
+  {
+    "id": "physics-tools-standards_019",
+    "file": "physics-tools-standards.md",
+    "heading": "1.2 常用数值方法",
+    "level": 3,
+    "content_preview": "**数值积分**\n\n```python\nfrom scipy import integrate",
+    "full_content": "**数值积分**\n\n```python\nfrom scipy import integrate"
+  },
+  {
+    "id": "physics-tools-standards_020",
+    "file": "physics-tools-standards.md",
+    "heading": "定积分",
+    "level": 1,
+    "content_preview": "result, error = integrate.quad(lambda x: x**2, 0, 1)",
+    "full_content": "result, error = integrate.quad(lambda x: x**2, 0, 1)"
+  },
+  {
+    "id": "physics-tools-standards_021",
+    "file": "physics-tools-standards.md",
+    "heading": "二重积分",
+    "level": 1,
+    "content_preview": "result = integrate.dblquad(lambda x, y: x*y, 0, 1, lambda x: 0, lambda x: x)\n```\n\n**微分方程求解**\n\n```python\nfrom scipy.integrate import solve_ivp\n\ndef odes(t, y):\n    return [y[1], -y[0]]\n\nsol = solve_ivp...",
+    "full_content": "result = integrate.dblquad(lambda x, y: x*y, 0, 1, lambda x: 0, lambda x: x)\n```\n\n**微分方程求解**\n\n```python\nfrom scipy.integrate import solve_ivp\n\ndef odes(t, y):\n    return [y[1], -y[0]]\n\nsol = solve_ivp(odes, [0, 10], [0, 1], dense_output=True)\n```\n\n**矩阵特征值**\n\n```python\nimport numpy as np\n\nA = np.array([[2, 1], [1, 2]])\neigenvalues, eigenvectors = np.linalg.eig(A)\n```"
+  },
+  {
+    "id": "physics-tools-standards_022",
+    "file": "physics-tools-standards.md",
+    "heading": "1.3 特殊函数",
+    "level": 3,
+    "content_preview": "```python\nfrom scipy import special",
+    "full_content": "```python\nfrom scipy import special"
+  },
+  {
+    "id": "physics-tools-standards_023",
+    "file": "physics-tools-standards.md",
+    "heading": "贝塞尔函数",
+    "level": 1,
+    "content_preview": "special.jn(n, x)",
+    "full_content": "special.jn(n, x)"
+  },
+  {
+    "id": "physics-tools-standards_024",
+    "file": "physics-tools-standards.md",
+    "heading": "勒让德多项式",
+    "level": 1,
+    "content_preview": "special.legendre(n)(x)",
+    "full_content": "special.legendre(n)(x)"
+  },
+  {
+    "id": "physics-tools-standards_025",
+    "file": "physics-tools-standards.md",
+    "heading": "伽马函数",
+    "level": 1,
+    "content_preview": "special.gamma(z)",
+    "full_content": "special.gamma(z)"
+  },
+  {
+    "id": "physics-tools-standards_026",
+    "file": "physics-tools-standards.md",
+    "heading": "误差函数",
+    "level": 1,
+    "content_preview": "special.erf(x)\n```\n\n---",
+    "full_content": "special.erf(x)\n```\n\n---"
+  },
+  {
+    "id": "physics-tools-standards_027",
+    "file": "physics-tools-standards.md",
+    "heading": "2.1 SymPy 基础",
+    "level": 3,
+    "content_preview": "```python\nimport sympy as sp",
+    "full_content": "```python\nimport sympy as sp"
+  },
+  {
+    "id": "physics-tools-standards_028",
+    "file": "physics-tools-standards.md",
+    "heading": "定义符号",
+    "level": 1,
+    "content_preview": "x, y, z = sp.symbols('x y z')\nn = sp.symbols('n', integer=True)",
+    "full_content": "x, y, z = sp.symbols('x y z')\nn = sp.symbols('n', integer=True)"
+  },
+  {
+    "id": "physics-tools-standards_029",
+    "file": "physics-tools-standards.md",
+    "heading": "定义表达式",
+    "level": 1,
+    "content_preview": "expr = (x + y)**3\nexpr.expand()",
+    "full_content": "expr = (x + y)**3\nexpr.expand()"
+  },
+  {
+    "id": "physics-tools-standards_030",
+    "file": "physics-tools-standards.md",
+    "heading": "求导",
+    "level": 1,
+    "content_preview": "sp.diff(expr, x)",
+    "full_content": "sp.diff(expr, x)"
+  },
+  {
+    "id": "physics-tools-standards_031",
+    "file": "physics-tools-standards.md",
+    "heading": "积分",
+    "level": 1,
+    "content_preview": "sp.integrate(expr, x)",
+    "full_content": "sp.integrate(expr, x)"
+  },
+  {
+    "id": "physics-tools-standards_032",
+    "file": "physics-tools-standards.md",
+    "heading": "方程求解",
+    "level": 1,
+    "content_preview": "sp.solve(x**2 - 4, x)\n```",
+    "full_content": "sp.solve(x**2 - 4, x)\n```"
+  },
+  {
+    "id": "physics-tools-standards_033",
+    "file": "physics-tools-standards.md",
+    "heading": "2.2 物理专用符号",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "physics-tools-standards_034",
+    "file": "physics-tools-standards.md",
+    "heading": "量子力学符号",
+    "level": 1,
+    "content_preview": "from sympy.physics.quantum import *",
+    "full_content": "from sympy.physics.quantum import *"
+  },
+  {
+    "id": "physics-tools-standards_035",
+    "file": "physics-tools-standards.md",
+    "heading": "张量运算",
+    "level": 1,
+    "content_preview": "from sympy.tensor.array import *\n```\n\n---",
+    "full_content": "from sympy.tensor.array import *\n```\n\n---"
+  },
+  {
+    "id": "physics-tools-standards_036",
+    "file": "physics-tools-standards.md",
+    "heading": "3.1 Matplotlib 基础",
+    "level": 3,
+    "content_preview": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 2*np.pi, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.xlabel(r'$\\omega t$')\nplt.ylabel(r'$\\sin(\\omega t)$')\nplt.title('Simple...",
+    "full_content": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 2*np.pi, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.xlabel(r'$\\omega t$')\nplt.ylabel(r'$\\sin(\\omega t)$')\nplt.title('Simple Harmonic Oscillator')\nplt.grid(True)\nplt.show()\n```"
+  },
+  {
+    "id": "physics-tools-standards_037",
+    "file": "physics-tools-standards.md",
+    "heading": "3.2 物理场可视化",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "physics-tools-standards_038",
+    "file": "physics-tools-standards.md",
+    "heading": "二维电场/势能场",
+    "level": 1,
+    "content_preview": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef potential(x, y, q1, q2):\n    return q1/np.sqrt((x-1)**2 + y**2) + q2/np.sqrt((x+1)**2 + y**2)\n\nx = np.linspace(-3, 3, 100)\ny = np.linspace(-3, 3...",
+    "full_content": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef potential(x, y, q1, q2):\n    return q1/np.sqrt((x-1)**2 + y**2) + q2/np.sqrt((x+1)**2 + y**2)\n\nx = np.linspace(-3, 3, 100)\ny = np.linspace(-3, 3, 100)\nX, Y = np.meshgrid(x, y)\nZ = potential(X, Y, 1, -1)\n\nplt.contourf(X, Y, Z, levels=20)\nplt.colorbar(label='Potential')\nplt.xlabel(r'$x$')\nplt.ylabel(r'$y$')\nplt.title('Electric Potential')\nplt.show()\n```"
+  },
+  {
+    "id": "physics-tools-standards_039",
+    "file": "physics-tools-standards.md",
+    "heading": "3.3 3D 表面图",
+    "level": 3,
+    "content_preview": "```python\nfrom mpl_toolkits.mplot3d import Axes3D\n\nfig = plt.figure()\nax = fig.add_subplot(111, projection='3d')\nax.plot_surface(X, Y, Z, cmap='viridis')\nax.set_xlabel('X')\nax.set_ylabel('Y')\nax.set_z...",
+    "full_content": "```python\nfrom mpl_toolkits.mplot3d import Axes3D\n\nfig = plt.figure()\nax = fig.add_subplot(111, projection='3d')\nax.plot_surface(X, Y, Z, cmap='viridis')\nax.set_xlabel('X')\nax.set_ylabel('Y')\nax.set_zlabel('Z')\nplt.show()\n```\n\n---"
+  },
+  {
+    "id": "physics-tools-standards_040",
+    "file": "physics-tools-standards.md",
+    "heading": "四、常用物理常数",
+    "level": 2,
+    "content_preview": "```python\nimport scipy.constants as const",
+    "full_content": "```python\nimport scipy.constants as const"
+  },
+  {
+    "id": "physics-tools-standards_041",
+    "file": "physics-tools-standards.md",
+    "heading": "基本常数",
+    "level": 1,
+    "content_preview": "const.c       # 光速\nconst.h       # 普朗克常数\nconst.hbar    # 约化普朗克常数\nconst.e       # 元电荷\nconst.m_e     # 电子质量\nconst.m_p     # 质子质量\nconst.alpha    # 精细结构常数\nconst.G       # 万有引力常数\nconst.k_B     # 玻尔兹曼常数",
+    "full_content": "const.c       # 光速\nconst.h       # 普朗克常数\nconst.hbar    # 约化普朗克常数\nconst.e       # 元电荷\nconst.m_e     # 电子质量\nconst.m_p     # 质子质量\nconst.alpha    # 精细结构常数\nconst.G       # 万有引力常数\nconst.k_B     # 玻尔兹曼常数"
+  },
+  {
+    "id": "physics-tools-standards_042",
+    "file": "physics-tools-standards.md",
+    "heading": "换算",
+    "level": 1,
+    "content_preview": "const.epsilon_0  # 真空介电常数\nconst.mu_0      # 真空磁导率\n```\n\n---",
+    "full_content": "const.epsilon_0  # 真空介电常数\nconst.mu_0      # 真空磁导率\n```\n\n---"
+  },
+  {
+    "id": "physics-tools-standards_043",
+    "file": "physics-tools-standards.md",
+    "heading": "五、单位制转换",
+    "level": 2,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "physics-tools-standards_044",
+    "file": "physics-tools-standards.md",
+    "heading": "SI 到原子单位",
+    "level": 1,
+    "content_preview": "const.physical_constants['atomic unit of length']",
+    "full_content": "const.physical_constants['atomic unit of length']"
+  },
+  {
+    "id": "physics-tools-standards_045",
+    "file": "physics-tools-standards.md",
+    "heading": "能量单位转换",
+    "level": 1,
+    "content_preview": "const.eV    # 电子伏特\nconst.cal    # 卡路里\nconst.keV    # 千电子伏特\nconst.MeV    # 兆电子伏特\nconst.GeV    # 吉电子伏特\n```\n\n---",
+    "full_content": "const.eV    # 电子伏特\nconst.cal    # 卡路里\nconst.keV    # 千电子伏特\nconst.MeV    # 兆电子伏特\nconst.GeV    # 吉电子伏特\n```\n\n---"
+  },
+  {
+    "id": "physics-tools-standards_046",
+    "file": "physics-tools-standards.md",
+    "heading": "6.1 计算工具",
+    "level": 3,
+    "content_preview": "```bash\npython3 scripts/calculate.py --help\n```",
+    "full_content": "```bash\npython3 scripts/calculate.py --help\n```"
+  },
+  {
+    "id": "physics-tools-standards_047",
+    "file": "physics-tools-standards.md",
+    "heading": "6.2 可视化工具",
+    "level": 3,
+    "content_preview": "```bash\npython3 scripts/visualize.py --help\n```\n\n---",
+    "full_content": "```bash\npython3 scripts/visualize.py --help\n```\n\n---"
+  },
+  {
+    "id": "physics-tools-standards_048",
+    "file": "physics-tools-standards.md",
+    "heading": "七、资源链接",
+    "level": 2,
+    "content_preview": "- [NumPy 文档](https://numpy.org/doc/)\n- [SciPy 文档](https://docs.scipy.org/)\n- [SymPy 文档](https://docs.sympy.org/)\n- [Matplotlib 文档](https://matplotlib.org/stable/contents.html)\n- [Physics Handbook](htt...",
+    "full_content": "- [NumPy 文档](https://numpy.org/doc/)\n- [SciPy 文档](https://docs.scipy.org/)\n- [SymPy 文档](https://docs.sympy.org/)\n- [Matplotlib 文档](https://matplotlib.org/stable/contents.html)\n- [Physics Handbook](http://www.users.howard.edu/~rafid/phys/Phys handbook.pdf)\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  },
+  {
+    "id": "physics-tools_049",
+    "file": "physics-tools.md",
+    "heading": "物理工具指南",
+    "level": 1,
+    "content_preview": "> 常用物理工具和数值计算库\n\n---",
+    "full_content": "> 常用物理工具和数值计算库\n\n---"
+  },
+  {
+    "id": "physics-tools_050",
+    "file": "physics-tools.md",
+    "heading": "1.1 Python 科学计算栈",
+    "level": 3,
+    "content_preview": "| 库 | 用途 | 导入方式 |\n|----|------|----------|\n| NumPy | 数值数组、线性代数 | `import numpy as np` |\n| SciPy | 特殊函数、数值积分、优化 | `import scipy as sp` |\n| SymPy | 符号计算、解析求解 | `import sympy as sp` |\n| mpmath | 高精度浮点运算 ...",
+    "full_content": "| 库 | 用途 | 导入方式 |\n|----|------|----------|\n| NumPy | 数值数组、线性代数 | `import numpy as np` |\n| SciPy | 特殊函数、数值积分、优化 | `import scipy as sp` |\n| SymPy | 符号计算、解析求解 | `import sympy as sp` |\n| mpmath | 高精度浮点运算 | `import mpmath as mp` |"
+  },
+  {
+    "id": "physics-tools_051",
+    "file": "physics-tools.md",
+    "heading": "1.2 常用数值方法",
+    "level": 3,
+    "content_preview": "**数值积分**\n\n```python\nfrom scipy import integrate",
+    "full_content": "**数值积分**\n\n```python\nfrom scipy import integrate"
+  },
+  {
+    "id": "physics-tools_052",
+    "file": "physics-tools.md",
+    "heading": "定积分",
+    "level": 1,
+    "content_preview": "result, error = integrate.quad(lambda x: x**2, 0, 1)",
+    "full_content": "result, error = integrate.quad(lambda x: x**2, 0, 1)"
+  },
+  {
+    "id": "physics-tools_053",
+    "file": "physics-tools.md",
+    "heading": "二重积分",
+    "level": 1,
+    "content_preview": "result = integrate.dblquad(lambda x, y: x*y, 0, 1, lambda x: 0, lambda x: x)\n```\n\n**微分方程求解**\n\n```python\nfrom scipy.integrate import solve_ivp\n\ndef odes(t, y):\n    return [y[1], -y[0]]\n\nsol = solve_ivp...",
+    "full_content": "result = integrate.dblquad(lambda x, y: x*y, 0, 1, lambda x: 0, lambda x: x)\n```\n\n**微分方程求解**\n\n```python\nfrom scipy.integrate import solve_ivp\n\ndef odes(t, y):\n    return [y[1], -y[0]]\n\nsol = solve_ivp(odes, [0, 10], [0, 1], dense_output=True)\n```\n\n**矩阵特征值**\n\n```python\nimport numpy as np\n\nA = np.array([[2, 1], [1, 2]])\neigenvalues, eigenvectors = np.linalg.eig(A)\n```"
+  },
+  {
+    "id": "physics-tools_054",
+    "file": "physics-tools.md",
+    "heading": "1.3 特殊函数",
+    "level": 3,
+    "content_preview": "```python\nfrom scipy import special",
+    "full_content": "```python\nfrom scipy import special"
+  },
+  {
+    "id": "physics-tools_055",
+    "file": "physics-tools.md",
+    "heading": "贝塞尔函数",
+    "level": 1,
+    "content_preview": "special.jn(n, x)",
+    "full_content": "special.jn(n, x)"
+  },
+  {
+    "id": "physics-tools_056",
+    "file": "physics-tools.md",
+    "heading": "勒让德多项式",
+    "level": 1,
+    "content_preview": "special.legendre(n)(x)",
+    "full_content": "special.legendre(n)(x)"
+  },
+  {
+    "id": "physics-tools_057",
+    "file": "physics-tools.md",
+    "heading": "伽马函数",
+    "level": 1,
+    "content_preview": "special.gamma(z)",
+    "full_content": "special.gamma(z)"
+  },
+  {
+    "id": "physics-tools_058",
+    "file": "physics-tools.md",
+    "heading": "误差函数",
+    "level": 1,
+    "content_preview": "special.erf(x)\n```\n\n---",
+    "full_content": "special.erf(x)\n```\n\n---"
+  },
+  {
+    "id": "physics-tools_059",
+    "file": "physics-tools.md",
+    "heading": "2.1 SymPy 基础",
+    "level": 3,
+    "content_preview": "```python\nimport sympy as sp",
+    "full_content": "```python\nimport sympy as sp"
+  },
+  {
+    "id": "physics-tools_060",
+    "file": "physics-tools.md",
+    "heading": "定义符号",
+    "level": 1,
+    "content_preview": "x, y, z = sp.symbols('x y z')\nn = sp.symbols('n', integer=True)",
+    "full_content": "x, y, z = sp.symbols('x y z')\nn = sp.symbols('n', integer=True)"
+  },
+  {
+    "id": "physics-tools_061",
+    "file": "physics-tools.md",
+    "heading": "定义表达式",
+    "level": 1,
+    "content_preview": "expr = (x + y)**3\nexpr.expand()",
+    "full_content": "expr = (x + y)**3\nexpr.expand()"
+  },
+  {
+    "id": "physics-tools_062",
+    "file": "physics-tools.md",
+    "heading": "求导",
+    "level": 1,
+    "content_preview": "sp.diff(expr, x)",
+    "full_content": "sp.diff(expr, x)"
+  },
+  {
+    "id": "physics-tools_063",
+    "file": "physics-tools.md",
+    "heading": "积分",
+    "level": 1,
+    "content_preview": "sp.integrate(expr, x)",
+    "full_content": "sp.integrate(expr, x)"
+  },
+  {
+    "id": "physics-tools_064",
+    "file": "physics-tools.md",
+    "heading": "方程求解",
+    "level": 1,
+    "content_preview": "sp.solve(x**2 - 4, x)\n```",
+    "full_content": "sp.solve(x**2 - 4, x)\n```"
+  },
+  {
+    "id": "physics-tools_065",
+    "file": "physics-tools.md",
+    "heading": "2.2 物理专用符号",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "physics-tools_066",
+    "file": "physics-tools.md",
+    "heading": "量子力学符号",
+    "level": 1,
+    "content_preview": "from sympy.physics.quantum import *",
+    "full_content": "from sympy.physics.quantum import *"
+  },
+  {
+    "id": "physics-tools_067",
+    "file": "physics-tools.md",
+    "heading": "张量运算",
+    "level": 1,
+    "content_preview": "from sympy.tensor.array import *\n```\n\n---",
+    "full_content": "from sympy.tensor.array import *\n```\n\n---"
+  },
+  {
+    "id": "physics-tools_068",
+    "file": "physics-tools.md",
+    "heading": "3.1 Matplotlib 基础",
+    "level": 3,
+    "content_preview": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 2*np.pi, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.xlabel(r'$\\omega t$')\nplt.ylabel(r'$\\sin(\\omega t)$')\nplt.title('Simple...",
+    "full_content": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 2*np.pi, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.xlabel(r'$\\omega t$')\nplt.ylabel(r'$\\sin(\\omega t)$')\nplt.title('Simple Harmonic Oscillator')\nplt.grid(True)\nplt.show()\n```"
+  },
+  {
+    "id": "physics-tools_069",
+    "file": "physics-tools.md",
+    "heading": "3.2 物理场可视化",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "physics-tools_070",
+    "file": "physics-tools.md",
+    "heading": "二维电场/势能场",
+    "level": 1,
+    "content_preview": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef potential(x, y, q1, q2):\n    return q1/np.sqrt((x-1)**2 + y**2) + q2/np.sqrt((x+1)**2 + y**2)\n\nx = np.linspace(-3, 3, 100)\ny = np.linspace(-3, 3...",
+    "full_content": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef potential(x, y, q1, q2):\n    return q1/np.sqrt((x-1)**2 + y**2) + q2/np.sqrt((x+1)**2 + y**2)\n\nx = np.linspace(-3, 3, 100)\ny = np.linspace(-3, 3, 100)\nX, Y = np.meshgrid(x, y)\nZ = potential(X, Y, 1, -1)\n\nplt.contourf(X, Y, Z, levels=20)\nplt.colorbar(label='Potential')\nplt.xlabel(r'$x$')\nplt.ylabel(r'$y$')\nplt.title('Electric Potential')\nplt.show()\n```"
+  },
+  {
+    "id": "physics-tools_071",
+    "file": "physics-tools.md",
+    "heading": "3.3 3D 表面图",
+    "level": 3,
+    "content_preview": "```python\nfrom mpl_toolkits.mplot3d import Axes3D\n\nfig = plt.figure()\nax = fig.add_subplot(111, projection='3d')\nax.plot_surface(X, Y, Z, cmap='viridis')\nax.set_xlabel('X')\nax.set_ylabel('Y')\nax.set_z...",
+    "full_content": "```python\nfrom mpl_toolkits.mplot3d import Axes3D\n\nfig = plt.figure()\nax = fig.add_subplot(111, projection='3d')\nax.plot_surface(X, Y, Z, cmap='viridis')\nax.set_xlabel('X')\nax.set_ylabel('Y')\nax.set_zlabel('Z')\nplt.show()\n```\n\n---"
+  },
+  {
+    "id": "physics-tools_072",
+    "file": "physics-tools.md",
+    "heading": "四、常用物理常数",
+    "level": 2,
+    "content_preview": "```python\nimport scipy.constants as const",
+    "full_content": "```python\nimport scipy.constants as const"
+  },
+  {
+    "id": "physics-tools_073",
+    "file": "physics-tools.md",
+    "heading": "基本常数",
+    "level": 1,
+    "content_preview": "const.c       # 光速\nconst.h       # 普朗克常数\nconst.hbar    # 约化普朗克常数\nconst.e       # 元电荷\nconst.m_e     # 电子质量\nconst.m_p     # 质子质量\nconst.alpha    # 精细结构常数\nconst.G       # 万有引力常数\nconst.k_B     # 玻尔兹曼常数",
+    "full_content": "const.c       # 光速\nconst.h       # 普朗克常数\nconst.hbar    # 约化普朗克常数\nconst.e       # 元电荷\nconst.m_e     # 电子质量\nconst.m_p     # 质子质量\nconst.alpha    # 精细结构常数\nconst.G       # 万有引力常数\nconst.k_B     # 玻尔兹曼常数"
+  },
+  {
+    "id": "physics-tools_074",
+    "file": "physics-tools.md",
+    "heading": "换算",
+    "level": 1,
+    "content_preview": "const.epsilon_0  # 真空介电常数\nconst.mu_0      # 真空磁导率\n```\n\n---",
+    "full_content": "const.epsilon_0  # 真空介电常数\nconst.mu_0      # 真空磁导率\n```\n\n---"
+  },
+  {
+    "id": "physics-tools_075",
+    "file": "physics-tools.md",
+    "heading": "五、单位制转换",
+    "level": 2,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "physics-tools_076",
+    "file": "physics-tools.md",
+    "heading": "SI 到原子单位",
+    "level": 1,
+    "content_preview": "const.physical_constants['atomic unit of length']",
+    "full_content": "const.physical_constants['atomic unit of length']"
+  },
+  {
+    "id": "physics-tools_077",
+    "file": "physics-tools.md",
+    "heading": "能量单位转换",
+    "level": 1,
+    "content_preview": "const.eV    # 电子伏特\nconst.cal    # 卡路里\nconst.keV    # 千电子伏特\nconst.MeV    # 兆电子伏特\nconst.GeV    # 吉电子伏特\n```\n\n---",
+    "full_content": "const.eV    # 电子伏特\nconst.cal    # 卡路里\nconst.keV    # 千电子伏特\nconst.MeV    # 兆电子伏特\nconst.GeV    # 吉电子伏特\n```\n\n---"
+  },
+  {
+    "id": "physics-tools_078",
+    "file": "physics-tools.md",
+    "heading": "6.1 计算工具",
+    "level": 3,
+    "content_preview": "```bash\npython3 scripts/calculate.py --help\n```",
+    "full_content": "```bash\npython3 scripts/calculate.py --help\n```"
+  },
+  {
+    "id": "physics-tools_079",
+    "file": "physics-tools.md",
+    "heading": "6.2 可视化工具",
+    "level": 3,
+    "content_preview": "```bash\npython3 scripts/visualize.py --help\n```\n\n---",
+    "full_content": "```bash\npython3 scripts/visualize.py --help\n```\n\n---"
+  },
+  {
+    "id": "physics-tools_080",
+    "file": "physics-tools.md",
+    "heading": "七、资源链接",
+    "level": 2,
+    "content_preview": "- [NumPy 文档](https://numpy.org/doc/)\n- [SciPy 文档](https://docs.scipy.org/)\n- [SymPy 文档](https://docs.sympy.org/)\n- [Matplotlib 文档](https://matplotlib.org/stable/contents.html)\n- [Physics Handbook](htt...",
+    "full_content": "- [NumPy 文档](https://numpy.org/doc/)\n- [SciPy 文档](https://docs.scipy.org/)\n- [SymPy 文档](https://docs.sympy.org/)\n- [Matplotlib 文档](https://matplotlib.org/stable/contents.html)\n- [Physics Handbook](http://www.users.howard.edu/~rafid/phys/Phys handbook.pdf)\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  },
+  {
+    "id": "formula-derivation-standards_081",
+    "file": "formula-derivation-standards.md",
+    "heading": "公式推导指南",
+    "level": 1,
+    "content_preview": "> 物理公式推导的规范和方法\n\n---",
+    "full_content": "> 物理公式推导的规范和方法\n\n---"
+  },
+  {
+    "id": "formula-derivation-standards_082",
+    "file": "formula-derivation-standards.md",
+    "heading": "1.1 物理优先",
+    "level": 3,
+    "content_preview": "1. **先有物理图像，再有数学形式**：明确每个量的物理意义\n2. **每一步都有物理依据**：不能纯粹数学操作，要有物理解释\n3. **保持物理直觉**：用物理图像检验中间结果",
+    "full_content": "1. **先有物理图像，再有数学形式**：明确每个量的物理意义\n2. **每一步都有物理依据**：不能纯粹数学操作，要有物理解释\n3. **保持物理直觉**：用物理图像检验中间结果"
+  },
+  {
+    "id": "formula-derivation-standards_083",
+    "file": "formula-derivation-standards.md",
+    "heading": "1.2 数学严谨",
+    "level": 3,
+    "content_preview": "1. **定义清晰**：每个符号首次出现必须定义\n2. **量纲一致**：等式两边量纲必须相同\n3. **求和约定**：使用爱因斯坦求和约定时明确指标范围\n\n---",
+    "full_content": "1. **定义清晰**：每个符号首次出现必须定义\n2. **量纲一致**：等式两边量纲必须相同\n3. **求和约定**：使用爱因斯坦求和约定时明确指标范围\n\n---"
+  },
+  {
+    "id": "formula-derivation-standards_084",
+    "file": "formula-derivation-standards.md",
+    "heading": "2.1 基本量纲",
+    "level": 3,
+    "content_preview": "| 物理量 | 量纲 |\n|--------|------|\n| 长度 | L |\n| 质量 | M |\n| 时间 | T |\n| 电流 | I |\n| 温度 | Θ |\n| 物质的量 | N |\n| 发光强度 | J |",
+    "full_content": "| 物理量 | 量纲 |\n|--------|------|\n| 长度 | L |\n| 质量 | M |\n| 时间 | T |\n| 电流 | I |\n| 温度 | Θ |\n| 物质的量 | N |\n| 发光强度 | J |"
+  },
+  {
+    "id": "formula-derivation-standards_085",
+    "file": "formula-derivation-standards.md",
+    "heading": "2.2 导出量纲",
+    "level": 3,
+    "content_preview": "| 物理量 | 量纲 |\n|--------|------|\n| 速度 | L T⁻¹ |\n| 加速度 | L T⁻² |\n| 力 | M L T⁻² |\n| 能量 | M L² T⁻² |\n| 功率 | M L² T⁻³ |\n| 频率 | T⁻¹ |\n| 电荷 | T I |\n| 电势 | M L² T⁻³ I⁻¹ |",
+    "full_content": "| 物理量 | 量纲 |\n|--------|------|\n| 速度 | L T⁻¹ |\n| 加速度 | L T⁻² |\n| 力 | M L T⁻² |\n| 能量 | M L² T⁻² |\n| 功率 | M L² T⁻³ |\n| 频率 | T⁻¹ |\n| 电荷 | T I |\n| 电势 | M L² T⁻³ I⁻¹ |"
+  },
+  {
+    "id": "formula-derivation-standards_086",
+    "file": "formula-derivation-standards.md",
+    "heading": "2.3 量纲检查示例",
+    "level": 3,
+    "content_preview": "**动能定理**\n\n$$[E_k] = M L^2 T^{-2}$$\n\n$$[E_k] = \\frac{1}{2} m v^2 = M \\cdot (L T^{-1})^2 = M L^2 T^{-2} \\checkmark$$\n\n**库仑定律**\n\n$$[F] = M L T^{-2}$$\n\n$$[F] = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_1 q_2}{r...",
+    "full_content": "**动能定理**\n\n$$[E_k] = M L^2 T^{-2}$$\n\n$$[E_k] = \\frac{1}{2} m v^2 = M \\cdot (L T^{-1})^2 = M L^2 T^{-2} \\checkmark$$\n\n**库仑定律**\n\n$$[F] = M L T^{-2}$$\n\n$$[F] = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_1 q_2}{r^2} = (M L^3 T^{-4} I^{-2}) \\cdot (T^2 I^2) \\cdot (L^{-2}) = M L T^{-2} \\checkmark$$\n\n---"
+  },
+  {
+    "id": "formula-derivation-standards_087",
+    "file": "formula-derivation-standards.md",
+    "heading": "3.1 Noether 定理",
+    "level": 3,
+    "content_preview": "| 对称性 | 守恒律 |\n|--------|--------|\n| 时间平移对称性 | 能量守恒 |\n| 空间平移对称性 | 动量守恒 |\n| 空间旋转对称性 | 角动量守恒 |\n| 规范对称性 | 电荷守恒 |\n| Lorentz 对称性 | 能量-动量守恒 |",
+    "full_content": "| 对称性 | 守恒律 |\n|--------|--------|\n| 时间平移对称性 | 能量守恒 |\n| 空间平移对称性 | 动量守恒 |\n| 空间旋转对称性 | 角动量守恒 |\n| 规范对称性 | 电荷守恒 |\n| Lorentz 对称性 | 能量-动量守恒 |"
+  },
+  {
+    "id": "formula-derivation-standards_088",
+    "file": "formula-derivation-standards.md",
+    "heading": "3.2 对称性检验",
+    "level": 3,
+    "content_preview": "推导完成后，检查：\n- 结果是否满足对应的对称性\n- 极限情况是否回到对称极限\n- 是否与已知守恒律矛盾\n\n---",
+    "full_content": "推导完成后，检查：\n- 结果是否满足对应的对称性\n- 极限情况是否回到对称极限\n- 是否与已知守恒律矛盾\n\n---"
+  },
+  {
+    "id": "formula-derivation-standards_089",
+    "file": "formula-derivation-standards.md",
+    "heading": "4.1 拉格朗日方法",
+    "level": 3,
+    "content_preview": "**步骤**\n\n1. 选择广义坐标 $q_i$\n2. 计算动能 $T(q_i, \\dot{q}_i)$\n3. 确定势能 $V(q_i)$\n4. 构造拉格朗日量 $L = T - V$\n5. 写出欧拉-拉格朗日方程\n\n$$\\frac{d}{dt}\\left(\\frac{\\partial L}{\\partial \\dot{q}_i}\\right) - \\frac{\\partial L}{\\partia...",
+    "full_content": "**步骤**\n\n1. 选择广义坐标 $q_i$\n2. 计算动能 $T(q_i, \\dot{q}_i)$\n3. 确定势能 $V(q_i)$\n4. 构造拉格朗日量 $L = T - V$\n5. 写出欧拉-拉格朗日方程\n\n$$\\frac{d}{dt}\\left(\\frac{\\partial L}{\\partial \\dot{q}_i}\\right) - \\frac{\\partial L}{\\partial q_i} = 0$$\n\n**示例：谐振子**\n\n1. 广义坐标：$x$\n2. 动能：$T = \\frac{1}{2}m\\dot{x}^2$\n3. 势能：$V = \\frac{1}{2}kx^2$\n4. 拉格朗日量：$L = \\frac{1}{2}m\\dot{x}^2 - \\frac{1}{2}kx^2$\n5. 运动方程：$m\\ddot{x} + kx = 0$"
+  },
+  {
+    "id": "formula-derivation-standards_090",
+    "file": "formula-derivation-standards.md",
+    "heading": "4.2 哈密顿方法",
+    "level": 3,
+    "content_preview": "**步骤**\n\n1. 计算广义动量 $p_i = \\frac{\\partial L}{\\partial \\dot{q}_i}$\n2. 构造哈密顿量 $H = \\sum_i p_i \\dot{q}_i - L$\n3. 写出正则方程\n\n$$\\dot{q}_i = \\frac{\\partial H}{\\partial p_i}, \\quad \\dot{p}_i = -\\frac{\\partial H}{...",
+    "full_content": "**步骤**\n\n1. 计算广义动量 $p_i = \\frac{\\partial L}{\\partial \\dot{q}_i}$\n2. 构造哈密顿量 $H = \\sum_i p_i \\dot{q}_i - L$\n3. 写出正则方程\n\n$$\\dot{q}_i = \\frac{\\partial H}{\\partial p_i}, \\quad \\dot{p}_i = -\\frac{\\partial H}{\\partial q_i}$$"
+  },
+  {
+    "id": "formula-derivation-standards_091",
+    "file": "formula-derivation-standards.md",
+    "heading": "4.3 量纲分析构造",
+    "level": 3,
+    "content_preview": "**示例：行星轨道特征尺度**\n\n已知：引力常数 $G$，中心质量 $M$，求特征半径 $R$\n\n1. 构造量纲正确的组合：$[G M] = L^3 T^{-2}$\n2. 引力提供向心力：$G M m / R^2 = m v^2 / R$\n3. 速度量纲：$[v] = L T^{-1}$\n4. 特征时间：$[t] = T$\n5. 特征半径：$R \\sim G M / v^2$\n\n---",
+    "full_content": "**示例：行星轨道特征尺度**\n\n已知：引力常数 $G$，中心质量 $M$，求特征半径 $R$\n\n1. 构造量纲正确的组合：$[G M] = L^3 T^{-2}$\n2. 引力提供向心力：$G M m / R^2 = m v^2 / R$\n3. 速度量纲：$[v] = L T^{-1}$\n4. 特征时间：$[t] = T$\n5. 特征半径：$R \\sim G M / v^2$\n\n---"
+  },
+  {
+    "id": "formula-derivation-standards_092",
+    "file": "formula-derivation-standards.md",
+    "heading": "5.1 符号约定",
+    "level": 3,
+    "content_preview": "| 含义 | 符号 |\n|------|------|\n| 位置 | $\\mathbf{r}$, $x$, $q$ |\n| 速度 | $\\mathbf{v}$, $\\dot{x}$ |\n| 动量 | $\\mathbf{p}$ |\n| 能量 | $E$, $H$ (哈密顿量) |\n| 拉格朗日量 | $L$, $\\mathcal{L}$ (密度) |\n| 波函数 | $\\psi$, $\\Psi$ |...",
+    "full_content": "| 含义 | 符号 |\n|------|------|\n| 位置 | $\\mathbf{r}$, $x$, $q$ |\n| 速度 | $\\mathbf{v}$, $\\dot{x}$ |\n| 动量 | $\\mathbf{p}$ |\n| 能量 | $E$, $H$ (哈密顿量) |\n| 拉格朗日量 | $L$, $\\mathcal{L}$ (密度) |\n| 波函数 | $\\psi$, $\\Psi$ |\n| 算符 | $\\hat{A}$, $\\hat{H}$ |"
+  },
+  {
+    "id": "formula-derivation-standards_093",
+    "file": "formula-derivation-standards.md",
+    "heading": "5.2 算符约定",
+    "level": 3,
+    "content_preview": "- 厄米算符：$\\hat{A}^\\dagger = \\hat{A}$，用 $\\dagger$ 表示伴随\n- 对易子：$[\\hat{A}, \\hat{B}] = \\hat{A}\\hat{B} - \\hat{B}\\hat{A}$\n- 对易子：$\\{\\hat{A}, \\hat{B}\\} = \\hat{A}\\hat{B} + \\hat{B}\\hat{A}$ (反对易子)",
+    "full_content": "- 厄米算符：$\\hat{A}^\\dagger = \\hat{A}$，用 $\\dagger$ 表示伴随\n- 对易子：$[\\hat{A}, \\hat{B}] = \\hat{A}\\hat{B} - \\hat{B}\\hat{A}$\n- 对易子：$\\{\\hat{A}, \\hat{B}\\} = \\hat{A}\\hat{B} + \\hat{B}\\hat{A}$ (反对易子)"
+  },
+  {
+    "id": "formula-derivation-standards_094",
+    "file": "formula-derivation-standards.md",
+    "heading": "5.3 自然单位制",
+    "level": 3,
+    "content_preview": "当使用 $\\hbar = c = 1$ 的自然单位制时：\n- 质量、能量、动量具有相同量纲\n- 长度和时间具有相同量纲\n- 明确标注单位制转换因子\n\n---",
+    "full_content": "当使用 $\\hbar = c = 1$ 的自然单位制时：\n- 质量、能量、动量具有相同量纲\n- 长度和时间具有相同量纲\n- 明确标注单位制转换因子\n\n---"
+  },
+  {
+    "id": "formula-derivation-standards_095",
+    "file": "formula-derivation-standards.md",
+    "heading": "六、推导文档模板",
+    "level": 2,
+    "content_preview": "使用 [formula_template.md](../assets/templates/formula_template.md) 记录推导过程。\n\n---",
+    "full_content": "使用 [formula_template.md](../assets/templates/formula_template.md) 记录推导过程。\n\n---"
+  },
+  {
+    "id": "formula-derivation-standards_096",
+    "file": "formula-derivation-standards.md",
+    "heading": "七、常见错误检查",
+    "level": 2,
+    "content_preview": "- [ ] 量纲不一致\n- [ ] 上下指标混乱\n- [ ] 求和约定遗漏\n- [ ] 正则方程写反符号\n- [ ] 忽略了对称性\n- [ ] 边界条件遗漏\n- [ ] 正则动量定义错误\n\n---",
+    "full_content": "- [ ] 量纲不一致\n- [ ] 上下指标混乱\n- [ ] 求和约定遗漏\n- [ ] 正则方程写反符号\n- [ ] 忽略了对称性\n- [ ] 边界条件遗漏\n- [ ] 正则动量定义错误\n\n---"
+  },
+  {
+    "id": "formula-derivation-standards_097",
+    "file": "formula-derivation-standards.md",
+    "heading": "八、参考资源",
+    "level": 2,
+    "content_preview": "- Goldstein, Classical Mechanics\n- Landau & Lifshitz, Mechanics\n- Sakurai, Modern Quantum Mechanics\n- Weinberg, The Quantum Theory of Fields\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*",
+    "full_content": "- Goldstein, Classical Mechanics\n- Landau & Lifshitz, Mechanics\n- Sakurai, Modern Quantum Mechanics\n- Weinberg, The Quantum Theory of Fields\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  },
+  {
+    "id": "workflows_098",
+    "file": "workflows.md",
+    "heading": "physicist 核心工作流",
+    "level": 1,
+    "content_preview": "> physicist 技能的完整工作流程，涵盖物理建模、理论分析、公式推导、交叉学科研究。\n\n---",
+    "full_content": "> physicist 技能的完整工作流程，涵盖物理建模、理论分析、公式推导、交叉学科研究。\n\n---"
+  },
+  {
+    "id": "workflows_099",
+    "file": "workflows.md",
+    "heading": "触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下场景时触发：\n- \"物理建模\"\n- \"理论模型\"\n- \"公式推导\"\n- \"方程求解\"\n- \"量子力学\"\n- \"热力学\"\n- \"电磁学\"\n- \"力学\"\n- \"对称性\"\n- \"守恒律\"\n- \"模型验证\"\n- \"实验设计\"\n\n---",
+    "full_content": "当用户提到以下场景时触发：\n- \"物理建模\"\n- \"理论模型\"\n- \"公式推导\"\n- \"方程求解\"\n- \"量子力学\"\n- \"热力学\"\n- \"电磁学\"\n- \"力学\"\n- \"对称性\"\n- \"守恒律\"\n- \"模型验证\"\n- \"实验设计\"\n\n---"
+  },
+  {
+    "id": "workflows_100",
+    "file": "workflows.md",
+    "heading": "快速开始",
+    "level": 2,
+    "content_preview": "- 物理建模：问题理解 → 假设条件 → 模型建立 → 求解验证 → 结果解释\n- 理论分析：物理图景 → 数学形式化 → 推导验证 → 物理解释\n- 公式推导：明确目标 → 选择方法 → 量纲检查 → 守恒律验证\n\n---",
+    "full_content": "- 物理建模：问题理解 → 假设条件 → 模型建立 → 求解验证 → 结果解释\n- 理论分析：物理图景 → 数学形式化 → 推导验证 → 物理解释\n- 公式推导：明确目标 → 选择方法 → 量纲检查 → 守恒律验证\n\n---"
+  },
+  {
+    "id": "workflows_101",
+    "file": "workflows.md",
+    "heading": "工作流速查",
+    "level": 2,
+    "content_preview": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| 物理建模 | 物理建模流程 | physicist-standards.md |\n| 物理工具 | 数值计算与可视化 | physics-tools-standards.md |\n| 公式推导 | 推导方法与检查 | formula-derivation-standards.md |\n\n---",
+    "full_content": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| 物理建模 | 物理建模流程 | physicist-standards.md |\n| 物理工具 | 数值计算与可视化 | physics-tools-standards.md |\n| 公式推导 | 推导方法与检查 | formula-derivation-standards.md |\n\n---"
+  },
+  {
+    "id": "workflows_102",
+    "file": "workflows.md",
+    "heading": "Q1：物理建模的标准流程？",
+    "level": 3,
+    "content_preview": "1. 问题理解：明确物理现象、关键变量、适用条件\n2. 假设条件：简化假设、近似条件、适用范围\n3. 模型建立：选择物理框架、建立方程、确定边界\n4. 求解验证：解析求解或数值模拟\n5. 结果解释：物理意义、量纲检查、守恒律验证",
+    "full_content": "1. 问题理解：明确物理现象、关键变量、适用条件\n2. 假设条件：简化假设、近似条件、适用范围\n3. 模型建立：选择物理框架、建立方程、确定边界\n4. 求解验证：解析求解或数值模拟\n5. 结果解释：物理意义、量纲检查、守恒律验证"
+  },
+  {
+    "id": "workflows_103",
+    "file": "workflows.md",
+    "heading": "Q2：公式推导必须检查什么？",
+    "level": 3,
+    "content_preview": "1. 量纲一致性：等式两边量纲相同\n2. 守恒律：能量、动量、电荷等守恒\n3. 对称性：利用对称性简化或验证\n4. 极限情况：还原到已知结果",
+    "full_content": "1. 量纲一致性：等式两边量纲相同\n2. 守恒律：能量、动量、电荷等守恒\n3. 对称性：利用对称性简化或验证\n4. 极限情况：还原到已知结果"
+  },
+  {
+    "id": "workflows_104",
+    "file": "workflows.md",
+    "heading": "Q3：如何验证理论正确性？",
+    "level": 3,
+    "content_preview": "1. 与实验数据对比\n2. 与已知极限情况对比\n3. 与近似理论对比\n4. 检查自洽性\n\n---",
+    "full_content": "1. 与实验数据对比\n2. 与已知极限情况对比\n3. 与近似理论对比\n4. 检查自洽性\n\n---"
+  },
+  {
+    "id": "workflows_105",
+    "file": "workflows.md",
+    "heading": "错误排查",
+    "level": 2,
+    "content_preview": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| 公式量纲不一致 | 推导过程有误 | 逐项检查每步推导 |\n| 结果违反守恒律 | 模型或计算有误 | 检查守恒量是否正确 |\n| 与实验不符 | 假设条件不符合实际 | 重新审视假设条件 |\n\n---\n\n*详见 [索引](index.md)*",
+    "full_content": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| 公式量纲不一致 | 推导过程有误 | 逐项检查每步推导 |\n| 结果违反守恒律 | 模型或计算有误 | 检查守恒量是否正确 |\n| 与实验不符 | 假设条件不符合实际 | 重新审视假设条件 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "physicist-standards_106",
+    "file": "physicist-standards.md",
+    "heading": "Physicist 使用指南",
+    "level": 1,
+    "content_preview": "> 物理理论必须符合实验。无法被实验验证的理论没有意义。\n\n---",
+    "full_content": "> 物理理论必须符合实验。无法被实验验证的理论没有意义。\n\n---"
+  },
+  {
+    "id": "physicist-standards_107",
+    "file": "physicist-standards.md",
+    "heading": "一、概述",
+    "level": 2,
+    "content_preview": "Physicist 是实验室的物理学家角色，专注于物理建模与理论分析。",
+    "full_content": "Physicist 是实验室的物理学家角色，专注于物理建模与理论分析。"
+  },
+  {
+    "id": "physicist-standards_108",
+    "file": "physicist-standards.md",
+    "heading": "核心能力",
+    "level": 3,
+    "content_preview": "| 能力 | 说明 |\n|------|------|\n| 物理建模 | 构建描述物理现象的理论模型 |\n| 理论分析 | 严谨的数学推导和物理分析 |\n| 公式推导 | 使用 LaTeX 进行数学表达 |\n| 交叉研究 | 连接物理与数学、心理学等学科 |\n| 模型验证 | 设计实验或模拟验证理论预测 |\n| 物理可视化 | 物理图景、场分布、轨迹绘制 |\n\n---",
+    "full_content": "| 能力 | 说明 |\n|------|------|\n| 物理建模 | 构建描述物理现象的理论模型 |\n| 理论分析 | 严谨的数学推导和物理分析 |\n| 公式推导 | 使用 LaTeX 进行数学表达 |\n| 交叉研究 | 连接物理与数学、心理学等学科 |\n| 模型验证 | 设计实验或模拟验证理论预测 |\n| 物理可视化 | 物理图景、场分布、轨迹绘制 |\n\n---"
+  },
+  {
+    "id": "physicist-standards_109",
+    "file": "physicist-standards.md",
+    "heading": "二、触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下关键词时触发：\n\n**物理建模相关**\n- 物理建模、理论模型、机制分析\n- 量子力学、热力学、统计物理\n- 电磁学、力学、流体力学\n- 场论、对称性、守恒律\n\n**公式推导相关**\n- 公式推导、方程求解、解析计算\n- 拉格朗日量、哈密顿量、路径积分\n- 本征值问题、微扰论\n\n**交叉研究相关**\n- 物理心理学、神经物理、经济物理\n- 生物物理、复杂系统\n- 数学物理、几何化方法...",
+    "full_content": "当用户提到以下关键词时触发：\n\n**物理建模相关**\n- 物理建模、理论模型、机制分析\n- 量子力学、热力学、统计物理\n- 电磁学、力学、流体力学\n- 场论、对称性、守恒律\n\n**公式推导相关**\n- 公式推导、方程求解、解析计算\n- 拉格朗日量、哈密顿量、路径积分\n- 本征值问题、微扰论\n\n**交叉研究相关**\n- 物理心理学、神经物理、经济物理\n- 生物物理、复杂系统\n- 数学物理、几何化方法\n\n**验证相关**\n- 模型验证、实验设计、模拟验证\n- 量纲分析、量级估计\n\n---"
+  },
+  {
+    "id": "physicist-standards_110",
+    "file": "physicist-standards.md",
+    "heading": "3.1 物理建模工作流程",
+    "level": 3,
+    "content_preview": "```\n问题理解 → 物理领域识别 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n```\n\n1. **问题理解**：明确物理现象、约束条件、目标\n2. **物理领域识别**：确定是经典力学、量子力学、统计物理等\n3. **假设条件**：列出所有假设，确保合理性\n4. **模型选择**：选择合适的物理模型（拉格朗日、哈密顿等）\n5. **求解验证**：解析或数值求解\n6. **结果解释**...",
+    "full_content": "```\n问题理解 → 物理领域识别 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n```\n\n1. **问题理解**：明确物理现象、约束条件、目标\n2. **物理领域识别**：确定是经典力学、量子力学、统计物理等\n3. **假设条件**：列出所有假设，确保合理性\n4. **模型选择**：选择合适的物理模型（拉格朗日、哈密顿等）\n5. **求解验证**：解析或数值求解\n6. **结果解释**：联系可观测物理量，验证守恒律"
+  },
+  {
+    "id": "physicist-standards_111",
+    "file": "physicist-standards.md",
+    "heading": "3.2 公式推导工作流程",
+    "level": 3,
+    "content_preview": "```\n明确目标 → 选择方法 → 执行推导 → 量纲检查 → 对称性验证 → 结果整理\n```\n\n1. **明确目标**：确定要推导的物理量或方程\n2. **选择方法**：拉格朗日法、Hamilton-Jacobi、路径积分等\n3. **执行推导**：每一步都要有物理依据\n4. **量纲检查**：确保等式两边量纲一致\n5. **对称性验证**：检查是否满足对称性要求\n6. **结果整理**：用 ...",
+    "full_content": "```\n明确目标 → 选择方法 → 执行推导 → 量纲检查 → 对称性验证 → 结果整理\n```\n\n1. **明确目标**：确定要推导的物理量或方程\n2. **选择方法**：拉格朗日法、Hamilton-Jacobi、路径积分等\n3. **执行推导**：每一步都要有物理依据\n4. **量纲检查**：确保等式两边量纲一致\n5. **对称性验证**：检查是否满足对称性要求\n6. **结果整理**：用 LaTeX 格式清晰呈现"
+  },
+  {
+    "id": "physicist-standards_112",
+    "file": "physicist-standards.md",
+    "heading": "3.3 交叉研究工作流程",
+    "level": 3,
+    "content_preview": "```\n问题识别 → 物理类比 → 模型映射 → 验证调整 → 结论输出\n```\n\n1. **问题识别**：明确跨学科问题的物理本质\n2. **物理类比**：找到与已知物理系统的对应关系\n3. **模型映射**：将一领域的模型映射到另一领域\n4. **验证调整**：检验模型在目标领域的合理性\n5. **结论输出**：给出可检验的预测\n\n---",
+    "full_content": "```\n问题识别 → 物理类比 → 模型映射 → 验证调整 → 结论输出\n```\n\n1. **问题识别**：明确跨学科问题的物理本质\n2. **物理类比**：找到与已知物理系统的对应关系\n3. **模型映射**：将一领域的模型映射到另一领域\n4. **验证调整**：检验模型在目标领域的合理性\n5. **结论输出**：给出可检验的预测\n\n---"
+  },
+  {
+    "id": "physicist-standards_113",
+    "file": "physicist-standards.md",
+    "heading": "4.1 核心原则",
+    "level": 3,
+    "content_preview": "1. **物理图像优先**：先建立清晰物理图景，再形式化推导\n2. **量纲检查**：所有公式必须先检查量纲一致性\n3. **守恒律验证**：能量、动量、电荷等守恒量必须检验\n4. **对称性分析**：利用对称性简化问题、验证结果",
+    "full_content": "1. **物理图像优先**：先建立清晰物理图景，再形式化推导\n2. **量纲检查**：所有公式必须先检查量纲一致性\n3. **守恒律验证**：能量、动量、电荷等守恒量必须检验\n4. **对称性分析**：利用对称性简化问题、验证结果"
+  },
+  {
+    "id": "physicist-standards_114",
+    "file": "physicist-standards.md",
+    "heading": "4.2 学术诚信原则",
+    "level": 3,
+    "content_preview": "1. **文献检索必须使用文献检索工具**：不能编造假文献\n2. **理论必须符合实验**：无法被实验验证的理论没有意义\n3. **数据来源可追溯**：所有使用的数据必须标明来源",
+    "full_content": "1. **文献检索必须使用文献检索工具**：不能编造假文献\n2. **理论必须符合实验**：无法被实验验证的理论没有意义\n3. **数据来源可追溯**：所有使用的数据必须标明来源"
+  },
+  {
+    "id": "physicist-standards_115",
+    "file": "physicist-standards.md",
+    "heading": "4.3 表达规范",
+    "level": 3,
+    "content_preview": "1. **使用 LaTeX 格式**：物理公式使用 LaTeX 表示\n2. **步骤清晰**：每一步推导都要有物理依据\n3. **符号一致**：全文符号使用保持一致，遵循物理学约定\n\n---",
+    "full_content": "1. **使用 LaTeX 格式**：物理公式使用 LaTeX 表示\n2. **步骤清晰**：每一步推导都要有物理依据\n3. **符号一致**：全文符号使用保持一致，遵循物理学约定\n\n---"
+  },
+  {
+    "id": "physicist-standards_116",
+    "file": "physicist-standards.md",
+    "heading": "五、物理领域识别",
+    "level": 2,
+    "content_preview": "| 领域 | 研究对象 | 核心工具 |\n|------|----------|----------|\n| 经典力学 | 宏观物体运动 | 牛顿定律、拉格朗日、哈密顿 |\n| 量子力学 | 微观粒子行为 | 波函数、算符、路径积分 |\n| 统计物理 | 多体系统 | 配分函数、系综理论 |\n| 电磁学 | 电荷和电磁场 | 麦克斯韦方程组 |\n| 热力学 | 热量和温度 | 热力学定律、自由能 |...",
+    "full_content": "| 领域 | 研究对象 | 核心工具 |\n|------|----------|----------|\n| 经典力学 | 宏观物体运动 | 牛顿定律、拉格朗日、哈密顿 |\n| 量子力学 | 微观粒子行为 | 波函数、算符、路径积分 |\n| 统计物理 | 多体系统 | 配分函数、系综理论 |\n| 电磁学 | 电荷和电磁场 | 麦克斯韦方程组 |\n| 热力学 | 热量和温度 | 热力学定律、自由能 |\n| 流体力学 | 流体运动 | 纳维-斯托克斯方程 |\n\n---"
+  },
+  {
+    "id": "physicist-standards_117",
+    "file": "physicist-standards.md",
+    "heading": "6.1 拉格朗日形式主义",
+    "level": 3,
+    "content_preview": "适用于：约束系统、场论、对称性分析\n\n```python",
+    "full_content": "适用于：约束系统、场论、对称性分析\n\n```python"
+  },
+  {
+    "id": "physicist-standards_118",
+    "file": "physicist-standards.md",
+    "heading": "示例：谐振子",
+    "level": 1,
+    "content_preview": "L = \"T - V\"\nT = \"1/2 * m * q_dot**2\"  # 动能\nV = \"1/2 * k * q**2\"       # 势能",
+    "full_content": "L = \"T - V\"\nT = \"1/2 * m * q_dot**2\"  # 动能\nV = \"1/2 * k * q**2\"       # 势能"
+  },
+  {
+    "id": "physicist-standards_119",
+    "file": "physicist-standards.md",
+    "heading": "欧拉-拉格朗日方程给出振动频率",
+    "level": 1,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "physicist-standards_120",
+    "file": "physicist-standards.md",
+    "heading": "6.2 哈密顿形式主义",
+    "level": 3,
+    "content_preview": "适用于：量子化、统计力学、相空间分析\n\n```python",
+    "full_content": "适用于：量子化、统计力学、相空间分析\n\n```python"
+  },
+  {
+    "id": "physicist-standards_121",
+    "file": "physicist-standards.md",
+    "heading": "示例：哈密顿量",
+    "level": 1,
+    "content_preview": "H = \"p**2 / (2m) + V(q)\"",
+    "full_content": "H = \"p**2 / (2m) + V(q)\""
+  },
+  {
+    "id": "physicist-standards_122",
+    "file": "physicist-standards.md",
+    "heading": "正则方程描述时间演化",
+    "level": 1,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "physicist-standards_123",
+    "file": "physicist-standards.md",
+    "heading": "6.3 量纲分析",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "physicist-standards_124",
+    "file": "physicist-standards.md",
+    "heading": "检查物理量量纲",
+    "level": 1,
+    "content_preview": "dim = {\n    \"长度\": \"L\",\n    \"质量\": \"M\", \n    \"时间\": \"T\",\n    \"能量\": \"M L^2 T^-2\",\n}\n```\n\n---",
+    "full_content": "dim = {\n    \"长度\": \"L\",\n    \"质量\": \"M\", \n    \"时间\": \"T\",\n    \"能量\": \"M L^2 T^-2\",\n}\n```\n\n---"
+  },
+  {
+    "id": "physicist-standards_125",
+    "file": "physicist-standards.md",
+    "heading": "七、模板",
+    "level": 2,
+    "content_preview": "- 分析报告模板：[report_template.md](../assets/templates/report_template.md)\n- 公式推导模板：[formula_template.md](../assets/templates/formula_template.md)\n\n---",
+    "full_content": "- 分析报告模板：[report_template.md](../assets/templates/report_template.md)\n- 公式推导模板：[formula_template.md](../assets/templates/formula_template.md)\n\n---"
+  },
+  {
+    "id": "physicist-standards_126",
+    "file": "physicist-standards.md",
+    "heading": "八、质量检查",
+    "level": 2,
+    "content_preview": "完成分析后，检查以下要点：\n\n- [ ] 量纲一致性检查通过\n- [ ] 守恒律（能量、动量等）得到满足\n- [ ] 对称性要求得到满足\n- [ ] 结果与已知极限情况一致\n- [ ] 可观测物理量有明确定义\n- [ ] 文献引用真实可查\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*",
+    "full_content": "完成分析后，检查以下要点：\n\n- [ ] 量纲一致性检查通过\n- [ ] 守恒律（能量、动量等）得到满足\n- [ ] 对称性要求得到满足\n- [ ] 结果与已知极限情况一致\n- [ ] 可观测物理量有明确定义\n- [ ] 文献引用真实可查\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  },
+  {
+    "id": "guide_127",
+    "file": "guide.md",
+    "heading": "Physicist 使用指南",
+    "level": 1,
+    "content_preview": "> 物理理论必须符合实验。无法被实验验证的理论没有意义。\n\n---",
+    "full_content": "> 物理理论必须符合实验。无法被实验验证的理论没有意义。\n\n---"
+  },
+  {
+    "id": "guide_128",
+    "file": "guide.md",
+    "heading": "一、概述",
+    "level": 2,
+    "content_preview": "Physicist 是实验室的物理学家角色，专注于物理建模与理论分析。",
+    "full_content": "Physicist 是实验室的物理学家角色，专注于物理建模与理论分析。"
+  },
+  {
+    "id": "guide_129",
+    "file": "guide.md",
+    "heading": "核心能力",
+    "level": 3,
+    "content_preview": "| 能力 | 说明 |\n|------|------|\n| 物理建模 | 构建描述物理现象的理论模型 |\n| 理论分析 | 严谨的数学推导和物理分析 |\n| 公式推导 | 使用 LaTeX 进行数学表达 |\n| 交叉研究 | 连接物理与数学、心理学等学科 |\n| 模型验证 | 设计实验或模拟验证理论预测 |\n| 物理可视化 | 物理图景、场分布、轨迹绘制 |\n\n---",
+    "full_content": "| 能力 | 说明 |\n|------|------|\n| 物理建模 | 构建描述物理现象的理论模型 |\n| 理论分析 | 严谨的数学推导和物理分析 |\n| 公式推导 | 使用 LaTeX 进行数学表达 |\n| 交叉研究 | 连接物理与数学、心理学等学科 |\n| 模型验证 | 设计实验或模拟验证理论预测 |\n| 物理可视化 | 物理图景、场分布、轨迹绘制 |\n\n---"
+  },
+  {
+    "id": "guide_130",
+    "file": "guide.md",
+    "heading": "二、触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下关键词时触发：\n\n**物理建模相关**\n- 物理建模、理论模型、机制分析\n- 量子力学、热力学、统计物理\n- 电磁学、力学、流体力学\n- 场论、对称性、守恒律\n\n**公式推导相关**\n- 公式推导、方程求解、解析计算\n- 拉格朗日量、哈密顿量、路径积分\n- 本征值问题、微扰论\n\n**交叉研究相关**\n- 物理心理学、神经物理、经济物理\n- 生物物理、复杂系统\n- 数学物理、几何化方法...",
+    "full_content": "当用户提到以下关键词时触发：\n\n**物理建模相关**\n- 物理建模、理论模型、机制分析\n- 量子力学、热力学、统计物理\n- 电磁学、力学、流体力学\n- 场论、对称性、守恒律\n\n**公式推导相关**\n- 公式推导、方程求解、解析计算\n- 拉格朗日量、哈密顿量、路径积分\n- 本征值问题、微扰论\n\n**交叉研究相关**\n- 物理心理学、神经物理、经济物理\n- 生物物理、复杂系统\n- 数学物理、几何化方法\n\n**验证相关**\n- 模型验证、实验设计、模拟验证\n- 量纲分析、量级估计\n\n---"
+  },
+  {
+    "id": "guide_131",
+    "file": "guide.md",
+    "heading": "3.1 物理建模工作流程",
+    "level": 3,
+    "content_preview": "```\n问题理解 → 物理领域识别 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n```\n\n1. **问题理解**：明确物理现象、约束条件、目标\n2. **物理领域识别**：确定是经典力学、量子力学、统计物理等\n3. **假设条件**：列出所有假设，确保合理性\n4. **模型选择**：选择合适的物理模型（拉格朗日、哈密顿等）\n5. **求解验证**：解析或数值求解\n6. **结果解释**...",
+    "full_content": "```\n问题理解 → 物理领域识别 → 假设条件 → 模型选择 → 求解验证 → 结果解释\n```\n\n1. **问题理解**：明确物理现象、约束条件、目标\n2. **物理领域识别**：确定是经典力学、量子力学、统计物理等\n3. **假设条件**：列出所有假设，确保合理性\n4. **模型选择**：选择合适的物理模型（拉格朗日、哈密顿等）\n5. **求解验证**：解析或数值求解\n6. **结果解释**：联系可观测物理量，验证守恒律"
+  },
+  {
+    "id": "guide_132",
+    "file": "guide.md",
+    "heading": "3.2 公式推导工作流程",
+    "level": 3,
+    "content_preview": "```\n明确目标 → 选择方法 → 执行推导 → 量纲检查 → 对称性验证 → 结果整理\n```\n\n1. **明确目标**：确定要推导的物理量或方程\n2. **选择方法**：拉格朗日法、Hamilton-Jacobi、路径积分等\n3. **执行推导**：每一步都要有物理依据\n4. **量纲检查**：确保等式两边量纲一致\n5. **对称性验证**：检查是否满足对称性要求\n6. **结果整理**：用 ...",
+    "full_content": "```\n明确目标 → 选择方法 → 执行推导 → 量纲检查 → 对称性验证 → 结果整理\n```\n\n1. **明确目标**：确定要推导的物理量或方程\n2. **选择方法**：拉格朗日法、Hamilton-Jacobi、路径积分等\n3. **执行推导**：每一步都要有物理依据\n4. **量纲检查**：确保等式两边量纲一致\n5. **对称性验证**：检查是否满足对称性要求\n6. **结果整理**：用 LaTeX 格式清晰呈现"
+  },
+  {
+    "id": "guide_133",
+    "file": "guide.md",
+    "heading": "3.3 交叉研究工作流程",
+    "level": 3,
+    "content_preview": "```\n问题识别 → 物理类比 → 模型映射 → 验证调整 → 结论输出\n```\n\n1. **问题识别**：明确跨学科问题的物理本质\n2. **物理类比**：找到与已知物理系统的对应关系\n3. **模型映射**：将一领域的模型映射到另一领域\n4. **验证调整**：检验模型在目标领域的合理性\n5. **结论输出**：给出可检验的预测\n\n---",
+    "full_content": "```\n问题识别 → 物理类比 → 模型映射 → 验证调整 → 结论输出\n```\n\n1. **问题识别**：明确跨学科问题的物理本质\n2. **物理类比**：找到与已知物理系统的对应关系\n3. **模型映射**：将一领域的模型映射到另一领域\n4. **验证调整**：检验模型在目标领域的合理性\n5. **结论输出**：给出可检验的预测\n\n---"
+  },
+  {
+    "id": "guide_134",
+    "file": "guide.md",
+    "heading": "4.1 核心原则",
+    "level": 3,
+    "content_preview": "1. **物理图像优先**：先建立清晰物理图景，再形式化推导\n2. **量纲检查**：所有公式必须先检查量纲一致性\n3. **守恒律验证**：能量、动量、电荷等守恒量必须检验\n4. **对称性分析**：利用对称性简化问题、验证结果",
+    "full_content": "1. **物理图像优先**：先建立清晰物理图景，再形式化推导\n2. **量纲检查**：所有公式必须先检查量纲一致性\n3. **守恒律验证**：能量、动量、电荷等守恒量必须检验\n4. **对称性分析**：利用对称性简化问题、验证结果"
+  },
+  {
+    "id": "guide_135",
+    "file": "guide.md",
+    "heading": "4.2 学术诚信原则",
+    "level": 3,
+    "content_preview": "1. **文献检索必须使用文献检索工具**：不能编造假文献\n2. **理论必须符合实验**：无法被实验验证的理论没有意义\n3. **数据来源可追溯**：所有使用的数据必须标明来源",
+    "full_content": "1. **文献检索必须使用文献检索工具**：不能编造假文献\n2. **理论必须符合实验**：无法被实验验证的理论没有意义\n3. **数据来源可追溯**：所有使用的数据必须标明来源"
+  },
+  {
+    "id": "guide_136",
+    "file": "guide.md",
+    "heading": "4.3 表达规范",
+    "level": 3,
+    "content_preview": "1. **使用 LaTeX 格式**：物理公式使用 LaTeX 表示\n2. **步骤清晰**：每一步推导都要有物理依据\n3. **符号一致**：全文符号使用保持一致，遵循物理学约定\n\n---",
+    "full_content": "1. **使用 LaTeX 格式**：物理公式使用 LaTeX 表示\n2. **步骤清晰**：每一步推导都要有物理依据\n3. **符号一致**：全文符号使用保持一致，遵循物理学约定\n\n---"
+  },
+  {
+    "id": "guide_137",
+    "file": "guide.md",
+    "heading": "五、物理领域识别",
+    "level": 2,
+    "content_preview": "| 领域 | 研究对象 | 核心工具 |\n|------|----------|----------|\n| 经典力学 | 宏观物体运动 | 牛顿定律、拉格朗日、哈密顿 |\n| 量子力学 | 微观粒子行为 | 波函数、算符、路径积分 |\n| 统计物理 | 多体系统 | 配分函数、系综理论 |\n| 电磁学 | 电荷和电磁场 | 麦克斯韦方程组 |\n| 热力学 | 热量和温度 | 热力学定律、自由能 |...",
+    "full_content": "| 领域 | 研究对象 | 核心工具 |\n|------|----------|----------|\n| 经典力学 | 宏观物体运动 | 牛顿定律、拉格朗日、哈密顿 |\n| 量子力学 | 微观粒子行为 | 波函数、算符、路径积分 |\n| 统计物理 | 多体系统 | 配分函数、系综理论 |\n| 电磁学 | 电荷和电磁场 | 麦克斯韦方程组 |\n| 热力学 | 热量和温度 | 热力学定律、自由能 |\n| 流体力学 | 流体运动 | 纳维-斯托克斯方程 |\n\n---"
+  },
+  {
+    "id": "guide_138",
+    "file": "guide.md",
+    "heading": "6.1 拉格朗日形式主义",
+    "level": 3,
+    "content_preview": "适用于：约束系统、场论、对称性分析\n\n```python",
+    "full_content": "适用于：约束系统、场论、对称性分析\n\n```python"
+  },
+  {
+    "id": "guide_139",
+    "file": "guide.md",
+    "heading": "示例：谐振子",
+    "level": 1,
+    "content_preview": "L = \"T - V\"\nT = \"1/2 * m * q_dot**2\"  # 动能\nV = \"1/2 * k * q**2\"       # 势能",
+    "full_content": "L = \"T - V\"\nT = \"1/2 * m * q_dot**2\"  # 动能\nV = \"1/2 * k * q**2\"       # 势能"
+  },
+  {
+    "id": "guide_140",
+    "file": "guide.md",
+    "heading": "欧拉-拉格朗日方程给出振动频率",
+    "level": 1,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "guide_141",
+    "file": "guide.md",
+    "heading": "6.2 哈密顿形式主义",
+    "level": 3,
+    "content_preview": "适用于：量子化、统计力学、相空间分析\n\n```python",
+    "full_content": "适用于：量子化、统计力学、相空间分析\n\n```python"
+  },
+  {
+    "id": "guide_142",
+    "file": "guide.md",
+    "heading": "示例：哈密顿量",
+    "level": 1,
+    "content_preview": "H = \"p**2 / (2m) + V(q)\"",
+    "full_content": "H = \"p**2 / (2m) + V(q)\""
+  },
+  {
+    "id": "guide_143",
+    "file": "guide.md",
+    "heading": "正则方程描述时间演化",
+    "level": 1,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "guide_144",
+    "file": "guide.md",
+    "heading": "6.3 量纲分析",
+    "level": 3,
+    "content_preview": "```python",
+    "full_content": "```python"
+  },
+  {
+    "id": "guide_145",
+    "file": "guide.md",
+    "heading": "检查物理量量纲",
+    "level": 1,
+    "content_preview": "dim = {\n    \"长度\": \"L\",\n    \"质量\": \"M\", \n    \"时间\": \"T\",\n    \"能量\": \"M L^2 T^-2\",\n}\n```\n\n---",
+    "full_content": "dim = {\n    \"长度\": \"L\",\n    \"质量\": \"M\", \n    \"时间\": \"T\",\n    \"能量\": \"M L^2 T^-2\",\n}\n```\n\n---"
+  },
+  {
+    "id": "guide_146",
+    "file": "guide.md",
+    "heading": "七、模板",
+    "level": 2,
+    "content_preview": "- 分析报告模板：[report_template.md](../assets/templates/report_template.md)\n- 公式推导模板：[formula_template.md](../assets/templates/formula_template.md)\n\n---",
+    "full_content": "- 分析报告模板：[report_template.md](../assets/templates/report_template.md)\n- 公式推导模板：[formula_template.md](../assets/templates/formula_template.md)\n\n---"
+  },
+  {
+    "id": "guide_147",
+    "file": "guide.md",
+    "heading": "八、质量检查",
+    "level": 2,
+    "content_preview": "完成分析后，检查以下要点：\n\n- [ ] 量纲一致性检查通过\n- [ ] 守恒律（能量、动量等）得到满足\n- [ ] 对称性要求得到满足\n- [ ] 结果与已知极限情况一致\n- [ ] 可观测物理量有明确定义\n- [ ] 文献引用真实可查\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*",
+    "full_content": "完成分析后，检查以下要点：\n\n- [ ] 量纲一致性检查通过\n- [ ] 守恒律（能量、动量等）得到满足\n- [ ] 对称性要求得到满足\n- [ ] 结果与已知极限情况一致\n- [ ] 可观测物理量有明确定义\n- [ ] 文献引用真实可查\n\n---\n\n*最后更新：2026-05-23*\n*更新者：杨权*"
+  }
+]
