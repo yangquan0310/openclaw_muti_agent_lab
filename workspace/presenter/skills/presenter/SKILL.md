@@ -104,17 +104,20 @@ metadata:
 
 ---
 
-## 快速命令
+## 命令行（CLI）
 
 ```bash
 # PPT 编译
-python3 scripts/ppt/main.py compile --input script.md --output out.pptx --template template
+presenter compile --input script.md --output out.pptx --template template
 
 # PPT Layout 列表
-python3 scripts/ppt/main.py list --template template
+presenter list --template template
 
 # PPT 脚本解析
-python3 scripts/ppt/main.py parse --input script.md
+presenter parse --input script.md
+
+# PPT 脚本验证
+presenter validate --input script.md
 
 # 快速检索
 python3 -m scripts.lookup.searcher <关键词>       # 搜索指南
@@ -128,6 +131,7 @@ python3 -m scripts.lookup.indexer                  # 重建索引
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 1.6.0 | 2026-05-24 | CLI 升级：新增 `/usr/local/bin/presenter` wrapper，快速命令改为 `presenter compile/list/parse` 格式 |
 | 1.5.0 | 2026-05-23 | 重构模块导航，完整覆盖所有16个指南，按使用场景分类 |
 | 1.4.0 | 2026-05-23 | 按技能体系规范补充"边界条件"章节，对齐实践技能体系 |
 | 1.3.0 | 2026-05-21 | PPT脚本-PPT衔接优化：validate命令、5套theme、新增toc/quote/stats结构 |
