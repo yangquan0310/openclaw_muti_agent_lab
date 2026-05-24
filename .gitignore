@@ -164,3 +164,7 @@ __pycache__/
 !/skills/skill-developer/
 !/skills/lookup/
 !/skills/lookup/**
+
+# lookup 索引数据（各技能运行时生成）
+skills/*/index/
+skills/*/index/
