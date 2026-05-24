@@ -122,6 +122,65 @@ chmod +x /usr/local/bin/{技能名}
 - 主入口函数必须定义为 `main(argv=None) -> int`，支持 pip entry_points 和 shell wrapper 两种方式
 - `if __name__ == "__main__": sys.exit(main())` 放文件末尾
 
+### scripts/ 目录结构规范
+
+所有技能的 `scripts/` 必须遵循以下结构：
+
+```
+skills/<name>/scripts/
+├── main.py           # CLI 统一入口（subparser 分发）
+├── {module}.py       # 模块实现（每个模块一个 .py 文件）
+└── {module}/        # 可选：模块内部子包
+    ├── __init__.py
+    └── {sub}.py
+```
+
+**每个 `{module}.py` 必须包含**：
+1. `def main()` — argparse 解析并执行逻辑
+2. `if __name__ == "__main__": main()` — 支持直接运行 `python3 scripts/{module}.py`
+
+**main.py 分发模式**（多子命令技能）：
+
+```python
+import sys
+from pathlib import Path
+
+_SKILL_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_SKILL_ROOT))
+
+from scripts.bazi  import main as bazi_main
+from scripts.lunar import main as lunar_main
+from scripts.fate  import main as fate_main
+
+def main():
+    subcmd = sys.argv[1]          # 取子命令
+    del sys.argv[1]               # 从 sys.argv 删除，让子模块看到干净参数
+    if subcmd == 'bazi':
+        sys.argv[0] = '<skill> bazi'
+        return bazi_main()
+    elif subcmd == 'lunar':
+        sys.argv[0] = '<skill> lunar'
+        return lunar_main()
+    ...
+
+if __name__ == '__main__':
+    sys.exit(main())
+```
+
+**main.py 单命令模式**（单工具技能）：
+
+```python
+import sys
+from pathlib import Path
+from scripts.{module} import main as module_main
+
+_SKILL_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_SKILL_ROOT))
+
+if __name__ == '__main__':
+    sys.exit(module_main())
+```
+
 ### 禁止形式
 
 ```bash

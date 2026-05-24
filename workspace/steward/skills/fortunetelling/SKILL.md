@@ -75,20 +75,21 @@ fortunetelling/
 
 ---
 
-## 快速调用
+## 命令行（CLI）
 
 ```bash
-# 八字排盘（阳历）
-python3 scripts/bazi.py 1990 5 15 14 --gender 男
+fortunetelling bazi  year month day hour [--gender 男|女] [--lunar]  # 八字排盘
+fortunetelling lunar year month day  [--hour]                         # 阴历转公历
+fortunetelling fate  year month day hour [--gender] [--type dayun|timing]
+                                              [--target YYYY-MM-DD-HH]
+                                              [--start-year YYYY] [--end-year YYYY]
 
-# 八字排盘（阴历）
-python3 scripts/bazi.py 1990 5 15 14 --gender 男 --lunar
-
-# 大运流年分析
-python3 scripts/fate.py 1998 7 16 9 --gender 女
-
-# 指定时间点的流年流月流日流时
-python3 scripts/fate.py 1998 7 16 9 --gender 女 --type timing --target 2026-5-20-17
+# 示例
+fortunetelling bazi  1990 5 15 14 --gender 男              # 阳历八字
+fortunetelling bazi  1990 5 15 14 --gender 男 --lunar     # 阴历八字
+fortunetelling lunar 1990 4 15                              # 阴历转公历
+fortunetelling fate  1998 7 16 9 --gender 女               # 大运流年
+fortunetelling fate  1998 7 16 9 --gender 女 --type timing --target 2026-5-20-17
 ```
 
 ---
@@ -97,4 +98,5 @@ python3 scripts/fate.py 1998 7 16 9 --gender 女 --type timing --target 2026-5-2
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 1.1.0 | 2026-05-24 | CLI 升级：新增 main.py 统一入口，`fortunetelling <子命令>` 格式 |
 | 1.0.0 | 2026-05-20 | 初始版本 |
