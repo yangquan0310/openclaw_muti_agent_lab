@@ -151,10 +151,10 @@ aliases:
 
 ## 八、相关概念
 
-- [[concepts/narrative-analysis]]（叙事分析）- 数据分析方法
+- concepts/narrative-analysis（叙事分析）- 数据分析方法
 - [[concepts/thematic-analysis]]（主题分析）- 后续分析方法
-- [[concepts/life-narrative]]（生命叙事）- 核心构念
-- [[concepts/self-narrative]]（自我叙事）- 相关概念
+- concepts/life-narrative（生命叙事）- 核心构念
+- concepts/self-narrative（自我叙事）- 相关概念
 - [[concepts/career-construction-theory]]（职业建构理论）- 理论基础
 
 ---

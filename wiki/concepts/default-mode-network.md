@@ -164,9 +164,9 @@ aliases:
 
 - [[concepts/sleep-quality]]（睡眠质量）- 前因/后效
 - [[concepts/rumination]]（反刍思维）- DMN相关过程
-- [[concepts/anxiety]]（焦虑）- 后效
-- [[concepts/medial-prefrontal-cortex]]（内侧前额叶皮层）- 核心脑区
-- [[concepts/precuneus]]（楔前叶）- 核心脑区
+- concepts/anxiety（焦虑）- 后效
+- concepts/medial-prefrontal-cortex（内侧前额叶皮层）- 核心脑区
+- concepts/precuneus（楔前叶）- 核心脑区
 
 ---
 

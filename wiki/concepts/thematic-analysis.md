@@ -150,11 +150,11 @@ aliases:
 
 ## 八、相关概念
 
-- [[concepts/qualitative-analysis]]（质性分析）- 上位方法
+- concepts/qualitative-analysis（质性分析）- 上位方法
 - [[concepts/life-story-interview]]（生命故事访谈）- 数据收集方法
-- [[concepts/narrative-analysis]]（叙事分析）- 相关方法
-- [[concepts/grounded-theory]]（扎根理论）- 对比方法
-- [[concepts/content-analysis]]（内容分析）- 对比方法
+- concepts/narrative-analysis（叙事分析）- 相关方法
+- concepts/grounded-theory（扎根理论）- 对比方法
+- concepts/content-analysis（内容分析）- 对比方法
 
 ---
 

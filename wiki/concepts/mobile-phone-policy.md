@@ -171,8 +171,8 @@ aliases:
 - [[concepts/multitasking]]（多任务行为）- 政策目标行为
 - [[concepts/cognitive-load]]（认知负荷）- 机制
 - [[concepts/sleep-quality]]（睡眠质量）- 后效
-- [[concepts/digital-literacy]]（数字素养）- 替代/补充策略
-- [[concepts/academic-performance]]（学业表现）- 后效
+- concepts/digital-literacy（数字素养）- 替代/补充策略
+- concepts/academic-performance（学业表现）- 后效
 
 ---
 

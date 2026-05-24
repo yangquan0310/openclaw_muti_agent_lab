@@ -383,13 +383,13 @@
 ## Generated
 <!-- openclaw:wiki:index:start -->
 - Render mode: `obsidian`
-- Total pages: 113
+- Total pages: 107
 - Claims: 16
 - Sources: 6
 - Entities: 12
 - Concepts: 52
-- Syntheses: 23
-- Reports: 20
+- Syntheses: 27
+- Reports: 10
 
 ### Sources
 - [[sources/conda|Conda 环境管理]]
@@ -482,35 +482,29 @@
 - [[syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务|三方协作实践：代理领取任务与执行流程]]
 - [[syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化|从学生论文修改到项目管理体系的演化]]
 - [[syntheses/2026-05-19-18-25-37-如何配置仓库|仓库]]
-- [[syntheses/团体心理辅导-樊富珉|团体心理辅导-樊富珉]]
+- [[syntheses/2026-05-23-11-14-00-代理实践技能体系总结|代理实践技能体系总结]]
+- [[syntheses/团体心理辅导|团体心理辅导-樊富珉]]
 - [[syntheses/团体辅导方案写作规范|团体辅导方案写作规范]]
 - [[syntheses/2026-05-19-18-25-37-多agent协作案例-学生论文修改项目|多Agent协作案例：学生论文修改项目]]
+- [[syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系|多Agent管理与单Agent记忆进化体系]]
 - [[syntheses/2026-05-23-23-50-00-如何用语音回复用户|如何用语音回复用户]]
+- [[syntheses/态射与范畴-比较与转换|态射与范畴：比较与转换]]
 - [[syntheses/2026-05-20-23-47-31-教育科学研究方法-多代理如何协作|教育科学研究方法-多代理协作总结]]
 - [[syntheses/2026-05-19-22-53-22-如何管理程序项目|程序项目]]
+- [[syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系|认知范式与精细化注入词研究体系]]
 - [[syntheses/2026-05-19-18-25-37-如何管理论文项目|论文项目]]
 - [[syntheses/2026-05-19-18-25-37-如何管理课程项目|课程项目]]
 - [[syntheses/2026-05-19-22-53-22-如何管理项目|项目]]
 
 ### Reports
-- [[reports/2026-05-17-18-40-33-claim-health|Claim Health]]
 - [[reports/claim-health|Claim Health]]
-- [[reports/2026-05-17-18-40-33-contradictions|Contradictions]]
 - [[reports/contradictions|Contradictions]]
-- [[reports/2026-05-19-22-54-14-lint|Lint Report]]
 - [[reports/lint|Lint Report]]
-- [[reports/2026-05-17-18-40-33-low-confidence|Low Confidence]]
 - [[reports/low-confidence|Low Confidence]]
-- [[reports/2026-05-19-18-25-37-open-questions|Open Questions]]
 - [[reports/open-questions|Open Questions]]
-- [[reports/2026-05-17-18-40-33-person-agent-directory|Person Agent Directory]]
 - [[reports/person-agent-directory|Person Agent Directory]]
-- [[reports/2026-05-19-18-25-37-privacy-review|Privacy Review]]
 - [[reports/privacy-review|Privacy Review]]
-- [[reports/2026-05-18-11-12-15-provenance-coverage|Provenance Coverage]]
 - [[reports/provenance-coverage|Provenance Coverage]]
-- [[reports/2026-05-17-18-40-33-relationship-graph|Relationship Graph]]
 - [[reports/relationship-graph|Relationship Graph]]
-- [[reports/2026-05-20-23-34-38-stale-pages|Stale Pages]]
 - [[reports/stale-pages|Stale Pages]]
 <!-- openclaw:wiki:index:end -->

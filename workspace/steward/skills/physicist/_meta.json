@@ -1,9 +1,16 @@
 {
   "name": "physicist",
   "version": "1.0.0",
-  "description": "物理建模与理论分析技能。用于物理建模、理论分析、公式推导、交叉学科研究、模型验证等场景。",
-  "entry_point": "mcp/server.py",
-  "triggers": ["物理建模", "理论分析", "公式推导", "物理验证", "交叉研究", "量子力学", "热力学", "电磁学", "力学"],
-  "dependencies": [],
-  "author": "Yang Quan"
+  "description": "末日地堡物理学家技能，提供辐射计算、能量建模、结构分析等物理服务",
+  "entry_point": "references/guide.md",
+  "triggers": ["辐射", "能源", "物理", "计算", "公式", "建模", "热力学", "核", "射线", "应力"],
+  "scripts": {
+    "lookup": "scripts/lookup.py",
+    "radiation": "scripts/radiation.py",
+    "energy": "scripts/energy.py",
+    "thermo": "scripts/thermo.py"
+  },
+  "author": "杨权",
+  "created": "2026-05-25",
+  "updated": "2026-05-25"
 }

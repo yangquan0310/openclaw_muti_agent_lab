@@ -160,8 +160,8 @@ aliases:
 - [[concepts/photo-taking-impairment-effect]]（拍照损害效应）- 具体形式
 - [[concepts/cognitive-load]]（认知负荷）- 前因
 - [[concepts/digital-memory]]（数字记忆）- 数字外包形式
-- [[concepts/external-memory]]（外部记忆）- 结果状态
-- [[concepts/metamemory]]（元记忆）- 相关机制
+- concepts/external-memory（外部记忆）- 结果状态
+- concepts/metamemory（元记忆）- 相关机制
 
 ---
 

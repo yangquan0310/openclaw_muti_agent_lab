@@ -164,7 +164,7 @@ aliases:
 - [[concepts/treatment-expectation]]（治疗期待）- 匹配因素
 - [[concepts/working-alliance]]（治疗联盟）- 匹配结果
 - [[concepts/common-factors-theory]]（共同因素理论）- 理论框架
-- [[concepts/patient-centered-care]]（以患者为中心）- 匹配理念
+- concepts/patient-centered-care（以患者为中心）- 匹配理念
 
 ---
 

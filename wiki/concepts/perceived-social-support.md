@@ -164,8 +164,8 @@ aliases:
 - [[concepts/stress-buffering-model]]（压力缓冲模型）- 理论解释
 - [[concepts/social-exclusion]]（社会排斥）- 后效
 - [[concepts/anger-rumination]]（愤怒反刍）- 后效
-- [[concepts/social-support]]（社会支持）- 上位概念
-- [[concepts/belongingness]]（归属感）- 机制
+- concepts/social-support（社会支持）- 上位概念
+- concepts/belongingness（归属感）- 机制
 
 ---
 

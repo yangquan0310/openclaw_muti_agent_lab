@@ -3,6 +3,7 @@ id: wangyaxin
 name: 王雅欣
 name_en: Wang Yaxin
 type: person
+pageType: entity
 created: 2026-05-23
 created_by: steward
 tags:
@@ -12,6 +13,8 @@ tags:
 related_entities:
   - steward
   - yangquan
+updatedAt: 2026-05-24T00:00:00+08:00
+sourceIds: []
 ---
 
 # 王雅欣 (Wang Yaxin)

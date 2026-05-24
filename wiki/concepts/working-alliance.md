@@ -167,8 +167,8 @@ aliases:
 - [[concepts/common-factors-theory]]（共同因素理论）- 联盟是核心因素
 - [[concepts/treatment-expectation]]（治疗期待）- 前因
 - [[concepts/therapeutic-matching]]（治疗匹配）- 关联应用
-- [[concepts/alliance-rupture]]（联盟破裂）- 相关过程
-- [[concepts/therapeutic-relationship]]（治疗关系）- 上位概念
+- concepts/alliance-rupture（联盟破裂）- 相关过程
+- concepts/therapeutic-relationship（治疗关系）- 上位概念
 
 ---
 

@@ -170,11 +170,11 @@ aliases:
 
 ## 九、相关概念
 
-- [[concepts/self-efficacy]]（自我效能）- 上位概念
+- concepts/self-efficacy（自我效能）- 上位概念
 - [[concepts/career-construction-theory]]（职业建构理论）- 关联理论
 - [[concepts/occupational-well-being]]（职业幸福感）- 后效
-- [[concepts/social-cognitive-career-theory]]（社会认知职业理论）- 理论基础
-- [[concepts/career-identity]]（职业身份）- 前因/结果
+- concepts/social-cognitive-career-theory（社会认知职业理论）- 理论基础
+- concepts/career-identity（职业身份）- 前因/结果
 
 ---
 

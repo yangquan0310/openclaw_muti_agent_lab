@@ -158,11 +158,11 @@ aliases:
 
 ## 九、相关概念
 
-- [[concepts/intrinsic-motivation]]（内在动机）- 主要结果
-- [[concepts/extrinsic-motivation]]（外在动机）- 对比概念
-- [[concepts/autonomy]]（自主性）- 核心需求
-- [[concepts/competence]]（胜任感）- 核心需求
-- [[concepts/relatedness]]（归属感）- 核心需求
+- concepts/intrinsic-motivation（内在动机）- 主要结果
+- concepts/extrinsic-motivation（外在动机）- 对比概念
+- concepts/autonomy（自主性）- 核心需求
+- concepts/competence（胜任感）- 核心需求
+- concepts/relatedness（归属感）- 核心需求
 
 ---
 

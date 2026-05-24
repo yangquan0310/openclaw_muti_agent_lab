@@ -160,8 +160,8 @@ $$AUC = \frac{1}{n-1} \sum_{i=1}^{n-1} \frac{V_i + V_{i+1}}{2}(t_{i+1} - t_i)$$
 
 - [[concepts/intertemporal-choice]]（跨期选择）- 上位概念
 - [[concepts/self-control]]（自我控制）- 前因/机制
-- [[concepts/impulsivity]]（冲动性）- 人格边界条件
-- [[concepts/time-perception]]（时间感知）- 前因
+- concepts/impulsivity（冲动性）- 人格边界条件
+- concepts/time-perception（时间感知）- 前因
 
 ---
 

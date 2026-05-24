@@ -162,10 +162,10 @@ aliases:
 ## 九、相关概念
 
 - [[concepts/fomo]]（错失焦虑）- 后效
-- [[concepts/upward-comparison]]（上行比较）- 具体类型
-- [[concepts/downward-comparison]]（下行比较）- 具体类型
-- [[concepts/envy]]（嫉妒）- 可能的情绪反应
-- [[concepts/self-esteem]]（自尊）- 前因/后效
+- concepts/upward-comparison（上行比较）- 具体类型
+- concepts/downward-comparison（下行比较）- 具体类型
+- concepts/envy（嫉妒）- 可能的情绪反应
+- concepts/self-esteem（自尊）- 前因/后效
 
 ---
 

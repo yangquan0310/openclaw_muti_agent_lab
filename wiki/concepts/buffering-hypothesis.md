@@ -162,7 +162,7 @@ SST预测：老年人感知时间有限→应更偏好即时收益→折扣率�
 - [[concepts/intertemporal-choice]]（跨期选择）- 应用场景
 - [[concepts/socioemotional-selectivity-theory]]（社会情绪选择理论）- 理论关联
 - [[concepts/stress-buffering-model]]（压力缓冲模型）- 理论来源
-- [[concepts/emotion-regulation]]（情绪调节）- 核心机制
+- concepts/emotion-regulation（情绪调节）- 核心机制
 
 ---
 

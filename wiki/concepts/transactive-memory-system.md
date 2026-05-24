@@ -160,9 +160,9 @@ aliases:
 
 - [[concepts/collective-memory]]（集体记忆）- 上位概念
 - [[concepts/digital-memory]]（数字记忆）- 人-机TMS
-- [[concepts/external-memory]]（外部记忆）- 相关机制
-- [[concepts/knowledge-sharing]]（知识共享）- 相关过程
-- [[concepts/group-performance]]（群体绩效）- 后效
+- concepts/external-memory（外部记忆）- 相关机制
+- concepts/knowledge-sharing（知识共享）- 相关过程
+- concepts/group-performance（群体绩效）- 后效
 
 ---
 

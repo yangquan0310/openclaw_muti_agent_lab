@@ -44,7 +44,7 @@ Agent 通过 OpenClaw 内置机制访问 API，**不直接读取 .env 文件**�
 ## 相关
 
 - [[sources/openclaw-system]] — OpenClaw 系统目录
-- [[concepts/agents]] — 安全红线（禁止泄露敏感信息）
+-  — 安全红线（禁止泄露敏感信息）
 
 ---
 

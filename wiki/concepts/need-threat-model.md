@@ -167,9 +167,9 @@ aliases:
 
 - [[concepts/social-exclusion]]（社会排斥）- 前因
 - [[concepts/rejection-sensitivity]]（拒绝敏感性）- 边界条件
-- [[concepts/social-pain]]（社会疼痛）- 即时反应
+- concepts/social-pain（社会疼痛）- 即时反应
 - [[concepts/perceived-social-support]]（领悟社会支持）- 保护因素
-- [[concepts/social-withdrawal]]（社会退缩）- 后效
+- concepts/social-withdrawal（社会退缩）- 后效
 
 ---
 

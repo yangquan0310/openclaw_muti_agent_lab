@@ -2,7 +2,7 @@
 pageType: concept
 id: concept.cognitive-load
 createdAt: 2026-05-23
-updatedAt: 2026-23
+updatedAt: 2026-05-24T00:00:00+08:00
 title: 认知负荷（Cognitive Load）
 sourceIds:
   - source.课堂拍照行为_文献综述
@@ -158,11 +158,11 @@ aliases:
 
 ## 九、相关概念
 
-- [[concepts/working-memory]]（工作记忆）- 理论基础
+- concepts/working-memory（工作记忆）- 理论基础
 - [[concepts/multitasking]]（多任务行为）- 前因
 - [[concepts/photo-taking-impairment-effect]]（拍照损害效应）- 相关现象
-- [[concepts/distracted-attention]]（注意力分散）- 相关机制
-- [[concepts/learning-performance]]（学习效果）- 后效
+- concepts/distracted-attention（注意力分散）- 相关机制
+- concepts/learning-performance（学习效果）- 后效
 
 ---
 

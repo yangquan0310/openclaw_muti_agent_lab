@@ -151,9 +151,9 @@ aliases:
 
 - [[concepts/social-comparison]]（社会比较）- 核心机制
 - [[concepts/academic-procrastination]]（学业拖延）- 后效
-- [[concepts/smartphone-addiction]]（智能手机成瘾）- 后效
+- concepts/smartphone-addiction（智能手机成瘾）- 后效
 - [[concepts/self-control]]（自我控制）- 边界条件
-- [[concepts/loneliness]]（孤独感）- 前因
+- concepts/loneliness（孤独感）- 前因
 
 ---
 

@@ -167,7 +167,7 @@ aliases:
 - [[concepts/working-alliance]]（治疗联盟）- 核心共同因素
 - [[concepts/treatment-expectation]]（治疗期待）- 共同因素
 - [[concepts/therapeutic-matching]]（治疗匹配）- 应用
-- [[concepts/placebo-effect]]（安慰剂效应）- 相关机制
+- concepts/placebo-effect（安慰剂效应）- 相关机制
 - [[concepts/treatment-preference]]（治疗偏好）- 关联因素
 
 ---

@@ -978,8 +978,8 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-05-23 14:50:00**
-**系统版本**: OpenClaw 2026.5.20
-**插件版本**: agent-self-development v4.3.0（规划中）
+**最后更新: 2026-05-25 04:00:00**
+**系统版本**: OpenClaw 2026.5.22
+**插件版本**: agent-self-development v4.3.1
 **运行状态**: ✅ 稳定版
 **备份状态**: ✅ 自动执行中

@@ -170,8 +170,8 @@ aliases:
 - [[concepts/sleep-quality]]（睡眠质量）- 前因/后效
 - [[concepts/rumination]]（反刍思维）- 认知唤醒成分
 - [[concepts/cognitive-behavioral-therapy-for-insomnia]]（失眠认知行为治疗）- 干预
-- [[concepts/insomnia]]（失眠）- 具体疾病
-- [[concepts/hpa-axis]]（HPA轴）- 相关生理机制
+- concepts/insomnia（失眠）- 具体疾病
+- concepts/hpa-axis（HPA轴）- 相关生理机制
 
 ---
 

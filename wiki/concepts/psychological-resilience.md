@@ -163,10 +163,10 @@ aliases:
 ## 九、相关概念
 
 - [[concepts/self-compassion]]（自我同情）- 前因/保护因素
-- [[concepts/emotion-regulation]]（情绪调节）- 机制
-- [[concepts/social-support]]（社会支持）- 前因/保护因素
+- concepts/emotion-regulation（情绪调节）- 机制
+- concepts/social-support（社会支持）- 前因/保护因素
 - [[concepts/academic-procrastination]]（学业拖延）- 后效
-- [[concepts/post-traumatic-growth]]（创伤后成长）- 相关积极结果
+- concepts/post-traumatic-growth（创伤后成长）- 相关积极结果
 
 ---
 

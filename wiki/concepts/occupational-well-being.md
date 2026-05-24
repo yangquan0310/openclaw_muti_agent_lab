@@ -170,7 +170,7 @@ aliases:
 - [[concepts/occupational-self-efficacy]]（职业自我效能）- 前因
 - [[concepts/meaning-making]]（意义建构）- 机制
 - [[concepts/creative-worker]]（创意工作者）- 特定群体
-- [[concepts/burnout]]（职业倦怠）- 负面对照
+- concepts/burnout（职业倦怠）- 负面对照
 
 ---
 

@@ -165,8 +165,8 @@ aliases:
 - [[concepts/academic-procrastination]]（学业拖延）- 后效
 - [[concepts/delay-discounting]]（延迟折扣）- 相关机制
 - [[concepts/fomo]]（错失焦虑）- 前因
-- [[concepts/impulsivity]]（冲动性）- 对立概念
-- [[concepts/executive-function]]（执行功能）- 前因
+- concepts/impulsivity（冲动性）- 对立概念
+- concepts/executive-function（执行功能）- 前因
 
 ---
 

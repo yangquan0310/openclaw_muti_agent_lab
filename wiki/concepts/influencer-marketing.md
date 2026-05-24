@@ -161,10 +161,10 @@ aliases:
 ## 九、相关概念
 
 - [[concepts/parasocial-relationship]]（准社会关系）- 核心机制
-- [[concepts/source-credibility]]（来源可信度）- 前因
-- [[concepts/consumer-trust]]（消费者信任）- 转移目标
-- [[concepts/social-proof]]（社会认同）- 机制
-- [[concepts/meaning-transfer]]（意义迁移）- 机制
+- concepts/source-credibility（来源可信度）- 前因
+- concepts/consumer-trust（消费者信任）- 转移目标
+- concepts/social-proof（社会认同）- 机制
+- concepts/meaning-transfer（意义迁移）- 机制
 
 ---
 

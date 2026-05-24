@@ -167,7 +167,7 @@ aliases:
 - [[concepts/occupational-well-being]]（职业幸福感）- 后效
 - [[concepts/generative-ai]]（生成式AI）- 威胁来源
 - [[concepts/meaning-making]]（意义建构）- 应对机制
-- [[concepts/career-identity]]（职业身份）- 核心构念
+- concepts/career-identity（职业身份）- 核心构念
 - [[concepts/career-construction-theory]]（职业建构理论）- 理论基础
 
 ---

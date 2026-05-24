@@ -168,7 +168,7 @@ aliases:
 
 - [[concepts/autobiographical-memory-function]]（自传体记忆功能）- 功能
 - [[concepts/self-continuity]]（自我连续性）- 功能
-- [[concepts/life-narrative]]（生命叙事）- 建构结果
+- concepts/life-narrative（生命叙事）- 建构结果
 - [[concepts/collective-memory]]（集体记忆）- 相关概念
 - [[concepts/digital-memory]]（数字记忆）- 数字化时代相关
 

@@ -14,7 +14,6 @@
         "consecutiveSkipped": 0,
         "lastFailureNotificationDeliveryStatus": "unknown",
         "nextRunAtMs": 1779652800000,
-        "lastError": "FallbackSummaryError: All models failed (2): minimax/MiniMax-M2.7-highspeed: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded) | minimax/MiniMax-M2.7: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded)",
         "lastDiagnostics": {
           "summary": "All models failed (2): minimax/MiniMax-M2.7-highspeed: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded) | minimax/MiniMax-M2.7: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded)",
           "entries": [
@@ -28,18 +27,19 @@
         },
         "lastDiagnosticSummary": "All models failed (2): minimax/MiniMax-M2.7-highspeed: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded) | minimax/MiniMax-M2.7: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded)",
         "lastErrorReason": "overloaded",
-        "lastFailureAlertAtMs": 1779566572985
+        "lastFailureAlertAtMs": 1779566572985,
+        "runningAtMs": 1779652800005
       }
     },
     "dc7447e5-7fcf-4c64-8079-e811456af6ed": {
-      "updatedAtMs": 1779562855224,
+      "updatedAtMs": 1779649312849,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 3 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1779649200000,
-        "lastRunAtMs": 1779562800011,
+        "nextRunAtMs": 1779735600000,
+        "lastRunAtMs": 1779649200081,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 55213,
+        "lastDurationMs": 112768,
         "lastDeliveryStatus": "not-requested",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,

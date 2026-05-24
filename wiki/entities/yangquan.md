@@ -139,7 +139,7 @@ relationships:
 
 ## Related
 
-- [[entity.wangyaxin]]
+- [[entities/wangyaxin]]
 
 ## Related
 <!-- openclaw:wiki:related:start -->

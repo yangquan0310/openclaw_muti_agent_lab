@@ -77,8 +77,8 @@ aliases:
 ## 相关
 
 - [[sources/openclaw-system]] — OpenClaw 系统目录
-- [[concepts/bootstrap]] — Agent 初始化模板
-- [[concepts/identity]] — 身份配置模板
+-  — Agent 初始化模板
+-  — 身份配置模板
 
 ---
 

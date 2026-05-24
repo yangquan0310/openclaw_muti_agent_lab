@@ -170,8 +170,8 @@ aliases:
 - [[concepts/social-exclusion]]（社会排斥）- 应对情境
 - [[concepts/anger-rumination]]（愤怒反刍）- 后效
 - [[concepts/need-threat-model]]（需求威胁模型）- 理论整合
-- [[concepts/attachment-anxiety]]（依恋焦虑）- 相关因素
-- [[concepts/hostile-attribution-bias]]（敌意归因偏向）- 相关机制
+- concepts/attachment-anxiety（依恋焦虑）- 相关因素
+- concepts/hostile-attribution-bias（敌意归因偏向）- 相关机制
 
 ---
 

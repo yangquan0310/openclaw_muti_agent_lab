@@ -159,10 +159,10 @@ aliases:
 
 ## 九、相关概念
 
-- [[concepts/self-criticism]]（自我批评）- 对立构念
+- concepts/self-criticism（自我批评）- 对立构念
 - [[concepts/psychological-resilience]]（心理弹性）- 相关保护因素
-- [[concepts/emotion-regulation]]（情绪调节）- 相关机制
-- [[concepts/mindfulness]]（正念）- 核心成分
+- concepts/emotion-regulation（情绪调节）- 相关机制
+- concepts/mindfulness（正念）- 核心成分
 - [[concepts/academic-procrastination]]（学业拖延）- 后效
 
 ---

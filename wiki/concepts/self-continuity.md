@@ -161,8 +161,8 @@ aliases:
 - [[concepts/intertemporal-choice]]（跨期选择）- 应用场景
 - [[concepts/delay-discounting]]（延迟折扣）- 后效
 - [[concepts/socioemotional-selectivity-theory]]（社会情绪选择理论）- 关联理论
-- [[concepts/life-narrative]]（生命叙事）- 机制
-- [[concepts/future-self]]（未来自我）- 相关构念
+- concepts/life-narrative（生命叙事）- 机制
+- concepts/future-self（未来自我）- 相关构念
 
 ---
 

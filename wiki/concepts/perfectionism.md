@@ -168,7 +168,7 @@ aliases:
 - [[concepts/rumination]]（反刍思维）- 中介机制
 - [[concepts/fomo]]（错失焦虑）- 后效
 - [[concepts/self-compassion]]（自我同情）- 保护因素
-- [[concepts/self-criticism]]（自我批评）- 相关构念
+- concepts/self-criticism（自我批评）- 相关构念
 
 ---
 

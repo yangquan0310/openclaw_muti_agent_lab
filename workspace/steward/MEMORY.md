@@ -118,3 +118,8 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
+
+## Promoted From Short-Term Memory (2026-05-25)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-12.md:40:57 -->
+- - T013 wiki瘦身：concepts/ 文件夹已完成，可继续 entities/reports/syntheses/sources 文件夹 --- ## Session: wiki 瘦身 T013 完成 + .env 来源 + Miniconda 安装 ### 1. wiki 瘦身 — entities/reports/syntheses/sources 文件夹 - **entities/**: 删除 academicassistant.md、teachingassistant.md；更新 index.md - **reports/**: 删除 claim-health.md、contradictions.md、low-confidence.md、open-questions.md、stale-pages.md、privacy-review.md、relationship-graph.md、person-agent-directory.md；内容合并到 lint.md；更新 index.md - **syntheses/**: 删除 wiki-agent-entity-template.md；更新 index.md - **sources/**: 删除 academic-course-schedule.md、teaching-course-schedule.md；重命名 lab-repository.md → repository.md（id 改为 source.repository）；新建 agent-self-development.md、openclaw-system.md、openclaw-workspace.md、openclaw-env.md；批量创建 15 个项目来源页面；更新 index.md - wiki_lint: ✅ No wiki lint issues - MEMORY.md T013 状态更新为 completed ### 2. 来源页面设计原则确认 - **source 定义**: 指向外部真实文件系统的来源页面，有具体文件路径，被 concept/entity 引用作为溯源依据 - **核心目的**: 让代理快速定位外部文件、为声明提供溯源依据 - **五种 pageType 分工**: concept（这是什么）、entity（这是谁）、source（这在哪里）、synthesis（这怎么用）、report（状态如何） [score=0.834 recalls=4 avg=0.644 source=memory/2026-05-12.md:40-57]

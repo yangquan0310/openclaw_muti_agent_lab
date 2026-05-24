@@ -164,8 +164,8 @@ aliases:
 ## 九、相关概念
 
 - [[concepts/cognitive-load]]（认知负荷）- 相关机制
-- [[concepts/attention-resumption]]（注意力恢复）- 相关过程
-- [[concepts/distracted-attention]]（注意力分散）- 相关状态
+- concepts/attention-resumption（注意力恢复）- 相关过程
+- concepts/distracted-attention（注意力分散）- 相关状态
 - [[concepts/mobile-phone-policy]]（手机政策）- 干预措施
 - [[concepts/fomo]]（错失焦虑）- 前因
 

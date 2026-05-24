@@ -63,8 +63,8 @@ aliases:
 
 ## 相关
 
-- [[concepts/repository]] — 仓库概念
-- [[concepts/project]] — 项目规范
+-  — 仓库概念
+-  — 项目规范
 
 ---
 

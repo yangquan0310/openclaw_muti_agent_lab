@@ -163,7 +163,7 @@ aliases:
 - [[concepts/treatment-expectation]]（治疗期待）- 相关构念
 - [[concepts/working-alliance]]（治疗联盟）- 后效
 - [[concepts/therapeutic-matching]]（治疗匹配）- 应用
-- [[concepts/patient-centered-care]]（以患者为中心）- 理念
+- concepts/patient-centered-care（以患者为中心）- 理念
 - [[concepts/self-determination-theory]]（自我决定理论）- 理论基础
 
 ---

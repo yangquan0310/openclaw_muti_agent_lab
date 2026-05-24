@@ -163,8 +163,8 @@ aliases:
 - [[concepts/creative-worker]]（创意工作者）- 特定群体
 - [[concepts/occupational-well-being]]（职业幸福感）- 后效
 - [[concepts/meaning-making]]（意义建构）- 应对机制
-- [[concepts/career-identity]]（职业身份）- 威胁对象
-- [[concepts/technological-anxiety]]（技术焦虑）- 相关情绪
+- concepts/career-identity（职业身份）- 威胁对象
+- concepts/technological-anxiety（技术焦虑）- 相关情绪
 
 ---
 

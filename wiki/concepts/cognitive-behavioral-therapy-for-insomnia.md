@@ -166,8 +166,8 @@ aliases:
 - [[concepts/sleep-quality]]（睡眠质量）- 干预目标
 - [[concepts/hyperarousal-model]]（过度觉醒模型）- 理论基础
 - [[concepts/rumination]]（反刍思维）- 干预靶点
-- [[concepts/insomnia]]（失眠）- 具体疾病
-- [[concepts/stimulus-control]]（刺激控制）- 核心技术
+- concepts/insomnia（失眠）- 具体疾病
+- concepts/stimulus-control（刺激控制）- 核心技术
 
 ---
 

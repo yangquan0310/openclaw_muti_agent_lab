@@ -166,9 +166,9 @@ aliases:
 
 - [[concepts/autobiographical-memory]]（自传体记忆）- 基础系统
 - [[concepts/self-continuity]]（自我连续性）- 自我功能
-- [[concepts/life-narrative]]（生命叙事）- 功能结果
-- [[concepts/social-sharing]]（社会分享）- 社会功能
-- [[concepts/self-guidance]]（自我导向）- 导向功能
+- concepts/life-narrative（生命叙事）- 功能结果
+- concepts/social-sharing（社会分享）- 社会功能
+- concepts/self-guidance（自我导向）- 导向功能
 
 ---
 

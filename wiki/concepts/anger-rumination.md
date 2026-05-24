@@ -162,9 +162,9 @@ aliases:
 
 - [[concepts/rumination]]（反刍思维）- 上位概念
 - [[concepts/social-exclusion]]（社会排斥）- 前因/后果
-- [[concepts/aggression]]（攻击行为）- 后效
+- concepts/aggression（攻击行为）- 后效
 - [[concepts/rejection-sensitivity]]（拒绝敏感性）- 边界条件
-- [[concepts/emotion-regulation]]（情绪调节）- 对立过程
+- concepts/emotion-regulation（情绪调节）- 对立过程
 
 ---
 

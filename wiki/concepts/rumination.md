@@ -151,8 +151,8 @@ aliases:
 
 - [[concepts/repetitive-negative-thinking]]（重复性消极思维）- 上位概念
 - [[concepts/anger-rumination]]（愤怒反刍）- 具体形式
-- [[concepts/worry]]（担忧）- 类似构念
-- [[concepts/depression]]（抑郁）- 后效
+- concepts/worry（担忧）- 类似构念
+- concepts/depression（抑郁）- 后效
 - [[concepts/sleep-quality]]（睡眠质量）- 后效
 
 ---

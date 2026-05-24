@@ -164,8 +164,8 @@ aliases:
 
 - [[concepts/perceived-social-support]]（领悟社会支持）- 核心变量
 - [[concepts/social-exclusion]]（社会排斥）- 压力源
-- [[concepts/social-support]]（社会支持）- 上位概念
-- [[concepts/coping]]（应对策略）- 机制
+- concepts/social-support（社会支持）- 上位概念
+- concepts/coping（应对策略）- 机制
 - [[concepts/need-threat-model]]（需求威胁模型）- 相关理论
 
 ---

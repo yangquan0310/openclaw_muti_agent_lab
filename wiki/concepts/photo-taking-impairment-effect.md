@@ -153,9 +153,9 @@ aliases:
 
 - [[concepts/memory-offloading]]（记忆外包）- 理论关联
 - [[concepts/cognitive-load]]（认知负荷）- 相关机制
-- [[concepts/external-memory]]（外部记忆）- 相关现象
-- [[concepts/attention-distribution]]（注意力分配）- 机制
-- [[concepts/encoding]]（编码）- 相关记忆过程
+- concepts/external-memory（外部记忆）- 相关现象
+- concepts/attention-distribution（注意力分配）- 机制
+- concepts/encoding（编码）- 相关记忆过程
 
 ---
 

@@ -163,9 +163,9 @@ aliases:
 
 - [[concepts/working-alliance]]（治疗联盟）- 作用机制
 - [[concepts/treatment-preference]]（治疗偏好）- 相关但不同
-- [[concepts/placebo-effect]]（安慰剂效应）- 结果
+- concepts/placebo-effect（安慰剂效应）- 结果
 - [[concepts/therapeutic-matching]]（治疗匹配）- 应用
-- [[concepts/change-readiness]]（改变准备度）- 具体形式
+- concepts/change-readiness（改变准备度）- 具体形式
 
 ---
 

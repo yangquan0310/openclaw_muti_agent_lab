@@ -44,29 +44,21 @@ fortunetelling bazi 1990 5 15 --Gender 男
 
 ## 二、实现方式
 
-有 3 种实现方式，按复杂度选用：
-
-### 方式 1：单脚本（单模块技能）
-
-```
-scripts/main.py  →  直接实现全部功能
-```
-
-适用于功能简单、无需子命令分发的技能。
-
-### 方式 2：Shell Wrapper + main.py 分发（推荐）
+所有技能统一使用 **Shell Wrapper** 方式，wrapper 在 `/usr/local/bin/{技能名}`：
 
 ```
 /usr/local/bin/{技能名}  →  scripts/main.py  →  各模块
 ```
 
-wrapper 写法：
+### wrapper 写法
+
 ```bash
 #!/bin/bash
 exec python3 /path/to/skills/{skill}/scripts/main.py "$@"
 ```
 
-main.py 路由格式：
+### main.py 路由格式
+
 ```python
 def main() -> int:
     subcmd = sys.argv[1] if len(sys.argv) > 1 else "help"
@@ -79,13 +71,6 @@ def main() -> int:
     else:
         print_help()
         return 1
-```
-
-### 方式 3：带子包的 main.py
-
-`scripts/` 下有子包时，wrapper 指向子包的 main.py：
-```
-scripts/ppt/main.py  →  list / extend / compile
 ```
 
 ---
@@ -123,17 +108,6 @@ scripts/ppt/main.py  →  list / extend / compile
 | 布尔标志 | 优先使用 `--flag` 而非 `--flag true/false` |
 
 ---
-
-## 五、entry_points 声明
-
-技能应在 `pyproject.toml` 中声明 `entry_points`，实现全局命令：
-
-```toml
-[project.scripts]
-{技能名} = "scripts.main:main"
-```
-
-声明后 `pip install -e .` 或 `pnpm add -g` 可自动生成命令。不依赖 wrapper。
 
 ---
 

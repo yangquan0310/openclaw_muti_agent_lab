@@ -158,9 +158,9 @@ aliases:
 ## 九、相关概念
 
 - [[concepts/rumination]]（反刍思维）- RNT的一种形式
-- [[concepts/worry]]（担忧）- RNT的一种形式
+- concepts/worry（担忧）- RNT的一种形式
 - [[concepts/anger-rumination]]（愤怒反刍）- RNT的一种形式
-- [[concepts/depression]]（抑郁）- 后效
+- concepts/depression（抑郁）- 后效
 - [[concepts/sleep-quality]]（睡眠质量）- 后效
 
 ---

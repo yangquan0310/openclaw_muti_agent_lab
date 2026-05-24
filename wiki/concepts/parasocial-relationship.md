@@ -146,10 +146,10 @@ aliases:
 
 ## 九、相关概念
 
-- [[concepts/parasocial-breakup]]（准社会分手）- 后果
-- [[concepts/social-presence]]（社会临场感）- 理论解释
-- [[concepts/source-credibility]]（来源可信度）- 前因
-- [[concepts/consumer-trust]]（消费者信任）- 后效
+- concepts/parasocial-breakup（准社会分手）- 后果
+- concepts/social-presence（社会临场感）- 理论解释
+- concepts/source-credibility（来源可信度）- 前因
+- concepts/consumer-trust（消费者信任）- 后效
 - [[concepts/influencer-marketing]]（影响者营销）- 应用场景
 
 ---

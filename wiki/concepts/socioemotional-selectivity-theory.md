@@ -163,7 +163,7 @@ SST预测老年人折扣率更高（更偏好即时），但实证发现多数�
 
 - [[concepts/intertemporal-choice]]（跨期选择）- 应用场景
 - [[concepts/delay-discounting]]（延迟折扣）- 理论冲突
-- [[concepts/emotion-regulation]]（情绪调节）- 核心目标
+- concepts/emotion-regulation（情绪调节）- 核心目标
 - [[concepts/self-continuity]]（自我连续性）- 相关理论
 - [[concepts/buffering-hypothesis]]（缓冲假设）- 理论修正
 

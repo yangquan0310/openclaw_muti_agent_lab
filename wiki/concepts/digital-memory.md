@@ -161,8 +161,8 @@ aliases:
 - [[concepts/autobiographical-memory]]（自传体记忆）- 内部记忆基础
 - [[concepts/memory-offloading]]（记忆外包）- 相关机制
 - [[concepts/transactive-memory-system]]（交互记忆系统）- 理论关联
-- [[concepts/external-memory]]（外部记忆）- 上位概念
-- [[concepts/digital-storage]]（数字存储）- 同义
+- concepts/external-memory（外部记忆）- 上位概念
+- concepts/digital-storage（数字存储）- 同义
 
 ---
 

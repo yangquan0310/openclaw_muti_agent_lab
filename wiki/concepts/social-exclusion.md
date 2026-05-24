@@ -165,7 +165,7 @@ aliases:
 - [[concepts/rejection-sensitivity]]（拒绝敏感性）- 边界条件
 - [[concepts/anger-rumination]]（愤怒反刍）- 后效
 - [[concepts/need-threat-model]]（需求威胁模型）- 理论解释
-- [[concepts/social-pain]]（社会疼痛）- 理论解释
+- concepts/social-pain（社会疼痛）- 理论解释
 
 ---
 

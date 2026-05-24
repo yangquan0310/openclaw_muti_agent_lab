@@ -167,11 +167,11 @@ aliases:
 
 ## 九、相关概念
 
-- [[concepts/life-narrative]]（生命叙事）- 机制
+- concepts/life-narrative（生命叙事）- 机制
 - [[concepts/career-construction-theory]]（职业建构理论）- 职业应用
-- [[concepts/post-traumatic-growth]]（创伤后成长）- 积极结果
-- [[concepts/sensemaking]]（意义建构）- 同义
-- [[concepts/meaning-in-life]]（生活意义感）- 结果
+- concepts/post-traumatic-growth（创伤后成长）- 积极结果
+- concepts/sensemaking（意义建构）- 同义
+- concepts/meaning-in-life（生活意义感）- 结果
 
 ---
 

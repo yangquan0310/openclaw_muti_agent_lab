@@ -66,7 +66,7 @@ aliases:
 
 - [[sources/openclaw-workspace]] — Agent 工作空间
 
-- [[concepts/bootstrap]] — Agent 初始化流程
+-  — Agent 初始化流程
 
 ---
 

@@ -167,8 +167,8 @@ aliases:
 - [[concepts/occupational-self-efficacy]]（职业自我效能）- 相关机制
 - [[concepts/occupational-well-being]]（职业幸福感）- 结果
 - [[concepts/meaning-making]]（意义建构）- 核心过程
-- [[concepts/career-adaptation]]（职业适应性）- 核心构念
-- [[concepts/life-narrative]]（生命叙事）- 机制
+- concepts/career-adaptation（职业适应性）- 核心构念
+- concepts/life-narrative（生命叙事）- 机制
 
 ---
 

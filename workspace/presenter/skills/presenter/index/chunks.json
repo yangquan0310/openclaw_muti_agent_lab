@@ -1,0 +1,2058 @@
+[
+  {
+    "id": "color-theory-guide_000",
+    "file": "color-theory-guide.md",
+    "heading": "配色方法论",
+    "level": 1,
+    "content_preview": "> 如何为可视化选择合适的配色方案\n\n---",
+    "full_content": "> 如何为可视化选择合适的配色方案\n\n---"
+  },
+  {
+    "id": "color-theory-guide_001",
+    "file": "color-theory-guide.md",
+    "heading": "1. 主导色原则",
+    "level": 3,
+    "content_preview": "**一个颜色占 60-70% 视觉权重**，其余颜色为辅助。\n\n| 角色 | 比例 | 作用 |\n|------|------|------|\n| 主导色 | 60-70% | 背景、大面积色块 |\n| 支持色 | 20-30% | 内容区域、卡片 |\n| 强调色 | 5-10% | 关键信息、CTA |",
+    "full_content": "**一个颜色占 60-70% 视觉权重**，其余颜色为辅助。\n\n| 角色 | 比例 | 作用 |\n|------|------|------|\n| 主导色 | 60-70% | 背景、大面积色块 |\n| 支持色 | 20-30% | 内容区域、卡片 |\n| 强调色 | 5-10% | 关键信息、CTA |"
+  },
+  {
+    "id": "color-theory-guide_002",
+    "file": "color-theory-guide.md",
+    "heading": "2. 对比原则",
+    "level": 3,
+    "content_preview": "**文字与背景必须有足够对比度**：\n- 深色文字 → 浅色背景\n- 浅色文字 → 深色背景\n- 避免低对比度组合（浅灰 on 白）",
+    "full_content": "**文字与背景必须有足够对比度**：\n- 深色文字 → 浅色背景\n- 浅色文字 → 深色背景\n- 避免低对比度组合（浅灰 on 白）"
+  },
+  {
+    "id": "color-theory-guide_003",
+    "file": "color-theory-guide.md",
+    "heading": "3. 主题匹配原则",
+    "level": 3,
+    "content_preview": "**配色必须匹配内容主题**。如果一套配色可以用于任何主题，说明选色不够具体。\n\n---",
+    "full_content": "**配色必须匹配内容主题**。如果一套配色可以用于任何主题，说明选色不够具体。\n\n---"
+  },
+  {
+    "id": "color-theory-guide_004",
+    "file": "color-theory-guide.md",
+    "heading": "配色决策框架",
+    "level": 2,
+    "content_preview": "```\n内容主题是什么？\n├── 专业/商务 → 蓝色系、灰色系\n├── 自然/环保 → 绿色系、棕色系\n├── 活力/创意 → 橙色、黄色、珊瑚色\n├── 学术/教育 → 蓝色、绿色、紫色\n├── 医疗/健康 → 蓝色、绿色、白色\n└── 温暖/人文 → 橙色、红色、暖灰色\n```\n\n---",
+    "full_content": "```\n内容主题是什么？\n├── 专业/商务 → 蓝色系、灰色系\n├── 自然/环保 → 绿色系、棕色系\n├── 活力/创意 → 橙色、黄色、珊瑚色\n├── 学术/教育 → 蓝色、绿色、紫色\n├── 医疗/健康 → 蓝色、绿色、白色\n└── 温暖/人文 → 橙色、红色、暖灰色\n```\n\n---"
+  },
+  {
+    "id": "color-theory-guide_005",
+    "file": "color-theory-guide.md",
+    "heading": "经典配色方案",
+    "level": 2,
+    "content_preview": "| 主题 | 主导色 | 支持色 | 强调色 |\n|------|--------|--------|--------|\n| **Midnight Executive** | `1E2761` 藏蓝 | `CADCFC` 冰蓝 | `FFFFFF` 白 |\n| **Forest & Moss** | `2C5F2D` 森林绿 | `97BC62` 苔藓绿 | `F5F5F5` 奶油白 |\n| **...",
+    "full_content": "| 主题 | 主导色 | 支持色 | 强调色 |\n|------|--------|--------|--------|\n| **Midnight Executive** | `1E2761` 藏蓝 | `CADCFC` 冰蓝 | `FFFFFF` 白 |\n| **Forest & Moss** | `2C5F2D` 森林绿 | `97BC62` 苔藓绿 | `F5F5F5` 奶油白 |\n| **Coral Energy** | `F96167` 珊瑚红 | `F9E795` 金黄 | `2F3C7E` 藏蓝 |\n| **Warm Terracotta** | `B85042` 陶土红 | `E7E8D1` 沙色 | `A7BEAE` 鼠尾草绿 |\n| **Ocean Gradient** | `065A82` 深海蓝 | `1C7293` 青蓝 | `21295C` 午夜蓝 |\n| **Charcoal Minimal** | `36454F` 炭灰 | `F2F2F2` 米白 | `212121` 墨黑 |\n| **Teal Trust** | `028090` 青绿 | `00A896` 海沫绿 | `02C39A` 薄荷绿 |\n| **Berry & Cream** | `6D2E46` 浆果红 | `A26769` 玫瑰灰 | `ECE2D0` 奶油色 |\n| **Sage Calm** | `84B59F` 鼠尾草绿 | `69A297` 尤加利 | `50808E` 石板蓝 |\n| **Cherry Bold** | `990011` 樱桃红 | `FCF6F5` 象牙白 | `2F3C7E` 藏蓝 |\n\n---"
+  },
+  {
+    "id": "color-theory-guide_006",
+    "file": "color-theory-guide.md",
+    "heading": "三明治结构（推荐）",
+    "level": 3,
+    "content_preview": "| 位置 | 背景 | 示例 |\n|------|------|------|\n| 标题幻灯片 | 深色 | 藏蓝背景 + 白字 |\n| 内容幻灯片 | 浅色 | 白底 + 深色文字 |\n| 结尾幻灯片 | 深色 | 藏蓝背景 + 白字 |",
+    "full_content": "| 位置 | 背景 | 示例 |\n|------|------|------|\n| 标题幻灯片 | 深色 | 藏蓝背景 + 白字 |\n| 内容幻灯片 | 浅色 | 白底 + 深色文字 |\n| 结尾幻灯片 | 深色 | 藏蓝背景 + 白字 |"
+  },
+  {
+    "id": "color-theory-guide_007",
+    "file": "color-theory-guide.md",
+    "heading": "全深色结构",
+    "level": 3,
+    "content_preview": "适合高端、电影感、戏剧性场景：\n- 全程深色背景\n- 浅色文字和图形\n- 更强的视觉冲击力\n\n---",
+    "full_content": "适合高端、电影感、戏剧性场景：\n- 全程深色背景\n- 浅色文字和图形\n- 更强的视觉冲击力\n\n---"
+  },
+  {
+    "id": "color-theory-guide_008",
+    "file": "color-theory-guide.md",
+    "heading": "常见错误",
+    "level": 2,
+    "content_preview": "| 错误 | 问题 | 正确做法 |\n|------|------|----------|\n| 所有颜色等权重 | 视觉混乱，无重点 | 一个主导色 + 少量辅助 |\n| 默认蓝色 | 缺乏主题相关性 | 根据内容选择配色 |\n| 低对比度文字 | 难以阅读 | 确保对比度 ≥ 4.5:1 |\n| 背景渐变滥用 | 干扰内容 | 谨慎使用，仅标题/结尾 |\n\n---",
+    "full_content": "| 错误 | 问题 | 正确做法 |\n|------|------|----------|\n| 所有颜色等权重 | 视觉混乱，无重点 | 一个主导色 + 少量辅助 |\n| 默认蓝色 | 缺乏主题相关性 | 根据内容选择配色 |\n| 低对比度文字 | 难以阅读 | 确保对比度 ≥ 4.5:1 |\n| 背景渐变滥用 | 干扰内容 | 谨慎使用，仅标题/结尾 |\n\n---"
+  },
+  {
+    "id": "color-theory-guide_009",
+    "file": "color-theory-guide.md",
+    "heading": "判断标准",
+    "level": 2,
+    "content_preview": "**如何判断配色是否合格？**\n\n1. **问自己**：这套配色能用于其他主题吗？如果是，配色不够具体。\n2. **问自己**：文字在背景上清晰可读吗？测试对比度。\n3. **问自己**：视觉重心是否在核心信息上？辅助色不应抢夺注意力。\n\n---\n\n*最后更新：2026-05-20*",
+    "full_content": "**如何判断配色是否合格？**\n\n1. **问自己**：这套配色能用于其他主题吗？如果是，配色不够具体。\n2. **问自己**：文字在背景上清晰可读吗？测试对比度。\n3. **问自己**：视觉重心是否在核心信息上？辅助色不应抢夺注意力。\n\n---\n\n*最后更新：2026-05-20*"
+  },
+  {
+    "id": "image-guide_010",
+    "file": "image-guide.md",
+    "heading": "图片制作指南",
+    "level": 1,
+    "content_preview": "> 信息图、插图、海报设计\n\n---",
+    "full_content": "> 信息图、插图、海报设计\n\n---"
+  },
+  {
+    "id": "image-guide_011",
+    "file": "image-guide.md",
+    "heading": "一、适用场景",
+    "level": 2,
+    "content_preview": "| 场景 | 示例 |\n|------|------|\n| 数据可视化 | 统计图表、信息图 |\n| 概念解释 | 流程图、示意图 |\n| 宣传物料 | 海报、封面图 |\n| 教学素材 | 插图、图解 |\n\n---",
+    "full_content": "| 场景 | 示例 |\n|------|------|\n| 数据可视化 | 统计图表、信息图 |\n| 概念解释 | 流程图、示意图 |\n| 宣传物料 | 海报、封面图 |\n| 教学素材 | 插图、图解 |\n\n---"
+  },
+  {
+    "id": "image-guide_012",
+    "file": "image-guide.md",
+    "heading": "二、制作工具",
+    "level": 2,
+    "content_preview": "| 工具 | 说明 |\n|------|------|\n| **image_generate** | AI 图片生成，适合概念图、插图 |\n| **Python + Pillow** | 适合简单图文合成 |\n| **SVG** | 适合矢量图形、流程图 |\n\n---",
+    "full_content": "| 工具 | 说明 |\n|------|------|\n| **image_generate** | AI 图片生成，适合概念图、插图 |\n| **Python + Pillow** | 适合简单图文合成 |\n| **SVG** | 适合矢量图形、流程图 |\n\n---"
+  },
+  {
+    "id": "image-guide_013",
+    "file": "image-guide.md",
+    "heading": "3.1 配色原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **主导色** | 一个颜色占 60-70% 视觉权重 |\n| **支持色** | 1-2 个辅助色 |\n| **强调色** | 1 个突出色用于关键信息 |",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **主导色** | 一个颜色占 60-70% 视觉权重 |\n| **支持色** | 1-2 个辅助色 |\n| **强调色** | 1 个突出色用于关键信息 |"
+  },
+  {
+    "id": "image-guide_014",
+    "file": "image-guide.md",
+    "heading": "3.2 排版原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **留白** | 信息密度与呼吸感同样重要 |\n| **层级** | 标题 > 核心信息 > 辅助说明 |\n| **对齐** | 相同类型元素对齐一致 |",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **留白** | 信息密度与呼吸感同样重要 |\n| **层级** | 标题 > 核心信息 > 辅助说明 |\n| **对齐** | 相同类型元素对齐一致 |"
+  },
+  {
+    "id": "image-guide_015",
+    "file": "image-guide.md",
+    "heading": "3.3 字体规范",
+    "level": 3,
+    "content_preview": "| 元素 | 字号 |\n|------|------|\n| 主标题 | 标题字号的 1.5-2 倍 |\n| 正文 | 适中字号，确保可读 |\n| 注释 | 较小字号，辅助信息 |\n\n---",
+    "full_content": "| 元素 | 字号 |\n|------|------|\n| 主标题 | 标题字号的 1.5-2 倍 |\n| 正文 | 适中字号，确保可读 |\n| 注释 | 较小字号，辅助信息 |\n\n---"
+  },
+  {
+    "id": "image-guide_016",
+    "file": "image-guide.md",
+    "heading": "4.1 信息图提示词结构",
+    "level": 3,
+    "content_preview": "```\n[类型]：简洁描述\n风格：[写实/扁平/手绘/科技感]\n配色：[颜色描述]\n内容：[核心信息]\n```",
+    "full_content": "```\n[类型]：简洁描述\n风格：[写实/扁平/手绘/科技感]\n配色：[颜色描述]\n内容：[核心信息]\n```"
+  },
+  {
+    "id": "image-guide_017",
+    "file": "image-guide.md",
+    "heading": "4.2 示例",
+    "level": 3,
+    "content_preview": "**信息图**：\n```\n信息图：教学流程图\n风格：扁平化、干净\n配色：蓝色系，专业教育风格\n内容：输入→处理→输出 三步流程\n```\n\n**插图**：\n```\n插图：心理学概念图\n风格：简约现代\n配色：暖色调，和谐舒适\n内容：人与人之间的互动关系\n```\n\n---",
+    "full_content": "**信息图**：\n```\n信息图：教学流程图\n风格：扁平化、干净\n配色：蓝色系，专业教育风格\n内容：输入→处理→输出 三步流程\n```\n\n**插图**：\n```\n插图：心理学概念图\n风格：简约现代\n配色：暖色调，和谐舒适\n内容：人与人之间的互动关系\n```\n\n---"
+  },
+  {
+    "id": "image-guide_018",
+    "file": "image-guide.md",
+    "heading": "五、质量检查",
+    "level": 2,
+    "content_preview": "详见 [quality-standards.md](quality-standards.md)\n\n---\n\n*最后更新：2026-05-20*",
+    "full_content": "详见 [quality-standards.md](quality-standards.md)\n\n---\n\n*最后更新：2026-05-20*"
+  },
+  {
+    "id": "chart-guide_019",
+    "file": "chart-guide.md",
+    "heading": "图表设计指南",
+    "level": 1,
+    "content_preview": "> 流程图、思维导图、知识图谱\n\n---",
+    "full_content": "> 流程图、思维导图、知识图谱\n\n---"
+  },
+  {
+    "id": "chart-guide_020",
+    "file": "chart-guide.md",
+    "heading": "一、适用场景",
+    "level": 2,
+    "content_preview": "| 类型 | 适用场景 |\n|------|----------|\n| **流程图** | 操作步骤、实施程序、时间发展 |\n| **思维导图** | 概念关系、层级结构、头脑风暴 |\n| **知识图谱** | 课程知识结构、学科体系 |\n\n---",
+    "full_content": "| 类型 | 适用场景 |\n|------|----------|\n| **流程图** | 操作步骤、实施程序、时间发展 |\n| **思维导图** | 概念关系、层级结构、头脑风暴 |\n| **知识图谱** | 课程知识结构、学科体系 |\n\n---"
+  },
+  {
+    "id": "chart-guide_021",
+    "file": "chart-guide.md",
+    "heading": "2.1 基本符号",
+    "level": 3,
+    "content_preview": "| 符号 | 含义 |\n|------|------|\n| 圆角矩形 | 开始/结束 |\n| 矩形 | 操作/步骤 |\n| 菱形 | 判断/决策 |\n| 箭头 | 流程方向 |",
+    "full_content": "| 符号 | 含义 |\n|------|------|\n| 圆角矩形 | 开始/结束 |\n| 矩形 | 操作/步骤 |\n| 菱形 | 判断/决策 |\n| 箭头 | 流程方向 |"
+  },
+  {
+    "id": "chart-guide_022",
+    "file": "chart-guide.md",
+    "heading": "2.2 设计原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **简洁** | 避免过于复杂的流程 |\n| **清晰** | 每步一个核心动作 |\n| **方向** | 保持统一的流向（左到右或上到下） |",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **简洁** | 避免过于复杂的流程 |\n| **清晰** | 每步一个核心动作 |\n| **方向** | 保持统一的流向（左到右或上到下） |"
+  },
+  {
+    "id": "chart-guide_023",
+    "file": "chart-guide.md",
+    "heading": "2.3 布局建议",
+    "level": 3,
+    "content_preview": "```\n方案1：水平流程\n[步骤1] → [步骤2] → [步骤3] → [步骤4]\n\n方案2：垂直流程\n  ↓\n[步骤1]\n  ↓\n[步骤2]\n  ↓\n\n方案3：决策分支\n      [判断]\n     ↙    ↘\n   [是]    [否]\n     ↘    ↙\n    [结果]\n```\n\n---",
+    "full_content": "```\n方案1：水平流程\n[步骤1] → [步骤2] → [步骤3] → [步骤4]\n\n方案2：垂直流程\n  ↓\n[步骤1]\n  ↓\n[步骤2]\n  ↓\n\n方案3：决策分支\n      [判断]\n     ↙    ↘\n   [是]    [否]\n     ↘    ↙\n    [结果]\n```\n\n---"
+  },
+  {
+    "id": "chart-guide_024",
+    "file": "chart-guide.md",
+    "heading": "3.1 基本结构",
+    "level": 3,
+    "content_preview": "| 层级 | 说明 |\n|------|------|\n| 中心主题 | 核心概念（最突出） |\n| 一级分支 | 主要类别 |\n| 二级分支 | 具体内容 |\n| 更多分支 | 细节补充 |",
+    "full_content": "| 层级 | 说明 |\n|------|------|\n| 中心主题 | 核心概念（最突出） |\n| 一级分支 | 主要类别 |\n| 二级分支 | 具体内容 |\n| 更多分支 | 细节补充 |"
+  },
+  {
+    "id": "chart-guide_025",
+    "file": "chart-guide.md",
+    "heading": "3.2 设计原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **层级清晰** | 同级元素视觉权重相近 |\n| **颜色区分** | 不同分支用不同颜色 |\n| **简洁** | 每节点一个关键词 |\n| **平衡** | 分支分布均匀 |\n\n---",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **层级清晰** | 同级元素视觉权重相近 |\n| **颜色区分** | 不同分支用不同颜色 |\n| **简洁** | 每节点一个关键词 |\n| **平衡** | 分支分布均匀 |\n\n---"
+  },
+  {
+    "id": "chart-guide_026",
+    "file": "chart-guide.md",
+    "heading": "4.1 适用场景",
+    "level": 3,
+    "content_preview": "| 场景 | 示例 |\n|------|------|\n| 课程结构 | 章节→单元→知识点 |\n| 概念体系 | 上位→下位→并列 |\n| 学科体系 | 领域→分支→专题 |",
+    "full_content": "| 场景 | 示例 |\n|------|------|\n| 课程结构 | 章节→单元→知识点 |\n| 概念体系 | 上位→下位→并列 |\n| 学科体系 | 领域→分支→专题 |"
+  },
+  {
+    "id": "chart-guide_027",
+    "file": "chart-guide.md",
+    "heading": "4.2 设计原则",
+    "level": 3,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **层级分明** | 不同层级用大小/颜色区分 |\n| **关系清晰** | 用箭头/连线标注关系 |\n| **简洁** | 核心概念优先，避免信息过载 |\n\n---",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **层级分明** | 不同层级用大小/颜色区分 |\n| **关系清晰** | 用箭头/连线标注关系 |\n| **简洁** | 核心概念优先，避免信息过载 |\n\n---"
+  },
+  {
+    "id": "chart-guide_028",
+    "file": "chart-guide.md",
+    "heading": "五、制作工具",
+    "level": 2,
+    "content_preview": "| 工具 | 说明 |\n|------|------|\n| **PPT** | 使用形状绘制流程图 |\n| **draw.io** | 专业图表工具 |\n| **Mermaid** | 文本生成图表 |\n| **Python + matplotlib** | 数据图表 |\n\n---",
+    "full_content": "| 工具 | 说明 |\n|------|------|\n| **PPT** | 使用形状绘制流程图 |\n| **draw.io** | 专业图表工具 |\n| **Mermaid** | 文本生成图表 |\n| **Python + matplotlib** | 数据图表 |\n\n---"
+  },
+  {
+    "id": "chart-guide_029",
+    "file": "chart-guide.md",
+    "heading": "六、质量检查",
+    "level": 2,
+    "content_preview": "详见 [quality-standards.md](quality-standards.md)\n\n---\n\n*最后更新：2026-05-20*",
+    "full_content": "详见 [quality-standards.md](quality-standards.md)\n\n---\n\n*最后更新：2026-05-20*"
+  },
+  {
+    "id": "ppt-guide_030",
+    "file": "ppt-guide.md",
+    "heading": "PPT 制作指南",
+    "level": 1,
+    "content_preview": "> 从 PPT 脚本设计 → Layout 选择 → PPTX 编译的完整流程\n\n---",
+    "full_content": "> 从 PPT 脚本设计 → Layout 选择 → PPTX 编译的完整流程\n\n---"
+  },
+  {
+    "id": "ppt-guide_031",
+    "file": "ppt-guide.md",
+    "heading": "一、核心概念",
+    "level": 2,
+    "content_preview": "| 概念 | 说明 |\n|------|------|\n| **slide_master** | 画布（背景、主题色、字体、页脚） |\n| **slide_layout** | 画布 + 预置占位符 |\n| **slide** | 编译器在画布上自主绘制的具体画面 |\n\n**编译器行为**：根据 `@structure` 自主设计 slide 的呈现方式，Layout 只是提供画布和可选的占位符位...",
+    "full_content": "| 概念 | 说明 |\n|------|------|\n| **slide_master** | 画布（背景、主题色、字体、页脚） |\n| **slide_layout** | 画布 + 预置占位符 |\n| **slide** | 编译器在画布上自主绘制的具体画面 |\n\n**编译器行为**：根据 `@structure` 自主设计 slide 的呈现方式，Layout 只是提供画布和可选的占位符位置参考。\n\n---"
+  },
+  {
+    "id": "ppt-guide_032",
+    "file": "ppt-guide.md",
+    "heading": "二、脚本编写（结构化格式）",
+    "level": 2,
+    "content_preview": "详见 [脚本编写指南](script-writing-guide.md)",
+    "full_content": "详见 [脚本编写指南](script-writing-guide.md)"
+  },
+  {
+    "id": "ppt-guide_033",
+    "file": "ppt-guide.md",
+    "heading": "快速格式",
+    "level": 3,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "ppt-guide_034",
+    "file": "ppt-guide.md",
+    "heading": "第N页：页面标题",
+    "level": 2,
+    "content_preview": "@layout: 1          # 可选：强制指定布局索引\n@structure: list    # 可选：声明内容结构类型\n\n**页面描述**：页面功能一句话说明\n\n**核心内容**：\n- 要点1\n- 要点2\n- 要点3\n\n**图表设计**：    # 可选\n- 排版建议\n\n**互动设计**：    # 可选\n- 课堂活动/提问设计\n\n**备注**：         # 可选\n- 教学...",
+    "full_content": "@layout: 1          # 可选：强制指定布局索引\n@structure: list    # 可选：声明内容结构类型\n\n**页面描述**：页面功能一句话说明\n\n**核心内容**：\n- 要点1\n- 要点2\n- 要点3\n\n**图表设计**：    # 可选\n- 排版建议\n\n**互动设计**：    # 可选\n- 课堂活动/提问设计\n\n**备注**：         # 可选\n- 教学备注、时间控制\n```"
+  },
+  {
+    "id": "ppt-guide_035",
+    "file": "ppt-guide.md",
+    "heading": "内容结构类型（@structure）",
+    "level": 3,
+    "content_preview": "| 结构类型 | 标记 | 适用场景 |\n|----------|------|----------|\n| **列表** | `@list` | 标题+多个条目（最常用） |\n| **表格** | `@table` | 多行多列对比数据 |\n| **时间轴** | `@timeline` | 按时间顺序的事件 |\n| **流程图** | `@flowchart` | 线性步骤、程序 |\n| **对...",
+    "full_content": "| 结构类型 | 标记 | 适用场景 |\n|----------|------|----------|\n| **列表** | `@list` | 标题+多个条目（最常用） |\n| **表格** | `@table` | 多行多列对比数据 |\n| **时间轴** | `@timeline` | 按时间顺序的事件 |\n| **流程图** | `@flowchart` | 线性步骤、程序 |\n| **对比** | `@compare` | 左右双栏对比 |\n| **卡片** | `@cards` | 并列特征、分类归纳 |\n| **封面** | `@cover` | 课程封面 |\n| **章节分隔** | `@section` | 节标题过渡页 |\n\n---"
+  },
+  {
+    "id": "ppt-guide_036",
+    "file": "ppt-guide.md",
+    "heading": "三、Layout 选择",
+    "level": 2,
+    "content_preview": "详见 [Layout 选择指南](layout-choice-guide.md)",
+    "full_content": "详见 [Layout 选择指南](layout-choice-guide.md)"
+  },
+  {
+    "id": "ppt-guide_037",
+    "file": "ppt-guide.md",
+    "heading": "快速选择表",
+    "level": 3,
+    "content_preview": "| 内容类型 | 推荐 Layout | 索引 |\n|----------|-------------|------|\n| **封面** | 标题幻灯片 | 0 |\n| **章节分隔/过渡** | 节标题 | 2 |\n| **双栏对比** | 两栏内容 | 3 |\n| **其他所有结构** | 标题和内容 | 1 |\n| **思考题/讨论** | 仅标题 | 5 |\n\n---",
+    "full_content": "| 内容类型 | 推荐 Layout | 索引 |\n|----------|-------------|------|\n| **封面** | 标题幻灯片 | 0 |\n| **章节分隔/过渡** | 节标题 | 2 |\n| **双栏对比** | 两栏内容 | 3 |\n| **其他所有结构** | 标题和内容 | 1 |\n| **思考题/讨论** | 仅标题 | 5 |\n\n---"
+  },
+  {
+    "id": "ppt-guide_038",
+    "file": "ppt-guide.md",
+    "heading": "四、编译命令",
+    "level": 2,
+    "content_preview": "```bash",
+    "full_content": "```bash"
+  },
+  {
+    "id": "ppt-guide_039",
+    "file": "ppt-guide.md",
+    "heading": "列出模板所有 slide_layouts",
+    "level": 1,
+    "content_preview": "python3 scripts/ppt/main.py list --template template",
+    "full_content": "python3 scripts/ppt/main.py list --template template"
+  },
+  {
+    "id": "ppt-guide_040",
+    "file": "ppt-guide.md",
+    "heading": "验证脚本（编译前检查）",
+    "level": 1,
+    "content_preview": "python3 scripts/ppt/main.py validate \\\n  --input script.md --template template",
+    "full_content": "python3 scripts/ppt/main.py validate \\\n  --input script.md --template template"
+  },
+  {
+    "id": "ppt-guide_041",
+    "file": "ppt-guide.md",
+    "heading": "编译（默认蓝色主题）",
+    "level": 1,
+    "content_preview": "python3 scripts/ppt/main.py compile \\\n  --input script.md --output out.pptx --template template",
+    "full_content": "python3 scripts/ppt/main.py compile \\\n  --input script.md --output out.pptx --template template"
+  },
+  {
+    "id": "ppt-guide_042",
+    "file": "ppt-guide.md",
+    "heading": "编译（指定主题）",
+    "level": 1,
+    "content_preview": "python3 scripts/ppt/main.py compile \\\n  --input script.md --output out.pptx --template template \\\n  --theme purple",
+    "full_content": "python3 scripts/ppt/main.py compile \\\n  --input script.md --output out.pptx --template template \\\n  --theme purple"
+  },
+  {
+    "id": "ppt-guide_043",
+    "file": "ppt-guide.md",
+    "heading": "解析脚本（调试）",
+    "level": 1,
+    "content_preview": "python3 scripts/ppt/main.py parse --input script.md\n```",
+    "full_content": "python3 scripts/ppt/main.py parse --input script.md\n```"
+  },
+  {
+    "id": "ppt-guide_044",
+    "file": "ppt-guide.md",
+    "heading": "配色主题",
+    "level": 3,
+    "content_preview": "支持 5 种配色主题：`blue`（默认）、`green`、`purple`、`orange`、`gray`。\n\n主题也可在脚本元数据中指定（优先级高于命令行）：\n```markdown\n---\ntitle: 演示文稿\ntheme: purple\n---\n```\n\n---",
+    "full_content": "支持 5 种配色主题：`blue`（默认）、`green`、`purple`、`orange`、`gray`。\n\n主题也可在脚本元数据中指定（优先级高于命令行）：\n```markdown\n---\ntitle: 演示文稿\ntheme: purple\n---\n```\n\n---"
+  },
+  {
+    "id": "ppt-guide_045",
+    "file": "ppt-guide.md",
+    "heading": "五、设计原理",
+    "level": 2,
+    "content_preview": "详见 [Slide 设计指南](slide-design-guide.md)，或深入学习：\n\n| 指南 | 说明 |\n|------|------|\n| [配色方法论](color-theory-guide.md) | 如何选择配色方案 |\n| [排版方法论](typography-guide.md) | 如何选择字体、设计版式 |\n| [视觉层级方法论](visual-hierarchy-gui...",
+    "full_content": "详见 [Slide 设计指南](slide-design-guide.md)，或深入学习：\n\n| 指南 | 说明 |\n|------|------|\n| [配色方法论](color-theory-guide.md) | 如何选择配色方案 |\n| [排版方法论](typography-guide.md) | 如何选择字体、设计版式 |\n| [视觉层级方法论](visual-hierarchy-guide.md) | 如何设计信息优先级 |"
+  },
+  {
+    "id": "ppt-guide_046",
+    "file": "ppt-guide.md",
+    "heading": "设计速查",
+    "level": 3,
+    "content_preview": "| 设计要素 | 推荐做法 |\n|----------|----------|\n| **配色** | 一个主导色（60-70%）+ 1-2 支持色 + 1 强调色 |\n| **字体** | 标题 36-44pt Bold，正文 14-16pt |\n| **间距** | 边距 0.5\"，内容块间距 0.3-0.5\" |\n| **对齐** | 正文左对齐，标题可居中 |\n\n---",
+    "full_content": "| 设计要素 | 推荐做法 |\n|----------|----------|\n| **配色** | 一个主导色（60-70%）+ 1-2 支持色 + 1 强调色 |\n| **字体** | 标题 36-44pt Bold，正文 14-16pt |\n| **间距** | 边距 0.5\"，内容块间距 0.3-0.5\" |\n| **对齐** | 正文左对齐，标题可居中 |\n\n---"
+  },
+  {
+    "id": "ppt-guide_047",
+    "file": "ppt-guide.md",
+    "heading": "六、质量检查",
+    "level": 2,
+    "content_preview": "详见 [质量检查清单](quality-standards.md)\n\n---\n\n*最后更新：2026-05-21*",
+    "full_content": "详见 [质量检查清单](quality-standards.md)\n\n---\n\n*最后更新：2026-05-21*"
+  },
+  {
+    "id": "visual-hierarchy-guide_048",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "视觉层级方法论",
+    "level": 1,
+    "content_preview": "> 如何设计信息的优先级和呈现顺序\n\n---",
+    "full_content": "> 如何设计信息的优先级和呈现顺序\n\n---"
+  },
+  {
+    "id": "visual-hierarchy-guide_049",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "核心问题",
+    "level": 2,
+    "content_preview": "**用户第一眼应该看到什么？第二眼呢？**\n\n视觉层级回答这个问题：通过大小、颜色、位置、对比度引导用户注意力。\n\n---",
+    "full_content": "**用户第一眼应该看到什么？第二眼呢？**\n\n视觉层级回答这个问题：通过大小、颜色、位置、对比度引导用户注意力。\n\n---"
+  },
+  {
+    "id": "visual-hierarchy-guide_050",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "层级设计四要素",
+    "level": 2,
+    "content_preview": "| 要素 | 作用 | 实现方式 |\n|------|------|----------|\n| **大小** | 越大越重要 | 字号、图形尺寸 |\n| **颜色** | 越突出越重要 | 强调色、对比度 |\n| **位置** | 越靠前越重要 | 左上→右下扫描 |\n| **对比** | 越明显越重要 | 明暗、饱和度 |\n\n---",
+    "full_content": "| 要素 | 作用 | 实现方式 |\n|------|------|----------|\n| **大小** | 越大越重要 | 字号、图形尺寸 |\n| **颜色** | 越突出越重要 | 强调色、对比度 |\n| **位置** | 越靠前越重要 | 左上→右下扫描 |\n| **对比** | 越明显越重要 | 明暗、饱和度 |\n\n---"
+  },
+  {
+    "id": "visual-hierarchy-guide_051",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "第一层：核心信息",
+    "level": 3,
+    "content_preview": "**用户必须知道的信息**。\n\n| 特点 | 设计方式 |\n|------|----------|\n| 字号 | 最大（36-44pt） |\n| 颜色 | 强调色或高对比 |\n| 位置 | 视觉焦点区（左上或中心） |",
+    "full_content": "**用户必须知道的信息**。\n\n| 特点 | 设计方式 |\n|------|----------|\n| 字号 | 最大（36-44pt） |\n| 颜色 | 强调色或高对比 |\n| 位置 | 视觉焦点区（左上或中心） |"
+  },
+  {
+    "id": "visual-hierarchy-guide_052",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "第二层：重要信息",
+    "level": 3,
+    "content_preview": "**支持核心信息的详细内容**。\n\n| 特点 | 设计方式 |\n|------|----------|\n| 字号 | 中等（20-24pt） |\n| 颜色 | 主色调 |\n| 位置 | 核心信息周围 |",
+    "full_content": "**支持核心信息的详细内容**。\n\n| 特点 | 设计方式 |\n|------|----------|\n| 字号 | 中等（20-24pt） |\n| 颜色 | 主色调 |\n| 位置 | 核心信息周围 |"
+  },
+  {
+    "id": "visual-hierarchy-guide_053",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "第三层：辅助信息",
+    "level": 3,
+    "content_preview": "**补充说明、来源、备注**。\n\n| 特点 | 设计方式 |\n|------|----------|\n| 字号 | 较小（10-12pt） |\n| 颜色 | 灰色或淡化 |\n| 位置 | 边缘或底部 |\n\n---",
+    "full_content": "**补充说明、来源、备注**。\n\n| 特点 | 设计方式 |\n|------|----------|\n| 字号 | 较小（10-12pt） |\n| 颜色 | 灰色或淡化 |\n| 位置 | 边缘或底部 |\n\n---"
+  },
+  {
+    "id": "visual-hierarchy-guide_054",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "F 模式（西方阅读习惯）",
+    "level": 3,
+    "content_preview": "用户习惯从左到右、从上到下扫描：\n\n```\n┌─────────────┐\n│ 重要  重要  │  ← 关注区域\n├─────────────┤\n│ 重要        │\n├─────────────┤\n│ 次要   次要  │  ← 关注减少\n└─────────────┘\n```\n\n**应用**：重要信息放左上，次要信息放右下。",
+    "full_content": "用户习惯从左到右、从上到下扫描：\n\n```\n┌─────────────┐\n│ 重要  重要  │  ← 关注区域\n├─────────────┤\n│ 重要        │\n├─────────────┤\n│ 次要   次要  │  ← 关注减少\n└─────────────┘\n```\n\n**应用**：重要信息放左上，次要信息放右下。"
+  },
+  {
+    "id": "visual-hierarchy-guide_055",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "Z 模式",
+    "level": 3,
+    "content_preview": "适合标题 → 图像 → 行动的流程：\n\n```\n┌─────────────┐\n│ 标题        │  ← 起点\n│      图像    │  ← 视觉过渡\n│ 行动号召    │  ← 终点\n└─────────────┘\n```\n\n---",
+    "full_content": "适合标题 → 图像 → 行动的流程：\n\n```\n┌─────────────┐\n│ 标题        │  ← 起点\n│      图像    │  ← 视觉过渡\n│ 行动号召    │  ← 终点\n└─────────────┘\n```\n\n---"
+  },
+  {
+    "id": "visual-hierarchy-guide_056",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "内容类型与层级",
+    "level": 2,
+    "content_preview": "| 内容类型 | 第一层级 | 第二层级 | 第三层级 |\n|----------|----------|----------|----------|\n| **封面** | 课程名称 | 副标题 | 机构/教师 |\n| **章节页** | 章节编号 | 章节标题 | 装饰元素 |\n| **内容页** | 核心观点 | 支撑论据 | 案例/备注 |\n| **对比页** | 对比项A | 对比项B |...",
+    "full_content": "| 内容类型 | 第一层级 | 第二层级 | 第三层级 |\n|----------|----------|----------|----------|\n| **封面** | 课程名称 | 副标题 | 机构/教师 |\n| **章节页** | 章节编号 | 章节标题 | 装饰元素 |\n| **内容页** | 核心观点 | 支撑论据 | 案例/备注 |\n| **对比页** | 对比项A | 对比项B | 共同点/差异 |\n| **数据页** | 关键数字 | 数据来源 | 详细说明 |\n\n---"
+  },
+  {
+    "id": "visual-hierarchy-guide_057",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "常见错误",
+    "level": 2,
+    "content_preview": "| 错误 | 问题 | 正确做法 |\n|------|------|----------|\n| 所有内容字号相同 | 无层级 | 区分主要/次要 |\n| 强调色滥用 | 失去重点 | 只强调最关键 |\n| 信息等权重 | 决策困难 | 强制排序优先级 |\n| 视觉密度过高 | 认知过载 | 减少信息量 |\n\n---",
+    "full_content": "| 错误 | 问题 | 正确做法 |\n|------|------|----------|\n| 所有内容字号相同 | 无层级 | 区分主要/次要 |\n| 强调色滥用 | 失去重点 | 只强调最关键 |\n| 信息等权重 | 决策困难 | 强制排序优先级 |\n| 视觉密度过高 | 认知过载 | 减少信息量 |\n\n---"
+  },
+  {
+    "id": "visual-hierarchy-guide_058",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "判断标准",
+    "level": 2,
+    "content_preview": "**如何判断层级设计是否合格？**\n\n1. **3秒测试**：用户 3 秒内能说出页面核心信息吗？\n2. **一指原则**：视线从第一层级自然流向第二层级？\n3. **去色测试**：去掉颜色后，层级仍然清晰吗？\n\n---",
+    "full_content": "**如何判断层级设计是否合格？**\n\n1. **3秒测试**：用户 3 秒内能说出页面核心信息吗？\n2. **一指原则**：视线从第一层级自然流向第二层级？\n3. **去色测试**：去掉颜色后，层级仍然清晰吗？\n\n---"
+  },
+  {
+    "id": "visual-hierarchy-guide_059",
+    "file": "visual-hierarchy-guide.md",
+    "heading": "一图胜千言",
+    "level": 2,
+    "content_preview": "**能用图形表达的，不用文字**。\n\n| 文字 | 图形 | 优势 |\n|------|------|------|\n| \"增长50%\" | 📈 图表 | 直观 |\n| \"步骤1→2→3\" | 流程图 | 清晰 |\n| \"A vs B\" | 对比卡片 | 易记 |\n| \"包含4个要素\" | 四象限 | 结构化 |\n\n---\n\n*最后更新：2026-05-20*",
+    "full_content": "**能用图形表达的，不用文字**。\n\n| 文字 | 图形 | 优势 |\n|------|------|------|\n| \"增长50%\" | 📈 图表 | 直观 |\n| \"步骤1→2→3\" | 流程图 | 清晰 |\n| \"A vs B\" | 对比卡片 | 易记 |\n| \"包含4个要素\" | 四象限 | 结构化 |\n\n---\n\n*最后更新：2026-05-20*"
+  },
+  {
+    "id": "image-generation-guide_060",
+    "file": "image-generation-guide.md",
+    "heading": "图片生成方法论",
+    "level": 1,
+    "content_preview": "> 如何使用 AI 图片生成模型创建高质量可视化素材\n\n---",
+    "full_content": "> 如何使用 AI 图片生成模型创建高质量可视化素材\n\n---"
+  },
+  {
+    "id": "image-generation-guide_061",
+    "file": "image-generation-guide.md",
+    "heading": "核心问题",
+    "level": 2,
+    "content_preview": "**什么内容适合用图片生成？什么内容不适合？**\n\n| 适合 | 不适合 |\n|------|--------|\n| 概念图、示意图、插图 | 需要精确数据可视化 |\n| 抽象概念可视化 | 精确的文字排版 |\n| 创意素材、封面图 | 需要严格品牌规范的设计 |\n\n---",
+    "full_content": "**什么内容适合用图片生成？什么内容不适合？**\n\n| 适合 | 不适合 |\n|------|--------|\n| 概念图、示意图、插图 | 需要精确数据可视化 |\n| 抽象概念可视化 | 精确的文字排版 |\n| 创意素材、封面图 | 需要严格品牌规范的设计 |\n\n---"
+  },
+  {
+    "id": "image-generation-guide_062",
+    "file": "image-generation-guide.md",
+    "heading": "基本结构",
+    "level": 3,
+    "content_preview": "```\n[类型]：简洁描述\n风格：[写实/扁平/手绘/科技感/极简/插画]\n配色：[颜色描述或色系]\n内容：[核心元素描述]\n```",
+    "full_content": "```\n[类型]：简洁描述\n风格：[写实/扁平/手绘/科技感/极简/插画]\n配色：[颜色描述或色系]\n内容：[核心元素描述]\n```"
+  },
+  {
+    "id": "image-generation-guide_063",
+    "file": "image-generation-guide.md",
+    "heading": "示例",
+    "level": 3,
+    "content_preview": "**信息图**：\n```\n信息图：教学流程图\n风格：扁平化、干净\n配色：蓝色系，专业教育风格\n内容：输入→处理→输出 三步流程\n```\n\n**插图**：\n```\n插图：心理学概念图\n风格：简约现代、温暖色调\n配色：暖色系，和谐舒适\n内容：两个人对话，象征人际沟通\n```\n\n**封面图**：\n```\n封面：在线教育平台\n风格：现代简约、科技感\n配色：深蓝+橙色点缀\n内容：笔记本电脑、书本、咖啡杯\n`...",
+    "full_content": "**信息图**：\n```\n信息图：教学流程图\n风格：扁平化、干净\n配色：蓝色系，专业教育风格\n内容：输入→处理→输出 三步流程\n```\n\n**插图**：\n```\n插图：心理学概念图\n风格：简约现代、温暖色调\n配色：暖色系，和谐舒适\n内容：两个人对话，象征人际沟通\n```\n\n**封面图**：\n```\n封面：在线教育平台\n风格：现代简约、科技感\n配色：深蓝+橙色点缀\n内容：笔记本电脑、书本、咖啡杯\n```\n\n---"
+  },
+  {
+    "id": "image-generation-guide_064",
+    "file": "image-generation-guide.md",
+    "heading": "风格匹配主题",
+    "level": 3,
+    "content_preview": "| 主题 | 推荐风格 |\n|------|----------|\n| 学术/教育 | 扁平化、干净、图表式 |\n| 商务/专业 | 极简、科技感、高端 |\n| 创意/艺术 | 插画、手绘、独特 |\n| 温暖/人本 | 暖色调、柔和、亲切 |\n| 科技/未来 | 霓虹、几何、深色背景 |",
+    "full_content": "| 主题 | 推荐风格 |\n|------|----------|\n| 学术/教育 | 扁平化、干净、图表式 |\n| 商务/专业 | 极简、科技感、高端 |\n| 创意/艺术 | 插画、手绘、独特 |\n| 温暖/人本 | 暖色调、柔和、亲切 |\n| 科技/未来 | 霓虹、几何、深色背景 |"
+  },
+  {
+    "id": "image-generation-guide_065",
+    "file": "image-generation-guide.md",
+    "heading": "风格特征表",
+    "level": 3,
+    "content_preview": "| 风格 | 特点 | 适用场景 |\n|------|------|----------|\n| **扁平化** | 无阴影、简洁色块 | 教学、信息图 |\n| **写实** | 照片级细节 | 海报、背景 |\n| **插画** | 手绘感、线条感 | 故事性内容 |\n| **科技感** | 几何、光效、深色 | 技术演示 |\n| **极简** | 大量留白、少元素 | 高端品牌 |\n\n---",
+    "full_content": "| 风格 | 特点 | 适用场景 |\n|------|------|----------|\n| **扁平化** | 无阴影、简洁色块 | 教学、信息图 |\n| **写实** | 照片级细节 | 海报、背景 |\n| **插画** | 手绘感、线条感 | 故事性内容 |\n| **科技感** | 几何、光效、深色 | 技术演示 |\n| **极简** | 大量留白、少元素 | 高端品牌 |\n\n---"
+  },
+  {
+    "id": "image-generation-guide_066",
+    "file": "image-generation-guide.md",
+    "heading": "分辨率与尺寸",
+    "level": 3,
+    "content_preview": "| 用途 | 推荐尺寸 | 分辨率 |\n|------|----------|--------|\n| 社交媒体 | 1080x1080 | 1K |\n| PPT 插图 | 1920x1080 | 2K |\n| 海报/印刷 | 2048x2048+ | 4K |",
+    "full_content": "| 用途 | 推荐尺寸 | 分辨率 |\n|------|----------|--------|\n| 社交媒体 | 1080x1080 | 1K |\n| PPT 插图 | 1920x1080 | 2K |\n| 海报/印刷 | 2048x2048+ | 4K |"
+  },
+  {
+    "id": "image-generation-guide_067",
+    "file": "image-generation-guide.md",
+    "heading": "质量参数",
+    "level": 3,
+    "content_preview": "| 参数 | 说明 |\n|------|------|\n| `--size` | 尺寸：1024x1024, 1536x1024, 1024x1536 |\n| `--aspect-ratio` | 宽高比：1:1, 2:3, 3:2, 16:9 |\n| `--quality` | 质量：low, medium, high |\n| `--output-format` | 格式：png, jpeg, ...",
+    "full_content": "| 参数 | 说明 |\n|------|------|\n| `--size` | 尺寸：1024x1024, 1536x1024, 1024x1536 |\n| `--aspect-ratio` | 宽高比：1:1, 2:3, 3:2, 16:9 |\n| `--quality` | 质量：low, medium, high |\n| `--output-format` | 格式：png, jpeg, webp |"
+  },
+  {
+    "id": "image-generation-guide_068",
+    "file": "image-generation-guide.md",
+    "heading": "避免常见问题",
+    "level": 3,
+    "content_preview": "| 问题 | 解决方式 |\n|------|----------|\n| 文字扭曲/错误 | 避免在图片中生成文字，改用后期添加 |\n| 风格不一致 | 同一项目保持相同提示词风格 |\n| 版权风险 | 避免生成带真实商标、名人形象 |\n\n---",
+    "full_content": "| 问题 | 解决方式 |\n|------|----------|\n| 文字扭曲/错误 | 避免在图片中生成文字，改用后期添加 |\n| 风格不一致 | 同一项目保持相同提示词风格 |\n| 版权风险 | 避免生成带真实商标、名人形象 |\n\n---"
+  },
+  {
+    "id": "image-generation-guide_069",
+    "file": "image-generation-guide.md",
+    "heading": "迭代优化流程",
+    "level": 2,
+    "content_preview": "```\n生成初版 → 检查问题 → 调整提示词 → 生成修正版 → 验证\n    ↓\n主要问题：\n- 风格不对？\n- 颜色不对？\n- 构图不对？\n- 元素缺失/多余？\n```",
+    "full_content": "```\n生成初版 → 检查问题 → 调整提示词 → 生成修正版 → 验证\n    ↓\n主要问题：\n- 风格不对？\n- 颜色不对？\n- 构图不对？\n- 元素缺失/多余？\n```"
+  },
+  {
+    "id": "image-generation-guide_070",
+    "file": "image-generation-guide.md",
+    "heading": "调整策略",
+    "level": 3,
+    "content_preview": "| 问题 | 调整方式 |\n|------|----------|\n| 风格偏了 | 在\"风格\"字段更具体描述 |\n| 颜色不对 | 明确指定颜色或色系 |\n| 构图不好 | 调整宽高比或重写构图描述 |\n| 元素多余 | 明确\"不要包含 XXX\" |\n\n---",
+    "full_content": "| 问题 | 调整方式 |\n|------|----------|\n| 风格偏了 | 在\"风格\"字段更具体描述 |\n| 颜色不对 | 明确指定颜色或色系 |\n| 构图不好 | 调整宽高比或重写构图描述 |\n| 元素多余 | 明确\"不要包含 XXX\" |\n\n---"
+  },
+  {
+    "id": "image-generation-guide_071",
+    "file": "image-generation-guide.md",
+    "heading": "模板1：概念解释图",
+    "level": 3,
+    "content_preview": "```\n[类型]：概念解释插图\n风格：[风格描述]\n配色：[主色调 + 辅助色]\n内容：[核心概念简单描述]\n布局：[单图/多图/图+文]\n```",
+    "full_content": "```\n[类型]：概念解释插图\n风格：[风格描述]\n配色：[主色调 + 辅助色]\n内容：[核心概念简单描述]\n布局：[单图/多图/图+文]\n```"
+  },
+  {
+    "id": "image-generation-guide_072",
+    "file": "image-generation-guide.md",
+    "heading": "模板2：流程/步骤图",
+    "level": 3,
+    "content_preview": "```\n[类型]：流程示意图\n风格：扁平化、清晰\n配色：[品牌色系]\n内容：[步骤数] 步流程：[起点] → [过程] → [终点]\n要求：每步有清晰标识，箭头连接\n```",
+    "full_content": "```\n[类型]：流程示意图\n风格：扁平化、清晰\n配色：[品牌色系]\n内容：[步骤数] 步流程：[起点] → [过程] → [终点]\n要求：每步有清晰标识，箭头连接\n```"
+  },
+  {
+    "id": "image-generation-guide_073",
+    "file": "image-generation-guide.md",
+    "heading": "模板3：对比图",
+    "level": 3,
+    "content_preview": "```\n[类型]：对比图\n风格：简洁、专业\n配色：左右使用不同色调区分\n内容：\n- 左侧：[对比项A] 特点...\n- 右侧：[对比项B] 特点...\n要求：视觉对比清晰，避免文字过多\n```",
+    "full_content": "```\n[类型]：对比图\n风格：简洁、专业\n配色：左右使用不同色调区分\n内容：\n- 左侧：[对比项A] 特点...\n- 右侧：[对比项B] 特点...\n要求：视觉对比清晰，避免文字过多\n```"
+  },
+  {
+    "id": "image-generation-guide_074",
+    "file": "image-generation-guide.md",
+    "heading": "模板4：数据可视化",
+    "level": 3,
+    "content_preview": "```\n[类型]：数据图表\n风格：扁平化、信息图风格\n配色：[数据色系，如蓝绿橙红]\n内容：[数据类型]：柱状/饼图/折线\n要求：图例清晰，数据点标注\n```\n\n---",
+    "full_content": "```\n[类型]：数据图表\n风格：扁平化、信息图风格\n配色：[数据色系，如蓝绿橙红]\n内容：[数据类型]：柱状/饼图/折线\n要求：图例清晰，数据点标注\n```\n\n---"
+  },
+  {
+    "id": "image-generation-guide_075",
+    "file": "image-generation-guide.md",
+    "heading": "组合使用",
+    "level": 2,
+    "content_preview": "**AI 图片 + PPT 制作**\n\n```\nAI 图片生成 → 下载保存 → 插入 PPT\n     ↓\n优势：\n- 获得独特、契合主题的配图\n- 避免通用图库的千篇一律\n- 节省寻找素材的时间\n```\n\n---",
+    "full_content": "**AI 图片 + PPT 制作**\n\n```\nAI 图片生成 → 下载保存 → 插入 PPT\n     ↓\n优势：\n- 获得独特、契合主题的配图\n- 避免通用图库的千篇一律\n- 节省寻找素材的时间\n```\n\n---"
+  },
+  {
+    "id": "image-generation-guide_076",
+    "file": "image-generation-guide.md",
+    "heading": "判断标准",
+    "level": 2,
+    "content_preview": "**如何判断生成的图片是否可用？**\n\n1. **主题契合**：图片是否准确表达核心概念？\n2. **风格统一**：是否与整体设计风格一致？\n3. **清晰度**：放大后是否仍然清晰？\n4. **可编辑性**：是否便于后续调整（如需添加文字）？\n\n---\n\n*最后更新：2026-05-20*",
+    "full_content": "**如何判断生成的图片是否可用？**\n\n1. **主题契合**：图片是否准确表达核心概念？\n2. **风格统一**：是否与整体设计风格一致？\n3. **清晰度**：放大后是否仍然清晰？\n4. **可编辑性**：是否便于后续调整（如需添加文字）？\n\n---\n\n*最后更新：2026-05-20*"
+  },
+  {
+    "id": "layout-choice-guide_077",
+    "file": "layout-choice-guide.md",
+    "heading": "如何查找合适的 Layout",
+    "level": 1,
+    "content_preview": "> 面对一页课件内容，快速找到最适合的呈现方式。\n>\n> 提供 4 种查找路径，总有一种适合你。\n\n---",
+    "full_content": "> 面对一页课件内容，快速找到最适合的呈现方式。\n>\n> 提供 4 种查找路径，总有一种适合你。\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_078",
+    "file": "layout-choice-guide.md",
+    "heading": "路径一：按内容类型查找（最常用）",
+    "level": 2,
+    "content_preview": "> 我知道这页内容是什么类型 → 找到 Layout\n\n| 内容类型 | 内容示例 | @structure | Layout 名称 | 索引 |\n|----------|----------|------------|-------------|------|\n| **封面** | 课程名、章节、教师信息 | `@cover` | 标题幻灯片 | 0 |\n| **目录/重点问题** | 学习目标...",
+    "full_content": "> 我知道这页内容是什么类型 → 找到 Layout\n\n| 内容类型 | 内容示例 | @structure | Layout 名称 | 索引 |\n|----------|----------|------------|-------------|------|\n| **封面** | 课程名、章节、教师信息 | `@cover` | 标题幻灯片 | 0 |\n| **目录/重点问题** | 学习目标、问题清单 | `@list` | 标题和内容 | 1 |\n| **章节分隔** | \"PART 01\"、\"第一节\" | `@section` | 节标题 | 2 |\n| **概念定义** | \"民族志是指...\" | `@list` | 标题和内容 | 1 |\n| **要点列举** | \"五大特点\"、\"四个原则\" | `@list` | 标题和内容 | 1 |\n| **步骤流程** | \"步骤1→步骤2→步骤3\" | `@flowchart` | 标题和内容 | 1 |\n| **时间发展** | \"古希腊→19世纪→1960后\" | `@timeline` | 标题和内容 | 1 |\n| **对比分析** | \"实验法 vs 质的研究\" | `@compare` | 两栏内容 | 3 |\n| **分类归纳** | \"四大类型\"、\"特征分类\" | `@cards` | 标题和内容 | 1 |\n| **数据表格** | \"风格对比表\"、\"统计数据\" | `@table` | 标题和内容 | 1 |\n| **案例分析** | \"访谈片段编码练习\" | `@list` | 标题和内容 | 1 |\n| **讨论提问** | \"思考题：如何自我反思？\" | `@list` | 标题和内容 | 1 |\n| **总结回顾** | \"本章核心要点回顾\" | `@list` | 标题和内容 | 1 |\n\n**示例**：\n```markdown"
+  },
+  {
+    "id": "layout-choice-guide_079",
+    "file": "layout-choice-guide.md",
+    "heading": "第1页：封面",
+    "level": 2,
+    "content_preview": "@structure: cover        ← 内容类型是\"封面\"\n```\n\n---",
+    "full_content": "@structure: cover        ← 内容类型是\"封面\"\n```\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_080",
+    "file": "layout-choice-guide.md",
+    "heading": "路径二：按关键词查找（最快）",
+    "level": 2,
+    "content_preview": "> 内容里出现了什么关键词 → 直接匹配\n\n| 关键词 | @structure | Layout | 索引 |\n|--------|------------|--------|------|\n| \"课程名\"、\"第X章\"、\"授课教师\" | `@cover` | 标题幻灯片 | 0 |\n| \"重点问题\"、\"学习目标\"、\"目录\" | `@list` | 标题和内容 | 1 |\n| \"PART\"、\"第一...",
+    "full_content": "> 内容里出现了什么关键词 → 直接匹配\n\n| 关键词 | @structure | Layout | 索引 |\n|--------|------------|--------|------|\n| \"课程名\"、\"第X章\"、\"授课教师\" | `@cover` | 标题幻灯片 | 0 |\n| \"重点问题\"、\"学习目标\"、\"目录\" | `@list` | 标题和内容 | 1 |\n| \"PART\"、\"第一节\"、\"第二节\" | `@section` | 节标题 | 2 |\n| \"vs\"、\"对比\"、\"比较\"、\"异同\" | `@compare` | 两栏内容 | 3 |\n| \"定义\"、\"内涵\"、\"概念\" | `@list` | 标题和内容 | 1 |\n| \"特点\"、\"原则\"、\"①②③\"、\"条目\" | `@list` | 标题和内容 | 1 |\n| \"步骤\"、\"流程\"、\"程序\"、\"①→②\" | `@flowchart` | 标题和内容 | 1 |\n| \"世纪\"、\"年代\"、\"起源\"、\"演变\"、\"发展\" | `@timeline` | 标题和内容 | 1 |\n| \"分类\"、\"类型\"、\"五大\"、\"四种\" | `@cards` | 标题和内容 | 1 |\n| \"表格\"、\"统计\"、\"数据\"、\"百分比\" | `@table` | 标题和内容 | 1 |\n| \"案例\"、\"故事\"、\"情境\" | `@list` | 标题和内容 | 1 |\n| \"思考\"、\"讨论\"、\"互动\"、\"提问\" | `@list` | 标题和内容 | 1 |\n| \"总结\"、\"回顾\"、\"核心\" | `@list` | 标题和内容 | 1 |\n\n**示例**：\n```markdown"
+  },
+  {
+    "id": "layout-choice-guide_081",
+    "file": "layout-choice-guide.md",
+    "heading": "第5页：起源与发展",
+    "level": 2,
+    "content_preview": "@structure: timeline    ← 关键词\"起源\"、\"发展\"\n```\n\n---",
+    "full_content": "@structure: timeline    ← 关键词\"起源\"、\"发展\"\n```\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_082",
+    "file": "layout-choice-guide.md",
+    "heading": "路径三：按页面功能查找",
+    "level": 2,
+    "content_preview": "> 这页在课件中承担什么功能 → 直接选 Layout\n\n| 页面功能 | 视觉需求 | Layout 名称 | 索引 |\n|----------|----------|-------------|------|\n| **封面** | 大标题居中，教师信息在下 | 标题幻灯片 | 0 |\n| **目录/导学** | 条目列表 | 标题和内容 | 1 |\n| **章节分隔** | 大字+简洁装饰，视...",
+    "full_content": "> 这页在课件中承担什么功能 → 直接选 Layout\n\n| 页面功能 | 视觉需求 | Layout 名称 | 索引 |\n|----------|----------|-------------|------|\n| **封面** | 大标题居中，教师信息在下 | 标题幻灯片 | 0 |\n| **目录/导学** | 条目列表 | 标题和内容 | 1 |\n| **章节分隔** | 大字+简洁装饰，视觉区分 | 节标题 | 2 |\n| **正文讲解** | 标题+bullet列表（最常用） | 标题和内容 | 1 |\n| **双栏对比** | 左右对等排列 | 两栏内容 | 3 |\n| **多栏对比** | 多组对等排列 | 比较 | 4 |\n| **思考题** | 只显示问题，留白引发思考 | 仅标题 | 5 |\n| **带图片讲解** | 左侧文字+右侧图片 | 图片与标题 | 7 |\n| **完全自定义** | 空白画布，手动排版 | 空白 | 6 |\n\n**示例**：\n```markdown"
+  },
+  {
+    "id": "layout-choice-guide_083",
+    "file": "layout-choice-guide.md",
+    "heading": "第19页：思考题",
+    "level": 2,
+    "content_preview": "@layout: 5    ← 页面功能是\"思考题\"，直接选 Layout 5\n```\n\n---",
+    "full_content": "@layout: 5    ← 页面功能是\"思考题\"，直接选 Layout 5\n```\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_084",
+    "file": "layout-choice-guide.md",
+    "heading": "路径四：决策树（最直观）",
+    "level": 2,
+    "content_preview": "```\n这页内容是什么？\n│\n├─ 课程名+章节+教师？ ──→ @cover    → Layout 0 (标题幻灯片)\n│\n├─ PART/第一节/章节分隔？ ──→ @section → Layout 2 (节标题)\n│\n├─ vs/对比/比较/异同？ ──→ @compare  → Layout 3 (两栏内容)\n│\n├─ 世纪/年代/起源/演变？ ──→ @timeline → Layo...",
+    "full_content": "```\n这页内容是什么？\n│\n├─ 课程名+章节+教师？ ──→ @cover    → Layout 0 (标题幻灯片)\n│\n├─ PART/第一节/章节分隔？ ──→ @section → Layout 2 (节标题)\n│\n├─ vs/对比/比较/异同？ ──→ @compare  → Layout 3 (两栏内容)\n│\n├─ 世纪/年代/起源/演变？ ──→ @timeline → Layout 1 (标题和内容)\n│\n├─ 步骤/流程/程序/①→②？ ──→ @flowchart → Layout 1\n│\n├─ 表格/数据/统计/百分比？ ──→ @table   → Layout 1\n│\n├─ 分类/类型/特点/五大？ ──→ @cards    → Layout 1\n│\n├─ 思考题/讨论/互动？ ──→ @list       → Layout 5 (仅标题)\n│\n└─ 其他（要点、条目、讲解）──→ @list     → Layout 1 (标题和内容)\n```\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_085",
+    "file": "layout-choice-guide.md",
+    "heading": "@cover → 封面 (Layout 0)",
+    "level": 3,
+    "content_preview": "**内容特征**：课程名称、章节标题、教师信息、机构信息。通常是第1页。\n\n**脚本示例**：\n```markdown",
+    "full_content": "**内容特征**：课程名称、章节标题、教师信息、机构信息。通常是第1页。\n\n**脚本示例**：\n```markdown"
+  },
+  {
+    "id": "layout-choice-guide_086",
+    "file": "layout-choice-guide.md",
+    "heading": "第1页：封面",
+    "level": 2,
+    "content_preview": "@structure: cover\n\n**核心内容**：\n- 教育科学研究方法\n- 第十章 质的研究法\n- 授课教师：王雅欣\n- 武汉文理学院 教育学院应用心理系\n```\n\n**设计原则**：\n- 信息层级：课程名 > 章节名 > 教师信息\n- 视觉焦点：大标题居中\n\n---",
+    "full_content": "@structure: cover\n\n**核心内容**：\n- 教育科学研究方法\n- 第十章 质的研究法\n- 授课教师：王雅欣\n- 武汉文理学院 教育学院应用心理系\n```\n\n**设计原则**：\n- 信息层级：课程名 > 章节名 > 教师信息\n- 视觉焦点：大标题居中\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_087",
+    "file": "layout-choice-guide.md",
+    "heading": "@section → 章节分隔 (Layout 2)",
+    "level": 3,
+    "content_preview": "**内容特征**：章节过渡、PART 标识、新主题引入。\n\n**脚本示例**：\n```markdown",
+    "full_content": "**内容特征**：章节过渡、PART 标识、新主题引入。\n\n**脚本示例**：\n```markdown"
+  },
+  {
+    "id": "layout-choice-guide_088",
+    "file": "layout-choice-guide.md",
+    "heading": "第4页：第一节标题",
+    "level": 2,
+    "content_preview": "@structure: section\n\n**核心内容**：\n- 第一节\n- 质的研究法概述\n- 起源 · 发展 · 特点\n```\n\n**设计原则**：\n- 视觉区分：与正文页有明显差异\n- 信息简洁：只放章节名和核心关键词\n\n---",
+    "full_content": "@structure: section\n\n**核心内容**：\n- 第一节\n- 质的研究法概述\n- 起源 · 发展 · 特点\n```\n\n**设计原则**：\n- 视觉区分：与正文页有明显差异\n- 信息简洁：只放章节名和核心关键词\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_089",
+    "file": "layout-choice-guide.md",
+    "heading": "@compare → 双栏对比 (Layout 3)",
+    "level": 3,
+    "content_preview": "**内容特征**：A vs B 对比、异同分析。必须包含\"左侧\"和\"右侧\"内容。\n\n**脚本示例**：\n```markdown",
+    "full_content": "**内容特征**：A vs B 对比、异同分析。必须包含\"左侧\"和\"右侧\"内容。\n\n**脚本示例**：\n```markdown"
+  },
+  {
+    "id": "layout-choice-guide_090",
+    "file": "layout-choice-guide.md",
+    "heading": "第3页：导入",
+    "level": 2,
+    "content_preview": "@structure: compare\n@layout: 3\n\n**核心内容**：\n- 左侧：实验法（ch09）\n  - 控制变量 → 量化数据 → 验证假设\n- 右侧：质的研究（ch10）\n  - 自然情境 → 描述手法 → 归纳建构\n```\n\n**设计原则**：\n- 对等结构：左右两侧条目数尽量一致\n- 对应排列：相同维度在同一行对比\n\n---",
+    "full_content": "@structure: compare\n@layout: 3\n\n**核心内容**：\n- 左侧：实验法（ch09）\n  - 控制变量 → 量化数据 → 验证假设\n- 右侧：质的研究（ch10）\n  - 自然情境 → 描述手法 → 归纳建构\n```\n\n**设计原则**：\n- 对等结构：左右两侧条目数尽量一致\n- 对应排列：相同维度在同一行对比\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_091",
+    "file": "layout-choice-guide.md",
+    "heading": "@timeline → 时间轴 (Layout 1)",
+    "level": 3,
+    "content_preview": "**内容特征**：历史演变、发展阶段。按时间顺序排列的事件。\n\n**脚本示例**：\n```markdown",
+    "full_content": "**内容特征**：历史演变、发展阶段。按时间顺序排列的事件。\n\n**脚本示例**：\n```markdown"
+  },
+  {
+    "id": "layout-choice-guide_092",
+    "file": "layout-choice-guide.md",
+    "heading": "第5页：起源与发展",
+    "level": 2,
+    "content_preview": "@structure: timeline\n\n**核心内容**：\n- 一、质的研究的起源与发展\n- [古希腊] 民族志起源，ethnos = 民族/文化\n- [19世纪] 博厄斯：实地调查第一人\n- [1930-1960] 殖民主义反思，研究者身份觉醒\n- [1960后] 现象学+阐释学，互动建构\n```\n\n**设计原则**：\n- 时间节点：4-6个为宜\n- 标注格式：`[时间] 事件描述`\n- 编...",
+    "full_content": "@structure: timeline\n\n**核心内容**：\n- 一、质的研究的起源与发展\n- [古希腊] 民族志起源，ethnos = 民族/文化\n- [19世纪] 博厄斯：实地调查第一人\n- [1930-1960] 殖民主义反思，研究者身份觉醒\n- [1960后] 现象学+阐释学，互动建构\n```\n\n**设计原则**：\n- 时间节点：4-6个为宜\n- 标注格式：`[时间] 事件描述`\n- 编译器自动在 slide 底部添加水平时间轴占位区域\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_093",
+    "file": "layout-choice-guide.md",
+    "heading": "@flowchart → 流程图 (Layout 1)",
+    "level": 3,
+    "content_preview": "**内容特征**：操作步骤、实施程序。线性流程、先后顺序。\n\n**脚本示例**：\n```markdown",
+    "full_content": "**内容特征**：操作步骤、实施程序。线性流程、先后顺序。\n\n**脚本示例**：\n```markdown"
+  },
+  {
+    "id": "layout-choice-guide_094",
+    "file": "layout-choice-guide.md",
+    "heading": "第8页：设计研究课题",
+    "level": 2,
+    "content_preview": "@structure: flowchart\n\n**核心内容**：\n- 一、设计研究课题\n- 步骤1：确定研究问题\n- 步骤2：了解背景与现状\n- 步骤3：确立个案与方法\n- 步骤4：思考研究价值\n- 步骤5：确立预期方案与步骤\n```\n\n**设计原则**：\n- 步骤数：5步以内最佳\n- 标注格式：`步骤N：描述` 或 `N. 描述`\n- 编译器自动在 slide 底部添加流程步骤占位区域\n\n---",
+    "full_content": "@structure: flowchart\n\n**核心内容**：\n- 一、设计研究课题\n- 步骤1：确定研究问题\n- 步骤2：了解背景与现状\n- 步骤3：确立个案与方法\n- 步骤4：思考研究价值\n- 步骤5：确立预期方案与步骤\n```\n\n**设计原则**：\n- 步骤数：5步以内最佳\n- 标注格式：`步骤N：描述` 或 `N. 描述`\n- 编译器自动在 slide 底部添加流程步骤占位区域\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_095",
+    "file": "layout-choice-guide.md",
+    "heading": "标准课件结构组合（20页示例）",
+    "level": 2,
+    "content_preview": "```\n第1页  课程封面        → @cover    → Layout 0\n第2页  重点问题        → @list     → Layout 1\n第3页  导入对比        → @compare  → Layout 3\n第4页  第一节分隔      → @section  → Layout 2\n第5页  概念定义        → @list     → Layout...",
+    "full_content": "```\n第1页  课程封面        → @cover    → Layout 0\n第2页  重点问题        → @list     → Layout 1\n第3页  导入对比        → @compare  → Layout 3\n第4页  第一节分隔      → @section  → Layout 2\n第5页  概念定义        → @list     → Layout 1\n第6页  五大特点        → @cards   → Layout 1\n第7页  第二节分隔      → @section  → Layout 2\n第8页  设计课题        → @flowchart→ Layout 1\n第9页  抽样方法        → @cards   → Layout 1\n第10页 资料搜集(上)    → @list    → Layout 1\n第11页 资料搜集(下)    → @list    → Layout 1\n第12页 资料分析(上)    → @flowchart→ Layout 1\n第13页 资料分析(下)    → @list    → Layout 1\n第14页 第三节分隔      → @section  → Layout 2\n第15页 报告结构        → @list    → Layout 1\n第16页 撰写风格        → @table   → Layout 1\n第17页 撰写要求        → @list    → Layout 1\n第18页 结果检验        → @list    → Layout 1\n第19页 总结思考        → @list    → Layout 1\n第20页 章节衔接        → @section  → Layout 2\n```\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_096",
+    "file": "layout-choice-guide.md",
+    "heading": "查看可用 Layout",
+    "level": 2,
+    "content_preview": "```bash\npython3 scripts/main.py list --template template\n```\n\n当前模板提供 10 个标准 Layout（索引 0-9）。如需专用 Layout（时间轴、流程图、卡片网格等），可通过 `extend` 命令添加：\n\n```bash\npython3 scripts/main.py extend --template template --a...",
+    "full_content": "```bash\npython3 scripts/main.py list --template template\n```\n\n当前模板提供 10 个标准 Layout（索引 0-9）。如需专用 Layout（时间轴、流程图、卡片网格等），可通过 `extend` 命令添加：\n\n```bash\npython3 scripts/main.py extend --template template --add timeline flowchart cards\n```\n\n---"
+  },
+  {
+    "id": "layout-choice-guide_097",
+    "file": "layout-choice-guide.md",
+    "heading": "版本历史",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 更新内容 |\n|------|------|----------|\n| v3.0 | 2026-05-15 | 合并 content-layout-matching 和 knowledge-layout-mapping，提供 4 种查找路径 |\n| v2.0 | 2026-05-14 | 添加 @structure 标记支持 |\n| v1.0 | 2026-05-14 | ...",
+    "full_content": "| 版本 | 日期 | 更新内容 |\n|------|------|----------|\n| v3.0 | 2026-05-15 | 合并 content-layout-matching 和 knowledge-layout-mapping，提供 4 种查找路径 |\n| v2.0 | 2026-05-14 | 添加 @structure 标记支持 |\n| v1.0 | 2026-05-14 | 初始版本 |"
+  },
+  {
+    "id": "doc-guide_098",
+    "file": "doc-guide.md",
+    "heading": "文档排版指南",
+    "level": 1,
+    "content_preview": "> 文档排版与视觉呈现优化规范\n\n---",
+    "full_content": "> 文档排版与视觉呈现优化规范\n\n---"
+  },
+  {
+    "id": "doc-guide_099",
+    "file": "doc-guide.md",
+    "heading": "核心原则",
+    "level": 2,
+    "content_preview": "| 优先级 | 原则 | 说明 |\n|--------|------|------|\n| 1 | **可读性** | 文字清晰，结构分明 |\n| 2 | **一致性** | 全文档排版风格统一 |\n| 3 | **层次感** | 信息层级通过视觉区分 |\n| 4 | **专业性** | 符合行业排版标准 |\n\n---",
+    "full_content": "| 优先级 | 原则 | 说明 |\n|--------|------|------|\n| 1 | **可读性** | 文字清晰，结构分明 |\n| 2 | **一致性** | 全文档排版风格统一 |\n| 3 | **层次感** | 信息层级通过视觉区分 |\n| 4 | **专业性** | 符合行业排版标准 |\n\n---"
+  },
+  {
+    "id": "doc-guide_100",
+    "file": "doc-guide.md",
+    "heading": "基本参数",
+    "level": 3,
+    "content_preview": "| 参数 | 值 |\n|------|------|\n| 页面方向 | 纵向 / 横向（根据内容） |\n| 页边距 | 上 2.54cm，下 2.54cm，左 3.17cm，右 2.54cm |\n| 字号 | 正文 12pt / 14pt，标题按层级 |\n| 行距 | 1.15-1.5 倍行距 |\n| 页码 | 底部居中或右下角 |",
+    "full_content": "| 参数 | 值 |\n|------|------|\n| 页面方向 | 纵向 / 横向（根据内容） |\n| 页边距 | 上 2.54cm，下 2.54cm，左 3.17cm，右 2.54cm |\n| 字号 | 正文 12pt / 14pt，标题按层级 |\n| 行距 | 1.15-1.5 倍行距 |\n| 页码 | 底部居中或右下角 |"
+  },
+  {
+    "id": "doc-guide_101",
+    "file": "doc-guide.md",
+    "heading": "A4 文档",
+    "level": 3,
+    "content_preview": "```\n+----------------------------------+\n|  左 3.17cm          右 2.54cm    |\n| +------------------------------+ |\n| |                              | | 上 2.54cm\n| |                              | |\n| | ...",
+    "full_content": "```\n+----------------------------------+\n|  左 3.17cm          右 2.54cm    |\n| +------------------------------+ |\n| |                              | | 上 2.54cm\n| |                              | |\n| |         正文区域             | |\n| |                              | |\n| |                              | | 下 2.54cm\n| +------------------------------+ |\n|           第 1 页 / 共 N 页       |\n+----------------------------------+\n```\n\n---"
+  },
+  {
+    "id": "doc-guide_102",
+    "file": "doc-guide.md",
+    "heading": "中文字体",
+    "level": 3,
+    "content_preview": "| 用途 | 推荐字体 |\n|------|----------|\n| 标题 | 黑体 / 微软雅黑 / 方正黑体 |\n| 正文 | 宋体 / 微软雅黑 / Arial |\n| 代码 | Source Code Pro / Consolas |",
+    "full_content": "| 用途 | 推荐字体 |\n|------|----------|\n| 标题 | 黑体 / 微软雅黑 / 方正黑体 |\n| 正文 | 宋体 / 微软雅黑 / Arial |\n| 代码 | Source Code Pro / Consolas |"
+  },
+  {
+    "id": "doc-guide_103",
+    "file": "doc-guide.md",
+    "heading": "英文字体",
+    "level": 3,
+    "content_preview": "| 用途 | 推荐字体 |\n|------|----------|\n| 标题 | Arial / Helvetica / Roboto |\n| 正文 | Times New Roman / Georgia |\n| 代码 | Courier New / Source Code Pro |",
+    "full_content": "| 用途 | 推荐字体 |\n|------|----------|\n| 标题 | Arial / Helvetica / Roboto |\n| 正文 | Times New Roman / Georgia |\n| 代码 | Courier New / Source Code Pro |"
+  },
+  {
+    "id": "doc-guide_104",
+    "file": "doc-guide.md",
+    "heading": "字号层级",
+    "level": 3,
+    "content_preview": "| 元素 | 字号 | 字重 | 例子 |\n|------|------|------|------|\n| 一级标题 | 22-24pt | Bold | 第一章 |\n| 二级标题 | 18-20pt | Bold | 1.1 节 |\n| 三级标题 | 16pt | SemiBold | 1.1.1 小节 |\n| 正文 | 12-14pt | Regular | 段落文字 |\n| 辅助文字 | 1...",
+    "full_content": "| 元素 | 字号 | 字重 | 例子 |\n|------|------|------|------|\n| 一级标题 | 22-24pt | Bold | 第一章 |\n| 二级标题 | 18-20pt | Bold | 1.1 节 |\n| 三级标题 | 16pt | SemiBold | 1.1.1 小节 |\n| 正文 | 12-14pt | Regular | 段落文字 |\n| 辅助文字 | 10-11pt | Regular | 脚注、图注 |\n\n---"
+  },
+  {
+    "id": "doc-guide_105",
+    "file": "doc-guide.md",
+    "heading": "段落格式",
+    "level": 3,
+    "content_preview": "- 首行缩进：2 字符（或 0.74cm）\n- 段后间距：8-12pt\n- 对齐方式：两端对齐（正文）、居中（标题）\n- 字间距：正常（避免过疏或过密）",
+    "full_content": "- 首行缩进：2 字符（或 0.74cm）\n- 段后间距：8-12pt\n- 对齐方式：两端对齐（正文）、居中（标题）\n- 字间距：正常（避免过疏或过密）"
+  },
+  {
+    "id": "doc-guide_106",
+    "file": "doc-guide.md",
+    "heading": "段落间距",
+    "level": 3,
+    "content_preview": "```\n【标题】\n↓ 段前 12pt，段后 6pt\n\n【正文段落】\n↓ 段前 0pt，段后 8pt\n\n【列表项】\n↓ 段前 0pt，段后 4pt\n```\n\n---",
+    "full_content": "```\n【标题】\n↓ 段前 12pt，段后 6pt\n\n【正文段落】\n↓ 段前 0pt，段后 8pt\n\n【列表项】\n↓ 段前 0pt，段后 4pt\n```\n\n---"
+  },
+  {
+    "id": "doc-guide_107",
+    "file": "doc-guide.md",
+    "heading": "标题层级",
+    "level": 2,
+    "content_preview": "```\n第一章（Chapter）\n├── 1.1 节（Section）\n│   ├── 1.1.1 小节（ Subsection）\n│   │   ├── （正文内容）\n│   │   └── 1.1.2 小节\n│   └── 1.1.2 小节\n└── 1.2 节\n```",
+    "full_content": "```\n第一章（Chapter）\n├── 1.1 节（Section）\n│   ├── 1.1.1 小节（ Subsection）\n│   │   ├── （正文内容）\n│   │   └── 1.1.2 小节\n│   └── 1.1.2 小节\n└── 1.2 节\n```"
+  },
+  {
+    "id": "doc-guide_108",
+    "file": "doc-guide.md",
+    "heading": "标题样式",
+    "level": 3,
+    "content_preview": "| 级别 | 格式 | 示例 |\n|------|------|------|\n| 一级 | 居中、Bold、18-20pt | **第一章 绪论** |\n| 二级 | 左对齐、Bold、16pt | **1.1 研究背景** |\n| 三级 | 左对齐、SemiBold、14pt | **1.1.1 国内研究** |\n| 四级 | 左对齐、Italic、13pt | **(1) 理论框架** |\n...",
+    "full_content": "| 级别 | 格式 | 示例 |\n|------|------|------|\n| 一级 | 居中、Bold、18-20pt | **第一章 绪论** |\n| 二级 | 左对齐、Bold、16pt | **1.1 研究背景** |\n| 三级 | 左对齐、SemiBold、14pt | **1.1.1 国内研究** |\n| 四级 | 左对齐、Italic、13pt | **(1) 理论框架** |\n\n---"
+  },
+  {
+    "id": "doc-guide_109",
+    "file": "doc-guide.md",
+    "heading": "有序列表",
+    "level": 3,
+    "content_preview": "1. 第一步\n2. 第二步\n3. 第三步",
+    "full_content": "1. 第一步\n2. 第二步\n3. 第三步"
+  },
+  {
+    "id": "doc-guide_110",
+    "file": "doc-guide.md",
+    "heading": "无序列表",
+    "level": 3,
+    "content_preview": "- 主要项\n  - 次要项\n    - 细节项\n- 另一个主要项",
+    "full_content": "- 主要项\n  - 次要项\n    - 细节项\n- 另一个主要项"
+  },
+  {
+    "id": "doc-guide_111",
+    "file": "doc-guide.md",
+    "heading": "列表格式",
+    "level": 3,
+    "content_preview": "- 缩进：层次分明\n- 项目符号：统一风格（圆点/方块/短横线）\n- 编号：1 / 1.1 / 1.1.1 层级\n\n---",
+    "full_content": "- 缩进：层次分明\n- 项目符号：统一风格（圆点/方块/短横线）\n- 编号：1 / 1.1 / 1.1.1 层级\n\n---"
+  },
+  {
+    "id": "doc-guide_112",
+    "file": "doc-guide.md",
+    "heading": "表格结构",
+    "level": 3,
+    "content_preview": "| 表头 | 内容 | 内容 |\n|------|------|------|\n| 数据 | 数据 | 数据 |",
+    "full_content": "| 表头 | 内容 | 内容 |\n|------|------|------|\n| 数据 | 数据 | 数据 |"
+  },
+  {
+    "id": "doc-guide_113",
+    "file": "doc-guide.md",
+    "heading": "表格样式",
+    "level": 3,
+    "content_preview": "| 元素 | 规范 |\n|------|------|\n| 表头 | 居中、SemiBold、底部边框 |\n| 单元格 | 左对齐或居中、顶底边框 |\n| 行高 | 1.2-1.5 倍行高 |\n| 交替行 | 可用浅色背景区分 |\n\n---",
+    "full_content": "| 元素 | 规范 |\n|------|------|\n| 表头 | 居中、SemiBold、底部边框 |\n| 单元格 | 左对齐或居中、顶底边框 |\n| 行高 | 1.2-1.5 倍行高 |\n| 交替行 | 可用浅色背景区分 |\n\n---"
+  },
+  {
+    "id": "doc-guide_114",
+    "file": "doc-guide.md",
+    "heading": "图片规范",
+    "level": 3,
+    "content_preview": "- 分辨率：打印 300dpi，屏幕 72dpi\n- 格式：PNG（透明）/ JPG（照片）/ SVG（图标）\n- 对齐：居中或左对齐\n- 图注：居中、12pt、段前 6pt",
+    "full_content": "- 分辨率：打印 300dpi，屏幕 72dpi\n- 格式：PNG（透明）/ JPG（照片）/ SVG（图标）\n- 对齐：居中或左对齐\n- 图注：居中、12pt、段前 6pt"
+  },
+  {
+    "id": "doc-guide_115",
+    "file": "doc-guide.md",
+    "heading": "图表规范",
+    "level": 3,
+    "content_preview": "- 配色：与文档整体配色协调\n- 字体：图表内文字 ≤ 10pt\n- 边框：简洁，去除不必要的边框\n\n---",
+    "full_content": "- 配色：与文档整体配色协调\n- 字体：图表内文字 ≤ 10pt\n- 边框：简洁，去除不必要的边框\n\n---"
+  },
+  {
+    "id": "doc-guide_116",
+    "file": "doc-guide.md",
+    "heading": "页眉",
+    "level": 3,
+    "content_preview": "```\n[文档标题]                    [Logo/品牌]\n------------------------------------------\n```",
+    "full_content": "```\n[文档标题]                    [Logo/品牌]\n------------------------------------------\n```"
+  },
+  {
+    "id": "doc-guide_117",
+    "file": "doc-guide.md",
+    "heading": "页脚",
+    "level": 3,
+    "content_preview": "```\n------------------------------------------\n              第 X 页 / 共 Y 页\n```",
+    "full_content": "```\n------------------------------------------\n              第 X 页 / 共 Y 页\n```"
+  },
+  {
+    "id": "doc-guide_118",
+    "file": "doc-guide.md",
+    "heading": "奇偶页（双面打印）",
+    "level": 3,
+    "content_preview": "- 奇数页：章节标题 + Logo\n- 偶数页：文档标题 + Logo\n\n---",
+    "full_content": "- 奇数页：章节标题 + Logo\n- 偶数页：文档标题 + Logo\n\n---"
+  },
+  {
+    "id": "doc-guide_119",
+    "file": "doc-guide.md",
+    "heading": "常用快捷键",
+    "level": 2,
+    "content_preview": "| 操作 | Word 快捷键 | 说明 |\n|------|-------------|------|\n| 标题 1 | Ctrl+Alt+1 | 一级标题 |\n| 标题 2 | Ctrl+Alt+2 | 二级标题 |\n| 标题 3 | Ctrl+Alt+3 | 三级标题 |\n| 编号列表 | Ctrl+Shift+L | 插入列表 |\n| 居中对齐 | Ctrl+E | 居中 |\n| 两端对齐...",
+    "full_content": "| 操作 | Word 快捷键 | 说明 |\n|------|-------------|------|\n| 标题 1 | Ctrl+Alt+1 | 一级标题 |\n| 标题 2 | Ctrl+Alt+2 | 二级标题 |\n| 标题 3 | Ctrl+Alt+3 | 三级标题 |\n| 编号列表 | Ctrl+Shift+L | 插入列表 |\n| 居中对齐 | Ctrl+E | 居中 |\n| 两端对齐 | Ctrl+J | 两端对齐 |\n| 清除格式 | Ctrl+Space | 清除格式 |\n\n---"
+  },
+  {
+    "id": "doc-guide_120",
+    "file": "doc-guide.md",
+    "heading": "版本",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 更新 |\n|------|------|------|\n| 1.0.0 | 2026-05-21 | 初始版本 |",
+    "full_content": "| 版本 | 日期 | 更新 |\n|------|------|------|\n| 1.0.0 | 2026-05-21 | 初始版本 |"
+  },
+  {
+    "id": "brand-guide_121",
+    "file": "brand-guide.md",
+    "heading": "品牌视觉指南",
+    "level": 1,
+    "content_preview": "> 统一视觉规范与品牌调性执行\n\n---",
+    "full_content": "> 统一视觉规范与品牌调性执行\n\n---"
+  },
+  {
+    "id": "brand-guide_122",
+    "file": "brand-guide.md",
+    "heading": "核心原则",
+    "level": 2,
+    "content_preview": "| 优先级 | 原则 | 说明 |\n|--------|------|------|\n| 1 | **一致性** | 所有触点保持统一视觉语言 |\n| 2 | **差异化** | 视觉风格与竞品明显区分 |\n| 3 | **可扩展** | 规范适用于不同场景和媒介 |\n| 4 | **可传承** | 设计元素具有时间稳定性 |\n\n---",
+    "full_content": "| 优先级 | 原则 | 说明 |\n|--------|------|------|\n| 1 | **一致性** | 所有触点保持统一视觉语言 |\n| 2 | **差异化** | 视觉风格与竞品明显区分 |\n| 3 | **可扩展** | 规范适用于不同场景和媒介 |\n| 4 | **可传承** | 设计元素具有时间稳定性 |\n\n---"
+  },
+  {
+    "id": "brand-guide_123",
+    "file": "brand-guide.md",
+    "heading": "主色（Primary）",
+    "level": 3,
+    "content_preview": "- 定义品牌的标志性颜色\n- 使用场景：Logo、主要按钮、关键标题\n- 建议：选择 1-2 种主色，避免过多",
+    "full_content": "- 定义品牌的标志性颜色\n- 使用场景：Logo、主要按钮、关键标题\n- 建议：选择 1-2 种主色，避免过多"
+  },
+  {
+    "id": "brand-guide_124",
+    "file": "brand-guide.md",
+    "heading": "辅助色（Secondary）",
+    "level": 3,
+    "content_preview": "- 辅助主色，丰富视觉层次\n- 使用场景：背景、装饰、次要按钮\n- 建议：2-4 种辅助色",
+    "full_content": "- 辅助主色，丰富视觉层次\n- 使用场景：背景、装饰、次要按钮\n- 建议：2-4 种辅助色"
+  },
+  {
+    "id": "brand-guide_125",
+    "file": "brand-guide.md",
+    "heading": "中性色（Neutral）",
+    "level": 3,
+    "content_preview": "- 文字、边框、背景\n- 建议：5-9 级灰阶（从极深到极浅）",
+    "full_content": "- 文字、边框、背景\n- 建议：5-9 级灰阶（从极深到极浅）"
+  },
+  {
+    "id": "brand-guide_126",
+    "file": "brand-guide.md",
+    "heading": "语义色（Semantic）",
+    "level": 3,
+    "content_preview": "| 用途 | 色值 |\n|------|------|\n| 成功 | 绿系 |\n| 警告 | 橙/黄系 |\n| 错误 | 红系 |\n| 信息 | 蓝系 |\n\n---",
+    "full_content": "| 用途 | 色值 |\n|------|------|\n| 成功 | 绿系 |\n| 警告 | 橙/黄系 |\n| 错误 | 红系 |\n| 信息 | 蓝系 |\n\n---"
+  },
+  {
+    "id": "brand-guide_127",
+    "file": "brand-guide.md",
+    "heading": "品牌字体",
+    "level": 3,
+    "content_preview": "| 类型 | 字体 | 使用场景 |\n|------|------|----------|\n| 标题字体 | 选择具有品牌气质的字体 | H1-H3 |\n| 正文字体 | 高可读性字体 | 正文、说明 |\n| 数字字体 | 等宽或特殊数字字体 | 数据展示 |",
+    "full_content": "| 类型 | 字体 | 使用场景 |\n|------|------|----------|\n| 标题字体 | 选择具有品牌气质的字体 | H1-H3 |\n| 正文字体 | 高可读性字体 | 正文、说明 |\n| 数字字体 | 等宽或特殊数字字体 | 数据展示 |"
+  },
+  {
+    "id": "brand-guide_128",
+    "file": "brand-guide.md",
+    "heading": "字号系统",
+    "level": 3,
+    "content_preview": "```\n12 / 14 / 16 / 20 / 24 / 32 / 40 / 48 / 64\n```\n- 保持 1.2-1.5 的行高比例\n- 标题字号通常是正文 1.25-1.5 倍\n\n---",
+    "full_content": "```\n12 / 14 / 16 / 20 / 24 / 32 / 40 / 48 / 64\n```\n- 保持 1.2-1.5 的行高比例\n- 标题字号通常是正文 1.25-1.5 倍\n\n---"
+  },
+  {
+    "id": "brand-guide_129",
+    "file": "brand-guide.md",
+    "heading": "空间保护",
+    "level": 3,
+    "content_preview": "- 最小安全空间 = Logo 高度的 1/4\n- Logo 周围保持干净，避免干扰",
+    "full_content": "- 最小安全空间 = Logo 高度的 1/4\n- Logo 周围保持干净，避免干扰"
+  },
+  {
+    "id": "brand-guide_130",
+    "file": "brand-guide.md",
+    "heading": "尺寸规范",
+    "level": 3,
+    "content_preview": "| 场景 | 最小尺寸 |\n|------|----------|\n| 数字端 | 高度 24px |\n| 打印品 | 高度 10mm |\n| 图标端 | 16px / 20px / 24px |",
+    "full_content": "| 场景 | 最小尺寸 |\n|------|----------|\n| 数字端 | 高度 24px |\n| 打印品 | 高度 10mm |\n| 图标端 | 16px / 20px / 24px |"
+  },
+  {
+    "id": "brand-guide_131",
+    "file": "brand-guide.md",
+    "heading": "配色变体",
+    "level": 3,
+    "content_preview": "- 深色背景：使用白色或浅色版本\n- 浅色背景：使用深色版本\n- 彩色背景：根据对比度选择最佳版本\n\n---",
+    "full_content": "- 深色背景：使用白色或浅色版本\n- 浅色背景：使用深色版本\n- 彩色背景：根据对比度选择最佳版本\n\n---"
+  },
+  {
+    "id": "brand-guide_132",
+    "file": "brand-guide.md",
+    "heading": "装饰图形",
+    "level": 3,
+    "content_preview": "- 定义品牌特有的装饰元素\n- 保持风格统一（线性/面性/几何/有机）\n- 使用场景：背景纹理、分割线、角落装饰",
+    "full_content": "- 定义品牌特有的装饰元素\n- 保持风格统一（线性/面性/几何/有机）\n- 使用场景：背景纹理、分割线、角落装饰"
+  },
+  {
+    "id": "brand-guide_133",
+    "file": "brand-guide.md",
+    "heading": "图标风格",
+    "level": 3,
+    "content_preview": "- 统一线宽：1.5px / 2px / 2.5px\n- 统一圆角：0 / 2px / 4px / 8px\n- 统一尺寸网格：4px 基准\n\n---",
+    "full_content": "- 统一线宽：1.5px / 2px / 2.5px\n- 统一圆角：0 / 2px / 4px / 8px\n- 统一尺寸网格：4px 基准\n\n---"
+  },
+  {
+    "id": "brand-guide_134",
+    "file": "brand-guide.md",
+    "heading": "摄影风格",
+    "level": 3,
+    "content_preview": "| 属性 | 规范 |\n|------|------|\n| 光线 | 自然光 / 特定氛围光 |\n| 色调 | 与品牌色协调 |\n| 构图 | 简洁，留白充足 |\n| 人物 | 职业/亲切/多元 |",
+    "full_content": "| 属性 | 规范 |\n|------|------|\n| 光线 | 自然光 / 特定氛围光 |\n| 色调 | 与品牌色协调 |\n| 构图 | 简洁，留白充足 |\n| 人物 | 职业/亲切/多元 |"
+  },
+  {
+    "id": "brand-guide_135",
+    "file": "brand-guide.md",
+    "heading": "插画风格",
+    "level": 3,
+    "content_preview": "- 定义插画的：描边/平涂/渐变/3D\n- 统一颜色使用\n- 定义角色/物品的基本形态\n\n---",
+    "full_content": "- 定义插画的：描边/平涂/渐变/3D\n- 统一颜色使用\n- 定义角色/物品的基本形态\n\n---"
+  },
+  {
+    "id": "brand-guide_136",
+    "file": "brand-guide.md",
+    "heading": "跨媒介一致性",
+    "level": 2,
+    "content_preview": "| 媒介 | 注意事项 |\n|------|----------|\n| 课件/PPT | 使用品牌模板，遵守配色和字体 |\n| 软件界面 | 遵循 UI 视觉规范 |\n| 文档/报告 | 使用品牌页眉页脚、页码样式 |\n| 社交媒体 | 使用品牌模板和固定元素 |\n| 印刷品 | 注意 CMYK 色彩转换 |\n\n---",
+    "full_content": "| 媒介 | 注意事项 |\n|------|----------|\n| 课件/PPT | 使用品牌模板，遵守配色和字体 |\n| 软件界面 | 遵循 UI 视觉规范 |\n| 文档/报告 | 使用品牌页眉页脚、页码样式 |\n| 社交媒体 | 使用品牌模板和固定元素 |\n| 印刷品 | 注意 CMYK 色彩转换 |\n\n---"
+  },
+  {
+    "id": "brand-guide_137",
+    "file": "brand-guide.md",
+    "heading": "品牌资产清单",
+    "level": 2,
+    "content_preview": "- [ ] Logo 源文件（SVG / PNG / EPS）\n- [ ] 品牌色值（HEX / RGB / CMYK / Pantone）\n- [ ] 字体文件及授权\n- [ ] 图标库\n- [ ] 模板库（PPT / Word / 社交媒体）\n- [ ] 图像素材库\n- [ ] 品牌指南 PDF\n\n---",
+    "full_content": "- [ ] Logo 源文件（SVG / PNG / EPS）\n- [ ] 品牌色值（HEX / RGB / CMYK / Pantone）\n- [ ] 字体文件及授权\n- [ ] 图标库\n- [ ] 模板库（PPT / Word / 社交媒体）\n- [ ] 图像素材库\n- [ ] 品牌指南 PDF\n\n---"
+  },
+  {
+    "id": "brand-guide_138",
+    "file": "brand-guide.md",
+    "heading": "版本",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 更新 |\n|------|------|------|\n| 1.0.0 | 2026-05-21 | 初始版本 |",
+    "full_content": "| 版本 | 日期 | 更新 |\n|------|------|------|\n| 1.0.0 | 2026-05-21 | 初始版本 |"
+  },
+  {
+    "id": "script-writing-guide_139",
+    "file": "script-writing-guide.md",
+    "heading": "PPT 脚本编写指南",
+    "level": 1,
+    "content_preview": "> **目标**：让任何人都能按照规范编写出可直接编译为 PPT 的演示文稿脚本。\n>\n> **适用范围**：任何需要通过结构化脚本自动生成 PPT 的场景（教学课件、工作汇报、产品演示等）。\n>\n> **格式版本**：v2.2（支持元数据 + 多主题 + 新结构类型）\n\n---",
+    "full_content": "> **目标**：让任何人都能按照规范编写出可直接编译为 PPT 的演示文稿脚本。\n>\n> **适用范围**：任何需要通过结构化脚本自动生成 PPT 的场景（教学课件、工作汇报、产品演示等）。\n>\n> **格式版本**：v2.2（支持元数据 + 多主题 + 新结构类型）\n\n---"
+  },
+  {
+    "id": "script-writing-guide_140",
+    "file": "script-writing-guide.md",
+    "heading": "一、脚本是什么",
+    "level": 2,
+    "content_preview": "PPT 脚本是一个 `.md` 文件，用**结构化标记**描述每一页幻灯片的内容和呈现方式。\n\n编译器读取脚本 → 按标记提取信息 → 自动匹配 Layout → 生成 `.pptx`。\n\n---",
+    "full_content": "PPT 脚本是一个 `.md` 文件，用**结构化标记**描述每一页幻灯片的内容和呈现方式。\n\n编译器读取脚本 → 按标记提取信息 → 自动匹配 Layout → 生成 `.pptx`。\n\n---"
+  },
+  {
+    "id": "script-writing-guide_141",
+    "file": "script-writing-guide.md",
+    "heading": "二、YAML 元数据头（可选）",
+    "level": 2,
+    "content_preview": "脚本开头可包含 YAML front matter，定义文档级属性：\n\n```markdown\n---\ntitle: 演示文稿标题\nauthor: 作者名\ndate: 2026-05-21\ntheme: blue  # 可选：blue/green/purple/orange/gray\n---",
+    "full_content": "脚本开头可包含 YAML front matter，定义文档级属性：\n\n```markdown\n---\ntitle: 演示文稿标题\nauthor: 作者名\ndate: 2026-05-21\ntheme: blue  # 可选：blue/green/purple/orange/gray\n---"
+  },
+  {
+    "id": "script-writing-guide_142",
+    "file": "script-writing-guide.md",
+    "heading": "演示文稿标题",
+    "level": 1,
+    "content_preview": "```\n\n| 字段 | 说明 |\n|------|------|\n| title | 文档标题（用于编译输出） |\n| author | 作者 |\n| date | 日期 |\n| theme | 配色主题（覆盖命令行 --theme） |\n\n---",
+    "full_content": "```\n\n| 字段 | 说明 |\n|------|------|\n| title | 文档标题（用于编译输出） |\n| author | 作者 |\n| date | 日期 |\n| theme | 配色主题（覆盖命令行 --theme） |\n\n---"
+  },
+  {
+    "id": "script-writing-guide_143",
+    "file": "script-writing-guide.md",
+    "heading": "三、脚本的整体结构",
+    "level": 2,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "script-writing-guide_144",
+    "file": "script-writing-guide.md",
+    "heading": "演示文稿标题（可选）",
+    "level": 1,
+    "content_preview": "---",
+    "full_content": "---"
+  },
+  {
+    "id": "script-writing-guide_145",
+    "file": "script-writing-guide.md",
+    "heading": "第1页：页面标题",
+    "level": 2,
+    "content_preview": "@structure: cover\n\n**页面描述**：...\n**核心内容**：\n- ...\n**图表设计**：...\n**备注**：...\n\n---",
+    "full_content": "@structure: cover\n\n**页面描述**：...\n**核心内容**：\n- ...\n**图表设计**：...\n**备注**：...\n\n---"
+  },
+  {
+    "id": "script-writing-guide_146",
+    "file": "script-writing-guide.md",
+    "heading": "第2页：页面标题",
+    "level": 2,
+    "content_preview": "@structure: list\n@layout: 1\n\n**核心内容**：\n- ...\n**图表设计**：...\n**备注**：...\n```",
+    "full_content": "@structure: list\n@layout: 1\n\n**核心内容**：\n- ...\n**图表设计**：...\n**备注**：...\n```"
+  },
+  {
+    "id": "script-writing-guide_147",
+    "file": "script-writing-guide.md",
+    "heading": "每个脚本包含",
+    "level": 3,
+    "content_preview": "| 组成部分 | 数量 | 说明 |\n|----------|------|------|\n| `# 演示文稿标题` | 1个 | 文件顶部，标识主题 |\n| `---` | 若干 | 页面之间的分隔线 |\n| `## 第N页` | 多个 | 每个幻灯片一页 |\n| `@structure` | 每页可选 | 声明内容结构类型，编译器自动匹配 Layout |\n| `@layout` | 每页可选...",
+    "full_content": "| 组成部分 | 数量 | 说明 |\n|----------|------|------|\n| `# 演示文稿标题` | 1个 | 文件顶部，标识主题 |\n| `---` | 若干 | 页面之间的分隔线 |\n| `## 第N页` | 多个 | 每个幻灯片一页 |\n| `@structure` | 每页可选 | 声明内容结构类型，编译器自动匹配 Layout |\n| `@layout` | 每页可选 | 强制覆盖 Layout 索引 |\n| 信息块（4~5种） | 每页 | 每页必须有 `核心内容` |\n\n---"
+  },
+  {
+    "id": "script-writing-guide_148",
+    "file": "script-writing-guide.md",
+    "heading": "@structure — 内容结构类型",
+    "level": 3,
+    "content_preview": "声明页面内容的逻辑结构，编译器自动选择最合适的 Layout。\n\n```markdown",
+    "full_content": "声明页面内容的逻辑结构，编译器自动选择最合适的 Layout。\n\n```markdown"
+  },
+  {
+    "id": "script-writing-guide_149",
+    "file": "script-writing-guide.md",
+    "heading": "第1页：封面",
+    "level": 2,
+    "content_preview": "@structure: cover\n```\n\n| @structure | 内容类型 | 自动匹配 Layout | 索引 | 内容特征关键词 |\n|------------|----------|-----------------|------|----------------|\n| `@cover` | 封面 | 标题幻灯片 | 0 | 标题、副标题、作者/日期 |\n| `@list` | 列...",
+    "full_content": "@structure: cover\n```\n\n| @structure | 内容类型 | 自动匹配 Layout | 索引 | 内容特征关键词 |\n|------------|----------|-----------------|------|----------------|\n| `@cover` | 封面 | 标题幻灯片 | 0 | 标题、副标题、作者/日期 |\n| `@list` | 列表（最常用） | 标题和内容 | 1 | 要点、条目、①②③ |\n| `@section` | 章节分隔 | 节标题 | 2 | PART、第一节、过渡 |\n| `@compare` | 双栏对比 | 两栏内容 | 3 | vs、对比、比较、异同 |\n| `@table` | 表格 | 标题和内容 | 1 | 表格、统计、数据、百分比 |\n| `@timeline` | 时间轴 | 标题和内容 | 1 | 世纪、年代、起源、演变 |\n| `@flowchart` | 流程图 | 标题和内容 | 1 | 步骤、流程、程序、①→② |\n| `@cards` | 卡片网格 | 标题和内容 | 1 | 分类、类型、特点、五大 |\n| `@toc` | 目录 | 标题和内容 | 1 | 目录、章节列表、导航 |\n| `@quote` | 引用/金句 | 标题和内容 | 1 | 名言、金句、语录 |\n| `@stats` | 统计数字 | 标题和内容 | 1 | 数据、百分比、关键指标 |\n\n> `@table`/`@timeline`/`@flowchart`/`@cards`/`@toc`/`@quote`/`@stats` 使用 Layout 1（标题和内容），编译器会自动在 slide 上设计对应的呈现方式。"
+  },
+  {
+    "id": "script-writing-guide_150",
+    "file": "script-writing-guide.md",
+    "heading": "@layout — 强制指定 Layout",
+    "level": 3,
+    "content_preview": "当自动推断不满足需求时，显式覆盖：\n\n```markdown",
+    "full_content": "当自动推断不满足需求时，显式覆盖：\n\n```markdown"
+  },
+  {
+    "id": "script-writing-guide_151",
+    "file": "script-writing-guide.md",
+    "heading": "第3页：导入",
+    "level": 2,
+    "content_preview": "@structure: compare\n@layout: 3\n```\n\n**优先级**：`@layout` 显式指定 > `@structure` 推断 > 默认 `@list`",
+    "full_content": "@structure: compare\n@layout: 3\n```\n\n**优先级**：`@layout` 显式指定 > `@structure` 推断 > 默认 `@list`"
+  },
+  {
+    "id": "script-writing-guide_152",
+    "file": "script-writing-guide.md",
+    "heading": "常见 Layout 选择表",
+    "level": 3,
+    "content_preview": "| 内容类型 | Layout 名称 | 索引 |\n|----------|-------------|------|\n| 封面 | 标题幻灯片 | 0 |\n| 正文/知识点 | 标题和内容 | 1 |\n| PART/第一节 | 节标题 | 2 |\n| vs/双栏对比 | 两栏内容 | 3 |\n| 多栏对比 | 比较 | 4 |\n| 思考题/讨论 | 仅标题 | 5 |\n| 左内容右标题 | 内容...",
+    "full_content": "| 内容类型 | Layout 名称 | 索引 |\n|----------|-------------|------|\n| 封面 | 标题幻灯片 | 0 |\n| 正文/知识点 | 标题和内容 | 1 |\n| PART/第一节 | 节标题 | 2 |\n| vs/双栏对比 | 两栏内容 | 3 |\n| 多栏对比 | 比较 | 4 |\n| 思考题/讨论 | 仅标题 | 5 |\n| 左内容右标题 | 内容与标题 | 6 |\n| 带图片正文 | 图片与标题 | 7 |\n\n> 查看全部：`python3 scripts/main.py list --template template`\n\n---"
+  },
+  {
+    "id": "script-writing-guide_153",
+    "file": "script-writing-guide.md",
+    "heading": "4.1 页面描述",
+    "level": 3,
+    "content_preview": "**写什么**：这一页的功能定位——这页是干什么的，观众看完应该获得什么。\n\n**示例**：\n```markdown\n**页面描述**：展示项目三个核心目标，引导观众关注重点\n**页面描述**：时间轴展示公司发展历程\n**页面描述**：用卡片分类展示产品的五大特点\n```\n\n**不写什么**：\n- ❌ 不要写\"这是第2页\"\n- ❌ 不要写重复信息\n\n---",
+    "full_content": "**写什么**：这一页的功能定位——这页是干什么的，观众看完应该获得什么。\n\n**示例**：\n```markdown\n**页面描述**：展示项目三个核心目标，引导观众关注重点\n**页面描述**：时间轴展示公司发展历程\n**页面描述**：用卡片分类展示产品的五大特点\n```\n\n**不写什么**：\n- ❌ 不要写\"这是第2页\"\n- ❌ 不要写重复信息\n\n---"
+  },
+  {
+    "id": "script-writing-guide_154",
+    "file": "script-writing-guide.md",
+    "heading": "4.2 核心内容（必需）",
+    "level": 3,
+    "content_preview": "**写什么**：这一页上要展示的所有文字内容。\n\n**格式规则**：\n1. 第1行 → 页面大标题\n2. 第2行起 → 内容条目\n3. 支持 Markdown 列表（`- ` 或 `1. `），编译时自动去掉前缀\n4. 空行会被跳过\n\n**示例**：\n```markdown\n**核心内容**：\n- 一、公司发展历程\n- 2018年：产品原型诞生\n- 2020年：获得A轮融资\n- 2022年：用户突...",
+    "full_content": "**写什么**：这一页上要展示的所有文字内容。\n\n**格式规则**：\n1. 第1行 → 页面大标题\n2. 第2行起 → 内容条目\n3. 支持 Markdown 列表（`- ` 或 `1. `），编译时自动去掉前缀\n4. 空行会被跳过\n\n**示例**：\n```markdown\n**核心内容**：\n- 一、公司发展历程\n- 2018年：产品原型诞生\n- 2020年：获得A轮融资\n- 2022年：用户突破百万\n- 2024年：全球化布局启动\n```\n\n**标题 vs 内容的区分**：\n```markdown\n**核心内容**：\n- 项目核心目标              ← 标题\n- 提升用户体验30%          ← 内容1\n- 降低运营成本20%          ← 内容2\n- 开拓三个新市场           ← 内容3\n```\n\n**不写什么**：\n- ❌ 不要写图表说明（如\"三个圆圈编号①②③\"——这是 `图表设计` 的内容）\n- ❌ 不要写备注（如\"时间控制2分钟\"——这是 `备注` 的内容）\n\n---"
+  },
+  {
+    "id": "script-writing-guide_155",
+    "file": "script-writing-guide.md",
+    "heading": "4.3 图表设计",
+    "level": 3,
+    "content_preview": "**写什么**：这一页的视觉呈现方式——形状、排列、特殊元素。\n\n**写什么不写什么的界限**：\n\n| 应该写 | 不应该写 |\n|--------|----------|\n| \"三个圆圈编号①②③\" | \"用蓝色背景\"（颜色由模板决定） |\n| \"水平时间轴，4个节点\" | \"字体用Arial\"（字体由模板决定） |\n| \"2×2卡片网格\" | \"动画效果：淡入\"（编译器不支持动画） |\n| \"...",
+    "full_content": "**写什么**：这一页的视觉呈现方式——形状、排列、特殊元素。\n\n**写什么不写什么的界限**：\n\n| 应该写 | 不应该写 |\n|--------|----------|\n| \"三个圆圈编号①②③\" | \"用蓝色背景\"（颜色由模板决定） |\n| \"水平时间轴，4个节点\" | \"字体用Arial\"（字体由模板决定） |\n| \"2×2卡片网格\" | \"动画效果：淡入\"（编译器不支持动画） |\n| \"左侧标题，右侧图片\" | \"图片从百度下载\"（图片由模板自带） |\n\n**示例**：\n```markdown\n**图表设计**：\n- 三个圆圈编号（①②③），每个目标对应一个圆圈\n- 时间轴布局：水平线+4个圆形节点\n- 5个卡片，2+3排列，每个卡片包含标题和描述\n- 左侧：概念定义，右侧：示例说明\n```\n\n**不写什么**：\n- ❌ 颜色、字体、字号（模板统一控制）\n- ❌ 动画、切换效果（编译器不支持）\n- ❌ 图片来源、下载方式\n\n---"
+  },
+  {
+    "id": "script-writing-guide_156",
+    "file": "script-writing-guide.md",
+    "heading": "4.4 互动设计（可选）",
+    "level": 3,
+    "content_preview": "**写什么**：这一页的演示互动环节——提问、讨论、活动。\n\n**示例**：\n```markdown\n**互动设计**：\n- 提问：\"大家觉得这三个目标中，哪个最具挑战性？\"\n- 小组讨论：5分钟讨论，每组选一个代表发言\n- 现场投票：举手表决\n```\n\n**如果无互动**：\n```markdown\n**互动设计**：无\n```\n\n> 注：`互动设计` 为可选信息块。非演示场景（如工作汇报）可省略...",
+    "full_content": "**写什么**：这一页的演示互动环节——提问、讨论、活动。\n\n**示例**：\n```markdown\n**互动设计**：\n- 提问：\"大家觉得这三个目标中，哪个最具挑战性？\"\n- 小组讨论：5分钟讨论，每组选一个代表发言\n- 现场投票：举手表决\n```\n\n**如果无互动**：\n```markdown\n**互动设计**：无\n```\n\n> 注：`互动设计` 为可选信息块。非演示场景（如工作汇报）可省略。\n\n---"
+  },
+  {
+    "id": "script-writing-guide_157",
+    "file": "script-writing-guide.md",
+    "heading": "4.5 备注",
+    "level": 3,
+    "content_preview": "**写什么**：给演讲者的提示——时间控制、重点强调、注意事项。\n\n**示例**：\n```markdown\n**备注**：\n- 时间控制：2分钟\n- 重点强调：第三个目标最容易被忽略\n- 注意事项：提前准备投票器\n```\n\n**如果无备注**：\n```markdown\n**备注**：无\n```\n\n---",
+    "full_content": "**写什么**：给演讲者的提示——时间控制、重点强调、注意事项。\n\n**示例**：\n```markdown\n**备注**：\n- 时间控制：2分钟\n- 重点强调：第三个目标最容易被忽略\n- 注意事项：提前准备投票器\n```\n\n**如果无备注**：\n```markdown\n**备注**：无\n```\n\n---"
+  },
+  {
+    "id": "script-writing-guide_158",
+    "file": "script-writing-guide.md",
+    "heading": "5.1 一页只说一件事",
+    "level": 3,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "script-writing-guide_159",
+    "file": "script-writing-guide.md",
+    "heading": "第6页：历程+特点+思考  ❌ 三件事塞在一页",
+    "level": 2,
+    "content_preview": "```",
+    "full_content": "```"
+  },
+  {
+    "id": "script-writing-guide_160",
+    "file": "script-writing-guide.md",
+    "heading": "5.2 内容密度适中",
+    "level": 3,
+    "content_preview": "- 一页 **3~6个内容条目** 为最佳\n- 超过8条 → 考虑拆分为两页\n- 只有1条 → 考虑加案例或图表丰富化",
+    "full_content": "- 一页 **3~6个内容条目** 为最佳\n- 超过8条 → 考虑拆分为两页\n- 只有1条 → 考虑加案例或图表丰富化"
+  },
+  {
+    "id": "script-writing-guide_161",
+    "file": "script-writing-guide.md",
+    "heading": "5.3 标题要概括，内容要具体",
+    "level": 3,
+    "content_preview": "```markdown\n✅ 好的例子：\n- 产品的五大特点          ← 标题：概括\n- 高性能：响应速度提升3倍   ← 内容1：具体\n- 易用性：三步完成操作      ← 内容2：具体\n\n❌ 不好的例子：\n- 产品特点                ← 太笼统，没有信息量\n- 特点1                   ← 无意义编号\n- 特点2                   ...",
+    "full_content": "```markdown\n✅ 好的例子：\n- 产品的五大特点          ← 标题：概括\n- 高性能：响应速度提升3倍   ← 内容1：具体\n- 易用性：三步完成操作      ← 内容2：具体\n\n❌ 不好的例子：\n- 产品特点                ← 太笼统，没有信息量\n- 特点1                   ← 无意义编号\n- 特点2                   ← 无意义编号\n```"
+  },
+  {
+    "id": "script-writing-guide_162",
+    "file": "script-writing-guide.md",
+    "heading": "5.4 信息块各司其职",
+    "level": 3,
+    "content_preview": "| 信息块 | 职责 | 常见错误 |\n|--------|------|----------|\n| 页面描述 | 功能定位 | 写成内容摘要 |\n| 核心内容 | 展示文字 | 混入图表说明 |\n| 图表设计 | 视觉方式 | 写成内容文字 |\n| 互动设计 | 演示活动 | 写成演讲者讲解 |\n| 备注 | 演讲提示 | 写成观众提示 |\n\n---",
+    "full_content": "| 信息块 | 职责 | 常见错误 |\n|--------|------|----------|\n| 页面描述 | 功能定位 | 写成内容摘要 |\n| 核心内容 | 展示文字 | 混入图表说明 |\n| 图表设计 | 视觉方式 | 写成内容文字 |\n| 互动设计 | 演示活动 | 写成演讲者讲解 |\n| 备注 | 演讲提示 | 写成观众提示 |\n\n---"
+  },
+  {
+    "id": "script-writing-guide_163",
+    "file": "script-writing-guide.md",
+    "heading": "六、完整示例",
+    "level": 2,
+    "content_preview": "```markdown",
+    "full_content": "```markdown"
+  },
+  {
+    "id": "script-writing-guide_164",
+    "file": "script-writing-guide.md",
+    "heading": "产品发布会",
+    "level": 1,
+    "content_preview": "---",
+    "full_content": "---"
+  },
+  {
+    "id": "script-writing-guide_165",
+    "file": "script-writing-guide.md",
+    "heading": "第1页：封面",
+    "level": 2,
+    "content_preview": "@structure: cover\n\n**页面描述**：发布会封面，展示产品名称、公司、日期\n\n**核心内容**：\n- 智云办公 3.0\n- 新一代智能协作平台\n- 智云科技\n- 2026年5月\n\n**图表设计**：\n- 左上角：公司 Logo\n- 右侧：产品界面截图\n\n**备注**：无\n\n---",
+    "full_content": "@structure: cover\n\n**页面描述**：发布会封面，展示产品名称、公司、日期\n\n**核心内容**：\n- 智云办公 3.0\n- 新一代智能协作平台\n- 智云科技\n- 2026年5月\n\n**图表设计**：\n- 左上角：公司 Logo\n- 右侧：产品界面截图\n\n**备注**：无\n\n---"
+  },
+  {
+    "id": "script-writing-guide_166",
+    "file": "script-writing-guide.md",
+    "heading": "第2页：核心目标",
+    "level": 2,
+    "content_preview": "@structure: list\n\n**页面描述**：展示产品三个核心目标，引导观众关注重点\n\n**核心内容**：\n- 产品核心目标\n- 提升团队协作效率 30%\n- 降低沟通成本 50%\n- 支持全球化远程办公\n\n**图表设计**：\n- 三个圆圈编号（①②③），每个目标对应一个圆圈\n\n**互动设计**：\n- 提问：\"大家觉得这三个目标中，哪个最具挑战性？\"\n\n**备注**：时间控制 2 分钟\n\n...",
+    "full_content": "@structure: list\n\n**页面描述**：展示产品三个核心目标，引导观众关注重点\n\n**核心内容**：\n- 产品核心目标\n- 提升团队协作效率 30%\n- 降低沟通成本 50%\n- 支持全球化远程办公\n\n**图表设计**：\n- 三个圆圈编号（①②③），每个目标对应一个圆圈\n\n**互动设计**：\n- 提问：\"大家觉得这三个目标中，哪个最具挑战性？\"\n\n**备注**：时间控制 2 分钟\n\n---"
+  },
+  {
+    "id": "script-writing-guide_167",
+    "file": "script-writing-guide.md",
+    "heading": "第3页：发展历程",
+    "level": 2,
+    "content_preview": "@structure: timeline\n\n**页面描述**：时间轴展示产品迭代历程\n\n**核心内容**：\n- 一、产品发展历程\n- 2022年：智云办公 1.0 发布\n- 2023年：引入AI智能助手\n- 2024年：用户突破百万\n- 2025年：企业版上线\n- 2026年：智云办公 3.0 全新发布\n\n**图表设计**：\n- 水平时间轴，5 个时间节点\n- 节点样式：圆形 + 年份标签\n\n**...",
+    "full_content": "@structure: timeline\n\n**页面描述**：时间轴展示产品迭代历程\n\n**核心内容**：\n- 一、产品发展历程\n- 2022年：智云办公 1.0 发布\n- 2023年：引入AI智能助手\n- 2024年：用户突破百万\n- 2025年：企业版上线\n- 2026年：智云办公 3.0 全新发布\n\n**图表设计**：\n- 水平时间轴，5 个时间节点\n- 节点样式：圆形 + 年份标签\n\n**备注**：每个时间点讲解 1 分钟\n\n---"
+  },
+  {
+    "id": "script-writing-guide_168",
+    "file": "script-writing-guide.md",
+    "heading": "第4页：感谢",
+    "level": 2,
+    "content_preview": "@structure: cover\n\n**页面描述**：结束页，展示感谢信息和联系方式\n\n**核心内容**：\n- 感谢聆听\n- 智云科技\n- www.zhiyun.com\n- contact@zhiyun.com\n\n**图表设计**：\n- 简洁背景，居中大字\n\n**备注**：无\n```\n\n---",
+    "full_content": "@structure: cover\n\n**页面描述**：结束页，展示感谢信息和联系方式\n\n**核心内容**：\n- 感谢聆听\n- 智云科技\n- www.zhiyun.com\n- contact@zhiyun.com\n\n**图表设计**：\n- 简洁背景，居中大字\n\n**备注**：无\n```\n\n---"
+  },
+  {
+    "id": "script-writing-guide_169",
+    "file": "script-writing-guide.md",
+    "heading": "Q1：不知道选哪个 @structure 怎么办？",
+    "level": 3,
+    "content_preview": "参考上面的\"@structure 与 Layout 映射表\"。最常用的是 `@list`，不确定就用它。",
+    "full_content": "参考上面的\"@structure 与 Layout 映射表\"。最常用的是 `@list`，不确定就用它。"
+  },
+  {
+    "id": "script-writing-guide_170",
+    "file": "script-writing-guide.md",
+    "heading": "Q2：内容太多一页放不下怎么办？",
+    "level": 3,
+    "content_preview": "拆分为两页：\n```markdown",
+    "full_content": "拆分为两页：\n```markdown"
+  },
+  {
+    "id": "script-writing-guide_171",
+    "file": "script-writing-guide.md",
+    "heading": "第5页：五大特点（上）",
+    "level": 2,
+    "content_preview": "@structure: list\n**核心内容**：\n- 二、产品的五大特点\n- 高性能：响应速度提升3倍\n- 易用性：三步完成操作\n\n---",
+    "full_content": "@structure: list\n**核心内容**：\n- 二、产品的五大特点\n- 高性能：响应速度提升3倍\n- 易用性：三步完成操作\n\n---"
+  },
+  {
+    "id": "script-writing-guide_172",
+    "file": "script-writing-guide.md",
+    "heading": "第6页：五大特点（下）",
+    "level": 2,
+    "content_preview": "@structure: list\n**核心内容**：\n- 安全性：银行级加密标准\n- 可扩展：支持百万级并发\n- 智能化：AI 自动优化工作流\n```",
+    "full_content": "@structure: list\n**核心内容**：\n- 安全性：银行级加密标准\n- 可扩展：支持百万级并发\n- 智能化：AI 自动优化工作流\n```"
+  },
+  {
+    "id": "script-writing-guide_173",
+    "file": "script-writing-guide.md",
+    "heading": "Q3：图表设计不会写怎么办？",
+    "level": 3,
+    "content_preview": "如果不会写，就写：\n```markdown\n**图表设计**：无\n```\n\n编译器会使用 layout 的默认样式。",
+    "full_content": "如果不会写，就写：\n```markdown\n**图表设计**：无\n```\n\n编译器会使用 layout 的默认样式。"
+  },
+  {
+    "id": "script-writing-guide_174",
+    "file": "script-writing-guide.md",
+    "heading": "Q4：互动设计想不出来怎么办？",
+    "level": 3,
+    "content_preview": "如果这一页不需要互动，就写：\n```markdown\n**互动设计**：无\n```\n\n不要硬凑互动。\n\n---",
+    "full_content": "如果这一页不需要互动，就写：\n```markdown\n**互动设计**：无\n```\n\n不要硬凑互动。\n\n---"
+  },
+  {
+    "id": "script-writing-guide_175",
+    "file": "script-writing-guide.md",
+    "heading": "八、检查清单",
+    "level": 2,
+    "content_preview": "写完脚本后，逐页检查：\n\n- [ ] 每页都有 `**核心内容**：`（至少2行）\n- [ ] 核心内容第1行是标题，后面是具体内容\n- [ ] 内容密度适中（3~6条）\n- [ ] 信息块各司其职，没有串位\n- [ ] 页面之间用 `---` 分隔\n- [ ] @structure 标记正确（如有使用）\n\n---",
+    "full_content": "写完脚本后，逐页检查：\n\n- [ ] 每页都有 `**核心内容**：`（至少2行）\n- [ ] 核心内容第1行是标题，后面是具体内容\n- [ ] 内容密度适中（3~6条）\n- [ ] 信息块各司其职，没有串位\n- [ ] 页面之间用 `---` 分隔\n- [ ] @structure 标记正确（如有使用）\n\n---"
+  },
+  {
+    "id": "script-writing-guide_176",
+    "file": "script-writing-guide.md",
+    "heading": "九、与具体项目的结合",
+    "level": 2,
+    "content_preview": "本指南是**通用规范**。在具体项目中使用时：\n\n1. **确定输出路径**：根据项目规范确定 `.md` 脚本的存放位置\n2. **确定编译方式**：调用项目指定的编译工具生成 `.pptx`\n3. **遵循项目额外约束**：如特定术语、格式要求、审核流程等\n\n> 例如，在课程备课项目中，脚本可能需遵循额外的 `v4 课件脚本` 规范（包含教学互动设计、时间控制等）。项目级规范应补充到项目的操作...",
+    "full_content": "本指南是**通用规范**。在具体项目中使用时：\n\n1. **确定输出路径**：根据项目规范确定 `.md` 脚本的存放位置\n2. **确定编译方式**：调用项目指定的编译工具生成 `.pptx`\n3. **遵循项目额外约束**：如特定术语、格式要求、审核流程等\n\n> 例如，在课程备课项目中，脚本可能需遵循额外的 `v4 课件脚本` 规范（包含教学互动设计、时间控制等）。项目级规范应补充到项目的操作手册中，而非修改本通用指南。\n\n---\n\n*版本: v2.1 | 更新: 2026-05-15 | 格式: 通用结构化脚本格式*"
+  },
+  {
+    "id": "slide-design-guide_177",
+    "file": "slide-design-guide.md",
+    "heading": "Slide 设计指南",
+    "level": 1,
+    "content_preview": "> **Layout 只是画布，Slide 设计才是核心。**\n>\n> 本指南指导编译器如何根据内容自主设计 slide 的呈现方式，而非被 layout 的占位符结构限制。\n\n---",
+    "full_content": "> **Layout 只是画布，Slide 设计才是核心。**\n>\n> 本指南指导编译器如何根据内容自主设计 slide 的呈现方式，而非被 layout 的占位符结构限制。\n\n---"
+  },
+  {
+    "id": "slide-design-guide_178",
+    "file": "slide-design-guide.md",
+    "heading": "Layout 的作用（有限）",
+    "level": 3,
+    "content_preview": "| Layout 提供 | 具体内容 | 使用方式 |\n|-------------|---------|---------|\n| **背景** | 母版背景色/背景图 | 直接使用 |\n| **配色** | 主题色、强调色 | 提取后统一使用 |\n| **字体** | 标题字体、正文字体 | 提取后统一使用 |\n| **页眉页脚** | 机构名称、页码、日期 | 直接使用 |\n| **占位符**...",
+    "full_content": "| Layout 提供 | 具体内容 | 使用方式 |\n|-------------|---------|---------|\n| **背景** | 母版背景色/背景图 | 直接使用 |\n| **配色** | 主题色、强调色 | 提取后统一使用 |\n| **字体** | 标题字体、正文字体 | 提取后统一使用 |\n| **页眉页脚** | 机构名称、页码、日期 | 直接使用 |\n| **占位符** | 标题框、内容框 | **参考位置，不强制填充** |"
+  },
+  {
+    "id": "slide-design-guide_179",
+    "file": "slide-design-guide.md",
+    "heading": "Slide 设计的作用（核心）",
+    "level": 3,
+    "content_preview": "编译器根据 `@structure` 和 `**图表设计**`，**自主决定** slide 上每一个元素的位置、大小、颜色、样式。\n\n```\n❌ 旧模式：用 Layout 1 的内容占位符 → 填 bullet 列表 → 结束\n   结果：19页长得一样，只是文字不同\n\n✅ 新模式：用 Layout 1 的背景+字体+页脚 → 自主设计排版\n   结果：timeline 画时间轴、flowcha...",
+    "full_content": "编译器根据 `@structure` 和 `**图表设计**`，**自主决定** slide 上每一个元素的位置、大小、颜色、样式。\n\n```\n❌ 旧模式：用 Layout 1 的内容占位符 → 填 bullet 列表 → 结束\n   结果：19页长得一样，只是文字不同\n\n✅ 新模式：用 Layout 1 的背景+字体+页脚 → 自主设计排版\n   结果：timeline 画时间轴、flowchart 画步骤框、cards 画卡片网格\n```"
+  },
+  {
+    "id": "slide-design-guide_180",
+    "file": "slide-design-guide.md",
+    "heading": "什么时候用 Layout 占位符？",
+    "level": 3,
+    "content_preview": "| 场景 | 处理方式 |\n|------|---------|\n| 封面标题 | **不用** title placeholder，自己画文本框（封面 layout 往往没有标题占位符） |\n| 普通内容 | **不用** content placeholder 的 bullet 列表，自己排版 |\n| 双栏对比 | 用 Layout 3 获取两栏占位符位置参考，但内容自主填充 |\n| 章节分隔...",
+    "full_content": "| 场景 | 处理方式 |\n|------|---------|\n| 封面标题 | **不用** title placeholder，自己画文本框（封面 layout 往往没有标题占位符） |\n| 普通内容 | **不用** content placeholder 的 bullet 列表，自己排版 |\n| 双栏对比 | 用 Layout 3 获取两栏占位符位置参考，但内容自主填充 |\n| 章节分隔 | 用 Layout 2 的背景，但文字自己画（控制字号和位置） |\n\n---"
+  },
+  {
+    "id": "slide-design-guide_181",
+    "file": "slide-design-guide.md",
+    "heading": "1.1 四大基本原则（CRAP）",
+    "level": 3,
+    "content_preview": "| 原则 | 含义 | 在课件中的应用 |\n|------|------|---------------|\n| **对比** Contrast | 元素之间要有明显差异 | 标题 vs 正文字号差 ≥ 8pt；重点内容用强调色 |\n| **重复** Repetition | 统一视觉元素贯穿全文 | 同一层级的标题字号一致；配色方案固定 |\n| **对齐** Alignment | 每个元素都与某...",
+    "full_content": "| 原则 | 含义 | 在课件中的应用 |\n|------|------|---------------|\n| **对比** Contrast | 元素之间要有明显差异 | 标题 vs 正文字号差 ≥ 8pt；重点内容用强调色 |\n| **重复** Repetition | 统一视觉元素贯穿全文 | 同一层级的标题字号一致；配色方案固定 |\n| **对齐** Alignment | 每个元素都与某条参考线对齐 | 所有文本框左对齐；图形中心对称 |\n| **亲密性** Proximity | 相关元素靠近，无关元素远离 | 一个主题的内容在一个视觉区域内 |"
+  },
+  {
+    "id": "slide-design-guide_182",
+    "file": "slide-design-guide.md",
+    "heading": "1.2 一页一焦点",
+    "level": 3,
+    "content_preview": "**错误**：一页塞满 10 个要点 + 3 张图 + 表格\n**正确**：一页只说一件事，3-6 个要点为最佳\n\n```\n❌ 第6页：质的研究特点+实施程序+注意事项+思考题\n✅ 第6页：质的研究的五大特点（5个要点）\n✅ 第7页：实施程序（5个步骤）\n```\n\n---",
+    "full_content": "**错误**：一页塞满 10 个要点 + 3 张图 + 表格\n**正确**：一页只说一件事，3-6 个要点为最佳\n\n```\n❌ 第6页：质的研究特点+实施程序+注意事项+思考题\n✅ 第6页：质的研究的五大特点（5个要点）\n✅ 第7页：实施程序（5个步骤）\n```\n\n---"
+  },
+  {
+    "id": "slide-design-guide_183",
+    "file": "slide-design-guide.md",
+    "heading": "2.1 配色方案（推荐）",
+    "level": 3,
+    "content_preview": "```\n主色    ████  #0096C7  蓝    → 标题、重点、节点\n辅色    ████  #48CAE4  浅蓝  → 次级内容、交替行\n强调色  ████  #90E0EF  更浅  → 背景、高亮\n点缀色  ████  #F4A261  橙    → 警示、对比项\n点缀色  ████  #9B59B6  紫    → 特殊标记\n背景    ████  #F8F9FA  近白  ...",
+    "full_content": "```\n主色    ████  #0096C7  蓝    → 标题、重点、节点\n辅色    ████  #48CAE4  浅蓝  → 次级内容、交替行\n强调色  ████  #90E0EF  更浅  → 背景、高亮\n点缀色  ████  #F4A261  橙    → 警示、对比项\n点缀色  ████  #9B59B6  紫    → 特殊标记\n背景    ████  #F8F9FA  近白  → slide 底色\n文字    ████  #212529  深灰  → 正文（不用纯黑）\n```"
+  },
+  {
+    "id": "slide-design-guide_184",
+    "file": "slide-design-guide.md",
+    "heading": "2.2 颜色心理学",
+    "level": 3,
+    "content_preview": "| 颜色 | 心理暗示 | 适用场景 |\n|------|---------|---------|\n| 蓝色 | 理性、专业、信任 | 学术课件主色 |\n| 绿色 | 自然、成长、安全 | 环保、心理类 |\n| 橙色 | 活力、温暖、提醒 | 重点标记、互动环节 |\n| 红色 | 危险、禁止、紧急 | 极少使用，仅警示 |\n| 紫色 | 神秘、创意、前沿 | 学术前沿、创新点 |",
+    "full_content": "| 颜色 | 心理暗示 | 适用场景 |\n|------|---------|---------|\n| 蓝色 | 理性、专业、信任 | 学术课件主色 |\n| 绿色 | 自然、成长、安全 | 环保、心理类 |\n| 橙色 | 活力、温暖、提醒 | 重点标记、互动环节 |\n| 红色 | 危险、禁止、紧急 | 极少使用，仅警示 |\n| 紫色 | 神秘、创意、前沿 | 学术前沿、创新点 |"
+  },
+  {
+    "id": "slide-design-guide_185",
+    "file": "slide-design-guide.md",
+    "heading": "2.3 对比度要求",
+    "level": 3,
+    "content_preview": "- **标题 vs 背景**：对比度 ≥ 4.5:1\n- **正文 vs 背景**：对比度 ≥ 7:1\n- **避免**：浅色字 + 浅色底；彩色字 + 彩色底",
+    "full_content": "- **标题 vs 背景**：对比度 ≥ 4.5:1\n- **正文 vs 背景**：对比度 ≥ 7:1\n- **避免**：浅色字 + 浅色底；彩色字 + 彩色底"
+  },
+  {
+    "id": "slide-design-guide_186",
+    "file": "slide-design-guide.md",
+    "heading": "2.4 配色禁忌",
+    "level": 3,
+    "content_preview": "| ❌ 不要做 | 原因 |\n|-----------|------|\n| 一页超过 4 种颜色 | 视觉混乱，学生注意力分散 |\n| 用红色作为大面积背景 | 刺眼、压迫感 |\n| 渐变色背景 + 彩色文字 | 对比度无法保证 |\n| 纯黑文字 + 纯白背景 | 过于刺眼，用深灰 + 近白 |\n\n---",
+    "full_content": "| ❌ 不要做 | 原因 |\n|-----------|------|\n| 一页超过 4 种颜色 | 视觉混乱，学生注意力分散 |\n| 用红色作为大面积背景 | 刺眼、压迫感 |\n| 渐变色背景 + 彩色文字 | 对比度无法保证 |\n| 纯黑文字 + 纯白背景 | 过于刺眼，用深灰 + 近白 |\n\n---"
+  },
+  {
+    "id": "slide-design-guide_187",
+    "file": "slide-design-guide.md",
+    "heading": "3.1 流程表达（线性逻辑）",
+    "level": 3,
+    "content_preview": "**适用**：步骤、程序、时间顺序\n\n```\n步骤1 → 步骤2 → 步骤3 → 步骤4 → 步骤5\n  ↑        ↑        ↑        ↑        ↑\n圆角框   圆角框   圆角框   圆角框   圆角框\n```\n\n**设计要点**：\n- 箭头方向统一（左→右 或 上→下）\n- 步骤框等宽等高，间距一致\n- 当前步骤用主色，其他用灰色\n- 步骤编号放在框内左上角",
+    "full_content": "**适用**：步骤、程序、时间顺序\n\n```\n步骤1 → 步骤2 → 步骤3 → 步骤4 → 步骤5\n  ↑        ↑        ↑        ↑        ↑\n圆角框   圆角框   圆角框   圆角框   圆角框\n```\n\n**设计要点**：\n- 箭头方向统一（左→右 或 上→下）\n- 步骤框等宽等高，间距一致\n- 当前步骤用主色，其他用灰色\n- 步骤编号放在框内左上角"
+  },
+  {
+    "id": "slide-design-guide_188",
+    "file": "slide-design-guide.md",
+    "heading": "3.2 对比表达（并列逻辑）",
+    "level": 3,
+    "content_preview": "**适用**：A vs B、优缺点、异同分析\n\n```\n┌─────────────┐    ┌─────────────┐\n│   实验法    │ ↔  │  质的研究   │\n├─────────────┤    ├─────────────┤\n│ 控制变量    │    │ 自然情境    │\n│ 量化数据    │    │ 描述手法    │\n│ 验证假设    │    │ 归纳建...",
+    "full_content": "**适用**：A vs B、优缺点、异同分析\n\n```\n┌─────────────┐    ┌─────────────┐\n│   实验法    │ ↔  │  质的研究   │\n├─────────────┤    ├─────────────┤\n│ 控制变量    │    │ 自然情境    │\n│ 量化数据    │    │ 描述手法    │\n│ 验证假设    │    │ 归纳建构    │\n└─────────────┘    └─────────────┘\n```\n\n**设计要点**：\n- 左右/上下严格对称\n- 对应维度在同一行\n- 两侧用对比色（冷色 vs 暖色）\n- 中间用「vs」「→」等符号连接"
+  },
+  {
+    "id": "slide-design-guide_189",
+    "file": "slide-design-guide.md",
+    "heading": "3.3 分类表达（层级逻辑）",
+    "level": 3,
+    "content_preview": "**适用**：特征归纳、类型划分、要素列举\n\n```\n        ┌─────────────┐\n        │ 质的研究特点 │\n        └──────┬──────┘\n    ┌─────┬─────┬─────┬─────┬─────┐\n    │  1  │  2  │  3  │  4  │  5  │\n    │自然 │描述 │整体 │归纳 │研究者│\n    │情境 ...",
+    "full_content": "**适用**：特征归纳、类型划分、要素列举\n\n```\n        ┌─────────────┐\n        │ 质的研究特点 │\n        └──────┬──────┘\n    ┌─────┬─────┬─────┬─────┬─────┐\n    │  1  │  2  │  3  │  4  │  5  │\n    │自然 │描述 │整体 │归纳 │研究者│\n    │情境 │手法 │观点 │思维 │即工具│\n    └─────┴─────┴─────┴─────┴─────┘\n```\n\n**设计要点**：\n- 卡片等宽，间距相等\n- 每卡顶部有色条或色块标识\n- 编号清晰，与内容对齐\n- 2-3 行排列，不超过 3 行"
+  },
+  {
+    "id": "slide-design-guide_190",
+    "file": "slide-design-guide.md",
+    "heading": "3.4 时间轴表达（演变逻辑）",
+    "level": 3,
+    "content_preview": "**适用**：历史发展、阶段演变、时间序列\n\n```\n●━━━━━━━━━━━━━━━━━━━━━━━━━━●━━━━━━━━━━━━━━━━━━━━━━━━━━●\n   ↑                          ↑                          ↑\n [古希腊]                   [19世纪]                   [1960后]\n...",
+    "full_content": "**适用**：历史发展、阶段演变、时间序列\n\n```\n●━━━━━━━━━━━━━━━━━━━━━━━━━━●━━━━━━━━━━━━━━━━━━━━━━━━━━●\n   ↑                          ↑                          ↑\n [古希腊]                   [19世纪]                   [1960后]\n 民族志起源                 博厄斯实地调查             现象学+阐释学\n```\n\n**设计要点**：\n- 水平线贯穿页面\n- 节点等距分布\n- 时间节点在上方，描述在下方\n- 不同时间段用不同颜色区分\n\n---"
+  },
+  {
+    "id": "slide-design-guide_191",
+    "file": "slide-design-guide.md",
+    "heading": "4.1 视觉权重金字塔",
+    "level": 3,
+    "content_preview": "```\n        大小            ← 最重要\n         ↑\n      颜色/位置        ← 次重要\n         ↑\n      粗细/形状        ← 辅助\n         ↑\n      间距/留白        ← 基础\n```",
+    "full_content": "```\n        大小            ← 最重要\n         ↑\n      颜色/位置        ← 次重要\n         ↑\n      粗细/形状        ← 辅助\n         ↑\n      间距/留白        ← 基础\n```"
+  },
+  {
+    "id": "slide-design-guide_192",
+    "file": "slide-design-guide.md",
+    "heading": "4.2 六种突出方法",
+    "level": 3,
+    "content_preview": "| 方法 | 操作 | 效果 | 注意 |\n|------|------|------|------|\n| **放大** | 字号从 24pt → 36pt | 最直观 | 不要放大太多 |\n| **变色** | 普通文字→主色 | 吸引注意 | 一页最多 2 处 |\n| **加粗** | font-weight: bold | 强调关键词 | 不要整段加粗 |\n| **背景框** | 浅色底框包...",
+    "full_content": "| 方法 | 操作 | 效果 | 注意 |\n|------|------|------|------|\n| **放大** | 字号从 24pt → 36pt | 最直观 | 不要放大太多 |\n| **变色** | 普通文字→主色 | 吸引注意 | 一页最多 2 处 |\n| **加粗** | font-weight: bold | 强调关键词 | 不要整段加粗 |\n| **背景框** | 浅色底框包裹 | 隔离重点 | 框不要太粗 |\n| **位置** | 放在视觉中心 | 自然聚焦 | 不要放角落 |\n| **动画** | 逐条出现 | 引导节奏 | 课件中慎用 |"
+  },
+  {
+    "id": "slide-design-guide_193",
+    "file": "slide-design-guide.md",
+    "heading": "4.3 重点密度控制",
+    "level": 3,
+    "content_preview": "```\n❌ 一页 8 个重点 → 没有重点\n✅ 一页 1-2 个重点 → 学生记得住\n```\n\n**原则**：如果所有都是重点，就没有重点。\n\n---",
+    "full_content": "```\n❌ 一页 8 个重点 → 没有重点\n✅ 一页 1-2 个重点 → 学生记得住\n```\n\n**原则**：如果所有都是重点，就没有重点。\n\n---"
+  },
+  {
+    "id": "slide-design-guide_194",
+    "file": "slide-design-guide.md",
+    "heading": "5.1 字号层级（16:9 比例）",
+    "level": 3,
+    "content_preview": "| 层级 | 字号 | 字重 | 用途 | 每页出现次数 |\n|------|------|------|------|-------------|\n| H1 | 36-44pt | Bold | 页面大标题 | 1 次 |\n| H2 | 28-32pt | Bold | 节标题/卡片标题 | 3-5 次 |\n| Body | 20-24pt | Regular | 正文内容 | 不限 |\n| C...",
+    "full_content": "| 层级 | 字号 | 字重 | 用途 | 每页出现次数 |\n|------|------|------|------|-------------|\n| H1 | 36-44pt | Bold | 页面大标题 | 1 次 |\n| H2 | 28-32pt | Bold | 节标题/卡片标题 | 3-5 次 |\n| Body | 20-24pt | Regular | 正文内容 | 不限 |\n| Caption | 14-16pt | Regular | 注释/来源 | 0-2 次 |"
+  },
+  {
+    "id": "slide-design-guide_195",
+    "file": "slide-design-guide.md",
+    "heading": "5.2 间距层级",
+    "level": 3,
+    "content_preview": "```\n页面边距：≥ 0.5 inch（1.27cm）\n标题到内容：≥ 0.3 inch（0.76cm）\n内容行间距：≥ 1.2 倍行高\n卡片间距：≥ 0.2 inch（0.5cm）\n```",
+    "full_content": "```\n页面边距：≥ 0.5 inch（1.27cm）\n标题到内容：≥ 0.3 inch（0.76cm）\n内容行间距：≥ 1.2 倍行高\n卡片间距：≥ 0.2 inch（0.5cm）\n```"
+  },
+  {
+    "id": "slide-design-guide_196",
+    "file": "slide-design-guide.md",
+    "heading": "5.3 视觉动线",
+    "level": 3,
+    "content_preview": "**F 型动线**（西方阅读习惯）：\n```\n1. 先看左上角（标题）\n2. 横向扫到右上角\n3. 纵向向下扫视\n4. 偶尔横向扫视\n```\n\n**Z 型动线**（对比/双栏）：\n```\n1. 左上角 → 2. 右上角\n         ↘\n3. 左下角 → 4. 右下角\n```\n\n**设计建议**：把最重要的信息放在动线的起点和终点。\n\n---",
+    "full_content": "**F 型动线**（西方阅读习惯）：\n```\n1. 先看左上角（标题）\n2. 横向扫到右上角\n3. 纵向向下扫视\n4. 偶尔横向扫视\n```\n\n**Z 型动线**（对比/双栏）：\n```\n1. 左上角 → 2. 右上角\n         ↘\n3. 左下角 → 4. 右下角\n```\n\n**设计建议**：把最重要的信息放在动线的起点和终点。\n\n---"
+  },
+  {
+    "id": "slide-design-guide_197",
+    "file": "slide-design-guide.md",
+    "heading": "6.1 可读性优先",
+    "level": 3,
+    "content_preview": "| 场景 | 要求 |\n|------|------|\n| 教室后排 | 字号 ≥ 24pt，行距 ≥ 1.5 |\n| 投影仪 | 对比度 ≥ 7:1，避免细线 |\n| 速记笔记 | 关键词前置，bullet 简短 |\n| 拍照复习 | 信息密度适中，留白 ≥ 20% |",
+    "full_content": "| 场景 | 要求 |\n|------|------|\n| 教室后排 | 字号 ≥ 24pt，行距 ≥ 1.5 |\n| 投影仪 | 对比度 ≥ 7:1，避免细线 |\n| 速记笔记 | 关键词前置，bullet 简短 |\n| 拍照复习 | 信息密度适中，留白 ≥ 20% |"
+  },
+  {
+    "id": "slide-design-guide_198",
+    "file": "slide-design-guide.md",
+    "heading": "6.2 节奏控制",
+    "level": 3,
+    "content_preview": "```\n导入页：简洁，1-2 个信息点\n内容页：3-5 个要点，有视觉锚点\n对比页：左右对称，一目了然\n互动页：问题醒目，留白充足\n总结页：结构回顾，重点复述\n```",
+    "full_content": "```\n导入页：简洁，1-2 个信息点\n内容页：3-5 个要点，有视觉锚点\n对比页：左右对称，一目了然\n互动页：问题醒目，留白充足\n总结页：结构回顾，重点复述\n```"
+  },
+  {
+    "id": "slide-design-guide_199",
+    "file": "slide-design-guide.md",
+    "heading": "6.3 避免认知过载",
+    "level": 3,
+    "content_preview": "| ❌ 过载信号 | ✅ 优化方案 |\n|-----------|-----------|\n| 一页 8+ 个 bullet | 拆分为 2 页 |\n| 文字铺满全页 | 删减 50%，只留关键词 |\n| 多种字体混用 | 统一为 1 种中文 + 1 种英文 |\n| 装饰元素过多 | 删除无意义的图形 |\n| 颜色超过 4 种 | 回归主色+辅色+强调色 |\n\n---",
+    "full_content": "| ❌ 过载信号 | ✅ 优化方案 |\n|-----------|-----------|\n| 一页 8+ 个 bullet | 拆分为 2 页 |\n| 文字铺满全页 | 删减 50%，只留关键词 |\n| 多种字体混用 | 统一为 1 种中文 + 1 种英文 |\n| 装饰元素过多 | 删除无意义的图形 |\n| 颜色超过 4 种 | 回归主色+辅色+强调色 |\n\n---"
+  },
+  {
+    "id": "slide-design-guide_200",
+    "file": "slide-design-guide.md",
+    "heading": "7.1 形状使用指南",
+    "level": 3,
+    "content_preview": "| 形状 | 含义 | 适用场景 |\n|------|------|---------|\n| 矩形 | 容器、边界 | 卡片、文本框 |\n| 圆角矩形 | 柔和、友好 | 步骤框、按钮 |\n| 圆形 | 节点、重点 | 时间轴节点、编号 |\n| 箭头 | 方向、流程 | 步骤连接、趋势 |\n| 菱形 | 判断、决策 | 流程图判断节点 |",
+    "full_content": "| 形状 | 含义 | 适用场景 |\n|------|------|---------|\n| 矩形 | 容器、边界 | 卡片、文本框 |\n| 圆角矩形 | 柔和、友好 | 步骤框、按钮 |\n| 圆形 | 节点、重点 | 时间轴节点、编号 |\n| 箭头 | 方向、流程 | 步骤连接、趋势 |\n| 菱形 | 判断、决策 | 流程图判断节点 |"
+  },
+  {
+    "id": "slide-design-guide_201",
+    "file": "slide-design-guide.md",
+    "heading": "7.2 线条规范",
+    "level": 3,
+    "content_preview": "```\n主线条：2-3pt，主色\n次线条：1pt，灰色\n虚线：表示辅助/可选\n细线分隔：0.5pt，浅灰\n```",
+    "full_content": "```\n主线条：2-3pt，主色\n次线条：1pt，灰色\n虚线：表示辅助/可选\n细线分隔：0.5pt，浅灰\n```"
+  },
+  {
+    "id": "slide-design-guide_202",
+    "file": "slide-design-guide.md",
+    "heading": "7.3 圆角与阴影",
+    "level": 3,
+    "content_preview": "```\n卡片圆角：4-8pt（太小=锐利，太大=幼稚）\n阴影：轻微（透明度 10-20%，偏移 2-4pt）\n避免：大圆角 + 重阴影 = 廉价感\n```\n\n---",
+    "full_content": "```\n卡片圆角：4-8pt（太小=锐利，太大=幼稚）\n阴影：轻微（透明度 10-20%，偏移 2-4pt）\n避免：大圆角 + 重阴影 = 廉价感\n```\n\n---"
+  },
+  {
+    "id": "slide-design-guide_203",
+    "file": "slide-design-guide.md",
+    "heading": "八、检查清单",
+    "level": 2,
+    "content_preview": "完成一页设计后，逐条检查：\n\n- [ ] 一页只说一件事\n- [ ] 信息密度适中（3-6 个要点）\n- [ ] 字号层级清晰（标题 ≥ 36pt，正文 ≥ 20pt）\n- [ ] 颜色不超过 4 种\n- [ ] 对比度足够（深色字+浅色底）\n- [ ] 所有元素对齐\n- [ ] 留白 ≥ 20%\n- [ ] 重点突出（1-2 处）\n- [ ] 视觉动线自然\n- [ ] 后排学生能看清\n\n---",
+    "full_content": "完成一页设计后，逐条检查：\n\n- [ ] 一页只说一件事\n- [ ] 信息密度适中（3-6 个要点）\n- [ ] 字号层级清晰（标题 ≥ 36pt，正文 ≥ 20pt）\n- [ ] 颜色不超过 4 种\n- [ ] 对比度足够（深色字+浅色底）\n- [ ] 所有元素对齐\n- [ ] 留白 ≥ 20%\n- [ ] 重点突出（1-2 处）\n- [ ] 视觉动线自然\n- [ ] 后排学生能看清\n\n---"
+  },
+  {
+    "id": "slide-design-guide_204",
+    "file": "slide-design-guide.md",
+    "heading": "九、从 Slide 升级 Layout 的流程",
+    "level": 2,
+    "content_preview": "当编译器画出的 slide 效果满意时，按以下步骤固化为模板 layout：\n\n```\nStep 1: 在 PowerPoint 中打开生成的 PPT\nStep 2: 复制满意的 slide（Ctrl+C）\nStep 3: 视图 → 幻灯片母版\nStep 4: 在母版列表中粘贴（Ctrl+V）→ 自动创建新 layout\nStep 5: 删除 layout 中的内容文本，保留图形和占位符框架\nSt...",
+    "full_content": "当编译器画出的 slide 效果满意时，按以下步骤固化为模板 layout：\n\n```\nStep 1: 在 PowerPoint 中打开生成的 PPT\nStep 2: 复制满意的 slide（Ctrl+C）\nStep 3: 视图 → 幻灯片母版\nStep 4: 在母版列表中粘贴（Ctrl+V）→ 自动创建新 layout\nStep 5: 删除 layout 中的内容文本，保留图形和占位符框架\nStep 6: 调整占位符位置，匹配图形区域\nStep 7: 关闭母版视图，保存模板\nStep 8: 运行 list 命令确认新 layout 索引\nStep 9: 后续编译时检测到该 layout，直接使用而不再自己画\n```\n\n**核心原则**：先由编译器自由设计 slide → 用户认可后 → 固化为 layout → 下次复用。\n\nLayout 是**沉淀下来的最佳实践**，不是**限制创造力的枷锁**。\n\n---"
+  },
+  {
+    "id": "slide-design-guide_205",
+    "file": "slide-design-guide.md",
+    "heading": "参考",
+    "level": 2,
+    "content_preview": "- *The Non-Designer's Design Book* — Robin Williams（CRAP 原则）\n- *Slide:ology* — Nancy Duarte（演讲可视化）\n- *Presentation Zen* — Garr Reynolds（简洁呈现）\n\n---\n\n*版本: v1.0 | 更新: 2026-05-15*",
+    "full_content": "- *The Non-Designer's Design Book* — Robin Williams（CRAP 原则）\n- *Slide:ology* — Nancy Duarte（演讲可视化）\n- *Presentation Zen* — Garr Reynolds（简洁呈现）\n\n---\n\n*版本: v1.0 | 更新: 2026-05-15*"
+  },
+  {
+    "id": "workflows_206",
+    "file": "workflows.md",
+    "heading": "presenter 核心工作流",
+    "level": 1,
+    "content_preview": "> presenter 技能的完整工作流程，涵盖PPT制作、图片生成、图表设计、课程可视化。\n\n---",
+    "full_content": "> presenter 技能的完整工作流程，涵盖PPT制作、图片生成、图表设计、课程可视化。\n\n---"
+  },
+  {
+    "id": "workflows_207",
+    "file": "workflows.md",
+    "heading": "触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下场景时触发：\n- \"制作 PPT\"\n- \"制作幻灯片\"\n- \"做课件\"\n- \"制作图片\"\n- \"设计信息图\"\n- \"做个图\"\n- \"可视化\"\n- \"图表设计\"\n- \"流程图\"\n- \"思维导图\"\n- \"课程可视化\"\n- \"知识图谱\"\n\n---",
+    "full_content": "当用户提到以下场景时触发：\n- \"制作 PPT\"\n- \"制作幻灯片\"\n- \"做课件\"\n- \"制作图片\"\n- \"设计信息图\"\n- \"做个图\"\n- \"可视化\"\n- \"图表设计\"\n- \"流程图\"\n- \"思维导图\"\n- \"课程可视化\"\n- \"知识图谱\"\n\n---"
+  },
+  {
+    "id": "workflows_208",
+    "file": "workflows.md",
+    "heading": "快速开始",
+    "level": 2,
+    "content_preview": "- PPT制作：脚本编写 → Layout选择 → 编译生成\n- 图片生成：明确需求 → AI生成 → 人工调整\n- 图表设计：确定类型 → 设计布局 → 视觉美化\n- 课程可视化：内容分析 → 结构设计 → 视觉呈现\n\n---",
+    "full_content": "- PPT制作：脚本编写 → Layout选择 → 编译生成\n- 图片生成：明确需求 → AI生成 → 人工调整\n- 图表设计：确定类型 → 设计布局 → 视觉美化\n- 课程可视化：内容分析 → 结构设计 → 视觉呈现\n\n---"
+  },
+  {
+    "id": "workflows_209",
+    "file": "workflows.md",
+    "heading": "工作流速查",
+    "level": 2,
+    "content_preview": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| PPT制作 | PPT制作流程 | ppt-guide.md |\n| 脚本编写 | 脚本编写指南 | script-writing-guide.md |\n| Layout选择 | Layout选择 | layout-choice-guide.md |\n| 图片生成 | 图片生成方法论 | image-g...",
+    "full_content": "| 需求 | 对应工作流 | 对应文件名 |\n|------|------|------|\n| PPT制作 | PPT制作流程 | ppt-guide.md |\n| 脚本编写 | 脚本编写指南 | script-writing-guide.md |\n| Layout选择 | Layout选择 | layout-choice-guide.md |\n| 图片生成 | 图片生成方法论 | image-generation-guide.md |\n| 图表设计 | 图表设计 | chart-guide.md |\n| 质量检查 | 质量标准 | quality-standards.md |\n\n---"
+  },
+  {
+    "id": "workflows_210",
+    "file": "workflows.md",
+    "heading": "Q1：如何选择正确的可视化类型？",
+    "level": 3,
+    "content_preview": "1. 内容是\"课程\"吗？→ 是 → PPT制作\n2. 内容是\"流程/步骤\"吗？→ 是 → 流程图\n3. 内容是\"概念关系\"吗？→ 是 → 思维导图\n4. 其他 → 信息图/图片",
+    "full_content": "1. 内容是\"课程\"吗？→ 是 → PPT制作\n2. 内容是\"流程/步骤\"吗？→ 是 → 流程图\n3. 内容是\"概念关系\"吗？→ 是 → 思维导图\n4. 其他 → 信息图/图片"
+  },
+  {
+    "id": "workflows_211",
+    "file": "workflows.md",
+    "heading": "Q2：PPT制作的标准流程？",
+    "level": 3,
+    "content_preview": "1. 脚本编写：按script-writing-guide.md编写结构化Markdown\n2. Layout选择：根据内容类型选择合适Layout\n3. 编译生成：使用Python脚本编译成PPTX\n4. 质量检查：按quality-standards.md检查",
+    "full_content": "1. 脚本编写：按script-writing-guide.md编写结构化Markdown\n2. Layout选择：根据内容类型选择合适Layout\n3. 编译生成：使用Python脚本编译成PPTX\n4. 质量检查：按quality-standards.md检查"
+  },
+  {
+    "id": "workflows_212",
+    "file": "workflows.md",
+    "heading": "Q3：图片生成的关键步骤？",
+    "level": 3,
+    "content_preview": "1. 明确需求：确定图片用途、风格、尺寸\n2. 提示词编写：描述画面内容、构图、风格\n3. AI生成：使用image-generation-guide.md的方法\n4. 人工调整：根据结果优化\n\n---",
+    "full_content": "1. 明确需求：确定图片用途、风格、尺寸\n2. 提示词编写：描述画面内容、构图、风格\n3. AI生成：使用image-generation-guide.md的方法\n4. 人工调整：根据结果优化\n\n---"
+  },
+  {
+    "id": "workflows_213",
+    "file": "workflows.md",
+    "heading": "错误排查",
+    "level": 2,
+    "content_preview": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| PPT编译失败 | 脚本格式错误 | 检查Markdown语法 |\n| Layout选择不当 | 内容类型判断错误 | 对照决策树重新选择 |\n| 图片模糊 | 分辨率设置过低 | 提高分辨率参数 |\n| 图表不清晰 | 类型选择错误 | 换用更合适的图表类型 |\n\n---\n\n*详见 [索引...",
+    "full_content": "| 现象 | 可能原因 | 解决方法 |\n|------|----------|----------|\n| PPT编译失败 | 脚本格式错误 | 检查Markdown语法 |\n| Layout选择不当 | 内容类型判断错误 | 对照决策树重新选择 |\n| 图片模糊 | 分辨率设置过低 | 提高分辨率参数 |\n| 图表不清晰 | 类型选择错误 | 换用更合适的图表类型 |\n\n---\n\n*详见 [索引](index.md)*"
+  },
+  {
+    "id": "typography-guide_214",
+    "file": "typography-guide.md",
+    "heading": "排版方法论",
+    "level": 1,
+    "content_preview": "> 如何选择字体和设计版式\n\n---",
+    "full_content": "> 如何选择字体和设计版式\n\n---"
+  },
+  {
+    "id": "typography-guide_215",
+    "file": "typography-guide.md",
+    "heading": "1. 配对原则",
+    "level": 3,
+    "content_preview": "**标题字体 + 正文字体配对使用**，不要全部使用同一种字体。\n\n| 类型 | 特点 | 推荐场景 |\n|------|------|----------|\n| **衬线字体** | 有装饰笔画，权威感 | 学术、正式文档 |\n| **无衬线字体** | 简洁现代，易读 | 演示、数据展示 |\n| **等宽字体** | 规整对齐 | 代码、数据表格 |",
+    "full_content": "**标题字体 + 正文字体配对使用**，不要全部使用同一种字体。\n\n| 类型 | 特点 | 推荐场景 |\n|------|------|----------|\n| **衬线字体** | 有装饰笔画，权威感 | 学术、正式文档 |\n| **无衬线字体** | 简洁现代，易读 | 演示、数据展示 |\n| **等宽字体** | 规整对齐 | 代码、数据表格 |"
+  },
+  {
+    "id": "typography-guide_216",
+    "file": "typography-guide.md",
+    "heading": "2. 字体配对表",
+    "level": 3,
+    "content_preview": "| 标题字体 | 正文字体 | 风格 |\n|----------|----------|------|\n| Georgia | Calibri | 经典权威 |\n| Arial Black | Arial | 现代直接 |\n| Calibri | Calibri Light | 简洁干净 |\n| Cambria | Calibri | 商务正式 |\n| Trebuchet MS | Calibri...",
+    "full_content": "| 标题字体 | 正文字体 | 风格 |\n|----------|----------|------|\n| Georgia | Calibri | 经典权威 |\n| Arial Black | Arial | 现代直接 |\n| Calibri | Calibri Light | 简洁干净 |\n| Cambria | Calibri | 商务正式 |\n| Trebuchet MS | Calibri | 活力现代 |\n| Palatino | Garamond | 优雅传统 |\n| Consolas | Calibri | 技术数据 |"
+  },
+  {
+    "id": "typography-guide_217",
+    "file": "typography-guide.md",
+    "heading": "3. 中文字体",
+    "level": 3,
+    "content_preview": "| 类型 | 字体 | 适用场景 |\n|------|------|----------|\n| 标题 | 微软雅黑 Bold | 通用 |\n| 正文 | 微软雅黑 / 思源黑体 | 通用 |\n| 学术 | 宋体 / 思源宋体 | 论文、正式 |\n\n---",
+    "full_content": "| 类型 | 字体 | 适用场景 |\n|------|------|----------|\n| 标题 | 微软雅黑 Bold | 通用 |\n| 正文 | 微软雅黑 / 思源黑体 | 通用 |\n| 学术 | 宋体 / 思源宋体 | 论文、正式 |\n\n---"
+  },
+  {
+    "id": "typography-guide_218",
+    "file": "typography-guide.md",
+    "heading": "标准字号规范",
+    "level": 3,
+    "content_preview": "| 元素 | 字号 | 权重 | 说明 |\n|------|------|------|------|\n| 幻灯片标题 | 36-44pt | Bold | 页面核心信息 |\n| 章节标题 | 20-24pt | Bold | 分节标识 |\n| 正文 | 14-16pt | Regular | 主要内容 |\n| 注释/脚注 | 10-12pt | Regular | 辅助说明 |\n| 最小字号 |...",
+    "full_content": "| 元素 | 字号 | 权重 | 说明 |\n|------|------|------|------|\n| 幻灯片标题 | 36-44pt | Bold | 页面核心信息 |\n| 章节标题 | 20-24pt | Bold | 分节标识 |\n| 正文 | 14-16pt | Regular | 主要内容 |\n| 注释/脚注 | 10-12pt | Regular | 辅助说明 |\n| 最小字号 | 10pt | - | 不可再小 |"
+  },
+  {
+    "id": "typography-guide_219",
+    "file": "typography-guide.md",
+    "heading": "字号对比原则",
+    "level": 3,
+    "content_preview": "**标题与正文字号差距 ≥ 20pt**，确保视觉层级清晰。\n\n---",
+    "full_content": "**标题与正文字号差距 ≥ 20pt**，确保视觉层级清晰。\n\n---"
+  },
+  {
+    "id": "typography-guide_220",
+    "file": "typography-guide.md",
+    "heading": "对齐原则",
+    "level": 2,
+    "content_preview": "| 内容类型 | 对齐方式 | 原因 |\n|----------|----------|------|\n| 标题 | 居中或左对齐 | 视觉锚点 |\n| 正文段落 | **左对齐** | 阅读起点明确 |\n| 列表 | 左对齐 | 条目清晰 |\n| 数据表格 | 居中对齐 | 数字对比 |\n| 引用 | 右缩进 | 区分主次 |\n\n**错误**：正文居中对齐 → 阅读起点不明确\n\n---",
+    "full_content": "| 内容类型 | 对齐方式 | 原因 |\n|----------|----------|------|\n| 标题 | 居中或左对齐 | 视觉锚点 |\n| 正文段落 | **左对齐** | 阅读起点明确 |\n| 列表 | 左对齐 | 条目清晰 |\n| 数据表格 | 居中对齐 | 数字对比 |\n| 引用 | 右缩进 | 区分主次 |\n\n**错误**：正文居中对齐 → 阅读起点不明确\n\n---"
+  },
+  {
+    "id": "typography-guide_221",
+    "file": "typography-guide.md",
+    "heading": "间距原则",
+    "level": 2,
+    "content_preview": "| 类型 | 最小值 | 推荐值 |\n|------|--------|--------|\n| 页边距 | 0.5\" | 0.75\" |\n| 内容块间距 | 0.3\" | 0.5\" |\n| 行间距 | 1.2x | 1.5x |\n| 段落间距 | 1x | 1.5x |\n\n---",
+    "full_content": "| 类型 | 最小值 | 推荐值 |\n|------|--------|--------|\n| 页边距 | 0.5\" | 0.75\" |\n| 内容块间距 | 0.3\" | 0.5\" |\n| 行间距 | 1.2x | 1.5x |\n| 段落间距 | 1x | 1.5x |\n\n---"
+  },
+  {
+    "id": "typography-guide_222",
+    "file": "typography-guide.md",
+    "heading": "留白原则",
+    "level": 2,
+    "content_preview": "**留白不是浪费，是设计**。\n\n| 误区 | 正确理解 |\n|------|----------|\n| 留白=没填满 | 留白=呼吸空间 |\n| 内容越多越好 | 核心信息突出更重要 |\n| 填满才专业 | 简洁才有力量 |\n\n---",
+    "full_content": "**留白不是浪费，是设计**。\n\n| 误区 | 正确理解 |\n|------|----------|\n| 留白=没填满 | 留白=呼吸空间 |\n| 内容越多越好 | 核心信息突出更重要 |\n| 填满才专业 | 简洁才有力量 |\n\n---"
+  },
+  {
+    "id": "typography-guide_223",
+    "file": "typography-guide.md",
+    "heading": "常见错误",
+    "level": 2,
+    "content_preview": "| 错误 | 问题 | 正确做法 |\n|------|------|----------|\n| 全部使用同一种字体 | 缺乏层级 | 标题/正文配对 |\n| 正文字号太小 | 难以阅读 | 正文 ≥ 14pt |\n| 字号差距太小 | 层级不清 | 标题 ≥ 36pt，正文 ≤ 16pt |\n| 正文居中对齐 | 阅读困难 | 正文左对齐 |\n| 行间距过密 | 阅读疲劳 | 行间距 ≥ 1.2x...",
+    "full_content": "| 错误 | 问题 | 正确做法 |\n|------|------|----------|\n| 全部使用同一种字体 | 缺乏层级 | 标题/正文配对 |\n| 正文字号太小 | 难以阅读 | 正文 ≥ 14pt |\n| 字号差距太小 | 层级不清 | 标题 ≥ 36pt，正文 ≤ 16pt |\n| 正文居中对齐 | 阅读困难 | 正文左对齐 |\n| 行间距过密 | 阅读疲劳 | 行间距 ≥ 1.2x |\n| 页面填太满 | 视觉压抑 | 保留 20-30% 留白 |\n\n---"
+  },
+  {
+    "id": "typography-guide_224",
+    "file": "typography-guide.md",
+    "heading": "判断标准",
+    "level": 2,
+    "content_preview": "**如何判断排版是否合格？**\n\n1. **层级清晰**：一眼能分辨标题/正文/注释？\n2. **阅读流畅**：正文左对齐，阅读起点明确？\n3. **呼吸感**：内容不拥挤，有留白空间？\n4. **字号适当**：最小字号 ≥ 10pt？\n\n---\n\n*最后更新：2026-05-20*",
+    "full_content": "**如何判断排版是否合格？**\n\n1. **层级清晰**：一眼能分辨标题/正文/注释？\n2. **阅读流畅**：正文左对齐，阅读起点明确？\n3. **呼吸感**：内容不拥挤，有留白空间？\n4. **字号适当**：最小字号 ≥ 10pt？\n\n---\n\n*最后更新：2026-05-20*"
+  },
+  {
+    "id": "ui-guide_225",
+    "file": "ui-guide.md",
+    "heading": "UI 视觉指南",
+    "level": 1,
+    "content_preview": "> 软件界面视觉设计规范\n\n---",
+    "full_content": "> 软件界面视觉设计规范\n\n---"
+  },
+  {
+    "id": "ui-guide_226",
+    "file": "ui-guide.md",
+    "heading": "核心原则",
+    "level": 2,
+    "content_preview": "| 优先级 | 原则 | 说明 |\n|--------|------|------|\n| 1 | **视觉一致性** | 同一产品内保持统一的视觉语言 |\n| 2 | **功能可见性** | 视觉元素应暗示其功能 |\n| 3 | **信息层级** | 重要信息突出，次要信息弱化 |\n| 4 | **对齐精确** | 像素级对齐，无模糊间距 |\n\n---",
+    "full_content": "| 优先级 | 原则 | 说明 |\n|--------|------|------|\n| 1 | **视觉一致性** | 同一产品内保持统一的视觉语言 |\n| 2 | **功能可见性** | 视觉元素应暗示其功能 |\n| 3 | **信息层级** | 重要信息突出，次要信息弱化 |\n| 4 | **对齐精确** | 像素级对齐，无模糊间距 |\n\n---"
+  },
+  {
+    "id": "ui-guide_227",
+    "file": "ui-guide.md",
+    "heading": "栅格系统",
+    "level": 3,
+    "content_preview": "- 桌面端：12列栅格，间距 16px / 24px / 32px\n- 移动端：4列栅格，间距 12px / 16px\n- 关键元素左对齐或居中对齐",
+    "full_content": "- 桌面端：12列栅格，间距 16px / 24px / 32px\n- 移动端：4列栅格，间距 12px / 16px\n- 关键元素左对齐或居中对齐"
+  },
+  {
+    "id": "ui-guide_228",
+    "file": "ui-guide.md",
+    "heading": "留白",
+    "level": 3,
+    "content_preview": "- 组件内边距：12px / 16px / 24px\n- 组件间距：8px / 16px / 24px / 32px\n- 页面边距：24px（桌面）/ 16px（移动）\n\n---",
+    "full_content": "- 组件内边距：12px / 16px / 24px\n- 组件间距：8px / 16px / 24px / 32px\n- 页面边距：24px（桌面）/ 16px（移动）\n\n---"
+  },
+  {
+    "id": "ui-guide_229",
+    "file": "ui-guide.md",
+    "heading": "语义色",
+    "level": 3,
+    "content_preview": "| 用途 | 色值建议 |\n|------|----------|\n| 主色 | 品牌主色，用于关键 CTA |\n| 辅助色 | 主色搭配色，用于次要元素 |\n| 成功 | `#22C55E` 或品牌绿 |\n| 警告 | `#F59E0B` 或品牌橙 |\n| 错误 | `#EF4444` 或品牌红 |\n| 文字主色 | `#1F2937`（深灰） |\n| 文字次色 | `#6B7280`（中灰） ...",
+    "full_content": "| 用途 | 色值建议 |\n|------|----------|\n| 主色 | 品牌主色，用于关键 CTA |\n| 辅助色 | 主色搭配色，用于次要元素 |\n| 成功 | `#22C55E` 或品牌绿 |\n| 警告 | `#F59E0B` 或品牌橙 |\n| 错误 | `#EF4444` 或品牌红 |\n| 文字主色 | `#1F2937`（深灰） |\n| 文字次色 | `#6B7280`（中灰） |\n| 背景色 | `#FFFFFF` / `#F9FAFB` |\n| 边框色 | `#E5E7EB` |"
+  },
+  {
+    "id": "ui-guide_230",
+    "file": "ui-guide.md",
+    "heading": "深色模式",
+    "level": 3,
+    "content_preview": "- 背景：`#111827`\n- 卡片：`#1F2937`\n- 边框：`#374151`\n\n---",
+    "full_content": "- 背景：`#111827`\n- 卡片：`#1F2937`\n- 边框：`#374151`\n\n---"
+  },
+  {
+    "id": "ui-guide_231",
+    "file": "ui-guide.md",
+    "heading": "字体规范",
+    "level": 2,
+    "content_preview": "| 元素 | 字号 | 字重 | 行高 |\n|------|------|------|------|\n| 标题 H1 | 24px | 700 | 1.2 |\n| 标题 H2 | 20px | 600 | 1.3 |\n| 标题 H3 | 16px | 600 | 1.4 |\n| 正文 | 14px | 400 | 1.5 |\n| 辅助文字 | 12px | 400 | 1.4 |\n| 按钮文字 ...",
+    "full_content": "| 元素 | 字号 | 字重 | 行高 |\n|------|------|------|------|\n| 标题 H1 | 24px | 700 | 1.2 |\n| 标题 H2 | 20px | 600 | 1.3 |\n| 标题 H3 | 16px | 600 | 1.4 |\n| 正文 | 14px | 400 | 1.5 |\n| 辅助文字 | 12px | 400 | 1.4 |\n| 按钮文字 | 14px | 500 | 1 |\n\n---"
+  },
+  {
+    "id": "ui-guide_232",
+    "file": "ui-guide.md",
+    "heading": "图标规范",
+    "level": 2,
+    "content_preview": "- 风格：线性图标（2px 描边）\n- 尺寸：16px / 20px / 24px / 32px\n- 颜色：跟随文字颜色或纯色\n- 命名：清晰表意外观，如 `icon-check-circle.svg`\n\n---",
+    "full_content": "- 风格：线性图标（2px 描边）\n- 尺寸：16px / 20px / 24px / 32px\n- 颜色：跟随文字颜色或纯色\n- 命名：清晰表意外观，如 `icon-check-circle.svg`\n\n---"
+  },
+  {
+    "id": "ui-guide_233",
+    "file": "ui-guide.md",
+    "heading": "按钮",
+    "level": 3,
+    "content_preview": "- 高度：32px（小型）/ 40px（中型）/ 48px（大型）\n- 圆角：4px（小型）/ 8px（中型）/ 12px（大型）\n- 主按钮：实心主色，文字白色\n- 次按钮：边框主色，文字主色",
+    "full_content": "- 高度：32px（小型）/ 40px（中型）/ 48px（大型）\n- 圆角：4px（小型）/ 8px（中型）/ 12px（大型）\n- 主按钮：实心主色，文字白色\n- 次按钮：边框主色，文字主色"
+  },
+  {
+    "id": "ui-guide_234",
+    "file": "ui-guide.md",
+    "heading": "输入框",
+    "level": 3,
+    "content_preview": "- 高度：40px\n- 边框：1px `#E5E7EB`\n- 圆角：6px\n- 聚焦：边框变主色，添加阴影",
+    "full_content": "- 高度：40px\n- 边框：1px `#E5E7EB`\n- 圆角：6px\n- 聚焦：边框变主色，添加阴影"
+  },
+  {
+    "id": "ui-guide_235",
+    "file": "ui-guide.md",
+    "heading": "卡片",
+    "level": 3,
+    "content_preview": "- 背景：白色\n- 边框：1px `#E5E7EB` 或无边框\n- 圆角：12px\n- 阴影：`0 1px 3px rgba(0,0,0,0.1)`\n\n---",
+    "full_content": "- 背景：白色\n- 边框：1px `#E5E7EB` 或无边框\n- 圆角：12px\n- 阴影：`0 1px 3px rgba(0,0,0,0.1)`\n\n---"
+  },
+  {
+    "id": "ui-guide_236",
+    "file": "ui-guide.md",
+    "heading": "交互反馈",
+    "level": 2,
+    "content_preview": "| 状态 | 视觉反馈 |\n|------|----------|\n| 悬停 | 背景色加深 10%，光标变为 pointer |\n| 点击 | 背景色加深 15%，轻微缩放 0.98 |\n| 禁用 | 透明度 50%，光标变为 not-allowed |\n| 加载 | 显示 spinner，禁用交互 |\n| 聚焦 | 添加 2px 主色外边框 |\n\n---",
+    "full_content": "| 状态 | 视觉反馈 |\n|------|----------|\n| 悬停 | 背景色加深 10%，光标变为 pointer |\n| 点击 | 背景色加深 15%，轻微缩放 0.98 |\n| 禁用 | 透明度 50%，光标变为 not-allowed |\n| 加载 | 显示 spinner，禁用交互 |\n| 聚焦 | 添加 2px 主色外边框 |\n\n---"
+  },
+  {
+    "id": "ui-guide_237",
+    "file": "ui-guide.md",
+    "heading": "版本",
+    "level": 2,
+    "content_preview": "| 版本 | 日期 | 更新 |\n|------|------|------|\n| 1.0.0 | 2026-05-21 | 初始版本 |",
+    "full_content": "| 版本 | 日期 | 更新 |\n|------|------|------|\n| 1.0.0 | 2026-05-21 | 初始版本 |"
+  },
+  {
+    "id": "quality-standards_238",
+    "file": "quality-standards.md",
+    "heading": "质量检查清单",
+    "level": 1,
+    "content_preview": "> presenter 技能交付物质量检查标准\n\n---",
+    "full_content": "> presenter 技能交付物质量检查标准\n\n---"
+  },
+  {
+    "id": "quality-standards_239",
+    "file": "quality-standards.md",
+    "heading": "1.1 内容检查",
+    "level": 3,
+    "content_preview": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 1 | 内容完整性 | 所有脚本中的核心内容都出现在 PPT 中 |\n| 2 | 内容准确性 | 忠实呈现原意，无遗漏、无歪曲 |\n| 3 | 文字正确性 | 无错别字、无语法错误 |\n| 4 | 逻辑顺序 | 内容顺序符合教学逻辑 |",
+    "full_content": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 1 | 内容完整性 | 所有脚本中的核心内容都出现在 PPT 中 |\n| 2 | 内容准确性 | 忠实呈现原意，无遗漏、无歪曲 |\n| 3 | 文字正确性 | 无错别字、无语法错误 |\n| 4 | 逻辑顺序 | 内容顺序符合教学逻辑 |"
+  },
+  {
+    "id": "quality-standards_240",
+    "file": "quality-standards.md",
+    "heading": "1.2 视觉检查",
+    "level": 3,
+    "content_preview": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 5 | 元素重叠 | 无文字与形状重叠 |\n| 6 | 边界溢出 | 无内容超出边界 |\n| 7 | 间距一致 | 相同类型元素间距一致 |\n| 8 | 边距合规 | 边距 ≥ 0.5\" |\n| 9 | 对齐整齐 | 相同类型元素对齐 |",
+    "full_content": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 5 | 元素重叠 | 无文字与形状重叠 |\n| 6 | 边界溢出 | 无内容超出边界 |\n| 7 | 间距一致 | 相同类型元素间距一致 |\n| 8 | 边距合规 | 边距 ≥ 0.5\" |\n| 9 | 对齐整齐 | 相同类型元素对齐 |"
+  },
+  {
+    "id": "quality-standards_241",
+    "file": "quality-standards.md",
+    "heading": "1.3 配色检查",
+    "level": 3,
+    "content_preview": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 10 | 配色一致 | 整套 PPT 配色统一 |\n| 11 | 对比度 | 文字与背景对比度足够 |\n| 12 | 强调色 | 关键信息使用强调色 |",
+    "full_content": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 10 | 配色一致 | 整套 PPT 配色统一 |\n| 11 | 对比度 | 文字与背景对比度足够 |\n| 12 | 强调色 | 关键信息使用强调色 |"
+  },
+  {
+    "id": "quality-standards_242",
+    "file": "quality-standards.md",
+    "heading": "1.4 字体检查",
+    "level": 3,
+    "content_preview": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 13 | 字号层次 | 标题 > 正文字号 |\n| 14 | 可读性 | 最小字号 ≥ 10pt |\n\n---",
+    "full_content": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 13 | 字号层次 | 标题 > 正文字号 |\n| 14 | 可读性 | 最小字号 ≥ 10pt |\n\n---"
+  },
+  {
+    "id": "quality-standards_243",
+    "file": "quality-standards.md",
+    "heading": "2.1 内容检查",
+    "level": 3,
+    "content_preview": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 1 | 信息完整 | 核心信息完整呈现 |\n| 2 | 表达清晰 | 一看即懂，无需解释 |",
+    "full_content": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 1 | 信息完整 | 核心信息完整呈现 |\n| 2 | 表达清晰 | 一看即懂，无需解释 |"
+  },
+  {
+    "id": "quality-standards_244",
+    "file": "quality-standards.md",
+    "heading": "2.2 视觉检查",
+    "level": 3,
+    "content_preview": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 3 | 构图平衡 | 视觉重心居中或平衡 |\n| 4 | 留白适当 | 不过于拥挤 |\n| 5 | 分辨率 | ≥ 1080p |\n\n---",
+    "full_content": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 3 | 构图平衡 | 视觉重心居中或平衡 |\n| 4 | 留白适当 | 不过于拥挤 |\n| 5 | 分辨率 | ≥ 1080p |\n\n---"
+  },
+  {
+    "id": "quality-standards_245",
+    "file": "quality-standards.md",
+    "heading": "3.1 内容检查",
+    "level": 3,
+    "content_preview": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 1 | 关系正确 | 元素关系准确 |\n| 2 | 标注清晰 | 每元素有明确标注 |",
+    "full_content": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 1 | 关系正确 | 元素关系准确 |\n| 2 | 标注清晰 | 每元素有明确标注 |"
+  },
+  {
+    "id": "quality-standards_246",
+    "file": "quality-standards.md",
+    "heading": "3.2 视觉检查",
+    "level": 3,
+    "content_preview": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 3 | 层级清晰 | 不同层级可区分 |\n| 4 | 颜色区分 | 不同类别用不同颜色 |\n| 5 | 方向一致 | 流程方向统一 |\n\n---",
+    "full_content": "| # | 检查项 | 通过标准 |\n|---|--------|----------|\n| 3 | 层级清晰 | 不同层级可区分 |\n| 4 | 颜色区分 | 不同类别用不同颜色 |\n| 5 | 方向一致 | 流程方向统一 |\n\n---"
+  },
+  {
+    "id": "quality-standards_247",
+    "file": "quality-standards.md",
+    "heading": "四、设计原则速查",
+    "level": 2,
+    "content_preview": "| 原则 | 说明 |\n|------|------|\n| **一图胜千言** | 好的可视化胜过千言万语 |\n| **留白是设计** | 信息密度与呼吸感同样重要 |\n| **一致性建立信任** | 统一的视觉语言让内容更专业 |\n| **呈现服务于理解** | 所有设计都为了让知识更易懂 |\n\n---",
+    "full_content": "| 原则 | 说明 |\n|------|------|\n| **一图胜千言** | 好的可视化胜过千言万语 |\n| **留白是设计** | 信息密度与呼吸感同样重要 |\n| **一致性建立信任** | 统一的视觉语言让内容更专业 |\n| **呈现服务于理解** | 所有设计都为了让知识更易懂 |\n\n---"
+  },
+  {
+    "id": "quality-standards_248",
+    "file": "quality-standards.md",
+    "heading": "五、检查流程",
+    "level": 2,
+    "content_preview": "```\n生成可视化 → 转换为图片 → 视觉检查 → 修复问题 → 重新检查\n     ↓            ↓           ↓\n  内容检查    细节放大    远观整体\n```\n\n---\n\n*最后更新：2026-05-20*",
+    "full_content": "```\n生成可视化 → 转换为图片 → 视觉检查 → 修复问题 → 重新检查\n     ↓            ↓           ↓\n  内容检查    细节放大    远观整体\n```\n\n---\n\n*最后更新：2026-05-20*"
+  },
+  {
+    "id": "guide_249",
+    "file": "guide.md",
+    "heading": "presenter 使用指南",
+    "level": 1,
+    "content_preview": "> presenter 技能的核心使用说明\n\n---",
+    "full_content": "> presenter 技能的核心使用说明\n\n---"
+  },
+  {
+    "id": "guide_250",
+    "file": "guide.md",
+    "heading": "一、概述",
+    "level": 2,
+    "content_preview": "presenter 是**唯一可视化技能**，负责：\n- PPT/幻灯片制作\n- 图片制作（信息图、插图、海报）\n- 图表设计（流程图、思维导图）\n- 课程可视化（教学图表、知识图谱）\n\n---",
+    "full_content": "presenter 是**唯一可视化技能**，负责：\n- PPT/幻灯片制作\n- 图片制作（信息图、插图、海报）\n- 图表设计（流程图、思维导图）\n- 课程可视化（教学图表、知识图谱）\n\n---"
+  },
+  {
+    "id": "guide_251",
+    "file": "guide.md",
+    "heading": "二、触发条件",
+    "level": 2,
+    "content_preview": "当用户提到以下场景时触发：\n- \"制作 PPT\"、\"制作幻灯片\"、\"做课件\"\n- \"制作图片\"、\"设计信息图\"、\"做个图\"\n- \"可视化\"、\"图表设计\"\n- \"流程图\"、\"思维导图\"\n- \"课程可视化\"、\"知识图谱\"\n\n---",
+    "full_content": "当用户提到以下场景时触发：\n- \"制作 PPT\"、\"制作幻灯片\"、\"做课件\"\n- \"制作图片\"、\"设计信息图\"、\"做个图\"\n- \"可视化\"、\"图表设计\"\n- \"流程图\"、\"思维导图\"\n- \"课程可视化\"、\"知识图谱\"\n\n---"
+  },
+  {
+    "id": "guide_252",
+    "file": "guide.md",
+    "heading": "3.1 内容类型判断",
+    "level": 3,
+    "content_preview": "| 内容类型 | 推荐可视化 |\n|----------|------------|\n| 教学流程、步骤操作 | **PPT 幻灯片** |\n| 概念关系、层级结构 | **思维导图** |\n| 流程/步骤/阶段 | **流程图** |\n| 数据对比、统计分析 | **信息图/图表** |\n| 课程整体呈现 | **PPT 课件** |",
+    "full_content": "| 内容类型 | 推荐可视化 |\n|----------|------------|\n| 教学流程、步骤操作 | **PPT 幻灯片** |\n| 概念关系、层级结构 | **思维导图** |\n| 流程/步骤/阶段 | **流程图** |\n| 数据对比、统计分析 | **信息图/图表** |\n| 课程整体呈现 | **PPT 课件** |"
+  },
+  {
+    "id": "guide_253",
+    "file": "guide.md",
+    "heading": "3.2 快速决策",
+    "level": 3,
+    "content_preview": "```\n内容是\"课程\"吗？\n├── 是 → 使用 PPT 制作流程\n└── 否 → 内容是\"流程/步骤\"吗？\n    ├── 是 → 流程图\n    └── 否 → 内容是\"概念关系\"吗？\n        ├── 是 → 思维导图\n        └── 否 → 信息图/图片\n```\n\n---",
+    "full_content": "```\n内容是\"课程\"吗？\n├── 是 → 使用 PPT 制作流程\n└── 否 → 内容是\"流程/步骤\"吗？\n    ├── 是 → 流程图\n    └── 否 → 内容是\"概念关系\"吗？\n        ├── 是 → 思维导图\n        └── 否 → 信息图/图片\n```\n\n---"
+  },
+  {
+    "id": "guide_254",
+    "file": "guide.md",
+    "heading": "四、可视化类型详细指南",
+    "level": 2,
+    "content_preview": "| 类型 | 指南 | 说明 |\n|------|------|------|\n| PPT | [ppt-guide.md](ppt-guide.md) | 脚本设计 → Layout → 编译 |\n| 图片生成 | [image-guide.md](image-guide.md) + [图片生成方法论](image-generation-guide.md) | AI 图片生成、图文设计 |\n| ...",
+    "full_content": "| 类型 | 指南 | 说明 |\n|------|------|------|\n| PPT | [ppt-guide.md](ppt-guide.md) | 脚本设计 → Layout → 编译 |\n| 图片生成 | [image-guide.md](image-guide.md) + [图片生成方法论](image-generation-guide.md) | AI 图片生成、图文设计 |\n| 图表 | [chart-guide.md](chart-guide.md) | 流程图、思维导图 |\n\n---"
+  },
+  {
+    "id": "guide_255",
+    "file": "guide.md",
+    "heading": "五、质量检查",
+    "level": 2,
+    "content_preview": "每次交付前必须检查：\n- [ ] 内容准确性：忠实呈现原意\n- [ ] 视觉规范性：符合设计规范\n- [ ] 信息清晰度：核心信息突出\n- [ 美观度：布局、配色、字体\n\n详细清单：[quality-standards.md](quality-standards.md)\n\n---",
+    "full_content": "每次交付前必须检查：\n- [ ] 内容准确性：忠实呈现原意\n- [ ] 视觉规范性：符合设计规范\n- [ ] 信息清晰度：核心信息突出\n- [ 美观度：布局、配色、字体\n\n详细清单：[quality-standards.md](quality-standards.md)\n\n---"
+  },
+  {
+    "id": "guide_256",
+    "file": "guide.md",
+    "heading": "六、MCP 工具",
+    "level": 2,
+    "content_preview": "暂无 MCP 工具，后续根据需求暴露。\n\n---\n\n*最后更新：2026-05-20*",
+    "full_content": "暂无 MCP 工具，后续根据需求暴露。\n\n---\n\n*最后更新：2026-05-20*"
+  }
+]

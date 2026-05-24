@@ -161,10 +161,10 @@ aliases:
 ## 九、相关概念
 
 - [[concepts/autobiographical-memory]]（自传体记忆）- 对比/个体层面
-- [[concepts/social-identity]]（社会同一性）- 功能
-- [[concepts/cultural-memory]]（文化记忆）- 相关概念
+- concepts/social-identity（社会同一性）- 功能
+- concepts/cultural-memory（文化记忆）- 相关概念
 - [[concepts/digital-memory]]（数字记忆）- 数字时代变化
-- [[concepts/memory-politics]]（记忆政治）- 相关机制
+- concepts/memory-politics（记忆政治）- 相关机制
 
 ---
 
