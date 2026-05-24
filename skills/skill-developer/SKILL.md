@@ -33,7 +33,7 @@ metadata:
 |------|------|
 | 禁止复制 | 自检脚本 scripts/selfcheck.py 通过 skill-developer 调用，不在初始化时复制 |
 | 禁止擅自定义 | scripts/ 结构取决于代理目的，不可强制要求特定结构 |
-| 禁止缺少 CLI | 所有技能必须提供 `{技能名} {子命令}` 格式的 CLI 入口，并写入 `pyproject.toml` 的 `project.scripts` |
+| 禁止缺少 CLI | 所有技能必须提供 `{技能名} {子命令}` 格式的 CLI 入口，详见 [scripts-standards.md](references/scripts-standards.md) |
 | 禁止 CLI 命名乱来 | 子命令必须全小写，技能名必须与 `project.name` 一致，禁止驼峰/大写 |
 
 ---
@@ -60,6 +60,7 @@ skill-developer init <skill-name> <description> [path] [emoji]
 | 指南写作 | [references/guide-writing-guide.md](references/guide-writing-guide.md) |
 | 质量标准 | [references/quality-standards.md](references/quality-standards.md) |
 | 代码规范 | [references/coding-standards.md](references/coding-standards.md) |
+| scripts 规范 | [references/scripts-standards.md](references/scripts-standards.md) |
 | 开发工作流 | [references/development-workflow.md](references/development-workflow.md) |
 | 更新工作流 | [references/update-workflow.md](references/update-workflow.md) |
 

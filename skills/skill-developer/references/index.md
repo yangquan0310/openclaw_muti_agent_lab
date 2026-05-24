@@ -14,6 +14,7 @@
 | [指南写作](guide-writing-guide.md) | 如何编写指南文档 |
 | [质量标准](quality-standards.md) | 技能质量检查清单 |
 | [代码规范](coding-standards.md) | 代码规范与模板 |
+| [scripts 规范](scripts-standards.md) | scripts/ 目录结构、模块文件规范 |
 | [开发工作流](development-workflow.md) | 开发工作流步骤 |
 | [更新工作流](update-workflow.md) | 如何更新已有技能 |
 
