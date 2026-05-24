@@ -120,10 +120,8 @@ python3 -m scripts.lookup.searcher "单元测试 怎么写"
 ## 快速调用
 
 ```bash
-# 构建索引
-lookup index -r /root/.openclaw/workspace/programmer/skills/programmer/references \
-  -m /root/.openclaw/workspace/programmer/skills/programmer/index/manifest.json \
-  -c /root/.openclaw/workspace/programmer/skills/programmer/index/chunks.json
+# 构建索引（references 文档有更新时执行）
+lookup index -r /root/.openclaw/workspace/programmer/skills/programmer/references -m /root/.openclaw/workspace/programmer/skills/programmer/index/manifest.json -c /root/.openclaw/workspace/programmer/skills/programmer/index/chunks.json
 
 # 搜索指南
 lookup search -i /root/.openclaw/workspace/programmer/skills/programmer/index/manifest.json <关键词>

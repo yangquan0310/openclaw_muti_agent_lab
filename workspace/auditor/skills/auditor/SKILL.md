@@ -89,20 +89,14 @@ metadata:
 ## 快速调用
 
 ```bash
-# 审计检查
-auditor --type financial --file report.pdf
-auditor --type compliance --dir ./docs
-
-# 构建索引
-lookup index -r /root/.openclaw/workspace/auditor/skills/auditor/references \
-  -m /root/.openclaw/workspace/auditor/skills/auditor/index/manifest.json \
-  -c /root/.openclaw/workspace/auditor/skills/auditor/index/chunks.json
+# 构建索引（references 文档有更新时执行）
+lookup index -r /root/.openclaw/workspace/auditor/skills/auditor/references -m /root/.openclaw/workspace/auditor/skills/auditor/index/manifest.json -c /root/.openclaw/workspace/auditor/skills/auditor/index/chunks.json
 
 # 搜索指南
 lookup search -i /root/.openclaw/workspace/auditor/skills/auditor/index/manifest.json <关键词>
 
-# 查看帮助
-auditor --help
+# 列出已索引文件
+lookup list -i /root/.openclaw/workspace/auditor/skills/auditor/index/manifest.json
 ```
 
 ## 模块导航

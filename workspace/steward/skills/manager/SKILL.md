@@ -61,16 +61,14 @@ metadata:
 ## 快速调用
 
 ```bash
-# 项目整理
-python3 scripts/maintainer/Maintainer.py --help
-
-# 构建索引
-lookup index -r /root/.openclaw/workspace/steward/skills/manager/references \
-  -m /root/.openclaw/workspace/steward/skills/manager/index/manifest.json \
-  -c /root/.openclaw/workspace/steward/skills/manager/index/chunks.json
+# 构建索引（references 文档有更新时执行）
+lookup index -r /root/.openclaw/workspace/steward/skills/manager/references -m /root/.openclaw/workspace/steward/skills/manager/index/manifest.json -c /root/.openclaw/workspace/steward/skills/manager/index/chunks.json
 
 # 搜索指南
 lookup search -i /root/.openclaw/workspace/steward/skills/manager/index/manifest.json <关键词>
+
+# 列出已索引文件
+lookup list -i /root/.openclaw/workspace/steward/skills/manager/index/manifest.json
 ```
 
 ## 版本历史
