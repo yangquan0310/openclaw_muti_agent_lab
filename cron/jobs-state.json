@@ -2,30 +2,44 @@
   "version": 1,
   "jobs": {
     "b6a6b07d-384d-43fb-ab80-0b713e8a8289": {
-      "updatedAtMs": 1779519239636,
+      "updatedAtMs": 1779566572972,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"00 04 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "lastRunAtMs": 1779519013855,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 225781,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
+        "lastRunAtMs": 1779566400010,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 172962,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
         "consecutiveSkipped": 0,
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "lastDelivered": true,
-        "nextRunAtMs": 1779566400000
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "nextRunAtMs": 1779652800000,
+        "lastError": "FallbackSummaryError: All models failed (2): minimax/MiniMax-M2.7-highspeed: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded) | minimax/MiniMax-M2.7: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded)",
+        "lastDiagnostics": {
+          "summary": "All models failed (2): minimax/MiniMax-M2.7-highspeed: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded) | minimax/MiniMax-M2.7: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded)",
+          "entries": [
+            {
+              "ts": 1779566572972,
+              "source": "agent-run",
+              "severity": "error",
+              "message": "All models failed (2): minimax/MiniMax-M2.7-highspeed: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded) | minimax/MiniMax-M2.7: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded)"
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "All models failed (2): minimax/MiniMax-M2.7-highspeed: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded) | minimax/MiniMax-M2.7: {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"server is busy, please retry later\"}} (overloaded)",
+        "lastErrorReason": "overloaded",
+        "lastFailureAlertAtMs": 1779566572985
       }
     },
     "dc7447e5-7fcf-4c64-8079-e811456af6ed": {
-      "updatedAtMs": 1779476452802,
+      "updatedAtMs": 1779562855224,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 3 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1779562800000,
-        "lastRunAtMs": 1779476400040,
+        "nextRunAtMs": 1779649200000,
+        "lastRunAtMs": 1779562800011,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 52762,
+        "lastDurationMs": 55213,
         "lastDeliveryStatus": "not-requested",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,

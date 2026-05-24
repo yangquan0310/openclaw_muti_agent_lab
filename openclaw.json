@@ -22,7 +22,8 @@
       "model": {
         "primary": "minimax/MiniMax-M2.7-highspeed",
         "fallbacks": [
-          "minimax/MiniMax-M2.7"
+          "minimax/MiniMax-M2.7",
+          "deepseek/deepseek-v4-flash"
         ]
       },
       "imageModel": {
@@ -153,6 +154,22 @@
       "search": {
         "enabled": true,
         "provider": "minimax"
+      }
+    },
+    "media": {
+      "image": {
+        "enabled": true,
+        "maxBytes": 10485760,
+        "maxChars": 500,
+        "models": [
+          {
+            "provider": "minimax",
+            "model": "MiniMax-VL-01",
+            "capabilities": [
+              "image"
+            ]
+          }
+        ]
       }
     }
   },
@@ -293,8 +310,8 @@
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.5.20",
-    "lastTouchedAt": "2026-05-23T10:42:22.230Z"
+    "lastTouchedVersion": "2026.5.22",
+    "lastTouchedAt": "2026-05-24T11:51:03.890Z"
   },
   "browser": {
     "enabled": true,
@@ -823,7 +840,7 @@
     "profiles": {}
   },
   "proxy": {
-    "enabled": true,
+    "enabled": false,
     "proxyUrl": "http://127.0.0.1:9981",
     "loopbackMode": "gateway-only"
   }

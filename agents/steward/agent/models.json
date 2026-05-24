@@ -2,7 +2,6 @@
   "providers": {
     "deepseek": {
       "baseUrl": "https://api.deepseek.com/anthropic",
-      "apiKey": "DEEPSEEK_API_KEY",
       "api": "anthropic-messages",
       "models": [
         {
@@ -30,7 +29,8 @@
             "cacheWrite": 0
           }
         }
-      ]
+      ],
+      "apiKey": "DEEPSEEK_API_KEY"
     },
     "kimicode": {
       "baseUrl": "https://api.kimi.com/coding/v1",
@@ -58,8 +58,8 @@
     },
     "minimax": {
       "baseUrl": "https://api.minimax.io/anthropic",
-      "apiKey": "MINIMAX_API_KEY",
       "api": "anthropic-messages",
+      "authHeader": true,
       "models": [
         {
           "id": "MiniMax-M2.7",
@@ -101,7 +101,8 @@
             "text"
           ]
         }
-      ]
+      ],
+      "apiKey": "MINIMAX_API_KEY"
     },
     "glmcode": {
       "baseUrl": "https://open.bigmodel.cn/api/anthropic",
