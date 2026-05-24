@@ -132,8 +132,10 @@ def main():
         description='搜索 References 指南'
     )
     parser.add_argument('query', nargs='?', help='搜索关键词')
-    parser.add_argument('--skill', default='programmer',
+    parser.add_argument('--skill',
                         help='技能名（默认 programmer）')
+    parser.add_argument('--path',
+                        help='技能根目录路径（与 --skill 二选一）')
     parser.add_argument('--files-only', '-f', action='store_true',
                         help='只显示文件匹配')
     parser.add_argument('--list', '-l', action='store_true',
@@ -142,20 +144,29 @@ def main():
                         help='返回结果数（默认 5）')
     args = parser.parse_args()
 
-    skill_root = resolve_skill_root(args.skill)
-    if not skill_root:
-        print(f"Error: 技能目录不存在: {args.skill}")
-        return 1
+    if not args.path:
+        skill_arg = args.skill or 'programmer'
+        skill_root = resolve_skill_root(skill_arg)
+        if not skill_root:
+            print(f"Error: 技能目录不存在: {skill_arg}")
+            return 1
+        skill_title = skill_arg.replace('-', ' ').title()
+    else:
+        skill_root = Path(args.path)
+        skill_title = skill_root.name
+        if not skill_root.exists():
+            print(f"Error: 路径不存在: {args.path}")
+            return 1
+
     index_dir = skill_root / "index"
 
     try:
         searcher = ReferencesSearcher(index_dir)
     except FileNotFoundError as e:
         print(f"Error: {e}")
-        print(f"\n请先构建索引: lookup index --skill {args.skill}")
+        index_hint = f"lookup index --path {args.path}" if args.path else f"lookup index --skill {skill_arg}"
+        print(f"\n请先构建索引: {index_hint}")
         return 1
-
-    skill_title = args.skill.replace('-', ' ').title()
 
     if args.list:
         files = searcher.list_files()

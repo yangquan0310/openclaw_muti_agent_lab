@@ -3,10 +3,11 @@
 lookup - 中央 References 搜索与索引工具
 
 Usage:
-    lookup search [--skill <name>] <query>        搜索指南
-    lookup index --skill <name>                   构建索引
-    lookup list [--skill <name>]                  列出已索引文件
-    lookup --help                                 显示本帮助
+    lookup search [--skill <name>] [--path <path>] <query>  搜索指南
+    lookup index --skill <name> | --path <path>            构建索引
+    lookup list [--skill <name>] [--path <path>]          列出已索引文件
+
+    lookup --help                                   显示本帮助
 """
 
 import sys
@@ -25,8 +26,10 @@ def cmd_search(args):
     sys.argv = ['searcher']
     if args.query:
         sys.argv.append(args.query)
-    if args.skill:
+    if getattr(args, 'skill', None):
         sys.argv.extend(['--skill', args.skill])
+    elif getattr(args, 'path', None):
+        sys.argv.extend(['--path', args.path])
     if getattr(args, 'files_only', False):
         sys.argv.extend(['--files-only'])
     if getattr(args, 'list', False):
@@ -38,7 +41,11 @@ def cmd_search(args):
 
 def cmd_index(args):
     from scripts.indexer import main as indexer_main
-    sys.argv = ['indexer', '--skill', args.skill]
+    sys.argv = ['indexer']
+    if args.skill:
+        sys.argv.extend(['--skill', args.skill])
+    elif args.path:
+        sys.argv.extend(['--path', args.path])
     return indexer_main()
 
 
@@ -63,8 +70,10 @@ def main():
     # lookup search
     p_search = subparsers.add_parser('search', help='搜索指南')
     p_search.add_argument('query', nargs='?', help='搜索关键词')
-    p_search.add_argument('--skill', default='programmer',
+    p_search.add_argument('--skill',
                           help='技能名（默认 programmer）')
+    p_search.add_argument('--path',
+                          help='技能根目录路径（与 --skill 二选一）')
     p_search.add_argument('--files-only', '-f', action='store_true',
                           help='只显示文件匹配')
     p_search.add_argument('--list', '-l', action='store_true',
@@ -74,13 +83,17 @@ def main():
 
     # lookup index
     p_index = subparsers.add_parser('index', help='构建索引')
-    p_index.add_argument('--skill', required=True,
+    p_index.add_argument('--skill',
                          help='技能名（如 programmer, mathematician）')
+    p_index.add_argument('--path',
+                         help='技能根目录路径（与 --skill 二选一）')
 
     # lookup list
     p_list = subparsers.add_parser('list', help='列出已索引文件')
-    p_list.add_argument('--skill', default='programmer',
+    p_list.add_argument('--skill',
                         help='技能名（默认 programmer）')
+    p_list.add_argument('--path',
+                        help='技能根目录路径（与 --skill 二选一）')
 
     args = parser.parse_args()
 
@@ -92,6 +105,8 @@ def main():
         # list 复用 searcher 的 --list 功能
         args.query = None
         args.list = True
+        # 确保 list 命令也有 files_only 属性
+        args.files_only = False
         return cmd_search(args)
     else:
         parser.print_help()

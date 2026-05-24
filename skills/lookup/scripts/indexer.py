@@ -195,20 +195,34 @@ def resolve_skill_root(skill_name: str) -> Path | None:
 
 def main():
     parser = argparse.ArgumentParser(description='构建 References 索引')
-    parser.add_argument('--skill', required=True,
+    parser.add_argument('--skill',
                         help='技能名（如 programmer, mathematician）')
+    parser.add_argument('--path',
+                        help='技能根目录路径（与 --skill 二选一）')
     args = parser.parse_args()
 
-    skill_root = resolve_skill_root(args.skill)
-    if not skill_root:
-        print(f"Error: 技能目录不存在: {args.skill}")
+    if not args.skill and not args.path:
+        print("Error: 必须提供 --skill 或 --path")
         return 1
+    if args.skill and args.path:
+        print("Error: --skill 和 --path 不能同时使用")
+        return 1
+
+    if args.path:
+        skill_root = Path(args.path)
+        skill_name = skill_root.name
+    else:
+        skill_root = resolve_skill_root(args.skill)
+        skill_name = args.skill
+        if not skill_root:
+            print(f"Error: 技能目录不存在: {args.skill}")
+            return 1
 
     references_dir = skill_root / "references"
     index_dir = skill_root / "index"
     index_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"【{args.skill}】索引构建")
+    print(f"【{skill_name}】索引构建")
     print(f"  来源: {references_dir}")
     print(f"  输出: {index_dir}")
 
