@@ -24,28 +24,28 @@
 | conda | Python 环境管理 | `conda env list`, `conda install <pkg>` |
 | r-base | R 语言环境 (conda) | `conda activate r-base`, `R --version` |
 
-### 文档处理模块（conda base 环境）（PDF/Word/PPT/Excel/排版）
+### 文档处理模块（conda base 环境，Python 3.13）（PDF/Word/PPT/Excel/排版）
 
 | 模块 | 版本 | 用途 |
 |------|------|------|
 | mineru | 3.1.15 | PDF 解析主模块 |
-| pdfminer.six | 20260107 |
-| pypdf | 6.12.1 |
-| pypdfium2 | 4.30.0 |
-| pdftext | 0.6.3 |
-| python-docx | 1.2.0 |
-| pypptx-with-oxml | 1.0.3 |
-| openpyxl | 3.1.5 |
-| beautifulsoup4 | 4.14.3 |
-| lxml | 6.1.1 |
-| markdown-it-py | 4.2.0 |
+| pdfminer.six | 20260107 | PDF 文本提取 |
+| pypdf | 6.12.1 | PDF 处理 |
+| pypdfium2 | 4.30.0 | PDF 渲染 |
+| pdftext | 0.6.3 | PDF 文本提取 |
+| python-docx | 1.2.0 | Word 文档处理 |
+| pypptx-with-oxml | 1.0.3 | PPT 处理 |
+| openpyxl | 3.1.5 | Excel 处理 |
+| beautifulsoup4 | 4.14.3 | HTML/XML 解析 |
+| lxml | 6.1.1 | XML/HTML 处理 |
+| markdown-it-py | 4.2.0 | Markdown 解析 |
 | pandoc | (系统) | 文档格式转换 |
 | weasyprint | (系统) | HTML 转 PDF |
-| fonttools | 4.63.0 |
-| reportlab | 4.5.1 |
-| pillow | 12.2.0 |
-| scikit-image | 0.26.0 |
-| onnxruntime | 1.26.0 |
+| fonttools | 4.63.0 | 字体处理 |
+| reportlab | 4.5.1 | PDF 生成 |
+| pillow | 12.2.0 | 图像处理 |
+| scikit-image | 0.26.0 | 图像处理 |
+| onnxruntime | 1.26.0 | ONNX 推理 |
 | nbformat | 5.10.4 | Jupyter 笔记处理 |
 | jq | JSON 处理 | `jq '.' openclaw.json` |
 | curl | HTTP 请求 | `curl -s https://...` |
@@ -54,11 +54,7 @@
 #### mineru 使用方法
 
 > minerU 可将 PDF 转换为 Markdown，适合复杂 PDF（表格、公式、图像）解析
-
-**激活环境**：
-```bash
-source /root/.miniconda/etc/profile.d/conda.sh && conda activate base
-```
+> base 为默认 Python 环境，直接使用 `python` 命令即可。
 
 **基本用法**：
 ```bash
