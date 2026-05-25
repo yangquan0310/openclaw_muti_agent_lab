@@ -2,6 +2,7 @@
 
 ## Generated
 <!-- openclaw:wiki:entities:index:start -->
+- [[entities/openclaw-ei4x|OpenClaw(龙虾)-ei4x]]
 - [[entities/writer|写作助手（Writer）]]
 - [[entities/presenter|呈现师（Presenter）]]
 - [[entities/steward|大管家（Steward）]]

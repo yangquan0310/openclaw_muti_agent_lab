@@ -1,39 +1,68 @@
-# 索引
+# programmer · 参考手册
 
-> programmer 技能开发指南导航
+> 程序员技能完整参考指南
 
 ---
 
-## 快速导航
+## 书籍目录
 
-| 指南 | 说明 |
+| 章节 | 对应的问题 |
+|------|------------|
+| [ch01_how-to-develop.md](ch01_how-to-develop.md) | 如何进行开发？ |
+| [ch02_how-to-write-code.md](ch02_how-to-write-code.md) | 如何编写代码？ |
+| [ch03_how-to-design-architecture.md](ch03_how-to-design-architecture.md) | 如何设计架构？ |
+| [ch04_how-to-design-oop.md](ch04_how-to-design-oop.md) | 如何进行 OOP 设计？ |
+| [ch05_how-to-fullstack.md](ch05_how-to-fullstack.md) | 如何进行全栈开发？ |
+| [ch06_how-to-write-test.md](ch06_how-to-write-test.md) | 如何编写测试？ |
+| [ch07_how-to-collaborate-with-pm.md](ch07_how-to-collaborate-with-pm.md) | 如何与产品协作？ |
+| [ch08_how-to-devops.md](ch08_how-to-devops.md) | 如何进行 DevOps？ |
+
+---
+
+## 按阶段查找
+
+### 开发全流程
+
+| 阶段 | 问题 | 章节 |
+|------|------|------|
+| 开始开发 | 如何进行开发？ | ch01 |
+| 编码 | 如何编写代码？ | ch02 |
+| 设计 | 如何设计架构？ | ch03 |
+| OOP | 如何进行 OOP 设计？ | ch04 |
+| 全栈 | 如何进行全栈开发？ | ch05 |
+| 测试 | 如何编写测试？ | ch06 |
+| 协作 | 如何与产品协作？ | ch07 |
+| 部署 | 如何进行 DevOps？ | ch08 |
+
+---
+
+## 章节结构
+
+每章统一包含四个层次：
+
+| 层次 | 回答的问题 |
+|------|------------|
+| **问题** | 为什么要知道这个？ |
+| **方法论** | 怎么思考这个问题？ |
+| **工作流** | 具体怎么执行？ |
+| **执行标准** | 做到什么程度算合格？ |
+
+---
+
+## 模板资源
+
+| 模板 | 用途 |
 |------|------|
-| [使用指南](guide.md) | 技能使用方法、触发条件 |
-| [OOP 指南](oop-guide.md) | 面向对象编程核心概念 |
-| [OOP 原则](oop-principles.md) | 封装、继承、多态详解 |
-| [架构指南](architecture-guide.md) | 系统架构、设计模式、微服务 |
-| [全栈开发](fullstack-guide.md) | 全栈开发知识与技术栈 |
-| [开发流程](development-workflow.md) | 开发工作流最佳实践 |
-| [代码规范](coding-standards.md) | 代码规范与设计原则 |
-| [产品经理](product-guide.md) | 需求分析与产品设计 |
-| [测试指南](testing-guide.md) | 单元测试、集成测试、E2E测试 |
-| [运维指南](devops-guide.md) | Docker/K8s部署、CI/CD、监控告警、日志管理 |
+| [需求文档模板](../assets/templates/需求文档模板.md) | 需求分析记录 |
+| [技术方案模板](../assets/templates/技术方案模板.md) | 技术方案设计 |
+| [用户故事模板](../assets/templates/用户故事模板.md) | 敏捷开发用户故事 |
+| [PRD模板](../assets/templates/PRD模板.md) | 产品需求文档 |
 
 ---
 
-## 按场景查找
+## 版本历史
 
-**理解 OOP**
-1. [OOP 指南](oop-guide.md) — 核心概念入门
-2. [OOP 原则](oop-principles.md) — 封装、继承、多态详解
-
-**全栈开发**
-3. [全栈开发](fullstack-guide.md) — 技术栈与架构
-
-**开发实践**
-4. [开发流程](development-workflow.md) — 从需求到交付
-5. [代码规范](coding-standards.md) — 整洁代码原则
-
----
-
-*点击标题跳转对应指南*
+| 版本 | 日期 | 说明 |
+|------|------|------|
+| 2.0.0 | 2026-05-25 | 重构 references：新框架 8 章 |
+| 1.0.0 | 2026-05-23 | 初始版本 |

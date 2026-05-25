@@ -1,0 +1,5 @@
+[steward/sessions/steward/3ddf3f90-8327-4ee9-b46d-631244d3ea5e.jsonl#L7] User: openclaw hermes pi有什么区别？
+[steward/sessions/steward/3ddf3f90-8327-4ee9-b46d-631244d3ea5e.jsonl#L8] Assistant: 你好！ 关于这三个概念，我的情况是： - **OpenClaw**：我是运行在 OpenClaw 平台上的 AI 助手（大管家 steward）。 - **Hermes / Pi**：这两个名称在我当前的上下文和技能文档中没有明确的定义。我不确定你指的是： - OpenClaw 生态内的其他代理（agent）？ - 外部的 AI 产品/助手？ - 还是其他什么系统？ 你能提供更多背景吗？比如你在哪里看到或听说的？这样我可以给你更准确的回答。
+[steward/sessions/steward/3ddf3f90-8327-4ee9-b46d-631244d3ea5e.jsonl#L9] User: 三个通用agent
+[steward/sessions/steward/3ddf3f90-8327-4ee9-b46d-631244d3ea5e.jsonl#L10] Assistant: 让我查一下 OpenClaw 文档，看看这三个通用代理的信息。
+[steward/sessions/steward/3ddf3f90-8327-4ee9-b46d-631244d3ea5e.jsonl#L20] Assistant: 根据 OpenClaw 文档，我找到了这三个概念的关系： ## 三个通用 Agent 的区别 | 名称 | 角色 | 说明 | |------|------|------| | **Hermes** | 上一代系统 | OpenClaw 的前身/竞品。OpenClaw 提供了 `openclaw migrate hermes` 命令，可以从 Hermes 导入配置、记忆、技能等到 OpenClaw | | **Pi** | 底层引擎 | OpenClaw 建立在 Pi 之上。OpenClaw 内部大量使用 pi-

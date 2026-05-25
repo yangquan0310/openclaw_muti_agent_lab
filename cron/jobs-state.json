@@ -14,22 +14,26 @@
         "consecutiveSkipped": 0,
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "nextRunAtMs": 1779739200000,
-        "lastDelivered": true
+        "lastDelivered": true,
+        "runningAtMs": 1779739200001
       }
     },
     "dc7447e5-7fcf-4c64-8079-e811456af6ed": {
-      "updatedAtMs": 1779649312849,
+      "updatedAtMs": 1779735674724,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 3 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1779735600000,
-        "lastRunAtMs": 1779649200081,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 112768,
-        "lastDeliveryStatus": "not-requested",
+        "nextRunAtMs": 1779822000000,
+        "lastRunAtMs": 1779735600013,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 74711,
+        "lastDeliveryStatus": "unknown",
         "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "consecutiveSkipped": 0
+        "consecutiveErrors": 1,
+        "consecutiveSkipped": 0,
+        "lastError": "cron: job interrupted by gateway restart",
+        "lastDelivered": false,
+        "lastDeliveryError": "cron: job interrupted by gateway restart"
       }
     }
   }

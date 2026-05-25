@@ -383,10 +383,10 @@
 ## Generated
 <!-- openclaw:wiki:index:start -->
 - Render mode: `obsidian`
-- Total pages: 107
+- Total pages: 108
 - Claims: 16
 - Sources: 6
-- Entities: 12
+- Entities: 13
 - Concepts: 52
 - Syntheses: 27
 - Reports: 10
@@ -400,6 +400,7 @@
 - [[sources/programming-languages|系统编程语言]]
 
 ### Entities
+- [[entities/openclaw-ei4x|OpenClaw(龙虾)-ei4x]]
 - [[entities/writer|写作助手（Writer）]]
 - [[entities/presenter|呈现师（Presenter）]]
 - [[entities/steward|大管家（Steward）]]

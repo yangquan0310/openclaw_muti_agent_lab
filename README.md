@@ -1,6 +1,6 @@
 # OpenClaw 实验室多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.5.20-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.5.22-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -684,6 +684,15 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.2.6 (2026-05-26)
+- **References 重构**: 程序员 references/ 目录重构为 8 个结构化章节（ch01-ch08）
+- **References 备份归档**: 原 13 个旧文件移至 temp/references-backup-20260526/
+- **记忆同步**: steward/memory/.dreams/ 日志文件日常同步（session-corpus 2026-05-23~25）
+- **Wiki 同步**: entities/index.md、wiki/index.md 小幅更新
+- **Cron 状态**: jobs-state.json 同步
+- **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+
 ### 版本 4.2.5 (2026-05-23)
 - **安全加固**: openclaw.json JINA API Key 改为环境变量 `${JINA_API_KEY}` 引用
 - **技能文档完善**: 新增/更新 7 个 Agent 的 skill references 文件（workflows.md、guides、standards 等）
@@ -978,7 +987,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-05-25 04:00:00**
+**最后更新: 2026-05-26 04:00:00**
 **系统版本**: OpenClaw 2026.5.22
 **插件版本**: agent-self-development v4.3.1
 **运行状态**: ✅ 稳定版

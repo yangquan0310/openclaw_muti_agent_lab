@@ -1,6 +1,6 @@
 {
   "pageCounts": {
-    "entity": 12,
+    "entity": 13,
     "concept": 52,
     "source": 6,
     "synthesis": 27,
@@ -1395,6 +1395,27 @@
       "privacyTier": "private",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-05-12T14:11:47.308Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "openclaw-ei4x",
+      "title": "OpenClaw(龙虾)-ei4x",
+      "kind": "entity",
+      "path": "entities/openclaw-ei4x.md",
+      "aliases": [],
+      "sourceIds": [
+        "openclaw-ei4x-entity"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "entity",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-25T15:47:08.807Z",
       "claimCount": 0,
       "topClaims": []
     },
