@@ -81,42 +81,16 @@ metadata:
 ```
 """,
 
-    "references/guide.md": """# {skill_name} 使用指南
 
-> 详细使用说明文档
+    "references/index.md": """# {skill_name}
 
----
-
-## 一、概述
-
-{skill_name} 是一个用于{description}的技能。
+> {description}
 
 ---
 
-## 二、触发条件
+## 快速开始
 
-当用户提到相关关键词时触发。
-
----
-
-*最后更新：{date}*
-""",
-
-    "references/index.md": """# 索引
-
-> {skill_name} 技能开发指南导航
-
----
-
-## 快速导航
-
-| 指南 | 说明 |
-|------|------|
-| [使用指南](guide.md) | 技能使用方法、触发条件、MCP 工具 |
-
----
-
-*点击标题跳转对应指南*
+开发新技能时，使用 [skill-developer](~/.openclaw/skills/skill-developer/SKILL.md) 技能。
 """,
 
     "mcp/server.py": """#!/usr/bin/env python3
@@ -256,7 +230,6 @@ class Skill:
         for rel_path, key in [
             ("SKILL.md", "SKILL.md"),
             ("README.md", "README.md"),
-            ("references/guide.md", "references/guide.md"),
             ("references/index.md", "references/index.md"),
             ("mcp/server.py", "mcp/server.py"),
         ]:
@@ -266,6 +239,7 @@ class Skill:
         print(f"\n✅ 技能初始化完成: {skill_path}")
         print(f"   - SKILL.md  - README.md  - _meta.json")
         print(f"   - scripts/  - references/  - mcp/server.py")
+        print(f"   - assets/templates/")
         print(f"\n   自检：skill-developer check {skill_path}")
         return 0
 

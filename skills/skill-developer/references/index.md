@@ -1,47 +1,68 @@
-# 索引
+# skill-developer 参考手册
 
-> skill-developer 技能开发指南导航
+> 技能开发的完整参考指南。
 
 ---
 
-## 快速导航
+## 书籍目录
 
-| 指南 | 说明 |
+| 章节 | 文件 | 对应的问题 |
+|------|------|------------|
+| 01 | [ch01_how-to-develop-new-skill.md](ch01_how-to-develop-new-skill.md) | 如何开发新技能？ |
+| 02 | [ch02_how-to-check-quality.md](ch02_how-to-check-quality.md) | 如何检查技能质量？ |
+| 03 | [ch03_how-to-build-cli.md](ch03_how-to-build-cli.md) | 如何建立命令行入口？ |
+| 04 | [ch04_how-to-write-scripts.md](ch04_how-to-write-scripts.md) | 如何编写 scripts？ |
+| 05 | [ch05_how-to-apply-naming-conventions.md](ch05_how-to-apply-naming-conventions.md) | 如何应用命名规范？ |
+| 06 | [ch06_how-to-update-skill.md](ch06_how-to-update-skill.md) | 如何更新技能？ |
+| 07 | [ch07_how-to-write-references-chapter.md](ch07_how-to-write-references-chapter.md) | 如何撰写 references 章节？ |
+
+---
+
+## 按阶段查找
+
+### 开发技能
+
+| 问题 | 章节 |
 |------|------|
-| [使用指南](guide.md) | 技能使用方法、触发条件、MCP 工具 |
-| [命名指南](naming-guide.md) | 如何决定一个文件叫什么名字 |
-| [命名规范](naming-standards.md) | references 文件和代码命名标准 |
-| [指南写作](guide-writing-guide.md) | 如何编写指南文档 |
-| [质量标准](quality-standards.md) | 技能质量检查清单 |
-| [代码规范](coding-standards.md) | 代码规范与模板 |
-| [CLI 规范](cli-standards.md) | 命令行格式、技能名/子命令/参数规范 |
-| [CLI 工作流](cli-workflow.md) | 如何建立 CLI、文件生成顺序、决策树 |
-| [开发指南](development-guide.md) | 技能开发的十条黄金法则 |
-| [scripts 规范](scripts-standards.md) | scripts/ 目录结构、模块文件规范 |
-| [开发工作流](development-workflow.md) | 开发工作流步骤 |
-| [更新工作流](update-workflow.md) | 如何更新已有技能 |
+| 如何开发？ | ch01 |
+| 如何检查质量？ | ch02 |
+| 如何命名？ | ch05 |
+| 如何写 scripts？ | ch04 |
+| 如何建立 CLI？ | ch03 |
+
+### 维护技能
+
+| 问题 | 章节 |
+|------|------|
+| 如何更新？ | ch06 |
+
+### 元技能
+
+| 问题 | 章节 |
+|------|------|
+| references 怎么写？ | ch07 |
 
 ---
 
-## 按场景查找
+## 章节结构
 
-**新建技能**
-1. [初始化新技能](guide.md#初始化)
-2. [CLI 规范](cli-standards.md)
-3. [CLI 工作流](cli-workflow.md)
-4. [编写 SKILL.md](guide.md#编写-skill-md)
-5. [命名指南](naming-guide.md)
-6. [编写指南](guide-writing-guide.md)
+每章统一包含四个层次：
 
-**开发中**
-7. [命名规范](naming-standards.md)
-8. [代码规范](coding-standards.md)
-9. [开发工作流](development-workflow.md)
-
-**完成后**
-8. [质量检查](quality-standards.md)
-9. [更新已有技能](update-workflow.md)
+| 层次 | 回答的问题 |
+|------|------------|
+| **问题** | 为什么要知道这个？ |
+| **方法论** | 怎么思考这个问题？ |
+| **工作流** | 具体怎么执行？ |
+| **执行标准** | 做到什么程度算合格？ |
 
 ---
 
-*点击标题跳转对应指南*
+## 快速命令
+
+```bash
+# 初始化新技能
+skill-developer init <name> <description> [path] [emoji]
+
+# 自检技能
+python3 scripts/selfcheck.py /path/to/skill
+```
