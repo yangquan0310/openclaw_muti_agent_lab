@@ -22,36 +22,30 @@
 | git | 版本控制 | `git add .`, `git commit -m "..."`, `git push origin development` |
 | pnpm | Node.js 包管理 | `pnpm add -g <pkg>`, `pnpm list -g` |
 | conda | Python 环境管理 | `conda env list`, `conda install <pkg>` |
-| py311 | Python 3.11 环境 (conda) | `conda activate py311`, `python --version` |
 | r-base | R 语言环境 (conda) | `conda activate r-base`, `R --version` |
-| docproc | 文档处理环境 (conda) | `conda activate docproc` |
 
-### docproc 环境模块（PDF/Word/PPT/Excel/排版）
+### 文档处理模块（conda base 环境）（PDF/Word/PPT/Excel/排版）
 
 | 模块 | 版本 | 用途 |
 |------|------|------|
 | mineru | 3.1.15 | PDF 解析主模块 |
-| markitdown | 0.1.5 | 文档转 Markdown |
-| pdfplumber | 0.11.9 | PDF 表格/文本提取 |
-| pdfminer.six | 20251230 | PDF 文本提取 |
-| pypdf | 6.11.0 | PDF 处理 |
-| pypdfium2 | 4.30.0 | PDF 渲染 |
-| pdftext | 0.6.3 | PDF 文本提取 |
-| python-docx | 1.2.0 | Word 文档处理 |
-| pypptx-with-oxml | 1.0.3 | PPT 处理 |
-| openpyxl | 3.1.5 | Excel 处理 |
-| beautifulsoup4 | 4.14.3 | HTML/XML 解析 |
-| lxml | 6.1.1 | XML/HTML 处理 |
-| markdown-it-py | 4.2.0 | Markdown 解析 |
-| markdownify | 1.2.2 | Markdown 转换 |
+| pdfminer.six | 20260107 |
+| pypdf | 6.12.1 |
+| pypdfium2 | 4.30.0 |
+| pdftext | 0.6.3 |
+| python-docx | 1.2.0 |
+| pypptx-with-oxml | 1.0.3 |
+| openpyxl | 3.1.5 |
+| beautifulsoup4 | 4.14.3 |
+| lxml | 6.1.1 |
+| markdown-it-py | 4.2.0 |
 | pandoc | (系统) | 文档格式转换 |
 | weasyprint | (系统) | HTML 转 PDF |
-| jinja2 | 3.1.6 | 模板引擎 |
-| fonttools | 4.63.0 | 字体处理 |
-| reportlab | 4.5.1 | PDF 生成 |
-| pillow | 12.2.0 | 图像处理 |
-| scikit-image | 0.25.2 | 图像处理 |
-| onnxruntime | 1.23.2 | ONNX 推理 |
+| fonttools | 4.63.0 |
+| reportlab | 4.5.1 |
+| pillow | 12.2.0 |
+| scikit-image | 0.26.0 |
+| onnxruntime | 1.26.0 |
 | nbformat | 5.10.4 | Jupyter 笔记处理 |
 | jq | JSON 处理 | `jq '.' openclaw.json` |
 | curl | HTTP 请求 | `curl -s https://...` |
@@ -63,7 +57,7 @@
 
 **激活环境**：
 ```bash
-conda activate docproc
+source /root/.miniconda/etc/profile.d/conda.sh && conda activate base
 ```
 
 **基本用法**：
