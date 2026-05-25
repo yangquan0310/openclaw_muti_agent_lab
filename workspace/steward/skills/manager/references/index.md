@@ -43,6 +43,12 @@
 | **cleaning-guide.md** | 定期清理 wiki 冗余内容 |
 | **sync-guide.md** | 将规范更新同步到 wiki |
 
+## 系统维护专项
+
+| 指南 | 用途 |
+|------|------|
+| **ch08_how-to-maintain-openclaw-system.md** | .openclaw 系统的体检、日常维护、问题处理和标准管理 |
+
 ---
 
-*最后更新：2026-05-22*
+*最后更新：2026-05-25*
