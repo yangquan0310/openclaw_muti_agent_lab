@@ -61,48 +61,18 @@ metadata:
 
 ---
 
-## 书籍目录
+## 指南导航
 
-| 章节 | 对应的问题 |
-|------|------------|
-| [ch01_how-to-develop.md](references/ch01_how-to-develop.md) | 如何进行开发？ |
-| [ch02_how-to-write-code.md](references/ch02_how-to-write-code.md) | 如何编写代码？ |
-| [ch03_how-to-design-architecture.md](references/ch03_how-to-design-architecture.md) | 如何设计架构？ |
-| [ch04_how-to-design-oop.md](references/ch04_how-to-design-oop.md) | 如何进行 OOP 设计？ |
-| [ch05_how-to-fullstack.md](references/ch05_how-to-fullstack.md) | 如何进行全栈开发？ |
-| [ch06_how-to-write-test.md](references/ch06_how-to-write-test.md) | 如何编写测试？ |
-| [ch07_how-to-collaborate-with-pm.md](references/ch07_how-to-collaborate-with-pm.md) | 如何与产品协作？ |
-| [ch08_how-to-devops.md](references/ch08_how-to-devops.md) | 如何进行 DevOps？ |
-
----
-
-## 按阶段查找
-
-### 开发全流程
-
-| 阶段 | 问题 | 章节 |
+| 章节 | 文件 | 内容 |
 |------|------|------|
-| 开始开发 | 如何进行开发？ | ch01 |
-| 编码 | 如何编写代码？ | ch02 |
-| 设计 | 如何设计架构？ | ch03 |
-| OOP | 如何进行 OOP 设计？ | ch04 |
-| 全栈 | 如何进行全栈开发？ | ch05 |
-| 测试 | 如何编写测试？ | ch06 |
-| 协作 | 如何与产品协作？ | ch07 |
-| 部署 | 如何进行 DevOps？ | ch08 |
-
----
-
-## 章节结构
-
-每章统一包含四个层次：
-
-| 层次 | 回答的问题 |
-|------|------------|
-| **问题** | 为什么要知道这个？ |
-| **方法论** | 怎么思考这个问题？ |
-| **工作流** | 具体怎么执行？ |
-| **执行标准** | 做到什么程度算合格？ |
+| 开发流程 | [development-workflow.md](references/development-workflow.md) | 从需求到交付的核心原则 |
+| 代码质量 | [code-quality.md](references/code-quality.md) | 好代码的标准 |
+| 架构设计 | [architecture-design.md](references/architecture-design.md) | 什么时候设计、设计什么 |
+| OOP 设计 | [oop-design.md](references/oop-design.md) | 封装/继承/多态的适用判断 |
+| 全栈开发 | [fullstack-development.md](references/fullstack-development.md) | 前端后端数据库的协作原则 |
+| 测试原则 | [testing-principles.md](references/testing-principles.md) | 为什么要测、测什么 |
+| 产品协作 | [product-collaboration.md](references/product-collaboration.md) | 需求评审、验收标准 |
+| DevOps | [devops-principles.md](references/devops-principles.md) | 容器化、CI/CD、部署原则 |
 
 ---
 
@@ -133,10 +103,11 @@ lookup search -i index/manifest.json <关键词>
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 2.1.0 | 2026-05-26 | 重构 references：8章改为原则性章节，文件名改为名词短语风格 |
 | 2.0.0 | 2026-05-25 | 重构 references：新框架 8 章，how-to 格式命名 |
 | 1.5.0 | 2026-05-23 | 模板从指南中提取到 assets/templates/ |
 | 1.0.0 | 2026-05-21 | 初始版本 |
 
 ---
 
-*最后重构: 2026-05-25*
+*最后重构: 2026-05-26*
