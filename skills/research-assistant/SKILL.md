@@ -84,7 +84,7 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 ## 数据流总览
 
 ```
-阶段1：理解 → 阅读《文献综述撰写指南》，明确研究问题
+阶段1：理解 → 阅读《文献综述撰写指南》（literature-review.md），明确研究问题
     ↓
 阶段2：检索 → Searcher → index.json
     ↓
