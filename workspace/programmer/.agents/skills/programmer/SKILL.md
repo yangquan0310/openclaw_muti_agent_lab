@@ -73,6 +73,10 @@ metadata:
 | 测试原则 | [testing-principles.md](references/testing-principles.md) | 为什么要测、测什么 |
 | 产品协作 | [product-collaboration.md](references/product-collaboration.md) | 需求评审、验收标准 |
 | DevOps | [devops-principles.md](references/devops-principles.md) | 容器化、CI/CD、部署原则 |
+| 版本控制 | [version-control.md](references/version-control.md) | Git 分支策略、提交规范 |
+| 性能优化 | [performance.md](references/performance.md) | 性能分析、缓存、并发 |
+| 安全原则 | [security.md](references/security.md) | 常见漏洞、防御策略 |
+| 调试方法论 | [debugging.md](references/debugging.md) | Bug 定位、根因分析 |
 
 ---
 
@@ -103,6 +107,7 @@ lookup search -i index/manifest.json <关键词>
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 2.2.0 | 2026-05-26 | 新增4章：版本控制、性能优化、安全原则、调试方法论 |
 | 2.1.0 | 2026-05-26 | 重构 references：8章改为原则性章节，文件名改为名词短语风格 |
 | 2.0.0 | 2026-05-25 | 重构 references：新框架 8 章，how-to 格式命名 |
 | 1.5.0 | 2026-05-23 | 模板从指南中提取到 assets/templates/ |
