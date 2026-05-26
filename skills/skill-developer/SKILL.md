@@ -33,7 +33,8 @@ metadata:
 | 边界 | 说明 |
 |------|------|
 | 禁止擅自定义 | scripts/ 结构取决于代理目的，不可强制要求特定结构 |
-| 禁止缺少 CLI | 所有技能必须提供 `{技能名} {子命令}` 格式的 CLI 入口，详见 [ch03_how-to-build-cli.md](references/ch03_how-to-build-cli.md) |
+| 禁止缺少 CLI | 所有技能必须提供 `{技能名} {子命令}` 格式的 CLI 入口 |
+| 禁止跳过自检 | selfcheck.py 是最后防线，任何更新后都应运行 |
 
 ---
 
@@ -49,17 +50,18 @@ skill-developer init <skill-name> <description> [path] [emoji]
 
 ---
 
-## 书籍目录
+## 指南导航
 
-| 章节 | 对应的问题 |
-|------|------------|
-| [ch01_how-to-develop-new-skill.md](references/ch01_how-to-develop-new-skill.md) | 如何开发新技能？ |
-| [ch02_how-to-check-quality.md](references/ch02_how-to-check-quality.md) | 如何检查质量？ |
-| [ch03_how-to-build-cli.md](references/ch03_how-to-build-cli.md) | 如何建立 CLI？ |
-| [ch04_how-to-write-scripts.md](references/ch04_how-to-write-scripts.md) | 如何编写 scripts？ |
-| [ch05_how-to-apply-naming-conventions.md](references/ch05_how-to-apply-naming-conventions.md) | 如何应用命名规范？ |
-| [ch06_how-to-update-skill.md](references/ch06_how-to-update-skill.md) | 如何更新技能？ |
-| [ch07_how-to-write-references-chapter.md](references/ch07_how-to-write-references-chapter.md) | 如何撰写 references 章节？ |
+| 章节 | 文件 | 内容 |
+|------|------|------|
+| 技能创建 | [skill-creation.md](references/skill-creation.md) | 什么时候建、什么时候不建 |
+| 技能扩展 | [skill-extension.md](references/skill-extension.md) | 什么时候扩展、什么时候新建 |
+| 质量标准 | [quality-standards.md](references/quality-standards.md) | 好技能的标准是什么 |
+| 设计原则 | [design-principles.md](references/design-principles.md) | 核心设计信念 |
+| 边界约束 | [boundaries.md](references/boundaries.md) | 禁止什么、避免什么 |
+| 常见错误 | [common-mistakes.md](references/common-mistakes.md) | 错误模式与案例 |
+| 命名规范 | [naming.md](references/naming.md) | 名称约定 |
+| 版本管理 | [versioning.md](references/versioning.md) | 版本号规则 |
 
 ---
 
@@ -67,6 +69,7 @@ skill-developer init <skill-name> <description> [path] [emoji]
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 5.3.0 | 2026-05-26 | references 重构：7章 how-to 改为 8章原则性章节，文件名改为名词短语风格 |
 | 5.2.0 | 2026-05-25 | 重构 references：新框架 7 章，how-to 格式命名，问题→方法论→工作流→执行标准结构 |
 | 5.1.0 | 2026-05-24 | 新增 pyproject.toml + entry_points，支持 `skill-developer init ...` CLI 格式 |
 | 5.0.0 | 2026-05-23 | 精简章节：移除触发条件、三层结构；模板由指南/scripts调用，不在SKILL.md导航 |

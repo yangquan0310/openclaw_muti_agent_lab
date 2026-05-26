@@ -1,68 +1,45 @@
 # skill-developer 参考手册
 
-> 技能开发的完整参考指南。
+> 技能开发的设计规范参考。
 
 ---
 
-## 书籍目录
+## 章节导航
 
-| 章节 | 文件 | 对应的问题 |
-|------|------|------------|
-| 01 | [ch01_how-to-develop-new-skill.md](ch01_how-to-develop-new-skill.md) | 如何开发新技能？ |
-| 02 | [ch02_how-to-check-quality.md](ch02_how-to-check-quality.md) | 如何检查技能质量？ |
-| 03 | [ch03_how-to-build-cli.md](ch03_how-to-build-cli.md) | 如何建立命令行入口？ |
-| 04 | [ch04_how-to-write-scripts.md](ch04_how-to-write-scripts.md) | 如何编写 scripts？ |
-| 05 | [ch05_how-to-apply-naming-conventions.md](ch05_how-to-apply-naming-conventions.md) | 如何应用命名规范？ |
-| 06 | [ch06_how-to-update-skill.md](ch06_how-to-update-skill.md) | 如何更新技能？ |
-| 07 | [ch07_how-to-write-references-chapter.md](ch07_how-to-write-references-chapter.md) | 如何撰写 references 章节？ |
+| 章节 | 文件 | 内容 |
+|------|------|------|
+| 技能创建 | [skill-creation.md](skill-creation.md) | 什么时候建、什么时候不建 |
+| 技能扩展 | [skill-extension.md](skill-extension.md) | 什么时候扩展、什么时候新建 |
+| 质量标准 | [quality-standards.md](quality-standards.md) | 好技能的标准是什么 |
+| 设计原则 | [design-principles.md](design-principles.md) | 核心设计信念 |
+| 边界约束 | [boundaries.md](boundaries.md) | 禁止什么、避免什么 |
+| 常见错误 | [common-mistakes.md](common-mistakes.md) | 错误模式与案例 |
+| 命名规范 | [naming.md](naming.md) | 名称约定 |
+| 版本管理 | [versioning.md](versioning.md) | 版本号规则 |
 
 ---
 
-## 按阶段查找
+## 按场景查找
 
-### 开发技能
+### 判断阶段
 
-| 问题 | 章节 |
+| 场景 | 章节 |
 |------|------|
-| 如何开发？ | ch01 |
-| 如何检查质量？ | ch02 |
-| 如何命名？ | ch05 |
-| 如何写 scripts？ | ch04 |
-| 如何建立 CLI？ | ch03 |
+| 不确定要不要建 | [skill-creation.md](skill-creation.md) |
+| 不确定要新建还是扩展 | [skill-extension.md](skill-extension.md) |
+| 不确定设计方向对不对 | [design-principles.md](design-principles.md) |
 
-### 维护技能
+### 执行阶段
 
-| 问题 | 章节 |
+| 场景 | 章节 |
 |------|------|
-| 如何更新？ | ch06 |
+| 不知道命名对不对 | [naming.md](naming.md) |
+| 不知道质量够不够 | [quality-standards.md](quality-standards.md) |
 
-### 元技能
+### 审查阶段
 
-| 问题 | 章节 |
+| 场景 | 章节 |
 |------|------|
-| references 怎么写？ | ch07 |
-
----
-
-## 章节结构
-
-每章统一包含四个层次：
-
-| 层次 | 回答的问题 |
-|------|------------|
-| **问题** | 为什么要知道这个？ |
-| **方法论** | 怎么思考这个问题？ |
-| **工作流** | 具体怎么执行？ |
-| **执行标准** | 做到什么程度算合格？ |
-
----
-
-## 快速命令
-
-```bash
-# 初始化新技能
-skill-developer init <name> <description> [path] [emoji]
-
-# 自检技能
-python3 scripts/selfcheck.py /path/to/skill
-```
+| 担心会出错 | [common-mistakes.md](common-mistakes.md) |
+| 不确定边界在哪里 | [boundaries.md](boundaries.md) |
+| 不知道版本号怎么改 | [versioning.md](versioning.md) |
