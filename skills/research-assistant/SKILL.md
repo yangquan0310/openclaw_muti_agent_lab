@@ -58,18 +58,26 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 **语言路由**：中文关键词 → CNKI（主）→ SemSch（备）；英文关键词 → SemSch（主）→ Scholar/GS（备）
 ---
 
-## 书籍目录
+## 指南导航
 
-| 章节 | 对应的问题 |
-|------|------------|
-| [ch01_how-to-execute-research-workflow.md](references/ch01_how-to-execute-research-workflow.md) | 如何执行研究工作流？ |
-| [ch02_how-to-search-academic-papers.md](references/ch02_how-to-search-academic-papers.md) | 如何检索学术文献？ |
-| [ch03_how-to-manage-knowledge-base.md](references/ch03_how-to-manage-knowledge-base.md) | 如何管理知识库？ |
-| [ch04_how-to-summarize-papers.md](references/ch04_how-to-summarize-papers.md) | 如何总结文献？ |
-| [ch05_how-to-synthesize-notes.md](references/ch05_how-to-synthesize-notes.md) | 如何合成笔记？ |
-| [ch06_how-to-write-literature-review.md](references/ch06_how-to-write-literature-review.md) | 如何撰写文献综述？ |
-| [ch07_how-to-write-research-status.md](references/ch07_how-to-write-research-status.md) | 如何撰写研究现状？ |
-| [ch08_how-to-maintain-metadata.md](references/ch08_how-to-maintain-metadata.md) | 如何维护元数据？ |
+| 章节 | 文件 | 内容 |
+|------|------|------|
+| 研究工作流 | [research-workflow.md](references/research-workflow.md) | 五阶段流程原则 |
+| 文献检索 | [paper-search.md](references/paper-search.md) | 检索策略与引擎选择 |
+| 知识库管理 | [knowledge-management.md](references/knowledge-management.md) | index.json 管理原则 |
+| 文献总结 | [paper-summary.md](references/paper-summary.md) | Summarizer 使用原则 |
+| 笔记合成 | [note-synthesis.md](references/note-synthesis.md) | Synthesizer 使用原则 |
+| 文献综述撰写 | [literature-review.md](references/literature-review.md) | 综述撰写原则 |
+| 研究现状撰写 | [research-status.md](references/research-status.md) | 现状报告撰写原则 |
+| 元数据维护 | [metadata-maintenance.md](references/metadata-maintenance.md) | Maintainer 使用原则 |
+
+## 模板资源
+
+| 模板 | 文件 |
+|------|------|
+| 文献综述模板 | [assets/文献综述模板.md](assets/文献综述模板.md) |
+| 研究现状模板 | [assets/研究现状模板.md](assets/研究现状模板.md) |
+| 检索报告模板 | [assets/检索报告模板.md](assets/检索报告模板.md) |
 
 ---
 
@@ -111,6 +119,7 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 5.6.0 | 2026-05-26 | 重构 references 为原则性章节；新增文献综述模板、研究现状模板 |
 | 5.5.0 | 2026-05-25 | 重构 references：新框架 8 章，how-to 格式命名，问题→方法论→工作流→执行标准结构 |
 | 5.4.0 | 2026-05-24 | CLI 重构：统一 search 命令 + 语言自动路由 |
 | 5.3.0 | 2026-05-23 | 按 skill-developer 新标准重构 |

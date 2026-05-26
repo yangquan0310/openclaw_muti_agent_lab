@@ -1,51 +1,48 @@
 # research-assistant 参考手册
 
-> 科研文献综述全流程助手
+> 科研文献综述全流程助手参考指南。
 
 ---
 
-## 书籍目录
+## 章节导航
 
-| 章节 | 对应的问题 |
-|------|------------|
-| [ch01_how-to-execute-research-workflow.md](ch01_how-to-execute-research-workflow.md) | 如何执行研究工作流？ |
-| [ch02_how-to-search-academic-papers.md](ch02_how-to-search-academic-papers.md) | 如何检索学术文献？ |
-| [ch03_how-to-manage-knowledge-base.md](ch03_how-to-manage-knowledge-base.md) | 如何管理知识库？ |
-| [ch04_how-to-summarize-papers.md](ch04_how-to-summarize-papers.md) | 如何总结文献？ |
-| [ch05_how-to-synthesize-notes.md](ch05_how-to-synthesize-notes.md) | 如何合成笔记？ |
-| [ch06_how-to-write-literature-review.md](ch06_how-to-write-literature-review.md) | 如何撰写文献综述？ |
-| [ch07_how-to-write-research-status.md](ch07_how-to-write-research-status.md) | 如何撰写研究现状？ |
-| [ch08_how-to-maintain-metadata.md](ch08_how-to-maintain-metadata.md) | 如何维护元数据？ |
-
----
-
-## 按阶段查找
-
-### 研究流程
-
-| 阶段 | 问题 | 章节 |
+| 章节 | 文件 | 内容 |
 |------|------|------|
-| 理解 | 如何执行研究工作流？ | ch01 |
-| 检索 | 如何检索学术文献？ | ch02 |
-| 整理 | 如何管理知识库？ | ch03 |
-| 分析 | 如何总结文献？ | ch04 |
-| 综合 | 如何合成笔记？ | ch05 |
-| 撰写 | 如何撰写文献综述？ | ch06 |
-| 撰写 | 如何撰写研究现状？ | ch07 |
-| 检查 | 如何维护元数据？ | ch08 |
+| 研究工作流 | [research-workflow.md](research-workflow.md) | 五阶段流程原则 |
+| 文献检索 | [paper-search.md](paper-search.md) | 检索策略与引擎选择 |
+| 知识库管理 | [knowledge-management.md](knowledge-management.md) | index.json 管理原则 |
+| 文献总结 | [paper-summary.md](paper-summary.md) | Summarizer 使用原则 |
+| 笔记合成 | [note-synthesis.md](note-synthesis.md) | Synthesizer 使用原则 |
+| 文献综述撰写 | [literature-review.md](literature-review.md) | 综述撰写原则 |
+| 研究现状撰写 | [research-status.md](research-status.md) | 现状报告撰写原则 |
+| 元数据维护 | [metadata-maintenance.md](metadata-maintenance.md) | Maintainer 使用原则 |
 
 ---
 
-## 章节结构
+## 按场景查找
 
-每章统一包含四个层次：
+### 执行阶段
 
-| 层次 | 回答的问题 |
-|------|------------|
-| **问题** | 为什么要知道这个？ |
-| **方法论** | 怎么思考这个问题？ |
-| **工作流** | 具体怎么执行？ |
-| **执行标准** | 做到什么程度算合格？ |
+| 场景 | 章节 |
+|------|------|
+| 不知道工作流程 | [research-workflow.md](research-workflow.md) |
+| 不知道如何检索 | [paper-search.md](paper-search.md) |
+| 不知道如何管理知识库 | [knowledge-management.md](knowledge-management.md) |
+
+### 撰写阶段
+
+| 场景 | 章节 |
+|------|------|
+| 不知道如何总结文献 | [paper-summary.md](paper-summary.md) |
+| 不知道如何合成笔记 | [note-synthesis.md](note-synthesis.md) |
+| 不知道如何写文献综述 | [literature-review.md](literature-review.md) |
+| 不知道如何写研究现状 | [research-status.md](research-status.md) |
+
+### 维护阶段
+
+| 场景 | 章节 |
+|------|------|
+| 不知道如何维护元数据 | [metadata-maintenance.md](metadata-maintenance.md) |
 
 ---
 
@@ -53,7 +50,7 @@
 
 ```bash
 # 检索文献
-research-assistant search --queries queries.json --kb-path knowledge/index.json
+research-assistant search --keyword "关键词" --limit 20
 
 # 总结文献
 research-assistant summarize --kb-path knowledge/index.json

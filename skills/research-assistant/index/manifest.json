@@ -1,1347 +1,607 @@
 {
-  "数据结构": {
-    "file": "数据结构.md",
-    "title": "研究助手 - 项目数据结构说明",
-    "description": "> 只保留知识库相关字段，删除项目级文件管理字段",
+  "paper-search": {
+    "file": "paper-search.md",
+    "title": "文献检索",
+    "description": "> 学术文献检索的原则与策略。",
     "keywords": [
-      "研究助手 - 项目数据结构说明",
-      "元数据结构",
-      "directories 结构",
-      "tags 结构",
-      "notes 结构",
-      "knowledge_base 结构",
-      "自动更新规则",
-      "字段",
-      "uploads",
-      "manuscripts",
-      "knowledge",
-      "note",
-      "review",
-      "search_query",
-      "retrieval_report",
-      "topic",
-      "temp",
-      "draft",
-      "skills",
-      "local_path",
-      "created_at",
-      "description",
-      "index_file",
-      "updated_at",
-      "操作",
-      "search 检索后",
-      "summarize 总结后",
-      "manage 导出笔记后",
-      "synthesize 生成综述后",
-      "version save 保存版本后"
+      "文献检索",
+      "语言路由原则",
+      "检索引擎选择",
+      "检索条件设计原则",
+      "明确目标",
+      "多轮递进",
+      "过滤条件",
+      "query 语法",
+      "补检索原则",
+      "常见错误",
+      "引擎",
+      "**Semantic Scholar**",
+      "**CNKI（知网）**",
+      "**Google Scholar**",
+      "**Exa/Tavily**",
+      "轮次",
+      "第一轮",
+      "第二轮",
+      "第三轮",
+      "条件",
+      "年份范围",
+      "引用量",
+      "文献类型",
+      "语法",
+      "空格",
+      "`\\",
+      "`\\\"\\\"`",
+      "`-`",
+      "`()`",
+      "错误"
     ],
     "sections": [
       {
-        "heading": "研究助手 - 项目数据结构说明",
+        "heading": "文献检索",
         "level": 1
       },
       {
-        "heading": "元数据结构",
+        "heading": "语言路由原则",
         "level": 2
       },
       {
-        "heading": "directories 结构",
+        "heading": "检索引擎选择",
         "level": 2
       },
       {
-        "heading": "tags 结构",
+        "heading": "检索条件设计原则",
         "level": 2
       },
       {
-        "heading": "notes 结构",
+        "heading": "明确目标",
+        "level": 3
+      },
+      {
+        "heading": "多轮递进",
+        "level": 3
+      },
+      {
+        "heading": "过滤条件",
+        "level": 3
+      },
+      {
+        "heading": "query 语法",
         "level": 2
       },
       {
-        "heading": "knowledge_base 结构",
+        "heading": "补检索原则",
         "level": 2
       },
       {
-        "heading": "自动更新规则",
+        "heading": "常见错误",
         "level": 2
       }
     ]
   },
-  "manage": {
-    "file": "manage.md",
-    "title": "知识库管理模块 (Manager)",
-    "description": "Manager 类提供知识库的合并、筛选、保存功能，支持链式调用，方便进行多步操作。",
+  "knowledge-management": {
+    "file": "knowledge-management.md",
+    "title": "知识库管理",
+    "description": "> knowledge/index.json 是核心数据源。",
     "keywords": [
-      "Manager",
-      "知识库管理模块",
-      "快速开始",
-      "我想...",
-      "文件说明",
-      "工作流示例",
-      "合并知识库",
-      "不绑定路径",
-      "空管理器用于合并",
-      "筛选知识库",
-      "初始化时绑定知识库路径",
-      "筛选后无参保存到绑定的路径",
-      "链式调用：合并 → 筛选 → 保存",
-      "方法详情",
-      "kb_path=None",
-      "`__init__`",
-      "*kb_paths, deduplicate=True",
-      "`merge`",
-      "conditions",
-      "`filter`",
-      "支持的筛选条件",
-      "output_path=None, project_name=\"\"",
-      "`save`",
-      "`get_kb()`",
-      "`get_papers()`",
-      "命令行工具",
-      "空管理器，必须指定输出路径",
-      "合并多个知识库",
-      "绑定到输入路径，无参保存",
-      "方式1: 使用命令行参数"
-    ],
-    "sections": [
-      {
-        "heading": "知识库管理模块 (Manager)",
-        "level": 1
-      },
-      {
-        "heading": "快速开始",
-        "level": 2
-      },
-      {
-        "heading": "我想...",
-        "level": 3
-      },
-      {
-        "heading": "文件说明",
-        "level": 2
-      },
-      {
-        "heading": "工作流示例",
-        "level": 2
-      },
-      {
-        "heading": "1. 合并知识库",
-        "level": 3
-      },
-      {
-        "heading": "空管理器用于合并（不绑定路径）",
-        "level": 1
-      },
-      {
-        "heading": "2. 筛选知识库",
-        "level": 3
-      },
-      {
-        "heading": "初始化时绑定知识库路径",
-        "level": 1
-      },
-      {
-        "heading": "筛选后无参保存到绑定的路径",
-        "level": 1
-      },
-      {
-        "heading": "3. 链式调用：合并 → 筛选 → 保存",
-        "level": 3
-      },
-      {
-        "heading": "空管理器用于合并",
-        "level": 1
-      },
-      {
-        "heading": "方法详情",
-        "level": 2
-      },
-      {
-        "heading": "`__init__(kb_path=None)`",
-        "level": 3
-      },
-      {
-        "heading": "`merge(*kb_paths, deduplicate=True)`",
-        "level": 3
-      },
-      {
-        "heading": "`filter(conditions)`",
-        "level": 3
-      },
-      {
-        "heading": "支持的筛选条件",
-        "level": 4
-      },
-      {
-        "heading": "`save(output_path=None, project_name=\"\")`",
-        "level": 3
-      },
-      {
-        "heading": "`get_kb()`",
-        "level": 3
-      },
-      {
-        "heading": "`get_papers()`",
-        "level": 3
-      },
-      {
-        "heading": "命令行工具",
-        "level": 2
-      },
-      {
-        "heading": "合并知识库",
-        "level": 3
-      },
-      {
-        "heading": "合并多个知识库（空管理器，必须指定输出路径）",
-        "level": 1
-      },
-      {
-        "heading": "筛选知识库",
-        "level": 3
-      },
-      {
-        "heading": "方式1: 使用命令行参数（绑定到输入路径，无参保存）",
-        "level": 1
-      },
-      {
-        "heading": "方式2: 使用筛选条件JSON文件",
-        "level": 1
-      },
-      {
-        "heading": "查看知识库信息",
-        "level": 3
-      },
-      {
-        "heading": "命令参数",
-        "level": 3
-      },
-      {
-        "heading": "知识库 JSON 结构",
-        "level": 2
-      },
-      {
-        "heading": "版本历史",
-        "level": 2
-      }
-    ]
-  },
-  "检索报告模板": {
-    "file": "检索报告模板.md",
-    "title": "标题",
-    "description": "- 关键词",
-    "keywords": [
-      "标题",
-      "**检索概况**",
-      "**文献统计**",
-      "主题分布",
-      "年份分布",
-      "主要作者",
-      "主要期刊",
-      "APA 7th格式",
-      "**高引用文献**"
-    ],
-    "sections": [
-      {
-        "heading": "标题",
-        "level": 1
-      },
-      {
-        "heading": "**检索概况**",
-        "level": 2
-      },
-      {
-        "heading": "**文献统计**",
-        "level": 2
-      },
-      {
-        "heading": "主题分布",
-        "level": 3
-      },
-      {
-        "heading": "年份分布",
-        "level": 3
-      },
-      {
-        "heading": "主要作者",
-        "level": 3
-      },
-      {
-        "heading": "主要期刊",
-        "level": 3
-      },
-      {
-        "heading": "**高引用文献（APA 7th格式）**",
-        "level": 2
-      }
-    ]
-  },
-  "Guide_to_Writing_a_Research_Status_Review": {
-    "file": "Guide_to_Writing_a_Research_Status_Review.md",
-    "title": "Guide to Writing a Research Status Review (研究现状撰写指南)",
-    "description": "> 适用场景：学位论文\"国内外研究现状\"章节、项目申请书的文献综述、研究背景章节",
-    "keywords": [
-      "研究现状撰写指南",
-      "Guide to Writing a Research Status Review",
-      "使用说明",
-      "Research Status vs Literature Review",
-      "第1章：区别篇",
-      "什么是研究现状",
-      "核心区别",
-      "核心判断：何时用研究现状？",
-      "Problem-Evolution Tree",
-      "第2章：核心结构——问题演进树",
-      "树状结构模板",
-      "问题X：XXXXXXXXXX",
-      "最早提出",
-      "质疑与修正",
-      "补充与发展",
-      "最新进展与当前争议",
-      "关键写作原则",
-      "以\"治疗偏好\"为例",
-      "完整示例",
-      "Overall Structure",
-      "第3章：整体结构模板",
-      "完整框架",
-      "标题：XXXX的研究现状",
-      "摘要",
-      "引言",
-      "研究背景",
-      "综述目的",
-      "研究问题",
-      "国内外研究现状",
-      "问题1：XXXX的提出与演进"
-    ],
-    "sections": [
-      {
-        "heading": "Guide to Writing a Research Status Review (研究现状撰写指南)",
-        "level": 1
-      },
-      {
-        "heading": "使用说明",
-        "level": 2
-      },
-      {
-        "heading": "第1章：区别篇（Research Status vs Literature Review）",
-        "level": 2
-      },
-      {
-        "heading": "1.1 什么是研究现状",
-        "level": 3
-      },
-      {
-        "heading": "1.2 核心区别",
-        "level": 3
-      },
-      {
-        "heading": "1.3 核心判断：何时用研究现状？",
-        "level": 3
-      },
-      {
-        "heading": "第2章：核心结构——问题演进树（Problem-Evolution Tree）",
-        "level": 2
-      },
-      {
-        "heading": "2.1 树状结构模板",
-        "level": 3
-      },
-      {
-        "heading": "问题X：XXXXXXXXXX",
-        "level": 2
-      },
-      {
-        "heading": "最早提出",
-        "level": 3
-      },
-      {
-        "heading": "质疑与修正",
-        "level": 3
-      },
-      {
-        "heading": "补充与发展",
-        "level": 3
-      },
-      {
-        "heading": "最新进展与当前争议",
-        "level": 3
-      },
-      {
-        "heading": "2.2 关键写作原则",
-        "level": 3
-      },
-      {
-        "heading": "2.3 完整示例（以\"治疗偏好\"为例）",
-        "level": 3
-      },
-      {
-        "heading": "第3章：整体结构模板（Overall Structure）",
-        "level": 2
-      },
-      {
-        "heading": "3.1 完整框架",
-        "level": 3
-      },
-      {
-        "heading": "标题：XXXX的研究现状",
-        "level": 1
-      },
-      {
-        "heading": "摘要",
-        "level": 2
-      },
-      {
-        "heading": "引言",
-        "level": 2
-      },
-      {
-        "heading": "研究背景",
-        "level": 3
-      },
-      {
-        "heading": "综述目的",
-        "level": 3
-      },
-      {
-        "heading": "研究问题",
-        "level": 2
-      },
-      {
-        "heading": "国内外研究现状",
-        "level": 2
-      },
-      {
-        "heading": "问题1：XXXX的提出与演进",
-        "level": 3
-      },
-      {
-        "heading": "问题2：XXXX的提出与演进",
-        "level": 3
-      },
-      {
-        "heading": "展望",
-        "level": 2
-      },
-      {
-        "heading": "参考文献",
-        "level": 2
-      },
-      {
-        "heading": "3.2 分章撰写要点",
-        "level": 3
-      },
-      {
-        "heading": "摘要（200-300字）",
-        "level": 4
-      },
-      {
-        "heading": "研究问题",
-        "level": 4
-      },
-      {
-        "heading": "国内外研究现状（核心章节，占全文70%篇幅）",
-        "level": 4
-      },
-      {
-        "heading": "展望（必须自然引出自身研究）",
-        "level": 4
-      },
-      {
-        "heading": "第4章：整合应用篇（Integration）",
-        "level": 2
-      },
-      {
-        "heading": "4.1 两种写法如何结合",
-        "level": 3
-      },
-      {
-        "heading": "4.2 常见问题（研究现状特有）",
-        "level": 3
-      },
-      {
-        "heading": "4.3 动词快速参考",
-        "level": 3
-      },
-      {
-        "heading": "4.4 质量检查清单（研究现状专用）",
-        "level": 3
-      },
-      {
-        "heading": "版本历史",
-        "level": 2
-      }
-    ]
-  },
-  "synthesize": {
-    "file": "synthesize.md",
-    "title": "文献综述合成模块 (Synthesizer)",
-    "description": "Synthesizer 类提供两个功能：",
-    "keywords": [
-      "Synthesizer",
-      "文献综述合成模块",
-      "快速开始",
-      "我想...",
-      "文件说明",
-      "工作流示例",
-      "提取结构化笔记",
-      "查看结果",
-      "治疗期待 — 文献笔记",
-      "标题",
-      "研究问题",
-      "研究方法",
-      "研究结果",
-      "研究结论",
-      "检查参考文献",
-      "检查综述中的引用格式",
-      "修复 DSAM 引用",
-      "绑定知识库路径",
-      "修复引用",
-      "方法详情",
-      "提取笔记",
-      "命令行工具",
-      "检查引用",
-      "版本历史",
-      "需求",
-      "从 topic 导出结构化笔记",
-      "检查参考文献格式",
-      "文件",
-      "`Synthesizer.py`",
-      "`ReferenceChecker.py`"
-    ],
-    "sections": [
-      {
-        "heading": "文献综述合成模块 (Synthesizer)",
-        "level": 1
-      },
-      {
-        "heading": "快速开始",
-        "level": 2
-      },
-      {
-        "heading": "我想...",
-        "level": 3
-      },
-      {
-        "heading": "文件说明",
-        "level": 2
-      },
-      {
-        "heading": "工作流示例",
-        "level": 2
-      },
-      {
-        "heading": "1. 提取结构化笔记",
-        "level": 3
-      },
-      {
-        "heading": "查看结果",
-        "level": 1
-      },
-      {
-        "heading": "治疗期待 — 文献笔记",
-        "level": 1
-      },
-      {
-        "heading": "1. 标题",
-        "level": 2
-      },
-      {
-        "heading": "研究问题",
-        "level": 3
-      },
-      {
-        "heading": "研究方法",
-        "level": 3
-      },
-      {
-        "heading": "研究结果",
-        "level": 3
-      },
-      {
-        "heading": "研究结论",
-        "level": 3
-      },
-      {
-        "heading": "2. 检查参考文献",
-        "level": 3
-      },
-      {
-        "heading": "检查综述中的引用格式",
-        "level": 1
-      },
-      {
-        "heading": "3. 修复 DSAM 引用",
-        "level": 3
-      },
-      {
-        "heading": "绑定知识库路径",
-        "level": 1
-      },
-      {
-        "heading": "修复引用",
-        "level": 1
-      },
-      {
-        "heading": "方法详情",
-        "level": 2
-      },
-      {
-        "heading": "提取笔记",
-        "level": 3
-      },
-      {
-        "heading": "检查参考文献",
-        "level": 3
-      },
-      {
-        "heading": "修复引用",
-        "level": 3
-      },
-      {
-        "heading": "命令行工具",
-        "level": 2
-      },
-      {
-        "heading": "提取笔记",
-        "level": 3
-      },
-      {
-        "heading": "检查引用",
-        "level": 3
-      },
-      {
-        "heading": "修复引用",
-        "level": 3
-      },
-      {
-        "heading": "版本历史",
-        "level": 2
-      }
-    ]
-  },
-  "summarize": {
-    "file": "summarize.md",
-    "title": "文献总结模块 (Summarizer)",
-    "description": "Summarizer 类使用 LLM 分析文献内容，自动添加 labels（分类标签）和 notes（结构化笔记）字段。",
-    "keywords": [
-      "Summarizer",
-      "文献总结模块",
-      "快速开始",
-      "我想...",
-      "文件说明",
-      "工作流示例",
-      "总结文献",
-      "方法详情",
-      "progress_interval=10",
-      "`summarize`",
-      "输出字段结构",
-      "labels 字段",
-      "notes 字段",
-      "实证文献",
-      "综述文献",
-      "理论文献",
-      "待分类",
-      "命令行工具",
-      "初始化时绑定知识库路径",
-      "命令参数",
-      "输出示例",
-      "配置说明",
-      "LLM 配置",
-      "环境变量",
-      "火山引擎方舟",
-      "腾讯云 tokenhub",
-      "版本历史",
-      "需求",
-      "文件",
-      "`Summarizer.py`"
-    ],
-    "sections": [
-      {
-        "heading": "文献总结模块 (Summarizer)",
-        "level": 1
-      },
-      {
-        "heading": "快速开始",
-        "level": 2
-      },
-      {
-        "heading": "我想...",
-        "level": 3
-      },
-      {
-        "heading": "文件说明",
-        "level": 2
-      },
-      {
-        "heading": "工作流示例",
-        "level": 2
-      },
-      {
-        "heading": "1. 总结文献",
-        "level": 3
-      },
-      {
-        "heading": "方法详情",
-        "level": 2
-      },
-      {
-        "heading": "`summarize(progress_interval=10)`",
-        "level": 3
-      },
-      {
-        "heading": "输出字段结构",
-        "level": 2
-      },
-      {
-        "heading": "labels 字段",
-        "level": 3
-      },
-      {
-        "heading": "notes 字段",
-        "level": 3
-      },
-      {
-        "heading": "实证文献",
-        "level": 4
-      },
-      {
-        "heading": "综述文献",
-        "level": 4
-      },
-      {
-        "heading": "理论文献",
-        "level": 4
-      },
-      {
-        "heading": "待分类",
-        "level": 4
-      },
-      {
-        "heading": "命令行工具",
-        "level": 2
-      },
-      {
-        "heading": "总结文献",
-        "level": 3
-      },
-      {
-        "heading": "总结文献（初始化时绑定知识库路径）",
-        "level": 1
-      },
-      {
-        "heading": "命令参数",
-        "level": 3
-      },
-      {
-        "heading": "输出示例",
-        "level": 3
-      },
-      {
-        "heading": "配置说明",
-        "level": 2
-      },
-      {
-        "heading": "LLM 配置",
-        "level": 3
-      },
-      {
-        "heading": "环境变量",
-        "level": 3
-      },
-      {
-        "heading": "火山引擎方舟",
-        "level": 1
-      },
-      {
-        "heading": "腾讯云 tokenhub",
-        "level": 1
-      },
-      {
-        "heading": "版本历史",
-        "level": 2
-      }
-    ]
-  },
-  "workflows": {
-    "file": "workflows.md",
-    "title": "research-assistant 核心工作流",
-    "description": "> 研究助手的核心工作流：检索 → 整理 → 分析 → 撰写 → 检查",
-    "keywords": [
-      "research-assistant 核心工作流",
-      "工作流总览",
-      "阶段 1：理解",
-      "阶段 2：检索",
-      "阶段 3：阅读",
-      "阶段 4：撰写",
-      "阶段 5：检查",
-      "数据流图",
-      "检查项",
-      "论文数量",
-      "时间范围",
-      "引用格式",
+      "知识库管理",
+      "数据结构",
+      "index.json 原则",
+      "是核心驱动",
+      "版本控制",
+      "不直接编辑",
+      "Manager 操作原则",
       "topic 筛选",
-      "AI 总结",
-      "笔记导出",
+      "数据合并",
+      "常见错误",
+      "错误",
+      "手动编辑 index.json",
+      "不 commit",
+      "多份 index.json",
+      "不备份"
+    ],
+    "sections": [
+      {
+        "heading": "知识库管理",
+        "level": 1
+      },
+      {
+        "heading": "数据结构",
+        "level": 2
+      },
+      {
+        "heading": "index.json 原则",
+        "level": 2
+      },
+      {
+        "heading": "是核心驱动",
+        "level": 3
+      },
+      {
+        "heading": "版本控制",
+        "level": 3
+      },
+      {
+        "heading": "不直接编辑",
+        "level": 3
+      },
+      {
+        "heading": "Manager 操作原则",
+        "level": 2
+      },
+      {
+        "heading": "topic 筛选",
+        "level": 3
+      },
+      {
+        "heading": "数据合并",
+        "level": 3
+      },
+      {
+        "heading": "常见错误",
+        "level": 2
+      }
+    ]
+  },
+  "metadata-maintenance": {
+    "file": "metadata-maintenance.md",
+    "title": "元数据维护",
+    "description": "> 使用 Maintainer 更新和管理文献元数据。",
+    "keywords": [
+      "元数据维护",
+      "元数据类型",
+      "Maintainer 操作",
+      "update_metadata",
+      "add_citation",
+      "generate_report",
+      "版本控制",
+      "数据一致性原则",
+      "单一来源",
+      "不手动编辑",
+      "定期备份",
+      "常见错误",
+      "类型",
+      "论文元数据",
+      "引用关系",
+      "标签",
+      "时间戳",
+      "错误",
+      "手动编辑",
+      "不 commit",
+      "不备份",
+      "标签混乱"
+    ],
+    "sections": [
+      {
+        "heading": "元数据维护",
+        "level": 1
+      },
+      {
+        "heading": "元数据类型",
+        "level": 2
+      },
+      {
+        "heading": "Maintainer 操作",
+        "level": 2
+      },
+      {
+        "heading": "update_metadata",
+        "level": 3
+      },
+      {
+        "heading": "add_citation",
+        "level": 3
+      },
+      {
+        "heading": "generate_report",
+        "level": 3
+      },
+      {
+        "heading": "版本控制",
+        "level": 2
+      },
+      {
+        "heading": "数据一致性原则",
+        "level": 2
+      },
+      {
+        "heading": "单一来源",
+        "level": 3
+      },
+      {
+        "heading": "不手动编辑",
+        "level": 3
+      },
+      {
+        "heading": "定期备份",
+        "level": 3
+      },
+      {
+        "heading": "常见错误",
+        "level": 2
+      }
+    ]
+  },
+  "research-workflow": {
+    "file": "research-workflow.md",
+    "title": "研究工作流",
+    "description": "> 科研文献综述的五阶段流程原则。",
+    "keywords": [
+      "研究工作流",
+      "阶段模型",
+      "核心原则",
+      "阶段顺序执行",
+      "输出驱动",
+      "Git 版本控制",
+      "阶段准入判断",
+      "数据流验证",
+      "常见错误",
+      "阶段",
+      "理解",
+      "检索",
+      "阅读",
+      "撰写",
+      "检查",
+      "当前阶段",
+      "错误",
+      "跳阶段",
+      "无输出就结束",
+      "不 commit",
+      "检索不全就开始写"
+    ],
+    "sections": [
+      {
+        "heading": "研究工作流",
+        "level": 1
+      },
+      {
+        "heading": "五阶段模型",
+        "level": 2
+      },
+      {
+        "heading": "核心原则",
+        "level": 2
+      },
+      {
+        "heading": "阶段顺序执行",
+        "level": 3
+      },
+      {
+        "heading": "输出驱动",
+        "level": 3
+      },
+      {
+        "heading": "Git 版本控制",
+        "level": 3
+      },
+      {
+        "heading": "阶段准入判断",
+        "level": 2
+      },
+      {
+        "heading": "数据流验证",
+        "level": 2
+      },
+      {
+        "heading": "常见错误",
+        "level": 2
+      }
+    ]
+  },
+  "paper-summary": {
+    "file": "paper-summary.md",
+    "title": "文献总结",
+    "description": "> 使用 Summarizer 从文献中提取结构化信息。",
+    "keywords": [
+      "文献总结",
+      "总结原则",
+      "提取而非改写",
+      "结构化输出",
+      "保留来源",
+      "Summarizer 输出格式",
+      "标签系统",
+      "用途",
+      "标签层级",
+      "常见错误",
+      "字段",
+      "title",
+      "authors",
+      "year",
+      "venue",
+      "key_findings",
+      "methodology",
+      "limitations",
+      "contribution",
+      "层级",
+      "主题",
+      "方法",
+      "观点",
+      "错误",
+      "总结太冗长",
+      "缺少来源信息",
+      "标签混乱",
+      "观点缺失"
+    ],
+    "sections": [
+      {
+        "heading": "文献总结",
+        "level": 1
+      },
+      {
+        "heading": "总结原则",
+        "level": 2
+      },
+      {
+        "heading": "提取而非改写",
+        "level": 3
+      },
+      {
+        "heading": "结构化输出",
+        "level": 3
+      },
+      {
+        "heading": "保留来源",
+        "level": 3
+      },
+      {
+        "heading": "Summarizer 输出格式",
+        "level": 2
+      },
+      {
+        "heading": "标签系统",
+        "level": 2
+      },
+      {
+        "heading": "用途",
+        "level": 3
+      },
+      {
+        "heading": "标签层级",
+        "level": 3
+      },
+      {
+        "heading": "常见错误",
+        "level": 2
+      }
+    ]
+  },
+  "research-status": {
+    "file": "research-status.md",
+    "title": "研究现状撰写",
+    "description": "> 参照 `assets/研究现状模板.md` 撰写领域研究现状报告。",
+    "keywords": [
+      "研究现状撰写",
+      "核心结构",
+      "撰写原则",
+      "聚焦\"现在\"",
+      "客观描述",
+      "时效性",
+      "与文献综述的区别",
+      "常见错误",
+      "部分",
+      "概述",
+      "核心议题",
+      "主要流派",
+      "研究热点",
+      "代表成果",
+      "问题与挑战",
+      "机遇与展望",
+      "结论",
+      "维度",
+      "目的",
+      "重点",
+      "视角",
+      "结构",
+      "错误",
+      "写成历史",
+      "堆砌文献",
+      "过时引用",
+      "观点堆砌"
+    ],
+    "sections": [
+      {
+        "heading": "研究现状撰写",
+        "level": 1
+      },
+      {
+        "heading": "核心结构",
+        "level": 2
+      },
+      {
+        "heading": "撰写原则",
+        "level": 2
+      },
+      {
+        "heading": "聚焦\"现在\"",
+        "level": 3
+      },
+      {
+        "heading": "客观描述",
+        "level": 3
+      },
+      {
+        "heading": "时效性",
+        "level": 3
+      },
+      {
+        "heading": "与文献综述的区别",
+        "level": 2
+      },
+      {
+        "heading": "常见错误",
+        "level": 2
+      }
+    ]
+  },
+  "literature-review": {
+    "file": "literature-review.md",
+    "title": "文献综述撰写",
+    "description": "> 参照 `assets/文献综述模板.md` 撰写结构化文献综述。",
+    "keywords": [
+      "文献综述撰写",
+      "核心结构",
+      "撰写原则",
+      "批判性分析",
+      "逻辑连贯",
+      "Gap",
+      "研究空白",
+      "引用规范",
+      "时效性原则",
+      "与研究现状的区别",
+      "常见错误",
+      "部分",
+      "引言",
+      "检索与筛选",
+      "主题分析",
+      "方法综述",
+      "综合讨论",
+      "未来方向",
+      "结论",
+      "维度",
+      "目的",
+      "重点",
+      "视角",
+      "结构",
+      "错误",
+      "罗列文献",
+      "缺少 gap",
+      "引用格式错",
+      "时效性差",
+      "结构混乱"
+    ],
+    "sections": [
+      {
+        "heading": "文献综述撰写",
+        "level": 1
+      },
+      {
+        "heading": "核心结构",
+        "level": 2
+      },
+      {
+        "heading": "撰写原则",
+        "level": 2
+      },
+      {
+        "heading": "批判性分析",
+        "level": 3
+      },
+      {
+        "heading": "逻辑连贯",
+        "level": 3
+      },
+      {
+        "heading": "研究空白（Gap）",
+        "level": 3
+      },
+      {
+        "heading": "引用规范",
+        "level": 3
+      },
+      {
+        "heading": "时效性原则",
+        "level": 2
+      },
+      {
+        "heading": "与研究现状的区别",
+        "level": 2
+      },
+      {
+        "heading": "常见错误",
+        "level": 2
+      }
+    ]
+  },
+  "note-synthesis": {
+    "file": "note-synthesis.md",
+    "title": "笔记合成",
+    "description": "> 使用 Synthesizer 将结构化笔记合成为连贯的笔记文档。",
+    "keywords": [
+      "笔记合成",
+      "合成原则",
+      "主题聚合",
+      "观点对比",
+      "批判性分析",
+      "Synthesizer 操作",
+      "extract_notes",
+      "check_references",
+      "identify_gaps",
+      "输出结构",
+      "主题一：[主题名称]",
+      "核心观点",
+      "比较分析",
+      "研究空白",
       "补充检索",
-      "APA 引用",
-      "元数据"
+      "常见错误",
+      "研究",
+      "错误",
+      "按论文罗列",
+      "不对比观点",
+      "不识别 gap",
+      "引用错误"
     ],
     "sections": [
       {
-        "heading": "research-assistant 核心工作流",
+        "heading": "笔记合成",
         "level": 1
       },
       {
-        "heading": "工作流总览",
+        "heading": "合成原则",
         "level": 2
       },
       {
-        "heading": "阶段 1：理解",
+        "heading": "主题聚合",
+        "level": 3
+      },
+      {
+        "heading": "观点对比",
+        "level": 3
+      },
+      {
+        "heading": "批判性分析",
+        "level": 3
+      },
+      {
+        "heading": "Synthesizer 操作",
         "level": 2
       },
       {
-        "heading": "阶段 2：检索",
+        "heading": "extract_notes",
+        "level": 3
+      },
+      {
+        "heading": "check_references",
+        "level": 3
+      },
+      {
+        "heading": "identify_gaps",
+        "level": 3
+      },
+      {
+        "heading": "输出结构",
         "level": 2
       },
       {
-        "heading": "阶段 3：阅读",
+        "heading": "主题一：[主题名称]",
         "level": 2
       },
       {
-        "heading": "阶段 4：撰写",
+        "heading": "核心观点",
+        "level": 3
+      },
+      {
+        "heading": "比较分析",
+        "level": 3
+      },
+      {
+        "heading": "研究空白",
+        "level": 3
+      },
+      {
+        "heading": "补充检索",
         "level": 2
       },
       {
-        "heading": "阶段 5：检查",
-        "level": 2
-      },
-      {
-        "heading": "数据流图",
-        "level": 2
-      }
-    ]
-  },
-  "search": {
-    "file": "search.md",
-    "title": "文献检索模块 (Searcher)",
-    "description": "Searcher 类负责从 Semantic Scholar 获取文献数据，支持多主题多轮检索，每轮可单独设置条件。",
-    "keywords": [
-      "Searcher",
-      "文献检索模块",
-      "快速开始",
-      "我想...",
-      "文件说明",
-      "浏览器自动化方案",
-      "CNKI 中文检索",
-      "工作流",
-      "第一步：构造搜索 URL",
-      "→ https://search.cnki.com.cn/Search/Result?SearchWord=深度学习&Match=Contains&Order=0&Page=1",
-      "第二步：浏览器访问并抓取快照",
-      "打开搜索结果页",
-      "等待页面加载完成后获取快照",
-      "或直接传给 Python",
-      "将 snapshot 返回的原始文本保存为文件",
-      "第三步：解析快照并写入知识库",
-      "读取浏览器快照文件",
-      "解析快照，提取文献列表",
-      "标准化并合并到知识库",
-      "完整 CLI 管道",
-      "保存快照后，一行命令完成解析+写入",
-      "CNKI 快照字段说明",
-      "注意事项",
-      "知网 vs Semantic Scholar 对比",
-      "工作流示例",
-      "检索文献",
-      "第一步：确定检索条件",
-      "第二步：执行检索",
-      "初始化时绑定知识库路径",
-      "方法调用时不再传知识库路径"
-    ],
-    "sections": [
-      {
-        "heading": "文献检索模块 (Searcher)",
-        "level": 1
-      },
-      {
-        "heading": "快速开始",
-        "level": 2
-      },
-      {
-        "heading": "我想...",
-        "level": 3
-      },
-      {
-        "heading": "文件说明",
-        "level": 2
-      },
-      {
-        "heading": "CNKI 中文检索（浏览器自动化方案）",
-        "level": 2
-      },
-      {
-        "heading": "工作流",
-        "level": 3
-      },
-      {
-        "heading": "第一步：构造搜索 URL",
-        "level": 3
-      },
-      {
-        "heading": "→ https://search.cnki.com.cn/Search/Result?SearchWord=深度学习&Match=Contains&Order=0&Page=1",
-        "level": 1
-      },
-      {
-        "heading": "第二步：浏览器访问并抓取快照",
-        "level": 3
-      },
-      {
-        "heading": "1. 打开搜索结果页",
-        "level": 1
-      },
-      {
-        "heading": "2. 等待页面加载完成后获取快照",
-        "level": 1
-      },
-      {
-        "heading": "3. 将 snapshot 返回的原始文本保存为文件（或直接传给 Python）",
-        "level": 1
-      },
-      {
-        "heading": "第三步：解析快照并写入知识库",
-        "level": 3
-      },
-      {
-        "heading": "读取浏览器快照文件",
-        "level": 1
-      },
-      {
-        "heading": "解析快照，提取文献列表",
-        "level": 1
-      },
-      {
-        "heading": "标准化并合并到知识库",
-        "level": 1
-      },
-      {
-        "heading": "完整 CLI 管道",
-        "level": 3
-      },
-      {
-        "heading": "保存快照后，一行命令完成解析+写入",
-        "level": 1
-      },
-      {
-        "heading": "CNKI 快照字段说明",
-        "level": 3
-      },
-      {
-        "heading": "注意事项",
-        "level": 3
-      },
-      {
-        "heading": "知网 vs Semantic Scholar 对比",
-        "level": 3
-      },
-      {
-        "heading": "工作流示例",
-        "level": 2
-      },
-      {
-        "heading": "1. 检索文献",
-        "level": 3
-      },
-      {
-        "heading": "第一步：确定检索条件",
-        "level": 4
-      },
-      {
-        "heading": "第二步：执行检索",
-        "level": 4
-      },
-      {
-        "heading": "初始化时绑定知识库路径",
-        "level": 1
-      },
-      {
-        "heading": "方法调用时不再传知识库路径",
-        "level": 1
-      },
-      {
-        "heading": "2. 更新知识库元数据",
-        "level": 3
-      },
-      {
-        "heading": "初始化时绑定知识库路径",
-        "level": 1
-      },
-      {
-        "heading": "方法调用时不再传知识库路径",
-        "level": 1
-      },
-      {
-        "heading": "方法详情",
-        "level": 2
-      },
-      {
-        "heading": "`search(queries, fields=None, deduplicate=True, **global_params)`",
-        "level": 3
-      },
-      {
-        "heading": "queries.list中的字典支持的字段",
-        "level": 4
-      },
-      {
-        "heading": "`update(fields=None)`",
-        "level": 3
-      },
-      {
-        "heading": "检索规则",
-        "level": 2
-      },
-      {
-        "heading": "query语法",
-        "level": 3
-      },
-      {
-        "heading": "fields_of_study",
-        "level": 3
-      },
-      {
-        "heading": "publication_types",
-        "level": 3
-      },
-      {
-        "heading": "命令行工具",
-        "level": 2
-      },
-      {
-        "heading": "检索文献",
-        "level": 3
-      },
-      {
-        "heading": "1. 创建检索条件 JSON 文件",
-        "level": 1
-      },
-      {
-        "heading": "2. 执行检索（初始化时绑定知识库路径）",
-        "level": 1
-      },
-      {
-        "heading": "更新知识库元数据",
-        "level": 3
-      },
-      {
-        "heading": "更新元数据（初始化时绑定知识库路径）",
-        "level": 1
-      },
-      {
-        "heading": "命令参数",
-        "level": 3
-      },
-      {
-        "heading": "配置说明",
-        "level": 2
-      },
-      {
-        "heading": "config.json 配置",
-        "level": 3
-      },
-      {
-        "heading": "环境变量",
-        "level": 3
-      },
-      {
-        "heading": "版本历史",
-        "level": 2
-      }
-    ]
-  },
-  "Guide_to_Writing_a_Literature_Review": {
-    "file": "Guide_to_Writing_a_Literature_Review.md",
-    "title": "Guide to Writing a Literature Review (文献综述撰写指南)",
-    "description": "> 适用对象：心理学、教育学、医学等社会科学领域研究者",
-    "keywords": [
-      "文献综述撰写指南",
-      "Guide to Writing a Literature Review",
-      "使用说明",
-      "What & Why",
-      "阶段1：理解篇",
-      "什么是文献综述",
-      "文献综述的5种类型",
-      "合格标准",
-      "核心误区：文献综述 ≠ 文献堆砌",
-      "Preparation",
-      "阶段2：准备篇",
-      "确定主题",
-      "系统检索",
-      "检索步骤",
-      "\"三位一体\"检索原则",
-      "筛选文献",
-      "四问法",
-      "评估标准",
-      "高水平文献三标准",
-      "Reading",
-      "阶段3：阅读篇",
-      "级过滤法",
-      "批判性阅读记录表",
-      "文献管理",
-      "Writing",
-      "阶段4：撰写篇",
-      "选择组织策略",
-      "标准结构",
-      "标题",
-      "引言"
-    ],
-    "sections": [
-      {
-        "heading": "Guide to Writing a Literature Review (文献综述撰写指南)",
-        "level": 1
-      },
-      {
-        "heading": "使用说明",
-        "level": 2
-      },
-      {
-        "heading": "阶段1：理解篇（What & Why）",
-        "level": 2
-      },
-      {
-        "heading": "1.1 什么是文献综述",
-        "level": 3
-      },
-      {
-        "heading": "1.2 文献综述的5种类型",
-        "level": 3
-      },
-      {
-        "heading": "1.3 合格标准",
-        "level": 3
-      },
-      {
-        "heading": "1.4 核心误区：文献综述 ≠ 文献堆砌",
-        "level": 3
-      },
-      {
-        "heading": "阶段2：准备篇（Preparation）",
-        "level": 2
-      },
-      {
-        "heading": "2.1 确定主题",
-        "level": 3
-      },
-      {
-        "heading": "2.2 系统检索",
-        "level": 3
-      },
-      {
-        "heading": "检索步骤",
-        "level": 4
-      },
-      {
-        "heading": "\"三位一体\"检索原则",
-        "level": 4
-      },
-      {
-        "heading": "2.3 筛选文献",
-        "level": 3
-      },
-      {
-        "heading": "评估标准（四问法）",
-        "level": 4
-      },
-      {
-        "heading": "高水平文献三标准",
-        "level": 4
-      },
-      {
-        "heading": "阶段3：阅读篇（Reading）",
-        "level": 2
-      },
-      {
-        "heading": "3.1 三级过滤法",
-        "level": 3
-      },
-      {
-        "heading": "3.2 批判性阅读记录表",
-        "level": 3
-      },
-      {
-        "heading": "3.3 文献管理",
-        "level": 3
-      },
-      {
-        "heading": "阶段4：撰写篇（Writing）",
-        "level": 2
-      },
-      {
-        "heading": "4.1 选择组织策略",
-        "level": 3
-      },
-      {
-        "heading": "4.2 标准结构",
-        "level": 3
-      },
-      {
-        "heading": "标题",
-        "level": 1
-      },
-      {
-        "heading": "引言",
-        "level": 2
-      },
-      {
-        "heading": "主体",
-        "level": 2
-      },
-      {
-        "heading": "结论",
-        "level": 2
-      },
-      {
-        "heading": "参考文献",
-        "level": 2
-      },
-      {
-        "heading": "4.3 引言写法",
-        "level": 3
-      },
-      {
-        "heading": "4.4 主体写法（核心！）",
-        "level": 3
-      },
-      {
-        "heading": "4.5 结论写法",
-        "level": 3
-      },
-      {
-        "heading": "阶段5：检查篇（Checklist）",
-        "level": 2
-      },
-      {
-        "heading": "5.1 8个常见问题",
-        "level": 3
-      },
-      {
-        "heading": "5.2 质量检查清单（提交前逐项核对）",
-        "level": 3
-      },
-      {
-        "heading": "5.3 进阶：研究空白识别",
-        "level": 3
-      },
-      {
-        "heading": "附录",
-        "level": 2
-      },
-      {
-        "heading": "附录A：文献综述 vs 系统综述",
-        "level": 3
-      },
-      {
-        "heading": "附录B：可视化工具",
-        "level": 3
-      },
-      {
-        "heading": "附录C：文献追踪技巧",
-        "level": 3
-      },
-      {
-        "heading": "版本历史",
-        "level": 2
-      }
-    ]
-  },
-  "maintainer": {
-    "file": "maintainer.md",
-    "title": "元数据维护模块 (Maintainer)",
-    "description": "Maintainer 负责维护项目元数据（时间戳更新）。",
-    "keywords": [
-      "Maintainer",
-      "元数据维护模块",
-      "快速开始",
-      "核心类",
-      "project_path",
-      "`Maintainer`",
-      "更新知识库时间戳",
-      "更新笔记元数据",
-      "`MetadataManager`",
-      "链式调用",
-      "方法详情",
-      "CLI 入口",
-      "元数据自动更新规则",
-      "版本历史",
-      "需求",
-      "操作",
-      "search 检索后",
-      "summarize 总结后",
-      "manage 导出笔记后",
-      "synthesize 提取笔记后",
-      "版本",
-      "3.0.0",
-      "2.0.0",
-      "1.0.0"
-    ],
-    "sections": [
-      {
-        "heading": "元数据维护模块 (Maintainer)",
-        "level": 1
-      },
-      {
-        "heading": "快速开始",
-        "level": 2
-      },
-      {
-        "heading": "核心类",
-        "level": 2
-      },
-      {
-        "heading": "`Maintainer(project_path)`",
-        "level": 3
-      },
-      {
-        "heading": "更新知识库时间戳",
-        "level": 1
-      },
-      {
-        "heading": "更新笔记元数据",
-        "level": 1
-      },
-      {
-        "heading": "`MetadataManager(project_path)`",
-        "level": 3
-      },
-      {
-        "heading": "链式调用",
-        "level": 1
-      },
-      {
-        "heading": "方法详情",
-        "level": 2
-      },
-      {
-        "heading": "更新知识库时间戳",
-        "level": 3
-      },
-      {
-        "heading": "更新笔记元数据",
-        "level": 3
-      },
-      {
-        "heading": "CLI 入口",
-        "level": 2
-      },
-      {
-        "heading": "更新知识库时间戳",
-        "level": 1
-      },
-      {
-        "heading": "更新笔记元数据",
-        "level": 1
-      },
-      {
-        "heading": "元数据自动更新规则",
-        "level": 2
-      },
-      {
-        "heading": "版本历史",
+        "heading": "常见错误",
         "level": 2
       }
     ]
