@@ -22,10 +22,14 @@
       "model": {
         "primary": "minimax/MiniMax-M2.7-highspeed",
         "fallbacks": [
+          "minimax/MiniMax-M2.7-highspeed",
           "minimax/MiniMax-M2.7",
           "xiaomicoding/mimo-v2.5-pro",
           "deepseek/deepseek-v4-flash"
         ]
+      },
+      "pdfModel": {
+        "primary": "minimax/MiniMax-VL-01"
       },
       "imageModel": {
         "primary": "minimax/MiniMax-VL-01"
@@ -158,63 +162,18 @@
       }
     },
     "media": {
-      "image": {
-        "enabled": true,
-        "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1",
-        "headers": {
-          "Authorization": "Bearer…KEY}"
-        },
-        "models": [
-          {
-            "provider": "mimo",
-            "model": "mimo-v2-omni",
-            "capabilities": [
-              "image"
-            ]
-          }
-        ],
-        "maxBytes": 10485760,
-        "maxChars": 500
-      },
-      "audio": {
-        "enabled": true,
-        "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1",
-        "headers": {
-          "Authorization": "Bearer ${MIMO_API_KEY}"
-        },
-        "models": [
-          {
-            "provider": "mimo",
-            "model": "mimo-v2-omni",
-            "capabilities": [
-              "audio"
-            ]
-          }
-        ],
-        "maxBytes": 20971520,
-        "maxChars": 1000,
-        "timeoutSeconds": 120,
-        "language": "zh"
-      },
-      "video": {
-        "enabled": true,
-        "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1",
-        "headers": {
-          "Authorization": "Bearer ${MIMO_API_KEY}"
-        },
-        "models": [
-          {
-            "provider": "mimo",
-            "model": "mimo-v2-omni",
-            "capabilities": [
-              "video"
-            ]
-          }
-        ],
-        "maxBytes": 104857600,
-        "maxChars": 2000,
-        "timeoutSeconds": 300
-      }
+      "models": [
+        {
+          "provider": "xiaomicoding",
+          "model": "mimo-v2-omni",
+          "capabilities": [
+            "image",
+            "audio",
+            "video"
+          ]
+        }
+      ],
+      "concurrency": 2
     }
   },
   "skills": {
@@ -355,7 +314,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.22",
-    "lastTouchedAt": "2026-05-26T13:05:39.566Z"
+    "lastTouchedAt": "2026-05-27T09:11:35.246Z"
   },
   "browser": {
     "enabled": true,
@@ -529,13 +488,12 @@
             "name": "MiMo-V2-Omni",
             "input": [
               "text",
-              "image"
+              "image",
+              "audio",
+              "video"
             ]
           }
         ]
-      },
-      "mimo": {
-        "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1"
       }
     },
     "mode": "merge"
@@ -864,6 +822,9 @@
         "hooks": {
           "allowConversationAccess": true
         }
+      },
+      "xiaomi": {
+        "enabled": true
       }
     },
     "allow": [
@@ -881,7 +842,8 @@
       "qqbot",
       "tavily",
       "zai",
-      "agent-self-development"
+      "agent-self-development",
+      "xiaomi"
     ],
     "load": {
       "paths": []

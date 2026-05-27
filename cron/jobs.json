@@ -58,6 +58,32 @@
         "mode": "none"
       },
       "state": {}
+    },
+    {
+      "id": "07bad57e-97aa-42ee-af83-8f083ace0d1c",
+      "agentId": "steward",
+      "sessionKey": "agent:steward:feishu:direct:ou_25cf20a1973aecc51f73d8e2800d7f7e",
+      "name": "OpenClaw版本检查-mimo视频理解",
+      "enabled": true,
+      "createdAtMs": 1779874196723,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 3",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "检查 OpenClaw GitHub 是否有新版本发布。\n\n执行以下命令获取最新版本：\ncurl -s https://api.github.com/repos/openclaw/openclaw/releases/latest | grep '\"tag_name\"'\n\n对比当前版本：2026.5.22\n\n如果版本 > 2026.5.22：\n1. 查看新版本的 changelog，确认是否提到 Xiaomi mimo 的 media understanding 更新\n2. 如果有更新，在 MEMORY.md 中找到 S001 条目，更新状态并通知用户\n3. 如果没有提到 mimo，passively 继续等待\n\n如果版本仍然是 2026.5.22 或更低，passively 继续等待。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "ou_25cf20a1973aecc51f73d8e2800d7f7e",
+        "channel": "feishu",
+        "accountId": "steward"
+      },
+      "state": {}
     }
   ]
 }

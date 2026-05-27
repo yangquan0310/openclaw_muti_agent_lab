@@ -56,6 +56,12 @@
 
 
 
+### 待跟进事项(Suspended)
+
+| ID | 事项 | 状态 | 创建时间 | 说明 |
+|----|------|------|----------|------|
+| S001 | mimo 音频/视频理解 | 🟡 suspended | 2026-05-27 | 等 OpenClaw 官方更新 Xiaomi mimo 的 media understanding provider。当前版本(2026.5.22) OpenClaw 扩展系统无 mimo video/audio capability。监控 GitHub releases 或 OpenClaw 更新。 |
+
 ## 陈述性记忆(Declarative Memory)
 
 ### 历史任务索引
@@ -134,3 +140,14 @@
 - 杨权设计新的技能体系标准： [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-23.md:32-32]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:47:50 -->
 - | 文件 | 类型 | |------|------| | `guide-writing-guide.md` | 如何撰写指南 | | `standards-writing-guide.md` | 如何撰写标准 | [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-23.md:47-50]
+
+## Promoted From Short-Term Memory (2026-05-28)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:88:91 -->
+- | 代理 | 技能 | 收录内容 | |------|------|----------| | 大管家 | manager | 任务推进/派发、论文项目、课程项目、程序项目 | | 程序员 | programmer | OOP指南、架构指南、全栈开发、测试、运维 | [score=0.842 recalls=0 avg=0.620 source=memory/2026-05-23.md:88-91]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:51:54 -->
+- | `workflow-writing-guide.md` | 如何撰写工作流 | | `coding-standards.md` | 代码规范 | | `development-workflow.md` | 开发工作流 | | `update-workflow.md` | 更新工作流 | [score=0.842 recalls=0 avg=0.620 source=memory/2026-05-23.md:51-54]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:66:69 -->
+- | 类型 | 命名规则 | 回答问题 | |------|----------|----------| | 方法论 | `*-guide` | 为什么要这样做？ | | 标准 | `*-standards` | 要满足什么条件？ | [score=0.842 recalls=0 avg=0.620 source=memory/2026-05-23.md:66-69]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:19:19 -->
+- └── syntheses/ # 总结文档（22个） [score=0.822 recalls=0 avg=0.620 source=memory/2026-05-23.md:19-19]

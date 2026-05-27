@@ -47,7 +47,7 @@
 
 | 指南 | 用途 |
 |------|------|
-| **ch08_how-to-maintain-openclaw-system.md** | .openclaw 系统的体检、日常维护、问题处理和标准管理 |
+| **openclaw-maintenance-guide.md** | .openclaw 系统的体检、日常维护、问题处理和标准管理 |
 
 ---
 

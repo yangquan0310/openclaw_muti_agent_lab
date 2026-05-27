@@ -3,8 +3,13 @@ name: manager
 description: >
   manager的实践技能。
   当需要推进任务、完善TODO、领取项目任务、派发任务时激活。
-  大管家唯一管理技能入口，负责论文、课程、程序、知识库、通用项目的管理。
-version: 5.0.0
+  当需要创建/整理/管理项目（论文、课程、程序、知识库/wiki、通用项目）时激活。
+  当需要备课时激活（lesson-plan-guide）。
+  当需要技能审计、核查技能质量时激活（skill-audit-workflow）。
+  当需要.openclaw系统体检、日常维护、问题处理时激活（openclaw-maintenance-guide）。
+  当需要定期清理wiki或同步规范时激活（cleaning-guide、sync-guide）。
+  **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点。
+version: 5.3.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -39,6 +44,11 @@ metadata:
 | 知识库管理 | knowledge-guide.md |
 | 项目整理 | organize-workflow.md |
 | 通用项目 | project-guide.md |
+| 课程备课 | lesson-plan-guide.md |
+| 技能审核 | skill-audit-workflow.md |
+| 定期清理 | cleaning-guide.md |
+| 规范同步 | sync-guide.md |
+| 系统维护 | openclaw-maintenance-guide.md |
 
 ---
 
@@ -52,6 +62,7 @@ metadata:
 
 ## 边界条件
 
+- **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点
 - 模板只能存放在 `assets/`
 - 不得在任务中指定模型、预算等权限外内容
 - 汇报必须通过群聊，禁止私聊
@@ -61,30 +72,26 @@ metadata:
 ## 快速调用
 
 ```bash
-# 初始化新项目
-manager init <path> --type thesis|course|program
-
-# 整理项目文件
-manager organize <project_path> [--dry-run]
+# 项目整理
+manager maintainer organize <project_path> [--dry-run]
 
 # 同步模板
-manager sync <project_path> [--dry-run]
+manager maintainer sync <project_path> [--dry-run]
 
 # 检查更新
-manager check-updates <project_path>
+manager maintainer check-updates <project_path>
 
 # 查看帮助
-manager --help
-manager <command> --help
-
-# 搜索指南
-lookup! search -i /root/.openclaw/workspace/steward/skills/manager/index/manifest.json <关键词>
+manager maintainer --help
+manager maintainer <子命令> --help
 ```
 
 ## 版本历史
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 5.3.0 | 2026-05-28 | description合并触发条件（删除body触发条件章节），覆盖全部12场景 |
+| 5.2.0 | 2026-05-28 | 修复：CLI与实际不符、版本号统一、补充触发边界、同步index.md内容 |
 | 5.1.0 | 2026-05-24 | CLI 精简：6子命令→4（init/organize/sync/check-updates），ABC 架构凝练 |
 | 5.0.0 | 2026-05-22 | 精简：详细工作流下沉到 references/ 各 guide |
 | 4.0.0 | 2026-05-21 | 唯一入口，整合所有子技能 |

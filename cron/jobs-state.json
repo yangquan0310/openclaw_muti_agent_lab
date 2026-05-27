@@ -15,7 +15,6 @@
         "lastFailureNotificationDeliveryStatus": "not-delivered",
         "nextRunAtMs": 1779912000000,
         "lastDelivered": false,
-        "lastError": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'.",
         "lastDiagnostics": {
           "summary": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'.",
           "entries": [
@@ -37,22 +36,30 @@
         "lastDeliveryError": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'.",
         "lastFailureNotificationDelivered": false,
         "lastFailureNotificationDeliveryError": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'.",
-        "lastFailureAlertAtMs": 1779825863415
+        "lastFailureAlertAtMs": 1779825863415,
+        "runningAtMs": 1779912000027
       }
     },
     "dc7447e5-7fcf-4c64-8079-e811456af6ed": {
-      "updatedAtMs": 1779822042070,
+      "updatedAtMs": 1779908501543,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 3 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1779908400000,
-        "lastRunAtMs": 1779822000038,
+        "nextRunAtMs": 1779994800000,
+        "lastRunAtMs": 1779908400008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 42032,
+        "lastDurationMs": 101535,
         "lastDeliveryStatus": "not-requested",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
         "consecutiveSkipped": 0
+      }
+    },
+    "07bad57e-97aa-42ee-af83-8f083ace0d1c": {
+      "updatedAtMs": 1779874196723,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 9 * * 3\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1780448400000
       }
     }
   }
