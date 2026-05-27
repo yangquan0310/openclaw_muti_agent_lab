@@ -334,7 +334,119 @@ lark-cli api POST /open-apis/im/v1/messages --dry-run
 | `--dry-run` | 试运行，不实际发送请求 |
 | `-q <expr>` | jq 表达式过滤 JSON 输出 |
 
+## 小米 MiMo 多模态理解（音频 / 视频）
+
+> MiMo-V2-Omni 模型支持音频理解（语音转文字/分析）和视频理解（逐帧分析）
+> API 接入点：`https://api.mimo-v2.com/v1`
+> Provider 配置参考（openclaw.json models.providers）：
+
+```json
+"mimo": {
+  "label": "MiMo",
+  "baseUrl": "https://api.mimo-v2.com/v1",
+  "apiKey": "<your_mimo_api_key>",
+  "api": "openai-chat",
+  "models": ["mimo-v2-omni"]
+}
+```
+
+### 语音理解（Audio Understanding）
+
+| 项目 | 说明 |
+|------|------|
+| **模型** | `mimo-v2-omni` |
+| **输入方式** | Base64 编码音频（`input_audio` 类型） |
+| **支持格式** | WAV、MP3、FLAC、OGG |
+| **计费** | 按音频时长计费，时长越长 Token 越多 |
+
+**消息格式示例**（SDK）：
+```python
+from openai import OpenAI
+import base64
+
+client = OpenAI(api_key="<your_mimo_api_key>", base_url="https://api.mimo-v2.com/v1")
+
+with open("audio.wav", "rb") as f:
+    audio_data = base64.b64encode(f.read()).decode()
+
+completion = client.chat.completions.create(
+    model="mimo-v2-omni",
+    messages=[{
+        "role": "user",
+        "content": [
+            {"type": "text", "text": "这段音频说了什么？"},
+            {
+                "type": "input_audio",
+                "input_audio": {"data": audio_data, "format": "wav"}
+            }
+        ]
+    }]
+)
+```
+
+**飞书语音消息处理流程**：
+1. 接收飞书语音消息（格式为 OPUS in OGG）
+2. 下载到本地（`feishu_im_bot_image`，message_id + file_key）
+3. 转换为 WAV：`ffmpeg -i input.ogg -acodec pcm_s16le -ar 16000 output.wav`
+4. Base64 编码后通过 MiMo API 发送
+
+### 视频理解（Video Understanding）
+
+| 项目 | 说明 |
+|------|------|
+| **模型** | `mimo-v2-omni` |
+| **输入方式** | 视频 URL 或 Base64 编码视频（`video_url` 类型） |
+| **支持格式** | MP4（URL 或 base64） |
+| **计费** | 按视频时长、分辨率、帧率计费，消耗远高于图片/文本 |
+
+**消息格式示例 — 视频 URL**：
+```python
+from openai import OpenAI
+
+client = OpenAI(api_key="<your_mimo_api_key>", base_url="https://api.mimo-v2.com/v1")
+
+completion = client.chat.completions.create(
+    model="mimo-v2-omni",
+    messages=[{
+        "role": "user",
+        "content": [
+            {"type": "text", "text": "这个视频里发生了什么？"},
+            {"type": "video_url", "video_url": {"url": "https://example.com/video.mp4"}}
+        ]
+    }]
+)
+```
+
+**消息格式示例 — Base64 编码视频**：
+```python
+from openai import OpenAI
+import base64
+
+with open("video.mp4", "rb") as f:
+    video_data = base64.b64encode(f.read()).decode()
+
+completion = client.chat.completions.create(
+    model="mimo-v2-omni",
+    messages=[{
+        "role": "user",
+        "content": [
+            {"type": "text", "text": "描述这个视频中发生了什么"},
+            {"type": "video_url", "video_url": {"url": f"data:video/mp4;base64,{video_data}"}}
+        ]
+    }]
+)
+```
+
+**⚠️ 成本提示**：视频 Token 消耗远高于图片/文本，长视频建议：
+- 提取关键帧作为图片输入，或
+- 剪辑为较短片段再分析
+
+### 参考链接
+
+- [语音理解文档](https://www.mimo-v2.com/zh/docs/usage-guide/multimodal/audio)
+- [视频理解文档](https://www.mimo-v2.com/zh/docs/usage-guide/multimodal/video)
+
 ---
 
-*最后重构: 2026-05-23*
+*最后重构: 2026-05-27*
 *重构者: 大管家*
