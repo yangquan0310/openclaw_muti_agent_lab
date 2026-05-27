@@ -54,33 +54,6 @@ metadata:
 | 1.0.0 | {date} | 初始版本 |
 """,
 
-    "README.md": """# {skill_name}
-
-{description}
-
----
-
-## 快速开始
-
-完成开发后，使用 skill-developer 技能进行自检。
-
----
-
-## 目录结构
-
-```
-{skill_name}/
-├── SKILL.md
-├── README.md
-├── _meta.json
-├── assets/templates/
-├── scripts/
-├── mcp/
-│   └── server.py
-└── references/
-```
-""",
-
 
     "references/index.md": """# {skill_name}
 
@@ -205,20 +178,6 @@ class Skill:
         for d in ["assets/templates", "scripts", "references", "mcp"]:
             (skill_path / d).mkdir(parents=True, exist_ok=True)
 
-        # _meta.json
-        (skill_path / "_meta.json").write_text(
-            json.dumps({
-                "name": skill_name,
-                "version": "1.0.0",
-                "description": description,
-                "entry_point": "mcp/server.py",
-                "triggers": [],
-                "dependencies": [],
-                "author": "Yang Quan",
-            }, indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
-
         # 模板文件
         vars_ = {
             "skill_name": skill_name,
@@ -229,7 +188,6 @@ class Skill:
         }
         for rel_path, key in [
             ("SKILL.md", "SKILL.md"),
-            ("README.md", "README.md"),
             ("references/index.md", "references/index.md"),
             ("mcp/server.py", "mcp/server.py"),
         ]:
@@ -237,7 +195,7 @@ class Skill:
             (skill_path / rel_path).write_text(content, encoding="utf-8")
 
         print(f"\n✅ 技能初始化完成: {skill_path}")
-        print(f"   - SKILL.md  - README.md  - _meta.json")
+        print(f"   - SKILL.md")
         print(f"   - scripts/  - references/  - mcp/server.py")
         print(f"   - assets/templates/")
         print(f"\n   自检：skill-developer check {skill_path}")
@@ -251,7 +209,6 @@ class Skill:
         pass_, fail, warn = [], [], []
         self._check_structure(skill_path, pass_, fail, warn)
         self._check_naming(skill_path, pass_, fail, warn)
-        self._check_meta(skill_path, pass_, fail, warn)
 
         for label, items in [("✅ 通过", pass_), ("❌ 失败", fail), ("⚠️  警告", warn)]:
             if items:
@@ -275,8 +232,9 @@ class Skill:
     # ── 自检子方法 ───────────────────────────────────
 
     def _check_structure(self, p: Path, pass_: list, fail: list, warn: list) -> None:
-        for f in ["SKILL.md", "README.md", "_meta.json"]:
-            (pass_ if (p / f).exists() else fail).append(f"必选文件{'存在' if (p / f).exists() else '缺失'}: {f}")
+        (pass_ if (p / "SKILL.md").exists() else fail).append(
+            f"必选文件{'存在' if (p / "SKILL.md").exists() else '缺失'}: SKILL.md"
+        )
         for d in ["scripts", "references", "assets"]:
             (pass_ if (p / d).exists() else warn).append(f"目录{'存在' if (p / d).exists() else '缺失'}: {d}/")
 
@@ -291,17 +249,7 @@ class Skill:
             ok = len(lines) <= 200
             (pass_ if ok else warn).append(f"SKILL.md {'合理' if ok else '过长'}: {len(lines)}行")
 
-    def _check_meta(self, p: Path, pass_: list, fail: list, warn: list) -> None:
-        mf = p / "_meta.json"
-        if not mf.exists():
-            fail.append("_meta.json 不存在")
-            return
-        try:
-            meta = json.loads(mf.read_text())
-            for key in ["name", "version", "description", "entry_point"]:
-                (pass_ if key in meta else fail).append(f"meta字段{'存在' if key in meta else '缺失'}: {key}")
-        except json.JSONDecodeError as e:
-            fail.append(f"_meta.json 格式错误: {e}")
+
 
 
 def main() -> int:
