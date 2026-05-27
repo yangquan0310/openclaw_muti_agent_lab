@@ -123,3 +123,14 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-12.md:40:57 -->
 - - T013 wiki瘦身：concepts/ 文件夹已完成，可继续 entities/reports/syntheses/sources 文件夹 --- ## Session: wiki 瘦身 T013 完成 + .env 来源 + Miniconda 安装 ### 1. wiki 瘦身 — entities/reports/syntheses/sources 文件夹 - **entities/**: 删除 academicassistant.md、teachingassistant.md；更新 index.md - **reports/**: 删除 claim-health.md、contradictions.md、low-confidence.md、open-questions.md、stale-pages.md、privacy-review.md、relationship-graph.md、person-agent-directory.md；内容合并到 lint.md；更新 index.md - **syntheses/**: 删除 wiki-agent-entity-template.md；更新 index.md - **sources/**: 删除 academic-course-schedule.md、teaching-course-schedule.md；重命名 lab-repository.md → repository.md（id 改为 source.repository）；新建 agent-self-development.md、openclaw-system.md、openclaw-workspace.md、openclaw-env.md；批量创建 15 个项目来源页面；更新 index.md - wiki_lint: ✅ No wiki lint issues - MEMORY.md T013 状态更新为 completed ### 2. 来源页面设计原则确认 - **source 定义**: 指向外部真实文件系统的来源页面，有具体文件路径，被 concept/entity 引用作为溯源依据 - **核心目的**: 让代理快速定位外部文件、为声明提供溯源依据 - **五种 pageType 分工**: concept（这是什么）、entity（这是谁）、source（这在哪里）、synthesis（这怎么用）、report（状态如何） [score=0.834 recalls=4 avg=0.644 source=memory/2026-05-12.md:40-57]
+
+## Promoted From Short-Term Memory (2026-05-27)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:78:78 -->
+- mcp_server 模板有 f-string 嵌套 bug（`{skill_name}` 未正确替换），需修复。 [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-23.md:78-78]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:15:18 -->
+- ├── concepts/ # 迁移记录 + 心理概念（范畴论/最优化） ├── sources/ # 资源配置清单（7个） ├── reports/ # 系统报告（10个） ├── entities/ # Agent实体定义（13个） [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-23.md:15-18]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:32:32 -->
+- 杨权设计新的技能体系标准： [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-23.md:32-32]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:47:50 -->
+- | 文件 | 类型 | |------|------| | `guide-writing-guide.md` | 如何撰写指南 | | `standards-writing-guide.md` | 如何撰写标准 | [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-23.md:47-50]

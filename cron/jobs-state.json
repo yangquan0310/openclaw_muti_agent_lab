@@ -2,38 +2,57 @@
   "version": 1,
   "jobs": {
     "b6a6b07d-384d-43fb-ab80-0b713e8a8289": {
-      "updatedAtMs": 1779653088686,
+      "updatedAtMs": 1779825863394,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"00 04 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "lastRunAtMs": 1779652800042,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 288644,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
+        "lastRunAtMs": 1779825600011,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 263383,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 1,
         "consecutiveSkipped": 0,
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "nextRunAtMs": 1779739200000,
-        "lastDelivered": true,
-        "runningAtMs": 1779739200001
+        "lastFailureNotificationDeliveryStatus": "not-delivered",
+        "nextRunAtMs": 1779912000000,
+        "lastDelivered": false,
+        "lastError": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'.",
+        "lastDiagnostics": {
+          "summary": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'.",
+          "entries": [
+            {
+              "ts": 1779825863388,
+              "source": "tool",
+              "severity": "error",
+              "message": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'."
+            },
+            {
+              "ts": 1779825863393,
+              "source": "agent-run",
+              "severity": "error",
+              "message": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'."
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'.",
+        "lastDeliveryError": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'.",
+        "lastFailureNotificationDelivered": false,
+        "lastFailureNotificationDeliveryError": "LLM error invalid_request_error: Invalid 'tools[4].function.name': string does not match pattern. Expected a string that matches the pattern '^[a-zA-Z0-9_-]+$'.",
+        "lastFailureAlertAtMs": 1779825863415
       }
     },
     "dc7447e5-7fcf-4c64-8079-e811456af6ed": {
-      "updatedAtMs": 1779735674724,
+      "updatedAtMs": 1779822042070,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 3 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1779822000000,
-        "lastRunAtMs": 1779735600013,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 74711,
-        "lastDeliveryStatus": "unknown",
+        "nextRunAtMs": 1779908400000,
+        "lastRunAtMs": 1779822000038,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 42032,
+        "lastDeliveryStatus": "not-requested",
         "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "consecutiveSkipped": 0,
-        "lastError": "cron: job interrupted by gateway restart",
-        "lastDelivered": false,
-        "lastDeliveryError": "cron: job interrupted by gateway restart"
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0
       }
     }
   }

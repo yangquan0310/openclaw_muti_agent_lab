@@ -16,6 +16,7 @@
 | 常见错误 | [common-mistakes.md](common-mistakes.md) | 错误模式与案例 |
 | 命名规范 | [naming.md](naming.md) | 名称约定 |
 | 版本管理 | [versioning.md](versioning.md) | 版本号规则 |
+| 渐进式披露 | [progressive-disclosure.md](progressive-disclosure.md) | 三层加载模型与触发机制 |
 
 ---
 
@@ -28,6 +29,7 @@
 | 不确定要不要建 | [skill-creation.md](skill-creation.md) |
 | 不确定要新建还是扩展 | [skill-extension.md](skill-extension.md) |
 | 不确定设计方向对不对 | [design-principles.md](design-principles.md) |
+| 不理解技能如何被触发和加载 | [progressive-disclosure.md](progressive-disclosure.md) |
 
 ### 执行阶段
 
@@ -35,6 +37,7 @@
 |------|------|
 | 不知道命名对不对 | [naming.md](naming.md) |
 | 不知道质量够不够 | [quality-standards.md](quality-standards.md) |
+| 不知道 L1/L2/L3 层该放什么 | [progressive-disclosure.md](progressive-disclosure.md) |
 
 ### 审查阶段
 

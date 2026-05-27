@@ -11,6 +11,7 @@
 - 触发条件是具体的，不是模糊的
 - 一个新问题出现时，能判断出是否应该用这个技能
 - 不会和其他技能的触发条件冲突或重叠
+- description 符合渐进式披露原则：说清楚何时激活、何时不用（详见 [progressive-disclosure.md](progressive-disclosure.md) L1 层设计）
 
 ### 有清晰的边界
 
@@ -20,9 +21,10 @@
 
 ### 结构服务于目的
 
-- SKILL.md 简洁，只放必要信息
-- references/ 按需加载，不过度设计
+- SKILL.md 简洁，只放必要信息（L2 层）
+- references/ 按需加载，不过度设计（L3 层）
 - scripts/ 只放被重复使用的工具
+- 三层结构符合渐进式披露模型（详见 [progressive-disclosure.md](progressive-disclosure.md)）
 
 ### 可验证
 

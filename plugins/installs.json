@@ -4,19 +4,19 @@
   "hostContractVersion": "2026.5.22",
   "compatRegistryVersion": "af8b17f09647983ae8ac5979bb70f87f862f1e9e343fe9eb85f4a11a135cfa17",
   "migrationVersion": 1,
-  "policyHash": "e4492280950265811c209398d05552588702459d6200d9009f4362bf83848f2b",
-  "generatedAtMs": 1779623503075,
+  "policyHash": "bcb804adfbb1575462a5208998e2aa353c88d4b7deb2fa11eb4f190a7627d443",
+  "generatedAtMs": 1779800808614,
   "refreshReason": "migration",
   "installRecords": {
     "agent-self-development": {
       "source": "git",
       "spec": "git:github.com/yangquan0310/agent-self-development",
       "installPath": "/root/.openclaw/git/git-de97ffe848595ced/repo",
-      "version": "4.4.0",
-      "resolvedAt": "2026-05-22T12:03:40.694Z",
-      "installedAt": "2026-05-22T12:03:40.695Z",
+      "version": "4.5.0",
+      "resolvedAt": "2026-05-26T13:05:32.078Z",
+      "installedAt": "2026-05-26T13:05:32.078Z",
       "gitUrl": "https://github.com/yangquan0310/agent-self-development.git",
-      "gitCommit": "bd5ea0b3aa1033ccfc8dc01646b34cff516fae3a"
+      "gitCommit": "277f4adbbdccae49e884abb8d872e1d54ae4754c"
     },
     "memory-tencentdb": {
       "source": "npm",
@@ -3273,16 +3273,16 @@
     {
       "pluginId": "agent-self-development",
       "manifestPath": "/root/.openclaw/git/git-de97ffe848595ced/repo/openclaw.plugin.json",
-      "manifestHash": "f24417c9a3d10df1ce78b733080aadd84c9e485235616d3661b7f036449421c0",
+      "manifestHash": "1a0ae8d1537b6a4bbd1e1ebcd8a80064e2aedeb6c14c0ead7b7722b0a5959274",
       "manifestFile": {
         "size": 948,
-        "mtimeMs": 1779451418100.6,
-        "ctimeMs": 1779451418100.6
+        "mtimeMs": 1779800728312.3992,
+        "ctimeMs": 1779800728312.3992
       },
       "source": "/root/.openclaw/git/git-de97ffe848595ced/repo/src/index.js",
       "rootDir": "/root/.openclaw/git/git-de97ffe848595ced/repo",
       "origin": "global",
-      "enabled": false,
+      "enabled": true,
       "startup": {
         "sidecar": false,
         "memory": false,
@@ -3291,15 +3291,15 @@
       },
       "compat": [],
       "packageName": "agent-self-development",
-      "packageVersion": "4.4.0",
-      "installRecordHash": "fa90be18b2b39a2a1b914616e57eb8ed85aef36214a324b8f451289b361f8550",
+      "packageVersion": "4.5.0",
+      "installRecordHash": "6d767d730c8c0de0b5c934392bfab23720a35360faa9ef8d57234077196a7f1a",
       "packageJson": {
         "path": "package.json",
-        "hash": "c7d20ffd1a553ad13d4a4815177ea3a7da5a451ea25017ebb6a9a1c1fbd25d98",
+        "hash": "059e33bad3d0127ef52b288deeb2f3b400bb00c8d0047f6c1cca54840c564ded",
         "fileSignature": {
-          "size": 793,
-          "mtimeMs": 1779451418101.6,
-          "ctimeMs": 1779451418101.6
+          "size": 803,
+          "mtimeMs": 1779800728312.3992,
+          "ctimeMs": 1779800728312.3992
         }
       }
     },

@@ -62,6 +62,7 @@ skill-developer init <skill-name> <description> [path] [emoji]
 | 常见错误 | [common-mistakes.md](references/common-mistakes.md) | 错误模式与案例 |
 | 命名规范 | [naming.md](references/naming.md) | 名称约定 |
 | 版本管理 | [versioning.md](references/versioning.md) | 版本号规则 |
+| 渐进式披露 | [progressive-disclosure.md](references/progressive-disclosure.md) | 三层加载模型与触发机制 |
 
 ---
 
@@ -69,6 +70,7 @@ skill-developer init <skill-name> <description> [path] [emoji]
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 5.4.0 | 2026-05-27 | 新增 `references/progressive-disclosure.md`：三层加载模型与模型驱动触发 |
 | 5.3.0 | 2026-05-26 | references 重构：7章 how-to 改为 8章原则性章节，文件名改为名词短语风格 |
 | 5.2.0 | 2026-05-25 | 重构 references：新框架 7 章，how-to 格式命名，问题→方法论→工作流→执行标准结构 |
 | 5.1.0 | 2026-05-24 | 新增 pyproject.toml + entry_points，支持 `skill-developer init ...` CLI 格式 |

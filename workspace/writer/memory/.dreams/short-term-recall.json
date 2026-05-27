@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-24T19:01:34.525Z",
+  "updatedAt": "2026-05-26T19:00:38.892Z",
   "entries": {
     "memory:memory/2026-04-13.md:4:7": {
       "key": "memory:memory/2026-04-13.md:4:7",
@@ -112686,6 +112686,65 @@
         "更新",
         "变更",
         "要点"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-25.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-25.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-25.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: 你能直接对word排版嘛？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-26T19:00:38.252Z",
+      "lastRecalledAt": "2026-05-26T19:00:38.252Z",
+      "queryHashes": [
+        "cd5aa3c5fc0e"
+      ],
+      "recallDays": [
+        "2026-05-27",
+        "2026-05-26"
+      ],
+      "conceptTags": [
+        "直接",
+        "word",
+        "排版"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-25.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-25.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-25.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 可以！我有以下几个层面的 Word 排版能力： ## 当前能力 | 能力 | 说明 | |------|------| | **读取 Word 文档** | 用 `python-docx` 提取文本、段落、结构 | | **修改 Word 文档** | 用 `python-docx` 修改内容、格式（字体、段落样式等） | | **创建 Word 文档** | 从零创建带格式的 .docx 文件 | | **格式控制** | 字体（中英文）、字号、行距、段落缩进、对齐方式、标题层级、加粗/斜体等 | | **docx 技能** |",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-26T19:00:38.252Z",
+      "lastRecalledAt": "2026-05-26T19:00:38.252Z",
+      "queryHashes": [
+        "cd5aa3c5fc0e"
+      ],
+      "recallDays": [
+        "2026-05-27",
+        "2026-05-26"
+      ],
+      "conceptTags": [
+        "python-docx",
+        "加粗/斜体等",
+        "可以",
+        "我有",
+        "以下",
+        "几个",
+        "层面",
+        "word"
       ]
     }
   }
