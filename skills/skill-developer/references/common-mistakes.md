@@ -83,3 +83,29 @@
 **问题**：不知道什么时候改大版本、小版本还是 patch。
 
 **教训**：见 versioning.md 的规范。
+
+---
+
+## 一致性维护
+
+### 触发短语与指南名称不匹配
+
+**问题**：SKILL.md description 中的触发短语与 references 指南名称不对应。
+
+**案例**：description 写「遵循技能设计原则」，但指南文件叫 `design-principles.md`，index.md 导航中写「设计原则」，三者不一致。
+
+**规范命名**（全部保持统一）：
+
+| description 触发短语 | index.md 章节名 | 文件名 |
+|---------------------|--------------|--------|
+| 技能创建 | 技能创建 | `skill-creation.md` |
+| 技能扩展 | 技能扩展 | `skill-extension.md` |
+| 质量标准 | 质量标准 | `quality-standards.md` |
+| 设计原则 | 设计原则 | `design-principles.md` |
+| 边界约束 | 边界约束 | `boundaries.md` |
+| 常见错误 | 常见错误 | `common-mistakes.md` |
+| 命名规范 | 命名规范 | `naming.md` |
+| 版本管理 | 版本管理 | `versioning.md` |
+| 渐进式披露 | 渐进式披露 | `progressive-disclosure.md` |
+
+**教训**：description 触发短语 → index.md 章节名 → 文件名，三者名称必须完全一致。修改任何一处必须同步更新另外两处。
