@@ -23,6 +23,7 @@
         "primary": "minimax/MiniMax-M2.7-highspeed",
         "fallbacks": [
           "minimax/MiniMax-M2.7",
+          "xiaomicoding/mimo-v2.5-pro",
           "deepseek/deepseek-v4-flash"
         ]
       },
@@ -170,6 +171,45 @@
             ]
           }
         ]
+      },
+      "audio": {
+        "enabled": true,
+        "baseUrl": "https://api.mimo-v2.com/v1",
+        "headers": {
+          "Authorization": "Bearer ${MIMO_API_KEY}"
+        },
+        "models": [
+          {
+            "provider": "mimo",
+            "model": "mimo-v2-omni",
+            "capabilities": [
+              "audio"
+            ]
+          }
+        ],
+        "maxBytes": 20971520,
+        "maxChars": 1000,
+        "timeoutSeconds": 120,
+        "language": "zh"
+      },
+      "video": {
+        "enabled": true,
+        "baseUrl": "https://api.mimo-v2.com/v1",
+        "headers": {
+          "Authorization": "Bearer ${MIMO_API_KEY}"
+        },
+        "models": [
+          {
+            "provider": "mimo",
+            "model": "mimo-v2-omni",
+            "capabilities": [
+              "video"
+            ]
+          }
+        ],
+        "maxBytes": 104857600,
+        "maxChars": 2000,
+        "timeoutSeconds": 300
       }
     }
   },
@@ -454,6 +494,33 @@
             "reasoning": true,
             "contextWindow": 204800,
             "maxTokens": 20480
+          }
+        ]
+      },
+      "xiaomicoding": {
+        "baseUrl": "https://token-plan-cn.xiaomimimo.com/anthropic",
+        "apiKey": "${MIMO_API_KEY}",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "mimo-v2.5-pro",
+            "name": "MiMo-V2.5-Pro"
+          },
+          {
+            "id": "mimo-v2.5",
+            "name": "MiMo-V2.5"
+          },
+          {
+            "id": "mimo-v2-pro",
+            "name": "MiMo-V2-Pro"
+          },
+          {
+            "id": "mimo-v2-omni",
+            "name": "MiMo-V2-Omni",
+            "input": [
+              "text",
+              "image"
+            ]
           }
         ]
       }
