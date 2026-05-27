@@ -160,21 +160,25 @@
     "media": {
       "image": {
         "enabled": true,
-        "maxBytes": 10485760,
-        "maxChars": 500,
+        "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1",
+        "headers": {
+          "Authorization": "Bearer…KEY}"
+        },
         "models": [
           {
-            "provider": "minimax",
-            "model": "MiniMax-VL-01",
+            "provider": "mimo",
+            "model": "mimo-v2-omni",
             "capabilities": [
               "image"
             ]
           }
-        ]
+        ],
+        "maxBytes": 10485760,
+        "maxChars": 500
       },
       "audio": {
         "enabled": true,
-        "baseUrl": "https://api.mimo-v2.com/v1",
+        "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1",
         "headers": {
           "Authorization": "Bearer ${MIMO_API_KEY}"
         },
@@ -194,7 +198,7 @@
       },
       "video": {
         "enabled": true,
-        "baseUrl": "https://api.mimo-v2.com/v1",
+        "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1",
         "headers": {
           "Authorization": "Bearer ${MIMO_API_KEY}"
         },
@@ -504,11 +508,17 @@
         "models": [
           {
             "id": "mimo-v2.5-pro",
-            "name": "MiMo-V2.5-Pro"
+            "name": "MiMo-V2.5-Pro",
+            "reasoning": true,
+            "contextWindow": 1000000,
+            "maxTokens": 384000
           },
           {
             "id": "mimo-v2.5",
-            "name": "MiMo-V2.5"
+            "name": "MiMo-V2.5",
+            "reasoning": true,
+            "contextWindow": 1000000,
+            "maxTokens": 384000
           },
           {
             "id": "mimo-v2-pro",
@@ -523,6 +533,9 @@
             ]
           }
         ]
+      },
+      "mimo": {
+        "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1"
       }
     },
     "mode": "merge"

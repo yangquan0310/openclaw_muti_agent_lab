@@ -337,13 +337,13 @@ lark-cli api POST /open-apis/im/v1/messages --dry-run
 ## 小米 MiMo 多模态理解（音频 / 视频）
 
 > MiMo-V2-Omni 模型支持音频理解（语音转文字/分析）和视频理解（逐帧分析）
-> API 接入点：`https://api.mimo-v2.com/v1`
+> API 接入点：`https://token-plan-cn.xiaomimimo.com/v1`
 > Provider 配置参考（openclaw.json models.providers）：
 
 ```json
 "mimo": {
   "label": "MiMo",
-  "baseUrl": "https://api.mimo-v2.com/v1",
+  "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1",
   "apiKey": "<your_mimo_api_key>",
   "api": "openai-chat",
   "models": ["mimo-v2-omni"]
@@ -364,7 +364,7 @@ lark-cli api POST /open-apis/im/v1/messages --dry-run
 from openai import OpenAI
 import base64
 
-client = OpenAI(api_key="<your_mimo_api_key>", base_url="https://api.mimo-v2.com/v1")
+client = OpenAI(api_key="<your_mimo_api_key>", base_url="https://token-plan-cn.xiaomimimo.com/v1")
 
 with open("audio.wav", "rb") as f:
     audio_data = base64.b64encode(f.read()).decode()
@@ -403,7 +403,7 @@ completion = client.chat.completions.create(
 ```python
 from openai import OpenAI
 
-client = OpenAI(api_key="<your_mimo_api_key>", base_url="https://api.mimo-v2.com/v1")
+client = OpenAI(api_key="<your_mimo_api_key>", base_url="https://token-plan-cn.xiaomimimo.com/v1")
 
 completion = client.chat.completions.create(
     model="mimo-v2-omni",
