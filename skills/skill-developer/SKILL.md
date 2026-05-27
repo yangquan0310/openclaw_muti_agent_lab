@@ -1,8 +1,8 @@
 ---
 name: skill-developer
 description: >
-  当用户要求「创建一个新技能」「新建 OpenClaw 技能」「教我开发技能」「更新技能」「维护技能」时触发。
-  用于指导代理创建、扩展和维护可复用的 OpenClaw 技能。
+  当用户要求「创建一个新技能」「开发一个新技能」「新建 OpenClaw 技能」「更新技能」「维护技能」「教我开发技能」「检查技能质量」「规范技能命名」「修复技能错误」时触发。
+  用于指导代理创建、扩展、检查、修复、重构可复用的 OpenClaw 技能，涵盖质量标准、设计原则、边界约束、命名规范、版本管理、渐进式披露。
 version: 5.2.0
 author: Yang Quan
 metadata:
@@ -72,6 +72,7 @@ skill-developer init <skill-name> <description> [path] [emoji]
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 5.6.0 | 2026-05-27 | 扩展 description 触发短语，覆盖全部8个指南 |
 | 5.5.0 | 2026-05-27 | 移除 mcp/ 目录生成，改为可选项；移除 README.md 和 _meta.json |
 | 5.4.0 | 2026-05-27 | 新增 `references/progressive-disclosure.md`：三层加载模型与模型驱动触发 |
 | 5.3.0 | 2026-05-26 | references 重构：7章 how-to 改为 8章原则性章节，文件名改为名词短语风格 |
