@@ -43,7 +43,6 @@ metadata:
 | 模块 | 位置 | 说明 |
 |------|------|------|
 | 指南 | [references/guide.md](references/guide.md) | 详细使用说明 |
-| MCP 入口 | [mcp/server.py](mcp/server.py) | 工具暴露 |
 
 ---
 
@@ -175,7 +174,7 @@ class Skill:
                 return 1
 
         # 目录结构
-        for d in ["assets/templates", "scripts", "references", "mcp"]:
+        for d in ["assets/templates", "scripts", "references"]:
             (skill_path / d).mkdir(parents=True, exist_ok=True)
 
         # 模板文件
@@ -189,14 +188,13 @@ class Skill:
         for rel_path, key in [
             ("SKILL.md", "SKILL.md"),
             ("references/index.md", "references/index.md"),
-            ("mcp/server.py", "mcp/server.py"),
         ]:
             content = _TEMPLATES[key].format(**vars_)
             (skill_path / rel_path).write_text(content, encoding="utf-8")
 
         print(f"\n✅ 技能初始化完成: {skill_path}")
         print(f"   - SKILL.md")
-        print(f"   - scripts/  - references/  - mcp/server.py")
+        print(f"   - scripts/  - references/")
         print(f"   - assets/templates/")
         print(f"\n   自检：skill-developer check {skill_path}")
         return 0

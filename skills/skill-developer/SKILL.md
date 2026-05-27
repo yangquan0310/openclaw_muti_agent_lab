@@ -64,12 +64,15 @@ skill-developer init <skill-name> <description> [path] [emoji]
 | 版本管理 | [versioning.md](references/versioning.md) | 版本号规则 |
 | 渐进式披露 | [progressive-disclosure.md](references/progressive-disclosure.md) | 三层加载模型与触发机制 |
 
+> `mcp/` 目录已移除，如有需要自行添加。
+
 ---
 
 ## 版本历史
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 5.5.0 | 2026-05-27 | 移除 mcp/ 目录生成，改为可选项；移除 README.md 和 _meta.json |
 | 5.4.0 | 2026-05-27 | 新增 `references/progressive-disclosure.md`：三层加载模型与模型驱动触发 |
 | 5.3.0 | 2026-05-26 | references 重构：7章 how-to 改为 8章原则性章节，文件名改为名词短语风格 |
 | 5.2.0 | 2026-05-25 | 重构 references：新框架 7 章，how-to 格式命名，问题→方法论→工作流→执行标准结构 |
