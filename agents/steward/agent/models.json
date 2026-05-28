@@ -7,35 +7,44 @@
         {
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
           "cost": {
             "input": 0.14,
             "output": 0.28,
             "cacheRead": 0.028,
             "cacheWrite": 0
-          }
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "api": "anthropic-messages"
         },
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek V4 Pro",
           "reasoning": true,
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
           "cost": {
             "input": 1.74,
             "output": 3.48,
             "cacheRead": 0.145,
             "cacheWrite": 0
-          }
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": [
+            "text"
+          ],
+          "api": "anthropic-messages"
         }
       ],
       "apiKey": "DEEPSEEK_API_KEY"
     },
     "kimicode": {
       "baseUrl": "https://api.kimi.com/coding/v1",
-      "api": "anthropic-messages",
       "apiKey": "${KIMI_API_KEY}",
+      "api": "anthropic-messages",
       "models": [
         {
           "id": "kimi-for-coding",
@@ -65,41 +74,69 @@
           "id": "MiniMax-M2.7",
           "name": "MiniMax M2.7",
           "reasoning": true,
-          "contextWindow": 204800,
-          "maxTokens": 20480,
           "input": [
             "text"
-          ]
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-M2.7-highspeed",
           "name": "MiniMax M2.7 Highspeed",
           "reasoning": true,
-          "contextWindow": 204800,
-          "maxTokens": 20480,
           "input": [
             "text"
-          ]
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-M2.5",
           "name": "MiniMax M2.5",
           "reasoning": true,
-          "contextWindow": 204800,
-          "maxTokens": 20480,
           "input": [
             "text"
-          ]
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-M2.5-highspeed",
           "name": "MiniMax M2.5 Highspeed",
           "reasoning": true,
-          "contextWindow": 204800,
-          "maxTokens": 20480,
           "input": [
             "text"
-          ]
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         }
       ],
       "apiKey": "MINIMAX_API_KEY"
@@ -114,14 +151,34 @@
           "name": "GLM-5.1",
           "reasoning": true,
           "contextWindow": 204800,
-          "maxTokens": 20480
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         },
         {
           "id": "GLM-5-Turbo",
           "name": "GLM-5-Turbo",
           "reasoning": true,
           "contextWindow": 204800,
-          "maxTokens": 20480
+          "maxTokens": 20480,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         }
       ]
     },
@@ -195,41 +252,69 @@
           "id": "MiniMax-M2.7",
           "name": "MiniMax M2.7",
           "reasoning": true,
-          "contextWindow": 204800,
-          "maxTokens": 20480,
           "input": [
             "text"
-          ]
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-M2.7-highspeed",
           "name": "MiniMax M2.7 Highspeed",
           "reasoning": true,
-          "contextWindow": 204800,
-          "maxTokens": 20480,
           "input": [
             "text"
-          ]
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-M2.5",
           "name": "MiniMax M2.5",
           "reasoning": true,
-          "contextWindow": 204800,
-          "maxTokens": 20480,
           "input": [
             "text"
-          ]
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-M2.5-highspeed",
           "name": "MiniMax M2.5 Highspeed",
           "reasoning": true,
-          "contextWindow": 204800,
-          "maxTokens": 20480,
           "input": [
             "text"
-          ]
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 20480,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         }
       ],
       "apiKey": "MINIMAX_API_KEY"
@@ -413,18 +498,51 @@
           "name": "MiMo-V2.5-Pro",
           "reasoning": true,
           "contextWindow": 1000000,
-          "maxTokens": 384000
+          "maxTokens": 384000,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         },
         {
           "id": "mimo-v2.5",
           "name": "MiMo-V2.5",
           "reasoning": true,
           "contextWindow": 1000000,
-          "maxTokens": 384000
+          "maxTokens": 384000,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "anthropic-messages"
         },
         {
           "id": "mimo-v2-pro",
-          "name": "MiMo-V2-Pro"
+          "name": "MiMo-V2-Pro",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "anthropic-messages"
         },
         {
           "id": "mimo-v2-omni",
@@ -434,7 +552,17 @@
             "image",
             "audio",
             "video"
-          ]
+          ],
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "anthropic-messages"
         }
       ]
     },
@@ -493,6 +621,83 @@
         }
       ],
       "apiKey": "XIAOMI_API_KEY"
+    },
+    "jina": {
+      "baseUrl": "https://api.jina.ai/v1",
+      "apiKey": "${JINA_API_KEY}",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "jina-embeddings-v5-text-small",
+          "name": "Jina Embeddings v5 Text Small",
+          "input": [
+            "text"
+          ],
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "jina-embeddings-v5-omni-small",
+          "name": "Jina Embeddings v5 Omni Small",
+          "input": [
+            "text",
+            "image"
+          ],
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "jina-reranker-v3",
+          "name": "Jina Reranker v3",
+          "input": [
+            "text"
+          ],
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "jina-vlm",
+          "name": "Jina VLM",
+          "input": [
+            "text",
+            "image"
+          ],
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        }
+      ]
     }
   }
 }

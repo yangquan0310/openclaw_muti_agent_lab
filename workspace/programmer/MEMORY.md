@@ -65,3 +65,14 @@
 ---
 *最后重构: 2026-05-23*
 *重构者: 大管家*
+
+## Promoted From Short-Term Memory (2026-05-29)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:6:9 -->
+- scripts/search/ [score=0.837 recalls=0 avg=0.620 source=memory/2026-05-24.md:14-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:14:17 -->
+- scripts/search/ ├── __init__.py → 导出 CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher ├── BaseSearcher.py → ABC 抽象基类 + Paper 模型 ├── CnkiSearcher.py → 中国知网（浏览器 snapshot） [score=0.837 recalls=0 avg=0.620 source=memory/2026-05-24.md:14-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:18:21 -->
+- ├── SemSchSearcher.py → Semantic Scholar（API） ├── ScholarSearcher.py → Google Scholar（requests） ├── Searcher.py → 原有实现（保留） ├── utils.py → 多态函数 + 工厂 [score=0.837 recalls=0 avg=0.620 source=memory/2026-05-24.md:18-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:22:23 -->
+- └── assets/ └── default_queries.json [score=0.817 recalls=0 avg=0.620 source=memory/2026-05-24.md:22-23]

@@ -54,7 +54,6 @@ physicist/
 │   ├── guide.md       # 使用指南
 │   └── radiation-guide.md  # 辐射物理指南
 ├── scripts/           # 计算脚本
-│   └── lookup.py      # 指南搜索
 ├── assets/            # 模板
 │   └── templates/     # 分析报告模板
 └── index/             # 索引
@@ -69,9 +68,6 @@ physicist/
 ```bash
 # 构建指南索引
 physicist index
-
-# 搜索指南
-physicist lookup <关键词>
 
 # 辐射计算
 physicist radiation --dose 100 --material lead --thickness 5

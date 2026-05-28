@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never">
+  <info>
+    <title>American Psychological Association 7th edition</title>
+    <id>apa-7th-edition</id>
+    <category citation-format="author-date"/>
+    <category field="psychology"/>
+    <updated>2024-01-01T00:00:00+00:00</updated>
+  </info>
+  <locale xml:lang="en">
+    <terms>
+      <term name="translator" form="short">
+        <single>Trans.</single>
+        <multiple>Trans.</multiple>
+      </term>
+    </terms>
+  </locale>
+  <macro name="author">
+    <names variable="author">
+      <name and="symbol" delimiter=", " delimiter-precedes-last="contextual" initialize-with=". " name-as-sort-order="all"/>
+    </names>
+  </macro>
+  <macro name="issued-year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <bibliography hanging-indent="true" entry-spacing="0" line-spacing="2">
+    <sort>
+      <key macro="author"/>
+      <key macro="issued-year"/>
+    </sort>
+    <layout suffix=".">
+      <group delimiter=" ">
+        <text macro="author"/>
+        <text macro="issued-year" prefix="(" suffix=")."/>
+        <text variable="title"/>
+        <text variable="container-title" font-style="italic"/>
+        <text variable="volume"/>
+        <text variable="page"/>
+        <text variable="DOI" prefix="https://doi.org/"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>

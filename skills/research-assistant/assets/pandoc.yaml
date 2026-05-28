@@ -1,0 +1,30 @@
+# Pandoc PDF 编译配置
+# 使用方式：cd manuscripts && pandoc --defaults pandoc.yaml
+
+standalone: true
+pdf-engine: xelatex
+from: markdown
+to: latex
+input-files: []
+output-file: output.pdf
+bibliography: reference.bib
+csl: apa.csl
+citeproc: false
+number-sections: true
+include-in-header: header.tex
+variables:
+  mainfont: "Noto Serif CJK SC"
+  sansfont: "Noto Serif CJK SC"
+  CJKmainfont: "Noto Serif CJK SC"
+  CJKsansfont: "Noto Serif CJK SC"
+  CJKmonofont: "Noto Sans Mono CJK SC"
+  geometry:
+    - top=1in
+    - bottom=1in
+    - left=1in
+    - right=1in
+  fontsize: 12pt
+  papersize: a4
+metadata:
+  title: "论文标题"
+  author: "作者一 作者二"

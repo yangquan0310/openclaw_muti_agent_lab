@@ -10,8 +10,8 @@
         "mode": "safeguard",
         "model": "minimax/MiniMax-M2.7",
         "postCompactionSections": [
-          "安全红线",
-          "工作原则"
+          "## 一、工作原则",
+          "## 四、安全红线"
         ]
       },
       "sandbox": {
@@ -29,7 +29,7 @@
         ]
       },
       "pdfModel": {
-        "primary": "minimax/MiniMax-VL-01"
+        "primary": "jina/jina-vlm"
       },
       "imageModel": {
         "primary": "minimax/MiniMax-VL-01"
@@ -45,7 +45,7 @@
       },
       "memorySearch": {
         "provider": "openai",
-        "model": "jina-embeddings-v4",
+        "model": "jina-embeddings-v5-text-small",
         "remote": {
           "baseUrl": "https://api.jina.ai/v1",
           "apiKey": "${JINA_API_KEY}"
@@ -158,7 +158,7 @@
     "web": {
       "search": {
         "enabled": true,
-        "provider": "minimax"
+        "provider": "exa"
       }
     },
     "media": {
@@ -314,7 +314,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.22",
-    "lastTouchedAt": "2026-05-27T09:11:35.246Z"
+    "lastTouchedAt": "2026-05-28T10:18:51.203Z"
   },
   "browser": {
     "enabled": true,
@@ -491,6 +491,43 @@
               "image",
               "audio",
               "video"
+            ]
+          }
+        ]
+      },
+      "jina": {
+        "baseUrl": "https://api.jina.ai/v1",
+        "apiKey": "${JINA_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "jina-embeddings-v5-text-small",
+            "name": "Jina Embeddings v5 Text Small",
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "jina-embeddings-v5-omni-small",
+            "name": "Jina Embeddings v5 Omni Small",
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "jina-reranker-v3",
+            "name": "Jina Reranker v3",
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "jina-vlm",
+            "name": "Jina VLM",
+            "input": [
+              "text",
+              "image"
             ]
           }
         ]
@@ -690,19 +727,10 @@
           "Authorization": "${TENCENT_QQ_AUTHORIZATION}"
         }
       },
-      "research-assistant": {
-        "command": "python3",
-        "args": [
-          "/root/.openclaw/workspace/skills/research-assistant/mcp/server.py"
-        ]
-      },
-      "exa": {
-        "command": "python3",
-        "args": [
-          "/root/.openclaw/mcp/exa/server.py"
-        ],
-        "env": {
-          "EXA_API_KEY": "${EXA_API_KEY}"
+      "jina-mcp-server": {
+        "url": "https://mcp.jina.ai/v1",
+        "headers": {
+          "Authorization": "Bearer ${JINA_API_KEY}"
         }
       }
     }
@@ -729,7 +757,11 @@
           ],
           "queryMode": "recent",
           "promptStyle": "balanced",
-          "timeoutMs": 15000
+          "timeoutMs": 15000,
+          "logging": true,
+          "maxSummaryChars": 220,
+          "setupGraceTimeoutMs": 30000,
+          "persistTranscripts": false
         }
       },
       "memory-wiki": {
@@ -882,7 +914,7 @@
     "profiles": {}
   },
   "proxy": {
-    "enabled": false,
+    "enabled": true,
     "proxyUrl": "http://127.0.0.1:9981",
     "loopbackMode": "gateway-only"
   }

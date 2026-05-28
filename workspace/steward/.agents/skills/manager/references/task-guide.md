@@ -42,6 +42,8 @@
 ```
 {{task_desc}}
 
+{{艾特代理}}
+
 📋 前置要求：
 - 明确自己的角色：{{agent_role}}，找到对应的 .agents/agents/{{agent}}.md 阅读
 - 查看 TODO.md 中的 {{subtask}} 子任务
