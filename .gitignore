@@ -92,42 +92,14 @@ __pycache__/
 /cron/runs/
 
 # ============================================
-# Agents 目录 - 实验室7个代理只保留 models.json
+# Agents 目录 - 实验室7个代理完全不追踪
 # ============================================
 /agents/*/
-!/agents/steward/
-!/agents/steward/agent/
-/agents/steward/agent/*
-!/agents/steward/agent/models.json
-!/agents/programmer/
-!/agents/programmer/agent/
-/agents/programmer/agent/*
-!/agents/programmer/agent/models.json
-!/agents/mathematician/
-!/agents/mathematician/agent/
-/agents/mathematician/agent/*
-!/agents/mathematician/agent/models.json
-!/agents/physicist/
-!/agents/physicist/agent/
-/agents/physicist/agent/*
-!/agents/physicist/agent/models.json
-!/agents/psychologist/
-!/agents/psychologist/agent/
-/agents/psychologist/agent/*
-!/agents/psychologist/agent/models.json
-!/agents/writer/
-!/agents/writer/agent/
-/agents/writer/agent/*
-!/agents/writer/agent/models.json
-!/agents/reviewer/
-!/agents/reviewer/agent/
-/agents/reviewer/agent/*
-!/agents/reviewer/agent/models.json
+/agents/**/
 
-# 教研室3个代理完全不追踪（覆盖上面的取消排除）
-/agents/teaching/
-/agents/academicassistant/
-/agents/studentaffairsassistant/
+# 排除临时文件夹
+/agents/*/temp/
+/agents/*/tmp/
 
 # ============================================
 # Workspace 目录 - 只追踪实验室7个代理
