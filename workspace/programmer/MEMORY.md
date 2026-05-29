@@ -76,3 +76,12 @@
 - ├── SemSchSearcher.py → Semantic Scholar（API） ├── ScholarSearcher.py → Google Scholar（requests） ├── Searcher.py → 原有实现（保留） ├── utils.py → 多态函数 + 工厂 [score=0.837 recalls=0 avg=0.620 source=memory/2026-05-24.md:18-21]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:22:23 -->
 - └── assets/ └── default_queries.json [score=0.817 recalls=0 avg=0.620 source=memory/2026-05-24.md:22-23]
+
+## Promoted From Short-Term Memory (2026-05-30)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:7:10 -->
+- | 技能 | 章节数 | 文件 | |------|--------|------| | skill-developer | 7 | ch01-ch07 | | research-assistant | 8 | ch01-ch08 | [score=0.837 recalls=0 avg=0.620 source=memory/2026-05-25.md:7-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:11:14 -->
+- | lookup | SKILL.md | 纯 CLI 工具，无 references | | feishu-voice | SKILL.md | 纯 CLI 工具，无 references | | 末日地堡 | 8 | ch01-ch08 | | programmer | 8 | ch01-ch08 | [score=0.837 recalls=0 avg=0.620 source=memory/2026-05-25.md:11-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:23:23 -->
+- **文件名格式**：`ch{num}_{how-to-do-something}.md` [score=0.837 recalls=0 avg=0.620 source=memory/2026-05-25.md:23-23]

@@ -1,6 +1,6 @@
 # OpenClaw 实验室多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.5.22-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.5.27-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -689,6 +689,16 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.2.7 (2026-05-30)
+- **工作空间清理**: 程序员 sessions/ 移至 temp/sessions/，大管家 agent/ 和 sessions/ 移至 temp/ 对应子目录
+- **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
+- **记忆同步**: 全部 10 个代理的 DREAMS.md、memory/.dreams/ 日志文件日常同步（events.jsonl、phase-signals.json、session-corpus、short-term-recall.json 等）
+- **Dreaming 同步**: 全部 10 个代理新增 2026-05-30 dreaming 报告（light/deep/rem）
+- **Cron 状态**: jobs.json、jobs-state.json 同步
+- **插件同步**: plugins/installs.json 更新
+- **配置同步**: openclaw.json 多字段更新
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+
 ### 版本 4.2.6 (2026-05-26)
 - **References 重构**: 程序员 references/ 目录重构为 8 个结构化章节（ch01-ch08）
 - **References 备份归档**: 原 13 个旧文件移至 temp/references-backup-20260526/
@@ -890,7 +900,6 @@ openclaw agents restart <agent-name>
 - **README更新**:同步版本号、时间戳、运行状态
 - **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
 
-### 版本 3.2.7 (2026-05-04)
 ### 版本 3.2.8 (2026-05-18)
 - **模型配置升级**: 新增 Kimi Code 系列模型(kimi-for-coding, kimi-code, k2p5)
 - **上下文窗口扩展**: DeepSeek V4 Flash 从 256K 扩展至 1M
@@ -992,8 +1001,8 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-05-29 04:00:00**
-**系统版本**: OpenClaw 2026.5.22
+**最后更新: 2026-05-30 04:00:00**
+**系统版本**: OpenClaw 2026.5.27
 **插件版本**: agent-self-development v4.3.1
 **运行状态**: ✅ 稳定版
 **备份状态**: ✅ 自动执行中

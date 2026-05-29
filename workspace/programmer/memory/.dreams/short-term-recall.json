@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-28T19:00:40.835Z",
+  "updatedAt": "2026-05-29T19:00:34.175Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-26.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-26.txt:1:1",
@@ -112355,17 +112355,17 @@
     "memory:memory/2026-05-24.md:6:9": {
       "key": "memory:memory/2026-05-24.md:6:9",
       "path": "memory/2026-05-24.md",
-      "startLine": 14,
-      "endLine": 14,
+      "startLine": 6,
+      "endLine": 9,
       "source": "memory",
-      "snippet": "scripts/search/",
+      "snippet": "ScholarSearcher 创建完成: 文件：`~/.openclaw/skills/research-assistant/scripts/search/ScholarSearcher.py`; 方案：requests + BeautifulSoup 解析静态 HTML（无需浏览器）; 解析字段：标题、URL、作者、年份、期刊、摘要、被引数; 内置 CAPTCHA/IP 封禁检测",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-24T19:01:22.894Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "e87913ef436c"
       ],
@@ -112375,7 +112375,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "captcha/ip",
@@ -112397,12 +112398,12 @@
       "source": "memory",
       "snippet": "ScholarSearcher 创建完成: **当前状态**：IP 被 Google Scholar 封禁（CAPTCHA），返回 0 结果属正常现象，等待几分钟后恢复",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-24T19:01:22.894Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "e87913ef436c"
       ],
@@ -112412,7 +112413,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "scholarsearcher",
@@ -112431,14 +112433,14 @@
       "startLine": 14,
       "endLine": 17,
       "source": "memory",
-      "snippet": "scripts/search/ ├── __init__.py → 导出 CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher ├── BaseSearcher.py → ABC 抽象基类 + Paper 模型 ├── CnkiSearcher.py → 中国知网（浏览器 snapshot）",
+      "snippet": "search 模块最终结构: scripts/search/ ├── __init__.py → 导出 CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher ├── BaseSearcher.py → ABC 抽象基类 + Paper 模型 ├── CnkiSearcher.py → 中国知网（浏览器 snapshot）",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-24T19:01:22.894Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "e87913ef436c"
       ],
@@ -112448,7 +112450,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "scripts/search",
@@ -112468,14 +112471,14 @@
       "startLine": 18,
       "endLine": 21,
       "source": "memory",
-      "snippet": "├── SemSchSearcher.py → Semantic Scholar（API） ├── ScholarSearcher.py → Google Scholar（requests） ├── Searcher.py → 原有实现（保留） ├── utils.py → 多态函数 + 工厂",
+      "snippet": "search 模块最终结构: ├── SemSchSearcher.py → Semantic Scholar（API） ├── ScholarSearcher.py → Google Scholar（requests） ├── Searcher.py → 原有实现（保留） ├── utils.py → 多态函数 + 工厂",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-24T19:01:22.894Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "e87913ef436c"
       ],
@@ -112485,7 +112488,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "semschsearcher.py",
@@ -112505,14 +112509,14 @@
       "startLine": 22,
       "endLine": 23,
       "source": "memory",
-      "snippet": "└── assets/ └── default_queries.json",
+      "snippet": "search 模块最终结构: └── assets/ └── default_queries.json",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-24T19:01:22.894Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "e87913ef436c"
       ],
@@ -112522,7 +112526,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "default-queries.json",
@@ -112540,12 +112545,12 @@
       "source": "memory",
       "snippet": "多态架构（ABC 模式）: `BaseSearcher`（ABC）定义抽象方法 `_do_search()`; `CnkiSearcher`、`SemSchSearcher`、`ScholarSearcher` 各自实现 `_do_search()`; `search_all([...], keyword, limit)` 接受任何 BaseSearcher 子类列表，无需 if-else",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-24T19:01:22.894Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "e87913ef436c"
       ],
@@ -112555,7 +112560,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "do-search",
@@ -112576,12 +112582,12 @@
       "source": "memory",
       "snippet": "类名重命名完成（本轮会话）: `CNKISearcher` → `CnkiSearcher`（保留别名）; `SemanticSearcher` → `SemSchSearcher`（保留别名）; `BrowserCNKISearcher` → `CnkiSearcher`（保留别名）; 旧代码（如 main.py）直接用别名运行，无需修改",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-24T19:01:22.894Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "e87913ef436c"
       ],
@@ -112591,7 +112597,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "main.py",
@@ -112612,12 +112619,12 @@
       "source": "memory",
       "snippet": "Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-24T19:01:22.894Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "e87913ef436c"
       ],
@@ -112627,7 +112634,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "pending",
@@ -112648,12 +112656,12 @@
       "source": "memory",
       "snippet": "Key Decisions: Google Scholar 用 requests 而非浏览器（实测 HTML 可直接解析）; Google Scholar 被封时返回 0 结果 + 提示，不抛异常; ScholarSearcher 通过 `__init__.py` 统一导出",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-24T19:01:22.894Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "e87913ef436c"
       ],
@@ -112663,7 +112671,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "key",
@@ -120012,14 +120021,14 @@
       "startLine": 7,
       "endLine": 10,
       "source": "memory",
-      "snippet": "完成的重构: | 技能 | 章节数 | 文件 | |------|--------|------| | skill-developer | 7 | ch01-ch07 | | research-assistant | 8 | ch01-ch08 |",
+      "snippet": "| 技能 | 章节数 | 文件 | |------|--------|------| | skill-developer | 7 | ch01-ch07 | | research-assistant | 8 | ch01-ch08 |",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120027,7 +120036,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "skill-developer",
@@ -120038,7 +120048,8 @@
         "技能",
         "章节",
         "文件"
-      ]
+      ],
+      "promotedAt": "2026-05-29T19:00:34.175Z"
     },
     "memory:memory/2026-05-25.md:11:14": {
       "key": "memory:memory/2026-05-25.md:11:14",
@@ -120046,14 +120057,14 @@
       "startLine": 11,
       "endLine": 14,
       "source": "memory",
-      "snippet": "完成的重构: | lookup | SKILL.md | 纯 CLI 工具，无 references | | feishu-voice | SKILL.md | 纯 CLI 工具，无 references | | 末日地堡 | 8 | ch01-ch08 | | programmer | 8 | ch01-ch08 |",
+      "snippet": "| lookup | SKILL.md | 纯 CLI 工具，无 references | | feishu-voice | SKILL.md | 纯 CLI 工具，无 references | | 末日地堡 | 8 | ch01-ch08 | | programmer | 8 | ch01-ch08 |",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120061,7 +120072,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "skill.md",
@@ -120072,7 +120084,8 @@
         "cli",
         "工具",
         "references"
-      ]
+      ],
+      "promotedAt": "2026-05-29T19:00:34.175Z"
     },
     "memory:memory/2026-05-25.md:18:19": {
       "key": "memory:memory/2026-05-25.md:18:19",
@@ -120082,12 +120095,12 @@
       "source": "memory",
       "snippet": "删除的技能: group-counseling-plan; mathematician",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120095,7 +120108,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "group-counseling-plan",
@@ -120113,14 +120127,14 @@
       "startLine": 23,
       "endLine": 23,
       "source": "memory",
-      "snippet": "新框架规范: **文件名格式**：`ch{num}_{how-to-do-something}.md`",
+      "snippet": "**文件名格式**：`ch{num}_{how-to-do-something}.md`",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120128,7 +120142,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "how-to-do-something",
@@ -120139,7 +120154,8 @@
         "num",
         "how",
         "something"
-      ]
+      ],
+      "promotedAt": "2026-05-29T19:00:34.175Z"
     },
     "memory:memory/2026-05-25.md:24:25": {
       "key": "memory:memory/2026-05-25.md:24:25",
@@ -120149,12 +120165,12 @@
       "source": "memory",
       "snippet": "新框架规范: 标题必须是 how-to 动宾短语; 示例：`ch01_how-to-develop-new-skill.md`",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120162,7 +120178,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "how-to",
@@ -120183,12 +120200,12 @@
       "source": "memory",
       "snippet": "新框架规范: **章节结构**（四层）：",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120196,7 +120213,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "框架",
@@ -120214,12 +120232,12 @@
       "source": "memory",
       "snippet": "新框架规范: 问题 - 为什么要知道这个？; 方法论 - 怎么思考这个问题？; 工作流 - 具体怎么执行？; 执行标准 - 做到什么程度算合格？",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120227,7 +120245,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "框架",
@@ -120248,12 +120267,12 @@
       "source": "memory",
       "snippet": "新框架规范: **SKILL.md 更新规范**：",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120261,7 +120280,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "skill.md",
@@ -120278,12 +120298,12 @@
       "source": "memory",
       "snippet": "新框架规范: 指南导航 → 书籍目录",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120291,7 +120311,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "框架",
@@ -120310,12 +120331,12 @@
       "source": "memory",
       "snippet": "新框架规范: 引用新框架的 ch* 文件",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120323,7 +120344,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "框架",
@@ -120340,12 +120362,12 @@
       "source": "memory",
       "snippet": "Git 提交: commit 5744bd9a：45 files changed, +2946 -1936",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-28T19:00:40.835Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -120353,7 +120375,8 @@
         "2026-05-27",
         "2026-05-26",
         "2026-05-28",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-30"
       ],
       "conceptTags": [
         "git",
@@ -137243,6 +137266,97 @@
         "建议",
         "release",
         "当前"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: 开始执行每日 Git 自动推送任务。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T19:00:34.175Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30",
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "开始",
+        "执行",
+        "每日",
+        "git",
+        "自动",
+        "推送",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T19:00:34.175Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30",
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 每日 Git 自动推送任务完成。 --- **📋 执行摘要 (2026-05-29 04:00)** ### 1. 密钥核查 | 文件 | 问题 | 处理 | |------|------|------| | `openclaw.json` | jina API Key 硬编码 `jina_4d2f40a` | ✅ 已替换为 `${JINA_API_KEY}` | | `agents/steward/agent/models.json` | 同上 | ✅ 已替换为 `${JINA_API_KEY}` | ### 2. 文件夹核查",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T19:00:34.175Z",
+      "lastRecalledAt": "2026-05-29T19:00:34.175Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30",
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "openclaw.json",
+        "jina-4d2f40a",
+        "jina-api-key",
+        "agents/steward/agent/models.json",
+        "每日",
+        "git",
+        "自动",
+        "推送"
       ]
     }
   }

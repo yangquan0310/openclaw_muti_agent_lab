@@ -28,7 +28,6 @@
 
 | 模块 | 版本 | 用途 |
 |------|------|------|
-| mineru | 3.1.15 | PDF 解析主模块 |
 | pdfminer.six | 20260107 | PDF 文本提取 |
 | pypdf | 6.12.1 | PDF 处理 |
 | pypdfium2 | 4.30.0 | PDF 渲染 |
@@ -50,20 +49,6 @@
 | jq | JSON 处理 | `jq '.' openclaw.json` |
 | curl | HTTP 请求 | `curl -s https://...` |
 | Vim / Nano | 文件编辑 | `vim file.md`, `nano file.md` |
-
-#### mineru 使用方法
-
-> minerU 可将 PDF 转换为 Markdown，适合复杂 PDF（表格、公式、图像）解析
-> base 为默认 Python 环境，直接使用 `python` 命令即可。
-
-**基本用法**：
-```bash
-python -m mineru.run --pdf /path/to/file.pdf --output /path/to/output/
-```
-
-**输出**：生成 `{文件名}.md` 文件，包含解析后的 Markdown 内容
-
-**适用场景**：学术论文、含表格/公式的复杂文档、多栏排版 PDF
 
 ## OpenClaw 常用命令
 

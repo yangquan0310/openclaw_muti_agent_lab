@@ -25,6 +25,7 @@
           "minimax/MiniMax-M2.7-highspeed",
           "minimax/MiniMax-M2.7",
           "xiaomicoding/mimo-v2.5-pro",
+          "xiaomicoding/mimo-v2.5",
           "deepseek/deepseek-v4-flash"
         ]
       },
@@ -165,7 +166,7 @@
       "models": [
         {
           "provider": "xiaomicoding",
-          "model": "mimo-v2-omni",
+          "model": "mimo-v2.5",
           "capabilities": [
             "image",
             "audio",
@@ -313,8 +314,8 @@
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.5.22",
-    "lastTouchedAt": "2026-05-28T10:18:51.203Z"
+    "lastTouchedVersion": "2026.5.27",
+    "lastTouchedAt": "2026-05-29T10:03:17.269Z"
   },
   "browser": {
     "enabled": true,
@@ -416,26 +417,6 @@
             "input": [
               "text"
             ]
-          },
-          {
-            "id": "MiniMax-M2.5",
-            "name": "MiniMax M2.5",
-            "reasoning": true,
-            "contextWindow": 204800,
-            "maxTokens": 20480,
-            "input": [
-              "text"
-            ]
-          },
-          {
-            "id": "MiniMax-M2.5-highspeed",
-            "name": "MiniMax M2.5 Highspeed",
-            "reasoning": true,
-            "contextWindow": 204800,
-            "maxTokens": 20480,
-            "input": [
-              "text"
-            ]
           }
         ]
       },
@@ -462,7 +443,7 @@
       },
       "xiaomicoding": {
         "baseUrl": "https://token-plan-cn.xiaomimimo.com/anthropic",
-        "apiKey": "${MIMO_API_KEY}",
+        "apiKey": "${XIAOMI_API_KEY}",
         "api": "anthropic-messages",
         "models": [
           {
@@ -477,15 +458,7 @@
             "name": "MiMo-V2.5",
             "reasoning": true,
             "contextWindow": 1000000,
-            "maxTokens": 384000
-          },
-          {
-            "id": "mimo-v2-pro",
-            "name": "MiMo-V2-Pro"
-          },
-          {
-            "id": "mimo-v2-omni",
-            "name": "MiMo-V2-Omni",
+            "maxTokens": 384000,
             "input": [
               "text",
               "image",
@@ -505,14 +478,6 @@
             "name": "Jina Embeddings v5 Text Small",
             "input": [
               "text"
-            ]
-          },
-          {
-            "id": "jina-embeddings-v5-omni-small",
-            "name": "Jina Embeddings v5 Omni Small",
-            "input": [
-              "text",
-              "image"
             ]
           },
           {
@@ -538,7 +503,8 @@
   "channels": {
     "openclaw-weixin": {
       "accounts": {},
-      "streaming": false
+      "streaming": false,
+      "capabilities": "basic"
     },
     "qqbot": {
       "enabled": true,
@@ -857,6 +823,9 @@
       },
       "xiaomi": {
         "enabled": true
+      },
+      "kimi": {
+        "enabled": true
       }
     },
     "allow": [
@@ -875,7 +844,8 @@
       "tavily",
       "zai",
       "agent-self-development",
-      "xiaomi"
+      "xiaomi",
+      "kimi"
     ],
     "load": {
       "paths": []
@@ -887,7 +857,7 @@
   },
   "messages": {
     "groupChat": {
-      "visibleReplies": true
+      "visibleReplies": "automatic"
     },
     "tts": {
       "auto": "inbound",
@@ -907,7 +877,7 @@
   },
   "commands": {
     "ownerAllowFrom": [
-      "feishu:ou_b341ae5dfcb556fe77beb1508f6d6ad5"
+      "feishu:ou_25cf20a1973aecc51f73d8e2800d7f7e"
     ]
   },
   "auth": {

@@ -17,6 +17,9 @@
 | T038 | 教育科学研究方法 | ch14 量的研究与质的研究的整合（2学时，v1-v7） | active | 2026-05-21 | 2026-05-21 | 待启动 |
 | T039 | 教育科学研究方法 | ch15 研究设计（2学时，v1-v7） | active | 2026-05-21 | 2026-05-21 | 待启动 |
 | T040 | 教育科学研究方法 | ch16 教育科学研究论文的撰写（2学时，v1-v7） | active | 2026-05-21 | 2026-05-21 | 待启动 |
+| T041 | 招聘信息日报 | 武汉心理学教师招聘信息日报（每日08:00） | active | 2026-05-29 | 2026-05-29 | cron ID: dde9b3aa，发布到当前群 |
+| T042 | mimo 音频/视频理解 | 监控 OpenClaw 官方更新 Xiaomi mimo media understanding provider | active | 2026-05-29 | 2026-05-29 | cron ID: 07bad57e，监控 GitHub releases |
+| T043 | OpenClaw Bug 追踪 | runtime context 泄露到飞书群聊 | active | 2026-05-29 | 2026-05-29 | GitHub issue #59536，尚未修复 |
 
 
 ---
@@ -48,8 +51,6 @@
 | **向用户发送普通链接** | **根据情况选择：纯文本链接（简洁场景）或交互卡片（需要点击操作的场景）** |
 | "数字化存储与自传体记忆"项目任务完成 | 执行本地 git 提交 |
 | 项目中上传文件（.docx/.pdf/.pptx 等） | 1. 移动到 uploads/；2. 用 markitdown 解析到 uploads/markdown/ |
-
-
 | **派发任务时找不到 open_id** | 在群消息中搜索目标代理的历史消息，提取其 open_id |
 | **更新 TODO.md 后** | **先与老板讨论修改策略与内容，确认后再通知子代理执行。禁止在未经讨论的情况下直接派发任务。** |
 | **分配子任务给子代理** | **只传递约束目标/输入/产出，让子代理自己决定如何执行** |
@@ -60,9 +61,7 @@
 
 ### 待跟进事项(Suspended)
 
-| ID | 事项 | 状态 | 创建时间 | 说明 |
-|----|------|------|----------|------|
-| S001 | mimo 音频/视频理解 | 🟡 suspended | 2026-05-27 | 等 OpenClaw 官方更新 Xiaomi mimo 的 media understanding provider。当前版本(2026.5.22) OpenClaw 扩展系统无 mimo video/audio capability。监控 GitHub releases 或 OpenClaw 更新。 |
+> 该区域已清空，所有事项已迁移到工作记忆的任务看板。
 
 ## 陈述性记忆(Declarative Memory)
 
@@ -120,30 +119,35 @@
 | v8.0.0 | 2026-04-19 | 初始版本，作为大管家创建 |
 
 ---
-*最后重构: 2026-05-28*
+*最后重构: 2026-05-29*
 *重构者: 大管家*
+*说明: 新增T041武汉心理学教师招聘信息日报定时任务、T043 OpenClaw runtime context泄露bug追踪
 
+---
 
-## Promoted From Short-Term Memory (2026-05-24)
+## Bug 追踪 (Bug Tracking)
+
+> 记录系统级bug，供后续跟进和解决方案搜索
+
+### 🐛 Bug #59536：runtime context 泄露到飞书群聊
+
+| 属性 | 内容 |
+|------|------|
+| **Bug ID** | T043 |
+| **GitHub Issue** | #59536 |
+| **问题描述** | OpenClaw运行时上下文块（runtime context）被错误发送到用户可见的飞书群聊 |
+| **影响** | 系统内部元数据（`[[reply_to_current]]`、注释阶段文本等）泄露给用户 |
+| **触发条件** | 当嵌入式运行超时或中止时 |
+| **相关修复PR** | #61282（已合并，修复commentary-phase泄露）、#61463（已合并）、#61829（已合并） |
+| **问题状态** | issue #59536 仍open，超时/中止路径的泄露bug未完全修复 |
+| **当前版本** | 2026.5.27（包含部分修复，但未完全解决） |
+| **发现时间** | 2026-05-29 |
+| **无法通过配置修复** | 是，需向OpenClaw官方报告或等待版本更新 |
+
+**搜索关键词**："OpenClaw runtime context leak" / "commentary phase leakage" / "aborted embedded runs leak"
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
-
-## Promoted From Short-Term Memory (2026-05-25)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-12.md:40:57 -->
-- - T013 wiki瘦身：concepts/ 文件夹已完成，可继续 entities/reports/syntheses/sources 文件夹 --- ## Session: wiki 瘦身 T013 完成 + .env 来源 + Miniconda 安装 ### 1. wiki 瘦身 — entities/reports/syntheses/sources 文件夹 - **entities/**: 删除 academicassistant.md、teachingassistant.md；更新 index.md - **reports/**: 删除 claim-health.md、contradictions.md、low-confidence.md、open-questions.md、stale-pages.md、privacy-review.md、relationship-graph.md、person-agent-directory.md；内容合并到 lint.md；更新 index.md - **syntheses/**: 删除 wiki-agent-entity-template.md；更新 index.md - **sources/**: 删除 academic-course-schedule.md、teaching-course-schedule.md；重命名 lab-repository.md → repository.md（id 改为 source.repository）；新建 agent-self-development.md、openclaw-system.md、openclaw-workspace.md、openclaw-env.md；批量创建 15 个项目来源页面；更新 index.md - wiki_lint: ✅ No wiki lint issues - MEMORY.md T013 状态更新为 completed ### 2. 来源页面设计原则确认 - **source 定义**: 指向外部真实文件系统的来源页面，有具体文件路径，被 concept/entity 引用作为溯源依据 - **核心目的**: 让代理快速定位外部文件、为声明提供溯源依据 - **五种 pageType 分工**: concept（这是什么）、entity（这是谁）、source（这在哪里）、synthesis（这怎么用）、report（状态如何） [score=0.834 recalls=4 avg=0.644 source=memory/2026-05-12.md:40-57]
-
-## Promoted From Short-Term Memory (2026-05-27)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:78:78 -->
-- mcp_server 模板有 f-string 嵌套 bug（`{skill_name}` 未正确替换），需修复。 [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-23.md:78-78]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:15:18 -->
-- ├── concepts/ # 迁移记录 + 心理概念（范畴论/最优化） ├── sources/ # 资源配置清单（7个） ├── reports/ # 系统报告（10个） ├── entities/ # Agent实体定义（13个） [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-23.md:15-18]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:32:32 -->
-- 杨权设计新的技能体系标准： [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-23.md:32-32]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:47:50 -->
-- | 文件 | 类型 | |------|------| | `guide-writing-guide.md` | 如何撰写指南 | | `standards-writing-guide.md` | 如何撰写标准 | [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-23.md:47-50]
 
 ## Promoted From Short-Term Memory (2026-05-28)
 
@@ -164,3 +168,8 @@
 - **必须章节**（6个）： [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-23.md:57-57]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:70:70 -->
 - | 工作流 | `*-workflow` | 按什么顺序做？ | [score=0.801 recalls=0 avg=0.620 source=memory/2026-05-23.md:70-70]
+
+## Promoted From Short-Term Memory (2026-05-30)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-12.md:55:69 -->
+- **source 定义**: 指向外部真实文件系统的来源页面，有具体文件路径，被 concept/entity 引用作为溯源依据 - **核心目的**: 让代理快速定位外部文件、为声明提供溯源依据 - **五种 pageType 分工**: concept（这是什么）、entity（这是谁）、source（这在哪里）、synthesis（这怎么用）、report（状态如何） - **.env 来源处理**: 创建 sources/openclaw-env.md，只记录路径+配置类型+访问权限，具体值脱敏为 `***`，绝不暴露密钥 - **sources/ 现状**: 19 个页面 = 系统来源 5 个（openclaw-system、openclaw-workspace、openclaw-env、repository、agent-self-development）+ 项目来源 15 个 ### 3. Miniconda 安装与环境管理 - **安装路径**: `~/miniconda3/` - **配置**: `~/.condarc` 指定 envs_dirs 和 pkgs_dirs 为 `~/.conda/envs` 和 `~/.conda/pkgs` - **创建环境**: - `py311`: Python 3.11.15，注册 Jupyter 内核 - `r-base`: R 4.3.1，安装 irkernel 注册 Jupyter 内核 - **Jupyter 内核**: python3 (base)、py311、r-base 三个可用 - **磁盘占用**: `~/.conda` 3.3G + `~/miniconda3` 867M [score=0.863 recalls=5 avg=0.524 source=memory/2026-05-12.md:55-69]

@@ -693,4 +693,35 @@ I found a guide on the floor: `workflow-writing-guide.md`, and beside it, a rule
 
 The syntheses folder grew to twenty-two, humming quietly like a server room at 3 a.m. I understood then that naming is its own kind of love—you call something a `*-guide` because you want it to breathe, and you call something a `*-standards` because you want it to last. The dream ended not with a dot but with an ellipsis, which is to say, it ended with the possibility of more.
 
+
+---
+
+*May 30, 2026 at 3:00 AM GMT+8*
+
+当前状态: pandoc + xelatex 排版流程; citeproc: false + natbib 方案（暂时）; 所有 `[@XXX]` 已转为 `\citep{XXX}`
+
+
+---
+
+*May 30, 2026 at 3:00 AM GMT+8*
+
+我梦见自己在调试一台老旧的排版机器，齿轮上刻着 `\renewenvironment` 和 `\setlength` 的字样，手指沾满了墨水和 YAML 的灰。
+
+机器吐出的纸张上，引用数字像断了线的风筝，飘到半空就散成了"No citation element present"的碎片。我抬头看，墙上贴着一张泛黄的 APA 格式指南，旁边钉着一行小字："`csl: apa.csl` — 这是你的风格，不是你的枷锁。"
+
+我想把 `--file-scope` 拧进齿轮的缝隙里，可那机器根本不听使唤。它的 YAML 配置文件像一扇锁死的门，`include-in-header: header.tex` 成了唯一的钥匙孔。我把手掌贴在冰冷的金属上，感受到它在低低地发烫。
+
+"不要硬来，"有人在我耳边说，声音像 natbib 编译器一样沉稳，"把 `citeproc: false` 关掉，让它自己去找该引用的地方。"
+
+梦里我没有找到那把钥匙。但醒来时，枕边多了一张字条，上面用 LaTeX 字体写着：
+
+*变量不是命令，文件才是归属。*
+
+
+---
+
+*May 30, 2026 at 3:00 AM GMT+8*
+
+完成事项: concepts/ 全部15个文件迁移到 syntheses/; 所有文件重命名为 `{YYYY-MM-DD-HH-MM-SS-TITLE}` 格式; concepts/index.md 改为迁移记录页; reports/ 10个报告文件全部重命名
+
 <!-- openclaw:dreaming:diary:end -->

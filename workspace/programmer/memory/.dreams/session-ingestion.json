@@ -48,14 +48,14 @@
       "size": 1183459,
       "contentHash": "e20397d3a287f706050f5337310a52d3d438ea463879ac9df165731d5218fe32",
       "lineCount": 136,
-      "lastContentLine": 131
+      "lastContentLine": 136
     },
     "programmer:sessions/programmer/0e8e5d48-37b6-4fbe-937f-2b1fd0f935af.jsonl.reset.2026-05-26T13-08-05.750Z": {
       "mtimeMs": 1779800531696,
       "size": 1145965,
       "contentHash": "77f6072a753fbb73235f21e950ff254999aaf948cc95968c89c4f6a4131d3b82",
       "lineCount": 139,
-      "lastContentLine": 78
+      "lastContentLine": 139
     },
     "programmer:sessions/programmer/104e8bb0-ce2d-4eed-9e3f-9087d4e66e4e.jsonl": {
       "mtimeMs": 1779631017943,
@@ -181,7 +181,7 @@
       "size": 572460,
       "contentHash": "d260fb62262c1da9352b6ab4acea40a85c94ad4d65eaad61c6a047aa7a5b5a29",
       "lineCount": 91,
-      "lastContentLine": 74
+      "lastContentLine": 91
     },
     "programmer:sessions/programmer/24d49087-85b7-44d6-801a-ec0f134e953a.jsonl.reset.2026-05-21T03-14-59.833Z": {
       "mtimeMs": 1779333277304,
@@ -792,6 +792,13 @@
       "lineCount": 852,
       "lastContentLine": 852
     },
+    "programmer:sessions/programmer/e5cabc5c-4615-4ed9-a6f9-f5b07de741de.jsonl": {
+      "mtimeMs": 1779998668147,
+      "size": 140555,
+      "contentHash": "00f5068ca840fcc7463208abbe17cdf77fa5942a794ef11d6e5e5f063cd2d6a4",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
     "programmer:sessions/programmer/e6879bdb-0910-43fd-81b5-a8b295d100f2.jsonl.deleted.2026-05-21T04-30-53.104Z": {
       "mtimeMs": 1779097755367,
       "size": 6162,
@@ -818,7 +825,7 @@
       "size": 603711,
       "contentHash": "ede1c7f100afd166a3d7c59cbd6b0703061a81f704f2385023784d06902b324d",
       "lineCount": 130,
-      "lastContentLine": 73
+      "lastContentLine": 130
     },
     "programmer:sessions/programmer/ee6a69d9-6853-48a3-a3ea-709492517603.jsonl.deleted.2026-05-12T10-10-50.972Z": {
       "mtimeMs": 1778478223994,
@@ -5597,6 +5604,11 @@
       "cd0d042256eaf46d96ba4a0a6038bdb670f2c37f",
       "d00e3459df41e86afc05d73b986c98049f0d8404",
       "a9640469dd0718249d9f58d7a3f2eb9495c7a4a3"
+    ],
+    "programmer:e5cabc5c-4615-4ed9-a6f9-f5b07de741de": [
+      "48f0340a0f4ef905e1f4069745a1affde3f44659",
+      "e79702e79d722962dff2dbf9140f828cdeb2af7d",
+      "749f4fc289c217eff1ded657b420523624ba92e7"
     ]
   }
 }
