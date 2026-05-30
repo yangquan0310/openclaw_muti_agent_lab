@@ -9,8 +9,8 @@
 
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | cron状态 |
 |----------|--------|--------|----------|----------|----------|
+| 每日 06:00 | 大管家（steward） | `7a700f52-10f4-4bab-9737-b09a08dde9ec` | OpenClaw版本检查 | 每日检查OpenClaw GitHub更新，摘要变更内容。**重点关注**：MiniMax/DeepSeek/GLM/Kimi/Mimo提供商变化；飞书/微信/QQ渠道变化；OpenClaw核心功能更新 | `{"enabled": "已启用"}` |
 | 每日 08:00 | 大管家（steward） | `dde9b3aa-2582-494e-bb54-a6e9625776c4` | 武汉心理学教师招聘信息日报 | 深度检索武汉地区高校心理学教师招聘信息（硕士/博士），发布到当前群聊 | `{"enabled": "已启用"}` |
-| 每日 09:00 | 大管家（steward） | `07bad57e-97aa-42ee-af83-8f083ace0d1c` | OpenClaw版本检查 | 每日检查OpenClaw GitHub更新，摘要变更内容。**重点关注**：MiniMax/DeepSeek/GLM/Kimi/Mimo提供商变化；飞书/微信/QQ渠道变化；OpenClaw核心功能更新 | `{"enabled": "已启用"}` |
 
 ---
 ## 表格排序规则
@@ -44,10 +44,10 @@
 | 1.0.0 | 2026-04-10 | 将状态列改为cron状态，规范状态取值 |
 
 ---
-*最后更新: 2026-05-29*
+*最后更新: 2026-05-30*
 *更新者: 大管家*
-*说明: 补录OpenClaw版本检查-mimo视频理解定时任务（周三09:00）；武汉招聘信息日报仍在HEARTBEAT中，但cron任务本身仍在运行，MEMORY.md中T041对应dde9b3aa*
+*说明: 修正OpenClaw版本检查执行时间为实际cron时间06:00，任务ID更新为7a700f52；删除mimo视频理解任务说明（该任务不存在）*
 
 ---
 
-> ⚠️ **MEMORY.md 同步说明**：T041（招聘信息日报）、T042（mimo版本检查）对应的cron任务ID已与HEARTBEAT保持一致。
+> ⚠️ **MEMORY.md 同步说明**：T041（招聘信息日报）、T042（OpenClaw版本检查）对应的cron任务ID已与HEARTBEAT保持一致。
