@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-24T19:01:15.676Z",
+  "updatedAt": "2026-05-30T19:00:41.487Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1",
@@ -11783,6 +11783,829 @@
         "职责",
         "技能",
         "物理"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: 你查看cron/job文件 创建一个定时任务`日报：伊辛模型最新应用` 有什么不懂的参数和我说 sessionTarget是session:agent:physicist:corn:physicist的定时任务",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "你查看cron/job文件",
+        "查看",
+        "cron",
+        "job",
+        "文件",
+        "创建",
+        "一个",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 好的，我先查看了现有 cron 结构，当前没有活跃任务。 创建日报定时任务，我需要确认以下参数： | 参数 | 说明 | 示例 | |------|------|------| | **执行时间** | 每日几点执行？ | `每日 09:00` | | **任务内容** | 日报具体要做什么？（搜索伊辛模型哪些方向？最新是多久内的？） | `搜索 arXiv 上伊辛模型在统计物理/神经科学/机器学习的最新应用论文，整理摘要` | 另外确认一下： - **时区**：默认 Asia/Shanghai，可行吗？ - **是否需要结果推送*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "上伊辛模型在统计物理/神经科学/机器学习的最新应用论文",
+        "asia/shanghai",
+        "好的",
+        "我先",
+        "查看",
+        "现有",
+        "cron",
+        "结构"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: 8点 约束： 1. 24小时内 2. arXiv 和学术期刊上的伊辛模型在统计物理/神经科学/机器学习的最新应用论文",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "约束",
+        "小时",
+        "arxiv",
+        "学术",
+        "期刊",
+        "模型",
+        "统计",
+        "物理"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: 定时任务已创建成功 ✅ | 参数 | 值 | |------|-----| | **任务ID** | `2997ffdb-bbaf-4810-821d-66fa4348b01f` | | **名称** | 日报：伊辛模型最新应用 | | **执行时间** | 每日 08:00 (Asia/Shanghai) | | **会话目标** | `session:agent:physicist:corn:physicist` | | **状态** | 已启用 | | **下次执行** | 2026-05-31 08:00 | 任务将按约束条",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "asia/shanghai",
+        "任务",
+        "创建",
+        "成功",
+        "参数",
+        "2997ffdb",
+        "bbaf",
+        "821d"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "User: 传递是怎么设置的？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "传递",
+        "怎么",
+        "设置"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: 刚才创建时 `delivery` 是**系统自动生成的**（根据 `sessionTarget` 绑定的 feishu direct 会话推断）： ```json \"delivery\": { \"mode\": \"announce\", // 公告模式：任务完成后发送结果到聊天 \"to\": \"ou_c521456b99036913d8395db28bb6c2d2\", // 发送给用户杨权 \"channel\": \"feishu\", // 飞书渠道 \"accountId\": \"physicist\" // 机器人账号 } ``` **传递模式说",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "刚才",
+        "创建",
+        "delivery",
+        "系统",
+        "自动",
+        "生成",
+        "根据",
+        "sessiontarget"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "User: accountId？不需要添加，没有这个参数",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "accountid",
+        "不需要",
+        "添加",
+        "没有",
+        "这个",
+        "参数"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: 已更新，`accountId` 从响应看仍保留（可能是系统自动填充字段），但核心传递参数已生效： ```json \"delivery\": { \"mode\": \"announce\", \"channel\": \"feishu\", \"to\": \"ou_c521456b99036913d8395db28bb6c2d2\" } ``` 如果系统仍自动填回 `accountId`，下次你可以直接让我用 `patch` 覆盖整个 `delivery` 对象试试。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "更新",
+        "accountid",
+        "响应",
+        "保留",
+        "可能是",
+        "系统",
+        "自动",
+        "填充"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "User: 你的日报的提示词不好 修改一下: ```GO 你是XXX。请完成以下任务： ## 任务：攥写「agent记忆」日报 ### 任务要求 - {} ### 约束条件 - {} ### 报告结构 请按以下结构生成 Markdown 格式的日报： ```markdown # {日报名称} > 日期：YYYY-MM-DD ## {主题} ### {文章1} - 标题 - 作者 - 时间 - 主要内容 ### {文章2} ## 🔗 参考链接 ``` ```",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "yyyy-mm-dd",
+        "你的",
+        "日报",
+        "提示",
+        "不好",
+        "修改",
+        "一下",
+        "你是"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: 已更新 ✅ 提示词已替换为新模板格式，包含： - **角色设定**：你是物理学专家 - **任务要求**：搜索 + 整理 + 分类 - **约束条件**：24小时内、arXiv + 学术期刊 - **报告结构**：标题、作者、时间、期刊/平台、主要内容、参考链接",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "期刊/平台",
+        "更新",
+        "提示",
+        "替换",
+        "模板",
+        "格式",
+        "包含",
+        "角色"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "User: 100 Glorious Years of the Ising Model 介绍一下这篇文章",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "glorious",
+        "years",
+        "ising",
+        "model",
+        "介绍",
+        "一下",
+        "这篇文章"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "Assistant: ## 《100 Glorious Years of the Ising Model》介绍 ### 基本信息 | 项目 | 内容 | |------|------| | **期刊** | European Physical Journal B (EPJ B) | | **arXiv** | [2601.11671](https://arxiv.org/pdf/2601.11671) | | **发表时间** | 2026年1月（预印本）/ 2026年2月（正式发表） | | **作者** | Muktish Acharyya (Pre",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "2601.11671",
+        "arxiv.org/pdf/2601.11671",
+        "glorious",
+        "years",
+        "ising",
+        "model",
+        "介绍",
+        "基本"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "Assistant: **20篇文章**： - **10篇综述**：介绍各领域基础进展 - **10篇研究论文**：最新研究成果 涉及主题：Ernst Ising 论文分析、非可加熵、Ising 自旋玻璃、Ising粗化动力学、AI/ML与Ising模型等。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "ai/ml与ising模型等",
+        "文章",
+        "综述",
+        "介绍",
+        "领域",
+        "基础",
+        "进展",
+        "研究"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "User: Personalized whole-brain Ising models with heterogeneous nodes 介绍下这篇文章",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "whole-brain",
+        "personalized",
+        "whole",
+        "brain",
+        "ising",
+        "models",
+        "heterogeneous",
+        "nodes"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "Assistant: ## 《Personalized whole-brain Ising models with heterogeneous nodes capture differences among brain regions》介绍 ### 基本信息 | 项目 | 内容 | |------|------| | **平台** | bioRxiv (预印本) → NeuroImage (正式发表) | | **正式发表** | NeuroImage, 332:121886, 2026 | | **作者** | Adam Craig, Sida Che",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "whole-brain",
+        "personalized",
+        "whole",
+        "brain",
+        "ising",
+        "models",
+        "heterogeneous",
+        "nodes"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "Assistant: # 伊辛模型最新应用日报 > 日期：2026-05-30 --- ## 统计物理 ### 文章1 - **标题：** Hidden Ising models from the generalized Yang-Baxter equation - **作者：** （待完善，arXiv:2605.30007） - **时间：** 2026-05-30（arXiv） - **期刊/平台：** arXiv (cond-mat.stat-mech) - **主要内容：** 研究从广义 Yang-Baxter 方程出发的隐伊辛模型，探讨其在可积",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "yang-baxter",
+        "2605.30007",
+        "期刊/平台",
+        "cond-mat.stat-mech",
+        "模型",
+        "最新",
+        "应用",
+        "日报"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "Assistant: marginal flow: resolving the four-state Potts endpoint in the square-lattice J₁–J₂ Ising model - **作者：** （待完善，arXiv:2605.25946） - **时间：** 2026-05（arXiv） - **期刊/平台：** arXiv (cond-mat.stat-mech) - **主要内容：** 针对正方晶格 $J_1$–$J_2$ 伊辛模型中四态 Potts 端点的临界性，提出含边缘流的一般化场混合理论，发展了修正的有限",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "four-state",
+        "square-lattice",
+        "2605.25946",
+        "2026-05",
+        "期刊/平台",
+        "cond-mat.stat-mech",
+        "j-1",
+        "j-2"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:18:18": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:18:18",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "Assistant: 神经科学 ### 文章1 - **标题：** Personalized whole-brain Ising models with heterogeneous nodes - **作者：** （待完善） - **时间：** 2026 - **期刊/平台：** bioRxiv / Science Direct (NeuroImage) - **主要内容：** 构建个性化全脑伊辛模型，考虑节点的异质性，以研究大脑复杂动力学如何从底层 connectivity 涌现，应用于精神病理学的理解。 ### 文章2 - **标题：** State",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "whole-brain",
+        "期刊/平台",
+        "神经",
+        "科学",
+        "文章",
+        "标题",
+        "personalized",
+        "whole"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:19:19": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:19:19",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 19,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "Assistant: NVIDIA - **时间：** 2026-04-14（World Quantum Day） - **期刊/平台：** NVIDIA 官方发布 - **主要内容：** NVIDIA 发布以\"伊辛模型\"命名的开源 AI 模型族，用于量子处理器校准和量子纠错。Ising Calibration 利用视觉-语言模型自动化量子处理器设置，将校准时间从数天缩短至数小时，在量子纠错解码中实现 2.5 倍加速和 3 倍精度提升。 ### 文章2 - **标题：** Capturing the universality class of the 2",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "期刊/平台",
+        "利用视觉-语言模型自动化量子处理器设置",
+        "2.5",
+        "nvidia",
+        "时间",
+        "world",
+        "quantum",
+        "day"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:20:20": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:20:20",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "Assistant: **作者：** （待完善，arXiv:2604.17109） - **时间：** 2026-04（arXiv） - **期刊/平台：** arXiv (cs.ET) - **主要内容：** 提出一种具有惯性的全并行稠密连接概率伊辛机（PIPM），适用于实时应用场景。 --- ## 🔗 参考链接 | 分类 | 链接 | |------|------| | 统计物理 | [arXiv:2605.30007 - Hidden Ising models from Yang-Baxter](https://arxiv.org/abs/260",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "2604.17109",
+        "2026-04",
+        "期刊/平台",
+        "cs.et",
+        "2605.30007",
+        "yang-baxter",
+        "arxiv.org/abs/260",
+        "作者"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:21:21": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:21:21",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 21,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "Assistant: Ising](https://www.sciencedirect.com/science/article/pii/S1053811926002028) | | 神经科学 | [Nature Communications - Kinetic Ising entropy flow](https://www.nature.com/articles/s41467-025-66669-w) | | 神经科学 | [PNAS - Ising decision-making](https://www.pnas.org/doi/10.1073/pn",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "decision-making",
+        "www.pnas.org/doi/10.1073/pn",
+        "ising",
+        "https",
+        "www.sciencedirect.com",
+        "science",
+        "article",
+        "pii"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:22:22": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:22:22",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "Assistant: |------|------| | **阈值效应** | fMRI数据在更高阈值二值化会降低模型与功能连接的相关系数，但会增加节点外场的异质性及其与结构特征的相关性 | | **最优阈值** | 存在一个同时兼顾拟合优度和区域内在异质性的阈值，使模型更好反映大脑作为异质节点网络的真实特性 | | **结构-功能映射** | 个性化、生物物理可解释的全脑结构-功能映射建模成为可能 | --- ### 科学意义 这项研究**桥接了两种范式**： - **连接组学方法**：以网络为中心 - **转化研究范式**：以脑区为中心 通过考虑脑区",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "网络",
+        "结构-功能映射",
+        "生物物理可解释的全脑结构-功能映射建模成为可能",
+        "效应",
+        "fmri",
+        "数据",
+        "更高",
+        "降低"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:23:23": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:23:23",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 23,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "User: 添加约束：使用jina搜索引擎进行搜索。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "添加",
+        "约束",
+        "使用",
+        "jina",
+        "搜索",
+        "引擎",
+        "进行"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:24:24": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:24:24",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 24,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "Assistant: 已更新 ✅ 新增约束：**必须使用 Jina 搜索 (https://jina.ai/search/) 进行学术搜索** 任务将于明日 08:00 执行，届时会使用 Jina 搜索引擎检索伊辛模型相关论文。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "jina.ai/search",
+        "更新",
+        "新增",
+        "约束",
+        "必须",
+        "使用",
+        "jina",
+        "搜索"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:25:25": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:25:25",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 25,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "User: 修改约束条件的表达：使用jina-ai技能进行搜索。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "使用jina-ai技能进行搜索",
+        "修改",
+        "约束",
+        "条件",
+        "表达",
+        "使用",
+        "jina",
+        "技能"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:26:26": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:26:26",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 26,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "Assistant: 已更新 ✅ 约束条件改为：**搜索工具：使用 jina-ai 技能进行搜索 (https://jina.ai/search/)**",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:40.871Z",
+      "lastRecalledAt": "2026-05-30T19:00:40.871Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "jina-ai",
+        "jina.ai/search",
+        "更新",
+        "约束",
+        "条件",
+        "搜索",
+        "工具",
+        "使用"
       ]
     }
   }

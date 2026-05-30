@@ -2,29 +2,12 @@
   "llm": {
     "default_provider": "deepseek",
     "providers": {
-      "kimi": {
-        "name": "Kimi",
-        "base_url": "https://api.moonshot.cn/v1",
-        "default_model": "moonshot-v1-8k",
-        "api_key_env": "KIMI_API_KEY",
-        "timeout": 30,
-        "temperature": 0.3,
-        "max_tokens": 5000
-      },
       "deepseek": {
         "name": "deepseek",
         "base_url": "https://api.deepseek.com/v1",
-        "default_model": "deepseek-v4-flash",
+        "default_model": "deepseek-chat",
         "api_key_env": "DEEPSEEK_API_KEY",
-        "timeout": 30,
-        "temperature": 0.3,
-        "max_tokens": 5000
-      },
-      "tencent_token": {
-        "name": "腾讯云tokenhub",
-        "base_url": "https://tokenhub.tencentmaas.com/v1",
-        "default_model": "deepseek-v3.2",
-        "api_key_env": "TOKENHUB_API_KEY",
+        "api_key": "",
         "timeout": 30,
         "temperature": 0.3,
         "max_tokens": 5000
@@ -36,26 +19,28 @@
     "request_interval": 0.5,
     "default_limit": 20
   },
-  "cnki": {
-    "is_mainland": true,
-    "request_interval": 3.0,
-    "timeout": 15,
-    "default_limit": 10
+  "easy_scholar": {
+    "api_key_env": "EASYSCHOLAR_API_KEY",
+    "base_url": "https://easyscholar.cc/open",
+    "timeout": 10,
+    "retry_times": 3,
+    "retry_delay": 1
   },
   "storage": {
+    "root_path": "/root/lab_repo/",
     "knowledge_base_dir": "knowledge/",
     "knowledge_base_file": "index.json",
     "note_dir": "knowledge/note/",
-    "notes_file_format": "笔记_{topic}.md",
+    "notes_file_format": "研究笔记_{topic}.md",
     "review_dir": "knowledge/review/",
-    "reviews_file_format": "综述_{topic}.md",
+    "reviews_file_format": "文献综述_{topic}.md",
+    "research_status_dir": "knowledge/review/",
+    "research_status_file_format": "研究现状_{topic}.md",
     "retrieval_report_dir": "knowledge/retrieval_report/",
-    "retrieval_report_file_format": "{topic}.md",
+    "retrieval_report_file_format": "检索报告_{topic}.md",
     "search_query_dir": "knowledge/search_query/",
-    "search_queries_file_format": "{query}.json",
-    "draft_dir": "temp/draft/",
-    "skills_dir": "skills/",
-    "topic_subset_dir": "knowledge/topic/",
-    "topic_subset_file_format": "{topic}.json"
+    "search_query_file_format": "检索条件_{topic}.json",
+    "topic_dir": "knowledge/topic/",
+    "topic_file_format": "{topic}.json"
   }
 }

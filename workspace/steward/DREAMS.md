@@ -724,4 +724,25 @@ The syntheses folder grew to twenty-two, humming quietly like a server room at 3
 
 完成事项: concepts/ 全部15个文件迁移到 syntheses/; 所有文件重命名为 `{YYYY-MM-DD-HH-MM-SS-TITLE}` 格式; concepts/index.md 改为迁移记录页; reports/ 10个报告文件全部重命名
 
+
+---
+
+*May 31, 2026 at 3:00 AM GMT+8*
+
+当前状态: pandoc + xelatex 排版流程; citeproc: false + natbib 方案（暂时）; 所有 `[@XXX]` 已转为 `\citep{XXX}`
+
+
+---
+
+*May 31, 2026 at 3:00 AM GMT+8*
+
+citeproc: true 测试失败: 使用 `input-files` 多文件输入时，citeproc 报错 "No citation element present"; 原因：Pandoc 拼接多文件时 citeproc 解析问题; 解决方案：需要用 `--file-scope` CLI 参数，但无法写入 pandoc.yaml
+
+
+---
+
+*May 31, 2026 at 3:00 AM GMT+8*
+
+完成事项: concepts/ 全部15个文件迁移到 syntheses/; 所有文件重命名为 `{YYYY-MM-DD-HH-MM-SS-TITLE}` 格式; concepts/index.md 改为迁移记录页; reports/ 10个报告文件全部重命名
+
 <!-- openclaw:dreaming:diary:end -->

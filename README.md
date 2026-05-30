@@ -689,6 +689,12 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.2.8 (2026-05-31)
+- **记忆同步**: 全部 10 个代理的 DREAMS.md、memory/.dreams/ 日志文件日常同步（events.jsonl、phase-signals.json、session-corpus、short-term-recall.json 等）
+- **Dreaming 同步**: 全部 10 个代理新增 2026-05-31 dreaming 报告（light/deep/rem）
+- **Cron 状态**: jobs.json、jobs-state.json 同步
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+
 ### 版本 4.2.7 (2026-05-30)
 - **工作空间清理**: 程序员 sessions/ 移至 temp/sessions/，大管家 agent/ 和 sessions/ 移至 temp/ 对应子目录
 - **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
@@ -1001,7 +1007,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-05-30 04:00:00**
+**最后更新: 2026-05-31 04:00:00**
 **系统版本**: OpenClaw 2026.5.27
 **插件版本**: agent-self-development v4.3.1
 **运行状态**: ✅ 稳定版

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-29T19:00:32.087Z",
+  "updatedAt": "2026-05-30T19:00:48.958Z",
   "entries": {
     "memory:memory/2026-04-13.md:5:8": {
       "key": "memory:memory/2026-04-13.md:5:8",
@@ -176466,19 +176466,22 @@
       "endLine": 85,
       "source": "memory",
       "snippet": "- **树状结构**：严格按\"问题演进\"四层展开（最早提出→质疑修正→补充发展→最新进展） - **Git管理版本**：删除temp/draft/归档逻辑 - **Synthesizer职责**：仅extract_notes+check_references，不写综述 - **Manager职责**：仅管理JSON，不导出结构化笔记 - **英文标题命名指南**：Guide_to_Writing_a_Literature_Review.md - **5篇无摘要删除**：用户决定直接删除 ## 技术限制与问题 - **沙箱限制**：仅能访问 ~/.openclaw/workspace/psychologist/ - **子代理中断**：gateway服务重启导致子代理反复失败 - **Kimi search不可用**：provider配置问题，tavily缺少API key - **知乎/百度访问受限**：403错误和验证码 ## 核心文献 - Kwan 2010：治疗偏好首次系统研究（205引用） - Cooper & Norcross 2015：C-NIP量表开发 - Hou 2020/2024：CFPPS量表开发与青少年验证 - Vîslă 2018/2021：治疗期待机制研究 - Williams 2016：14,587患者全国调查 ## 知识库状态 - 总文献：707篇 - \"治疗期待\"主题：132篇（全部结构化） - 核心文献：已总结并纳入研究现状 --- *记录时间: 2026-05-15 23:30* *记录者: 心理学家*",
-      "recallCount": 2,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.0255399942398071,
+      "totalScore": 1.981690153479576,
       "maxScore": 0.5362763345241546,
       "firstRecalledAt": "2026-05-23T02:18:27.377Z",
-      "lastRecalledAt": "2026-05-23T02:19:34.527Z",
+      "lastRecalledAt": "2026-05-30T12:11:57.398Z",
       "queryHashes": [
         "12cf195696f2",
-        "2ccf0066c7b0"
+        "2ccf0066c7b0",
+        "2ff911773e0b",
+        "5191ca8b68b8"
       ],
       "recallDays": [
-        "2026-05-23"
+        "2026-05-23",
+        "2026-05-30"
       ],
       "conceptTags": [
         "gateway",
@@ -194105,6 +194108,3934 @@
         "知识",
         "核心",
         "技术"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: 你现在有几个定时任务",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "现在",
+        "几个",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 老板，我当前有 **1 个**定时任务： | 任务名称 | 描述 | 状态 | 下次执行 | |----------|------|------|----------| | 日报：数字化存储与自传体记忆 | 每天上午8点检索24小时内新发布的「数字化存储与自传体记忆」相关文献，攥写日报 | ✅ 已启用 | 次日 08:00 | 如需管理（如暂停、删除或新增定时任务），请告诉我。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "老板",
+        "当前",
+        "任务",
+        "名称",
+        "描述",
+        "状态",
+        "下次",
+        "执行"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: 添加到心跳任务了嘛？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "添加",
+        "心跳",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: 还没有，HEARTBEAT.md 的表格是空的。我来补充登记：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "heartbeat.md",
+        "没有",
+        "表格",
+        "我来",
+        "补充",
+        "登记"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: ✅ 已登记到 HEARTBEAT.md： | 执行时间 | 负责人 | 任务ID | 会话ID | 任务名称 | 功能描述 | cron状态 | |----------|--------|--------|--------|----------|----------|----------| | 每日 08:00 | 心理学家（psychologist） | `aba0ae04-...` | `session:agent:psychologist:corn:psychologist的定时任务` | 日报：数字化存储与自传体记忆 | 每",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "heartbeat.md",
+        "登记",
+        "执行",
+        "时间",
+        "负责",
+        "任务",
+        "会话",
+        "名称"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: 执行一次，记录错误，向我汇报",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "执行",
+        "一次",
+        "记录",
+        "错误",
+        "汇报"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: 已触发，等待执行结果……",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "触发",
+        "等待",
+        "执行",
+        "结果"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: 老板，汇报如下： --- ## 执行结果 **状态**：❌ 失败（日报内容已攥写，但发送失败） **错误信息**： ``` Error: Outbound not configured for channel: feishu Delivering to Feishu requires target <chatId|user:openId|chat:chatId> ``` **根因分析**： - cron job 的 `delivery` 配置目标为 `user:ou_c1a8fc008307a0385a2fcd3c0ca6b71b`",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "老板",
+        "汇报",
+        "如下",
+        "执行",
+        "结果",
+        "状态",
+        "失败",
+        "日报"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "User: delivery的to出错了！ 你的问题定位有问题！ 应该使用正确的to！ 其他都不要改动",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "delivery",
+        "你的",
+        "问题",
+        "定位",
+        "应该",
+        "使用",
+        "正确",
+        "其他"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: 明白了，`to` 格式多了 `user:` 前缀。当前配置是 `user:ou_c1a8fc008307a0385a2fcd3c0ca6b71b`，应该改为 `ou_c1a8fc008307a0385a2fcd3c0ca6b71b`。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "明白",
+        "格式",
+        "当前",
+        "配置",
+        "应该"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "Assistant: 已修复，`to` 从 `user:ou_c1a8fc008307a0385a2fcd3c0ca6b71b` 改为 `ou_c1a8fc008307a0385a2fcd3c0ca6b71b`。再次触发验证：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "修复",
+        "再次",
+        "触发",
+        "验证"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "Assistant: 任务还在执行中，等一下再看结果……",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "任务",
+        "执行",
+        "一下",
+        "再看",
+        "结果"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "Assistant: 根据检索到的学术文献，我现在撰写日报。 --- # 日报：数字化存储与自传体记忆 **日期**：2026年5月30日 **检索范围**：心理学、认知科学、神经科学相关数据库 **检索状态**：✅ 已检索 --- ## 一、理论研究：数字时代自传体记忆理论框架 ### 1. AMEDIA模型：数字时代自传体记忆的整合性框架 **文献信息**： > Hutmacher, F., Appel, M., & Schwan, S. (2024). Understanding Autobiographical Memory in the Dig",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "根据",
+        "检索",
+        "学术",
+        "文献",
+        "现在",
+        "撰写",
+        "日报",
+        "数字"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "Assistant: (2025). The philosophical dimensions of memory in the digital era: Technology, memory and identity. *International Journal of Research and Review*, 12(6), 902–910. 【DOI待补充】 **核心观点**： 数字时代自传体记忆的哲学研究指出，技术正在深刻改变记忆过程本身：传统记忆依赖主动提取（recall），而数字环境正逐渐转向以识别（recognition）为基础的模型。这一",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "philosophical",
+        "dimensions",
+        "digital",
+        "era",
+        "technology",
+        "identity",
+        "international",
+        "journal"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "Assistant: study），探究数字工具如何中介自传体记忆的提取过程。 **核心发现**（基于AMEDIA模型）： 1. 数字编码方式显著影响记忆重构的内容与结构 2. 数字策展行为（如编辑、删除、重排照片）反过来塑造内部记忆表征 3. 检索阶段数字与内部信息的整合程度因个体数字习惯而异 **简评**：该研究通过实验方法验证了AMEDIA模型的两个核心假设，为理论框架提供了实证支撑，深化了我们对\"数字策展行为如何反过来影响内部记忆\"的机制理解。 --- ### 4. 生日记忆研究：数字时代自传体记忆的出声思考实验 **文献信息**： > Hutm",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "study",
+        "探究",
+        "数字",
+        "工具",
+        "如何",
+        "中介",
+        "自传",
+        "记忆"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "Assistant: **核心观点**： 数字技术允许个体将记忆外部化存储，但保存动机的核心并非认知卸载，而是社会联结等自传体记忆的核心功能。 **简评**：该综述文章厘清了数字记忆外部化的动机机制，区分了\"认知卸载\"与\"社会性保存\"两种不同导向，对理解数字化存储的真实心理动因具有重要价值。 --- ## 三、神经科学视角：记忆编码与检索的神经机制 ### 6. 记忆编码与检索的神经调控：乙酰胆碱的关键作用 **文献信息**： > Gedankien, T., et al. (2026). Memory encoding and retrieval: R",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "核心",
+        "观点",
+        "数字",
+        "技术",
+        "允许",
+        "个体",
+        "记忆",
+        "外部"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "Assistant: computer coded) and hedonic and eudaimonic well-being. *Journal of Research in Personality*, June 2026. 【DOI待补充，原文链接：https://www.sciencedirect.com/science/article/abs/pii/S0092656626000309】 **核心发现**： 采用三波纵向设计，探究个人叙事主题（代理性、交际性、救赎性、污染性）与享乐幸福感及实现幸福感之间的关联。 **简评**：该研究方法学上的一",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "well-being",
+        "computer",
+        "coded",
+        "hedonic",
+        "eudaimonic",
+        "well",
+        "journal",
+        "research"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:18:18": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:18:18",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "Assistant: 数字记忆障碍（Digital Amnesia）的心理学机制 - 老年人数字自传体记忆策略的年龄差异 --- ## 参考文献 1. Hutmacher, F., Appel, M., & Schwan, S. (2024). Understanding Autobiographical Memory in the Digital Age: The AMEDIA-Model. *Psychological Inquiry*, 35(2), 83–105. https://doi.org/10.1080/1047840x.2024.238",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "amedia-model",
+        "数字",
+        "记忆",
+        "障碍",
+        "digital",
+        "amnesia",
+        "心理",
+        "机制"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:19:19": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:19:19",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 19,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "Assistant: autobiographical memories in the digital age. *Trends in Cognitive Sciences*, 25(12), 1072–1081. https://doi.org/10.1016/j.tics.2021.08.005 5. Banik, G. (2025). The philosophical dimensions of memory in the digital era: Technology, memory and identity. *International J",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "autobiographical",
+        "memories",
+        "digital",
+        "age",
+        "trends",
+        "cognitive",
+        "sciences",
+        "https"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:20:20": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:20:20",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "Assistant: 该任务已在 **12:35 PM** 完成并发送。 日报《数字化存储与自传体记忆》已基于检索结果攥写完毕，包含： - AMEDIA模型理论与实证研究（4篇核心文献） - 数字记忆哲学维度 - 神经科学机制 - 交叉应用与心理健康 如需重新获取，请告知。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "任务",
+        "完成",
+        "发送",
+        "日报",
+        "数字",
+        "存储",
+        "自传",
+        "记忆"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:21:21": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:21:21",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 21,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "User: Portable Agent Memory: A Protocol for Provenance-Verified Memory Transfer Across Heterogeneous LLM Agents 这篇文章详细介绍一下",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "provenance-verified",
+        "portable",
+        "protocol",
+        "provenance",
+        "verified",
+        "transfer",
+        "across",
+        "heterogeneous"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:22:22": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:22:22",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "Assistant: # Portable Agent Memory 论文详解 > **论文全称**：Portable Agent Memory: A Protocol for Provenance-Verified Memory Transfer Across Heterogeneous LLM Agents > **来源**：arXiv:2605.11032（2026-05-10） > **定位**：与 MCP（工具调用）、A2A（任务协作）并列，共同构成 LLM Agent 互操作协议栈的第三极——**\"Agent 知道什么\"**的标准化 ---",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "provenance-verified",
+        "2605.11032",
+        "portable",
+        "论文",
+        "全称",
+        "protocol",
+        "provenance",
+        "verified"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:23:23": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:23:23",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 23,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "Assistant: |------|------|------|------| | **情景记忆** | E | 事件序列、时间线 | \"2024年用户问了关于行动研究法的问题\" | | **语义记忆** | S | 事实性知识、概念 | \"行动研究法是一种循环反思的实践研究\" | | **程序性记忆** | P | 技能、操作流程 | \"先设计干预方案，再实施并收集数据\" | | **工作状态** | W | 当前任务上下文 | 当前正在撰写教案的进度 | | **身份偏好** | I | Agent 自我认知、用户偏好 | \"我是心理学家 Agen",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "情景",
+        "记忆",
+        "事件",
+        "序列",
+        "时间",
+        "用户",
+        "问了",
+        "关于"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:24:24": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:24:24",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 24,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "Assistant: **对象能力安全模型**（Dennis & Van Horn, 1966），能力令牌是**签名后的作用域授权**： ```json { \"scope_expression\": \"S[tag=教学偏好]\", // 作用域表达式 \"permissions\": [\"read\", \"derive\"] // read=读取, derive=衍生新条目 } // 注意：无 export 权限 → 不可转授权 ``` **粒度化权限集**：read、write、derive、redact、export、rehydrate **典型场景**：向合作",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "scope-expression",
+        "对象",
+        "能力",
+        "安全",
+        "模型",
+        "dennis",
+        "van",
+        "horn"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:25:25": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:25:25",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 25,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "Assistant: \\delta \\cdot depth(e) $$ 默认权重：$\\alpha=0.2, \\beta=0.3, \\gamma=0.4, \\delta=0.1$（近期性、显著性、语义相似度、DAG 深度） --- ### 2.5 抗注入抵抗机制（三层防御） **记忆介导的提示注入**：攻击者污染源 Agent 记忆，植入指令性文本，随记忆迁移到目标 Agent 并被执行。 **三层防御**： | 防御层 | 机制 | |--------|------| | **结构边界** | 记忆被包装在 `[PAM:DATA:...]` 类型标记中，",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "0.2",
+        "0.3",
+        "0.4",
+        "0.1",
+        "2.5",
+        "delta",
+        "cdot",
+        "depth"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:26:26": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:26:26",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 26,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "Assistant: 0.89 | 0.81 | 0.84 | | Gemini → Claude | 0.85 | 0.91 | 0.83 | 0.86 | | **无记忆（基线）** | 0.31 | 0.45 | 0.28 | **0.35** | **关键发现**：结构化记忆迁移相比无记忆基线**提升 2.4 倍**，其中问答任务保真度最高（语义记忆迁移最干净），规划任务最易降级（工作记忆天然与模型相关）。 ### 3.2 Re-Hydration Fidelity（RHF） 衡量迁移后目标与源端对探测问题回答的语义相似度： $$ RHF = \\",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "0.89",
+        "0.81",
+        "0.84",
+        "0.85",
+        "0.91",
+        "0.83",
+        "0.86",
+        "0.31"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:27:27": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:27:27",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 27,
+      "endLine": 27,
+      "source": "memory",
+      "snippet": "Assistant: A2A (Agent-to-Agent) → 标准化任务协作（Agent 之间如何配合） PAM (Portable Agent Memory) → 标准化记忆迁移（Agent 知道什么，如何携带） ``` ### 核心意义 1. **防止知识锁禁**：类似 GDPR/DMA 对消费者服务的促进竞争效应，PAM 防止知识被困死在单一 Agent 生态中 2. **多厂商 Agent 协作基础**：企业可同时使用 Claude + GPT-4 + Gemini，记忆可跨平台延续 3. **渐进式采用**：即使只实现基础的 JSON 导",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "gpt",
+        "agent-to-agent",
+        "gdpr/dma",
+        "gpt-4",
+        "a2a",
+        "标准",
+        "任务",
+        "协作"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:28:28": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:28:28",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 28,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "User: second-brain-mcp: A self-maintaining personal knowledge database 这个项目介绍一下",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "second-brain-mcp",
+        "self-maintaining",
+        "second",
+        "brain",
+        "mcp",
+        "self",
+        "maintaining",
+        "personal"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:29:29": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:29:29",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 29,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "Assistant: # second-brain-mcp 项目详解 > **定位**：一款基于 MCP 协议、号称\"自我维护\"的个人知识数据库 > **GitHub**：`ddmanyes/second-brain-mcp` > **核心理念**：*\"For anyone who saves more papers, notes, and figures than they could ever re-read.\"* --- ## 一、核心问题：大多数知识管理工具的痛点 | 常见问题 | second-brain 的解法 | |----------|-",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "second-brain-mcp",
+        "ddmanyes/second-brain-mcp",
+        "re-read",
+        "second-brain",
+        "second",
+        "brain",
+        "mcp",
+        "项目"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:30:30": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:30:30",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 30,
+      "endLine": 30,
+      "source": "memory",
+      "snippet": "Assistant: ⚙️ second-brain-mcp 核心管线 ├─ Markdown 笔记（存储到 vault/ 目录） ├─ 图表 OCR + VLM 描述（Claude Vision） ├─ 语义嵌入 + 自动 [[wikilinks]] 生成 ├─ Ebbinghaus 评分排名 └─ PNG 快照（60-90% Token 削减） ↓ 🔍 输出 ├─ 语义搜索（BM25 + 向量混合） ├─ 图表内容搜索 └─ 定期休眠压缩 ``` --- ## 三、19 个 MCP 工具一览 ### 3.1 核心记忆工具 | 工具 | 功能 | |",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "second-brain-mcp",
+        "60-90",
+        "3.1",
+        "second",
+        "brain",
+        "mcp",
+        "核心",
+        "markdown"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:31:31": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:31:31",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 31,
+      "endLine": 31,
+      "source": "memory",
+      "snippet": "Assistant: `memory/goals.md` | | `sync_index` | 从 vault 文件重建 DuckDB 索引 | ### 3.3 休眠压缩工具（Vault Sleep） | 工具 | 功能 | |------|------| | `vault_sleep` | **核心压缩**：低活跃度笔记的 LLM 压缩（默认 dry_run） | | `sleep_status` | 显示待压缩候选，不实际执行 | | `snapshot_note_tool` | 以选定分辨率层级渲染笔记为 PNG | | `extract_rule",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "memory/goals.md",
+        "sync-index",
+        "3.3",
+        "vault-sleep",
+        "dry-run",
+        "sleep-status",
+        "snapshot-note-tool",
+        "extract-rule"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:32:32": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:32:32",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 32,
+      "endLine": 32,
+      "source": "memory",
+      "snippet": "Assistant: | **联想回忆** | 语义搜索 + 自动生成 `[[wikilinks]]` | | **睡眠依赖巩固** | launchd cron 定时任务，在你睡眠时执行 | --- ## 五、技术栈 | 组件 | 技术选型 | |------|---------| | **协议层** | MCP（Model Context Protocol） | | **向量数据库** | DuckDB（本地，SQLite 式部署） | | **嵌入模型** | 自托管 `nomic-embed-text`（llama-server），BM25 作为",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "nomic-embed-text",
+        "llama-server",
+        "联想",
+        "回忆",
+        "搜索",
+        "自动",
+        "生成",
+        "wikilinks"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:33:33": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:33:33",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 33,
+      "endLine": 33,
+      "source": "memory",
+      "snippet": "User: 为什么还有警告: 未设置 EASYSCHOLAR_API_KEY",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "easyscholar-api-key",
+        "为什么",
+        "还有",
+        "警告",
+        "设置"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:34:34": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:34:34",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 34,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "Assistant: 我没有在当前配置中找到 `easyScholar` 或 `EASYSCHOLAR_API_KEY` 的任何配置。这个警告可能来自某个插件或技能的依赖检查。 请问您是在哪里看到这个警告的？（是 `openclaw doctor` 的输出？还是某个技能的日志？）如果方便的话，请把完整的警告信息发给我，我可以帮您排查是哪个组件在检查这个 API Key。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "easyscholar-api-key",
+        "没有",
+        "当前",
+        "配置",
+        "找到",
+        "easyscholar",
+        "任何",
+        "这个"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:35:35": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:35:35",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 35,
+      "endLine": 35,
+      "source": "memory",
+      "snippet": "User: 这个是在使用研究助手的update_jcr",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "这个是在使用研究助手的update-jcr",
+        "这个",
+        "是在",
+        "使用",
+        "研究",
+        "助手",
+        "update-jcr"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:36:36": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:36:36",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 36,
+      "endLine": 36,
+      "source": "memory",
+      "snippet": "Assistant: 找到原因了。 **警告来源**：`Summarizer.py` 第 421 行 ```python api_key = self._get_easy_scholar_api_key() if not api_key: print(\"警告: 未设置 EASYSCHOLAR_API_KEY 环境变量，跳过 JCR 更新\") ``` **触发逻辑**：当调用 `update_jcr` 时，脚本会检查 `EASYSCHOLAR_API_KEY` 环境变量，如果未设置则打印警告并跳过 JCR 更新。 **解决方法**： 1. **设置环境变量",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "summarizer.py",
+        "api-key",
+        "get-easy-scholar-api-key",
+        "easyscholar-api-key",
+        "update-jcr",
+        "找到",
+        "原因",
+        "警告"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:37:37": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:37:37",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 37,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "User: 我在.env中配置；",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "我在.env中配置",
+        "我在",
+        "env",
+        "配置"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:38:38": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:38:38",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 38,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "Assistant: `.env` 中已配置，但 Python 脚本是作为**独立进程**运行的，不会自动加载 OpenClaw 的 `.env` 文件。 **问题根源**：技能通过 `os.environ.get('EASYSCHOLAR_API_KEY')` 读取环境变量，但 `.env` 中的变量没有被传递到子进程的运行环境。 **解决方案**： 您希望我通过哪种方式帮您解决这个问题？ 1. **方案A**：在技能 CLI 前添加环境变量前缀 ```bash EASYSCHOLAR_API_KEY=*** research-assistant su",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "os.environ.get",
+        "easyscholar-api-key",
+        "research-assistant",
+        "env",
+        "配置",
+        "python",
+        "脚本",
+        "作为"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:39:39": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:39:39",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 39,
+      "endLine": 39,
+      "source": "memory",
+      "snippet": "User: summarizer初始化的时候，添加一个参数和api_key一样，初始化EASYSCHOLAR_API_KEY",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "添加一个参数和api-key一样",
+        "初始化easyscholar-api-key",
+        "summarizer",
+        "初始",
+        "时候",
+        "添加",
+        "一个",
+        "参数"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:40:40": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:40:40",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 40,
+      "endLine": 40,
+      "source": "memory",
+      "snippet": "Assistant: 现在我来进行修改： 1. 在 `__init__` 添加 `easyscholar_api_key` 参数 2. 修改 `_get_easy_scholar_api_key` 方法，优先使用实例变量",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "easyscholar-api-key",
+        "get-easy-scholar-api-key",
+        "现在",
+        "我来",
+        "进行",
+        "修改",
+        "init",
+        "添加"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:41:41": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:41:41",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 41,
+      "endLine": 41,
+      "source": "memory",
+      "snippet": "Assistant: 现在修改 CLI 部分，添加 `--easyscholar-api-key` 命令行参数：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "easyscholar-api-key",
+        "现在",
+        "修改",
+        "cli",
+        "部分",
+        "添加",
+        "easyscholar",
+        "api"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:42:42": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:42:42",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 42,
+      "endLine": 42,
+      "source": "memory",
+      "snippet": "Assistant: 修改完成。让我验证一下更改：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "修改",
+        "完成",
+        "验证",
+        "一下",
+        "更改"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:43:43": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:43:43",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 43,
+      "endLine": 43,
+      "source": "memory",
+      "snippet": "Assistant: 现在更新文档：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "现在",
+        "更新"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:44:44": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:44:44",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 44,
+      "endLine": 44,
+      "source": "memory",
+      "snippet": "Assistant: 已完成修改，现在支持三种方式使用 EasyScholar API Key： | 方式 | 用法 | |------|------| | **CLI 参数** | `research-assistant summarize --update-jcr --easyscholar-api-key YOUR_KEY` | | **Python API** | `Summarizer(kb_path=\"index.json\", easyscholar_api_key=\"YOUR_KEY\")` | | **环境变量** | `export EA",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "research-assistant",
+        "update-jcr",
+        "easyscholar-api-key",
+        "your-key",
+        "kb-path",
+        "index.json",
+        "完成",
+        "修改"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:45:45": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:45:45",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 45,
+      "endLine": 45,
+      "source": "memory",
+      "snippet": "Assistant: 📰 **「数字化存储与自传体记忆」日报** 📅 2026年5月30日 | 主题：数字化存储与自传体记忆 | 检索范围：心理学、认知科学、神经科学 --- ## 一、神经科学领域（记忆存储机制） ### 1. 前额叶皮层对海马记忆组织的控制 | 项目 | 内容 | |------|------| | **标题** | The prefrontal cortex controls memory organization in the hippocampus | | **作者** | de Sousa, A. F., et al. |",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "数字",
+        "存储",
+        "自传",
+        "记忆",
+        "日报",
+        "主题",
+        "检索",
+        "范围"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:46:46": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:46:46",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 46,
+      "endLine": 46,
+      "source": "memory",
+      "snippet": "Assistant: Rao, N. R., & Yang, A. C., et al. | | **期刊** | Cell | | **年份** | 2026 | | **DOI** | 10.1016/j.cell.2026.04.048 | **核心发现：** Gladstone研究所的团队发现大脑清除废物的路径与以往认为的不同——主要通过硬脑膜、颅骨和鼻腔排出，而非颈部淋巴结。阿尔茨海默病模型中，废物完全被困在脑内无法排出。 **简评：** 该研究揭示了记忆存储系统失效的病理机制，为理解数字化记忆存储的\"硬件基础\"提供了神经退行性视角。 ---",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "10.1016/j.cell.2026.04.048",
+        "rao",
+        "yang",
+        "期刊",
+        "cell",
+        "年份",
+        "doi",
+        "10.1016"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:47:47": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:47:47",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 47,
+      "endLine": 47,
+      "source": "memory",
+      "snippet": "Assistant: LLM Agents | | **作者** | Santhosh Kumar Ravindran | | **机构** | Microsoft Research | | **年份** | 2026 | **核心发现：** 提出了五组件记忆模型（情景记忆、语义记忆、程序记忆、工作记忆、身份记忆），Transfer Continuity Score达0.88。 **简评：** 数字\"自传体记忆\"存储和传输的标准协议框架。 --- ### 5. AI系统中的生物记忆类比 second-brain-mcp项目将人类记忆系统的核心机制直接映射",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "score达0.88",
+        "llm",
+        "agents",
+        "作者",
+        "santhosh",
+        "kumar",
+        "ravindran",
+        "机构"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:48:48": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:48:48",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 48,
+      "endLine": 48,
+      "source": "memory",
+      "snippet": "Assistant: **神经机制类比**：vmPFC的\"质量控制检查点\"功能类似于AI记忆系统中的检索排名机制 2. **记忆脆弱性**：阿尔茨海默病蛋白质清除障碍 = AI系统知识库噪声累积 3. **可验证性需求**：记忆必须有provenance和完整性验证，与人脑自传体记忆的\"自我叙事一致性\"需求相呼应 --- **检索说明：【已检索】** 本日报基于2026年5月29-30日的学术数据库检索结果，所有文献信息均来自真实发表记录。 *生成时间：2026-05-30 13:58 (Asia/Shanghai)*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "本日报基于2026年5月29-30日的学术数据库检索结果",
+        "asia/shanghai",
+        "神经",
+        "机制",
+        "类比",
+        "vmpfc",
+        "质量",
+        "控制"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:49:49": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:49:49",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 49,
+      "endLine": 49,
+      "source": "memory",
+      "snippet": "User: /reset",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "reset"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:50:50": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:50:50",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 50,
+      "endLine": 50,
+      "source": "memory",
+      "snippet": "Assistant: ✅ Session reset.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "reset"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:51:51": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:51:51",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 51,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "Assistant: 根据检索结果，我整理了24小时内发表的与\"数字化存储与自传体记忆\"相关的研究文献，现在撰写日报。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "根据",
+        "检索",
+        "结果",
+        "整理",
+        "小时",
+        "发表",
+        "数字",
+        "存储"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:52:52": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:52:52",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 52,
+      "endLine": 52,
+      "source": "memory",
+      "snippet": "User: 不需要你用message传递，你只需要输出，自然会通过delivery传递过去",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "不需要",
+        "message",
+        "传递",
+        "只需要",
+        "输出",
+        "自然",
+        "通过",
+        "delivery"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:53:53": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:53:53",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 53,
+      "endLine": 53,
+      "source": "memory",
+      "snippet": "Assistant: 📰 **「数字化存储与自传体记忆」日报** 📅 2026年5月30日 | 主题：数字化存储与自传体记忆 | 检索范围：心理学、认知科学、神经科学 --- ## 一、神经科学领域（记忆存储机制） ### 1. 前额叶皮层对海马记忆组织的控制 | 项目 | 内容 | |------|------| | **标题** | The prefrontal cortex controls memory organization in the hippocampus | | **作者** | de Sousa, A. F., et al. |",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "数字",
+        "存储",
+        "自传",
+        "记忆",
+        "日报",
+        "主题",
+        "检索",
+        "范围"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:54:54": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:54:54",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 54,
+      "endLine": 54,
+      "source": "memory",
+      "snippet": "Assistant: brain clearance architecture revealed by neuronal protein tracing | | **作者** | Chayama, Y., Rao, N. R., & Yang, A. C., et al. | | **期刊** | Cell | | **年份** | 2026 | | **DOI** | 10.1016/j.cell.2026.04.048 | **核心发现：** Gladstone研究所的团队开发了追踪神经元蛋白清除的新方法，发现： - 废物主要通过硬脑膜、颅骨和鼻腔排",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "10.1016/j.cell.2026.04.048",
+        "brain",
+        "clearance",
+        "architecture",
+        "revealed",
+        "neuronal",
+        "protein",
+        "tracing"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:55:55": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:55:55",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 55,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "Assistant: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003824 | **核心发现：** 通过同时记录背侧CA1（dCA1）和内侧眶额皮层（mOFC）的神经元活动，发现dCA1展示更强的空间特异性，而mOFC在目标相关活动中展示更显著的学习依赖性更新。循环网络模型揭示了动态突触效能如何支持高效学习和灵活目标更新。 **简评：** 该研究为理解自传体记忆中的情景编码提供了计算框架——大脑如何在空间情境中组织目标相关记忆，并支持记忆的灵活提取。 -",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "网络",
+        "10.1371/journal.pbio.3003824",
+        "https",
+        "journals.plos.org",
+        "plosbiology",
+        "article",
+        "10.1371",
+        "journal.pbio"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:56:56": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:56:56",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 56,
+      "endLine": 56,
+      "source": "memory",
+      "snippet": "Assistant: |------|------| | **标题** | second-brain-mcp: A self-maintaining personal knowledge database | | **作者** | ddmanyes | | **平台** | GitHub | | **日期** | 2026-05-29 | | **链接** | https://github.com/ddmanyes/second-brain-mcp | **核心设计：** | 生物脑机制 | 数字系统对应 | |------------|--------",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "second-brain-mcp",
+        "self-maintaining",
+        "标题",
+        "second",
+        "brain",
+        "mcp",
+        "self",
+        "maintaining"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:57:57": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:57:57",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 57,
+      "endLine": 57,
+      "source": "memory",
+      "snippet": "Assistant: 10.1016/S0140-6736(26)00515-5 | | **链接** | https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(26)00515-5/abstract | **核心发现：** 基于CARDIA研究的1350名参与者（中位年龄61岁），阿尔茨海默病神经病理阳性与言语记忆加速下降显著相关（p-tau217/Aβ42比值：OR 2.44），血浆生物标志物可在认知症状出现前数十年检测病理变化。 **简评：** 强调了一个关键问题——自传体记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "10.1016/s0140-6736",
+        "00515-5",
+        "00515-5/abstract",
+        "p-tau217/aβ42比值",
+        "2.44",
+        "10.1016",
+        "s0140",
+        "https"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:58:58": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:58:58",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 58,
+      "endLine": 58,
+      "source": "memory",
+      "snippet": "Assistant: 为理解\"数字化自我\"如何存储提供了认知神经科学基础——当我们将数字记忆与第一人称视角的自我叙事整合时，大脑可能采用与普通情景记忆不同的加工机制。 --- ## 四、综合评述 ### 研究趋势总结 | 方向 | 关键进展 | 意义 | |------|----------|------| | **记忆组织机制** | 发现vmPFC-海马记忆分离通路 | 揭示大脑\"数字化存储决策\"的神经基础 | | **记忆病理** | 脑废物清除系统与阿尔茨海默病的关系 | 为记忆存储系统的失效机制提供新视角 | | **数字记忆架构** | PA",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "发现vmpfc-海马记忆分离通路",
+        "理解",
+        "数字",
+        "自我",
+        "如何",
+        "存储",
+        "提供",
+        "认知"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:59:59": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:59:59",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 59,
+      "endLine": 59,
+      "source": "memory",
+      "snippet": "Assistant: 该任务已于 **13:58** 完成了同样的日报，检索结果将在同一天内保持一致，无需重复执行。 如需生成**下一日**（5月31日）的日报，请等待至明天或设置新的定时任务。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "任务",
+        "完成",
+        "同样",
+        "日报",
+        "检索",
+        "结果",
+        "同一",
+        "天内"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:60:60": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:60:60",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 60,
+      "endLine": 60,
+      "source": "memory",
+      "snippet": "User: 我在测试传递。我下次给你发送任务后，你把结果重新输出即可。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "我在",
+        "测试",
+        "传递",
+        "下次",
+        "发送",
+        "任务",
+        "结果",
+        "重新"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:61:61": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:61:61",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 61,
+      "endLine": 61,
+      "source": "memory",
+      "snippet": "User: 你现在有什么定时任务？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "现在",
+        "什么",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:62:62": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:62:62",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 62,
+      "endLine": 62,
+      "source": "memory",
+      "snippet": "Assistant: 老板，当前没有任何定时任务。 我查了一下，系统中的 cron 任务列表为空。HEARTBEAT.md 中也没有记录任何 psychologist 专属的定时任务。 如果您需要设置定时任务，请告诉我具体需求（比如定期检索文献、发送提醒等），我来帮您配置。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "heartbeat.md",
+        "老板",
+        "当前",
+        "没有",
+        "任何",
+        "任务",
+        "一下",
+        "系统"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:63:63": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:63:63",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 63,
+      "endLine": 63,
+      "source": "memory",
+      "snippet": "User: 每天上午8点，运行定时任务，在`agent:psychologist:corn:psychologist的定时任务`会话中运行。 目标：攥写`数字化存储与自传体记忆`日报 约束：24小时内新发布的文献",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "每天",
+        "上午",
+        "运行",
+        "任务",
+        "会话",
+        "目标",
+        "数字",
+        "存储"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:64:64": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:64:64",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 64,
+      "endLine": 64,
+      "source": "memory",
+      "snippet": "Assistant: 好的，我来为您设置这个定时任务。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "好的",
+        "我来",
+        "设置",
+        "这个",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:65:65": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:65:65",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 65,
+      "endLine": 65,
+      "source": "memory",
+      "snippet": "Assistant: 已设置完成！以下是任务详情： | 项目 | 内容 | |------|------| | **任务ID** | `aba0ae04-d41a-434f-9071-9d9a0f2f261e` | | **任务名称** | 日报：数字化存储与自传体记忆 | | **执行时间** | 每天 08:00（Asia/Shanghai） | | **下次执行** | 2026-05-31 08:00 | | **执行会话** | 隔离会话（自动创建） | | **送达方式** | 飞书消息推送 | **任务内容**： - 检索 24 小时内新发",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "asia/shanghai",
+        "设置",
+        "完成",
+        "以下",
+        "任务",
+        "详情",
+        "项目",
+        "内容"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:66:66": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:66:66",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 66,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "Assistant: 已触发！任务已加入执行队列。 结果将通过飞书消息送达，预计几分钟后完成。请留意飞书消息通知。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "触发",
+        "任务",
+        "加入",
+        "执行",
+        "队列",
+        "结果",
+        "通过",
+        "消息"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:67:67": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:67:67",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 67,
+      "endLine": 67,
+      "source": "memory",
+      "snippet": "User: 日报：数字化存储与自传体记忆 这个会话没有按要求指定为agent:psychologist:corn:psychologist的定时任务",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "日报",
+        "数字",
+        "存储",
+        "自传",
+        "记忆",
+        "这个",
+        "会话",
+        "没有"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:68:68": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:68:68",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 68,
+      "endLine": 68,
+      "source": "memory",
+      "snippet": "Assistant: 明白了，我来修正会话配置。需要指定为命名会话 `session:agent:psychologist:corn:psychologist的定时任务`。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "明白",
+        "我来",
+        "修正",
+        "会话",
+        "配置",
+        "需要",
+        "指定",
+        "命名"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:69:69": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:69:69",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 69,
+      "endLine": 69,
+      "source": "memory",
+      "snippet": "Assistant: 有两个问题需要修正： 1. 会话目标应为命名会话 `session:agent:psychologist:corn:psychologist的定时任务` 2. 飞书投递需要指定具体目标用户",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "问题",
+        "需要",
+        "修正",
+        "会话",
+        "目标",
+        "命名",
+        "任务",
+        "指定"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:70:70": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:70:70",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 70,
+      "endLine": 70,
+      "source": "memory",
+      "snippet": "Assistant: 已修正配置，现在再次运行一次：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "修正",
+        "配置",
+        "现在",
+        "再次",
+        "运行",
+        "一次"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:71:71": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:71:71",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 71,
+      "endLine": 71,
+      "source": "memory",
+      "snippet": "Assistant: 已修正并重新触发。变更内容： | 项目 | 修改前 | 修改后 | |------|--------|--------| | **sessionTarget** | `isolated` | `session:agent:psychologist:corn:psychologist的定时任务` | | **delivery.to** | 未指定 | `user:ou_c1a8fc008307a0385a2fcd3c0ca6b71b`（杨权） | 结果将发送到您（杨权）的飞书会话，请留意。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "delivery.to",
+        "修正",
+        "重新",
+        "触发",
+        "变更",
+        "内容",
+        "项目",
+        "修改"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:72:72": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:72:72",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 72,
+      "endLine": 72,
+      "source": "memory",
+      "snippet": "User: 定时任务已完成，没有触发传递。检查原因",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "任务",
+        "完成",
+        "没有",
+        "触发",
+        "传递",
+        "检查",
+        "原因"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:73:73": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:73:73",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 73,
+      "endLine": 73,
+      "source": "memory",
+      "snippet": "Assistant: 上次触发时任务还在运行中，现已结束。再触发一次：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "上次",
+        "触发",
+        "任务",
+        "运行",
+        "结束",
+        "一次"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:74:74": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:74:74",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 74,
+      "endLine": 74,
+      "source": "memory",
+      "snippet": "Assistant: 老板，`to` 已从 `user:ou_xxx` 改为 `ou_c1a8fc008307a0385a2fcd3c0ca6b71b`，但错误仍是 **\"Outbound not configured for channel: feishu\"**。 这个错误说明问题不只是 `to` 格式——而是 OpenClaw 的飞书**投递通道（Outbound）本身未配置**。 需要检查 gateway 配置：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "gateway",
+        "ou-xxx",
+        "老板",
+        "user:ou-xxx",
+        "错误",
+        "仍是",
+        "outbound",
+        "not"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:75:75": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:75:75",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 75,
+      "endLine": 75,
+      "source": "memory",
+      "snippet": "Assistant: 老板，配置检查完毕。Feishu 账号 `psychologist`（`cli_a94170cfbcf8dccb`）已正确配置，channel 和 account binding 都正常。 `to` 格式已从 `user:ou_xxx` 修正为 `ou_c1a8fc008307a0385a2fcd3c0ca6b71b`，当前 cron 状态显示上次运行是 13:38（`lastRunAtMs: 1780119440770`），误差为 `already-running`。 能否请您手动触发一次？或者告知我是否需要重启 gateway",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "gateway",
+        "cli-a94170cfbcf8dccb",
+        "ou-xxx",
+        "already-running",
+        "老板",
+        "配置",
+        "检查",
+        "完毕"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:76:76": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:76:76",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 76,
+      "endLine": 76,
+      "source": "memory",
+      "snippet": "User: to不对！ 应你使用了错误的聊天会话！",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "不对",
+        "使用",
+        "错误",
+        "聊天",
+        "会话"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:77:77": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:77:77",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 77,
+      "endLine": 77,
+      "source": "memory",
+      "snippet": "Assistant: 明白了！当前 cron delivery 的 `to` 是 `ou_c1a8fc008307a0385a2fcd3c0ca6b71b`（用户 open_id），但 Feishu announce 需要的是 **chat_id**（如 `oc_xxxxx`）。 让我查一下当前这个 DM 的 chat_id：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "open-id",
+        "chat-id",
+        "oc-xxxxx",
+        "明白",
+        "当前",
+        "cron",
+        "delivery",
+        "用户"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:78:78": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:78:78",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 78,
+      "endLine": 78,
+      "source": "memory",
+      "snippet": "Assistant: 找到了！当前会话的 delivery context 是 `to: \"user:ou_c1a8fc008307a0385a2fcd3c0ca6b71b\"`（这是 user open_id 格式），但 cron announce 需要 **chat_id** 格式（`oc_xxx`）。 请问这个 DM 的 chat_id 是多少？或者我可以尝试用 `chat:ou_c1a8fc008307a0385a2fcd3c0ca6b71b` 格式？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "open-id",
+        "chat-id",
+        "oc-xxx",
+        "找到",
+        "当前",
+        "会话",
+        "delivery",
+        "context"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:79:79": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:79:79",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 79,
+      "endLine": 79,
+      "source": "memory",
+      "snippet": "User: 你不会查嘛？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "不会"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:80:80": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:80:80",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 80,
+      "endLine": 80,
+      "source": "memory",
+      "snippet": "Assistant: 抱歉！从 runtime context 直接就能看到消息的 `chat_id: \"user:ou_c1a8fc008307a0385a2fcd3c0ca6b71b\"`。 这是 DM 会话的 chat_id，格式就是 `user:ou_xxx`——cron delivery 的 `to` 字段值应该直接用这个完整值，而不是去掉前缀。 让我重新更新 cron 的 to：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "chat-id",
+        "ou-xxx",
+        "抱歉",
+        "runtime",
+        "context",
+        "直接",
+        "看到",
+        "消息"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:81:81": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:81:81",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 81,
+      "endLine": 81,
+      "source": "memory",
+      "snippet": "Assistant: 最新诊断变了：`Channel is unavailable: feishu`——说明问题不在 `to` 格式，而是 **Feishu outbound 通道本身不可用**。 让我检查 gateway 状态：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "gateway",
+        "最新",
+        "诊断",
+        "channel",
+        "unavailable",
+        "feishu",
+        "说明",
+        "问题"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:82:82": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:82:82",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 82,
+      "endLine": 82,
+      "source": "memory",
+      "snippet": "Assistant: 明白了！`to` 应该直接用 runtime context 里的 `chat_id: \"user:ou_c1a8fc008307a0385a2fcd3c0ca6b71b\"`——这正是当前 DM 会话的标识。 cron 的 `to` 已经更新为这个值了。但刚才运行时仍然报错 `",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "chat-id",
+        "明白",
+        "应该",
+        "直接",
+        "runtime",
+        "context",
+        "正是",
+        "当前"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:83:83": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:83:83",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 83,
+      "endLine": 83,
+      "source": "memory",
+      "snippet": "User: 就是你搞错了to！！！ 是你的问题！",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "就是",
+        "搞错",
+        "你的",
+        "问题"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:84:84": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:84:84",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 84,
+      "endLine": 84,
+      "source": "memory",
+      "snippet": "Assistant: 明白了！`to` 值没问题（就是 `user:ou_c1a8fc008307a0385a2fcd3c0ca6b71b`），但 Feishu channel 在 cron session 上下文中不可用，导致 `Channel is unavailable`。 问题根因：cron 在独立的 isolated session 中运行，该 session 的 delivery context 没有正确绑定到当前这个 DM 会话的 channel。 需要 gateway 重新加载 feishu 连接：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "gateway",
+        "明白",
+        "问题",
+        "就是",
+        "feishu",
+        "channel",
+        "cron",
+        "上下文"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:85:85": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:85:85",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 85,
+      "endLine": 85,
+      "source": "memory",
+      "snippet": "Assistant: Portable Agent Memory 的互补关系 | 维度 | Portable Agent Memory | second-brain-mcp | |------|---------------------|-------------------| | **解决的问题** | Agent 记忆跨模型迁移 | 个人知识库自我维护 | | **记忆主体** | AI Agent 的操作上下文 | 人类用户的文献/笔记 | | **核心机制** | Merkle-DAG + 密码学签名 | Ebbinghaus 评分 + 休眠压缩",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "second-brain-mcp",
+        "人类用户的文献/笔记",
+        "merkle-dag",
+        "portable",
+        "互补",
+        "关系",
+        "second",
+        "brain"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:86:86": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:86:86",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 86,
+      "endLine": 86,
+      "source": "memory",
+      "snippet": "User: 你帮我解读一下日报",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "解读",
+        "一下",
+        "日报"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:87:87": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:87:87",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 87,
+      "endLine": 87,
+      "source": "memory",
+      "snippet": "Assistant: 老板，让我先查看一下今天的日报内容和相关记录。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "老板",
+        "我先",
+        "查看",
+        "一下",
+        "今天",
+        "日报",
+        "内容",
+        "相关"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:88:88": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:88:88",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 88,
+      "endLine": 88,
+      "source": "memory",
+      "snippet": "Assistant: 老板，我找到了今天的日报内容。由于定时任务在今天上午触发了多次（08:00、13:01、13:10、13:35 等），发送状态也经历了一些问题，最终成功发送的是 **08:06** 那一次。 以下是今天日报的完整内容和解读： --- # 📰 「数字化存储与自传体记忆」日报解读 **日期**：2026年5月30日 | **检索范围**：心理学、认知科学、神经科学 --- ## 一、神经科学领域：记忆存储的硬件机制 ### 1. 前额叶皮层对海马记忆组织的控制 | 项目 | 内容 | |------|------| | **标题**",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "老板",
+        "找到",
+        "今天",
+        "日报",
+        "内容",
+        "由于",
+        "任务",
+        "上午"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:89:89": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:89:89",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 89,
+      "endLine": 89,
+      "source": "memory",
+      "snippet": "Assistant: clearance architecture revealed by neuronal protein tracing | | **作者** | Chayama, Y., Rao, N. R., & Yang, A. C., et al. | | **期刊** | Cell | | **年份** | 2026 | **核心发现**：Gladstone 研究所发现： - 废物排出路径：**硬脑膜→颅骨→鼻腔**（而非传统认为的颈部淋巴结） - 阿尔茨海默病模型中，废物完全被困在脑内 - 每个脑区有独立的\"邮政编码\"清除系统 **研究意",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "clearance",
+        "architecture",
+        "revealed",
+        "neuronal",
+        "protein",
+        "tracing",
+        "作者",
+        "chayama"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:90:90": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:90:90",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 90,
+      "endLine": 90,
+      "source": "memory",
+      "snippet": "Assistant: 4. 可移植代理记忆协议（Portable Agent Memory） | 项目 | 内容 | |------|------| | **来源** | arXiv:2605.11032 | | **日期** | 2026-05-10 | **协议核心**： - **五组件记忆模型** $M=(E,S,P,W,I)$：情景、语义、程序性、工作、身份记忆 - **Merkle-DAG** 溯源结构（BLAKE3 + Ed25519 签名） - **能力令牌** 细粒度访问控制 - **抗注入重水化管线**：防止记忆迁移中的提示注入攻击 *",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "2605.11032",
+        "merkle-dag",
+        "移植",
+        "代理",
+        "记忆",
+        "协议",
+        "portable",
+        "项目"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:91:91": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:91:91",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 91,
+      "endLine": 91,
+      "source": "memory",
+      "snippet": "Assistant: 记忆外部化与认知卸载 **文献**：Heersmink & Sutton (2026), *Memory, Mind & Media* **核心概念区分**： | 概念 | 定义 | 示例 | |------|------|------| | **认知卸载** | 将信息委托给外部系统以降低内部负荷 | 使用计算器、存储电话号码 | | **双重加载（Biloading）** | 内外资源共同支撑记忆，通过冗余增强可靠性 | 云相册 + 脑内记忆的双重备份 | --- ### 7. 数字遗忘（Digital Amnesia）效应 *",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "备份",
+        "记忆",
+        "外部",
+        "认知",
+        "文献",
+        "heersmink",
+        "sutton",
+        "mind"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:92:92": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:92:92",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 92,
+      "endLine": 92,
+      "source": "memory",
+      "snippet": "User: 你的定时任务有哪些？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "你的",
+        "任务",
+        "哪些"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:93:93": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:93:93",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 93,
+      "endLine": 93,
+      "source": "memory",
+      "snippet": "Assistant: 老板，我当前只有 **1 个**定时任务： --- ## 📋 当前活跃定时任务 | 项目 | 内容 | |------|------| | **任务名称** | 日报：数字化存储与自传体记忆 | | **任务ID** | `aba0ae04-d41a-434f-9071-9d9a0f2f261e` | | **执行时间** | 每天 **08:00**（Asia/Shanghai） | | **主题** | 检索 24 小时内新发布的「数字化存储与自传体记忆」相关文献 | | **检索范围** | 心理学、认知科学、神经科学 |",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "asia/shanghai",
+        "老板",
+        "当前",
+        "只有",
+        "任务",
+        "活跃",
+        "项目",
+        "内容"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:94:94": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:94:94",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 94,
+      "endLine": 94,
+      "source": "memory",
+      "snippet": "Assistant: 好的，有需要随时叫我。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "好的",
+        "需要",
+        "随时"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:95:95": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:95:95",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 95,
+      "endLine": 95,
+      "source": "memory",
+      "snippet": "User: 你的日报的提示词不好 修改一下: ```GO 你是XXX。请完成以下任务： ## 任务：攥写「agent记忆」日报 ### 任务要求 - {} ### 约束条件 - {} ### 报告结构 请按以下结构生成 Markdown 格式的日报： ```markdown # {日报名称} > 日期：YYYY-MM-DD ## {主题} ### {文章1} - 标题 - 作者 - 时间 - 主要内容 ### {文章2} ## 🔗 参考链接 ``` ```",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "yyyy-mm-dd",
+        "你的",
+        "日报",
+        "提示",
+        "不好",
+        "修改",
+        "一下",
+        "你是"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:96:96": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:96:96",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 96,
+      "endLine": 96,
+      "source": "memory",
+      "snippet": "Assistant: 好的，我来更新日报的提示词模板。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "好的",
+        "我来",
+        "更新",
+        "日报",
+        "提示",
+        "模板"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:97:97": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:97:97",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 97,
+      "endLine": 97,
+      "source": "memory",
+      "snippet": "User: config = self._load_config() self.easyscholar_api_key 也有config.get嘛？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "load-config",
+        "self.easyscholar-api-key",
+        "也有config.get嘛",
+        "config",
+        "self",
+        "也有",
+        "config.get"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:98:98": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:98:98",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 98,
+      "endLine": 98,
+      "source": "memory",
+      "snippet": "Assistant: 你说得对，应该加上从 config.json 读取的逻辑。让我补上：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "config.json",
+        "说得",
+        "应该",
+        "加上",
+        "逻辑"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:99:99": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:99:99",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 99,
+      "endLine": 99,
+      "source": "memory",
+      "snippet": "Assistant: 同步更新文档字符串中的优先级说明：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "同步",
+        "更新",
+        "字符",
+        "中的",
+        "优先",
+        "说明"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:100:100": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:100:100",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 100,
+      "endLine": 100,
+      "source": "memory",
+      "snippet": "Assistant: 验证一下：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "验证",
+        "一下"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:101:101": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:101:101",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 101,
+      "endLine": 101,
+      "source": "memory",
+      "snippet": "Assistant: 已补上。现在 `easyscholar_api_key` 的加载优先级是： | 优先级 | 来源 | |--------|------| | 1 | 参数 `easyscholar_api_key=\"...\"` | | 2 | 环境变量 `EASYSCHOLAR_API_KEY` | | 3 | `config.json` → `easy_scholar.api_key` | 这样即使不传参、不设环境变量，只要 `config.json` 里配了也能用。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "easyscholar-api-key",
+        "config.json",
+        "easy-scholar.api-key",
+        "现在",
+        "优先",
+        "来源",
+        "参数",
+        "环境"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:102:102": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:102:102",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 102,
+      "endLine": 102,
+      "source": "memory",
+      "snippet": "User: 然后给 /root/data/disk/仓库/数字化存储与自传体记忆/knowledge/index.json更新一下jcr 你先检查一下，是不是已经更新了？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "然后",
+        "root",
+        "data",
+        "disk",
+        "仓库",
+        "数字",
+        "存储",
+        "自传"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:103:103": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:103:103",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 103,
+      "endLine": 103,
+      "source": "memory",
+      "snippet": "Assistant: 还有 **103 篇**没有 JCR 数据。现在执行更新：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "还有",
+        "没有",
+        "jcr",
+        "数据",
+        "现在",
+        "执行",
+        "更新"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:104:104": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:104:104",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 104,
+      "endLine": 104,
+      "source": "memory",
+      "snippet": "Assistant: 进程被 SIGKILL 了，可能是超时。让我直接用 Python 测试一下 API 是否正常：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "进程",
+        "sigkill",
+        "可能是",
+        "直接",
+        "python",
+        "测试",
+        "一下",
+        "api"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:105:105": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:105:105",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 105,
+      "endLine": 105,
+      "source": "memory",
+      "snippet": "Assistant: API Key 没传进去，让我检查一下：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "api",
+        "key",
+        "进去",
+        "检查",
+        "一下"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:106:106": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:106:106",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 106,
+      "endLine": 106,
+      "source": "memory",
+      "snippet": "Assistant: API Key 正常，但该期刊没有返回等级数据。让我直接运行更新命令：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "api",
+        "key",
+        "正常",
+        "期刊",
+        "没有",
+        "返回",
+        "等级",
+        "数据"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:107:107": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:107:107",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 107,
+      "endLine": 107,
+      "source": "memory",
+      "snippet": "Assistant: 超时了（60秒不够）。让我直接用 Python 脚本跑，并加个超时控制：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "不够",
+        "直接",
+        "python",
+        "脚本",
+        "加个",
+        "控制"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:108:108": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:108:108",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 108,
+      "endLine": 108,
+      "source": "memory",
+      "snippet": "User: 可能是这103篇没有数据。 更新一下，没有数据的不要空着，填一个NA",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "可能是",
+        "没有",
+        "数据",
+        "更新",
+        "一下",
+        "不要",
+        "空着",
+        "一个"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:109:109": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:109:109",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 109,
+      "endLine": 109,
+      "source": "memory",
+      "snippet": "Assistant: 明白了，下次收到任务后直接输出即可，会自动通过 delivery 传递过去。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "明白",
+        "下次",
+        "收到",
+        "任务",
+        "直接",
+        "输出",
+        "即可",
+        "自动"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:110:110": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:110:110",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 110,
+      "endLine": 110,
+      "source": "memory",
+      "snippet": "Assistant: 📰 **「数字化存储与自传体记忆」日报** 📅 2026年5月30日 | 主题：数字化存储与自传体记忆 | 检索范围：心理学、认知科学、神经科学 --- ## 一、神经科学领域（记忆存储机制） ### 1. 前额叶皮层对海马记忆组织的控制 | 项目 | 内容 | |------|------| | **标题** | The prefrontal cortex controls memory organization in the hippocampus | | **作者** | de Sousa, A. F., et al. |",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "数字",
+        "存储",
+        "自传",
+        "记忆",
+        "日报",
+        "主题",
+        "检索",
+        "范围"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:111:111": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:111:111",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 111,
+      "endLine": 111,
+      "source": "memory",
+      "snippet": "Assistant: brain clearance architecture revealed by neuronal protein tracing | | **作者** | Chayama, Y., Rao, N. R., & Yang, A. C., et al. | | **期刊** | Cell | | **年份** | 2026 | | **DOI** | 10.1016/j.cell.2026.04.048 | **核心发现：** Gladstone研究所的团队开发了追踪神经元蛋白清除的新方法，发现： - 废物主要通过硬脑膜、颅骨和鼻腔排",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "10.1016/j.cell.2026.04.048",
+        "brain",
+        "clearance",
+        "architecture",
+        "revealed",
+        "neuronal",
+        "protein",
+        "tracing"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:112:112": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:112:112",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 112,
+      "endLine": 112,
+      "source": "memory",
+      "snippet": "Assistant: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003824 | **核心发现：** 通过同时记录背侧CA1（dCA1）和内侧眶额皮层（mOFC）的神经元活动，发现dCA1展示更强的空间特异性，而mOFC在目标相关活动中展示更显著的学习依赖性更新。循环网络模型揭示了动态突触效能如何支持高效学习和灵活目标更新。 **简评：** 该研究为理解自传体记忆中的情景编码提供了计算框架——大脑如何在空间情境中组织目标相关记忆，并支持记忆的灵活提取。 -",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "网络",
+        "10.1371/journal.pbio.3003824",
+        "https",
+        "journals.plos.org",
+        "plosbiology",
+        "article",
+        "10.1371",
+        "journal.pbio"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:113:113": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:113:113",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 113,
+      "endLine": 113,
+      "source": "memory",
+      "snippet": "Assistant: |------|------| | **标题** | second-brain-mcp: A self-maintaining personal knowledge database | | **作者** | ddmanyes | | **平台** | GitHub | | **日期** | 2026-05-29 | | **链接** | https://github.com/ddmanyes/second-brain-mcp | **核心设计：** | 生物脑机制 | 数字系统对应 | |------------|--------",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "second-brain-mcp",
+        "self-maintaining",
+        "标题",
+        "second",
+        "brain",
+        "mcp",
+        "self",
+        "maintaining"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:114:114": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:114:114",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 114,
+      "endLine": 114,
+      "source": "memory",
+      "snippet": "Assistant: 10.1016/S0140-6736(26)00515-5 | | **链接** | https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(26)00515-5/abstract | **核心发现：** 基于CARDIA研究的1350名参与者（中位年龄61岁），阿尔茨海默病神经病理阳性与言语记忆加速下降显著相关（p-tau217/Aβ42比值：OR 2.44），血浆生物标志物可在认知症状出现前数十年检测病理变化。 **简评：** 强调了一个关键问题——自传体记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "10.1016/s0140-6736",
+        "00515-5",
+        "00515-5/abstract",
+        "p-tau217/aβ42比值",
+        "2.44",
+        "10.1016",
+        "s0140",
+        "https"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:115:115": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:115:115",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 115,
+      "endLine": 115,
+      "source": "memory",
+      "snippet": "Assistant: 为理解\"数字化自我\"如何存储提供了认知神经科学基础——当我们将数字记忆与第一人称视角的自我叙事整合时，大脑可能采用与普通情景记忆不同的加工机制。 --- ## 四、综合评述 ### 研究趋势总结 | 方向 | 关键进展 | 意义 | |------|----------|------| | **记忆组织机制** | 发现vmPFC-海马记忆分离通路 | 揭示大脑\"数字化存储决策\"的神经基础 | | **记忆病理** | 脑废物清除系统与阿尔茨海默病的关系 | 为记忆存储系统的失效机制提供新视角 | | **数字记忆架构** | PA",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "发现vmpfc-海马记忆分离通路",
+        "理解",
+        "数字",
+        "自我",
+        "如何",
+        "存储",
+        "提供",
+        "认知"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:116:116": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:116:116",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 116,
+      "endLine": 116,
+      "source": "memory",
+      "snippet": "Assistant: 找到原因了。任务**执行成功**，日报内容已生成，但**投递失败**： > **错误**：`Outbound not configured for channel: feishu` 这表示 Feishu 投递通道未配置出站（outbound）能力。任务本身运行正常，生成了完整的日报内容，但无法推送到您的飞书。 **当前可用的替代方案**： 1. **直接查看会话内容**——日报已生成在 `agent:psychologist:corn:psychologist的定时任务` 会话中 2. **修复 Feishu outbound 配置",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "找到",
+        "原因",
+        "任务",
+        "执行",
+        "成功",
+        "日报",
+        "内容",
+        "生成"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:117:117": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:117:117",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 117,
+      "endLine": 117,
+      "source": "memory",
+      "snippet": "User: 应该是你之前没有设置传递，或者设置错误 冲洗测试",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "应该",
+        "之前",
+        "没有",
+        "设置",
+        "传递",
+        "或者",
+        "错误",
+        "冲洗"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:118:118": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:118:118",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 118,
+      "endLine": 118,
+      "source": "memory",
+      "snippet": "Assistant: 明白了，我来重新测试。先确认当前配置，再触发一次运行。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "明白",
+        "我来",
+        "重新",
+        "测试",
+        "确认",
+        "当前",
+        "配置",
+        "触发"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:119:119": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:119:119",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 119,
+      "endLine": 119,
+      "source": "memory",
+      "snippet": "Assistant: 配置本身看起来正确。问题出在系统层面——`Outbound not configured for channel: feishu`。让我检查网关的通道配置：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "网关",
+        "配置",
+        "本身",
+        "看起来",
+        "正确",
+        "问题",
+        "系统",
+        "层面"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:120:120": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:120:120",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 120,
+      "endLine": 120,
+      "source": "memory",
+      "snippet": "Assistant: 发现问题了。配置本身没问题，但系统报错 `Outbound not configured for channel: feishu`。 不过，您现在正在 Feishu 上与我对话，说明 Feishu 通道本身是通的。让我重新触发一次运行：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "发现",
+        "问题",
+        "配置",
+        "本身",
+        "系统",
+        "outbound",
+        "not",
+        "configured"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:121:121": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:121:121",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 121,
+      "endLine": 121,
+      "source": "memory",
+      "snippet": "Assistant: 已触发，请留意飞书消息。结果将直接发送到您的飞书会话。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "触发",
+        "留意",
+        "消息",
+        "结果",
+        "直接",
+        "发送",
+        "会话"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:122:122": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:122:122",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 122,
+      "endLine": 122,
+      "source": "memory",
+      "snippet": "User: cron是否有问题？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "cron",
+        "是否",
+        "问题"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:123:123": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:123:123",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 123,
+      "endLine": 123,
+      "source": "memory",
+      "snippet": "Assistant: 是的，cron 有问题。问题不在日报生成——**生成完全成功**，而是**投递失败**。 **核心错误**：`Outbound not configured for channel: feishu` 日报已在 `agent:psychologist:corn:psychologist的定时任务` 会话中生成完毕，但 cron 的 `announce` 投递机制无法将结果推送到您的飞书。 **诊断**： - ✅ 任务执行正常（3次运行都成功生成了完整日报） - ✅ 分辨率正确（psychologist 账号 → ou_c1a8fc00",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "ou-c1a8fc00",
+        "cron",
+        "问题",
+        "不在",
+        "日报",
+        "生成",
+        "完全",
+        "成功"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:124:124": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:124:124",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 124,
+      "endLine": 124,
+      "source": "memory",
+      "snippet": "User: 修复传递问题",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "修复",
+        "传递",
+        "问题"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:125:125": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:125:125",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 125,
+      "endLine": 125,
+      "source": "memory",
+      "snippet": "Assistant: 好的，我来修复投递配置。问题在于 `sessionTarget: isolated` 导致投递走向了错误路径。改为 `session:current` 让结果直接投到当前会话。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "好的",
+        "我来",
+        "修复",
+        "配置",
+        "问题",
+        "在于",
+        "sessiontarget",
+        "isolated"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:126:126": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:126:126",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 126,
+      "endLine": 126,
+      "source": "memory",
+      "snippet": "Assistant: 已更新为 `sessionTarget: current`，现在触发测试：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "更新",
+        "sessiontarget",
+        "current",
+        "现在",
+        "触发",
+        "测试"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:127:127": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:127:127",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 127,
+      "endLine": 127,
+      "source": "memory",
+      "snippet": "Assistant: 已触发。请留意飞书消息推送，预计1-2分钟内送达。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:41.730Z",
+      "lastRecalledAt": "2026-05-30T19:00:41.730Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "预计1-2分钟内送达",
+        "触发",
+        "留意",
+        "消息",
+        "推送",
+        "预计",
+        "分钟"
       ]
     }
   }

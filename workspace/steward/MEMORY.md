@@ -145,3 +145,8 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-12.md:55:69 -->
 - **source 定义**: 指向外部真实文件系统的来源页面，有具体文件路径，被 concept/entity 引用作为溯源依据 - **核心目的**: 让代理快速定位外部文件、为声明提供溯源依据 - **五种 pageType 分工**: concept（这是什么）、entity（这是谁）、source（这在哪里）、synthesis（这怎么用）、report（状态如何） - **.env 来源处理**: 创建 sources/openclaw-env.md，只记录路径+配置类型+访问权限，具体值脱敏为 `***`，绝不暴露密钥 - **sources/ 现状**: 19 个页面 = 系统来源 5 个（openclaw-system、openclaw-workspace、openclaw-env、repository、agent-self-development）+ 项目来源 15 个 ### 3. Miniconda 安装与环境管理 - **安装路径**: `~/miniconda3/` - **配置**: `~/.condarc` 指定 envs_dirs 和 pkgs_dirs 为 `~/.conda/envs` 和 `~/.conda/pkgs` - **创建环境**: - `py311`: Python 3.11.15，注册 Jupyter 内核 - `r-base`: R 4.3.1，安装 irkernel 注册 Jupyter 内核 - **Jupyter 内核**: python3 (base)、py311、r-base 三个可用 - **磁盘占用**: `~/.conda` 3.3G + `~/miniconda3` 867M [score=0.863 recalls=5 avg=0.524 source=memory/2026-05-12.md:55-69]
+
+## Promoted From Short-Term Memory (2026-05-31)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:118:121 -->
+- variables: [score=0.815 recalls=0 avg=0.620 source=memory/2026-05-28.md:40-40]

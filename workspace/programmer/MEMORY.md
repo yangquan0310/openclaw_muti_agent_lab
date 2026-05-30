@@ -85,3 +85,8 @@
 - | lookup | SKILL.md | 纯 CLI 工具，无 references | | feishu-voice | SKILL.md | 纯 CLI 工具，无 references | | 末日地堡 | 8 | ch01-ch08 | | programmer | 8 | ch01-ch08 | [score=0.837 recalls=0 avg=0.620 source=memory/2026-05-25.md:11-14]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:23:23 -->
 - **文件名格式**：`ch{num}_{how-to-do-something}.md` [score=0.837 recalls=0 avg=0.620 source=memory/2026-05-25.md:23-23]
+
+## Promoted From Short-Term Memory (2026-05-31)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:27:27 -->
+- **章节结构**（四层）： [score=0.858 recalls=0 avg=0.620 source=memory/2026-05-25.md:27-27]

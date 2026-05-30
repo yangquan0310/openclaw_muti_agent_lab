@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-26T19:00:25.701Z",
+  "updatedAt": "2026-05-30T19:00:40.487Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-14.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:1:1",
@@ -12749,6 +12749,759 @@
         "广泛",
         "可见",
         "主要"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: 你查看cron/job文件中其他日报 创建一个每日8点定时任务`日报：认知计算最新文章` 约束： 1. 24小时内 2. arXiv 和学术期刊(尤其psychological review和journal of mathematical psychology)上的认知计算最新论文 sessionTarget是session:agent:mathematician:corn:mathematician的定时任务 有什么其他不懂的参数和我说",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "你查看cron/job文件中其他日报",
+        "查看",
+        "cron",
+        "job",
+        "文件",
+        "其他",
+        "日报",
+        "创建"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 定时任务已创建成功。以下是关键参数说明： | 参数 | 值 | 说明 | |------|-----|------| | **任务ID** | `ccdb4a42-76e1-4e65-be97-704e19f89bfc` | 唯一标识，后续修改/删除需要此ID | | **任务名称** | 日报：认知计算最新文章 | | | **执行时间** | `0 8 * * *`（Asia/Shanghai） | 每天北京时间 08:00 | | **sessionTarget** | `session:agent:mathematician",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "后续修改/删除需要此id",
+        "asia/shanghai",
+        "任务",
+        "创建",
+        "成功",
+        "以下",
+        "关键",
+        "参数"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: delivery没有to?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "delivery",
+        "没有"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: 对，`to` 是**可选**的。 ### 原因 | 场景 | 是否需要 `to` | |------|--------------| | **当前对话（DM）** | 不需要，自动路由到当前会话 | | **指定其他用户/群** | 需要，如 `\"to\": \"user:ou_xxx\"` 或 `\"to\": \"chat:oc_xxx\"` | | **跨渠道推送** | 需要，明确指定目标 | ### 你的情况 你在**飞书私信**中触发创建，任务完成后 `delivery.mode = \"announce\"` + `channel =",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "指定其他用户/群",
+        "ou-xxx",
+        "oc-xxx",
+        "delivery.mode",
+        "原因",
+        "场景",
+        "是否",
+        "需要"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "User: 第一，需要你添加to！！！ 第二，你的日报的提示词修改一下: ```GO 你是XXX。请完成以下任务： ## 任务：攥写{日报} ### 任务要求 - {} ### 约束条件 - {} ### 报告结构 请按以下结构生成 Markdown 格式的日报： ```markdown # {日报名称} > 日期：YYYY-MM-DD ## {主题} ### {文章1} - 标题 - 作者 - 时间 - 主要内容 ### {文章2} ## 🔗 参考链接 ``` ```",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "yyyy-mm-dd",
+        "第一",
+        "需要",
+        "添加",
+        "第二",
+        "你的",
+        "日报",
+        "提示"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: 已更新完成。变更如下： | 变更项 | 旧值 | 新值 | |--------|------|------| | **delivery.to** | （空） | `user:ou_c68e7cb7a033c7faf4a3b35f3ec2f2ab` | | **日报格式** | 旧格式 | 新 Markdown 结构（标题/作者/时间/主要内容） | 日报结构现在是： ``` # 认知计算日报 > 日期：YYYY-MM-DD ## arXiv 预印本 ### 文章1 - 标题： - 作者： - 时间： - 主要内容： ## 期刊文章",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "delivery.to",
+        "标题/作者/时间/主要内容",
+        "yyyy-mm-dd",
+        "更新",
+        "完成",
+        "变更",
+        "如下",
+        "日报"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "User: 主题！不是arXiv 预印本和期刊文章 to: ou_c68e7cb7a033c7faf4a3b35f3ec2f2ab没有user:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "主题",
+        "不是",
+        "arxiv",
+        "期刊",
+        "文章",
+        "没有"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: 已修正两处： | 变更项 | 旧值 | 新值 | |--------|------|------| | **delivery.to** | `user:ou_c68e7cb7a033c7faf4a3b35f3ec2f2ab` | `ou_c68e7cb7a033c7faf4a3b35f3ec2f2ab` | | **报告结构** | `## arXiv 预印本` / `## 期刊文章` | `## {主题1}` / `## {主题2}`（按主题组织） | 现在日报按**主题**分类（如 Bayesian认知模型、神经网络、认知架构等",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "网络",
+        "delivery.to",
+        "修正",
+        "变更",
+        "报告",
+        "结构",
+        "arxiv",
+        "期刊"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "User: 不要以方法为主题，要以认知对象为主题",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "不要",
+        "方法",
+        "主题",
+        "认知",
+        "对象"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: 已更新。现在日报按**认知对象**（如记忆、决策、知觉、语言、推理、学习等）组织文章，而非方法论。 结构示例： ``` ## 记忆 ### 文章1 - 标题：... - 作者：... - 时间：... - 主要内容：... ## 决策 ### 文章1 - 标题：... ```",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "更新",
+        "现在",
+        "日报",
+        "认知",
+        "对象",
+        "记忆",
+        "决策",
+        "知觉"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "User: 添加约束：使用jina搜索引擎进行搜索。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "添加",
+        "约束",
+        "使用",
+        "jina",
+        "搜索",
+        "引擎",
+        "进行"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "Assistant: 已添加约束：**必须使用 Jina 搜索引擎（https://jina.ai）进行搜索**，通过 jina 技能调用。 注意到系统显示上次任务（15:04）执行成功，耗时 152s，状态 `ok`，已成功推送。有其他调整随时说！",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "jina.ai",
+        "添加",
+        "约束",
+        "必须",
+        "使用",
+        "jina",
+        "搜索",
+        "引擎"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "Assistant: 根据过去24小时的文献检索结果，整理日报如下： --- # 认知计算日报 > 日期：2026-05-30（检索范围：2026-05-29 至 2026-05-30 UTC） --- ## 记忆 ### 文章1 - **标题**：Flexible goal learning involves coordinated population activity in dCA1 and medial orbitofrontal cortex - **作者**：Li J, Tang L, Wei X, Chen Y, Xu H（Seoul Na",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "根据",
+        "过去",
+        "小时",
+        "文献",
+        "检索",
+        "结果",
+        "整理",
+        "日报"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "Assistant: ### 文章1 - **标题**：Rapid and reliable computational markers of decision-making for predicting daily smoking behavior and smoking cessation treatment outcomes - **作者**：Lee JH, Lee SH, Yang J, Kim H, Ahn WY（Seoul National University） - **时间**：2026-05-29（Neuropsychopharmaco",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "decision-making",
+        "文章",
+        "标题",
+        "rapid",
+        "reliable",
+        "computational",
+        "markers",
+        "decision"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "Assistant: **主要内容**：提出状态依赖漂移扩散模型（sdDDM），捕捉决策过程中随时间演化的神经状态变化，揭示了日内时段对决策策略的结构性影响，弥补了传统平稳性假设下分析方法遗漏的长时程决策结构。 --- ## 知觉 ### 文章1 - **标题**：Computational models reveal intuitive physics and statistical cues separately contribute to the visual perception of liquids - **作者**：Zhang Y, Bi W",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "主要",
+        "内容",
+        "提出",
+        "状态",
+        "依赖",
+        "漂移",
+        "扩散",
+        "模型"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "Assistant: Approaches, Inductive Biases, and Measurement - **作者**：Bailey N, Child C, Weyde T（City, University of London） - **时间**：2026-05-29（JAIR） - **主要内容**：系统综述过去十年深度学习智能体间组合语言涌现的研究，表明系统性泛化与地形相似性（topsim）是最主要的组合性测度，\"生产力压力\"（强制小词汇量）是组合性涌现的必要条件，揭示了符号主义与连接主义的潜在桥梁。 ### 文章2 - **标题**：T",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "approaches",
+        "inductive",
+        "biases",
+        "measurement",
+        "作者",
+        "bailey",
+        "child",
+        "weyde"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "Assistant: Cognitive Interpretability: A Research Agenda for Modelling Generalisation and Predicting Agent Behaviour - **作者**：-[^1]（来自 Cambridge & Georgetown） - **时间**：2026-05-29（LessWrong） - **主要内容**：提出\"发展性认知可解释性\"（DCI）研究议程：通过将AI行为建模为随训练演化的潜在认知结构（动机、意图、目标），实现对分布外行为的可预测解释与安全部署评估，并",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "cognitive",
+        "interpretability",
+        "research",
+        "agenda",
+        "modelling",
+        "generalisation",
+        "predicting",
+        "behaviour"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:18:18": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:18:18",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "Assistant: Spisak & Friston - Self-orthogonalizing attractor networks | [Neurocomputing](https://doi.org/10.1016/j.neucom.2026.133472) | | 决策 | Lee et al. - Computational markers of smoking decision-making | [Neuropsychopharmacology](https://www.nature.com/articles/s41386-026-024",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "network",
+        "self-orthogonalizing",
+        "decision-making",
+        "spisak",
+        "friston",
+        "self",
+        "orthogonalizing",
+        "attractor"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:19:19": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:19:19",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 19,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "Assistant: al. - Emergence of compositional languages | [JAIR](https://www.jair.org/index.php/jair/article/view/17302) | | 语言 | Chen et al. - Statistical learning & L2 grammar | [Brain and Language](https://doi.org/10.1016/j.bandl.2026.105749) | | 元认知 | Meta-Cognitive Memory Poli",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "meta-cognitive",
+        "emergence",
+        "compositional",
+        "languages",
+        "jair",
+        "https",
+        "www.jair.org",
+        "index.php"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:20:20": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:20:20",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "Assistant: Biology、Neuropsychopharmacology、Neurocomputing、Cognition、Frontiers in Psychology、JAIR、Brain and Language、bioRxiv 等 > - 选取标准：计算认知学核心议题（记忆、决策、知觉、语言、意识、元认知/学习），排除非实证性报道及工具软件类文章 --- [^1]：作者信息需从原文补充。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "元认知/学习",
+        "biology",
+        "neuropsychopharmacology",
+        "neurocomputing",
+        "cognition",
+        "frontiers",
+        "psychology",
+        "jair"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:21:21": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:21:21",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 21,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "User: jina的搜索技能名称是什么？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "jina",
+        "搜索",
+        "技能",
+        "名称",
+        "什么"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:22:22": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:22:22",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "Assistant: Jina 搜索技能的名称是 **`jina`**（位于 `~/.openclaw/skills/jina-ai/SKILL.md`）。 使用时在 prompt 中写 `请使用 jina 搜索` 或 `使用 jina 技能` 即可触发。 不过实际上内置的 `tavily_search` 工具在 cron 任务的 isolated session 中可能更稳定。如果 Jina 技能在定时任务环境中调用失败，可以考虑改回 `tavily_search`。要测试一下吗？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "openclaw/skills/jina-ai/skill.md",
+        "tavily-search",
+        "jina",
+        "搜索",
+        "技能",
+        "名称",
+        "位于",
+        "openclaw"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:23:23": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:23:23",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 23,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "User: 修改约束条件的表达：使用jina-ai技能进行搜索。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "使用jina-ai技能进行搜索",
+        "修改",
+        "约束",
+        "条件",
+        "表达",
+        "使用",
+        "jina",
+        "技能"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:24:24": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:24:24",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 24,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "Assistant: 已更新。约束条件改为：**必须使用 jina-ai 技能进行搜索**。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T19:00:34.881Z",
+      "lastRecalledAt": "2026-05-30T19:00:34.881Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-05-31",
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "jina-ai",
+        "更新",
+        "约束",
+        "条件",
+        "必须",
+        "使用",
+        "jina",
+        "技能"
       ]
     }
   }

@@ -59,7 +59,7 @@ queries.json → Searcher → index.json
                             ↓
                     Synthesizer → 笔记.md
                             ↓
-                    补充检索 → Exa/Tavily → 笔记.md
+                    jina-ai/Exa/Tavily补充检索 → 代理整合补充结果 → 笔记.md
                             ↓
                     代理撰写 → 综述.md
                             ↓

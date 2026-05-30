@@ -285,4 +285,25 @@ Key Decisions: Google Scholar 用 requests 而非浏览器（实测 HTML 可直�
 
 Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
 
+
+---
+
+*May 31, 2026 at 3:00 AM GMT+8*
+
+User: /reset
+
+
+---
+
+*May 31, 2026 at 3:00 AM GMT+8*
+
+Key Decisions: Google Scholar 用 requests 而非浏览器（实测 HTML 可直接解析）; Google Scholar 被封时返回 0 结果 + 提示，不抛异常; ScholarSearcher 通过 `__init__.py` 统一导出
+
+
+---
+
+*May 31, 2026 at 3:00 AM GMT+8*
+
+Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
+
 <!-- openclaw:dreaming:diary:end -->

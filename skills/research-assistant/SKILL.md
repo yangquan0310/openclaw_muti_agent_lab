@@ -2,7 +2,7 @@
 name: research-assistant
 description: >
   科研文献综述全流程助手。支持文献检索、AI总结、知识库管理、笔记导出、文献综述撰写、研究现状撰写。
-version: 5.5.0
+version: 5.8.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -22,7 +22,7 @@ metadata:
 1. **index.json 是核心**：所有知识产出以 index.json 为核心驱动
 2. **Git 版本控制**：使用 Git 管理版本，不需要额外归档
 3. **阶段化执行**：理解 → 检索 → 阅读 → 撰写 → 检查，五阶段顺序执行
-4. **补充检索**：使用 Exa/Tavily 补充政策文件、行业报告等到笔记
+4. **补充检索**：使用 jina-ai/Exa/Tavily 补充政策文件、行业报告等到笔记
 
 ---
 
@@ -41,6 +41,8 @@ metadata:
 research-assistant search --keyword "深度学习" --limit 20 --year-min 2020
 research-assistant search --keyword "deep learning" --limit 20
 research-assistant summarize --kb-path knowledge/index.json
+research-assistant summarize --kb-path knowledge/index.json --update-jcr
+research-assistant summarize --kb-path knowledge/index.json --update-jcr --dry-run
 research-assistant manage info --kb-path knowledge/index.json
 research-assistant manage merge --inputs a.json,b.json --output merged.json
 ```
@@ -70,6 +72,7 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 | 文献综述撰写 | [literature-review.md](references/literature-review.md) | 综述撰写原则 |
 | 研究现状撰写 | [research-status.md](references/research-status.md) | 现状报告撰写原则 |
 | 元数据维护 | [metadata-maintenance.md](references/metadata-maintenance.md) | Maintainer 使用原则 |
+| 期刊等级查询 | [easyScholar API](references/easyscholar-api.md) | EasyScholarRanker 使用原则 |
 
 ## 模板资源
 
@@ -86,9 +89,9 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 ```
 阶段1：理解 → 阅读《文献综述撰写指南》（literature-review.md），明确研究问题
     ↓
-阶段2：检索 → Searcher → index.json
+阶段2：检索 → Searcher → index.json（数据库检索）
     ↓
-阶段3：阅读 → Manager → topic.json → Summarizer → notes/labels → Synthesizer → 笔记.md
+阶段3：阅读 → Manager → topic.json → Summarizer → notes/labels → Synthesizer.extract_notes() → 笔记.md → jina-ai/Tavily补充检索 → 代理整合补充结果写入笔记
     ↓
 阶段4：撰写 → 代理阅读笔记，撰写综述/研究现状
     ↓
@@ -106,10 +109,15 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 │   ├── topic/               ← 主题子集
 │   │   └── {topic}.json
 │   ├── note/                ← 结构化笔记
-│   │   └── 笔记_{topic}.md
-│   └── review/              ← 综述文档
-│       ├── 综述_{topic}.md
-│       └── 研究现状.md
+│   │   └── 研究笔记_{topic}.md
+│   ├── review/              ← 综述文档
+│   │   ├── 文献综述_{topic}.md
+│   │   └── 研究现状_{topic}.md
+│   ├── retrieval_report/     ← 检索报告
+│   │   └── 检索报告_{topic}.md
+│   └── search_query/        ← 检索条件
+│       └── 检索条件_{topic}.json
+│ 
 └── metadata.json
 ```
 
@@ -119,6 +127,8 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 5.8.0 | 2026-05-30 | 新增 easyScholar API 支持：获取期刊 JCR/SCI 分区 |
+| 5.7.0 | 2026-05-30 | 目录结构重构：研究现状_{topic}.md、检索报告、检索条件独立目录 |
 | 5.6.0 | 2026-05-26 | 重构 references 为原则性章节；新增文献综述模板、研究现状模板 |
 | 5.5.0 | 2026-05-25 | 重构 references：新框架 8 章，how-to 格式命名，问题→方法论→工作流→执行标准结构 |
 | 5.4.0 | 2026-05-24 | CLI 重构：统一 search 命令 + 语言自动路由 |

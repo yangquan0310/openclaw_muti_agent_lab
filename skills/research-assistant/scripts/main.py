@@ -46,6 +46,13 @@ def main(argv=None) -> int:
                             help="知识库路径")
     sum_parser.add_argument("--progress-interval", type=int, default=10,
                             help="进度间隔（秒，默认 10）")
+    # JCR 更新选项
+    sum_parser.add_argument("--update-jcr", action="store_true",
+                            help="使用 easyScholar API 更新 JCR 分区")
+    sum_parser.add_argument("--easyscholar-api-key",
+                            help="EasyScholar API Key（可替代环境变量 EASYSCHOLAR_API_KEY）")
+    sum_parser.add_argument("--dry-run", action="store_true",
+                            help="仅模拟运行，不保存更改")
     sum_parser.set_defaults(func=_run_summarize)
 
     # ── manage ──────────────────────────────────────────────────
@@ -144,12 +151,29 @@ def _run_search(args) -> int:
 
 
 def _run_summarize(args) -> int:
-    summarizer = Summarizer(kb_path=args.kb_path)
-    kb = summarizer.summarize()
-    print(json.dumps({
-        "success": True,
-        "count": len(kb.get("papers", [])),
-    }, ensure_ascii=False))
+    import json
+    summarizer = Summarizer(
+        kb_path=args.kb_path,
+        easyscholar_api_key=getattr(args, 'easyscholar_api_key', None),
+    )
+
+    if args.update_jcr:
+        # 更新 JCR 分区
+        stats = summarizer.update_jcr(dry_run=args.dry_run, progress_interval=args.progress_interval)
+        result = {
+            "success": True,
+            "action": "update_jcr",
+        }
+        result.update(stats)
+        print(json.dumps(result, ensure_ascii=False))
+    else:
+        # 执行摘要总结
+        kb = summarizer.summarize(progress_interval=args.progress_interval)
+        print(json.dumps({
+            "success": True,
+            "action": "summarize",
+            "count": len(kb.get("papers", [])),
+        }, ensure_ascii=False))
     return 0
 
 
