@@ -10,7 +10,7 @@
 | 执行时间 | 负责人 | 任务ID | 任务名称 | 功能描述 | cron状态 |
 |----------|--------|--------|----------|----------|----------|
 | 每日 08:00 | 大管家（steward） | `dde9b3aa-2582-494e-bb54-a6e9625776c4` | 武汉心理学教师招聘信息日报 | 深度检索武汉地区高校心理学教师招聘信息（硕士/博士），发布到当前群聊 | `{"enabled": "已启用"}` |
-| 每日 09:00 | 大管家（steward） | `07bad57e-97aa-42ee-af83-8f083ace0d1c` | OpenClaw版本检查 | 每日检查OpenClaw GitHub更新，摘要变更内容，说明是否与mimo相关 | `{"enabled": "已启用"}` |
+| 每日 09:00 | 大管家（steward） | `07bad57e-97aa-42ee-af83-8f083ace0d1c` | OpenClaw版本检查 | 每日检查OpenClaw GitHub更新，摘要变更内容。**重点关注**：MiniMax/DeepSeek/GLM/Kimi/Mimo提供商变化；飞书/微信/QQ渠道变化；OpenClaw核心功能更新 | `{"enabled": "已启用"}` |
 
 ---
 ## 表格排序规则

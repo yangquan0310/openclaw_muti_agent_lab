@@ -18,8 +18,7 @@
 | T039 | 教育科学研究方法 | ch15 研究设计（2学时，v1-v7） | active | 2026-05-21 | 2026-05-21 | 待启动 |
 | T040 | 教育科学研究方法 | ch16 教育科学研究论文的撰写（2学时，v1-v7） | active | 2026-05-21 | 2026-05-21 | 待启动 |
 | T041 | 招聘信息日报 | 武汉心理学教师招聘信息日报（每日08:00） | active | 2026-05-29 | 2026-05-29 | cron ID: dde9b3aa，发布到当前群 |
-| T042 | mimo 音频/视频理解 | 监控 OpenClaw 官方更新 Xiaomi mimo media understanding provider | active | 2026-05-29 | 2026-05-29 | cron ID: 07bad57e，监控 GitHub releases |
-| T043 | OpenClaw Bug 追踪 | runtime context 泄露到飞书群聊 | active | 2026-05-29 | 2026-05-29 | GitHub issue #59536，尚未修复 |
+| T042 | OpenClaw 版本检查 | 监控 OpenClaw 官方 GitHub releases，**重点关注**：MiniMax/DeepSeek/GLM/Kimi/Mimo 提供商变化；飞书/微信/QQ 渠道变化；OpenClaw 核心功能更新 | active | 2026-05-29 | 2026-05-30 | cron ID: 7a700f52（2026-05-30重新创建，原ID 07bad57e 丢失） |
 
 
 ---
@@ -56,6 +55,7 @@
 | **分配子任务给子代理** | **只传递约束目标/输入/产出，让子代理自己决定如何执行** |
 | **需要重复发送同样内容** | **先艾特用户确认是否发送成功，再决定是否重试；禁止在未经确认的情况下盲目重试** |
 | **发送飞书原生语音消息** | ~~使用 feishu-voice 技能~~（已迁移至 wiki：syntheses/如何用语音回复用户.md） |
+| **监控 OpenClaw 更新时** | **重点关注**：MiniMax、DeepSeek、GLM、Kimi、Mimo 提供商变化；飞书、微信、QQ 渠道变化；OpenClaw 核心功能更新 |
 
 
 
@@ -117,34 +117,6 @@
 | v8.10.0 | 2026-05-06 | 精简：删除陈述性记忆、工作记忆使用规则、会话清单，只保留 If-Then 规则 |
 | v8.9.0 | 2026-05-01 | 每日自我更新：无个人更新触发，纯维护日 |
 | v8.0.0 | 2026-04-19 | 初始版本，作为大管家创建 |
-
----
-*最后重构: 2026-05-29*
-*重构者: 大管家*
-*说明: 新增T041武汉心理学教师招聘信息日报定时任务、T043 OpenClaw runtime context泄露bug追踪
-
----
-
-## Bug 追踪 (Bug Tracking)
-
-> 记录系统级bug，供后续跟进和解决方案搜索
-
-### 🐛 Bug #59536：runtime context 泄露到飞书群聊
-
-| 属性 | 内容 |
-|------|------|
-| **Bug ID** | T043 |
-| **GitHub Issue** | #59536 |
-| **问题描述** | OpenClaw运行时上下文块（runtime context）被错误发送到用户可见的飞书群聊 |
-| **影响** | 系统内部元数据（`[[reply_to_current]]`、注释阶段文本等）泄露给用户 |
-| **触发条件** | 当嵌入式运行超时或中止时 |
-| **相关修复PR** | #61282（已合并，修复commentary-phase泄露）、#61463（已合并）、#61829（已合并） |
-| **问题状态** | issue #59536 仍open，超时/中止路径的泄露bug未完全修复 |
-| **当前版本** | 2026.5.27（包含部分修复，但未完全解决） |
-| **发现时间** | 2026-05-29 |
-| **无法通过配置修复** | 是，需向OpenClaw官方报告或等待版本更新 |
-
-**搜索关键词**："OpenClaw runtime context leak" / "commentary phase leakage" / "aborted embedded runs leak"
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]

@@ -4,7 +4,6 @@
     {
       "id": "b6a6b07d-384d-43fb-ab80-0b713e8a8289",
       "agentId": "programmer",
-      "sessionKey": "agent:main:corn:main的定时任务",
       "name": "每日凌晨自动提交推送Git",
       "enabled": true,
       "deleteAfterRun": false,
@@ -60,32 +59,6 @@
       "state": {}
     },
     {
-      "id": "07bad57e-97aa-42ee-af83-8f083ace0d1c",
-      "agentId": "steward",
-      "sessionKey": "agent:steward:feishu:direct:ou_25cf20a1973aecc51f73d8e2800d7f7e",
-      "name": "OpenClaw版本检查-mimo视频理解",
-      "enabled": true,
-      "createdAtMs": 1779874196723,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "session:agent:steward:corn:steward的定时任务",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "检查 OpenClaw GitHub 是否有新版本发布。\n\n【任务】\n1. 获取最新版本：curl -s https://api.github.com/repos/openclaw/openclaw/releases/latest\n2. 获取当前运行版本：openclaw --version\n3. 对比是否有更新\n\n【输出格式】\n\n📢 **OpenClaw 版本检查**（YYYY-MM-DD HH:MM）\n\n**最新版本**：v.x.x.x\n**当前版本**：v.x.x.x\n**状态**：🔴 有更新 / 🟢 已是最新\n\n**更新摘要**：\n- [摘要 changelog 内容，简洁列出主要变更点]\n\n【注意】如果检测到更新，在结果中说明是否与 mimo 视频理解相关。"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_25cf20a1973aecc51f73d8e2800d7f7e",
-        "accountId": "steward"
-      },
-      "state": {}
-    },
-    {
       "id": "dde9b3aa-2582-494e-bb54-a6e9625776c4",
       "agentId": "steward",
       "name": "武汉心理学教师招聘信息日报",
@@ -107,6 +80,84 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "chat:oc_e811136cfaf31ebcdacb055de36b39fc"
+      },
+      "state": {}
+    },
+    {
+      "id": "aba0ae04-d41a-434f-9071-9d9a0f2f261e",
+      "agentId": "psychologist",
+      "name": "日报：数字化存储与自传体记忆",
+      "description": "每天上午8点检索24小时内新发布的「数字化存储与自传体记忆」相关文献，攥写日报",
+      "enabled": true,
+      "createdAtMs": 1780115613200,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:agent:psychologist:corn:psychologist的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "任务：攥写「数字化存储与自传体记忆」日报\n\n约束条件：\n- 检索24小时内新发布的学术文献\n- 主题：数字化存储与自传体记忆（digital storage and autobiographical memory）\n- 检索范围：心理学、认知科学、神经科学相关数据库\n\n输出要求：\n- 按学术规范引用真实文献\n- 每条文献需包含：标题、作者、期刊/会议、年份、DOI/链接\n- 按主题分类整理\n- 简评研究意义\n\n请先检索文献，基于检索结果攥写日报，禁止编造文献信息。",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_c1a8fc008307a0385a2fcd3c0ca6b71b",
+        "bestEffort": false
+      },
+      "deleteAfterRun": false,
+      "state": {}
+    },
+    {
+      "id": "7e49d2a7-6aec-43f3-a094-db37ff850c50",
+      "agentId": "programmer",
+      "name": "每日Agent记忆日报",
+      "enabled": true,
+      "createdAtMs": 1780115829271,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "session:agent:main:corn:main的定时任务",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "你是程序员（programmer）的专属助手。请完成以下任务：\n\n## 任务：攥写「agent记忆」日报\n\n### 约束条件\n- 仅纳入 **24小时内新发布** 的内容\n- 内容来源：学术会议论文、arXiv 手稿\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# Agent 记忆 日报\n> 日期：YYYY-MM-DD\n\n## 🤖 Agent 开发动态\n（过去24小时发布的 Agent 相关论文/文章）\n\n## 📚 学术论文\n### 会议论文\n（按 topic 分类）\n\n### arXiv 手稿\n（按 topic 分类）\n\n## 🔗 参考链接\n- [论文标题](URL)\n```\n\n### 执行步骤\n1. 使用 `wiki_search` 检索今日发布的 agent 相关论文（搜索关键词：agent, LLM agent, AI agent, autonomous agent, multi-agent）\n2. 使用 `web_search` 搜索 arXiv 今日/昨日新提交的 agent 相关论文\n3. 整理并撰写日报\n4. 将最终报告通过当前渠道发送给用户（消息路由会自动处理）\n\n### 输出要求\n- 优先关注：**Agent 开发、LLM Agent、Multi-Agent 系统、Autonomous Agent**\n- 每条论文包含：标题、作者、来源、链接、简短摘要（1-2句）\n- 如果当日无新发布内容，报告\"今日无新增\"并注明原因\n- 报告语言：中文",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a4bc01a3736e458817235a94124d340c"
+      },
+      "state": {}
+    },
+    {
+      "id": "7a700f52-10f4-4bab-9737-b09a08dde9ec",
+      "agentId": "steward",
+      "name": "OpenClaw版本检查",
+      "enabled": true,
+      "createdAtMs": 1780120013221,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "你是OpenClaw更新检查助手。每天早9点检查一次OpenClaw官方GitHub更新。\n\n【任务】\n1. 访问 OpenClaw GitHub releases 页面：https://github.com/openclaw/openclaw/releases\n2. 检查最新版本发布信息\n3. 对比上次检查的版本（如果存在）\n\n【重点关注】\n- MiniMax、DeepSeek、GLM、Kimi、Mimo 等AI提供商的变化\n- 飞书、微信、QQ 等渠道的变化\n- OpenClaw 核心功能更新\n\n【输出格式】（直接在回复中输出内容，不要发消息）\n\n**OpenClaw 版本检查报告**（YYYY-MM-DD HH:mm）\n\n**最新版本**：vX.X.X\n**发布时间**：XXXX\n\n**版本变更摘要**：\n- [主要更新内容]\n- [提供商变化]\n- [渠道变化]\n- [其他重要变更]\n\n**是否有重大变化**：是/否\n**详细变化**：\n[如果有大变化，列出具体内容]\n\n如果没有检测到重大更新，输出：「今日OpenClaw无重大更新」\n\n【重要】只报告真实存在的更新，不要编造任何信息。",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_25cf20a1973aecc51f73d8e2800d7f7e"
       },
       "state": {}
     }

@@ -2,20 +2,20 @@
   "version": 1,
   "jobs": {
     "b6a6b07d-384d-43fb-ab80-0b713e8a8289": {
-      "updatedAtMs": 1779998671009,
+      "updatedAtMs": 1780085287867,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"00 04 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "lastRunAtMs": 1779998400007,
+        "lastRunAtMs": 1780084800013,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 271002,
+        "lastDurationMs": 487854,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
         "lastFailureNotificationDeliveryStatus": "not-requested",
-        "nextRunAtMs": 1780084800000,
+        "nextRunAtMs": 1780171200000,
         "lastDelivered": true,
-        "runningAtMs": 1780084800004
+        "runningAtMs": 1780120269285
       }
     },
     "dc7447e5-7fcf-4c64-8079-e811456af6ed": {
@@ -33,27 +33,71 @@
         "consecutiveSkipped": 0
       }
     },
-    "07bad57e-97aa-42ee-af83-8f083ace0d1c": {
-      "updatedAtMs": 1780050266017,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 9 * * *\",\"tz\":\"Asia/Shanghai\"}}",
-      "state": {
-        "nextRunAtMs": 1780102800000
-      }
-    },
     "dde9b3aa-2582-494e-bb54-a6e9625776c4": {
-      "updatedAtMs": 1780030794760,
+      "updatedAtMs": 1780099245376,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 8 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780099200000,
-        "lastRunAtMs": 1780030782092,
+        "nextRunAtMs": 1780185600000,
+        "lastRunAtMs": 1780099200012,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12668,
+        "lastDurationMs": 45364,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
         "consecutiveSkipped": 0
+      }
+    },
+    "aba0ae04-d41a-434f-9071-9d9a0f2f261e": {
+      "updatedAtMs": 1780120043125,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 8 * * *\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1780185600000,
+        "lastRunAtMs": 1780120037024,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 6101,
+        "lastDeliveryStatus": "not-delivered",
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0,
+        "lastDelivered": false
+      }
+    },
+    "7e49d2a7-6aec-43f3-a094-db37ff850c50": {
+      "updatedAtMs": 1780119000942,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 8 * * *\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1780185600000,
+        "lastRunAtMs": 1780118901407,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 25365,
+        "lastDeliveryStatus": "unknown",
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "consecutiveSkipped": 0,
+        "lastError": "Error: Outbound not configured for channel: feishu",
+        "lastDiagnostics": {
+          "summary": "Error: Outbound not configured for channel: feishu",
+          "entries": [
+            {
+              "ts": 1780118926769,
+              "source": "delivery",
+              "severity": "error",
+              "message": "Error: Outbound not configured for channel: feishu"
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "Error: Outbound not configured for channel: feishu"
+      }
+    },
+    "7a700f52-10f4-4bab-9737-b09a08dde9ec": {
+      "updatedAtMs": 1780120013221,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 9 * * *\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1780189200000
       }
     }
   }
