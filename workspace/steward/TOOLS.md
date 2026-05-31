@@ -160,21 +160,43 @@ pkill mihomo && nohup mihomo -d /etc/mihomo > /var/log/mihomo.log 2>&1 &
 }
 ```
 
-### 发送音视频
-```
+### 发送音频（asVoice vs 普通文件）
+
+**asVoice=true + 音频文件**：语音消息（可播放的音频气泡）
+```json
 {
   "action": "send",
   "target": "user:ou_xxx",
-  "message": "语音",
-  "media": "/path/audio.opus"
+  "message": "语音说明",
+  "media": "/path/audio.ogg",
+  "asVoice": true,
+  "text": "语音说明"
 }
 ```
-```
+> ⚠️ **必须提供音频文件**。asVoice=true 不带音频文件时，只会发送文本，不会自动转语音。
+> ⚠️ **音频格式要求**：飞书语音消息需要 **OPUS in OGG** 格式，不支持 MP3。
+> 使用 `ffmpeg -i input.mp3 -acodec libopus -ac 1 -ar 16000 output.ogg` 转换。
+> 自动化脚本：`~/.openclaw/skills/feishu-voice/scripts/send_voice.py`
+
+**普通 media（无 asVoice）**：文件附件
+```json
 {
   "action": "send",
   "target": "user:ou_xxx",
-  "message": "视频",
-  "media": "/path/video.mp4"
+  "message": "音频文件",
+  "media": "/path/audio.ogg",
+  "text": "音频文件"
+}
+```
+
+### 发送视频
+```json
+{
+  "action": "send",
+  "target": "user:ou_xxx",
+  "message": "视频说明",
+  "media": "/path/video.mp4",
+  "text": "视频说明"
 }
 ```
 
@@ -190,46 +212,6 @@ pkill mihomo && nohup mihomo -d /etc/mihomo > /var/log/mihomo.log 2>&1 &
 
 ---
 
-## 网络检索（Jina MCP）
-
-> 通过 `jina-mcp-server`（已配置）提供，支持 search + reranker 一体化检索。
-
-### 核心工具
-
-| 工具 | 功能 |
-|------|------|
-| `search_web` | 网络搜索（支持时间/地区/语言过滤） |
-| `parallel_search_web` | 多查询并行搜索（同时搜多个角度） |
-| `search_arxiv` | 学术论文搜索（arXiv） |
-| `search_ssrn` | 社会科学论文搜索（SSRN） |
-| `expand_query` | AI 查询扩展（生成更多搜索角度） |
-| `sort_by_relevance` | **用 jina-reranker-v3 对文档列表重排序** |
-| `read_url` | 网页/PDF → Markdown（内容提取） |
-| `classify_text` | Embedding 文本分类 |
-| `deduplicate_strings` | Embedding 去重 |
-
-### 典型用法
-
-```bash
-# 1. 搜索（返回原始结果）
-search_web("量子计算最新进展")
-
-# 2. 对搜索结果二次精排
-sort_by_relevance(query="量子计算", documents=[...原始结果列表...])
-```
-
-### OpenClaw 内置 web_search vs Jina MCP
-
-| 工具 | 提供商 | reranker | 说明 |
-|------|--------|----------|------|
-| `web_search`（内置） | Brave/DuckDuckGo/Exa/Tavily 等 | ❌ | 内置通用搜索 |
-| `search_web`（Jina） | Jina AI | ✅ 内置 | 搜索+重排一体化 |
-
-### 调用方式
-
-OpenClaw 的 `web_search` 工具默认使用内置 provider。如需使用 Jina 的 search_web，需在对话中**主动调用 jina-mcp 工具**。
-
----
 
 ## lark-cli 常用命令
 
@@ -253,15 +235,8 @@ lark-cli im +messages-send --user-id ou_xxx --file ./report.pdf
 # 发送视频
 lark-cli im +messages-send --user-id ou_xxx --video ./video.mp4 --video-cover ./cover.jpg
 
-# 发送语音消息（需先转换格式，见下方说明）
+# 发送语音消息（需先转换格式，见上方说明）
 lark-cli im +messages-send --user-id ou_xxx --audio ./voice.ogg
-
-> ⚠️ **语音消息格式要求**：飞书语音消息需要 **OPUS in OGG** 格式，不支持 MP3。使用 `ffmpeg -i input.mp3 -acodec libopus -ac 1 -ar 16000 output.ogg` 转换。
->
-> **自动化脚本**：`~/.openclaw/skills/feishu-voice/scripts/send_voice.py`
-> ```bash
-> python3 ~/.openclaw/skills/feishu-voice/scripts/send_voice.py <mp3_path> [open_id]
-> ```
 
 ---
 
