@@ -30,7 +30,7 @@
         ]
       },
       "pdfModel": {
-        "primary": "jina/jina-vlm"
+        "primary": "xiaomicoding/mimo-v2.5"
       },
       "imageModel": {
         "primary": "minimax/MiniMax-VL-01"
@@ -308,14 +308,14 @@
     }
   },
   "wizard": {
-    "lastRunAt": "2026-05-21T07:56:20.818Z",
-    "lastRunVersion": "2026.5.19",
+    "lastRunAt": "2026-05-31T04:55:04.843Z",
+    "lastRunVersion": "2026.5.28",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.5.27",
-    "lastTouchedAt": "2026-05-29T10:03:17.269Z"
+    "lastTouchedVersion": "2026.5.28",
+    "lastTouchedAt": "2026-05-31T09:02:46.870Z"
   },
   "browser": {
     "enabled": true,
@@ -510,6 +510,10 @@
       "enabled": true,
       "streaming": false,
       "accounts": {
+        "default": {
+          "appId": "1903464819",
+          "clientSecret": "${QQBOT_YANGQUAN_CLIENT_SECRET}"
+        },
         "yangquan": {
           "appId": "1903464819",
           "clientSecret": "${QQBOT_YANGQUAN_CLIENT_SECRET}"
@@ -528,9 +532,9 @@
       "typingIndicator": true,
       "resolveSenderNames": true,
       "streaming": true,
+      "renderMode":"card",
       "groupPolicy": "open",
       "requireMention": true,
-      "threads": true,
       "accounts": {
         "default": {
           "webhookPath": "/feishu/events",
@@ -675,24 +679,6 @@
   },
   "mcp": {
     "servers": {
-      "tencent-docs": {
-        "url": "https://docs.qq.com/openapi/mcp",
-        "headers": {
-          "Authorization": "${TENCENT_QQ_AUTHORIZATION}"
-        }
-      },
-      "tencent-docengine": {
-        "url": "https://docs.qq.com/api/v6/doc/mcp",
-        "headers": {
-          "Authorization": "${TENCENT_QQ_AUTHORIZATION}"
-        }
-      },
-      "tencent-sheetengine": {
-        "url": "https://docs.qq.com/api/v6/sheet/mcp",
-        "headers": {
-          "Authorization": "${TENCENT_QQ_AUTHORIZATION}"
-        }
-      },
       "jina-mcp-server": {
         "url": "https://mcp.jina.ai/v1",
         "headers": {
@@ -704,7 +690,8 @@
   "plugins": {
     "entries": {
       "browser": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       },
       "active-memory": {
         "enabled": true,
@@ -761,10 +748,12 @@
         }
       },
       "openclaw-weixin": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       },
       "deepseek": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       },
       "moonshot": {
         "enabled": true,
@@ -777,10 +766,12 @@
         }
       },
       "qqbot": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       },
       "openclaw-lark": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       },
       "exa": {
         "enabled": true,
@@ -801,7 +792,8 @@
         }
       },
       "zai": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       },
       "minimax": {
         "enabled": true,
@@ -813,19 +805,23 @@
         }
       },
       "document-extract": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       },
       "agent-self-development": {
         "enabled": true,
         "hooks": {
           "allowConversationAccess": true
-        }
+        },
+        "config": {}
       },
       "xiaomi": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       },
       "kimi": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       }
     },
     "allow": [
@@ -866,11 +862,11 @@
         "minimax": {
           "apiKey": "${MINIMAX_API_KEY}",
           "model": "speech-2.8-hd",
-          "voiceId": "male-qn-jingying",
           "speed": 1,
           "vol": 1,
           "pitch": 0,
-          "baseUrl": "https://api.minimaxi.com"
+          "baseUrl": "https://api.minimaxi.com",
+          "speakerVoiceId": "male-qn-jingying"
         }
       }
     }

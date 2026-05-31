@@ -745,4 +745,25 @@ citeproc: true 测试失败: 使用 `input-files` 多文件输入时，citeproc 
 
 完成事项: concepts/ 全部15个文件迁移到 syntheses/; 所有文件重命名为 `{YYYY-MM-DD-HH-MM-SS-TITLE}` 格式; concepts/index.md 改为迁移记录页; reports/ 10个报告文件全部重命名
 
+
+---
+
+*June 1, 2026 at 3:00 AM GMT+8*
+
+User: 接下来，按照md前面添加yaml，pandoc.yaml控制输出和整体的布局，apa.csl控制参考文献，来重新排版/root/data/disk/仓库/数字化存储与自传体记忆/manuscripts/博士论文/
+
+
+---
+
+*June 1, 2026 at 3:00 AM GMT+8*
+
+User: 接下来，按照md前面添加yaml，pandoc.yaml控制输出和整体的布局，apa.csl控制参考文献，来重新排版/root/data/disk/仓库/数字化存储与自传体记忆/manuscripts/博士论文/
+
+
+---
+
+*June 1, 2026 at 3:00 AM GMT+8*
+
+完成事项: concepts/ 收录49个心理学概念（8个类别）
+
 <!-- openclaw:dreaming:diary:end -->

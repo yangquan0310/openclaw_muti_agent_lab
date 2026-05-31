@@ -383,12 +383,12 @@
 ## Generated
 <!-- openclaw:wiki:index:start -->
 - Render mode: `obsidian`
-- Total pages: 108
+- Total pages: 110
 - Claims: 16
 - Sources: 6
 - Entities: 13
 - Concepts: 52
-- Syntheses: 27
+- Syntheses: 29
 - Reports: 10
 
 ### Sources
@@ -478,18 +478,20 @@
 - [[syntheses/2026-05-19-18-25-37-如何攥写if-then规则|If-Then 规则修改标准]]
 - [[syntheses/2026-05-21-10-42-53-如何攥写memory配置文件|MEMORY 记忆模板（MEMORY.md）]]
 - [[syntheses/2026-05-19-18-25-37-如何攥写soul配置文件|SOUL 人格模板（SOUL.md）]]
+- [[syntheses/2026-05-31-11-00-00-CCT-论文笔记|The Cognitive Categorical Transformer (CCT) - 论文笔记]]
 - [[syntheses/2026-05-19-18-25-37-如何攥写tools配置文件|TOOLS 工具配置模板（TOOLS.md）]]
 - [[syntheses/2026-05-19-18-25-37-如何攥写user配置文件|USER 用户画像模板（USER.md）]]
 - [[syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务|三方协作实践：代理领取任务与执行流程]]
 - [[syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化|从学生论文修改到项目管理体系的演化]]
 - [[syntheses/2026-05-19-18-25-37-如何配置仓库|仓库]]
 - [[syntheses/2026-05-23-11-14-00-代理实践技能体系总结|代理实践技能体系总结]]
-- [[syntheses/团体心理辅导|团体心理辅导-樊富珉]]
-- [[syntheses/团体辅导方案写作规范|团体辅导方案写作规范]]
+- [[syntheses/2026-05-24-23-22-13-团体心理辅导|团体心理辅导-樊富珉]]
+- [[syntheses/2026-05-24-23-22-05-团体辅导方案写作规范|团体辅导方案写作规范]]
+- [[syntheses/2026-05-31-11-30-00-复形vs流形-关系描述的数学对比|复形 vs 流形：关系描述的数学对比]]
 - [[syntheses/2026-05-19-18-25-37-多agent协作案例-学生论文修改项目|多Agent协作案例：学生论文修改项目]]
 - [[syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系|多Agent管理与单Agent记忆进化体系]]
 - [[syntheses/2026-05-23-23-50-00-如何用语音回复用户|如何用语音回复用户]]
-- [[syntheses/态射与范畴-比较与转换|态射与范畴：比较与转换]]
+- [[syntheses/2026-05-24-23-12-04-态射与范畴-比较与转换|态射与范畴：比较与转换]]
 - [[syntheses/2026-05-20-23-47-31-教育科学研究方法-多代理如何协作|教育科学研究方法-多代理协作总结]]
 - [[syntheses/2026-05-19-22-53-22-如何管理程序项目|程序项目]]
 - [[syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系|认知范式与精细化注入词研究体系]]

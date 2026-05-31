@@ -306,4 +306,25 @@ Key Decisions: Google Scholar 用 requests 而非浏览器（实测 HTML 可直�
 
 Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
 
+
+---
+
+*June 1, 2026 at 3:00 AM GMT+8*
+
+Assistant: ✅ 已全部更新，两条日报的约束条件统一改为： > 使用 **jina-ai 技能**进行搜索 cron 和 HEARTBEAT.md 均已同步。
+
+
+---
+
+*June 1, 2026 at 3:00 AM GMT+8*
+
+Assistant: [链接](https://www.jair.org/index.php/jair/article/view/17302) 综述深度学习 Agent 中组合性语言的涌现机制（近十年研究）： - **Productivity pressure**（词汇量约束）是组合性涌现的必要条件 - Transformer 架构在emergent language 中的作用尚未被充分探索 - 建议用 **topographic similarity** + **系统性泛化** 作为标准评估指标 #### Distilling Structural R
+
+
+---
+
+*June 1, 2026 at 3:00 AM GMT+8*
+
+Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
+
 <!-- openclaw:dreaming:diary:end -->

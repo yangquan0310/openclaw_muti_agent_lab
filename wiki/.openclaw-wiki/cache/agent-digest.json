@@ -3,7 +3,7 @@
     "entity": 13,
     "concept": 52,
     "source": 6,
-    "synthesis": 27,
+    "synthesis": 29,
     "report": 10
   },
   "claimCount": 16,
@@ -1801,7 +1801,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-24T15:04:04.453Z",
+      "lastTouchedAt": "2026-05-31T03:45:39.782Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1933,7 +1933,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-24T15:04:04.453Z",
+      "lastTouchedAt": "2026-05-31T03:45:39.782Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2651,14 +2651,12 @@
       "topClaims": []
     },
     {
-      "id": "synthesis.团体心理辅导-樊富珉",
-      "title": "团体心理辅导-樊富珉",
+      "id": "morphism-category-comparison",
+      "title": "态射与范畴：比较与转换",
       "kind": "synthesis",
-      "path": "syntheses/团体心理辅导.md",
+      "path": "syntheses/2026-05-24-23-12-04-态射与范畴-比较与转换.md",
       "aliases": [],
-      "sourceIds": [
-        "deepseek_markdown_20260521_023f62---adf29835-aacd-4fd5-a224-c53cb7b2584a"
-      ],
+      "sourceIds": [],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -2666,63 +2664,16 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "confidence": 0.95,
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-24T03:57:08.172Z",
-      "claimCount": 8,
-      "topClaims": [
-        {
-          "text": "《团体心理辅导》由樊富珉、何瑾编著，华东师范大学出版社出版",
-          "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
-          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
-        },
-        {
-          "text": "团体发展经历初期阶段、转换阶段、工作阶段、结束阶段四个时期",
-          "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
-          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
-        },
-        {
-          "text": "团体辅导具有教育、发展、预防、治疗四大功能",
-          "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
-          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
-        },
-        {
-          "text": "团体辅导场所需满足舒适性、功能性、保密性、互动性、非干扰性五个要求",
-          "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
-          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
-        },
-        {
-          "text": "团体辅导常用技术包括倾听、复述、反映、澄清、提问、总结等",
-          "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
-          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
-        }
-      ]
+      "lastTouchedAt": "2026-05-24T00:00:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
     },
     {
       "id": "synthesis.团体辅导方案写作规范",
       "title": "团体辅导方案写作规范",
       "kind": "synthesis",
-      "path": "syntheses/团体辅导方案写作规范.md",
+      "path": "syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md",
       "aliases": [],
       "sourceIds": [
         "团体心理辅导-樊富珉-2026-05-24"
@@ -2787,12 +2738,82 @@
       ]
     },
     {
-      "id": "morphism-category-comparison",
-      "title": "态射与范畴：比较与转换",
+      "id": "synthesis.团体心理辅导-樊富珉",
+      "title": "团体心理辅导-樊富珉",
       "kind": "synthesis",
-      "path": "syntheses/态射与范畴-比较与转换.md",
+      "path": "syntheses/2026-05-24-23-22-13-团体心理辅导.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "deepseek_markdown_20260521_023f62---adf29835-aacd-4fd5-a224-c53cb7b2584a"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "confidence": 0.95,
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-24T03:57:08.172Z",
+      "claimCount": 8,
+      "topClaims": [
+        {
+          "text": "《团体心理辅导》由樊富珉、何瑾编著，华东师范大学出版社出版",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        },
+        {
+          "text": "团体发展经历初期阶段、转换阶段、工作阶段、结束阶段四个时期",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        },
+        {
+          "text": "团体辅导具有教育、发展、预防、治疗四大功能",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        },
+        {
+          "text": "团体辅导场所需满足舒适性、功能性、保密性、互动性、非干扰性五个要求",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        },
+        {
+          "text": "团体辅导常用技术包括倾听、复述、反映、澄清、提问、总结等",
+          "status": "supported",
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-05-24T03:57:08.172Z"
+        }
+      ]
+    },
+    {
+      "id": "synthesis.the-cognitive-categorical-transformer-cct-论文笔记",
+      "title": "The Cognitive Categorical Transformer (CCT) - 论文笔记",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-31-11-00-00-CCT-论文笔记.md",
+      "aliases": [],
+      "sourceIds": [
+        "arxiv:2605.28864"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -2801,7 +2822,28 @@
       "topRelationships": [],
       "pageType": "synthesis",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-24T00:00:00+08:00",
+      "lastTouchedAt": "2026-05-31T03:12:34.691Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.复形-vs-流形-关系描述的数学对比",
+      "title": "复形 vs 流形：关系描述的数学对比",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-31-11-30-00-复形vs流形-关系描述的数学对比.md",
+      "aliases": [],
+      "sourceIds": [
+        "mathematical_discussion:simplicial_vs_manifold"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-05-31T03:35:50.748Z",
       "claimCount": 0,
       "topClaims": []
     }

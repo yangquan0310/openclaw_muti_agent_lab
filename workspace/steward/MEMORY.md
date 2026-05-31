@@ -150,3 +150,10 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:118:121 -->
 - variables: [score=0.815 recalls=0 avg=0.620 source=memory/2026-05-28.md:40-40]
+
+## Promoted From Short-Term Memory (2026-06-01)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:13:16 -->
+- | 章节 | 问题 | |------|------| | §3.5 | 放置位置存疑 | | §4.4 | 需补充经典认知范式（工作记忆N-back、联想记忆配对联想学习、错误记忆与幻觉评估） | [score=0.828 recalls=0 avg=0.620 source=memory/2026-05-28.md:13-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:17:18 -->
+- | §4.5 | 在理论框架中间讲意义，逻辑不通 | | §6.1 | 内容堆砌，与§6.2完全脱节 | [score=0.828 recalls=0 avg=0.620 source=memory/2026-05-28.md:17-18]

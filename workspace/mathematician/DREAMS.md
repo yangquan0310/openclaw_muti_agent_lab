@@ -599,4 +599,18 @@ to的参数格式到底是什么？是 `user:ou_` 开头，还是直接就是 `o
 
 User: 你查看cron/job文件中其他日报 创建一个每日8点定时任务`日报：认知计算最新文章` 约束： 1. 24小时内 2. arXiv 和学术期刊(尤其psychological review和journal of mathematical psychology)上的认知计算最新论文 sessionTarget是session:agent:mathematician:corn:mathematician的定时任务 有什么其他不懂的参数和我说
 
+
+---
+
+*June 1, 2026 at 3:00 AM GMT+8*
+
+User: 日报为什么会存储成文件？而不是消息
+
+
+---
+
+*June 1, 2026 at 3:00 AM GMT+8*
+
+Assistant: **主要内容**：提出状态依赖漂移扩散模型（sdDDM），捕捉决策过程中随时间演化的神经状态变化，揭示了日内时段对决策策略的结构性影响，弥补了传统平稳性假设下分析方法遗漏的长时程决策结构。 --- ## 知觉 ### 文章1 - **标题**：Computational models reveal intuitive physics and statistical cues separately contribute to the visual perception of liquids - **作者**：Zhang Y, Bi W
+
 <!-- openclaw:dreaming:diary:end -->

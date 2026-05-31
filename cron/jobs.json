@@ -58,7 +58,7 @@
       "createdAtMs": 1780025705581,
       "schedule": {
         "kind": "cron",
-        "expr": "0 8 * * *",
+        "expr": "20 8 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:agent:steward:corn:steward的定时任务",
@@ -93,7 +93,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是学术研究助手。请完成以下任务：\n\n## 任务：攥写「数字化存储与自传体记忆」日报\n\n### 任务要求\n- 检索近24小时内新发布的学术文献\n- 主题范围：数字化存储与自传体记忆（digital storage and autobiographical memory）\n- 检索领域：心理学、认知科学、神经科学、人工智能\n- 每条文献需包含：标题、作者、期刊/会议、年份、DOI/链接\n- 按主题分类整理，每条文献附简要评述\n\n### 约束条件\n- 禁止编造文献信息，所有引用必须基于真实检索结果\n- 检索不到文献时，明确标注「未检索到该类型文献」\n- 只引用可验证的学术来源（DOI、正式发表的期刊/会议）\n- 报告总字数控制在 1500-2000 字以内\n- **检索方式：必须使用 jina-ai 技能（read 加载 ~/.openclaw/skills/jina-ai/SKILL.md）进行文献检索**\n\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# 数字化存储与自传体记忆日报\n> 日期：YYYY-MM-DD\n\n## 主题分类文献综述\n\n### {分类主题1}\n\n**文献1**\n- 标题：\n- 作者：\n- 期刊/会议：\n- 年份：\n- DOI/链接：\n- 核心发现：\n- 简评：\n\n**文献2**\n- ...\n\n### {分类主题2}\n- ...\n\n## 参考链接\n- [文献标题] DOI/URL\n```",
+        "message": "你是学术研究助手。请完成以下任务：\n\n## 任务：攥写「数字化存储与自传体记忆」日报\n\n### 任务要求\n- 检索近24小时内新发布的学术文献\n- 主题范围：数字化存储与自传体记忆（digital storage and autobiographical memory）\n- 检索领域：心理学、认知科学、神经科学、人工智能\n- 每条文献需包含：标题、作者、期刊/会议、年份、DOI/链接\n- 按主题分类整理，每条文献附简要评述\n\n### 约束条件\n- 禁止编造文献信息，所有引用必须基于真实检索结果\n- 检索不到文献时，明确标注「未检索到该类型文献」\n- 只引用可验证的学术来源（DOI、正式发表的期刊/会议）\n- 报告总字数控制在 1500-2000 字以内\n- **检索方式：必须使用 jina-ai 技能（read 加载 ~/.openclaw/skills/jina-ai/SKILL.md）进行文献检索**\n- 日报禁止写入文件：完成后，将日报的完整内容整理在当前消息，不要保存到文件。\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# 数字化存储与自传体记忆日报\n> 日期：YYYY-MM-DD\n\n## 主题分类文献综述\n\n### {分类主题1}\n\n**文献1**\n- 标题：\n- 作者：\n- 期刊/会议：\n- 年份：\n- DOI/链接：\n- 核心发现：\n- 简评：\n\n**文献2**\n- ...\n\n### {分类主题2}\n- ...\n\n## 参考链接\n- [文献标题] DOI/URL\n```",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -113,14 +113,14 @@
       "createdAtMs": 1780115829271,
       "schedule": {
         "kind": "cron",
-        "expr": "0 8 * * *",
+        "expr": "10 8 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:agent:programmer:corn:programmer的定时任务",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是程序员（programmer）的专属助手。请完成以下任务：\n\n## 任务：攥写「Agent记忆」日报\n\n### 任务要求\n- 检索过去24小时内新发布的 Agent 相关学术论文/arXiv 手稿\n\n### 约束条件\n- 仅纳入24小时内新发布的内容\n- 内容来源：学术会议论文、arXiv 手稿\n- 使用 jina-ai 技能进行搜索\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# Agent 记忆 日报\n> 日期：YYYY-MM-DD\n\n## 学术论文\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：（1-2句摘要）\n\n### 文章2\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n## 🔗 参考链接\n```",
+        "message": "你是程序员（programmer）的专属助手。请完成以下任务：\n\n## 任务：攥写「Agent记忆」日报\n\n### 任务要求\n- 检索过去24小时内新发布的 Agent 相关学术论文/arXiv 手稿\n\n### 约束条件\n- 仅纳入24小时内新发布的内容\n- 内容来源：学术会议论文、arXiv 手稿\n- 使用 jina-ai 技能进行搜索\n- 日报禁止写入文件：完成后，将日报的完整内容整理在当前消息，不要保存到文件。\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# Agent 记忆 日报\n> 日期：YYYY-MM-DD\n\n## {分类主题}\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：（1-2句摘要）\n\n### 文章2\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n## 🔗 参考链接\n```",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -147,7 +147,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是OpenClaw更新检查助手。每天早6点检查一次OpenClaw官方GitHub更新。\n\n【任务】\n1. 访问 OpenClaw GitHub releases 页面：https://github.com/openclaw/openclaw/releases\n2. 检查最新版本发布信息\n3. 对比上次检查的版本（如果存在）\n\n【重点关注】\n- MiniMax、DeepSeek、GLM、Kimi、Mimo 等AI提供商的变化\n- 飞书、微信、QQ 等渠道的变化\n- OpenClaw 核心功能更新\n- **memory search 是否新增 rerank 模型支持**（如 builtin 引擎支持 jina-reranker 等专业 rerank 模型）\n\n【输出格式】（直接在回复中输出内容，不要发消息）\n\n**OpenClaw 版本检查报告**（YYYY-MM-DD HH:mm）\n\n**最新版本**：vX.X.X\n**发布时间**：XXXX\n\n**版本变更摘要**：\n- [主要更新内容]\n- [提供商变化]\n- [渠道变化]\n- [rerank 模型支持变化]\n- [其他重要变更]\n\n**是否有重大变化**：是/否\n**详细变化**：\n[如果有大变化，列出具体内容]\n\n如果没有检测到重大更新，输出：「今日OpenClaw无重大更新」\n\n【重要】只报告真实存在的更新，不要编造任何信息。",
+        "message": "你是OpenClaw更新检查助手。每天早6点检查一次OpenClaw官方GitHub更新。\n\n【任务】\n1. 访问 OpenClaw GitHub releases 页面：https://github.com/openclaw/openclaw/releases\n2. 检查最新版本发布信息\n3. 对比上次检查的版本（如果存在）\n\n【重点关注】\n- MiniMax、DeepSeek、GLM、Kimi、Mimo 等AI提供商的变化\n- 飞书、微信、QQ 等渠道的变化\n- OpenClaw 核心功能更新\n- **memory search 是否新增 rerank 模型支持**（如 builtin 引擎支持 jina-reranker 等专业 rerank 模型）\n- **Issue #85439 修复状态**：飞书工具调用结果可见性bug是否已修复\n\n【输出格式】（直接在回复中输出内容，不要发消息）\n\n**OpenClaw 版本检查报告**（YYYY-MM-DD HH:mm）\n\n**最新版本**：vX.X.X\n**发布时间**：XXXX\n\n**版本变更摘要**：\n- [主要更新内容]\n- [提供商变化]\n- [渠道变化]\n- [rerank 模型支持变化]\n- [其他重要变更]\n\n**是否有重大变化**：是/否\n**详细变化**：\n[如果有大变化，列出具体内容]\n\n**Issue #85439（飞书工具可见性bug）修复状态**：\n- 已修复/未修复/部分修复/未提及\n- [如已修复，注明版本号]\n\n如果没有检测到重大更新，输出：「今日OpenClaw无重大更新」\n\n【重要】只报告真实存在的更新，不要编造任何信息。",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -168,14 +168,14 @@
       "createdAtMs": 1780122436005,
       "schedule": {
         "kind": "cron",
-        "expr": "0 8 * * *",
+        "expr": "15 8 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:agent:physicist:corn:physicist",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是物理学专家。请完成以下任务：\n\n## 任务：攥写「伊辛模型最新应用」日报\n\n### 任务要求\n1. 搜索伊辛模型(Ising Model)在统计物理、神经科学、机器学习领域的最新应用论文\n2. 整理论文标题、作者、时间、期刊/平台、主要内容\n3. 按统计物理、神经科学、机器学习三个领域分类呈现\n4. 如果没有找到论文，注明\"本期无更新\"\n\n### 约束条件\n- 时间范围：24小时内发表的论文\n- 来源：arXiv + 学术期刊\n- **搜索工具：使用 jina-ai 技能进行搜索 (https://jina.ai/search/)**\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# 伊辛模型最新应用日报\n> 日期：YYYY-MM-DD\n\n## 统计物理\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 期刊/平台：\n- 主要内容：\n\n## 神经科学\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 期刊/平台：\n- 主要内容：\n\n## 机器学习\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 期刊/平台：\n- 主要内容：\n\n## 🔗 参考链接\n\n```\n\n完成后将结果保存到 ~/data/disk/仓库/physicist/日报/ 目录下，文件名格式：`Ising_Model_Daily_YYYY-MM-DD.md`",
+        "message": "你是物理学专家。请完成以下任务：\n\n## 任务：攥写「伊辛模型最新应用」日报\n\n### 任务要求\n1. 搜索伊辛模型(Ising Model)在统计物理、神经科学、机器学习领域的最新应用论文\n2. 整理论文标题、作者、时间、期刊/平台、主要内容\n3. 按统计物理、神经科学、机器学习三个领域分类呈现\n4. 如果没有找到论文，注明\"本期无更新\"\n\n### 约束条件\n- 时间范围：24小时内发表的论文\n- 来源：arXiv + 学术期刊\n- **搜索工具：使用 jina-ai 技能进行搜索 (https://jina.ai/search/)**\n- 日报禁止写入文件：完成后，将日报的完整内容整理在当前消息，不要保存到文件。\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# 伊辛模型最新应用日报\n> 日期：YYYY-MM-DD\n\n## 统计物理\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 期刊/平台：\n- 主要内容：\n\n## 神经科学\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 期刊/平台：\n- 主要内容：\n\n## 机器学习\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 期刊/平台：\n- 主要内容：\n\n## 🔗 参考链接\n```",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -197,48 +197,20 @@
       "createdAtMs": 1780124147529,
       "schedule": {
         "kind": "cron",
-        "expr": "0 8 * * *",
+        "expr": "05 8 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "session:agent:mathematician:corn:mathematician",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是认知计算领域的学术助手。请完成以下任务：\n\n## 任务：攥写认知计算日报\n\n### 任务要求\n- 检索过去 24 小时内（以 UTC 0 点为界）的学术文献\n- 重点来源：arXiv（cs.AI、cs.LG、q-bio.NC、stat.ML 等）、Psychological Review、Journal of Mathematical Psychology\n- 检索主题：Computational cognition / Cognitive computation、Mathematical models of cognition、Neural network models of mind、Probabilistic models of cognition、Bayesian cognitive models、Connectionist models、Symbolicism vs connectionism、Cognitive architecture、Mathematical psychology\n- 对检索结果进行筛选、去重，按相关度排序\n\n### 约束条件\n- 必须使用 jina-ai 技能进行搜索\n- 最多选取 10 篇最重要的文献\n- 每篇文章需包含：标题、作者、时间、主要内容（一句话总结）\n- 按认知对象（如：记忆、决策、知觉、语言、推理、学习等）组织文章，而非按方法或来源\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# 认知计算日报\n> 日期：YYYY-MM-DD\n\n## {认知对象1}\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n### 文章2\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n## {认知对象2}\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n## 🔗 参考链接\n\n```",
+        "message": "你是认知计算领域的学术助手。请完成以下任务：\n\n## 任务：攥写认知计算日报\n\n### 任务要求\n- 检索主题：Computational cognition / Cognitive computation、Mathematical models of cognition、Neural network models of mind、Probabilistic models of cognition、Bayesian cognitive models、Connectionist models、Symbolicism vs connectionism、Cognitive architecture、Mathematical psychology\n- 对检索结果进行筛选、去重，按相关度排序\n\n### 约束条件\n- 必须使用 jina-ai 技能进行搜索\n- 最多选取 10 篇最重要的文献\n- 检索过去 24 小时内（以 UTC 0 点为界）的学术文献\n- 重点来源：arXiv（cs.AI、cs.LG、q-bio.NC、stat.ML 等）、Psychological Review、Journal of Mathematical Psychology\n- 每篇文章需包含：标题、作者、时间、主要内容（一句话总结）\n- 按认知对象（如：记忆、决策、知觉、语言、推理、学习等）组织文章，而非按方法或来源\n- 日报禁止写入文件：完成后，将日报的完整内容整理在当前消息，不要保存到文件。\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# 认知计算日报\n> 日期：YYYY-MM-DD\n\n## {认知对象1}\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n### 文章2\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n## {认知对象2}\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n## 🔗 参考链接\n\n```",
         "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
         "to": "ou_c68e7cb7a033c7faf4a3b35f3ec2f2ab",
-        "bestEffort": false
-      },
-      "deleteAfterRun": false,
-      "state": {}
-    },
-    {
-      "id": "879ffcd3-e210-4e59-8139-0ed3f1a473b7",
-      "agentId": "programmer",
-      "sessionKey": "agent:programmer:feishu:direct:ou_a4bc01a3736e458817235a94124d340c",
-      "name": "日报：Agent记忆机制",
-      "enabled": true,
-      "createdAtMs": 1780124748706,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "session:agent:programmer:corn:programmer的定时任务",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "你是程序员（programmer）的专属助手。请完成以下任务：\n\n## 任务：攥写「Agent记忆机制」日报\n\n### 任务要求\n- 检索过去24小时内新发布的 Agent 记忆机制相关学术论文/arXiv 手稿\n\n### 约束条件\n- 仅纳入24小时内新发布的内容\n- 内容来源：学术会议论文、arXiv 手稿、技术博客\n- 使用 jina-ai 技能进行搜索\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# Agent 记忆机制 日报\n> 日期：YYYY-MM-DD\n\n## 学术论文\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：（1-2句摘要）\n\n### 文章2\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n## 🔗 参考链接\n```",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a4bc01a3736e458817235a94124d340c",
         "bestEffort": false
       },
       "deleteAfterRun": false,
