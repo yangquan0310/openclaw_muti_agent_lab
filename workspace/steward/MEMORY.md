@@ -43,7 +43,7 @@
 | 每日维护任务推送 | 推送到development分支 |
 | 文档太大（超过5000字） | 使用腾讯云文档分段上传 |
 | **合并main分支前** | **先更新 `.openclaw/README.md` 版本历史** |
-| **项目文件整理** | **使用 thesis-manager/course-manager 技能，标准目录：uploads/manuscripts/knowledge/ 等。metadata.json 必须在根目录，不可移动。统一仓库路径：/root/data/disk/仓库/** |
+| **项目文件整理** | **使用 thesis-manager/course-manager 技能，标准目录：uploads/manuscripts/knowledge/ 等。metadata.json 必须在根目录，不可移动。统一仓库路径：/data/disk/仓库/** |
 | **用户要求"查原因"** | **先读代码→定位问题→确认根因→再谈修复，不急于给方案** |
 | **终稿/草稿目录存在** | **使用 thesis-manager/course-manager 技能手动整理，迁移到标准目录** |
 | **向用户发送权限申请** | **必须使用飞书交互卡片（interactive card），包含按钮和跳转链接** |
