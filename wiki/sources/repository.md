@@ -12,20 +12,20 @@ aliases:
 # 仓库
 
 > 实验室统一项目仓库。
-> 来源：`/root/data/disk/仓库/`
+> 来源：`/data/disk/仓库/`
 
 ---
 
 ## 路径
 
 ```
-/root/data/disk/仓库/
+/data/disk/仓库/
 ```
 
 ## 结构
 
 ```
-/root/data/disk/仓库/
+/data/disk/仓库/
 ├── README.md              # 仓库总览（项目索引）
 │
 ├── 项目A/                 # 每个项目一个文件夹
