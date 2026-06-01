@@ -327,4 +327,25 @@ Assistant: [链接](https://www.jair.org/index.php/jair/article/view/17302) 综�
 
 Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
 
+
+---
+
+*June 2, 2026 at 3:00 AM GMT+8*
+
+User: 必须用 delivery "mode": "announce", "channel": "feishu", 检查to!!!!
+
+
+---
+
+*June 2, 2026 at 3:00 AM GMT+8*
+
+ScholarSearcher 创建完成: **当前状态**：IP 被 Google Scholar 封禁（CAPTCHA），返回 0 结果属正常现象，等待几分钟后恢复
+
+
+---
+
+*June 2, 2026 at 3:00 AM GMT+8*
+
+Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
+
 <!-- openclaw:dreaming:diary:end -->

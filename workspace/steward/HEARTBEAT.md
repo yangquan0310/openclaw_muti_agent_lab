@@ -58,4 +58,4 @@
 
 | Bug ID | 严重程度 | 描述 | Issue链接 | 发现日期 | 状态 |
 |--------|----------|------|----------|----------|------|
-| FEISHU-TOOL-VISIBLE | 中 | 飞书频道streaming=true时，工具调用结果未渲染到流式卡片，而是作为独立消息发送 | GitHub Issue #85439 | 2026-05-31 | 未修复 |
+| TOOL-PROGRESS-LEAK | 中 | **飞书/微信/QQ 三平台都受影响**：工具调用进度（toolProgressResult 的 `visibility: "channel"`）通过 `onToolStart` → `updateStreamingStatusLine` 路径发到群聊，且 final reply 在某些情况下被错误抑制。已尝试 `streaming=false` + `blockStreaming=false`（完全非流式）**仍泄漏**——说明泄漏路径不止 block pipeline，工具进度通过 `draftStream.update(...)` 独立发送。 | GitHub Issue #85439 | 2026-05-31（升级 2026-06-02：扩大范围 + 验证完全非流式方案无效） | 未修复 |

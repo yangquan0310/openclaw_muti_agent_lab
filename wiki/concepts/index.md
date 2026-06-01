@@ -2,6 +2,7 @@
 
 ## Generated
 <!-- openclaw:wiki:concepts:index:start -->
+- [[concepts/agent-personal-config-architecture|Agent 个人配置架构规范]]
 - [[concepts/thematic-analysis|主题分析（Thematic Analysis）]]
 - [[concepts/transactive-memory-system|交互记忆系统（Transactive Memory System, TMS）]]
 - [[concepts/common-factors-theory|共同因素理论（Common Factors Theory）]]

@@ -75,5 +75,6 @@ aliases:
 ### Referenced By
 
 - [[syntheses/2026-05-19-18-25-37-如何配置仓库|仓库]]
+- [[syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮|我的 agent 工程实践：驾驭方法论]]
 - [[syntheses/2026-05-19-22-53-22-如何管理项目|项目]]
 <!-- openclaw:wiki:related:end -->

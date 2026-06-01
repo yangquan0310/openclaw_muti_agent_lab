@@ -337,7 +337,7 @@
       "lineCount": 1,
       "lastContentLine": 1
     },
-    "programmer:sessions/programmer/42ee9665-5ac3-42a8-a0c7-900ecfe468b3.jsonl": {
+    "programmer:sessions/programmer/42ee9665-5ac3-42a8-a0c7-900ecfe468b3.jsonl.reset.2026-06-01T03-13-29.419Z": {
       "mtimeMs": 1780195319890,
       "size": 27214,
       "contentHash": "1da084bea3baf0c4b450e06e12864172ca62c7b46897bdbca14109aa59161932",
@@ -596,6 +596,13 @@
       "lineCount": 8,
       "lastContentLine": 8
     },
+    "programmer:sessions/programmer/972ff8e1-2ca1-4295-846e-e7740a6bcde6.jsonl": {
+      "mtimeMs": 1780273018012,
+      "size": 393629,
+      "contentHash": "7948c65ff247ce0661b1875cabdbd6344a362b0aded891cf2c3c4239fedcc9a9",
+      "lineCount": 6,
+      "lastContentLine": 6
+    },
     "programmer:sessions/programmer/98fc3fad-fe88-473e-aab7-650b9451a4e4.jsonl.reset.2026-05-28T13-15-25.427Z": {
       "mtimeMs": 1779900946701,
       "size": 282139,
@@ -651,6 +658,13 @@
       "contentHash": "a19721ed431ffbde21abfb0f7268b7755471ab95a8052b5cd8045d3f3c875db7",
       "lineCount": 3,
       "lastContentLine": 3
+    },
+    "programmer:sessions/programmer/a989b0c3-9d54-4880-91d5-b99a7a277eef.jsonl": {
+      "mtimeMs": 1780312307179,
+      "size": 327048,
+      "contentHash": "7da2467741492d0d9d77dd997c0c63d629b6fa106113226fdd9e2e890a288b89",
+      "lineCount": 26,
+      "lastContentLine": 25
     },
     "programmer:sessions/programmer/acc757d9-24b0-401f-bdaf-c5080e050f93.jsonl.reset.2026-05-21T04-03-12.320Z": {
       "mtimeMs": 1779336172669,
@@ -811,7 +825,7 @@
       "size": 344912,
       "contentHash": "c703d6017aae31a79fd37c1ae1958a28dc1db534e2a792288d37668b476d69b7",
       "lineCount": 50,
-      "lastContentLine": 48
+      "lastContentLine": 50
     },
     "programmer:sessions/programmer/de9f41ca-4da6-4be9-b7d4-54e10b121074.jsonl": {
       "mtimeMs": 1779653088210,
@@ -5800,7 +5814,9 @@
       "456e304d7dc37b86a9332b8b635dcc4dbb736547",
       "c280058785fbb1d3e61fd80122cb7ede8b9c03b3",
       "0a4bdc827298ff439400c7712b4015df1f2c8e0f",
-      "c70f4df9c47a733385cdc5511bf8d799be3241c6"
+      "c70f4df9c47a733385cdc5511bf8d799be3241c6",
+      "e2a40b14894af469a569ead9e89f7d6a411e95fa",
+      "b18227e3f1395468bfe05a9acb5b11a2cf7648c6"
     ],
     "programmer:42ee9665-5ac3-42a8-a0c7-900ecfe468b3": [
       "64354c395e1990aee2989175ed4b8eba489eedbf",
@@ -5826,6 +5842,40 @@
       "199fe2eba15eabbb1cf6f622a4a08a8946830586",
       "58c676a8c61ded38fd678492935e0e507886e327",
       "0732a7c384d9a3fa870c802f035a8a2c343a7cfc"
+    ],
+    "programmer:972ff8e1-2ca1-4295-846e-e7740a6bcde6": [
+      "db507c7b481c3f68633f3c2eda6e1f6fa8a283cb",
+      "cf06fcaf4d6a086a8201677c1e9a3d72e0761434",
+      "99646e70bd27c6c64f11c39ab9997b27f5d136ef",
+      "c6bd82607d9f4c3959a6e90d00016309bd382379",
+      "585d66159d9937e9dd44a268611ba36cf3ae09b7",
+      "268b8a1ed1804c2e0ce85734a1064d332458bf2a"
+    ],
+    "programmer:a989b0c3-9d54-4880-91d5-b99a7a277eef": [
+      "c47b3c3d1dc47aeee3344725506ecbb8e2894bd3",
+      "025f4742993d804e20bafd31a400f915649fda34",
+      "f1ab5138faf43f51bc8b1fa94026c19061a5c5aa",
+      "228a6ad4f30459926a1a4275bf8792e7a22d2826",
+      "c20cd0259adb05493813eb57ed80433fea91c3a5",
+      "387d4f974259a01db03d67c4a60e65b8172293ed",
+      "9fe90cc5acd5fca9d7f425bdbef10a78c761c0a6",
+      "aa74b044e878789c6c603eb80f60e8a39244c97d",
+      "b4d0517cec1a6950d58400cfeea276f838107540",
+      "9969314c37cb31e6d7efed1b89885e9215c8632a",
+      "013a639f6a2c02f25933de08dfd980f92eb029a5",
+      "cfa94e3e35e36ddd21015b1c6a8693cdb9387966",
+      "64dc1701568baebec301026d43628501f3639666",
+      "62cf145befbd0f126cd0a2fa71762fbe0712f45b",
+      "71d6a93a7eb5bdb8616b382d3fc6072baf645a1b",
+      "b7ac1fa017675b28b32a167e46dd1d5a5082d478",
+      "1583b3411b2a01c74b6ead1affa6d145b8fde914",
+      "5bac67f8e316b0e4b0146c74e418330998088598",
+      "cb70c1e5bf121615816d5b5c77f23cfcd38de468",
+      "ea1bed1c8dd8708a453d564d7c13aa9b695ffbb3",
+      "04c7729cbdbf3a3c0c14fb9926ca8d06afb76acc",
+      "a823507e35c824ec58a8dc2ad0fc4395412319ab",
+      "9fa031833724a2c5749f3c503dc689e11bb32df3",
+      "0d5b4fa13a4e22c4332aac8a48458f9ea9b83d92"
     ]
   }
 }

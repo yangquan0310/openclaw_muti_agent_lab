@@ -1,24 +1,34 @@
 {
   "pageCounts": {
     "entity": 13,
-    "concept": 52,
+    "concept": 53,
     "source": 6,
-    "synthesis": 29,
+    "synthesis": 31,
     "report": 10
   },
-  "claimCount": 16,
+  "claimCount": 21,
   "claimHealth": {
     "freshness": {
-      "fresh": 16,
+      "fresh": 21,
       "aging": 0,
       "stale": 0,
       "unknown": 0
     },
     "contested": 0,
     "lowConfidence": 0,
-    "missingEvidence": 14
+    "missingEvidence": 18
   },
-  "contradictionClusters": [],
+  "contradictionClusters": [
+    {
+      "key": "agents md 原则数量有版本差异 v8 写 11 条 早期写 10 条",
+      "label": "AGENTS.md 原则数量有版本差异：v8 写 11 条，早期写 10 条",
+      "kind": "page-note",
+      "entryCount": 1,
+      "paths": [
+        "syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md"
+      ]
+    }
+  ],
   "pages": [
     {
       "id": "concept.academic-procrastination",
@@ -41,6 +51,29 @@
       "pageType": "concept",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.agent-personal-config-architecture",
+      "title": "Agent 个人配置架构规范",
+      "kind": "concept",
+      "path": "concepts/agent-personal-config-architecture.md",
+      "aliases": [
+        "个人配置规范",
+        "五件套规范",
+        "代理配置架构"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-01T16:45:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1801,7 +1834,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-31T03:45:39.782Z",
+      "lastTouchedAt": "2026-06-01T08:50:58.968Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1820,7 +1853,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "lastTouchedAt": "2026-06-01T08:50:58.968Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1876,7 +1909,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "lastTouchedAt": "2026-06-01T08:50:58.968Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1933,7 +1966,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-31T03:45:39.782Z",
+      "lastTouchedAt": "2026-06-01T08:50:58.968Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1971,7 +2004,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-24T15:12:08.059Z",
+      "lastTouchedAt": "2026-06-01T08:16:27.440Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2846,6 +2879,119 @@
       "lastTouchedAt": "2026-05-31T03:35:50.748Z",
       "claimCount": 0,
       "topClaims": []
+    },
+    {
+      "title": "认知过程的对称性破缺机制——从余代数到皮亚杰的发展理论",
+      "kind": "synthesis",
+      "path": "syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.agent-engineering-practice",
+      "title": "我的 agent 工程实践：驾驭方法论",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md",
+      "aliases": [
+        "驾驭代理",
+        "协调者方法论",
+        "harness 三件套",
+        "驾驭方法论"
+      ],
+      "sourceIds": [
+        "source.openclaw-system",
+        "source.repository",
+        "entity.steward",
+        "entity.yangquan"
+      ],
+      "questions": [
+        "三件套各自的迭代节奏如何协调？",
+        "经验沉淀到什么程度可以独立成技能？"
+      ],
+      "contradictions": [
+        "AGENTS.md 原则数量有版本差异：v8 写 11 条，早期写 10 条"
+      ],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "confidence": 0.9,
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-01T16:35:00+08:00",
+      "claimCount": 5,
+      "topClaims": [
+        {
+          "id": "claim.config.1",
+          "text": "代理个人配置五件套各有分工：AGENTS 定原则、SOUL 定风格、IDENTITY 定边界、MEMORY 定规则、实践技能定流程",
+          "status": "supported",
+          "confidence": 0.95,
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-06-01T16:35:00+08:00"
+        },
+        {
+          "id": "claim.plugin.1",
+          "text": "代理自我发展插件（v4.5.0）通过 8 个工具 + 4 个 hook 时机实现任务追踪、偏差检测、事件记录和自我调节",
+          "status": "supported",
+          "confidence": 0.95,
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-06-01T16:35:00+08:00"
+        },
+        {
+          "id": "claim.harness.1",
+          "text": "协调者通过三件套驾驭代理：代理个人配置（AGENTS+SOUL+IDENTITY+MEMORY+实践技能）、项目工作台、代理自我发展插件",
+          "status": "supported",
+          "confidence": 0.95,
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source",
+              "sourceId": "entity.steward",
+              "weight": 0.95
+            }
+          ],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-06-01T16:35:00+08:00"
+        },
+        {
+          "id": "claim.workspace.1",
+          "text": "项目工作台通过四契约文件（README/HANDBOOK/TODO/metadata.json）+ 标准目录结构 + Manager 子类路由实现规范化管理",
+          "status": "supported",
+          "confidence": 0.95,
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-06-01T16:35:00+08:00"
+        },
+        {
+          "id": "claim.synergy.1",
+          "text": "三件套协同循环：个人配置约束行为 → 工作台承载项目 → 插件固化经验 → 经验沉淀回个人配置",
+          "status": "supported",
+          "confidence": 0.9,
+          "evidenceCount": 0,
+          "missingEvidence": true,
+          "evidence": [],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-06-01T16:35:00+08:00"
+        }
+      ]
     }
   ]
 }

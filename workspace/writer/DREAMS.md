@@ -535,4 +535,18 @@ Assistant: 【写作助手→大管家】AI Agent科普文章任务进度汇报 
 
 User: @大管家 [System: This message @mentions the following users: 大管家 (open_id: ou_86f2e1424cd5464a0cf60640c1ac874b). Use these open_ids when performing actions involving these users. To @mention in a reply, use `<at user_id="ou_xxx">Name</at>`; plain "@Name" won't notify.]
 
+
+---
+
+*June 2, 2026 at 3:00 AM GMT+8*
+
+User: 按文章的脉络组织问题 从问题出现的顺序，从前到后，一个问题，一个建议，一个参考文献
+
+
+---
+
+*June 2, 2026 at 3:00 AM GMT+8*
+
+Assistant: [[reply_to_current]] 老板您好！关于如何正确艾特审稿助手，我来帮您说明： 审稿助手的 open_id 是 `ou_25cf20a1973aecc51f73d8e2800d7f7e` 在飞书群里艾特审稿助手的方式是： `<at user_id="ou_25cf20a1973aecc51f73d8e2800d7f7e">审稿助手</at>` 直接输入 `@审稿助手` 可能无法识别，因为系统需要精确匹配 open_id。 需要我帮您直接在群里艾特审稿助手吗？
+
 <!-- openclaw:dreaming:diary:end -->

@@ -51,6 +51,7 @@
 | "数字化存储与自传体记忆"项目任务完成 | 执行本地 git 提交 |
 | 项目中上传文件（.docx/.pdf/.pptx 等） | 1. 移动到 uploads/；2. 用 markitdown 解析到 uploads/markdown/ |
 | **派发任务时找不到 open_id** | 在群消息中搜索目标代理的历史消息，提取其 open_id |
+| **用户报告飞书/微信/QQ 工具结果泄漏** | **不要花时间调 streaming/blockStreaming 参数**——已验证完全非流式（streaming=false + blockStreaming=false）仍泄漏；这是 OpenClaw 上游 bug（#85439），等官方修复。在 HEARTBEAT.md `TOOL-PROGRESS-LEAK` 行跟踪 |
 | **更新 TODO.md 后** | **先与老板讨论修改策略与内容，确认后再通知子代理执行。禁止在未经讨论的情况下直接派发任务。** |
 | **分配子任务给子代理** | **只传递约束目标/输入/产出，让子代理自己决定如何执行** |
 | **需要重复发送同样内容** | **先艾特用户确认是否发送成功，再决定是否重试；禁止在未经确认的情况下盲目重试** |
@@ -133,26 +134,6 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-05-28)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:88:91 -->
-- | 代理 | 技能 | 收录内容 | |------|------|----------| | 大管家 | manager | 任务推进/派发、论文项目、课程项目、程序项目 | | 程序员 | programmer | OOP指南、架构指南、全栈开发、测试、运维 | [score=0.842 recalls=0 avg=0.620 source=memory/2026-05-23.md:88-91]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:51:54 -->
-- | `workflow-writing-guide.md` | 如何撰写工作流 | | `coding-standards.md` | 代码规范 | | `development-workflow.md` | 开发工作流 | | `update-workflow.md` | 更新工作流 | [score=0.842 recalls=0 avg=0.620 source=memory/2026-05-23.md:51-54]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:66:69 -->
-- | 类型 | 命名规则 | 回答问题 | |------|----------|----------| | 方法论 | `*-guide` | 为什么要这样做？ | | 标准 | `*-standards` | 要满足什么条件？ | [score=0.842 recalls=0 avg=0.620 source=memory/2026-05-23.md:66-69]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:19:19 -->
-- └── syntheses/ # 总结文档（22个） [score=0.822 recalls=0 avg=0.620 source=memory/2026-05-23.md:19-19]
-
-## Promoted From Short-Term Memory (2026-05-29)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:41:41 -->
-- 整合到写作指南中，删除： [score=0.842 recalls=0 avg=0.620 source=memory/2026-05-23.md:41-41]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:57:57 -->
-- **必须章节**（6个）： [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-23.md:57-57]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:70:70 -->
-- | 工作流 | `*-workflow` | 按什么顺序做？ | [score=0.801 recalls=0 avg=0.620 source=memory/2026-05-23.md:70-70]
-
 ## Promoted From Short-Term Memory (2026-05-30)
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-12.md:55:69 -->
@@ -169,3 +150,16 @@
 - | 章节 | 问题 | |------|------| | §3.5 | 放置位置存疑 | | §4.4 | 需补充经典认知范式（工作记忆N-back、联想记忆配对联想学习、错误记忆与幻觉评估） | [score=0.828 recalls=0 avg=0.620 source=memory/2026-05-28.md:13-16]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:17:18 -->
 - | §4.5 | 在理论框架中间讲意义，逻辑不通 | | §6.1 | 内容堆砌，与§6.2完全脱节 | [score=0.828 recalls=0 avg=0.620 source=memory/2026-05-28.md:17-18]
+
+## Promoted From Short-Term Memory (2026-06-02)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:34:34 -->
+- **pandoc.yaml**：仅含配置变量 [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:34-34]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:36:38 -->
+- standalone: true pdf-engine: xelatex input-files: [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:36-38]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:40:42 -->
+- variables: mainfont: "Noto Serif CJK SC" geometry: [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:40-42]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:49:49 -->
+- **全文整合稿.md开头YAML块**： [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:49-49]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:52:53 -->
+- title: AI Agent 的技术原理与心理学应用 subtitle: 面向管理心理学背景读者的科普文章 [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:52-53]

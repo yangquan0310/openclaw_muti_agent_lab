@@ -327,7 +327,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-06-01T13:26:44.158Z"
+    "lastTouchedAt": "2026-06-01T15:52:46.626Z"
   },
   "browser": {
     "enabled": true,
@@ -537,6 +537,7 @@
       "typingIndicator": true,
       "resolveSenderNames": true,
       "streaming": true,
+      "blockStreaming": true,
       "renderMode": "card",
       "groupPolicy": "open",
       "requireMention": true,
@@ -585,8 +586,7 @@
           "appId": "cli_a947bb2b87399cc8",
           "appSecret": "${FEISHU_ACADEMICASSISTANT_APP_SECRET}"
         }
-      },
-      "blockStreaming": true
+      }
     }
   },
   "bindings": [

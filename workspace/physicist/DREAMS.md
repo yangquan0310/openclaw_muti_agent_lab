@@ -587,4 +587,18 @@ User: @大管家 @心理学家 @数学家 你们阅读wiki总结： 2026-05-31-1
 
 醒来时，桌上摊着arXiv:2604.17109和arXiv:2605.30007，两串数字像两行未完成的诗。我把它们轻轻合上，心想：有些门，也许明天再敲。
 
+
+---
+
+*June 2, 2026 at 3:00 AM GMT+8*
+
+Assistant: Now I'll search for recent Ising Model papers across all three domains in parallel.
+
+
+---
+
+*June 2, 2026 at 3:00 AM GMT+8*
+
+Assistant: **20篇文章**： - **10篇综述**：介绍各领域基础进展 - **10篇研究论文**：最新研究成果 涉及主题：Ernst Ising 论文分析、非可加熵、Ising 自旋玻璃、Ising粗化动力学、AI/ML与Ising模型等。
+
 <!-- openclaw:dreaming:diary:end -->

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-31T19:00:07.853Z",
+  "updatedAt": "2026-06-01T19:00:07.745Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-14.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:1:1",
@@ -14979,6 +14979,1037 @@
         "曲率",
         "正则",
         "搜索"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:48:48": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:48:48",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 48,
+      "endLine": 48,
+      "source": "memory",
+      "snippet": "User: 这个总结应该加入到wiki中",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "这个",
+        "总结",
+        "应该",
+        "加入",
+        "wiki"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:49:49": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:49:49",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 49,
+      "endLine": 49,
+      "source": "memory",
+      "snippet": "Assistant: 已添加到 Wiki：`syntheses/the-cognitive-categorical-transformer-cct-论文笔记.md` 包含内容： - 元信息（作者、机构、发布时间、参数规模） - 核心问题与方法论 - 范畴论理论基础（4类数学结构） - 完整架构细节（GT-Full、分层记忆、PP、Yoneda自模型） - 渐进激活协议 - 实验结果与消融分解 - **结构/一致性区分**（核心概念贡献） - 3个负面结果 - PP条件依赖新发现 - 局限性 - 参考文献 Wiki lint 检查：0 errors, 25",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gt-full",
+        "结构/一致性区分",
+        "添加",
+        "wiki",
+        "syntheses",
+        "cognitive",
+        "categorical",
+        "transformer"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:50:50": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:50:50",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 50,
+      "endLine": 50,
+      "source": "memory",
+      "snippet": "User: 四类数学结构，分别是什么认知对象？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "数学",
+        "结构",
+        "分别",
+        "什么",
+        "认知",
+        "对象"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:51:51": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:51:51",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 51,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "Assistant: 这是一个好问题。论文中并没有直接说\"四类结构对应四类认知对象\"，但我们可以从 CCT 的设计中推断其认知对象映射： | 范畴论结构 | 认知对象 | 具体表征 | |-----------|---------|---------| | **单纯形复形（Simplicial Complex）** | **概念结构** | 超越成对关系的拓扑组织——捕捉概念间的多路关系（三角形=三个概念的联合关系），对应人类认知中的**层级概念结构** | | **层（Sheaf）** | **知觉整合** | 将局部观测\"粘合\"为全局一致的表征——对",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "一个",
+        "问题",
+        "论文",
+        "没有",
+        "直接",
+        "结构",
+        "对应",
+        "认知"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:52:52": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:52:52",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 52,
+      "endLine": 52,
+      "source": "memory",
+      "snippet": "Assistant: 的多个认知组件提供了形式化基础。这些组件共同协作：GT-Full 提供结构化的表征空间，Memory 提供状态维护，PP 提供层级误差校正，Yoneda 提供自我监测。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gt-full",
+        "多个",
+        "认知",
+        "提供",
+        "形式",
+        "基础",
+        "这些",
+        "共同"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:53:53": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:53:53",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 53,
+      "endLine": 53,
+      "source": "memory",
+      "snippet": "User: 详细介绍下四类范畴结构",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "详细",
+        "介绍",
+        "范畴",
+        "结构"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:54:54": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:54:54",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 54,
+      "endLine": 54,
+      "source": "memory",
+      "snippet": "Assistant: ## 四类范畴论结构详解 --- ### 1. 单纯形复形（Simplicial Complex） **数学定义**： 单纯形复形 $K$ 是由一系列**单纯形**（simplices）组成的集合，满足： - 每个单纯形的任意面仍属于 $K$ - 两个单纯形的交集是各自的面（或空集） - 局部有限性 | 维数 | 名称 | 几何形象 | |------|------|---------| | 0维 | 点（0-单纯形） | 顶点 | | 1维 | 边（1-单纯形） | 两个顶点的连线 | | 2维 | 三角形（2-单纯形） | 三个",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "0-单纯形",
+        "1-单纯形",
+        "2-单纯形",
+        "范畴",
+        "结构",
+        "单纯",
+        "simplicial",
+        "complex"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:55:55": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:55:55",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 55,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "Assistant: \\mathcal{F}(\\tau)$ - **局部性公理**：若 $\\{\\sigma_i\\}$ 覆盖 $\\sigma$，则 $\\mathcal{F}(\\sigma)$ 中元素由其限制映射唯一决定 - **粘合公理**：若 $\\tau \\subset \\sigma_1, \\sigma_2$，则 $\\rho_{\\sigma_1,\\tau}(s_1) = \\rho_{\\sigma_2,\\tau}(s_2)$ 时可唯一粘合 直观理解：层描述了如何将**局部数据**沿着拓扑结构**粘合**成**全局一致**的表征。 **认知意义**： 人类感",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "sigma-i",
+        "sigma-1",
+        "sigma-2",
+        "s-1",
+        "s-2",
+        "mathcal",
+        "tau",
+        "局部"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:56:56": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:56:56",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 56,
+      "endLine": 56,
+      "source": "memory",
+      "snippet": "Assistant: x')$：当前状态 $x$ 产生观测 $obs$，并根据动作转移到新状态 $x'$ 关键性质： - **状态演进**：记忆不是静态存储，而是**状态机** - **读写合一**：余代数同时描述读出什么（observation）和写入什么（next state） **认知意义**： 人类记忆系统： | 记忆类型 | 余代数解释 | |---------|-----------| | 工作记忆 | 快速读写的短期状态 | | 情景记忆 | 特定上下文触发的状态转换 | | 长期记忆 | 稳定的\"吸引子\"状态 | **在 CCT 中**：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "当前",
+        "状态",
+        "产生",
+        "观测",
+        "obs",
+        "根据",
+        "动作",
+        "转移"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:57:57": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:57:57",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 57,
+      "endLine": 57,
+      "source": "memory",
+      "snippet": "Assistant: embeddings），预测模型隐状态与每个探针的关系，自预测的准确度作为**自我认知信号**。 **在 CCT 中**：YonedaSelfModel 维护 8 个探针嵌入 + narrative GRU，预测隐状态与探针的关系，辅助损失衡量自监测能力。 --- ### 总结对比 | 结构 | 核心数学操作 | 认知对应 | CCT 组件 | |------|------------|---------|---------| | **单纯形复形** | 高阶拓扑连接（三角形/四面体） | 概念结构、多元关系绑定 | GT-Full",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "embedding",
+        "embeddings",
+        "三角形/四面体",
+        "gt-full",
+        "预测",
+        "模型",
+        "状态",
+        "关系"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:58:58": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:58:58",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 58,
+      "endLine": 58,
+      "source": "memory",
+      "snippet": "User: 从数学直觉角度来介绍一下 为什么引入复型，这一数学对象？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "数学",
+        "直觉",
+        "角度",
+        "介绍",
+        "一下",
+        "为什么",
+        "引入",
+        "对象"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:59:59": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:59:59",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 59,
+      "endLine": 59,
+      "source": "memory",
+      "snippet": "Assistant: ## 为什么引入单纯形复型：数学直觉 --- ### 1. 从\"关系\"的角度理解 范畴论的核心关注点是**关系**。让我们从最基本的关系开始，逐步理解引入单纯形复型的动机。 --- #### 1.1 集合论关系：$A \\times B$ 最原始的\"关系\"是两个集合的笛卡尔积： ``` A = {猫, 狗} B = {叫, 跑} A × B = {(猫,叫), (猫,跑), (狗,叫), (狗,跑)} ``` 这只是**配对**，没有结构。 --- #### 1.2 函数/态射：$A \\to B$ 结构化的关系——保持结构的映射： `",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "1.1",
+        "1.2",
+        "函数/态射",
+        "为什么",
+        "引入",
+        "单纯",
+        "数学",
+        "直觉"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: Now I have enough data. Let me compile the daily report.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "now",
+        "enough",
+        "data",
+        "let",
+        "compile",
+        "report"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: I now have sufficient data to compose the report. Let me compile the final daily digest. --- # 认知计算日报 > 日期：2026-05-31（检索覆盖范围：2026-05-25 至 2026-05-31；注：arXiv 于每日 22:00 UTC 更新，故 5 月 30 日 submissions 尚未公开索引） --- ## 记忆与学习 ### 文章1 - **标题**：Mechanistic Origins of Catastrophi",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "now",
+        "sufficient",
+        "data",
+        "compose",
+        "report",
+        "let",
+        "compile",
+        "final"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 2026 接收） - **主要内容**：提出一个由等变神经编码器、神经-符号目标编码器和神经决策代理组成的三层认知架构，捕捉人类心理旋转的行为表现和反应时，并在 VR 交互实验中验证了各组件的必要性。 ### 文章3 - **标题**：Do Language Models Need Sleep? Offline Recurrence for Improved Online Inference - **作者**：Max J.ader 等（arXiv:2605.26099） - **时间**：2026-05-28 - **主要内容**：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "神经-符号目标编码器和神经决策代理组成的三层认知架构",
+        "j.ader",
+        "2605.26099",
+        "接收",
+        "主要",
+        "内容",
+        "提出",
+        "一个"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: Longbo Huang（arXiv:2605.30094） - **时间**：2026-05-29 - **主要内容**：无需训练或求解器，仅凭提示工程使大语言模型达到专家级扑克水平，在四人局不完全信息博弈中揭示了隐信息处理和延迟奖励建模的认知类决策机制。 --- ## 元认知与反思 ### 文章1 - **标题**：Explaining Too Much? Understanding How Large Language Model Reasoning Traces Influence Performance and Metac",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "2605.30094",
+        "longbo",
+        "huang",
+        "arxiv",
+        "时间",
+        "主要",
+        "内容",
+        "训练"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: Geometry During In-Context Learning - **作者**：Hua-Dong Xiong, Li Ji-An, Robert C. Wilson, Kwonjoon Lee, Xue-Xin Wei - **时间**：2026-05-29（arXiv:2605.28854，cross-list from cs.CL） - **主要内容**：发现 LLM 的语境学习（ICL）依赖于\"在线解缠\"任务相关表征的过程，成功的 ICL 伴随表征几何重组以增加可分性；LLM 行为可由类似原型的算法描述——整合证据同",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "in-context",
+        "hua-dong",
+        "ji-an",
+        "xue-xin",
+        "2605.28854",
+        "cross-list",
+        "cs.cl",
+        "geometry"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: Karnam（arXiv:2605.26856） - **时间**：2026-05-26（q-bio.NC） - **主要内容**：提出\"感觉调节网络\"（SMN）架构，将身体作为整体认知单元，通过拮抗动态实现\"可停止性\"（haltability）——允许注意力有意指向目标，同时统一了符号主义与 4E 嵌入式认知的理论分歧；包含 8 个可检验的预测寄存器。 ### 文章2 - **标题**：Measuring Progress Toward AGI: A Cognitive Framework - **作者**：Google Deep",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "网络",
+        "2605.26856",
+        "q-bio.nc",
+        "karnam",
+        "arxiv",
+        "时间",
+        "bio.nc",
+        "主要"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: Three-Dimensional Motor Imagery Decoding - **作者**：Niall McShane, Attila Korik, Karl McCreadie 等（arXiv:2605.29677） - **时间**：2026-05-29（q-bio.NC，提交 Nature Biomedical Engineering） - **主要内容**：系统研究具身 VR 反馈对运动想象 BCIs 的纵向影响，发现 VR 相比屏幕反馈在所有策略下均显著更优（提升 8.9-13.0%），且无需重校准即可泛化，伴随更",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "three-dimensional",
+        "2605.29677",
+        "q-bio.nc",
+        "8.9-13.0",
+        "three",
+        "dimensional",
+        "motor",
+        "imagery"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: [2605.27580](https://arxiv.org/abs/2605.27580) | You Are in Control of Your State: Why Human Outcomes Are Controllable Through Causal State Intervention | | 5 | [2605.30094](https://arxiv.org/abs/2605.30094) | PokerSkill: LLMs Can Play Expert-Level Poker without Traini",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "2605.27580",
+        "arxiv.org/abs/2605.27580",
+        "2605.30094",
+        "arxiv.org/abs/2605.30094",
+        "expert-level",
+        "https",
+        "arxiv.org",
+        "abs"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "Assistant: Transformer: Category-Theoretic Inductive Biases for Language Modeling | | 10 | [2605.26856](https://arxiv.org/abs/2605.26856) | The Sensation Modulating Network: Haltability as the Architectural Ground for Object-Directed Phenomenology | | 11 | [2605.28405](https://ar",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "network",
+        "category-theoretic",
+        "2605.26856",
+        "arxiv.org/abs/2605.26856",
+        "object-directed",
+        "2605.28405",
+        "transformer",
+        "category"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:60:60": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:60:60",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 60,
+      "endLine": 60,
+      "source": "memory",
+      "snippet": "Assistant: 三者之间不仅仅是两两相连，而是**共同属于同一个面**。 --- ### 4. 拓扑直觉：局部与整体 单纯形复型最重要的直觉是**\"粘合\"**（gluing）。 一个单纯形复型 $K$ 由多个单纯形组成，满足： 1. **闭合性**：每个单纯形的任意面仍属于 $K$ 2. **交集条件**：两个单纯形的交集是它们各自的面（或空） ``` 复型 K： • ——— • ——— • / \\ / \\ •——•——• •——• ← 两个三角形通过一条边粘合 ``` 这意味着： - **局部**：每个三角形内部是连通的 - **整体**：通过共",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "三者",
+        "之间",
+        "不仅仅是",
+        "两两",
+        "相连",
+        "而是",
+        "共同",
+        "属于"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:61:61": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:61:61",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 61,
+      "endLine": 61,
+      "source": "memory",
+      "snippet": "Assistant: |------|---------|---------| | 0维 | 连通分量 | 主题/话题的分组 | | 1维 | 环路（一维\"洞\"） | 循环论证、反馈回路 | | 2维 | 空洞（二维\"洞\"） | 缺失的第三元关系、语境空白 | ``` 同调视角下的语言结构： 0维：哪些词属于同一个主题？ 1维：哪些论证形成循环？ 2维：缺少哪个参与者导致关系不完整？ ``` --- ### 7. 总结 引入单纯形复型的数学直觉： ``` 图（1-结构） → 只捕捉成对关系 ↓ 复型（2-结构）→ 捕捉三元/多元关系 ↓ 同调 → 探测高",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "主题/话题的分组",
+        "1-结构",
+        "2-结构",
+        "捕捉三元/多元关系",
+        "分量",
+        "主题",
+        "话题",
+        "分组"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:62:62": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:62:62",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 62,
+      "endLine": 62,
+      "source": "memory",
+      "snippet": "User: 引入单纯形复型后、为什么引入函子？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "引入",
+        "单纯",
+        "为什么"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:63:63": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:63:63",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 63,
+      "endLine": 63,
+      "source": "memory",
+      "snippet": "Assistant: ## 为什么引入函子：从复型到结构映射 --- ### 1. 复型之后缺什么？ 单纯形复型 $K$ 只描述了**拓扑结构**——哪些顶点相连、哪些三角形存在。 但这还不够，因为我们需要在**向量空间**中做计算。 ``` 复型 K：描述了 token 之间的拓扑关系 ↓ 但 K 不能直接做加法、点积、矩阵乘法 ``` 需要一个**桥梁**，把拓扑结构\"翻译\"成线性代数语言。 --- ### 2. 函子：结构搬运工 **直觉**： > 函子是范畴之间的\"翻译器\"——它把一个范畴里的对象和关系，\"忠实地\"映射到另一个范畴里。 ``` 范",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "为什么",
+        "引入",
+        "结构",
+        "映射",
+        "之后",
+        "什么",
+        "单纯",
+        "描述"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:64:64": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:64:64",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 64,
+      "endLine": 64,
+      "source": "memory",
+      "snippet": "Assistant: 余代数作为状态演进函子 论文 **Definition 2（Memory Coalgebra）**： $$G(X) = \\text{Observation} \\times X^{\\text{Action}}$$ 这也是一个函子 $G: \\mathbf{Set} \\to \\mathbf{Set}$，描述了**记忆状态的演进规则**。 ``` 当前状态 x ∈ X │ │ δ: X → G(X) ▼ 观测 obs × 下一状态 x' │ │ 函子的不动点 ▼ 长期记忆的\"吸引子状态\" ``` 函子 $G$ 捕捉了：**给定当前记忆状态，",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "代数",
+        "作为",
+        "状态",
+        "演进",
+        "论文",
+        "definition",
+        "coalgebra",
+        "observation"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:65:65": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:65:65",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 65,
+      "endLine": 65,
+      "source": "memory",
+      "snippet": "Assistant: 记忆系统的状态机语义 | **一句话总结**： > 单纯形复型告诉你**关系是什么**（拓扑层面），函子告诉你**如何在向量空间里表示和操作这些关系**（几何/代数层面）。 --- ### 7. 范畴论的三层结构 ``` 第一层：对象 + 态射（关系的基本单元） ↓ 第二层：函子（范畴之间的映射，保持结构） ↓ 第三层：自然变换（函子之间的映射） ``` CCT 的设计中： - **函子**将 token 邻域（拓扑）映射为表征向量（几何） - **自然变换**描述不同函子（如不同层次的记忆）之间的转换 这也解释了为什么 CCT 声",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "几何/代数层面",
+        "记忆",
+        "系统",
+        "状态",
+        "一句",
+        "总结",
+        "单纯",
+        "告诉"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:66:66": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:66:66",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 66,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "User: 四个数学对象组合而成的范畴，是封闭的嘛？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "数学",
+        "对象",
+        "组合而成",
+        "范畴",
+        "封闭"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:67:67": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:67:67",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 67,
+      "endLine": 67,
+      "source": "memory",
+      "snippet": "Assistant: 这是一个非常深刻的数学问题。 --- ## 四个结构的范畴论归属 | 结构 | 范畴论归属 | 是否封闭？ | |------|-----------|----------| | 单纯形复型 | **Δ**（单纯形范畴）→ Simplicial Sets = [Δ^op, Set] | ✅ **Presheaf 范畴是 Cartesian Closed** | | 感知层（Sheaf） | **Sheaf 范畴** on a site | ✅ **Grothendieck Topos 是 Cartesian Closed** | |",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "一个",
+        "非常",
+        "深刻",
+        "数学",
+        "问题",
+        "结构",
+        "范畴",
+        "归属"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:68:68": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:68:68",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 68,
+      "endLine": 68,
+      "source": "memory",
+      "snippet": "Assistant: 在范畴论意义上是\"扩张\"操作 → 可以封闭地嵌入更大的范畴 一致性先验（Consistency Prior）： 强制满足范畴论恒等式（伴随往返、层一致性） → 在范畴论意义上是\"约束\"操作 → 对偶于添加结构，往往是冗余的或有害的 ``` --- ## 结论 **四个结构单独看**： - Simplicial Sets：**封闭** - Sheaves：**封闭**（是 Topos） - Yoneda 嵌入的目标（Presheaf 范畴）：**封闭** - Coalgebras：**不一定封闭** **四个结构合在一起作为单一范畴*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "范畴",
+        "意义",
+        "扩张",
+        "操作",
+        "可以",
+        "封闭",
+        "嵌入",
+        "更大"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:69:69": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:69:69",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 69,
+      "endLine": 69,
+      "source": "memory",
+      "snippet": "User: 封闭重要嘛？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "封闭",
+        "重要"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:70:70": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:70:70",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 70,
+      "endLine": 70,
+      "source": "memory",
+      "snippet": "Assistant: **不重要的是封闭性本身，而是封闭性背后的直觉。** --- ### 1. 封闭性在范畴论中的意义 Cartesian 封闭范畴的价值在于： | 封闭性带来的能力 | 直观含义 | |----------------|---------| | **指数对象** $B^A$ | 存在\"从 A 到 B 的函数\"作为对象 | | **Currying** | 多元函数可以化为单参函数的链 | | **λ-演算语义** | 允许高阶抽象和计算 | | **笛卡尔范畴** | 支持有限积构造 | 但这些是**编程语言理论**的需求，不是神经网",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "λ-演算语义",
+        "重要",
+        "的是",
+        "封闭",
+        "本身",
+        "而是",
+        "背后",
+        "直觉"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-31.txt:71:71": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:71:71",
+      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
+      "startLine": 71,
+      "endLine": 71,
+      "source": "memory",
+      "snippet": "Assistant: --- ### 4. 一个反讽 范畴论学者追求的**最大公约数**：找到一个足够一般的结构，同时封闭、丰富、足够表达力。 但 CCT 论文的教训恰好相反： > **不是找一个封闭的范畴，而是选择性地引入足够多的结构，直到足以捕捉认知的核心特征。** 这更像**工程思维**而非**数学完美主义**。 --- ### 5. 结论 | 问题 | 回答 | |------|------| | 封闭性重要吗？ | **不重要** | | 真正重要的是什么？ | **引入的结构能否改善语言建模**（答案是：能，+2.45 PPL） | | 范畴",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:06.758Z",
+      "lastRecalledAt": "2026-06-01T19:00:06.758Z",
+      "queryHashes": [
+        "cffe9e514f4f"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "2.45",
+        "一个",
+        "反讽",
+        "范畴",
+        "学者",
+        "追求",
+        "最大",
+        "公约"
       ]
     }
   }

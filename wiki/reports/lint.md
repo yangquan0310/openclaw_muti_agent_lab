@@ -9,10 +9,15 @@ status: active
 
 ## Generated
 <!-- openclaw:wiki:lint:start -->
-- Errors: 0
-- Warnings: 28
+- Errors: 2
+- Warnings: 37
+
+### Errors
+- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Missing `id` frontmatter.
+- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Missing `pageType` frontmatter.
 
 ### Warnings
+- `concepts/agent-personal-config-architecture.md`: Non-source page is missing `sourceIds` provenance.
 - `entities/wangyaxin.md`: Non-source page is missing `sourceIds` provenance.
 - `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Non-source page is missing `sourceIds` provenance.
 - `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Non-source page is missing `sourceIds` provenance.
@@ -41,8 +46,23 @@ status: active
 - `syntheses/2026-05-31-11-30-00-复形vs流形-关系描述的数学对比.md`: Broken wikilink target `Simplicial Message Passing`.
 - `syntheses/2026-05-31-11-30-00-复形vs流形-关系描述的数学对比.md`: Broken wikilink target `inductive_bias`.
 - `syntheses/2026-05-31-11-30-00-复形vs流形-关系描述的数学对比.md`: Broken wikilink target `结构先验 vs 一致性先验`.
+- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Non-source page is missing `sourceIds` provenance.
+- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Page freshness needs review (missing updatedAt).
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Page lists 1 contradiction to resolve.
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Page lists 2 open questions.
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.config.1` is missing structured evidence.
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.workspace.1` is missing structured evidence.
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.plugin.1` is missing structured evidence.
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.synergy.1` is missing structured evidence.
+
+### Contradictions
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Page lists 1 contradiction to resolve.
+
+### Open Questions
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Page lists 2 open questions.
 
 ### Quality Follow-Up
+- `concepts/agent-personal-config-architecture.md`: Non-source page is missing `sourceIds` provenance.
 - `entities/wangyaxin.md`: Non-source page is missing `sourceIds` provenance.
 - `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Non-source page is missing `sourceIds` provenance.
 - `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Non-source page is missing `sourceIds` provenance.
@@ -65,4 +85,10 @@ status: active
 - `syntheses/2026-05-24-23-22-13-团体心理辅导.md`: Claim `领导者风格分为权威型、民主型，放任型三种` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-13-团体心理辅导.md`: Claim `团体辅导具有教育、发展、预防、治疗四大功能` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-13-团体心理辅导.md`: Claim `团体辅导需遵循专业、民主、共同、启导、发展、综合、保密七项原则` is missing structured evidence.
+- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Non-source page is missing `sourceIds` provenance.
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.config.1` is missing structured evidence.
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.workspace.1` is missing structured evidence.
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.plugin.1` is missing structured evidence.
+- `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.synergy.1` is missing structured evidence.
+- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Page freshness needs review (missing updatedAt).
 <!-- openclaw:wiki:lint:end -->

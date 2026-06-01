@@ -613,4 +613,18 @@ User: 日报为什么会存储成文件？而不是消息
 
 Assistant: **主要内容**：提出状态依赖漂移扩散模型（sdDDM），捕捉决策过程中随时间演化的神经状态变化，揭示了日内时段对决策策略的结构性影响，弥补了传统平稳性假设下分析方法遗漏的长时程决策结构。 --- ## 知觉 ### 文章1 - **标题**：Computational models reveal intuitive physics and statistical cues separately contribute to the visual perception of liquids - **作者**：Zhang Y, Bi W
 
+
+---
+
+*June 2, 2026 at 3:00 AM GMT+8*
+
+User: 这个总结应该加入到wiki中
+
+
+---
+
+*June 2, 2026 at 3:00 AM GMT+8*
+
+Assistant: **主要内容**：提出SAAS框架，通过建模知识边界使LLM智能体学会识别自身认知极限，自主调节何时该搜索、何时该终止，在保持准确率的同时显著减少过度搜索计算开销。 --- ## 决策 ### 文章1 - **标题**：Subcortical Shape Variations and Their Associations with Cognition Across the 8th Decade of Life: A Study in the Lothian Birth Cohort 1936 - **作者**：Maria del C
+
 <!-- openclaw:dreaming:diary:end -->

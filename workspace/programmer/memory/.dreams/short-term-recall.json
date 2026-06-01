@@ -1,629 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-31T19:00:10.021Z",
+  "updatedAt": "2026-06-01T19:00:09.736Z",
   "entries": {
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:154:154": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:154:154",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 154,
-      "endLine": 154,
-      "source": "memory",
-      "snippet": "Assistant: 现在检查关键的 `__main__` 入口和 lookup 目录结构：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "现在",
-        "检查",
-        "关键",
-        "入口",
-        "lookup",
-        "目录",
-        "结构"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:155:155": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:155:155",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 155,
-      "endLine": 155,
-      "source": "memory",
-      "snippet": "Assistant: 问题已经清晰了。现在系统检查 SKILL.md 的 `lookup!` 和 CLI 声明：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "skill.md",
-        "问题",
-        "已经",
-        "清晰",
-        "现在",
-        "系统",
-        "检查",
-        "lookup"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:156:156": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:156:156",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 156,
-      "endLine": 156,
-      "source": "memory",
-      "snippet": "Assistant: 先修 mathematician 的 `__main__` 入口：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "mathematician",
-        "入口"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:157:157": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:157:157",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 157,
-      "endLine": 157,
-      "source": "memory",
-      "snippet": "Assistant: 之前 grep 漏了——文件里是双引号 `__main__` 不是单引号。再确认一下：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "之前",
-        "grep",
-        "漏了",
-        "文件",
-        "不是",
-        "确认",
-        "一下"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:158:158": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:158:158",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 158,
-      "endLine": 158,
-      "source": "memory",
-      "snippet": "Assistant: 所有业务CLI模块的 `__main__` 都齐全。之前 grep 引号问题误报了。现在聚焦真正的问题：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "所有",
-        "业务",
-        "cli",
-        "齐全",
-        "之前",
-        "grep",
-        "问题",
-        "现在"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:159:159": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:159:159",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 159,
-      "endLine": 159,
-      "source": "memory",
-      "snippet": "Assistant: **真正的问题只有两个：** 1. `reviewer` 和 `writer` 的 `__init__.py` 是空的 2. 所有 SKILL.md 没有 `lookup!` 标记",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "skill.md",
-        "真正",
-        "问题",
-        "只有",
-        "reviewer",
-        "writer",
-        "init",
-        "所有"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:160:160": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:160:160",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 160,
-      "endLine": 160,
-      "source": "memory",
-      "snippet": "Assistant: 现在更新所有 SKILL.md 添加 `lookup!` 标记：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "skill.md",
-        "现在",
-        "更新",
-        "所有",
-        "添加",
-        "lookup",
-        "标记"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:161:161": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:161:161",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 161,
-      "endLine": 161,
-      "source": "memory",
-      "snippet": "Assistant: 现在用 sed 批量替换 `lookup` → `lookup!`（仅行首的 markdown 代码块形式）：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "现在",
-        "sed",
-        "批量",
-        "替换",
-        "lookup",
-        "markdown",
-        "代码",
-        "形式"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:162:162": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:162:162",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 162,
-      "endLine": 162,
-      "source": "memory",
-      "snippet": "Assistant: --- ## 完整审查报告 ### 一、scripts/ 结构审查结果 | 技能 | scripts/ 内容 | `__init__.py` | 含 `main()` | 含 `__main__` | wrapper | 结论 | |------|-------------|-------------|------------|--------------|---------|------| | **auditor** | `lookup/` | ❌ 无 | ❌ 无 | ❌ 无 | ❌ | ❌ 无业务CLI（仅lookup） | |",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "完整",
-        "审查",
-        "报告",
-        "scripts",
-        "结构",
-        "结果",
-        "技能",
-        "内容"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:163:163": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:163:163",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 163,
-      "endLine": 163,
-      "source": "memory",
-      "snippet": "Assistant: **缺少scripts目录** | | **psychologist** | `lookup/` | ❌ 无 | ❌ 无 | ❌ 无 | ❌ | ❌ 无业务CLI（仅lookup） | | **reviewer** | review_checklist.py + lookup + `__init__.py` | ⚠️ **已修复**（原来是空的） | ✅ 1个 | ✅ 1个 | ✅ | ⚠️ 需验证wrapper | | **fortunetelling** | main.py + bazi + lunar + fate + `__",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "review-checklist.py",
-        "main.py",
-        "缺少",
-        "scripts",
-        "目录",
-        "psychologist",
-        "lookup",
-        "业务"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:164:164": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:164:164",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 164,
-      "endLine": 164,
-      "source": "memory",
-      "snippet": "Assistant: **physicist** | ✅ 已添加 | ✅ 5条 | lookup! ✅ CLI ✅ | | **presenter** | ✅ 已添加 | ✅ 3条 | lookup! ✅ CLI ✅ | | **programmer** | ✅ 已添加 | ❌ 无业务CLI | lookup! ✅ | | **superpowers** | ❌ 无SKILL.md引用 | ❌ 无CLI | ❌ | | **psychologist** | ✅ 已添加 | ❌ 无业务CLI | lookup! ✅ | | **reviewer** | ✅",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "无skill.md引用",
-        "physicist",
-        "添加",
-        "lookup",
-        "cli",
-        "presenter",
-        "programmer",
-        "业务"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:165:165": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:165:165",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 165,
-      "endLine": 165,
-      "source": "memory",
-      "snippet": "Assistant: manager / writer --- ### 四、遗留问题 | 技能 | 问题 | 说明 | |------|------|------| | **superpowers** | 缺少整个 `scripts/` 目录 | 规范明确要求必须有 `scripts/`，即使无业务CLI也应有 `__init__.py` | | **auditor / instructor / programmer / psychologist** | 有 `scripts/lookup/` 但无 `__init__.py` | lookup 子包缺少",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "scripts/lookup",
-        "manager",
-        "writer",
-        "遗留",
-        "问题",
-        "技能",
-        "说明",
-        "superpowers"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:166:166": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:166:166",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 166,
-      "endLine": 166,
-      "source": "memory",
-      "snippet": "Assistant: CNKI 全站返回 JS 安全验证页面，说明服务器 IP 被风控了。换思路——用浏览器工具登录获取 Cookie，再传给检索器：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "cnki",
-        "返回",
-        "安全",
-        "验证",
-        "说明",
-        "服务",
-        "思路",
-        "浏览"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:167:167": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:167:167",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 167,
-      "endLine": 167,
-      "source": "memory",
-      "snippet": "Assistant: 服务器 IP 被 CNKI 风控了，换用 OpenClaw 内置浏览器登录获取 Cookie：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "服务",
-        "cnki",
-        "换用",
-        "openclaw",
-        "浏览",
-        "登录",
-        "获取",
-        "cookie"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:168:168": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:168:168",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 168,
-      "endLine": 168,
-      "source": "memory",
-      "snippet": "Assistant: 换个思路——试试 requests-html，它支持 JS 渲染：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "requests-html",
-        "换个",
-        "思路",
-        "requests",
-        "html",
-        "支持",
-        "渲染"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:169:169": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:169:169",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 169,
-      "endLine": 169,
-      "source": "memory",
-      "snippet": "Assistant: 浏览器已启动！用它来登录 CNKI 并获取 Cookie：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "浏览",
-        "启动",
-        "登录",
-        "cnki",
-        "获取",
-        "cookie"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:170:170": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:170:170",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 170,
-      "endLine": 170,
-      "source": "memory",
-      "snippet": "Assistant: CNKI 首页已加载，可以看到搜索框。关键：存在滑块验证。先用首页搜索框试试：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "cnki",
-        "首页",
-        "可以",
-        "看到",
-        "搜索",
-        "关键",
-        "存在",
-        "验证"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:171:171": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:171:171",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 171,
-      "endLine": 171,
-      "source": "memory",
-      "snippet": "Assistant: 有安全验证弹窗，先关闭它，然后试用首页搜索：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "安全",
-        "验证",
-        "关闭",
-        "然后",
-        "试用",
-        "首页",
-        "搜索"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:172:172": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:172:172",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 172,
-      "endLine": 172,
-      "source": "memory",
-      "snippet": "Assistant: 有安全验证弹窗，先关闭它，然后试用首页搜索：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "安全",
-        "验证",
-        "关闭",
-        "然后",
-        "试用",
-        "首页",
-        "搜索"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-24.txt:173:173": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-24.txt:173:173",
-      "path": "memory/.dreams/session-corpus/2026-05-24.txt",
-      "startLine": 173,
-      "endLine": 173,
-      "source": "memory",
-      "snippet": "Assistant: [assistant turn failed before producing content]",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-26T19:00:32.630Z",
-      "queryHashes": [
-        "c27113cc41fb"
-      ],
-      "recallDays": [
-        "2026-05-27",
-        "2026-05-26"
-      ],
-      "conceptTags": [
-        "turn",
-        "failed",
-        "producing",
-        "content"
-      ]
-    },
     "memory:memory/.dreams/session-corpus/2026-05-25.txt:52:52": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-25.txt:52:52",
       "path": "memory/.dreams/session-corpus/2026-05-25.txt",
@@ -9575,131 +8953,6 @@
         "确认"
       ]
     },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:13:13": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:13:13",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 13,
-      "endLine": 13,
-      "source": "memory",
-      "snippet": "User: 📋 修复任务 🎯 任务目标： 1. 修正KV Cache显存计算（LLaMA 2 70B参数配置混淆） 2. 修正arXiv preprint引用口吻（改为\"即将发表\"或\"预印本\"） 3. 统一参考文献格式（APA第7版） 📁 输入文件： - /root/data/disk/仓库/记忆机制认知推断论文/manuscripts/全文整合稿.md - /root/data/disk/仓库/记忆机制认知推断论文/manuscripts/审稿报告.md 📄 输出文件： - /root/data/disk/仓库/记忆机制认知推断论文/manus",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "修复",
-        "任务",
-        "目标",
-        "修正",
-        "cache",
-        "计算",
-        "llama",
-        "70b"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:14:14": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:14:14",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 14,
-      "endLine": 14,
-      "source": "memory",
-      "snippet": "Assistant: 收到修复任务！先读取文件确认问题：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "收到",
-        "修复",
-        "任务",
-        "先读",
-        "文件",
-        "确认",
-        "问题"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:15:15": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:15:15",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 15,
-      "endLine": 15,
-      "source": "memory",
-      "snippet": "Assistant: 现在修正arXiv preprint引用格式：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "现在",
-        "修正",
-        "arxiv",
-        "preprint",
-        "引用",
-        "格式"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:16:16": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:16:16",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 16,
-      "endLine": 16,
-      "source": "memory",
-      "snippet": "Assistant: <at user_id=\"ou_a6b4a6a6387298bb97e42791dae7d1eb\">@大管家</at> 修复任务已完成！ --- **✅ 修复报告** **1. KV Cache显存计算修正：** - 原文：以LLaMA 2 70B为例（80层，128个注意力头）→ 8MB/token - 修正后：以LLaMA 2 70B为例（80层，8个键值头采用分组查询注意力）→ 8KB/token - 计算公式也相应修正为 `$n_{\\text{kv_heads}}$` 而非 `$n_{\\text{heads}}$` **2.",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "user-id",
-        "8mb/token",
-        "8kb/token",
-        "kv-heads",
-        "管家",
-        "修复",
-        "任务",
-        "完成"
-      ]
-    },
     "memory:memory/.dreams/session-corpus/2026-05-28.txt:17:17": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:17:17",
       "path": "memory/.dreams/session-corpus/2026-05-28.txt",
@@ -9794,37 +9047,6 @@
         "只需要",
         "即可",
         "message"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:2:2": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:2:2",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 2,
-      "endLine": 2,
-      "source": "memory",
-      "snippet": "Assistant: 收到！先查看现有初稿，再通过艾特派发任务。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "收到",
-        "查看",
-        "现有",
-        "初稿",
-        "通过",
-        "特派",
-        "任务"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-28.txt:20:20": {
@@ -9976,214 +9198,6 @@
         "推送",
         "任务",
         "完成"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:3:3": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:3:3",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 3,
-      "endLine": 3,
-      "source": "memory",
-      "snippet": "Assistant: 初稿内容很完整！现在按照分工派发任务： --- 📋 **论文任务派发** 🎯 **任务目标**： - 补充第1-2章论据 - 增加近3年参考文献（2022-2025） - 补强章节间过渡 📌 **任务约束**： - 只补充论据、增加参考文献、补强过渡 - APA第7版格式 📁 **输入/输出文件**： - `/root/data/disk/仓库/记忆机制认知推断论文/manuscripts/初稿/` --- <at user_id=\"ou_28062d0d9cc960b7cc3ee59f485c200d\">@心理学家</at",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "补充第1-2章论据",
-        "2022-2025",
-        "输入/输出文件",
-        "user-id",
-        "初稿",
-        "内容",
-        "完整",
-        "现在"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:4:4": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:4:4",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 4,
-      "endLine": 4,
-      "source": "memory",
-      "snippet": "Assistant: 第2章：补充RAG最新变体（Self-RAG、Corrective-RAG、Agentic-RAG）、记忆机制与认知科学的交叉验证 完成后请在群聊中艾特大管家汇报结果。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "self-rag",
-        "corrective-rag",
-        "agentic-rag",
-        "补充",
-        "rag",
-        "最新",
-        "变体",
-        "self"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:5:5": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:5:5",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 5,
-      "endLine": 5,
-      "source": "memory",
-      "snippet": "Assistant: 明白！已经开始执行第1-2章的补充工作。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "已经开始执行第1-2章的补充工作",
-        "明白",
-        "已经",
-        "开始",
-        "执行",
-        "补充",
-        "工作"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:6:6": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:6:6",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 6,
-      "endLine": 6,
-      "source": "memory",
-      "snippet": "Assistant: 现在开始对第1章进行精修补充，重点增加2022-2025年参考文献和强化过渡段落：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "重点增加2022-2025年参考文献和强化过渡段落",
-        "现在",
-        "开始",
-        "进行",
-        "补充",
-        "重点",
-        "增加",
-        "参考文献"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:7:7": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:7:7",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 7,
-      "endLine": 7,
-      "source": "memory",
-      "snippet": "Assistant: 第1章补充完成。现在补充第2章：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "补充",
-        "完成",
-        "现在"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:8:8": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:8:8",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 8,
-      "endLine": 8,
-      "source": "memory",
-      "snippet": "Assistant: 现在补强第2章末尾向第3章的过渡：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "现在",
-        "末尾",
-        "过渡"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-28.txt:9:9": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:9:9",
-      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
-      "startLine": 9,
-      "endLine": 9,
-      "source": "memory",
-      "snippet": "Assistant: 验证修改结果：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-27T19:01:05.421Z",
-      "lastRecalledAt": "2026-05-27T19:01:05.421Z",
-      "queryHashes": [
-        "f9fcbbc6bd1e"
-      ],
-      "recallDays": [
-        "2026-05-28",
-        "2026-05-27"
-      ],
-      "conceptTags": [
-        "验证",
-        "修改",
-        "结果"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-29.txt:1:1": {
@@ -11534,6 +10548,69 @@
         "等待",
         "结果",
         "推送"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:136:136": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:136:136",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 136,
+      "endLine": 136,
+      "source": "memory",
+      "snippet": "User: 必须用 delivery \"mode\": \"announce\", \"channel\": \"feishu\", 检查to!!!!",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "必须",
+        "delivery",
+        "mode",
+        "announce",
+        "channel",
+        "feishu",
+        "检查"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-30.txt:137:137": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:137:137",
+      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
+      "startLine": 137,
+      "endLine": 137,
+      "source": "memory",
+      "snippet": "Assistant: 理解了！对比 Git 任务和日报任务的 `sessionKey`： - **Git 任务** `sessionKey`: `agent:main:corn:main的定时任务` ✅ - **日报任务** `sessionKey`: `agent:programmer:feishu:direct:...` ❌（绑定了 Feishu DM） 问题在于 `sessionKey` 不对，cron 任务自己的 session 绑定到了 Feishu DM，导致 announce 变成\"给自己发消息\"。修复 `sessionKey` 为 `ag",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "3558e5ebbbb7"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "理解",
+        "对比",
+        "git",
+        "任务",
+        "日报",
+        "sessionkey",
+        "agent:main:corn:main",
+        "agent:programmer:feishu:direct"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-30.txt:14:14": {
@@ -15131,6 +14208,919 @@
         "检索"
       ]
     },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: 锁文件 `972ff8e1...lock` 已不存在（说明被清理了）。但锁由 gateway 进程（41468）持有可能卡住了。让我检查 gateway 日志：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "文件",
+        "972ff8e1",
+        "lock",
+        "不存在",
+        "说明",
+        "清理",
+        "进程"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "Assistant: Gateway 进程正常运行，正在活跃通信（微信、Minimax API）。strace 显示它在正常写入会话文件。 **问题分析**： | 现象 | 根因 | |------|------| | \"日报：Agent记忆\" 失败 | **任务执行超时** — 08:00 启动，08:16 还在搜索 arXiv，最终超过 cron 任务的 timeout 设置而失败 | | `SessionWriteLockTimeoutError` | cron 任务失败后，系统尝试发送通知时，**写入会话文件获取锁超时** | 锁超时是因为 ga",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "进程",
+        "正常",
+        "运行",
+        "正在",
+        "活跃",
+        "通信",
+        "minimax"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "User: 增加timeout",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "增加",
+        "timeout"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "Assistant: 已更新： | 项目 | 修改前 | 修改后 | |------|--------|--------| | **日报：Agent记忆** timeout | 300s | **600s** | 不过注意：根据诊断信息，任务失败的真实原因是 **会话文件锁超时（60秒）**，不是 job payload 的 timeout。任务执行到 61 秒时就被锁阻塞卡住了，随后报错退出。 如果下次运行还遇到同样的锁超时问题，还需要我调大 session 锁的超时时间吗？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "更新",
+        "项目",
+        "修改",
+        "日报",
+        "记忆",
+        "timeout",
+        "300s",
+        "600s"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "User: session锁怎么只有60s？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "怎么",
+        "只有",
+        "60s"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "Assistant: 好问题，让我查一下这个锁超时的配置路径。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "问题",
+        "一下",
+        "这个",
+        "配置",
+        "路径"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "Assistant: 找到了！有三个相关配置： | 配置 | 当前值 | 说明 | |------|--------|------| | `session.writeLock.acquireTimeoutMs` | **60000ms = 60s** | 等待获取锁的最大时间 | | `session.writeLock.maxHoldMs` | 300000ms = 5min | 单次持有锁的最大时间 | | `session.writeLock.staleMs` | 1800000ms = 30min | 锁被视为过期的阈值 | **锁等待超时 =",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "session.writelock.maxholdms",
+        "session.writelock.stalems",
+        "找到",
+        "有三",
+        "相关",
+        "配置",
+        "当前",
+        "说明"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:18:18": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:18:18",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "Assistant: 配置中没有显式设置 `session.writeLock`，所以走的是**默认值 60000ms（60秒）**。 现在把它改成 180 秒（3分钟）：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "session.writelock",
+        "配置",
+        "没有",
+        "设置",
+        "所以",
+        "的是",
+        "默认",
+        "60000ms"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:19:19": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:19:19",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 19,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "Assistant: 这个字段是**受保护路径**，不能通过 `config.patch` 修改，但 hint 提示可以通过**环境变量**覆盖： ``` env override: OPENCLAW_SESSION_WRITE_LOCK_ACQUIRE_TIMEOUT_MS ```",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "config.patch",
+        "这个",
+        "保护",
+        "路径",
+        "不能",
+        "通过",
+        "修改",
+        "hint"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Let me continue checking the workspace state and other agent folders:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "let",
+        "continue",
+        "checking",
+        "state",
+        "other",
+        "folders"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:20:20": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:20:20",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "Assistant: Gateway 由 systemd 管理（`openclaw-gateway.service`）。让我检查服务配置，找到环境变量的设置方式：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "openclaw-gateway.service",
+        "systemd",
+        "管理",
+        "openclaw",
+        "gateway.service",
+        "检查",
+        "服务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:21:21": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:21:21",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 21,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "Assistant: Gateway 似乎通过某种 supervisor 机制管理。让我直接加环境变量到 `.env` 然后重启：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "似乎",
+        "通过",
+        "某种",
+        "supervisor",
+        "机制",
+        "管理",
+        "直接"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:22:22": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:22:22",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "Assistant: 已添加到 `.env`。现在重启 gateway 让配置生效：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "添加",
+        "env",
+        "现在",
+        "配置",
+        "生效"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:23:23": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:23:23",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 23,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "Assistant: 让我确认 gateway 是否加载了新的环境变量：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "确认",
+        "是否",
+        "新的",
+        "环境",
+        "变量"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:24:24": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:24:24",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 24,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "Assistant: 找到了！Gateway 运行在 **systemd --user** 模式下。让我检查服务配置：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "找到",
+        "运行",
+        "systemd",
+        "模式",
+        "检查",
+        "服务",
+        "配置"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:25:25": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:25:25",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 25,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "Assistant: 服务从 `gateway.systemd.env` 读取环境变量，不是 `.env`！让我加到正确的文件：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gateway.systemd.env",
+        "服务",
+        "环境",
+        "变量",
+        "不是",
+        "env",
+        "加到"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:26:26": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:26:26",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 26,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "Assistant: 变量加错文件了！服务读的是 `gateway.systemd.env`，不是 `.env`。正确做法是加到 `gateway.systemd.env`：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gateway.systemd.env",
+        "变量",
+        "文件",
+        "服务",
+        "的是",
+        "不是",
+        "env"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:27:27": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:27:27",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 27,
+      "endLine": 27,
+      "source": "memory",
+      "snippet": "Assistant: 现在重启 systemd --user 服务使配置生效：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "现在",
+        "systemd",
+        "服务",
+        "配置",
+        "生效"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:28:28": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:28:28",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 28,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "User: 你现在是什么模型？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "现在",
+        "什么",
+        "模型"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:29:29": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:29:29",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 29,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: Let me check other agent workspaces and look for README files:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "let",
+        "check",
+        "other",
+        "workspaces",
+        "look",
+        "readme"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:30:30": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:30:30",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 30,
+      "endLine": 30,
+      "source": "memory",
+      "snippet": "User: 你现在是什么模型？",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "现在",
+        "什么",
+        "模型"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: Good - there's a README.md at the root. Let me check for API keys in the files being committed and look at the git status:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "readme.md",
+        "good",
+        "there's",
+        "root",
+        "let",
+        "check",
+        "api",
+        "keys"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: Good - all API keys use environment variables (`${XXX_API_KEY}` format). No hardcoded keys found. Now let me commit and push the changes:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "xxx-api-key",
+        "good",
+        "all",
+        "api",
+        "keys",
+        "use",
+        "environment",
+        "variables"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: ✅ **每日 Git 自动推送任务完成** **执行结果：** | 步骤 | 状态 | 详情 | |------|------|------| | 🔍 密钥核查 | ✅ 通过 | 所有 API Key 均使用环境变量（`${XXX_API_KEY}`），无硬编码 | | 📁 工作空间核查 | ✅ 通过 | 10 个 Agent 工作空间结构正常，`.dreams` 记忆文件正常 | | 📝 更新 README | ✅ 无需修改 | README.md 无变更 | | 📤 提交推送 | ✅ 成功 | `6b613607` →",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "xxx-api-key",
+        "readme.md",
+        "每日",
+        "git",
+        "自动",
+        "推送",
+        "任务",
+        "完成"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: Cron 任务会话写入超时，说明上一个会话可能卡住了。让我检查一下：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "cron",
+        "任务",
+        "会话",
+        "说明",
+        "一个",
+        "可能",
+        "卡住",
+        "检查"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: 进程 41468（Gateway）存活，锁文件较新（11:14 创建）。让我检查 cron 任务对应的会话：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "进程",
+        "存活",
+        "文件",
+        "创建",
+        "检查",
+        "cron",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "Assistant: 找到了！**\"日报：Agent记忆\"任务超时失败**，日志显示： 1. 任务在 08:00 启动，一直在搜索 arXiv 论文 2. 08:16 时 jsonl 有 393KB（还在写） 3. 最终 `cron: job execution timed out (last phase: tool-execution-started)` — **任务执行超时** 4. 之后尝试写入会话时因锁未释放而 `SessionWriteLockTimeoutError` Cron 任务已经失败并结束。让我检查锁状态：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:09.292Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "tool-execution-started",
+        "找到",
+        "日报",
+        "记忆",
+        "任务",
+        "失败",
+        "日志",
+        "显示"
+      ]
+    },
     "memory:memory/2026-05-24.md:10:10": {
       "key": "memory:memory/2026-05-24.md:10:10",
       "path": "memory/2026-05-24.md",
@@ -15490,12 +15480,12 @@
       "source": "memory",
       "snippet": "完成的重构: | lookup | SKILL.md | 纯 CLI 工具，无 references | | feishu-voice | SKILL.md | 纯 CLI 工具，无 references | | 末日地堡 | 8 | ch01-ch08 | | programmer | 8 | ch01-ch08 |",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15506,7 +15496,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "skill.md",
@@ -15528,12 +15519,12 @@
       "source": "memory",
       "snippet": "删除的技能: group-counseling-plan; mathematician",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15544,7 +15535,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "group-counseling-plan",
@@ -15564,12 +15556,12 @@
       "source": "memory",
       "snippet": "新框架规范: **文件名格式**：`ch{num}_{how-to-do-something}.md`",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15580,7 +15572,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "how-to-do-something",
@@ -15602,12 +15595,12 @@
       "source": "memory",
       "snippet": "新框架规范: 标题必须是 how-to 动宾短语; 示例：`ch01_how-to-develop-new-skill.md`",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15618,7 +15611,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "how-to",
@@ -15639,12 +15633,12 @@
       "source": "memory",
       "snippet": "新框架规范: **章节结构**（四层）：",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15655,7 +15649,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "框架",
@@ -15674,12 +15669,12 @@
       "source": "memory",
       "snippet": "新框架规范: 问题 - 为什么要知道这个？; 方法论 - 怎么思考这个问题？; 工作流 - 具体怎么执行？; 执行标准 - 做到什么程度算合格？",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15690,7 +15685,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "框架",
@@ -15711,12 +15707,12 @@
       "source": "memory",
       "snippet": "新框架规范: **SKILL.md 更新规范**：",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15727,7 +15723,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "skill.md",
@@ -15744,12 +15741,12 @@
       "source": "memory",
       "snippet": "新框架规范: 指南导航 → 书籍目录",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15760,7 +15757,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "框架",
@@ -15779,12 +15777,12 @@
       "source": "memory",
       "snippet": "新框架规范: 引用新框架的 ch* 文件",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15795,7 +15793,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "框架",
@@ -15812,12 +15811,12 @@
       "source": "memory",
       "snippet": "Git 提交: commit 5744bd9a：45 files changed, +2946 -1936",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15828,7 +15827,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "git",
@@ -15846,12 +15846,12 @@
       "source": "memory",
       "snippet": "完成的重构: | 技能 | 章节数 | 文件 | |------|--------|------| | skill-developer | 7 | ch01-ch07 | | research-assistant | 8 | ch01-ch08 |",
       "recallCount": 0,
-      "dailyCount": 6,
+      "dailyCount": 7,
       "groundedCount": 0,
-      "totalScore": 3.72,
+      "totalScore": 4.34,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-26T19:00:32.630Z",
-      "lastRecalledAt": "2026-05-31T19:00:09.494Z",
+      "lastRecalledAt": "2026-06-01T19:00:09.292Z",
       "queryHashes": [
         "d840cb851395"
       ],
@@ -15862,7 +15862,8 @@
         "2026-05-29",
         "2026-05-30",
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "skill-developer",

@@ -78,4 +78,5 @@ aliases:
 
 - [[sources/openclaw-env|openclaw-env]]
 - [[sources/openclaw-workspace|openclaw-workspace]]
+- [[syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮|我的 agent 工程实践：驾驭方法论]]
 <!-- openclaw:wiki:related:end -->

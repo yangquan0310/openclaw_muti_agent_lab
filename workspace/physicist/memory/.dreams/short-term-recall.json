@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-31T19:00:08.318Z",
+  "updatedAt": "2026-06-01T19:00:08.210Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1",
@@ -13651,6 +13651,134 @@
         "学家",
         "审阅",
         "完成"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: Now I'll search for recent Ising Model papers across all three domains in parallel.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:07.932Z",
+      "lastRecalledAt": "2026-06-01T19:00:07.932Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "now",
+        "i'll",
+        "recent",
+        "ising",
+        "model",
+        "papers",
+        "across",
+        "all"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Let me do more targeted searches to find the most recent Ising Model papers:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:07.932Z",
+      "lastRecalledAt": "2026-06-01T19:00:07.932Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "let",
+        "targeted",
+        "searches",
+        "find",
+        "recent",
+        "ising",
+        "model",
+        "papers"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 根据我的全面搜索，在过去24小时（2026年5月31日至6月1日）内，未在arXiv及学术期刊上发现伊辛模型相关的新发表论文。以下是完整的日报： --- # 伊辛模型最新应用日报 > 日期：2026-06-01 ## 统计物理 **本期无更新** > 在过去24小时内，arXiv统计物理（cond-mat.stat-mech）最新提交中未发现伊辛模型相关新论文。 ## 神经科学 **本期无更新** > 在过去24小时内，arXiv q-bio（定量生物学/神经科学）最新提交中未发现伊辛模型相关新论文。注：近期（2026年2月）有一篇",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:07.932Z",
+      "lastRecalledAt": "2026-06-01T19:00:07.932Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "cond-mat.stat-mech",
+        "q-bio",
+        "定量生物学/神经科学",
+        "根据",
+        "我的",
+        "全面",
+        "搜索",
+        "过去"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: **说明**：arXiv每日新提交量较大但伊辛模型并非每日必有新论文。若需放宽时间范围至最近一周或一个月，请告知，我可以提供更全面的近期论文综述。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-01T19:00:07.932Z",
+      "lastRecalledAt": "2026-06-01T19:00:07.932Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "说明",
+        "arxiv",
+        "每日",
+        "提交",
+        "较大",
+        "模型",
+        "并非",
+        "必有"
       ]
     }
   }

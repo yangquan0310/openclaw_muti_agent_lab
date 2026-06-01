@@ -133,3 +133,5 @@
 [programmer/sessions/programmer/de17223a-290b-471e-80b6-f1531781498b.jsonl.reset.2026-05-30T05-30-10.668Z#L80] Assistant: 看到了！sessions 列表里没有 `agent:programmer:corn:programmer的定时任务` 这个会话。这个 cron session 可能丢失了。 对比： - Git 任务 `lastDeliveryStatus: "delivered"` ✅ - Agent 日报任务 `lastDeliveryStatus: "unknown"` ❌ 关键区别是 **Git 任务的成功 delivery 是历史状态**，不是当前
 [programmer/sessions/programmer/de17223a-290b-471e-80b6-f1531781498b.jsonl.reset.2026-05-30T05-30-10.668Z#L82] Assistant: 已恢复 announce。现在触发测试：
 [programmer/sessions/programmer/de17223a-290b-471e-80b6-f1531781498b.jsonl.reset.2026-05-30T05-30-10.668Z#L84] Assistant: 触发成功，等待结果推送 ⏳
+[programmer/sessions/programmer/de17223a-290b-471e-80b6-f1531781498b.jsonl.reset.2026-05-30T05-30-10.668Z#L85] User: 必须用 delivery "mode": "announce", "channel": "feishu", 检查to!!!!
+[programmer/sessions/programmer/de17223a-290b-471e-80b6-f1531781498b.jsonl.reset.2026-05-30T05-30-10.668Z#L86] Assistant: 理解了！对比 Git 任务和日报任务的 `sessionKey`： - **Git 任务** `sessionKey`: `agent:main:corn:main的定时任务` ✅ - **日报任务** `sessionKey`: `agent:programmer:feishu:direct:...` ❌（绑定了 Feishu DM） 问题在于 `sessionKey` 不对，cron 任务自己的 session 绑定到了 Feishu 

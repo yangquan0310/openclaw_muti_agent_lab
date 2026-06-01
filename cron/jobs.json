@@ -121,7 +121,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "你是程序员（programmer）的专属助手。请完成以下任务：\n\n## 任务：攥写「Agent记忆」日报\n\n### 任务要求\n- 检索过去24小时内新发布的 Agent 相关学术论文/arXiv 手稿\n\n### 约束条件\n- 仅纳入24小时内新发布的内容\n- 内容来源：学术会议论文、arXiv 手稿\n- 使用 jina-ai 技能进行搜索\n- 日报禁止写入文件：完成后，将日报的完整内容整理在当前消息，不要保存到文件。\n\n### 报告结构\n请按以下结构生成 Markdown 格式的日报：\n\n```markdown\n# Agent 记忆 日报\n> 日期：YYYY-MM-DD\n\n## {分类主题}\n\n### 文章1\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：（1-2句摘要）\n\n### 文章2\n- 标题：\n- 作者：\n- 时间：\n- 主要内容：\n\n## 🔗 参考链接\n```",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
