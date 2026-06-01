@@ -8,10 +8,10 @@
       "reasoningDefault": "stream",
       "compaction": {
         "mode": "safeguard",
-        "model": "minimax/MiniMax-M2.7",
+        "model": "minimax/MiniMax-M3",
         "postCompactionSections": [
-          "## 一、工作原则",
-          "## 四、安全红线"
+          "## 二、工作原则",
+          "## 三、安全红线"
         ]
       },
       "sandbox": {
@@ -20,17 +20,15 @@
         }
       },
       "model": {
-        "primary": "minimax/MiniMax-M2.7-highspeed",
+        "primary": "minimax/MiniMax-M3",
         "fallbacks": [
-          "minimax/MiniMax-M2.7-highspeed",
-          "minimax/MiniMax-M2.7",
+          "minimax/MiniMax-M3",
           "xiaomicoding/mimo-v2.5-pro",
-          "xiaomicoding/mimo-v2.5",
           "deepseek/deepseek-v4-flash"
         ]
       },
       "pdfModel": {
-        "primary": "xiaomicoding/mimo-v2.5"
+        "primary": "minimax/MiniMax-M3"
       },
       "imageModel": {
         "primary": "minimax/MiniMax-VL-01"
@@ -149,9 +147,6 @@
   },
   "tools": {
     "profile": "full",
-    "deny": [
-      "feishu_im_user_message"
-    ],
     "elevated": {
       "enabled": true,
       "allowFrom": {}
@@ -165,8 +160,8 @@
     "media": {
       "models": [
         {
-          "provider": "xiaomicoding",
-          "model": "mimo-v2.5",
+          "provider": "minimax",
+          "model": "MiniMax-M3",
           "capabilities": [
             "image",
             "audio",
@@ -174,7 +169,24 @@
           ]
         }
       ],
-      "concurrency": 2
+      "concurrency": 2,
+      "audio": {
+        "enabled": true,
+        "maxBytes": 20971520,
+        "scope": {
+          "default": "allow"
+        },
+        "models": [
+          {
+            "type": "cli",
+            "command": "fw-transcribe",
+            "args": [
+              "{{MediaPath}}"
+            ],
+            "timeoutSeconds": 120
+          }
+        ]
+      }
     }
   },
   "skills": {
@@ -315,7 +327,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-05-31T09:02:46.870Z"
+    "lastTouchedAt": "2026-06-01T13:26:44.158Z"
   },
   "browser": {
     "enabled": true,
@@ -399,23 +411,16 @@
         "api": "anthropic-messages",
         "models": [
           {
-            "id": "MiniMax-M2.7",
-            "name": "MiniMax M2.7",
+            "id": "MiniMax-M3",
+            "name": "MiniMax M3",
             "reasoning": true,
-            "contextWindow": 204800,
-            "maxTokens": 20480,
+            "contextWindow": 1000000,
+            "maxTokens": 384000,
             "input": [
-              "text"
-            ]
-          },
-          {
-            "id": "MiniMax-M2.7-highspeed",
-            "name": "MiniMax M2.7 Highspeed",
-            "reasoning": true,
-            "contextWindow": 204800,
-            "maxTokens": 20480,
-            "input": [
-              "text"
+              "text",
+              "image",
+              "audio",
+              "video"
             ]
           }
         ]
@@ -457,8 +462,8 @@
             "id": "mimo-v2.5",
             "name": "MiMo-V2.5",
             "reasoning": true,
-            "contextWindow": 1000000,
-            "maxTokens": 384000,
+            "contextWindow": 200000,
+            "maxTokens": 20000,
             "input": [
               "text",
               "image",
@@ -532,7 +537,7 @@
       "typingIndicator": true,
       "resolveSenderNames": true,
       "streaming": true,
-      "renderMode":"card",
+      "renderMode": "card",
       "groupPolicy": "open",
       "requireMention": true,
       "accounts": {
@@ -580,7 +585,8 @@
           "appId": "cli_a947bb2b87399cc8",
           "appSecret": "${FEISHU_ACADEMICASSISTANT_APP_SECRET}"
         }
-      }
+      },
+      "blockStreaming": true
     }
   },
   "bindings": [
@@ -751,6 +757,14 @@
         "enabled": true,
         "config": {}
       },
+      "qqbot": {
+        "enabled": true,
+        "config": {}
+      },
+      "openclaw-lark": {
+        "enabled": true,
+        "config": {}
+      },
       "deepseek": {
         "enabled": true,
         "config": {}
@@ -765,11 +779,24 @@
           }
         }
       },
-      "qqbot": {
+      "zai": {
         "enabled": true,
         "config": {}
       },
-      "openclaw-lark": {
+      "minimax": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "${MINIMAX_API_KEY}",
+            "region": "cn"
+          }
+        }
+      },
+      "xiaomi": {
+        "enabled": true,
+        "config": {}
+      },
+      "kimi": {
         "enabled": true,
         "config": {}
       },
@@ -791,19 +818,6 @@
           }
         }
       },
-      "zai": {
-        "enabled": true,
-        "config": {}
-      },
-      "minimax": {
-        "enabled": true,
-        "config": {
-          "webSearch": {
-            "apiKey": "${MINIMAX_API_KEY}",
-            "region": "cn"
-          }
-        }
-      },
       "document-extract": {
         "enabled": true,
         "config": {}
@@ -814,34 +828,26 @@
           "allowConversationAccess": true
         },
         "config": {}
-      },
-      "xiaomi": {
-        "enabled": true,
-        "config": {}
-      },
-      "kimi": {
-        "enabled": true,
-        "config": {}
       }
     },
     "allow": [
       "browser",
-      "deepseek",
-      "document-extract",
-      "exa",
       "active-memory",
       "memory-core",
       "memory-wiki",
-      "minimax",
-      "moonshot",
       "openclaw-lark",
       "openclaw-weixin",
       "qqbot",
-      "tavily",
+      "deepseek",
       "zai",
-      "agent-self-development",
+      "minimax",
+      "moonshot",
       "xiaomi",
-      "kimi"
+      "kimi",
+      "exa",
+      "tavily",
+      "document-extract",
+      "agent-self-development"
     ],
     "load": {
       "paths": []
@@ -868,7 +874,8 @@
           "baseUrl": "https://api.minimaxi.com",
           "speakerVoiceId": "male-qn-jingying"
         }
-      }
+      },
+      "mode": "final"
     }
   },
   "commands": {
