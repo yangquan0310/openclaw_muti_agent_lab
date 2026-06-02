@@ -34,34 +34,6 @@ metadata:
 
 ---
 
-## 场景索引
-
-| 场景 | guide |
-|------|-------|
-| 任务推进/派发 | task-guide.md |
-| 论文项目 | thesis-guide.md |
-| 课程项目 | course-guide.md |
-| 程序项目 | program-guide.md |
-| 知识库管理 | knowledge-guide.md |
-| 项目整理 | organize-workflow.md |
-| 通用项目 | project-guide.md |
-| 课程备课 | lesson-plan-guide.md |
-| 技能审核 | skill-audit-workflow.md |
-| 定期清理 | cleaning-guide.md |
-| 规范同步 | sync-guide.md |
-| 系统维护 | openclaw-maintenance-guide.md |
-| Workboard 任务发布 | workboard-guide.md |
-
----
-
-## 核心流程
-
-```
-领取任务 → 明确约束 → 更新TODO.md → 派发子代理 → 追踪进度 → 汇报老板
-```
-
----
-
 ## 边界条件
 
 - **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点
@@ -87,7 +59,27 @@ manager maintainer check-updates <project_path>
 manager maintainer --help
 manager maintainer <子命令> --help
 ```
+---
 
+## 指南导航
+
+| 章节 | 文件 | 内容 |
+|------|------|------|
+| 任务推进/派发 | task-flow-guide.md ||
+| 论文项目 | thesis-guide.md ||
+| 课程项目 | course-guide.md ||
+| 程序项目 | program-guide.md ||
+| 知识库管理 | knowledge-guide.md ||
+| 项目整理 | organize-workflow.md ||
+| 通用项目 | project-guide.md ||
+| 课程备课 | lesson-plan-guide.md ||
+| 技能审核 | skill-audit-workflow.md ||
+| 定期清理 | cleaning-guide.md ||
+| 规范同步 | sync-guide.md ||
+| 系统维护 | openclaw-maintenance-guide.md ||
+| Workboard 任务发布 | workboard-guide.md ||
+
+---
 ## 版本历史
 
 | 版本 | 日期 | 更新 |

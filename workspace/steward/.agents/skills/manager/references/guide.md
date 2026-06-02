@@ -32,7 +32,7 @@ manager 是大管家的唯一管理技能入口。所有管理场景——论文
 
 | 场景 | 查看指南 |
 |------|----------|
-| 给子代理派发任务 | task-guide.md |
+| 给子代理派发任务 | task-flow-guide.md |
 | 论文项目整理 | thesis-guide.md |
 | 课程项目整理 | course-guide.md |
 | 程序项目整理 | program-guide.md |

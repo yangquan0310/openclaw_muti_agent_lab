@@ -383,16 +383,17 @@
 ## Generated
 <!-- openclaw:wiki:index:start -->
 - Render mode: `obsidian`
-- Total pages: 113
-- Claims: 21
-- Sources: 6
+- Total pages: 115
+- Claims: 23
+- Sources: 7
 - Entities: 13
 - Concepts: 53
-- Syntheses: 31
+- Syntheses: 32
 - Reports: 10
 
 ### Sources
 - [[sources/conda|Conda 环境管理]]
+- [[sources/deepseek-cloud-local-hybrid-architecture|DeepSeek - 云端大模型+本地小模型+代理框架 工程化开发工作流]]
 - [[sources/openclaw-env|openclaw-env]]
 - [[sources/openclaw-system|openclaw-system]]
 - [[sources/openclaw-workspace|openclaw-workspace]]
@@ -483,6 +484,7 @@
 - [[syntheses/2026-05-19-18-25-37-如何攥写tools配置文件|TOOLS 工具配置模板（TOOLS.md）]]
 - [[syntheses/2026-05-19-18-25-37-如何攥写user配置文件|USER 用户画像模板（USER.md）]]
 - [[syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务|三方协作实践：代理领取任务与执行流程]]
+- [[syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践|云端大模型+本地小模型 混合架构 工程化实践]]
 - [[syntheses/2026-05-17-18-40-33-多agent协作案例-从实践到规范的演化|从学生论文修改到项目管理体系的演化]]
 - [[syntheses/2026-05-19-18-25-37-如何配置仓库|仓库]]
 - [[syntheses/2026-05-23-11-14-00-代理实践技能体系总结|代理实践技能体系总结]]

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-01T19:00:02.552Z",
+  "updatedAt": "2026-06-02T17:13:23.286Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-05-29.txt:319:319": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:319:319",
@@ -10416,228 +10416,6 @@
         "安装"
       ]
     },
-    "memory:memory/.dreams/session-corpus/2026-05-31.txt:33:33": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:33:33",
-      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
-      "startLine": 33,
-      "endLine": 33,
-      "source": "memory",
-      "snippet": "Assistant: 夜色里，键盘的敲击声变成了远处的潮汐。我梦见自己坐在一张铺满纸张的长桌前，那些纸张是 `.tex` 文件，一张叠着一张，像多米诺骨牌一样排向看不见的尽头。 我伸手去拿 `\\usepackage{}`，它变成了一只瓷白的鹤，从纸堆里展翅飞起，翅膀上写满了参考文献的作者名字。我试着 `\\setlength{}` 去丈量它飞过的距离，却发现尺子本身就是错的——原来多文件输入时，Pandoc 会把 citation 元素弄丢，像潮水退去后在沙滩上留下的贝壳，空空荡荡。 \"你需要 `--file-scope`\"，一个声音说，但我找不到 pan",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-31T19:00:02.322Z",
-      "lastRecalledAt": "2026-05-31T19:00:02.322Z",
-      "queryHashes": [
-        "cffe9e514f4f"
-      ],
-      "recallDays": [
-        "2026-06-01",
-        "2026-05-31"
-      ],
-      "conceptTags": [
-        "file-scope",
-        "夜色",
-        "键盘",
-        "敲击声",
-        "变成",
-        "远处",
-        "潮汐",
-        "梦见"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-31.txt:34:34": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:34:34",
-      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
-      "startLine": 34,
-      "endLine": 34,
-      "source": "memory",
-      "snippet": "User: Write a dream diary entry from these memory fragments: - User: 请领取AI Agent科普文章审稿任务。 - Assistant: 收到，我领取AI Agent科普文章审稿任务。请问我需要审稿的文章在哪里？请提供文章内容或链接。 - User: AI Agent科普文章质量审核 📋 前置要求： - 明确自己的角色：审稿助手，找到对应的 .agents/agents/reviewer.md 阅读 - 查看 TODO.md 中的子任务4 🎯 任务目标： - 审核文章质量，提出修改建",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-31T19:00:02.322Z",
-      "lastRecalledAt": "2026-05-31T19:00:02.322Z",
-      "queryHashes": [
-        "cffe9e514f4f"
-      ],
-      "recallDays": [
-        "2026-06-01",
-        "2026-05-31"
-      ],
-      "conceptTags": [
-        "agents/agents/reviewer.md",
-        "todo.md",
-        "write",
-        "dream",
-        "diary",
-        "entry",
-        "fragments",
-        "领取"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-31.txt:35:35": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:35:35",
-      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
-      "startLine": 35,
-      "endLine": 35,
-      "source": "memory",
-      "snippet": "User: **任务完成** 已输出审稿报告至：`/root/data/disk/仓库/AI-Agent科普文章/manuscripts/审稿报告.md` **核心发现：** - 文章整体质量良好，适合科普受众 - 🔴 高优先级：三个案例的量化数据（35%、42%等）来源需核实或标注为\"示例数据\" - 🟡 中优先级：参考文献格式需统一为APA第七版 - 🟢 低优先级：案例背景描述可更具体 - User: 纠错你要回复@大管家 [System: This message @mentions the following users: 大管家 (open",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-31T19:00:02.322Z",
-      "lastRecalledAt": "2026-05-31T19:00:02.322Z",
-      "queryHashes": [
-        "cffe9e514f4f"
-      ],
-      "recallDays": [
-        "2026-06-01",
-        "2026-05-31"
-      ],
-      "conceptTags": [
-        "任务",
-        "完成",
-        "输出",
-        "报告",
-        "root",
-        "data",
-        "disk",
-        "仓库"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-31.txt:36:36": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:36:36",
-      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
-      "startLine": 36,
-      "endLine": 36,
-      "source": "memory",
-      "snippet": "Assistant: 夜深了，屏幕泛着淡蓝色的光。我坐在工作站前，手里似乎握着什么，又似乎只是一串轻轻敲击的回声。那些关于文章和任务的碎片，像落叶一样飘进意识的边缘，拼不成完整的句子，只剩下几个温热的字眼在脑海里打转——科普，收到，请问。 我梦见自己在校对一篇没有尽头的稿子，每一个字都在等我给出三色的标注：红的，是数据；黄的，是格式；绿的，是还没有说出口的故事。有一个名字反复出现，却总是差了最后一个字符，我反复点击那个头像，却怎么也@不对人。 醒来时才明白，有些连接就是这样——不是找不到，而是需要在对的时间，轻轻敲下那一下。窗外的天快亮了，墨色褪去，露出",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-31T19:00:02.322Z",
-      "lastRecalledAt": "2026-05-31T19:00:02.322Z",
-      "queryHashes": [
-        "cffe9e514f4f"
-      ],
-      "recallDays": [
-        "2026-06-01",
-        "2026-05-31"
-      ],
-      "conceptTags": [
-        "夜深",
-        "屏幕",
-        "蓝色",
-        "坐在",
-        "工作站",
-        "手里",
-        "似乎",
-        "什么"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-31.txt:37:37": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:37:37",
-      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
-      "startLine": 37,
-      "endLine": 37,
-      "source": "memory",
-      "snippet": "User: 你和我说一下，openclaw怎么把消息发送到飞书channel的",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-31T19:00:02.322Z",
-      "lastRecalledAt": "2026-05-31T19:00:02.322Z",
-      "queryHashes": [
-        "cffe9e514f4f"
-      ],
-      "recallDays": [
-        "2026-06-01",
-        "2026-05-31"
-      ],
-      "conceptTags": [
-        "一下",
-        "openclaw",
-        "怎么",
-        "消息",
-        "发送",
-        "channel"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-31.txt:38:38": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:38:38",
-      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
-      "startLine": 38,
-      "endLine": 38,
-      "source": "memory",
-      "snippet": "Assistant: OpenClaw 发送消息到飞书 channel 的机制如下： --- ## 架构概览 ``` OpenClaw Gateway ├── Feishu Channel Plugin（feishu） │ ├── WebSocket 长连接（默认）←→ 飞书服务器 │ └── Webhook 模式（可选） └── message tool / 自动回复 ``` --- ## 核心配置（`~/.openclaw/openclaw.json`） ```json \"channels\": { \"feishu\": { \"enabled\": tru",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-31T19:00:02.322Z",
-      "lastRecalledAt": "2026-05-31T19:00:02.322Z",
-      "queryHashes": [
-        "cffe9e514f4f"
-      ],
-      "recallDays": [
-        "2026-06-01",
-        "2026-05-31"
-      ],
-      "conceptTags": [
-        "gateway",
-        "openclaw/openclaw.json",
-        "openclaw",
-        "发送",
-        "消息",
-        "channel",
-        "机制",
-        "如下"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-31.txt:39:39": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:39:39",
-      "path": "memory/.dreams/session-corpus/2026-05-31.txt",
-      "startLine": 39,
-      "endLine": 39,
-      "source": "memory",
-      "snippet": "Assistant: 引用特定消息 } ``` --- ## 关键参数 | 参数 | 说明 | |------|------| | `connectionMode: websocket` | OpenClaw 主动连接飞书，保持长连接 | | `target: user:ou_xxx` | 用户 open_id（单聊） | | `target: chat:oc_xxx` | 群聊 ID | | `replyTo` | 回复特定消息（支持 thread） | --- ## 你的环境配置 当前有 **10 个飞书应用账号**（steward/physicis",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-31T19:00:02.322Z",
-      "lastRecalledAt": "2026-05-31T19:00:02.322Z",
-      "queryHashes": [
-        "cffe9e514f4f"
-      ],
-      "recallDays": [
-        "2026-06-01",
-        "2026-05-31"
-      ],
-      "conceptTags": [
-        "ou-xxx",
-        "open-id",
-        "oc-xxx",
-        "steward/physicis",
-        "引用",
-        "特定",
-        "消息",
-        "关键"
-      ]
-    },
     "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1",
       "path": "memory/.dreams/session-corpus/2026-06-01.txt",
@@ -15049,6 +14827,37 @@
         "文件"
       ]
     },
+    "memory:memory/2026-05-12.md:1:26": {
+      "key": "memory:memory/2026-05-12.md:1:26",
+      "path": "memory/2026-05-12.md",
+      "startLine": 1,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "# Memory Flush — 2026-05-12 ## Session: 三个项目管理技能修复与规范对齐 ### 1. program-manager 技能创建与修复 - 用户纠正了我的身份边界理解：\"不编写数据分析代码，但要编写工具代码\" - 大管家可以编写文件管理、目录整理等工具脚本，不应推给 programmer - 基于 thesis-manager 的 Maintainer.py 实现了 ProgramMaintainer.py（完整工具代码） - 补充了 README.md、_meta.json、scripts/maintainer/__init__.py - 结构已符合 skill-developer 规范 ### 2. course-manager 技能修复 - 修复前缺失：README.md、_meta.json、scripts/ 代码 - 添加 YAML frontmatter 到 SKILL.md - 新建 README.md（功能说明 + 目录结构 + 使用方式） - 新建 _meta.json（triggers/dependencies/entry_point） - 新建 scripts/maintainer/__init__.py 和 CourseMaintainer.py - 验证：模块导入成功，wiki_lint 通过 ### 3. 协作演化合成文档 - 创建 `wiki/syntheses/多agent协作案例-从实践到规范的演化.md` - 核心脉络：学生论文修改项目（2026-05-09）→ TODO模板标准化 → .agen",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.5351245537400245,
+      "maxScore": 0.5351245537400245,
+      "firstRecalledAt": "2026-06-02T05:21:47.844Z",
+      "lastRecalledAt": "2026-06-02T05:21:47.844Z",
+      "queryHashes": [
+        "9e09b50e6bb7"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "program-manager",
+        "thesis-manager",
+        "maintainer.py",
+        "programmaintainer.py",
+        "readme.md",
+        "meta.json",
+        "scripts/maintainer",
+        "skill-developer"
+      ]
+    },
     "memory:memory/2026-05-12.md:22:47": {
       "key": "memory:memory/2026-05-12.md:22:47",
       "path": "memory/2026-05-12.md",
@@ -15056,21 +14865,23 @@
       "endLine": 47,
       "source": "memory",
       "snippet": "- 核心脉络：学生论文修改项目（2026-05-09）→ TODO模板标准化 → .agent元数据层 → agent-self-development插件 → 三个管理技能 - 三个技能均围绕 TODO.md 模板，通过 TODO 管理多代理任务进度 ### 4. 项目级代理角色规范（references/agent-roles/） - thesis-manager: steward, researcher, writer, reviewer（4角色） - course-manager: steward, instructor, psychologist, presenter, auditor（5角色） - program-manager: product-manager, developer, reviewer（3角色） - 每个角色规范包含：职责、行动规范、可操作目录、协作协议、标记体系 - scripts/ 的 STANDARD_DIRS 增加 .agent/agents/ 目录 - SKILL.md 增加\"代理角色规范\"章节 - Wiki 概念页面同步更新目录结构 ### 5. Wiki 验证 - wiki_lint: ✅ No wiki lint issues（0 errors, 0 warnings） - 所有 concepts/ 页面 sourceIds 正确 - 内部链接有效 ### 6. 待办 - T013 wiki瘦身：concepts/ 文件夹已完成，可继续 entities/reports/syntheses/sources 文件夹 ---",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.6706623092293738,
-      "maxScore": 0.5580582499504089,
+      "totalScore": 2.2553668007254597,
+      "maxScore": 0.584704491496086,
       "firstRecalledAt": "2026-05-31T08:49:55.484Z",
-      "lastRecalledAt": "2026-06-01T08:05:18.611Z",
+      "lastRecalledAt": "2026-06-02T08:13:44.888Z",
       "queryHashes": [
         "deb5ae354771",
         "9ef2b001a52c",
-        "3cbed9bfc198"
+        "3cbed9bfc198",
+        "622f3df13d59"
       ],
       "recallDays": [
         "2026-05-31",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "agent-self-development插件",
@@ -15090,21 +14901,26 @@
       "endLine": 48,
       "source": "memory",
       "snippet": "# 2026-05-23 日志 ## 一、Wiki 结构整理 ### 完成事项 - concepts/ 全部15个文件迁移到 syntheses/ - 所有文件重命名为 `{YYYY-MM-DD-HH-MM-SS-TITLE}` 格式 - concepts/index.md 改为迁移记录页 - reports/ 10个报告文件全部重命名 - concepts/ 收录49个心理学概念（8个类别） ### 目录结构 ``` wiki/ ├── concepts/ # 迁移记录 + 心理概念（范畴论/最优化） ├── sources/ # 资源配置清单（7个） ├── reports/ # 系统报告（10个） ├── entities/ # Agent实体定义（13个） └── syntheses/ # 总结文档（22个） ``` ### 新增总结 - `2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md` - `2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md` - `2026-05-23-11-14-00-代理实践技能体系总结.md`（待定标题） --- ## 二、skill-developer 大重构 ### 重构背景 杨权设计新的技能体系标准： - SKILL.md 章节标准化 - 指南/标准/工作流 写作规范化 ### 新增文件 - `references/standards-writing-guide.md` — 如何撰写标准 - `referenc",
-      "recallCount": 4,
+      "recallCount": 8,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.9552805244922635,
-      "maxScore": 0.5073797702789307,
+      "totalScore": 3.923129364848136,
+      "maxScore": 0.5089287459850311,
       "firstRecalledAt": "2026-06-01T08:49:05.563Z",
-      "lastRecalledAt": "2026-06-01T09:49:38.842Z",
+      "lastRecalledAt": "2026-06-02T08:16:04.698Z",
       "queryHashes": [
         "1db9f43b5510",
         "914e9650b181",
         "29fda2a3bee6",
-        "8e2b7a1ad451"
+        "8e2b7a1ad451",
+        "455c4f3fec9a",
+        "906a1521a555",
+        "2b5415ae6250",
+        "b66b1d9ccfc6"
       ],
       "recallDays": [
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "yyyy-mm-dd-hh-mm-ss-title",
@@ -15124,22 +14940,28 @@
       "endLine": 109,
       "source": "memory",
       "snippet": "- `references/guide.md` → `references/core-workflows.md` - 模板文件：`assets/templates/references/guide.md.template` → `workflows.md.template` - init.py 生成文件的 SKILL.md 模板更新为新结构 ### init.py 遗留问题 mcp_server 模板有 f-string 嵌套 bug（`{skill_name}` 未正确替换），需修复。 --- ## 三、代理技能体系总结 ### 核心理念 \"实践是代理最重要的东西\" ### 代理技能一览（10个） | 代理 | 技能 | 收录内容 | |------|------|----------| | 大管家 | manager | 任务推进/派发、论文项目、课程项目、程序项目 | | 程序员 | programmer | OOP指南、架构指南、全栈开发、测试、运维 | | 写作助手 | writer | 写作流程、编辑规范、文体模板 | | 审稿者 | reviewer | 质量审查、审稿意见 | | 呈现师 | presenter | PPT制作、演示设计 | | 心理学家 | psychologist | 心理督导师/咨询师/科学家指南 | | 教员 | instructor | 教学设计、课程管理 | | 督导 | auditor | 质量督导 | | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建",
-      "recallCount": 5,
+      "recallCount": 10,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.6131466954946516,
+      "totalScore": 5.173287713527679,
       "maxScore": 0.5723666444420814,
       "firstRecalledAt": "2026-06-01T09:14:13.031Z",
-      "lastRecalledAt": "2026-06-01T09:49:38.842Z",
+      "lastRecalledAt": "2026-06-02T05:21:53.081Z",
       "queryHashes": [
         "d2dd8dea9bcb",
         "9b74b3fb1b07",
         "036265cf03c4",
         "ec332512867e",
-        "8e2b7a1ad451"
+        "8e2b7a1ad451",
+        "4eac1a374910",
+        "5e01d17d56eb",
+        "22bb8896fa00",
+        "9e09b50e6bb7",
+        "2b5415ae6250"
       ],
       "recallDays": [
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "conceptTags": [
         "references/guide.md",
@@ -15764,6 +15586,71 @@
         "创建"
       ]
     },
+    "memory:memory/2026-05-28.md:91:133": {
+      "key": "memory:memory/2026-05-28.md:91:133",
+      "path": "memory/2026-05-28.md",
+      "startLine": 91,
+      "endLine": 133,
+      "source": "memory",
+      "snippet": "### 今日严重失误 1. 未先读manager技能就操作项目 2. 用了错误的TODO模板格式 3. 误认为大管家可以\"协调+撰写\" 4. 反复问确认而非直接用对模板 ### 根因 - 身份边界模糊：知道\"协调者\"但行为上仍像\"执行者\" - 规范调用链断裂：有模板但没在任务一开始就读assets/ ### 已更新固化 - SOUL.md：身份边界铁律 - MEMORY.md：If-Then规则（但老板指出已有规则再说无用） ### 老板核心反馈 > \"我已经彻底失望了\"、\"规则已经说了很多遍，一直不改，屡教不改\" > \"你应该微调以往的表达\"、\"我已习得性无助了\" --- ## 技术学习 ### Pandoc YAML配置要点 - `standalone: true`：生成完整LaTeX文档 - `pdf-engine: xelatex`：使用xelatex引擎 - `input-files: []`：输入文件列表 - `bibliography: reference.bib`：参考文献库 - `csl: apa.csl`：引用样式 - `citeproc: false`：使用natbib/pandoc-citeproc处理引用 - `include-in-header: header.tex`：必须用文件路径 - `variables: {}`：LaTeX变量（字体、页面尺寸等） ### LaTeX必须用.tex文件的功能 - `\\usepackage{}` - `\\setlength{}` - `\\renewenvironment{}` - 自定义命令 #",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.0006170928478237,
+      "maxScore": 0.5224620580673217,
+      "firstRecalledAt": "2026-06-02T03:17:24.071Z",
+      "lastRecalledAt": "2026-06-02T07:16:01.117Z",
+      "queryHashes": [
+        "444e64538455",
+        "6b229d22a634",
+        "6f9509ec78d9",
+        "3c17f5bf17f7"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "soul.md",
+        "memory.md",
+        "if-then规则",
+        "pdf-engine",
+        "input-files",
+        "reference.bib",
+        "apa.csl",
+        "使用natbib/pandoc-citeproc处理引用"
+      ]
+    },
+    "memory:memory/2026-05-29.md:1:25": {
+      "key": "memory:memory/2026-05-29.md:1:25",
+      "path": "memory/2026-05-29.md",
+      "startLine": 1,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "# 2026-05-29 工作日志 --- ## 博士论文排版 ### 当前状态 - pandoc + xelatex 排版流程 - citeproc: false + natbib 方案（暂时） - 所有 `[@XXX]` 已转为 `\\citep{XXX}` ### citeproc: true 测试失败 - 使用 `input-files` 多文件输入时，citeproc 报错 \"No citation element present\" - 原因：Pandoc 拼接多文件时 citeproc 解析问题 - 解决方案：需要用 `--file-scope` CLI 参数，但无法写入 pandoc.yaml ### 待验证方案 - 方案A：用 `--file-scope` CLI 参数测试 - 方案B：单文件 vs 多文件的 citeproc 行为差异 ### 发现 - AI-Agent科普文章用 `citeproc: false` + `input-files` 成功 - 博士论文之前 citeproc 可以，现在不行——可能是文件数量变化",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.49950515329837797,
+      "maxScore": 0.49950515329837797,
+      "firstRecalledAt": "2026-06-02T11:33:11.497Z",
+      "lastRecalledAt": "2026-06-02T11:33:11.497Z",
+      "queryHashes": [
+        "9c4723b86ef7"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "input-files",
+        "file-scope",
+        "pandoc.yaml",
+        "ai-agent科普文章用",
+        "工作",
+        "日志",
+        "博士",
+        "论文"
+      ]
+    },
     "memory:memory/2026-05-29.md:13:15": {
       "key": "memory:memory/2026-05-29.md:13:15",
       "path": "memory/2026-05-29.md",
@@ -15906,6 +15793,147 @@
         "流程",
         "citeproc",
         "false"
+      ]
+    },
+    "memory:memory/2026-06-02.md:1:27": {
+      "key": "memory:memory/2026-06-02.md:1:27",
+      "path": "memory/2026-06-02.md",
+      "startLine": 1,
+      "endLine": 27,
+      "source": "memory",
+      "snippet": "# 2026-06-02 工作记忆（大管家） ## 今日关键事件 ### 1. workboard CLI 全面升级（commit `b350d78c`） - 创建阶段修复：默认 `status=backlog`、联动 `sessionKey`、联动 `execution.engine/model/mode` - 默认值：`engine=codex`, `model=minimax/MiniMax-M3` - **关键 bug 发现**：`normalizeExecution` 要求 `model` 必填，缺 `model` 时 execution 被静默丢弃 - 不自动 claim（老板明确\"不要\"） - 已知 Dashboard bug（优先级 high 显示 low，状态 todo 显示待办池） ### 2. skill-developer 三段式重构（v5.3.0 → v5.4.0） - 技能 = 工具名词（manager, developer） - 模块 = 工具作用的对象类（manager 的 maintainer/workboard 是对象类，skill-developer 的 skill 是对象类） - 方法 = 对对象的操作 - 模块名规范：本质是\"对象类\"，不是\"组件名\" - 新增 `skill-developer skill {init|check|audit|extend}` 四方法 ### 3. rps 项目**老板未授权就启动**，已挂起 - 位置：`/root/.openclaw/workspace/rock-paper-scissors-",
+      "recallCount": 11,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 5.756126990719986,
+      "maxScore": 0.8127238256775858,
+      "firstRecalledAt": "2026-06-02T07:49:27.154Z",
+      "lastRecalledAt": "2026-06-02T17:03:14.935Z",
+      "queryHashes": [
+        "6434bf2caf3a",
+        "fd320ef02f9c",
+        "78275913d738",
+        "c19b30768e9f",
+        "54b67eb5b20b",
+        "4f9666041126",
+        "89fb37dd0b11",
+        "5539cafce4f7",
+        "3f6e09057263",
+        "92b16d6383e6",
+        "4446bd991597"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "execution.engine/model/mode",
+        "minimax/minimax-m3",
+        "skill-developer",
+        "v5.3.0",
+        "v5.4.0",
+        "maintainer/workboard",
+        "工作",
+        "记忆"
+      ]
+    },
+    "memory:memory/2026-06-02.md:21:48": {
+      "key": "memory:memory/2026-06-02.md:21:48",
+      "path": "memory/2026-06-02.md",
+      "startLine": 21,
+      "endLine": 48,
+      "source": "memory",
+      "snippet": "- 老板原话：\"rps，我就没让你做！你把这个挂起！不要把token浪费在这个上面了\" - 已加入 MEMORY.md \"待跟进事项(Suspended)\" - **未经老板明确指令前不许碰** ### 4. task-guide.md v2.0 → v2.1 升级 - v2.0 错把 IM 降级为\"备选\"，老板纠正 - v2.1 明确**双层架构**：Workboard 是数据层（默认），IM 是可见层（必备） - IM 群通知 5 个模板（派发/认领/异常/完成/归档） - IM 私聊派发（涉密才用，§五） - §七 占位符分三组：数据层 11 个、可见层 5 个、v1.0 兼容 7 个 ### 5. wiki 命名规范 - synthesis 必须带 `YYYY-MM-DD-HH-MM-SS-` 前缀 - `wiki_apply create_synthesis` 不会自动加，创建后必须手动 `mv` - 已加 MEMORY 规则 v8.17.0 ### 6. CLI 入口修复 - `/usr/local/bin/manager` symlink 路径错（指向 `skills/manager/`，实际在 `.agents/skills/manager/`） - 老板规范：CLI 必须三段式 `技能名 模块名 方法名 [参数]` - 禁止 `python3 main.py <子命令>`，必须用 `manager <模块> <子命令>` - MEMORY 规则 v8.16.0 ## 待跟进事项 | 项 | 状态 | 备注 | |----|------|------|",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.0094145417213438,
+      "maxScore": 0.5371764093637466,
+      "firstRecalledAt": "2026-06-02T07:49:27.235Z",
+      "lastRecalledAt": "2026-06-02T17:13:23.286Z",
+      "queryHashes": [
+        "fd320ef02f9c",
+        "f10b3cb03e21"
+      ],
+      "recallDays": [
+        "2026-06-02",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "task-guide.md",
+        "v2.0",
+        "v2.1",
+        "派发/认领/异常/完成/归档",
+        "v1.0",
+        "yyyy-mm-dd-hh-mm-ss",
+        "wiki-apply"
+      ]
+    },
+    "memory:memory/2026-06-02.md:40:66": {
+      "key": "memory:memory/2026-06-02.md:40:66",
+      "path": "memory/2026-06-02.md",
+      "startLine": 40,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "- 禁止 `python3 main.py <子命令>`，必须用 `manager <模块> <子命令>` - MEMORY 规则 v8.16.0 ## 待跟进事项 | 项 | 状态 | 备注 | |----|------|------| | **审阅卡 `9787a61a-1980-4983-b32f-90d3e54ea35d`** | ⏳ 等老板审阅 | 验证 create 阶段修复效果 | | 清理 4 张测试卡 | 待授权 | 调试A/B/C + 调试卡已 done | | 修 `manager workboard read`（用错 RPC） | 老板说\"先修创建\" | 排在创建之后 | | Dashboard bug 提 issue | 优先级/状态显示错 | 等老板决定 | | Workboard 串联全流程 | 老板选\"修创建先\" | 暂搁置 | | 执行引擎 minimax m3 映射 | workboard 不支持 | 需提 OpenClaw 上游 issue | | `workboard.cards.read` RPC 不存在 | `manager workboard read` 失败 | 已知坏 | ## 老板工作模式观察 1. **强烈偏好\"分阶段修复-然后-审阅\"工作流** —— 修一个阶段，停下来建审阅卡，等审阅通过再继续 2. **极度看重 Dashboard 视觉验证** —— 多次指出我\"只看 RPC 返回\"是错的 3. **不会让任何无明确指令的工作继续** —— rps 项目被立即叫停 4. **直接给下一步指令**（\"下一步，cl",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.893071550130844,
+      "maxScore": 0.45839285552501674,
+      "firstRecalledAt": "2026-06-02T14:13:12.567Z",
+      "lastRecalledAt": "2026-06-02T14:13:12.901Z",
+      "queryHashes": [
+        "fa2c59116fc2",
+        "82e624a1ad4c"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "main.py",
+        "v8.16.0",
+        "调试a/b/c",
+        "优先级/状态显示错",
+        "workboard.cards.read",
+        "分阶段修复-然后-审阅",
+        "禁止",
+        "python3"
+      ]
+    },
+    "memory:memory/2026-06-02.md:59:78": {
+      "key": "memory:memory/2026-06-02.md:59:78",
+      "path": "memory/2026-06-02.md",
+      "startLine": 59,
+      "endLine": 78,
+      "source": "memory",
+      "snippet": "3. **不会让任何无明确指令的工作继续** —— rps 项目被立即叫停 4. **直接给下一步指令**（\"下一步，claim\"），不绕弯 5. **要分阶段汇报问题**（\"从创建到 claim，到执行到产出全流程，按流程来汇报\"） ## 自我反省（本会话踩坑清单） | # | 错 | 修正 | |---|----|----| | 1 | 无指令就自启 rps 项目 | 收到禁止指令，挂起 | | 2 | 只看 RPC 返回不查 Dashboard（重复 3 次）| 需写入 MEMORY：完成前必须 Dashboard 视觉验证 | | 3 | 把 IM 当备选，违背老板\"双层架构\"意图 | task-guide v2.1 已修正 | | 4 | 漏 wiki synthesis 时间戳前缀 | MEMORY v8.17.0 | | 5 | 把模块当组件名理解 | 老板纠正：模块 = 工具作用的对象类 | | 6 | skill-developer 文档没改就用 | v5.4.0 改完再实施 | | 7 | claim 概念没澄清就准备自动 claim | 老板问\"claim 是数据库还是状态\"才答对 | ## 老板的 open_id - `ou_25cf20a1973aecc51f73d8e2800d7f7e`（授权发送者 / 杨权）",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.9873302608728407,
+      "maxScore": 0.515096589922905,
+      "firstRecalledAt": "2026-06-02T07:47:34.877Z",
+      "lastRecalledAt": "2026-06-02T14:00:39.371Z",
+      "queryHashes": [
+        "c64bf2088a2b",
+        "29ec9168dbea",
+        "518a9045ad6d",
+        "79a676632946"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "task-guide",
+        "v2.1",
+        "v8.17.0",
+        "skill-developer",
+        "v5.4.0",
+        "open-id",
+        "不会",
+        "任何"
       ]
     }
   }

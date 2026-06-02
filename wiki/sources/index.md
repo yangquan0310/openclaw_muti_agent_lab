@@ -31,6 +31,7 @@
 ## Generated
 <!-- openclaw:wiki:sources:index:start -->
 - [[sources/conda|Conda 环境管理]]
+- [[sources/deepseek-cloud-local-hybrid-architecture|DeepSeek - 云端大模型+本地小模型+代理框架 工程化开发工作流]]
 - [[sources/openclaw-env|openclaw-env]]
 - [[sources/openclaw-system|openclaw-system]]
 - [[sources/openclaw-workspace|openclaw-workspace]]

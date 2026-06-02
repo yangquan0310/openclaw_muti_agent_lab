@@ -36,17 +36,29 @@
 
 ## CLI 命令
 
-格式：`{技能名} {子命令} [参数]`
+格式：`{技能名} {模块名} {方法名} [参数]`（**三段式**）
+
+| 段 | 命名 | 例子 |
+|----|------|------|
+| 技能名 | 字母、数字、连字符 | `skill-developer` |
+| 模块名 | 名词（与 references/ 一一对应）| `creation`, `extension`, `quality`, `naming`, `versioning`, `boundaries`, `principles`, `disclosure`, `audit` |
+| 方法名 | 动词或动词+名词 | `init`, `audit`, `check`, `extend`, `refactor` |
+| 参数 | 尽量少，每个参数有明确用途 | `<skill-name>`, `[path]`, `--format` |
 
 | 规范 | 要求 |
 |------|------|
-| 子命令 | 动词或动词+名词 |
-| 参数 | 尽量少，每个参数有明确用途 |
 | 帮助 | `-h/--help` 提供简洁说明 |
 
-**好的例子**：`skill-developer init my-skill "描述"`
+**好的例子**：
+```bash
+skill-developer creation init my-skill "描述"
+skill-developer quality audit ./my-skill
+skill-developer naming check <skill-name>
+```
 
-**坏的例子**：`skill-developer create-new-skill-with-options`
+**坏的例子**：
+- `skill-developer create-new-skill-with-options`（无模块分层）
+- `skill-developer init my-skill`（**两段式，已废弃**）
 
 ---
 

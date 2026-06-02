@@ -2,14 +2,14 @@
   "pageCounts": {
     "entity": 13,
     "concept": 53,
-    "source": 6,
-    "synthesis": 31,
+    "source": 7,
+    "synthesis": 32,
     "report": 10
   },
-  "claimCount": 21,
+  "claimCount": 23,
   "claimHealth": {
     "freshness": {
-      "fresh": 21,
+      "fresh": 23,
       "aging": 0,
       "stale": 0,
       "unknown": 0
@@ -26,6 +26,15 @@
       "entryCount": 1,
       "paths": [
         "syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md"
+      ]
+    },
+    {
+      "key": "deepseek 推荐 7b 13b 小b模型处理高频任务 但实际工业部署中 7b 模型的能力上限是否能稳定支撑 分类 情绪判断 等任务 需基准测试验证 ",
+      "label": "DeepSeek 推荐 7B-13B 小B模型处理高频任务，但实际工业部署中 7B 模型的能力上限是否能稳定支撑\"分类+情绪判断\"等任务？需基准测试验证。",
+      "kind": "page-note",
+      "entryCount": 1,
+      "paths": [
+        "syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md"
       ]
     }
   ],
@@ -61,7 +70,7 @@
       "path": "concepts/agent-personal-config-architecture.md",
       "aliases": [
         "个人配置规范",
-        "五件套规范",
+        "六件套规范",
         "代理配置架构"
       ],
       "sourceIds": [],
@@ -1834,7 +1843,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-01T08:50:58.968Z",
+      "lastTouchedAt": "2026-06-02T05:59:52.602Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1853,7 +1862,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-01T08:50:58.968Z",
+      "lastTouchedAt": "2026-06-02T06:03:05.379Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1909,7 +1918,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-01T08:50:58.968Z",
+      "lastTouchedAt": "2026-06-02T06:03:05.379Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1966,7 +1975,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-01T08:50:58.968Z",
+      "lastTouchedAt": "2026-06-02T05:59:52.602Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2026,6 +2035,29 @@
       "pageType": "source",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-05-12T11:05:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.deepseek-cloud-local-hybrid-architecture",
+      "title": "DeepSeek - 云端大模型+本地小模型+代理框架 工程化开发工作流",
+      "kind": "source",
+      "path": "sources/deepseek-cloud-local-hybrid-architecture.md",
+      "aliases": [
+        "大B小B模型协作",
+        "混合 AI 部署",
+        "DeepSeek 混合架构"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-02T13:55:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2932,7 +2964,7 @@
       "topClaims": [
         {
           "id": "claim.config.1",
-          "text": "代理个人配置五件套各有分工：AGENTS 定原则、SOUL 定风格、IDENTITY 定边界、MEMORY 定规则、实践技能定流程",
+          "text": "代理个人配置六件套各有分工：AGENTS 定原则、SOUL 定风格、IDENTITY 定边界、MEMORY 定规则、实践技能定流程",
           "status": "supported",
           "confidence": 0.95,
           "evidenceCount": 0,
@@ -2990,6 +3022,73 @@
           "evidence": [],
           "freshnessLevel": "fresh",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
+        }
+      ]
+    },
+    {
+      "id": "synthesis.云端大模型-本地小模型-混合架构-工程化实践",
+      "title": "云端大模型+本地小模型 混合架构 工程化实践",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md",
+      "aliases": [],
+      "sourceIds": [
+        "source.deepseek-cloud-local-hybrid-architecture"
+      ],
+      "questions": [
+        "OpenClaw 引入本地小模型后，多 agent 协作的 claim/heartbeat 机制是否还能正常工作（特别是大模型路由时）？",
+        "Workboard 看板的\"卡片状态机\"是否可以直接演化为\"工作流 DAG 节点\"？",
+        "本地小模型选型：Qwen 2.5 7B / Llama 3.1 8B / Mistral 7B 哪个最适配 OpenClaw 场景？"
+      ],
+      "contradictions": [
+        "DeepSeek 推荐 7B-13B 小B模型处理高频任务，但实际工业部署中 7B 模型的能力上限是否能稳定支撑\"分类+情绪判断\"等任务？需基准测试验证。"
+      ],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "confidence": 0.6,
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-02T05:59:52.026Z",
+      "claimCount": 2,
+      "topClaims": [
+        {
+          "id": "claim-2",
+          "text": "开发期大B输出静态工作流定义（DAG），运行期小B严格按剧本执行，可显著降低 token 成本并保护敏感数据",
+          "status": "partially-verified",
+          "confidence": 0.7,
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "source.deepseek-cloud-local-hybrid-architecture",
+              "path": "https://chat.deepseek.com/share/wth27xgnr7kztgb5rf",
+              "weight": 0.8,
+              "note": "典型场景（退款工单）节省 2 次云端调用，案例具体可参考"
+            }
+          ],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-06-02T05:59:52.026Z"
+        },
+        {
+          "id": "claim-1",
+          "text": "云端大模型做大脑（规划/设计），本地小模型做手脚（执行/落地），通过 Docker 和代理框架实现混合 AI 部署是成熟模式",
+          "status": "partially-verified",
+          "confidence": 0.6,
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "source.deepseek-cloud-local-hybrid-architecture",
+              "path": "https://chat.deepseek.com/share/wth27xgnr7kztgb5rf",
+              "weight": 0.7,
+              "note": "DeepSeek 单一来源，需更多工程实践验证"
+            }
+          ],
+          "freshnessLevel": "fresh",
+          "lastTouchedAt": "2026-06-02T05:59:52.026Z"
         }
       ]
     }

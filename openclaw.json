@@ -327,7 +327,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-06-01T15:52:46.626Z"
+    "lastTouchedAt": "2026-06-02T15:57:10.981Z"
   },
   "browser": {
     "enabled": true,
@@ -374,13 +374,14 @@
         ]
       },
       "deepseek": {
-        "baseUrl": "https://api.deepseek.com/anthropic",
+        "baseUrl": "https://api.deepseek.com",
         "apiKey": "${DEEPSEEK_API_KEY}",
-        "api": "anthropic-messages",
+        "api": "openai-completions",
         "models": [
           {
             "id": "deepseek-v4-flash",
             "name": "DeepSeek V4 Flash",
+            "reasoning": true,
             "contextWindow": 1000000,
             "maxTokens": 384000,
             "cost": {
@@ -822,35 +823,37 @@
         "enabled": true,
         "config": {}
       },
+      "workboard": {
+        "enabled": true
+      },
       "agent-self-development": {
-        "enabled": true,
-        "hooks": {
-          "allowConversationAccess": true
-        },
-        "config": {}
+        "enabled": true
       }
     },
     "allow": [
-      "browser",
       "active-memory",
+      "agent-self-development",
+      "browser",
+      "deepseek",
+      "document-extract",
+      "exa",
+      "kimi",
       "memory-core",
       "memory-wiki",
+      "minimax",
+      "moonshot",
       "openclaw-lark",
       "openclaw-weixin",
       "qqbot",
-      "deepseek",
-      "zai",
-      "minimax",
-      "moonshot",
-      "xiaomi",
-      "kimi",
-      "exa",
       "tavily",
-      "document-extract",
-      "agent-self-development"
+      "workboard",
+      "xiaomi",
+      "zai"
     ],
     "load": {
-      "paths": []
+      "paths": [
+        "/data/disk/仓库/agent-self-development"
+      ]
     },
     "slots": {
       "memory": "memory-core"

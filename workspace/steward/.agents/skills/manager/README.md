@@ -20,7 +20,7 @@
 | 课程项目整理 | [course-guide.md](references/course-guide.md) |
 | 程序项目整理 | [program-guide.md](references/program-guide.md) |
 | wiki 知识库维护 | [knowledge-guide.md](references/knowledge-guide.md) |
-| 多代理任务派发 | [task-guide.md](references/task-guide.md) |
+| 多代理任务派发 | [task-flow-guide.md](references/task-flow-guide.md) |
 | 通用项目整理 | [project-guide.md](references/project-guide.md) |
 
 ---
@@ -39,7 +39,7 @@ manager/
 │   ├── course-guide.md   # 课程管理
 │   ├── program-guide.md  # 程序管理
 │   ├── knowledge-guide.md # 知识库管理
-│   ├── task-guide.md     # 任务派发
+│   ├── task-flow-guide.md     # 任务派发（v2.2 三件套）
 │   ├── project-guide.md  # 通用项目
 │   ├── directory-standards.md  # 目录规范
 │   ├── contract-standards.md   # 契约文件

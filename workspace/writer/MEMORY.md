@@ -23,7 +23,7 @@
 
 | 任务ID | 项目 | 任务描述 | 完成时间 | 备注 |
 |--------|------|----------|----------|------|
-||||||
+| `2b1f89f2` | writer @oc_983c895 群会话任务（占位） | 验证 Workboard create 不传 --status 时 --session 触发 backlog 默认值 + execution.sessionKey 完整同步；卡片已 claim→proof→review | 2026-06-03 00:41 | 占位测试，无文件产出；群汇报 message_id `om_x100b6ec4cb5c1530c0a00639a5ce24d` |
 
 
 ## 程序性记忆(Procedural Memory)
@@ -57,6 +57,7 @@
 
 
 | **需要重复发送同样内容** | **先艾特用户确认是否发送成功，再决定是否重试；禁止在未经确认的情况下盲目重试** |
+| **处理 Workboard 卡片** | **卡片真实 ID 是 UUID 格式**（如 `2b1f89f2-7437-4182-98f3-698a14c84a80`），任务标题里的 `oc_xxx` 往往是飞书群 chat_id 而非卡片 ID。处理步骤：先 `workboard_list` 找到 UUID → 用 UUID 调用 `workboard_claim`/`workboard_read`/`workboard_proof`/`workboard_release`，别用 `oc_xxx` 误用为卡片 ID |
 
 ## 历史版本
 

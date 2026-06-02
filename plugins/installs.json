@@ -4,19 +4,16 @@
   "hostContractVersion": "2026.5.28",
   "compatRegistryVersion": "83616130f933585b84e09f19f9891a959b9bd6ce25d027eba4680bfd49be5abe",
   "migrationVersion": 1,
-  "policyHash": "c05113e33de620ded96730f9d22d856672b3c4c4d33ffa3d2b4d5be32b34210a",
-  "generatedAtMs": 1780203850089,
-  "refreshReason": "migration",
+  "policyHash": "10ab992529463a55befc03cc88bf0026fadc25a5c9eaca691099053dcc666a9c",
+  "generatedAtMs": 1780415831117,
+  "refreshReason": "source-changed",
   "installRecords": {
     "agent-self-development": {
-      "source": "git",
-      "spec": "git:github.com/yangquan0310/agent-self-development",
-      "installPath": "/root/.openclaw/git/git-de97ffe848595ced/repo",
-      "version": "4.5.0",
-      "resolvedAt": "2026-05-31T04:55:17.346Z",
-      "installedAt": "2026-05-31T04:55:17.347Z",
-      "gitUrl": "https://github.com/yangquan0310/agent-self-development.git",
-      "gitCommit": "277f4adbbdccae49e884abb8d872e1d54ae4754c"
+      "source": "path",
+      "sourcePath": "/data/disk/仓库/agent-self-development",
+      "installPath": "/data/disk/仓库/agent-self-development",
+      "version": "4.5.1",
+      "installedAt": "2026-06-02T15:57:10.265Z"
     },
     "memory-tencentdb": {
       "source": "npm",
@@ -67,19 +64,52 @@
       "resolvedSpec": "@openclaw/qqbot@2026.5.28",
       "integrity": "sha512-ILxltIvJh1XCwITiAGW0DJFFfoUb2msfyU+fgdoPMns6PLN7dOo3KUNzDkDsImAJ0EEZDyWdzhhaYImp1+Hepw==",
       "shasum": "fb3c8de1131eeaeb19f3d1f1c66d85d5087365b1",
-      "resolvedAt": "2026-05-31T04:55:22.142Z",
-      "installedAt": "2026-05-31T04:55:30.049Z"
+      "resolvedAt": "2026-06-02T14:59:00.480Z",
+      "installedAt": "2026-06-02T14:59:05.652Z"
     }
   },
   "plugins": [
+    {
+      "pluginId": "agent-self-development",
+      "manifestPath": "/data/disk/仓库/agent-self-development/openclaw.plugin.json",
+      "manifestHash": "67913918781a43edda3c5aa4da04eb2972e0ebed30ab32b47a7b0a6e2fd5b814",
+      "manifestFile": {
+        "size": 948,
+        "mtimeMs": 1780415379422.0947,
+        "ctimeMs": 1780415379422.0947
+      },
+      "source": "/data/disk/仓库/agent-self-development/src/index.js",
+      "rootDir": "/data/disk/仓库/agent-self-development",
+      "origin": "config",
+      "enabled": true,
+      "startup": {
+        "sidecar": false,
+        "memory": false,
+        "deferConfiguredChannelFullLoadUntilAfterListen": false,
+        "agentHarnesses": []
+      },
+      "compat": [],
+      "packageName": "agent-self-development",
+      "packageVersion": "4.5.1",
+      "installRecordHash": "b21774f1531babee981de716744af6f8bd588fe87b072f0575851c3f8c3f8d3e",
+      "packageJson": {
+        "path": "package.json",
+        "hash": "e3f95bf8967d0ec5017ac3b02f5237bdba2ab68d80478cbe0447abda167db65e",
+        "fileSignature": {
+          "size": 803,
+          "mtimeMs": 1780415379422.0947,
+          "ctimeMs": 1780415379422.0947
+        }
+      }
+    },
     {
       "pluginId": "active-memory",
       "manifestPath": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/active-memory/openclaw.plugin.json",
       "manifestHash": "4c980e5ee4e7f524e40cc22ba63b3a04af0dc6945caa094e3c9d6b126dcd8f20",
       "manifestFile": {
         "size": 8836,
-        "mtimeMs": 1780202645335.3972,
-        "ctimeMs": 1780202645335.3972
+        "mtimeMs": 1780412130905.9158,
+        "ctimeMs": 1780412130905.9158
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/active-memory/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/active-memory",
@@ -99,8 +129,8 @@
       "manifestHash": "fdc5e1cdeef340d975c104515f0e8b3aec42bf80c27de8b26ac8ae8d3b1593d4",
       "manifestFile": {
         "size": 336,
-        "mtimeMs": 1780202645335.3972,
-        "ctimeMs": 1780202645335.3972
+        "mtimeMs": 1780412130906.9158,
+        "ctimeMs": 1780412130906.9158
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/admin-http-rpc/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/admin-http-rpc",
@@ -122,8 +152,8 @@
         "hash": "e96558cba3d97380d3da7b648c2350a72a7a45dcb3aaf1e1af42a820681d5544",
         "fileSignature": {
           "size": 295,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130993.9167,
+          "ctimeMs": 1780412130993.9167
         }
       }
     },
@@ -133,8 +163,8 @@
       "manifestHash": "41072056eb8e89799556d17b99d78adca7c0502e192d611bcb9caea56102537f",
       "manifestFile": {
         "size": 1087,
-        "mtimeMs": 1780202645335.3972,
-        "ctimeMs": 1780202645335.3972
+        "mtimeMs": 1780412130907.916,
+        "ctimeMs": 1780412130907.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/alibaba/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/alibaba",
@@ -155,8 +185,8 @@
         "hash": "40a3538200facc8239af4adcf65559530837e31617c1a3217aeb91d3e3ff58ea",
         "fileSignature": {
           "size": 316,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130995.9167,
+          "ctimeMs": 1780412130995.9167
         }
       }
     },
@@ -166,8 +196,8 @@
       "manifestHash": "54ee9c428aca425272addbb0961be425f6f518fce0111e9b8affc9f188098768",
       "manifestFile": {
         "size": 7314,
-        "mtimeMs": 1780202645335.3972,
-        "ctimeMs": 1780202645335.3972
+        "mtimeMs": 1780412130907.916,
+        "ctimeMs": 1780412130907.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/anthropic/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/anthropic",
@@ -193,8 +223,8 @@
         "hash": "912407ca862f5d0eb09b2f46694434c7f234a6d619fef6671e404bb41b661623",
         "fileSignature": {
           "size": 301,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130995.9167,
+          "ctimeMs": 1780412130995.9167
         }
       }
     },
@@ -204,8 +234,8 @@
       "manifestHash": "b2a546a0bdfc98852742b0a3d6405dc586bf073b639ea6a4b2d5fe3ab028f981",
       "manifestFile": {
         "size": 1375,
-        "mtimeMs": 1780202645335.3972,
-        "ctimeMs": 1780202645335.3972
+        "mtimeMs": 1780412130908.916,
+        "ctimeMs": 1780412130908.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/arcee/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/arcee",
@@ -226,8 +256,8 @@
         "hash": "dcc68497a2a1ded4f20f53ca451f15ceb3bf571228718c76f70a6c0e1ecba958",
         "fileSignature": {
           "size": 293,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130995.9167,
+          "ctimeMs": 1780412130995.9167
         }
       }
     },
@@ -237,8 +267,8 @@
       "manifestHash": "e9acb86a38021c6bcb2b97704c615b890ac9802b73ec34cbe537ef2665d457e0",
       "manifestFile": {
         "size": 2060,
-        "mtimeMs": 1780202645335.3972,
-        "ctimeMs": 1780202645335.3972
+        "mtimeMs": 1780412130908.916,
+        "ctimeMs": 1780412130908.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/azure-speech/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/azure-speech",
@@ -259,8 +289,8 @@
         "hash": "b864e7a9c12e4b65e138d1585b6307cb3b0ae609e646cc2d088af86c32e5c3b5",
         "fileSignature": {
           "size": 289,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130995.9167,
+          "ctimeMs": 1780412130995.9167
         }
       }
     },
@@ -270,8 +300,8 @@
       "manifestHash": "dd4a71a9d9bd4b33a0a5057c9caa5eabe2abc508993910e2f54fb092cb7b7a42",
       "manifestFile": {
         "size": 338,
-        "mtimeMs": 1780202645336.3972,
-        "ctimeMs": 1780202645336.3972
+        "mtimeMs": 1780412130909.916,
+        "ctimeMs": 1780412130909.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/bonjour/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/bonjour",
@@ -294,8 +324,8 @@
         "hash": "d5fa8571610d987833089831732eda5d1310b56f3a61d4152484878495b988e5",
         "fileSignature": {
           "size": 333,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130996.9167,
+          "ctimeMs": 1780412130996.9167
         }
       }
     },
@@ -305,8 +335,8 @@
       "manifestHash": "8c707bde12a49ae31ecec38a04d0f139e7ca0efe86b1ba299a0fedc61162acb3",
       "manifestFile": {
         "size": 400,
-        "mtimeMs": 1780202645336.3972,
-        "ctimeMs": 1780202645336.3972
+        "mtimeMs": 1780412130910.916,
+        "ctimeMs": 1780412130910.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/browser/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/browser",
@@ -329,8 +359,8 @@
         "hash": "dd0fd2bd34f1d7af9f55bd7f0a01e00562b793508bce7b5b8361fdb537031ab9",
         "fileSignature": {
           "size": 510,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130996.9167,
+          "ctimeMs": 1780412130996.9167
         }
       }
     },
@@ -340,8 +370,8 @@
       "manifestHash": "641e7e656b893fd42f7e3429adc1c3d71dfd60cabfff03cbeb9ac900b2fc815f",
       "manifestFile": {
         "size": 4732,
-        "mtimeMs": 1780202645336.3972,
-        "ctimeMs": 1780202645336.3972
+        "mtimeMs": 1780412130910.916,
+        "ctimeMs": 1780412130910.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/byteplus/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/byteplus",
@@ -362,8 +392,8 @@
         "hash": "cfc824b6336a00ab0552b6935bbda8032d070db1cd17020136ad39db86738eea",
         "fileSignature": {
           "size": 299,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130996.9167,
+          "ctimeMs": 1780412130996.9167
         }
       }
     },
@@ -373,8 +403,8 @@
       "manifestHash": "95d29758fccb5c392a4d1d764ae6872d63a0b824edfb08d58042d97d3ec21759",
       "manifestFile": {
         "size": 872,
-        "mtimeMs": 1780202645336.3972,
-        "ctimeMs": 1780202645336.3972
+        "mtimeMs": 1780412130912.916,
+        "ctimeMs": 1780412130912.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/canvas/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/canvas",
@@ -395,8 +425,8 @@
         "hash": "e33fae8229e5c66e2b7dda124c9d343f567d0b100b046c9971186d541eeffa89",
         "fileSignature": {
           "size": 573,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130997.9167,
+          "ctimeMs": 1780412130997.9167
         }
       }
     },
@@ -406,8 +436,8 @@
       "manifestHash": "bfb547926762d6a6fe34dd9b2e9a51a70dba675b795ba61c6b98df375bad9220",
       "manifestFile": {
         "size": 2945,
-        "mtimeMs": 1780202645336.3972,
-        "ctimeMs": 1780202645336.3972
+        "mtimeMs": 1780412130912.916,
+        "ctimeMs": 1780412130912.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/cerebras/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/cerebras",
@@ -428,8 +458,8 @@
         "hash": "d0019c467f30bc84c666b43280b65642383fd203f09f63603a9c2897e2ce33dd",
         "fileSignature": {
           "size": 299,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130998.9167,
+          "ctimeMs": 1780412130998.9167
         }
       }
     },
@@ -439,8 +469,8 @@
       "manifestHash": "ef1787d22592bbad9e03ccffbaf414d8cd89405f4907e2593ab5890bd1d61606",
       "manifestFile": {
         "size": 23031,
-        "mtimeMs": 1780202645336.3972,
-        "ctimeMs": 1780202645336.3972
+        "mtimeMs": 1780412130912.916,
+        "ctimeMs": 1780412130912.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/chutes/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/chutes",
@@ -461,8 +491,8 @@
         "hash": "7ebd50b0d2e44d57226b6756e342684231d34313cbbc2debf3cd512990cda435",
         "fileSignature": {
           "size": 298,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130998.9167,
+          "ctimeMs": 1780412130998.9167
         }
       }
     },
@@ -472,8 +502,8 @@
       "manifestHash": "d7b635ef787baa52d57ddc8f4d8860e89f87da3726aceb89dbd6d9657888ad2b",
       "manifestFile": {
         "size": 9412,
-        "mtimeMs": 1780202645336.3972,
-        "ctimeMs": 1780202645336.3972
+        "mtimeMs": 1780412130913.916,
+        "ctimeMs": 1780412130913.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/clickclack/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/clickclack",
@@ -512,8 +542,8 @@
         "hash": "0a751e8a081bd3c7c66d79e0558d759b03213ab9b9f467a748dc4caf3cc458b7",
         "fileSignature": {
           "size": 1214,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130999.9167,
+          "ctimeMs": 1780412130999.9167
         }
       }
     },
@@ -523,8 +553,8 @@
       "manifestHash": "e8d9e791c3e2472c88d58c05f5363a910c699a65a4369ac1ffa35c2625ee631c",
       "manifestFile": {
         "size": 1304,
-        "mtimeMs": 1780202645336.3972,
-        "ctimeMs": 1780202645336.3972
+        "mtimeMs": 1780412130914.916,
+        "ctimeMs": 1780412130914.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/cloudflare-ai-gateway/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/cloudflare-ai-gateway",
@@ -545,8 +575,8 @@
         "hash": "adf0db16f22b03b040cad381c5652be614802a2068bc14cbf82801260fd41995",
         "fileSignature": {
           "size": 325,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412130999.9167,
+          "ctimeMs": 1780412130999.9167
         }
       }
     },
@@ -556,8 +586,8 @@
       "manifestHash": "dab45f8336d4279b9d7fd6d5eccf86559d8d4f1adaefe5210dc5c76b40fcf876",
       "manifestFile": {
         "size": 2165,
-        "mtimeMs": 1780202645336.3972,
-        "ctimeMs": 1780202645336.3972
+        "mtimeMs": 1780412130914.916,
+        "ctimeMs": 1780412130914.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/codex-supervisor/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/codex-supervisor",
@@ -577,8 +607,8 @@
         "hash": "cefb79e11d78c53c271a00e65e2211e42994967c9c8023f9fe1d8f19d5ff64f6",
         "fileSignature": {
           "size": 448,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412131000.9167,
+          "ctimeMs": 1780412131000.9167
         }
       }
     },
@@ -588,8 +618,8 @@
       "manifestHash": "131ba7b5521dc42bbb0384a6327ca3f28ff44cdb615d861e2d7ed3e0af394910",
       "manifestFile": {
         "size": 9587,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130929.916,
+        "ctimeMs": 1780412130929.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/comfy/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/comfy",
@@ -610,8 +640,8 @@
         "hash": "df646e2e9d539ca812a4a74ec023deb06ce40889361eaf804406c0ea3a9f8662",
         "fileSignature": {
           "size": 295,
-          "mtimeMs": 1780202645342.3975,
-          "ctimeMs": 1780202645342.3975
+          "mtimeMs": 1780412131000.9167,
+          "ctimeMs": 1780412131000.9167
         }
       }
     },
@@ -621,8 +651,8 @@
       "manifestHash": "2e238fcce7097fc4e52b8fded692a105f61c671c6805c70bcfdc840412981390",
       "manifestFile": {
         "size": 645,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130929.916,
+        "ctimeMs": 1780412130929.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/copilot-proxy/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/copilot-proxy",
@@ -643,8 +673,8 @@
         "hash": "008341c0bcb5947ce9aa68c0121d8e2cd2b53707d8db7c917cbde1401146aef5",
         "fileSignature": {
           "size": 300,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131001.9167,
+          "ctimeMs": 1780412131001.9167
         }
       }
     },
@@ -654,8 +684,8 @@
       "manifestHash": "33708188c75e2dfe43125260a038f7d578b0f5671b0efef51242c308cde75b79",
       "manifestFile": {
         "size": 723,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130929.916,
+        "ctimeMs": 1780412130929.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/deepgram/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/deepgram",
@@ -676,8 +706,8 @@
         "hash": "0431866b2ad66f54076d01b86ff0d5a8d05ced253009355d6b1c36738371136b",
         "fileSignature": {
           "size": 312,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131002.9167,
+          "ctimeMs": 1780412131002.9167
         }
       }
     },
@@ -687,8 +717,8 @@
       "manifestHash": "0faadc14b7e38145c36418b47b842f0e3cc04cddef17ff99fe05a4b196ff9d2b",
       "manifestFile": {
         "size": 6442,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130930.916,
+        "ctimeMs": 1780412130930.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/deepinfra/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/deepinfra",
@@ -711,8 +741,8 @@
         "hash": "4f16cc80905d43fffb863f4e97513d1faba2edbbaf6b9bb0a5fb687858ec78b9",
         "fileSignature": {
           "size": 301,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131002.9167,
+          "ctimeMs": 1780412131002.9167
         }
       }
     },
@@ -722,8 +752,8 @@
       "manifestHash": "d7ea028516d78e34fb7081b58b6d7b26c89efaff40f9ac3f7dc7a0a091d907ef",
       "manifestFile": {
         "size": 3684,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130930.916,
+        "ctimeMs": 1780412130930.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/deepseek/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/deepseek",
@@ -744,8 +774,8 @@
         "hash": "32f20f6b3ec6496524d7a691bcdd1d29304bb4bd911ae9bc4e0e9a8a066eb4f0",
         "fileSignature": {
           "size": 299,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131003.9167,
+          "ctimeMs": 1780412131003.9167
         }
       }
     },
@@ -755,8 +785,8 @@
       "manifestHash": "12927d5b8f22d47494cc74bd977149db7f4923665d775f78e06c73b1608b7cd2",
       "manifestFile": {
         "size": 621,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130932.916,
+        "ctimeMs": 1780412130932.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/device-pair/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/device-pair",
@@ -777,8 +807,8 @@
       "manifestHash": "c4bcd246214ef231b69b438dc8a4b7d0bcf51c8605e0ea32f1db4c7a8dc0df18",
       "manifestFile": {
         "size": 400,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130932.916,
+        "ctimeMs": 1780412130932.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/document-extract/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/document-extract",
@@ -799,8 +829,8 @@
         "hash": "98814f765eaece6b9bc4fc7a40d2d10d34304b5e2c8fc0b42f104b79d215a2f0",
         "fileSignature": {
           "size": 361,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131003.9167,
+          "ctimeMs": 1780412131003.9167
         }
       }
     },
@@ -810,8 +840,8 @@
       "manifestHash": "97c43b0c6846179073a218e2f878a8523d7467743919e18deef83ab95e49ca21",
       "manifestFile": {
         "size": 922,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130932.916,
+        "ctimeMs": 1780412130932.916
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/duckduckgo/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/duckduckgo",
@@ -831,8 +861,8 @@
         "hash": "be87944df87ac682cc139836fde216f013983ce3fa5b4b3c5862a6a93783b399",
         "fileSignature": {
           "size": 292,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131003.9167,
+          "ctimeMs": 1780412131003.9167
         }
       }
     },
@@ -842,8 +872,8 @@
       "manifestHash": "9df3fa6f0b659cbafa888eb64cbbc951d552c2600cff4a45950fcf789415d69a",
       "manifestFile": {
         "size": 1002,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130933.9163,
+        "ctimeMs": 1780412130933.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/elevenlabs/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/elevenlabs",
@@ -864,8 +894,8 @@
         "hash": "c1d229945c0ae1fcdce332adab3a9de374c5bc4e51219002ae6de6d6fbcc653e",
         "fileSignature": {
           "size": 299,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131004.9167,
+          "ctimeMs": 1780412131004.9167
         }
       }
     },
@@ -875,8 +905,8 @@
       "manifestHash": "95392ace14897483a552f5b7d314d9b8b25796f650c3e469374736ecfbe5e722",
       "manifestFile": {
         "size": 1190,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130934.9163,
+        "ctimeMs": 1780412130934.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/exa/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/exa",
@@ -896,8 +926,8 @@
         "hash": "b3f0b88923002ebbb1a364f779bf759543c4bed14240878db42d9d8c30ae6fa2",
         "fileSignature": {
           "size": 278,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131005.9167,
+          "ctimeMs": 1780412131005.9167
         }
       }
     },
@@ -907,8 +937,8 @@
       "manifestHash": "c18ff410c367a62cf530e728937beb261ec29752cc0a1ac95cf8815a0451ad04",
       "manifestFile": {
         "size": 1172,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130934.9163,
+        "ctimeMs": 1780412130934.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/fal/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/fal",
@@ -929,8 +959,8 @@
         "hash": "9e6196c5e13976fdb8f15fc9e9b36aaddd2fa6a65d12b654cf4df45dc7880eba",
         "fileSignature": {
           "size": 289,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131005.9167,
+          "ctimeMs": 1780412131005.9167
         }
       }
     },
@@ -940,8 +970,8 @@
       "manifestHash": "58af0929b80753b3778f240b8480cbaf7d14280ac81cce23b01d92b51e44ae0e",
       "manifestFile": {
         "size": 1559,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130936.9163,
+        "ctimeMs": 1780412130936.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/file-transfer/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/file-transfer",
@@ -962,8 +992,8 @@
         "hash": "456546d1e18cd46d21f1488ef53907073098fa579452227ab9345c1f55cd2151",
         "fileSignature": {
           "size": 394,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131006.9167,
+          "ctimeMs": 1780412131006.9167
         }
       }
     },
@@ -973,8 +1003,8 @@
       "manifestHash": "6a901631cfc25003a398127ae1b18b63a2740ea26bd2ce10a05035e80d7cc19e",
       "manifestFile": {
         "size": 2179,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130936.9163,
+        "ctimeMs": 1780412130936.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/firecrawl/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/firecrawl",
@@ -994,8 +1024,8 @@
         "hash": "ecda986d9341db91451dae213b9445af0a4ae94fd0ea8bc6b21fd465d6f43329",
         "fileSignature": {
           "size": 339,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131006.9167,
+          "ctimeMs": 1780412131006.9167
         }
       }
     },
@@ -1005,8 +1035,8 @@
       "manifestHash": "2e682eeb1a3624fb27a183f2d74a5d79fbec8fa0c191792b9360bc1797e7ceae",
       "manifestFile": {
         "size": 2077,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130936.9163,
+        "ctimeMs": 1780412130936.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/fireworks/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/fireworks",
@@ -1027,8 +1057,8 @@
         "hash": "afc03f11952b1a68b767bb504ce455d1cef8d8e5c0a796828d90f97c2eaa7c21",
         "fileSignature": {
           "size": 301,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131007.9167,
+          "ctimeMs": 1780412131007.9167
         }
       }
     },
@@ -1038,8 +1068,8 @@
       "manifestHash": "238694bdad530241d6cfa247ea9a9e7cb20b2de2330e7afa472d197fbbe568a6",
       "manifestFile": {
         "size": 7535,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130936.9163,
+        "ctimeMs": 1780412130936.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/github-copilot/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/github-copilot",
@@ -1060,8 +1090,8 @@
         "hash": "40e3537eb0dcab6560e40682960419ed19394b181f827770c729c502cb4c45cb",
         "fileSignature": {
           "size": 366,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131007.9167,
+          "ctimeMs": 1780412131007.9167
         }
       }
     },
@@ -1071,8 +1101,8 @@
       "manifestHash": "51c3bb5b2837ec96b09aea4e995aada9298e2acbfec70025478c35c011b546a0",
       "manifestFile": {
         "size": 28465,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130938.9163,
+        "ctimeMs": 1780412130938.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/google/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/google",
@@ -1095,8 +1125,8 @@
         "hash": "94757bf6f7f197a7294c39e94815c3673a110fd14ac9b024f70c54fdaf4fe69a",
         "fileSignature": {
           "size": 375,
-          "mtimeMs": 1780202645343.3975,
-          "ctimeMs": 1780202645343.3975
+          "mtimeMs": 1780412131008.9167,
+          "ctimeMs": 1780412131008.9167
         }
       }
     },
@@ -1106,8 +1136,8 @@
       "manifestHash": "1a21296070e5740c4cff326b263be4c9c418d6b09e8182f7a2ae50cba39aa8e0",
       "manifestFile": {
         "size": 383,
-        "mtimeMs": 1780202645337.3972,
-        "ctimeMs": 1780202645337.3972
+        "mtimeMs": 1780412130938.9163,
+        "ctimeMs": 1780412130938.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/gradium/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/gradium",
@@ -1127,8 +1157,8 @@
         "hash": "f8cc7b1503fbd0dc698f57334e56cf63ea2fad7ec84a6b4be214c09f9da0ec1d",
         "fileSignature": {
           "size": 293,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131008.9167,
+          "ctimeMs": 1780412131008.9167
         }
       }
     },
@@ -1138,8 +1168,8 @@
       "manifestHash": "37c1fa249ca5d03b6a78866330853a71a38f2f526c8d3649a1cc7eb609d8f1e1",
       "manifestFile": {
         "size": 5225,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130939.9163,
+        "ctimeMs": 1780412130939.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/groq/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/groq",
@@ -1160,8 +1190,8 @@
         "hash": "88a4d1c79f29307fe852e64b6586dcd81f39681cf7c04acf53c6aa636b68023d",
         "fileSignature": {
           "size": 304,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131010.9167,
+          "ctimeMs": 1780412131010.9167
         }
       }
     },
@@ -1171,8 +1201,8 @@
       "manifestHash": "2ec94d8623ace2c7349a284749696e711997681c92957749437cd8fe2e9e3f6f",
       "manifestFile": {
         "size": 1688,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130939.9163,
+        "ctimeMs": 1780412130939.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/huggingface/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/huggingface",
@@ -1193,8 +1223,8 @@
         "hash": "a1b446f2cd87b3138697f6e403ee7dc675bfab96c110236100e554788099120c",
         "fileSignature": {
           "size": 306,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131010.9167,
+          "ctimeMs": 1780412131010.9167
         }
       }
     },
@@ -1204,8 +1234,8 @@
       "manifestHash": "ea2011f2118e95fd5550df73d77e843653877b6f2edf74c5a9aa85c199b32b28",
       "manifestFile": {
         "size": 24873,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130941.9163,
+        "ctimeMs": 1780412130941.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/imessage/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/imessage",
@@ -1253,8 +1283,8 @@
         "hash": "25fc984ca9e5315249be7099a88952aef9af2e03c78f8750429eca7ff5857356",
         "fileSignature": {
           "size": 1761,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131011.9167,
+          "ctimeMs": 1780412131011.9167
         }
       }
     },
@@ -1264,8 +1294,8 @@
       "manifestHash": "000732dd27b979de727c6c3060aeaba47b8af1f850320699862fb2cf0a254529",
       "manifestFile": {
         "size": 1293,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130942.9163,
+        "ctimeMs": 1780412130942.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/inworld/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/inworld",
@@ -1286,8 +1316,8 @@
         "hash": "b91b8204e85cca6479fbdead46b627d829dd6aed85d30e6542770110f0fd446d",
         "fileSignature": {
           "size": 293,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131011.9167,
+          "ctimeMs": 1780412131011.9167
         }
       }
     },
@@ -1297,8 +1327,8 @@
       "manifestHash": "1065f8ff5cf69276d66de118b25933972e29907d942a18eb36994080f40a5a8d",
       "manifestFile": {
         "size": 21165,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130942.9163,
+        "ctimeMs": 1780412130942.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/irc/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/irc",
@@ -1347,8 +1377,8 @@
         "hash": "db6efd14682f08447af400bf18bc4e962bc0aab17142f81e4d8d49e544ce370f",
         "fileSignature": {
           "size": 1012,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131012.917,
+          "ctimeMs": 1780412131012.917
         }
       }
     },
@@ -1358,8 +1388,8 @@
       "manifestHash": "67dd7a5b32c65c8a48a224134f7f139f43c00af9b399673a7b159ffc793d4430",
       "manifestFile": {
         "size": 1819,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130942.9163,
+        "ctimeMs": 1780412130942.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/kilocode/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/kilocode",
@@ -1380,8 +1410,8 @@
         "hash": "6af6ecfc0cb4b926733d92b48994b08f630e7b5f39b5f029cdec9111906028d5",
         "fileSignature": {
           "size": 303,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131012.917,
+          "ctimeMs": 1780412131012.917
         }
       }
     },
@@ -1391,8 +1421,8 @@
       "manifestHash": "7f0077b75191bc6d13ddd7b36ad9108b14c49332532ebadfd470f5f97861acd4",
       "manifestFile": {
         "size": 1659,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130943.9163,
+        "ctimeMs": 1780412130943.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/kimi-coding/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/kimi-coding",
@@ -1413,8 +1443,8 @@
         "hash": "9903ff2c0ae4ae56b9429e948da2088155d8afb140339792c751f30f25dfc03b",
         "fileSignature": {
           "size": 291,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131012.917,
+          "ctimeMs": 1780412131012.917
         }
       }
     },
@@ -1424,8 +1454,8 @@
       "manifestHash": "db1d4f6e0f6678c903b291402128f6f57942f0aac84f751d7a4d8389f2dd19d6",
       "manifestFile": {
         "size": 975,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130943.9163,
+        "ctimeMs": 1780412130943.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/litellm/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/litellm",
@@ -1446,8 +1476,8 @@
         "hash": "04173f47c211895767c4af116ec36e17b4823105f378a6683e96146783f72bfc",
         "fileSignature": {
           "size": 297,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131013.917,
+          "ctimeMs": 1780412131013.917
         }
       }
     },
@@ -1457,8 +1487,8 @@
       "manifestHash": "8662441bfdf67447107c5de639fc3c3b46509f9f07cad6eef3266b730c531a76",
       "manifestFile": {
         "size": 990,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130944.9163,
+        "ctimeMs": 1780412130944.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/llm-task/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/llm-task",
@@ -1478,8 +1508,8 @@
         "hash": "34468afa6fc838bb39d2e96a24f3bbbed785324c8ffe34aa58f41f86b4e6787d",
         "fileSignature": {
           "size": 340,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131013.917,
+          "ctimeMs": 1780412131013.917
         }
       }
     },
@@ -1489,8 +1519,8 @@
       "manifestHash": "54c7aa5855e457758646e5ac4e51819d8738dfbf6413040f1ac74f474bb50f00",
       "manifestFile": {
         "size": 1357,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130944.9163,
+        "ctimeMs": 1780412130944.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/lmstudio/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/lmstudio",
@@ -1514,8 +1544,8 @@
         "hash": "369810d8135b8b0b460cadf716e21a2219a27434bec2978591e2e083982935c7",
         "fileSignature": {
           "size": 230,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131014.917,
+          "ctimeMs": 1780412131014.917
         }
       }
     },
@@ -1525,8 +1555,8 @@
       "manifestHash": "9f23ba952b74847285aa4feed3787aeb04ecf6d9557c96c597d968ec24f774fd",
       "manifestFile": {
         "size": 32733,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130946.9163,
+        "ctimeMs": 1780412130946.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/mattermost/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/mattermost",
@@ -1561,8 +1591,8 @@
         "hash": "30d71428a822246f0c08ff29568aa35d9edadd8c0e689ead2b1a9d945fbaa4b1",
         "fileSignature": {
           "size": 997,
-          "mtimeMs": 1780202645344.3975,
-          "ctimeMs": 1780202645344.3975
+          "mtimeMs": 1780412131015.917,
+          "ctimeMs": 1780412131015.917
         }
       }
     },
@@ -1572,8 +1602,8 @@
       "manifestHash": "281362c58007be59f52d8dae668f1ef656f682b3f7a01ba7a2bb14f86d42dce8",
       "manifestFile": {
         "size": 6058,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130946.9163,
+        "ctimeMs": 1780412130946.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/memory-core/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/memory-core",
@@ -1593,8 +1623,8 @@
         "hash": "8cf1c3ca14686cc5b3fa0ce9cc4ce72cb9c1e6a88fbf1a8904f9b832806a96f7",
         "fileSignature": {
           "size": 560,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131016.917,
+          "ctimeMs": 1780412131016.917
         }
       }
     },
@@ -1604,8 +1634,8 @@
       "manifestHash": "75985149f5886866ce34c0b556bba252237629385ea57fba748d68544c5a3f76",
       "manifestFile": {
         "size": 5206,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130947.9163,
+        "ctimeMs": 1780412130947.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/memory-wiki/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/memory-wiki",
@@ -1625,8 +1655,8 @@
         "hash": "96660023eba72f2ff479a82c7ea7c0f1e55fb8475f0574ad2759ebeed6798dd6",
         "fileSignature": {
           "size": 551,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131016.917,
+          "ctimeMs": 1780412131016.917
         }
       }
     },
@@ -1636,8 +1666,8 @@
       "manifestHash": "4fae9b5374016e1d457a0c18e7ab86f116af790fea107e1f63c683fe78951d69",
       "manifestFile": {
         "size": 272,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130948.9163,
+        "ctimeMs": 1780412130948.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/microsoft/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/microsoft",
@@ -1658,8 +1688,8 @@
         "hash": "9c3f00fdcda37ebc061494c764f8119180dc5e0fcf04e58cce859df46b15f53c",
         "fileSignature": {
           "size": 352,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131017.917,
+          "ctimeMs": 1780412131017.917
         }
       }
     },
@@ -1669,8 +1699,8 @@
       "manifestHash": "21f8fc266cb838fa037902c7d6e15af962d289738e511173e9740d2fccee6fec",
       "manifestFile": {
         "size": 1174,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130947.9163,
+        "ctimeMs": 1780412130947.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/microsoft-foundry/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/microsoft-foundry",
@@ -1691,8 +1721,8 @@
         "hash": "9036708617c29da637e604abcd8affa984cf47528141967dae153d3ef244f8bc",
         "fileSignature": {
           "size": 308,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131017.917,
+          "ctimeMs": 1780412131017.917
         }
       }
     },
@@ -1702,8 +1732,8 @@
       "manifestHash": "ab37718aca1e40a1347c058f5497719ba83f7d30a8c0b5de1bfc27f8638275f2",
       "manifestFile": {
         "size": 411,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130948.9163,
+        "ctimeMs": 1780412130948.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/migrate-claude/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/migrate-claude",
@@ -1723,8 +1753,8 @@
         "hash": "143747221d45c82e1af07a0f86501ec131a4ea0a6cd51210fa5047c2cf12e4ac",
         "fileSignature": {
           "size": 470,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131018.917,
+          "ctimeMs": 1780412131018.917
         }
       }
     },
@@ -1734,8 +1764,8 @@
       "manifestHash": "82bb35ee30b4305bd66d2c76d79c3efda1adc348164d36fcae4ba7484f2958d6",
       "manifestFile": {
         "size": 388,
-        "mtimeMs": 1780202645338.3972,
-        "ctimeMs": 1780202645338.3972
+        "mtimeMs": 1780412130949.9163,
+        "ctimeMs": 1780412130949.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/migrate-hermes/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/migrate-hermes",
@@ -1755,8 +1785,8 @@
         "hash": "e5d879a1e6653cb8c3622df64b4afc9bdfeb7dc9a0b3d93a6632107d65afc84b",
         "fileSignature": {
           "size": 515,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131018.917,
+          "ctimeMs": 1780412131018.917
         }
       }
     },
@@ -1766,8 +1796,8 @@
       "manifestHash": "d47db927cff6269c10784f671623cb882e1d263265f53ecca3103e6acbd5ef11",
       "manifestFile": {
         "size": 4957,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130950.9163,
+        "ctimeMs": 1780412130950.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/minimax/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/minimax",
@@ -1788,8 +1818,8 @@
         "hash": "d28ccc091fbbcd41017ee20ebe7f6c98d907a3334e7f04cc4cbe010b88f746ca",
         "fileSignature": {
           "size": 307,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131019.917,
+          "ctimeMs": 1780412131019.917
         }
       }
     },
@@ -1799,8 +1829,8 @@
       "manifestHash": "8b57e42d51df38778ce4d7ba5222a8127eab70118e54f94fd5bbd2ca0c8e98d6",
       "manifestFile": {
         "size": 5055,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130950.9163,
+        "ctimeMs": 1780412130950.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/mistral/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/mistral",
@@ -1821,8 +1851,8 @@
         "hash": "f19392a04a3e2d0bf3334df56002527a0847dcd9dc6e05bc57efafef1b498d23",
         "fileSignature": {
           "size": 297,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131019.917,
+          "ctimeMs": 1780412131019.917
         }
       }
     },
@@ -1832,8 +1862,8 @@
       "manifestHash": "2fe73ad6353431be4c7d5865e2dce6e02c2c2c7b458465cdc58eac0629648b9f",
       "manifestFile": {
         "size": 5710,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130951.9163,
+        "ctimeMs": 1780412130951.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/moonshot/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/moonshot",
@@ -1854,8 +1884,8 @@
         "hash": "7f9464fa825266c340a20803efdfcced39d07722af6055eaef21283380f9b4a8",
         "fileSignature": {
           "size": 299,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131020.917,
+          "ctimeMs": 1780412131020.917
         }
       }
     },
@@ -1865,8 +1895,8 @@
       "manifestHash": "069f3fe422f14de85933998ecc6cd128995ab0924a962061b2f201d3223b274c",
       "manifestFile": {
         "size": 4530,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130951.9163,
+        "ctimeMs": 1780412130951.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/nvidia/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/nvidia",
@@ -1887,8 +1917,8 @@
         "hash": "bf21f3587a33ad83c5d48f59da5b8cee9ebcfaa914dd316351a159ff7391c1da",
         "fileSignature": {
           "size": 295,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131020.917,
+          "ctimeMs": 1780412131020.917
         }
       }
     },
@@ -1898,8 +1928,8 @@
       "manifestHash": "7196ee1480be8d9781d407fbc1def5d51f1f7b5421d882f11bc096ff70db593d",
       "manifestFile": {
         "size": 397,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130952.9163,
+        "ctimeMs": 1780412130952.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/oc-path/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/oc-path",
@@ -1921,8 +1951,8 @@
         "hash": "897886ad7cca9b0cdd37c3f922c2045ab24376189e22c429a76cc278d22f912c",
         "fileSignature": {
           "size": 592,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131021.917,
+          "ctimeMs": 1780412131021.917
         }
       }
     },
@@ -1932,8 +1962,8 @@
       "manifestHash": "e3258a908aa070875997a55f525de2b16b6b7b544e18dcf14448b1d49ba4904b",
       "manifestFile": {
         "size": 1737,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130952.9163,
+        "ctimeMs": 1780412130952.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/ollama/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/ollama",
@@ -1957,8 +1987,8 @@
         "hash": "527fa5f6f7b8ea0e3eb0cda2d6bf5dc627730d03c8d1b749f343d0fedf093f40",
         "fileSignature": {
           "size": 344,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131022.917,
+          "ctimeMs": 1780412131022.917
         }
       }
     },
@@ -1968,8 +1998,8 @@
       "manifestHash": "b7b6e77271010216cc988012c9238b1b989a5e7ab8a70ad7b98b499031a6b89a",
       "manifestFile": {
         "size": 304,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130953.9163,
+        "ctimeMs": 1780412130953.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/open-prose/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/open-prose",
@@ -1989,8 +2019,8 @@
         "hash": "a62fb02a484f78fd9e5215017a3db90829e1df13a1d9d09dea4c6d0f7f01c2ad",
         "fileSignature": {
           "size": 318,
-          "mtimeMs": 1780202645345.3975,
-          "ctimeMs": 1780202645345.3975
+          "mtimeMs": 1780412131022.917,
+          "ctimeMs": 1780412131022.917
         }
       }
     },
@@ -2000,8 +2030,8 @@
       "manifestHash": "5f60db1864220199d82dafe7cfc451e010fcb86740efbca499f75fd2ca980441",
       "manifestFile": {
         "size": 18631,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130954.9163,
+        "ctimeMs": 1780412130954.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/openai/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/openai",
@@ -2022,8 +2052,8 @@
         "hash": "4fd7fb590362ce4f08807ce6fd2c5347cfa7063c6ebe324e30c0ec3c29531f3b",
         "fileSignature": {
           "size": 340,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131023.917,
+          "ctimeMs": 1780412131023.917
         }
       }
     },
@@ -2033,8 +2063,8 @@
       "manifestHash": "f7f583e37b6b524d94bc0dd1f6a81164d266f09731391ed21e8a6494d6afd4ed",
       "manifestFile": {
         "size": 1420,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130955.9163,
+        "ctimeMs": 1780412130955.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/opencode/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/opencode",
@@ -2055,8 +2085,8 @@
         "hash": "d5e5ad67784b2c51304937930c0b254b467f355c39353a7bda7496c35bfa8e16",
         "fileSignature": {
           "size": 303,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131024.917,
+          "ctimeMs": 1780412131024.917
         }
       }
     },
@@ -2066,8 +2096,8 @@
       "manifestHash": "2acb8573ff505e02d89b84c2fe9a0e73ae55872488a5646a3ee50eae3acc1be5",
       "manifestFile": {
         "size": 2898,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130954.9163,
+        "ctimeMs": 1780412130954.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/opencode-go/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/opencode-go",
@@ -2088,8 +2118,8 @@
         "hash": "91cc5a821a284ddaa828ee53e91a1da7da9415d5654738c271525e2ceb324764",
         "fileSignature": {
           "size": 305,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131024.917,
+          "ctimeMs": 1780412131024.917
         }
       }
     },
@@ -2099,8 +2129,8 @@
       "manifestHash": "85001d185105f85f8a896b2c383792b4d5f5d323f303c11b8ab6bec3c7df936a",
       "manifestFile": {
         "size": 2108,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130955.9163,
+        "ctimeMs": 1780412130955.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/openrouter/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/openrouter",
@@ -2121,8 +2151,8 @@
         "hash": "ab45093c21328771bcffe9c3d00190997796495e8c653a9fff4ff6353dfe83a3",
         "fileSignature": {
           "size": 303,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131025.917,
+          "ctimeMs": 1780412131025.917
         }
       }
     },
@@ -2132,8 +2162,8 @@
       "manifestHash": "d23af51731d5d6b37beb403e8ec7755b073cf37092c499d28e091e956b5704c4",
       "manifestFile": {
         "size": 1401,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130957.9163,
+        "ctimeMs": 1780412130957.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/perplexity/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/perplexity",
@@ -2153,8 +2183,8 @@
         "hash": "0af117fc21478b706046e285b16434c1cb8b068cbd9f60229b365ed867760917",
         "fileSignature": {
           "size": 292,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131025.917,
+          "ctimeMs": 1780412131025.917
         }
       }
     },
@@ -2164,8 +2194,8 @@
       "manifestHash": "b72511655c2d09e181fae00026ac7aab2784d73c4a351022dd8bd3be68826ec1",
       "manifestFile": {
         "size": 437,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130957.9163,
+        "ctimeMs": 1780412130957.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/phone-control/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/phone-control",
@@ -2186,8 +2216,8 @@
       "manifestHash": "92d7976488e7f8425e977e028325aa7b9162dcd32ae3e2ed707228116e7854c3",
       "manifestFile": {
         "size": 1172,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130957.9163,
+        "ctimeMs": 1780412130957.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/policy/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/policy",
@@ -2209,8 +2239,8 @@
         "hash": "d84b2eac285d049a9c6abf064752fa754d414ec8ae48eef4f674b035a29d7dd9",
         "fileSignature": {
           "size": 526,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131026.917,
+          "ctimeMs": 1780412131026.917
         }
       }
     },
@@ -2220,8 +2250,8 @@
       "manifestHash": "fb676780f2ff142c2815e000350f806ec6c8e9f6fe7da8013274be6c7e5d365e",
       "manifestFile": {
         "size": 1969,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130958.9163,
+        "ctimeMs": 1780412130958.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/qianfan/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/qianfan",
@@ -2242,8 +2272,8 @@
         "hash": "fb32f63a452283201c75975e504285b8dc9824b5f51df77ce05b64c36c755f8b",
         "fileSignature": {
           "size": 297,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131026.917,
+          "ctimeMs": 1780412131026.917
         }
       }
     },
@@ -2253,8 +2283,8 @@
       "manifestHash": "01d0e62901e603353d661be1d8db8fc2612ffd00b7b52d923deaa48b6af2941b",
       "manifestFile": {
         "size": 5332,
-        "mtimeMs": 1780202645339.3972,
-        "ctimeMs": 1780202645339.3972
+        "mtimeMs": 1780412130958.9163,
+        "ctimeMs": 1780412130958.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/qwen/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/qwen",
@@ -2275,8 +2305,8 @@
         "hash": "c6878fc150c7f577cd79f2fdc089ae47b7d4516ecae445db0f033d9a241fadd2",
         "fileSignature": {
           "size": 297,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131027.917,
+          "ctimeMs": 1780412131027.917
         }
       }
     },
@@ -2286,8 +2316,8 @@
       "manifestHash": "eced36751d706363709775349163a0af9ec43806a0a9efa4b77ee266b4fac145",
       "manifestFile": {
         "size": 932,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130959.9163,
+        "ctimeMs": 1780412130959.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/runway/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/runway",
@@ -2308,8 +2338,8 @@
         "hash": "754067343b37622dfe014132aa448fe15f50d3ee12cc9a87b42f97ad3bc90d56",
         "fileSignature": {
           "size": 301,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131027.917,
+          "ctimeMs": 1780412131027.917
         }
       }
     },
@@ -2319,8 +2349,8 @@
       "manifestHash": "1870f1133b5090e746c1507328755b5972e69bca59c7de72c5285ea18f514d3b",
       "manifestFile": {
         "size": 1141,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130959.9163,
+        "ctimeMs": 1780412130959.9163
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/searxng/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/searxng",
@@ -2340,8 +2370,8 @@
         "hash": "51171aa44a98250f8ff25696a00343ad225364e36d2225710d80e8fac69cf003",
         "fileSignature": {
           "size": 286,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131028.917,
+          "ctimeMs": 1780412131028.917
         }
       }
     },
@@ -2351,8 +2381,8 @@
       "manifestHash": "1544c80fee3d42abdc0a1cf33ecec449dc5980e838013a43c9b320132931fc79",
       "manifestFile": {
         "size": 435,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130961.9165,
+        "ctimeMs": 1780412130961.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/senseaudio/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/senseaudio",
@@ -2373,8 +2403,8 @@
         "hash": "885e7bcab23210ab9ac1dd82836045257a623496b115a3122edf61ff6d7d0348",
         "fileSignature": {
           "size": 316,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131028.917,
+          "ctimeMs": 1780412131028.917
         }
       }
     },
@@ -2384,8 +2414,8 @@
       "manifestHash": "516328e0fca0f8a5fe00e53eb72794d8d838fa667a218468bf3be4db86dbea79",
       "manifestFile": {
         "size": 989,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130961.9165,
+        "ctimeMs": 1780412130961.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/sglang/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/sglang",
@@ -2406,8 +2436,8 @@
         "hash": "97e16f8fe309269e6c0f216590cab447e34377d8271bba24970646cdc30b2fd8",
         "fileSignature": {
           "size": 295,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131029.917,
+          "ctimeMs": 1780412131029.917
         }
       }
     },
@@ -2417,8 +2447,8 @@
       "manifestHash": "1975bfba3e15f2bf8e653405384115c23273b453d4984cfd7ef193712c82b086",
       "manifestFile": {
         "size": 22636,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130961.9165,
+        "ctimeMs": 1780412130961.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/signal/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/signal",
@@ -2464,8 +2494,8 @@
         "hash": "423fd49d729970f647cdab8f584f27c311bc2984fb515423207da66614c18735",
         "fileSignature": {
           "size": 1151,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131029.917,
+          "ctimeMs": 1780412131029.917
         }
       }
     },
@@ -2475,8 +2505,8 @@
       "manifestHash": "f480b74bb21088de8def5612525f1892d5f50ca54beedc086122beca75ac77dd",
       "manifestFile": {
         "size": 2198,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130963.9165,
+        "ctimeMs": 1780412130963.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/skill-workshop/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/skill-workshop",
@@ -2496,8 +2526,8 @@
         "hash": "091bdc1a52440fd68e9fffd6ae0efe84018f963c60d1980d5a2745138729a333",
         "fileSignature": {
           "size": 342,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131030.917,
+          "ctimeMs": 1780412131030.917
         }
       }
     },
@@ -2507,8 +2537,8 @@
       "manifestHash": "e7746faebfe2f8cb84844f00209e80dd44080f6d816d24f0a6221f151660a96d",
       "manifestFile": {
         "size": 4392,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130963.9165,
+        "ctimeMs": 1780412130963.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/stepfun/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/stepfun",
@@ -2529,8 +2559,8 @@
         "hash": "1ed42eec87d027c086c291ca5df19364939eccd222609654a8410c541ce8054b",
         "fileSignature": {
           "size": 297,
-          "mtimeMs": 1780202645346.3975,
-          "ctimeMs": 1780202645346.3975
+          "mtimeMs": 1780412131030.917,
+          "ctimeMs": 1780412131030.917
         }
       }
     },
@@ -2540,8 +2570,8 @@
       "manifestHash": "2a4665e235730749759fdcb1405afa690ce63a40640dfd5e1c71106b298c1b6d",
       "manifestFile": {
         "size": 859,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130963.9165,
+        "ctimeMs": 1780412130963.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/synthetic/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/synthetic",
@@ -2562,8 +2592,8 @@
         "hash": "d68ea1aec83c25d3c3db4ec16c9095c24067dfe96893a613135baee4513a2d9a",
         "fileSignature": {
           "size": 301,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131031.917,
+          "ctimeMs": 1780412131031.917
         }
       }
     },
@@ -2573,8 +2603,8 @@
       "manifestHash": "e74b5b2dfff117b54cd80728c4fc5b54a56085fc870e6f9d5c9914a151aa812f",
       "manifestFile": {
         "size": 377,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130964.9165,
+        "ctimeMs": 1780412130964.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/talk-voice/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/talk-voice",
@@ -2595,8 +2625,8 @@
       "manifestHash": "632fefd56fdf85a86e0030c46bb7183c470b28749fa6e3b520065c470cd75b01",
       "manifestFile": {
         "size": 1254,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130965.9165,
+        "ctimeMs": 1780412130965.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/tavily/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/tavily",
@@ -2616,8 +2646,8 @@
         "hash": "e92cdaa104c56f13b81549700ffb739f88a667f09285ef5b5e1eaafcc34fe67a",
         "fileSignature": {
           "size": 333,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131031.917,
+          "ctimeMs": 1780412131031.917
         }
       }
     },
@@ -2627,8 +2657,8 @@
       "manifestHash": "ef7e3db75c59d9c87bcc9b7913e015e301e9899968bb9c2903e0a3a7bfe4ae7c",
       "manifestFile": {
         "size": 96209,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130984.9165,
+        "ctimeMs": 1780412130984.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/telegram/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/telegram",
@@ -2680,8 +2710,8 @@
         "hash": "c30177e30f44a285f037042a07b40f0f83643823299da39551f9897bf9c06a90",
         "fileSignature": {
           "size": 1464,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131032.917,
+          "ctimeMs": 1780412131032.917
         }
       }
     },
@@ -2691,8 +2721,8 @@
       "manifestHash": "940cd66f43284b1fffe93db3ee2f943ff669f2a5683f904645dede77850b9f52",
       "manifestFile": {
         "size": 2605,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130985.9165,
+        "ctimeMs": 1780412130985.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/tencent/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/tencent",
@@ -2713,8 +2743,8 @@
         "hash": "25a2f5744108ed7ec366b52190a4900df141b10373baf69e7c0c836e1b8cef95",
         "fileSignature": {
           "size": 327,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131032.917,
+          "ctimeMs": 1780412131032.917
         }
       }
     },
@@ -2724,8 +2754,8 @@
       "manifestHash": "d9b6ba4a091fbd003fe01376b6ebb6c63c0adf67b92e77c814210fea908213f2",
       "manifestFile": {
         "size": 845,
-        "mtimeMs": 1780202645340.3972,
-        "ctimeMs": 1780202645340.3972
+        "mtimeMs": 1780412130985.9165,
+        "ctimeMs": 1780412130985.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/thread-ownership/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/thread-ownership",
@@ -2745,8 +2775,8 @@
       "manifestHash": "a0002519d33bb793d0e2eebef7736a124c55bfa1641b70871c34f9d6ced53625",
       "manifestFile": {
         "size": 3382,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130985.9165,
+        "ctimeMs": 1780412130985.9165
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/together/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/together",
@@ -2767,8 +2797,8 @@
         "hash": "9baba64146c8a4088a3a6b6c1971cf682eb68fdb4538bbf4b4c7ada6e57c0e94",
         "fileSignature": {
           "size": 299,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131033.917,
+          "ctimeMs": 1780412131033.917
         }
       }
     },
@@ -2778,8 +2808,8 @@
       "manifestHash": "3d5e89884b8b1e7a70bf66a931ac9065253f045e80c04121b706ab6cd60c26a7",
       "manifestFile": {
         "size": 293,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130986.9167,
+        "ctimeMs": 1780412130986.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/tts-local-cli/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/tts-local-cli",
@@ -2800,8 +2830,8 @@
         "hash": "d42a7d77c6f8ec9d8e33aac25eb9d0966d97158205253b5bae201cbb30d90049",
         "fileSignature": {
           "size": 291,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131033.917,
+          "ctimeMs": 1780412131033.917
         }
       }
     },
@@ -2811,8 +2841,8 @@
       "manifestHash": "b369bb059c2524406091e782c9bd0b28196726aea96708c5fd6b796f3ca7a84b",
       "manifestFile": {
         "size": 15091,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130986.9167,
+        "ctimeMs": 1780412130986.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/venice/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/venice",
@@ -2833,8 +2863,8 @@
         "hash": "3b6955c828477c61789ac8414cff5d9e691b38167500889d48351355309ca02e",
         "fileSignature": {
           "size": 295,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131034.917,
+          "ctimeMs": 1780412131034.917
         }
       }
     },
@@ -2844,8 +2874,8 @@
       "manifestHash": "2d2f9a5522399f376b4000f6b7bbcaf7907249ed63836395ef5f040693dadc57",
       "manifestFile": {
         "size": 1498,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130987.9167,
+        "ctimeMs": 1780412130987.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/vercel-ai-gateway/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/vercel-ai-gateway",
@@ -2866,8 +2896,8 @@
         "hash": "9c92ec2826f89e5c473589f7374b49be29f19f12ac81b7a56e3da4eedba03f83",
         "fileSignature": {
           "size": 317,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131034.917,
+          "ctimeMs": 1780412131034.917
         }
       }
     },
@@ -2877,8 +2907,8 @@
       "manifestHash": "5d6549e208e9bddc5ab9ffade528b2c08ec9ff7180b507574c30a29ba26f37c0",
       "manifestFile": {
         "size": 978,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130988.9167,
+        "ctimeMs": 1780412130988.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/vllm/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/vllm",
@@ -2899,8 +2929,8 @@
         "hash": "67dd9b59ae995883a7b9083a30baf2c66b0983125c7d3dc2a97381e09ac872d0",
         "fileSignature": {
           "size": 291,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131035.917,
+          "ctimeMs": 1780412131035.917
         }
       }
     },
@@ -2910,8 +2940,8 @@
       "manifestHash": "1a721b9638b350abfc6a1eca0aa4ab3f63cd10128335436bc65b6cf6c28e632b",
       "manifestFile": {
         "size": 6471,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130988.9167,
+        "ctimeMs": 1780412130988.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/volcengine/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/volcengine",
@@ -2932,8 +2962,8 @@
         "hash": "b50fe80a11d8c6e07afeaf4b051e4a8dc9f0758929e50c0c8ee443f5f3c46c6c",
         "fileSignature": {
           "size": 303,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131036.917,
+          "ctimeMs": 1780412131036.917
         }
       }
     },
@@ -2943,8 +2973,8 @@
       "manifestHash": "cb25968651c311fc2493786cb2913f0964370abbb72e2f906068bc9032140fae",
       "manifestFile": {
         "size": 416,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130989.9167,
+        "ctimeMs": 1780412130989.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/voyage/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/voyage",
@@ -2965,8 +2995,8 @@
         "hash": "c991ad7485d2bab01814c146257da71cfdfd751c918883a7e1f0b4cf4d75a08a",
         "fileSignature": {
           "size": 305,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131036.917,
+          "ctimeMs": 1780412131036.917
         }
       }
     },
@@ -2976,8 +3006,8 @@
       "manifestHash": "0afa2e06cb0bddc1b92e22427733f86547161401d96f8b1aea2f52dec444372d",
       "manifestFile": {
         "size": 1038,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130989.9167,
+        "ctimeMs": 1780412130989.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/vydra/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/vydra",
@@ -2998,8 +3028,8 @@
         "hash": "321d3dbc30c6ac209a762fe8b5e78749242e84d8a7722a5b453e631645ae6771",
         "fileSignature": {
           "size": 299,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131037.917,
+          "ctimeMs": 1780412131037.917
         }
       }
     },
@@ -3009,8 +3039,8 @@
       "manifestHash": "3fb9b2d5c284d27c5bef18b63c99baf5f2bdfd82ac874b342fd387f450b2d7e8",
       "manifestFile": {
         "size": 415,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130990.9167,
+        "ctimeMs": 1780412130990.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/web-readability/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/web-readability",
@@ -3031,8 +3061,8 @@
         "hash": "903a4c9aa7431c4a95ecb5d2adcbef66963eae414148a4e308463320b8107e80",
         "fileSignature": {
           "size": 407,
-          "mtimeMs": 1780202645347.3975,
-          "ctimeMs": 1780202645347.3975
+          "mtimeMs": 1780412131037.917,
+          "ctimeMs": 1780412131037.917
         }
       }
     },
@@ -3042,8 +3072,8 @@
       "manifestHash": "7191e52bc4113b1ef24deececc8cb6dbfa598e569c96a296af1f787051d9c63a",
       "manifestFile": {
         "size": 1865,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130991.9167,
+        "ctimeMs": 1780412130991.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/webhooks/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/webhooks",
@@ -3063,8 +3093,8 @@
         "hash": "ac8e3a3df99aadaf85484311f3978045c78c3fa89afaa4d35c58c7c9a2424ab9",
         "fileSignature": {
           "size": 331,
-          "mtimeMs": 1780202645348.3975,
-          "ctimeMs": 1780202645348.3975
+          "mtimeMs": 1780412131038.917,
+          "ctimeMs": 1780412131038.917
         }
       }
     },
@@ -3074,13 +3104,13 @@
       "manifestHash": "25571bc0b81534f997ca20ad5ded63a16af49ef2e6bda7927f5ba6052d6d0edf",
       "manifestFile": {
         "size": 1023,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130991.9167,
+        "ctimeMs": 1780412130991.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/workboard/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/workboard",
       "origin": "bundled",
-      "enabled": false,
+      "enabled": true,
       "startup": {
         "sidecar": true,
         "memory": false,
@@ -3095,8 +3125,8 @@
         "hash": "34396b4d8e4cf74dbcfe5c3eb19399347acff753f10b0b7d969d71aa7b0d16e1",
         "fileSignature": {
           "size": 512,
-          "mtimeMs": 1780202645348.3975,
-          "ctimeMs": 1780202645348.3975
+          "mtimeMs": 1780412131039.9172,
+          "ctimeMs": 1780412131039.9172
         }
       }
     },
@@ -3106,8 +3136,8 @@
       "manifestHash": "c855c33fa74603ffcec9bfa497b76f4636c1e5f824a955a4456d38e9ac70a57e",
       "manifestFile": {
         "size": 7588,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130992.9167,
+        "ctimeMs": 1780412130992.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/xai/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/xai",
@@ -3131,8 +3161,8 @@
         "hash": "c24838e0626f5b63f89e2b310e45e9287cfa5dcdb4ffd0392e59a9b4978d40a9",
         "fileSignature": {
           "size": 347,
-          "mtimeMs": 1780202645348.3975,
-          "ctimeMs": 1780202645348.3975
+          "mtimeMs": 1780412131039.9172,
+          "ctimeMs": 1780412131039.9172
         }
       }
     },
@@ -3142,8 +3172,8 @@
       "manifestHash": "1dd5ae5d1b26cdb968b712fc46a0a6626a6d796504aba8859717e9933ba2a6d4",
       "manifestFile": {
         "size": 2586,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130992.9167,
+        "ctimeMs": 1780412130992.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/xiaomi/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/xiaomi",
@@ -3164,8 +3194,8 @@
         "hash": "82dc17de330afbc54b6e8ca0adc3cc208456d58ea30353cf46d5b88b08d29eaf",
         "fileSignature": {
           "size": 295,
-          "mtimeMs": 1780202645348.3975,
-          "ctimeMs": 1780202645348.3975
+          "mtimeMs": 1780412131040.9172,
+          "ctimeMs": 1780412131040.9172
         }
       }
     },
@@ -3175,8 +3205,8 @@
       "manifestHash": "9067a2b934f4a139f8fb2c785699863f094d9f147c6ce98ba8b7eba5bfd08178",
       "manifestFile": {
         "size": 9020,
-        "mtimeMs": 1780202645341.3975,
-        "ctimeMs": 1780202645341.3975
+        "mtimeMs": 1780412130993.9167,
+        "ctimeMs": 1780412130993.9167
       },
       "source": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/zai/index.js",
       "rootDir": "/root/.local/share/pnpm/global/5/.pnpm/openclaw@2026.5.28/node_modules/openclaw/dist/extensions/zai",
@@ -3197,55 +3227,22 @@
         "hash": "ead7dd2ca43331189e01dc6033e60913fcf7bfa79bd8ba6f2d18a8bf498525f9",
         "fileSignature": {
           "size": 290,
-          "mtimeMs": 1780202645348.3975,
-          "ctimeMs": 1780202645348.3975
-        }
-      }
-    },
-    {
-      "pluginId": "agent-self-development",
-      "manifestPath": "/root/.openclaw/git/git-de97ffe848595ced/repo/openclaw.plugin.json",
-      "manifestHash": "1a0ae8d1537b6a4bbd1e1ebcd8a80064e2aedeb6c14c0ead7b7722b0a5959274",
-      "manifestFile": {
-        "size": 948,
-        "mtimeMs": 1780203315172.5876,
-        "ctimeMs": 1780203315172.5876
-      },
-      "source": "/root/.openclaw/git/git-de97ffe848595ced/repo/src/index.js",
-      "rootDir": "/root/.openclaw/git/git-de97ffe848595ced/repo",
-      "origin": "global",
-      "enabled": true,
-      "startup": {
-        "sidecar": false,
-        "memory": false,
-        "deferConfiguredChannelFullLoadUntilAfterListen": false,
-        "agentHarnesses": []
-      },
-      "compat": [],
-      "packageName": "agent-self-development",
-      "packageVersion": "4.5.0",
-      "installRecordHash": "98cf54ecdf19f8b14f998dce6857bb348b40c38b9b03a68d0aa0985c453315bd",
-      "packageJson": {
-        "path": "package.json",
-        "hash": "059e33bad3d0127ef52b288deeb2f3b400bb00c8d0047f6c1cca54840c564ded",
-        "fileSignature": {
-          "size": 803,
-          "mtimeMs": 1780203315173.5876,
-          "ctimeMs": 1780203315173.5876
+          "mtimeMs": 1780412131040.9172,
+          "ctimeMs": 1780412131040.9172
         }
       }
     },
     {
       "pluginId": "memory-tencentdb",
-      "manifestPath": "/root/data/disk/.openclaw/npm/node_modules/@tencentdb-agent-memory/memory-tencentdb/openclaw.plugin.json",
+      "manifestPath": "/data/disk/.openclaw/npm/node_modules/@tencentdb-agent-memory/memory-tencentdb/openclaw.plugin.json",
       "manifestHash": "216be24959f1d55ea0ac455fc00712324ac6351bb7bc3fcd1cc6e26c1383332c",
       "manifestFile": {
         "size": 12193,
         "mtimeMs": 1778869490198.6284,
-        "ctimeMs": 1780027707617.9543
+        "ctimeMs": 1780238959844.6392
       },
-      "source": "/root/data/disk/.openclaw/npm/node_modules/@tencentdb-agent-memory/memory-tencentdb/dist/index.mjs",
-      "rootDir": "/root/data/disk/.openclaw/npm/node_modules/@tencentdb-agent-memory/memory-tencentdb",
+      "source": "/data/disk/.openclaw/npm/node_modules/@tencentdb-agent-memory/memory-tencentdb/dist/index.mjs",
+      "rootDir": "/data/disk/.openclaw/npm/node_modules/@tencentdb-agent-memory/memory-tencentdb",
       "origin": "global",
       "enabled": false,
       "startup": {
@@ -3264,21 +3261,21 @@
         "fileSignature": {
           "size": 3662,
           "mtimeMs": 1778869490199.6284,
-          "ctimeMs": 1780027707617.9543
+          "ctimeMs": 1780238959844.6392
         }
       }
     },
     {
       "pluginId": "openclaw-lark",
-      "manifestPath": "/root/data/disk/.openclaw/npm/node_modules/@larksuite/openclaw-lark/openclaw.plugin.json",
+      "manifestPath": "/data/disk/.openclaw/npm/node_modules/@larksuite/openclaw-lark/openclaw.plugin.json",
       "manifestHash": "b68030281b8ff6e7f95a1f7a6484477a11a7fc53ee2186a397212df9ad99b42b",
       "manifestFile": {
         "size": 1552,
         "mtimeMs": 1779350401928.7854,
-        "ctimeMs": 1780027711051.986
+        "ctimeMs": 1780238962895.6719
       },
-      "source": "/root/data/disk/.openclaw/npm/node_modules/@larksuite/openclaw-lark/index.js",
-      "rootDir": "/root/data/disk/.openclaw/npm/node_modules/@larksuite/openclaw-lark",
+      "source": "/data/disk/.openclaw/npm/node_modules/@larksuite/openclaw-lark/index.js",
+      "rootDir": "/data/disk/.openclaw/npm/node_modules/@larksuite/openclaw-lark",
       "origin": "global",
       "enabled": true,
       "startup": {
@@ -3327,21 +3324,21 @@
         "fileSignature": {
           "size": 1392,
           "mtimeMs": 1779350401929.7854,
-          "ctimeMs": 1780027711051.986
+          "ctimeMs": 1780238962895.6719
         }
       }
     },
     {
       "pluginId": "openclaw-weixin",
-      "manifestPath": "/root/data/disk/.openclaw/npm/node_modules/@tencent-weixin/openclaw-weixin/openclaw.plugin.json",
+      "manifestPath": "/data/disk/.openclaw/npm/node_modules/@tencent-weixin/openclaw-weixin/openclaw.plugin.json",
       "manifestHash": "7b4b9f21af8972468af852a068184e4314b6aa29c4f189290f69d7cc628d236d",
       "manifestFile": {
         "size": 433,
         "mtimeMs": 1778857750354.905,
-        "ctimeMs": 1780027710725.9832
+        "ctimeMs": 1780238962607.669
       },
-      "source": "/root/data/disk/.openclaw/npm/node_modules/@tencent-weixin/openclaw-weixin/dist/index.js",
-      "rootDir": "/root/data/disk/.openclaw/npm/node_modules/@tencent-weixin/openclaw-weixin",
+      "source": "/data/disk/.openclaw/npm/node_modules/@tencent-weixin/openclaw-weixin/dist/index.js",
+      "rootDir": "/data/disk/.openclaw/npm/node_modules/@tencent-weixin/openclaw-weixin",
       "origin": "global",
       "enabled": true,
       "startup": {
@@ -3383,21 +3380,21 @@
         "fileSignature": {
           "size": 1480,
           "mtimeMs": 1778857750355.905,
-          "ctimeMs": 1780027710725.9832
+          "ctimeMs": 1780238962607.669
         }
       }
     },
     {
       "pluginId": "qqbot",
-      "manifestPath": "/root/data/disk/.openclaw/npm/projects/openclaw-qqbot-d3553f72f8/node_modules/@openclaw/qqbot/openclaw.plugin.json",
+      "manifestPath": "/data/disk/.openclaw/npm/projects/openclaw-qqbot-d3553f72f8/node_modules/@openclaw/qqbot/openclaw.plugin.json",
       "manifestHash": "e77a0f73216221ce9e94df0314cbacf5f064d0dced30332365009005389d5112",
       "manifestFile": {
         "size": 22299,
-        "mtimeMs": 1780203329070.7158,
-        "ctimeMs": 1780203329070.7158
+        "mtimeMs": 1780412344729.8894,
+        "ctimeMs": 1780412344729.8894
       },
-      "source": "/root/data/disk/.openclaw/npm/projects/openclaw-qqbot-d3553f72f8/node_modules/@openclaw/qqbot/dist/index.js",
-      "rootDir": "/root/data/disk/.openclaw/npm/projects/openclaw-qqbot-d3553f72f8/node_modules/@openclaw/qqbot",
+      "source": "/data/disk/.openclaw/npm/projects/openclaw-qqbot-d3553f72f8/node_modules/@openclaw/qqbot/dist/index.js",
+      "rootDir": "/data/disk/.openclaw/npm/projects/openclaw-qqbot-d3553f72f8/node_modules/@openclaw/qqbot",
       "origin": "global",
       "enabled": true,
       "startup": {
@@ -3410,10 +3407,10 @@
         "channel-env-vars"
       ],
       "enabledByDefault": true,
-      "setupSource": "/root/data/disk/.openclaw/npm/projects/openclaw-qqbot-d3553f72f8/node_modules/@openclaw/qqbot/dist/setup-entry.js",
+      "setupSource": "/data/disk/.openclaw/npm/projects/openclaw-qqbot-d3553f72f8/node_modules/@openclaw/qqbot/dist/setup-entry.js",
       "packageName": "@openclaw/qqbot",
       "packageVersion": "2026.5.28",
-      "installRecordHash": "96aad2f26954102e133d9233f8e42c8c8fc71970f85c87325feea45550b5552d",
+      "installRecordHash": "8a2a2ac581fd616aed2b23e9939789e17d9233e61f368098a0b5ab09115ab62f",
       "packageInstall": {
         "defaultChoice": "npm",
         "npm": {
@@ -3446,8 +3443,8 @@
         "hash": "c8f639ee107d9e5768cb8c64666a4720774724bdff59760062f5408b1c300b16",
         "fileSignature": {
           "size": 1769,
-          "mtimeMs": 1780203329083.716,
-          "ctimeMs": 1780203329083.716
+          "mtimeMs": 1780412344741.8896,
+          "ctimeMs": 1780412344741.8896
         }
       }
     }

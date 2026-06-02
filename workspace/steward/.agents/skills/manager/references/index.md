@@ -10,7 +10,7 @@
 | 指南 | 用途 |
 |------|------|
 | **workboard-guide.md** | workboard 任务发布（v1.4.0）—— 大管家派发主用 |
-| **task-guide.md** | 任务派发完整流程（IM 群艾特 + TODO 看板） |
+| **task-flow-guide.md** | 任务流指南 v2.2（TODO + workboard + IM 三件套派发） |
 | **workflows.md** | 速查表：各种需求对应哪个指南 |
 | **guide.md** | manager 是什么、什么时候用 |
 
@@ -29,8 +29,6 @@
 | 指南 | 用途 |
 |------|------|
 | **constraint-standards.md** | 任务约束目标的制定规范 |
-| **task-lifecycle-standards.md** | 子任务的完整生命流程 |
-| **task-progression-standards.md** | 通过文件传递推进任务 |
 | **sync-standards.md** | TODO ↔ task 工具 ↔ workboard 同步规则（v2.0） |
 
 ## 规范参考

@@ -10,7 +10,7 @@ status: active
 ## Generated
 <!-- openclaw:wiki:lint:start -->
 - Errors: 2
-- Warnings: 37
+- Warnings: 40
 
 ### Errors
 - `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Missing `id` frontmatter.
@@ -54,12 +54,17 @@ status: active
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.workspace.1` is missing structured evidence.
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.plugin.1` is missing structured evidence.
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.synergy.1` is missing structured evidence.
+- `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Page lists 1 contradiction to resolve.
+- `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Page lists 3 open questions.
+- `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Broken wikilink target `../sources/deepseek-cloud-local-hybrid-architecture.md`.
 
 ### Contradictions
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Page lists 1 contradiction to resolve.
+- `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Page lists 1 contradiction to resolve.
 
 ### Open Questions
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Page lists 2 open questions.
+- `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Page lists 3 open questions.
 
 ### Quality Follow-Up
 - `concepts/agent-personal-config-architecture.md`: Non-source page is missing `sourceIds` provenance.

@@ -73,7 +73,7 @@ async def cmd_read(client: WorkboardClient, args: argparse.Namespace) -> int:
     return out(result)
 
 
-# IM 任务派发模板 → Workboard notes 格式（与 task-guide.md §五 / §四 保持一致）
+# IM 任务派发模板 → Workboard notes 格式（与 task-flow-guide.md v2.2 保持一致）
 TASK_NOTES_TEMPLATE = """{task_desc}
 
 {assignee}

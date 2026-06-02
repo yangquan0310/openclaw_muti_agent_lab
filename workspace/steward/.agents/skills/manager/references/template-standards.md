@@ -30,7 +30,7 @@ manager/
 │   ├── metadata-template.json
 │   └── ...
 └── references/          # 指南目录
-    └── task-guide.md    # 任务派发模板在此文件末尾
+    └── task-flow-guide.md    # 任务派发模板在第三章
 ```
 
 ---
@@ -51,11 +51,11 @@ manager/
 ...
 ```
 
-✅ **正确**：只在 `references/task-guide.md` 中定义，其他文件引用
+✅ **正确**：只在 `references/task-flow-guide.md` 中定义，其他文件引用
 
 ```markdown
 # 其他文件（正确）
-任务派发模板见 `references/task-guide.md`。
+任务派发模板见 `references/task-flow-guide.md`。
 ```
 
 ---
