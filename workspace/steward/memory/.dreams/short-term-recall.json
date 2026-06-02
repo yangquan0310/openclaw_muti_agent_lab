@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-02T19:05:46.414Z",
+  "updatedAt": "2026-06-02T19:32:39.204Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-05-31.txt:245:245": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:245:245",
@@ -7906,38 +7906,6 @@
         "google"
       ]
     },
-    "memory:memory/.dreams/session-corpus/2026-06-01.txt:91:91": {
-      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:91:91",
-      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
-      "startLine": 91,
-      "endLine": 91,
-      "source": "memory",
-      "snippet": "User: main.py）直接用别名运行，无需修改 - 删除的技能: group-counseling-plan; mathematician - 新框架规范: 标题必须是 how-to 动宾短语; 示例：`ch01_how-to-develop-new-skill.md` - 新框架规范: 问题 - 为什么要知道这个？; 方法论 - 怎么思考这个问题？; 工作流 - 具体怎么执行？; 执行标准 - 做到什么程度算合格？ - 新框架规范: 指南导航 → 书籍目录 - Git 提交: commit 5744bd9a：45 files changed, +",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:02.552Z",
-      "lastRecalledAt": "2026-06-01T19:00:02.552Z",
-      "queryHashes": [
-        "2939732c7523"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "main.py",
-        "group-counseling-plan",
-        "how-to",
-        "ch01-how-to-develop-new-skill.md",
-        "直接",
-        "别名",
-        "运行",
-        "修改"
-      ]
-    },
     "memory:memory/.dreams/session-corpus/2026-06-02.txt:100:100": {
       "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:100:100",
       "path": "memory/.dreams/session-corpus/2026-06-02.txt",
@@ -14369,6 +14337,37 @@
         "program-manager",
         "product-manager",
         "standard-dirs"
+      ]
+    },
+    "memory:memory/2026-05-13.md:1:25": {
+      "key": "memory:memory/2026-05-13.md:1:25",
+      "path": "memory/2026-05-13.md",
+      "startLine": 1,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "# Memory Flush — 2026-05-13 ## 创业指导项目 — 终稿归档与审核 ### 目录结构规范（已写入SKILL.md） - **docs/**: 终稿不加版本号后缀（如 `刘力豪组挑战杯商业计划书_终稿.md`） - **manuscripts/reviews/**: 审核意见最新版存放 - **temp/draft/**: 旧版本、历史修改说明归档 ### 修改说明双格式 1. **逐轮版** (`docs/修改说明_逐轮版.md/pdf`): 按版本轮次组织（原始版→v2→v3→v4→v4.1→v4.2→v5→v6） 2. **内容版** (`docs/修改说明_内容版.md/pdf`): 按内容维度组织（理论/数据/文献/伦理/财务/格式） ### 审核轮次记录 - T021: 审稿助手 — 内容质量深度审核（评级🟡需重大修改） - T022: 心理学家 — 学术内容深化（含可直接插入文本） - T023: 写作助手 — v6内容改写（12项修改） - T024: 审稿助手 — 第三轮审核（评级🟢修改到位，8项遗留） - T025: 写作助手 — T024遗留修正（8项全部完成） - T026: 大管家 — 修改说明更新（同步遗留问题标记） - T027: 审稿助手 — 终稿+修改说明核查（7/8项到位，1项必改） - T028: 写作助手 — 终稿最终修正（已派发） ### T027关键发现 - 终稿中九、2.1仍不是标题格式（缺少`###`标记），但修改说明声称\"已补充\"",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4858818650245666,
+      "maxScore": 0.4858818650245666,
+      "firstRecalledAt": "2026-06-02T19:32:39.204Z",
+      "lastRecalledAt": "2026-06-02T19:32:39.204Z",
+      "queryHashes": [
+        "a72c64593b58"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "已写入skill.md",
+        "刘力豪组挑战杯商业计划书-终稿.md",
+        "manuscripts/reviews",
+        "temp/draft",
+        "docs/修改说明-逐轮版.md/pdf",
+        "v4.1",
+        "v4.2",
+        "docs/修改说明-内容版.md/pdf"
       ]
     },
     "memory:memory/2026-05-23.md:1:48": {
