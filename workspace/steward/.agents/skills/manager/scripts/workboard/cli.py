@@ -71,11 +71,83 @@ async def cmd_read(client: WorkboardClient, args: argparse.Namespace) -> int:
     return out(result)
 
 
+# IM 任务派发模板 → Workboard notes 格式（与 task-guide.md §五 / §四 保持一致）
+TASK_NOTES_TEMPLATE = """{task_desc}
+
+{assignee}
+
+📋 前置要求：
+- 明确自己的角色：{agent_role}，找到对应的 .agents/agents/{agent_role}.md 阅读
+- 查看 TODO.md 中的 {subtask} 子任务
+
+🎯 任务目标：
+- {goal}
+
+📌 任务约束：
+- {constraints}
+
+📁 输入文件：
+- {input_file}
+
+📄 输出文件：
+- {output_file}
+
+💬 反馈：
+- 完成后在群聊中艾特大管家汇报
+- 汇报内容：完成的是什么任务
+- 汇报内容：产出是什么（文件路径）
+"""
+
+
+def _build_task_notes(args) -> str:
+    """根据 CLI 参数组装 notes 字段，结构与 IM 派发模板一致"""
+    assignee = args.assignee or ""
+    # --task-desc 优先，--notes 兜底
+    task_desc = args.task_desc or args.notes or ""
+    # 默认值（让模板不留空）
+    goal = args.goal or "（待补充）"
+    constraints = args.constraints or "（待补充）"
+    feedback = args.feedback or "完成后在群聊中艾特大管家汇报，产出 = 文件路径"
+    return TASK_NOTES_TEMPLATE.format(
+        task_desc=task_desc,
+        assignee=f"@{assignee}" if assignee else "（未指定）",
+        agent_role=args.agent_role or assignee or "（未指定）",
+        subtask=args.subtask or "（待补充）",
+        goal=goal,
+        constraints=constraints,
+        input_file=args.input_file or "（无）",
+        output_file=args.output_file or "（无）",
+        feedback=feedback,
+    )
+
+
 async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
+    # 必填检查：agentId（卡片创建时必须指定 agent）
+    if not args.assignee:
+        return err_out("--assignee 必填：workboard 创建卡片时必须指定 agent")
+
     labels = [l.strip() for l in args.labels.split(",")] if args.labels else None
+
+    # 根据结构化参数组装 notes（--notes 可选覆盖）
+    notes = args.notes or _build_task_notes(args)
+
+    if args.dry_run:
+        return out({
+            "ok": True,
+            "dry_run": True,
+            "would_create": {
+                "title": args.title,
+                "notes_preview": notes,
+                "status": args.status,
+                "priority": args.priority,
+                "labels": labels,
+                "agentId": args.assignee,
+            },
+        })
+
     result = await client.create_card(
         title=args.title,
-        notes=args.notes or "",
+        notes=notes,
         status=args.status,
         priority=args.priority,
         labels=labels,
@@ -198,13 +270,23 @@ def build_parser() -> argparse.ArgumentParser:
     p.set_defaults(_func=cmd_read)
 
     # create
-    p = sub.add_parser("create", help="创建卡片（任务发布）")
+    p = sub.add_parser("create", help="创建卡片（任务发布，--assignee 必填）")
     p.add_argument("--title", required=True, help="卡片标题")
-    p.add_argument("--notes", help="卡片描述/笔记")
+    # 结构化任务参数（与 IM 派发模板一致，组装为 notes）
+    p.add_argument("--task-desc", help="任务描述（→{{task_desc}}）")
+    p.add_argument("--agent-role", help="代理角色（→{{agent_role}}，如 psychologist / writer）")
+    p.add_argument("--subtask", help="TODO.md 子任务名（→{{subtask}}）")
+    p.add_argument("--goal", help="任务目标（→{{任务目标}}）")
+    p.add_argument("--constraints", help="任务约束（→{{任务约束}}）")
+    p.add_argument("--input-file", help="输入文件路径（→{{输入文件}}）")
+    p.add_argument("--output-file", help="输出文件路径（→{{输出文件}}）")
+    p.add_argument("--feedback", help="反馈说明（→{{反馈}}）")
+    p.add_argument("--notes", help="【可选覆盖】直接指定 notes，跳过模板组装")
     p.add_argument("--status", choices=sorted(VALID_STATUSES), default="todo", help="初始状态（默认 todo）")
     p.add_argument("--priority", choices=sorted(VALID_PRIORITIES), default="normal", help="优先级（默认 normal）")
     p.add_argument("--labels", help="标签，逗号分隔（如 ch12,文献检索）")
-    p.add_argument("--assignee", help="指派给 agent（如 psychologist / writer）")
+    p.add_argument("--assignee", required=True, help="【必填】指派给 agent（如 psychologist / writer）")
+    p.add_argument("--dry-run", action="store_true", help="仅预览 notes，不实际创建")
     p.set_defaults(_func=cmd_create)
 
     # update
