@@ -144,6 +144,15 @@ async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
     else:
         session_key = f"agent:{args.assignee}:main"
 
+    # status 默认逻辑：避免 Dashboard Dx 自动同步将 todo + 有 sessionKey 的卡动到 review
+    # 老板需求：create 时能指定 session，但卡不应被自动挪
+    if args.status:
+        status = args.status
+    elif args.session:
+        status = "backlog"  # 有 sessionKey 配 default 选 backlog：Dx 只从 backlog 同步到 running，不会冲到 review
+    else:
+        status = "todo"  # 默认 todo
+
     # 联动：让 Dashboard "代理"字段非空（值域 codex/claude，minimax m3 不在白名单）
     # 注意：workboard normalizeExecution 要求 execution 必须有 model 字段，否则返回 undefined 被丢
     execution = None
@@ -154,6 +163,9 @@ async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
             "status": "idle",
             "model": args.model,  # 默认 model 跟实际执行模型一致
         }
+        # 联动 execution.sessionKey（Dashboard 需 execution 里也有 sessionKey 才能正确同步）
+        if session_key:
+            execution["sessionKey"] = session_key
 
     if args.dry_run:
         return out({
@@ -174,7 +186,7 @@ async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
     result = await client.create_card(
         title=args.title,
         notes=notes,
-        status=args.status,
+        status=status,
         priority=args.priority,
         labels=labels,
         agent_id=args.assignee,
@@ -351,7 +363,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--output-file", help="输出文件路径（→{{输出文件}}）")
     p.add_argument("--feedback", help="反馈说明（→{{反馈}}）")
     p.add_argument("--notes", help="【可选覆盖】直接指定 notes，跳过模板组装")
-    p.add_argument("--status", choices=sorted(VALID_STATUSES), default="backlog", help="初始状态（默认 backlog/待办池）")
+    p.add_argument("--status", choices=sorted(VALID_STATUSES), default=None, help="初始状态。默认逻辑：指定 --session 时 backlog（避免 Dashboard Dx 自动同步动到 review），无 --session 时 todo")
     p.add_argument("--priority", choices=sorted(VALID_PRIORITIES), default="normal", help="优先级（默认 normal）")
     p.add_argument("--labels", help="标签，逗号分隔（如 ch12,文献检索）")
     p.add_argument("--assignee", required=True, help="【必填】指派给 agent（如 psychologist / writer）")
