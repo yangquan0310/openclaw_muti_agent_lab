@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-02T17:13:23.286Z",
+  "updatedAt": "2026-06-02T17:40:58.374Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-05-29.txt:319:319": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:319:319",
@@ -14940,13 +14940,13 @@
       "endLine": 109,
       "source": "memory",
       "snippet": "- `references/guide.md` → `references/core-workflows.md` - 模板文件：`assets/templates/references/guide.md.template` → `workflows.md.template` - init.py 生成文件的 SKILL.md 模板更新为新结构 ### init.py 遗留问题 mcp_server 模板有 f-string 嵌套 bug（`{skill_name}` 未正确替换），需修复。 --- ## 三、代理技能体系总结 ### 核心理念 \"实践是代理最重要的东西\" ### 代理技能一览（10个） | 代理 | 技能 | 收录内容 | |------|------|----------| | 大管家 | manager | 任务推进/派发、论文项目、课程项目、程序项目 | | 程序员 | programmer | OOP指南、架构指南、全栈开发、测试、运维 | | 写作助手 | writer | 写作流程、编辑规范、文体模板 | | 审稿者 | reviewer | 质量审查、审稿意见 | | 呈现师 | presenter | PPT制作、演示设计 | | 心理学家 | psychologist | 心理督导师/咨询师/科学家指南 | | 教员 | instructor | 教学设计、课程管理 | | 督导 | auditor | 质量督导 | | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建",
-      "recallCount": 10,
+      "recallCount": 11,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5.173287713527679,
+      "totalScore": 5.72561307400465,
       "maxScore": 0.5723666444420814,
       "firstRecalledAt": "2026-06-01T09:14:13.031Z",
-      "lastRecalledAt": "2026-06-02T05:21:53.081Z",
+      "lastRecalledAt": "2026-06-02T17:40:58.374Z",
       "queryHashes": [
         "d2dd8dea9bcb",
         "9b74b3fb1b07",
@@ -14957,11 +14957,13 @@
         "5e01d17d56eb",
         "22bb8896fa00",
         "9e09b50e6bb7",
-        "2b5415ae6250"
+        "2b5415ae6250",
+        "ab3417dd7130"
       ],
       "recallDays": [
         "2026-06-01",
-        "2026-06-02"
+        "2026-06-02",
+        "2026-06-03"
       ],
       "conceptTags": [
         "references/guide.md",

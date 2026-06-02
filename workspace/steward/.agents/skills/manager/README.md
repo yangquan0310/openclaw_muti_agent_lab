@@ -31,10 +31,9 @@
 manager/
 ├── SKILL.md               # 技能规范
 ├── README.md             # 本文件
-├── _meta.json            # 元数据
-├── references/           # 指南文档
+├── references/           # 指南文档（22 个文件）
 │   ├── index.md          # 书籍索引
-│   ├── guide.md          # 使用指南
+│   ├── manager-overview.md  # manager 概述
 │   ├── thesis-guide.md    # 论文管理
 │   ├── course-guide.md   # 课程管理
 │   ├── program-guide.md  # 程序管理

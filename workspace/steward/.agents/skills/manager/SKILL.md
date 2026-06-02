@@ -10,7 +10,7 @@ description: >
   当需要定期清理wiki或同步规范时激活（cleaning-guide、sync-guide）。
   当需要发布 workboard 任务卡（多 Agent 协作跟踪）时激活（workboard-guide）。
   **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点。
-version: 5.6.0
+version: 5.7.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -46,6 +46,11 @@ metadata:
 ## 快速调用
 
 ```bash
+# Workboard 任务发布
+manager workboard create --assignee writer --session 'agent:writer:...' --title '...'
+manager workboard start --id <card_id>
+manager workboard move --id <card_id> --status done
+
 # 项目整理
 manager maintainer organize <project_path> [--dry-run]
 
@@ -56,39 +61,40 @@ manager maintainer sync <project_path> [--dry-run]
 manager maintainer check-updates <project_path>
 
 # 查看帮助
+manager workboard --help
 manager maintainer --help
-manager maintainer <子命令> --help
 ```
 ---
 
 ## 指南导航
 
-| 章节 | 文件 | 内容 |
-|------|------|------|
-| 任务推进/派发 | task-flow-guide.md ||
-| 论文项目 | thesis-guide.md ||
-| 课程项目 | course-guide.md ||
-| 程序项目 | program-guide.md ||
-| 知识库管理 | knowledge-guide.md ||
-| 项目整理 | organize-workflow.md ||
-| 通用项目 | project-guide.md ||
-| 课程备课 | lesson-plan-guide.md ||
-| 技能审核 | skill-audit-workflow.md ||
-| 定期清理 | cleaning-guide.md ||
-| 规范同步 | sync-guide.md ||
-| 系统维护 | openclaw-maintenance-guide.md ||
-| Workboard 任务发布 | workboard-guide.md ||
+| 章节 | 文件 |
+|------|------|
+| manager 概述 | manager-overview.md |
+| Workboard 任务发布 | workboard-guide.md v1.4.0 |
+| 任务流（三件套派发） | task-flow-guide.md v2.2 |
+| 论文项目 | thesis-guide.md |
+| 课程项目 | course-guide.md |
+| 程序项目 | program-guide.md |
+| 知识库管理 | knowledge-guide.md v2.0 |
+| 项目整理 | organize-workflow.md |
+| 通用项目 | project-guide.md |
+| 课程备课 | lesson-plan-guide.md |
+| 技能审核 | skill-audit-workflow.md |
+| 定期清理 | cleaning-guide.md |
+| 系统维护 | openclaw-maintenance-guide.md |
 
 ---
 ## 版本历史
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
-| 5.5.0 | 2026-06-02 | **Python 迁移**：workboard 模块从 Node.js (wb-rpc.mjs) 迁移至 Python 包 (`scripts/workboard/`)，集成到 manager CLI 统一入口（`manager workboard <子命令>`）。修复设备身份签名时间差 bug（signedAt 只计算一次） |
+| 5.7.0 | 2026-06-03 | **skill-developer 规范对齐**：删 `_meta.json`、`references/README.md`（v5.5.0 移除）；`guide.md`→`manager-overview.md`（noun phrase 命名）；references 清理冗余（-3个文件）；版本历史全量修复 |
 | 5.6.0 | 2026-06-02 | **修复 UX bug**：`claim --auto-start` 选项。claim 后自动用 update RPC 设置 `execution.status=running`，避免 dashboard 仍显示「开始」按钮（claim 只改 board.status，不改 execution.status） |
-| 5.4.0 | 2026-06-02 | 新增场景：**Workboard 任务发布**（workboard-guide.md）。建/改/移/删/批量/归档走 gateway RPC + 设备身份认证，详见 references/workboard-guide.md |
-| 5.3.0 | 2026-05-28 | description合并触发条件（删除body触发条件章节），覆盖全部12场景 |
-| 5.2.0 | 2026-05-28 | 修复：CLI与实际不符、版本号统一、补充触发边界、同步index.md内容 |
+| 5.5.0 | 2026-06-02 | **Python 迁移**：workboard 模块从 Node.js (wb-rpc.mjs) 迁移至 Python 包 (`scripts/workboard/`)，集成到 manager CLI 统一入口（`manager workboard <子命令>`）。修复设备身份签名时间差 bug |
+| 5.4.0 | 2026-06-02 | 新增场景：**Workboard 任务发布**（workboard-guide.md）。建/改/移/删/批量/归档走 gateway RPC + 设备身份认证 |
+| 5.3.0 | 2026-05-28 | description 合并触发条件（删除 body 触发条件章节），覆盖全部12场景 |
+| 5.2.0 | 2026-05-28 | 修复：CLI与实际不符、版本号统一、补充触发边界、同步 index.md 内容 |
 | 5.1.0 | 2026-05-24 | CLI 精简：6子命令→4（init/organize/sync/check-updates），ABC 架构凝练 |
 | 5.0.0 | 2026-05-22 | 精简：详细工作流下沉到 references/ 各 guide |
 | 4.0.0 | 2026-05-21 | 唯一入口，整合所有子技能 |

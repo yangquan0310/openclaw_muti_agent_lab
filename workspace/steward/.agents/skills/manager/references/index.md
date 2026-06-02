@@ -12,7 +12,7 @@
 | **workboard-guide.md** | workboard 任务发布（v1.4.0）—— 大管家派发主用 |
 | **task-flow-guide.md** | 任务流指南 v2.2（TODO + workboard + IM 三件套派发） |
 | **workflows.md** | 速查表：各种需求对应哪个指南 |
-| **guide.md** | manager 是什么、什么时候用 |
+| **manager-overview.md** | manager 是什么、什么时候用 |
 
 ## 项目专项
 
