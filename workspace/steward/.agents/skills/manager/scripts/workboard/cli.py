@@ -131,6 +131,20 @@ async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
     # 根据结构化参数组装 notes（--notes 可选覆盖）
     notes = args.notes or _build_task_notes(args)
 
+    # 联动：让 Dashboard 真的显示"已关联会话"（用户反馈：之前一直"没有已关联的会话"）
+    session_key = None if args.no_session else f"agent:{args.assignee}:main"
+
+    # 联动：让 Dashboard "代理"字段非空（值域 codex/claude，minimax m3 不在白名单）
+    # 注意：workboard normalizeExecution 要求 execution 必须有 model 字段，否则返回 undefined 被丢
+    execution = None
+    if not args.no_execution:
+        execution = {
+            "engine": args.engine,
+            "mode": "autonomous",
+            "status": "idle",
+            "model": args.model,  # 默认 model 跟实际执行模型一致
+        }
+
     if args.dry_run:
         return out({
             "ok": True,
@@ -142,6 +156,8 @@ async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
                 "priority": args.priority,
                 "labels": labels,
                 "agentId": args.assignee,
+                "sessionKey": session_key,
+                "execution": execution,
             },
         })
 
@@ -152,6 +168,8 @@ async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
         priority=args.priority,
         labels=labels,
         agent_id=args.assignee,
+        session_key=session_key,
+        execution=execution,
     )
     card = result.get("card", result)
     return out({"ok": True, "card": card, "card_id": card.get("id")})
@@ -282,10 +300,14 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--output-file", help="输出文件路径（→{{输出文件}}）")
     p.add_argument("--feedback", help="反馈说明（→{{反馈}}）")
     p.add_argument("--notes", help="【可选覆盖】直接指定 notes，跳过模板组装")
-    p.add_argument("--status", choices=sorted(VALID_STATUSES), default="todo", help="初始状态（默认 todo）")
+    p.add_argument("--status", choices=sorted(VALID_STATUSES), default="backlog", help="初始状态（默认 backlog/待办池）")
     p.add_argument("--priority", choices=sorted(VALID_PRIORITIES), default="normal", help="优先级（默认 normal）")
     p.add_argument("--labels", help="标签，逗号分隔（如 ch12,文献检索）")
     p.add_argument("--assignee", required=True, help="【必填】指派给 agent（如 psychologist / writer）")
+    p.add_argument("--engine", default="codex", choices=["codex", "claude"], help="execution.engine（workboard 白名单，默认 codex；Dashboard “代理”字段驱动）")
+    p.add_argument("--model", default="minimax/MiniMax-M3", help="execution.model（workboard 必填，默认 minimax/MiniMax-M3 跟随实际执行模型）")
+    p.add_argument("--no-session", action="store_true", help="不联动设 sessionKey（默认会设 agent:<assignee>:main）")
+    p.add_argument("--no-execution", action="store_true", help="不联动设 execution.engine（默认会设 codex）")
     p.add_argument("--dry-run", action="store_true", help="仅预览 notes，不实际创建")
     p.set_defaults(_func=cmd_create)
 
