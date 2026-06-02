@@ -89,14 +89,14 @@ OpenClaw Workboard 是 Dashboard 看板系统（http://10.0.0.9:18098/estqvr/）
 ```bash
 # 通过 manager 统一入口
 cd /root/.openclaw/workspace/steward/.agents/skills/manager/scripts
-python3 main.py workboard <子命令> [选项]
+manager workboard <子命令> [选项]
 ```
 
 **支持的子命令**：
 
 ```bash
 # 建卡
-python3 main.py workboard create \
+manager workboard create \
   --title "ch12 个案研究法 - 文献检索" \
   --notes "检索近 5 年中英文核心文献" \
   --priority high \
@@ -104,32 +104,32 @@ python3 main.py workboard create \
   --assignee psychologist
 
 # 列卡
-python3 main.py workboard list --assignee psychologist
-python3 main.py workboard list --status todo --limit 10
+manager workboard list --assignee psychologist
+manager workboard list --status todo --limit 10
 
 # 读卡
-python3 main.py workboard read --id <card_id>
+manager workboard read --id <card_id>
 
 # 认领
-python3 main.py workboard claim --id <card_id> --owner steward --ttl 120
+manager workboard claim --id <card_id> --owner steward --ttl 120
 
 # 续约（带 token）
-python3 main.py workboard heartbeat --id <card_id> --owner steward --token *** --note "进度说明"
+manager workboard heartbeat --id <card_id> --owner steward --token *** --note "进度说明"
 
 # 评论
-python3 main.py workboard comment --id <card_id> --body "评论内容"
+manager workboard comment --id <card_id> --body "评论内容"
 
 # 释放（带 token）
-python3 main.py workboard release --id <card_id> --owner steward --token *** --status done
+manager workboard release --id <card_id> --owner steward --token *** --status done
 
 # 归档
-python3 main.py workboard archive --id <card_id>
+manager workboard archive --id <card_id>
 ```
 
 **查看完整帮助**：
 ```bash
-python3 main.py workboard --help
-python3 main.py workboard create --help
+manager workboard --help
+manager workboard create --help
 ```
 
 ### 步骤 3：跟踪卡片状态
