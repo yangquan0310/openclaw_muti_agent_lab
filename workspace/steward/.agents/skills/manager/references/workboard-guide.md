@@ -1,6 +1,13 @@
-# Workboard 任务发布指南
+# Workboard 任务发布指南 v1.4.0
 
-> **v1.3.0 认知更正**：本指南之前定位为“大管家调度控制台”。**错的**。
+> **v1.4.0 重大更新**（2026-06-03）：
+> 1. 加入 4 个新 commit 的 CLI 能力（`--session` flag、默认 backlog、execution 完整、start 真触发 run）
+> 2. 新增"卡状态机"章节（Dx 自动同步行为）
+> 3. **新增"Dashboard 限制"章节**（不能用 dashboard 的"开始"按钮——这条踩过坑）
+> 4. 扩充"与其他工具的协作"——三件套架构（TODO 纪律 + workboard 执行 + IM 可见）
+> 5. 5+1 步新派发流程（claim 是 start 的前置门）
+
+> **v1.3.0 认知更正**：本指南之前定位为"大管家调度控制台"。**错的**。
 > 正确理解（从 OpenClaw 官方插件 `plugin.json` 描述）：**`Dashboard workboard for agent-owned issues and sessions`**。
 > **Workboard 的真正主用户是 agent**（writer / reviewer / psychologist / ...），不是大管家/用户。Dashboard 只是人类旁观察看。
 
@@ -61,118 +68,239 @@ OpenClaw Workboard 是 Dashboard 看板系统（http://10.0.0.9:18098/estqvr/）
 
 ## 三、能力边界（重要）
 
-### Agent 工具集（我直接可用）
+### Agent 工具集（代理直接可用）
 
-| 工具 | 用途 |
-|------|------|
-| `workboard_list` | 列卡 |
-| `workboard_read` | 读卡 |
-| `workboard_claim` | 认领（独占）|
-| `workboard_heartbeat` | 续约（防 claim 过期）|
-| `workboard_release` | 释放（指定下一状态）|
-| `workboard_comment` | 评论 |
-| `workboard_proof` | 附证据（artifact）|
-| `workboard_unblock` | 解阻塞卡 |
+| 工具 | 用途 | 谁用 |
+|------|------|------|
+| `workboard_list` | 列卡 | 代理 + 大管家 |
+| `workboard_read` | 读卡 | 代理 + 大管家 |
+| `workboard_claim` | 认领（独占）| **代理**（大管家不调） |
+| `workboard_heartbeat` | 续约（防 claim 过期）| **代理** |
+| `workboard_release` | 释放（指定下一状态）| **代理** |
+| `workboard_comment` | 评论 | 代理 + 大管家 |
+| `workboard_proof` | 附证据（artifact）| **代理**（执行完附产出） |
+| `workboard_unblock` | 解阻塞卡 | 代理 + 大管家 |
 
-### Gateway RPC（需走脚本）
+### 大管家 CLI（仅派发层）
 
-| RPC 方法 | 用途 |
-|---------|------|
-| `workboard.cards.create` | 建卡 |
-| `workboard.cards.update` | 改卡 |
-| `workboard.cards.move` | 移动（看板拖拽）|
-| `workboard.cards.delete` | 删卡 |
-| `workboard.cards.archive` | 归档 |
-| `workboard.cards.bulk` | 批量操作 |
-| `workboard.cards.export` | 导出 |
+| CLI 子命令 | 用途 |
+|-----------|------|
+| `manager workboard create` | 建卡 |
+| `manager workboard start` | start（claim 之后才调） |
+| `manager workboard move` | 移动（看板拖拽的 CLI 等价） |
+| `manager workboard list` | 列卡 |
+| `manager workboard read` | 读卡 |
+| `manager workboard bulk` | 批量（archive/delete/move） |
+| `manager workboard delete` | 删卡 |
 
-**关键限制**：建/改/移/删/批量/归档 **不暴露为 agent 工具**，必须走 gateway RPC。
+**关键分工**：
+- **大管家** = 派发层（CLI）。负责：建卡、start（认领后）、核验后归档
+- **代理** = 执行层（插件工具）。负责：claim、heartbeat、release、proof
+
+> ❌ **不暴露给大管家 CLI 的工具**：claim / heartbeat / release / proof。代理**直接用插件工具**，不绕大管家。
 
 ---
 
-## 四、发布任务的标准流程
+## 四、发布任务的 5+1 步新流程
 
-### 步骤 1：明确要发的任务
+### 心智模型（三件套架构）
+
+```
+老板交任务
+    ↓
+[1] 大管家 create card（--session, 默认 backlog）
+    ↓
+[2] 大管家 群里艾特代理（IM 模板，**开头**带 workboard 信息）
+    ↓
+[3] 代理 收到 → workboard_claim 认领 → 群里回"已认领 card=xxx"
+    ↓
+[4] 大管家 看到认领 → manager workboard start（这时才 start！）
+    ↓
+[5] 代理执行（chat.send 触发 run，runId 活跃）
+    ↓
+[6] 代理执行完 → 群里发完成消息 + workboard_proof 附产出
+    ↓
+[7] 大管家核验产出 → 插件工具 move → done / blocked
+```
+
+### 步骤 1：明确任务
 
 回答三个问题：
-- **任务目标**：一句话说清要干什么
-- **指派对象**：哪个 agent（`steward` / `psychologist` / `writer` / ...）
-- **优先级 + 标签**：`low/normal/high/urgent` + `labels`
+- 任务目标（一句话）
+- 指派对象（哪个 agent：`writer` / `reviewer` / `psychologist` / ...）
+- 优先级 + 标签（`low/normal/high/urgent` + `labels`）
 
-### 步骤 2：调用 CLI
+### 步骤 2：建卡（大管家 CLI）
 
 ```bash
-# 通过 manager 统一入口
-cd /root/.openclaw/workspace/steward/.agents/skills/manager/scripts
-manager workboard <子命令> [选项]
+manager workboard create \
+  --title "ch10 草稿 v1.0" \
+  --assignee writer \
+  --priority high \
+  --session 'agent:writer:feishu:group:oc_983c895ba1ddedcebda690213926d1b2' \
+  --task-desc "..." \
+  --agent-role writer \
+  --goal "..." \
+  --constraints "..." \
+  --feedback "..."
 ```
 
-**支持的子命令**：
+**关键选项**：
+- `--session X`：指定关联 session（与 `--no-session` 互斥）
+- **不传 `--status` 时**：有 `--session` → 默认 `backlog`；无 `--session` → 默认 `todo`
+  - **为什么 backlog？** Dx 自动同步只从 `backlog → running` 同步，不会从 `backlog` 冲到 `review`
+  - 想手动进 `todo`？`manager workboard move --id X --status todo`
+- `--engine {codex,claude}`：execution.engine
+- `--model`：execution.model（不传默认 `minimax/MiniMax-M3`）
+
+**互斥校验**：`--session` 和 `--no-session` 不能同时用。
+
+### 步骤 3：IM 群里艾特代理
+
+**IM 模板**（workboard 信息**在开头**，原有派发模板内容保持不变）：
+
+```
+🔧 workboard 信息：
+- card_id: {{card_id}}（短 8 位：{{card_short}}）
+- session: {{sessionKey}}
+- dashboard: {{card_url}}
+
+{{task_desc}}
+
+{{艾特代理}}
+
+📋 前置要求：
+- 明确自己的角色：{{agent_role}}
+- 找到对应的 .agents/agents/{{agent}}.md 阅读
+- 查看 TODO.md 中的 {{subtask}} 子任务
+
+🎯 任务目标：{{任务目标}}
+📌 任务约束：{{任务约束}}
+📁 输入文件：{{input_file}}
+📄 输出文件：{{output_file}}
+
+💬 反馈：完成后在群里艾特大管家汇报
+```
+
+**模板要点**：
+- workboard 信息**在开头**（不是末尾），让代理一进群就看到
+- 原有派发模板内容**一字不动**
+- **只一个模板**（不要拆派发/启动/完成多个模板）
+- 后续状态变化由 workboard 自己管（Dx + dashboard），群里**不重复发**
+
+### 步骤 4：等代理 claim
+
+代理收到模板后：
+1. 用 `workboard_claim` 插件工具认领
+2. 群里回复 `已认领 card={{card_short}}`
+3. 卡片 metadata.claim 写入（ownerId、token、claimedAt）
+
+**大管家动作**：看到认领后，调 `manager workboard start`。
+
+### 步骤 5：start（大管家 CLI，**只在 claim 之后**）
 
 ```bash
-# 建卡
-manager workboard create \
-  --title "ch12 个案研究法 - 文献检索" \
-  --notes "检索近 5 年中英文核心文献" \
-  --priority high \
-  --labels "ch12,文献检索" \
-  --assignee psychologist
+manager workboard start --id <card_id>
+# 或强制指定 session：
+manager workboard start --id <card_id> --session 'agent:writer:feishu:group:oc_xxx'
+```
 
-# 列卡
-manager workboard list --assignee psychologist
-manager workboard list --status todo --limit 10
+**start 内部做了什么**（v1.4.0 修复后）：
+1. 读卡 → 确认有 claim 或 --session 指定
+2. 复用 session（不再新建）
+3. **调 `chat.send` 触发新 run**（带 `idempotencyKey`，避免重复发）
+4. 更新卡片：`status=running`, `execution.status=running`, `execution.runId=xxx`, `execution.sessionKey=...`
 
-# 读卡
+**关键修复**（v1.4.0 之前踩的坑）：
+- ❌ 旧版：start 只改卡元数据，不触发 run（卡 = running 但 agent 一直不在群里）
+- ✅ v1.4.0：start 调 chat.send 真正触发 run
+
+**复用 vs 新建**：
+- `--session X`：强制用 X（即使没消息历史也复用）
+- 不传 `--session`：复用卡上 sessionKey（如果有消息历史），否则 sessions.create 新建
+- `--no-reuse`：跳过复用，永远 sessions.create 新建
+
+### 步骤 6：代理执行
+
+代理在 session 里干活，通过插件工具：
+- `workboard_heartbeat` 续约（防 claim 过期）
+- `workboard_comment` 留评论
+- 执行完用 `workboard_proof` 附产出
+
+执行完成后，代理**在群里发完成消息**（艾特大管家）。
+
+**Dx 自动同步**：run 完成后，Dashboard Dx 把卡从 `running` 移到 `review`。
+
+### 步骤 7：大管家核验 + 归档
+
+```bash
+# 读卡看产出
 manager workboard read --id <card_id>
 
-# 认领
-manager workboard claim --id <card_id> --owner steward --ttl 120
+# 核验通过：移到 done
+manager workboard move --id <card_id> --status done
 
-# 认领 + 自动触发 execution（推荐）
-# 修复合卡后 dashboard 仍显示「开始」按钮的 UX bug：
-#   claim 只改 board.status（todo→running），不改 execution.status（仍 idle）
-#   → dashboard 渲染时仍把 execution.idle 的卡当作「未开始」，所以还显示「开始」按钮
-#   --auto-start 会用 update RPC 同步设置 execution.status=running
-manager workboard claim --id <card_id> --owner steward --ttl 120 --auto-start
+# 核验失败：移到 blocked（人工介入）
+manager workboard move --id <card_id> --status blocked
 
-# 续约（带 token）
-manager workboard heartbeat --id <card_id> --owner steward --token *** --note "进度说明"
-
-# 评论
-manager workboard comment --id <card_id> --body "评论内容"
-
-# 释放（带 token）
-manager workboard release --id <card_id> --owner steward --token *** --status done
-
-# 归档
+# 归档（可选）
 manager workboard archive --id <card_id>
-```
-
-**查看完整帮助**：
-```bash
-manager workboard --help
-manager workboard create --help
-```
-
-### 步骤 3：跟踪卡片状态
-
-```bash
-# 通过 agent 工具跟踪
-workboard_list --assignee psychologist
-workboard_read <card_id>
-```
-
-### 步骤 4：完成后归档
-
-```bash
-# 任务完成 → 移到 done → 归档
-wb-rpc.mjs move --id <card_id> --status done
-wb-rpc.mjs archive --id <card_id>
+# 或批量
+manager workboard bulk --action archive --archive true --ids <id1>,<id2>
 ```
 
 ---
 
-## 五、设备身份认证（首次使用）
+## 五、卡状态机
+
+```
+   create
+     ↓
+   backlog   ← Dx 不会从 backlog 同步出去
+     ↓ (move to todo)
+   todo       ← 已在群里艾特，等代理 claim
+     ↓ (claim 写入)
+   [claimed]  ← metadata 状态，不是卡片 status
+     ↓ (start)
+   running    ← chat.send 触发 run
+     ↓ (run 完成)
+   review     ← Dx 自动从 running 挪过来
+     ↓
+     ├─→ done      (大管家核验通过)
+     ├─→ blocked   (大管家核验失败/超时)
+     └─→ running   (重跑)
+```
+
+**Dx 自动同步规则**（dashboard 控制台 `Dx()` 函数）：
+- 卡有 `sessionKey` + session 是 `done` → 卡 → `review`
+- 卡有 `sessionKey` + session 是 `running` → 卡 → `running`
+- 卡有 `sessionKey` + session 是 `failed` → 卡 → `blocked`
+- 卡有 `sessionKey` + session 是 `idle` → 不动
+- 卡无 `sessionKey` → 不动
+
+**为什么 `--session` 配默认 `backlog`？**
+- Dx 只从 `backlog → running` 同步，不会从 `backlog` 冲到 `review`
+- 卡在 `backlog` 时**稳态**，不被 Dx 乱动
+- 想进 `todo`？手动 `move --status todo`（大管家显式启动派发）
+
+---
+
+## 六、Dashboard 限制（重要！踩过坑）
+
+⚠️ **不能点 Dashboard 上的"开始"按钮**。原因：
+
+Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create", ...)`，**无视 card 上的 sessionKey**。每次点"开始"都会：
+1. 强制调 `sessions.create` 建**新** session
+2. 用新 session key 覆盖卡上的 `sessionKey`
+3. 卡上原本指定 `oc_983c895...` 被覆盖成 `agent:writer:dashboard:...`
+
+**正确路径**：用 CLI `manager workboard start --id <card>` 触发（v1.4.0 修复后真复用 session）。
+
+**临时绕过**：如果卡已经被 dashboard 覆盖，把卡移到 `blocked` 状态，用 CLI 重建 session 引用。
+
+---
+
+## 七、设备身份认证（首次使用）
 
 首次调用 `manager workboard` 时会自动触发 **device pairing flow**：
 
@@ -185,7 +313,7 @@ wb-rpc.mjs archive --id <card_id>
 
 ---
 
-## 六、常见错误与排查
+## 八、常见错误与排查
 
 | 错误 | 原因 | 解决 |
 |------|------|------|
@@ -193,42 +321,59 @@ wb-rpc.mjs archive --id <card_id>
 | `claim ownerId is required` | 调 claim 没传 ownerId | 必传 `ownerId` 参数 |
 | `card already claimed by X` | 已被其他 agent 认领 | 等释放或换一张卡 |
 | `claim token does not match` | 续约/释放的 token 错了 | 用 claim 返回的 token |
+| `400 Invalid 'tools[N].function.name'` | DeepSeek 拒收带点号 tool 名 | 不要动插件！已加红线（v8.19.0） |
+| `invalid chat.send params: must have required property 'idempotencyKey'` | chat.send 漏 idempotencyKey | v1.4.0 修复（start 自动加） |
+| `execution dropped by normalizeExecution` | execution 缺 model 字段 | v1.4.0 修复（start 默认 `minimax/MiniMax-M3`） |
+| Dx 自动从 backlog 移到 review | --session 时没传 --status | v1.4.0 修复（默认 backlog） |
+| 卡执行完 writer 不在群里 | 用 dashboard 点"开始"（强制 sessions.create） | 用 CLI `manager workboard start` |
 
 ---
 
-## 七、与其他工具的协作
+## 九、与其他工具的协作
 
-### 与 TODO.md 配合
+### 三件套架构：TODO 纪律 + workboard 执行 + IM 可见
+
+| 层级 | 工具 | 角色 | 谁看 |
+|------|------|------|------|
+| **纪律层** | `TODO.md` | 看板、状态记录 | 大管家 + 老板 |
+| **数据/执行层** | `workboard` 卡片 | `start` 派发、状态机、运行轨迹 | 子代理 + Dashboard |
+| **可见层** | **IM 群艾特** | 1 个通知模板（开头带 workboard 信息） | 群里所有人 |
+
+**三者缺一不可**：TODO 没纪律会失控，workboard 没 IM 群里看不到，IM 没 workboard 没结构化数据。
+
+### TODO.md 配合
 
 ```markdown
-## 当前活跃任务看板
-
-| T042 | OpenClaw 版本检查 | ... | 状态：active |
+- [ ] **T-001**：ch10 writer 草稿  [card=2a967a38-47e1-4182-98f3-698a14c84a80]
+  - 📄 约束目标：在 oc_983c895 群写 v1.0 ch10 草稿
+  - 📄 输入：ch9 v2.0 + ch10 大纲
+  - 📄 产出：ch10_v1.0.md
+  - 📄 派发：writer（claim → start）
+  - 📄 状态：⬜ 待认领
 ```
 
-**Workboard 卡片**是 TODO.md 的**结构化延伸**：
-- TODO.md：轻量记事（人看）
-- Workboard：结构化跟踪（系统看）
+`[card={{card_id}}]` 是 workboard 引用，便于从 TODO 跳到 Dashboard 查完整状态。
 
-**规则**：重要任务在两边都登记。TODO.md 写摘要，Workboard 写详情和 proof。
+### 完整同步规则
 
-### 与 IM 派发配合
+详见 [`sync-standards.md`](./sync-standards.md) v2.0（TODO ↔ task 工具 ↔ workboard 三方同步）。
 
-派发任务的两种方式：
+### IM 派发配合
 
-| 方式 | 适用场景 |
-|------|----------|
-| IM 艾特（轻量）| 单次短任务、不需要跟踪 |
-| Workboard 卡片（重量）| 多人协作、长任务、需要留痕 |
-
-**不要重复**：要么 IM 派，要么建卡派，不要同时发两边。
+**只一个模板**（开头带 workboard 信息），不要重复发多个模板。状态变化由 workboard Dx 自动同步到 Dashboard，群里不重复通知。
 
 ---
 
-## 八、版本历史
+## 十、版本历史
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
-| 1.1.0 | 2026-06-02 | **Python 迁移**：脚本从 Node.js (wb-rpc.mjs) 迁移至 Python 包 (`scripts/workboard/`)，CLI 统一入口 `manager workboard <子命令>`。设备身份配对改为自动批准。 |
-| 1.2.0 | 2026-06-02 | **修复 UX bug**：新增 `claim --auto-start` 选项，claim 后自动设置 `execution.status=running`（避免 dashboard 仍显示「开始」按钮）。烟测验证：execution.status 从 idle 成功改为 running |
-| 1.0.0 | 2026-06-02 | 初始版本：明确 workboard 任务发布的标准流程（基于烟测验证） |
+| 1.4.0 | 2026-06-03 | **重大升级**：(1) 加 `--session` flag + 默认 backlog（commit `f18df719`）；(2) 修 `ejecución`→`execution` 拼写 + start 默认 model（commit `9e78459e`）；(3) start 路径 A/B 真触发 run + idempotencyKey（commit `58094e59`）；(4) 加 Dashboard 限制章节；(5) 加卡状态机章节；(6) 5+1 步新派发流程；(7) 三件套架构整合 |
+| 1.3.0 | 2026-06-02 | 认知更正：workboard 主用户是 agent，不是大管家 |
+| 1.2.0 | 2026-06-02 | 修复 UX bug：新增 `claim --auto-start` 选项（claim 后自动设置 execution.status=running） |
+| 1.1.0 | 2026-06-02 | Python 迁移：脚本从 Node.js (wb-rpc.mjs) 迁移至 Python 包 |
+| 1.0.0 | 2026-06-02 | 初始版本：明确 workboard 任务发布的标准流程 |
+
+---
+
+*最后更新：2026-06-03*
