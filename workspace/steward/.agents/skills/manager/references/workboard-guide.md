@@ -84,23 +84,52 @@ OpenClaw Workboard 是 Dashboard 看板系统（http://10.0.0.9:18098/estqvr/）
 - **指派对象**：哪个 agent（`steward` / `psychologist` / `writer` / ...）
 - **优先级 + 标签**：`low/normal/high/urgent` + `labels`
 
-### 步骤 2：调用发布脚本
+### 步骤 2：调用 CLI
 
 ```bash
-# 完整路径
-node /root/.openclaw/workspace/steward/scripts/wb-rpc.mjs <命令> [参数]
+# 通过 manager 统一入口
+cd /root/.openclaw/workspace/steward/.agents/skills/manager/scripts
+python3 main.py workboard <子命令> [选项]
 ```
 
-**支持的子命令**（参见脚本 `--help`）：
+**支持的子命令**：
 
 ```bash
-wb-rpc.mjs create \
+# 建卡
+python3 main.py workboard create \
   --title "ch12 个案研究法 - 文献检索" \
   --notes "检索近 5 年中英文核心文献" \
   --priority high \
-  --status todo \
   --labels "ch12,文献检索" \
   --assignee psychologist
+
+# 列卡
+python3 main.py workboard list --assignee psychologist
+python3 main.py workboard list --status todo --limit 10
+
+# 读卡
+python3 main.py workboard read --id <card_id>
+
+# 认领
+python3 main.py workboard claim --id <card_id> --owner steward --ttl 120
+
+# 续约（带 token）
+python3 main.py workboard heartbeat --id <card_id> --owner steward --token *** --note "进度说明"
+
+# 评论
+python3 main.py workboard comment --id <card_id> --body "评论内容"
+
+# 释放（带 token）
+python3 main.py workboard release --id <card_id> --owner steward --token *** --status done
+
+# 归档
+python3 main.py workboard archive --id <card_id>
+```
+
+**查看完整帮助**：
+```bash
+python3 main.py workboard --help
+python3 main.py workboard create --help
 ```
 
 ### 步骤 3：跟踪卡片状态
@@ -123,15 +152,14 @@ wb-rpc.mjs archive --id <card_id>
 
 ## 五、设备身份认证（首次使用）
 
-首次调用 `wb-rpc.mjs` 时会触发 **device pairing flow**：
+首次调用 `manager workboard` 时会自动触发 **device pairing flow**：
 
-1. 脚本自动生成 Ed25519 密钥对
+1. Python 脚本自动生成 Ed25519 密钥对
 2. 用私钥签名 connect 握手
-3. gateway 发送配对请求到 Dashboard
-4. **您需要在 Dashboard 弹窗中批准设备配对**
-5. 批准后，scopes 才会有 `operator.admin`
+3. gateway **自动批准** CLI 设备配对（无需手动操作）
+4. scopes 自动获取 `operator.admin`
 
-**配对只需一次**。后续同设备复用 stored token，无需再配对。
+**配对过程全自动**。CLI 模式下 gateway 自动批准设备，无需在 Dashboard 手动操作。
 
 ---
 
@@ -179,4 +207,5 @@ wb-rpc.mjs archive --id <card_id>
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 1.1.0 | 2026-06-02 | **Python 迁移**：脚本从 Node.js (wb-rpc.mjs) 迁移至 Python 包 (`scripts/workboard/`)，CLI 统一入口 `manager workboard <子命令>`。设备身份配对改为自动批准。 |
 | 1.0.0 | 2026-06-02 | 初始版本：明确 workboard 任务发布的标准流程（基于烟测验证） |
