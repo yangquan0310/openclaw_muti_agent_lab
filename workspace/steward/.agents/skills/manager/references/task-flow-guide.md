@@ -86,7 +86,8 @@ manager workboard create \
 
 ### 步骤 4：IM 群里艾特代理（大管家）
 
-**IM 模板**（workboard 信息**在开头**）：
+**IM 群艾特模板**（老板 2026-06-03 定型——**用于认领，不包目标/约束/输入/产出**）：
+（目标/约束/输入/产出在 workboard 卡 notes 字段，见 cli.py `TASK_NOTES_TEMPLATE`）
 
 ```
 🔧 workboard 信息：
@@ -99,21 +100,16 @@ manager workboard create \
 {{艾特代理}}
 
 📋 前置要求：
-- 明确自己的角色：{{agent_role}}
-- 找到对应的 .agents/agents/{{agent}}.md 阅读
-- 查看 TODO.md 中的 {{subtask}} 子任务
+- 明确自己的角色：{{agent_role}}、找到对应的 .agents/agents/{{agent}}.md 阅读
+- 查看并完善 TODO.md 中的 {{subtask}} 子任务
 
-🎯 任务目标：{{任务目标}}
-📌 任务约束：{{任务约束}}
-📁 输入文件：{{input_file}}
-📄 输出文件：{{output_file}}
-
-💬 反馈：完成后在群里艾特大管家汇报
+💬 反馈：任务领取后在群里艾特大管家汇报
 ```
 
 **模板要点**：
-- workboard 信息**在开头**（不是末尾）
-- 原有派发模板内容**一字不动**
+- workboard 信息**在开头**
+- **只在认领阶段用**（代理认领后告知大管家）
+- 目标/约束/输入/产出 → **不在群里发**，走 workboard 卡 notes 字段
 - **只一个模板**（不拆派发/启动/完成多个）
 - 后续状态变化由 workboard 自己管（Dx + dashboard），群里**不重复发**
 

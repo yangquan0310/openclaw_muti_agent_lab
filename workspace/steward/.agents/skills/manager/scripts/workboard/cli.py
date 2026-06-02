@@ -73,16 +73,9 @@ async def cmd_read(client: WorkboardClient, args: argparse.Namespace) -> int:
     return out(result)
 
 
-# IM 任务派发模板 → Workboard notes 格式（与 task-flow-guide.md v2.2 保持一致）
-TASK_NOTES_TEMPLATE = """{task_desc}
-
-{assignee}
-
-📋 前置要求：
-- 明确自己的角色：{agent_role}，找到对应的 .agents/agents/{agent_role}.md 阅读
-- 查看 TODO.md 中的 {subtask} 子任务
-
-🎯 任务目标：
+# Workboard 卡 notes 模板（老板 2026-06-03 定型：只含目标/约束/输入/产出 + 完成反馈）
+# IM 群模板（含 workboard 信息 + 前置要求 + 认领反馈）在 task-flow-guide.md v2.3 步骤 4
+TASK_NOTES_TEMPLATE = """🎯 任务目标：
 - {goal}
 
 📌 任务约束：
@@ -102,24 +95,13 @@ TASK_NOTES_TEMPLATE = """{task_desc}
 
 
 def _build_task_notes(args) -> str:
-    """根据 CLI 参数组装 notes 字段，结构与 IM 派发模板一致"""
-    assignee = args.assignee or ""
-    # --task-desc 优先，--notes 兜底
-    task_desc = args.task_desc or args.notes or ""
-    # 默认值（让模板不留空）
-    goal = args.goal or "（待补充）"
-    constraints = args.constraints or "（待补充）"
-    feedback = args.feedback or "完成后在群聊中艾特大管家汇报，产出 = 文件路径"
+    """根据 CLI 参数组装 notes 字段，与老板定型的 notes 模板一致"""
+    # 反馈文字已硬编码在模板中（老板 2026-06-03 定型），不设占位符
     return TASK_NOTES_TEMPLATE.format(
-        task_desc=task_desc,
-        assignee=f"@{assignee}" if assignee else "（未指定）",
-        agent_role=args.agent_role or assignee or "（未指定）",
-        subtask=args.subtask or "（待补充）",
-        goal=goal,
-        constraints=constraints,
+        goal=args.goal or "（待补充）",
+        constraints=args.constraints or "（待补充）",
         input_file=args.input_file or "（无）",
         output_file=args.output_file or "（无）",
-        feedback=feedback,
     )
 
 
