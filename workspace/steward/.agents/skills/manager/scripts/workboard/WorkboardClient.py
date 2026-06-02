@@ -285,6 +285,128 @@ class WorkboardClient:
     async def update_card(self, card_id: str, patch: dict) -> dict:
         return await self.request("workboard.cards.update", {"id": card_id, "patch": patch})
 
+    async def sessions_create(
+        self,
+        agent_id: str,
+        label: str,
+        model: str,
+        message: Optional[str] = None,
+    ) -> dict:
+        """起一个 session。返回 dict 含 key（sessionKey）、sessionId、runId、entry。"""
+        params: dict[str, Any] = {
+            "agentId": agent_id,
+            "label": label,
+            "model": model,
+        }
+        if message:
+            params["message"] = message
+        return await self.request("sessions.create", params)
+
+    async def start_card(
+        self,
+        card_id: str,
+        engine: str = "codex",
+        mode: str = "autonomous",
+        reuse: bool = True,
+    ) -> dict:
+        """步 3+4：起 session + 推送到卡。
+
+        复用优先（默认）：
+        1. 读卡
+        2. 如有 sessionKey 且 reuse=True：chat.history 查是否活
+        3. 如活 → chat.send 复用
+        4. 如死/无 → sessions.create
+        5. cards.update 设 status=running, sessionKey, runId, execution
+        """
+        ENGINE_TO_MODEL = {
+            "codex": "openai/gpt-5.5",
+            "claude": "anthropic/claude-sonnet-4-6",
+        }
+        if engine not in ENGINE_TO_MODEL:
+            raise WorkboardError(f"engine 必须是 codex/claude")
+        model = ENGINE_TO_MODEL[engine]
+
+        # 1. 读卡
+        result = await self.list_cards(limit=500, include_archived=False)
+        card = next((c for c in result.get("cards", []) if c.get("id") == card_id), None)
+        if not card:
+            return {"error": "not_found", "id": card_id}
+        if card.get("status") == "done":
+            return {"error": "already_done", "id": card_id}
+
+        agent_id = card.get("agentId") or "main"
+        title = card.get("title", "")
+        label = f"{title[:40]} ({card_id[:8]})"
+        task_msg = (
+            f"Work on this OpenClaw Workboard card: {title}\n\n"
+            f"{card.get('notes', '')}\n\n"
+            "When done, summarize what changed and what remains."
+        ).strip()
+
+        session_key, run_id, reused = None, None, False
+
+        # 2-3. 复用现有 session
+        if reuse and card.get("sessionKey"):
+            try:
+                history = await self.request("chat.history", {
+                    "sessionKey": card["sessionKey"],
+                    "limit": 1,
+                })
+                msgs = history.get("messages", []) if isinstance(history, dict) else []
+                if msgs:
+                    # session 还活 → 复用
+                    session_key = card["sessionKey"]
+                    reused = True
+            except Exception:
+                pass
+
+        # 4. 新建 session
+        if not session_key:
+            try:
+                s = await self.sessions_create(
+                    agent_id=agent_id, label=label, model=model, message=task_msg,
+                )
+            except WorkboardError as e:
+                if "label already in use" in str(e):
+                    # label 冲突，append uuid 重试
+                    import uuid
+                    s = await self.sessions_create(
+                        agent_id=agent_id, label=f"{label} {uuid.uuid4().hex[:6]}", model=model, message=task_msg,
+                    )
+                else:
+                    raise
+            session_key = s.get("key")
+            run_id = s.get("runId")
+
+        # 5. cards.update
+        import time as _t
+        now_ms = int(_t.time() * 1000)
+        execution = {
+            "engine": engine,
+            "mode": mode,
+            "status": "running",
+            "model": model,
+            "startedAt": now_ms,
+            "updatedAt": now_ms,
+            "sessionKey": session_key,
+        }
+        if run_id:
+            execution["runId"] = run_id
+
+        r = await self.update_card(card_id, {
+            "status": "running",
+            "sessionKey": session_key,
+            "runId": run_id,
+            "execution": execution,
+        })
+        return {
+            "card": r,
+            "session_key": session_key,
+            "run_id": run_id,
+            "execution": execution,
+            "reused": reused,
+        }
+
     async def move_card(self, card_id: str, status: str, position: Optional[int] = None) -> dict:
         if status not in VALID_STATUSES:
             raise WorkboardError(f"status 必须是 {VALID_STATUSES} 之一")
