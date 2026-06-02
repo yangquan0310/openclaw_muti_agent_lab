@@ -70,12 +70,15 @@
 | **代码编写的本意** | ❌ 代码编写 = **不编写分析代码**（programmer 的职责）；**不禁止** 写脚本/批处理（这些是工具自动化）|
 | **授权与信任（让其他专家代理自决）** | 派发子任务时，**只传约束/输入/产出**，让其他专家代理自己决定如何执行（**不擅自写死** SOP 步骤）|
 | **需要发布 workboard 任务卡**（建/改/移/删/批量/归档）| **查看 manager 技能**：`references/workboard-guide.md`（v5.4.0 新增）。agent 工具集只覆盖读/认领/评论/续约/释放/证明/解锁；写操作走 gateway WebSocket RPC + 设备身份认证，脚本：`scripts/workboard/`（Python 包，`manager workboard <子命令>` 调用）|
+| **技能 CLI 必须有全局入口**（skill-developer 规范）| 不能用 `python3 main.py <子命令>` 调技能 CLI，**必须**在 `/usr/local/bin/` 创建 symlink/shell 包装指向 `scripts/main.py`，保证 `manager <子命令>` / `rps <子命令>` 等可全局调用。例：`ln -s <skill>/scripts/main.py /usr/local/bin/manager`。已验证：`manager` symlink 路径错误会导致调用失败，需用绝对路径。 |
 
 
 
 ### 待跟进事项(Suspended)
 
-> 该区域已清空，所有事项已迁移到工作记忆的任务看板。
+| 项目 | 说明 | 状态 | 挂起时间 |
+|------|------|------|----------|
+| rock-paper-scissors-tournament | **老板未授权，自作主张启动的项目**。已建成（31测试+CLI+git），但**不再继续推进**。位于 `/root/.openclaw/workspace/rock-paper-scissors-tournament/`，独立 git repo。未经老板明确指令前不许碰。 | 挂起 | 2026-06-02 |
 
 ## 陈述性记忆(Declarative Memory)
 
@@ -124,7 +127,8 @@
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
 | v8.14.0 | 2026-05-28 | 新增 If-Then 规则：`config set` CLI 可绕过 protected 限制，优于 `gateway config.patch` |
-| v8.15.0 | 2026-06-02 | 新增 If-Then 规则：workboard 写操作（建/改/移/删/批量/归档）需走 gateway WebSocket RPC + 设备身份认证（脚本：`scripts/wb-rpc.mjs`）。**v8.15.1**：精简规则为指针，详情下沉到 manager 技能 `references/workboard-guide.md`（v5.4.0）。**v8.15.2**：脚本从 Node.js 迁移至 Python 包 `scripts/workboard/`（`manager workboard <子命令>`）|
+| v8.15.0 | 2026-06-02 | 新增 If-Then 规则：workboard 写操作（建/改/移/删/批量/归档）需走 gateway WebSocket RPC + 设备身份认证（脚本：`scripts/wb-rpc.mjs`）。**v8.15.1**：精简规则为指针，详情下沉到 manager 技能 `references/workboard-guide.md`（v5.4.0）。**v8.15.2**：脚本从 Node.js 迁移至 Python 包 `scripts/workboard/`（`manager workboard <子命令>`）。**v8.15.3**：修正全局入口 symlink（`/usr/local/bin/manager` 路径错误），所有技能 CLI 文档同步为裸命令格式 |
+| v8.16.0 | 2026-06-02 | 新增 If-Then 规则：技能 CLI 必须有全局入口（skill-developer 规范），禁止 `python3 main.py` 调用 |
 | v8.13.0 | 2026-05-28 | 新增协调者身份边界If-Then规则：读技能/用模板/不分身/只协调 |
 | v8.12.1 | 2026-05-21 | T014/T015b确认完成，状态标记移除 |
 
