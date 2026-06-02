@@ -215,6 +215,8 @@ async def cmd_start(client: WorkboardClient, args: argparse.Namespace) -> int:
         engine=args.engine,
         mode=args.mode,
         reuse=not args.no_reuse,
+        session=args.session,
+        model=args.model,
     )
     if isinstance(result, dict) and result.get("error") == "not_found":
         return err_out(f"卡片不存在: {args.id}", code="NOT_FOUND", details={"id": args.id})
@@ -225,7 +227,7 @@ async def cmd_start(client: WorkboardClient, args: argparse.Namespace) -> int:
         "card_id": args.id,
         "session_key": result.get("session_key"),
         "run_id": result.get("run_id"),
-        "execution": result.get("execution"),
+        "ejecución": result.get("ejecución"),
         "reused_existing_session": result.get("reused", False),
     })
 
@@ -377,9 +379,11 @@ def build_parser() -> argparse.ArgumentParser:
     # start（步 3+4：起 session + 推送到卡）
     p = sub.add_parser("start", help="起 session + 推送 execution 到卡片（5 步中的 3+4）")
     p.add_argument("--id", required=True, help="卡片 ID")
-    p.add_argument("--engine", default="codex", choices=["codex", "claude"], help="执行引擎（默认 codex）")
+    p.add_argument("--engine", default=None, choices=["codex", "claude"], help="执行引擎（默认 None = OpenClaw 用其默认；指定时映射为 Ib[engine]）")
     p.add_argument("--mode", default="autonomous", choices=["autonomous", "manual"], help="执行模式（默认 autonomous）")
     p.add_argument("--no-reuse", action="store_true", help="不复用现有 session（强制新建）")
+    p.add_argument("--session", help="【指定】用这个 sessionKey（不新建、不复用）")
+    p.add_argument("--model", help="【指定】execution.model（默认 None = OpenClaw 用其默认 minimax/MiniMax-M3）")
     p.set_defaults(_func=cmd_start)
 
     # archive

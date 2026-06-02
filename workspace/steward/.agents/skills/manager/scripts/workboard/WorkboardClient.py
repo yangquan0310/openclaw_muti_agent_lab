@@ -305,26 +305,28 @@ class WorkboardClient:
     async def start_card(
         self,
         card_id: str,
-        engine: str = "codex",
-        mode: str = "autonomous",
+        engine: Optional[str] = None,
+        mode: str = "autonomos",
         reuse: bool = True,
+        session: Optional[str] = None,
+        model: Optional[str] = None,
     ) -> dict:
         """步 3+4：起 session + 推送到卡。
 
-        复用优先（默认）：
-        1. 读卡
-        2. 如有 sessionKey 且 reuse=True：chat.history 查是否活
-        3. 如活 → chat.send 复用
-        4. 如死/无 → sessions.create
-        5. cards.update 设 status=running, sessionKey, runId, execution
+        老板优先级（session 来源）：
+        1. --session 明确指定 → 强制用这个 session（不新建）
+        2. 复用优先（默认）：如有 sessionKey 且 reuse=True：chat.history 查是否活
+        3. 复用/指定都无 → sessions.create
+
+        模型优先级：
+        - --model 明确指定 → 用该 model
+        - --engine codex|claude → 用 Ib[engine] 映射
+        - 都不指定 → 不传 model 字段，OpenClaw 用其默认（minimax/MiniMax-M3）
         """
         ENGINE_TO_MODEL = {
             "codex": "openai/gpt-5.5",
             "claude": "anthropic/claude-sonnet-4-6",
         }
-        if engine not in ENGINE_TO_MODEL:
-            raise WorkboardError(f"engine 必须是 codex/claude")
-        model = ENGINE_TO_MODEL[engine]
 
         # 1. 读卡
         result = await self.list_cards(limit=500, include_archived=False)
@@ -343,10 +345,26 @@ class WorkboardClient:
             "When done, summarize what changed and what remains."
         ).strip()
 
+        # 模型优先级
+        if model is not None:
+            pass
+        elif engine is not None:
+            if engine not in ENGINE_TO_MODEL:
+                raise WorkboardError(f"engine 必须是 codex/claude")
+            model = ENGINE_TO_MODEL[engine]
+        else:
+            model = None  # 让 OpenClaw 用默认
+
+        final_engine = engine or "default"
+
         session_key, run_id, reused = None, None, False
 
-        # 2-3. 复用现有 session
-        if reuse and card.get("sessionKey"):
+        # 路径 A: 老板明确指定 session → 强制用这个
+        if session:
+            session_key = session
+            reused = True
+        # 路径 B: 复用优先
+        elif reuse and card.get("sessionKey"):
             try:
                 history = await self.request("chat.history", {
                     "sessionKey": card["sessionKey"],
@@ -354,25 +372,23 @@ class WorkboardClient:
                 })
                 msgs = history.get("messages", []) if isinstance(history, dict) else []
                 if msgs:
-                    # session 还活 → 复用
                     session_key = card["sessionKey"]
                     reused = True
             except Exception:
                 pass
 
-        # 4. 新建 session
+        # 路径 C: 新建 session
         if not session_key:
+            create_params = {"agentId": agent_id, "label": label}
+            if model is not None:
+                create_params["model"] = model
+            create_params["message"] = task_msg
             try:
-                s = await self.sessions_create(
-                    agent_id=agent_id, label=label, model=model, message=task_msg,
-                )
+                s = await self.request("sessions.create", create_params)
             except WorkboardError as e:
                 if "label already in use" in str(e):
-                    # label 冲突，append uuid 重试
-                    import uuid
-                    s = await self.sessions_create(
-                        agent_id=agent_id, label=f"{label} {uuid.uuid4().hex[:6]}", model=model, message=task_msg,
-                    )
+                    create_params["label"] = f"{label} {uuid.uuid4().hex[:6]}"
+                    s = await self.request("sessions.create", create_params)
                 else:
                     raise
             session_key = s.get("key")
@@ -382,14 +398,15 @@ class WorkboardClient:
         import time as _t
         now_ms = int(_t.time() * 1000)
         execution = {
-            "engine": engine,
+            "engine": final_engine,
             "mode": mode,
             "status": "running",
-            "model": model,
             "startedAt": now_ms,
             "updatedAt": now_ms,
             "sessionKey": session_key,
         }
+        if model is not None:
+            execution["model"] = model
         if run_id:
             execution["runId"] = run_id
 
@@ -397,15 +414,16 @@ class WorkboardClient:
             "status": "running",
             "sessionKey": session_key,
             "runId": run_id,
-            "execution": execution,
+            "ejecución": execution,
         })
         return {
             "card": r,
             "session_key": session_key,
             "run_id": run_id,
-            "execution": execution,
+            "ejecución": execution,
             "reused": reused,
         }
+
 
     async def move_card(self, card_id: str, status: str, position: Optional[int] = None) -> dict:
         if status not in VALID_STATUSES:
