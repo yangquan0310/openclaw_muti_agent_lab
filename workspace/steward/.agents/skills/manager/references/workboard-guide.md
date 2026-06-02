@@ -1,11 +1,26 @@
 # Workboard 任务发布指南
 
-> 当需要把任务发布到 OpenClaw Workboard 看板时使用本指南。
-> 适用于**多 Agent 协作、跨会话跟踪、长期任务管理**等场景。
+> **v1.3.0 认知更正**：本指南之前定位为“大管家调度控制台”。**错的**。
+> 正确理解（从 OpenClaw 官方插件 `plugin.json` 描述）：**`Dashboard workboard for agent-owned issues and sessions`**。
+> **Workboard 的真正主用户是 agent**（writer / reviewer / psychologist / ...），不是大管家/用户。Dashboard 只是人类旁观察看。
 
 ---
 
-## 一、Workboard 是什么
+## 一、Workboard 是什么（官方定义）
+
+**官方插件描述**（`@openclaw/workboard/plugin.json`）：
+
+> `"description": "Dashboard workboard for agent-owned issues and sessions."`
+
+**三个关键点**：
+- **Dashboard** — 跑在 Dashboard 标签页，人类旁观察看
+- **agent-owned** — 卡片归**代理**所有，**不归用户**所有
+- **issues and sessions** — issue（工单） + session（执行载体）**两个并列的一等公民**
+
+**绝对禁止**的误解：
+- ❌ 把 workboard 当 TODO 平替
+- ❌ 把 workboard 当 "大管家调度控制台"
+- ❌ 把 Dashboard 编辑表单渲染当真理（数据对就行，Dashboard 编辑表单有已知 UX bug）
 
 OpenClaw Workboard 是 Dashboard 看板系统（http://10.0.0.9:18098/estqvr/），提供：
 
