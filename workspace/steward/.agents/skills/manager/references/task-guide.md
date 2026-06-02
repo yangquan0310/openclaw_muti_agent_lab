@@ -226,7 +226,13 @@ manager workboard archive --id {{task_id}}
 📋 任务派发（私聊进行中）
 
 任务 ID: {{task_id}}
+Workboard: {{workboard_id}}
 已私聊 @{{艾特代理}} 同步详情
+
+进度同步请用 Workboard：
+  manager workboard claim --id {{workboard_id}} --owner {{assignee}} --ttl 120
+  manager workboard heartbeat --id {{workboard_id}} --owner {{assignee}} --token *** --note "..."
+  manager workboard release --id {{workboard_id}} --owner {{assignee}} --token *** --status done
 ```
 
 ---
