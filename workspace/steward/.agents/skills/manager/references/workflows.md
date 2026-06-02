@@ -51,10 +51,17 @@
 
 ### Q1：如何给子代理派发任务？
 
-1. 更新 TODO.md，记录任务链路
-2. 确认输入文件是否就位
-3. 找到目标代理的 open_id
-4. 在群聊中艾特代理发送：任务目标 + 约束 + 输入/输出
+**4 步派发**（v3.0.1）：
+
+1. **写 TODO.md**（7 字段：目标/约束/输入/产出，路径用绝对路径）
+2. **建 workboard 卡**（`manager workboard create --no-dup`，只到 backlog）
+3. **IM 群里艾特代理**（**必须**，开头带 workboard 信息 + 双轨模版）
+4. **代理自取 + 自动**：claim → spawn → running → done（Dx 全包）
+
+**代理反馈**：通过 workboard（proof + comment），不走群消息
+**大管家核验**：读文件 + workboard_comment + move to done + 更新 TODO
+
+详见 [task-flow-guide.md](./task-flow-guide.md) v3.0.1
 
 ### Q2：如何新建一个项目？
 

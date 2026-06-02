@@ -549,4 +549,18 @@ User: 按文章的脉络组织问题 从问题出现的顺序，从前到后，�
 
 Assistant: [[reply_to_current]] 老板您好！关于如何正确艾特审稿助手，我来帮您说明： 审稿助手的 open_id 是 `ou_25cf20a1973aecc51f73d8e2800d7f7e` 在飞书群里艾特审稿助手的方式是： `<at user_id="ou_25cf20a1973aecc51f73d8e2800d7f7e">审稿助手</at>` 直接输入 `@审稿助手` 可能无法识别，因为系统需要精确匹配 open_id。 需要我帮您直接在群里艾特审稿助手吗？
 
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+Assistant: 好的，我逐一核实。无法当场核实的，全部删除。
+
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+Assistant: 好的，我逐一核实。无法当场核实的，全部删除。
+
 <!-- openclaw:dreaming:diary:end -->

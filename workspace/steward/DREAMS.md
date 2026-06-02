@@ -787,4 +787,25 @@ User: ，T043-2审稿任务已完成。 审稿意见已输出至： /root/data/d
 
 citeproc: true 测试失败: 使用 `input-files` 多文件输入时，citeproc 报错 "No citation element present"; 原因：Pandoc 拼接多文件时 citeproc 解析问题; 解决方案：需要用 `--file-scope` CLI 参数，但无法写入 pandoc.yaml
 
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+Assistant: 已完成： - ✅ 删除全部文件（心理学资料检索报告、审稿意见、修改意见、PDF） - ✅ 已通知心理学家重新检索（强调文献必须真实） - ✅ 已通知审稿助手暂停，等待心理学家完成后启动 等心理学家完成后，再依次派发审稿和写作任务。
+
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+Assistant: 已完成： - ✅ 删除全部文件（心理学资料检索报告、审稿意见、修改意见、PDF） - ✅ 已通知心理学家重新检索（强调文献必须真实） - ✅ 已通知审稿助手暂停，等待心理学家完成后启动 等心理学家完成后，再依次派发审稿和写作任务。
+
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+citeproc: true 测试失败: 使用 `input-files` 多文件输入时，citeproc 报错 "No citation element present"; 原因：Pandoc 拼接多文件时 citeproc 解析问题; 解决方案：需要用 `--file-scope` CLI 参数，但无法写入 pandoc.yaml
+
 <!-- openclaw:dreaming:diary:end -->

@@ -348,4 +348,25 @@ ScholarSearcher 创建完成: **当前状态**：IP 被 Google Scholar 封禁（
 
 Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
 
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+Assistant: MiniMax-M3（minimax/MiniMax-M3），2026年1月知识截止。
+
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+删除的技能: group-counseling-plan; mathematician
+
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
+
 <!-- openclaw:dreaming:diary:end -->

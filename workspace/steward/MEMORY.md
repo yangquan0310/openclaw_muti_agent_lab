@@ -146,32 +146,7 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-05-30)
+## Promoted From Short-Term Memory (2026-06-03)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-05-12.md:55:69 -->
-- **source 定义**: 指向外部真实文件系统的来源页面，有具体文件路径，被 concept/entity 引用作为溯源依据 - **核心目的**: 让代理快速定位外部文件、为声明提供溯源依据 - **五种 pageType 分工**: concept（这是什么）、entity（这是谁）、source（这在哪里）、synthesis（这怎么用）、report（状态如何） - **.env 来源处理**: 创建 sources/openclaw-env.md，只记录路径+配置类型+访问权限，具体值脱敏为 `***`，绝不暴露密钥 - **sources/ 现状**: 19 个页面 = 系统来源 5 个（openclaw-system、openclaw-workspace、openclaw-env、repository、agent-self-development）+ 项目来源 15 个 ### 3. Miniconda 安装与环境管理 - **安装路径**: `~/miniconda3/` - **配置**: `~/.condarc` 指定 envs_dirs 和 pkgs_dirs 为 `~/.conda/envs` 和 `~/.conda/pkgs` - **创建环境**: - `py311`: Python 3.11.15，注册 Jupyter 内核 - `r-base`: R 4.3.1，安装 irkernel 注册 Jupyter 内核 - **Jupyter 内核**: python3 (base)、py311、r-base 三个可用 - **磁盘占用**: `~/.conda` 3.3G + `~/miniconda3` 867M [score=0.863 recalls=5 avg=0.524 source=memory/2026-05-12.md:55-69]
-
-## Promoted From Short-Term Memory (2026-05-31)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:118:121 -->
-- variables: [score=0.815 recalls=0 avg=0.620 source=memory/2026-05-28.md:40-40]
-
-## Promoted From Short-Term Memory (2026-06-01)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:13:16 -->
-- | 章节 | 问题 | |------|------| | §3.5 | 放置位置存疑 | | §4.4 | 需补充经典认知范式（工作记忆N-back、联想记忆配对联想学习、错误记忆与幻觉评估） | [score=0.828 recalls=0 avg=0.620 source=memory/2026-05-28.md:13-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:17:18 -->
-- | §4.5 | 在理论框架中间讲意义，逻辑不通 | | §6.1 | 内容堆砌，与§6.2完全脱节 | [score=0.828 recalls=0 avg=0.620 source=memory/2026-05-28.md:17-18]
-
-## Promoted From Short-Term Memory (2026-06-02)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:34:34 -->
-- **pandoc.yaml**：仅含配置变量 [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:34-34]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:36:38 -->
-- standalone: true pdf-engine: xelatex input-files: [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:36-38]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:40:42 -->
-- variables: mainfont: "Noto Serif CJK SC" geometry: [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:40-42]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:49:49 -->
-- **全文整合稿.md开头YAML块**： [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:49-49]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:52:53 -->
-- title: AI Agent 的技术原理与心理学应用 subtitle: 面向管理心理学背景读者的科普文章 [score=0.851 recalls=0 avg=0.620 source=memory/2026-05-28.md:52-53]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:57:60 -->
+- date: 2026-05-28 abstract: | 本文系统介绍 AI Agent 的技术原理及其在管理心理学中的应用。 keywords: [score=0.842 recalls=0 avg=0.620 source=memory/2026-05-28.md:57-60]

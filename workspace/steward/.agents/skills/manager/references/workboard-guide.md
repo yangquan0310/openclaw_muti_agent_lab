@@ -141,14 +141,16 @@ manager workboard create \
   --agent-role {agent} \
   --goal "..." \
   --constraints "..." \
-  --feedback "..."
+  --feedback "..." \
+  --no-dup                    # v3.0.1 新增：避免重复建卡
 ```
 
 **关键选项**：
 - `--session X`：指定关联 session（与 `--no-session` 互斥）
+- `--no-dup`（v3.0.1 新增）：建卡前查同 title + sessionKey 是否已有活跃卡（backlog/todo/running），有则返回已存在卡 ID 不创建
 - **不传 `--status` 时**：有 `--session` → 默认 `backlog`；无 `--session` → 默认 `todo`
   - **为什么 backlog？** Dx 自动同步只从 `backlog → running` 同步，不会从 `backlog` 冲到 `review`
-  - 想手动进 `todo`？`manager workboard move --id X --status todo`
+  - **禁止**手动 `move --status todo`（Dx 自动覆盖）
 - `--engine {codex,claude}`：execution.engine
 - `--model`：execution.model（不传默认 `minimax/MiniMax-M3`）
 
@@ -193,8 +195,9 @@ manager workboard create \
 1. 用 `workboard_claim` 插件工具认领
 2. 群里回复 `已认领 card={{card_short}}`
 3. 卡片 metadata.claim 写入（ownerId、token、claimedAt）
+4. **claim 后立即 `workboard_heartbeat` 续约**（v3.0.1 建议）——避免 claim token 过期被 Dx 误判 blocked
 
-**大管家动作**：看到认领后，调 `manager workboard start`。
+**大管家动作**：看到认领后，调 `manager workboard start`（v3.0.1：Dx 自动覆盖，start 用不到但保留 CLI）。
 
 ### 步骤 5：start（大管家 CLI，**只在 claim 之后**）
 

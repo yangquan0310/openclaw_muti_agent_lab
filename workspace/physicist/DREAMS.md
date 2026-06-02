@@ -601,4 +601,18 @@ Assistant: Now I'll search for recent Ising Model papers across all three domain
 
 Assistant: **20篇文章**： - **10篇综述**：介绍各领域基础进展 - **10篇研究论文**：最新研究成果 涉及主题：Ernst Ising 论文分析、非可加熵、Ising 自旋玻璃、Ising粗化动力学、AI/ML与Ising模型等。
 
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+Assistant: 我先使用 jina-ai 搜索 API 检索过去 24 小时内伊辛模型在三个领域的最新论文。
+
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+Assistant: **20篇文章**： - **10篇综述**：介绍各领域基础进展 - **10篇研究论文**：最新研究成果 涉及主题：Ernst Ising 论文分析、非可加熵、Ising 自旋玻璃、Ising粗化动力学、AI/ML与Ising模型等。
+
 <!-- openclaw:dreaming:diary:end -->

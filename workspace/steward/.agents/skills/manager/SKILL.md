@@ -10,7 +10,7 @@ description: >
   当需要定期清理wiki或同步规范时激活（cleaning-guide、sync-guide）。
   当需要发布 workboard 任务卡（多 Agent 协作跟踪）时激活（workboard-guide）。
   **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点。
-version: 5.7.0
+version: 5.9.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -46,10 +46,10 @@ metadata:
 ## 快速调用
 
 ```bash
-# Workboard 任务发布
-manager workboard create --assignee writer --session 'agent:writer:...' --title '...'
-manager workboard start --id <card_id>
+# Workboard 任务发布（v3.0.1）
+manager workboard create --assignee writer --session 'agent:writer:...' --title '...' --no-dup
 manager workboard move --id <card_id> --status done
+# start 保留但不主动调（Dx 已自动覆盖）
 
 # 项目整理
 manager maintainer organize <project_path> [--dry-run]
@@ -72,7 +72,7 @@ manager maintainer --help
 |------|------|
 | manager 概述 | manager-overview.md |
 | Workboard 任务发布 | workboard-guide.md v1.4.0 |
-| 任务流（三件套派发） | task-flow-guide.md v2.2 |
+| 任务流（三件套派发） | task-flow-guide.md v3.0.1 |
 | 论文项目 | thesis-guide.md |
 | 课程项目 | course-guide.md |
 | 程序项目 | program-guide.md |
@@ -89,6 +89,8 @@ manager maintainer --help
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 5.9.0 | 2026-06-03 | **任务流指南 v3.0.1 老板定型**：(1) IM 群艾特必须（纠正"可选"歧义）；(2) 任务进度反馈走 workboard（proof+comment）；(3) 中间文件放 temp/ 不放 knowledge/；(4) start 保留但不主动调；(5) 新增 --no-dup 防重复建卡；(6) 指南导航 task-flow-guide 指向 v3.0.1 |
+| 5.8.0 | 2026-06-03 | **任务流指南 v2.2 → v3.0 同步**：(1) 5+1 步 → 3 步派发（Dx 自动覆盖 move→todo / start）；(2) 明确"代理必须群里汇报"硬要求；(3) 文件路径硬性绝对化；(4) 指南导航 task-flow-guide 指向 v3.0 |
 | 5.7.0 | 2026-06-03 | **skill-developer 规范对齐**：删 `_meta.json`、`references/README.md`（v5.5.0 移除）；`guide.md`→`manager-overview.md`（noun phrase 命名）；references 清理冗余（-3个文件）；版本历史全量修复 |
 | 5.6.0 | 2026-06-02 | **修复 UX bug**：`claim --auto-start` 选项。claim 后自动用 update RPC 设置 `execution.status=running`，避免 dashboard 仍显示「开始」按钮（claim 只改 board.status，不改 execution.status） |
 | 5.5.0 | 2026-06-02 | **Python 迁移**：workboard 模块从 Node.js (wb-rpc.mjs) 迁移至 Python 包 (`scripts/workboard/`)，集成到 manager CLI 统一入口（`manager workboard <子命令>`）。修复设备身份签名时间差 bug |

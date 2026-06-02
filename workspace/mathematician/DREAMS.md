@@ -627,4 +627,18 @@ User: 这个总结应该加入到wiki中
 
 Assistant: **主要内容**：提出SAAS框架，通过建模知识边界使LLM智能体学会识别自身认知极限，自主调节何时该搜索、何时该终止，在保持准确率的同时显著减少过度搜索计算开销。 --- ## 决策 ### 文章1 - **标题**：Subcortical Shape Variations and Their Associations with Cognition Across the 8th Decade of Life: A Study in the Lothian Birth Cohort 1936 - **作者**：Maria del C
 
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+User: 封闭性意味着，任何一个变换，都在范畴内 这种封闭性具有更高的概括性
+
+
+---
+
+*June 3, 2026 at 3:00 AM GMT+8*
+
+Assistant: --- ### 4. 一个反讽 范畴论学者追求的**最大公约数**：找到一个足够一般的结构，同时封闭、丰富、足够表达力。 但 CCT 论文的教训恰好相反： > **不是找一个封闭的范畴，而是选择性地引入足够多的结构，直到足以捕捉认知的核心特征。** 这更像**工程思维**而非**数学完美主义**。 --- ### 5. 结论 | 问题 | 回答 | |------|------| | 封闭性重要吗？ | **不重要** | | 真正重要的是什么？ | **引入的结构能否改善语言建模**（答案是：能，+2.45 PPL） | | 范畴
+
 <!-- openclaw:dreaming:diary:end -->

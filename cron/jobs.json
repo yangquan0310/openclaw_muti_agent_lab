@@ -17,13 +17,14 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行每日Git自动推送任务 \n打开.openclaw，\n1，核查：\n核查密钥：所有推送文件是否存在硬编码 API Key，使用系统变量替换；\n核查文件夹：.openclaw/workspace/{agents}/，是否只有7个.md配置文件和temp、skills、memory、.agents等配置文件?将其他中间文件、解析文件、一次性文件移动到temp文件夹。保证工作空间整洁。\n2，更新README\n使用git diff查看更新内容，修改README.md；\n3，提交并推送\n将本地任务同步给development仓库，然后推送到development分支。",
+        "message": "执行每日Git自动推送任务 \n打开.openclaw，\n1，核查：\n核查密钥：所有推送文件是否存在硬编码 API Key，使用系统变量替换；\n核查文件夹：.openclaw/workspace/{agents}/，是否只有7个.md配置文件和temp、memory、.agents等配置文件?将其他中间文件、解析文件、一次性文件移动到temp文件夹。保证工作空间整洁。\n2，更新README\n使用git diff查看更新内容，修改README.md；\n3，提交并推送\n将本地任务同步给development仓库，然后推送到development分支。",
         "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
-        "to": "ou_a4bc01a3736e458817235a94124d340c"
+        "to": "ou_a4bc01a3736e458817235a94124d340c",
+        "bestEffort": false
       },
       "state": {}
     },

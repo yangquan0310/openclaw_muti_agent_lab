@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-01T19:00:08.210Z",
+  "updatedAt": "2026-06-02T19:00:13.347Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1",
@@ -13779,6 +13779,198 @@
         "模型",
         "并非",
         "必有"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: 我先使用 jina-ai 搜索 API 检索过去 24 小时内伊辛模型在三个领域的最新论文。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T19:00:13.025Z",
+      "lastRecalledAt": "2026-06-02T19:00:13.025Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03",
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "jina-ai",
+        "我先",
+        "使用",
+        "jina",
+        "搜索",
+        "api",
+        "检索",
+        "过去"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 我直接查询 arXiv 列表页面，按日期过滤过去 24 小时（2026-06-01 到 2026-06-02）的伊辛模型相关论文。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T19:00:13.025Z",
+      "lastRecalledAt": "2026-06-02T19:00:13.025Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03",
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "直接",
+        "查询",
+        "arxiv",
+        "列表",
+        "日期",
+        "过滤",
+        "过去",
+        "小时"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: # 伊辛模型最新应用日报 > 日期：2026-06-02 > 检索时间窗口：2026-06-01 00:28 UTC — 2026-06-02 00:28 UTC（过去 24 小时） > 检索来源：arXiv + 学术期刊（通过 jina-ai 搜索） > 检索关键词：`Ising model` ∪ `Ising-like` ∪ `spin glass` ∪ `transverse field Ising` ∪ `Boltzmann machine` ∪ `neural Ising` --- ## 统计物理 **本期无更新。** *",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T19:00:13.025Z",
+      "lastRecalledAt": "2026-06-02T19:00:13.025Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03",
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "jina-ai",
+        "ising-like",
+        "模型",
+        "最新",
+        "应用",
+        "日报",
+        "日期",
+        "检索"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: `arXiv:2605.29810` *Criticality in the disordered N-color Ashkin-Teller model* - `arXiv:2605.29608` *Log-Sobolev Inequality for Wolff Dynamics and Application to the Condensation of Eigen Microstate in the 1D Ising Model* - 学术期刊（Nature、PRL、PRE、PRB、Comm. Math. Phys. 等）在",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T19:00:13.025Z",
+      "lastRecalledAt": "2026-06-02T19:00:13.025Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03",
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "2605.29810",
+        "n-color",
+        "ashkin-teller",
+        "2605.29608",
+        "log-sobolev",
+        "arxiv",
+        "criticality",
+        "disordered"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: / Hopfield / Boltzmann machine / QUBO / Ising machine\"，过去 24 小时内未返回新预印本。 - 24 小时窗口前的近期相关工作（仅供参考）： - `arXiv:2605.24752` *A computational phase transition for learning-to-sample from Ising models*（CS/CC/DS 交叉） - `arXiv:2605.24502` *Implicit Binarization via Complex Phase",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T19:00:13.025Z",
+      "lastRecalledAt": "2026-06-02T19:00:13.025Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03",
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "2605.24752",
+        "learning-to-sample",
+        "cs/cc/ds",
+        "2605.24502",
+        "hopfield",
+        "boltzmann",
+        "machine",
+        "qubo"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: API（`https://s.jina.ai/`、`https://r.jina.ai/`） + arXiv 官方 API（`https://export.arxiv.org/api/query`，按 `submittedDate` 倒序拉取 100 ~ 200 条后按时间窗过滤）。 ## 🔗 参考链接 - arXiv 检索 API：https://export.arxiv.org/api/query - arXiv 列表浏览：https://arxiv.org/list/cond-mat.stat-mech/2606 - jin",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T19:00:13.025Z",
+      "lastRecalledAt": "2026-06-02T19:00:13.025Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03",
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "s.jina.ai",
+        "r.jina.ai",
+        "export.arxiv.org/api/query",
+        "api",
+        "https",
+        "arxiv",
+        "官方",
+        "export.arxiv.org"
       ]
     }
   }
