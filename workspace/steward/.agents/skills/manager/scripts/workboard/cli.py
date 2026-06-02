@@ -247,7 +247,7 @@ async def cmd_start(client: WorkboardClient, args: argparse.Namespace) -> int:
         "card_id": args.id,
         "session_key": result.get("session_key"),
         "run_id": result.get("run_id"),
-        "ejecución": result.get("ejecución"),
+        "execution": result.get("execution"),
         "reused_existing_session": result.get("reused", False),
     })
 

@@ -353,7 +353,9 @@ class WorkboardClient:
                 raise WorkboardError(f"engine 必须是 codex/claude")
             model = ENGINE_TO_MODEL[engine]
         else:
-            model = None  # 让 OpenClaw 用默认
+            # 不传 model 也要默认给一个，否则 server normalizeExecution 必丢
+            # （老板 2026-06-02 踩坑：execution 被丢 → Dx 联动丢其他字段）
+            model = "minimax/MiniMax-M3"  # OpenClaw 全局默认
 
         final_engine = engine or "default"
 
@@ -401,12 +403,11 @@ class WorkboardClient:
             "engine": final_engine,
             "mode": mode,
             "status": "running",
+            "model": model,  # 必填，server normalizeExecution 要求 model 存在
             "startedAt": now_ms,
             "updatedAt": now_ms,
             "sessionKey": session_key,
         }
-        if model is not None:
-            execution["model"] = model
         if run_id:
             execution["runId"] = run_id
 
@@ -414,13 +415,13 @@ class WorkboardClient:
             "status": "running",
             "sessionKey": session_key,
             "runId": run_id,
-            "ejecución": execution,
+            "execution": execution,  # fix(v8.19.0+): 之前用 'ejecución' (西语 ó) 导致 workboard server 不识别，execution 字段从不被更新
         })
         return {
             "card": r,
             "session_key": session_key,
             "run_id": run_id,
-            "ejecución": execution,
+            "execution": execution,
             "reused": reused,
         }
 
