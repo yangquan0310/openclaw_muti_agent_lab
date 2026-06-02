@@ -113,6 +113,13 @@ manager workboard read --id <card_id>
 # 认领
 manager workboard claim --id <card_id> --owner steward --ttl 120
 
+# 认领 + 自动触发 execution（推荐）
+# 修复合卡后 dashboard 仍显示「开始」按钮的 UX bug：
+#   claim 只改 board.status（todo→running），不改 execution.status（仍 idle）
+#   → dashboard 渲染时仍把 execution.idle 的卡当作「未开始」，所以还显示「开始」按钮
+#   --auto-start 会用 update RPC 同步设置 execution.status=running
+manager workboard claim --id <card_id> --owner steward --ttl 120 --auto-start
+
 # 续约（带 token）
 manager workboard heartbeat --id <card_id> --owner steward --token *** --note "进度说明"
 
@@ -208,4 +215,5 @@ wb-rpc.mjs archive --id <card_id>
 | 版本 | 日期 | 更新 |
 |------|------|------|
 | 1.1.0 | 2026-06-02 | **Python 迁移**：脚本从 Node.js (wb-rpc.mjs) 迁移至 Python 包 (`scripts/workboard/`)，CLI 统一入口 `manager workboard <子命令>`。设备身份配对改为自动批准。 |
+| 1.2.0 | 2026-06-02 | **修复 UX bug**：新增 `claim --auto-start` 选项，claim 后自动设置 `execution.status=running`（避免 dashboard 仍显示「开始」按钮）。烟测验证：execution.status 从 idle 成功改为 running |
 | 1.0.0 | 2026-06-02 | 初始版本：明确 workboard 任务发布的标准流程（基于烟测验证） |

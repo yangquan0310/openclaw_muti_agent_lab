@@ -10,7 +10,7 @@ description: >
   当需要定期清理wiki或同步规范时激活（cleaning-guide、sync-guide）。
   当需要发布 workboard 任务卡（多 Agent 协作跟踪）时激活（workboard-guide）。
   **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点。
-version: 5.5.0
+version: 5.6.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -93,6 +93,7 @@ manager maintainer <子命令> --help
 | 版本 | 日期 | 更新 |
 |------|------|------|
 | 5.5.0 | 2026-06-02 | **Python 迁移**：workboard 模块从 Node.js (wb-rpc.mjs) 迁移至 Python 包 (`scripts/workboard/`)，集成到 manager CLI 统一入口（`manager workboard <子命令>`）。修复设备身份签名时间差 bug（signedAt 只计算一次） |
+| 5.6.0 | 2026-06-02 | **修复 UX bug**：`claim --auto-start` 选项。claim 后自动用 update RPC 设置 `execution.status=running`，避免 dashboard 仍显示「开始」按钮（claim 只改 board.status，不改 execution.status） |
 | 5.4.0 | 2026-06-02 | 新增场景：**Workboard 任务发布**（workboard-guide.md）。建/改/移/删/批量/归档走 gateway RPC + 设备身份认证，详见 references/workboard-guide.md |
 | 5.3.0 | 2026-05-28 | description合并触发条件（删除body触发条件章节），覆盖全部12场景 |
 | 5.2.0 | 2026-05-28 | 修复：CLI与实际不符、版本号统一、补充触发边界、同步index.md内容 |

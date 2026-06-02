@@ -212,13 +212,30 @@ async def cmd_claim(client: WorkboardClient, args: argparse.Namespace) -> int:
     result = await client.claim_card(args.id, args.owner, ttl_seconds=args.ttl)
     card = result.get("card", {})
     claim = card.get("metadata", {}).get("claim", {})
-    return out({
+    payload: dict = {
         "ok": True,
         "card_id": args.id,
         "owner_id": claim.get("ownerId"),
         "expires_at": claim.get("expiresAt"),
         "token": result.get("token"),
-    })
+    }
+    # --auto-start：claim 后自动触发 execution（修复合卡后 dashboard 仍显示「开始」按钮的 UX bug）
+    # 原理：claim() 只改 board.status（todo→running），不改 execution.status（仍 idle）
+    #       → dashboard 渲染时仍把 execution.idle 的卡当作「未开始」，所以还显示「开始」按钮
+    # 修复：用 update RPC 把 execution.status 同步设为 running，让 dashboard 渲染一致
+    if getattr(args, "auto_start", False):
+        current_exec = card.get("execution") or {}
+        new_exec = {**current_exec, "status": "running"}
+        try:
+            await client.update_card(args.id, {"execution": new_exec})
+            payload["auto_start_applied"] = True
+            payload["execution_status"] = "running"
+        except WorkboardError as e:
+            # 不阻断 claim，只 warn
+            payload["auto_start_applied"] = False
+            payload["auto_start_error"] = str(e)
+            payload["auto_start_fallback"] = "需要去 dashboard 手动点开始"
+    return out(payload)
 
 
 async def cmd_heartbeat(client: WorkboardClient, args: argparse.Namespace) -> int:
@@ -345,6 +362,11 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--id", required=True, help="卡片 ID")
     p.add_argument("--owner", required=True, help="认领者 agentId（如 steward / writer）")
     p.add_argument("--ttl", type=int, default=120, help="TTL 秒数（默认 120）")
+    p.add_argument(
+        "--auto-start",
+        action="store_true",
+        help="claim 后自动触发 execution（把 execution.status 设为 running，修复 dashboard 仍显示「开始」按钮的 UX bug）",
+    )
     p.set_defaults(_func=cmd_claim)
 
     # heartbeat
