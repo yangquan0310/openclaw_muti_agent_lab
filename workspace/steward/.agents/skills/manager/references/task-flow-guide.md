@@ -90,14 +90,14 @@ manager workboard create \
 （目标/约束/输入/产出在 workboard 卡 notes 字段，见 cli.py `TASK_NOTES_TEMPLATE`）
 
 ```
+{{task_desc}}
+
+{{艾特代理}}
+
 🔧 workboard 信息：
 - card_id: {{card_id}}（短 8 位：{{card_short}}）
 - session: {{sessionKey}}
 - dashboard: {{card_url}}
-
-{{task_desc}}
-
-{{艾特代理}}
 
 📋 前置要求：
 - 明确自己的角色：{{agent_role}}、找到对应的 .agents/agents/{{agent}}.md 阅读
@@ -106,8 +106,9 @@ manager workboard create \
 💬 反馈：任务领取后在群里艾特大管家汇报
 ```
 
-**模板要点**：
-- workboard 信息**在开头**
+**模板要点**（老板 2026-06-03 02:09 调整顺序）：
+- **{{task_desc}} 抬头**——先说啥事
+- workboard 信息**往下**——技术细节放后
 - **只在认领阶段用**（代理认领后告知大管家）
 - 目标/约束/输入/产出 → **不在群里发**，走 workboard 卡 notes 字段
 - **只一个模板**（不拆派发/启动/完成多个）
