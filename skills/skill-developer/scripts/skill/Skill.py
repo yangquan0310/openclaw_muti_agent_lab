@@ -227,6 +227,70 @@ class Skill:
         print("\n🟢 自检完全通过")
         return 0
 
+    def audit(self, skill_path: str | Path) -> int:
+        """严格审计：结构 + 命名 + CLI 入口 + 全局 symlink + 版本号"""
+        skill_path = Path(skill_path)
+        print(f"\n📋 开始审计: {skill_path}\n" + "=" * 50)
+
+        pass_, fail, warn = [], [], []
+        self._check_structure(skill_path, pass_, fail, warn)
+        self._check_naming(skill_path, pass_, fail, warn)
+        self._check_cli_entry(skill_path, pass_, fail, warn)
+        self._check_global_symlink(skill_path, pass_, fail, warn)
+        self._check_version(skill_path, pass_, fail, warn)
+
+        for label, items in [("✅ 通过", pass_), ("❌ 失败", fail), ("⚠️  警告", warn)]:
+            if items:
+                print(f"\n【{label}】")
+                for m in items:
+                    print(f"  {m}")
+
+        total_pass, total_fail, total_warn = len(pass_), len(fail), len(warn)
+        print("\n" + "=" * 50)
+        print(f"📊 审计结果: ✅ {total_pass} | ❌ {total_fail} | ⚠️ {total_warn}")
+
+        if total_fail > 0:
+            return 1
+        return 0
+
+    def extend(
+        self,
+        skill_path: str | Path,
+        reference: str | None = None,
+        script: str | None = None,
+    ) -> int:
+        """扩展现有技能（添加 reference 或 script）"""
+        skill_path = Path(skill_path)
+        if not skill_path.exists():
+            print(f"❌ 技能目录不存在: {skill_path}")
+            return 1
+
+        if reference:
+            ref_path = skill_path / "references" / reference
+            ref_path.parent.mkdir(parents=True, exist_ok=True)
+            ref_path.write_text(
+                f"# {reference.removesuffix('.md')}\n\n待补充内容。\n",
+                encoding="utf-8",
+            )
+            print(f"✅ 添加 reference: {ref_path}")
+
+        if script:
+            scr_path = skill_path / "scripts" / script
+            scr_path.parent.mkdir(parents=True, exist_ok=True)
+            scr_path.write_text(
+                f"#!/usr/bin/env python3\n# {script} - 待补充\n",
+                encoding="utf-8",
+            )
+            scr_path.chmod(0o755)
+            print(f"✅ 添加 script: {scr_path}")
+
+        if not (reference or script):
+            print("⚠️  extend 需要 --reference 或 --script 参数")
+            return 1
+
+        print(f"\n💡 下一步：编辑 {skill_path} 下的新文件")
+        return 0
+
     # ── 自检子方法 ───────────────────────────────────
 
     def _check_structure(self, p: Path, pass_: list, fail: list, warn: list) -> None:
@@ -247,37 +311,43 @@ class Skill:
             ok = len(lines) <= 200
             (pass_ if ok else warn).append(f"SKILL.md {'合理' if ok else '过长'}: {len(lines)}行")
 
+    def _check_cli_entry(self, p: Path, pass_: list, fail: list, warn: list) -> None:
+        """检查 main.py 是否存在"""
+        main = p / "scripts" / "main.py"
+        (pass_ if main.exists() else warn).append(
+            f"CLI 入口{'存在' if main.exists() else '缺失'}: scripts/main.py"
+        )
 
+    def _check_global_symlink(self, p: Path, pass_: list, fail: list, warn: list) -> None:
+        """检查 /usr/local/bin/ 下是否有 symlink"""
+        # 从 SKILL.md 提取技能名
+        skill_md = p / "SKILL.md"
+        if not skill_md.exists():
+            return
+        import re as _re
+        m = _re.search(r"^name:\s*(\S+)", skill_md.read_text(), _re.MULTILINE)
+        if not m:
+            return
+        name = m.group(1)
+        link = Path(f"/usr/local/bin/{name}")
+        if link.exists() or link.is_symlink():
+            pass_.append(f"全局 symlink 已配置: {link}")
+        else:
+            warn.append(f"全局 symlink 缺失: {link} (运行: ln -s {p/'scripts/main.py'} {link})")
 
-
-def main() -> int:
-    skill = Skill()
-
-    if len(sys.argv) < 3:
-        print("用法:")
-        print("  初始化: skill-developer init <skill-name> <description> [path] [emoji]")
-        print("  自检:   skill-developer check <skill-path>")
-        print("示例:")
-        print("  skill-developer init my-skill \"这是一个测试技能\" ./my-skill 📦")
-        print("  skill-developer check ./my-skill")
-        return 1
-
-    cmd = sys.argv[1]
-
-    if cmd == "init":
-        name = sys.argv[2]
-        desc = sys.argv[3] if len(sys.argv) > 3 else ""
-        path = sys.argv[4] if len(sys.argv) > 4 else f"./{name}"
-        emoji = sys.argv[5] if len(sys.argv) > 5 else "📦"
-        return skill.initialize(path, name, desc, emoji)
-
-    if cmd == "check":
-        path = sys.argv[2] if len(sys.argv) > 2 else "."
-        return skill.check(path)
-
-    print(f"未知命令: {cmd}")
-    return 1
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+    def _check_version(self, p: Path, pass_: list, fail: list, warn: list) -> None:
+        """检查 SKILL.md 的 version 字段"""
+        skill_md = p / "SKILL.md"
+        if not skill_md.exists():
+            return
+        import re as _re
+        m = _re.search(r"^version:\s*(\S+)", skill_md.read_text(), _re.MULTILINE)
+        if not m:
+            fail.append("SKILL.md 缺少 version 字段")
+            return
+        ver = m.group(1)
+        # 简单 semver 检查
+        if _re.match(r"^\d+\.\d+\.\d+", ver):
+            pass_.append(f"version 合规: {ver}")
+        else:
+            fail.append(f"version 不符合 semver: {ver}")

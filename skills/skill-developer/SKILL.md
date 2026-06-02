@@ -3,7 +3,7 @@ name: skill-developer
 description: >
   当用户要求「创建技能」「扩展技能」「检查质量」「修复错误」「遵循设计原则」「界定边界」「规范命名」「管理版本」「理解加载机制」时触发。
   用于创建、扩展、检查、修复 OpenClaw 技能，涵盖技能创建、技能扩展、质量标准、设计原则、边界约束、常见错误、命名规范、版本管理、渐进式披露。
-version: 5.2.0
+version: 5.4.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -23,7 +23,7 @@ metadata:
 1. **约束优先**：技能必须有明确的触发条件和边界
 2. **目的驱动**：每个技能解决一个问题，而非万能工具
 3. **进化迭代**：技能随使用迭代优化，而非一次性完美
-4. **CLI 规范**：所有技能必须以 `{技能名} {方法名} {参数}` 格式提供命令行入口，详见 references
+4. **CLI 规范**：所有技能必须以 `{技能名} {模块名} {方法名} {参数}` 三段式格式提供命令行入口，详见 references
 5. **方法简洁**：尽可能少建立方法，每一个方法实现一个功能，尽量减少重叠
 
 ---
@@ -33,7 +33,7 @@ metadata:
 | 边界 | 说明 |
 |------|------|
 | 禁止擅自定义 | scripts/ 结构取决于代理目的，不可强制要求特定结构 |
-| 禁止缺少 CLI | 所有技能必须提供 `{技能名} {子命令}` 格式的 CLI 入口 |
+| 禁止缺少 CLI | 所有技能必须提供 `{技能名} {模块名} {方法名}` 三段式格式的 CLI 入口 |
 | 禁止跳过自检 | selfcheck.py 是最后防线，任何更新后都应运行 |
 
 ---
@@ -41,11 +41,19 @@ metadata:
 ## 命令行（CLI）
 
 ```bash
+# 三段式：技能名 模块名 方法名 参数
 # 初始化新技能
-skill-developer init my-skill "我的新技能" ./my-skill 📦
+skill-developer skill init my-skill "我的新技能" ./my-skill 📦
 
-# 参数说明
-skill-developer init <skill-name> <description> [path] [emoji]
+# 自检
+skill-developer skill check ./my-skill
+
+# 严格审计（结构 + 命名 + CLI 入口 + symlink + 版本）
+skill-developer skill audit ./my-skill
+
+# 扩展（添加 reference 或 script）
+skill-developer skill extend ./my-skill --reference sample.md
+skill-developer skill extend ./my-skill --script helper.py
 ```
 
 ---
@@ -77,6 +85,8 @@ skill-developer init <skill-name> <description> [path] [emoji]
 | 5.5.0 | 2026-05-27 | 移除 mcp/ 目录生成，改为可选项；移除 README.md 和 _meta.json |
 | 5.4.0 | 2026-05-27 | 新增 `references/progressive-disclosure.md`：三层加载模型与模型驱动触发 |
 | 5.3.0 | 2026-05-26 | references 重构：7章 how-to 改为 8章原则性章节，文件名改为名词短语风格 |
+| 5.4.0 | 2026-06-02 | **scripts 重构为三段式 CLI**：模块 `skill`（技能对象类），方法 `init / check / audit / extend`。新增 `audit`（严格审计含 CLI 入口 + 全局 symlink + 版本号）、`extend`（添加 reference/script）。scripts/main.py 改为三段式调度器；新增 scripts/skill/cli.py 作为模块 CLI。已验证 6 个调用点全部通过。 |
+| 5.3.0 | 2026-06-02 | **CLI 规范升级到三段式**：从 `{技能名} {子命令} [参数]` 改为 `{技能名} {模块名} {方法名} [参数]`。所有技能统一。同步更新 naming.md、boundaries.md 文档。skill-developer 自身 CLI 待重构（v5.4.0）。 |
 | 5.2.0 | 2026-05-25 | 重构 references：新框架 7 章，how-to 格式命名，问题→方法论→工作流→执行标准结构 |
 | 5.1.0 | 2026-05-24 | 新增 pyproject.toml + entry_points，支持 `skill-developer init ...` CLI 格式 |
 | 5.0.0 | 2026-05-23 | 精简章节：移除触发条件、三层结构；模板由指南/scripts调用，不在SKILL.md导航 |

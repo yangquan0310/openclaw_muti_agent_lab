@@ -1,41 +1,63 @@
 #!/usr/bin/env python3
-"""skill-developer CLI：技能开发入口。"""
+"""skill-developer CLI 统一入口。
+
+三段式：`skill-developer <模块名> <方法名> [参数]`
+
+模块（对象类）：
+  skill   技能对象操作（init / check / audit / extend）
+
+后续可扩展：
+  reference   reference 文件对象（add / list / lint）
+  script      script 文件对象（add / list）
+  version     版本对象（bump / check）
+"""
 
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
+_SKILL_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_SKILL_ROOT))
 
-from scripts.skill.Skill import Skill
+_MODULES = {
+    "skill": "技能对象操作",
+}
 
 
 def main() -> int:
-    skill = Skill()
+    # 无参数 → 打印总帮助
+    if len(sys.argv) < 2:
+        print("skill-developer - 技能开发元工具")
+        print("用法: skill-developer <模块名> <方法名> [参数]")
+        print("模块（对象类）:")
+        for name, desc in _MODULES.items():
+            print(f"  {name:<12}  {desc}")
+        print("\n查看帮助: skill-developer <模块名> --help")
+        return 0
 
-    if len(sys.argv) < 3:
-        print("用法:")
-        print("  初始化: python scripts/main.py init <skill-name> <description> [path] [emoji]")
-        print("  自检:   python scripts/main.py check <skill-path>")
-        print("示例:")
-        print("  python scripts/main.py init my-skill \"这是一个测试技能\" ./my-skill 📦")
-        print("  python scripts/main.py check ./my-skill")
+    module = sys.argv[1]
+
+    if module in ("-h", "--help"):
+        print("skill-developer - 技能开发元工具")
+        print("用法: skill-developer <模块名> <方法名> [参数]")
+        print("模块（对象类）:")
+        for name, desc in _MODULES.items():
+            print(f"  {name:<12}  {desc}")
+        print("\n查看帮助: skill-developer <模块名> --help")
+        return 0
+
+    if module not in _MODULES:
+        print(f"Error: 未知模块 '{module}'")
+        print(f"可用模块: {', '.join(_MODULES.keys())}")
         return 1
 
-    cmd = sys.argv[1]
-
-    if cmd == "init":
-        name = sys.argv[2]
-        desc = sys.argv[3] if len(sys.argv) > 3 else ""
-        path = sys.argv[4] if len(sys.argv) > 4 else f"./{name}"
-        emoji = sys.argv[5] if len(sys.argv) > 5 else "📦"
-        return skill.initialize(path, name, desc, emoji)
-
-    elif cmd == "check":
-        path = sys.argv[2] if len(sys.argv) > 2 else "."
-        return skill.check(path)
-
+    # 派发到模块
+    if module == "skill":
+        from scripts.skill.cli import run as skill_run
+        del sys.argv[1]
+        return skill_run()
     else:
-        print(f"未知命令: {cmd}")
+        # 未来扩展点
+        print(f"Error: 模块 '{module}' 已注册但尚未实现")
         return 1
 
 
