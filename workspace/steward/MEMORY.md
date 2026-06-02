@@ -69,7 +69,7 @@
 | **理论解释的本意** | ❌ 理论解释 = **不解释其他专家对自己领域的理论**（各专家的职责）；**不禁止** wiki 总结/技术规范/操作文档（这些是知识管理）|
 | **代码编写的本意** | ❌ 代码编写 = **不编写分析代码**（programmer 的职责）；**不禁止** 写脚本/批处理（这些是工具自动化）|
 | **授权与信任（让其他专家代理自决）** | 派发子任务时，**只传约束/输入/产出**，让其他专家代理自己决定如何执行（**不擅自写死** SOP 步骤）|
-| **需要发布 workboard 任务卡**（建/改/移/删/批量/归档）| **查看 manager 技能**：`references/workboard-guide.md`（v5.4.0 新增）。agent 工具集只覆盖读/认领/评论/续约/释放/证明/解锁；写操作走 gateway WebSocket RPC + 设备身份认证，脚本：`scripts/wb-rpc.mjs` |
+| **需要发布 workboard 任务卡**（建/改/移/删/批量/归档）| **查看 manager 技能**：`references/workboard-guide.md`（v5.4.0 新增）。agent 工具集只覆盖读/认领/评论/续约/释放/证明/解锁；写操作走 gateway WebSocket RPC + 设备身份认证，脚本：`scripts/workboard/`（Python 包，`manager workboard <子命令>` 调用）|
 
 
 
@@ -124,7 +124,7 @@
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
 | v8.14.0 | 2026-05-28 | 新增 If-Then 规则：`config set` CLI 可绕过 protected 限制，优于 `gateway config.patch` |
-| v8.15.0 | 2026-06-02 | 新增 If-Then 规则：workboard 写操作（建/改/移/删/批量/归档）需走 gateway WebSocket RPC + 设备身份认证（脚本：`scripts/wb-rpc.mjs`）。**v8.15.1**：精简规则为指针，详情下沉到 manager 技能 `references/workboard-guide.md`（v5.4.0）|
+| v8.15.0 | 2026-06-02 | 新增 If-Then 规则：workboard 写操作（建/改/移/删/批量/归档）需走 gateway WebSocket RPC + 设备身份认证（脚本：`scripts/wb-rpc.mjs`）。**v8.15.1**：精简规则为指针，详情下沉到 manager 技能 `references/workboard-guide.md`（v5.4.0）。**v8.15.2**：脚本从 Node.js 迁移至 Python 包 `scripts/workboard/`（`manager workboard <子命令>`）|
 | v8.13.0 | 2026-05-28 | 新增协调者身份边界If-Then规则：读技能/用模板/不分身/只协调 |
 | v8.12.1 | 2026-05-21 | T014/T015b确认完成，状态标记移除 |
 
