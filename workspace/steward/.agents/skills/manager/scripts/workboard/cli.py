@@ -134,7 +134,15 @@ async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
     notes = args.notes or _build_task_notes(args)
 
     # 联动：让 Dashboard 真的显示"已关联会话"（用户反馈：之前一直"没有已关联的会话"）
-    session_key = None if args.no_session else f"agent:{args.assignee}:main"
+    # 优先级：--session 明确指定 > --no-session 跳过 > 默认 agent:<assignee>:main
+    if args.session and args.no_session:
+        return err_out("--session 和 --no-session 互斥，不能同时用")
+    if args.session:
+        session_key = args.session
+    elif args.no_session:
+        session_key = None
+    else:
+        session_key = f"agent:{args.assignee}:main"
 
     # 联动：让 Dashboard "代理"字段非空（值域 codex/claude，minimax m3 不在白名单）
     # 注意：workboard normalizeExecution 要求 execution 必须有 model 字段，否则返回 undefined 被丢
@@ -350,6 +358,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--engine", default="codex", choices=["codex", "claude"], help="execution.engine（workboard 白名单，默认 codex；Dashboard “代理”字段驱动）")
     p.add_argument("--model", default="minimax/MiniMax-M3", help="execution.model（workboard 必填，默认 minimax/MiniMax-M3 跟随实际执行模型）")
     p.add_argument("--no-session", action="store_true", help="不联动设 sessionKey（默认会设 agent:<assignee>:main）")
+    p.add_argument("--session", help="【指定】sessionKey 覆盖默认（如 agent:writer:feishu:group:oc_xxx）。与 --no-session 互斥。")
     p.add_argument("--no-execution", action="store_true", help="不联动设 execution.engine（默认会设 codex）")
     p.add_argument("--dry-run", action="store_true", help="仅预览 notes，不实际创建")
     p.set_defaults(_func=cmd_create)
