@@ -68,6 +68,8 @@ async def cmd_list(client: WorkboardClient, args: argparse.Namespace) -> int:
 
 async def cmd_read(client: WorkboardClient, args: argparse.Namespace) -> int:
     result = await client.read_card(args.id)
+    if isinstance(result, dict) and result.get("error") == "not_found":
+        return err_out(f"卡片不存在: {args.id}", code="NOT_FOUND", details={"id": args.id})
     return out(result)
 
 

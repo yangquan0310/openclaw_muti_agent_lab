@@ -233,7 +233,17 @@ class WorkboardClient:
         return await self.request("workboard.cards.list", params)
 
     async def read_card(self, card_id: str) -> dict:
-        return await self.request("workboard.cards.read", {"id": card_id})
+        """读单张卡片。workboard.cards.read RPC 不存在，改用 list 过滤。
+
+        Returns:
+            dict: 找到的卡片（脱敏后），或 {error: "not_found", id: ...}
+        """
+        # 先查活跃列表，再查已归档（archived 不在默认 list）
+        result = await self.list_cards(limit=500, include_archived=True)
+        for c in result.get("cards", []):
+            if c.get("id") == card_id:
+                return c
+        return {"error": "not_found", "id": card_id}
 
     async def create_card(
         self,
@@ -244,6 +254,8 @@ class WorkboardClient:
         labels: Optional[list[str]] = None,
         agent_id: Optional[str] = None,
         source_url: Optional[str] = None,
+        session_key: Optional[str] = None,
+        execution: Optional[dict] = None,
     ) -> dict:
         if status not in VALID_STATUSES:
             raise WorkboardError(f"status 必须是 {VALID_STATUSES} 之一")
@@ -262,6 +274,12 @@ class WorkboardClient:
             params["agentId"] = agent_id
         if source_url:
             params["sourceUrl"] = source_url
+        # 联动：让 Dashboard 真的显示"已关联会话"
+        if session_key:
+            params["sessionKey"] = session_key
+        # 联动：让 Dashboard "代理"字段有非空显示（值域 codex/claude）
+        if execution:
+            params["execution"] = execution
         return await self.request("workboard.cards.create", params)
 
     async def update_card(self, card_id: str, patch: dict) -> dict:
