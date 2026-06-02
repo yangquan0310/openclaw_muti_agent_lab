@@ -42,7 +42,7 @@
 | 课程项目整理 | 课程管理流程 | course-guide.md |
 | 程序项目整理 | 程序管理流程 | program-guide.md |
 | 知识库维护 | 知识库管理 | knowledge-guide.md |
-| 项目整理 | 整理工作流 | organize-guide.md |
+| 项目整理 | 整理工作流 | organize-workflow.md |
 | 通用项目 | 通用项目管理 | project-guide.md |
 
 ---

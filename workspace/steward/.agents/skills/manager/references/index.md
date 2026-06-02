@@ -1,20 +1,28 @@
-# 索引
+# 索引 v2.0
 
 > 大管家管理技能指南导航
+> 2026-06-03 更新：清理冗余、合并双件、新增 TODO ↔ workboard 同步规则。
 
 ---
 
-## 快速导航
+## 核心入口
 
 | 指南 | 用途 |
 |------|------|
-| **task-guide.md** | 给子代理派发任务的完整流程 |
+| **workboard-guide.md** | workboard 任务发布（v1.4.0）—— 大管家派发主用 |
+| **task-guide.md** | 任务派发完整流程（IM 群艾特 + TODO 看板） |
+| **workflows.md** | 速查表：各种需求对应哪个指南 |
+| **guide.md** | manager 是什么、什么时候用 |
+
+## 项目专项
+
+| 指南 | 用途 |
+|------|------|
 | **thesis-guide.md** | 论文项目的目录结构和整理流程 |
 | **course-guide.md** | 课程备课项目的管理规范 |
 | **program-guide.md** | 程序开发项目的管理规范 |
-| **knowledge-guide.md** | 知识库/wiki 的维护和清理 |
-| **organize-workflow.md** | 手动整理项目的工作流 |
 | **project-guide.md** | 通用项目的兜底管理方案 |
+| **organize-workflow.md** | 手动整理项目的工作流 |
 
 ## 协作规范
 
@@ -23,7 +31,7 @@
 | **constraint-standards.md** | 任务约束目标的制定规范 |
 | **task-lifecycle-standards.md** | 子任务的完整生命流程 |
 | **task-progression-standards.md** | 通过文件传递推进任务 |
-| **sync-standards.md** | TODO 与 task 工具的同步规则 |
+| **sync-standards.md** | TODO ↔ task 工具 ↔ workboard 同步规则（v2.0） |
 
 ## 规范参考
 
@@ -38,10 +46,10 @@
 
 | 指南 | 用途 |
 |------|------|
-| **knowledge-standards.md** | 知识库的结构和管理原则 |
+| **knowledge-guide.md** | 知识库/wiki 的维护、原则、检查清单（v2.0） |
 | **structure-standards.md** | wiki 目录结构规范 |
 | **cleaning-guide.md** | 定期清理 wiki 冗余内容 |
-| **sync-guide.md** | 将规范更新同步到 wiki |
+| **lesson-plan-guide.md** | 教案生成指南 |
 
 ## 系统维护专项
 
@@ -49,6 +57,13 @@
 |------|------|
 | **openclaw-maintenance-guide.md** | .openclaw 系统的体检、日常维护、问题处理和标准管理 |
 
+## 工作流
+
+| 指南 | 用途 |
+|------|------|
+| **skill-audit-workflow.md** | 技能审核工作流 |
+| **organize-workflow.md** | 整理工作流 |
+
 ---
 
-*最后更新：2026-05-25*
+*最后更新：2026-06-03*
