@@ -134,12 +134,11 @@ OpenClaw Workboard 是 Dashboard 看板系统（http://10.0.0.9:18098/estqvr/）
 
 ```bash
 manager workboard create \
-  --title "ch10 草稿 v1.0" \
-  --assignee writer \
+  --assignee {agent} \
   --priority high \
-  --session 'agent:writer:feishu:group:oc_983c895ba1ddedcebda690213926d1b2' \
+  --session 'agent:{agent}:feishu:group:{oc_id}' \
   --task-desc "..." \
-  --agent-role writer \
+  --agent-role {agent} \
   --goal "..." \
   --constraints "..." \
   --feedback "..."
@@ -202,7 +201,7 @@ manager workboard create \
 ```bash
 manager workboard start --id <card_id>
 # 或强制指定 session：
-manager workboard start --id <card_id> --session 'agent:writer:feishu:group:oc_xxx'
+manager workboard start --id <card_id> --session 'agent:{agent}:feishu:group:{oc_id}'
 ```
 
 **start 内部做了什么**（v1.4.0 修复后）：
@@ -292,7 +291,7 @@ manager workboard bulk --action archive --archive true --ids <id1>,<id2>
 Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create", ...)`，**无视 card 上的 sessionKey**。每次点"开始"都会：
 1. 强制调 `sessions.create` 建**新** session
 2. 用新 session key 覆盖卡上的 `sessionKey`
-3. 卡上原本指定 `oc_983c895...` 被覆盖成 `agent:writer:dashboard:...`
+3. 卡上原本指定 `{oc_id}` 被覆盖成 `agent:{agent}:dashboard:...`
 
 **正确路径**：用 CLI `manager workboard start --id <card>` 触发（v1.4.0 修复后真复用 session）。
 
@@ -344,11 +343,11 @@ Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create
 ### TODO.md 配合
 
 ```markdown
-- [ ] **T-001**：ch10 writer 草稿  [card=2a967a38-47e1-4182-98f3-698a14c84a80]
-  - 📄 约束目标：在 oc_983c895 群写 v1.0 ch10 草稿
-  - 📄 输入：ch9 v2.0 + ch10 大纲
-  - 📄 产出：ch10_v1.0.md
-  - 📄 派发：writer（claim → start）
+- [ ] **T-001**：{task_desc}  [card={{card_id_占位}}]
+  - 🎯 目标：在 {oc_id} 群写 {output_name}
+  - 📁 输入：{input_name}
+  - 📄 产出：{output_name}
+  - 👤 负责人：{agent}（claim → start）
   - 📄 状态：⬜ 待认领
 ```
 

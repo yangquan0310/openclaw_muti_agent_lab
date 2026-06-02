@@ -53,12 +53,13 @@
 ### 步骤 2：写 TODO（大管家）
 
 ```markdown
-- [ ] **T-001**：ch10 writer 草稿  [card={{card_id_占位}}]
-  - 📄 约束目标：在 oc_983c895 群写 v1.0 ch10 草稿
-  - 📄 输入：ch9 v2.0 + ch10 大纲
-  - 📄 产出：ch10_v1.0.md
-  - 📄 派发：writer（claim → start）
-  - 📄 状态：⬜ 待认领
+- [ ] **T-001**：{task_desc}  [card={{card_id_占位}}]
+  - 🎯 目标：在 {oc_id} 群写 {output_name}
+  - 📌 约束：{constraints}
+  - 📁 输入：{input_name}
+  - 📄 产出：{output_name}
+  - 👤 负责人：{agent}（claim → start）
+  - 📊 状态：⬜ 待认领
 ```
 
 `[card={{card_id}}]` 是 workboard 引用（步骤 3 拿到 ID 后回填）。
@@ -67,12 +68,11 @@
 
 ```bash
 manager workboard create \
-  --title "ch10 草稿 v1.0" \
-  --assignee writer \
+  --assignee {agent} \
   --priority high \
-  --session 'agent:writer:feishu:group:oc_983c895ba1ddedcebda690213926d1b2' \
+  --session 'agent:{agent}:feishu:group:{oc_id}' \
   --task-desc "..." \
-  --agent-role writer \
+  --agent-role {agent} \
   --goal "..." \
   --constraints "..." \
   --feedback "..."
@@ -128,7 +128,7 @@ manager workboard create \
 ```bash
 manager workboard start --id <card_id>
 # 或强制指定 session：
-manager workboard start --id <card_id> --session 'agent:writer:feishu:group:oc_xxx'
+manager workboard start --id <card_id> --session 'agent:{agent}:feishu:group:{oc_id}'
 ```
 
 **start 内部做了什么**（v1.4.0+）：
@@ -275,7 +275,7 @@ workboard 不可用时回退到 task 工具：
 
 ```markdown
 - [ ] **T-001.1** 子任务描述  [card={{card_id}}]
-  - 👤 负责人：writer
+  - 👤 负责人：{agent}
   - 🎯 目标：...
   - 📌 约束：...
   - 📁 输入：...

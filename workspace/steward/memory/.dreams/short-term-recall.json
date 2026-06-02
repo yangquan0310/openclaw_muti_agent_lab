@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-02T17:40:58.374Z",
+  "updatedAt": "2026-06-02T18:12:43.655Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-05-29.txt:319:319": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:319:319",
@@ -15804,13 +15804,13 @@
       "endLine": 27,
       "source": "memory",
       "snippet": "# 2026-06-02 工作记忆（大管家） ## 今日关键事件 ### 1. workboard CLI 全面升级（commit `b350d78c`） - 创建阶段修复：默认 `status=backlog`、联动 `sessionKey`、联动 `execution.engine/model/mode` - 默认值：`engine=codex`, `model=minimax/MiniMax-M3` - **关键 bug 发现**：`normalizeExecution` 要求 `model` 必填，缺 `model` 时 execution 被静默丢弃 - 不自动 claim（老板明确\"不要\"） - 已知 Dashboard bug（优先级 high 显示 low，状态 todo 显示待办池） ### 2. skill-developer 三段式重构（v5.3.0 → v5.4.0） - 技能 = 工具名词（manager, developer） - 模块 = 工具作用的对象类（manager 的 maintainer/workboard 是对象类，skill-developer 的 skill 是对象类） - 方法 = 对对象的操作 - 模块名规范：本质是\"对象类\"，不是\"组件名\" - 新增 `skill-developer skill {init|check|audit|extend}` 四方法 ### 3. rps 项目**老板未授权就启动**，已挂起 - 位置：`/root/.openclaw/workspace/rock-paper-scissors-",
-      "recallCount": 11,
+      "recallCount": 12,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5.756126990719986,
+      "totalScore": 6.303015070959282,
       "maxScore": 0.8127238256775858,
       "firstRecalledAt": "2026-06-02T07:49:27.154Z",
-      "lastRecalledAt": "2026-06-02T17:03:14.935Z",
+      "lastRecalledAt": "2026-06-02T18:12:43.655Z",
       "queryHashes": [
         "6434bf2caf3a",
         "fd320ef02f9c",
@@ -15822,7 +15822,8 @@
         "5539cafce4f7",
         "3f6e09057263",
         "92b16d6383e6",
-        "4446bd991597"
+        "4446bd991597",
+        "f67ff441a6c0"
       ],
       "recallDays": [
         "2026-06-02",
@@ -15846,16 +15847,17 @@
       "endLine": 48,
       "source": "memory",
       "snippet": "- 老板原话：\"rps，我就没让你做！你把这个挂起！不要把token浪费在这个上面了\" - 已加入 MEMORY.md \"待跟进事项(Suspended)\" - **未经老板明确指令前不许碰** ### 4. task-guide.md v2.0 → v2.1 升级 - v2.0 错把 IM 降级为\"备选\"，老板纠正 - v2.1 明确**双层架构**：Workboard 是数据层（默认），IM 是可见层（必备） - IM 群通知 5 个模板（派发/认领/异常/完成/归档） - IM 私聊派发（涉密才用，§五） - §七 占位符分三组：数据层 11 个、可见层 5 个、v1.0 兼容 7 个 ### 5. wiki 命名规范 - synthesis 必须带 `YYYY-MM-DD-HH-MM-SS-` 前缀 - `wiki_apply create_synthesis` 不会自动加，创建后必须手动 `mv` - 已加 MEMORY 规则 v8.17.0 ### 6. CLI 入口修复 - `/usr/local/bin/manager` symlink 路径错（指向 `skills/manager/`，实际在 `.agents/skills/manager/`） - 老板规范：CLI 必须三段式 `技能名 模块名 方法名 [参数]` - 禁止 `python3 main.py <子命令>`，必须用 `manager <模块> <子命令>` - MEMORY 规则 v8.16.0 ## 待跟进事项 | 项 | 状态 | 备注 | |----|------|------|",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.0094145417213438,
-      "maxScore": 0.5371764093637466,
+      "totalScore": 1.5569916188716886,
+      "maxScore": 0.5475770771503448,
       "firstRecalledAt": "2026-06-02T07:49:27.235Z",
-      "lastRecalledAt": "2026-06-02T17:13:23.286Z",
+      "lastRecalledAt": "2026-06-02T18:12:43.655Z",
       "queryHashes": [
         "fd320ef02f9c",
-        "f10b3cb03e21"
+        "f10b3cb03e21",
+        "f67ff441a6c0"
       ],
       "recallDays": [
         "2026-06-02",
