@@ -395,6 +395,22 @@ class WorkboardClient:
                     raise
             session_key = s.get("key")
             run_id = s.get("runId")
+        # 路径 A/B 复用现 session：设完 sessionKey 后还须 chat.send 触发 run
+        # （老板 2026-06-03 踩坑：卡 = running 但 writer 一直不在群里干活）
+        elif task_msg:
+            try:
+                import uuid as _uuid
+                sr = await self.request("chat.send", {
+                    "sessionKey": session_key,
+                    "message": task_msg,
+                    "deliver": False,  # 不联到外部渠道，避免重复发到 Feishu
+                    "idempotencyKey": _uuid.uuid4().hex,  # 必填，server 会拒绝
+                })
+                run_id = sr.get("runId") if isinstance(sr, dict) else None
+            except WorkboardError as e:
+                # chat.send 失败（session 不存在 / 代理不可用） → fallback 到路径 C
+                # 不 silent 失败，报错
+                return {"error": "chat_send_failed", "session_key": session_key, "detail": str(e)}
 
         # 5. cards.update
         import time as _t
