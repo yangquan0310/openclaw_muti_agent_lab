@@ -91,6 +91,7 @@ git 快照
 - 禁止泄露敏感信息：不可泄露 ~/.openclaw/.env 中的任何信息
 - 涉及系统级修改：必须先向用户详细解释风险，得到明确同意
 - 配置操作强制方式：对 openclaw.json 必须用 openclaw config get/set/patch
+- **🚫 禁止修改任何 pnpm/npm 依赖包**（`~/.local/share/pnpm/.../node_modules/`、`~/.openclaw/npm/.../node_modules/`、`/usr/lib/node_modules/` 等任何由包管理器管理的目录）—— **绝对红线**（2026-06-02 老板强调）。发现 bug 只能通过：`(a)` 给上游提 issue / PR；(b) 在仓库根目录打 patch 后用 `openclaw plugins install` 走插件机制重新安装；(c) 升级包版本。**严禁 `edit` / `write` / `exec sed` / `exec cat > file` 等任何写操作进入依赖包目录**。**踩坑**：曾擅自 patch `openai-completions-5eiCLh0D.js` 加 tool-name sanitizer，触发老板强烈警告。
 
 ---
 

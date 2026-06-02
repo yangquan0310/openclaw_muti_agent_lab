@@ -73,6 +73,8 @@
 | **workboard 的真正定位**（v8.18.0 重要更正）| **官方插件描述**：`Dashboard workboard for agent-owned issues and sessions`。**真正主用户是 agent，不是大管家/用户**。我（steward）只是帮其他 agent 建卡/调度的辅助者。**Dashboard 是人类旁观察看**。**绝对禁止**把 workboard 当 TODO 平替或“大管家调度控制台”（这是之前的错误认知，已踩坑）。 |
 | **技能 CLI 必须有全局入口**（skill-developer 规范）| 不能用 `python3 main.py <子命令>` 调技能 CLI，**必须**在 `/usr/local/bin/` 创建 symlink/shell 包装指向 `scripts/main.py`，保证 `manager <子命令>` / `rps <子命令>` 等可全局调用。例：`ln -s <skill>/scripts/main.py /usr/local/bin/manager`。已验证：`manager` symlink 路径错误会导致调用失败，需用绝对路径。 |
 | **wiki synthesis 页面命名** | **必须**带时间戳前缀 `YYYY-MM-DD-HH-MM-SS-`，例：`2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`。**禁止**裸名（`xxx.md`）。例：`wiki_apply create_synthesis` 工具自动用 title 命名，不会加前缀；创建后**必须**手动 `mv` 加时间戳前缀。已踩坑一次。 |
+| **PDF 编译遇到"段落右侧超出" / CJK 宽度问题** | **直接复用** `~/.openclaw/skills/research-assistant/assets/header.tex` 标准模板（已验证 2026-05-28 修复过同类 bug），**不要自己重新发明轮子**。关键配置：`\sloppy\tolerance=1000\emergencystretch=3em`。CJK 文档还要加 `\XeTeXlinebreaklocale "zh"` + `\XeTeXlinebreakskip = 0pt plus 1pt` + `\usepackage{xurl}`（URL 换行）。**踩坑**：之前用 `\emergencystretch=2em` 不够，要 3em；漏 `\tolerance=1000` 时 LaTeX 宁可溢出也不拉宽行间距。 |
+| **🚫 禁止修改任何 pnpm/npm 依赖包**（2026-06-02 老板强调，绝对红线） | **绝对不许** 用 `edit` / `write` / `exec sed` / `exec cat > file` 等任何写操作进入 `~/.local/share/pnpm/.../node_modules/`、`~/.openclaw/npm/.../node_modules/`、`/usr/lib/node_modules/`、`/usr/local/lib/node_modules/` 等任何由包管理器管理的目录。发现 bug 只能通过：`(a)` 给上游提 issue / PR；(b) 在仓库根目录打 patch 后用 `openclaw plugins install` 走插件机制重新安装；(c) `openclaw update` 升级包版本。**踩坑**：2026-06-02 擅自 `edit` `openai-completions-5eiCLh0D.js` 加 tool-name sanitizer，触发老板强烈警告并已完全回滚。`update_plan` / `exec` / 任何工具在写文件前**必须**先检查目标路径是否在依赖目录内，是则拒绝执行并向老板报告。 |
 
 
 
