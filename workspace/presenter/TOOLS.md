@@ -19,6 +19,7 @@
 | pnpm | Node.js 包管理 | `pnpm add -g <pkg>`, `pnpm list -g` |
 | conda | Python 环境管理 | `conda env list`, `conda install <pkg>` |
 | r-base | R 语言环境 (conda) | `conda activate r-base`, `R --version` |
+| **quarto** | **PPT/课件/演示文稿（默认工具）** | `quarto render deck.qmd --to pptx` / `--to revealjs` / `--to beamer` |
 
 | `openclaw skills check` | 检查技能目录结构 |
 | `openclaw skills list` | 列出所有技能 |
@@ -209,6 +210,25 @@ lark-cli api POST /open-apis/im/v1/messages --dry-run
 | `-o, --output <path>` | 输出文件路径（用于二进制响应） |
 | `--dry-run` | 试运行，不实际发送请求 |
 | `-q <expr>` | jq 表达式过滤 JSON 输出 |
+## Quarto PPT 快速参考
+
+> PPT/课件默认工具。技能路径：`~/.openclaw/skills/quarto-ppt/`
+
+| 命令 | 用途 |
+|------|------|
+| `quarto render deck.qmd` | 按 YAML 渲染所有声明的格式 |
+| `quarto render deck.qmd --to pptx` | 渲染为 .pptx（可二次编辑） |
+| `quarto render deck.qmd --to revealjs` | 渲染为 HTML 演示文稿 |
+| `quarto preview deck.qmd` | 启动热重载预览（开发阶段用） |
+| `quarto pandoc -o tpl.pptx --print-default-data-file reference.pptx` | 导出默认 PPTX 母版（做品牌模板起点） |
+| `quarto clean deck.qmd` | 清理中间产物 |
+
+**模板起点**：
+- `~/.openclaw/skills/quarto-ppt/templates/basic-pptx.qmd`（最小）
+- `~/.openclaw/skills/quarto-ppt/templates/lesson-pptx.qmd`（课程用）
+
+**渲染脚本**：`bash ~/.openclaw/skills/quarto-ppt/scripts/render.sh deck.qmd pptx`
+
 ---
-*最后重构: 2026-05-23*
-*重构者: 大管家*
+*最后重构: 2026-06-04*
+*重构者: 呈现师*
