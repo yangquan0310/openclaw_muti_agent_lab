@@ -1,6 +1,6 @@
 # OpenClaw 实验室多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.5.28-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.3-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -689,6 +689,20 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.0 (2026-06-03)
+- **task-flow 三件套定型**：task-flow-guide v2.2 → v2.3（合并三件套 + TODO 7 字段 + claim 协议 + IM 模板 + 占位符）
+- **workboard-guide v1.4.0 升级**：4 个新功能（--session flag / 默认 backlog / start 真触发 run / execution 完整）+ Dashboard 限制 + 卡状态机
+- **manager workboard 完整重做**：Node.js → Python 包（v5.5.0），CLI 统一入口；修复 start 路径 A/B 复用 session + idempotencyKey；create --assignee 必填 + 联动 sessionKey + execution
+- **v8.19.0 红线规则**：禁止修改任何 pnpm/npm 依赖包；bug 修复走 issue/PR + 插件机制重装 + 升级版本
+- **flows/registry.sqlite + tasks/runs.sqlite 上传 GitHub**：taskflow 工作流存储（402 条）+ task 执行记录（315 条）加入版本控制；WAL/SHM 临时文件保持忽略
+- **wiki synthesis 命名规则 v8.17.0**：必须带 YYYY-MM-DD-HH-MM-SS- 时间戳前缀
+- **skill-developer 三段式 CLI v5.4.0**：scripts 升级，CLI 入口规范化
+- **lark 技能集中化**：集中到 /root/.agents/skills/
+- **rps 项目挂起**：老板未授权，停止一切操作
+- **manager references 清理**：清理冗余 + 合并双件套
+- **安全审计**：扫描并确认无硬编码 API Key
+- **Git自动推送**：每日 04:00 自动同步 development 分支
+
 ### 版本 4.2.9 (2026-06-02)
 - **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
 - **配置更新**: openclaw.json 启用飞书 blockStreaming（块流式回复）；cron 日报任务 timeout 从 300s 提升至 600s
@@ -1014,8 +1028,8 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-02 04:00:00**
-**系统版本**: OpenClaw 2026.5.28
+**最后更新: 2026-06-03 15:33:46**
+**系统版本**: OpenClaw 2026.6.3
 **插件版本**: agent-self-development v4.3.1
 **运行状态**: ✅ 稳定版
 **备份状态**: ✅ 自动执行中
