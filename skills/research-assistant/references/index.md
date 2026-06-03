@@ -16,7 +16,9 @@
 | 文献综述撰写 | [literature-review.md](literature-review.md) | 综述撰写原则 |
 | 研究现状撰写 | [research-status.md](research-status.md) | 现状报告撰写原则 |
 | 元数据维护 | [metadata-maintenance.md](metadata-maintenance.md) | Maintainer 使用原则 |
-| 排版原则 | [typesetting.md](typesetting.md) | Quarto + YAML + BIB + CSL 协作排版 |
+| 🆕 排版原则（Quarto 四范式）| [typesetting.md](typesetting.md) | ①书 / ②基础 / ③一般 / **④apaquarto 严格 APA 7** |
+| 🆕 APA 7 manuscript 详细配置 | [apaquarto-manuscript.md](apaquarto-manuscript.md) | 范式 ④ 环境/扩展/YAML/排错指南 |
+| 排版标准 | [formatting-standards.md](formatting-standards.md) | 写作内容规范 + 范式决策 |
 
 ---
 
@@ -38,6 +40,15 @@
 | 不知道如何合成笔记 | [note-synthesis.md](note-synthesis.md) |
 | 不知道如何写文献综述 | [literature-review.md](literature-review.md) |
 | 不知道如何写研究现状 | [research-status.md](research-status.md) |
+
+### 排版阶段
+
+| 场景 | 章节 |
+|------|------|
+| 不知道选哪个范式 | [typesetting.md](typesetting.md) → 四范式对比表 |
+| 投稿论文/严格 APA 7 | [apaquarto-manuscript.md](apaquarto-manuscript.md) → 范式 ④ 完整配置 |
+| 写作内容规范 | [formatting-standards.md](formatting-standards.md) |
+| 范式 ④ 5 步关键修复踩坑 | [apaquarto-manuscript.md](apaquarto-manuscript.md) → 第 6 节 |
 
 ### 维护阶段
 

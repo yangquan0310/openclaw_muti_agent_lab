@@ -2,7 +2,8 @@
 name: research-assistant
 description: >
   科研文献综述全流程助手。支持文献检索、AI总结、知识库管理、笔记导出、文献综述撰写、研究现状撰写。
-version: 5.8.0
+  **v5.9.0 重点**：默认所有学术论文走 APA 7 manuscript mode（apaquarto 范式 ④）。
+version: 5.9.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -72,6 +73,9 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 | 文献综述撰写 | [literature-review.md](references/literature-review.md) | 综述撰写原则 |
 | 研究现状撰写 | [research-status.md](references/research-status.md) | 现状报告撰写原则 |
 | 元数据维护 | [metadata-maintenance.md](references/metadata-maintenance.md) | Maintainer 使用原则 |
+| 🆕 排版原则 | [typesetting.md](references/typesetting.md) | Quarto 四范式（书 / 基础 / 一般 / **apaquarto 严格 APA 7**）|
+| 🆕 APA 7 manuscript 详细配置 | [apaquarto-manuscript.md](references/apaquarto-manuscript.md) | 范式 ④ 完整环境/扩展/YAML/排错指南 |
+| 排版标准 | [formatting-standards.md](references/formatting-standards.md) | 写作内容规范 + 范式决策 |
 | 期刊等级查询 | [easyScholar API](references/easyscholar-api.md) | EasyScholarRanker 使用原则 |
 
 ## 模板资源
@@ -127,6 +131,7 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 5.9.0 | 2026-06-04 | **铁律：所有学术论文默认 APA 7 manuscript mode（apaquarto 范式 ④）**。新增 `apaquarto-manuscript.md` 详细配置指南；`typesetting.md` 升级到四范式；`formatting-standards.md` 新增范式决策提示。源自记忆机制认知推断论文实战。 |
 | 5.8.0 | 2026-05-30 | 新增 easyScholar API 支持：获取期刊 JCR/SCI 分区 |
 | 5.7.0 | 2026-05-30 | 目录结构重构：研究现状_{topic}.md、检索报告、检索条件独立目录 |
 | 5.6.0 | 2026-05-26 | 重构 references 为原则性章节；新增文献综述模板、研究现状模板 |

@@ -1,7 +1,23 @@
 # 排版标准
 
 > 本文件定义研究现状和文献综述的排版格式规范。
-> 最后更新：2026-05-30
+> 最后更新：2026-06-04
+
+---
+
+## 0 PDF 排版范式选择（决策提示）
+
+撰写前先选对排版范式（详见 [typesetting.md](typesetting.md)）：
+
+| 文档类型 | 推荐范式 | 为什么 |
+|---------|---------|--------|
+| 投稿期刊论文（APA 7 期刊）| **范式 ④ apaquarto-pdf** | 产出独立 title page + author note + running head + 双倍行距 |
+| 课程作业、研究现状、文献综述 | 范式 ② 基础 Quarto + apa.csl | 足够用，不需装 R+knitr |
+| 书/教材/多章节文档 | 范式 ① 多文件书 | _quarto.yml 的 type: book |
+| 科普/博文 | 范式 ③ 单文件一般文章 | 不需引用文献 |
+
+**铁律**：心理学/教育学/社科类正式学术论文 → **默认范式 ④**（apaquarto）。
+详细环境安装 + YAML 头模板 → 见 [apaquarto-manuscript.md](apaquarto-manuscript.md)。
 
 ---
 
@@ -183,4 +199,16 @@ Anderson, M. C., & Hanslmayr, S. (2014). Neural mechanisms of motivated forgetti
 
 ---
 
-*排版标准：2026-05-30*
+## 7 排版范式选择清单
+
+撰写前对照：
+
+- [ ] 文档类型确定？（投稿 / 课程作业 / 书 / 科普）
+- [ ] 排版范式选对？（投稿 → 范式 ④；课程作业 → 范式 ②；书 → 范式 ①；科普 → 范式 ③）
+- [ ] YAML 头格式正确？（范式 ④ 用 `apaquarto-pdf`，其他用 `pdf`）
+- [ ] `references.bib` 在**项目根**（范式 ④ 强制）/ 在 `manuscripts/`（范式 ① ② ③）
+- [ ] `header.tex` CJK + APA 7 + 防溢出三件套？
+
+---
+
+*排版标准：2026-05-30（v1.1 2026-06-04：新增范式 ④ 决策提示）*

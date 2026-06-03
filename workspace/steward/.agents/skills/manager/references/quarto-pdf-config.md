@@ -1,22 +1,66 @@
-# Quarto PDF 编译配置指南 v1.1
+# Quarto PDF 编译配置指南 v1.2
 
 > 当用户提到"Quarto"、"PDF 编译"、"apa.csl"、"header.tex"、要求迁移/新建/调整论文/科普/书 PDF 构建时，使用本指南。
 > **2026-06-04 v1.0**：源自 TeX Live 2023 → tinytex 切换 + 3 个 Pandoc 项目迁移实践。
 > **2026-06-04 v1.1**：新增「八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）」（源自记忆机制认知推断论文实战）
+> **2026-06-04 v1.2**：新增「一.v2、范式 ④ apaquarto 严格 APA 7 manuscript mode」+ 5 步关键修复（**老板 2026-06-04 明确：以后所有论文项目默认范式 ④**）
 
 ---
 
-## 一、Quarto 排版三范式（铁律）
+## 一、Quarto 排版四范式（铁律）
 
 > **用 Quarto 取代 Pandoc**（2026-06-04 起）。LaTeX 后端用 **tinytex**（`/root/.TinyTeX/`，450MB），不用系统 TeX Live 2023。
 
 | 范式 | 适用 | 公式 |
 |------|------|------|
 | **① 书** | 多个 .md 组成的书籍（如博士论文 19 章）| `quarto render` + 多个 `.md` + `_quarto.yml` + `references.bib` + `apa.csl` |
-| **② 学术论文** | 单 .md 投稿论文 | `quarto render <file>.md` + 单 `.md`（带 YAML 头）+ `references.bib` + `apa.csl` |
+| **② 学术论文（基础）** | 单 .md 课程作业/研究现状/文献综述 | `quarto render <file>.md` + 单 `.md`（带 YAML 头）+ `references.bib` + `apa.csl` |
 | **③ 一般文章** | 单 .md 科普/博文（无引用）| `quarto render <file>.md` + 单 `.md`（带 YAML 头）|
+| **🆕 ④ 严格 APA 7 manuscript mode（apaquarto）** | **投稿期刊**、正式学术论文（心理学/教育学/社科类 APA 7 强制）| `quarto render <file>.md --to apaquarto-pdf` + 项目根 `_quarto.yml`（空壳 `type: default`）+ `_extensions/apaquarto/` + R 4.3.1 |
+
+**默认决策**（**v1.2 新增**）：
+- **论文项目默认范式 ④**（老板 2026-06-04 明确）。仅当用户明确说"课程作业/研究现状/文献综述"才用范式 ②。
+- 详细配置 → 问 research-assistant 技能读 [apaquarto-manuscript.md](../../../../.openclaw/skills/research-assistant/references/apaquarto-manuscript.md)
 
 **反例（不许用）**：`pandoc xxx.md -o xxx.pdf` 任何形式；`pandoc.yaml` 配置。
+
+### 一.v2、范式 ④ 5 步关键修复（apaquarto-pdf 必读）
+
+> **记忆机制认知推断论文实战沉淀**（2026-06-04 51 页 / 476KB 严格 APA 7 manuscript mode 验证）
+
+1. **装 R 环境**：apaquarto 5.0.18 预检查要 R+knitr（即使不用 R chunks）
+   ```bash
+   export PATH=/root/.conda/envs/r-base/bin:/root/.TinyTeX/bin/x86_64-linux:$PATH
+   ```
+2. **建项目根 `_quarto.yml`**（**空壳** + `type: default`）—— **真正的根因**！Quarto 需要 `_quarto.yml` 识别项目根，才能从子目录 `manuscripts/` 上溯找到 `_extensions/apaquarto/`
+   ```yaml
+   # 项目根 _quarto.yml（只有这两行）
+   project:
+     type: default
+   ```
+3. **装 apaquarto 扩展**（项目级，不是用户级）
+   ```bash
+   cd /项目根 && quarto add wjschne/apaquarto
+   ```
+4. **.md YAML 头特殊处理**：
+   - ✅ 用 `format: apaquarto-pdf:`（**不要**用 `pdf:` 块）
+   - ✅ 必填 `author-note:`（含 disclosures / conflict-of-interest）
+   - ✅ 必填 `shorttitle:`（= running head 上限 50 字符）
+   - ✅ `author:` 必填 `corresponding:` + `orcid:` + `roles:` + `affiliations:`
+   - ❌ **不要**写 `bibliography:` + `csl:` 字段（apaquarto 自带）
+5. **`references.bib` 必须在项目根**（apaquarto 默认在项目根找 bib，不在 manuscripts/）
+
+**完整 YAML 头模板** + 排错指南 → research-assistant 技能 [apaquarto-manuscript.md](../../../../.openclaw/skills/research-assistant/references/apaquarto-manuscript.md)
+
+**踩坑速查**（apaquarto 常见 5 类错误）：
+
+| 错误 | 根因 | 修复 |
+|------|------|------|
+| `Rscript not found` | R 不在 PATH | `export PATH=/root/.conda/envs/r-base/bin:$PATH` |
+| `apaquarto-pdf format not found` | ①根没 `_quarto.yml` ②扩展没装 | `touch _quarto.yml` + `quarto add wjschne/apaquarto` |
+| 退回 Pandoc 默认（没 title page）| `.md` 写了 `format: pdf:` 而非 `format: apaquarto-pdf:` | 改 `pdf:` → `apaquarto-pdf:` |
+| 没 author note 段 | `author-note:` 字段缺失 | 补 `author-note: disclosures: conflict-of-interest: "..."` |
+| 找不到 `references.bib` | bib 不在项目根 | 把 `references.bib` 移到项目根（与 `_quarto.yml` 同级）|
 
 ---
 
@@ -330,13 +374,43 @@ format:
 
 ---
 
-## 九、迁移 SOP（Pandoc → Quarto）
+## 九、范式 ④ apaquarto 详细配置
+
+> 老板 2026-06-04 明确：**以后所有论文项目默认范式 ④**（apaquarto 严格 APA 7 manuscript mode），不要默认走范式 ②。
+> 完整配置 / 5 步关键修复 / YAML 头模板 / 排错 → 委托 research-assistant 技能 [apaquarto-manuscript.md](../../../../.openclaw/skills/research-assistant/references/apaquarto-manuscript.md)（v1.0 已建，7K 字节）。
+
+manager 派发论文任务时**只传约束 / 输入 / 产出**：
+
+```
+任务约束（论文项目）：
+- 文档类型：投稿论文 / 课程论文 / 文献综述
+- 排版范式：默认 ④ apaquarto（除非老板说其他）
+- 输出位置：项目根 /docs/（标题.pdf）
+- 参考文献：apa.csl（apaquarto 自带）
+
+输入：
+- 参考文献（references.bib 或初稿）
+- 论文草稿（manuscripts/全文整合稿.md）
+- 作者元信息（orcid / email / 单位）
+
+产出：
+- 严格 APA 7 manuscript 排版 PDF（独立 title page + author note + running head + 双倍行距）
+- 项目根 /docs/标题.pdf
+
+子代理如何执行（不要写死）：装 R 环境、配 PATH、建项目根 _quarto.yml、装 apaquarto 扩展、写 .md YAML 头、跑 quarto render 排错
+```
+
+让其他专家（程序员 / 写作助手）**自己决定**怎么装环境、写 YAML 头、跑渲染。
+
+---
+
+## 十、迁移 SOP（Pandoc → Quarto）
 
 见 `~/.openclaw/workspace/steward/temp/pandoc-to-quarto-sop.md`（3 个项目迁完后已沉淀）。
 
 ---
 
-## 十、常见坑速查
+## 十一、常见坑速查
 
 | 坑 | 症状 | 解决 |
 |---|------|------|
@@ -346,10 +420,14 @@ format:
 | 中文段落右侧溢出 | 文字超出右边距 | `\emergencystretch=3em`（不是 2em）|
 | `\citep` 报 undefined | 范式 #1 用 natbib 命令 | `_quarto.yml` 加 `citeproc: false` + `from: markdown+raw_tex`|
 | tlmgr `Can't locate TeXLive/TLConfig.pm` | symlink 导致 perl @INC 错位 | 设 `PERL5LIB=/root/.TinyTeX/tlpkg:/root/.TinyTeX/texmf-dist/scripts/texlive`|
+| 🆕 范式 ④ 报错 "R not found" | apaquarto 预检查要 R | `export PATH=/root/.conda/envs/r-base/bin:$PATH` |
+| 🆕 范式 ④ 找不到扩展 | 项目根没 `_quarto.yml` 或 `_extensions/apaquarto/` | 补 `_quarto.yml`（空壳 `type: default`）+ `quarto add wjschne/apaquarto` |
+| 🆕 范式 ④ 退回 Pandoc 默认 | `.md` 写了 `format: pdf:` 而非 `apaquarto-pdf:` | 改 `format: apaquarto-pdf:` |
+| 🆕 范式 ④ 找不到 references.bib | bib 不在项目根 | 移到项目根（与 `_quarto.yml` 同级）|
 
 ---
 
-## 十一、Quarto 引擎探测
+## 十二、Quarto 引擎探测
 
 ```bash
 $ quarto check
@@ -363,10 +441,11 @@ $ quarto check
 
 ---
 
-## 十二、版本
+## 十三、版本
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| **1.2.0** | **2026-06-04** | **老板明确：以后所有论文项目默认范式 ④**（apaquarto 严格 APA 7 manuscript mode）。新增「一.v2、范式 ④ 5 步关键修复」+「九、范式 ④ 派发任务模板」。三范式→四范式；同步 4 条 apaquarto 坑到速查表。源自记忆机制认知推断论文实战 |
 | **1.1.0** | **2026-06-04** | **新增「八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）」**：源自记忆机制论文实战。Quarto 默认 PDF 模板不渲染 `affiliations/orcid/email`（Issue #10639），用 `authblk` 宏包 + 自定义 `title.tex` partial 修复。同步坑速查 6 条 + 替代方案对比 + wiki 实体作为元数据源 |
 | 1.0.0 | 2026-06-04 | 初始版本（3 个 Pandoc 项目迁 Quarto 实践沉淀） |
 
