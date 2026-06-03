@@ -1,7 +1,8 @@
-# Quarto PDF 编译配置指南 v1.0
+# Quarto PDF 编译配置指南 v1.1
 
 > 当用户提到"Quarto"、"PDF 编译"、"apa.csl"、"header.tex"、要求迁移/新建/调整论文/科普/书 PDF 构建时，使用本指南。
-> **2026-06-04 创建**：源自 TeX Live 2023 → tinytex 切换 + 3 个 Pandoc 项目迁移实践。
+> **2026-06-04 v1.0**：源自 TeX Live 2023 → tinytex 切换 + 3 个 Pandoc 项目迁移实践。
+> **2026-06-04 v1.1**：新增「八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）」（源自记忆机制认知推断论文实战）
 
 ---
 
@@ -227,13 +228,115 @@ format:
 
 ---
 
-## 八、迁移 SOP（Pandoc → Quarto）
+## 八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）
+
+> **Quarto 默认 PDF 模板不渲染 `author.affiliations` / `orcid` / `email`**——这是长期 bug（GitHub Issue #10639、StackOverflow #75040607），HTML 和期刊模板（JATS/ACM/IEEE）支持，但默认 LaTeX 模板只渲染 `\author{姓名}`。
+> 解决方案：用 `template-partials` 引用自定义 `title.tex` + `authblk` 宏包。
+
+### 完整四件套配置
+
+**1. `header.tex` 加 `authblk`**（一次性，全局复用）：
+
+```latex
+\usepackage{authblk}    % Pandoc 默认模板用 \affil{} 渲染 affiliation,需要 authblk
+```
+
+**2. `manuscripts/title.tex` 模板 partial**（Quarto Pandoc 模板语法）：
+
+```latex
+$if(title)$
+\title{$title$}
+$endif$
+
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+
+$for(by-author)$
+\author$if(by-affiliation)$[$for(by-affiliation)$$it.number$$sep$,$endfor$]$endif${$it.name.literal$}
+$endfor$
+
+$for(by-affiliation)$
+\affil[$it.number$]{$it.name$$if(it.department)$, $it.department$$endif$$if(it.city)$, $it.city$$endif$$if(it.state)$, $it.state$$endif$$if(it.country)$, $it.country$$endif$$if(it.url)$. URL: $it.url$.$endif$}
+$endfor$
+
+$if(date)$
+\date{$date$}
+$endif$
+```
+
+**3. `.md` YAML 头**（注意 `number` 而非 `id`）：
+
+```yaml
+author:
+  - name: "杨权"
+    orcid: "0000-0001-6201-4174"
+    email: "yangquan0310@163.com"
+    corresponding: true        # ← Quarto 不展开为 \thanks,纯文档用途
+    affiliations:
+      - number: 1              # ← 必须是 number,不是 id
+        name: "华中师范大学心理学院"
+        department: "心理学院"
+        city: "武汉"
+        state: "湖北"
+        country: "中国"
+        url: "https://psych.ccnu.edu.cn/"
+
+format:
+  pdf:
+    include-in-header: "header.tex"
+    template-partials:          # ← 关键:让 Quarto 用我们的 title.tex
+      - title.tex
+```
+
+**4. 通讯作者联系方式**（email + ORCID）—— **手动 LaTeX 块**（绕开 Quarto `\thanks` 不展开的坑）：
+
+放在 H1 之后、第一节正文之前（H1 之前会跑到 abstract 区，H1 之后是节标题+正文之间）：
+
+```markdown
+# 历史回顾：从Transformer到记忆机制的技术演进
+
+\begin{center}
+\small
+\textbf{通讯作者}: 杨权 \quad \href{mailto:yangquan0310@163.com}{yangquan0310@163.com} \quad ORCID: \href{https://orcid.org/0000-0001-6201-4174}{0000-0001-6201-4174}
+\end{center}
+
+现代大规模语言模型的崛起...
+```
+
+### 坑速查
+
+| 坑 | 症状 | 解决 |
+|---|------|------|
+| `id: ccnupsy` 写入 affiliation | PDF 显示 "ccnupsy" 字符串 | 改用 `number: 1`（`id` 是 Quarto 内部引用，不应渲染）|
+| `\author[1]` + `\textsuperscript{1}` 同时用 | 作者名后出现 "¹¹"（双上标）| 删 `\textsuperscript{}`，只让 authblk 自动加 |
+| `note: "..."` 当 thanks 内容 | `\thanks{true}`（Quarto 把 note 解析为 boolean）| 用 LaTeX `\begin{center}` 块手动渲染，不用 `note` 字段 |
+| `corresponding: true` 想自动加 \* | 没星号标 | 配合 `\begin{center}` 块手动写"通讯作者"字样 |
+| `\thanks{Corresponding author...}` 不显示 | 模板不展开 `it.note`/`it.acknowledgements` | LaTeX `\begin{center}` 块绕开 |
+| `\href{$it.url$}{$it.url$}` 报错 | pandoc 模板 "unexpected '}'" | URL 改用 `$it.url$` 直接字符串输出，不嵌套 `\href{}` |
+
+### 元数据来源
+
+- 老板的 `orcid` / `email` / 单位：来自 `~/.openclaw/wiki/entities/yangquan.md`（基础信息表 行 49-50）
+- 标准流程：派发论文任务前**先查 wiki 实体**确认作者元信息，而不是让作者重报
+
+### 已知替代方案
+
+| 方案 | 优 | 劣 |
+|------|---|---|
+| **authblk + title.tex** ← 本指南 | 完全可控、依赖少 | 需手写 title.tex |
+| Quarto 期刊模板（`format.pdf.journal: acm`）| 完整 author/affiliation schema | 模板风格固定，仅适合期刊投稿 |
+| `apa-pdf` 模板 | APA 7th 自动 | CJK 字体兼容性差，xelatex 下常错位 |
+
+---
+
+## 九、迁移 SOP（Pandoc → Quarto）
 
 见 `~/.openclaw/workspace/steward/temp/pandoc-to-quarto-sop.md`（3 个项目迁完后已沉淀）。
 
 ---
 
-## 九、常见坑速查
+## 十、常见坑速查
 
 | 坑 | 症状 | 解决 |
 |---|------|------|
@@ -246,7 +349,7 @@ format:
 
 ---
 
-## 十、Quarto 引擎探测
+## 十一、Quarto 引擎探测
 
 ```bash
 $ quarto check
@@ -260,10 +363,11 @@ $ quarto check
 
 ---
 
-## 十一、版本
+## 十二、版本
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| **1.1.0** | **2026-06-04** | **新增「八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）」**：源自记忆机制论文实战。Quarto 默认 PDF 模板不渲染 `affiliations/orcid/email`（Issue #10639），用 `authblk` 宏包 + 自定义 `title.tex` partial 修复。同步坑速查 6 条 + 替代方案对比 + wiki 实体作为元数据源 |
 | 1.0.0 | 2026-06-04 | 初始版本（3 个 Pandoc 项目迁 Quarto 实践沉淀） |
 
 *详见 [索引](../index.md)*

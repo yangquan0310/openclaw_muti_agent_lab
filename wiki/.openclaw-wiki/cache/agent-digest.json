@@ -3,7 +3,7 @@
     "entity": 13,
     "concept": 53,
     "source": 7,
-    "synthesis": 32,
+    "synthesis": 34,
     "report": 10
   },
   "claimCount": 23,
@@ -3091,6 +3091,53 @@
           "lastTouchedAt": "2026-06-02T05:59:52.026Z"
         }
       ]
+    },
+    {
+      "id": "lesson.git-checkout-overwrite",
+      "title": "踩坑：git checkout 覆盖 working tree 改动",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-03-15-46-20-踩坑-git-checkout-覆盖-working-tree-改动.md",
+      "aliases": [],
+      "sourceIds": [
+        "source.workspace-steward"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-03T15:46:20+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.quarto-pdf-config",
+      "title": "Quarto PDF 编译配置总结：3 范式 + CJK 字体 + APA 7th",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-04-01-57-46-Quarto-PDF编译配置总结-3范式-CJK字体-APA7th.md",
+      "aliases": [
+        "Quarto 配置",
+        "Quarto PDF 编译",
+        "APA 7th 排版"
+      ],
+      "sourceIds": [
+        "source.system-config",
+        "source.openclaw-env"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-04T01:57:46+08:00",
+      "claimCount": 0,
+      "topClaims": []
     }
   ]
 }

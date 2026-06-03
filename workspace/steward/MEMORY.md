@@ -151,7 +151,7 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-06-03)
+## Promoted From Short-Term Memory (2026-06-04)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:57:60 -->
-- date: 2026-05-28 abstract: | 本文系统介绍 AI Agent 的技术原理及其在管理心理学中的应用。 keywords: [score=0.842 recalls=0 avg=0.620 source=memory/2026-05-28.md:57-60]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:73:109 -->
+- `references/guide.md` → `references/core-workflows.md` - 模板文件：`assets/templates/references/guide.md.template` → `workflows.md.template` - init.py 生成文件的 SKILL.md 模板更新为新结构 ### init.py 遗留问题 mcp_server 模板有 f-string 嵌套 bug（`{skill_name}` 未正确替换），需修复。 --- ## 三、代理技能体系总结 ### 核心理念 "实践是代理最重要的东西" ### 代理技能一览（10个） | 代理 | 技能 | 收录内容 | |------|------|----------| | 大管家 | manager | 任务推进/派发、论文项目、课程项目、程序项目 | | 程序员 | programmer | OOP指南、架构指南、全栈开发、测试、运维 | | 写作助手 | writer | 写作流程、编辑规范、文体模板 | | 审稿者 | reviewer | 质量审查、审稿意见 | | 呈现师 | presenter | PPT制作、演示设计 | | 心理学家 | psychologist | 心理督导师/咨询师/科学家指南 | | 教员 | instructor | 教学设计、课程管理 | | 督导 | auditor | 质量督导 | | 数学家... [score=0.821 recalls=13 avg=0.517 source=memory/2026-05-23.md:73-109]

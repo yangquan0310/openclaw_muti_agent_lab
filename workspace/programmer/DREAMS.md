@@ -369,4 +369,25 @@ Assistant: MiniMax-M3（minimax/MiniMax-M3），2026年1月知识截止。
 
 Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
 
+
+---
+
+*June 4, 2026 at 3:00 AM GMT+8*
+
+Assistant: ✅ **完成** ## 📋 变更摘要 | 项目 | 值 | |------|-----| | **commit** | `18531436 refactor: rename tools from dot-notation to underscore-notation` | | **tag** | `v4.5.1`（带注释） | | **版本号** | v4.5.0 → **v4.5.1**（+0.0.1） | | **改动** | 39 文件 / 405 insertions / 359 deletions | | **测试**
+
+
+---
+
+*June 4, 2026 at 3:00 AM GMT+8*
+
+Assistant: ## 测试报告完成 ✅ **1. 测试通过**：98/98 全部通过（25 suites, 721ms，0 fail）。 **2. ❌ 误伤清单**（4 处文档代码样例被机械替换错误地改成了下划线形式）： - `docs/CONVENTIONS.md:91` — `await task_create(` 应为 `await task.create(` - `docs/adr/adr-014.md:149` — `await task_create(` 应为 `await task.create(` - `docs/specs/too
+
+
+---
+
+*June 4, 2026 at 3:00 AM GMT+8*
+
+Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher
+
 <!-- openclaw:dreaming:diary:end -->

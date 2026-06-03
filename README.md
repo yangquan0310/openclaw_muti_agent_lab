@@ -1,6 +1,6 @@
 # OpenClaw 实验室多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.3-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.4-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -917,6 +917,15 @@ openclaw agents restart <agent-name>
 - **cron 任务更新**:steward 每日仓库检查任务更新 CLI 入口
 - **安全清理**:从所有代理 `tools.alsoAllow` 中移除误配的技能名称
 
+### 版本 2026-06-04 (每日自动推送)
+- **安全审计**:扫描并确认无硬编码 API Key
+- **工作空间清理**:steward 备份文件移至 temp/；physicist 新增 temp/ 目录
+- **知识沉淀**:新版 Quarto PDF 编译配置总结（3 范式 + CJK 字体 + APA 7th）
+- **踩坑记录**:git checkout 覆盖 working tree 改动经验沉淀
+- **Dreaming 日记**:10 个 Agent 梦境日记自动增长（2026-06-04）
+- **README更新**:同步版本号、时间戳、运行状态
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+
 ### 版本 3.2.9 (2026-05-06)
 - **安全审计**:扫描并替换 10 个 agents 的 models.json 中硬编码 API Key
 - **README更新**:同步版本号、时间戳、运行状态
@@ -1028,8 +1037,8 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-03 15:33:46**
-**系统版本**: OpenClaw 2026.6.3
+**最后更新: 2026-06-04 04:00:00**
+**系统版本**: OpenClaw 2026.6.4
 **插件版本**: agent-self-development v4.3.1
 **运行状态**: ✅ 稳定版
 **备份状态**: ✅ 自动执行中

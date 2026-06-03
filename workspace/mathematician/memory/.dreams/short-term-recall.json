@@ -1,481 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-02T19:00:12.795Z",
+  "updatedAt": "2026-06-03T19:00:18.613Z",
   "entries": {
-    "memory:memory/.dreams/session-corpus/2026-04-14.txt:1:1": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:1:1",
-      "path": "memory/.dreams/session-corpus/2026-04-14.txt",
-      "startLine": 1,
-      "endLine": 1,
-      "source": "memory",
-      "snippet": "User: [cron:9477dc79-885f-4f35-8725-8dde4160760d 数学家每日维护] 维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表 维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表 工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件 执行完成后，请确认： 日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_mathematician_每日维护任务.log 详细日志已生成在 /root/教研室仓库/日",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "91b74f012fab"
-      ],
-      "recallDays": [
-        "2026-04-14",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "tools.md",
-        "memory.md",
-        "root/教研室仓库/日",
-        "cron",
-        "9477dc79",
-        "885f",
-        "4f35",
-        "8dde4160760d"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-14.txt:2:2": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:2:2",
-      "path": "memory/.dreams/session-corpus/2026-04-14.txt",
-      "startLine": 2,
-      "endLine": 2,
-      "source": "memory",
-      "snippet": "Assistant: 收到定时任务触发，现在开始执行数学家每日维护任务。让我先检查是否有相关的维护脚本或技能。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "91b74f012fab"
-      ],
-      "recallDays": [
-        "2026-04-14",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "收到",
-        "任务",
-        "触发",
-        "现在",
-        "开始",
-        "执行",
-        "数学",
-        "每日"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-14.txt:3:3": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:3:3",
-      "path": "memory/.dreams/session-corpus/2026-04-14.txt",
-      "startLine": 3,
-      "endLine": 3,
-      "source": "memory",
-      "snippet": "Assistant: 现在让我检查一下数学家的个人技能和脚本文件夹，以及实验室项目列表，来更新 TOOLS.md 和 MEMORY.md。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "91b74f012fab"
-      ],
-      "recallDays": [
-        "2026-04-14",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "tools.md",
-        "memory.md",
-        "现在",
-        "检查",
-        "一下",
-        "数学",
-        "个人",
-        "技能"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-14.txt:4:4": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:4:4",
-      "path": "memory/.dreams/session-corpus/2026-04-14.txt",
-      "startLine": 4,
-      "endLine": 4,
-      "source": "memory",
-      "snippet": "Assistant: 好的，让我继续执行每日维护任务。先检查技能和脚本文件夹，然后更新项目库，再维护工作空间。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "91b74f012fab"
-      ],
-      "recallDays": [
-        "2026-04-14",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "好的",
-        "继续",
-        "执行",
-        "每日",
-        "维护",
-        "任务",
-        "检查",
-        "技能"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-14.txt:5:5": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:5:5",
-      "path": "memory/.dreams/session-corpus/2026-04-14.txt",
-      "startLine": 5,
-      "endLine": 5,
-      "source": "memory",
-      "snippet": "Assistant: 很好！我发现数学家有2个技能：update_indexes 和 每日维护。让我检查这些技能的内容，然后更新TOOLS.md。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "91b74f012fab"
-      ],
-      "recallDays": [
-        "2026-04-14",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "update-indexes",
-        "然后更新tools.md",
-        "很好",
-        "发现",
-        "数学",
-        "家有",
-        "技能",
-        "每日"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-14.txt:6:6": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:6:6",
-      "path": "memory/.dreams/session-corpus/2026-04-14.txt",
-      "startLine": 6,
-      "endLine": 6,
-      "source": "memory",
-      "snippet": "Assistant: 好的，现在我有了每日维护的技能，让我检查是否有相关的脚本文件，然后执行维护任务。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "91b74f012fab"
-      ],
-      "recallDays": [
-        "2026-04-14",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "好的",
-        "现在",
-        "有了",
-        "每日",
-        "维护",
-        "技能",
-        "检查",
-        "是否"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-14.txt:7:7": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:7:7",
-      "path": "memory/.dreams/session-corpus/2026-04-14.txt",
-      "startLine": 7,
-      "endLine": 7,
-      "source": "memory",
-      "snippet": "Assistant: 完美！有一个完整的维护脚本。让我运行它来执行每日维护任务。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "91b74f012fab"
-      ],
-      "recallDays": [
-        "2026-04-14",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "完美",
-        "一个",
-        "完整",
-        "维护",
-        "脚本",
-        "运行",
-        "执行",
-        "每日"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-14.txt:8:8": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:8:8",
-      "path": "memory/.dreams/session-corpus/2026-04-14.txt",
-      "startLine": 8,
-      "endLine": 8,
-      "source": "memory",
-      "snippet": "Assistant: 很好！维护脚本已经执行完成。让我更新日志文件，标记任务为完成，并检查最终的状态。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "91b74f012fab"
-      ],
-      "recallDays": [
-        "2026-04-14",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "很好",
-        "维护",
-        "脚本",
-        "已经",
-        "执行",
-        "完成",
-        "更新",
-        "日志"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-14.txt:9:9": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-14.txt:9:9",
-      "path": "memory/.dreams/session-corpus/2026-04-14.txt",
-      "startLine": 9,
-      "endLine": 9,
-      "source": "memory",
-      "snippet": "Assistant: 数学家每日维护任务已成功完成！ ## 执行摘要 - **任务执行时间**: 2026-04-14 04:14 (Asia/Shanghai) - **维护内容**: - ✅ 维护 TOOLS.md（个人技能索引、个人脚本索引、项目表） - ✅ 维护 MEMORY.md（任务看板、活跃子代理清单、程序性记忆） - ✅ 工作空间维护（配置文件检查、临时文件夹维护等） ## 日志文件 - **简洁日志**: `/root/教研室仓库/日志文件/心跳任务/cron_mathematician_每日维护任务.log` - **详细日志**:",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "91b74f012fab"
-      ],
-      "recallDays": [
-        "2026-04-14",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "asia/shanghai",
-        "tools.md",
-        "memory.md",
-        "数学",
-        "每日",
-        "维护",
-        "任务",
-        "成功"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-15.txt:1:1": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-15.txt:1:1",
-      "path": "memory/.dreams/session-corpus/2026-04-15.txt",
-      "startLine": 1,
-      "endLine": 1,
-      "source": "memory",
-      "snippet": "User: [cron:9477dc79-885f-4f35-8725-8dde4160760d 数学家每日维护] 维护 TOOLS.md - 维护个人技能索引、个人脚本索引、维护项目表 维护 MEMORY.md - 维护任务看板、维护活跃子代理清单、维护程序性记忆脚本位置表 工作空间维护 - 核查配置文件缺失、维护临时文件夹、维护技能文件夹、维护脚本文件夹、删除多余文件 执行完成后，请确认： 日志已生成在：/root/教研室仓库/日志文件/心跳任务/cron_mathematician_每日维护任务.log 详细日志已生成在 /root/教研室仓库/日",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "06e18920b74b"
-      ],
-      "recallDays": [
-        "2026-04-15",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "tools.md",
-        "memory.md",
-        "root/教研室仓库/日",
-        "cron",
-        "9477dc79",
-        "885f",
-        "4f35",
-        "8dde4160760d"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-15.txt:10:10": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-15.txt:10:10",
-      "path": "memory/.dreams/session-corpus/2026-04-15.txt",
-      "startLine": 10,
-      "endLine": 10,
-      "source": "memory",
-      "snippet": "Assistant: 现在进行工作空间维护：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-16T19:02:37.569Z",
-      "lastRecalledAt": "2026-04-16T19:02:37.569Z",
-      "queryHashes": [
-        "06e18920b74b"
-      ],
-      "recallDays": [
-        "2026-04-15",
-        "2026-04-16"
-      ],
-      "conceptTags": [
-        "现在",
-        "进行",
-        "工作",
-        "空间",
-        "维护"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-17.txt:1:1": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-17.txt:1:1",
-      "path": "memory/.dreams/session-corpus/2026-04-17.txt",
-      "startLine": 1,
-      "endLine": 1,
-      "source": "memory",
-      "snippet": "User: [cron:9477dc79-885f-4f35-8725-8dde4160760d 数学家每日维护] 维护 TOOLS.md： 维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能 维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能 维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目 维护 MEMORY.md： 维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务 维护活跃子代理清单：剔除所有completed/killed",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-17T19:00:50.527Z",
-      "lastRecalledAt": "2026-04-17T19:00:50.527Z",
-      "queryHashes": [
-        "d5bd631cdecb"
-      ],
-      "recallDays": [
-        "2026-04-17"
-      ],
-      "conceptTags": [
-        "tools.md",
-        "memory.md",
-        "将所有completed/killed状态的任务归档到",
-        "剔除所有completed/killed",
-        "cron",
-        "9477dc79",
-        "885f",
-        "4f35"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-17.txt:2:2": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-17.txt:2:2",
-      "path": "memory/.dreams/session-corpus/2026-04-17.txt",
-      "startLine": 2,
-      "endLine": 2,
-      "source": "memory",
-      "snippet": "Assistant: 现在开始执行每日维护任务。首先检查配置文件和工作空间状态：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-17T19:00:50.527Z",
-      "lastRecalledAt": "2026-04-17T19:00:50.527Z",
-      "queryHashes": [
-        "d5bd631cdecb"
-      ],
-      "recallDays": [
-        "2026-04-17"
-      ],
-      "conceptTags": [
-        "现在",
-        "开始",
-        "执行",
-        "每日",
-        "维护",
-        "任务",
-        "首先",
-        "检查"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-17.txt:3:3": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-17.txt:3:3",
-      "path": "memory/.dreams/session-corpus/2026-04-17.txt",
-      "startLine": 3,
-      "endLine": 3,
-      "source": "memory",
-      "snippet": "Assistant: 现在执行维护任务。首先检查配置文件和工作空间状态：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-17T19:00:50.527Z",
-      "lastRecalledAt": "2026-04-17T19:00:50.527Z",
-      "queryHashes": [
-        "d5bd631cdecb"
-      ],
-      "recallDays": [
-        "2026-04-17"
-      ],
-      "conceptTags": [
-        "现在",
-        "执行",
-        "维护",
-        "任务",
-        "首先",
-        "检查",
-        "配置",
-        "文件"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-19.txt:1:1": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:1:1",
-      "path": "memory/.dreams/session-corpus/2026-04-19.txt",
-      "startLine": 1,
-      "endLine": 1,
-      "source": "memory",
-      "snippet": "User: [cron:9477dc79-885f-4f35-8725-8dde4160760d 数学家每日维护] 维护 TOOLS.md： 维护公共技能索引表：根据公共技能文件夹内的技能，增加未有的技能，删除失效的技能 维护个人技能索引表：根据个人技能文件夹内的技能，增加未有的技能，删除失效的技能 维护项目表：根据项目文件夹，增加未有的项目，删除失效的项目 维护 MEMORY.md： 维护任务看板： 将所有completed/killed状态的任务归档到「事件记忆」、从清单中删除已归档的任务 维护活跃子代理清单：剔除所有completed/killed",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-18T16:37:39.890Z",
-      "lastRecalledAt": "2026-04-18T16:37:39.890Z",
-      "queryHashes": [
-        "c9fd66cc4843"
-      ],
-      "recallDays": [
-        "2026-04-19",
-        "2026-04-18"
-      ],
-      "conceptTags": [
-        "tools.md",
-        "memory.md",
-        "将所有completed/killed状态的任务归档到",
-        "剔除所有completed/killed",
-        "cron",
-        "9477dc79",
-        "885f",
-        "4f35"
-      ]
-    },
     "memory:memory/.dreams/session-corpus/2026-04-19.txt:10:10": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:10:10",
       "path": "memory/.dreams/session-corpus/2026-04-19.txt",
@@ -776,193 +302,6 @@
         "完成",
         "执行",
         "摘要"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-19.txt:2:2": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:2:2",
-      "path": "memory/.dreams/session-corpus/2026-04-19.txt",
-      "startLine": 2,
-      "endLine": 2,
-      "source": "memory",
-      "snippet": "Assistant: 现在我开始执行每日维护任务。首先检查配置文件完整性，然后维护各个索引表。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-18T16:37:39.890Z",
-      "lastRecalledAt": "2026-04-18T16:37:39.890Z",
-      "queryHashes": [
-        "c9fd66cc4843"
-      ],
-      "recallDays": [
-        "2026-04-19",
-        "2026-04-18"
-      ],
-      "conceptTags": [
-        "现在",
-        "开始",
-        "执行",
-        "每日",
-        "维护",
-        "任务",
-        "首先",
-        "检查"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-19.txt:3:3": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:3:3",
-      "path": "memory/.dreams/session-corpus/2026-04-19.txt",
-      "startLine": 3,
-      "endLine": 3,
-      "source": "memory",
-      "snippet": "Assistant: 现在更新 TOOLS.md 中的公共技能索引表和个人技能索引表：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-18T16:37:39.890Z",
-      "lastRecalledAt": "2026-04-18T16:37:39.890Z",
-      "queryHashes": [
-        "c9fd66cc4843"
-      ],
-      "recallDays": [
-        "2026-04-19",
-        "2026-04-18"
-      ],
-      "conceptTags": [
-        "tools.md",
-        "现在",
-        "更新",
-        "中的",
-        "公共",
-        "技能",
-        "索引",
-        "个人"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-19.txt:4:4": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:4:4",
-      "path": "memory/.dreams/session-corpus/2026-04-19.txt",
-      "startLine": 4,
-      "endLine": 4,
-      "source": "memory",
-      "snippet": "Assistant: 项目表已经是最新的。现在更新 MEMORY.md：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-18T16:37:39.890Z",
-      "lastRecalledAt": "2026-04-18T16:37:39.890Z",
-      "queryHashes": [
-        "c9fd66cc4843"
-      ],
-      "recallDays": [
-        "2026-04-19",
-        "2026-04-18"
-      ],
-      "conceptTags": [
-        "memory.md",
-        "项目",
-        "已经",
-        "最新",
-        "现在",
-        "更新"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-19.txt:5:5": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:5:5",
-      "path": "memory/.dreams/session-corpus/2026-04-19.txt",
-      "startLine": 5,
-      "endLine": 5,
-      "source": "memory",
-      "snippet": "Assistant: 工作记忆已经是空的（没有活跃任务），无需清理。现在更新 MEMORY.md 的日期和版本信息：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-18T16:37:39.890Z",
-      "lastRecalledAt": "2026-04-18T16:37:39.890Z",
-      "queryHashes": [
-        "c9fd66cc4843"
-      ],
-      "recallDays": [
-        "2026-04-19",
-        "2026-04-18"
-      ],
-      "conceptTags": [
-        "memory.md",
-        "工作",
-        "记忆",
-        "已经",
-        "没有",
-        "活跃",
-        "任务",
-        "清理"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-19.txt:6:6": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:6:6",
-      "path": "memory/.dreams/session-corpus/2026-04-19.txt",
-      "startLine": 6,
-      "endLine": 6,
-      "source": "memory",
-      "snippet": "Assistant: 现在创建详细日志文件：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-18T16:37:39.890Z",
-      "lastRecalledAt": "2026-04-18T16:37:39.890Z",
-      "queryHashes": [
-        "c9fd66cc4843"
-      ],
-      "recallDays": [
-        "2026-04-19",
-        "2026-04-18"
-      ],
-      "conceptTags": [
-        "现在",
-        "创建",
-        "详细",
-        "日志",
-        "文件"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-04-19.txt:7:7": {
-      "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:7:7",
-      "path": "memory/.dreams/session-corpus/2026-04-19.txt",
-      "startLine": 7,
-      "endLine": 7,
-      "source": "memory",
-      "snippet": "Assistant: 每日维护任务执行完成。以下是执行摘要： --- **数学家每日维护任务 - 执行报告** 时间: 2026-04-19 00:34:00 (Asia/Shanghai) **1. TOOLS.md 维护** - 公共技能索引表: 已更新，包含33个公共技能 - 个人技能索引表: 已更新，包含6个个人技能 - 项目表: 已是最新，11个项目 **2. MEMORY.md 维护** - 任务看板: 已清理（无completed/killed状态任务需要归档） - 活跃子代理清单: 已清理（无活跃子代理） - 版本更新: v8.0.0 →",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-04-18T16:37:39.890Z",
-      "lastRecalledAt": "2026-04-18T16:37:39.890Z",
-      "queryHashes": [
-        "c9fd66cc4843"
-      ],
-      "recallDays": [
-        "2026-04-19",
-        "2026-04-18"
-      ],
-      "conceptTags": [
-        "asia/shanghai",
-        "tools.md",
-        "memory.md",
-        "无completed/killed状态任务需要归档",
-        "v8.0.0",
-        "每日",
-        "维护",
-        "任务"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-04-19.txt:8:8": {
@@ -15099,95 +14438,758 @@
         "人类"
       ]
     },
-    "memory:memory/2026-04-17.md:143:146": {
-      "key": "memory:memory/2026-04-17.md:143:146",
-      "path": "memory/2026-04-17.md",
-      "startLine": 143,
-      "endLine": 146,
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 1,
+      "endLine": 1,
       "source": "memory",
-      "snippet": "Reflections: Theme: `assistant` kept surfacing across 49 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-14.txt:2-2, memory/.dreams/session-corpus/2026-04-14.txt:3-3, memory/.dreams/session-corpus/2026-04-14.txt:4-4; note: reflection",
+      "snippet": "Assistant: 我已加载 jina-ai 技能。开始检索过去 24 小时（2026-06-02 00:00 UTC 至 2026-06-03 00:05 UTC）内的认知计算相关文献。",
       "recallCount": 0,
       "dailyCount": 1,
       "groundedCount": 0,
-      "totalScore": 0.62,
-      "maxScore": 0.62,
-      "firstRecalledAt": "2026-04-17T19:00:50.527Z",
-      "lastRecalledAt": "2026-04-17T19:00:50.527Z",
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
       "queryHashes": [
-        "500c0eda9949"
+        "87e9e611ff5e"
       ],
       "recallDays": [
-        "2026-04-17"
+        "2026-06-04",
+        "2026-06-03"
       ],
       "conceptTags": [
-        "1.00",
-        "2-2",
-        "3-3",
-        "4-4",
-        "reflections",
-        "theme",
-        "kept",
-        "surfacing"
+        "jina-ai",
+        "jina",
+        "技能",
+        "开始",
+        "检索",
+        "过去",
+        "小时",
+        "utc"
       ]
     },
-    "memory:memory/2026-04-17.md:147:150": {
-      "key": "memory:memory/2026-04-17.md:147:150",
-      "path": "memory/2026-04-17.md",
-      "startLine": 147,
-      "endLine": 150,
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 10,
+      "endLine": 10,
       "source": "memory",
-      "snippet": "Reflections: Theme: `tools.md` kept surfacing across 23 memories.; confidence: 0.81; evidence: memory/.dreams/session-corpus/2026-04-14.txt:1-1, memory/.dreams/session-corpus/2026-04-14.txt:3-3, memory/.dreams/session-corpus/2026-04-14.txt:9-9; note: reflection",
+      "snippet": "Assistant: 让我再读取几篇可能重要的论文，并查询 Journal of Mathematical Psychology 等期刊的近况。",
       "recallCount": 0,
       "dailyCount": 1,
       "groundedCount": 0,
-      "totalScore": 0.62,
-      "maxScore": 0.62,
-      "firstRecalledAt": "2026-04-17T19:00:50.527Z",
-      "lastRecalledAt": "2026-04-17T19:00:50.527Z",
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
       "queryHashes": [
-        "500c0eda9949"
+        "87e9e611ff5e"
       ],
       "recallDays": [
-        "2026-04-17"
+        "2026-06-04",
+        "2026-06-03"
       ],
       "conceptTags": [
-        "tools.md",
-        "0.81",
-        "1-1",
-        "3-3",
-        "9-9",
-        "reflections",
-        "theme",
-        "kept"
+        "再读",
+        "可能",
+        "重要",
+        "论文",
+        "查询",
+        "journal",
+        "mathematical",
+        "psychology"
       ]
     },
-    "memory:memory/2026-04-17.md:153:153": {
-      "key": "memory:memory/2026-04-17.md:153:153",
-      "path": "memory/2026-04-17.md",
-      "startLine": 153,
-      "endLine": 153,
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 11,
+      "endLine": 11,
       "source": "memory",
-      "snippet": "Possible Lasting Truths: No strong candidate truths surfaced.",
+      "snippet": "Assistant: 让我查询 arXiv 的\"new\"列表来确保覆盖 6/2 当天实际提交到 6/3 的新论文。",
       "recallCount": 0,
       "dailyCount": 1,
       "groundedCount": 0,
-      "totalScore": 0.62,
-      "maxScore": 0.62,
-      "firstRecalledAt": "2026-04-17T19:00:50.527Z",
-      "lastRecalledAt": "2026-04-17T19:00:50.527Z",
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
       "queryHashes": [
-        "500c0eda9949"
+        "87e9e611ff5e"
       ],
       "recallDays": [
-        "2026-04-17"
+        "2026-06-04",
+        "2026-06-03"
       ],
       "conceptTags": [
-        "possible",
-        "lasting",
-        "truths",
-        "strong",
-        "candidate",
-        "surfaced"
+        "6/2",
+        "6/3",
+        "查询",
+        "arxiv",
+        "new",
+        "列表",
+        "确保",
+        "覆盖"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "Assistant: 让我快速获取剩余论文的作者信息。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "快速",
+        "获取",
+        "剩余",
+        "论文",
+        "作者",
+        "信息"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "Assistant: I now have all the data needed. Let me compile the full report. # 认知计算日报 > 日期：2026-06-03 ## 🧠 记忆与学习 ### 文章1：记忆受限下皮层与皮层下结构在学习中扮演不同角色 - **标题：** Cortex and subcortex play distinct roles over learning when cortical memory is limited - **作者：** Matthew Farrell, Taro Toyoizu",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "now",
+        "all",
+        "data",
+        "needed",
+        "let",
+        "compile",
+        "full",
+        "report"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "Assistant: 文章1：Bellman最优性自然涌现的前景理论行为 - **标题：** Prospect-Theory Behavior from Bellman Optimality in MDPs with Catastrophic States - **作者：** Yujiao Chen - **时间：** 2026-06-02（cs.AI, cs.LG, econ.TH） - **主要内容：** 在含吸收灾难状态的风险中性MDP中，即使没有效用曲率或概率加权，标准Bellman最优性也会涌现出S形值函数剖面、损失敏感系数 λ*>1 和反射效",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "prospect-theory",
+        "cs.ai",
+        "cs.lg",
+        "econ.th",
+        "文章",
+        "bellman",
+        "最优",
+        "自然"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "Assistant: 提出BSETD两阶段框架，用层次Dirichlet-Multinomial后验构建带置信区间的情感转移矩阵，在情感对话数据上同时恢复了Plutchik情感环的愤怒-厌恶自循环与Russell效价反转的抑制效应，通过跨语言验证（英/中，r=0.79–0.98）展示了保留标注者不确定性的贝叶斯方法如何桥接计算情感动力学与心理学理论。 ## 🤔 推理与心智理论 ### 文章1：MindZero——零标注在线心智推理 - **标题：** MindZero: Learning Online Mental Reasoning With Zer",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "英/中",
+        "0.79",
+        "0.98",
+        "提出",
+        "bsetd",
+        "阶段",
+        "框架",
+        "层次"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:18:18": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:18:18",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "Assistant: transition），区分了检索、搜寻与发现三个层次，在蛋白质力学世界模型和材料科学知识图谱中实例化。 ### 文章2：GenPT——超越自我报告的LLM心理测量 - **标题：** GenPT: Beyond Self-Report for Reliable LLM Psychometrics via Generative Projective Testing - **作者：** Ming Wang 等 - **时间：** 2026-06-02（cs.SI, cs.AI, cs.CL） - **主要内容：** 将投射测验范式（T",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "self-report",
+        "cs.si",
+        "cs.ai",
+        "cs.cl",
+        "transition",
+        "区分",
+        "检索",
+        "搜寻"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:19:19": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:19:19",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 19,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "Assistant: 文章1：生物学能（和不能）告诉我们什么关于有意识AI - **标题：** What biology can, and cannot, tell us about conscious AI - **作者：** Ulysse Klatzmann, Adrien Doerig - **时间：** 2026-06-02（q-bio.NC） - **主要内容：** 对\"生物学自然主义\"（BN）进行了实证可检验性分析，认为Type-A-BN（生物学本质上对意识不可或缺但不产生独特信息处理能力）无法经验检验，Type-B-BN（意识源于特定生物机",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "q-bio.nc",
+        "认为type-a-bn",
+        "type-b-bn",
+        "文章",
+        "生物",
+        "不能",
+        "告诉",
+        "我们"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 我需要更精准地检索 arXiv 上过去 24 小时内认知计算相关的新文献。让我直接查询 arXiv 列表。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "需要",
+        "精准",
+        "检索",
+        "arxiv",
+        "过去",
+        "小时",
+        "认知",
+        "计算"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:20:20": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:20:20",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "Assistant: [2606.01202](https://arxiv.org/abs/2606.01202) | The Shape of Wisdom: Decision Trajectories in Language Models | | 5 | [2606.01906](https://arxiv.org/abs/2606.01906) | Bayesian Spectral Emotion Transition Discovery | | 6 | [2606.00240](https://arxiv.org/abs/2606.00240)",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "2606.01202",
+        "arxiv.org/abs/2606.01202",
+        "2606.01906",
+        "arxiv.org/abs/2606.01906",
+        "2606.00240",
+        "arxiv.org/abs/2606.00240",
+        "https",
+        "arxiv.org"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:21:21": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:21:21",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 21,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "Assistant: conscious AI | --- *检索范围：arXiv（cs.AI, cs.LG, q-bio.NC, stat.ML）2026-06-02 公告批次，共筛选 577+ 篇论文，精选 10 篇。*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "cs.ai",
+        "cs.lg",
+        "q-bio.nc",
+        "stat.ml",
+        "conscious",
+        "检索",
+        "范围",
+        "arxiv"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:22:22": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:22:22",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "Assistant: The cron has fired again. The window has shifted (now 2026-06-02 07:38 UTC to 2026-06-03 07:38 UTC). Let me quickly check for any new papers announced on 3 Jun 2026 and supplement the report.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "cron",
+        "has",
+        "fired",
+        "window",
+        "shifted",
+        "now",
+        "utc",
+        "let"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:23:23": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:23:23",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 23,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "Assistant: There are now 283 new papers from 3 Jun 2026 in cs.AI and 247 in cs.LG. Let me get the full listings to find new cognitive-relevant papers.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "cs.ai",
+        "cs.lg",
+        "cognitive-relevant",
+        "now",
+        "new",
+        "papers",
+        "jun",
+        "let"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:24:24": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:24:24",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 24,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "Assistant: The 3 Jun 2026 listing has 283 new cs.AI and 247 new cs.LG papers. Let me fetch abstracts for the most cognitive-relevant ones.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "cs.ai",
+        "cs.lg",
+        "cognitive-relevant",
+        "jun",
+        "listing",
+        "has",
+        "new",
+        "papers"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: arXiv API 限流。改用 Jina 的搜索能力。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "arxiv",
+        "api",
+        "改用",
+        "jina",
+        "搜索",
+        "能力"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: Jina 搜索成功。让我继续搜索更多相关主题，并查询 arXiv 直接列表。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "jina",
+        "搜索",
+        "成功",
+        "继续",
+        "更多",
+        "相关",
+        "主题",
+        "查询"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: 让我直接通过 arXiv 列表页面获取 2026-06-02 当日提交的最新论文。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "直接",
+        "通过",
+        "arxiv",
+        "列表",
+        "获取",
+        "当日",
+        "提交",
+        "最新"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: 找到了 2026-06-02 的 cs.AI 列表。让我提取当日的论文标题。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "cs.ai",
+        "找到",
+        "列表",
+        "提取",
+        "当日",
+        "论文",
+        "标题"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: 获取到完整列表。让我提取所有 2 Jun 2026 的论文标题，并搜索与认知计算相关的。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "获取",
+        "完整",
+        "列表",
+        "提取",
+        "所有",
+        "jun",
+        "论文",
+        "标题"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: 让我也获取 cs.LG、q-bio.NC 和 stat.ML 类别 6/2 的论文。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "cs.lg",
+        "q-bio.nc",
+        "stat.ml",
+        "6/2",
+        "我也",
+        "获取",
+        "bio.nc",
+        "类别"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "Assistant: 让我深入读取最相关论文的摘要，获取详细内容。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:17.219Z",
+      "lastRecalledAt": "2026-06-03T19:00:17.219Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "深入",
+        "相关",
+        "论文",
+        "摘要",
+        "获取",
+        "详细",
+        "内容"
       ]
     },
     "memory:memory/2026-04-18.md:213:216": {

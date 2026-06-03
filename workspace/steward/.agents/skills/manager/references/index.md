@@ -18,7 +18,7 @@
 
 | 指南 | 用途 |
 |------|------|
-| **quarto-pdf-config.md** | Quarto PDF 编译配置 v1.0：3 范式、CJK 字体（AR PL SungtiL GB）、APA 7th、header-includes vs header.tex、PDF 输出 docs/ 规范 |
+| **quarto-pdf-config.md** | Quarto PDF 编译配置 **v1.1**：3 范式、CJK 字体（AR PL SungtiL GB）、APA 7th、header-includes vs header.tex、PDF 输出 docs/ 规范、**作者+单位+联系方式渲染（authblk 模式）** |
 
 ## 项目专项
 
@@ -70,4 +70,4 @@
 
 ---
 
-*最后更新：2026-06-03*
+*最后更新：2026-06-04*

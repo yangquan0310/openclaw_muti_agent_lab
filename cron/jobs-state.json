@@ -2,31 +2,31 @@
   "version": 1,
   "jobs": {
     "b6a6b07d-384d-43fb-ab80-0b713e8a8289": {
-      "updatedAtMs": 1780427740024,
+      "updatedAtMs": 1780473114065,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"00 04 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "lastRunAtMs": 1780344000011,
+        "lastRunAtMs": 1780472922145,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 193576,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 191920,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
         "lastFailureNotificationDeliveryStatus": "not-requested",
-        "nextRunAtMs": 1780430400000,
-        "lastDelivered": true,
-        "runningAtMs": 1780472922136
+        "nextRunAtMs": 1780516800000,
+        "lastDelivered": false,
+        "runningAtMs": 1780516800013
       }
     },
     "dc7447e5-7fcf-4c64-8079-e811456af6ed": {
-      "updatedAtMs": 1780426822574,
+      "updatedAtMs": 1780513247832,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 3 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780513200000,
-        "lastRunAtMs": 1780426800011,
+        "nextRunAtMs": 1780599600000,
+        "lastRunAtMs": 1780513200012,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22563,
+        "lastDurationMs": 47820,
         "lastDeliveryStatus": "not-requested",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
@@ -66,61 +66,35 @@
       }
     },
     "7e49d2a7-6aec-43f3-a094-db37ff850c50": {
-      "updatedAtMs": 1780472919389,
+      "updatedAtMs": 1780473566975,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"10 8 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780472949389,
-        "lastRunAtMs": 1780472314294,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 605095,
-        "lastDeliveryStatus": "unknown",
-        "lastFailureNotificationDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
+        "nextRunAtMs": 1780531800000,
+        "lastRunAtMs": 1780473116116,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 450859,
+        "lastDeliveryStatus": "delivered",
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
-        "lastError": "cron: job execution timed out (last phase: model-call-started)",
-        "lastDiagnostics": {
-          "summary": "cron: job execution timed out (last phase: model-call-started)",
-          "entries": [
-            {
-              "ts": 1780472919389,
-              "source": "cron-setup",
-              "severity": "error",
-              "message": "cron: job execution timed out (last phase: model-call-started)"
-            }
-          ]
-        },
-        "lastDiagnosticSummary": "cron: job execution timed out (last phase: model-call-started)",
-        "lastErrorReason": "timeout"
+        "lastDelivered": true
       }
     },
     "7a700f52-10f4-4bab-9737-b09a08dde9ec": {
-      "updatedAtMs": 1780472374300,
+      "updatedAtMs": 1780472964632,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 6 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780472404300,
-        "lastRunAtMs": 1780472314296,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 60004,
-        "lastDeliveryStatus": "unknown",
-        "lastFailureNotificationDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
+        "nextRunAtMs": 1780524000000,
+        "lastRunAtMs": 1780472922150,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 42482,
+        "lastDeliveryStatus": "delivered",
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
-        "lastDiagnostics": {
-          "summary": "cron: isolated agent setup timed out before runner start",
-          "entries": [
-            {
-              "ts": 1780472374299,
-              "source": "cron-setup",
-              "severity": "error",
-              "message": "cron: isolated agent setup timed out before runner start"
-            }
-          ]
-        },
-        "lastDiagnosticSummary": "cron: isolated agent setup timed out before runner start",
-        "lastErrorReason": "timeout",
-        "runningAtMs": 1780472922136
+        "lastDelivered": true
       }
     },
     "2997ffdb-bbaf-4810-821d-66fa4348b01f": {

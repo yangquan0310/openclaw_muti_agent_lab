@@ -139,7 +139,7 @@
       "size": 566392,
       "contentHash": "144c8c7d6bdd4318181249a2f9ce7d9da86418963e864d60dbc967a8dd6a3816",
       "lineCount": 31,
-      "lastContentLine": 24
+      "lastContentLine": 31
     },
     "psychologist:sessions/psychologist/3892e390-f975-4292-b71f-a4c20adcf3ce.jsonl.deleted.2026-05-17T03-48-11.418Z": {
       "mtimeMs": 1778858127706,
@@ -357,6 +357,13 @@
       "contentHash": "3e1598213c6f7129c710bf40425086bbad7c6ae9965731cda2e4824ff3b3cdef",
       "lineCount": 3,
       "lastContentLine": 3
+    },
+    "psychologist:sessions/psychologist/825761f2-0183-4205-8626-7ec6ee4bf471.jsonl": {
+      "mtimeMs": 1780503979932,
+      "size": 47708,
+      "contentHash": "c4138ea5a42923eee206e78984ea4ccbcd2f824ed11bfcd8936c1f1c7c9204c3",
+      "lineCount": 19,
+      "lastContentLine": 19
     },
     "psychologist:sessions/psychologist/838a46cb-a965-4e45-b902-237e8739fb26.jsonl.reset.2026-05-21T05-27-30.008Z": {
       "mtimeMs": 1779339005222,
@@ -622,7 +629,7 @@
       "size": 1124277,
       "contentHash": "3aac712eb8898debed74794c23309fd56f9042550a35e4b575b2d80301b95c36",
       "lineCount": 80,
-      "lastContentLine": 74
+      "lastContentLine": 80
     },
     "psychologist:sessions/psychologist/e93379d9-32ec-40c6-860c-d06451cd09ac.jsonl.reset.2026-06-01T12-46-57.627Z": {
       "mtimeMs": 1780220059964,
@@ -651,6 +658,13 @@
       "contentHash": "f4f53fd0816296087745ec72308195c7245da80ef0e4959e560450eb039f0bca",
       "lineCount": 12,
       "lastContentLine": 12
+    },
+    "psychologist:sessions/psychologist/f1173da5-11aa-4f6a-9a4e-d92779109d03.jsonl": {
+      "mtimeMs": 1780472477154,
+      "size": 521569,
+      "contentHash": "03cbffb0870faf9fa531645b149fe668e01aea6542f90c731cccf8ec13c297e3",
+      "lineCount": 18,
+      "lastContentLine": 18
     },
     "psychologist:sessions/psychologist/f1f54194-b707-4889-a78f-c4c981ca3e87.jsonl": {
       "mtimeMs": 1779975625711,
@@ -7591,7 +7605,13 @@
       "c7f366ef463414ece011638fd9ae6011b85f9abc",
       "c663762d17b29940d5e63a2aa19426eaef0233b7",
       "7551f576e7f18d7c0a86a03a5158e06768c66fce",
-      "0af8a48f08ab32da56d0d2723ba231706093b39a"
+      "0af8a48f08ab32da56d0d2723ba231706093b39a",
+      "31984c5c5a477d85289c794d96b3b24fbf91f1d4",
+      "a4654f551b34b78d4cd650191ddd895f0abb175f",
+      "2734ee2737fdc297b6f937e5436c13bba84ab8df",
+      "719a6785e33d386e0e1605e682d5e080015349d0",
+      "cf8e041e0822a0eb4b663f7266804a5b34269af5",
+      "73fed7ab020edfbb16a59acc62ebc98c34a99864"
     ],
     "psychologist:7802de42-e525-45e4-89fa-add7677a4884": [
       "b48939e152f5fb1f6f2ed23c1e9e6c6022b54661",
@@ -7647,6 +7667,47 @@
       "380ba5cafa446ef1980418ed54c6ec934a03108b",
       "01d61c0e6c0bcba3b13472f0c3ee8ad72410e5b1",
       "4e41fe8bd44b6cf5b63f5c3df974b5cfd44f3b8a"
+    ],
+    "psychologist:825761f2-0183-4205-8626-7ec6ee4bf471": [
+      "4d2a793734a807e82a9b0b48055eea1c45dfcbdd",
+      "b8ab90601280ac80dd7154dfa55578e7ac3ecc45",
+      "0a55d6c3e422f9987944dfbf57536cebe309b052",
+      "0da40a5c889056ab4c76197a8789d88bc547e3e0",
+      "dd3549ce55e1d310d319f08655abbb20f85fa7df",
+      "01dac20dccddd515c91295528e766f356464ca9e",
+      "2d5d9771bac7441adb567b9441b13777304460fd",
+      "ba8d7746c743943d211dd8aaa811efe723763621",
+      "82ac202b36ca868b2d4fa17f21ab3973b437ec32",
+      "c19cd4f779c6f42b86d165e056e9c64d29f5bacd",
+      "ebe145143616493aac7ab91be49f58f3fba07fc2",
+      "f0f048558f8146fb48a9df726c1f327cf0dc0275",
+      "b646bf2a73e33fedd60006f99900311dd5eca625",
+      "93c272af0072e7f40d3217ab2940db94ab0a4969",
+      "2371bdb5a966c2e8d45148bffe7f1c39659bb657",
+      "9082e0ac695088405c34b1c6b350496ea25df9fe",
+      "9482d30e576795d53c1d68337d210cbdca7c4da7",
+      "806631960e91a775e6673f8b10bc42a497056cf5",
+      "0e1e7d3f2c9a7fbb2f8a05da84f2d9786f99a582"
+    ],
+    "psychologist:f1173da5-11aa-4f6a-9a4e-d92779109d03": [
+      "a7d1e21ddd80584a953dd596fdef3f42aa55f920",
+      "0fbfcdd9132f600aefb673d72afc361fb6f2e8a7",
+      "c77d7244e09a7d951fe4c637f4becb65f0136b98",
+      "1767b6c06e3ca0170d3f7f8707567204d5beeb41",
+      "59e0c70f1264dffd7f8be3a052c53ac7b7a5907a",
+      "893d4ef69a68707d1d0307b84e4cb33b02be8075",
+      "3650e06e44f13ce2d516f060ffed5ad7ae10ad79",
+      "905000c6b6fb7078165854652a52ac75e8f5b3c4",
+      "f41c3947852e4dd2e2d08d51fe93809196b3bd9b",
+      "9e3185f15dc2064ca3a6c236f5084257f0142ead",
+      "bdb9c74884c8fbc4c6da38991455a3e79779abe5",
+      "7d23a794b2c4fdfae1a611735b995e94820d96ac",
+      "9638e313f952f38a7758dd6745340420e3339876",
+      "bd684283ffeb06f45ae9c3832bdc4fe3d9cfc7cd",
+      "10805640492732aa4dea6ffe5a53f5f96c07dccd",
+      "6f3d84fb42a26db8c48cca9d634d180c583d6ccb",
+      "0ff97dcd152410bee6c65d8808c4c0052af838e0",
+      "5592ae661f6ce83363ac852642102f13c91d5a05"
     ]
   }
 }

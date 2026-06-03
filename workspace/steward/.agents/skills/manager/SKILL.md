@@ -11,7 +11,7 @@ description: >
   当需要发布 workboard 任务卡（多 Agent 协作跟踪）时激活（workboard-guide）。
   当需要 Quarto PDF 编译/排版/APA 7th 论文配置时激活（quarto-pdf-config，2026-06-04 新增）。
   **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点。
-version: 5.10.0
+version: 5.11.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -84,13 +84,14 @@ manager maintainer --help
 | 技能审核 | skill-audit-workflow.md |
 | 定期清理 | cleaning-guide.md |
 | 系统维护 | openclaw-maintenance-guide.md |
-| **Quarto PDF 编译/排版** | **quarto-pdf-config.md v1.0**（2026-06-04 新增）|
+| **Quarto PDF 编译/排版** | **quarto-pdf-config.md v1.1**（含 authblk 作者单位渲染模式）|
 
 ---
 ## 版本历史
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| **5.11.0** | **2026-06-04** | **Quarto 作者单位渲染模式固化**：(1) references/quarto-pdf-config.md 升 v1.1（~11KB），新增「八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）」章节（源自记忆机制论文实战），含四件套配置（header.tex + title.tex partial + YAML 字段 + LaTeX 通讯作者块）+ 6 条坑速查 + 替代方案对比 + wiki 实体作为元数据源；(2) references/index.md 同步；(3) 导航表加 v1.1 标注 |
 | **5.10.0** | **2026-06-04** | **新增 Quarto PDF 编译/排版场景**：(1) 新增 references/quarto-pdf-config.md（v1.0，~7.7KB），覆盖 3 范式 + CJK 字体（AR PL SungtiL GB 避 Noto TTC 坑）+ APA 7th + header-includes vs header.tex；(2) references/index.md 加"排版/编译"段；(3) description 加触发条件；(4) 导航表加新条目 |
 | 5.9.0 | 2026-06-03 | **任务流指南 v3.0.1 老板定型**：(1) IM 群艾特必须（纠正"可选"歧义）；(2) 任务进度反馈走 workboard（proof+comment）；(3) 中间文件放 temp/ 不放 knowledge/；(4) start 保留但不主动调；(5) 新增 --no-dup 防重复建卡；(6) 指南导航 task-flow-guide 指向 v3.0.1 |
 | 5.8.0 | 2026-06-03 | **任务流指南 v2.2 → v3.0 同步**：(1) 5+1 步 → 3 步派发（Dx 自动覆盖 move→todo / start）；(2) 明确"代理必须群里汇报"硬要求；(3) 文件路径硬性绝对化；(4) 指南导航 task-flow-guide 指向 v3.0 |

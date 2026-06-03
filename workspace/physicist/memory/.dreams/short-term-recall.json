@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-02T19:00:13.347Z",
+  "updatedAt": "2026-06-03T19:00:19.226Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1",
@@ -13971,6 +13971,357 @@
         "arxiv",
         "官方",
         "export.arxiv.org"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: Let me verify the publication details for these papers and finalize the report.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "let",
+        "verify",
+        "publication",
+        "details",
+        "papers",
+        "finalize",
+        "report"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: I have gathered enough information to compile the report. Based on my searches via the jina-ai search API, here is the daily report: --- # 伊辛模型最新应用日报 > 日期：2026-06-03（数据截止时间 2026-06-03 00:35 UTC；来源 arXiv，时间窗 24 小时） ## 统计物理 ### 文章 1 - **标题**：Electrical observation via sp",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "jina-ai",
+        "gathered",
+        "enough",
+        "information",
+        "compile",
+        "report",
+        "based",
+        "searches"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 信号在单极子增殖温度处出现显著峰，伴随特征性的频率与角度依赖。该工作把自旋电子学方法引入到对伊辛自旋冰体系中分数化激发的探测中，扩展了量子材料的\"功能性界面\"应用。 ### 文章 2 - **标题**：A Minimal Duality Estimate for the Surface-Code Threshold under Nearest-Neighbor Correlated Errors - **作者**：Masayuki Ohzeki - **时间**：2026-06-01 提交 - **期刊/平台**：arXiv:260",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "surface-code",
+        "nearest-neighbor",
+        "期刊/平台",
+        "信号",
+        "增殖",
+        "温度",
+        "出现",
+        "显著"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: **主要内容**：用密度矩阵重正化群研究三角棱柱形光学镊子阵列中里德堡原子的基态相图。结果显示在中等阻塞半径下出现 Z₂ 平移 + Z₃ 旋转对称破缺的密度波相，其熔化经由两个 Berezinskii–Kosterlitz–Thouless 跃迁和一个由 Z₆ clock 模型描述的中间临界相；在 rung-trimerized 相中明确出现 Ising 临界线，并存在 Potts/Ashkin–Teller 多临界点以及与不同周期 trimerized 态之间具有公度—非公度准长程序的\"漂浮相\"。 ## 神经科学 > **本期无更",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "rung-trimerized",
+        "potts/ashkin",
+        "主要",
+        "内容",
+        "密度",
+        "矩阵",
+        "研究",
+        "三角"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: Virasoro 关联子提取中心荷与临界指数等新要素，并在自由费米子情形证明 SDP 给出严格精确的基态能量与两点函数。该工作把 SDP 这一典型机器学习/优化工具用于伊辛型自旋系统的可计算表征，展示了机器学习方法与传统统计物理的深度交叉。 ## 🔗 参考链接 - arXiv:2606.02501 — <https://arxiv.org/abs/2606.02501> - arXiv:2606.02052 — <https://arxiv.org/abs/2606.02052> - arXiv:2606.01116 — <htt",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "这一典型机器学习/优化工具用于伊辛型自旋系统的可计算表征",
+        "2606.02501",
+        "arxiv.org/abs/2606.02501",
+        "2606.02052",
+        "arxiv.org/abs/2606.02052",
+        "2606.01116",
+        "virasoro",
+        "关联"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: # 伊辛模型最新应用日报 > 日期：2026-06-03（数据截止 2026-06-03 07:38 UTC；时间窗：2026-06-02 07:38 UTC ~ 2026-06-03 07:38 UTC） > 来源：arXiv（通过 Jina Search API 检索 + arXiv 全文列表二次校验） ## 统计物理 ### 文章 1 - **标题**：Electrical observation via spin Seebeck effect of fractionalized excitations in a magnet",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "模型",
+        "最新",
+        "应用",
+        "日报",
+        "日期",
+        "数据",
+        "截止",
+        "utc"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: Minimal Duality Estimate for the Surface-Code Threshold under Nearest-Neighbor Correlated Errors - **作者**：Masayuki Ohzeki - **时间**：2026-06-01 提交 - **期刊/平台**：arXiv:2606.02052 [cond-mat.dis-nn, quant-ph] - **主要内容**：将\"单方程对偶判据\"（single-equation duality criterion）应用于由表面码最近邻关",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "surface-code",
+        "nearest-neighbor",
+        "期刊/平台",
+        "2606.02052",
+        "cond-mat.dis-nn",
+        "quant-ph",
+        "single-equation",
+        "minimal"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: 链，结合\"激发态能级交叉\"与\"基于广义位置算符的拓扑指示量\"两种方法精确确定相图。模型展现奈尔序与由交错伊辛项诱导的键二聚化相的竞争；与共形场论和玻色化结果对比，发现能级交叉法在奈尔—二聚化相边界处仍保持高精度，而拓扑指示量在能隙极小（关联长度极大）一侧精度受影响。提出两种方法联用是相关一维模型相图计算的更高效方案。 ### 文章 4 - **标题**：Fracton Topological Holography - **作者**：Yu-Tao Hu, Jie-Yu Zhang, Peng Ye - **时间**：2026-06-0",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "yu-tao",
+        "jie-yu",
+        "2026-06-0",
+        "结合",
+        "激发",
+        "能级",
+        "交叉",
+        "基于"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "Assistant: **期刊/平台**：arXiv:2606.03380 [quant-ph, cond-mat.dis-nn] - **主要内容**：将\"伊辛哈密顿量相 oracle\" exp(−iTH) 直接作为量子搜索原语，oracle 通过相位连续标记构型、按有限谐振带选择，而非传统的布尔 oracle。与 Grover 扩散算子交替后仍产生 Grover 型放大峰；通过精确谱回归与生成函数刻画峰位、宽度与高度。对退火高斯态密度情形，目标在能带含 M 个构型的高密度尾部时所需 oracle 调用数为 Θ(√(2ⁿ/M))；并通过谱对称化与迭代校",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "期刊/平台",
+        "2606.03380",
+        "quant-ph",
+        "cond-mat.dis-nn",
+        "2n/m",
+        "期刊",
+        "平台",
+        "arxiv"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: cond-mat.str-el, hep-lat] - **主要内容**：系统研究半正定规划（SDP）方法在自旋链哈密顿量分析中的表现，重点验证其在横场伊辛模型与 3-态 Potts 模型中提取基态能量、第一激发带电态与关联子的能力。提出用电荷约束构造激发态、可积模型加额外约束、在临界点处用近似 Virasoro 关联子提取中心荷与临界指数等新要素；在自由费米子情形严格证明 SDP 给出精确的基态能量与两点函数。该工作把 SDP（典型机器学习/优化工具）用于伊辛型自旋系统的可计算表征，展示了机器学习方法与传统统计物理的深度交叉。 #",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "cond-mat.str-el",
+        "hep-lat",
+        "3-态",
+        "典型机器学习/优化工具",
+        "cond",
+        "mat.str",
+        "hep",
+        "lat"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "Assistant: arXiv:2606.02052 — <https://arxiv.org/abs/2606.02052> - arXiv:2606.02845 — <https://arxiv.org/abs/2606.02845> - arXiv:2606.03582 — <https://arxiv.org/abs/2606.03582> - arXiv:2606.03380 — <https://arxiv.org/abs/2606.03380> - arXiv:2606.02013 — <https://arxiv.org/abs/260",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T19:00:18.845Z",
+      "lastRecalledAt": "2026-06-03T19:00:18.845Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04",
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "2606.02052",
+        "arxiv.org/abs/2606.02052",
+        "2606.02845",
+        "arxiv.org/abs/2606.02845",
+        "2606.03582",
+        "arxiv.org/abs/2606.03582",
+        "2606.03380",
+        "arxiv.org/abs/2606.03380"
       ]
     }
   }

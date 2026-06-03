@@ -383,12 +383,12 @@
 ## Generated
 <!-- openclaw:wiki:index:start -->
 - Render mode: `obsidian`
-- Total pages: 115
+- Total pages: 117
 - Claims: 23
 - Sources: 7
 - Entities: 13
 - Concepts: 53
-- Syntheses: 32
+- Syntheses: 34
 - Reports: 10
 
 ### Sources
@@ -479,6 +479,7 @@
 - [[syntheses/2026-05-19-18-25-37-如何攥写identity配置文件|IDENTITY 身份模板（IDENTITY.md）]]
 - [[syntheses/2026-05-19-18-25-37-如何攥写if-then规则|If-Then 规则修改标准]]
 - [[syntheses/2026-05-21-10-42-53-如何攥写memory配置文件|MEMORY 记忆模板（MEMORY.md）]]
+- [[syntheses/2026-06-04-01-57-46-Quarto-PDF编译配置总结-3范式-CJK字体-APA7th|Quarto PDF 编译配置总结：3 范式 + CJK 字体 + APA 7th]]
 - [[syntheses/2026-05-19-18-25-37-如何攥写soul配置文件|SOUL 人格模板（SOUL.md）]]
 - [[syntheses/2026-05-31-11-00-00-CCT-论文笔记|The Cognitive Categorical Transformer (CCT) - 论文笔记]]
 - [[syntheses/2026-05-19-18-25-37-如何攥写tools配置文件|TOOLS 工具配置模板（TOOLS.md）]]
@@ -502,6 +503,7 @@
 - [[syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架|认知过程的对称性破缺机制——从余代数到皮亚杰的发展理论]]
 - [[syntheses/2026-05-19-18-25-37-如何管理论文项目|论文项目]]
 - [[syntheses/2026-05-19-18-25-37-如何管理课程项目|课程项目]]
+- [[syntheses/2026-06-03-15-46-20-踩坑-git-checkout-覆盖-working-tree-改动|踩坑：git checkout 覆盖 working tree 改动]]
 - [[syntheses/2026-05-19-22-53-22-如何管理项目|项目]]
 
 ### Reports

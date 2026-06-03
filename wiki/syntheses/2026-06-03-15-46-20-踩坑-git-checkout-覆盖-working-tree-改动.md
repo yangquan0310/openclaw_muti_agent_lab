@@ -186,3 +186,10 @@ git stash drop
 *事故归档人：大管家（steward）*
 *归档时间：2026-06-03 15:46:20+08:00*
 *状态：教训已学，防御措施待落地*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Related Pages
+
+- [[syntheses/2026-05-19-18-25-37-如何攥写if-then规则|If-Then 规则修改标准]]
+<!-- openclaw:wiki:related:end -->

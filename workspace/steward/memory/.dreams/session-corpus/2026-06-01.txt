@@ -161,3 +161,27 @@
 [steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L63] Assistant: # 🎙️ OpenClaw ASR 需要的 Whisper 是什么（已查证官方文档） ## 📌 核心结论 > **OpenClaw 不限定具体 Whisper 实现**。它接受**任意本地 CLI** 把音频 → 文本，只要 `{{MediaPath}}` 占位符对、stdout 吐纯文本即可。 ## 🔧 三种可选形态（按官方文档） | CLI 命令 | 引擎 | 需要的"模型" | 安装方式 | |---------|------|------
 [steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L63] Assistant: provider: "openai", model: "gpt-4o-mini-transcribe" }, // 云端优先 { type: "cli", command: "whisper", // 走 Python whisper args: ["--model", "base", "{{MediaPath}}"], // 用 base 模型 timeoutSeconds: 45, }, ], }, }, }, } ``` ## 📊 Whispe
 [steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L63] Assistant: 生产环境：上 `faster-whisper`（CTranslate2 后端，速度 4x 提升）或 `whisper.cpp` ## ❓ 老板要哪种？ 1. **本地 `whisper` Python CLI + base 模型**（最简单，5 分钟跑通） 2. **本地 `whisper.cpp` + small 模型**（速度更快，中文更好） 3. **云端 STT provider**（不装本地，OpenRouter/OpenAI/Deepgra
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L64] User: 你先修复pip，然后再安装openai-whisper
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L65] Assistant: 老板，明白。我先制定计划再动手。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L67] Assistant: ## Step 1：评估 pip 状态
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L69] Assistant: 定位明确：pip 26.0.1 装了但 `metadata_editable` 模块缺失。`ensurepip` 自身可用。开始 Step 2。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L71] Assistant: ## Step 2：修复 pip
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L73] Assistant: ensurepip 没用（它说"已满足"但其实包不完整）。直接强制重装。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L86] Assistant: `get-pip.py` 已下载到本地（2.1MB），但是之前执行卡住。直接用本地文件强制重装 pip。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L88] Assistant: pip 升级到 26.1.2。验证修复。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L90] Assistant: pip 修复完成。Step 3：安装 openai-whisper。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L92] Assistant: ## Step 3：安装 openai-whisper
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L122] Assistant: 正在解压 triton-3.7.0（135MB，PyTorch GPU 配套库）。继续等。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L126] Assistant: torch 2.12.0、triton 3.7.0、llvmlite 0.47.0、openai_whisper 都已下载到 unpack 目录。继续等。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L134] Assistant: 所有依赖已下载，正在解压 nvidia_cublas（170MB）。继续等。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L150] Assistant: 进程被 SIGKILL（很可能 OOM）。检查状态：
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L152] Assistant: **找到根因了**： - 物理内存只有 1.9GB - pip 解压 nvidia_cublas (170MB) + torch (1GB) 时 OOM，被内核杀掉 - 默认 pip 拉的是 CUDA 版 torch **修复策略**：先装 **CPU 版 torch**（小得多），再装 whisper。先清理残留。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L160] Assistant: CPU 版 torch `2.12.0+cpu`（~200MB）正在解压。继续等。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L190] Assistant: 老板，我决定切换策略。原因： 1. 物理内存只有 1.9GB 2. PyTorch 即使 CPU 版也要 ~1GB，加 whisper 模型 + 加载运行时 ≈ OOM 3. 之前那个 OOM 就是因为 CUDA 版 torch **切换到 `faster-whisper`**：基于 CTranslate2（**不依赖 PyTorch**），速度 4x，内存更小。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L192] Assistant: ## Step 3 (重做)：安装 faster-whisper（无 torch 依赖）
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L200] Assistant: `faster-whisper 1.2.1` 装好！无需 torch。Step 4 验证。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L202] Assistant: ## Step 4：验证 faster-whisper
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L204] Assistant: **重要发现**：`faster-whisper` 没有 CLI，只有 Python API。我需要写一个 CLI 包装让 OpenClaw 调用。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L208] Assistant: ## Step 5：配置 OpenClaw 启用 ASR
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L216] Assistant: Dry-run 通过。执行真正的 patch。
+[steward/sessions/steward/797f407c-74b9-48b9-86a3-5b8002123a7d.jsonl.reset.2026-06-01T16-01-45.485Z#L218] Assistant: ## Step 6：实测转写（先生成测试音频）

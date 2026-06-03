@@ -596,4 +596,18 @@ Assistant: 让我尝试用飞书消息直接问用户问题，因为我一直找
 
 Assistant: **index.json 文献统计：** | 指标 | 数量 | |------|------| | 文献总数 | 468 篇 | | 没有 notes 的文献 | 8 篇 | **没有 notes 的文献列表：** | # | Paper ID | 标题 | |---|----------|------| | 1 | a6900f75... | Five weeks of immersive reminiscence therapy... | | 2 | 831cea64... | The efficacy of Life Rev
 
+
+---
+
+*June 4, 2026 at 3:00 AM GMT+8*
+
+Assistant: <at user_id="ou_c1a8fc008307a0385a2fcd3c0ca6b71b">杨权</at> 老板，进度汇报： ## ✅ 已完成 1. 通读论文 303 行（4 变量 + 3 理论 + 33 参考文献） 2. 验证 13 篇关键引用，**确认 4 处严重错误**： - **张雯等(2024)** 作者名单 6 处错位（潘辰→潘超、姚树桥→姚诗铭、朱锦士→朱佳佳、凌东辉→凌东、杨海波→杨涵淳、许家琪→徐静莎） - **熊猛&叶一舵(2016)** 页码错（416-427 → 实际 438-453） - **韩娟等
+
+
+---
+
+*June 4, 2026 at 3:00 AM GMT+8*
+
+Assistant: **文献 12（深度伪造与错误记忆，专题相关）** - 标题：Deepfake false memories - 作者：G. Murphy, E. Flynn - 期刊/会议：Memory - 年份：2022 - DOI/链接：https://doi.org/10.1080/09658211.2021.1919715 - 核心发现：观看 AI 生成视频可在被试中诱发"虚假自传体记忆"。 - 简评：Dombrowski (2026) 将其列为"数字时代记忆扭曲"的风险证据；本期作为前置基础文献引用。 --- ## 检索说明 - 检索引
+
 <!-- openclaw:dreaming:diary:end -->
