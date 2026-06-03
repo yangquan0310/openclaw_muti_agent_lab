@@ -14,7 +14,8 @@
         "consecutiveSkipped": 0,
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "nextRunAtMs": 1780430400000,
-        "lastDelivered": true
+        "lastDelivered": true,
+        "runningAtMs": 1780472922136
       }
     },
     "dc7447e5-7fcf-4c64-8079-e811456af6ed": {
@@ -33,105 +34,125 @@
       }
     },
     "dde9b3aa-2582-494e-bb54-a6e9625776c4": {
-      "updatedAtMs": 1780360094408,
+      "updatedAtMs": 1780472511912,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"20 8 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780446000000,
-        "lastRunAtMs": 1780359910732,
+        "nextRunAtMs": 1780532400000,
+        "lastRunAtMs": 1780472314266,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 183676,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 197646,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
-        "consecutiveSkipped": 0,
-        "runningAtMs": 1780472314266
+        "consecutiveSkipped": 0
       }
     },
     "aba0ae04-d41a-434f-9071-9d9a0f2f261e": {
-      "updatedAtMs": 1780360029760,
+      "updatedAtMs": 1780472477472,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 8 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780444800000,
-        "lastRunAtMs": 1780359910734,
+        "nextRunAtMs": 1780531200000,
+        "lastRunAtMs": 1780472314293,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 119026,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 163179,
+        "lastDeliveryStatus": "not-delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1780472314293
+        "lastDelivered": false
       }
     },
     "7e49d2a7-6aec-43f3-a094-db37ff850c50": {
-      "updatedAtMs": 1780359787219,
+      "updatedAtMs": 1780472919389,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"10 8 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780445400000,
-        "lastRunAtMs": 1780359305649,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 481570,
-        "lastDeliveryStatus": "delivered",
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
+        "nextRunAtMs": 1780472949389,
+        "lastRunAtMs": 1780472314294,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 605095,
+        "lastDeliveryStatus": "unknown",
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
         "consecutiveSkipped": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1780472314294
+        "lastError": "cron: job execution timed out (last phase: model-call-started)",
+        "lastDiagnostics": {
+          "summary": "cron: job execution timed out (last phase: model-call-started)",
+          "entries": [
+            {
+              "ts": 1780472919389,
+              "source": "cron-setup",
+              "severity": "error",
+              "message": "cron: job execution timed out (last phase: model-call-started)"
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "cron: job execution timed out (last phase: model-call-started)",
+        "lastErrorReason": "timeout"
       }
     },
     "7a700f52-10f4-4bab-9737-b09a08dde9ec": {
-      "updatedAtMs": 1780351447639,
+      "updatedAtMs": 1780472374300,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 6 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780437600000,
-        "lastRunAtMs": 1780351200007,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 247632,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
+        "nextRunAtMs": 1780472404300,
+        "lastRunAtMs": 1780472314296,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 60004,
+        "lastDeliveryStatus": "unknown",
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
         "consecutiveSkipped": 0,
-        "runningAtMs": 1780472314296
+        "lastDiagnostics": {
+          "summary": "cron: isolated agent setup timed out before runner start",
+          "entries": [
+            {
+              "ts": 1780472374299,
+              "source": "cron-setup",
+              "severity": "error",
+              "message": "cron: isolated agent setup timed out before runner start"
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "cron: isolated agent setup timed out before runner start",
+        "lastErrorReason": "timeout",
+        "runningAtMs": 1780472922136
       }
     },
     "2997ffdb-bbaf-4810-821d-66fa4348b01f": {
-      "updatedAtMs": 1780360175119,
+      "updatedAtMs": 1780472726614,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"15 8 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780445700000,
-        "lastRunAtMs": 1780360125738,
+        "nextRunAtMs": 1780532100000,
+        "lastRunAtMs": 1780472314297,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 49381,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 412317,
+        "lastDeliveryStatus": "not-delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1780472314297
+        "lastDelivered": false
       }
     },
     "ccdb4a42-76e1-4e65-be97-704e19f89bfc": {
-      "updatedAtMs": 1780367847268,
+      "updatedAtMs": 1780472892512,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"05 8 * * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780445100000,
-        "lastRunAtMs": 1780367500357,
+        "nextRunAtMs": 1780531500000,
+        "lastRunAtMs": 1780472314299,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 346911,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 578213,
+        "lastDeliveryStatus": "not-delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1780472314299
+        "lastDelivered": false
       }
     }
   }
