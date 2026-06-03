@@ -56,7 +56,22 @@
         "id": "steward",
         "name": "steward",
         "workspace": "/root/.openclaw/workspace/steward",
-        "agentDir": "/root/.openclaw/agents/steward/agent"
+        "agentDir": "/root/.openclaw/agents/steward/agent",
+        "subagents": {
+          "allowAgents": [
+            "writer",
+            "mathematician",
+            "physicist",
+            "psychologist",
+            "programmer",
+            "reviewer",
+            "instructor",
+            "presenter",
+            "auditor"
+          ],
+          "delegationMode": "prefer",
+          "requireAgentId": true
+        }
       },
       {
         "id": "mathematician",
@@ -327,7 +342,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-06-02T15:57:10.981Z"
+    "lastTouchedAt": "2026-06-03T07:43:23.065Z"
   },
   "browser": {
     "enabled": true,

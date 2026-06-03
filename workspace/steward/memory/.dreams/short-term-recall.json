@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-02T19:32:39.204Z",
+  "updatedAt": "2026-06-03T07:41:21.159Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-05-31.txt:245:245": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-31.txt:245:245",
@@ -7872,38 +7872,6 @@
         "原生",
         "支持",
         "现状"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-06-01.txt:90:90": {
-      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:90:90",
-      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
-      "startLine": 90,
-      "endLine": 90,
-      "source": "memory",
-      "snippet": "User: Write a dream diary entry from these memory fragments: - Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher - Key Decisions: Google Scholar 用 requests 而非浏览器（实测 HTML 可直接解析）; Google",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:02.552Z",
-      "lastRecalledAt": "2026-06-01T19:00:02.552Z",
-      "queryHashes": [
-        "2939732c7523"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "write",
-        "dream",
-        "diary",
-        "entry",
-        "fragments",
-        "pending",
-        "items",
-        "google"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-06-02.txt:100:100": {
@@ -15951,6 +15919,37 @@
         "老板",
         "授权",
         "发送"
+      ]
+    },
+    "memory:memory/2026-06-03.md:158:185": {
+      "key": "memory:memory/2026-06-03.md:158:185",
+      "path": "memory/2026-06-03.md",
+      "startLine": 158,
+      "endLine": 185,
+      "source": "memory",
+      "snippet": "- 子代理在卡上 notes 看到的永远是权威信息 --- ## 四、挂起项（待跟进） | # | 任务 | 状态 | 优先级 | |---|------|------|--------| | 1 | 推 development 分支（10 commit 累积） | pending | 中 | | 2 | 跑端到端 demo 验证新流程（用 manager workboard 派一个真任务） | pending | 中 | | 3 | 4 元文件 README/METADATA 是否需要更新（同步到 v2.3 任务流） | pending | 低 | | 4 | task 工具存在性验证（实际调一次 task.create 看报不报错） | pending | 低 | | 5 | 写端到端 demo 文档（从老板交任务到归档完整流程） | pending | 低 | | 6 | agent-self-development 插件重新安装（恢复 task 工具源） | pending | 低（不阻塞） | | 7 | T041 / T042 定时任务已累积 1 天未检查 | pending | 中 | --- ## 五、跨文件引用（已落库的位置） | 规则 | 落库文件 | |------|----------| | 三件套架构 + 5+1 步流程 | `task-flow-guide.md v2.3` | | workboard CLI 用法 + Dashboard 限制 | `workboard-guide.md v1.4.0` | | TODO 7 字段 + 主",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.5125194072723388,
+      "maxScore": 0.5125194072723388,
+      "firstRecalledAt": "2026-06-03T07:41:21.159Z",
+      "lastRecalledAt": "2026-06-03T07:41:21.159Z",
+      "queryHashes": [
+        "7d1ebb445c57"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "readme/metadata",
+        "v2.3",
+        "task.create",
+        "agent-self-development",
+        "task-flow-guide.md",
+        "workboard-guide.md",
+        "v1.4.0",
+        "代理"
       ]
     }
   }
