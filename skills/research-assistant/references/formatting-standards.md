@@ -7,9 +7,9 @@
 
 ## 1 文档格式
 
-### 1.1 Pandoc YAML 头
+### 1.1 Quarto YAML 头（YAML Front Matter）
 
-所有 `.md` 文档必须包含 Pandoc YAML 头：
+所有 `.md` 文档必须包含 Quarto YAML 头（YAML Front Matter 格式）：
 
 ```markdown
 ---

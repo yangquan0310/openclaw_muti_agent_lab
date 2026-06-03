@@ -16,7 +16,7 @@
 | 文献综述撰写 | [literature-review.md](literature-review.md) | 综述撰写原则 |
 | 研究现状撰写 | [research-status.md](research-status.md) | 现状报告撰写原则 |
 | 元数据维护 | [metadata-maintenance.md](metadata-maintenance.md) | Maintainer 使用原则 |
-| 排版原则 | [typesetting.md](typesetting.md) | pandoc + YAML + BIB + CSL 协作排版 |
+| 排版原则 | [typesetting.md](typesetting.md) | Quarto + YAML + BIB + CSL 协作排版 |
 
 ---
 
