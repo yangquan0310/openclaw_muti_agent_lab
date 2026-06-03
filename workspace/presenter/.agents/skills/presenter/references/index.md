@@ -1,6 +1,6 @@
-# 索引
+# 索引（L3 资源导航）
 
-> presenter 技能设计方法论指南导航。PPT 制作内容已内联在 [主 SKILL.md](../SKILL.md) 第 1 节。
+> presenter 技能 L3 资源导航。PPT 速查在 [主 SKILL.md 第 3 节](../SKILL.md#3-核心职责-1ppt--课件默认-quarto)，详细内容在本目录的 `ppt/` 子目录。
 
 ---
 
@@ -9,16 +9,25 @@
 ### 技能总览
 | 入口 | 说明 |
 |------|------|
-| [主技能入口](../SKILL.md) | 呈现师综合技能（v1.8.0，**含 PPT 完整内容**）|
+| [主技能入口](../SKILL.md) | 呈现师综合技能（v1.9.0，L2 指令层 389 行）|
 | [使用指南](guide.md) | 技能使用概述、触发条件 |
+| [README.md](../README.md) | 入口说明 |
 
-### PPT 制作
-**直接看 [主 SKILL.md 第 1 节](../SKILL.md#核心职责-1ppt--课件默认-quarto)**——所有 PPT 内容已内联。
+### PPT 制作（核心职责）
+**主 SKILL.md 第 3 节放速查**；详细文档按主题拆分到本目录 `ppt/` 子目录：
+
+| 文档 | 内容 |
+|------|------|
+| [ppt/quarto-syntax.md](ppt/quarto-syntax.md) | 完整语法（分隔/列表/两列/代码/公式/图片/表格/备注/片段/背景/图表）|
+| [ppt/quarto-theme.md](ppt/quarto-theme.md) | 主题与样式（revealjs 主题、SCSS、reference-doc）|
+| [ppt/quarto-faq.md](ppt/quarto-faq.md) | 15 个常见问题（中文乱码/字体/图片/慢渲染等）|
+| [ppt/quarto-vs-pptx.md](ppt/quarto-vs-pptx.md) | Quarto 与 python-pptx 详细对比与选型 |
+| [ppt/ppt-workflow.md](ppt/ppt-workflow.md) | 完整 10 步工作流（决策→模板→编写→渲染→调样式→交付）|
 
 > 配套资产：
-> - [templates/](../templates/) — basic-pptx / basic-revealjs / lesson-pptx / brand-template.pptx
-> - [examples/](../examples/) — demo-pptx / demo-revealjs / demo-with-template
-> - [scripts/render.sh](../scripts/render.sh) — 渲染小工具
+> - [../assets/templates/](../assets/templates/) — basic/lesson-pptx.qmd + brand-template.pptx
+> - [../assets/examples/](../assets/examples/) — demo-pptx / demo-revealjs / demo-with-template
+> - [../scripts/render.sh](../scripts/render.sh) — 渲染小工具
 >
 > ⚠️ [旧 PPT 制作指南](ppt-guide.md)（python-pptx 流程）已弃用，仅作历史参考。
 
@@ -45,6 +54,7 @@
 |------|------|
 | [图片制作指南](image-guide.md) | 信息图、插图、海报设计 |
 | [图表设计指南](chart-guide.md) | 流程图、思维导图、知识图谱 |
+| [工作流总览](workflows.md) | 跨职责工作流参考 |
 
 ### 质量保障
 | 指南 | 说明 |
@@ -56,10 +66,11 @@
 ## 按场景查找
 
 **制作 PPT（默认 Quarto）**
-1. 看 [主 SKILL.md 第 1 节](../SKILL.md#核心职责-1ppt--课件默认-quarto)
-2. 复制 `templates/lesson-pptx.qmd` 起步
-3. 调样式参考 [Slide 设计指南](slide-design-guide.md)
-4. 验收参考 [质量检查清单](quality-standards.md)
+1. 看 [主 SKILL.md 第 3 节](../SKILL.md#3-核心职责-1ppt--课件默认-quarto)
+2. 复制 `assets/templates/lesson-pptx.qmd` 起步
+3. 看 [ppt/ppt-workflow.md](ppt/ppt-workflow.md) 完整工作流
+4. 调样式参考 [Slide 设计指南](slide-design-guide.md) / [ppt/quarto-theme.md](ppt/quarto-theme.md)
+5. 验收参考 [质量检查清单](quality-standards.md)
 
 **编写脚本**
 1. [脚本编写指南](script-writing-guide.md)（输出 .qmd）
@@ -102,4 +113,4 @@
 
 ---
 
-> 最近更新：2026-06-04 — PPT 入口改指主 SKILL.md 第 1 节（不再单独成子技能）
+> 最近更新：2026-06-04 — 按 L1/L2/L3 三层重构，PPT 详细内容入 `ppt/` 子目录

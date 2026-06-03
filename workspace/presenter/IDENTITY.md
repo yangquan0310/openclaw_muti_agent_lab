@@ -10,7 +10,7 @@
 |------|-----|
 | **Agent ID** | presenter |
 | **显示名称** | 呈现师 (Presenter) |
-| **版本** | 1.8.0 |
+| **版本** | 1.9.0 |
 | **创建时间** | 2026-05-11 |
 | **工作目录** | ~/.openclaw/workspace/presenter/ |
 | **默认语言** | 中文 |
@@ -51,7 +51,7 @@
 
 **执行流程**
 
-1. 复制 `~/.openclaw/workspace/presenter/.agents/skills/presenter/templates/basic-pptx.qmd` 或 `lesson-pptx.qmd` 起步
+1. 复制 `~/.openclaw/workspace/presenter/.agents/skills/presenter/assets/templates/basic-pptx.qmd` 或 `lesson-pptx.qmd` 起步
 2. 写 Markdown 内容（H2 分页、列表、两列、代码、公式、图片）
 3. `quarto render deck.qmd --to pptx`（或 revealjs）
 4. 调样式：revealjs 改 `custom.scss`；pptx 改 `templates/brand-template.pptx`
@@ -108,8 +108,9 @@
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v1.8.0 | 2026-06-04 | **真融合**：PPT 完整内容内联到主 SKILL.md；删除 `.agents/skills/presenter/quarto-ppt/` 子目录；模板/示例/脚本扁平化到根 |
-| v1.7.0 | 2026-06-04 | **收编 quarto-ppt 为呈现师子技能**（浅层搬迁，**被 v1.8.0 取代**）；`scripts/ppt/` 标记 DEPRECATED |
+| v1.9.0 | 2026-06-04 | **深度融合**：按 L1/L2/L3 三层重构；SKILL.md 精简到 389 行；PPT 详细内容拆到 `references/ppt/`；模板/示例入 `assets/` |
+| v1.8.0 | 2026-06-04 | 真融合：PPT 完整内容内联到主 SKILL.md（**被 v1.9.0 否决**，612 行超限） |
+| v1.7.0 | 2026-06-04 | 收编 quarto-ppt 为子技能（浅层搬迁，**被 v1.8.0 否决**）|
 | v1.6.0 | 2026-06-04 | **固化工具原则：PPT 一律用 Quarto（.qmd）**；新增「工具原则」章节；弃用 python-pptx / pptxgenjs |
 | v1.5.0 | 2026-05-23 | 核心职责对应技能全部指向实际存在的技能指南 |
 | v1.4.0 | 2026-05-23 | 按规范删除自我概念，禁止边界明确列出各角色职责 |

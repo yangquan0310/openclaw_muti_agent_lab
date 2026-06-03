@@ -1,12 +1,21 @@
 {
   "name": "presenter",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "呈现师：所有视觉传达工作的设计师。核心职责是 PPT/课件/演示文稿（首选 Quarto + .qmd），同时覆盖脚本编写、图片制作、图表设计、UI 视觉、品牌执行、文档排版。",
   "author": "Yang Quan",
   "emoji": "🎨",
   "created": "2026-05-11",
   "updated": "2026-06-04",
   "tags": ["ppt", "presentation", "visual-design", "quarto", "brand", "ui"],
+  "structure": {
+    "L1_metadata": "SKILL.md YAML frontmatter（name + description）",
+    "L2_instructions": "SKILL.md 正文（<500 行，速查 + 核心指令）",
+    "L3_resources": {
+      "assets": ["templates", "examples"],
+      "references": ["ppt/", "image-guide.md", "chart-guide.md", "ui-guide.md", ...],
+      "scripts": ["render.sh"]
+    }
+  },
   "tools_locked": {
     "ppt": "quarto",
     "ppt_format_default": "pptx"

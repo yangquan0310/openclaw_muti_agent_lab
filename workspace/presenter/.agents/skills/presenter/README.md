@@ -1,6 +1,6 @@
 # presenter（呈现师技能）
 
-> **所有视觉传达工作的设计师**。一份综合技能，涵盖 PPT/课件、脚本、图片、图表、UI、品牌、文档七大类。
+> **所有视觉传达工作的设计师**。L2 指令层控制在 500 行内，详细内容下沉到 `references/`。
 
 ---
 
@@ -20,17 +20,17 @@
 
 | 文件 | 用途 |
 |------|------|
-| [SKILL.md](SKILL.md) | **主技能入口**（所有内容一站式查阅）|
-| [references/index.md](references/index.md) | 设计方法论指南索引 |
-| [templates/](templates/) | PPT 模板起点 |
-| [examples/](examples/) | PPT 完整示例 |
+| [SKILL.md](SKILL.md) | **主技能入口**（L2 指令层，389 行）|
+| [references/index.md](references/index.md) | L3 资源导航 |
+| [assets/templates/](assets/templates/) | PPT 模板起点 |
+| [assets/examples/](assets/examples/) | PPT 完整示例 |
 | [scripts/render.sh](scripts/render.sh) | 渲染小工具 |
 
 ---
 
 ## 七大职责
 
-1. **PPT / 课件**（核心）— 详见 SKILL.md 第 1 节
+1. **PPT / 课件**（核心）— SKILL.md 第 3 节 + [references/ppt/](references/ppt/)
 2. **脚本编写** — [script-writing-guide.md](references/script-writing-guide.md)
 3. **图片制作** — [image-guide.md](references/image-guide.md) / [image-generation-guide.md](references/image-generation-guide.md)
 4. **图表设计** — [chart-guide.md](references/chart-guide.md)
@@ -57,7 +57,7 @@
 
 ```bash
 # 复制模板
-cp templates/lesson-pptx.qmd ./deck.qmd
+cp assets/templates/lesson-pptx.qmd ./deck.qmd
 
 # 编辑 deck.qmd，写入内容
 
@@ -68,7 +68,19 @@ bash scripts/render.sh deck.qmd pptx
 
 ---
 
+## 分层结构
+
+按 skill-developer 的 L1/L2/L3 三层规范组织：
+
+| 层 | 位置 | 内容 | 加载时机 |
+|----|------|------|----------|
+| **L1 元数据** | SKILL.md YAML | name + description | 启动时（注入 System Prompt）|
+| **L2 指令** | SKILL.md 正文 | 速查表 + 核心指令 | 触发判断后 |
+| **L3 资源** | references/ + assets/ + scripts/ | 详细内容、模板、脚本 | 按需读取 |
+
+---
+
 ## 版本
 
-- 当前：v1.8.0（2026-06-04）
-- 变更：真融合——PPT 完整内容内联到主 SKILL.md，删除 `quarto-ppt/` 子目录
+- 当前：v1.9.0（2026-06-04）
+- 变更：深度融合——按 L1/L2/L3 三层规范重构；SKILL.md 精简到 389 行；PPT 详细内容拆到 `references/ppt/`

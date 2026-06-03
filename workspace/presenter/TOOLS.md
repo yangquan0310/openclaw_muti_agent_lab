@@ -224,8 +224,8 @@ lark-cli api POST /open-apis/im/v1/messages --dry-run
 | `quarto clean deck.qmd` | 清理中间产物 |
 
 **模板起点**：
-- `~/.openclaw/workspace/presenter/.agents/skills/presenter/templates/basic-pptx.qmd`（最小）
-- `~/.openclaw/workspace/presenter/.agents/skills/presenter/templates/lesson-pptx.qmd`（课程用）
+- `~/.openclaw/workspace/presenter/.agents/skills/presenter/assets/templates/basic-pptx.qmd`（最小）
+- `~/.openclaw/workspace/presenter/.agents/skills/presenter/assets/templates/lesson-pptx.qmd`（课程用）
 
 **渲染脚本**：`bash ~/.openclaw/workspace/presenter/.agents/skills/presenter/scripts/render.sh deck.qmd pptx`
 
