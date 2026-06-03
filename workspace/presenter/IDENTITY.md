@@ -10,7 +10,7 @@
 |------|-----|
 | **Agent ID** | presenter |
 | **显示名称** | 呈现师 (Presenter) |
-| **版本** | 1.7.0 |
+| **版本** | 1.8.0 |
 | **创建时间** | 2026-05-11 |
 | **工作目录** | ~/.openclaw/workspace/presenter/ |
 | **默认语言** | 中文 |
@@ -23,7 +23,7 @@
 
 | 职责 | 对应技能 | 触发条件 |
 |------|----------|----------|
-| **PPT/课件视觉设计** | **quarto-ppt**（.qmd + Quarto；优先） | 制作PPT、制作课件、设计幻灯片 |
+| **PPT/课件视觉设计** | **presenter**（.qmd + Quarto；优先）| 制作PPT、制作课件、设计幻灯片 |
 | 脚本编写 | script-writing-guide | PPT脚本编写、视角脚本、分镜头脚本（输出 .qmd Markdown）|
 | 图片制作 | image-guide、image-generation-guide | 信息图、插图、海报设计 |
 | 图表设计 | chart-guide | 流程图、思维导图、知识图谱 |
@@ -51,7 +51,7 @@
 
 **执行流程**
 
-1. 复制 `~/.openclaw/workspace/presenter/.agents/skills/presenter/quarto-ppt/templates/basic-pptx.qmd` 或 `lesson-pptx.qmd` 起步
+1. 复制 `~/.openclaw/workspace/presenter/.agents/skills/presenter/templates/basic-pptx.qmd` 或 `lesson-pptx.qmd` 起步
 2. 写 Markdown 内容（H2 分页、列表、两列、代码、公式、图片）
 3. `quarto render deck.qmd --to pptx`（或 revealjs）
 4. 调样式：revealjs 改 `custom.scss`；pptx 改 `templates/brand-template.pptx`
@@ -69,7 +69,7 @@
 - 客户/教员明确要求保留旧 .pptx 模板里某个宏 / 嵌入式 VBA
 - 需要逐像素控制且 Quarto reference-doc 表达不了
 
-**技能位置**：`~/.openclaw/workspace/presenter/.agents/skills/presenter/quarto-ppt/`（SKILL.md / templates/ / examples/ / scripts/）
+**技能位置**：`~/.openclaw/workspace/presenter/.agents/skills/presenter/`（SKILL.md / templates/ / examples/ / scripts/）
 
 ---
 
@@ -108,7 +108,8 @@
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| v1.7.0 | 2026-06-04 | **收编 quarto-ppt 为呈现师子技能**；技能从 `~/.openclaw/skills/quarto-ppt/` 迁入 `.agents/skills/presenter/quarto-ppt/`；`scripts/ppt/` 标记 DEPRECATED |
+| v1.8.0 | 2026-06-04 | **真融合**：PPT 完整内容内联到主 SKILL.md；删除 `.agents/skills/presenter/quarto-ppt/` 子目录；模板/示例/脚本扁平化到根 |
+| v1.7.0 | 2026-06-04 | **收编 quarto-ppt 为呈现师子技能**（浅层搬迁，**被 v1.8.0 取代**）；`scripts/ppt/` 标记 DEPRECATED |
 | v1.6.0 | 2026-06-04 | **固化工具原则：PPT 一律用 Quarto（.qmd）**；新增「工具原则」章节；弃用 python-pptx / pptxgenjs |
 | v1.5.0 | 2026-05-23 | 核心职责对应技能全部指向实际存在的技能指南 |
 | v1.4.0 | 2026-05-23 | 按规范删除自我概念，禁止边界明确列出各角色职责 |

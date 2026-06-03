@@ -1,6 +1,6 @@
 # presenter（呈现师技能）
 
-> **所有视觉传达工作的设计师**。覆盖 PPT/课件、脚本、图片、图表、UI、品牌、文档七大类。
+> **所有视觉传达工作的设计师**。一份综合技能，涵盖 PPT/课件、脚本、图片、图表、UI、品牌、文档七大类。
 
 ---
 
@@ -9,25 +9,34 @@
 | 维度 | 内容 |
 |------|------|
 | **角色** | 备课团队 · 呈现师 |
+| **核心职责** | PPT / 课件 / 演示文稿（首选 Quarto + .qmd）|
 | **工具原则** | **PPT/课件一律用 Quarto（.qmd）** |
 | **默认输出** | `.pptx`（可二次编辑）/ RevealJS（HTML）|
 | **协作对象** | 教员（内容）、督导（质量）、大管家（任务） |
 
 ---
 
-## 子技能
+## 入口
 
-| 技能 | 触发场景 | 入口 |
-|------|----------|------|
-| **quarto-ppt** | 制作 PPT/课件/演示文稿 | [quarto-ppt/SKILL.md](quarto-ppt/SKILL.md) |
-| （规划中）script-writing | 视角/分镜头脚本 | — |
-| （规划中）image-guide | 信息图/插图/海报 | — |
-| （规划中）chart-guide | 流程图/思维导图/知识图谱 | — |
-| （规划中）ui-guide | 软件界面/图标/布局 | — |
-| （规划中）brand-guide | 品牌视觉/配色规范 | — |
-| （规划中）doc-guide | 文档排版/字体 | — |
+| 文件 | 用途 |
+|------|------|
+| [SKILL.md](SKILL.md) | **主技能入口**（所有内容一站式查阅）|
+| [references/index.md](references/index.md) | 设计方法论指南索引 |
+| [templates/](templates/) | PPT 模板起点 |
+| [examples/](examples/) | PPT 完整示例 |
+| [scripts/render.sh](scripts/render.sh) | 渲染小工具 |
 
-> 当前唯一落地的子技能是 **quarto-ppt**。其余子技能等接到对应任务时再沉淀。
+---
+
+## 七大职责
+
+1. **PPT / 课件**（核心）— 详见 SKILL.md 第 1 节
+2. **脚本编写** — [script-writing-guide.md](references/script-writing-guide.md)
+3. **图片制作** — [image-guide.md](references/image-guide.md) / [image-generation-guide.md](references/image-generation-guide.md)
+4. **图表设计** — [chart-guide.md](references/chart-guide.md)
+5. **UI 视觉** — [ui-guide.md](references/ui-guide.md)
+6. **品牌视觉** — [brand-guide.md](references/brand-guide.md) / [color-theory-guide.md](references/color-theory-guide.md)
+7. **文档排版** — [doc-guide.md](references/doc-guide.md) / [typography-guide.md](references/typography-guide.md)
 
 ---
 
@@ -44,16 +53,16 @@
 
 ---
 
-## 快速开始
+## 快速开始（PPT）
 
 ```bash
 # 复制模板
-cp .agents/skills/presenter/quarto-ppt/templates/lesson-pptx.qmd ./deck.qmd
+cp templates/lesson-pptx.qmd ./deck.qmd
 
 # 编辑 deck.qmd，写入内容
 
 # 渲染
-bash .agents/skills/presenter/quarto-ppt/scripts/render.sh deck.qmd pptx
+bash scripts/render.sh deck.qmd pptx
 # → deck.pptx
 ```
 
@@ -61,5 +70,5 @@ bash .agents/skills/presenter/quarto-ppt/scripts/render.sh deck.qmd pptx
 
 ## 版本
 
-- 当前：v1.6.0（2026-06-04）
-- 变更：把 quarto-ppt 收编为子技能，presenter 不再依赖独立技能目录
+- 当前：v1.8.0（2026-06-04）
+- 变更：真融合——PPT 完整内容内联到主 SKILL.md，删除 `quarto-ppt/` 子目录

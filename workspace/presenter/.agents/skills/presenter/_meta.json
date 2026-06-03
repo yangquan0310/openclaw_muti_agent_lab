@@ -1,18 +1,14 @@
 {
   "name": "presenter",
-  "version": "1.7.0",
-  "description": "呈现师：所有视觉传达工作的设计师。PPT/课件首选 Quarto（.qmd），同时覆盖脚本编写、图片制作、图表设计、UI 视觉、品牌执行、文档排版。",
+  "version": "1.8.0",
+  "description": "呈现师：所有视觉传达工作的设计师。核心职责是 PPT/课件/演示文稿（首选 Quarto + .qmd），同时覆盖脚本编写、图片制作、图表设计、UI 视觉、品牌执行、文档排版。",
   "author": "Yang Quan",
   "emoji": "🎨",
   "created": "2026-05-11",
   "updated": "2026-06-04",
   "tags": ["ppt", "presentation", "visual-design", "quarto", "brand", "ui"],
-  "sub_skills": [
-    {
-      "id": "quarto-ppt",
-      "name": "Quarto PPT",
-      "path": "quarto-ppt/SKILL.md",
-      "description": "用 Quarto 制作 .pptx 与 RevealJS 演示文稿（默认 PPT 工具）"
-    }
-  ]
+  "tools_locked": {
+    "ppt": "quarto",
+    "ppt_format_default": "pptx"
+  }
 }

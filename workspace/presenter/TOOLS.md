@@ -212,7 +212,7 @@ lark-cli api POST /open-apis/im/v1/messages --dry-run
 | `-q <expr>` | jq 表达式过滤 JSON 输出 |
 ## Quarto PPT 快速参考
 
-> PPT/课件默认工具。技能路径：`~/.openclaw/workspace/presenter/.agents/skills/presenter/quarto-ppt/`
+> PPT/课件默认工具。技能路径：`~/.openclaw/workspace/presenter/.agents/skills/presenter/`
 
 | 命令 | 用途 |
 |------|------|
@@ -224,10 +224,10 @@ lark-cli api POST /open-apis/im/v1/messages --dry-run
 | `quarto clean deck.qmd` | 清理中间产物 |
 
 **模板起点**：
-- `~/.openclaw/workspace/presenter/.agents/skills/presenter/quarto-ppt/templates/basic-pptx.qmd`（最小）
-- `~/.openclaw/workspace/presenter/.agents/skills/presenter/quarto-ppt/templates/lesson-pptx.qmd`（课程用）
+- `~/.openclaw/workspace/presenter/.agents/skills/presenter/templates/basic-pptx.qmd`（最小）
+- `~/.openclaw/workspace/presenter/.agents/skills/presenter/templates/lesson-pptx.qmd`（课程用）
 
-**渲染脚本**：`bash ~/.openclaw/workspace/presenter/.agents/skills/presenter/quarto-ppt/scripts/render.sh deck.qmd pptx`
+**渲染脚本**：`bash ~/.openclaw/workspace/presenter/.agents/skills/presenter/scripts/render.sh deck.qmd pptx`
 
 ---
 *最后重构: 2026-06-04*

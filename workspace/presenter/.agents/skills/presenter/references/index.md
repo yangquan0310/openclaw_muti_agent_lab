@@ -1,6 +1,6 @@
 # 索引
 
-> presenter 技能指南导航
+> presenter 技能设计方法论指南导航。PPT 制作内容已内联在 [主 SKILL.md](../SKILL.md) 第 1 节。
 
 ---
 
@@ -9,17 +9,17 @@
 ### 技能总览
 | 入口 | 说明 |
 |------|------|
-| [技能总览](../SKILL.md) | 呈现师技能集（v1.6.0） |
+| [主技能入口](../SKILL.md) | 呈现师综合技能（v1.8.0，**含 PPT 完整内容**）|
 | [使用指南](guide.md) | 技能使用概述、触发条件 |
 
-### PPT 制作（首选 Quarto）
-| 指南 | 说明 |
-|------|------|
-| **[Quarto PPT 详细文档](../quarto-ppt/SKILL.md)** | **默认 PPT 工具**（.qmd → .pptx / revealjs）|
-| [Quarto PPT 模板](../quarto-ppt/templates/) | basic-pptx / basic-revealjs / lesson-pptx |
-| [Quarto PPT 示例](../quarto-ppt/examples/) | demo-pptx / demo-revealjs / demo-with-template |
-| [Quarto PPT 渲染脚本](../quarto-ppt/scripts/render.sh) | 一键渲染工具 |
+### PPT 制作
+**直接看 [主 SKILL.md 第 1 节](../SKILL.md#核心职责-1ppt--课件默认-quarto)**——所有 PPT 内容已内联。
 
+> 配套资产：
+> - [templates/](../templates/) — basic-pptx / basic-revealjs / lesson-pptx / brand-template.pptx
+> - [examples/](../examples/) — demo-pptx / demo-revealjs / demo-with-template
+> - [scripts/render.sh](../scripts/render.sh) — 渲染小工具
+>
 > ⚠️ [旧 PPT 制作指南](ppt-guide.md)（python-pptx 流程）已弃用，仅作历史参考。
 
 ### 脚本编写
@@ -56,10 +56,10 @@
 ## 按场景查找
 
 **制作 PPT（默认 Quarto）**
-1. 复制模板 `quarto-ppt/templates/lesson-pptx.qmd`
-2. 看 [Quarto PPT 详细文档](../quarto-ppt/SKILL.md)
-3. 看 [Slide 设计指南](slide-design-guide.md) 调样式
-4. 看 [质量检查清单](quality-standards.md) 验收
+1. 看 [主 SKILL.md 第 1 节](../SKILL.md#核心职责-1ppt--课件默认-quarto)
+2. 复制 `templates/lesson-pptx.qmd` 起步
+3. 调样式参考 [Slide 设计指南](slide-design-guide.md)
+4. 验收参考 [质量检查清单](quality-standards.md)
 
 **编写脚本**
 1. [脚本编写指南](script-writing-guide.md)（输出 .qmd）
@@ -86,18 +86,6 @@
 
 ---
 
-## 文件命名规范
-
-references 中的文章按类型命名：
-
-| 类型 | 命名规则 | 示例 |
-|------|----------|------|
-| **方法论** | `*-guide` | `color-theory-guide.md` |
-| **标准** | `*-checklist` | `quality-standards.md` |
-| **工作流** | `*-workflow` | （如有需要） |
-
----
-
 ## 核心原则速查
 
 | 原则 | 说明 |
@@ -114,4 +102,4 @@ references 中的文章按类型命名：
 
 ---
 
-> 最近更新：2026-06-04 — 把 PPT 入口改指 quarto-ppt；旧 ppt-guide.md 保留为历史参考
+> 最近更新：2026-06-04 — PPT 入口改指主 SKILL.md 第 1 节（不再单独成子技能）
