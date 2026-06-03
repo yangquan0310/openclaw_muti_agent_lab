@@ -60,6 +60,7 @@
 |------|------|----------|
 | 2.0.0 | 2026-06-04 | **切换默认 PPT 工具为 Quarto（.qmd）**；新增 quarto-ppt 技能；弃用 python-pptx / pptxgenjs |
 | 2.1.0 | 2026-06-04 | **深度融合**：按 L1/L2/L3 重构；模板入 `assets/templates/`；详细入 `references/ppt/` |
+| 2.2.0 | 2026-06-04 | **对齐 skill-developer 规范**：SKILL.md 5 必含章节 |
 | 1.0.0 | 2026-05-23 | 初版规则表 |
 
 ## 当前活跃技能清单
