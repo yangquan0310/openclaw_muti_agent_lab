@@ -23,6 +23,29 @@
 | pnpm | Node.js 包管理 | `pnpm add -g <pkg>`, `pnpm list -g` |
 | conda | Python 环境管理 | `conda env list`, `conda install <pkg>` |
 | r-base | R 语言环境 (conda) | `conda activate r-base`, `R --version` |
+| tinytex | 用户级 TeX Live 2026 | `xelatex` 路径 `/root/.TinyTeX/bin/x86_64-linux/`，替代系统 texlive-* |
+
+### TinyTeX（用户级 TeX Live 2026，2026-06-04 替代系统 TeX Live 2023）
+
+| 引擎 | 路径 |
+|------|------|
+| **xelatex** | `/root/.TinyTeX/bin/x86_64-linux/xelatex` |
+| **pdflatex** | `/root/.TinyTeX/bin/x86_64-linux/pdflatex` |
+| **lualatex** | `/root/.TinyTeX/bin/x86_64-linux/lualatex` |
+| **tlmgr** | `/root/.TinyTeX/bin/x86_64-linux/tlmgr`（TUNA 镜像） |
+| **TEXDIR** | `/root/.TinyTeX`（不是 `/usr/local/texlive`） |
+
+**自动加载**：`/etc/profile.d/tinytex.sh` 已配好 PATH 优先级。
+
+**关键包已装**：xetex, latex, latex-extra, latexrecommended, ctex, fontspec, xcolor, geometry, setspace, indentfirst, sectsty, footmisc, fancyhdr, caption, hyperref, booktabs, longtable, ulem, enumitem, parskip, xurl, unicode-math, luatex
+
+**装新包**：
+```bash
+export PATH=/root/.TinyTeX/bin/x86_64-linux:$PATH
+tlmgr install <package>  # 自动走 TUNA 镜像
+```
+
+**大小**：~450MB（vs 系统 TeX Live 2023 ~1.2GB，节省 750MB+）。
 
 ### 文档处理模块（conda base 环境，Python 3.13）（PDF/Word/PPT/Excel/排版）
 

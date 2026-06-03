@@ -9,8 +9,9 @@ description: >
   当需要.openclaw系统体检、日常维护、问题处理时激活（openclaw-maintenance-guide）。
   当需要定期清理wiki或同步规范时激活（cleaning-guide、sync-guide）。
   当需要发布 workboard 任务卡（多 Agent 协作跟踪）时激活（workboard-guide）。
+  当需要 Quarto PDF 编译/排版/APA 7th 论文配置时激活（quarto-pdf-config，2026-06-04 新增）。
   **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点。
-version: 5.9.0
+version: 5.10.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -83,12 +84,14 @@ manager maintainer --help
 | 技能审核 | skill-audit-workflow.md |
 | 定期清理 | cleaning-guide.md |
 | 系统维护 | openclaw-maintenance-guide.md |
+| **Quarto PDF 编译/排版** | **quarto-pdf-config.md v1.0**（2026-06-04 新增）|
 
 ---
 ## 版本历史
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| **5.10.0** | **2026-06-04** | **新增 Quarto PDF 编译/排版场景**：(1) 新增 references/quarto-pdf-config.md（v1.0，~7.7KB），覆盖 3 范式 + CJK 字体（AR PL SungtiL GB 避 Noto TTC 坑）+ APA 7th + header-includes vs header.tex；(2) references/index.md 加"排版/编译"段；(3) description 加触发条件；(4) 导航表加新条目 |
 | 5.9.0 | 2026-06-03 | **任务流指南 v3.0.1 老板定型**：(1) IM 群艾特必须（纠正"可选"歧义）；(2) 任务进度反馈走 workboard（proof+comment）；(3) 中间文件放 temp/ 不放 knowledge/；(4) start 保留但不主动调；(5) 新增 --no-dup 防重复建卡；(6) 指南导航 task-flow-guide 指向 v3.0.1 |
 | 5.8.0 | 2026-06-03 | **任务流指南 v2.2 → v3.0 同步**：(1) 5+1 步 → 3 步派发（Dx 自动覆盖 move→todo / start）；(2) 明确"代理必须群里汇报"硬要求；(3) 文件路径硬性绝对化；(4) 指南导航 task-flow-guide 指向 v3.0 |
 | 5.7.0 | 2026-06-03 | **skill-developer 规范对齐**：删 `_meta.json`、`references/README.md`（v5.5.0 移除）；`guide.md`→`manager-overview.md`（noun phrase 命名）；references 清理冗余（-3个文件）；版本历史全量修复 |

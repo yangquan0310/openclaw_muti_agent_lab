@@ -14,6 +14,12 @@
 | **workflows.md** | 速查表：各种需求对应哪个指南 |
 | **manager-overview.md** | manager 是什么、什么时候用 |
 
+## 排版/编译（2026-06-04 新增）
+
+| 指南 | 用途 |
+|------|------|
+| **quarto-pdf-config.md** | Quarto PDF 编译配置 v1.0：3 范式、CJK 字体（AR PL SungtiL GB）、APA 7th、header-includes vs header.tex、PDF 输出 docs/ 规范 |
+
 ## 项目专项
 
 | 指南 | 用途 |
