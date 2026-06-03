@@ -1,10 +1,18 @@
 {
   "name": "presenter",
-  "version": "1.0.0",
-  "description": "当需要制作图片、PPT、逻辑可视化、课程可视化时触发。唯一可视化技能，整合图片制作、PPT制作、图表设计、流程图设计、信息图设计、课程可视化等一切可视化需求。",
-  "entry_point": "mcp/server.py",
-  "triggers": [],
-  "dependencies": [],
+  "version": "1.7.0",
+  "description": "呈现师：所有视觉传达工作的设计师。PPT/课件首选 Quarto（.qmd），同时覆盖脚本编写、图片制作、图表设计、UI 视觉、品牌执行、文档排版。",
   "author": "Yang Quan",
-  "mcp_tools": []
+  "emoji": "🎨",
+  "created": "2026-05-11",
+  "updated": "2026-06-04",
+  "tags": ["ppt", "presentation", "visual-design", "quarto", "brand", "ui"],
+  "sub_skills": [
+    {
+      "id": "quarto-ppt",
+      "name": "Quarto PPT",
+      "path": "quarto-ppt/SKILL.md",
+      "description": "用 Quarto 制作 .pptx 与 RevealJS 演示文稿（默认 PPT 工具）"
+    }
+  ]
 }

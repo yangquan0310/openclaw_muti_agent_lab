@@ -1,0 +1,82 @@
+---
+title: "Quarto RevealJS 学习样例"
+subtitle: "HTML 演示文稿"
+author: "杨权"
+date: "2026-06-04"
+format:
+  revealjs:
+    theme: simple
+    incremental: true
+    slide-number: true
+    chalkboard: true
+    code-line-numbers: true
+---
+
+# 总览
+
+## RevealJS 优势
+
+- HTML 格式，跨平台
+- 11 套内置主题
+- 支持代码高亮、公式、片段动画
+- 可打印为 PDF
+- 支持白板、演讲者视图
+
+## 内置主题一览
+
+- `beige` / `blood` / `dark` / `default`
+- `dracula` / `league` / `moon` / `night`
+- `serif` / `simple` / `sky` / `solarized`
+
+主题可在 YAML 切换：
+
+```yaml
+format:
+  revealjs:
+    theme: dracula
+```
+
+## 两列 + 片段
+
+:::: {.columns}
+::: {.column width="50%"}
+**要点**
+
+::: {.fragment}
+- 第一条
+:::
+::: {.fragment}
+- 第二条
+:::
+:::
+::: {.column width="50%"}
+**图示**
+
+::: {.fragment}
+![占位图](https://placehold.co/400x250/76AADB/FFFFFF/png?text=Quarto)
+:::
+:::
+::::
+
+## 代码片段
+
+```python
+import sys
+print(f"Python {sys.version}")
+```
+
+## 公式
+
+$$
+\sigma^2 = \frac{1}{N}\sum_{i=1}^{N}(x_i - \mu)^2
+$$
+
+## 演讲者笔记
+
+::: {.notes}
+这页是给演讲者看的备注。
+:::
+
+## 谢谢
+
+Quarto 演示结束。

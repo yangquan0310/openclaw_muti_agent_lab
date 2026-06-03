@@ -1,0 +1,49 @@
+---
+title: "PPT 标题"
+subtitle: "副标题"
+author: "杨权"
+date: "2026-06-04"
+format:
+  revealjs:
+    theme: simple
+    incremental: true
+    slide-number: true
+    chalkboard: true
+    code-line-numbers: true
+---
+
+# 课程总览
+
+## 第一章
+
+- 要点一
+- 要点二
+- 要点三
+
+## 第二章
+
+:::: {.columns}
+::: {.column width="50%"}
+**左列**
+:::
+::: {.column width="50%"}
+**右列**
+:::
+::::
+
+## 代码
+
+```python
+def hello():
+    print("hi")
+```
+
+## 公式
+
+$$
+E = mc^2
+$$
+
+## 致谢
+
+谢谢观看。

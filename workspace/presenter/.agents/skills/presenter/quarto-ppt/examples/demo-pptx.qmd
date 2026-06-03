@@ -1,0 +1,74 @@
+---
+title: "Quarto PPT 学习样例"
+subtitle: "呈现师内部验证"
+author: "杨权"
+date: "2026-06-04"
+format:
+  pptx:
+    incremental: true
+    slide-level: 2
+---
+
+# 课程总览
+
+## 这是第一节（section header）
+
+由 `#` 标题自动作为分隔页。
+
+## 这是普通内容页
+
+- 列表项一
+- 列表项二
+  - 嵌套子项
+  - 另一个子项
+- 列表项三
+
+`incremental: true` 让列表逐条出现。
+
+## 两列布局
+
+:::: {.columns}
+::: {.column width="50%"}
+**左列**
+
+- 文字
+- 图片
+- 表格
+:::
+::: {.column width="50%"}
+**右列**
+
+- 代码
+- 公式
+- 引用
+:::
+::::
+
+## 代码块
+
+```python
+def hello(name: str) -> str:
+    return f"Hello, {name}!"
+
+print(hello("Quarto"))
+```
+
+## 公式与图片
+
+行内公式 $E = mc^2$，独立公式：
+
+$$
+\int_0^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+```
+
+![一只测试小狗](https://placehold.co/600x300/394D85/FFFFFF/png?text=Quarto+PPTX){width=80%}
+
+## 演讲者备注
+
+::: {.notes}
+这一页给演讲者看，正文不会显示在幻灯片上。
+:::
+
+## 致谢
+
+谢谢观看。

@@ -1,6 +1,16 @@
 # PPT 制作指南
 
-> 从 PPT 脚本设计 → Layout 选择 → PPTX 编译的完整流程
+> ⚠️ **已弃用**（2026-06-04）：本指南描述的 PPT 脚本 + python-pptx 流程已停止维护。
+>
+> **新工作请用** [Quarto PPT 技能](../quarto-ppt/SKILL.md)（.qmd → .pptx / revealjs）
+>
+> 本文档保留作历史参考。`scripts/ppt/` 目录已标记为 DEPRECATED。
+>
+> 详见 IDENTITY.md「工具原则」。
+
+---
+
+> 从 PPT 脚本设计 → Layout 选择 → PPTX 编译的完整流程（**旧版**）
 
 ---
 

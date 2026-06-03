@@ -1,0 +1,49 @@
+---
+title: "PPT 标题"
+subtitle: "副标题"
+author: "杨权"
+date: "2026-06-04"
+institute: "呈现师"
+format:
+  pptx:
+    reference-doc: brand-template.pptx
+    incremental: false
+    slide-level: 2
+---
+
+# 课程总览
+
+## 第一章：起点
+
+内容区。
+
+- 要点一
+- 要点二
+- 要点三
+
+## 第二章：进阶
+
+:::: {.columns}
+::: {.column width="50%"}
+**左列**
+
+- 子项
+:::
+::: {.column width="50%"}
+**右列**
+
+- 子项
+:::
+::::
+
+# 总结
+
+## 关键收获
+
+- 收获 1
+- 收获 2
+- 收获 3
+
+## 致谢
+
+谢谢观看。

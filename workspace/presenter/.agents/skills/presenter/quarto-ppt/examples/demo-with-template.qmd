@@ -1,0 +1,32 @@
+---
+title: "使用品牌模板的样例"
+author: "杨权"
+date: "2026-06-04"
+format:
+  pptx:
+    reference-doc: default-ref.pptx
+    incremental: false
+---
+
+# 模板验证
+
+## 这是首页之后的章节封面
+
+`#` 标题作为 Section Header。
+
+## 这是普通内容页
+
+- 模板来自 `default-ref.pptx`
+- Pandoc 会按布局名匹配：Title Slide / Title and Content / Section Header / Two Content / Comparison / Content with Caption / Blank
+- 缺失的布局会从默认模板兜底
+
+## 测试两列
+
+:::: {.columns}
+::: {.column width="50%"}
+左列
+:::
+::: {.column width="50%"}
+右列
+:::
+::::

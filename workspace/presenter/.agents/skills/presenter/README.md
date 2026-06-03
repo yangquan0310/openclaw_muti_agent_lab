@@ -1,77 +1,65 @@
-# presenter - 唯一可视化技能
+# presenter（呈现师技能）
 
-> 整合一切可视化需求：图片、PPT、图表、流程图、课程可视化
+> **所有视觉传达工作的设计师**。覆盖 PPT/课件、脚本、图片、图表、UI、品牌、文档七大类。
 
 ---
 
-## 核心职责
+## 核心定位
 
-| 类型 | 说明 |
+| 维度 | 内容 |
 |------|------|
-| **PPT 制作** | 课件脚本设计 → Layout 选择 → PPTX 编译 |
-| **图片制作** | 信息图、插图、海报设计 |
-| **图表设计** | 流程图、思维导图、知识图谱 |
-| **课程可视化** | 教学图表、知识结构可视化 |
+| **角色** | 备课团队 · 呈现师 |
+| **工具原则** | **PPT/课件一律用 Quarto（.qmd）** |
+| **默认输出** | `.pptx`（可二次编辑）/ RevealJS（HTML）|
+| **协作对象** | 教员（内容）、督导（质量）、大管家（任务） |
 
 ---
 
-## 核心原则
+## 子技能
 
-1. **呈现准确性**：忠实呈现内容，不歪曲原意
-2. **视觉规范性**：遵循统一的设计规范与品牌调性
-3. **信息清晰度**：学生能快速抓住核心信息
-4. **美观度**：在保证前三项的基础上追求视觉美感
+| 技能 | 触发场景 | 入口 |
+|------|----------|------|
+| **quarto-ppt** | 制作 PPT/课件/演示文稿 | [quarto-ppt/SKILL.md](quarto-ppt/SKILL.md) |
+| （规划中）script-writing | 视角/分镜头脚本 | — |
+| （规划中）image-guide | 信息图/插图/海报 | — |
+| （规划中）chart-guide | 流程图/思维导图/知识图谱 | — |
+| （规划中）ui-guide | 软件界面/图标/布局 | — |
+| （规划中）brand-guide | 品牌视觉/配色规范 | — |
+| （规划中）doc-guide | 文档排版/字体 | — |
+
+> 当前唯一落地的子技能是 **quarto-ppt**。其余子技能等接到对应任务时再沉淀。
 
 ---
 
-## 过渡说明
+## 工具原则（铁律）
 
-本技能整合了以下技能（过渡期保留，陆续整合）：
-- `pptx-2`：基础 PPT 技能
-- `PowerPoint-presenter`：完整 PPT 制作流程
+凡是接到"制作 PPT / 课件 / 幻灯片"的任务：
+
+1. **第一步就是用 Quarto（.qmd）**
+2. 默认输出 `pptx`（Office 可二次编辑）；演示场景输出 `revealjs`（HTML/PDF）
+3. 不写 python-pptx / pptxgenjs / PowerPoint XML 拼装代码
+4. 旧技能（`pptx-2` / `pptx-generator`）仅在维护既有资产时回退
+
+详见 [IDENTITY.md 的「工具原则」章节](../../../../IDENTITY.md)。
 
 ---
 
-## 目录结构
+## 快速开始
 
+```bash
+# 复制模板
+cp .agents/skills/presenter/quarto-ppt/templates/lesson-pptx.qmd ./deck.qmd
+
+# 编辑 deck.qmd，写入内容
+
+# 渲染
+bash .agents/skills/presenter/quarto-ppt/scripts/render.sh deck.qmd pptx
+# → deck.pptx
 ```
-presenter/
-├── SKILL.md                    # 导航首页
-├── README.md                   # 本文件
-├── _meta.json                  # 元数据
-├── assets/templates/           # 模板文件
-├── scripts/                    # 脚本
-│   └── ppt/                    # PPT 相关脚本
-│       ├── main.py
-│       ├── ScriptParser.py
-│       ├── PptxCompiler.py
-│       └── TemplateExtender.py
-├── references/                 # 指南文档
-│   ├── index.md
-│   ├── guide.md
-│   ├── ppt-guide.md
-│   ├── image-guide.md
-│   ├── chart-guide.md
-│   └── quality-standards.md
-└── mcp/
-    └── server.py               # MCP 入口
-```
 
 ---
 
-## 使用方式
+## 版本
 
-当用户提到以下场景时触发：
-- "制作 PPT"、"制作幻灯片"
-- "制作图片"、"设计信息图"
-- "可视化"、"图表设计"
-- "流程图"、"思维导图"
-- "课程可视化"、"知识图谱"
-
----
-
-## 版本历史
-
-| 版本 | 日期 | 更新 |
-|------|------|------|
-| 1.0.0 | 2026-05-20 | 初始版本，整合所有可视化需求 |
+- 当前：v1.6.0（2026-06-04）
+- 变更：把 quarto-ppt 收编为子技能，presenter 不再依赖独立技能目录
