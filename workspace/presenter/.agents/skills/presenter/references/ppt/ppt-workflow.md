@@ -226,7 +226,7 @@ git commit -m "feat(ppt): 新增 XXX 课件"
 
 ## 完整示例
 
-完整工作流见 [assets/examples/](../../assets/examples/)：
+完整工作流见 [assets/demos/](../../assets/demos/)：
 - `demo-pptx.qmd` — PPTX 完整示例
 - `demo-revealjs.qmd` — RevealJS 完整示例
 - `demo-with-template.qmd` — PPTX + reference-doc 示例

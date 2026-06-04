@@ -2,11 +2,12 @@
 name: presenter
 description: >
   呈现师：所有视觉传达工作的设计师。
-  核心职责是 PPT/课件/演示文稿制作（首选 Quarto + .qmd，输出 .pptx 或 RevealJS HTML）；
+  核心职责是 PPT/课件/演示文稿制作——**只**用 Quarto + .qmd，输出 .pptx 或 RevealJS HTML。
+  后处理仅用 `scripts/build_brand_template.py` / `scripts/style_pptx_tables.py`（纯 zipfile XML，不是 python-pptx，不是生成器）。
   兼顾脚本编写、图片制作、图表设计、UI 视觉、品牌视觉执行、文档排版。
-  工具原则：PPT 一律用 Quarto，禁用 python-pptx / pptxgenjs 起步。
+  工具原则：PPT 一律用 Quarto，**禁用** python-pptx / pptxgenjs 起步；旧 `scripts/ppt/` 已全量删档，无回退路径。
   当用户要求"做 PPT"、"做课件"、"做演示文稿"、"写脚本"、"做信息图"、"做海报"、"做流程图"、"做界面设计"等视觉任务时激活。
-version: 1.10.0
+version: 1.11.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -24,7 +25,7 @@ metadata:
 ## 核心原则
 
 1. **呈现准确性**：忠实还原设计稿/内容，不歪曲、不遗漏
-2. **工具锁定**：PPT/课件一律用 Quarto（.qmd），输出 `.pptx` 或 RevealJS HTML
+2. **工具锁定（铁律）**：PPT/课件**只**用 Quarto（.qmd），输出 `.pptx` 或 RevealJS HTML。**不做生成端 python-pptx**。`scripts/ppt/` 已全量删档，无回退路径
 3. **职责清晰**：原创教学由教员负责，视觉呈现由呈现师负责，质量终审由督导负责
 4. **L1/L2/L3 分层**：SKILL.md 只放 L2 速查 + 核心指令，详细内容按主题下沉到 `references/`
 5. **约束优先于流程**：先界定边界（能做/不能做），再设计路径；不为了完整而完整
@@ -65,12 +66,15 @@ metadata:
 - ❌ 不用 python-pptx / pptxgenjs 起步（新工作）
 - ❌ 不写 PowerPoint XML 拼装代码
 - ❌ 不在 `pptx-2` / `pptx-generator` 技能上做新工作
+- ❌ `scripts/ppt/` python-pptx 旧工具链（2026-06-04 已全量删档，不复存）
 
-### 🔁 回退旧工具（必须满足其一）
+### 🚫 **无回退条件**
 
-- 维护既有 python-pptx 资产（不再改用 .qmd 重写）
-- 客户/教员明确要求保留旧 .pptx 模板里某个宏 / 嵌入式 VBA
-- 需要逐像素控制且 Quarto reference-doc 表达不了
+2026-06-04 后不设“回退到 python-pptx 生成”的合法路径。逐像素需求走：
+- `scripts/build_brand_template.py`（生成品牌母版，**纯 zipfile XML**）
+- `scripts/style_pptx_tables.py`（表格样式注入，**纯 zipfile XML**）
+
+两者都不是 python-pptx，也不是 PPT 生成器，是 Quarto 输出的**后处理器**。
 
 ---
 
@@ -88,16 +92,15 @@ cp assets/templates/lesson-pptx.qmd ./deck.qmd
 ### 2. 渲染
 
 ```bash
-# 一键渲染（封装脚本）
-bash scripts/render.sh deck.qmd pptx
-bash scripts/render.sh deck.qmd revealjs
-bash scripts/render.sh deck.qmd both
-
-# 或直接用 Quarto
+# 直接调 Quarto CLI（**不包装成 .sh**）
 quarto render deck.qmd --to pptx
 quarto render deck.qmd --to revealjs
-quarto preview deck.qmd                  # 热重载预览
+quarto render deck.qmd                    # YAML 头部声明的 format 全渲
+quarto preview deck.qmd                   # 热重载预览
+quarto preview deck.qmd --to pptx         # 预览到指定格式
 ```
+
+**完整 CLI 速查**：[references/ppt/quarto-cli-guide.md](references/ppt/quarto-cli-guide.md)
 
 ### 3. 套品牌母版
 
@@ -117,7 +120,34 @@ format:
     theme: simple
 ```
 
-### 5. 提交督导审核
+### 5. 表格样式（重要）
+
+Quarto pptx 输出使用 Office 默认 table style（`{5C22544A-...}` 灰底粗黑边），**YAML 和 reference-doc 都控制不了**。唯一可靠路径是渲染后注入 `<a:tcPr>`。
+
+通过三段式 CLI 调用（封装在 `scripts/ppt/` 模块）：
+
+```bash
+# 母版装饰（一站式 / 微调）
+presenter ppt template decorate deck.pptx -o deck_brand.pptx
+presenter ppt template add-header deck.pptx -o deck.pptx --color 1F4E79
+presenter ppt template set-fonts deck.pptx -o deck.pptx --chinese 微软雅黑
+presenter ppt template set-theme-colors deck.pptx -o deck.pptx --accent1 1F4E79
+
+# 表格样式
+presenter ppt tables style deck_brand.pptx -o deck_styled.pptx
+```
+
+**或 Python API 调用**：
+```python
+from scripts.ppt import PPTXFile, TemplateEditor, TableStyler
+ppt = PPTXFile("input.pptx").load()
+TemplateEditor(ppt).decorate("output.pptx", header_color="0096C7")
+TableStyler(PPTXFile("output.pptx").load()).style("final.pptx")
+```
+
+详细：[scripts/ppt/README.md](scripts/ppt/README.md) · [references/ppt/table-styling.md](references/ppt/table-styling.md)
+
+### 6. 提交督导审核
 
 完成视觉设计后，提交督导（auditor）做质量终审。
 
@@ -130,9 +160,11 @@ format:
 | 指南 | 位置 | 内容 |
 |------|------|------|
 | 完整语法 | [references/ppt/quarto-syntax.md](references/ppt/quarto-syntax.md) | 分隔/列表/两列/代码/公式/图片/表格/备注/片段/背景/图表 |
+| **CLI 速查** | [references/ppt/quarto-cli-guide.md](references/ppt/quarto-cli-guide.md) | **render / preview / 调试 / 装依赖（直接调 quarto，不包装）** |
+| **表格样式** | [references/ppt/table-styling.md](references/ppt/table-styling.md) | **两段式渲染：Quarto + Python tcPr 注入（重要）** |
 | 主题与样式 | [references/ppt/quarto-theme.md](references/ppt/quarto-theme.md) | revealjs 主题、SCSS、reference-doc |
 | 15 个 FAQ | [references/ppt/quarto-faq.md](references/ppt/quarto-faq.md) | 中文乱码/字体/图片/慢渲染等 |
-| 与 python-pptx 对比 | [references/ppt/quarto-vs-pptx.md](references/ppt/quarto-vs-pptx.md) | 工具选型 |
+| **为什么只用 Quarto** | [references/ppt/quarto-vs-pptx.md](references/ppt/quarto-vs-pptx.md) | **Quarto-vs-python-pptx 选型史证** |
 | 完整工作流 | [references/ppt/ppt-workflow.md](references/ppt/ppt-workflow.md) | 10 步工作流（决策→模板→编写→渲染→调样式→交付）|
 
 ### 脚本编写
@@ -184,9 +216,9 @@ format:
 | 类型 | 位置 |
 |------|------|
 | 模板 | [assets/templates/](assets/templates/) — `basic-pptx.qmd` / `basic-revealjs.qmd` / `lesson-pptx.qmd` / `brand-template.pptx` / `legacy-template.pptx` |
-| 示例 | [assets/examples/](assets/examples/) — `demo-pptx.qmd` / `demo-revealjs.qmd` / `demo-with-template.qmd` |
-| 渲染脚本 | [scripts/render.sh](scripts/render.sh) |
-| ⚠️ 旧 python-pptx 工具 | [scripts/ppt/](scripts/ppt/) — **DEPRECATED**，仅维护旧资产时用 |
+| 示例 | [assets/demos/](assets/demos/) — `demo-pptx.qmd` / `demo-revealjs.qmd` / `demo-with-template.qmd` |
+| **后处理（生成母版）** | [scripts/build_brand_template.py](scripts/build_brand_template.py) — **纯 zipfile XML**，不是 python-pptx |
+| **后处理（表格样式）** | [scripts/style_pptx_tables.py](scripts/style_pptx_tables.py) — **纯 zipfile XML**，不是 python-pptx |
 
 ---
 
@@ -204,10 +236,14 @@ format:
     ├── README.md
     ├── assets/                    L3 资产
     │   ├── templates/
-    │   └── examples/
-    ├── scripts/                   L3 工具
-    │   ├── render.sh
-    │   └── ppt/                   ⚠️ DEPRECATED
+    │   └── demos/
+    ├── scripts/                   L3 工具（2026-06-04 后无 .sh 包装）
+    │   ├── main.py                     presenter CLI 统一入口（三段式）
+    │   └── ppt/                       PPT 后处理模块
+    │       ├── PPT.py                  PPTXFile 类（zipfile 包装）
+    │       ├── Template.py             TemplateEditor（5 个母版装饰方法）
+    │       ├── Tables.py               TableStyler（1 个表格样式方法）
+    │       └── cli.py                  ppt 模块 CLI 调度
     └── references/                L3 资源
         ├── index.md
         ├── guide.md
@@ -215,7 +251,9 @@ format:
         │   ├── quarto-syntax.md
         │   ├── quarto-theme.md
         │   ├── quarto-faq.md
+        │   ├── quarto-cli-guide.md
         │   ├── quarto-vs-pptx.md
+        │   ├── table-styling.md
         │   └── ppt-workflow.md
         └── ...（14 篇设计方法论）
 ```

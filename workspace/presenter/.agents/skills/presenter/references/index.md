@@ -26,7 +26,7 @@
 
 > 配套资产：
 > - [../assets/templates/](../assets/templates/) — basic/lesson-pptx.qmd + brand-template.pptx
-> - [../assets/examples/](../assets/examples/) — demo-pptx / demo-revealjs / demo-with-template
+> - [../assets/demos/](../assets/demos/) — demo-pptx / demo-revealjs / demo-with-template
 > - [../scripts/render.sh](../scripts/render.sh) — 渲染小工具
 >
 > ⚠️ [旧 PPT 制作指南](ppt-guide.md)（python-pptx 流程）已弃用，仅作历史参考。

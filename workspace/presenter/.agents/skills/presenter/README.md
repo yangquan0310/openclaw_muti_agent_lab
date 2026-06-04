@@ -23,7 +23,7 @@
 | [SKILL.md](SKILL.md) | **主技能入口**（L2 指令层，389 行）|
 | [references/index.md](references/index.md) | L3 资源导航 |
 | [assets/templates/](assets/templates/) | PPT 模板起点 |
-| [assets/examples/](assets/examples/) | PPT 完整示例 |
+| [assets/demos/](assets/demos/) | PPT 完整示例 |
 | [scripts/render.sh](scripts/render.sh) | 渲染小工具 |
 
 ---
