@@ -213,10 +213,21 @@ TableStyler(PPTXFile("output.pptx").load()).style("final.pptx")
 
 ## 资产
 
+按 **Quarto 编译所需资源类型**组织：
+
+| 类型 | 位置 | 用途 | Quarto 调用 |
+|------|------|------|-------------|
+| 模板 | [assets/templates/](assets/templates/) | Quarto 骨架（.qmd）+ reference-doc 母版（.pptx）| `cp` 起步；`reference-doc: assets/templates/xxx.pptx` |
+| 示例 | [assets/demos/](assets/demos/) | 完整可运行 .qmd | `cp` 参考写法 |
+| 图片 | [assets/images/](assets/images/) | 可复用图片库 | `![](assets/images/xxx.png)` |
+| 图表 | [assets/charts/](assets/charts/) | 静态图（PNG/SVG）或数据驱动 | `![](assets/charts/xxx.png)` |
+| 字体 | [assets/fonts/](assets/fonts/) | 自定义字体（.ttf/.otf/.woff）| `src: url(assets/fonts/xxx.woff2)` |
+| 样式 | [assets/styles/](assets/styles/) | 自定义 SCSS（revealjs 主题）| `theme: [default, assets/styles/xxx.scss]` |
+
+**后处理**：
+
 | 类型 | 位置 |
 |------|------|
-| 模板 | [assets/templates/](assets/templates/) — `basic-pptx.qmd` / `basic-revealjs.qmd` / `lesson-pptx.qmd` / `brand-template.pptx` / `legacy-template.pptx` |
-| 示例 | [assets/demos/](assets/demos/) — `demo-pptx.qmd` / `demo-revealjs.qmd` / `demo-with-template.qmd` |
 | **后处理（生成母版）** | [scripts/build_brand_template.py](scripts/build_brand_template.py) — **纯 zipfile XML**，不是 python-pptx |
 | **后处理（表格样式）** | [scripts/style_pptx_tables.py](scripts/style_pptx_tables.py) — **纯 zipfile XML**，不是 python-pptx |
 
@@ -234,9 +245,13 @@ TableStyler(PPTXFile("output.pptx").load()).style("final.pptx")
     ├── SKILL.md                   你正在读这份（L2 指令层）
     ├── _meta.json
     ├── README.md
-    ├── assets/                    L3 资产
-    │   ├── templates/
-    │   └── demos/
+    ├── assets/                    L3 资产（按 Quarto 资源类型组织）
+    │   ├── templates/             骨架（.qmd）+ reference-doc 母版（.pptx）
+    │   ├── demos/                 完整示例 .qmd
+    │   ├── images/                可复用图片
+    │   ├── charts/                静态/数据图表
+    │   ├── fonts/                 自定义字体
+    │   └── styles/                自定义 SCSS（revealjs 主题）
     ├── scripts/                   L3 工具（2026-06-04 后无 .sh 包装）
     │   ├── main.py                     presenter CLI 统一入口（三段式）
     │   └── ppt/                       PPT 后处理模块
