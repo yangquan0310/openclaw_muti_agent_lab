@@ -88,3 +88,27 @@
 [programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L140] User: 回滚到修改前，然后精确重命名
 [programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L141] Assistant: ✅ 明白。**回滚 + 精确重命名**。
 [programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L143] Assistant: ✅ 回滚成功（98/98 测试过）。下面用**精确模式**重做：只匹配**带引号/反引号包围的字符串字面量**。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L145] Assistant: **234 处带引号字符串**（之前误改 422 处无引号的）。开始精确替换。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L147] Assistant: 471 处残留！让我看清楚。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L151] User: 不可能有这么多！ 你的修改完全毫无道理！
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L152] Assistant: 冷静。让我先看一个具体例子搞清楚"471 处"到底是什么。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L154] Assistant: **先承认现状错了**。让我说清楚： ## 📊 数字拆分 | 数字 | 说明 | |------|------| | **234 处** | 带引号/反引号的字符串字面量 → **已改完** | | **281 处** | 历史档案（docs/architecture/、docs/reports/review-*/、docs/reference/、.agents/sessions/）→ **故意保留，正确** | | **190 处**
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L154] Assistant: 的就是函数调用，不跟的就是描述性引用。 ## ❓ 怎么继续？ 请告诉我： | 选项 | 命令 | 适用 | |------|------|------| | **A. 用"不跟 `(`" 规则继续改** | 精准 sed：替换 `task\.create\b` 但**排除** `task\.create(` | 改 190 处裸引用 | | **B. 接受现状** | 234 改 + 281 历史保留 + 190 裸引用不动 | 用户对"
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L155] User: 我只管结果。哪怕你一个一个判断都行！
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L156] Assistant: 明白。**逐个判断**——不再用 sed 模式。用脚本生成"逐行裸引用清单"，然后**逐个**判断改/不改。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L158] Assistant: 清单清晰了。现在**用 Python 脚本按规则逐个判断**： - 后面是 `(` → 命名空间方法 → **不改** - 后面是 `.` 或字母/数字/`_` → 属性访问 → **不改** - 后面是 `,` `:` 空格 `→` `\n` 等标点 → 描述性引用 → **改**
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L160] Assistant: **找到几个脚本误判**（如 `src/tools/handlers.js:62` 是字符串里工具名 `event.query(` 不该算方法调用）。**修正判断后用 Python 做精确替换**：
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L162] Assistant: **还有 2 类没改**： 1. 用户文档里的调用样例 `event.query({...})` — 应改成新名 2. `src/tools/handlers.js:62` 字符串里的 `event.query({` — 应改 但**不能**改 `src/tools/handlers.js` 里的真实方法调用（`await task.create(`）。用**逐个 edit** 处理特殊 case。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L164] Assistant: 用 Python 改**用户文档里的调用样例**（`(` 后），排除代码示例：
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L166] User: 回退，然后重新修改
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L167] Assistant: **先回退到完全干净状态**。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L169] Assistant: ✅ **回退完成**，干净状态：277f4adb + 98/98 测试过 + 656 处点式引用（281 历史 + 375 当前）。 ## 🎯 重做计划（4 步合一） | 步骤 | 内容 | 处数 | 工具 | |------|------|------|------| | 1 | 字符串字面量 `'...'` `"..."` `` `...` `` | ~234 | sed（3 种引号） | | 2 | 行内裸工具名（前后空格/标点）
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L173] Assistant: 脚本崩了（symlink 文件 `if-then-rule-standard.md` 无法打开）。已改 19 个、未改 20 个。**先回退已改部分**，再修脚本重做。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L175] Assistant: ✅ 干净。修脚本重做（加 exists/try 检查）：
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L177] Assistant: ⚠️ **严重 bug**！`src/tools/handlers.js` 10 处被误改（命名空间方法调用）。原因：路径以 `./` 开头，正则 `^src/` 不匹配。先看现在状态。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L179] Assistant: **9 处严重误伤** + `src/tools/handlers.js` 是代码层关键文件。立刻回退所有，再**只修这个文件**。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L181] Assistant: ✅ **完美**！35 文件 / 388 处全部正确。**手动处理 1 个特殊 case**：`src/tools/handlers.js:62` 字符串内的 `event.query({ runId })`。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L183] Assistant: [assistant turn failed before producing content]
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L187] User: 创建一个测试子代理，进行测试
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L188] Assistant: **先看清 320 处残留分布 + 立刻 spawn 子代理做完整审计**。
+[programmer/sessions/programmer/bc242007-0e36-4012-a94e-8121c8571d7d.jsonl.reset.2026-06-03T06-46-57.021Z#L190] Assistant: **先看 skills 那 1 处残留是什么 + 立刻 spawn 子代理做完整审计**。

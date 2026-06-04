@@ -610,4 +610,18 @@ Assistant: <at user_id="ou_c1a8fc008307a0385a2fcd3c0ca6b71b">杨权</at> 老板�
 
 Assistant: **文献 12（深度伪造与错误记忆，专题相关）** - 标题：Deepfake false memories - 作者：G. Murphy, E. Flynn - 期刊/会议：Memory - 年份：2022 - DOI/链接：https://doi.org/10.1080/09658211.2021.1919715 - 核心发现：观看 AI 生成视频可在被试中诱发"虚假自传体记忆"。 - 简评：Dombrowski (2026) 将其列为"数字时代记忆扭曲"的风险证据；本期作为前置基础文献引用。 --- ## 检索说明 - 检索引
 
+
+---
+
+*June 5, 2026 at 3:00 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
+
+---
+
+*June 5, 2026 at 3:00 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
 <!-- openclaw:dreaming:diary:end -->

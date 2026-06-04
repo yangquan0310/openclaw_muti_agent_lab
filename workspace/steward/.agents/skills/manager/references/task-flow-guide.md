@@ -113,6 +113,10 @@ manager workboard create \
 - 找到对应的 .agents/agents/{{agent}}.md 阅读
 - 查看 TODO.md 中的 {{subtask}} 子任务
 
+☁ 完成反馈：
+- 在群里艾特大管家
+- 汇报结果
+
 ```
 
 **模板要点**：

@@ -42,7 +42,11 @@
 | 需要做内部技术分享/带动画 | revealjs 格式 + 内置主题（`simple`/`dracula` 等） |
 | 需要 PDF 形式课件 | revealjs + 浏览器打印 PDF（或 `?print-pdf`） |
 | 需要使用 Python 工具 | 用 Quarto 代码块（仅纯语法高亮，无需 Jupyter）；要执行代码需 `conda install jupyter nbformat` |
-| **旧工具（python-pptx / pptxgenjs）** | **新工作一律不用**；仅在已有资产维护/逐像素控制时回退 |
+| **旧工具（python-pptx / pptxgenjs）** | **已全量删档**（2026-06-04）。`scripts/ppt/` 不复存，无回退路径。生成端 = Quarto 唯一；后处理 = `build_brand_template.py` / `style_pptx_tables.py`（纯 zipfile XML，**不是 python-pptx**）|
+| **sh 包装脚本** | **已删**（2026-06-04）。`scripts/render.sh` 和 `scripts/render-with-tables.sh` 全删。Quarto CLI 自身就是完整接口，包装 = 噪声。CLI 速查见 `references/ppt/quarto-cli-guide.md` |
+| **PPT 后处理** | 走 `scripts/ppt/` 模块（不是单文件 CLI）。三段式 CLI：`presenter ppt template <子方法>` + `presenter ppt tables <子方法>`。详见 `scripts/ppt/README.md` |
+| **pptx 表格样式** | **两段式渲染**：`quarto render` → `python3 scripts/style_pptx_tables.py` 注入 tcPr。YAML / reference-doc 都控制不了 pptx 表格，必须后处理。详见 `references/ppt/table-styling.md` |
+| **pptx 母版装饰** | slide master 的 shape 才会出现在每页；改 theme 颜色 slide 看不见——必须改 `slideMasters/slideMaster1.xml`。`scripts/build_brand_template.py` 可程序化生成品牌母版 |
 | 完成视觉设计初稿后 | 提交督导（auditor）进行质量审核 |
 | 不原创教学内容 | 仅呈现教员提供的内容，不修改原意 |
 | 遵循统一品牌调性与配色规范 | 保持跨媒介视觉一致性（课件/软件/文档） |
@@ -61,6 +65,10 @@
 | 2.0.0 | 2026-06-04 | **切换默认 PPT 工具为 Quarto（.qmd）**；新增 quarto-ppt 技能；弃用 python-pptx / pptxgenjs |
 | 2.1.0 | 2026-06-04 | **深度融合**：按 L1/L2/L3 重构；模板入 `assets/templates/`；详细入 `references/ppt/` |
 | 2.2.0 | 2026-06-04 | **对齐 skill-developer 规范**：SKILL.md 5 必含章节 |
+| 2.3.0 | 2026-06-04 | **固化两段式 pptx 渲染**：scripts/style_pptx_tables.py + scripts/build_brand_template.py + scripts/render-with-tables.sh + references/ppt/table-styling.md。母版 assets/templates/brand-template-teal-orange.pptx。解决 Quarto pptx 表格不可控、theme 改色 slide 不变两大痛点 |
+| 2.4.0 | 2026-06-04 | **彻底转向 Quarto**：`scripts/ppt/` python-pptx 旧代码全量删档；IDENTITY.md / SKILL.md / MEMORY.md 同步去回退路径；quarto-vs-pptx.md 改写为"为什么只用 Quarto"史证文档；杨权明确指令"主要用 Quarto 去把 md/qmd 编译为 pptx" |
+| 2.5.0 | 2026-06-04 | **删 .sh 包装**：`scripts/render.sh` + `scripts/render-with-tables.sh` 全删；新增 `references/ppt/quarto-cli-guide.md`（CLI 速查）；SKILL.md 同步；杨权明确指令"直接用 quarto 命令行来做，那个 sh 没有意义" |
+| 2.6.0 | 2026-06-04 | **封装 PPT 后处理为模块**（`scripts/ppt/`）：PPTXFile / TemplateEditor / TableStyler 三类 + 三段式 CLI `presenter ppt template/tables ...`；6 个子方法（decorate / add-header / add-accent / set-cover / set-fonts / set-theme-colors / tables.style）；旧 build_brand_template.py / style_pptx_tables.py 全删。skill-developer 三段式规范落地 |
 | 1.0.0 | 2026-05-23 | 初版规则表 |
 
 ## 当前活跃技能清单

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-30T19:01:01.740Z",
+  "updatedAt": "2026-06-04T19:00:17.242Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-05-10.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:1:1",
@@ -13499,6 +13499,755 @@
         "查收",
         "教育",
         "叙事"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: @大管家 @呈现师 @督导 @心理学家 [System: This message @mentions the following users: 大管家 (open_id: ou_533756bb2c2206e0e7229b2e9aa90c97), 呈现师 (open_id: ou_ef4dc56236712c6014660f8255523b45), 督导 (open_id: ou_0e1f9e71266f1b2bbf01f818f7b88833), 心理学家 (open_id: ou_3a163427b0839d1264a720c774bb",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "open-id",
+        "ou-3a163427b0839d1264a720c774bb",
+        "管家",
+        "呈现",
+        "心理学家",
+        "message",
+        "mentions",
+        "following"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: 【T038 已派发】ch14《量的研究与质的研究的整合》v1 需求分析 任务已派发，请尽快认领执行。 🔧 **workboard 信息** - card_id：9b369f42-f865-4d40-bef2-52d00d26e540（短：9b369f42） - session：agent:instructor:feishu:group:oc_1032e70e8854c3bba9df42f38d532536 - dashboard：[http://10.0.0.9:18098/estqvr/](http://10.0.0.9:18098/es",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "card-id",
+        "10.0.0.9",
+        "18098/estqvr",
+        "18098/es",
+        "t038",
+        "ch14",
+        "量的",
+        "研究"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: **输出文件**：/data/disk/仓库/教育科学研究方法/chapters/ch14_量的研究与质的研究的整合/manuscripts/v1_需求分析.md",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "输出",
+        "文件",
+        "data",
+        "disk",
+        "仓库",
+        "教育",
+        "科学",
+        "研究"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: 收到，T038 已派发。立即认领并开始执行：先解析 ch14 教材、参考 ch12 范式，再产出 v1 需求分析。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "收到",
+        "t038",
+        "立即",
+        "开始",
+        "执行",
+        "解析",
+        "ch14",
+        "教材"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: 卡片已认领，ch12 范式已读，ch14 目录已确认。下一步：检查 markdown 解析状态、读取 README/metadata。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "readme/metadata",
+        "卡片",
+        "ch12",
+        "ch14",
+        "目录",
+        "确认",
+        "下一步",
+        "检查"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: 教材 markdown 已存在（教材内容.md），README 已确认三节结构。读取教材内容：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "教材内容.md",
+        "教材",
+        "markdown",
+        "存在",
+        "内容",
+        "readme",
+        "确认",
+        "结构"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: 教材内容已读取（ch14 三节结构清晰）。参考 ch10/ch11 单章范式补充：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "ch10/ch11",
+        "教材",
+        "内容",
+        "ch14",
+        "结构",
+        "清晰",
+        "参考",
+        "ch10"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: 参考 ch10 单章范式 + ch12 详细学情分析，撰写 ch14 v1 需求分析。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "参考",
+        "ch10",
+        "ch12",
+        "详细",
+        "分析",
+        "撰写",
+        "ch14",
+        "需求"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "Assistant: 文件已写入。校验内容并提交 proof：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "文件",
+        "内容",
+        "提交",
+        "proof"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: 文件 282 行校验通过。更新 metadata.json + 提交 proof + 释放卡片：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "metadata.json",
+        "文件",
+        "通过",
+        "更新",
+        "提交",
+        "proof",
+        "释放",
+        "卡片"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "Assistant: Proof passed。释放卡片并完成：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "proof",
+        "passed",
+        "释放",
+        "卡片",
+        "完成"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "Assistant: **✅ T038 ch14 v1 需求分析 交付完成** 📄 **文件**：`/data/disk/仓库/教育科学研究方法/chapters/ch14_量的研究与质的研究的整合/manuscripts/v1_需求分析.md`（282 行） 📊 **交付要点**： | 模块 | 内容 | 规模 | |------|------|------| | 基本信息 | ch14 / 2 学时 / 90 min / 全书收官章节 | 1 表 | | 学生画像 | 60-80 人 / 已学 ch01-13 / 5 大挑战 + 4 大优势 |",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "60-80",
+        "ch01-13",
+        "t038",
+        "ch14",
+        "需求",
+        "分析",
+        "交付",
+        "完成"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "Assistant: 卡片已释放，状态为 `review`，等待督导/大管家审核",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "等待督导/大管家审核",
+        "卡片",
+        "释放",
+        "状态",
+        "review",
+        "等待",
+        "管家",
+        "审核"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "User: @大管家 [System: This message @mentions the following users: 大管家 (open_id: ou_533756bb2c2206e0e7229b2e9aa90c97). Use these open_ids when performing actions involving these users. To @mention in a reply, use `<at user_id=\"ou_xxx\">Name</at>`; plain \"@Name\" won't notify.]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "open-id",
+        "open-ids",
+        "user-id",
+        "ou-xxx",
+        "管家",
+        "message",
+        "mentions",
+        "following"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "User: 做完，需要艾特大管家，交付任务",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "做完",
+        "需要",
+        "特大",
+        "管家",
+        "交付",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "Assistant: [[reply_to_current]] <at user_id=\"ou_533756bb2c2206e0e7229b2e9aa90c97\">大管家</at> T038 ch14 v1 需求分析 交付待审 📄 `chapters/ch14_量的研究与质的研究的整合/manuscripts/v1_需求分析.md`（282 行） 🎯 90 min 分配严守约束（导入 5 + 第一节 25 + 过渡 2 + 第二节 45 + 第三节 8 + 总结 5）· 严守\"不引入教材外新概念\"红线 · 衔接 ch07-13 定位\"全书方法论收官\"",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "reply-to-current",
+        "user-id",
+        "ch07-13",
+        "管家",
+        "t038",
+        "ch14",
+        "需求",
+        "分析"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "User: 【T038 v1 收工 + v2 派发】 ✅ v1 已收工（workboard 9b369f42 → done） - 产出：manuscripts/v1_需求分析.md（282 行 / 10 节 / 严格基于教材 11 张 PPT） - 核验点：90 min 分配严格对齐 / 全书方法论收官定位 / 9 条注意事项（供 v2/v3/v4 协作） ———— v2 内容框架 派发 ———— 启动 v2 内容框架（与 v2b psychologist 并行）。 🔧 workboard - card_id：1263b12a-3adf-490e-ad",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "manuscripts/v1-需求分析.md",
+        "v2/v3/v4",
+        "card-id",
+        "1263b12a-3adf-490e-ad",
+        "t038",
+        "收工",
+        "workboard",
+        "9b369f42"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:18:18": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:18:18",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "User: 派发（心理学家）见下一条。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "心理学家",
+        "一条"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:19:19": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:19:19",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 19,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "Assistant: 收到，T039 v2 内容框架 已派发。立即认领，先读 v2 范式 + v1 需求分析。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "收到",
+        "t039",
+        "内容",
+        "框架",
+        "立即",
+        "先读",
+        "需求",
+        "分析"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:20:20": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:20:20",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "Assistant: 卡片已认领，v2 范式（ch10 详细版 + ch11 简洁版）已读。开始构建 ch14 v2：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "卡片",
+        "ch10",
+        "详细",
+        "ch11",
+        "简洁",
+        "开始",
+        "ch14"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:21:21": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:21:21",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 21,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "Assistant: v1 已重读到位（重点/案例/衔接/红线全有）。开始撰写 v2_内容框架.md：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "重点/案例/衔接/红线全有",
+        "v2-内容框架.md",
+        "重点",
+        "案例",
+        "衔接",
+        "开始",
+        "撰写",
+        "内容"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:22:22": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:22:22",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "Assistant: 文件已写入（17816 bytes）。校验关键指标 + 更新 metadata + 提交 proof：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "文件",
+        "bytes",
+        "关键",
+        "指标",
+        "更新",
+        "metadata",
+        "提交",
+        "proof"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:23:23": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:23:23",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 23,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "Assistant: 实际 12 个独立编号知识点 + 1 个综合辨析（6+7+8）+ 综述 13/14 共 14 个概念点（13-15 范围内）。提交 proof：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "13/14",
+        "13-15",
+        "实际",
+        "独立",
+        "编号",
+        "知识",
+        "综合",
+        "辨析"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-04.txt:24:24": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-04.txt:24:24",
+      "path": "memory/.dreams/session-corpus/2026-06-04.txt",
+      "startLine": 24,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "Assistant: Proof passed + comment 留。释放卡片：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T19:00:17.011Z",
+      "lastRecalledAt": "2026-06-04T19:00:17.011Z",
+      "queryHashes": [
+        "ecfa2a7911d5"
+      ],
+      "recallDays": [
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "proof",
+        "passed",
+        "comment",
+        "释放",
+        "卡片"
       ]
     }
   }

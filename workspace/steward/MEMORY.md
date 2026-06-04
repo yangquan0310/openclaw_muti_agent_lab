@@ -58,6 +58,13 @@
 | **发送飞书原生语音消息** | ~~使用 feishu-voice 技能~~（已迁移至 wiki：syntheses/如何用语音回复用户.md） |
 | **监控 OpenClaw 更新时** | **重点关注**：MiniMax、DeepSeek、GLM、Kimi、Mimo 提供商变化；飞书、微信、QQ 渠道变化；OpenClaw 核心功能更新 |
 | **派发任务给其他专家代理** | steward 自主决定派给哪个子代理/怎么传约束（**不需先与老板讨论**）；让其他专家代理自行决定如何执行子任务（**不擅写死子任务步骤**） |
+| **ch14 教训（2026-06-04 沉淀）：派发决策权** | 任何轮次**收工后** steward **自主决定**下一轮派发时机、内容、目标代理、建卡 + 群通知（老板 2026-06-04 11:14 拍板"接下来不需要我拍板，你可以自主进行"）。v2.1/v4.1 反馈循环是 instructor 收到 psychologist/auditor 建议后自动在 v2/v4 文件上修改，不算新派发，仍需核验后收工。**原则**：不擅自写死子任务步骤、遵循 IM 5 段模板（重点☁ 在群里艾特大管家）、遵循项目 README/HANDBOOK 真实规范 |
+| **ch14 教训（2026-06-04 沉淀）：lesson-plan-guide 是镜像不是源** | manager 技能 `references/lesson-plan-guide.md` 是**镜像**，**项目 README v2.1.0 / HANDBOOK v1.0.5 才是规范源**。派发前**先核**项目 README/HANDBOOK，再对照 manager 技能 reference。lesson-plan-guide v1.0 严重落后（v4 课件脚本 / v6 终稿教案顺序反，v7 收工完全缺失），v2.0.0（2026-06-04 重写）已修正。**项目规范是源，manager 技能是镜像** |
+| **ch14 教训（2026-06-04 沉淀）：@提及 open_id 必须用首条系统消息** | 派发 @ 提及代理时，open_id **必须用首条系统消息明确给定的版本**（不依赖记忆/截断）。ch14 群首条系统消息给定的 5 个 open_id：教员 `1ab6` / 心理学家 `c775` / 呈现师 `4843` / 督导 `804b` / 大管家 `705e`。**禁忌**：不要自己记忆/推测/截断 open_id |
+| **ch14 教训（2026-06-04 心理学家沉淀）：open_id 严禁编造** | 引用其他代理 open_id 时**必须从当前消息的元数据中复制**，**不依赖记忆**、**不编造末四位**。如消息未含元数据，应通过工作流（workboard + 通讯录）查询后再引用。心理学家的"末四位混淆"是**编造**（不是真实记忆而是错误推断），**违反真实性原则**——比"记忆有误"更严重。**禁忌**：不确定的 ID 宁可查询也不要编造 |
+| **ch14 教训（2026-06-04 沉淀）：真实 7 阶段流水线** | 课程备课真实 7 阶段（README v2.1.0 / HANDBOOK v1.0.5）：v1 需求分析（instructor） → v2 内容框架（instructor） → **v3 内容补充**（psychologist，向 v2 提意见） → **v4 终稿教案**（instructor 融合 v1-v3） → v5 审校（auditor，向 v4 提意见） → **v6 课件 pptx**（presenter 编译） → **v7 收工**（steward：Git + docx + 飞书传递）。**反馈循环**：v3→v2.1、v5→v4.1（不创建分支文件）|
+| **ch14 教训（2026-06-04 沉淀）：IM 派发模板必须 5 段齐全** | task-flow-guide v3.0.1 IM 模板有 5 段：① task_desc ② @代理 ③ workboard 信息 ④ 前置要求 ⑤ **完成反馈（在群里艾特大管家）**。之前 steward 派发漏第 5 段，代理不知道完成后要艾特大管家。**派发前自检 5 段齐全** |
+| **ch14 教训（2026-06-04 修正）：收工材料发送渠道** | v7 收工的 pptx / docx 成品**默认发群**（老板 2026-06-04 12:57 明确要求"我要求发群里"）。**之前 v8.23.0 误判为版权违规是错的**，已撤销。如老板明确说"发给我"再走 DM open_id `ou_25cf20a1973aecc51f73d8e2800d7f7e`。**错误回忆**：我曾撤回了正确的群消息（`om_x100b6d3be0a6f4b8c4a53b7bc7d3cb8` deleted=true），又错误地走 DM 通道；正确做法是老板原话就是要求发群，不该撤。
 | **修改 TODO.md 任务描述** | 必须先与老板讨论修改策略与内容（**这是任务本身调整，不是派发**） |
 | **大管家 vs 其他专家代理职责边界** | 大管家 = 协调者，落实用户方向；其他专家 = 执行者（writer 写论文/数学家分析数据/各专家解释自己领域理论/programmer 写代码/auditor 审核等）|
 | **发送链接/卡片的操作权** | steward 自主根据情况选择纯文本 vs 飞书交互卡片（不需先与老板讨论）——这是操作权，不算"擅自修改"老板给的 SOP |
@@ -142,6 +149,8 @@
 | v8.18.0 | 2026-06-02 | **重要认知更正**：workboard 官方插件描述是 `Dashboard workboard for agent-owned issues and sessions`。**真正主用户是 agent**（writer/reviewer/...），不是大管家/用户。**Dashboard 只是人类旁观察看**。我之前把 manager workboard CLI 当作“大管家调度控制台”是错的认知——它只是对接官方 8 个插件工具的 wrapper。 |
 | v8.20.0 | 2026-06-04 | **TeX Live 2023 → tinytex + Quarto 原装生态 全量切换**。卸系统 TeX Live 2023（释放 ~1.2GB），装 tinytex 2026（`/root/.TinyTeX/`，450MB），3 个 Pandoc 项目迁 Quarto（3 commit）。**铁律：以后用 Quarto 取代 Pandoc**，三种范式：①书=quarto+多.md+`_quarto.yml`+`references.bib`+`apa.csl` ②学术论文=quarto+`.md`(yaml头)+`references.bib`+`apa.csl` ③一般文章=quarto+`.md`(yaml头)。LaTeX 后端走 tinytex。 |
 | v8.21.0 | 2026-06-04 | **🆕 论文项目默认范式 ④ apaquarto**（老板明确：以后所有论文文档都需要排版成 apa 格式）。三范式→四范式；新增 `references/apaquarto-manuscript.md` 详细配置（7K）；`research-assistant` 技能 v5.8.0→v5.9.0；`manager/references/quarto-pdf-config.md` v1.1.0→v1.2.0。**5 步关键修复**沉淀：R 环境 + PATH + 根 `_quarto.yml`（空壳 `type: default`，**真正的根因**）+ apaquarto 扩展 + `.md` YAML 头特殊处理。源自记忆机制认知推断论文实战（51 页 / 476KB 严格 APA 7 manuscript mode）。 |
+| v8.22.0 | 2026-06-04 | **🆕 ch14 流程经验沉淀**（5 条新 If-Then 规则）：(1) 派发决策权归老板（收工后只做核验，下一轮派发必须先拍板）；(2) lesson-plan-guide 是镜像不是源（项目 README/HANDBOOK 是规范源）；(3) @提及 open_id 必须用首条系统消息（5 个代理 open_id 末四位：教员 1ab6 / 心理学家 c775 / 呈现师 4843 / 督导 804b / 大管家 705e）；(4) 真实 7 阶段流水线（v1 需求 / v2 框架 / v3 内容补充 / v4 终稿教案 / v5 审校 / v6 pptx / v7 收工，v2.1/v4.1 反馈循环不创建分支）；(5) IM 派发模板必须 5 段齐全（重点☁ 完成反馈：在群里艾特大管家）。lesson-plan-guide v1.0.0 → v2.0.0（4 处严重错误：v4 课件脚本 / v6 终稿教案顺序反，v7 收工缺失） |
+| v8.23.0 | 2026-06-04 | **已撤销（v8.23.1 替换）**：v8.23.0 误判"教材内容版权保护→严禁发群"是错的。**实际老板原话是要求发群**，我却错误撤回并走 DM。修正后规则："收工材料发送渠道：v7 收工默认发群；老板明确说'发给我'才走 DM" |
 | v8.13.0 | 2026-05-28 | 新增协调者身份边界If-Then规则：读技能/用模板/不分身/只协调 |
 | v8.12.1 | 2026-05-21 | T014/T015b确认完成，状态标记移除 |
 
@@ -153,7 +162,21 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-06-04)
+## Promoted From Short-Term Memory (2026-06-05)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:73:109 -->
-- `references/guide.md` → `references/core-workflows.md` - 模板文件：`assets/templates/references/guide.md.template` → `workflows.md.template` - init.py 生成文件的 SKILL.md 模板更新为新结构 ### init.py 遗留问题 mcp_server 模板有 f-string 嵌套 bug（`{skill_name}` 未正确替换），需修复。 --- ## 三、代理技能体系总结 ### 核心理念 "实践是代理最重要的东西" ### 代理技能一览（10个） | 代理 | 技能 | 收录内容 | |------|------|----------| | 大管家 | manager | 任务推进/派发、论文项目、课程项目、程序项目 | | 程序员 | programmer | OOP指南、架构指南、全栈开发、测试、运维 | | 写作助手 | writer | 写作流程、编辑规范、文体模板 | | 审稿者 | reviewer | 质量审查、审稿意见 | | 呈现师 | presenter | PPT制作、演示设计 | | 心理学家 | psychologist | 心理督导师/咨询师/科学家指南 | | 教员 | instructor | 教学设计、课程管理 | | 督导 | auditor | 质量督导 | | 数学家... [score=0.821 recalls=13 avg=0.517 source=memory/2026-05-23.md:73-109]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-29.md:13:15 -->
+- citeproc: true 测试失败: 使用 `input-files` 多文件输入时，citeproc 报错 "No citation element present"; 原因：Pandoc 拼接多文件时 citeproc 解析问题; 解决方案：需要用 `--file-scope` CLI 参数，但无法写入 pandoc.yaml [score=0.939 recalls=0 avg=0.620 source=memory/2026-05-29.md:13-15]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:25:28 -->
+- 完成状态: ✅ 技术原理（程序员）; ✅ 心理学应用（心理学家）; ✅ 全文整合（写作助手）; ✅ 审稿审核（审稿助手） [score=0.899 recalls=0 avg=0.620 source=memory/2026-05-28.md:25-28]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:29:30 -->
+- 完成状态: ✅ 修复审稿问题（案例数据核实、APA格式、案例背景）; ✅ 真实案例替换（IBM AskHR、Salesforce Manager Agent、LTM RAIma） [score=0.899 recalls=0 avg=0.620 source=memory/2026-05-28.md:29-30]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:39:39 -->
+- 最终配置（推荐方式3）: 全文整合稿.md [score=0.899 recalls=0 avg=0.620 source=memory/2026-05-28.md:39-39]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28.md:8:10 -->
+- 版本状态: v2.1.0：新一轮修改任务已创建; 主任务：全文逻辑重构; 约束：只调整结构/逻辑，不增加新内容 [score=0.899 recalls=0 avg=0.620 source=memory/2026-05-28.md:8-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-29.md:18:19 -->
+- 待验证方案: 方案A：用 `--file-scope` CLI 参数测试; 方案B：单文件 vs 多文件的 citeproc 行为差异 [score=0.899 recalls=0 avg=0.620 source=memory/2026-05-29.md:18-19]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-29.md:22:23 -->
+- 发现: AI-Agent科普文章用 `citeproc: false` + `input-files` 成功; 博士论文之前 citeproc 可以，现在不行——可能是文件数量变化 [score=0.899 recalls=0 avg=0.620 source=memory/2026-05-29.md:22-23]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-29.md:8:10 -->
+- 当前状态: pandoc + xelatex 排版流程; citeproc: false + natbib 方案（暂时）; 所有 `[@XXX]` 已转为 `\citep{XXX}` [score=0.899 recalls=0 avg=0.620 source=memory/2026-05-29.md:8-10]

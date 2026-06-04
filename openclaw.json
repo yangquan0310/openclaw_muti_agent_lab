@@ -4,8 +4,10 @@
       "workspace": "/root/.openclaw/workspace/",
       "userTimezone": "Asia/Shanghai",
       "thinkingDefault": "adaptive",
-      "verboseDefault": "full",
+      "verboseDefault": "on",
       "reasoningDefault": "stream",
+      "blockStreamingDefault": "on",
+      "blockStreamingBreak": "text_end",
       "compaction": {
         "mode": "safeguard",
         "model": "minimax/MiniMax-M3",
@@ -341,8 +343,8 @@
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-06-03T07:43:23.065Z"
+    "lastTouchedVersion": "2026.6.1",
+    "lastTouchedAt": "2026-06-04T13:21:57.613Z"
   },
   "browser": {
     "enabled": true,
@@ -730,8 +732,8 @@
             "presenter",
             "auditor"
           ],
-          "queryMode": "recent",
-          "promptStyle": "balanced",
+          "queryMode": "message",
+          "promptStyle": "precision-heavy",
           "timeoutMs": 15000,
           "logging": true,
           "maxSummaryChars": 220,

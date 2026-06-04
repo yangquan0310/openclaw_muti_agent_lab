@@ -57,6 +57,13 @@
       "lineCount": 5,
       "lastContentLine": 5
     },
+    "auditor:sessions/auditor/59cee586-3d28-4310-bf5f-05fd19b67744.jsonl": {
+      "mtimeMs": 1780544935394,
+      "size": 349034,
+      "contentHash": "248d791d3c2f8e8401a7f4b45aa0945420a15083346ce46d8346d1a9daf97929",
+      "lineCount": 15,
+      "lastContentLine": 15
+    },
     "auditor:sessions/auditor/5a68ccca-69c9-4a64-b1e9-3d0ecfef89d5.jsonl.deleted.2026-05-17T03-48-21.843Z": {
       "mtimeMs": 1778586307836,
       "size": 9886,
@@ -133,13 +140,6 @@
       "contentHash": "ae04bb4339ff6f28f61d7a039a66f957557511615c1a014be2db52f33c1afde1",
       "lineCount": 2,
       "lastContentLine": 2
-    },
-    "auditor:sessions/auditor/ed4fd2f1-0c52-47cd-a21f-dc048e497433.jsonl.reset.2026-05-02T17-26-00.889Z": {
-      "mtimeMs": 1777626822765,
-      "size": 576804,
-      "contentHash": "580d8549ffc3e9b0450aaae6f5fa3f94653100e8bddc0603bd595f1fd694ec9c",
-      "lineCount": 81,
-      "lastContentLine": 81
     },
     "auditor:sessions/auditor/fb918880-1b31-4e8f-8ade-9c5541471c7a.jsonl.deleted.2026-05-17T03-48-10.573Z": {
       "mtimeMs": 1778949481060,
@@ -374,6 +374,23 @@
       "0e271f29dcc1a36783415c21f2696ff8824ac205",
       "b2bb80620267de00b288b4b3bf8c419d7cb9de5b",
       "9b82c157d7018c831b0252383aeeddc6eb8d70e4"
+    ],
+    "auditor:59cee586-3d28-4310-bf5f-05fd19b67744": [
+      "264c66be16e225c94554d6754451a475dbaa4600",
+      "d44f13dbb9139c3e675e4bc6013773cae7dd1610",
+      "105bbd35d3f8d894ba96f4a441b7e89e8cea6e87",
+      "41d1424aa192fb10a7d67282d1ce1a206abe3a0b",
+      "bbba9dfafadf1e07bf5590e85e47fe3feeaeab13",
+      "e56742797574ec43449991d05586bbfb17c32ab9",
+      "402891cdc7aeea5e23bcce7b7653a192d2deae57",
+      "a38124d0f9d3c8de223d858e1d9a4e9d631bd6e2",
+      "2d91ca6ad766683b4c9c02fcb189ac90a40025d0",
+      "a38e4226abf4949f4f653ac0a755bd5dcc5a3b28",
+      "272dccd0ab202b641d71925ce90dea59c445c879",
+      "98b41ab7611b00cea9ca6b4f942f2bc85908f7a3",
+      "e362d7c35741b7ce2eef49aac08741f66975b744",
+      "b2b13b87a5220ae8164b706c42f64b355e29de5c",
+      "b55744f224c1ef4a497efac7bd89068a5c19ab2d"
     ]
   }
 }

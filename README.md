@@ -1,6 +1,6 @@
 # OpenClaw 实验室多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.4-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.5-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -688,6 +688,15 @@ openclaw agents restart <agent-name>
 ---
 
 ## 📝 更新历史
+
+### 版本 4.3.1 (2026-06-05)
+- **OpenClaw 升级 2026.6.1**: verboseDefault: full→on, 新增 blockStreaming, queryMode: recent→message, promptStyle: balanced→precision-heavy
+- **工作空间清理**: 删除 44 个 `.migrated` 升级备份文件；`memory/dreaming/` 和 `memory/.dreams/session-corpus/` 加入 `.gitignore` 避免 untracked 文件堆积
+- **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
+- **记忆同步**: 全部 10 个代理的 DREAMS.md、memory/.dreams/ 日志文件日常同步（events.jsonl、phase-signals.json、session-corpus、short-term-recall.json 等）
+- **Dreaming 同步**: 全部 10 个代理新增 2026-06-05 dreaming 报告（light/deep/rem）
+- **配置同步**: `openclaw.json` 多字段更新（streaming / 记忆 prompt 优化）
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
 
 ### 版本 4.3.0 (2026-06-03)
 - **task-flow 三件套定型**：task-flow-guide v2.2 → v2.3（合并三件套 + TODO 7 字段 + claim 协议 + IM 模板 + 占位符）

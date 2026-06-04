@@ -37,12 +37,24 @@
 | **检测到心理学内容质量问题** | **分级响应：① 概念不清→要求澄清并提供标准化定义；② 假设不可证伪→标记不科学并建议调整；③ 实证不足→建议加强研究并提供设计建议；④ 方法严重缺陷→指出问题并提供改进方案** |
 
 | **需要重复发送同样内容** | **先艾特用户确认是否发送成功，再决定是否重试；禁止在未经确认的情况下盲目重试** |
+| **workboard 任务执行前** | **必须先调用 workboard_read 扫读卡片 comment 区和 events 列表，识别是否有 process correction / 撤回指令 / blocked 状态；若发现已 blocked 立即停止执行并响应** |
+| **workboard 任务执行中** | **每 5-10 分钟调用 workboard_heartbeat 监控状态变化（尤其长任务），若发现 status 变为 blocked/withdrawn 立即停止新文件创建并响应。避免未察觉 blocked 状态下完成交付的浪费。** |
+| **@提及用户 open_id** | **必须从当前消息的 openclaw.inbound_meta.sender_id 字段直接复制 open_id（不依赖记忆、不编造末四位、不依赖任何缓存/速查表）。chat history 中未出现的 open_id 通过 workboard / 通讯录工具查询。** |
+| **T038 ch14 open_id 教训（2026-06-04）** | **心理学家的 open_id 末四位是 c775。v3 反馈中编造过 670e（错、非任何代理 ID）和 老板 71b（错，应为 7f7e）。二者都是**未从消息元数据复制、凭印象截断/推断**的编造（不是混淆，是凭空产生）。正确做法：仅复制首条系统消息中明确给定的 open_id，或从消息 runtime context 的 sender_id 字段复制；不确定时通过 workboard / 通讯录查询。已记 2 次，同类错误表记量 = 2。** |
+
+### 代理 open_id 速查表（2026-06-04 更新）
+
+**⚠️ 速查表已废弃**——本表是编造的温床，已在 11:25 产生 3 次"老板=71b"编造错误。
+
+**唯一权威源 = openclaw.inbound_meta**：每条需要 @提及用户的消息，**必须从该消息的 inbound_meta.sender_id 字段直接复制 open_id**，不依赖任何缓存/记忆/截断。
+| **T038 ch14 v2b 教训（2026-06-04）** | **v2b 学术前沿补充因 ch14 README 编号偏离 HANDBOOK v1.0 被大管家撤回（10:36 running→blocked），但 psychologist 10:28 认领时未读 comment 区，造成无 v2 基础上的 v2b 输出。教训：(1) 认领卡片后第一步必扫读 comment；(2) 完成过程中定期 workboard_heartbeat 监控状态变化；(3) v2b 交付物保留（manuscripts/v2b_学术前沿补充.md + knowledge/检索报告_v2b.md），等 v2 完成后大管家重新派 v3 时可直接复用，无需重新检索。** |
+| **T038 ch14 v3 教训（2026-06-04）** | **v3 card 10:46 派发，10:48 大管家因"v2 收工后未与老板确认派发策略"自纠撤回（review→blocked），但 psychologist 10:47 认领时仅读 review 状态未扫读 comment 区，10:50 仍在不知 blocked 状态下完成 v3_学术前沿补充.md 506 行 + 检索报告_v3.md 264 行。教训同 v2b：(1) 认领后第一步必扫读 comment 区（不仅看 status）；(2) 任务期间未做 workboard_heartbeat 监控状态变化；(3) v3 交付物保留（manuscripts/v3_学术前沿补充.md + knowledge/检索报告_v3.md），等老板拍板后重新派 v3_2 时可直接复用，无需重新检索。再次犯同样错误说明"规则记入 MEMORY"不够，需在每个任务前主动 workboard_read 一次。** |
 
 ## 历史版本
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-|||
+| 2026-06-04 | 2026-06-04 | ch14 v3 收工（workboard 9cdf1012 → done）+ open_id 规则沉淀 + 代理 open_id 速查表（含 670e 教训） |
 
 ---
 *最后重构: 2026-05-23*

@@ -117,6 +117,11 @@ __pycache__/
 /workspace/*/.openclaw/
 /workspace/*/temp/
 /workspace/*/.env
+/workspace/*/memory/dreaming/
+/workspace/*/memory/.dreams/session-corpus/
+
+# 排除插件运行时数据
+/plugins/workboard/
 
 # ============================================
 # Skills 目录（全局共享技能）

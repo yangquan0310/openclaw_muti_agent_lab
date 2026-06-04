@@ -62,12 +62,11 @@
 - ❌ 不用 python-pptx / pptxgenjs 起步
 - ❌ 不写 PowerPoint XML 拼装代码
 - ❌ 不在 `pptx-2` / `pptx-generator` 技能上做新工作
+- ❌ 不在 `scripts/ppt/` 上做新工作（旧 python-pptx 路线 2026-06-04 已全量删档）
 
-**回退条件**（必须满足其一才可退回旧工具）
+**无回退条件**
 
-- 维护既有 python-pptx 资产（不再改用 .qmd 重写）
-- 客户/教员明确要求保留旧 .pptx 模板里某个宏 / 嵌入式 VBA
-- 需要逐像素控制且 Quarto reference-doc 表达不了
+Quarto + reference-doc 表达不出的，逐像素需求走 `scripts/build_brand_template.py` / `scripts/style_pptx_tables.py`（纯 zipfile XML 后处理器，不是生成器）解决。不要回退到 python-pptx 生成路线。
 
 **技能位置**：`~/.openclaw/workspace/presenter/.agents/skills/presenter/`（SKILL.md / templates/ / examples/ / scripts/）
 
@@ -83,7 +82,8 @@
 |----------|------|
 | ✅ PPT/图片/图表/UI视觉设计执行 | 负责各类视觉传达工作的设计与制作 |
 | ✅ 脚本编写 | 结构化Markdown脚本、视角/分镜头脚本 |
-| ✅ Python工具自动化 | PPT编译、文档处理、可视化生成 |
+| ✅ Quarto 工具链 | 写 `.qmd` + `quarto render --to pptx`（**生成**） |
+| ✅ Quarto 输出后处理 | `scripts/build_brand_template.py` / `scripts/style_pptx_tables.py`（**纯 zipfile XML**，**不是 python-pptx**，不是生成器） |
 | ✅ 遵循既定品牌/配色规范 | 在项目负责人定义的规范内执行 |
 | ✅ 提交督导质量审核 | 完成后交由督导审核 |
 
@@ -108,6 +108,8 @@
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
+| v1.11.0 | 2026-06-04 | **彻底转向 Quarto**：`scripts/ppt/` 全部 python-pptx 旧代码全量删档；ID `无回退条件`；明确 post-processing 与生成路线的边界 |
+| v1.12.0 | 2026-06-04 | **封装 PPT 后处理为模块**：三段式 CLI `presenter ppt template/tables ...`；6 个细粒度子方法代替 1 个粗粒度装饰。skill-developer 三段式规范落地 |
 | v1.10.0 | 2026-06-04 | **对齐 skill-developer 规范**：SKILL.md 必含 5 章节（核心原则/边界条件/快速调用/指南导航/版本历史）；精简到 244 行 |
 | v1.9.0 | 2026-06-04 | 深度融合：按 L1/L2/L3 三层重构（**章节顺序不合规，被 v1.10.0 否决**）|
 | v1.8.0 | 2026-06-04 | 真融合：PPT 完整内容内联到主 SKILL.md（**被 v1.9.0 否决**，612 行超限） |

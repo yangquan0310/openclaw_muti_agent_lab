@@ -90,3 +90,26 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:27:27 -->
 - **章节结构**（四层）： [score=0.858 recalls=0 avg=0.620 source=memory/2026-05-25.md:27-27]
+
+## Promoted From Short-Term Memory (2026-06-05)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:38:39 -->
+- Pending Items: Google Scholar IP 封禁问题：当前 IP 被封，等待后恢复；代码层面已内置检测; search 模块 4 个检索器均已完成： CnkiSearcher, SemSchSearcher, ScholarSearcher, BaseSearcher [score=0.935 recalls=0 avg=0.620 source=memory/2026-05-24.md:38-39]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:42:44 -->
+- Key Decisions: Google Scholar 用 requests 而非浏览器（实测 HTML 可直接解析）; Google Scholar 被封时返回 0 结果 + 提示，不抛异常; ScholarSearcher 通过 `__init__.py` 统一导出 [score=0.935 recalls=0 avg=0.620 source=memory/2026-05-24.md:42-44]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:10:10 -->
+- ScholarSearcher 创建完成: **当前状态**：IP 被 Google Scholar 封禁（CAPTCHA），返回 0 结果属正常现象，等待几分钟后恢复 [score=0.934 recalls=0 avg=0.620 source=memory/2026-05-24.md:10-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:18:19 -->
+- 删除的技能: group-counseling-plan; mathematician [score=0.917 recalls=0 avg=0.620 source=memory/2026-05-25.md:18-19]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:24:25 -->
+- 新框架规范: 标题必须是 how-to 动宾短语; 示例：`ch01_how-to-develop-new-skill.md` [score=0.917 recalls=0 avg=0.620 source=memory/2026-05-25.md:24-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:34:34 -->
+- 新框架规范: 指南导航 → 书籍目录 [score=0.917 recalls=0 avg=0.620 source=memory/2026-05-25.md:34-34]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:28:31 -->
+- 新框架规范: 问题 - 为什么要知道这个？; 方法论 - 怎么思考这个问题？; 工作流 - 具体怎么执行？; 执行标准 - 做到什么程度算合格？ [score=0.888 recalls=0 avg=0.620 source=memory/2026-05-25.md:28-31]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:40:40 -->
+- Git 提交: commit 5744bd9a：45 files changed, +2946 -1936 [score=0.878 recalls=0 avg=0.620 source=memory/2026-05-25.md:40-40]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:27:29 -->
+- 多态架构（ABC 模式）: `BaseSearcher`（ABC）定义抽象方法 `_do_search()`; `CnkiSearcher`、`SemSchSearcher`、`ScholarSearcher` 各自实现 `_do_search()`; `search_all([...], keyword, limit)` 接受任何 BaseSearcher 子类列表，无需 if-else [score=0.870 recalls=0 avg=0.620 source=memory/2026-05-24.md:27-29]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:32:35 -->
+- 类名重命名完成（本轮会话）: `CNKISearcher` → `CnkiSearcher`（保留别名）; `SemanticSearcher` → `SemSchSearcher`（保留别名）; `BrowserCNKISearcher` → `CnkiSearcher`（保留别名）; 旧代码（如 main.py）直接用别名运行，无需修改 [score=0.870 recalls=0 avg=0.620 source=memory/2026-05-24.md:32-35]
