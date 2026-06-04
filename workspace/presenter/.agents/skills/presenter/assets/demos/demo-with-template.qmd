@@ -4,7 +4,7 @@ author: "杨权"
 date: "2026-06-04"
 format:
   pptx:
-    reference-doc: default-ref.pptx
+    reference-doc: ../reference-doc/brand-template.pptx
     incremental: false
 ---
 
@@ -16,7 +16,7 @@ format:
 
 ## 这是普通内容页
 
-- 模板来自 `default-ref.pptx`
+- 模板来自 `brand-template.pptx`
 - Pandoc 会按布局名匹配：Title Slide / Title and Content / Section Header / Two Content / Comparison / Content with Caption / Blank
 - 缺失的布局会从默认模板兜底
 
