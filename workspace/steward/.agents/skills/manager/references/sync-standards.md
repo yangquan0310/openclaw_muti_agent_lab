@@ -36,7 +36,7 @@
 | 大管家领取时 | 添加主任务行，备注 `card={{card_id}}` | `manager workboard create --session X` |
 | 群里艾特代理 | 标记 ⬜ → 派发通知已发 | 状态保持 todo，等代理 claim |
 | 代理 claim | 标记 ⬜ → ⏳ 已认领 | 卡片 metadata.claim 写入 |
-| 大管家 start | 标记 ⏳ → 🔄 | `manager workboard start` |
+| 大管家 start | 标记 ⏳ → 🔄 | v1.5.0 删除：代理认领后自己 `chat.send` 启 run，大管家不介入 |
 | 代理执行中 | 保持 🔄 | execution.status=running |
 | 代理完成 | 保持 🔄（等核验） | Dx 自动 todo → review |
 | 大管家核验 | 标记 🔄 → ✅ | `manager workboard move --status done` |

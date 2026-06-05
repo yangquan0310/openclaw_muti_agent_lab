@@ -75,6 +75,9 @@ async def cmd_read(client: WorkboardClient, args: argparse.Namespace) -> int:
 
 # Workboard 卡 notes 模板（老板 2026-06-03 定型：只含目标/约束/输入/产出 + 完成反馈）
 # IM 群模板（含 workboard 信息 + 前置要求 + 认领反馈）在 task-flow-guide.md v2.3 步骤 4
+# 注：反馈措辞按 session 场景动态切换（老板 2026-06-06 指正）：
+#   - 群 session（feishu:group）→ "在群聊中艾特大管家汇报"
+#   - 其他（dashboard / DM / main）→ "在当前会话中向派发者反馈"
 TASK_NOTES_TEMPLATE = """🎯 任务目标：
 - {goal}
 
@@ -88,7 +91,7 @@ TASK_NOTES_TEMPLATE = """🎯 任务目标：
 - {output_file}
 
 💬 反馈：
-- 完成后在群聊中艾特大管家汇报
+- {feedback_intro}
 - 汇报内容：完成的是什么任务
 - 汇报内容：产出是什么（文件路径）
 """
@@ -96,12 +99,19 @@ TASK_NOTES_TEMPLATE = """🎯 任务目标：
 
 def _build_task_notes(args) -> str:
     """根据 CLI 参数组装 notes 字段，与老板定型的 notes 模板一致"""
-    # 反馈文字已硬编码在模板中（老板 2026-06-03 定型），不设占位符
+    # 反馈渠道按 session 场景区分（老板 2026-06-06 指正：dashboard/DM 不是群聊，别写"群聊艾特"）
+    # 实际 session_key 由 cmd_create 在 args 上挂上；这里读不到就保守按"当前会话"措辞
+    sk = getattr(args, "_resolved_session_key", None) or args.session or ""
+    if "feishu:group" in sk:
+        feedback_intro = "完成后在群聊中艾特大管家汇报"
+    else:
+        feedback_intro = "完成后在当前会话中向派发者反馈"
     return TASK_NOTES_TEMPLATE.format(
         goal=args.goal or "（待补充）",
         constraints=args.constraints or "（待补充）",
         input_file=args.input_file or "（无）",
         output_file=args.output_file or "（无）",
+        feedback_intro=feedback_intro,
     )
 
 
@@ -111,9 +121,6 @@ async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
         return err_out("--assignee 必填：workboard 创建卡片时必须指定 agent")
 
     labels = [l.strip() for l in args.labels.split(",")] if args.labels else None
-
-    # 根据结构化参数组装 notes（--notes 可选覆盖）
-    notes = args.notes or _build_task_notes(args)
 
     # 联动：让 Dashboard 真的显示"已关联会话"（用户反馈：之前一直"没有已关联的会话"）
     # 优先级：--session 明确指定 > --no-session 跳过 > 默认 agent:<assignee>:main
@@ -125,6 +132,13 @@ async def cmd_create(client: WorkboardClient, args: argparse.Namespace) -> int:
         session_key = None
     else:
         session_key = f"agent:{args.assignee}:main"
+
+    # 把最终 session_key 挂到 args，让 _build_task_notes 据此选反馈措辞
+    # （老板 2026-06-06 指正：dashboard/DM 场景别写"群聊艾特"）
+    args._resolved_session_key = session_key
+
+    # 根据结构化参数组装 notes（--notes 可选覆盖）
+    notes = args.notes or _build_task_notes(args)
 
     # status 默认逻辑：避免 Dashboard Dx 自动同步将 todo + 有 sessionKey 的卡动到 review
     # 老板需求：create 时能指定 session，但卡不应被自动挪
@@ -208,30 +222,6 @@ async def cmd_delete(client: WorkboardClient, args: argparse.Namespace) -> int:
 async def cmd_archive(client: WorkboardClient, args: argparse.Namespace) -> int:
     result = await client.archive_card(args.id, archived=not args.unarchive)
     return out(result)
-
-
-async def cmd_start(client: WorkboardClient, args: argparse.Namespace) -> int:
-    """起 session + 推送到卡（workboard 5 步中的步 3+4）。"""
-    result = await client.start_card(
-        card_id=args.id,
-        engine=args.engine,
-        mode=args.mode,
-        reuse=not args.no_reuse,
-        session=args.session,
-        model=args.model,
-    )
-    if isinstance(result, dict) and result.get("error") == "not_found":
-        return err_out(f"卡片不存在: {args.id}", code="NOT_FOUND", details={"id": args.id})
-    if isinstance(result, dict) and result.get("error") == "already_done":
-        return err_out(f"卡片已 done: {args.id}", code="ALREADY_DONE", details={"id": args.id})
-    return out({
-        "ok": True,
-        "card_id": args.id,
-        "session_key": result.get("session_key"),
-        "run_id": result.get("run_id"),
-        "execution": result.get("execution"),
-        "reused_existing_session": result.get("reused", False),
-    })
 
 
 async def cmd_claim(client: WorkboardClient, args: argparse.Namespace) -> int:
@@ -350,7 +340,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--labels", help="标签，逗号分隔（如 ch12,文献检索）")
     p.add_argument("--assignee", required=True, help="【必填】指派给 agent（如 psychologist / writer）")
     p.add_argument("--engine", default="codex", choices=["codex", "claude"], help="execution.engine（workboard 白名单，默认 codex；Dashboard “代理”字段驱动）")
-    p.add_argument("--model", default="minimax/MiniMax-M3", help="execution.model（workboard 必填，默认 minimax/MiniMax-M3 跟随实际执行模型）")
+    p.add_argument("--model", default="minimax", help="execution.model（workboard 必填，默认 minimax 让 OpenClaw 自选模型）")
     p.add_argument("--no-session", action="store_true", help="不联动设 sessionKey（默认会设 agent:<assignee>:main）")
     p.add_argument("--session", help="【指定】sessionKey 覆盖默认（如 agent:writer:feishu:group:oc_xxx）。与 --no-session 互斥。")
     p.add_argument("--no-execution", action="store_true", help="不联动设 execution.engine（默认会设 codex）")
@@ -377,17 +367,6 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("delete", help="删除卡片（不可恢复）")
     p.add_argument("--id", required=True, help="卡片 ID")
     p.set_defaults(_func=cmd_delete)
-
-    # archive
-    # start（步 3+4：起 session + 推送到卡）
-    p = sub.add_parser("start", help="起 session + 推送 execution 到卡片（5 步中的 3+4）")
-    p.add_argument("--id", required=True, help="卡片 ID")
-    p.add_argument("--engine", default=None, choices=["codex", "claude"], help="执行引擎（默认 None = OpenClaw 用其默认；指定时映射为 Ib[engine]）")
-    p.add_argument("--mode", default="autonomous", choices=["autonomous", "manual"], help="执行模式（默认 autonomous）")
-    p.add_argument("--no-reuse", action="store_true", help="不复用现有 session（强制新建）")
-    p.add_argument("--session", help="【指定】用这个 sessionKey（不新建、不复用）")
-    p.add_argument("--model", help="【指定】execution.model（默认 None = OpenClaw 用其默认 minimax/MiniMax-M3）")
-    p.set_defaults(_func=cmd_start)
 
     # archive
     p = sub.add_parser("archive", help="归档 / 取消归档卡片")

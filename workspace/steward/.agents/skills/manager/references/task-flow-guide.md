@@ -140,13 +140,8 @@ manager workboard create \
 
 **大管家不需要**：
 - ❌ 手动 `move --status todo`（Dx 自动）
-- ❌ 手动 `manager workboard start`（Dx 自动）
 - ❌ 手动 `move --status done`（Dx 自动）
-
-**start 保留但不主动调**（CLI 不删除）：
-- Dx 现在自动 backlog → running → done，start 用不到
-- 但**保留命令**——应对未来 Dx bug 修复或需要手动触发的新场景
-- 用法（按需）：`manager workboard start --id <card_id>`
+- ❌ ~~手动 `manager workboard start`~~（v1.5.0 已删除子命令，代理认领后自己 `chat.send` 启 run）
 
 **监控**：如果卡超过 30 分钟仍在 running，介入处理（看 attempt 状态 + 群消息）
 

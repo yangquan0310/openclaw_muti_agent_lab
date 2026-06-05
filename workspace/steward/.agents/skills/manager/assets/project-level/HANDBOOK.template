@@ -54,7 +54,7 @@
 **认领（claim）协议。**
 - 代理收到大管家 IM 群通知后，用 workboard_claim 插件工具认领该 card
 - 认领后在群里回复"已认领 card={{card_short}}"
-- 大管家**只在看到群里认领后**才调 `manager workboard start` 触发 run
+- ~~大管家**只在看到群里认领后**才调 `manager workboard start` 触发 run~~（v1.5.0 删：代理认领后自己 `chat.send` 启 run）
 
 **文件管理规则**
 - 每个轮次只生成一份文件，直接在文件上修改
