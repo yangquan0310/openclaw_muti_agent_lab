@@ -31,18 +31,16 @@
 
 | Agent | open_id | 主要任务 | 触发关键词 |
 |-------|---------|----------|------------|
-| **大管家** | `ou_b341ae5dfcb556fe77beb1508f6d6ad5` | 文档管理、系统维护、任务调度 | 管理、维护、备份、同步、调度 |
-| **程序员** | — | 代码开发、工具开发、系统优化、架构设计 | 开发、代码、脚本、工具、优化 |
-| **数学家** | — | 统计分析、数学建模、算法实现 | 统计、建模、数据分析、计算、算法 |
-| **物理学家** | — | 物理建模、理论推导、量化研究 | 建模、模拟、物理分析、理论推导 |
-| **心理学家** | `ou_a0a0e824aa1959a64231872dce5cc775` | 理论审核、实验设计、结果解释 | 心理学、实验设计、理论分析、问卷设计 |
-| **写作助手** | `ou_6286830776f65067c096418e0c42bc57` | 论文撰写、内容创作、文档编辑 | 写作、编辑、翻译、润色、文档生成 |
-| **审稿助手** | `ou_1fe1fb30adbe8c90838ba3b8dbaee7f9` | 质量审查、格式规范、投稿建议 | 审稿、检查、格式、投稿、审查 |
-| **审计员** | — | 教学质量审核、课件一致性检查 | 审计、检查、一致性、审核 |
-| **讲师** | — | 教学辅助、课程材料整理 | 教学、课件、整理 |
-| **呈现师** | `ou_990a093e6dc0a444c328747bcae11a77` | PPT设计与视觉呈现 | PPT、设计、呈现、视觉 |
-
-> 注："—" 表示尚未在飞书群中配置 open_id
+| **大管家** | 文档管理、系统维护、任务调度 | 管理、维护、备份、同步、调度 |
+| **程序员** | 代码开发、工具开发、系统优化、架构设计 | 开发、代码、脚本、工具、优化 |
+| **数学家** | 统计分析、数学建模、算法实现 | 统计、建模、数据分析、计算、算法 |
+| **物理学家** | 物理建模、理论推导、量化研究 | 建模、模拟、物理分析、理论推导 |
+| **心理学家** | 理论审核、实验设计、结果解释 | 心理学、实验设计、理论分析、问卷设计 |
+| **写作助手** | 论文撰写、内容创作、文档编辑 | 写作、编辑、翻译、润色、文档生成 |
+| **审稿助手** | 质量审查、格式规范、投稿建议 | 审稿、检查、格式、投稿、审查 |
+| **审计员** | 教学质量审核、课件一致性检查 | 审计、检查、一致性、审核 |
+| **讲师** | 教学辅助、课程材料整理 | 教学、课件、整理 |
+| **呈现师** | PPT设计与视觉呈现 | PPT、设计、呈现、视觉 |
 
 ---
 
@@ -56,9 +54,9 @@
 ├── .gitallowed                        # Git允许规则（secrets豁免）
 ├── requirements.txt                   # Python依赖文件
 ├── openclaw.json                      # OpenClaw主配置文件
-├── cron/                              # 定时任务
-│   ├── jobs.json                      # 任务列表
-│   └── jobs-state.json                # 运行状态
+├── state/                             # SQLite 控制平面（cron/plugin/tasks/devices 等运行时状态，2026-06-05 迁入）
+│   ├── .gitkeep                       # 占位文件（让目录结构对仓库可见）
+│   └── openclaw.sqlite                # SQLite 主数据库（WAL 模式，WAL/SHM 不入库）
 ├── workspace/                         # Agent工作空间（10个）
 │   ├── programmer/                    # 程序员
 │   │   ├── AGENTS.md                  # 任务生命周期行为规范
@@ -89,13 +87,13 @@
 │   ├── .gitignore                     # Skills目录git规则
 │   ├── skill-developer/               # 技能开发工程化
 │   └── research-assistant/            # 文献检索与知识管理
-├── wiki/                              # 知识库（全局共享）
-│   ├── concepts/                      # 概念页面
-│   ├── entities/                      # 实体页面
-│   ├── sources/                       # 来源页面
-│   ├── syntheses/                    # 综合分析页面
-│   └── reports/                       # 报告页面
-└── plugins/                           # 插件目录
+└── wiki/                              # 知识库（全局共享）
+    ├── concepts/                      # 概念页面
+    ├── entities/                      # 实体页面
+    ├── sources/                       # 来源页面
+    ├── syntheses/                    # 综合分析页面
+    └── reports/                       # 报告页面
+
 ```
 ## 📄 论文项目管理
 
@@ -151,8 +149,8 @@
 │
 └── .agents/                # 元数据层(隐藏目录)
     ├── events/            # 事件流
-    ├── agents/         # 决策存档
-    ├── skills/         # 决策存档
+    ├── agents/          
+    ├── skills/          
     └── tasks/             # 任务索引
 ```
 
@@ -176,7 +174,7 @@
          ↓
 6. 用户确认 → [APPROVED] → 定稿移入 docs/
          ↓
-7. 大管家归档版本 → temp/draft/ + 更新 metadata.json
+7. 大管家归档版本 → temp/ + 更新 metadata.json
 ```
 
 **四文件契约**:
@@ -209,7 +207,6 @@
 | 综述文件 | 含"综述"/"review" | knowledge/review/ |
 | 检索条件 | .json 且含"检索" | knowledge/search_query/ |
 | 检索报告 | .md 且含"检索报告" | knowledge/retrieval_report/ |
-| 备份文件 | 含 backup/备份/old/旧 | temp/draft/ |
 | 中间文件 | .tmp/.temp/.log/.bak | temp/ |
 
 ### 写作助手撰写规范(writer)
@@ -294,14 +291,10 @@ maintainer: 更新元数据 + 保存版本快照
 
 ```bash
 # CLI 统一入口
-python3 scripts/main.py search --queries queries.json --kb-path index.json
-python3 scripts/main.py summarize --kb-path index.json
-python3 scripts/main.py manage filter --kb-path index.json --output filtered.json
-python3 scripts/main.py synthesize extract --notes notes.json
-
-# 元数据维护
-python3 scripts/maintainer/Maintainer.py ~/项目 update-kb
-python3 scripts/maintainer/Maintainer.py ~/项目 save-version knowledge/review/综述.md
+research-assistant search --queries queries.json --kb-path index.json
+research-assistant summarize --kb-path index.json
+research-assistant manage filter --kb-path index.json --output filtered.json
+research-assistant synthesize extract --notes notes.json
 ```
 
 **知识库特性**:
@@ -323,13 +316,11 @@ python3 scripts/maintainer/Maintainer.py ~/项目 save-version knowledge/review/
 ✅ **面向对象架构**:五个独立模块,职责清晰,易于扩展
 
 ---
-## 🤖 Agent自我发展插件(agent-self-development v4.2.0)
+## 🤖 Agent自我发展插件(agent-self-development v4.5.0)
 
 > 插件位置:`extensions/agent-self-development/`
 
 > 源码仓库:`https://github.com/yangquan0310/agent-self-development`
-
-> **核心原则**：用户领航 → Agent 执行 → 插件史官只记录（Plugin asks, Agent decides, Plugin records）
 
 ---
 
@@ -378,7 +369,7 @@ python3 scripts/maintainer/Maintainer.py ~/项目 save-version knowledge/review/
 └─────────────────────────────────────────┘
                     ↑↓ 双向交互
 ┌─────────────────────────────────────────┐
-│           外部记忆（.agent/events/）      │
+│           外部记忆（.agents/events/）      │
 │  · 按时间序列组织的事件记录             │
 │  · 计划、偏差、归因的完整轨迹           │
 │  · 长期可检索的行动历史                 │
@@ -393,9 +384,9 @@ python3 scripts/maintainer/Maintainer.py ~/项目 save-version knowledge/review/
 
 | 工作自我功能 | 代理操作 | 记录位置 | 说明 |
 |-------------|---------|---------|------|
-| **计划** | 任务启动前制定执行方案 | `.agent/tasks/{runId}.json` | 明确目标、约束、验收标准 |
-| **偏差** | 实际执行与预期的差异 | `.agent/tasks/{runId}.json` | 记录执行中的偏离 |
-| **归因** | 对偏差的分析与策略调整 | `.agent/tasks/{runId}.json` | 分析原因，更新 If-Then 规则 |
+| **计划** | 任务启动前制定执行方案 | `.agents/tasks/{runId}.json` | 明确目标、约束、验收标准 |
+| **偏差** | 实际执行与预期的差异 | `.agents/tasks/{runId}.json` | 记录执行中的偏离 |
+| **归因** | 对偏差的分析与策略调整 | `.agents/tasks/{runId}.json` | 分析原因，更新 If-Then 规则 |
 
 任务完成后，插件将 `.agent/tasks/{runId}.json` 中的计划、偏差和归因整合为事件，形成按时间序列组织的自传体记忆，使代理能够以"我之前的某次行动"为索引追溯经验。
 
