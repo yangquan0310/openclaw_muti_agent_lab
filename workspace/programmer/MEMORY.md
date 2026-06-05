@@ -11,7 +11,6 @@
 | 任务ID | 项目 | 任务描述 | 状态 | 创建时间 | 最后更新 | 备注 |
 |--------|------|----------|------|----------|----------|------|
 | T001 | [openclaw_muti_agent_lab](https://github.com/yangquan0310/openclaw_muti_agent_lab) | 每日04:00自动提交并推送代码变更到development分支 | active | 2026-04-27 00:00 | 2026-05-21 09:24 | 定时任务，确保代码不丢失；固定会话 `agent:programmer:corn:programmer的定时任务` |
-| T002 | agent-self-development | v4.3.1：.agent目录改名为.agents（commit b19afce）；版本+0.01发布v4.3.1并推送tag；代码实现阶段仍停滞（依赖其他开发者） | active | 2026-05-08 19:35 | 2026-05-21 01:00 | 技术方案已完成；今日完成：.agent→.agents重命名+b19afce + v4.3.1发布+tag推送 |
 | T003 | openclaw-bot-review | 3000端口openclaw-bot-review项目开发与维护，终身项目 | active | 2026-05-21 00:30 | 2026-05-21 09:22 | 待跟进具体需求，stats缓存化已完成（commit 37070b7） |
 | T004 | 腾讯云Lighthouse服务器 | 永久维护腾讯云轻量应用服务器（腾讯云Lighthouse） | active | 2026-05-25 21:44 | 2026-05-25 21:44 | 技能：tencentcloud-lighthouse-skill；配置：~/.mcporter/mcporter.json；Region：ap-shanghai；实例ID：lhins-4nn64c7g；公网IP：101.43.20.69 |
 
@@ -26,7 +25,7 @@
 
 | 任务ID | 项目 | 任务描述 | 完成时间 | 备注 |
 |--------|------|----------|----------|------|
-||||||
+| T002 | agent-self-development | .agent → .agents 重命名 + 插件 disable + extensions/ → plugins/ 迁移（已被新 plugin 体系取代） | 2026-05-19 | 实际完成路径：5/19 `51223215` 清理配置 → `17700782` disable 插件 + extensions/ 目录删除 → `811eebd4` 删除 concepts/ 文档。原 MEMORY.md 标注的 commit `b19afce` 在 git 中已不存在（被 force push 重写）。 |
 
 
 ## 程序性记忆(Procedural Memory)
