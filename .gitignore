@@ -83,50 +83,26 @@ __pycache__/
 !/.gitignore
 !/openclaw.json
 !/workspace/
-!/agents/
-!/plugins/
 !/wiki/
-!/tasks/
+!/state/
+!/skills/
 
 # ============================================
-# State 目录 - SQLite 控制平面（不追踪 .sqlite*）
-# 只允许 .gitkeep 占位文件，让目录结构对外部可见
+# State 目录 
 # ============================================
 !state/
 !/state/.gitkeep
-
-# ============================================
-# Cron 目录 - 业务已迁 SQLite（2026-06-05 清理）
-# 保留 runs/ 子目录排除（历史遗留兼容）
-# ============================================
-/cron/runs/
-
-# ============================================
-# Agents 目录 - 实验室7个代理完全不追踪
-# ============================================
-/agents/*/
-/agents/**/
-
-# 排除临时文件夹
-/agents/*/temp/
-/agents/*/tmp/
+!/state/openclaw.sqlite
 
 # ============================================
 # Workspace 目录 - 只追踪实验室7个代理
 # ============================================
-# 排除教研室3个代理
-/workspace/teaching/
-/workspace/academicassistant/
-/workspace/studentaffairsassistant/
-
-# 排除所有代理的内部文件和临时文件
+!/workspace/
 /workspace/*/.openclaw/
 /workspace/*/temp/
 /workspace/*/.env
 /workspace/*/memory/dreaming/
 /workspace/*/memory/.dreams/session-corpus/
-
-# 排除插件运行时数据
 /plugins/workboard/
 
 # ============================================
@@ -140,18 +116,11 @@ __pycache__/
 !/skills/research-assistant/
 !/skills/research-assistant/**/
 !/skills/research-assistant/**
-!/skills/task-dispatcher/
-!/skills/task-dispatcher/**/
-!/skills/task-dispatcher/**
+!/skills/skill-developer/
+!/skills/skill-developer/**/
+!/skills/skill-developer/**
 /skills/**/__pycache__/
 /skills/**/*.pyc
 /skills/**/*.pyo
 /skills/**/*.cache
 /skills/**/node_modules/
-!/skills/skill-developer/
-!/skills/lookup/
-!/skills/lookup/**
-
-# lookup 索引数据（各技能运行时生成）
-skills/*/index/
-skills/*/index/
