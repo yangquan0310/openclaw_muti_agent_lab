@@ -1,9 +1,16 @@
-# Workboard 任务发布指南 v1.5.0
+# Workboard 任务发布指南 v1.6.0
 
-> **v1.5.0 重大简化**(2026-06-06):
-> 1. **删除 `start` 子命令**(代码 + 文档)--卡建好后大管家不再"启 session",代理自己 claim + 启动 run
-> 2. 派发流程从 **5+1 步 → 4 步**(create → IM 艾特 → 代理 claim → 代理执行 + proof)
-> 3. 卡状态机去掉"start 步骤"--"running"转换由代理手动 chat.send / 调度触发
+> **v1.6.0 同步升级**（2026-06-06，对接 SKILL.md v5.12.0 老板拍板）：
+> 1. **明确 workboard 永远只管"建卡/管理"**（v3.2.0 铁律）—— workboard CLI 不接派发能力，**绝对禁止**加 spawn / dispatch 子命令
+> 2. **加"3 动作铁律"章节**（v1.6.0 新增）——大管家 3 个动作：建卡 + im/spawn 派发 + 验收
+> 3. **§二、什么时候用 Workboard** 加"私聊派发也用"——workboard 在 DM 场景下走 `--no-session` 建卡
+> 4. **§三、能力边界"关键分工"**重写——大管家 = 建卡层（CLI），派发动作走 IM 群 / sessions_spawn，不走 workboard
+> 5. 同步 task-flow-guide.md v3.2.0 导航（§二、群派发 / §三、私聊派发）
+
+> **v1.5.0 重大简化**（2026-06-06）—— 已被 v1.6.0 取代，仅作历史参考：
+> 1. **删除 `start` 子命令**（代码 + 文档）——卡建好后大管家不再"启 session"，代理自己 claim + 启动 run
+> 2. 派发流程从 **5+1 步 → 4 步**（create → IM 艾特 → 代理 claim → 代理执行 + proof）
+> 3. 卡状态机去掉"start 步骤"——"running"转换由代理手动 chat.send / 调度触发
 > 4. "Dashboard 限制"章节删"manager workboard start"推荐路径
 > 5. 三件套架构改"create 派发"
 > 6. 错误排查删 3 条 start 相关
@@ -55,17 +62,21 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 
 ### ✅ 适合用
 
-- 多 Agent 协作任务(写作助手 → 数学家 → 审稿人 接力)
-- 长任务(数小时到数天,需要 claim 防僵死)
-- 需要可追溯证据的任务(v1→v7 版本演进、proof 沉淀)
-- Bug 追踪(已知 bug 建卡跟踪)
-- 每日定时任务的报告卡(T042 每日 OpenClaw 检查)
+- 多 Agent 协作任务（写作助手 → 数学家 → 审稿人 接力）
+- 长任务（数小时到数天，需要 claim 防僵死）
+- 需要可追溯证据的任务（v1→v7 版本演进、proof 沉淀）
+- Bug 追踪（已知 bug 建卡跟踪）
+- 每日定时任务的报告卡（T042 每日 OpenClaw 检查）
+- **两种派发场景（v1.6.0 新增）**：
+  - **群派发**：IM 群里交任务，建卡绑群 session（`--session feishu:group:oc_xxx`），Dx 自动同步
+  - **私聊派发**（v3.2.0）：老板在 DM 里交任务，建卡不绑 session（`--no-session`），大管家手动 sessions_spawn 启子代理
+  - 详见 task-flow-guide.md v3.2.0（§二、群派发 / §三、私聊派发）
 
 ### ❌ 不必用
 
-- 单 Agent 短期任务(一句话能说完的)
+- 单 Agent 短期任务（一句话能说完的）
 - 临时讨论、IM 问询
-- 简单进度跟踪(MEMORY.md 够用)
+- 简单进度跟踪（MEMORY.md 够用）
 
 ---
 
@@ -96,15 +107,52 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 | `manager workboard bulk` | 批量(archive/delete/move) |
 | `manager workboard delete` | 删卡 |
 
-**关键分工**:
-- **大管家** = 派发层(CLI)。负责:建卡、start(认领后)、核验后归档
-- **代理** = 执行层(插件工具)。负责:claim、heartbeat、release、proof
+**关键分工**（v1.6.0 重写）：
+- **大管家** = **建卡层**（CLI）。负责：**建卡**（`manager workboard create`）+ 核验后归档（read + workboard_comment + move done）
+- **代理** = 执行层（插件工具）。负责：claim、heartbeat、release、proof
+- **派发动作**（im 群艾特 / sessions_spawn）**由大管家在会话里手动做**，**不走 workboard CLI**
 
-> ❌ **不暴露给大管家 CLI 的工具**:claim / heartbeat / release / proof。代理**直接用插件工具**,不绕大管家。
+> ❌ **不暴露给大管家 CLI 的工具**：claim / heartbeat / release / proof。代理**直接用插件工具**，不绕大管家。
+> ❌ **绝对禁止**给 workboard CLI 加 spawn / dispatch 子命令（v1.6.0 拍板）——派发动作永远在会话里手动做。
 
 ---
 
-## 四、发布任务的 4 步新流程(v1.5.0 简化)
+## 三之2、Workboard 永远只管"建卡/管理"（v1.6.0 新增铁律）
+
+> **v1.6.0 老板拍板**（2026-06-06）：workboard 是**任务进度控制工具**（看 §五、卡状态机），**不**包含派发能力本身。
+
+### 大管家 3 动作铁律
+
+```
+[1] 建卡    →  manager workboard create
+[2] 派发    →  IM 群艾特（群场景）  /  sessions_spawn（私聊场景）
+[3] 验收    →  workboard_comment + manager workboard move --status done
+```
+
+### 两种派发场景下 workboard 的角色
+
+| 场景 | workboard 动作 | 不做的动作 |
+|------|----------------|------------|
+| **群派发** | `create --session feishu:group:oc_xxx` 建卡，绑群 session | 不启 session（Dx 自动）|
+| **私聊派发** | `create --no-session` 建卡，不绑 session | 不启 session（大管家手动 sessions_spawn）|
+
+### 为什么 workboard 不接派发
+
+- workboard CLI 的子命令**全部是"建卡/管理"**类动作：create / update / move / delete / archive / bulk / list / read / export + 9 个代理工具（claim / heartbeat / release / comment / proof / unblock / attachment_* / notify_* / board_*）
+- **没有** spawn / dispatch / start 子命令（v1.5.0 删除 start，v1.6.0 确认永远不再加回来）
+- 派发动作（IM 群艾特 / sessions_spawn）**永远**由大管家在会话里手动做
+
+### 与 task-flow-guide.md 的关系
+
+- **task-flow-guide.md v3.2.0 §二、群派发场景**：完整 4 步流程（写 TODO → 建卡 → IM 5 段模板 → 核验+群完成确认）
+- **task-flow-guide.md v3.2.0 §三、私聊派发场景**：完整 3 步流程（建卡 → sessions_spawn → 核验，不发群、不写 TODO）
+
+**读 workboard-guide.md = 学会 workboard CLI 怎么用**  
+**读 task-flow-guide.md v3.2.0 = 学会完整派发流程（含 IM/spawn 派发动作）**
+
+---
+
+## 四、发布任务的 4 步新流程（v1.5.0 简化）
 
 ### 心智模型(三件套架构)
 
@@ -239,10 +287,10 @@ manager workboard bulk --action archive --archive true --ids <id1>,<id2>
      ↓
    backlog   ← Dx 不会从 backlog 同步出去
      ↓ (move to todo)
-   todo       ← 已在群里艾特，等代理 claim
+   todo       ← 已在群里艾特,等代理 claim
      ↓ (claim 写入)
-   [claimed]  ← metadata 状态，不是卡片 status
-     ↓ (代理手动 chat.send / scheduler 启 run，v1.5.0)
+   [claimed]  ← metadata 状态,不是卡片 status
+     ↓ (代理手动 chat.send / scheduler 启 run,v1.5.0)
    running    ← runId 活跃
      ↓ (run 完成)
    review     ← Dx 自动从 running 挪过来
@@ -252,7 +300,7 @@ manager workboard bulk --action archive --archive true --ids <id1>,<id2>
      └─→ running   (重跑)
 ```
 
-> v1.5.0 变化：`running` 状态不再由 `start` 子命令推。代理认领后自己 `chat.send` 触发 run（OpenClaw runtime 自动同步 execution.status）。
+> v1.5.0 变化:`running` 状态不再由 `start` 子命令推。代理认领后自己 `chat.send` 触发 run(OpenClaw runtime 自动同步 execution.status)。
 
 **Dx 自动同步规则**(dashboard 控制台 `Dx()` 函数):
 - 卡有 `sessionKey` + session 是 `done` → 卡 → `review`
@@ -268,16 +316,16 @@ manager workboard bulk --action archive --archive true --ids <id1>,<id2>
 
 ---
 
-## 六、Dashboard 限制（重要！踩过坑）
+## 六、Dashboard 限制(重要!踩过坑)
 
-⚠️ **不能点 Dashboard 上的“开始”按钮**。原因：
+⚠️ **不能点 Dashboard 上的"开始"按钮**。原因:
 
-Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create", ...)`，**无视 card 上的 sessionKey**。每次点“开始”都会：
+Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create", ...)`,**无视 card 上的 sessionKey**。每次点"开始"都会:
 1. 强制调 `sessions.create` 建**新** session
 2. 用新 session key 覆盖卡上的 `sessionKey`
 3. 卡上原本指定 `{oc_id}` 被覆盖成 `agent:{agent}:dashboard:...`
 
-**v1.5.0 后的正确路径**：**完全不点 dashboard 的开始按钮**。代理认领后自己 `chat.send` 启 run（不需任何 CLI 介入）。如果卡已被 dashboard 覆盖，把卡移到 `blocked` 状态，由代理手动重 claim。
+**v1.5.0 后的正确路径**:**完全不点 dashboard 的开始按钮**。代理认领后自己 `chat.send` 启 run(不需任何 CLI 介入)。如果卡已被 dashboard 覆盖,把卡移到 `blocked` 状态,由代理手动重 claim。
 
 ---
 
@@ -304,9 +352,9 @@ Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create
 | `claim token does not match` | 续约/释放的 token 错了 | 用 claim 返回的 token |
 | `400 Invalid 'tools[N].function.name'` | DeepSeek 拒收带点号 tool 名 | 不要动插件!已加红线(v8.19.0) |
 | `invalid chat.send params: must have required property 'idempotencyKey'` | chat.send 漏 idempotencyKey | 代理 chat.send 时手动加 idempotencyKey |
-| `execution dropped by normalizeExecution` | execution 缺 model 字段 | v1.5.0 修复（create 默认 `minimax`，不指具体模型） |
-| Dx 自动从 backlog 移到 review | --session 时没传 --status | v1.4.0 修复（默认 backlog） |
-| 卡执行完 writer 不在群里 | 用 dashboard 点“开始”（强制 sessions.create） | v1.5.0 后不点 dashboard 开始；让代理手动 `chat.send` 启 run |
+| `execution dropped by normalizeExecution` | execution 缺 model 字段 | v1.5.0 修复(create 默认 `minimax`,不指具体模型) |
+| Dx 自动从 backlog 移到 review | --session 时没传 --status | v1.4.0 修复(默认 backlog) |
+| 卡执行完 writer 不在群里 | 用 dashboard 点"开始"(强制 sessions.create) | v1.5.0 后不点 dashboard 开始;让代理手动 `chat.send` 启 run |
 
 ---
 
@@ -329,7 +377,7 @@ Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create
   - 🎯 目标:在 {oc_id} 群写 {output_name}
   - 📁 输入:{input_name}
   - 📄 产出:{output_name}
-  - 👤 负责人：{agent}（claim 后自己启 run）
+  - 👤 负责人:{agent}(claim 后自己启 run)
   - 📄 状态:⬜ 待认领
 ```
 
@@ -349,8 +397,9 @@ Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| **1.6.0** | 2026-06-06 | **同步升级，对接 SKILL.md v5.12.0**：(1) 顶部加 v1.6.0 更新说明（6 项变更）；(2) §二、什么时候用 Workboard 加"两种派发场景"段；(3) §三、能力边界"关键分工"重写——大管家 = 建卡层（CLI），派发动作走 IM 群 / sessions_spawn；(4) **新章节"三之2、Workboard 永远只管建卡/管理"**——明确 3 动作铁律 + 两种派发场景下 workboard 角色 + 为什么 workboard 不接派发；(5) 同步 task-flow-guide.md v3.2.0 导航；(6) 源自私聊派发端到端测试 + SKILL.md v5.12.0 同步 |
 | 1.5.0 | 2026-06-06 | **重大简化**：(1) 删除 `start` 子命令（cli.py + WorkboardClient.py）；(2) 5+1 步 → 4 步流程；(3) 卡状态机去掉 `start` 步骤；(4) `create` 默认 model 改成 `minimax`（不指具体模型）；(5) 反馈措辞按 session 场景动态化；(6) 删 3 条 start 相关错误排查 |
-| 1.4.0 | 2026-06-03 | **重大升级**：(1) 加 `--session` flag + 默认 backlog（commit `f18df719`）；(2) 修 `ejecución`→`execution` 拼写 + start 默认 model（commit `9e78459e`）；(3) start 路径 A/B 真触发 run + idempotencyKey（commit `58094e59`）；(4) 加 Dashboard 限制章节；(5) 加卡状态机章节；(6) 5+1 步新派发流程；(7) 三件套架构整合 |
+| 1.4.0 | 2026-06-03 | **重大升级**:(1) 加 `--session` flag + 默认 backlog(commit `f18df719`);(2) 修 `ejecución`→`execution` 拼写 + start 默认 model(commit `9e78459e`);(3) start 路径 A/B 真触发 run + idempotencyKey(commit `58094e59`);(4) 加 Dashboard 限制章节;(5) 加卡状态机章节;(6) 5+1 步新派发流程;(7) 三件套架构整合 |
 | 1.3.0 | 2026-06-02 | 认知更正:workboard 主用户是 agent,不是大管家 |
 | 1.2.0 | 2026-06-02 | 修复 UX bug:新增 `claim --auto-start` 选项(claim 后自动设置 execution.status=running) |
 | 1.1.0 | 2026-06-02 | Python 迁移:脚本从 Node.js (wb-rpc.mjs) 迁移至 Python 包 |
