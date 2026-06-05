@@ -1,7 +1,24 @@
 # Wiki Index
 
 > 实验室知识库总索引
-> 最后更新：2026-05-15
+> 最后更新：2026-06-05
+
+---
+
+## 6 个核心目录
+
+> 详见 [[AGENTS|AGENTS.md]] 完整约定。每个目录有明确的角色定位。
+
+| 目录 | 用途 | 数量 | 入口 |
+|------|------|------|------|
+| **`raw/`** | 证据层，存放原始文件 | 1 | [[raw/README\|入口]] |
+| **`sources/`** | 来源摘要（每个 raw source 必配） | 7 | [[sources/index\|入口]] |
+| **`syntheses/`** | 总结 / 综合分析 | 34 | （详见 plugin 索引） |
+| **`concepts/`** | 概念文件 | 53 | （详见 plugin 索引） |
+| **`entities/`** | 实体（人物/机构/项目） | 13 | [[entities/index\|入口]] |
+| **`reports/`** | 客观报告（lint/统计/问题） | 10 | [[reports/index\|入口]] |
+
+> **6 个目录依赖流向**：`raw/` → `sources/` → `syntheses/` → `concepts/` + `entities/`；`reports/` 横切。
 
 ---
 
@@ -9,11 +26,28 @@
 
 | 分类 | 说明 | 数量 |
 |------|------|------|
-| [实体 (Entities)](#entities) | Agent 个人页面、系统实体 | 5 |
-| [概念 (Concepts)](#concepts) | 规范、标准、模板 | 7 |
-| [综合 (Syntheses)](#syntheses) | 任务看板、案例、模板 | 3 |
+| [证据层 (raw)](#raw) | 原始文件（PDF/OCR/笔记/资产） | 1 |
+| [来源 (Sources)](#sources) | 来源摘要 | 7 |
+| [综合 (Syntheses)](#syntheses) | 任务看板、案例、模板 | 34 |
+| [概念 (Concepts)](#concepts) | 规范、标准、模板 | 53 |
+| [实体 (Entities)](#entities) | Agent 个人页面、系统实体 | 13 |
 | [报告 (Reports)](#reports) | 诊断、统计、目录 | 10 |
-| [来源 (Sources)](#sources) | 记忆桥接、仓库配置 | 228 |
+
+---
+
+## raw
+
+> 证据层原始资料。详见 [[raw/README|raw/README.md]]。
+
+### papers/
+
+| 文件 | 来源 | 归档日期 |
+|------|------|----------|
+| [Diehl et al. 2026 - Captured Memories](raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf) | JARMAC 15(1), 98-107 | 2026-06-05 |
+
+### articles/ books/ notes/ assets/
+
+*（暂无归档）*
 
 ---
 
@@ -41,6 +75,8 @@
 |------|------|
 | OpenClaw 系统架构 | [openclaw-gateway](entities/openclaw-gateway.md) |
 
+> ⚠️ 实际 vault 有 13 个 entities（含 personality、team 等维度），详见下方"自动生成索引"。
+
 ---
 
 ## Concepts
@@ -61,6 +97,8 @@
 | 课程项目 | 教学备课全流程 | [course-project](concepts/course-project.md) |
 | 程序项目 | 工具开发全流程 | [program-project](concepts/program-project.md) |
 
+> ⚠️ 实际 vault 有 53 个 concepts，详见下方"自动生成索引"。
+
 ---
 
 ## Syntheses
@@ -70,6 +108,8 @@
 | [Wiki 维护任务看板](syntheses/wiki-维护-todo.md) | P0-P3 任务追踪 | ✅ 已归档 |
 | [Agent 实体页面模板](syntheses/wiki-agent-entity-template.md) | 标准 frontmatter + 正文结构 | ✅ 已发布 |
 | [多 Agent 协作案例](syntheses/多agent协作案例-学生论文修改项目.md) | 学生论文修改完整流程 | ✅ 已归档 |
+
+> ⚠️ 实际 vault 有 34 个 syntheses，详见下方"自动生成索引"。
 
 ---
 
@@ -92,19 +132,36 @@
 
 ## Sources
 
-### 实验室配置
+### 系统来源（已建）
 
 | 来源 | 说明 |
 |------|------|
+| [Conda 环境管理](sources/conda.md) | Python/R 环境 |
+| [OpenClaw 系统目录](sources/openclaw-system.md) | 系统架构 |
+| [OpenClaw 环境变量](sources/openclaw-env.md) | env 配置 |
+| [OpenClaw 工作空间](sources/openclaw-workspace.md) | agent 工作空间 |
 | [仓库](sources/repository.md) | 仓库结构 |
-| [教研室仓库](sources/teaching-repository.md) | 教研室仓库结构 |
-| [教学助手课程表](sources/teaching-course-schedule.md) | 课程安排 |
-| [教务助手课程安排](sources/academic-course-schedule.md) | 课程安排 |
+| [系统编程语言](sources/programming-languages.md) | 编程语言清单 |
+| [DeepSeek 混合架构](sources/deepseek-cloud-local-hybrid-architecture.md) | 云端+本地+代理工作流 |
 
-### Agent 记忆桥接
+### 模板（已建）
 
-> Memory Bridge 文件按 Agent 和 dreaming 类型自动归档，共 228 个文件。
-> 详见下方自动生成索引。
+| 模板 | 说明 |
+|------|------|
+| [Source Summary 模板](sources/_template_source_summary.md) | 来源摘要标准结构（老板 2026-06-05 制定） |
+
+### 计划中项目源（⚠️ 死链待补）
+
+> `sources/index.md` 已列出 13 个项目源，但文件尚未创建。使用前请按 `[[sources/<项目名>]]` 路径创建：
+> AI 降重提示工程 / Zotero 文件管理 / 创新创业基础 / 学生论文修改 / 审稿学习 / 影响者营销中的自我扩展机制 / 教育科学研究方法 / 数字化存储与自传体记忆 / 科研实验室搭建 / 维护老板信息 / 范文学习 / 跨期选择的年龄差异 / 量表编制 / wiki 维护
+
+---
+
+## Wiki 工作约定
+
+- [AGENTS.md](AGENTS.md) — 6 个核心目录约定 + 写入规则 + 文件命名约定
+- [raw/README.md](raw/README.md) — 原始资料归档流程
+- [sources/_template_source_summary.md](sources/_template_source_summary.md) — 来源摘要标准结构
 
 ---
 
@@ -383,22 +440,25 @@
 ## Generated
 <!-- openclaw:wiki:index:start -->
 - Render mode: `obsidian`
-- Total pages: 117
+- Total pages: 122
 - Claims: 23
-- Sources: 7
+- Sources: 10
 - Entities: 13
 - Concepts: 53
-- Syntheses: 34
-- Reports: 10
+- Syntheses: 35
+- Reports: 11
 
 ### Sources
 - [[sources/conda|Conda 环境管理]]
 - [[sources/deepseek-cloud-local-hybrid-architecture|DeepSeek - 云端大模型+本地小模型+代理框架 工程化开发工作流]]
+- [[sources/2026-06-05_Diehl-et-al_Captured-Memories|Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
 - [[sources/openclaw-env|openclaw-env]]
 - [[sources/openclaw-system|openclaw-system]]
 - [[sources/openclaw-workspace|openclaw-workspace]]
+- [[sources/_template_source_summary|Source Summary 模板]]
 - [[sources/repository|仓库]]
 - [[sources/programming-languages|系统编程语言]]
+- [[sources/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv|范畴论结构先验可在 306M 规模上压低 WikiText-103 困惑度（GT-Full 单独贡献 84%）]]
 
 ### Entities
 - [[entities/openclaw-ei4x|OpenClaw(龙虾)-ei4x]]
@@ -498,6 +558,7 @@
 - [[syntheses/2026-05-24-23-12-04-态射与范畴-比较与转换|态射与范畴：比较与转换]]
 - [[syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮|我的 agent 工程实践：驾驭方法论]]
 - [[syntheses/2026-05-20-23-47-31-教育科学研究方法-多代理如何协作|教育科学研究方法-多代理协作总结]]
+- [[syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026|照片视角作为外部痕迹——改写自传体记忆视角的因果证据]]
 - [[syntheses/2026-05-19-22-53-22-如何管理程序项目|程序项目]]
 - [[syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系|认知范式与精细化注入词研究体系]]
 - [[syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架|认知过程的对称性破缺机制——从余代数到皮亚杰的发展理论]]
@@ -512,6 +573,7 @@
 - [[reports/lint|Lint Report]]
 - [[reports/low-confidence|Low Confidence]]
 - [[reports/open-questions|Open Questions]]
+- [[reports/2026-06-05-15-54-00-OpenClaw-v2026.6.1-session路径错配bug-修复报告|OpenClaw v2026.6.1 session 路径错配 bug 修复报告]]
 - [[reports/person-agent-directory|Person Agent Directory]]
 - [[reports/privacy-review|Privacy Review]]
 - [[reports/provenance-coverage|Provenance Coverage]]

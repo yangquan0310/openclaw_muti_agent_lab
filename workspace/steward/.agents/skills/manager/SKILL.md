@@ -2,19 +2,14 @@
 name: manager
 description: >
   manager是大管家的管理实践技能（**唯一入口**，任务派发唯一路径）。
-  **两种任务协调方式必查**（2026-06-06 老板拍板）：
-  - **群里交任务** → IM 5 段模板艾特代理 + workboard 建卡 + Dx 自动同步状态
-  - **用户私聊你发送任务** → 大管家手动 sessions_spawn 子代理 + workboard 建卡（--no-session）+ 大管家手动验收
-  两场景**必须**走 task-flow-guide.md v3.2.0（§二、群派发 / §三、私聊派发）。
-  当需要派发任务、推进任务、完善TODO、领取项目任务、协调子代理干活时激活。
-  当需要创建/整理/管理项目（论文、课程、程序、知识库/wiki、通用项目）时激活。
+  当需要派发任务、推进任务、完善TODO、领取项目任务、协调子代理干活时激活（task-flow-guide.md）。
+  当需要创建/管理项目（论文、课程、程序、知识库/wiki、通用项目）时激活。
   当需要备课时激活（lesson-plan-guide）。
   当需要技能审计、核查技能质量时激活（skill-audit-workflow）。
   当需要.openclaw系统体检、日常维护、问题处理时激活（openclaw-maintenance-guide）。
   当需要定期清理wiki或同步规范时激活（cleaning-guide、sync-guide）。
   当需要发布 workboard 任务卡（多 Agent 协作跟踪）时激活（workboard-guide）。
   当需要 Quarto PDF 编译/排版/APA 7th 论文配置时激活（quarto-pdf-config）。
-  **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点。
 version: 5.12.0
 author: Yang Quan
 metadata:

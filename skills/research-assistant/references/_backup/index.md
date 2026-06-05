@@ -22,7 +22,7 @@
 | [summarize](summarize.md) | 总结模块 |
 | [manage](manage.md) | 管理模块 |
 | [synthesize](synthesize.md) | 综述模块 |
-| [maintainer](maintainer.md) | 维护模块 |
+| [maintain](maintain.md) | 维护模块 |
 
 ---
 

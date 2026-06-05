@@ -2,9 +2,9 @@
   "pageCounts": {
     "entity": 13,
     "concept": 53,
-    "source": 7,
-    "synthesis": 34,
-    "report": 10
+    "source": 10,
+    "synthesis": 35,
+    "report": 11
   },
   "claimCount": 23,
   "claimHealth": {
@@ -73,7 +73,9 @@
         "六件套规范",
         "代理配置架构"
       ],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -1738,7 +1740,9 @@
       "kind": "entity",
       "path": "entities/wangyaxin.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -1825,6 +1829,25 @@
       "privacyTier": "private",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-05-23T19:15:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.openclaw-session-path-bug-2026-06-05",
+      "title": "OpenClaw v2026.6.1 session 路径错配 bug 修复报告",
+      "kind": "report",
+      "path": "reports/2026-06-05-15-54-00-OpenClaw-v2026.6.1-session路径错配bug-修复报告.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-05T08:15:00.000Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2013,7 +2036,80 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-01T08:16:27.440Z",
+      "lastTouchedAt": "2026-06-05T08:15:28.128Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.template-source-summary",
+      "title": "Source Summary 模板",
+      "kind": "source",
+      "path": "sources/_template_source_summary.md",
+      "aliases": [
+        "资料源笔记模板"
+      ],
+      "sourceIds": [
+        "raw/README.md"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-05T15:21:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.cct-al-kari-2026",
+      "title": "范畴论结构先验可在 306M 规模上压低 WikiText-103 困惑度（GT-Full 单独贡献 84%）",
+      "kind": "source",
+      "path": "sources/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.md",
+      "aliases": [
+        "CCT",
+        "Cognitive Categorical Transformer",
+        "Al Kari 2026"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-05T15:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.diehl-2026-captured-memories",
+      "title": "Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）",
+      "kind": "source",
+      "path": "sources/2026-06-05_Diehl-et-al_Captured-Memories.md",
+      "aliases": [
+        "照片视角与记忆视角漂移",
+        "First-person vs third-person viewpoint photos",
+        "Captured memories Diehl 2026"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-05T15:48:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2227,7 +2323,9 @@
       "kind": "synthesis",
       "path": "syntheses/2026-05-17-18-40-33-如何设计agent-memory.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -2580,7 +2678,9 @@
       "kind": "synthesis",
       "path": "syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -2645,7 +2745,9 @@
       "kind": "synthesis",
       "path": "syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -2664,7 +2766,9 @@
       "kind": "synthesis",
       "path": "syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -2683,7 +2787,9 @@
       "kind": "synthesis",
       "path": "syntheses/2026-05-23-11-14-00-代理实践技能体系总结.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -2702,7 +2808,9 @@
       "kind": "synthesis",
       "path": "syntheses/2026-05-23-23-50-00-如何用语音回复用户.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -2721,7 +2829,9 @@
       "kind": "synthesis",
       "path": "syntheses/2026-05-24-23-12-04-态射与范畴-比较与转换.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
@@ -2877,7 +2987,8 @@
       "path": "syntheses/2026-05-31-11-00-00-CCT-论文笔记.md",
       "aliases": [],
       "sourceIds": [
-        "arxiv:2605.28864"
+        "raw/papers/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.pdf",
+        "sources/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.md"
       ],
       "questions": [],
       "contradictions": [],
@@ -2887,7 +2998,7 @@
       "topRelationships": [],
       "pageType": "synthesis",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-31T03:12:34.691Z",
+      "lastTouchedAt": "2026-06-05T15:40:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2913,18 +3024,23 @@
       "topClaims": []
     },
     {
+      "id": "synthesis.cognitive-symmetry-breaking-2026-05-31",
       "title": "认知过程的对称性破缺机制——从余代数到皮亚杰的发展理论",
       "kind": "synthesis",
       "path": "syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md",
       "aliases": [],
-      "sourceIds": [],
+      "sourceIds": [
+        "sources/openclaw-system.md"
+      ],
       "questions": [],
       "contradictions": [],
       "bestUsedFor": [],
       "notEnoughFor": [],
       "relationshipCount": 0,
       "topRelationships": [],
-      "freshnessLevel": "unknown",
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-05T16:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -3136,6 +3252,32 @@
       "pageType": "synthesis",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-06-04T01:57:46+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.diehl-2026-photo-viewpoint-memory-perspective",
+      "title": "照片视角作为外部痕迹——改写自传体记忆视角的因果证据",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026.md",
+      "aliases": [
+        "Diehl 2026 synthesis",
+        "照片视角-记忆漂移综合分析"
+      ],
+      "sourceIds": [
+        "sources/2026-06-05_Diehl-et-al_Captured-Memories.md",
+        "raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf",
+        "raw/papers/2026-05-31_Hutmacher-Schramm_Scrolling-through-the-Past_In-Mind-Magazine.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-05T15:48:00+08:00",
       "claimCount": 0,
       "topClaims": []
     }

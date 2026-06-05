@@ -9,23 +9,20 @@ status: active
 
 ## Generated
 <!-- openclaw:wiki:lint:start -->
-- Errors: 2
-- Warnings: 40
-
-### Errors
-- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Missing `id` frontmatter.
-- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Missing `pageType` frontmatter.
+- Errors: 0
+- Warnings: 41
 
 ### Warnings
-- `concepts/agent-personal-config-architecture.md`: Non-source page is missing `sourceIds` provenance.
-- `entities/wangyaxin.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-11-14-00-代理实践技能体系总结.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-23-50-00-如何用语音回复用户.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-24-23-12-04-态射与范畴-比较与转换.md`: Non-source page is missing `sourceIds` provenance.
+- `reports/2026-06-05-15-54-00-OpenClaw-v2026.6.1-session路径错配bug-修复报告.md`: Broken wikilink target `concept/xxx`.
+- `reports/2026-06-05-15-54-00-OpenClaw-v2026.6.1-session路径错配bug-修复报告.md`: Broken wikilink target `concepts/xxx`.
+- `reports/2026-06-05-15-54-00-OpenClaw-v2026.6.1-session路径错配bug-修复报告.md`: Broken wikilink target `raw/papers/xxx`.
+- `sources/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.md`: Broken wikilink target `raw/papers/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.pdf`.
+- `sources/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.md`: Broken wikilink target `concepts/inductive_bias`.
+- `sources/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.md`: Broken wikilink target `raw/papers/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.pdf`.
+- `sources/2026-06-05_Diehl-et-al_Captured-Memories.md`: Broken wikilink target `concepts/记忆视角`.
+- `sources/2026-06-05_Diehl-et-al_Captured-Memories.md`: Broken wikilink target `concepts/外部痕迹改写记忆`.
+- `sources/2026-06-05_Diehl-et-al_Captured-Memories.md`: Broken wikilink target `syntheses/Hutmacher-Schramm-2026-数字工具重塑记忆`.
+- `sources/2026-06-05_Diehl-et-al_Captured-Memories.md`: Broken wikilink target `raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf`.
 - `syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md`: Claim `科学团辅方案包含背景分析、目标设定、对象界定、内容设计、方法技术、效果评估、经费预算七要素` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md`: Claim `目标应包含认知、情感、行为三个维度` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md`: Claim `单元结构应包含暖身、主题、讨论、总结四个环节` is missing structured evidence.
@@ -40,14 +37,13 @@ status: active
 - `syntheses/2026-05-24-23-22-13-团体心理辅导.md`: Claim `领导者风格分为权威型、民主型，放任型三种` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-13-团体心理辅导.md`: Claim `团体辅导具有教育、发展、预防、治疗四大功能` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-13-团体心理辅导.md`: Claim `团体辅导需遵循专业、民主、共同、启导、发展、综合、保密七项原则` is missing structured evidence.
+- `syntheses/2026-05-31-11-00-00-CCT-论文笔记.md`: Broken wikilink target `raw/papers/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.pdf`.
 - `syntheses/2026-05-31-11-00-00-CCT-论文笔记.md`: Broken wikilink target `Simplicial Message Passing`.
 - `syntheses/2026-05-31-11-00-00-CCT-论文笔记.md`: Broken wikilink target `inductive_bias`.
 - `syntheses/2026-05-31-11-00-00-CCT-论文笔记.md`: Broken wikilink target `结构先验 vs 一致性先验`.
 - `syntheses/2026-05-31-11-30-00-复形vs流形-关系描述的数学对比.md`: Broken wikilink target `Simplicial Message Passing`.
 - `syntheses/2026-05-31-11-30-00-复形vs流形-关系描述的数学对比.md`: Broken wikilink target `inductive_bias`.
 - `syntheses/2026-05-31-11-30-00-复形vs流形-关系描述的数学对比.md`: Broken wikilink target `结构先验 vs 一致性先验`.
-- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Page freshness needs review (missing updatedAt).
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Page lists 1 contradiction to resolve.
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Page lists 2 open questions.
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.config.1` is missing structured evidence.
@@ -56,7 +52,8 @@ status: active
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.synergy.1` is missing structured evidence.
 - `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Page lists 1 contradiction to resolve.
 - `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Page lists 3 open questions.
-- `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Broken wikilink target `../sources/deepseek-cloud-local-hybrid-architecture.md`.
+- `syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026.md`: Broken wikilink target `raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf`.
+- `syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026.md`: Broken wikilink target `raw/papers/2026-05-31_Hutmacher-Schramm_Scrolling-through-the-Past_In-Mind-Magazine.pdf`.
 
 ### Contradictions
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Page lists 1 contradiction to resolve.
@@ -67,15 +64,6 @@ status: active
 - `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Page lists 3 open questions.
 
 ### Quality Follow-Up
-- `concepts/agent-personal-config-architecture.md`: Non-source page is missing `sourceIds` provenance.
-- `entities/wangyaxin.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-17-18-40-33-如何设计agent-memory.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-20-23-34-38-三方协作实践-代理如何领取与执行任务.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-00-34-多Agent管理与单Agent记忆进化体系.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-11-14-00-代理实践技能体系总结.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-23-23-50-00-如何用语音回复用户.md`: Non-source page is missing `sourceIds` provenance.
-- `syntheses/2026-05-24-23-12-04-态射与范畴-比较与转换.md`: Non-source page is missing `sourceIds` provenance.
 - `syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md`: Claim `科学团辅方案包含背景分析、目标设定、对象界定、内容设计、方法技术、效果评估、经费预算七要素` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md`: Claim `目标应包含认知、情感、行为三个维度` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md`: Claim `单元结构应包含暖身、主题、讨论、总结四个环节` is missing structured evidence.
@@ -90,10 +78,8 @@ status: active
 - `syntheses/2026-05-24-23-22-13-团体心理辅导.md`: Claim `领导者风格分为权威型、民主型，放任型三种` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-13-团体心理辅导.md`: Claim `团体辅导具有教育、发展、预防、治疗四大功能` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-13-团体心理辅导.md`: Claim `团体辅导需遵循专业、民主、共同、启导、发展、综合、保密七项原则` is missing structured evidence.
-- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Non-source page is missing `sourceIds` provenance.
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.config.1` is missing structured evidence.
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.workspace.1` is missing structured evidence.
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.plugin.1` is missing structured evidence.
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.synergy.1` is missing structured evidence.
-- `syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md`: Page freshness needs review (missing updatedAt).
 <!-- openclaw:wiki:lint:end -->

@@ -112,3 +112,10 @@
 - 多态架构（ABC 模式）: `BaseSearcher`（ABC）定义抽象方法 `_do_search()`; `CnkiSearcher`、`SemSchSearcher`、`ScholarSearcher` 各自实现 `_do_search()`; `search_all([...], keyword, limit)` 接受任何 BaseSearcher 子类列表，无需 if-else [score=0.870 recalls=0 avg=0.620 source=memory/2026-05-24.md:27-29]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:32:35 -->
 - 类名重命名完成（本轮会话）: `CNKISearcher` → `CnkiSearcher`（保留别名）; `SemanticSearcher` → `SemSchSearcher`（保留别名）; `BrowserCNKISearcher` → `CnkiSearcher`（保留别名）; 旧代码（如 main.py）直接用别名运行，无需修改 [score=0.870 recalls=0 avg=0.620 source=memory/2026-05-24.md:32-35]
+
+## Promoted From Short-Term Memory (2026-06-06)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:33:33 -->
+- 新框架规范: **SKILL.md 更新规范**： [score=0.859 recalls=0 avg=0.620 source=memory/2026-05-25.md:33-33]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:36:36 -->
+- 新框架规范: 引用新框架的 ch* 文件 [score=0.859 recalls=0 avg=0.620 source=memory/2026-05-25.md:36-36]

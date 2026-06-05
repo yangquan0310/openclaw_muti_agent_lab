@@ -32,9 +32,12 @@
 <!-- openclaw:wiki:sources:index:start -->
 - [[sources/conda|Conda 环境管理]]
 - [[sources/deepseek-cloud-local-hybrid-architecture|DeepSeek - 云端大模型+本地小模型+代理框架 工程化开发工作流]]
+- [[sources/2026-06-05_Diehl-et-al_Captured-Memories|Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
 - [[sources/openclaw-env|openclaw-env]]
 - [[sources/openclaw-system|openclaw-system]]
 - [[sources/openclaw-workspace|openclaw-workspace]]
+- [[sources/_template_source_summary|Source Summary 模板]]
 - [[sources/repository|仓库]]
 - [[sources/programming-languages|系统编程语言]]
+- [[sources/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv|范畴论结构先验可在 306M 规模上压低 WikiText-103 困惑度（GT-Full 单独贡献 84%）]]
 <!-- openclaw:wiki:sources:index:end -->

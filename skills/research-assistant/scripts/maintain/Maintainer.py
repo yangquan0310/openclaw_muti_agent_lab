@@ -338,7 +338,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) < 2:
-        print("用法: python3 scripts/maintainer/Maintainer.py <项目路径> [命令] [参数...]")
+        print("用法: python3 scripts/maintain/Maintainer.py <项目路径> [命令] [参数...]")
         print("")
         print("命令:")
         print("  update-kb              更新知识库时间戳")

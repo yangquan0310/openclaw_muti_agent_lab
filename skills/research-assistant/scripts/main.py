@@ -13,6 +13,7 @@ from scripts.search import search_by_keyword
 from scripts.summarize.Summarizer import Summarizer
 from scripts.manage.Manager import Manager
 from scripts.synthesize.Synthesizer import Synthesizer
+from scripts.download import ZoteroJianguoyunDownloader
 
 
 def main(argv=None) -> int:
@@ -99,6 +100,25 @@ def main(argv=None) -> int:
                        help="知识库路径（可多次）")
     fix_p.add_argument("--output", help="输出路径")
     fix_p.set_defaults(func=_run_synthesize)
+
+    # ── download（多态：DOI/key → Zotero → 坚果云 → wiki）─────────
+    download_parser = sub.add_parser(
+        "download", help="PDF 下载（Zotero 库 → 坚果云 WebDAV → wiki raw）"
+    )
+    dl_mode = download_parser.add_mutually_exclusive_group(required=True)
+    dl_mode.add_argument("--doi", metavar="DOI",
+                         help="DOI（如 10.1177/0956797617694868）")
+    dl_mode.add_argument("--zotero-key", metavar="KEY",
+                         help="Zotero item key（8 字符，如 R8MVF42R）")
+    download_parser.add_argument(
+        "--wiki-raw-dir", default="/root/.openclaw/wiki/raw/papers",
+        help="wiki raw 目录（默认 /root/.openclaw/wiki/raw/papers）"
+    )
+    download_parser.add_argument(
+        "--tmp-dir", default="/tmp/zotero_dl",
+        help="临时下载目录（默认 /tmp/zotero_dl）"
+    )
+    download_parser.set_defaults(func=_run_download)
 
     args = parser.parse_args(argv)
     if not args.module:
@@ -215,6 +235,38 @@ def _run_synthesize(args) -> int:
         synthesizer.check_references(args.doc)
         result = synthesizer.fix_references(args.doc, args.output)
         print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
+
+
+def _run_download(args) -> int:
+    """download 子命令：Zotero → 坚果云 → wiki 流水线"""
+    import json
+    identifier = args.doi or args.zotero_key
+    try:
+        dl = ZoteroJianguoyunDownloader(wiki_raw_dir=args.wiki_raw_dir)
+        pdf_path = dl.run(identifier, dest_dir=Path(args.tmp_dir))
+        meta = dl.find_paper(identifier)  # 重新拿元数据用于输出
+        result = {
+            "success": True,
+            "identifier": identifier,
+            "pdf_path": str(pdf_path),
+            "size_bytes": pdf_path.stat().st_size,
+            "title": meta.title,
+            "authors": meta.authors,
+            "year": meta.year,
+            "zotero_item_key": meta.zotero_item_key,
+            "zotero_attachment_key": meta.zotero_attachment_key,
+            "archive_filename": meta.archive_filename(),
+        }
+    except Exception as e:
+        result = {
+            "success": False,
+            "identifier": identifier,
+            "error": str(e),
+        }
+        print(json.dumps(result, ensure_ascii=False))
+        return 1
+    print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 
 

@@ -88,6 +88,7 @@ mathematician -h
 | 数学工具 | [guides/math-tools.md](guides/math-tools.md) | 数值计算、矩阵运算、微积分、算法复杂度 |
 | 统计指南 | [guides/statistics.md](guides/statistics.md) | 描述统计、假设检验、回归分析、时间序列 |
 | 概念写作 | [guides/concept-writing-guide.md](guides/concept-writing-guide.md) | 数学概念文档的撰写规范 |
+| **论文阅读 SOP** | [references/guides/paper-reading.md](references/guides/paper-reading.md) | 论文阅读全流程：阅读前清单、raw/sources/syntheses 证据链、三遍阅读法、负面结果、复现性检查、待确认项规范 |
 | 模板 | [assets/templates/](assets/templates/) | 报告模板、公式模板 |
 
 ---
@@ -134,5 +135,6 @@ mathematician -h
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| 1.2.0 | 2026-06-05 | 新增"论文阅读 SOP"指南（[paper-reading.md](references/guides/paper-reading.md)），对齐 wiki 6 层目录与 raw/sources/syntheses 证据链 |
 | 1.1.0 | 2026-05-23 | 增加边界条件章节，对齐实践技能体系规范 |
 | 1.0.0 | 2026-05-23 | 初始版本 |

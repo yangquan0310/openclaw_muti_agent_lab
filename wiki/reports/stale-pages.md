@@ -3,14 +3,12 @@ pageType: report
 id: report.stale-pages
 title: Stale Pages
 status: active
-updatedAt: 2026-06-01T08:16:27.440Z
+updatedAt: 2026-06-05T08:15:28.128Z
 ---
 
 # Stale Pages
 
 ## Generated
 <!-- openclaw:wiki:stale-pages:start -->
-- Stale pages: 1
-
-- [[syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架|认知过程的对称性破缺机制——从余代数到皮亚杰的发展理论]]: missing updatedAt
+- No aging or stale pages older than 30 days.
 <!-- openclaw:wiki:stale-pages:end -->

@@ -27,7 +27,7 @@ research-assistant/
 │   ├── synthesize/           # 文献综述合成模块
 │   │   ├── Synthesizer.py
 │   │   └── __init__.py
-│   ├── maintainer/           # 元数据维护与版本控制模块
+│   ├── maintain/           # 元数据维护与版本控制模块
 │   │   ├── Maintainer.py
 │   │   └── __init__.py
 │   ├── mcp/                   # MCP服务器
@@ -55,7 +55,7 @@ manage: 筛选子集 → export_notes() → knowledge/note/笔记_主题.md
     ↓
 synthesize: 基于笔记撰写 → knowledge/review/综述_主题.md
     ↓
-maintainer: 更新元数据 + 保存版本快照
+maintain: 更新元数据 + 保存版本快照
 ```
 
 ## 快速开始
@@ -68,8 +68,8 @@ maintainer: 更新元数据 + 保存版本快照
 | 总结文献 | `python3 scripts/main.py summarize --kb-path index.json` | 补充 notes/labels |
 | 管理知识库 | `python3 scripts/main.py manage filter --kb-path index.json` | 筛选并导出笔记 |
 | 写文献综述 | `python3 scripts/main.py synthesize extract --notes notes.json` | 基于笔记生成综述 |
-| 更新元数据 | `python3 scripts/maintainer/Maintainer.py ~/项目 update-kb` | 自动更新时间戳 |
-| 保存版本 | `python3 scripts/maintainer/Maintainer.py ~/项目 save-version knowledge/review/综述.md` | 综述版本快照 |
+| 更新元数据 | `python3 scripts/maintain/Maintainer.py ~/项目 update-kb` | 自动更新时间戳 |
+| 保存版本 | `python3 scripts/maintain/Maintainer.py ~/项目 save-version knowledge/review/综述.md` | 综述版本快照 |
 
 ### 完整学术工作流示例
 

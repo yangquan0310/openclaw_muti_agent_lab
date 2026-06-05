@@ -18,7 +18,7 @@ Maintainer 负责维护项目元数据（时间戳更新）。
 元数据维护协调器。
 
 ```python
-from maintainer.Maintainer import Maintainer
+from maintain.Maintainer import Maintainer
 
 maintainer = Maintainer("~/项目")
 
@@ -34,7 +34,7 @@ maintainer.update_notes_metadata("笔记_主题.md", "knowledge/note/笔记_主�
 元数据管理器，提供链式调用修改元数据。
 
 ```python
-from maintainer.Maintainer import MetadataManager
+from maintain.Maintainer import MetadataManager
 
 mm = MetadataManager("~/项目")
 
@@ -68,10 +68,10 @@ maintainer.update_notes_metadata(note_filename, local_path, description="")
 
 ```bash
 # 更新知识库时间戳
-python3 maintainer/Maintainer.py ~/项目 update-kb
+python3 maintain/Maintainer.py ~/项目 update-kb
 
 # 更新笔记元数据
-python3 maintainer/Maintainer.py ~/项目 update-notes 笔记_主题.md knowledge/note/笔记_主题.md "描述"
+python3 maintain/Maintainer.py ~/项目 update-notes 笔记_主题.md knowledge/note/笔记_主题.md "描述"
 ```
 
 ---

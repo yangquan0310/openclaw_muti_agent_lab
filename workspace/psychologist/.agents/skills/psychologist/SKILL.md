@@ -63,6 +63,12 @@ metadata:
 | 心理咨询师 | [counselor-guide.md](references/counselor-guide.md) |
 | 心理科学家 | [scientist-guide.md](references/scientist-guide.md) |
 
+### 工具方法（跨身份）
+
+| 指南 | 说明 |
+|------|------|
+| [paper-reading.md](references/guides/paper-reading.md) | **论文阅读 SOP**（v1.0）—— 阅读前清单 + 三遍阅读法 + 负面结果记录 + 复现性检查 + 同领域对比 + 笔记中"待确认项"规范 |
+
 ### 专项指南
 
 | 指南 | 说明 |
@@ -199,6 +205,7 @@ lookup! list -i /root/.openclaw/workspace/psychologist/skills/psychologist/index
 | 版本 | 日期 | 更新 |
 |------|------|------|
 | 3.1.0 | 2026-05-23 | references文件重命名：中文→英文，命名规范化 |
+| 3.2.0 | 2026-06-05 | 新增论文阅读 SOP（`references/guides/paper-reading.md`），沉淀自 Diehl 2026 JARMAC 阅读实战（杨权 15:51 指令）|
 | 3.0.0 | 2026-05-23 | 对齐代理技能体系：新增指南导航总览、重命名目录为psychologist |
 | 2.1.0 | 2026-05-21 | 新增 lookup 快速检索 |
 | 2.0.0 | 2026-05-21 | 升级为psychologist技能包：心理督导师+心理咨询师+心理科学家 |
