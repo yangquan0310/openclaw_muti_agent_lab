@@ -1,17 +1,21 @@
 ---
 name: manager
 description: >
-  manager的实践技能。
-  当需要推进任务、完善TODO、领取项目任务、派发任务时激活。
+  manager是大管家的管理实践技能（**唯一入口**，任务派发唯一路径）。
+  **两种任务协调方式必查**（2026-06-06 老板拍板）：
+  - **群里交任务** → IM 5 段模板艾特代理 + workboard 建卡 + Dx 自动同步状态
+  - **用户私聊你发送任务** → 大管家手动 sessions_spawn 子代理 + workboard 建卡（--no-session）+ 大管家手动验收
+  两场景**必须**走 task-flow-guide.md v3.2.0（§二、群派发 / §三、私聊派发）。
+  当需要派发任务、推进任务、完善TODO、领取项目任务、协调子代理干活时激活。
   当需要创建/整理/管理项目（论文、课程、程序、知识库/wiki、通用项目）时激活。
   当需要备课时激活（lesson-plan-guide）。
   当需要技能审计、核查技能质量时激活（skill-audit-workflow）。
   当需要.openclaw系统体检、日常维护、问题处理时激活（openclaw-maintenance-guide）。
   当需要定期清理wiki或同步规范时激活（cleaning-guide、sync-guide）。
   当需要发布 workboard 任务卡（多 Agent 协作跟踪）时激活（workboard-guide）。
-  当需要 Quarto PDF 编译/排版/APA 7th 论文配置时激活（quarto-pdf-config，2026-06-04 新增）。
+  当需要 Quarto PDF 编译/排版/APA 7th 论文配置时激活（quarto-pdf-config）。
   **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点。
-version: 5.11.0
+version: 5.12.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -31,7 +35,10 @@ metadata:
 1. **授权执行**：管方向、定边界、分配任务，不亲自执行
 2. **约束目标前置**：领取任务先明确验收标准 + 边界条件
 3. **子代理自主**：子任务由子代理自己拆解，大管家只定约束/输入/产出
-4. **TODO.md 强制**：领取任务立即录入，记录任务链路和当前阶段
+4. **TODO.md 群场景强制，私聊场景不写**：
+   - **群派发**：领取任务立即写 TODO.md（看板 + 状态记录）
+   - **私聊派发**（v3.2.0）：单卡 workboard 即可，**不**写 TODO.md（单人任务不必建看板）
+5. **派发永远只 3 动作**（v3.2.0 老板拍板）：**建卡 + im/spawn 派发 + 验收**。workboard CLI 不接派发能力，spawn / dispatch 子命令**绝对禁止**加
 
 ---
 
@@ -40,31 +47,42 @@ metadata:
 - **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点
 - 模板只能存放在 `assets/`
 - 不得在任务中指定模型、预算等权限外内容
-- 汇报必须通过群聊，禁止私聊
+- **汇报渠道按场景分**（v3.2.0 修正）：
+  - **群派发**：进度走 workboard，群里不发"进度更新"（只派发通知 + 完成确认）
+  - **私聊派发**：DM 是派发通道本身，进度走 workboard，DM 看到 proof 即代表完成
+  - ~~汇报必须通过群聊，禁止私聊~~（v3.2.0 撤销：私聊派发场景下 DM 是合法通道）
 
 ---
 
 ## 快速调用
 
 ```bash
-# Workboard 任务发布（v3.0.1）
-manager workboard create --assignee writer --session 'agent:writer:...' --title '...' --no-dup
+# === Workboard 任务发布（v1.5.0 简化，start 子命令已删） ===
+# 群派发建卡：绑群 session，Dx 自动同步
+manager workboard create --assignee writer --session 'agent:writer:feishu:group:oc_xxx' --title '...' --no-dup
+# 私聊派发建卡：不绑 session，大管家手动管状态
+manager workboard create --assignee writer --no-session --title '...'  # v3.2.0 私聊场景
+# 核验
+manager workboard read --id <card_id>
+workboard_comment --id <card_id> --body "大管家核验通过：..."      # 走插件工具（大管家也可以 CLI 路径）
 manager workboard move --id <card_id> --status done
-# start 保留但不主动调（Dx 已自动覆盖）
 
-# 项目整理
+# === 派发动作（不走 workboard CLI） ===
+# 群场景：IM 5 段模板艾特（看 task-flow-guide.md §二）
+# 私聊场景：sessions_spawn(agentId=<assignee>, isolate=True, task=...)  # 看 task-flow-guide.md §三
+
+# === 项目整理 ===
 manager maintainer organize <project_path> [--dry-run]
-
-# 同步模板
 manager maintainer sync <project_path> [--dry-run]
-
-# 检查更新
 manager maintainer check-updates <project_path>
 
-# 查看帮助
+# === 查看帮助 ===
 manager workboard --help
 manager maintainer --help
 ```
+
+**大管家 3 动作铁律**（v3.2.0 拍板）：**建卡 + im/spawn 派发 + 验收**。workboard CLI 永远只管"建卡/管理"，派发动作脱离 workboard。
+
 ---
 
 ## 指南导航
@@ -72,8 +90,8 @@ manager maintainer --help
 | 章节 | 文件 |
 |------|------|
 | manager 概述 | manager-overview.md |
-| Workboard 任务发布 | workboard-guide.md v1.4.0 |
-| 任务流（三件套派发） | task-flow-guide.md v3.0.1 |
+| Workboard 任务发布 | workboard-guide.md **v1.5.0**（start 子命令已删） |
+| **任务流（两种协调方式）** | **task-flow-guide.md v3.2.0**（§二、群派发 / §三、私聊派发） |
 | 论文项目 | thesis-guide.md |
 | 课程项目 | course-guide.md |
 | 程序项目 | program-guide.md |
@@ -91,6 +109,7 @@ manager maintainer --help
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| **5.12.0** | **2026-06-06** | **两种任务协调方式必查**（老板 2026-06-06 拍板，源自私聊派发端到端测试）：(1) **description 字段加"两种协调方式"** 必查触发——群里 = IM + workboard、私聊 = sessions_spawn + workboard，确保 LLM 看到"派发"类任务立即想起 manager 技能；(2) **核心原则修"TODO.md 强制"为分场景**——群场景写，私聊场景不写（v3.2.0 §3.2）；(3) **边界条件撤销"禁止私聊汇报"**——v3.2.0 私聊派发场景下 DM 是合法通道；(4) **快速调用更新 v1.5.0**——start 子命令已删，加群/私聊建卡对照、spawn 派发说明；(5) 导航表 task-flow-guide v3.0.1 → v3.2.0、workboard-guide v1.4.0 → v1.5.0 |
 | **5.11.0** | **2026-06-04** | **Quarto 作者单位渲染模式固化**：(1) references/quarto-pdf-config.md 升 v1.1（~11KB），新增「八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）」章节（源自记忆机制论文实战），含四件套配置（header.tex + title.tex partial + YAML 字段 + LaTeX 通讯作者块）+ 6 条坑速查 + 替代方案对比 + wiki 实体作为元数据源；(2) references/index.md 同步；(3) 导航表加 v1.1 标注 |
 | **5.10.0** | **2026-06-04** | **新增 Quarto PDF 编译/排版场景**：(1) 新增 references/quarto-pdf-config.md（v1.0，~7.7KB），覆盖 3 范式 + CJK 字体（AR PL SungtiL GB 避 Noto TTC 坑）+ APA 7th + header-includes vs header.tex；(2) references/index.md 加"排版/编译"段；(3) description 加触发条件；(4) 导航表加新条目 |
 | 5.9.0 | 2026-06-03 | **任务流指南 v3.0.1 老板定型**：(1) IM 群艾特必须（纠正"可选"歧义）；(2) 任务进度反馈走 workboard（proof+comment）；(3) 中间文件放 temp/ 不放 knowledge/；(4) start 保留但不主动调；(5) 新增 --no-dup 防重复建卡；(6) 指南导航 task-flow-guide 指向 v3.0.1 |
