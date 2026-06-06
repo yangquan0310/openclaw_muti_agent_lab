@@ -1,5 +1,11 @@
-# 任务流指南 v3.3.0
+# 任务流指南 v3.4.0
 
+> **v3.4.0 重大补充**（2026-06-06 老板指正 + 联动测试验证）：
+> 1. **新加"§五、完整工作流"**——3 阶段总览（建卡+派发 / 等待 / 验收）/ 派发双通道对比 / 验收三态详细流程
+> 2. **加"§五之2、私聊派发防中断兜底"**——老板担心的"子代理不向你发消息就中断了"问题解决方案
+> 3. **加"§五之3、跨场景大管家工作流整合"**——群场景 + 私聊场景完整 5 步流程
+> 4. 原"§五、异常处理" → §六（序号顺移）
+>
 > **v3.3.0 重大修复**（2026-06-06 老板纠错）：
 > 1. **删除所有 `manager workboard` CLI 引用**（v2026.6.6）—— `scripts/workboard/` 932 行 Python 已删
 > 2. **建卡/验收全部走 `workboard_*` agent tool**（plugin contract tools 一直就有，见 `extensions/workboard/openclaw.plugin.json`）
@@ -397,9 +403,158 @@ Work on this OpenClaw Workboard card:
 
 ---
 
-## 五、异常处理
+## 五、完整工作流（v3.4.0 新增）
 
-### 5.1 Dx 误判排查
+> 源自 2026-06-06 联动测试 + 老板指正："大管家只需要看最后 done 状态，或者干预一下 blocked 的。claim 是 session/IM 去通知其他代理。"
+
+### 5.1 三阶段总览
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ Phase 1：建卡 + 派发（一次性）  5-10s                          │
+│   workboard_create + (IM 艾特 | sessions_spawn)              │
+├─────────────────────────────────────────────────────────────┤
+│ Phase 2：等待（不盯中间）  6s ~ 数分钟                          │
+│   Dx 自动同步 / 代理自管理 / OpenClaw runtime push           │
+│   大管家在这里 100% 不介入                                       │
+├─────────────────────────────────────────────────────────────┤
+│ Phase 3：验收（只动 done/blocked）  5-30s                       │
+│   done:  workboard_read → 核验 → workboard_comment →         │
+│          workboard_complete → archive（可选）                  │
+│   blocked: workboard_read → reassign / unblock /             │
+│            重新派发 / 接受失败                                 │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**关键洞察**：
+- Phase 1 是**大管家主动动作**（5-10s 一次性）
+- Phase 2 是**大管家完全不介入**（Dx / 代理 / runtime 三方自动化）
+- Phase 3 是**大管家再次主动**（5-30s，但只对 done/blocked 两种状态）
+
+### 5.2 派发双通道对比
+
+| 维度 | 群派发 | 私聊派发 |
+|------|--------|----------|
+| 触发 | 老板在群里交任务 | 老板在 DM 交任务 |
+| 派发动作 | **IM 5 段模板艾特**（开头带 workboard 信息） | **`sessions_spawn` + `workboard_comment` 软关联** |
+| 卡 status 默认 | backlog（Dx 推 running） | todo（Dx/手动推） |
+| claim 触发 | 群里代理看到艾特 → 调 workboard_claim | Dx 看到 agentId 匹配 spawn → auto-claim |
+| 同步方式 | Dx 推：backlog → running → review | 手动管（spawn + comment 软关联） |
+| 完成信号 | 群里代理发"完成"消息 | **announce event 推回主 DM** |
+| 兜底 | 群里能看到 @ 状态 | spawn 后**立即发"已派发 + cardId"消息**（防中断）|
+| TODO.md 写？ | 写（群场景强制） | **不写**（私聊单人任务） |
+
+### 5.3 验收三态详细流程
+
+```
+[卡 status = done]（或 review 状态但已 proof 完毕）
+  ↓
+workboard_read({ id: cardId })
+  查 metadata.proof + artifacts + comments
+  ↓
+读产出文件（人工核验）
+  - 目标达成？
+  - 约束符合？
+  - 4 必填字段？引用规范？proof status=passed？
+  ↓
+workboard_comment({ id, body: "核验通过/不通过" })
+  ↓
+workboard_complete({
+  id, token, summary: "...",
+  proof: { status: "passed", label, command, note }
+})
+  ↓
+workboard_board_archive({ id, archived: true })  // 可选
+
+
+[卡 status = blocked]
+  ↓
+workboard_read({ id: cardId })
+  查 failure reason + failureCount
+  ↓
+决策（4 选 1）：
+  ├─ 换人重做：workboard_reassign({ id, agentId: "新代理" })
+  │            → workboard_unblock({ id })  // 解阻塞
+  │
+  ├─ 解阻塞让原代理继续：workboard_unblock({ id })
+  │            → 代理 workboard_heartbeat + workboard_proof + workboard_complete
+  │
+  ├─ 接受失败归档：workboard_complete({
+  │     id, proof: { status: "failed", note: "原因..." }
+  │   })
+  │
+  └─ 完全放弃：workboard_board_archive({ id, archived: true })
+
+
+[卡 status = running]
+  ↓
+大管家：什么都不做
+  ↓
+等 announce event 触发
+  或等 Dx 推卡到 review
+```
+
+### 5.4 私聊派发防中断兜底（老板 2026-06-06 担心）
+
+老板原话："如果子代理不向你发送消息，我这边就中断了。你后续的消息不会路由过来"
+
+**实际风险**：
+- `sessions_spawn` 依赖 OpenClaw runtime 的 auto-announce
+- 如果子代理死锁/异常/announce 失败 → 老板 IM 流冻结 → 老板以为大管家消失了
+
+**兜底方案**：
+
+```
+[1] 老板 DM 交任务
+[2] 我调 workboard_create → cardId
+[3] 我**立即** IM 回你："已派发 [X] 给 writer，cardId=xxx"
+    ↑ 这条消息是你 IM 流里的锚点——你知道我没消失
+[4] 我调 sessions_spawn → childSessionKey
+[5] workboard_comment(cardId, "sessionKey=" + childSessionKey)  // 软关联
+[6] sessions_yield 等子代理完成
+[7a] 成功：announce event 来 → 我继续 → 核验 + complete
+[7b] 失败：你看到的是"已派发"消息 + 等不到完成
+    → 你能 @我 唤醒 / 让我查 workboard 卡 / 让 Dx 兜底
+```
+
+**为什么这个范式不中断你的 IM 流**：
+- 我**在 spawn 之前**已经发了一条"已派发"消息
+- 即使 spawn 后僵死，你**至少看到过"已派发"**——不会感觉凭空消失
+- 你有 `cardId` 可以查、可以 @我、可以让我查卡
+
+### 5.5 跨场景大管家工作流整合（v3.4.0 整合）
+
+**群场景**完整 5 步：
+```
+[1] workboard_create({ agentId, priority, labels, status: "backlog" })
+    注：plugin CLI 不支持 session 绑定，用 workboard_comment 写软关联
+[2] workboard_comment({ id, body: "sessionKey=agent:writer:feishu:group:oc_xxx" })
+[3] IM 5 段模板艾特（开头带 workboard 信息：cardId/short + sessionKey + dashboard URL）
+[4] 群里代理 claim + 执行 + proof + complete（Dx 全包同步）
+[5] Dx 推 running → review
+[6] 大管家 read + 核验 + comment + complete + archive
+```
+
+**私聊场景**完整 6 步：
+```
+[1] workboard_create({ agentId, priority, labels, status: "todo" })
+[2] sessions_spawn({ agentId, task, mode: "run" })
+[3] workboard_comment({ id, body: "sessionKey=" + childSessionKey })
+[4] sessions_yield 等子代理完成
+[5] **立即**发"已派发 + cardId"消息到老板 DM（兜底）
+[6] sessions_history(childSessionKey) 查产出
+[7] workboard_read + 核验 + comment + complete + archive
+```
+
+**关键差异**：
+- 群场景靠 **Dx 自动同步 + IM 群可见**——大管家只发一次艾特
+- 私聊场景靠 **announce event 推回 + 主动发"已派发"**——大管家必须**两条线并行**（spawn + IM 兜底）
+
+---
+
+## 六、异常处理
+
+### 6.1 Dx 误判排查
 
 如果卡在 5 分钟内 `blocked` 3+ 次：
 
@@ -416,7 +571,7 @@ workboard_unblock({ id: cardId })
 
 **预防**：代理 claim 后立即 `workboard_heartbeat` 续约，避免 claim token 过期被 Dx 误判。
 
-### 5.2 子代理失败处理（两场景通用）
+### 6.2 子代理失败处理（两场景通用）
 
 | 失败类型 | 表现 | 处理 |
 |----------|------|------|
@@ -425,14 +580,14 @@ workboard_unblock({ id: cardId })
 | 任务理解错误 | proof 不通过 | 同上 |
 | 代理崩溃/timeout | session 失败 | Dx 推卡到 `blocked`；大管家读卡看 attempt 错误；重新 spawn |
 
-### 5.3 重新派发
+### 6.3 重新派发
 
 - **群场景**：群里重新发 IM 模板（不传 `--no-dup` 让建新卡；或读旧卡用新 `move --status todo` 复用）
 - **私聊场景**：重新 `sessions_spawn`（spawn task 里传新 card_id 或复用旧 card）
 
 ---
 
-## 六、版本历史
+## 七、版本历史
 
 | 版本 | 日期 | 说明 |
 |------|------|------|

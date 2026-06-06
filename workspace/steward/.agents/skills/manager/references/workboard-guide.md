@@ -1,5 +1,9 @@
-# Workboard 任务发布指南 v1.7.0
+# Workboard 任务发布指南 v1.8.0
 
+> **v1.8.0 重大补充**（2026-06-06 老板指正 + 联动测试验证）：
+> 1. **新加"三之3、大管家使用技巧"**——明确"大管家不做什么"、"看 status 简化判断"、"agentId 副作用及应对"
+> 2. 4 场联动测试验证（v8.26.0 实测）：A done 路径 / B blocked 路径 / C subagent 自管 workboard / D notify_subscribe 链路
+>
 > **v1.7.0 重大修复**（2026-06-06 老板纠错，老板拍板）：
 > 1. **删除 `manager workboard` CLI**（v2026.6.6）—— `scripts/workboard/` 整个目录（932 行 Python）已删除
 > 2. **建卡改用 agent tool**（`workboard_create`）或 **plugin 自带 CLI**（`openclaw workboard create`）
@@ -124,6 +128,74 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 
 > ❌ **绝对禁止**重建 `manager workboard` CLI 或新增 spawn / dispatch 子命令（v1.6.0 + v1.7.0 拍板）——派发动作永远在会话里手动做。
 > ❌ **绝对禁止**再回退到 `scripts/workboard/` Python 包（v1.7.0 删除后，永不重建）。如需 shell 操作，**只用 `openclaw workboard` plugin CLI**。
+
+---
+
+## 三之3、大管家使用技巧（v1.8.0 新增）
+
+> 源自 2026-06-06 v8.26.0 联动测试 + 老板指正："claim 是 session/IM 通知其他代理，大管家不需要管中间态"。
+
+### 3.3.1 大管家不做什么（4 条铁律）
+
+| ❌ 大管家**不**做的 | 由谁做 | 机制 |
+|------|------|------|
+| 不主动 `workboard_claim` | **代理自己** / **Dx 自动** | Dx 看到 `agentId=writer` 的卡 → spawn 时**自动 claim** 到 writer（实测 C 测试发现） |
+| 不主动 `workboard_proof` | **执行代理** | 代理执行完自己调 workboard_proof 附证据 |
+| 不盯 todo→running 迁移 | **Dx 自动同步** | 卡绑 sessionKey + session running → 卡 status=running（**大管家不介入**）|
+| 不读中间过程 | **无** | 中间态（running/claimed）大管家**不读**——除非有异常 |
+
+**关键洞察**：
+- **`claim` 是触发器**，不是大管家的动作
+- 群场景：claim 由群 IM 艾特 → 代理自己 workboard_claim
+- 私聊场景：claim 由 sessions_spawn 触发子代理 → Dx 看到 agentId 匹配**自动 claim**
+- **大管家发完派发通知就完事**——不主动调 claim
+
+### 3.3.2 大管家"看 status" 的简化判断
+
+✅ **看 done** → 核验产出 + `workboard_complete` + archive（可选）
+✅ **看 blocked** → 人工介入（`workboard_reassign` / `workboard_unblock` / 重新派发 / 接受失败）
+❌ **不看 running**（中间态，不管）
+❌ **不看 todo**（已派发，等代理 claim / Dx 自动 claim）
+
+**心智口诀**：**只看头尾，不盯中间**。
+
+### 3.3.3 `workboard_create` `agentId` 副作用及应对
+
+`workboard_create({ agentId: "writer" })` 会触发**副作用**（v8.26.0 实测 C 测试发现）：
+
+1. **Dx 看到 agentId → spawn 阶段自动 claim 到该 agent**（kind: "claimed" 事件自动写入）
+2. **claim 后 workboard_comment / workboard_block 等"卡操作"只允许 owner**（报 "card is claimed by writer"）
+3. **大管家自己 comment** 到已 claim 的卡 → 报错（除非 workboard_reassign 接管）
+
+**应对策略**：
+
+| 场景 | 应对 |
+|------|------|
+| 群派发 | workboard_create 后让群里代理**自己 claim + comment**——大管家不介入 |
+| 私聊派发 | workboard_create 后 sessions_spawn 触发 Dx auto-claim，子代理**自己调** workboard_comment |
+| 大管家想 comment | 选项 A：`workboard_reassign({ id, agentId: "steward" })` 接管 → claim → comment<br>选项 B：建新卡（不与已 claim 的卡冲突）|
+
+### 3.3.4 workboard 状态机 vs 大管家介入点
+
+```
+   create                          ← 大管家 [1] 建卡
+     ↓
+   todo                            ← Dx/代理 auto-claim
+     ↓ (claim - 必走！)
+   running                         ← Dx 自动同步，**大管家不盯**
+     ↓ (代理 workboard_proof + workboard_complete)
+   done                            ← 大管家 [3] 核验 + complete + archive
+     ↓
+   archived                        ← 大管家 [3] 可选
+
+   todo / running
+     ↓ (卡失败 / 超时)
+   blocked                         ← 大管家 [3] 人工介入
+
+   done ↔ blocked                  ← 大管家可 reassign / unblock 反复折腾
+```
+
+**大管家介入点**：**起点 (create) + 终点 (done/blocked) + 中间异常 (blocked 反复)**——**不**盯 running 中间过程。
 
 ---
 
