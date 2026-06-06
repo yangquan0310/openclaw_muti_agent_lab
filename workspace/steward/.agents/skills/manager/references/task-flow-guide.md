@@ -1,5 +1,11 @@
-# 任务流指南 v3.5.0
+# 任务流指南 v3.6.0
 
+> **v3.6.0 重大补充**（2026-06-06 老板拍板 + 模板测试验证）：
+> 1. **新加"§六、消息/note 模板库"**——指向 workboard-guide.md v1.10.0 §三之5（v3.5.0 范式所有消息/note 模板）
+> 2. 序号顺移：原"§六、异常处理" → §七；原"§七、版本历史" → §八
+> 3. 异常处理子小节 6.x → 7.x 重编号
+> 4. 模板来源：5 轮测试验证（轮 1-3 / 重测 / 完整流程 / 模板测试）
+>
 > **v3.5.0 重大修正**（2026-06-06 3 轮多轮测试验证，老板拍板）：
 > 1. **§五.4 私聊派发防中断**：删除"立即发'已派发'消息"——改为"**不调 yield**——流式 reply——turn 自然结束——runtime auto-push event 触发下一轮"
 > 2. **§五.5 私聊派发 6 步**（v3.4.0 写 7 步）：重写——subagent 完整自管 workboard（claim + comment + proof + complete）——大管家**只**核验——**不**接管
@@ -586,9 +592,38 @@ subagent 用自己 token 调 workboard_complete
 
 ---
 
-## 六、异常处理
+## 六、消息/note 模板库（v3.6.0 新增）
 
-### 6.1 Dx 误判排查
+> 详见 **workboard-guide.md v1.10.0 §三之5、消息/note 模板库**（10 个模板 + 派发范式 3 句话总结）。
+
+**模板索引**（按使用场景分类）：
+
+| 模板 | 用途 | 场景 |
+|------|------|------|
+| §三之5.1 workboard_create | 建卡 | 大管家派发前 |
+| §三之5.2 sessions_spawn task | spawn 完整自管 task | 大管家派发 |
+| §三之5.3 workboard_comment 软关联 | 软关联 childSessionKey | 大管家派发后 |
+| §三之5.4 v3.5.0 流式 reply | **不调 yield** 派发完成 | 大管家派发（v3.5.0 核心）|
+| §三之5.5 workboard_proof | 附证据 | subagent 验收 / 大管家验收 |
+| §三之5.6 workboard_complete summary | 完整归档 | subagent 验收 / 大管家接管 |
+| §三之5.7 大管家核验 reply | 核验报告 | 大管家 v3.5.0 不接管 |
+| §三之5.8 大管家接管 fallback A | 接管路径 | subagent claim 失败时 |
+| §三之5.9 sessions_send 续接 fallback C | 续接子代理 | subagent 跑完没 complete |
+| §三之5.10 v3.5.0 派发范式 3 句话总结 | 范式核心 | 所有派发的核心原则 |
+
+**派发核心原则**（v3.5.0 子代理模板测试写的 3 句话）：
+
+1. **大管家核心原则**：大管家 = 建卡（定任务）+ 派发（通知代理）+ 验收；中间执行全由 subagent 自治完成，大管家不介入细节。
+2. **v3.5.0 派发关键改进**：派发后**不调 sessions_yield**——reply 即本回合最终流式回复——turn 自然结束——runtime auto-push event 触发大管家下一轮——**流式输出全程保留**。
+3. **大管家只核验不接管**：subagent 完整自管 workboard 卡（claim + comment + proof + complete）——大管家仅 workboard_read 核验——除 fallback 路径外**不**调 reassign / claim / complete。
+
+**详细模板内容**：见 workboard-guide.md v1.10.0 §三之5（10 个完整模板）。
+
+---
+
+## 七、异常处理
+
+### 7.1 Dx 误判排查
 
 如果卡在 5 分钟内 `blocked` 3+ 次：
 
@@ -605,7 +640,7 @@ workboard_unblock({ id: cardId })
 
 **预防**：代理 claim 后立即 `workboard_heartbeat` 续约，避免 claim token 过期被 Dx 误判。
 
-### 6.2 子代理失败处理（两场景通用）
+### 7.2 子代理失败处理（两场景通用）
 
 | 失败类型 | 表现 | 处理 |
 |----------|------|------|
@@ -614,14 +649,14 @@ workboard_unblock({ id: cardId })
 | 任务理解错误 | proof 不通过 | 同上 |
 | 代理崩溃/timeout | session 失败 | Dx 推卡到 `blocked`；大管家读卡看 attempt 错误；重新 spawn |
 
-### 6.3 重新派发
+### 7.3 重新派发
 
 - **群场景**：群里重新发 IM 模板（不传 `--no-dup` 让建新卡；或读旧卡用新 `move --status todo` 复用）
 - **私聊场景**：重新 `sessions_spawn`（spawn task 里传新 card_id 或复用旧 card）
 
 ---
 
-## 七、版本历史
+## 八、版本历史
 
 | 版本 | 日期 | 说明 |
 |------|------|------|

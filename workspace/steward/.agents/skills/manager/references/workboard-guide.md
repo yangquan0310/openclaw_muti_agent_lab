@@ -1,4 +1,9 @@
-# Workboard 任务发布指南 v1.9.0
+# Workboard 任务发布指南 v1.10.0
+
+> **v1.10.0 重大补充**（2026-06-06 老板拍板 + 模板测试验证）：
+> 1. **新加"三之5、消息/note 模板库"**——10 个模板（workboard_create / spawn task / comment 软关联 / v3.5.0 流式 reply / proof / complete summary / 核验 reply / fallback A 接管 / fallback C 续接 / 派发范式 3 句话总结）
+> 2. 模板来源：5 轮测试验证（轮 1-3 / 重测 / 完整流程 / 模板测试）
+> 3. 指向：task-flow-guide.md v3.6.0 “§六、消息/note 模板库”与本节同表
 
 > **v1.9.0 重大补充**（2026-06-06 3 轮多轮测试验证，老板拍板）：
 > 1. **新加"三之4、v3.5.0 私聊派发新范式"**——基于 3 轮测试（subagent claim 行为 / 不 yield auto-trigger / 大管家接管 fallback）
@@ -275,6 +280,144 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 3. **workboard_reassign 行为不一致**：v3.4.0 写诗测试时 reassign 不可靠，v1.9.0 轮 3 测试时 reassign 真生效（agentId 改 writer→steward）——可能跟 Dx 状态有关
 4. **大管家 workboard_claim 强行覆盖 subagent claim 失败**："card already claimed by writer"——**不**像 Dx claim 是"软"——subagent claim 是"硬"（轮 1）
 5. **sessions_send 续接能"复活"已退出的 subagent**——让 subagent 用自己 token complete（轮 1）
+
+---
+
+## 三之5、消息/note 模板库（v1.10.0 新增，5 轮测试验证）
+
+> 源自 v8.26.0 + v3.4.0 + v3.5.0 多轮实测，**模板测试**验证可跑通。task-flow-guide.md v3.6.0 §六 与本节同表。
+
+### 3.5.1 workboard_create 模板
+
+```js
+{
+  title: "[<前缀>] <任务描述>",
+  notes: `目的：...
+流程：...
+期望：...`,
+  agentId: "<writer/reviewer/psychologist/...>",
+  priority: "low/normal/high/urgent",
+  labels: ["test", "v3.5.0", "..."],
+  status: "todo"（私聊）/ "backlog"（群派发）
+}
+```
+
+### 3.5.2 sessions_spawn task 模板（v3.5.0 完整自管）
+
+```
+你是 <agentName> agent，<任务描述>的子代理。
+
+**CARD_ID**：<cardId>（看 prompt 实际替换值）
+
+**任务目标**：...
+
+**步骤**（按 v3.5.0 范式）：
+1. workboard_claim({ id: CARD_ID, ttlSeconds: 300 }) —— 拿 token
+2. <实际任务>
+3. workboard_comment({ id, body: "✅ v3.5.0 完整自管测试认领 + <产出>" })（带 token）
+4. workboard_proof({ id, status: "passed", label: "...", note: "..." })（带 token）
+5. workboard_complete({ id, token: <claim token>, summary: "...", proof: { status: "passed" } })（带 token）
+6. 在主 DM 回复：<产出> + 简短说明
+
+**约束**：
+- 真正的内容——不要"测试"或"pong"
+- ...
+```
+
+### 3.5.3 workboard_comment 软关联模板（v3.5.0 大管家用）
+
+```
+🔗 软关联 sessionKey（<场景>）：
+- childSessionKey=<childSessionKey>
+- runId=<runId>
+- taskName=<taskName>
+- 实际 CARD_ID: <cardId>
+- <场景>：<任务> + <期望>
+```
+
+### 3.5.4 v3.5.0 流式 reply 模板（**不调 yield**）
+
+```
+v3.5.0 派发完成（**不 yield**）：
+
+🔧 workboard 卡：
+- card_id: <cardId>
+- childSessionKey: <childSessionKey>
+- runId: <runId>
+- taskName: <taskName>
+
+🧪 **v3.5.0 范式 6 步**：
+1. ✅ workboard_create
+2. ✅ sessions_spawn（task 含**完整自管**）
+3. ✅/⚠️ workboard_comment 软关联（成功/失败）
+4. 🔜 流式 reply（**不调 yield**）
+5. 🔜 turn 自然结束
+6. 🔜 runtime auto-push event → 大管家下一轮
+
+子代理任务：<任务>
+大管家**只**核验不接管——按 v3.5.0 文档。
+```
+
+### 3.5.5 workboard_proof 模板
+
+```js
+proof: {
+  status: "passed/failed",
+  label: "<test-name>",
+  command: "<action>",
+  note: "<explanation>"
+}
+```
+
+### 3.5.6 workboard_complete summary 模板
+
+```
+"<大管家/代理>验收<通过/失败>：<任务>已<完成/失败>。v3.5.0 派发范式<总结>。"
+```
+
+### 3.5.7 大管家核验 reply 模板（v3.5.0 不接管）
+
+```
+v3.5.0 验收<通过/失败>：
+- 卡 status=<done/blocked>
+- 事件流：...
+- 关键产出：...
+- 关键认知：...
+```
+
+### 3.5.8 大管家接管路径模板（v3.5.0 fallback A）
+
+```js
+// subagent claim 失败时（Dx 先占 + subagent 跑得慢）
+workboard_reassign({ id, agentId: "steward", resetFailures: false, reason: "..." })
+workboard_claim({ id, ttlSeconds: 300 })  // 拿新 token
+workboard_complete({ id, token, summary, proof })  // 标 done
+```
+
+### 3.5.9 sessions_send 续接模板（v3.4.0 §五.4 fallback C）
+
+```
+续接指令（<轮 N> 收尾）：
+你刚才 workboard_claim 拿到了 token（<token>）。**大管家自己 claim 被拒**（"card already claimed by writer"），所以请你**用你自己的 token** 调 workboard_complete 归档此卡。
+
+调用参数（务必带 token）：
+workboard_complete({
+  id: "<cardId>",
+  token: "<token>",
+  summary: "...",
+  proof: { status: "passed", label: "..." }
+})
+
+完成后只回 "pong <label> done"，然后结束本轮。
+```
+
+### 3.5.10 v3.5.0 私聊派发范式 3 句话总结（子代理模板测试写的）
+
+> 3 句话**就是范式核心**——所有其他模板都围绕这 3 句话
+
+1. **大管家核心原则**：大管家 = 建卡（定任务）+ 派发（通知代理）+ 验收；中间执行全由 subagent 自治完成，大管家不介入细节。
+2. **v3.5.0 派发关键改进**：派发后**不调 sessions_yield**——reply 即本回合最终流式回复——turn 自然结束——runtime auto-push event 触发大管家下一轮——**流式输出全程保留**。
+3. **大管家只核验不接管**：subagent 完整自管 workboard 卡（claim + comment + proof + complete）——大管家仅 workboard_read 核验——除 fallback 路径外**不**调 reassign / claim / complete。
 
 ---
 

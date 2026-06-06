@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-06T04:48:59.313Z",
+  "updatedAt": "2026-06-06T05:35:53.050Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-06-02.txt:293:293": {
       "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:293:293",
@@ -1790,70 +1790,6 @@
         "打通",
         "一下",
         "不要"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-06-02.txt:351:351": {
-      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:351:351",
-      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
-      "startLine": 351,
-      "endLine": 351,
-      "source": "memory",
-      "snippet": "Assistant: # 认领 → 执行 之间的断点 ## 完整数据流（应有 vs 实际） ``` 应有流程： workboard.claim 成功 ↓ 【断点】某机制触发 expert agent session 启动 ↓ agent 读取 card.notes ↓ agent 开始工作（读文件 / 调工具 / 写产出） ↓ agent heartbeat + 工作 ↓ agent release 实际流程： workboard.claim 成功 → SQLite 写一行 → 没有然后 ``` **断点位置**：`workboard.claim` 返回",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-04T19:00:04.694Z",
-      "lastRecalledAt": "2026-06-04T19:00:04.694Z",
-      "queryHashes": [
-        "e10dbdebc851"
-      ],
-      "recallDays": [
-        "2026-06-05",
-        "2026-06-04"
-      ],
-      "conceptTags": [
-        "workboard.claim",
-        "card.notes",
-        "执行",
-        "之间",
-        "完整",
-        "数据",
-        "应有",
-        "实际"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-06-02.txt:352:352": {
-      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:352:352",
-      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
-      "startLine": 352,
-      "endLine": 352,
-      "source": "memory",
-      "snippet": "Assistant: workboard.claim（\"打卡\"） ← bot 只能做这一步 ↓ ❌ bot 没有任何\"启动 psychologist agent session\"的能力 ``` **bot 凭证**（feishu-psychologist-allowFrom.json）只授权了 workboard 操作，**没有\"启动 agent\"权限**。 **应该有但没有的**： - 飞书 bot 收到 @ 后，**除了 claim 还要调 `sessions_spawn(agentId='psychologist', task=card.notes",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-04T19:00:04.694Z",
-      "lastRecalledAt": "2026-06-04T19:00:04.694Z",
-      "queryHashes": [
-        "e10dbdebc851"
-      ],
-      "recallDays": [
-        "2026-06-05",
-        "2026-06-04"
-      ],
-      "conceptTags": [
-        "workboard.claim",
-        "sessions-spawn",
-        "card.notes",
-        "打卡",
-        "bot",
-        "只能",
-        "一步",
-        "没有"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-06-03.txt:328:328": {
@@ -13722,18 +13658,22 @@
       "endLine": 98,
       "source": "memory",
       "snippet": "mainfont: \"Noto Serif CJK SC\" geometry: - top=1in - bottom=1in - left=1in - right=1in ``` **全文整合稿.md开头YAML块**： ```yaml --- title: AI Agent 的技术原理与心理学应用 subtitle: 面向管理心理学背景读者的科普文章 author: - 王雅欣 - 杨权 date: 2026-05-28 abstract: | 本文系统介绍 AI Agent 的技术原理及其在管理心理学中的应用。 keywords: - AI Agent - 大语言模型 - 管理心理学 - 人机协作 header-includes: - | \\usepackage{indentfirst} \\setlength{\\parindent}{2em} \\sloppy \\tolerance=1000 \\emergencystretch=3em --- ``` --- ## 排版规范更新 ### research-assistant技能 - `references/typesetting.md`：排版原则参考文档已更新 - `assets/`：保留 apa.csl、pandoc.yaml（精简版）、reference.bib - **关键发现**： 1. Pandoc的`include-in-header`只支持文件路径 2. `header-includes",
-      "recallCount": 1,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.48461187183856963,
-      "maxScore": 0.48461187183856963,
+      "totalScore": 2.02869503647089,
+      "maxScore": 0.5447461858391761,
       "firstRecalledAt": "2026-06-05T12:40:03.053Z",
-      "lastRecalledAt": "2026-06-05T12:40:03.053Z",
+      "lastRecalledAt": "2026-06-06T05:35:53.050Z",
       "queryHashes": [
-        "35b340e2674c"
+        "35b340e2674c",
+        "c5270e240604",
+        "f082f1bef65b",
+        "861930d64c77"
       ],
       "recallDays": [
-        "2026-06-05"
+        "2026-06-05",
+        "2026-06-06"
       ],
       "conceptTags": [
         "全文整合稿.md开头yaml块",
@@ -14365,6 +14305,37 @@
         "强烈",
         "偏好",
         "阶段"
+      ]
+    },
+    "memory:memory/2026-06-02.md:59:78": {
+      "key": "memory:memory/2026-06-02.md:59:78",
+      "path": "memory/2026-06-02.md",
+      "startLine": 59,
+      "endLine": 78,
+      "source": "memory",
+      "snippet": "3. **不会让任何无明确指令的工作继续** —— rps 项目被立即叫停 4. **直接给下一步指令**（\"下一步，claim\"），不绕弯 5. **要分阶段汇报问题**（\"从创建到 claim，到执行到产出全流程，按流程来汇报\"） ## 自我反省（本会话踩坑清单） | # | 错 | 修正 | |---|----|----| | 1 | 无指令就自启 rps 项目 | 收到禁止指令，挂起 | | 2 | 只看 RPC 返回不查 Dashboard（重复 3 次）| 需写入 MEMORY：完成前必须 Dashboard 视觉验证 | | 3 | 把 IM 当备选，违背老板\"双层架构\"意图 | task-guide v2.1 已修正 | | 4 | 漏 wiki synthesis 时间戳前缀 | MEMORY v8.17.0 | | 5 | 把模块当组件名理解 | 老板纠正：模块 = 工具作用的对象类 | | 6 | skill-developer 文档没改就用 | v5.4.0 改完再实施 | | 7 | claim 概念没澄清就准备自动 claim | 老板问\"claim 是数据库还是状态\"才答对 | ## 老板的 open_id - `ou_25cf20a1973aecc51f73d8e2800d7f7e`（授权发送者 / 杨权）",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.5404418483376503,
+      "maxScore": 0.5404418483376503,
+      "firstRecalledAt": "2026-06-06T05:29:30.046Z",
+      "lastRecalledAt": "2026-06-06T05:29:30.046Z",
+      "queryHashes": [
+        "9d79cce98ea4"
+      ],
+      "recallDays": [
+        "2026-06-06"
+      ],
+      "conceptTags": [
+        "task-guide",
+        "v2.1",
+        "v8.17.0",
+        "skill-developer",
+        "v5.4.0",
+        "open-id",
+        "不会",
+        "任何"
       ]
     },
     "memory:memory/2026-06-02.md:6:9": {
@@ -15139,6 +15110,37 @@
         "目标"
       ]
     },
+    "memory:memory/2026-06-03.md:158:185": {
+      "key": "memory:memory/2026-06-03.md:158:185",
+      "path": "memory/2026-06-03.md",
+      "startLine": 158,
+      "endLine": 185,
+      "source": "memory",
+      "snippet": "- 子代理在卡上 notes 看到的永远是权威信息 --- ## 四、挂起项（待跟进） | # | 任务 | 状态 | 优先级 | |---|------|------|--------| | 1 | 推 development 分支（10 commit 累积） | pending | 中 | | 2 | 跑端到端 demo 验证新流程（用 manager workboard 派一个真任务） | pending | 中 | | 3 | 4 元文件 README/METADATA 是否需要更新（同步到 v2.3 任务流） | pending | 低 | | 4 | task 工具存在性验证（实际调一次 task.create 看报不报错） | pending | 低 | | 5 | 写端到端 demo 文档（从老板交任务到归档完整流程） | pending | 低 | | 6 | agent-self-development 插件重新安装（恢复 task 工具源） | pending | 低（不阻塞） | | 7 | T041 / T042 定时任务已累积 1 天未检查 | pending | 中 | --- ## 五、跨文件引用（已落库的位置） | 规则 | 落库文件 | |------|----------| | 三件套架构 + 5+1 步流程 | `task-flow-guide.md v2.3` | | workboard CLI 用法 + Dashboard 限制 | `workboard-guide.md v1.4.0` | | TODO 7 字段 + 主",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8330578109360431,
+      "maxScore": 0.8330578109360431,
+      "firstRecalledAt": "2026-06-06T05:26:18.603Z",
+      "lastRecalledAt": "2026-06-06T05:26:18.603Z",
+      "queryHashes": [
+        "86bbc94d46ef"
+      ],
+      "recallDays": [
+        "2026-06-06"
+      ],
+      "conceptTags": [
+        "readme/metadata",
+        "v2.3",
+        "task.create",
+        "agent-self-development",
+        "task-flow-guide.md",
+        "workboard-guide.md",
+        "v1.4.0",
+        "代理"
+      ]
+    },
     "memory:memory/2026-06-03.md:16:17": {
       "key": "memory:memory/2026-06-03.md:16:17",
       "path": "memory/2026-06-03.md",
@@ -15349,19 +15351,23 @@
       "endLine": 194,
       "source": "memory",
       "snippet": "| TODO 7 字段 + 主/子任务模板 | `task-flow-guide.md v2.3` 第四章 + `assets/project-level/TODO.template` | | IM 群模板 | `task-flow-guide.md v2.3` 步骤 4 | | workboard notes 模板 | `cli.py` `TASK_NOTES_TEMPLATE` | | claim 协议 | `workboard-guide.md v1.4.0` 步骤 5 + `HANDBOOK.template` | | 禁止改依赖包 | `AGENTS.md` 第三章 红线 + `MEMORY.md` If-Then | | 工具分工 | `workboard-guide.md v1.4.0` 第三章 | --- *Flush 时间：2026-06-03 03:14 Asia/Shanghai* *会话长度：约 5 小时（22:29→03:14）* *commits：10*",
-      "recallCount": 5,
+      "recallCount": 9,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.7782727316021916,
-      "maxScore": 0.5794871136546135,
+      "totalScore": 5.388757149494459,
+      "maxScore": 0.8708880688913372,
       "firstRecalledAt": "2026-06-04T14:59:38.142Z",
-      "lastRecalledAt": "2026-06-06T04:48:59.313Z",
+      "lastRecalledAt": "2026-06-06T05:26:18.685Z",
       "queryHashes": [
         "780c95356657",
         "3f5ae218b143",
         "a5b6c32eb73e",
         "96d3d6f2de79",
-        "7e7b987e747e"
+        "7e7b987e747e",
+        "214472ac465b",
+        "a002c45be2ba",
+        "86bbc94d46ef",
+        "37e12783f64c"
       ],
       "recallDays": [
         "2026-06-04",
@@ -15689,13 +15695,13 @@
       "endLine": 72,
       "source": "memory",
       "snippet": "| **数据/执行层** | `workboard` 卡片 | 派发、状态机、运行轨迹 | 大管家 CLI（create/start/move/list/read/bulk）+ 代理插件工具（claim/heartbeat/release/proof） | | **可见层** | **IM 群艾特** | 1 个模板（认领用） | 大管家 | **5+1 步流程**： ``` [1] 大管家 create card（--session, 默认 backlog） [2] 大管家 IM 群艾特代理（IM 模板，task_desc 抬头） [3] 代理 claim（workboard_claim 插件工具 + 群里回\"已认领\"） [4] 大管家 start（CLI，只在 claim 之后） [5] 代理执行（chat.send 触发 run） [6] 代理执行完 → 群里发完成消息 + workboard_proof [7] 大管家核验 → workboard.move → done / blocked ``` ### 2. 两个模板有意分开 | 模板 | 用途 | 内容 | 位置 | |------|------|------|------| | **IM 群模板** | 认领 | workboard 信息 + task_desc + 前置要求 + \"领取后反馈\" | task-flow-guide.md v2.3 步骤 4 | | **workboard notes 模板** | 执行 | 目标/约束/输入/产出 + \"完成反馈\" | cli.py `TASK_NOTES_",
-      "recallCount": 8,
+      "recallCount": 12,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 4.524865058064461,
-      "maxScore": 0.5960467800498008,
+      "totalScore": 7.049920048499256,
+      "maxScore": 0.8421211741210523,
       "firstRecalledAt": "2026-06-03T19:09:52.967Z",
-      "lastRecalledAt": "2026-06-06T04:48:59.313Z",
+      "lastRecalledAt": "2026-06-06T05:26:18.603Z",
       "queryHashes": [
         "39ae31636f84",
         "b02bd3dc2a6e",
@@ -15704,7 +15710,11 @@
         "8988a57dc580",
         "a5b6c32eb73e",
         "24c9ac33b50f",
-        "7e7b987e747e"
+        "7e7b987e747e",
+        "214472ac465b",
+        "a002c45be2ba",
+        "13935b89b7af",
+        "86bbc94d46ef"
       ],
       "recallDays": [
         "2026-06-04",
