@@ -1,4 +1,10 @@
-# 任务流指南 v3.2.0
+# 任务流指南 v3.3.0
+
+> **v3.3.0 重大修复**（2026-06-06 老板纠错）：
+> 1. **删除所有 `manager workboard` CLI 引用**（v2026.6.6）—— `scripts/workboard/` 932 行 Python 已删
+> 2. **建卡/验收全部走 `workboard_*` agent tool**（plugin contract tools 一直就有，见 `extensions/workboard/openclaw.plugin.json`）
+> 3. **shell 备选用 `openclaw workboard` plugin CLI**（runtime-slash 命令）
+> 4. **踩坑教训**：v8.25.0 拍板时漏看了 `workboard_create` agent tool，错让老板创建 932 行 Python 脚本——**完全没必要的**
 
 > **v3.2.0 重构**（2026-06-06 老板指正）：
 > 1. 按**场景**为主线分节：群派发 vs 私聊派发——两场景自包含，读者"查群怎么发"或"查私聊怎么发"一节搞定
@@ -19,7 +25,7 @@
 | 层级 | 工具 | 角色 | 谁用 |
 |------|------|------|------|
 | **纪律层** | `TODO.md` | 看板、状态记录（仅群场景） | 大管家 |
-| **执行层** | `workboard` 卡片 | 任务声明、状态机、进度反馈 | 大管家 CLI（建卡）+ 代理插件工具（claim/heartbeat/proof/comment）|
+| **执行层** | `workboard` 卡片 | 任务声明、状态机、进度反馈 | 大管家 agent tool（建卡/验收）+ 代理 agent tool（claim/heartbeat/proof/comment）|
 | **通知层** | **IM 群艾特**（群场景）/ **`sessions_spawn`**（私聊场景） | 派发通道 | 大管家手动 |
 
 **关键洞察**：
@@ -27,15 +33,15 @@
 - **workboard 永远只管"建卡/管理"**——**不**提供派发能力
 - **dashboard 是任务进度主可见层**——老板通过 dashboard 看进度
 
-### 1.2 大管家 3 动作铁律
+### 1.2 大管家 3 动作铁律（v3.3.0 重写）
 
 ```
-[1] 建卡     →  manager workboard create
+[1] 建卡     →  workboard_create（agent tool，主用）/ openclaw workboard create（plugin CLI，shell 备选）
 [2] 派发     →  IM 群艾特（群场景）  /  sessions_spawn（私聊场景）
-[3] 验收     →  workboard_comment + manager workboard move --status done
+[3] 验收     →  workboard_read + workboard_comment + workboard_complete（agent tool，全部走 tool）
 ```
 
-**绝对禁止**给 workboard CLI 加 spawn / dispatch 子命令。派发动作永远在大管家会话里手动做。
+**绝对禁止**给 workboard 加 spawn / dispatch 子命令。**绝对禁止**重建 `manager workboard` CLI（v3.3.0 删除后永不重建）。派发动作永远在大管家会话里手动做。
 
 ### 1.3 workboard 状态机（Dx 自动）
 
@@ -92,27 +98,40 @@
 
 **TODO 7 字段规范**（仅群场景用，私聊不写 TODO.md）见 [四、通用规则 § 4.1](#41-todo-7-字段规范仅群场景用)。
 
-#### 步骤 2：建 workboard 卡（绑群 session）
+#### 步骤 2：建 workboard 卡（绑群 session，v3.3.0 改用 agent tool）
 
-```bash
-manager workboard create \
-  --assignee {agent} \
-  --priority {high|normal|urgent} \
-  --session 'agent:{agent}:feishu:group:{oc_id}' \
-  --task-desc "..." \
-  --agent-role {agent} \
-  --goal "..." \
-  --constraints "..." \
-  --feedback "完成后在群聊中艾特大管家汇报" \
-  --no-dup                    # v3.0.1 防重复建卡
-# 不传 --status → 默认 backlog（v1.4.0 起的默认行为）
+```js
+// agent tool（主用，完整功能）
+workboard_create({
+  title: "...",
+  notes: "目标：... 约束：... 任务描述：...",
+  agentId: "{agent}",            // 接收人
+  priority: "high",              // high / normal / urgent
+  labels: ["..."],
+  status: "backlog",             // 群场景默认 backlog（Dx 自动同步）
+  // 不绑 session 直接传（agent tool 无 --session 概念）
+  // 改用 workboard_comment 写软关联：sessionKey=agent:{agent}:feishu:group:{oc_id}
+  idempotencyKey: "{title}|{oc_id}"  // v3.0.1 防重复建卡
+})
+
+// 建卡后立即建软关联
+workboard_comment({
+  id: cardId,
+  body: "sessionKey=agent:{agent}:feishu:group:{oc_id}\nfeedback: 完成后在群聊中艾特大管家汇报"
+})
 ```
 
-**关键约束**：
-- **必须传 `--session`**——绑到群里 session，Dx 自动同步 `backlog → running → review`
-- **禁止**手动 `move --status todo`（Dx 自动覆盖）
+**shell 备选**（plugin CLI 不支持 session 绑定，仅最简建卡）：
+```bash
+openclaw workboard create "title" --agent {agent} --priority high --labels "..."
+# ⚠️ plugin CLI 无 --session / --no-dup / 自定义字段，复杂建卡必须用 agent tool
+```
+
+**关键约束**（v3.3.0）：
+- **绑定群 session**用 `workboard_comment` 写软关联（plugin CLI 不支持 sessionKey，agent tool 也没有 `--session` flag）
+- **Dx 自动同步**依赖 `metadata.sessionKey`——所以建卡后**必须** comment 写明
 - **文件路径必须绝对**——如 `/data/disk/仓库/.../temp/认知范式补充资料.md`
-- 传 `--no-dup`（v3.0.1）——建卡前查同 title + sessionKey 是否有活跃卡
+- 传 `idempotencyKey`（v3.0.1 等价 `--no-dup`）——建卡前查同 title + sessionKey 是否有活跃卡
 
 #### 步骤 3：IM 5 段模板艾特（**必须**）
 
@@ -157,11 +176,11 @@ manager workboard create \
 7. 代理在群里发"完成 + 艾特大管家"消息
 
 大管家核验（review 状态时介入）：
-1. manager workboard read 看产出
+1. `workboard_read({ id: cardId })` 看产出
 2. 读文件手动核验（4 必填 / 引用规范 / proof status: passed）
-3. workboard_comment 写核验结果
+3. `workboard_comment({ id, body: "核验结果..." })` 写核验结果
 4. 更新 TODO.md 为 [x] + 核验结果
-5. manager workboard move --status done
+5. `workboard_complete({ id, summary, proof })` → done
 6. （可选）群里发简短完成确认（**不是模板**，自己写）
 ```
 
@@ -181,26 +200,28 @@ manager workboard create \
 
 ### 3.2 私聊派发 3 步流程
 
-#### 步骤 1：建 workboard 卡（**不**绑 session）
+#### 步骤 1：建 workboard 卡（**不**绑 session，v3.3.0 改用 agent tool）
 
-```bash
-manager workboard create \
-  --assignee {agent} \
-  --priority {normal|high|urgent} \
-  --no-session                     # 关键：v3.1.0 私聊不联 dashboard session
-  --task-desc "..." \
-  --agent-role {agent} \
-  --goal "..." \
-  --constraints "..." \
-  --feedback "完成后在当前会话中向派发者反馈"
-# 不传 --status → 默认 todo（不是 backlog）
+```js
+// agent tool（主用）
+workboard_create({
+  title: "...",
+  notes: "目标：... 约束：... 任务描述：...",
+  agentId: "{agent}",
+  priority: "normal",             // normal / high / urgent
+  labels: ["..."],
+  status: "todo"                  // 私聊场景默认 todo（不需 Dx 同步）
+  // 不传 idempotencyKey（私聊单人任务，重复概率低）
+})
+
+// （可选）反馈措辞直接写 notes 里：完成后在当前会话中向派发者反馈
 ```
 
-**关键调整（vs 群派发建卡）**：
-- **`--no-session`**：不联动 dashboard session（私聊场景不需要绑到特定 session）
-- **反馈措辞**：默认"在当前会话中向派发者反馈"（v1.5.0 动态反馈措辞按 session 场景自动选）
-- **不传 `--status`** → 默认 `todo`（不是 backlog，因为不需 Dx 同步）
-- **不传 `--no-dup`**（私聊单人任务，重复概率低）
+**关键调整（vs 群派发建卡，v3.3.0）**：
+- **不传 sessionKey**——agent tool 没有 sessionKey 字段（plugin CLI 也没有 `--no-session` flag）
+- **不需 `workboard_comment` 写软关联**——私聊场景下 sessions_spawn 返回的 childSessionKey 才需要 comment 写
+- **不传 `idempotencyKey`**（私聊单人任务，重复概率低）
+- **反馈措辞直接写 notes** 里：默认"在当前会话中向派发者反馈"
 
 #### 步骤 2：sessions_spawn 启子代理（大管家手动，**不**走 workboard CLI）
 
@@ -228,7 +249,7 @@ sessions_spawn(
 ```
 
 **为什么手 sessions_spawn 而不靠 workboard CLI**：
-- `manager workboard` **不**提供派发能力（v1.5.0 删除 start，剩 16 个子命令都是"看板/管理"动作）
+- `workboard_*` agent tool / `openclaw workboard` CLI **不**提供 spawn 派发能力（v1.5.0 删了 start，v3.3.0 仍维持）——派发永远在大管家会话里手动做
 - 私聊派发没有"群艾特"通道，**必须**由大管家主动启 session
 - 隔离 `isolate=True` 保证子代理不污染主 DM 会话上下文
 - spawn 时**显式传 card_id + card_url**——让子代理知道"干的是这张卡"
@@ -246,10 +267,10 @@ sessions_spawn(
 7. 子代理在 DM 会话里回复"已完成 + 产出路径"（spawn task 里显式要求）
 
 大管家核验：
-1. manager workboard read 看产出
+1. `workboard_read({ id: cardId })` 看产出
 2. 读文件手动核验
-3. workboard_comment 写核验结果
-4. manager workboard move --status done
+3. `workboard_comment({ id, body })` 写核验结果
+4. `workboard_complete({ id, summary, proof })` → done
 5. **不**更新 TODO.md（私聊单人任务不必建 TODO）
 6. **不**发群完成确认（没群可发；DM 会话里大管家直接读 proof 就知道完成了）
 ```
@@ -281,7 +302,7 @@ Work on this OpenClaw Workboard card:
 | 触发 | 老板在群里交任务 | 老板在 DM 里交任务 |
 | 派发通道 | IM 群 5 段模板艾特 | **大管家手动 `sessions_spawn`** |
 | 代理收任务方式 | 群里被 @ + 看 workboard | 启新 session + 传任务 + 看 workboard |
-| workboard session | `--session feishu:group:oc_xxx` | **`--no-session`** |
+| workboard session | `workboard_comment` 写 `sessionKey=agent:writer:feishu:group:oc_xxx`（agent tool / CLI 都不直接支持 `--session`） | 不传 sessionKey，私聊无 session 关联 |
 | 默认 status | backlog（Dx 推） | todo（无 Dx 同步） |
 | 进度反馈 | workboard（proof + comment） | **同群派发** |
 | 完成汇报 | 群里艾特大管家 | DM 会话里大管家自己看 proof |
@@ -382,15 +403,15 @@ Work on this OpenClaw Workboard card:
 
 如果卡在 5 分钟内 `blocked` 3+ 次：
 
-```bash
-# 1. 读卡确认 attempt 状态
-manager workboard read --id <card_id>
+```js
+// 1. 读卡确认 attempt 状态
+workboard_read({ id: cardId })
 
-# 2. 如果 attempt 状态是 running（Dx 误判），unblock
-workboard_unblock
+// 2. 如果 attempt 状态是 running（Dx 误判），unblock
+workboard_unblock({ id: cardId })
 
-# 3. 如果 attempt 状态是 blocked（真失败），看 attempt 错误信息
-# 4. retry：v1.5.0 暂时无 retry CLI，手动重新 spawn / 群里重新 @ 即可
+// 3. 如果 attempt 状态是 blocked（真失败），看 attempt 错误信息
+// 4. retry：手动重新 spawn（私聊）/ 群里重新 @ 代理（群场景）
 ```
 
 **预防**：代理 claim 后立即 `workboard_heartbeat` 续约，避免 claim token 过期被 Dx 误判。

@@ -51,32 +51,55 @@ metadata:
 
 ## 快速调用
 
-```bash
-# === Workboard 任务发布（v1.5.0 简化，start 子命令已删） ===
-# 群派发建卡：绑群 session，Dx 自动同步
-manager workboard create --assignee writer --session 'agent:writer:feishu:group:oc_xxx' --title '...' --no-dup
-# 私聊派发建卡：不绑 session，大管家手动管状态
-manager workboard create --assignee writer --no-session --title '...'  # v3.2.0 私聊场景
-# 核验
-manager workboard read --id <card_id>
-workboard_comment --id <card_id> --body "大管家核验通过：..."      # 走插件工具（大管家也可以 CLI 路径）
-manager workboard move --id <card_id> --status done
+```js
+// === Workboard 任务发布（v3.3.0 改用 agent tool） ===
 
-# === 派发动作（不走 workboard CLI） ===
-# 群场景：IM 5 段模板艾特（看 task-flow-guide.md §二）
-# 私聊场景：sessions_spawn(agentId=<assignee>, isolate=True, task=...)  # 看 task-flow-guide.md §三
+// 群派发建卡（agent tool 主用，plugin CLI 不支持 session 绑定）
+workboard_create({
+  title: "...",
+  notes: "目标：... 约束：... 任务描述：...",
+  agentId: "writer",
+  priority: "high",
+  labels: ["..."],
+  status: "backlog"  // 群场景默认 backlog（Dx 自动同步）
+})
+// 绑群 session（用 workboard_comment 写软关联，agent tool / CLI 都无 --session flag）
+workboard_comment({ id: cardId, body: "sessionKey=agent:writer:feishu:group:oc_xxx" })
 
-# === 项目整理 ===
+// 私聊派发建卡（不绑 session）
+workboard_create({
+  title: "...",
+  notes: "...",
+  agentId: "writer",
+  priority: "high",
+  status: "todo"  // 私聊场景默认 todo
+})
+
+// 核验
+workboard_read({ id: cardId })
+workboard_comment({ id: cardId, body: "大管家核验通过：..." })
+workboard_complete({ id: cardId, summary: "...", proof: { status: "passed" } })
+
+// === 派发动作（不走 workboard） ===
+// 群场景：IM 5 段模板艾特（看 task-flow-guide.md §二）
+// 私聊场景：sessions_spawn({ agentId, task, isolate: true })  # 看 task-flow-guide.md §三
+
+// === shell 备选：plugin CLI（最简建卡，复杂建卡必须用 agent tool） ===
+// openclaw workboard create "title" --agent writer --priority high
+// openclaw workboard list [--board default] [--status todo]
+// openclaw workboard show <id>
+// openclaw plugins enable workboard   # 启用 plugin
+
+// === 项目整理 ===
 manager maintainer organize <project_path> [--dry-run]
 manager maintainer sync <project_path> [--dry-run]
 manager maintainer check-updates <project_path>
 
-# === 查看帮助 ===
-manager workboard --help
+// === 查看帮助 ===
 manager maintainer --help
 ```
 
-**大管家 3 动作铁律**（v3.2.0 拍板）：**建卡 + im/spawn 派发 + 验收**。workboard CLI 永远只管"建卡/管理"，派发动作脱离 workboard。
+**大管家 3 动作铁律**（v3.3.0 重写）：**建卡（agent tool）+ im/spawn 派发 + 验收（agent tool）**。workboard CLI (`manager workboard`) **已删除**（v2026.6.6，932 行 Python 脚本），派发动作脱离 workboard 仍正确。
 
 ---
 
@@ -112,6 +135,7 @@ manager maintainer --help
 | 5.7.0 | 2026-06-03 | **skill-developer 规范对齐**：删 `_meta.json`、`references/README.md`（v5.5.0 移除）；`guide.md`→`manager-overview.md`（noun phrase 命名）；references 清理冗余（-3个文件）；版本历史全量修复 |
 | 5.6.0 | 2026-06-02 | **修复 UX bug**：`claim --auto-start` 选项。claim 后自动用 update RPC 设置 `execution.status=running`，避免 dashboard 仍显示「开始」按钮（claim 只改 board.status，不改 execution.status） |
 | 5.5.0 | 2026-06-02 | **Python 迁移**：workboard 模块从 Node.js (wb-rpc.mjs) 迁移至 Python 包 (`scripts/workboard/`)，集成到 manager CLI 统一入口（`manager workboard <子命令>`）。修复设备身份签名时间差 bug |
+| 5.13.0 | 2026-06-06 | **重大修复（老板纠错）**：删除 `scripts/workboard/` 整个目录（932 行 Python）。`manager workboard <子命令>` CLI 整段移除（main.py:49-50）。建卡/验收全部走 `workboard_*` agent tool（plugin contract tools 一直就有），shell 备选用 `openclaw workboard` plugin CLI。修复 v8.25.0 沉淀错误认知（漏看 `workboard_create` tool）。workboard-guide.md v1.6.0 → v1.7.0；task-flow-guide.md v3.2.0 → v3.3.0 |
 | 5.4.0 | 2026-06-02 | 新增场景：**Workboard 任务发布**（workboard-guide.md）。建/改/移/删/批量/归档走 gateway RPC + 设备身份认证 |
 | 5.3.0 | 2026-05-28 | description 合并触发条件（删除 body 触发条件章节），覆盖全部12场景 |
 | 5.2.0 | 2026-05-28 | 修复：CLI与实际不符、版本号统一、补充触发边界、同步 index.md 内容 |

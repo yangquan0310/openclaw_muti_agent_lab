@@ -5,7 +5,11 @@
 
 模块:
   maintainer  项目整理（organize/sync-templates/check-updates/maintain/move/meta）
-  workboard   Workboard 任务发布/管理（list/read/create/claim/heartboard/release/...）
+
+> **v2026.6.6 重大修复**：删除 `scripts/workboard/` 整个目录（932 行 Python 脚本）。
+> 原 `manager workboard create/read/move/...` 全部由 **agent tool**（`workboard_create` / `workboard_read` / `workboard_complete` / `workboard_comment` / ...）
+> 或 **plugin 自带 CLI**（`openclaw workboard create/list/show/...`）替代。
+> 详见 references/workboard-guide.md v1.7.0。
 """
 
 import sys
@@ -16,7 +20,6 @@ sys.path.insert(0, str(_SKILL_ROOT))
 
 _MODULES = {
     "maintainer": "项目整理",
-    "workboard": "Workboard 任务发布/管理",
 }
 
 
@@ -46,10 +49,6 @@ def main() -> int:
         from scripts.maintainer.Maintainer import main as mnt_main
         del sys.argv[1]
         return mnt_main()
-    elif module == "workboard":
-        from scripts.workboard.cli import main as wb_main
-        del sys.argv[1]
-        return wb_main()
     else:
         print(f"Error: 未知模块 '{module}'")
         print("可用模块:", ", ".join(_MODULES.keys()))

@@ -1,5 +1,12 @@
-# Workboard 任务发布指南 v1.6.0
+# Workboard 任务发布指南 v1.7.0
 
+> **v1.7.0 重大修复**（2026-06-06 老板纠错，老板拍板）：
+> 1. **删除 `manager workboard` CLI**（v2026.6.6）—— `scripts/workboard/` 整个目录（932 行 Python）已删除
+> 2. **建卡改用 agent tool**（`workboard_create`）或 **plugin 自带 CLI**（`openclaw workboard create`）
+> 3. **核验/验收改用 agent tool**（`workboard_read` / `workboard_comment` / `workboard_complete` / `workboard_delete` 等）
+> 4. **大管家 3 动作铁律保持**（建卡 + im/spawn 派发 + 验收），但"建卡"和"验收"全部走 agent tool，**不再走 manager CLI**
+> 5. **踩坑教训**：v8.25.0 拍板时漏看了 `workboard_create` agent tool 一直就在 plugin contract tools 里（`extensions/workboard/openclaw.plugin.json:18`），错让老板创建 932 行 Python 脚本——**完全没必要的**。**v1.7.0 撤销 v8.25.0 沉淀，建卡用 tool/plugin CLI**
+>
 > **v1.6.0 同步升级**（2026-06-06，对接 SKILL.md v5.12.0 老板拍板）：
 > 1. **明确 workboard 永远只管"建卡/管理"**（v3.2.0 铁律）—— workboard CLI 不接派发能力，**绝对禁止**加 spawn / dispatch 子命令
 > 2. **加"3 动作铁律"章节**（v1.6.0 新增）——大管家 3 个动作：建卡 + im/spawn 派发 + 验收
@@ -95,25 +102,28 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 | `workboard_proof` | 附证据(artifact)| **代理**(执行完附产出) |
 | `workboard_unblock` | 解阻塞卡 | 代理 + 大管家 |
 
-### 大管家 CLI(仅派发层)
+### 大管家建卡/验收（agent tool / plugin CLI，v1.7.0 重写）
 
-| CLI 子命令 | 用途 |
-|-----------|------|
-| `manager workboard create` | 建卡 |
-| ~~`manager workboard start`~~ | ~~start(claim 之后才调)~~ v1.5.0 删除 |
-| `manager workboard move` | 移动(看板拖拽的 CLI 等价) |
-| `manager workboard list` | 列卡 |
-| `manager workboard read` | 读卡 |
-| `manager workboard bulk` | 批量(archive/delete/move) |
-| `manager workboard delete` | 删卡 |
+**会话内**（大管家主用）：**直接用 `workboard_*` agent tool**——plugin contract tools 里**一直就有**（见 `extensions/workboard/openclaw.plugin.json`）。
+**shell / cron 场景**（次用）：**用 `openclaw workboard` plugin 自带 CLI**（runtime-slash 命令）。
 
-**关键分工**（v1.6.0 重写）：
-- **大管家** = **建卡层**（CLI）。负责：**建卡**（`manager workboard create`）+ 核验后归档（read + workboard_comment + move done）
-- **代理** = 执行层（插件工具）。负责：claim、heartbeat、release、proof
-- **派发动作**（im 群艾特 / sessions_spawn）**由大管家在会话里手动做**，**不走 workboard CLI**
+| 动作 | agent tool（推荐） | plugin CLI（shell 备选） |
+|------|---------------------|---------------------------|
+| 建卡 | `workboard_create({ title, notes, agentId, status, priority, labels, ... })` | `openclaw workboard create "title" --notes "..." --agent writer --priority high --labels ...` |
+| 读卡 | `workboard_read({ id: cardId })` | `openclaw workboard show <id>` |
+| 列卡 | `workboard_list({ status, boardId, limit })` | `openclaw workboard list [--board ...] [--status ...]` |
+| 评论 | `workboard_comment({ id, body })` | （plugin CLI 无此子命令，用 tool） |
+| 验收归档（move done） | `workboard_complete({ id, summary, proof })` | （plugin CLI 无此子命令，用 tool） |
+| 删卡 | `workboard_delete({ id })` | （plugin CLI 无此子命令，用 tool） |
+| 批量（archive/move） | 多次循环调 `workboard_*` tool | （plugin CLI 无 bulk，循环调 create/list） |
 
-> ❌ **不暴露给大管家 CLI 的工具**：claim / heartbeat / release / proof。代理**直接用插件工具**，不绕大管家。
-> ❌ **绝对禁止**给 workboard CLI 加 spawn / dispatch 子命令（v1.6.0 拍板）——派发动作永远在会话里手动做。
+**关键分工**（v1.7.0 重写）：
+- **大管家** = **建卡/验收层**（agent tool）。负责：**建卡**（`workboard_create`）+ **验收**（`workboard_read` + `workboard_comment` + `workboard_complete` / `workboard_delete`）
+- **代理** = 执行层（agent tool）。负责：claim、heartbeat、release、proof、comment
+- **派发动作**（im 群艾特 / sessions_spawn）**由大管家在会话里手动做**，**不走 workboard**
+
+> ❌ **绝对禁止**重建 `manager workboard` CLI 或新增 spawn / dispatch 子命令（v1.6.0 + v1.7.0 拍板）——派发动作永远在会话里手动做。
+> ❌ **绝对禁止**再回退到 `scripts/workboard/` Python 包（v1.7.0 删除后，永不重建）。如需 shell 操作，**只用 `openclaw workboard` plugin CLI**。
 
 ---
 
@@ -121,12 +131,12 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 
 > **v1.6.0 老板拍板**（2026-06-06）：workboard 是**任务进度控制工具**（看 §五、卡状态机），**不**包含派发能力本身。
 
-### 大管家 3 动作铁律
+### 大管家 3 动作铁律（v1.7.0 重写）
 
 ```
-[1] 建卡    →  manager workboard create
+[1] 建卡    →  workboard_create（agent tool，主用）/ openclaw workboard create（plugin CLI，shell 备选）
 [2] 派发    →  IM 群艾特（群场景）  /  sessions_spawn（私聊场景）
-[3] 验收    →  workboard_comment + manager workboard move --status done
+[3] 验收    →  workboard_read + workboard_comment + workboard_complete（agent tool，全部走 tool）
 ```
 
 ### 两种派发场景下 workboard 的角色
@@ -138,7 +148,10 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 
 ### 为什么 workboard 不接派发
 
-- workboard CLI 的子命令**全部是"建卡/管理"**类动作：create / update / move / delete / archive / bulk / list / read / export + 9 个代理工具（claim / heartbeat / release / comment / proof / unblock / attachment_* / notify_* / board_*）
+- workboard plugin 暴露的**所有 35 个 agent tool**（`extensions/workboard/openclaw.plugin.json` 里的 `contracts.tools`）都是"建卡/管理/执行"类动作：
+- **建卡/验收**（大管家用）：`workboard_create` / `workboard_read` / `workboard_list` / `workboard_comment` / `workboard_complete` / `workboard_delete` / `workboard_attachment_*` / `workboard_board_*` / `workboard_stats` / `workboard_link` / `workboard_promote` / `workboard_reassign` / `workboard_unblock` / `workboard_specify` / `workboard_decompose` / `workboard_notify_*`
+- **执行**（代理用）：`workboard_claim` / `workboard_heartbeat` / `workboard_release` / `workboard_proof` / `workboard_runs` / `workboard_block` / `workboard_reclaim` / `workboard_dispatch` / `workboard_worker_log` / `workboard_protocol_violation`
+- **plugin CLI 备选**（shell 场景）：`openclaw workboard create / list / show / dispatch`
 - **没有** spawn / dispatch / start 子命令（v1.5.0 删除 start，v1.6.0 确认永远不再加回来）
 - 派发动作（IM 群艾特 / sessions_spawn）**永远**由大管家在会话里手动做
 
@@ -159,7 +172,7 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 ```
 老板交任务
     ↓
-[1] 大管家 create card(--session, 默认 backlog)
+[1] 大管家 workboard_create({...}) 建卡（agent tool，可绑 session，agentId=接收人）
     ↓
 [2] 大管家 群里艾特代理(IM 模板,**开头**带 workboard 信息)
     ↓
@@ -167,10 +180,11 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
     ↓ (代理自己 chat.send / 调度启 run,不走 workboard start)
 [4] 代理执行完 → 群里发完成消息 + workboard_proof 附产出
     ↓
-[5] 大管家核验产出 → 插件工具 move → done / blocked
+[5] 大管家核验产出 → workboard_read + workboard_complete → done / blocked
 ```
 
 > v1.5.0 重要变化:**大管家不再调 `manager workboard start`**。代理认领后自己启 run(`chat.send` 触发或 scheduler 调起)。workboard 卡只作"任务声明/看板",派发用 IM 群,启 run 由代理负责。
+> v1.7.0 重大修复:**`manager workboard` CLI 整个删除**（`scripts/workboard/` 932 行 Python 已删）。建卡/验收全部走 agent tool，shell 备选用 `openclaw workboard`。
 
 ### 步骤 1:明确任务
 
@@ -179,31 +193,57 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 - 指派对象(哪个 agent:`writer` / `reviewer` / `psychologist` / ...)
 - 优先级 + 标签(`low/normal/high/urgent` + `labels`)
 
-### 步骤 2:建卡(大管家 CLI)
+### 步骤 2:建卡（agent tool / plugin CLI，v1.7.0 重写）
 
-```bash
-manager workboard create \
-  --assignee {agent} \
-  --priority high \
-  --session 'agent:{agent}:feishu:group:{oc_id}' \
-  --task-desc "..." \
-  --agent-role {agent} \
-  --goal "..." \
-  --constraints "..." \
-  --feedback "..." \
-  --no-dup                    # v3.0.1 新增:避免重复建卡
+```js
+// 主用：agent tool（会话内）
+workboard_create({
+  title: "...",
+  notes: "...",
+  agentId: "{agent}",           // 接收人
+  priority: "high",              // low / normal / high / urgent
+  labels: ["..."],
+  status: "todo",                // 可选；不传默认 todo
+  // 可选：绑定 session（与不绑互斥，二选一）
+  // boardId: "default",
+  // tenant: "...",
+  // idempotencyKey: "..."        // 避免重复建卡
+})
 ```
 
-**关键选项**:
-- `--session X`:指定关联 session(与 `--no-session` 互斥)
-- `--no-dup`(v3.0.1 新增):建卡前查同 title + sessionKey 是否已有活跃卡(backlog/todo/running),有则返回已存在卡 ID 不创建
-- **不传 `--status` 时**:有 `--session` → 默认 `backlog`;无 `--session` → 默认 `todo`
-  - **为什么 backlog?** Dx 自动同步只从 `backlog → running` 同步,不会从 `backlog` 冲到 `review`
-  - **禁止**手动 `move --status todo`(Dx 自动覆盖)
-- `--engine {codex,claude}`:execution.engine
-- `--model`:execution.model(不传默认 `minimax/MiniMax-M3`)
+**shell 备选**：plugin CLI
+```bash
+openclaw workboard create "title" \
+  --notes "..." \
+  --agent {agent} \
+  --priority high \
+  --labels "label1,label2" \
+  [--board default]
+```
 
-**互斥校验**:`--session` 和 `--no-session` 不能同时用。
+> ⚠️ **plugin CLI 不支持** `--session` / `--no-session` / `--no-dup` / `--assignee` / 自定义字段。**复杂建卡必须用 agent tool**。
+
+**关键选项**（agent tool `workboard_create` 参数）：
+- `title`（必填）：卡标题
+- `notes`（可选）：详细描述
+- `agentId`（必填，建议）：接收代理 ID（`writer` / `reviewer` / `psychologist` / ...）
+- `status`（可选，默认 `todo`）：初始状态
+- `priority`（可选，默认 `normal`）：low / normal / high / urgent
+- `labels`（可选）：标签数组
+- `tenant`（可选）：租户命名空间
+- `boardId`（可选，默认 `default`）：看板命名空间
+- `idempotencyKey`（可选）：幂等键（避免重复建卡）
+- `parents`（可选）：父卡 ID 数组（依赖关系）
+- `workspace`（可选）：workspace 配置
+- `maxRetries` / `maxRuntimeSeconds` / `scheduledAt`（可选）：运行时参数
+- `skills`（可选）：建议技能
+
+**绑定 session 的正确方式**（v1.7.0）：
+- **plugin CLI / agent tool 都不直接支持 `--session`**（plugin CLI 没有这个 flag，agent tool 也没有 `sessionKey` 参数）
+- **改用 metadata.sessionKey**：建卡后用 `workboard_comment({ id, body: "sessionKey=agent:xxx:feishu:group:oc_xxx" })` 写软关联
+- **或**用 `workboard_notify_subscribe({ cardId, sessionKey, target, eventKinds: ["completed","failed"] })` 建立通知通道
+
+**互斥校验**（v1.7.0 已无 `--session` / `--no-session` 概念）：agent tool 的所有参数都通过单一对象传入，没有 CLI 风格的"互斥 flag"问题。
 
 ### 步骤 3:IM 群里艾特代理
 
@@ -260,22 +300,33 @@ manager workboard create \
 
 **Dx 自动同步**:run 完成后,Dashboard Dx 把卡从 `running` 移到 `review`。
 
-### 步骤 6:大管家核验 + 归档
+### 步骤 6:大管家核验 + 归档（v1.7.0 全部走 agent tool）
 
-```bash
-# 读卡看产出
-manager workboard read --id <card_id>
+```js
+// 1. 读卡看产出
+workboard_read({ id: card_id })
 
-# 核验通过:移到 done
-manager workboard move --id <card_id> --status done
+// 2. 核验通过:workboard_complete 移到 done（带 summary + proof）
+workboard_complete({
+  id: card_id,
+  summary: "大管家核验通过：...",
+  proof: { status: "passed", label: "...", note: "..." },
+  artifacts: [{ label: "...", path: "/path/to/output" }]
+})
 
-# 核验失败:移到 blocked(人工介入)
-manager workboard move --id <card_id> --status blocked
+// 3. 核验失败（人工介入）：workboard_block 移到 blocked
+workboard_block({ id: card_id, reason: "核验失败：..." })
 
-# 归档(可选)
-manager workboard archive --id <card_id>
-# 或批量
-manager workboard bulk --action archive --archive true --ids <id1>,<id2>
+// 4. 归档（可选）
+workboard_board_archive({ id: card_id, archived: true })
+
+// 5. 删卡（不可恢复）
+workboard_delete({ id: card_id })
+
+// 6. 批量：循环调 workboard_*（无 bulk 子命令）
+for (const id of cardIds) {
+  workboard_board_archive({ id, archived: true })
+}
 ```
 
 ---
@@ -331,7 +382,7 @@ Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create
 
 ## 七、设备身份认证(首次使用)
 
-首次调用 `manager workboard` 时会自动触发 **device pairing flow**:
+首次调用 `openclaw workboard`（plugin CLI）或 `workboard_*`（agent tool）时都会自动触发 **device pairing flow**（plugin 已配对，agent tool 走 plugin 上下文，CLI 走 Python 设备身份认证）。
 
 1. Python 脚本自动生成 Ed25519 密钥对
 2. 用私钥签名 connect 握手

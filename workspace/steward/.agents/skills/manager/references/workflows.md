@@ -54,7 +54,7 @@
 **4 步派发**（v3.0.1）：
 
 1. **写 TODO.md**（7 字段：目标/约束/输入/产出，路径用绝对路径）
-2. **建 workboard 卡**（`manager workboard create --no-dup`，只到 backlog）
+2. **建 workboard 卡**（`workboard_create({ ..., idempotencyKey: "..." })`，只到 backlog）
 3. **IM 群里艾特代理**（**必须**，开头带 workboard 信息 + 双轨模版）
 4. **代理自取 + 自动**：claim → spawn → running → done（Dx 全包）
 
