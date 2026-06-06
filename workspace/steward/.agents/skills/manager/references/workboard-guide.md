@@ -1,4 +1,10 @@
-# Workboard 任务发布指南 v1.8.0
+# Workboard 任务发布指南 v1.9.0
+
+> **v1.9.0 重大补充**（2026-06-06 3 轮多轮测试验证，老板拍板）：
+> 1. **新加"三之4、v3.5.0 私聊派发新范式"**——基于 3 轮测试（subagent claim 行为 / 不 yield auto-trigger / 大管家接管 fallback）
+> 2. **§3.3.3 加 subagent claim 时序说明**——Dx auto-claim 不稳定，subagent 跑得快时 claim 成功（实测）
+> 3. **大管家 workboard_claim 强行覆盖行为总结**——Dx claim 是"软"（可覆盖）/ subagent claim 是"硬"（覆盖失败）
+> 4. **v1.9.0 撤销 v3.4.0 §5.4 §5.5 错误**：v3.4.0 写"❌ workboard_claim / ❌ workboard_complete"是错的——实测 subagent 可完整自管
 
 > **v1.8.0 重大补充**（2026-06-06 老板指正 + 联动测试验证）：
 > 1. **新加"三之3、大管家使用技巧"**——明确"大管家不做什么"、"看 status 简化判断"、"agentId 副作用及应对"
@@ -159,20 +165,29 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 
 **心智口诀**：**只看头尾，不盯中间**。
 
-### 3.3.3 `workboard_create` `agentId` 副作用及应对
+### 3.3.3 `workboard_create` `agentId` 副作用及应对（v1.9.0 3 轮测试更新）
 
-`workboard_create({ agentId: "writer" })` 会触发**副作用**（v8.26.0 实测 C 测试发现）：
+`workboard_create({ agentId: "writer" })` 会触发**副作用**（v8.26.0 C 测试 + v1.9.0 3 轮测试发现）：
 
-1. **Dx 看到 agentId → spawn 阶段自动 claim 到该 agent**（kind: "claimed" 事件自动写入）
+1. **Dx 看到 agentId → spawn 阶段**可能**自动 claim 到该 agent**（kind: "claimed" 事件自动写入）——**但不稳定**（3 轮测试有时序窗口）
 2. **claim 后 workboard_comment / workboard_block 等"卡操作"只允许 owner**（报 "card is claimed by writer"）
 3. **大管家自己 comment** 到已 claim 的卡 → 报错（除非 workboard_reassign 接管）
+
+**subagent claim 行为时序窗口**（v1.9.0 3 轮测试实测）：
+
+| subagent 跑得快（22s）| subagent 跑得慢（39s+） |
+|------------------------|------------------------|
+| Dx 还没 auto-claim | Dx 先 claim |
+| subagent claim **成功** | subagent claim **失败**（"already claimed"）|
+| 拿 token + 完整自管 | 大管家接管 fallback |
 
 **应对策略**：
 
 | 场景 | 应对 |
 |------|------|
 | 群派发 | workboard_create 后让群里代理**自己 claim + comment**——大管家不介入 |
-| 私聊派发 | workboard_create 后 sessions_spawn 触发 Dx auto-claim，子代理**自己调** workboard_comment |
+| 私聊派发（subagent claim 成功）| sessions_spawn 含**完整自管 task**——subagent 跑得快时 claim + comment + proof + complete 一气呵成 |
+| 私聊派发（subagent claim 失败）| 大管家接管：reassign + claim + complete（详见 §三之4 fallback） |
 | 大管家想 comment | 选项 A：`workboard_reassign({ id, agentId: "steward" })` 接管 → claim → comment<br>选项 B：建新卡（不与已 claim 的卡冲突）|
 
 ### 3.3.4 workboard 状态机 vs 大管家介入点
@@ -180,7 +195,7 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 ```
    create                          ← 大管家 [1] 建卡
      ↓
-   todo                            ← Dx/代理 auto-claim
+   todo                            ← Dx/代理 auto-claim（**不稳定**——v1.9.0 3 轮测试）
      ↓ (claim - 必走！)
    running                         ← Dx 自动同步，**大管家不盯**
      ↓ (代理 workboard_proof + workboard_complete)
@@ -196,6 +211,70 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 ```
 
 **大管家介入点**：**起点 (create) + 终点 (done/blocked) + 中间异常 (blocked 反复)**——**不**盯 running 中间过程。
+
+### 3.3.5 大管家 workboard_claim 强行覆盖行为总结（v1.9.0 3 轮测试）
+
+| 情况 | workboard_claim 强行覆盖结果 | 原因 |
+|------|----------------------------|------|
+| 卡 status=todo（没人 claim）| ✅ 成功 | 没 active claim，steward 直接认领 |
+| Dx auto-claim 占先（Dx claim 是"软"）| ✅ 成功 | Dx claim 不持久，steward 可覆盖（v3.4.0 写诗测试时实测）|
+| subagent claim 占先（subagent claim 是"硬"）| ❌ 失败 "card already claimed by writer" | subagent 拿 token 持续 5 分钟（ttl），覆盖失败（轮 1 实测）|
+
+**结论**：
+- **Dx claim 是"软"** —— 大管家可覆盖
+- **subagent claim 是"硬"** —— 大管家覆盖失败 → 需 sessions_send 续接让 subagent 调 workboard_complete
+
+---
+
+## 三之4、v3.5.0 私聊派发新范式（v1.9.0 新增，3 轮测试验证）
+
+### 3.4.1 核心改进（vs v3.4.0）
+
+| 维度 | v3.4.0（**错**）| v3.5.0（**对**）|
+|------|----------------|----------------|
+| 派发后等待 | 调 `sessions_yield` | **不调 yield**——turn 自然结束——runtime auto-push event |
+| 流式输出 | ❌ yield 断流式 | ✅ 老板 DM 流字字流式 |
+| subagent claim | ❌ 写"不要 claim"（**错**）| ✅ 让 subagent claim（有时序窗口，跑得快成功）|
+| subagent complete | ❌ 写"留给大管家"（**错**）| ✅ subagent 用自己 token complete |
+| 大管家接管 | 调 reassign + claim + complete | 接管是 **fallback**——subagent 失败时才走 |
+
+### 3.4.2 v3.5.0 私聊派发 6 步范式
+
+```
+[1] workboard_create({ agentId: "writer", status: "todo" })
+[2] sessions_spawn({
+      task: "用 CARD_ID 调 workboard_claim + comment + proof + complete（完整自管）"
+    })
+[3] workboard_comment 软关联（**不**强制——subagent 失败时由 subagent 自己 comment）
+[4] 流式 reply（**不**调 sessions_yield）
+[5] turn 自然结束
+[6] runtime auto-push announce event → 大管家下一轮
+[7] 大管家核验（workboard_read + comment 核验意见）—— **不**接管
+```
+
+### 3.4.3 subagent 失败 fallback 路径（v3.5.0 修正）
+
+3 种 fallback 场景：
+
+**A. subagent claim 失败**（Dx 先占 + subagent 跑得慢）：
+- 大管家 `workboard_reassign({ agentId: "steward" })`—— 改 agentId
+- 然后 `workboard_claim`—— 拿 token
+- 然后 `workboard_complete`—— 标 done
+
+**B. subagent 没调 workboard_* 工具**（runtime 太短没机会）：
+- 大管家接管（同 A）—— reassign + claim + complete
+
+**C. subagent 跑完但没 complete**（token 过期 / 异常）：
+- 大管家 `sessions_send` 续接 subagent —— 让 subagent 用 token complete
+- 或大管家接管（同 A）
+
+### 3.4.4 关键发现（v1.9.0 3 轮测试沉淀）
+
+1. **OpenClaw runtime auto-push event**：不调 sessions_yield，runtime 自动 push 子代理完成 event 触发大管家下一轮（**实测可用**——轮 2）
+2. **subagent claim 行为有时序窗口**：subagent 跑得快（22s）→ Dx 还没 claim → subagent claim 成功；subagent 跑得慢（39s+）→ Dx 先 claim → subagent 失败（轮 1）
+3. **workboard_reassign 行为不一致**：v3.4.0 写诗测试时 reassign 不可靠，v1.9.0 轮 3 测试时 reassign 真生效（agentId 改 writer→steward）——可能跟 Dx 状态有关
+4. **大管家 workboard_claim 强行覆盖 subagent claim 失败**："card already claimed by writer"——**不**像 Dx claim 是"软"——subagent claim 是"硬"（轮 1）
+5. **sessions_send 续接能"复活"已退出的 subagent**——让 subagent 用自己 token complete（轮 1）
 
 ---
 

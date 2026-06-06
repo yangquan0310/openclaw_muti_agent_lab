@@ -1,5 +1,14 @@
-# 任务流指南 v3.4.0
+# 任务流指南 v3.5.0
 
+> **v3.5.0 重大修正**（2026-06-06 3 轮多轮测试验证，老板拍板）：
+> 1. **§五.4 私聊派发防中断**：删除"立即发'已派发'消息"——改为"**不调 yield**——流式 reply——turn 自然结束——runtime auto-push event 触发下一轮"
+> 2. **§五.5 私聊派发 6 步**（v3.4.0 写 7 步）：重写——subagent 完整自管 workboard（claim + comment + proof + complete）——大管家**只**核验——**不**接管
+> 3. **§五.5 接管 fallback**：3 种 fallback 场景（subagent claim 失败 / 没调 workboard / 没 complete）——大管家 reassign + claim + complete 或 sessions_send 续接
+> 4. **v3.4.0 §五.4 §五.5 错误**（已撤销）：
+>    - §五.4 写"立即发'已派发'消息"——错（reply 就是派发信息）
+>    - §五.5 写"❌ workboard_claim"——错（实测 subagent 可 claim，有时序窗口）
+>    - §五.5 写"❌ workboard_complete"——错（实测 subagent 可 complete，用自己 token）
+>
 > **v3.4.0 重大补充**（2026-06-06 老板指正 + 联动测试验证）：
 > 1. **新加"§五、完整工作流"**——3 阶段总览（建卡+派发 / 等待 / 验收）/ 派发双通道对比 / 验收三态详细流程
 > 2. **加"§五之2、私聊派发防中断兜底"**——老板担心的"子代理不向你发消息就中断了"问题解决方案
@@ -494,37 +503,32 @@ workboard_read({ id: cardId })
   或等 Dx 推卡到 review
 ```
 
-### 5.4 私聊派发防中断兜底（老板 2026-06-06 担心）
+### 5.4 私聊派发防中断（v3.5.0 重写：3 轮测试验证）
 
-老板原话："如果子代理不向你发送消息，我这边就中断了。你后续的消息不会路由过来"
+**老板之前担心**："spawn 后子代理不向你发消息，IM 流中断"
 
-**实际风险**：
-- `sessions_spawn` 依赖 OpenClaw runtime 的 auto-announce
-- 如果子代理死锁/异常/announce 失败 → 老板 IM 流冻结 → 老板以为大管家消失了
+**实测结果（v3.5.0）**：
+- ❌ 旧方案"spawn + sessions_yield"：**断流式**（yield message 整段出现，不流式）
+- ✅ 新方案"spawn + **不调 yield**"：**保留流式**（runtime auto-push event 触发下一轮）
 
-**兜底方案**：
+**v3.5.0 兜底方案**（不调 yield）：
 
 ```
-[1] 老板 DM 交任务
-[2] 我调 workboard_create → cardId
-[3] 我**立即** IM 回你："已派发 [X] 给 writer，cardId=xxx"
-    ↑ 这条消息是你 IM 流里的锚点——你知道我没消失
-[4] 我调 sessions_spawn → childSessionKey
-[5] workboard_comment(cardId, "sessionKey=" + childSessionKey)  // 软关联
-[6] sessions_yield 等子代理完成
-[7a] 成功：announce event 来 → 我继续 → 核验 + complete
-[7b] 失败：你看到的是"已派发"消息 + 等不到完成
-    → 你能 @我 唤醒 / 让我查 workboard 卡 / 让 Dx 兜底
+[1] workboard_create + sessions_spawn + workboard_comment（顺序）
+[2] 流式 reply：派发信息（**不**调 sessions_yield）
+[3] turn 自然结束
+[4] runtime auto-push 子代理完成 event → 大管家下一轮
+[5] 大管家从 history 看到子代理产出 + 核验
 ```
 
-**为什么这个范式不中断你的 IM 流**：
-- 我**在 spawn 之前**已经发了一条"已派发"消息
-- 即使 spawn 后僵死，你**至少看到过"已派发"**——不会感觉凭空消失
-- 你有 `cardId` 可以查、可以 @我、可以让我查卡
+**关键**：
+- **老板 DM 流字字流式**（reply 是本回合最终流式回复）
+- **不**依赖 yield 消息（runtime auto-push event 自然触发）
+- **不**需要 message tool 独立发"已派发"消息（reply 已包含派发信息）
 
-### 5.5 跨场景大管家工作流整合（v3.4.0 整合）
+### 5.5 跨场景大管家工作流（v3.5.0 整合 + 3 轮测试修正）
 
-**群场景**完整 5 步：
+**群场景**完整 6 步（不变）：
 ```
 [1] workboard_create({ agentId, priority, labels, status: "backlog" })
     注：plugin CLI 不支持 session 绑定，用 workboard_comment 写软关联
@@ -535,20 +539,50 @@ workboard_read({ id: cardId })
 [6] 大管家 read + 核验 + comment + complete + archive
 ```
 
-**私聊场景**完整 6 步：
+**私聊场景**完整 7 步（v3.5.0 新版，3 轮测试验证）：
+
 ```
-[1] workboard_create({ agentId, priority, labels, status: "todo" })
-[2] sessions_spawn({ agentId, task, mode: "run" })
-[3] workboard_comment({ id, body: "sessionKey=" + childSessionKey })
-[4] sessions_yield 等子代理完成
-[5] **立即**发"已派发 + cardId"消息到老板 DM（兜底）
-[6] sessions_history(childSessionKey) 查产出
-[7] workboard_read + 核验 + comment + complete + archive
+[1] workboard_create({ agentId: "writer", priority, labels, status: "todo" })
+[2] sessions_spawn({
+      task: "用 CARD_ID 调 workboard_claim + comment + proof + complete（完整自管）"
+    })
+[3] workboard_comment({ id, body: "sessionKey=" + childSessionKey })  // 软关联
+[4] 流式 reply（**不**调 sessions_yield）
+[5] turn 自然结束
+[6] runtime auto-push announce event → 大管家下一轮
+[7] 大管家核验（workboard_read + comment 核验意见）—— **不**接管（subagent 已自管）
 ```
 
-**关键差异**：
+**关键修正（v3.4.0 错误 → v3.5.0 正确）**：
+- ❌ v3.4.0 写"❌ workboard_claim"——**错**（实测 subagent 可 claim，**有时序窗口**）
+- ❌ v3.4.0 写"❌ workboard_complete"——**错**（实测 subagent 可 complete，用自己 token）
+- ✅ v3.5.0 改为"subagent **完整自管**"——大管家**只**核验——**不**接管
+
+**subagent 失败 fallback 路径**（3 种场景，v3.5.0 修正）：
+
+**A. claim 失败**（Dx 先占 + subagent 跑得慢）：
+```
+大管家 workboard_reassign({ agentId: "steward" })  // 改 agentId
+        ↓
+大管家 workboard_claim                              // 拿 token
+        ↓
+大管家 workboard_complete                            // 标 done
+```
+
+**B. 没调 workboard**（runtime 太短没机会）：大管家接管（同 A）—— reassign + claim + complete
+
+**C. 没 complete**（异常 / token 过期）：
+```
+大管家 sessions_send 续接 subagent
+        ↓
+subagent 用自己 token 调 workboard_complete
+        ↓
+大管家核验
+```
+
+**关键差异**（v3.5.0 vs v3.4.0）：
 - 群场景靠 **Dx 自动同步 + IM 群可见**——大管家只发一次艾特
-- 私聊场景靠 **announce event 推回 + 主动发"已派发"**——大管家必须**两条线并行**（spawn + IM 兜底）
+- 私聊场景靠 **runtime auto-push event**（**不**需要 yield 消息）——老板 DM 流**字字流式**
 
 ---
 
