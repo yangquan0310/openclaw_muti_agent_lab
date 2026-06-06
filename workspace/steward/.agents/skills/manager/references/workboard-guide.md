@@ -1,54 +1,10 @@
 # Workboard 任务发布指南 v1.11.0
 
-> **v1.11.0 重大补充**（2026-06-06 老板拍板）：
-> 1. **3.5.1 任务四要素**——建卡 note 核心内容（**任务目标 / 任务约束 / 输入路径 / 输出路径**）
-> 2. **3.5.2 通知模板**——派发核心内容（**任务标题 / CARD_ID / 操作步骤 / 反馈要求**）
-> 3. 其他模板保持（comment 软关联 / 流式 reply / proof / complete summary / 核验 reply / fallback A 接管 / fallback C 续接 / 3 句话总结）
-
-> **v1.10.0 重大补充**（2026-06-06 老板拍板 + 模板测试验证）：
-> 1. **新加"三之5、消息/note 模板库"**——10 个模板（workboard_create / spawn task / comment 软关联 / v3.5.0 流式 reply / proof / complete summary / 核验 reply / fallback A 接管 / fallback C 续接 / 派发范式 3 句话总结）
-> 2. 模板来源：5 轮测试验证（轮 1-3 / 重测 / 完整流程 / 模板测试）
-> 3. 指向：task-flow-guide.md v3.6.0 “§六、消息/note 模板库”与本节同表
-
-> **v1.9.0 重大补充**（2026-06-06 3 轮多轮测试验证，老板拍板）：
-> 1. **新加"三之4、v3.5.0 私聊派发新范式"**——基于 3 轮测试（subagent claim 行为 / 不 yield auto-trigger / 大管家接管 fallback）
-> 2. **§3.3.3 加 subagent claim 时序说明**——Dx auto-claim 不稳定，subagent 跑得快时 claim 成功（实测）
-> 3. **大管家 workboard_claim 强行覆盖行为总结**——Dx claim 是"软"（可覆盖）/ subagent claim 是"硬"（覆盖失败）
-> 4. **v1.9.0 撤销 v3.4.0 §5.4 §5.5 错误**：v3.4.0 写"❌ workboard_claim / ❌ workboard_complete"是错的——实测 subagent 可完整自管
-
-> **v1.8.0 重大补充**（2026-06-06 老板指正 + 联动测试验证）：
-> 1. **新加"三之3、大管家使用技巧"**——明确"大管家不做什么"、"看 status 简化判断"、"agentId 副作用及应对"
-> 2. 4 场联动测试验证（v8.26.0 实测）：A done 路径 / B blocked 路径 / C subagent 自管 workboard / D notify_subscribe 链路
->
-> **v1.7.0 重大修复**（2026-06-06 老板纠错，老板拍板）：
-> 1. **删除 `manager workboard` CLI**（v2026.6.6）—— `scripts/workboard/` 整个目录（932 行 Python）已删除
-> 2. **建卡改用 agent tool**（`workboard_create`）或 **plugin 自带 CLI**（`openclaw workboard create`）
-> 3. **核验/验收改用 agent tool**（`workboard_read` / `workboard_comment` / `workboard_complete` / `workboard_delete` 等）
-> 4. **大管家 3 动作铁律保持**（建卡 + im/spawn 派发 + 验收），但"建卡"和"验收"全部走 agent tool，**不再走 manager CLI**
-> 5. **踩坑教训**：v8.25.0 拍板时漏看了 `workboard_create` agent tool 一直就在 plugin contract tools 里（`extensions/workboard/openclaw.plugin.json:18`），错让老板创建 932 行 Python 脚本——**完全没必要的**。**v1.7.0 撤销 v8.25.0 沉淀，建卡用 tool/plugin CLI**
->
-> **v1.6.0 同步升级**（2026-06-06，对接 SKILL.md v5.12.0 老板拍板）：
-> 1. **明确 workboard 永远只管"建卡/管理"**（v3.2.0 铁律）—— workboard CLI 不接派发能力，**绝对禁止**加 spawn / dispatch 子命令
-> 2. **加"3 动作铁律"章节**（v1.6.0 新增）——大管家 3 个动作：建卡 + im/spawn 派发 + 验收
-> 3. **§二、什么时候用 Workboard** 加"私聊派发也用"——workboard 在 DM 场景下走 `--no-session` 建卡
-> 4. **§三、能力边界"关键分工"**重写——大管家 = 建卡层（CLI），派发动作走 IM 群 / sessions_spawn，不走 workboard
-> 5. 同步 task-flow-guide.md v3.2.0 导航（§二、群派发 / §三、私聊派发）
-
-> **v1.5.0 重大简化**（2026-06-06）—— 已被 v1.6.0 取代，仅作历史参考：
-> 1. **删除 `start` 子命令**（代码 + 文档）——卡建好后大管家不再"启 session"，代理自己 claim + 启动 run
-> 2. 派发流程从 **5+1 步 → 4 步**（create → IM 艾特 → 代理 claim → 代理执行 + proof）
-> 3. 卡状态机去掉"start 步骤"——"running"转换由代理手动 chat.send / 调度触发
-> 4. "Dashboard 限制"章节删"manager workboard start"推荐路径
-> 5. 三件套架构改"create 派发"
-> 6. 错误排查删 3 条 start 相关
-
-> **v1.4.0 重大更新**(2026-06-03)--已被 v1.5.0 取代,仅作历史参考:
-
-> **v1.3.0 认知更正**:本指南之前定位为"大管家调度控制台"。**错的**。
-> 正确理解(从 OpenClaw 官方插件 `plugin.json` 描述):**`Dashboard workboard for agent-owned issues and sessions`**。
-> **Workboard 的真正主用户是 agent**(writer / reviewer / psychologist / ...),不是大管家/用户。Dashboard 只是人类旁观察看。
+> v1.11.0：任务四要素（建卡 note 核心）+ 通知模板（派发核心）。详见末尾 §十、版本历史。
 
 ---
+
+## 一、Workboard 是什么(官方定义)
 
 ## 一、Workboard 是什么(官方定义)
 
@@ -785,7 +741,12 @@ Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
-| **1.6.0** | 2026-06-06 | **同步升级，对接 SKILL.md v5.12.0**：(1) 顶部加 v1.6.0 更新说明（6 项变更）；(2) §二、什么时候用 Workboard 加"两种派发场景"段；(3) §三、能力边界"关键分工"重写——大管家 = 建卡层（CLI），派发动作走 IM 群 / sessions_spawn；(4) **新章节"三之2、Workboard 永远只管建卡/管理"**——明确 3 动作铁律 + 两种派发场景下 workboard 角色 + 为什么 workboard 不接派发；(5) 同步 task-flow-guide.md v3.2.0 导航；(6) 源自私聊派发端到端测试 + SKILL.md v5.12.0 同步 |
+| **v1.11.0** | 2026-06-06 | **重大补充**（老板拍板）：(1) **3.5.1 任务四要素**——建卡 note 核心内容（**任务目标 / 任务约束 / 输入路径 / 输出路径**）；(2) **3.5.2 通知模板**——派发核心内容（**任务标题 / CARD_ID / 操作步骤 / 反馈要求**）；(3) 其他模板保持（comment 软关联 / 流式 reply / proof / complete summary / 核验 reply / fallback A 接管 / fallback C 续接 / 3 句话总结）。详见 §三之5、消息/note 模板库 |
+| **v1.10.0** | 2026-06-06 | **重大补充**（老板拍板 + 模板测试验证）：(1) **新加"三之5、消息/note 模板库"**——10 个模板（workboard_create / spawn task / comment 软关联 / v3.5.0 流式 reply / proof / complete summary / 核验 reply / fallback A 接管 / fallback C 续接 / 派发范式 3 句话总结）；(2) 模板来源：5 轮测试验证（轮 1-3 / 重测 / 完整流程 / 模板测试）；(3) 指向：task-flow-guide.md v3.6.0 "§六、消息/note 模板库" 与本节同表 |
+| **v1.9.0** | 2026-06-06 | **重大补充**（3 轮多轮测试验证，老板拍板）：(1) **新加"三之4、v3.5.0 私聊派发新范式"**——基于 3 轮测试（subagent claim 行为 / 不 yield auto-trigger / 大管家接管 fallback）；(2) **§3.3.3 加 subagent claim 时序说明**——Dx auto-claim 不稳定，subagent 跑得快时 claim 成功（实测）；(3) **大管家 workboard_claim 强行覆盖行为总结**——Dx claim 是"软"（可覆盖）/ subagent claim 是"硬"（覆盖失败）；(4) **v1.9.0 撤销 v3.4.0 §5.4 §5.5 错误**：v3.4.0 写"❌ workboard_claim / ❌ workboard_complete"是错的——实测 subagent 可完整自管 |
+| **v1.8.0** | 2026-06-06 | **重大补充**（老板指正 + 联动测试验证）：(1) **新加"三之3、大管家使用技巧"**——明确"大管家不做什么"、"看 status 简化判断"、"agentId 副作用及应对"；(2) 4 场联动测试验证（v8.26.0 实测）：A done 路径 / B blocked 路径 / C subagent 自管 workboard / D notify_subscribe 链路 |
+| **v1.7.0** | 2026-06-06 | **重大修复**（老板纠错，老板拍板）：(1) **删除 `manager workboard` CLI**（v2026.6.6）—— `scripts/workboard/` 整个目录（932 行 Python）已删除；(2) **建卡改用 agent tool**（`workboard_create`）或 **plugin 自带 CLI**（`openclaw workboard create`）；(3) **核验/验收改用 agent tool**（`workboard_read` / `workboard_comment` / `workboard_complete` / `workboard_delete` 等）；(4) **大管家 3 动作铁律保持**（建卡 + im/spawn 派发 + 验收），但"建卡"和"验收"全部走 agent tool，**不再走 manager CLI**；(5) **踩坑教训**：v8.25.0 拍板时漏看了 `workboard_create` agent tool 一直就在 plugin contract tools 里（`extensions/workboard/openclaw.plugin.json:18`），错让老板创建 932 行 Python 脚本——**完全没必要的**。**v1.7.0 撤销 v8.25.0 沉淀，建卡用 tool/plugin CLI** |
+| **v1.6.0** | 2026-06-06 | **同步升级，对接 SKILL.md v5.12.0**：(1) 顶部加 v1.6.0 更新说明（6 项变更）；(2) §二、什么时候用 Workboard 加"两种派发场景"段；(3) §三、能力边界"关键分工"重写——大管家 = 建卡层（CLI），派发动作走 IM 群 / sessions_spawn；(4) **新章节"三之2、Workboard 永远只管建卡/管理"**——明确 3 动作铁律 + 两种派发场景下 workboard 角色 + 为什么 workboard 不接派发；(5) 同步 task-flow-guide.md v3.2.0 导航；(6) 源自私聊派发端到端测试 + SKILL.md v5.12.0 同步 |
 | 1.5.0 | 2026-06-06 | **重大简化**：(1) 删除 `start` 子命令（cli.py + WorkboardClient.py）；(2) 5+1 步 → 4 步流程；(3) 卡状态机去掉 `start` 步骤；(4) `create` 默认 model 改成 `minimax`（不指具体模型）；(5) 反馈措辞按 session 场景动态化；(6) 删 3 条 start 相关错误排查 |
 | 1.4.0 | 2026-06-03 | **重大升级**:(1) 加 `--session` flag + 默认 backlog(commit `f18df719`);(2) 修 `ejecución`→`execution` 拼写 + start 默认 model(commit `9e78459e`);(3) start 路径 A/B 真触发 run + idempotencyKey(commit `58094e59`);(4) 加 Dashboard 限制章节;(5) 加卡状态机章节;(6) 5+1 步新派发流程;(7) 三件套架构整合 |
 | 1.3.0 | 2026-06-02 | 认知更正:workboard 主用户是 agent,不是大管家 |
@@ -795,4 +756,5 @@ Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create
 
 ---
 
-*最后更新:2026-06-03*
+*最后更新：2026-06-06 14:25*
+*v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0 整理者：大管家（steward）*

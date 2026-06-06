@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-06T06:17:58.019Z",
+  "updatedAt": "2026-06-06T06:32:20.349Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-06-02.txt:293:293": {
       "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:293:293",
@@ -15117,15 +15117,18 @@
       "endLine": 185,
       "source": "memory",
       "snippet": "- 子代理在卡上 notes 看到的永远是权威信息 --- ## 四、挂起项（待跟进） | # | 任务 | 状态 | 优先级 | |---|------|------|--------| | 1 | 推 development 分支（10 commit 累积） | pending | 中 | | 2 | 跑端到端 demo 验证新流程（用 manager workboard 派一个真任务） | pending | 中 | | 3 | 4 元文件 README/METADATA 是否需要更新（同步到 v2.3 任务流） | pending | 低 | | 4 | task 工具存在性验证（实际调一次 task.create 看报不报错） | pending | 低 | | 5 | 写端到端 demo 文档（从老板交任务到归档完整流程） | pending | 低 | | 6 | agent-self-development 插件重新安装（恢复 task 工具源） | pending | 低（不阻塞） | | 7 | T041 / T042 定时任务已累积 1 天未检查 | pending | 中 | --- ## 五、跨文件引用（已落库的位置） | 规则 | 落库文件 | |------|----------| | 三件套架构 + 5+1 步流程 | `task-flow-guide.md v2.3` | | workboard CLI 用法 + Dashboard 限制 | `workboard-guide.md v1.4.0` | | TODO 7 字段 + 主",
-      "recallCount": 1,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.8330578109360431,
+      "totalScore": 2.4678434332943655,
       "maxScore": 0.8330578109360431,
       "firstRecalledAt": "2026-06-06T05:26:18.603Z",
-      "lastRecalledAt": "2026-06-06T05:26:18.603Z",
+      "lastRecalledAt": "2026-06-06T06:32:20.349Z",
       "queryHashes": [
-        "86bbc94d46ef"
+        "86bbc94d46ef",
+        "7f3251d2b3c1",
+        "cf1d79a0fa61",
+        "6c2baa6a7ae6"
       ],
       "recallDays": [
         "2026-06-06"
@@ -15351,13 +15354,13 @@
       "endLine": 194,
       "source": "memory",
       "snippet": "| TODO 7 字段 + 主/子任务模板 | `task-flow-guide.md v2.3` 第四章 + `assets/project-level/TODO.template` | | IM 群模板 | `task-flow-guide.md v2.3` 步骤 4 | | workboard notes 模板 | `cli.py` `TASK_NOTES_TEMPLATE` | | claim 协议 | `workboard-guide.md v1.4.0` 步骤 5 + `HANDBOOK.template` | | 禁止改依赖包 | `AGENTS.md` 第三章 红线 + `MEMORY.md` If-Then | | 工具分工 | `workboard-guide.md v1.4.0` 第三章 | --- *Flush 时间：2026-06-03 03:14 Asia/Shanghai* *会话长度：约 5 小时（22:29→03:14）* *commits：10*",
-      "recallCount": 10,
+      "recallCount": 13,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5.924644842363168,
+      "totalScore": 7.632224671906997,
       "maxScore": 0.8708880688913372,
       "firstRecalledAt": "2026-06-04T14:59:38.142Z",
-      "lastRecalledAt": "2026-06-06T06:16:02.784Z",
+      "lastRecalledAt": "2026-06-06T06:32:20.349Z",
       "queryHashes": [
         "780c95356657",
         "3f5ae218b143",
@@ -15368,7 +15371,10 @@
         "a002c45be2ba",
         "86bbc94d46ef",
         "37e12783f64c",
-        "d961dd4d3e90"
+        "d961dd4d3e90",
+        "7f3251d2b3c1",
+        "cf1d79a0fa61",
+        "6c2baa6a7ae6"
       ],
       "recallDays": [
         "2026-06-04",
