@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-06T05:35:53.050Z",
+  "updatedAt": "2026-06-06T06:17:58.019Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-06-02.txt:293:293": {
       "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:293:293",
@@ -15351,13 +15351,13 @@
       "endLine": 194,
       "source": "memory",
       "snippet": "| TODO 7 字段 + 主/子任务模板 | `task-flow-guide.md v2.3` 第四章 + `assets/project-level/TODO.template` | | IM 群模板 | `task-flow-guide.md v2.3` 步骤 4 | | workboard notes 模板 | `cli.py` `TASK_NOTES_TEMPLATE` | | claim 协议 | `workboard-guide.md v1.4.0` 步骤 5 + `HANDBOOK.template` | | 禁止改依赖包 | `AGENTS.md` 第三章 红线 + `MEMORY.md` If-Then | | 工具分工 | `workboard-guide.md v1.4.0` 第三章 | --- *Flush 时间：2026-06-03 03:14 Asia/Shanghai* *会话长度：约 5 小时（22:29→03:14）* *commits：10*",
-      "recallCount": 9,
+      "recallCount": 10,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5.388757149494459,
+      "totalScore": 5.924644842363168,
       "maxScore": 0.8708880688913372,
       "firstRecalledAt": "2026-06-04T14:59:38.142Z",
-      "lastRecalledAt": "2026-06-06T05:26:18.685Z",
+      "lastRecalledAt": "2026-06-06T06:16:02.784Z",
       "queryHashes": [
         "780c95356657",
         "3f5ae218b143",
@@ -15367,7 +15367,8 @@
         "214472ac465b",
         "a002c45be2ba",
         "86bbc94d46ef",
-        "37e12783f64c"
+        "37e12783f64c",
+        "d961dd4d3e90"
       ],
       "recallDays": [
         "2026-06-04",
@@ -15695,13 +15696,13 @@
       "endLine": 72,
       "source": "memory",
       "snippet": "| **数据/执行层** | `workboard` 卡片 | 派发、状态机、运行轨迹 | 大管家 CLI（create/start/move/list/read/bulk）+ 代理插件工具（claim/heartbeat/release/proof） | | **可见层** | **IM 群艾特** | 1 个模板（认领用） | 大管家 | **5+1 步流程**： ``` [1] 大管家 create card（--session, 默认 backlog） [2] 大管家 IM 群艾特代理（IM 模板，task_desc 抬头） [3] 代理 claim（workboard_claim 插件工具 + 群里回\"已认领\"） [4] 大管家 start（CLI，只在 claim 之后） [5] 代理执行（chat.send 触发 run） [6] 代理执行完 → 群里发完成消息 + workboard_proof [7] 大管家核验 → workboard.move → done / blocked ``` ### 2. 两个模板有意分开 | 模板 | 用途 | 内容 | 位置 | |------|------|------|------| | **IM 群模板** | 认领 | workboard 信息 + task_desc + 前置要求 + \"领取后反馈\" | task-flow-guide.md v2.3 步骤 4 | | **workboard notes 模板** | 执行 | 目标/约束/输入/产出 + \"完成反馈\" | cli.py `TASK_NOTES_",
-      "recallCount": 12,
+      "recallCount": 13,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 7.049920048499256,
+      "totalScore": 7.612950896406323,
       "maxScore": 0.8421211741210523,
       "firstRecalledAt": "2026-06-03T19:09:52.967Z",
-      "lastRecalledAt": "2026-06-06T05:26:18.603Z",
+      "lastRecalledAt": "2026-06-06T06:17:58.019Z",
       "queryHashes": [
         "39ae31636f84",
         "b02bd3dc2a6e",
@@ -15714,7 +15715,8 @@
         "214472ac465b",
         "a002c45be2ba",
         "13935b89b7af",
-        "86bbc94d46ef"
+        "86bbc94d46ef",
+        "daaa964fc3e3"
       ],
       "recallDays": [
         "2026-06-04",

@@ -1,4 +1,9 @@
-# Workboard 任务发布指南 v1.10.0
+# Workboard 任务发布指南 v1.11.0
+
+> **v1.11.0 重大补充**（2026-06-06 老板拍板）：
+> 1. **3.5.1 任务四要素**——建卡 note 核心内容（**任务目标 / 任务约束 / 输入路径 / 输出路径**）
+> 2. **3.5.2 通知模板**——派发核心内容（**任务标题 / CARD_ID / 操作步骤 / 反馈要求**）
+> 3. 其他模板保持（comment 软关联 / 流式 reply / proof / complete summary / 核验 reply / fallback A 接管 / fallback C 续接 / 3 句话总结）
 
 > **v1.10.0 重大补充**（2026-06-06 老板拍板 + 模板测试验证）：
 > 1. **新加"三之5、消息/note 模板库"**——10 个模板（workboard_create / spawn task / comment 软关联 / v3.5.0 流式 reply / proof / complete summary / 核验 reply / fallback A 接管 / fallback C 续接 / 派发范式 3 句话总结）
@@ -287,14 +292,15 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 
 > 源自 v8.26.0 + v3.4.0 + v3.5.0 多轮实测，**模板测试**验证可跑通。task-flow-guide.md v3.6.0 §六 与本节同表。
 
-### 3.5.1 workboard_create 模板
+### 3.5.1 workboard_create 模板（**任务四要素**）
 
 ```js
 {
   title: "[<前缀>] <任务描述>",
-  notes: `目的：...
-流程：...
-期望：...`,
+  notes: `任务目标：...
+任务约束：...
+输入路径：...
+输出路径：...`,
   agentId: "<writer/reviewer/psychologist/...>",
   priority: "low/normal/high/urgent",
   labels: ["test", "v3.5.0", "..."],
@@ -302,26 +308,63 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 }
 ```
 
-### 3.5.2 sessions_spawn task 模板（v3.5.0 完整自管）
+**任务四要素**（v1.11.0 老板拍板）：
+
+| 要素 | 含义 | 示例 |
+|------|------|------|
+| **任务目标** | 干什么 | 写一首中文诗（主题/格律自选）|
+| **任务约束** | 限制 / 边界 | 不调任何 workboard 工具 / 不少于 4 句 / 严守格律 |
+| **输入路径** | 读什么文件 / 资源 | `~/.openclaw/workspace/steward/IDENTITY.md`（v3.5.0 重测示例）|
+| **输出路径** | 产出落到哪 | 主 DM 回复（v3.5.0 私聊派发） / `/tmp/...md`（文件产出）|
+
+> **任务四要素是建卡 note 的核心内容**——老板 2026-06-06 拍板。
+
+**实测示例**（v3.5.0 完整流程 写词）：
+```
+notes: 任务目标：写一首词（蝶恋花/水调歌头/念奴娇/满江红自选，主题自选）
+任务约束：不少于词牌规定句数；严守格律（平仄押韵）；不调 workboard_reassign / message tool
+输入路径：（无——纯创作）
+输出路径：主 DM 回复词作全文 + 简短说明
+```
+
+### 3.5.2 sessions_spawn task 模板（**通知模板 4 要素**）
 
 ```
-你是 <agentName> agent，<任务描述>的子代理。
+任务标题：<title>
+CARD_ID：<cardId>（看 prompt 实际替换值）
+操作步骤：
+  1. workboard_claim({ id: CARD_ID, ttlSeconds: 300 }) —— 拿 token
+  2. <实际任务>
+  3. workboard_comment({ id, body: "✅ v3.5.0 完整自管测试认领 + <产出>" })（带 token）
+  4. workboard_proof({ id, status: "passed", label: "...", note: "..." })（带 token）
+  5. workboard_complete({ id, token: <claim token>, summary: "...", proof: { status: "passed" } })（带 token）
+反馈要求：
+  - 完成后在主 DM 回复：<产出> + 简短说明
+  - **反馈要求**（老板拍板）：...
+```
 
-**CARD_ID**：<cardId>（看 prompt 实际替换值）
+**通知模板 4 要素**（v1.11.0 老板拍板）：
 
-**任务目标**：...
+| 要素 | 含义 | 示例 |
+|------|------|------|
+| **任务标题** | 告诉代理做什么 | 写一首词（蝶恋花/水调歌头自选）|
+| **CARD_ID** | 告知 workboard 卡 ID（让代理自管）| `34b4d37f-704b-4a8e-bdeb-d2db19b73a73` |
+| **操作步骤** | 按 v3.5.0 范式自管 workboard | claim → comment → proof → complete |
+| **反馈要求** | 完成后怎么反馈 | 主 DM 回复 + 简短说明 / 调 specific 工具 |
 
-**步骤**（按 v3.5.0 范式）：
-1. workboard_claim({ id: CARD_ID, ttlSeconds: 300 }) —— 拿 token
-2. <实际任务>
-3. workboard_comment({ id, body: "✅ v3.5.0 完整自管测试认领 + <产出>" })（带 token）
-4. workboard_proof({ id, status: "passed", label: "...", note: "..." })（带 token）
-5. workboard_complete({ id, token: <claim token>, summary: "...", proof: { status: "passed" } })（带 token）
-6. 在主 DM 回复：<产出> + 简短说明
+> **通知模板是派发通知的核心内容**——老板 2026-06-06 拍板。**4 要素**结构清晰，让代理知道**做什么 / 在哪做 / 怎么做 / 怎么反馈**。
 
-**约束**：
-- 真正的内容——不要"测试"或"pong"
-- ...
+**实测示例**（v3.5.0 完整流程 写词）：
+```
+任务标题：写一首词（蝶恋花/水调歌头/念奴娇/满江红 自选，主题自选）
+CARD_ID：34b4d37f-704b-4a8e-bdeb-d2db19b73a73
+操作步骤：
+  1. workboard_claim({ id: CARD_ID, ttlSeconds: 300 }) —— 拿 token
+  2. 写词（按所选词牌格律）
+  3. workboard_comment({ id, body: "✅ v3.5.0 完整流程测试认领 + 词作\n\n【词牌名】\n（词作全文）" })（带 token）
+  4. workboard_proof({ id, status: "passed", label: "v3.5.0-complete-flow", note: "..." })（带 token）
+  5. workboard_complete({ id, token: <claim token>, summary: "...", proof: { status: "passed" } })（带 token）
+反馈要求：完成后在主 DM 回复词作全文 + 简短说明（词牌/主题/格律/灵感）
 ```
 
 ### 3.5.3 workboard_comment 软关联模板（v3.5.0 大管家用）
