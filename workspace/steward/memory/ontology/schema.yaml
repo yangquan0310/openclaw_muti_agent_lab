@@ -1,0 +1,106 @@
+types:
+  Person:
+    required:
+    - name
+    properties:
+      name: string
+      email: string?
+      phone: string?
+      role: string?
+      notes: string?
+  Project:
+    required:
+    - name
+    - status
+    status_enum:
+    - planning
+    - active
+    - paused
+    - completed
+    - archived
+    properties:
+      name: string
+      description: string?
+      status: string
+      start_date: date?
+      end_date: date?
+      tags: string[]?
+  Task:
+    required:
+    - title
+    - status
+    status_enum:
+    - open
+    - in_progress
+    - blocked
+    - done
+    - cancelled
+    priority_enum:
+    - low
+    - normal
+    - high
+    - urgent
+    properties:
+      title: string
+      description: string?
+      status: string
+      priority: string?
+      due: datetime?
+      estimate_hours: number?
+      tags: string[]?
+  Event:
+    required:
+    - title
+    - start
+    validate: 'if end exists: end >= start'
+    properties:
+      title: string
+      description: string?
+      start: datetime
+      end: datetime?
+      location: string?
+      status: string?
+relations:
+  has_owner:
+    from_types:
+    - Project
+    - Task
+    to_types:
+    - Person
+    cardinality: many_to_one
+  has_task:
+    from_types:
+    - Project
+    to_types:
+    - Task
+    cardinality: one_to_many
+  blocks:
+    from_types:
+    - Task
+    to_types:
+    - Task
+    acyclic: true
+    cardinality: many_to_many
+  attends:
+    from_types:
+    - Person
+    to_types:
+    - Event
+    cardinality: many_to_many
+  part_of:
+    from_types:
+    - Task
+    - Event
+    to_types:
+    - Project
+    cardinality: many_to_one
+constraints:
+- type: Task
+  rule: 'status transitions: open -> in_progress -> (done|blocked) -> done'
+  enforcement: warn
+- type: Event
+  rule: 'if end exists: end >= start'
+  enforcement: warn
+- relation: blocks
+  rule: acyclic
+  enforcement: block
