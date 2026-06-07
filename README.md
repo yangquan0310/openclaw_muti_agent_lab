@@ -1,6 +1,6 @@
 # OpenClaw 实验室多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.6-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.7-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -994,6 +994,15 @@ openclaw agents restart <agent-name>
 - **配置同步**: openclaw.json 配置微调
 - **清理**: mathematician MCP server 删除、steward 旧体检报告删除
 
+### 版本 3.2.3 (2026-06-07)
+- **每日自动同步 2026-06-07**: 71 文件变更(60700+/-62331-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码
+- **工作空间核查**: 10 个 Agent 目录结构正常,无 stray 文件
+- **技能清理**: writer 技能删除旧 lookup/indexer/searcher 脚本(_meta.json、mcp/server.py、index/、scripts/lookup/ 等),保留核心 SKILL.md + scripts/main.py + scripts/writer/
+- **Agent梦境同步**: 10 个 Agent 的 DREAMS.md 及 dreams 记忆数据库同步
+- **新增未追踪文件**: steward/memory/2026-06-07.md(本次新生成)
+- **运行状态**: ✅ 稳定版,无未提交变更
+
 ### 版本 3.1.1 (2026-04-19)
 - **重构日志系统**:将实验室仓库和教研室仓库的日志文件迁移到各代理的memory目录
 - **删除日志文件目录**:移除实验室仓库/日志文件/和教研室仓库/日志文件/目录
@@ -1045,8 +1054,8 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-06 04:00:00**
-**系统版本**: OpenClaw 2026.6.6
+**最后更新: 2026-06-07 04:00:00**
+**系统版本**: OpenClaw 2026.6.7
 **插件版本**: agent-self-development v4.3.1
 **运行状态**: ✅ 稳定版
 **备份状态**: ✅ 自动执行中
