@@ -178,25 +178,25 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-06-07)
+## Promoted From Short-Term Memory (2026-06-08)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:45:72 -->
-- | **数据/执行层** | `workboard` 卡片 | 派发、状态机、运行轨迹 | 大管家 CLI（create/start/move/list/read/bulk）+ 代理插件工具（claim/heartbeat/release/proof） | | **可见层** | **IM 群艾特** | 1 个模板（认领用） | 大管家 | **5+1 步流程**： ``` [1] 大管家 create card（--session, 默认 backlog） [2] 大管家 IM 群艾特代理（IM 模板，task_desc 抬头） [3] 代理 claim（workboard_claim 插件工具 + 群里回"已认领"） [4] 大管家 start（CLI，只在 claim 之后） [5] 代理执行（chat.send 触发 run） [6] 代理执行完 → 群里发完成消息 + workboard_proof [7] 大管家核验 → workboard.move → done / blocked ``` ### 2.... [score=0.838 recalls=13 avg=0.586 source=memory/2026-06-03.md:45-72]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:182:194 -->
-- | TODO 7 字段 + 主/子任务模板 | `task-flow-guide.md v2.3` 第四章 + `assets/project-level/TODO.template` | | IM 群模板 | `task-flow-guide.md v2.3` 步骤 4 | | workboard notes 模板 | `cli.py` `TASK_NOTES_TEMPLATE` | | claim 协议 | `workboard-guide.md v1.4.0` 步骤 5 + `HANDBOOK.template` | | 禁止改依赖包 | `AGENTS.md` 第三章 红线 + `MEMORY.md` If-Then | | 工具分工 | `workboard-guide.md v1.4.0` 第三章 | --- *Flush 时间：2026-06-03 03:14 Asia/Shanghai* *会话长度：约 5 小时（22:29→03:14）* *commits：10* [score=0.823 recalls=13 avg=0.587 source=memory/2026-06-03.md:182-194]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:10:10 -->
-- workboard CLI 全面升级（commit `b350d78c`）: 已知 Dashboard bug（优先级 high 显示 low，状态 todo 显示待办池） [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-02.md:10-10]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:13:16 -->
-- skill-developer 三段式重构（v5.3.0 → v5.4.0）: 技能 = 工具名词（manager, developer）; 模块 = 工具作用的对象类（manager 的 maintainer/workboard 是对象类，skill-developer 的 skill 是对象类）; 方法 = 对对象的操作; 模块名规范：本质是"对象类"，不是"组件名" [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-02.md:13-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:17:17 -->
-- skill-developer 三段式重构（v5.3.0 → v5.4.0）: 新增 `skill-developer skill {init|check|audit|extend}` 四方法 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-02.md:17-17]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:20:23 -->
-- rps 项目**老板未授权就启动**，已挂起: 位置：`/root/.openclaw/workspace/rock-paper-scissors-tournament/`; 老板原话："rps，我就没让你做！你把这个挂起！不要把token浪费在这个上面了"; 已加入 MEMORY.md "待跟进事项(Suspended)"; **未经老板明确指令前不许碰** [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-02.md:20-23]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:26:29 -->
-- task-guide.md v2.0 → v2.1 升级: v2.0 错把 IM 降级为"备选"，老板纠正; v2.1 明确**双层架构**：Workboard 是数据层（默认），IM 是可见层（必备）; IM 群通知 5 个模板（派发/认领/异常/完成/归档）; IM 私聊派发（涉密才用，§五） [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-02.md:26-29]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:30:30 -->
-- task-guide.md v2.0 → v2.1 升级: §七 占位符分三组：数据层 11 个、可见层 5 个、v1.0 兼容 7 个 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-02.md:30-30]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:33:35 -->
-- wiki 命名规范: synthesis 必须带 `YYYY-MM-DD-HH-MM-SS-` 前缀; `wiki_apply create_synthesis` 不会自动加，创建后必须手动 `mv`; 已加 MEMORY 规则 v8.17.0 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-02.md:33-35]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:38:41 -->
-- CLI 入口修复: `/usr/local/bin/manager` symlink 路径错（指向 `skills/manager/`，实际在 `.agents/skills/manager/`）; 老板规范：CLI 必须三段式 `技能名 模块名 方法名 [参数]`; 禁止 `python3 main.py <子命令>`，必须用 `manager <模块> <子命令>`; MEMORY 规则 v8.16.0 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-02.md:38-41]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:45:48 -->
+- 待跟进事项: | 项 | 状态 | 备注 | |----|------|------| | **审阅卡 `9787a61a-1980-4983-b32f-90d3e54ea35d`** | ⏳ 等老板审阅 | 验证 create 阶段修复效果 | | 清理 4 张测试卡 | 待授权 | 调试A/B/C + 调试卡已 done | [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-02.md:45-48]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:6:9 -->
+- workboard CLI 全面升级（commit `b350d78c`）: 创建阶段修复：默认 `status=backlog`、联动 `sessionKey`、联动 `execution.engine/model/mode`; 默认值：`engine=codex`, `model=minimax/MiniMax-M3`; **关键 bug 发现**：`normalizeExecution` 要求 `model` 必填，缺 `model` 时 execution 被静默丢弃; 不自动 claim（老板明确"不要"） [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-02.md:6-9]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:12:15 -->
+- workboard CLI 修复链（4 commit）: | Commit | 修复 | |--------|------| | `6d9c815e` | feat: create 加 `--session` flag | | `f18df719` | fix: `--session` 配默认 backlog + execution.sessionKey 同步 | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:12-15]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:16:17 -->
+- workboard CLI 修复链（4 commit）: | `9e78459e` | fix: `ejecución`→`execution` 拼写 + start 默认 model | | `58094e59` | fix: start 路径 A/B 真触发 run（chat.send + idempotencyKey） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:16-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:19:20 -->
+- workboard CLI 修复链（4 commit）: **根因**：workboard 控制台 `Ix()` 硬编码 `sessions.create` 覆盖卡 sessionKey；CLI 没真触发 run；`normalizeExecution` 要 model 字段。 **教训**：依赖包里的 `control-ui/.../assets/index-*.js` 等前端代码也是 workboard 行为的一部分，Dx 函数会强制同步卡状态到 session 状态。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:19-20]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:24:27 -->
+- 任务流文档重构（6 commit）: | Commit | 内容 | |--------|------| | `a0d1d8f9` | refactor: 清理冗余 references（26→25），合并 knowledge + sync 双件 | | `65e50ce1` | feat: workboard-guide v1.4.0（4 新 CLI 功能 + Dashboard 限制 + 卡状态机） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:24-27]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:28:31 -->
+- 任务流文档重构（6 commit）: | `5c3e33ec` | feat: task-flow-guide v2.2 合并三件套（task-guide + lifecycle + progression） | | `1e3c2e02` | chore: skill-developer 规范对齐（删 guide.md / README.md / _meta.json，CLI symlink） | | `325359b2` | fix: v2.3 审计修复（TODO 7 字段定型 + claim 协议） | | `30b26ce3` | feat: IM 模板简化（强调认领，不包目标/约束/输入/产出） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:28-31]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:3:4 -->
+- 2026-06-03 长期记忆: > Pre-compaction memory flush。今天的工作记忆归集。 > 已合并到工作区文件的内容不再重复，只记**新决策/新规则/挂起项**。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:3-4]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:32:34 -->
+- 任务流文档重构（6 commit）: | `314dd6ac` | refactor: notes 模板独立 + 去重 `_build_task_notes` | | `9734205d` | chore: IM 模板顺序调整（task_desc 抬头） | | `97bd4b7e` | chore: 去硬编码值（agent/session/oc_id 等改占位符） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:32-34]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:42:45 -->
+- 三件套架构（TODO + workboard + IM）: | 层 | 工具 | 角色 | 谁用 | |----|------|------|------| | **纪律层** | `TODO.md` | 看板、状态记录 | 大管家 | | **数据/执行层** | `workboard` 卡片 | 派发、状态机、运行轨迹 | 大管家 CLI（create/start/move/list/read/bulk）+ 代理插件工具（claim/heartbeat/release/proof） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:42-45]

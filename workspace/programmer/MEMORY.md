@@ -13,6 +13,7 @@
 | T001 | [openclaw_muti_agent_lab](https://github.com/yangquan0310/openclaw_muti_agent_lab) | 每日04:00自动提交并推送代码变更到development分支 | active | 2026-04-27 00:00 | 2026-05-21 09:24 | 定时任务，确保代码不丢失；固定会话 `agent:programmer:corn:programmer的定时任务` |
 | T003 | openclaw-bot-review | 3000端口openclaw-bot-review项目开发与维护，终身项目 | active | 2026-05-21 00:30 | 2026-05-21 09:22 | 待跟进具体需求，stats缓存化已完成（commit 37070b7） |
 | T004 | 腾讯云Lighthouse服务器 | 永久维护腾讯云轻量应用服务器（腾讯云Lighthouse） | active | 2026-05-25 21:44 | 2026-05-25 21:44 | 技能：tencentcloud-lighthouse-skill；配置：~/.mcporter/mcporter.json；Region：ap-shanghai；实例ID：lhins-4nn64c7g；公网IP：101.43.20.69 |
+| T005 | docker-webdav | 维护 bytemark/webdav 容器（id: a4ef35dd2d1b），端口 80/443 | active | 2026-06-07 12:40 | 2026-06-07 12:40 | 基础设施类，目前唯一运行中的 docker 容器；WebDAV 协议文件服务 |
 
 ---
 
@@ -59,7 +60,7 @@
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-|||
+| 2026-06-07 | 2026-06-07 12:40 | 新增 T005：维护 docker webdav 容器（bytemark/webdav，id a4ef35dd2d1b，端口 80/443） |
 
 ---
 *最后重构: 2026-05-23*

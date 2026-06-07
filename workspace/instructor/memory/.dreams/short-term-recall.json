@@ -1,323 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-06T19:00:44.845Z",
+  "updatedAt": "2026-06-07T19:00:23.750Z",
   "entries": {
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:25:25": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:25:25",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 25,
-      "endLine": 25,
-      "source": "memory",
-      "snippet": "User: [Attachment: /root/.openclaw/media/qqbot/downloads/《教育科学研究方法》_9_1778425329548_a75465.pdf]",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "openclaw/media/qqbot/downloads",
-        "9-1778425329548-a75465.pdf",
-        "attachment",
-        "root",
-        "openclaw",
-        "media",
-        "qqbot",
-        "downloads"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:26:26": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:26:26",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 26,
-      "endLine": 26,
-      "source": "memory",
-      "snippet": "Assistant: 嘿！我收到了你发的PDF——这是《教育科学研究方法》的第九章，主题是**\"教育实验研究法\"**。 这一章主要内容包括： **核心概念** - **实验变量**（自变量）——研究者主动操纵的因素，比如启发式教学法 vs 传统讲授法 - **因变量**——实验的结果，如学生成绩、态度、学习方法的变化 - **干扰变量**——可能影响结果的其他因素，需要严格控制 **实验法的特点** - ✅ **优点**：最适合建立因果关系，成功实验具有可推广性 - ❌ **缺点**：教育实验中控制干扰变量非常困难（比如随机分班、随机选教师在实际操作中很",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "收到",
-        "pdf",
-        "教育",
-        "科学",
-        "研究",
-        "方法",
-        "第九章",
-        "主题"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:27:27": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:27:27",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 27,
-      "endLine": 27,
-      "source": "memory",
-      "snippet": "User: 你现在识别这一章的知识提取文字，然后先标记出来你觉得重要的知识，生成一个知识图谱。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "现在",
-        "识别",
-        "一章",
-        "知识",
-        "提取",
-        "文字",
-        "然后",
-        "标记"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:28:28": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:28:28",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 28,
-      "endLine": 28,
-      "source": "memory",
-      "snippet": "Assistant: 完成！📚 这一章的知识提取、标记和知识图谱都做好了。 **MEDIA:/root/.openclaw/workspace/teaching/knowledge_graph_ch9.png** --- ## 📌 知识标记总结 我把21页内容梳理成了 **5大模块**，标记了考点等级： ### ⭐⭐⭐ 核心概念（必背） | 概念 | 关键要点 | |------|---------| | **实验变量** | 自变量，要与现存变量有本质区别 + 可操作可观察 | | **因变量** | 实验结果，不能只用高考衡量，要多维度 | |",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "完成",
-        "一章",
-        "知识",
-        "提取",
-        "标记",
-        "做好",
-        "media",
-        "root"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:29:29": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:29:29",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 29,
-      "endLine": 29,
-      "source": "memory",
-      "snippet": "Assistant: `knowledge_graph_ch9.html` — 可交互的知识图谱网页（支持点击节点看详情） 需要我针对某个具体知识点深入讲解吗？比如「怎么区分内在效度和外在效度」或者「单组设计和双组设计怎么选」？",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "knowledge-graph-ch9.html",
-        "knowledge-graph-ch9",
-        "html",
-        "交互",
-        "知识",
-        "网页",
-        "支持",
-        "节点"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:30:30": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:30:30",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 30,
-      "endLine": 30,
-      "source": "memory",
-      "snippet": "User: 做一个思维导图，并总结要点",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "一个",
-        "思维",
-        "总结",
-        "要点"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:31:31": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:31:31",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 31,
-      "endLine": 31,
-      "source": "memory",
-      "snippet": "Assistant: **MEDIA:/root/.openclaw/workspace/teaching/mindmap_ch9.png** --- ## 📋 要点总结 ### 一、核心逻辑链 ``` 教育实验 = 操纵实验变量 → 控制干扰变量 → 观测因变量变化 → 检验效度 ``` ### 二、三大变量 ⭐⭐⭐ | 变量 | 本质 | 关键要求 | |------|------|---------| | **实验变量** | 自变量，研究者主动操纵 | 与现有方法有本质区别、可操作、可观察 | | **因变量** | 实验结果 | 不能只用单一",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "media",
-        "root",
-        "openclaw",
-        "teaching",
-        "mindmap-ch9",
-        "png",
-        "要点",
-        "总结"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:32:32": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:32:32",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 32,
-      "endLine": 32,
-      "source": "memory",
-      "snippet": "Assistant: 类型 | 适用场景 | |------|---------| | **单组设计** | 无等组可用，或自然因素影响小 | | **双组设计** 🔥 | 有等组条件，**等组前后测最常用** | | **循环组设计** | 多组轮换，用**拉丁方阵**安排顺序 | > 📌 **拉丁方阵** = K×K排列，每元素每行每列只出现一次（名词解释考点） ### 五、实验控制 🔵 **最大最小原则** 1. 实验变量 → 产生**最大变化** 2. 干扰变量 → 产生**最小影响** 3. 选择**好的测量工具** **6大控制方法**",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "类型",
-        "适用",
-        "场景",
-        "设计",
-        "可用",
-        "自然",
-        "因素",
-        "影响"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:33:33": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:33:33",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 33,
-      "endLine": 33,
-      "source": "memory",
-      "snippet": "Assistant: ## 📊 进展汇报 **任务：第九章《教育实验研究法》知识提取与图谱生成** | 步骤 | 状态 | 详情 | |------|------|------| | 1. OCR提取 | ✅ 完成 | 21页PDF全部提取完毕，保存至 `chapter9_text.txt` | | 2. 知识标记 | ✅ 完成 | 标记 ⭐核心考点 / 🔥高频考点 / 📌重要概念 | | 3. 知识整理 | ✅ 完成 | 梳理为5大模块：核心概念、效度体系、实验设计、实验控制、经典案例 | | 4. 知识图谱 | ✅ 完成 | 生成可交互HTML",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "chapter9-text.txt",
-        "进展",
-        "汇报",
-        "任务",
-        "第九章",
-        "教育",
-        "实验",
-        "研究"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-10.txt:34:34": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:34:34",
-      "path": "memory/.dreams/session-corpus/2026-05-10.txt",
-      "startLine": 34,
-      "endLine": 34,
-      "source": "memory",
-      "snippet": "Assistant: ## 📊 进展汇报 — 第九章《教育实验研究法》 **任务已完成，全部交付。** --- ### ✅ 已完成的工作 | 阶段 | 状态 | 产出 | |------|------|------| | OCR提取 | 完成 | 21页PDF完整文字提取 | | 知识识别 | 完成 | 标记 ⭐核心考点 / 🔥高频考点 / 📌重要概念 | | 层级整理 | 完成 | 5大模块：概念→效度→设计→控制→案例 | | 知识图谱 | 完成 | 可交互HTML + 静态PNG | | 思维导图 | 完成 | 结构化PNG | | 要点总结",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-11T19:00:47.313Z",
-      "lastRecalledAt": "2026-05-11T19:00:47.313Z",
-      "queryHashes": [
-        "0bd2888cfb05"
-      ],
-      "recallDays": [
-        "2026-05-12",
-        "2026-05-11"
-      ],
-      "conceptTags": [
-        "进展",
-        "汇报",
-        "第九章",
-        "教育",
-        "实验",
-        "研究",
-        "任务",
-        "完成"
-      ]
-    },
     "memory:memory/.dreams/session-corpus/2026-05-10.txt:49:49": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-10.txt:49:49",
       "path": "memory/.dreams/session-corpus/2026-05-10.txt",
@@ -2068,436 +1752,6 @@
         "需求",
         "分析",
         "阶段"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:17:17": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:17:17",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 17,
-      "endLine": 17,
-      "source": "memory",
-      "snippet": "Assistant: v1 已完成。现在我来完成 **v2 内容框架**。先查看可用材料。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "完成",
-        "现在",
-        "我来",
-        "内容",
-        "框架",
-        "查看",
-        "可用",
-        "材料"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:18:18": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:18:18",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 18,
-      "endLine": 18,
-      "source": "memory",
-      "snippet": "Assistant: 现在我来创建 **v2 内容框架**。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "现在",
-        "我来",
-        "创建",
-        "内容",
-        "框架"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:19:19": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:19:19",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 19,
-      "endLine": 19,
-      "source": "memory",
-      "snippet": "Assistant: 已完成 **v2 内容框架**，核心内容如下： --- ## ch10 质的研究法 — v2 内容框架 ### 一、知识点清单（三级结构） **第一层：章级框架** - 第一节 质的研究法概述（15min） - 第二节 质的研究的实施程序（35min） - 第三节 质的研究的报告撰写（30min） **第二层：节级知识点（14个）** | 编号 | 知识点 | 重要程度 | |------|--------|----------| | 1.1 | 质的研究的起源与发展 | ⭐⭐⭐ | | 1.2 | **五大特点** | ⭐⭐⭐⭐⭐",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "1.1",
-        "1.2",
-        "完成",
-        "内容",
-        "框架",
-        "核心",
-        "如下",
-        "ch10"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:20:20": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:20:20",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 20,
-      "endLine": 20,
-      "source": "memory",
-      "snippet": "User: @呈现师 @督导 你们把自己的飞书open_id告诉@大管家 ，让@大管家 写入wiki的实体中。 [System: This message @mentions the following users: 呈现师 (open_id: ou_ef4dc56236712c6014660f8255523b45), 督导 (open_id: ou_0e1f9e71266f1b2bbf01f818f7b88833), 大管家 (open_id: ou_533756bb2c2206e0e7229b2e9aa90c97), 大管家 (open_id: ou",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "你们把自己的飞书open-id告诉",
-        "open-id",
-        "呈现",
-        "你们",
-        "自己",
-        "告诉",
-        "管家",
-        "wiki"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:21:21": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:21:21",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 21,
-      "endLine": 21,
-      "source": "memory",
-      "snippet": "Assistant: 案例4：伦理困境讨论（发现教师体罚怎么办） ### 四、衔接设计 - **与ch09**：\"实验法能回答所有教育问题吗？\" - **与ch11**：\"行动研究就是教师在自己的实践中开展的质的研究\" ### 五、PPT建议 - 色彩：暖色调（橙/黄），区别于ch09的冷色调 - 增加\"编码练习\"互动页 - 15页结构规划已给出 --- **当前进度**：ch10 备课中，v1✅ v2✅，下一步 v2b（学术前沿，心理学家）或 v3（活动方案，呈现师） 你看这个框架可以吗？需要调整哪些部分？",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "橙/黄",
-        "案例",
-        "伦理",
-        "困境",
-        "讨论",
-        "发现",
-        "教师",
-        "体罚"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:22:22": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:22:22",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 22,
-      "endLine": 22,
-      "source": "memory",
-      "snippet": "User: 你把他添加到工作记忆中",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "添加",
-        "工作",
-        "记忆"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:23:23": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:23:23",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 23,
-      "endLine": 23,
-      "source": "memory",
-      "snippet": "Assistant: 已添加到工作记忆 ✅ **当前活跃任务看板**更新如下： | 任务ID | 项目 | 任务描述 | 状态 | 备注 | |--------|------|----------|------|------| | ch10-v2 | 教育科学研究方法 | ch10质的研究法v2内容框架 | ✅ 已完成 | 下一步：v2b学术前沿（心理学家）或v3活动方案（呈现师） | 需要我现在推进下一步吗？比如： 1. 请求心理学家补充v2b学术前沿 2. 直接开始v3活动方案设计（如果v2b可以并行）",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "ch10-v2",
-        "添加",
-        "工作",
-        "记忆",
-        "当前",
-        "活跃",
-        "任务",
-        "看板"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:3:3": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:3:3",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 3,
-      "endLine": 3,
-      "source": "memory",
-      "snippet": "User: 查看todo，完成v1",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "查看",
-        "todo",
-        "完成"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:4:4": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:4:4",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 4,
-      "endLine": 4,
-      "source": "memory",
-      "snippet": "User: @大管家 你通过艾特其他代理@心理学家 @呈现师 @督导 把todo的任务1推进一下。让他们1，提醒他们需要完善自己的内容，让他们做什么。 [System: This message @mentions the following users: 大管家 (open_id: ou_533756bb2c2206e0e7229b2e9aa90c97), 心理学家 (open_id: ou_3a163427b0839d1264a720c774bb13e8), 呈现师 (open_id: ou_ef4dc56236712c6014660f8255523",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "open-id",
-        "ou-ef4dc56236712c6014660f8255523",
-        "管家",
-        "通过",
-        "其他",
-        "代理",
-        "心理学家",
-        "呈现"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:5:5": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:5:5",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 5,
-      "endLine": 5,
-      "source": "memory",
-      "snippet": "Assistant: 我先查看一下todo的内容，了解一下任务1是什么。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "我先",
-        "查看",
-        "一下",
-        "todo",
-        "内容",
-        "了解",
-        "任务",
-        "什么"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:6:6": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:6:6",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 6,
-      "endLine": 6,
-      "source": "memory",
-      "snippet": "Assistant: 明白，我先完成 **ch10 质的研究法 v1 需求分析**，然后通知其他代理。 ---",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "明白",
-        "我先",
-        "完成",
-        "ch10",
-        "研究",
-        "需求",
-        "分析",
-        "然后"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:7:7": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:7:7",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 7,
-      "endLine": 7,
-      "source": "memory",
-      "snippet": "Assistant: **v1 需求分析已完成** ✅ 文件已写入：`chapters/ch10_质的研究法/manuscripts/v1_需求分析.md` --- 现在启动后续任务，请各位代理按分工推进： @心理学家 ch10质的研究法已启动备课，需要你补充**v2b 学术前沿**（产出 `v2b_学术前沿补充.md`），请结合质性研究方法在教育领域的最新进展和典型案例，具体内容由你自行完善。 @呈现师 ch10质的研究法后续需要**v3 活动方案**和**v4 课件初稿**，当前等待教员完成v2内容框架和心理学家完成v2b前沿补充后启动，你可以先准备",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "v2b-学术前沿补充.md",
-        "需求",
-        "分析",
-        "完成",
-        "文件",
-        "chapters",
-        "ch10",
-        "研究"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:8:8": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:8:8",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 8,
-      "endLine": 8,
-      "source": "memory",
-      "snippet": "User: 查看todo，完成v2",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "查看",
-        "todo",
-        "完成"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-12.txt:9:9": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-12.txt:9:9",
-      "path": "memory/.dreams/session-corpus/2026-05-12.txt",
-      "startLine": 9,
-      "endLine": 9,
-      "source": "memory",
-      "snippet": "Assistant: 我查看了自己的工作记忆和workspace，目前情况如下： **当前状态** - 我的MEMORY.md中**没有活跃任务记录** - workspace中**没有课程项目目录** - 飞书任务/清单/多维表格**权限不足**，无法访问 **可能的原因** 杨权之前提到\"工作台添加了\"，但我这边无法读取飞书工作台的数据。 **需要你补充** 1. 这个\"todo\"具体是什么内容？（教学目标设计？某章节的框架？） 2. \"v2\"指的是什么？（课程版本？还是某个具体任务的第二阶段？） 3. 能否直接发给我相关文件/链接，或者告诉我项目目",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-12T19:00:36.388Z",
-      "lastRecalledAt": "2026-05-12T19:00:36.388Z",
-      "queryHashes": [
-        "7842911a6fdb"
-      ],
-      "recallDays": [
-        "2026-05-13",
-        "2026-05-12"
-      ],
-      "conceptTags": [
-        "我的memory.md中",
-        "飞书任务/清单/多维表格",
-        "能否直接发给我相关文件/链接",
-        "查看",
-        "自己",
-        "工作",
-        "记忆",
-        "目前"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-14.txt:1:1": {
@@ -15914,6 +15168,198 @@
         "转告"
       ]
     },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:74:74": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:74:74",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 74,
+      "endLine": 74,
+      "source": "memory",
+      "snippet": "Assistant: 内容生成社会心理影响 → 传播心理与公众认知 → 法律规制与心理边界 - 候选：佐斌（华中师大 社会心理，全国知名）/ 田媛（华中师大 社会心理）/ 严煤（湖大 经济心理） - ⚠️ **法律心理学候选缺口**：华中师大+湖大暂无明确法律心理学博导，建议改 **传播心理 + 社会心理圆桌** 聚焦（避免硬塞法律） **教员心理学化小计**：3 场 / 9 学时 / **9000 元**（与 17:35 草稿一致） **4 维度脚手架（心理学化）**： - 知识：AI 时代心理学知识更新 - 方法：心理学研究方法人机协同 - 思维：学",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "内容",
+        "生成",
+        "社会",
+        "心理",
+        "影响",
+        "传播",
+        "公众",
+        "认知"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:75:75": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:75:75",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 75,
+      "endLine": 75,
+      "source": "memory",
+      "snippet": "User: 【修正】17:39 发了**5 场细化方案**（不是我之前以为的 3 场）—— 我 17:55 \"3 场与草稿一致\"是误导信息，**立即修正** ———— **5 场 vs 心理学家草稿 3 场差异** ———— · **新增 2 场**：教员场 2 教学+教育管理（合并原督导场 6）+ 教员场 5 经济+历史+哲学（5h/5000） · **督导角色调整**：你\"教学+教育管理 1 场 + 终审\" → \"格式 + 终审\"（1 场归入教员场 2） · **取消备选场 7** 大学生心理适应 **总场次 7 场** = 心理学家 2 + 教员",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "5h/5000",
+        "修正",
+        "方案",
+        "不是",
+        "之前",
+        "以为",
+        "草稿",
+        "一致"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:76:76": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:76:76",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 76,
+      "endLine": 76,
+      "source": "memory",
+      "snippet": "User: 12000） ———— **派心理学家更新 v1.0 草稿** ———— @心理学家 你的 88f3 子卡 v1.0 草稿（教员 3 场版）需要**更新**为**教员 5 场版**： · 教员场 3 → 5 · 督导场 6 删除（归入教员场 2） · 备选场 7 删除 · 督导角色改为\"格式 + 终审\" 请在 88f3 子卡 comment 更新 v1.0 草稿（或在群里贴新版本，我转告你复制） ———— **督导角色调整** ———— @督导 教员 17:39 调整你的角色： · 原\"教学+教育管理 1 场 + 终审\" → \"格式 + v1",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "v1.0",
+        "心理学家",
+        "更新",
+        "草稿",
+        "你的",
+        "88f3",
+        "教员",
+        "需要"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:77:77": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:77:77",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 77,
+      "endLine": 77,
+      "source": "memory",
+      "snippet": "User: ou_2dfb1dec2d0c16a86602cedebf1af420). Use these open_ids when performing actions involving these users. To @mention in a reply, use `<at user_id=\"ou_xxx\">Name</at>`; plain \"@Name\" won't notify.]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "open-ids",
+        "user-id",
+        "ou-xxx",
+        "use",
+        "when",
+        "performing",
+        "actions",
+        "involving"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:78:78": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:78:78",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 78,
+      "endLine": 78,
+      "source": "memory",
+      "snippet": "Assistant: <at user_id=\"ou_533756bb2c2206e0e7229b2e9aa90c97\">大管家</at> 修正收到 —— 17:39 5 场是教员此前提议（含场 2 教学+教育管理合并 + 场 5 经济+历史+哲学 新增），与教员立场一致 ✅。 **教员 5 场详细方案**（供心理学家复制到 88f3 子卡，替代 17:35 3 场）： **场 1 课程体系重构**（4h / 第二类 / 学工·主办+3系·协办 / 4000元） - 模块：挑战机遇 → 培养目标 → 教法学法 → 评价改革 - 4 维度：知识（AI 知识",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "user-id",
+        "管家",
+        "修正",
+        "收到",
+        "教员",
+        "提议",
+        "教学",
+        "教育"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:79:79": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:79:79",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 79,
+      "endLine": 79,
+      "source": "memory",
+      "snippet": "Assistant: + 工具演练(1) + 讲座(1) - 主讲：风笑天（武大 社会学 本地首选）/ 陈向明（北大 质性）/ 卢晖临（北大 质性）/ 备第三类张文彤 - 协办：3 系之一（社会学/方法论） **场 4 AI 传播+法律规制**（2h / 第二类 / 3 系·承办 / 2000元） - 模块：AI 内容生成传播 → 法律规制伦理边界 - 4 维度：知识（数字传播+法律）/ 方法（案例研讨）/ 思维（跨学科）/ 价值（伦理边界） - 评价：圆桌(1) + 案例研讨(1) — 跨学科对话 - 主讲：彭兰（清华 新媒体）/ 张志安（中山大学 A",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "社会学/方法论",
+        "工具",
+        "演练",
+        "讲座",
+        "社会",
+        "本地",
+        "北大",
+        "第三"
+      ]
+    },
     "memory:memory/.dreams/session-corpus/2026-06-05.txt:8:8": {
       "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:8:8",
       "path": "memory/.dreams/session-corpus/2026-06-05.txt",
@@ -15946,6 +15392,321 @@
         "整合"
       ]
     },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:80:80": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:80:80",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 80,
+      "endLine": 80,
+      "source": "memory",
+      "snippet": "Assistant: 结余 10000-15000 ⚠️ **杨权 17:50 严格约束**（心理学 only + 华中师大+湖大 only）仍待 <at user_id=\"ou_4c357eb5fa270e1ba1ed8142d2f83999\">王雅欣</at> 拍板。如果王雅欣同意心理学化，教员 5 场心理学化重设计 1 小时内可出（5 场 → 学习心理 / 教育心理 / 心理学研究方法 / 社会心理 / 跨学科心理圆桌，候选全部华中师大+湖大心理学博导）。如果王雅欣同意 5 场现行，教员 5 场 details 已就位 ✅。 <at user_id",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "10000-15000",
+        "user-id",
+        "严格",
+        "约束",
+        "心理",
+        "only",
+        "华中",
+        "拍板"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:81:81": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:81:81",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 81,
+      "endLine": 81,
+      "source": "memory",
+      "snippet": "User: \"教员心理学化\"收到，督导审一下 + 4 个问题： **✅ 64ff 状态**：已认领（status: running）—— 你消息可能没看到我的最新群回复（17:56 之后） **⚠️ 1. 教员心理学化 = 过度解读杨权指示？** - 杨权原文：\"**心理学相关场次主讲人候选**改华中师大+湖大\"——**是改候选单位，不改主题** - 教员心理学化把 3 场都改成心理学方向（社会心理 + 传播心理 + 心理边界）——**偏离原分工** - 建议：教员 3 场保持原主题（场 A 课程体系 + 场 B 研究方法 + 场 C 传播+法律），候选",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "教员",
+        "心理",
+        "收到",
+        "一下",
+        "问题",
+        "64ff",
+        "状态",
+        "status"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:82:82": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:82:82",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 82,
+      "endLine": 82,
+      "source": "memory",
+      "snippet": "Assistant: <at user_id=\"ou_0e1f9e71266f1b2bbf01f818f7b88833\">督导</at> 4 点审查扎实，逐条接受 + **撤回心理学化重设计**： **1. 心理学化 = 过度解读杨权指示** ✅ 接受 - 杨权 17:50 原文是**候选单位改，不是主题改** - 教员心理学化把 3 场都改成心理学方向偏离原分工 —— **撤回** - 教员 5 场 details（per 17:39 5 场方案，上一条群消息）**保持原主题**：课程体系重构 + 教学+教育管理 + 研究方法人机协同 + AI 传播+",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "user-id",
+        "审查",
+        "扎实",
+        "逐条",
+        "接受",
+        "撤回",
+        "心理",
+        "设计"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:83:83": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:83:83",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 83,
+      "endLine": 83,
+      "source": "memory",
+      "snippet": "Assistant: - 非心理学场次（教员 5 场 + 心理学家 场 2 AI 伦理）候选**保持原全国博导** **总结撤回**： - 教员 5 场心理学化重设计完全撤回 ✅ - 督导板块心理学化重设计完全撤回 ✅ - 法律视角保持不砍 ✅ - 学科多元化保持（8 学科）✅ <at user_id=\"ou_3a163427b0839d1264a720c774bb13e8\">心理学家</at> 请按 17:39 5 场方案（不心理学化）更新 88f3 子卡 v1.0 草稿，教员 5 场 details 已就位（上一条群消息）。 <at user_id=",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "user-id",
+        "v1.0",
+        "心理",
+        "教员",
+        "心理学家",
+        "伦理",
+        "候选",
+        "保持"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:84:84": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:84:84",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 84,
+      "endLine": 84,
+      "source": "memory",
+      "snippet": "User: <card> @ou_8408d4e878adc82086b6253bb1dbf4c6 心理学化备选方案收到，督导审一下： **✅ 64ff 状态**：已认领（status: running）+ 2 个 comment（终审意见 + 1 场定稿后撤回）—— 角色 = 0 场 + 终审 **⚠️ 心理学化 vs 5 场现行 对比**： | 维度 | 方案 A：5 场现行 ✅ 督导推荐 | 方案 B：5 场心理学化 | |------|------|------| | 学科覆盖 | 9 视角（经济 / 历史 / 哲学 / 课程 / 方法论 / 传",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "card",
+        "心理",
+        "方案",
+        "收到",
+        "一下",
+        "64ff",
+        "状态",
+        "status"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:85:85": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:85:85",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 85,
+      "endLine": 85,
+      "source": "memory",
+      "snippet": "User: 场现行 vs 5 场心理学化**（核心分歧） 2. 3 系名称 3. 候选单位 4. 场 5 5h 违规解决方案**等心理学家 v1.0 草稿更新到 5 场版后，督导启动终审**。 </card>",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "v1.0",
+        "现行",
+        "心理",
+        "核心",
+        "分歧",
+        "名称",
+        "候选",
+        "单位"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:86:86": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:86:86",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 86,
+      "endLine": 86,
+      "source": "memory",
+      "snippet": "Assistant: ⚠️ <at user_id=\"ou_4c357eb5fa270e1ba1ed8142d2f83999\">王雅欣</at> 18:13:42 \"同意此约束\" 拍板 —— **心理学化（方案 B）正式确认**。 **撤回 上一条 撤回 心理学化**，重新 propose 教员 5 场 心理学化 重设计（符合杨权约束 + 王雅欣拍板）。 **督导担忧接受**：学科覆盖损失 5+ 视角 / 主题偏离 \"AI 时代人文社科素养\" → \"AI 时代心理学素养\" —— 王雅欣拍板，教员执行。督导 64ff 终审仍启动（审查心理学化 5 场 财行",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "user-id",
+        "同意",
+        "约束",
+        "拍板",
+        "心理",
+        "方案",
+        "正式",
+        "确认"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:87:87": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:87:87",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 87,
+      "endLine": 87,
+      "source": "memory",
+      "snippet": "Assistant: 蒲蕊（华中师大 教育学原理）/ 涂阳军（湖大） - 协办：华中师大心理学院+教育学院 **场 3 心理学研究方法**（3h / 第二类 / 3 系·承办 / 3000元） - 标题：心理学研究方法的人机协同新图景 - 模块：量化方法 AI 介入 → 质性方法 AI 辅助 → 混合方法论反思 - 4 维度：知识（心理学方法论）/ 方法（AI 工具）/ 思维（批判方法论）/ 价值（研究伦理） - 评价：案例研讨(1) + 工具演练(1) + 讲座(1) - 主讲：温忠麟（华中师大 量化方法，全国知名）/ 彭运春（华中师大 心理学研究方法",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "华中",
+        "教育",
+        "原理",
+        "协办",
+        "心理",
+        "学院",
+        "研究",
+        "方法"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:88:88": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:88:88",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 88,
+      "endLine": 88,
+      "source": "memory",
+      "snippet": "Assistant: 萧浩（华中师大 哲学） - 协办：华中师大心理学院+跨学科 **教员 5 场心理学化小计**：5 场 / **15 学时** / **14000 元**（学工 4000 + 3 系 10000） **全局**：心理学家 2 + 教员 5 = 7 场 / **19 学时** / 20000 元（5 万的 40%） **剩余 30000**：差旅 8000-12000 + 物料 3000-5000 + 场地 2000-3000 + 结余 10000-15000 **关键调整（vs 17:39 5 场现行）**： - 主题心理学化（学习/",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "8000-12000",
+        "3000-5000",
+        "2000-3000",
+        "10000-15000",
+        "华中",
+        "哲学",
+        "协办",
+        "心理"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:89:89": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:89:89",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 89,
+      "endLine": 89,
+      "source": "memory",
+      "snippet": "Assistant: 湖北大学心理学系 / 第 3 系待定）。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "湖北",
+        "大学",
+        "心理学系"
+      ]
+    },
     "memory:memory/.dreams/session-corpus/2026-06-05.txt:9:9": {
       "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:9:9",
       "path": "memory/.dreams/session-corpus/2026-06-05.txt",
@@ -15976,6 +15737,262 @@
         "performing",
         "actions",
         "involving"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:90:90": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:90:90",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 90,
+      "endLine": 90,
+      "source": "memory",
+      "snippet": "User: 收到 两条路方案（心理学化 5 场 vs 5 场现行）。我已记录，不擅自改 v1.0 草稿，等 @王雅欣 拍板。 [System: This message @mentions the following users: 王雅欣 (open_id: ou_4c357eb5fa270e1ba1ed8142d2f83999). Use these open_ids when performing actions involving these users. To @mention in a reply, use `<at user_id=\"ou_x",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "v1.0",
+        "open-id",
+        "open-ids",
+        "user-id",
+        "ou-x",
+        "收到",
+        "两条路",
+        "方案"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:91:91": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:91:91",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 91,
+      "endLine": 91,
+      "source": "memory",
+      "snippet": "Assistant: <at user_id=\"ou_3a163427b0839d1264a720c774bb13e8\">心理学家</at> 提醒：王雅欣 18:13:42 已拍板 \"**同意此约束**\"（杨权 心理学 only + 华中师大+湖大 only），**心理学化（方案 B）正式确认** ✅。 教员 5 场心理学化重设计已就位（见上一条群消息），可按心理学化方案更新 88f3 子卡 v1.0 草稿： **心理学化 5 场 vs 17:39 5 场现行 关键差异**： - **主题心理学化**：学习心理学 / 教育心理学 / 心理学研究方法 /",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "user-id",
+        "v1.0",
+        "心理学家",
+        "提醒",
+        "拍板",
+        "同意",
+        "约束",
+        "心理"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:92:92": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:92:92",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 92,
+      "endLine": 92,
+      "source": "memory",
+      "snippet": "User: 4 点接受 + 撤回心理学化 ✅ 收到，督导审一下： **✅ 4 点逐条接受确认**： 1. **心理学化撤回** → 教员 5 场保持原主题（8 学科多元化）✅ 2. **学科覆盖**：8 学科（教员：课程 / 教学 / 方法 / 传播 / 法律 / 经济 / 历史 / 哲学）+ 2 学科（心理：认知 / 伦理）= **10 学科视角** ✅ 3. **督导板块边界**：教学 + 教育管理（**不是教育心理学**）✅ 4. **候选单位**：仅心理学相关场次（场 1 认知心理学 + 备选场 7）改华中师大+湖大 ✅ **✅ 督导角色确认**",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "接受",
+        "撤回",
+        "心理",
+        "收到",
+        "一下",
+        "逐条",
+        "确认",
+        "教员"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:93:93": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:93:93",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 93,
+      "endLine": 93,
+      "source": "memory",
+      "snippet": "Assistant: <at user_id=\"ou_0e1f9e71266f1b2bbf01f818f7b88833\">督导</at> 4 点接受 + 撤回心理学化 ✅ 收到，教员立场与督导一致： **✅ 5 场现行（方案 B，17:39 5 场 教员 details）是路径**： - **10 学科视角**（教员 8 学科：课程/教学/方法论/传播/法律/经济/历史/哲学 + 心理学家 2 学科：认知/伦理）✅ - **候选规则**：心理学相关场次（心理学家 场 1 认知心理学 + 备选场 7 大学生心理适应）改**华中师大+湖大**；其他场次**全",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "user-id",
+        "课程/教学/方法论/传播/法律/经济/历史/哲学",
+        "认知/伦理",
+        "接受",
+        "撤回",
+        "心理",
+        "收到",
+        "教员"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:94:94": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:94:94",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 94,
+      "endLine": 94,
+      "source": "memory",
+      "snippet": "Assistant: A3（分 2 个半天）：保持 1 场，但多半天场地/差旅成本（约 2000-3000 元） **教员推荐方案 A2**（理由：0 主题损失 + 5-8 场范围内 + 候选灵活 + 财行 540 号合规） **待 <at user_id=\"ou_4c357eb5fa270e1ba1ed8142d2f83999\">王雅欣</at> 拍板**： 1. **3 系名称**（建议：教育学院 / 心理系 / 新闻传播学院 or 法学院 / 马克思主义学院 / 人文学院） 2. **场 5 5h 违规解决方案**（教员推荐 A2 — 拆 2 场）",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "但多半天场地/差旅成本",
+        "2000-3000",
+        "5-8",
+        "user-id",
+        "半天",
+        "保持",
+        "场地",
+        "差旅"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:95:95": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:95:95",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 95,
+      "endLine": 95,
+      "source": "memory",
+      "snippet": "User: 心理学化 5 场方案收到，督导审一下 + **关键问题**： **✅ 通过项**： - 场 5 改为 4h → **解决督导之前指出的 5h 违规** ✅ - 15 学时 / 14000 元 预算合规（5 万 28%） - 备选场 7 保留（学工 2 万覆盖） **⚠️ 关键问题：18:14 撤回 vs 18:16 心理学化 矛盾？** - 18:14 你：\"4 点接受 + **撤回心理学化重设计** + 教员 5 场 details 保持原主题\" - 18:16 你：心理学化 5 场方案（学习/教育/研究方法/社会/跨学科心理圆桌） - 这",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "学习/教育/研究方法/社会/跨学科心理圆桌",
+        "心理",
+        "方案",
+        "收到",
+        "一下",
+        "关键",
+        "问题",
+        "通过"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:96:96": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:96:96",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 96,
+      "endLine": 96,
+      "source": "memory",
+      "snippet": "Assistant: <at user_id=\"ou_0e1f9e71266f1b2bbf01f818f7b88833\">督导</at> 关键问题抓得准，**接受 18:14 vs 18:16 矛盾** —— 教员应统一立场： **矛盾原因（诚实说明）**： - 王雅欣 18:13:42 \"同意此约束\" —— \"约束\" 解读不明确（候选 only vs 心理学 only） - 督导解读：候选 only 改，主题保持（大管家 17:50 转发软化版） - 我 18:16 解读：心理学 only（杨权 17:50 严格约束原版） - 18:14 我接受督导撤",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "user-id",
+        "关键",
+        "问题",
+        "接受",
+        "矛盾",
+        "教员",
+        "统一",
+        "立场"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-05.txt:97:97": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-05.txt:97:97",
+      "path": "memory/.dreams/session-corpus/2026-06-05.txt",
+      "startLine": 97,
+      "endLine": 97,
+      "source": "memory",
+      "snippet": "Assistant: 候选都改**（杨权 17:50 严格约束原版）→ 教员 5 场心理学化重设计（1 小时内出） 2. **3 系名称**（教员建议：教育学院 / 心理系 / 新闻传播学院 or 法学院 / 马克思主义学院 / 人文学院） 3. **场 2 改 3h**（+1500 元，督导已接受） 4. **场 5 5h 违规解决方案**（教员推荐 A2 拆 2 场，5 场现行下；心理学化下可能不同） 5. **场 7 备选保留 vs 取消**（5 场现行取消 / 心理学化保留） **教员等王雅欣明确\"心理学 only\"边界后**： - 选项 X：教",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-07T19:00:22.350Z",
+      "lastRecalledAt": "2026-06-07T19:00:22.350Z",
+      "queryHashes": [
+        "d131cc37f49c"
+      ],
+      "recallDays": [
+        "2026-06-08",
+        "2026-06-07"
+      ],
+      "conceptTags": [
+        "候选",
+        "严格",
+        "约束",
+        "原版",
+        "教员",
+        "心理",
+        "设计",
+        "小时"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-06-06.txt:1:1": {

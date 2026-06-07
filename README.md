@@ -1,6 +1,6 @@
 # OpenClaw 实验室多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.7-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.8-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -993,6 +993,17 @@ openclaw agents restart <agent-name>
 - **Agent梦境同步**: 10 个 Agent 的 DREAMS.md 及 dreams 记忆数据库同步
 - **配置同步**: openclaw.json 配置微调
 - **清理**: mathematician MCP server 删除、steward 旧体检报告删除
+
+### 版本 3.2.4 (2026-06-08)
+- **每日自动同步 2026-06-08**: 54 文件变更(50484+/-47389-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码(.env / gateway.systemd.env 均在 .gitignore 中,不入库)
+- **工作空间核查**: 10 个 Agent 目录结构正常,无 stray 文件
+- **清理迁移**: steward/skills/.skills_store_lock.json(运行期锁文件) → temp/_cleanup/,并新增 `/workspace/*/skills/.skills_store_lock.json` gitignore 规则
+- **配置变更**: openclaw.json 调整模型回退(fallbacks deepseek-v4-flash → deepseek-v4-pro)、移除 agent-self-development 路径加载、启用 hooks.internal.self-improvement
+- **.gitignore**: 新增 `!/hooks/` 与 `/workspace/*/skills/.skills_store_lock.json` 规则
+- **Agent梦境同步**: 10 个 Agent 的 DREAMS.md 及 dreams 记忆数据库同步;programmer/steward MEMORY.md 更新
+- **新增未追踪文件**: hooks/self-improvement/{HOOK.md,handler.ts,handler.js}、skills/.skills_store_lock.json、10 个 Agent memory/ontology/{schema.yaml,graph.jsonl}
+- **运行状态**: ✅ 稳定版,准备推送 development 分支
 
 ### 版本 3.2.3 (2026-06-07)
 - **每日自动同步 2026-06-07**: 71 文件变更(60700+/-62331-)

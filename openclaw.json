@@ -26,7 +26,7 @@
         "fallbacks": [
           "minimax/MiniMax-M3",
           "xiaomicoding/mimo-v2.5-pro",
-          "deepseek/deepseek-v4-flash"
+          "deepseek/deepseek-v4-pro"
         ]
       },
       "pdfModel": {
@@ -343,8 +343,8 @@
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.6.1",
-    "lastTouchedAt": "2026-06-04T13:21:57.613Z"
+    "lastTouchedVersion": "2026.6.2-beta.1",
+    "lastTouchedAt": "2026-06-07T03:07:01.330Z"
   },
   "browser": {
     "enabled": true,
@@ -702,8 +702,7 @@
     }
   },
   "mcp": {
-    "servers": {
-    }
+    "servers": {}
   },
   "plugins": {
     "entries": {
@@ -861,11 +860,6 @@
       "xiaomi",
       "zai"
     ],
-    "load": {
-      "paths": [
-        "/data/disk/仓库/agent-self-development"
-      ]
-    },
     "slots": {
       "memory": "memory-core"
     },
@@ -904,5 +898,15 @@
     "enabled": true,
     "proxyUrl": "http://127.0.0.1:9981",
     "loopbackMode": "gateway-only"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "self-improvement": {
+          "enabled": true
+        }
+      }
+    }
   }
 }

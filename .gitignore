@@ -86,6 +86,7 @@ __pycache__/
 !/wiki/
 !/state/
 !/skills/
+!/hooks/
 
 # ============================================
 # State 目录 
@@ -103,6 +104,7 @@ __pycache__/
 /workspace/*/.env
 /workspace/*/memory/dreaming/
 /workspace/*/memory/.dreams/session-corpus/
+/workspace/*/skills/.skills_store_lock.json
 /plugins/workboard/
 
 # ============================================
