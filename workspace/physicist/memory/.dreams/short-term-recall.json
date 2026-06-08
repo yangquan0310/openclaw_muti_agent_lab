@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-07T19:00:17.485Z",
+  "updatedAt": "2026-06-08T19:00:17.398Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-04-11.txt:1:1",
@@ -15171,6 +15171,324 @@
         "failed",
         "producing",
         "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: Let me search for more recent papers specifically in the last 24 hours.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "let",
+        "recent",
+        "papers",
+        "specifically",
+        "last",
+        "hours"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Let me search arXiv directly for the most recent submissions with Ising model in each relevant field.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "let",
+        "arxiv",
+        "directly",
+        "recent",
+        "submissions",
+        "ising",
+        "model",
+        "each"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: Let me use arXiv's API directly to find recent Ising model papers.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "let",
+        "use",
+        "arxiv's",
+        "api",
+        "directly",
+        "find",
+        "recent",
+        "ising"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: Let me also search for the most recent Ising model papers in neuroscience and machine learning areas.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "let",
+        "recent",
+        "ising",
+        "model",
+        "papers",
+        "neuroscience",
+        "machine",
+        "learning"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: Now I have enough information. Let me prepare the report. The strict 24-hour window (June 7 00:18 UTC to June 8 00:18 UTC) is empty for arXiv announcements due to the typical 1-2 day delay, but the most recent arXiv announcement (Friday June 5, 2026) contains several r",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "24-hour",
+        "1-2",
+        "now",
+        "enough",
+        "information",
+        "let",
+        "prepare",
+        "report"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: thermalisation in free fermions - **作者**：Purvaash Panduranghan-Udhayashankar, Filiberto Ares, Pasquale Calabrese - **时间**：2026-06-04 - **期刊/平台**：arXiv:2606.06362 [cond-mat.stat-mech, quant-ph] - **主要内容**：研究自由费米子闭系统中的量子热化与 Mpemba 效应。三段几何结构：有限中心链初始处于有限温度，两侧为半无限同温库链；中心链连接",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "panduranghan-udhayashankar",
+        "期刊/平台",
+        "2606.06362",
+        "cond-mat.stat-mech",
+        "quant-ph",
+        "thermalisation",
+        "free",
+        "fermions"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: 累积量。**关键发现**：模型表现出二阶相变，其临界指数**仍属于二维 Ising 普适类**；空间约束、平面且全局连通的交互拓扑在临界动力学中保持空间维度。 ### 文章 3 - **标题**：A stochastic model for fog forecasting - **作者**：Elsa Cardoso-Bihlo, Boualem Khouider - **时间**：2026-06-04 - **期刊/平台**：arXiv:2606.05590 [math-ph] - **主要内容**：提出一种基于**统计力学 Isi",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "cardoso-bihlo",
+        "期刊/平台",
+        "2606.05590",
+        "math-ph",
+        "累积",
+        "关键",
+        "发现",
+        "模型"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: 数据中的标度行为。**结合现象学重整化群（PRG）框架、功率谱密度（PSD）和去趋势波动分析（DFA）**，刻画多尺度集体动力学。结果显示健康对照者呈现与临界类组织一致的非平凡标度行为（**Ising 型临界动力学特征**），而早期精神病患者保持临界类整体现象学，但多观测量的标度指数出现系统性偏移，提示**集体动力学的重组而非临界态的丧失**。 --- ## 机器学习 ### 文章 1 - **标题**：Generative Criticality in Large Language Model Temperature Scalin",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "数据",
+        "中的",
+        "标度",
+        "行为",
+        "结合",
+        "现象",
+        "重整",
+        "prg"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "Assistant: **时间**：2026-06-02 - **期刊/平台**：arXiv:2606.03917 [physics.app-ph, cs.LG]（已投稿 Phys. Rev. E） - **主要内容**：研究 Adam 优化器用于**模拟、时间连续的 Ising 机器**（优化硬件）。针对传统梯度下降类动力学在速度与鲁棒性上的限制，**推导连续时间版本的 Adam 动力学**。在 Max-Cut 基准上，Adam 动力学相比梯度下降/动量方法显著缩短到达目标的时间并提升解质量。论文还提出一阶连续时间 Adam 近似作为简化实现方案，**",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "期刊/平台",
+        "2606.03917",
+        "physics.app-ph",
+        "cs.lg",
+        "max-cut",
+        "动力学相比梯度下降/动量方法显著缩短到达目标的时间并提升解质量",
+        "时间",
+        "期刊"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: https://arxiv.org/abs/2606.06238 | | Adam for Analog Ising Machines | https://arxiv.org/abs/2606.03917 | | Bilayer Janus 1T-MnSSe (effective Ising) | https://arxiv.org/abs/2606.06146 | | High-Order Vector Potts Models (Ising generalization) | https://arxiv.org/abs/2606",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:15.922Z",
+      "lastRecalledAt": "2026-06-08T19:00:15.922Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "arxiv.org/abs/2606.06238",
+        "arxiv.org/abs/2606.03917",
+        "1t-mnsse",
+        "arxiv.org/abs/2606.06146",
+        "high-order",
+        "arxiv.org/abs/2606",
+        "https",
+        "arxiv.org"
       ]
     }
   }

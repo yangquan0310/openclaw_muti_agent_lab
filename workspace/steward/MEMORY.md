@@ -178,25 +178,7 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-06-08)
+## Promoted From Short-Term Memory (2026-06-09)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:45:48 -->
-- 待跟进事项: | 项 | 状态 | 备注 | |----|------|------| | **审阅卡 `9787a61a-1980-4983-b32f-90d3e54ea35d`** | ⏳ 等老板审阅 | 验证 create 阶段修复效果 | | 清理 4 张测试卡 | 待授权 | 调试A/B/C + 调试卡已 done | [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-02.md:45-48]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:6:9 -->
-- workboard CLI 全面升级（commit `b350d78c`）: 创建阶段修复：默认 `status=backlog`、联动 `sessionKey`、联动 `execution.engine/model/mode`; 默认值：`engine=codex`, `model=minimax/MiniMax-M3`; **关键 bug 发现**：`normalizeExecution` 要求 `model` 必填，缺 `model` 时 execution 被静默丢弃; 不自动 claim（老板明确"不要"） [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-02.md:6-9]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:12:15 -->
-- workboard CLI 修复链（4 commit）: | Commit | 修复 | |--------|------| | `6d9c815e` | feat: create 加 `--session` flag | | `f18df719` | fix: `--session` 配默认 backlog + execution.sessionKey 同步 | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:12-15]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:16:17 -->
-- workboard CLI 修复链（4 commit）: | `9e78459e` | fix: `ejecución`→`execution` 拼写 + start 默认 model | | `58094e59` | fix: start 路径 A/B 真触发 run（chat.send + idempotencyKey） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:16-17]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:19:20 -->
-- workboard CLI 修复链（4 commit）: **根因**：workboard 控制台 `Ix()` 硬编码 `sessions.create` 覆盖卡 sessionKey；CLI 没真触发 run；`normalizeExecution` 要 model 字段。 **教训**：依赖包里的 `control-ui/.../assets/index-*.js` 等前端代码也是 workboard 行为的一部分，Dx 函数会强制同步卡状态到 session 状态。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:19-20]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:24:27 -->
-- 任务流文档重构（6 commit）: | Commit | 内容 | |--------|------| | `a0d1d8f9` | refactor: 清理冗余 references（26→25），合并 knowledge + sync 双件 | | `65e50ce1` | feat: workboard-guide v1.4.0（4 新 CLI 功能 + Dashboard 限制 + 卡状态机） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:24-27]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:28:31 -->
-- 任务流文档重构（6 commit）: | `5c3e33ec` | feat: task-flow-guide v2.2 合并三件套（task-guide + lifecycle + progression） | | `1e3c2e02` | chore: skill-developer 规范对齐（删 guide.md / README.md / _meta.json，CLI symlink） | | `325359b2` | fix: v2.3 审计修复（TODO 7 字段定型 + claim 协议） | | `30b26ce3` | feat: IM 模板简化（强调认领，不包目标/约束/输入/产出） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:28-31]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:3:4 -->
-- 2026-06-03 长期记忆: > Pre-compaction memory flush。今天的工作记忆归集。 > 已合并到工作区文件的内容不再重复，只记**新决策/新规则/挂起项**。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:3-4]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:32:34 -->
-- 任务流文档重构（6 commit）: | `314dd6ac` | refactor: notes 模板独立 + 去重 `_build_task_notes` | | `9734205d` | chore: IM 模板顺序调整（task_desc 抬头） | | `97bd4b7e` | chore: 去硬编码值（agent/session/oc_id 等改占位符） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:32-34]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:42:45 -->
-- 三件套架构（TODO + workboard + IM）: | 层 | 工具 | 角色 | 谁用 | |----|------|------|------| | **纪律层** | `TODO.md` | 看板、状态记录 | 大管家 | | **数据/执行层** | `workboard` 卡片 | 派发、状态机、运行轨迹 | 大管家 CLI（create/start/move/list/read/bulk）+ 代理插件工具（claim/heartbeat/release/proof） | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-03.md:42-45]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:46:46 -->
+- 三件套架构（TODO + workboard + IM）: | **可见层** | **IM 群艾特** | 1 个模板（认领用） | 大管家 | [score=0.805 recalls=0 avg=0.620 source=memory/2026-06-03.md:46-46]

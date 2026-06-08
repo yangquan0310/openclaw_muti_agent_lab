@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-07T19:00:19.586Z",
+  "updatedAt": "2026-06-08T19:00:20.646Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-05-30.txt:211:211": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:211:211",
@@ -246,307 +246,6 @@
         "research-status-file-format",
         "技能",
         "配置"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:219:219": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:219:219",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 219,
-      "endLine": 219,
-      "source": "memory",
-      "snippet": "User: 算了 下一个任务 index.json有多少文献？ 哪些文献没有notes",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "index.json有多少文献",
-        "算了",
-        "一个",
-        "任务",
-        "index.json",
-        "多少",
-        "文献",
-        "哪些"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:220:220": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:220:220",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 220,
-      "endLine": 220,
-      "source": "memory",
-      "snippet": "Assistant: **index.json 文献统计：** | 指标 | 数量 | |------|------| | 文献总数 | 468 篇 | | 没有 notes 的文献 | 8 篇 | **没有 notes 的文献列表：** | # | Paper ID | 标题 | |---|----------|------| | 1 | a6900f75... | Five weeks of immersive reminiscence therapy... | | 2 | 831cea64... | The efficacy of Life Rev",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "index.json",
-        "文献",
-        "统计",
-        "指标",
-        "数量",
-        "总数",
-        "没有",
-        "列表"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:221:221": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:221:221",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 221,
-      "endLine": 221,
-      "source": "memory",
-      "snippet": "User: 这八篇，有没有abstract？",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "没有",
-        "abstract"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:222:222": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:222:222",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 222,
-      "endLine": 222,
-      "source": "memory",
-      "snippet": "Assistant: | # | 标题 | 有无 Abstract | |---|------|---------------| | 1 | Five weeks of immersive reminiscence therapy improves... | ✓ (1410字符) | | 2 | The efficacy of Life Review Therapy combined with... | ✓ (1748字符) | | 3 | Improvement of the Quality of Life in Aging by... | ✓ (12",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "标题",
-        "abstract",
-        "five",
-        "weeks",
-        "immersive",
-        "reminiscence",
-        "therapy",
-        "improves"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:223:223": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:223:223",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 223,
-      "endLine": 223,
-      "source": "memory",
-      "snippet": "Assistant: 好，现在我有足够的信息了。来写合并后的研究现状文档：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "现在",
-        "我有",
-        "足够",
-        "信息",
-        "合并",
-        "研究",
-        "现状"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:224:224": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:224:224",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 224,
-      "endLine": 224,
-      "source": "memory",
-      "snippet": "Assistant: 已完成，文件已写入： `/root/data/disk/仓库/数字化存储与自传体记忆/knowledge/review/研究现状_数字化存储与自传体记忆.md` --- **文档结构（按模板8部分）**： | 部分 | 内容 | |------|------| | 一、概述 | 核心概念定义表 + 报告范围 | | 二、核心议题 | 5个议题（数字化使用、自我参照编码、系统性巩固、主动遗忘、生成性提取），每议题按\"主流观点→最新进展→关键技术→实践应用\"展开 | | 三、主要流派 | 3组流派对比表（退化论vs适应论、STC vs",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "完成",
-        "文件",
-        "root",
-        "data",
-        "disk",
-        "仓库",
-        "数字",
-        "存储"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:225:225": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:225:225",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 225,
-      "endLine": 225,
-      "source": "memory",
-      "snippet": "User: 把这个文件传递过来",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "这个",
-        "文件",
-        "传递",
-        "过来"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:226:226": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:226:226",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 226,
-      "endLine": 226,
-      "source": "memory",
-      "snippet": "Assistant: 研究现状_数字化存储与自传体记忆.md",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "研究现状-数字化存储与自传体记忆.md",
-        "研究",
-        "现状",
-        "数字",
-        "存储",
-        "自传",
-        "记忆"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:227:227": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:227:227",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 227,
-      "endLine": 227,
-      "source": "memory",
-      "snippet": "Assistant: 已发送。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "发送"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-30.txt:228:228": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-30.txt:228:228",
-      "path": "memory/.dreams/session-corpus/2026-05-30.txt",
-      "startLine": 228,
-      "endLine": 228,
-      "source": "memory",
-      "snippet": "User: 这个写得不好。 删除后重新撰写。 名字叫数字化存储对自传体记忆的影响。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-06-01T19:00:08.382Z",
-      "lastRecalledAt": "2026-06-01T19:00:08.382Z",
-      "queryHashes": [
-        "3558e5ebbbb7"
-      ],
-      "recallDays": [
-        "2026-06-02",
-        "2026-06-01"
-      ],
-      "conceptTags": [
-        "这个",
-        "不好",
-        "删除",
-        "重新",
-        "撰写",
-        "名字",
-        "数字",
-        "存储"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-31.txt:100:100": {
@@ -15918,6 +15617,301 @@
         "unified",
         "framework",
         "arxiv"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status. [Subagent Task] 你是**心理学家**，被大管家派发评估任务。请按以下要求执行： ## 任务标题 [心理学家] 评估两家供应商设备功能 vs 心理学实验/教学/科研需求匹配度 ## CARD_ID（你的 workboard 卡片 ID） bc31024b-e46e-4b",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "1/1",
+        "auto-announce",
+        "busy-poll",
+        "心理学实验/教学/科研需求匹配度",
+        "card-id",
+        "bc31024b-e46e-4b",
+        "context",
+        "running"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: 虚拟现实沉浸式心理干预实验室 - 武汉文理学院是**应用心理学系**，重点是应用心理学（咨询/治疗/测评/团体），但也要覆盖基础心理学（实验/统计/认知） - 两家供应商：朗心致远（25 项设备）、混元时代（10 项设备） ## 任务四要素 - 目标：评估两家供应商的设备功能与\"智能心理科技与创新实验中心\"教学/科研/实验需求的匹配度 - 约束：仅评估**功能匹配度**（教学/科研/咨询/团体），不评判价格 - 输入：上述两份 xlsx - 输出：评估报告 markdown（绝对路径已给） 请独立完成，写出有专业判断力的报告。报告要明确推荐",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "咨询/治疗/测评/团体",
+        "实验/统计/认知",
+        "教学/科研/实验需求的匹配度",
+        "教学/科研/咨询/团体",
+        "虚拟",
+        "现实",
+        "沉浸",
+        "心理"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 我已读完两份 xlsx。下面写报告。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "xlsx",
+        "下面",
+        "报告"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: 报告已生成，21KB / 254 行，结构完整。现在调用 workboard_complete 报大管家。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "workboard-complete",
+        "报告",
+        "生成",
+        "21kb",
+        "结构",
+        "完整",
+        "现在",
+        "管家"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: 任务完成。 **完成情况**： - ✅ 读取两份 xlsx（朗心致远 25 项 + 混元时代 10 项），重点读\"设备清单汇总\"和按实验室分 sheet 的功能参数 - ✅ 按要求结构写评估报告（结论 / 4 实验室对比 / 关键设备对比 / 风险点 / 谈判建议 / 补充说明） - ✅ 报告写入 `/root/.openclaw/workspace/steward/temp/心理系实验室报价评审/心理学家-功能匹配度评估.md`（21KB / 254 行） - ✅ workboard_complete 已调用，proof=pass",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "workboard-complete",
+        "任务",
+        "完成",
+        "情况",
+        "xlsx",
+        "时代",
+        "重点",
+        "设备"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-08.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-08.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-06-08.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-08T19:00:17.650Z",
+      "lastRecalledAt": "2026-06-08T19:00:17.650Z",
+      "queryHashes": [
+        "b2d79ea44bad"
+      ],
+      "recallDays": [
+        "2026-06-09",
+        "2026-06-08"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
       ]
     },
     "memory:memory/2026-05-15.md:1:34": {

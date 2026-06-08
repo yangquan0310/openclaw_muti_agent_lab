@@ -309,6 +309,13 @@
       "lineCount": 34,
       "lastContentLine": 34
     },
+    "psychologist:sessions/psychologist/5f011df7-babb-4ab1-8894-dc0b6a60fa30.jsonl": {
+      "mtimeMs": 1780893798819,
+      "size": 223610,
+      "contentHash": "65c2f5e5c938bb89fe6743c1bca39d4ff76c1c8f0e95587004f852996af811cf",
+      "lineCount": 5,
+      "lastContentLine": 5
+    },
     "psychologist:sessions/psychologist/63fd4f8d-7ca3-4bc7-a105-cfdc038a8753.jsonl.reset.2026-05-30T05-36-37.219Z": {
       "mtimeMs": 1780119364600,
       "size": 265447,
@@ -357,13 +364,6 @@
       "contentHash": "04bae1048508902f7bace0e2d1ff2a3245dd086291cb721ea9279b904b0e71f4",
       "lineCount": 113,
       "lastContentLine": 113
-    },
-    "psychologist:sessions/psychologist/76774531-8c78-4a65-a12d-b544056e212a.jsonl.deleted.2026-05-09T14-53-16.321Z": {
-      "mtimeMs": 1778312530074,
-      "size": 273938,
-      "contentHash": "33d572bec11822a9baece97cd10d2c5470216da0128d527886a1bdfb86a83d9c",
-      "lineCount": 1,
-      "lastContentLine": 1
     },
     "psychologist:sessions/psychologist/7802de42-e525-45e4-89fa-add7677a4884.jsonl": {
       "mtimeMs": 1780360029073,
@@ -421,6 +421,13 @@
       "lineCount": 13,
       "lastContentLine": 13
     },
+    "psychologist:sessions/psychologist/8697dbc4-eb51-42d1-9ff5-f148bab01ea4.jsonl": {
+      "mtimeMs": 1780878788189,
+      "size": 465791,
+      "contentHash": "2c99912e21616a74bfac4b7a2ba826d0a7d0e608eab254b6e1f8f44d9f334ec0",
+      "lineCount": 5,
+      "lastContentLine": 5
+    },
     "psychologist:sessions/psychologist/88469314-9d62-480c-9b34-78fe2bc3cfdd.jsonl": {
       "mtimeMs": 1780121199096,
       "size": 184684,
@@ -449,26 +456,12 @@
       "lineCount": 11,
       "lastContentLine": 11
     },
-    "psychologist:sessions/psychologist/921c5a94-8afc-4716-ae4a-b2842bd65524.jsonl.deleted.2026-05-09T14-53-16.516Z": {
-      "mtimeMs": 1778298293533,
-      "size": 240462,
-      "contentHash": "0fecf6449058e1b2a754640dadb0544782ad282a06146790d2d015e431f313fe",
-      "lineCount": 1,
-      "lastContentLine": 1
-    },
     "psychologist:sessions/psychologist/948aae96-fd03-4c55-839d-4ff0a72f6fa1.jsonl": {
       "mtimeMs": 1779897253271,
       "size": 54191,
       "contentHash": "32096952480fe2ead9fd49d85e1391608cae2280953e60d83bb99332c769843e",
       "lineCount": 8,
       "lastContentLine": 8
-    },
-    "psychologist:sessions/psychologist/961c15f7-b2a2-42de-9751-885ab2e0e55d.jsonl.reset.2026-05-09T03-36-24.954Z": {
-      "mtimeMs": 1778258443832,
-      "size": 1545365,
-      "contentHash": "170617fdfcb4471bfe7af37995bcb4382c698dbe76faa58e8332e860866b5571",
-      "lineCount": 55,
-      "lastContentLine": 55
     },
     "psychologist:sessions/psychologist/9b76b23b-690c-4794-adf4-d89b8935bbd6.jsonl": {
       "mtimeMs": 1779898607448,
@@ -503,7 +496,7 @@
       "size": 1758008,
       "contentHash": "50226139b2dd926290697e46c78ad365ee04c9e5c1952e4845cbbde38df9f1f5",
       "lineCount": 330,
-      "lastContentLine": 72
+      "lastContentLine": 330
     },
     "psychologist:sessions/psychologist/a7913ff3-7674-4ef7-9547-bc388ec850bd.jsonl.reset.2026-05-30T05-32-37.075Z": {
       "mtimeMs": 1780119051150,
@@ -601,7 +594,7 @@
       "size": 1740119,
       "contentHash": "abf440580bfcd36cd389d9d55e9f3d8fd9ee4e7ff84e8280946ca02ecd66810e",
       "lineCount": 235,
-      "lastContentLine": 72
+      "lastContentLine": 235
     },
     "psychologist:sessions/psychologist/bfb58ee0-5482-4210-864a-1f1ff1e92f3b.jsonl.deleted.2026-05-17T03-48-16.467Z": {
       "mtimeMs": 1778834791535,
@@ -8141,6 +8134,20 @@
       "02f8d7b9cde2979eb4ad622666504b413d886913",
       "7eb2f1a760a3e945b5498f0a6606200592559904",
       "07b9dc4a96ce51a99e48f1167133f202fc608249"
+    ],
+    "psychologist:5f011df7-babb-4ab1-8894-dc0b6a60fa30": [
+      "77880533d71dc84f663bc8c87e19959cab32208d",
+      "e3df3d5abc69cc134f64d55de5bad3acdeaf6ccb",
+      "5032d5f099b3558087f68f9972f10bec0e8c61e8",
+      "e69d91fcfe64767e8450014d521e4125dca72b47",
+      "f301d33303bf4f8a0e1ce37ab91f51562c4fc4bb"
+    ],
+    "psychologist:8697dbc4-eb51-42d1-9ff5-f148bab01ea4": [
+      "ec0a050acc10323d734102e404668c420bc5eda8",
+      "3f682ac47321993163507dc1fe2a391f62b33234",
+      "6c2dac4f840d821e2f442c38b9304770ba3d724b",
+      "9c48759747bdd595d577f91b17d24750708b0b0c",
+      "85024727bf22b5674890a3ff1a0c97cf81134ed9"
     ]
   }
 }
