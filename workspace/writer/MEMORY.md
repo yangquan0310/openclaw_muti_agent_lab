@@ -58,6 +58,7 @@
 
 | **需要重复发送同样内容** | **先艾特用户确认是否发送成功，再决定是否重试；禁止在未经确认的情况下盲目重试** |
 | **处理 Workboard 卡片** | **卡片真实 ID 是 UUID 格式**（如 `2b1f89f2-7437-4182-98f3-698a14c84a80`），任务标题里的 `oc_xxx` 往往是飞书群 chat_id 而非卡片 ID。处理步骤：先 `workboard_list` 找到 UUID → 用 UUID 调用 `workboard_claim`/`workboard_read`/`workboard_proof`/`workboard_release`，别用 `oc_xxx` 误用为卡片 ID |
+| **apaquorto / quarto render 输出路径** | **`--output-dir` 相对 shell 当前工作目录（CWD），不是 .md 文件所在目录**。v5.5 错位就因此——从 `manuscripts/治疗匹配测度论文/` 跑 `--output-dir ../docs` 输出落 `manuscripts/docs/`（错）。正确两条：(a) `cd 学生论文修改 && quarto render manuscripts/治疗匹配测度论文/治疗匹配测度论文.md --output-dir docs` → 输出 `学生论文修改/docs/`；(b) `cd manuscripts/治疗匹配测度论文 && quarto render 治疗匹配测度论文.md --output-dir ../../docs` → 输出 `学生论文修改/docs/`. apaquorto 脚手架期望输出在 `学生论文修改/docs/`，跑前 `pwd` 验证 CWD |
 
 ## 历史版本
 
