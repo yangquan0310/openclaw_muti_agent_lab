@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-09T19:01:06.866Z",
+  "updatedAt": "2026-06-10T19:03:48.601Z",
   "entries": {
     "memory:memory/.dreams/session-corpus/2026-05-20.txt:1:1": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-20.txt:1:1",
@@ -1440,215 +1440,6 @@
         "案例"
       ]
     },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:37:37": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:37:37",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 37,
-      "endLine": 37,
-      "source": "memory",
-      "snippet": "Assistant: <at user_id=\"ou_533756bb2c2206e0e7229b2e9aa90c97\">大管家</at> ch11行动研究法v6终稿教案任务已完成。 ✅ 终稿教案_v2.md（2026-05-21 13:29 写入，已提交main） ✅ 输入：课件脚本_v2.md + v3_案例补充.md + 终稿教案.md ✅ 输出：manuscripts/终稿教案_v2.md ✅ 内容：按20页课件脚本结构编排，完整融入3个真实案例（韩娟2024课堂管理/顾泠沅2022青浦教改/嘉定新城2025幼儿园教师发展），含三案例横向对照表，",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "user-id",
-        "终稿教案-v2.md",
-        "课件脚本-v2.md",
-        "v3-案例补充.md",
-        "终稿教案.md",
-        "manuscripts/终稿教案-v2.md",
-        "管家",
-        "ch11"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:38:38": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:38:38",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 38,
-      "endLine": 38,
-      "source": "memory",
-      "snippet": "User: 已清理完成。ch11状态： - manuscripts/: 仅保留需求分析.md ✅ - slides/: 清空 **新流程开始：** ch11行动研究法 **v2内容框架** 任务 前置：读 ch11_行动研究法/README.md 输入：ch11_行动研究法/manuscripts/需求分析.md 输出：ch11_行动研究法/manuscripts/内容框架.md 要求：基于需求分析，设计知识框架、知识点清单（含重难点）、课时分配建议 完成后群里艾特大管家汇报。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "仅保留需求分析.md",
-        "ch11-行动研究法/readme.md",
-        "ch11-行动研究法/manuscripts/需求分析.md",
-        "ch11-行动研究法/manuscripts/内容框架.md",
-        "清理",
-        "完成",
-        "ch11",
-        "状态"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:39:39": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:39:39",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 39,
-      "endLine": 39,
-      "source": "memory",
-      "snippet": "Assistant: 收到任务。ch11已清理完毕，新流程从v2内容框架开始。 前置：读 README.md（已知内容框架.md输出路径） 执行v2内容框架任务：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "readme.md",
-        "已知内容框架.md输出路径",
-        "收到",
-        "任务",
-        "ch11",
-        "清理",
-        "完毕",
-        "流程"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:4:4": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:4:4",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 4,
-      "endLine": 4,
-      "source": "memory",
-      "snippet": "Assistant: 终稿教案_v2.md已生成并推送至main分支。现在群里汇报：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "终稿教案-v2.md已生成并推送至main分支",
-        "教案",
-        "生成",
-        "推送",
-        "分支",
-        "现在",
-        "汇报"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:40:40": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:40:40",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 40,
-      "endLine": 40,
-      "source": "memory",
-      "snippet": "Assistant: 需求分析已读。现在编写v2内容框架：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "需求",
-        "分析",
-        "现在",
-        "编写",
-        "内容",
-        "框架"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:41:41": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:41:41",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 41,
-      "endLine": 41,
-      "source": "memory",
-      "snippet": "Assistant: 已写入，提交git：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "提交",
-        "git"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:42:42": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:42:42",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 42,
-      "endLine": 42,
-      "source": "memory",
-      "snippet": "Assistant: 汇报大管家：",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "汇报",
-        "管家"
-      ]
-    },
     "memory:memory/.dreams/session-corpus/2026-05-21.txt:43:43": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:43:43",
       "path": "memory/.dreams/session-corpus/2026-05-21.txt",
@@ -1871,38 +1662,6 @@
         "任务",
         "完成",
         "汇报"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:5:5": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:5:5",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 5,
-      "endLine": 5,
-      "source": "memory",
-      "snippet": "Assistant: @呈现师 ch11行动研究法终稿教案v2已完成，整合了3个真实案例（韩娟2024课堂管理/顾泠沅2022青浦教改/嘉定新城2025幼儿园教师发展），请基于课件脚本_v2.md编译终稿PPT",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "请基于课件脚本-v2.md编译终稿ppt",
-        "呈现",
-        "ch11",
-        "行动",
-        "研究",
-        "教案",
-        "完成",
-        "整合"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-21.txt:50:50": {
@@ -2225,38 +1984,6 @@
         "确认"
       ]
     },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:6:6": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:6:6",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 6,
-      "endLine": 6,
-      "source": "memory",
-      "snippet": "User: 收到。需要同步更新教案。 **v6终稿任务分配：** **教员（instructor）**：基于v4课件脚本更新终稿教案，整合3个真实案例内容 - 输入：manuscripts/课件脚本_v2.md + manuscripts/v3_案例补充.md + 现有终稿教案.md - 输出：manuscripts/终稿教案_v2.md（替换原文件） **呈现师（presenter）**：基于v4课件脚本编译终稿PPT - 输入：manuscripts/课件脚本_v2.md - 输出：slides/教育科学研究方法_第十一章_终稿.pptx 更新终稿教",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "manuscripts/课件脚本-v2.md",
-        "manuscripts/v3-案例补充.md",
-        "现有终稿教案.md",
-        "manuscripts/终稿教案-v2.md",
-        "slides/教育科学研究方法-第十一章-终稿.pptx",
-        "收到",
-        "需要",
-        "同步"
-      ]
-    },
     "memory:memory/.dreams/session-corpus/2026-05-21.txt:60:60": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:60:60",
       "path": "memory/.dreams/session-corpus/2026-05-21.txt",
@@ -2471,70 +2198,6 @@
         "completed",
         "教案",
         "task"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:7:7": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:7:7",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 7,
-      "endLine": 7,
-      "source": "memory",
-      "snippet": "Assistant: @呈现师 <at user_id=\"ou_ef4dc56236712c6014660f8255523b45\">呈现师</at> ch11行动研究法终稿教案v2已完成，整合了课件脚本_v2（20页）和3个真实案例（韩娟2024/顾泠沅2022/嘉定新城2025）。请基于课件脚本_v2.md编译终稿PPT，输出到slides/教育科学研究方法_第十一章_终稿.pptx。完成后群里汇报。",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "user-id",
-        "整合了课件脚本-v2",
-        "韩娟2024/顾泠沅2022/嘉定新城2025",
-        "请基于课件脚本-v2.md编译终稿ppt",
-        "输出到slides/教育科学研究方法-第十一章-终稿.pptx",
-        "呈现",
-        "ch11",
-        "行动"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-21.txt:8:8": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-21.txt:8:8",
-      "path": "memory/.dreams/session-corpus/2026-05-21.txt",
-      "startLine": 8,
-      "endLine": 8,
-      "source": "memory",
-      "snippet": "User: 收到。需要同步更新教案。 **v6终稿任务分配：** **教员（instructor）**：基于v4课件脚本更新终稿教案，整合3个真实案例内容 - 输入：manuscripts/课件脚本_v2.md + manuscripts/v3_案例补充.md + 现有终稿教案.md - 输出：manuscripts/终稿教案_v2.md（替换原文件） **呈现师（presenter）**：基于v4课件脚本编译终稿PPT - 输入：manuscripts/课件脚本_v2.md - 输出：slides/教育科学研究方法_第十一章_终稿.pptx 更新终稿教",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-22T19:00:50.999Z",
-      "lastRecalledAt": "2026-05-22T19:00:50.999Z",
-      "queryHashes": [
-        "90ee39ac7cd8"
-      ],
-      "recallDays": [
-        "2026-05-23",
-        "2026-05-22"
-      ],
-      "conceptTags": [
-        "manuscripts/课件脚本-v2.md",
-        "manuscripts/v3-案例补充.md",
-        "现有终稿教案.md",
-        "manuscripts/终稿教案-v2.md",
-        "slides/教育科学研究方法-第十一章-终稿.pptx",
-        "收到",
-        "需要",
-        "同步"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-23.txt:1:1": {
@@ -13073,6 +12736,102 @@
         "final"
       ]
     },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:117:117": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:117:117",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 117,
+      "endLine": 117,
+      "source": "memory",
+      "snippet": "Assistant: 消息发送成功！更新计划，标记任务完成。",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "消息",
+        "发送",
+        "成功",
+        "更新",
+        "计划",
+        "标记",
+        "任务",
+        "完成"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:118:118": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:118:118",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 118,
+      "endLine": 118,
+      "source": "memory",
+      "snippet": "Assistant: ## ✅ ch15 v2 内容框架任务完成报告 **📄 产出文件**：`/data/disk/仓库/教育科学研究方法/chapters/ch15_研究设计/manuscripts/v2_内容框架.md` **📊 实际规模**：46,228 字节 / 850 行 / 10 一级标题 ### 5 大必填部分全部齐全 | # | 必填部分 | 状态 | |---|----------|------| | 1 | 三层知识结构（框架→细化→范例） | ✅ | | 2 | 15 个知识点清单（4 重点 + 2 重难点，难度+课时全标注）",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "ch15",
+        "内容",
+        "框架",
+        "任务",
+        "完成",
+        "报告",
+        "文件",
+        "data"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:119:119": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:119:119",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 119,
+      "endLine": 119,
+      "source": "memory",
+      "snippet": "Assistant: `workboard_proof`：status=passed, label=ch15-v2，附产出路径 2. ✅ `workboard_comment`：详细进度反馈 3. ✅ 群里 @大管家 汇报（消息已成功发送到 `oc_1032e70e8854c3bba9df42f38d532536`，message_id=om_x100b6d4bfd25e0bcc35338027c396c5） ### 移交说明 按 lesson-plan-guide v2.0.0 §四 规范，v2.0 状态为已核验，**心理学家 v3 现在可以串行启动*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "workboard-proof",
+        "ch15-v2",
+        "workboard-comment",
+        "message-id",
+        "lesson-plan-guide",
+        "v2.0.0",
+        "v2.0",
+        "status"
+      ]
+    },
     "memory:memory/.dreams/session-corpus/2026-06-09.txt:12:12": {
       "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:12:12",
       "path": "memory/.dreams/session-corpus/2026-06-09.txt",
@@ -13100,6 +12859,254 @@
         "最大",
         "精确",
         "裁剪"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:120:120": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:120:120",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 120,
+      "endLine": 120,
+      "source": "memory",
+      "snippet": "Assistant: 王老师，您刚发的PPT（教育科学研究方法1213.pptx）我尝试下载但没成功——可能因为它是新版file_key（file_v3_0012g_...）格式，我手头的下载工具（feishu_im_bot_image / lark-cli download）都报错了。 不过我**刚才已经按您的拆分要求生成了两份教案**，是基于 6月5日您发的 73页三章合一PPT（ch12+ch13+ch14）拆出来的： - 📘 教案一：第十二章 个案研究法 + 第十三章（上）教育叙事研究（4学时） - 📗 教案二：第十三章（下）教育叙事研究 +",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "教育科学研究方法1213.pptx",
+        "可能因为它是新版file-key",
+        "file-v3-0012g",
+        "feishu-im-bot-image",
+        "lark-cli",
+        "老师",
+        "ppt",
+        "教育"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:121:121": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:121:121",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 121,
+      "endLine": 121,
+      "source": "memory",
+      "snippet": "Assistant: 按 message 工具规则，发完消息后用 NO_REPLY 等待回复。 NO_REPLY",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "no-reply",
+        "message",
+        "工具",
+        "规则",
+        "消息",
+        "等待",
+        "回复"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:122:122": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:122:122",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 122,
+      "endLine": 122,
+      "source": "memory",
+      "snippet": "Assistant: 收到！王老师要的是文件（不是文本）。让我直接把两份教案文件发给她：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "收到",
+        "老师",
+        "的是",
+        "文件",
+        "不是",
+        "文本",
+        "直接",
+        "教案"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:123:123": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:123:123",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 123,
+      "endLine": 123,
+      "source": "memory",
+      "snippet": "Assistant: 教案一_第12章个案研究法+第13章(上)教育叙事研究.md",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "教案一-第12章个案研究法",
+        "教育叙事研究.md",
+        "教案",
+        "个案",
+        "研究",
+        "教育",
+        "叙事"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:124:124": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:124:124",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 124,
+      "endLine": 124,
+      "source": "memory",
+      "snippet": "Assistant: 教案二_第13章(下)教育叙事研究+第14章量的研究与质的研究的整合.md",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "教案二-第13章",
+        "第14章量的研究与质的研究的整合.md",
+        "教案",
+        "教育",
+        "叙事",
+        "研究",
+        "量的",
+        "整合"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:125:125": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:125:125",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 125,
+      "endLine": 125,
+      "source": "memory",
+      "snippet": "Assistant: Final verification:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "final",
+        "verification"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:126:126": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:126:126",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 126,
+      "endLine": 126,
+      "source": "memory",
+      "snippet": "Assistant: All 5 verification criteria pass. Task complete. ## Summary **ch15《研究设计》v2.1 反馈循环（重派）** 任务已完成： **文件写入**： - 路径：`/data/disk/仓库/教育科学研究方法/chapters/ch15_研究设计/manuscripts/v2_内容框架.md` - v2.0 → v2.1：46,228 字节 / 850 行 → **51,992 字节 / 907 行**（+5,764 字节 / +57 行 / +12.5%） **强制验收 5",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "v2.1",
+        "v2.0",
+        "12.5",
+        "all",
+        "verification",
+        "criteria",
+        "pass",
+        "task"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-09.txt:127:127": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-09.txt:127:127",
+      "path": "memory/.dreams/session-corpus/2026-06-09.txt",
+      "startLine": 127,
+      "endLine": 127,
+      "source": "memory",
+      "snippet": "Assistant: ch03→kp8 发现→分解 - **4 P2 自选**：kp1 国际隐喻+斯诺 1854 / kp6 \"太大\"反例 / kp10 甘特图 / kp12 中国本土化核心评审要素 - **1 关键贡献**：PM 理论中国化 30 年 8 阶段谱系 **约束遵守**：不引入教材外新概念 / 90 min 总课时不变（v3 全部嵌入式插入）/ 直接覆盖 v2 文件（未创建分支） **反馈已完成**： - ✅ `workboard_proof` (status: passed, label: ch15-v2.1-retry) - ✅ `wo",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-10T19:03:25.288Z",
+      "lastRecalledAt": "2026-06-10T19:03:25.288Z",
+      "queryHashes": [
+        "25f210cf024c"
+      ],
+      "recallDays": [
+        "2026-06-11",
+        "2026-06-10"
+      ],
+      "conceptTags": [
+        "workboard-proof",
+        "ch15-v2.1-retry",
+        "ch03",
+        "kp8",
+        "发现",
+        "分解",
+        "kp1",
+        "国际"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-06-09.txt:13:13": {

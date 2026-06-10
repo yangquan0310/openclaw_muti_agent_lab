@@ -994,6 +994,15 @@ openclaw agents restart <agent-name>
 - **配置同步**: openclaw.json 配置微调
 - **清理**: mathematician MCP server 删除、steward 旧体检报告删除
 
+### 版本 3.2.6 (2026-06-11)
+- **每日自动同步 2026-06-11**: 47 文件变更(47061+/-45127-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码(grep 全仓库扫描 `api_key/secret/token/password` 无明文值;待推送文件均为 DREAMS 日记、dreams 记忆数据库、state/openclaw.sqlite,无密钥泄露)
+- **工作空间核查**: 10 个 Agent 目录结构正常,标准 8 个 .md 配置文件 + temp/memory/.agents/.openclaw/.learnings 目录齐全
+- **清理迁移**: psychologist/knowledge/research/{hull_1920_scispace.pdf, reber_1967_academia.html, reberlab.html}(一次性研究下载文件) → psychologist/temp/research_2026-06-10/,gitignore 自动忽略
+- **Agent梦境同步**: 10 个 Agent 的 DREAMS.md 及 dreams 记忆数据库(events.jsonl/phase-signals/session-ingestion/short-term-recall/daily-ingestion)同步
+- **state/openclaw.sqlite**: 系统状态数据库同步(7MB,WAL/SHM 已忽略)
+- **运行状态**: ✅ 稳定版,准备推送 development 分支
+
 ### 版本 3.2.5 (2026-06-10)
 - **每日自动同步 2026-06-10**: 54 文件变更(64991+/-62432-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码(grep 全仓库扫描 `api_key/secret/token/password` 无明文值;`config.json` 仅保留 `api_key_env` 字段名)
@@ -1075,7 +1084,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-10 04:00:00**
+**最后更新: 2026-06-11 04:00:00**
 **系统版本**: OpenClaw 2026.6.8
 **插件版本**: agent-self-development v4.3.1
 **运行状态**: ✅ 稳定版
