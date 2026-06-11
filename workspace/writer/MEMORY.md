@@ -69,3 +69,12 @@
 ---
 *最后重构: 2026-05-23*
 *重构者: 大管家*
+
+## Promoted From Short-Term Memory (2026-06-12)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-09-1033.md:13:14 -->
+- Conversation Summary: assistant: 心理治疗适宜性与治疗期待和偏好的关系_CFPPS论文.pdf assistant: NO_REPLY [score=0.815 recalls=0 avg=0.620 source=memory/2026-06-09-1033.md:13-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-09-1033.md:3:5 -->
+- Session: 2026-06-09 10:33:31 GMT+8: **Session Key**: agent:writer:feishu:group:oc_cd80162eb81e39f77160a0daab2a6ab8; **Session ID**: 6c2eb9d6-fcfb-40a0-8fbb-e6ab94d462ff; **Source**: feishu [score=0.815 recalls=0 avg=0.620 source=memory/2026-06-09-1033.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-09-1033.md:9:12 -->
+- Conversation Summary: user: 最新版发给我 assistant: 老板，请问您要的是哪份文档的最新版？是之前讨论过的某个学术文档、项目文件，还是其他材料？方便说一下文件名或大致内容吗？ user: 你记忆呢？ user: 这个论文最新版 [score=0.815 recalls=0 avg=0.620 source=memory/2026-06-09-1033.md:9-12]

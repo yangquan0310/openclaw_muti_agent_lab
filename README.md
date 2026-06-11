@@ -994,6 +994,16 @@ openclaw agents restart <agent-name>
 - **配置同步**: openclaw.json 配置微调
 - **清理**: mathematician MCP server 删除、steward 旧体检报告删除
 
+### 版本 3.2.7 (2026-06-12)
+- **每日自动同步 2026-06-12**: 64 文件变更（含梦境记忆同步 + 迁移文件清理）
+- **密钥核查**: 全仓库扫描无硬编码 API Key（仅 3 处 `your-xxx-key` 占位符在 skills/research-assistant 文档/备份中）
+- **工作空间核查**: 10 个 Agent 目录结构正常，每个工作区含 8 个标准 .md 配置文件 + memory/temp/.agents/.learnings 等配置目录
+- **迁移文件清理**: 40 个 .migrated 一次性迁移备份（系统升级产物）从 10 个 Agent 的 `memory/.dreams/` 移至对应 `temp/memory_dreams_migrated/` 目录；`wiki/.openclaw-wiki/source-sync.json.migrated` 移至 `wiki/temp/`（`.gitignore` 自动忽略）
+- **Agent梦境同步**: 10 个 Agent 的 DREAMS.md 新增 2 段梦境条目 + dreams 记忆数据库（events.jsonl）同步；旧版索引（phase-signals/session-ingestion/short-term-recall/daily-ingestion.json）已迁移至 .migrated
+- **新工作流文件**: workspace/psychologist/memory/2026-06-11-1055.md（学术研究助手 cron session 历史）
+- **state/openclaw.sqlite**: 系统状态数据库同步（7MB+，WAL/SHM 已忽略）
+- **运行状态**: ✅ 稳定版，已推 development 分支
+
 ### 版本 3.2.6 (2026-06-11)
 - **每日自动同步 2026-06-11**: 47 文件变更(47061+/-45127-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码(grep 全仓库扫描 `api_key/secret/token/password` 无明文值;待推送文件均为 DREAMS 日记、dreams 记忆数据库、state/openclaw.sqlite,无密钥泄露)
@@ -1084,7 +1094,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-11 04:00:00**
+**最后更新: 2026-06-12 04:00:00**
 **系统版本**: OpenClaw 2026.6.8
 **插件版本**: agent-self-development v4.3.1
 **运行状态**: ✅ 稳定版
