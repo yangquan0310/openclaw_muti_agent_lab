@@ -8,7 +8,7 @@
 
 | 执行时间 | 负责人 | 任务ID | 会话ID | 任务名称 | 功能描述 | 脚本位置 | 执行方式 | cron状态 |
 |----------|--------|--------|--------|----------|----------|----------|----------|----------|
-| 每日 04:00 | 程序员（programmer） | `b6a6b07d-384d-43fb-ab80-0b713e8a8289` | `agent:programmer:corn:programmer的定时任务` | 每日凌晨自动提交推送Git | 自动提交所有更改并推送到development分支 | cron payload 直接指令 | 固定会话执行 | enabled |
+| 每日 04:00 | 程序员（programmer） | `b6a6b07d-384d-43fb-ab80-0b713e8a8289` | `agent:programmer:corn:programmer的定时任务` | 每日凌晨自动提交推送Git | 自动提交所有更改并推送到main分支 | cron payload 直接指令 | 固定会话执行 | enabled |
 | 每日 08:10 | 程序员（programmer） | `7e49d2a7-6aec-43f3-a094-db37ff850c50` | `agent:programmer:corn:programmer的定时任务` | 日报：Agent记忆 | 检索24h内新发布的Agent相关学术论文/arXiv手稿，使用jina-ai技能搜索，攥写日报并发给用户 | cron payload 直接指令 | 固定会话执行 | enabled |
 
 ---
@@ -16,5 +16,6 @@
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
-| 1.0.0 | 2026-05-10 | 从系统管理员接管Git自动推送任务，改为固定会话执行 |
+| 1.2.0 | 2026-06-12 | 每日04:00 Git 推送目标从 development 切换至 main；本地与远程 development 分支均已删除 |
 | 1.1.0 | 2026-06-03 | 移除已删除的「日报：Agent记忆机制」任务（879ffcd3-...），修正 08:00 → 08:10 时间 |
+| 1.0.0 | 2026-05-10 | 从系统管理员接管Git自动推送任务，改为固定会话执行 |
