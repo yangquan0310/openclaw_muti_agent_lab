@@ -19,10 +19,9 @@
 
 | 引擎 | 适用语言 | 数据量 | API |
 |------|----------|--------|-----|
-| **Semantic Scholar** | 英文为主 | 全球学术文献 | REST API（需 Key） |
+| **Semantic Scholar** | 英文为主 | 全球学术文献 | REST API（`SEMANTIC_SCHOLAR_API_KEY` 环境变量）|
 | **CNKI（知网）** | 中文 | 中文期刊/学位论文 | 浏览器自动化 |
-| **Google Scholar** | 通用 | 全球 | 无限制 |
-| **Exa/Tavily** | 通用 | 含政策/报告 | REST API |
+| **Google Scholar** | 通用 | 全球 | 受 rate limit 限制 |
 
 ---
 
@@ -62,9 +61,19 @@
 
 ---
 
-## 补检索原则
+## 补检索原则（系统级工具）
 
-主检索完成后，使用 Exa/Tavily 补充：
+`sdk-search` 模块只覆盖学术数据库（Semantic Scholar / CNKI / Google Scholar）。
+
+补检索用 OpenClaw 系统级工具：
+- **jina-ai** skill（`~/.openclaw/skills/jina-ai/`，需 `JINA_API_KEY`）— 主要补检索工具
+- **Exa / Tavily**（OpenClaw MCP 工具，需 `EXA_API_KEY` / `TAVILY_API_KEY`）— 政策/行业/新闻来源
+
+补检索时机：
+- search 阶段**不**用（search 是**学术数据库**检索）
+- **Synthesizer 阶段后**用——发现笔记空白时，人工用 jina-ai/Exa/Tavily 补检索，**手动**整合结果回写笔记.md
+
+补检索可补充：
 - 政策文件
 - 行业报告
 - 新闻报道

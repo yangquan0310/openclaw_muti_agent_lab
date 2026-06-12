@@ -58,7 +58,12 @@
 
 ## 补充检索
 
-合成过程中发现空白时，使用 jina-ai/Exa/Tavily 补充检索，将结果直接整合写入笔记.md。
+`extract_notes` 输出**初步笔记**后，**人工**用 jina-ai/Exa/Tavily 补检索（OpenClaw 系统级工具），将补检索结果**手动**整合回写笔记.md。
+
+补检索时机：
+- 补检索**不在** Synthesizer 代码内
+- 是**完整工作流**中的**人工/代理**环节
+- 补检索工具：jina-ai skill（`~/.openclaw/skills/jina-ai/`，需 `JINA_API_KEY`） + Exa/Tavily（OpenClaw MCP 工具，需 `EXA_API_KEY` / `TAVILY_API_KEY`）
 
 ---
 

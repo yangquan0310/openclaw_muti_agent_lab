@@ -2,8 +2,8 @@
 name: research-assistant
 description: >
   科研文献综述全流程助手。支持文献检索、AI总结、知识库管理、笔记导出、文献综述撰写、研究现状撰写。
-  **v5.9.0 重点**：默认所有学术论文走 APA 7 manuscript mode（apaquarto 范式 ④）。
-version: 5.9.0
+  **v5.11.0 重点**：references 重构为 13 个文件（1 索引 + 1 工作流 + 1 排版 + 6 模块 + 4 文体）。4 个文体撰写指南（narrative-review / meta-analysis / observational-study / experimental-study）基于心理学 APA 7 + JARS-Quant 规范，**不**用医学 PRISMA / STROBE / CONSORT。
+version: 5.11.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -61,22 +61,23 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 **语言路由**：中文关键词 → CNKI（主）→ SemSch（备）；英文关键词 → SemSch（主）→ Scholar/GS（备）
 ---
 
-## 指南导航
+## 指南导航（v5.11.0 重构：13 个 references）
 
-| 章节 | 文件 | 内容 |
-|------|------|------|
-| 研究工作流 | [research-workflow.md](references/research-workflow.md) | 五阶段流程原则 |
-| 文献检索 | [paper-search.md](references/paper-search.md) | 检索策略与引擎选择 |
-| 知识库管理 | [knowledge-management.md](references/knowledge-management.md) | index.json 管理原则 |
-| 文献总结 | [paper-summary.md](references/paper-summary.md) | Summarizer 使用原则 |
-| 笔记合成 | [note-synthesis.md](references/note-synthesis.md) | Synthesizer 使用原则 |
-| 文献综述撰写 | [literature-review.md](references/literature-review.md) | 综述撰写原则 |
-| 研究现状撰写 | [research-status.md](references/research-status.md) | 现状报告撰写原则 |
-| 元数据维护 | [metadata-maintenance.md](references/metadata-maintenance.md) | Maintainer 使用原则 |
-| 🆕 排版原则 | [typesetting.md](references/typesetting.md) | Quarto 四范式（书 / 基础 / 一般 / **apaquarto 严格 APA 7**）|
-| 🆕 APA 7 manuscript 详细配置 | [apaquarto-manuscript.md](references/apaquarto-manuscript.md) | 范式 ④ 完整环境/扩展/YAML/排错指南 |
-| 排版标准 | [formatting-standards.md](references/formatting-standards.md) | 写作内容规范 + 范式决策 |
-| 期刊等级查询 | [easyScholar API](references/easyscholar-api.md) | EasyScholarRanker 使用原则 |
+| # | 章节 | 文件 | 内容 |
+|---|------|------|------|
+| 1 | references 索引 | [index.md](references/index.md) | references 目录索引 |
+| 2 | 研究助手工作流 | [research-workflow.md](references/research-workflow.md) | 5 阶段流程原则 |
+| 3 | apaquarto 排版指南 | [apaquarto-manuscript.md](references/apaquarto-manuscript.md) | 严格 APA 7 manuscript 完整配置 |
+| 4 | search 模块使用指南 | [module-search.md](references/module-search.md) | 检索（学术数据库：CNKI / SemSch / Google Scholar）|
+| 5 | manage 模块使用指南 | [module-manage.md](references/module-manage.md) | 知识库管理（merge / filter / info）|
+| 6 | maintain 模块使用指南 | [module-maintain.md](references/module-maintain.md) | 元数据维护（MetadataManager）|
+| 7 | summarize 模块使用指南 | [module-summarize.md](references/module-summarize.md) | 总结（+ JCR / SCI 分区更新）|
+| 8 | synthesize 模块使用指南 | [module-synthesize.md](references/module-synthesize.md) | 合成（extract_notes / check_references / fix_references）|
+| 9 | download 模块使用指南 | [module-download.md](references/module-download.md) | PDF 下载（DOI / Zotero key → 坚果云 → wiki raw）|
+| 10 | 叙述性综述撰写指南 | [narrative-review.md](references/narrative-review.md) | APA 7 + Baumeister & Leary 1997 + SANRA |
+| 11 | 元分析撰写指南 | [meta-analysis.md](references/meta-analysis.md) | APA 7 + JARS-Quant Table 9 (MARS) |
+| 12 | 观察研究报告撰写指南 | [observational-study.md](references/observational-study.md) | APA 7 + JARS-Quant Tables 1, 5, 6 |
+| 13 | 实验研究报告撰写指南 | [experimental-study.md](references/experimental-study.md) | APA 7 + JARS-Quant Table 2 |
 
 ## 模板资源
 
@@ -91,7 +92,7 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 ## 数据流总览
 
 ```
-阶段1：理解 → 阅读《文献综述撰写指南》（literature-review.md），明确研究问题
+阶段1：理解 → 阅读《研究助手工作流》（research-workflow.md），明确研究问题
     ↓
 阶段2：检索 → Searcher → index.json（数据库检索）
     ↓
@@ -131,6 +132,8 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 5.11.0 | 2026-06-12 | **references 重构为 13 个文件**：删 12 个旧文件（typesetting, formatting-standards, research-status, literature-review, easyscholar-api, paper-search, knowledge-management, paper-summary, note-synthesis, metadata-maintenance, narrative-synthesis, systematic-review），重组为 1 索引 + 1 工作流 + 1 排版 + 6 模块 + 4 文体。4 个文体撰写指南（narrative-review / meta-analysis / observational-study / experimental-study）基于心理学 APA 7 + JARS-Quant 规范，**不**用医学 PRISMA / STROBE / CONSORT。 |
+| 5.10.0 | 2026-06-12 | **apaquarto 排版指南重大修正**（基于跨期选择年龄差异论文实战）：① `_quarto.yml`/`_extensions`/`references.bib` 全在 `manuscripts/` 下；② 不需要 `header.tex`；③ 引用必须用 `[@key]` 语法（参考 Quarto Citations 文档）；④ 图表直接放正文（apaquarto 自动处理 `floatsintext`）；⑤ 安装命令 `cd manuscripts` 不复制；⑥ 渲染命令加 `--resource-path .`。 |
 | 5.9.0 | 2026-06-04 | **铁律：所有学术论文默认 APA 7 manuscript mode（apaquarto 范式 ④）**。新增 `apaquarto-manuscript.md` 详细配置指南；`typesetting.md` 升级到四范式；`formatting-standards.md` 新增范式决策提示。源自记忆机制认知推断论文实战。 |
 | 5.8.0 | 2026-05-30 | 新增 easyScholar API 支持：获取期刊 JCR/SCI 分区 |
 | 5.7.0 | 2026-05-30 | 目录结构重构：研究现状_{topic}.md、检索报告、检索条件独立目录 |

@@ -1,286 +1,253 @@
-# 范式 ④ 严格 APA 7 manuscript mode（apaquarto-pdf）配置指南
+# 范式 ④ APA 7 manuscript mode（apaquarto-pdf）配置指南
 
-> **2026-06-04 实战沉淀**：源自记忆机制认知推断论文（51 页 / 476KB）。
-> **核心目标**：让 Quarto 接管 APA 7 期刊稿件结构，产出**独立标题页 + 独立摘要页 + Author Note + Running head + 页码右上角 + 双倍行距**的完整 APA 7 manuscript。
+> **2026-06-12 重写**：基于跨期选择年龄差异论文实战（19 页 / 287KB）。
+> **v2.0 修正 v1.0 的关键错误**：_quarto.yml / _extensions / references.bib 位置；header.tex 不需要；引用必须用 `[@key]` 语法。
 
 ---
 
 ## 1. 何时使用范式 ④
 
-| 场景 | 用哪个范式 |
-|------|----------|
+| 场景 | 范式 |
+|------|------|
 | 投稿心理学/教育学/社科类期刊 | **范式 ④**（APA 7 强制）|
-| 毕业论文中要 APA 7 manuscript 排版的章节 | **范式 ④** |
-| 课程作业、研究现状、文献综述（投稿用）| 范式 ②（基础 Quarto + apa.csl，足够）|
+| 毕业论文 APA 7 manuscript 排版 | **范式 ④** |
+| 课程作业、研究现状、文献综述 | 范式 ②（基础 Quarto + apa.csl）|
 | 书/教材/多章节文档 | 范式 ① |
 | 科普/博文 | 范式 ③ |
-
-**判断口诀**：要"APA 7 manuscript 期刊投稿风" → 范式 ④；要"APA 7 参考文献" → 范式 ②。
 
 ---
 
 ## 2. 环境准备（一次性）
 
-### 2.1 R + knitr（apaquarto 5.0.18 预检查要）
+### 2.1 R + knitr
 
 ```bash
-# r-base conda 环境已存在（2026-06-04 验证）
-/root/.conda/envs/r-base/bin/R --version
-# R version 4.3.1 (2023-06-16) -- "Beagle Scouts"
-
-# 激活 + 配 PATH（必须）
+# r-base conda 环境
 export PATH=/root/.conda/envs/r-base/bin:/root/.TinyTeX/bin/x86_64-linux:$PATH
+R --version
 ```
 
-### 2.2 Quarto + tinytex（已装）
+### 2.2 Quarto + tinytex
 
 ```bash
-quarto --version   # 1.7.34
-xelatex --version  # TeX Live 2026（tinytex）
-```
-
-### 2.3 CJK 字体
-
-```bash
-fc-list :lang=zh | grep "AR PL SungtiL GB"   # 验证
-# 0 输出 → 装：apt install fonts-arphic-gbsn00lp
+quarto --version   # 1.7.34+
+xelatex --version  # TeX Live 2026 (tinytex)
 ```
 
 ---
 
 ## 3. 项目初始化（每个新项目走一次）
 
-### 3.1 建项目根 `_quarto.yml`（**真正的根因**）
+### 3.1 目录结构
 
-> **关键认知**：Quarto 需要 `_quarto.yml` 识别项目根，才能从子目录 `manuscripts/` 上溯找到 `_extensions/apaquarto/`。
-> 缺这个文件 → apaquarto-pdf 找不到扩展 → 退回 Pandoc 默认。
+```
+项目根/
+├── docs/                          ← 编译输出
+│   └── Manuscript.pdf
+└── manuscripts/
+    ├── _quarto.yml                ← Quarto 项目配置（必须）
+    ├── _extensions/apaquarto/     ← apaquarto 扩展（quarto add 装）
+    ├── Manuscript.md              ← 正文（带 YAML 头）
+    ├── references.bib             ← 参考文献库
+    └── figures/                   ← 图片
+        ├── image1.png
+        ├── image2.png
+        └── image3.png
+```
+
+**关键认知**：`_quarto.yml`、`_extensions/`、`references.bib` 全部在 `manuscripts/` 目录下（不是项目根）。
+
+### 3.2 创建 `_quarto.yml`
 
 ```yaml
-# 项目根 _quarto.yml（**只有这两行，够了**）
+# manuscripts/_quarto.yml（只需这两行）
 project:
   type: default
 ```
 
-> ❌ **不要**用 `type: book`（那是范式 ① 书的）。
-> ❌ **不要**用 `type: manuscript`（Quarto 1.7 还没原生 manuscript type）。
-
-### 3.2 装 apaquarto 扩展（项目级）
+### 3.3 安装 apaquarto 扩展
 
 ```bash
-cd /项目根
+cd manuscripts
 quarto add wjschne/apaquarto
-# 自动装到 ./_extensions/apaquarto/（48 个文件，含完整 apa.csl）
+# 自动装到 ./_extensions/apaquarto/
 ```
 
-**验证**：
-```bash
-ls _extensions/apaquarto/
-# 看到 apa.csl  apanote.lua  apatemplate.tex  doc-class.tex  ...
-```
+**注意**：直接 cd 到 `manuscripts/` 目录执行，不要在项目根执行后复制。
 
-### 3.3 复制 `header.tex`（CJK 字体 + APA 7 段间距 + 防溢出）
+### 3.4 不需要 header.tex
 
-```bash
-cat > manuscripts/header.tex <<'EOF'
-% ========== CJK 字体配置（apaquarto 默认 Times Roman 不支持中文，必须显式声明）==========
-\usepackage{xeCJK}
-\setCJKmainfont{AR PL SungtiL GB}
-\setCJKsansfont{AR PL SungtiL GB}
-\setCJKmonofont{AR PL SungtiL GB}
-\setmainfont{AR PL SungtiL GB}
-\setsansfont{AR PL SungtiL GB}
-\setmonofont{AR PL SungtiL GB}
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt
-\usepackage{xurl}
-
-% ========== 防段落右侧溢出（v8.20.0 铁律：\sloppy + \tolerance=1000 + \emergencystretch=3em）==========
-\sloppy
-\tolerance=1000
-\emergencystretch=3em
-EOF
-```
+apaquarto 通过 YAML 字段控制所有排版参数，**不需要自建 header.tex**。
+CJK 字体等特殊需求可通过 YAML 的 `include-in-header` 字段处理（见下方 YAML 模板）。
 
 ---
 
-## 4. .md 文件 YAML 头完整模板
+## 4. YAML 头模板
 
 ```yaml
 ---
-title: "论文完整标题（APA 7 Title Case）"
-shorttitle: "Running head（≤50 字符大写）"
+title: "论文完整标题"
+shorttitle: "Running head（≤50 字符）"
 
 author:
-  - name: "杨权"
-    orcid: "0000-0001-6201-4174"
-    email: "yangquan0310@163.com"
-    corresponding: true        # 🆕 至少一个作者填 true
-    roles:                     # 🆕 CRediT: Contributor Roles Taxonomy
-      - conceptualization
-      - writing
-      - methodology
+  - name: "作者姓名"
+    corresponding: true
     affiliations:
-      - id: ccnupsy            # 🆕 机构 ID，多个作者共享同一机构用 ref:
-        name: "华中师范大学心理学院"
-        department: "心理学院"
-        city: "武汉"
-        region: "湖北"
+      - id: aff1
+        name: "机构名称"
+        department: "院系"
+        city: "城市"
+        region: "省份"
         country: "中国"
-  # 多作者：- name: "作者二"  ...  affiliations: - ref: ccnupsy
 
-date: "2026-06-04"
-keywords: [关键词1, 关键词2, 关键词3, 关键词4, 关键词5]
-
-abstract: |
-  摘要正文（APA 7 严格格式，150-250 字）。
-  研究背景 → 主要发现（2-3 句）→ 结论（1 句）。
-
-author-note:                   # 🆕 必填，否则 apaquarto 报错
+author-note:
   disclosures:
     conflict-of-interest: "作者声明无利益冲突。"
-  # 可选字段：
-  # author-contributions: "第一作者负责 X，第二作者负责 Y。"
-  # funding: "本研究受 X 基金资助（项目号：XXXX）。"
 
-floatsintext: true             # 🆕 APA 7：图表嵌在正文里（不集中到末尾）
-numbered-lines: false          # 🆕 关闭逐行编号（投稿用）
-word-count: false              # 🆕 关闭自动字数统计
-draft-date: false              # 🆕 关闭草稿日期
+abstract: |
+  摘要正文（150-250 字）。
 
-format:                        # 🆕 用 apaquarto-pdf，**不要**用 pdf:
+keywords:
+  - 关键词1
+  - 关键词2
+  - 关键词3
+
+# 不需要 bibliography: 和 csl: 字段
+# apaquarto 自带 apa.csl，bibliography 默认找 references.bib
+# 如果文件名不是 references.bib，需要显式声明：
+# bibliography: references.bib
+
+floatsintext: false    # false = 图表集中到末尾（期刊投稿常用）
+numbered-lines: false
+word-count: false
+draft-date: false
+
+format:
   apaquarto-pdf:
-    documentmode: man          # 🆕 manuscript mode（journal article 风格）
-    keep-tex: true             # 保留 .tex 源码（排错用）
-    include-in-header: "header.tex"
-
-# ❌ 不要写 bibliography: + csl: 字段
-# apaquarto 自带 references.bib（默认）+ 完整 apa.csl
-# 重复写会冲突
+    documentmode: man
+    keep-tex: true
+    # include-in-header: "header.tex"  # 仅 CJK 等特殊需求时用
 ---
 ```
 
 ---
 
-## 5. 渲染命令
+## 5. 引用语法（核心！）
 
-### 5.1 基础渲染
+引用格式严格按 [Quarto Citations 文档](https://quarto.org/docs/authoring/citations.html)。
+
+### 5.1 基本语法
+
+| 类型 | 写法 | 输出 |
+|------|------|------|
+| 括号引用 | `[@frederick2002]` | (Frederick et al., 2002) |
+| 多引用 | `[@frederick2002; @seaman2022]` | (Frederick et al., 2002; Seaman et al., 2022) |
+| 叙事引用 | `@frederick2002` | Frederick et al. (2002) |
+| 页码 | `[@frederick2002, pp. 33-35]` | (Frederick et al., 2002, pp. 33–35) |
+| 仅年份 | `[-@frederick2002]` | (2002) |
+
+**错误示例**（不能这样写）：
+- ❌ `(Frederick et al., 2002)` — 纯文本，citeproc 不处理
+- ❌ `Frederick et al. (2002)` — 纯文本
+
+### 5.2 apaquarto 扩展功能
+
+apaquarto 在标准 Quarto 引用基础上增加了：
+- **所有格引用**：`@frederick2002 ['s]` → Frederick et al.'s (2002)
+- **带页码所有格**：`@frederick2002 ['s, pp. 1-2]` → Frederick et al.'s (2002, pp. 1–2)
+- **匿名审稿引用**：`mask: true` + `masked-citations` 字段
+
+详见 [apaquarto 引用文档](https://wjschne.github.io/apaquarto/writing.html#citations)。
+
+---
+
+## 6. References 段
+
+在正文末尾（Conflict of Interest 之后）加：
+
+```markdown
+# References
+
+::: {#refs}
+:::
+```
+
+`::: {#refs}:::` div 让 citeproc 在该位置插入自动生成的参考文献列表。
+**不要手动写参考文献列表**——citeproc 从 `references.bib` 自动生成。
+
+---
+
+## 7. 图表
+
+图表**直接放在正文里**（与文字混排）。apaquarto 通过 `floatsintext` 设置自动处理位置：
+- `floatsintext: true`（默认）→ 图表嵌在正文
+- `floatsintext: false` → 图表集中到 References 之后末尾
+
+### 7.1 Markdown 图片（直接引用）
+
+```markdown
+![实验流程图](figures/image1.png){#fig-exp-proc width=80%}
+
+: 实验流程图 {#fig-exp-proc}
+```
+
+### 7.2 R 代码生成图表（推荐）
+
+apaquarto 支持 R 代码块直接生成图表（详见 [example.qmd](https://github.com/wjschne/apaquarto/blob/main/example.qmd)）：
+
+````markdown
+```{r}
+#| label: fig-myplot
+#| fig-cap: "图表标题（Title Case）"
+#| fig-height: 4
+#| fig-width: 6
+
+library(ggplot2)
+ggplot(data, aes(x, y)) + geom_point()
+```
+````
+
+### 7.3 表格
+
+```markdown
+| 列1 | 列2 | 列3 |
+|:---|:---:|---:|
+| 数据 | 数据 | 数据 |
+
+: 表格标题 {#tbl-label}
+```
+
+---
+
+## 8. 渲染命令
 
 ```bash
-cd 项目根
-quarto render manuscripts/全文整合稿.md --to apaquarto-pdf
+cd manuscripts
+export PATH=/root/.conda/envs/r-base/bin:/root/.TinyTeX/bin/x86_64-linux:$PATH
+quarto render Manuscript.md --to apaquarto-pdf --output-dir ../docs --resource-path .
 ```
 
-输出位置：`manuscripts/全文整合稿.pdf`（默认）。
-
-### 5.2 输出到 `docs/`（铁律：项目根 docs/）
-
-```bash
-quarto render manuscripts/全文整合稿.md --to apaquarto-pdf --output-dir docs
-mv docs/全文整合稿.pdf docs/记忆机制的认知推断.pdf
-```
-
-### 5.3 排错渲染（保留 .tex）
-
-```bash
-# keep-tex: true 已经在 YAML 头，渲染后看：
-ls manuscripts/全文整合稿.tex
-# 检查 .tex 的 ① 字体声明 ② 标题页结构 ③ author-note 渲染
-```
+**关键参数**：
+- `--to apaquarto-pdf`：用 apaquarto 扩展渲染
+- `--output-dir ../docs`：输出到 `docs/` 目录
+- `--resource-path .`：让 citeprocr.lua 找到 `references.bib`（**必须**）
 
 ---
 
-## 6. 5 步关键修复的踩坑记录
+## 9. 踩坑记录
 
-| 步 | 错误信息 | 根因 | 修复 |
-|------|---------|------|------|
-| 1 | `Rscript not found` | apaquarto 预检查要 R | `export PATH=/root/.conda/envs/r-base/bin:$PATH` |
-| 2 | `xelatex not found` 或 `! LaTeX Error: File 'apa7.sty' not found` | tinytex 不在 PATH | `export PATH=/root/.TinyTeX/bin/x86_64-linux:$PATH` |
-| 3 | `apaquarto-pdf format not found` 或退回 Pandoc 默认 | ①项目根没 `_quarto.yml` ②扩展没装 | `touch _quarto.yml` + `echo "project:\n  type: default" > _quarto.yml` + `quarto add wjschne/apaquarto` |
-| 4 | 渲染出 PDF 但**没标题页/没 author note** | `.md` YAML 头写的是 `format: pdf:` 而非 `format: apaquarto-pdf:` | 改 `pdf:` → `apaquarto-pdf:` |
-| 5 | 渲染出 PDF 但**没 author note** | `author-note:` 字段缺失 | 补 `author-note: disclosures: conflict-of-interest: "..."` |
-
----
-
-## 7. 常见问题排错
-
-### 7.1 "I'm using apaquarto but getting Pandoc default output"
-
-**根因**：`.md` YAML 头的 `format:` 块写的是 `pdf:` 而非 `apaquarto-pdf:`。
-
-**检查**：
-```bash
-grep "format:" manuscripts/全文整合稿.md
-# 必须看到 format:  apaquarto-pdf:，不是 format:  pdf:
-```
-
-### 7.2 中文显示成方块/乱码
-
-**根因**：`header.tex` 没正确加载中文字体。
-
-**修复**：检查 `header.tex` 是否有：
-```latex
-\usepackage{xeCJK}
-\setCJKmainfont{AR PL SungtiL GB}
-```
-
-验证字体存在：`fc-list :lang=zh | grep "AR PL SungtiL GB"`。
-
-### 7.3 段落右侧超出（文字溢出右边距）
-
-**根因**：apaquarto 默认 `\emergencystretch` 不够。
-
-**修复**：在 `header.tex` 末尾加：
-```latex
-\sloppy
-\tolerance=1000
-\emergencystretch=3em
-```
-
-### 7.4 参考文献格式不对
-
-**根因**：范式 ④ 不需要 `csl:` 字段，apaquarto 自带完整 apa.csl。
-
-**检查**：YAML 头**不要**有 `csl:` 行。
-
-### 7.5 找不到 `references.bib`
-
-**根因**：apaquarto 默认在**项目根**找 `references.bib`（不在 manuscripts/）。
-
-**修复**：把 `references.bib` 放在**项目根**（与 `_quarto.yml` 同级）。
-
----
-
-## 8. 范式 ④ vs 范式 ② 对比
-
-| 维度 | 范式 ②（基础 Quarto + apa.csl）| 范式 ④（apaquarto manuscript）|
-|------|------------------------------|-------------------------------|
-| 标题页 | ❌ 没（标题直接放正文）| ✅ 独立 title page |
-| 摘要页 | ❌ 没（摘要放第一段）| ✅ 独立 abstract page |
-| Author Note | ❌ 没 | ✅ ORCID + Conflict of interest + CRediT roles + 通讯作者 |
-| Running head | ❌ 没 | ✅ 上限 50 字符大写 |
-| 页码位置 | 默认底部居中 | ✅ 右上角 |
-| 行距 | 单倍（默认）| ✅ 双倍 |
-| documentclass | article（Pandoc 默认）| apacls（APA 7 宏包）|
-| 图表 | 浮动 | floatsintext（嵌在正文）|
-| 安装复杂度 | 低 | 高（5 步修复 + R 环境 + 扩展）|
-| 适用 | 课程作业、研究现状 | 投稿期刊、正式论文 |
-
-**判断口诀**：
-- 投稿 / 严格 APA 7 期刊稿件 → **范式 ④**
-- 课程作业 / 简单论文 → 范式 ②
-
----
-
-## 9. 完整实战示例
-
-参考项目：`/data/disk/仓库/记忆机制认知推断论文/`
-
-- 根 `_quarto.yml`（空壳 2 行）
-- `_extensions/apaquarto/`（48 文件，quarto add 装）
-- `manuscripts/header.tex`（CJK + APA 7 + 防溢出三件套）
-- `manuscripts/全文整合稿.md`（apaquarto YAML 头 + 全文）
-- `references.bib`（在**项目根**，不在 manuscripts/）
-- 输出：`docs/记忆机制的认知推断.pdf`（51 页 / 476KB）
+| 问题 | 根因 | 修复 |
+|------|------|------|
+| `Unable to read the extension 'apaquarto'` | `_quarto.yml` 或 `_extensions/` 不在正确位置 | 确保都在 `manuscripts/` 下 |
+| `CiteprocParseError: No citation element present` | 简化版 apa.csl 有问题 | 用 apaquarto 自带的完整 apa.csl（不要自建简化版）|
+| `File bibliography.bib not found` | `references.bib` 不在 `manuscripts/` | 移到 `manuscripts/` |
+| 引用显示为 `[@key]` 原文 | 用了 APA 文本格式 `(Author, Year)` | 改用 `[@key]` 语法 |
+| 参考文献重复出现 | 手动写了 # References 段 + citeproc 自动生成 | 删手动列表，只保留 `::: {#refs}:::` |
+| Figure 编号变 A1/A2/A3 | `# Tables and Figures` 标题被 apaquarto 当附录 | 去掉标题，直接放表格和图 |
+| `[H]` 出现在 PDF | YAML 里有 `fig-pos: H` 或 `tbl-pos: H` | 删掉这些字段 |
+| Figure caption 在图上方 | apaquarto 默认 `fig-cap-location: top` | 这是 apaquarto 的设计选择，与 APA 7 标准（caption 在图下方）不同 |
+| Figure caption 位置改不了 | `_extension.yml` common 段强制 top | 需改 vendor 扩展（谨慎）|
+| `CiteprocParseError` 编译失败 | 正文引用用了 `(Author, Year)` 而非 `[@key]` | 全部改为 `[@key]` 语法 |
 
 ---
 
@@ -288,4 +255,6 @@ grep "format:" manuscripts/全文整合稿.md
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
-| v1.0 | 2026-06-04 | 初版：5 步关键修复 + YAML 头完整模板 + 踩坑记录。源自记忆机制认知推断论文实战。 |
+| v2.1 | 2026-06-12 | **老板纠错**：① 3.3 安装命令改为 `cd manuscripts`（不是项目根），不复制；② 5 引用语法参考 Quarto Citations 文档 + apaquarto 扩展功能（所有格引用 `@key ['s]`）；③ 7 图表可直接放正文，apaquarto 自动处理 `floatsintext`，支持 R 代码块生成图表。 |
+| v2.0 | 2026-06-12 | **重大重写**：修正 _quarto.yml/_extensions/references.bib 位置（全在 manuscripts/）；移除 header.tex；新增引用语法 + References div + 图表章节 + 渲染命令 `--resource-path .` + 踩坑记录。基于跨期选择年龄差异论文实战。 |
+| v1.0 | 2026-06-04 | 初版：5 步关键修复 + YAML 头完整模板。源自记忆机制认知推断论文实战。 |
