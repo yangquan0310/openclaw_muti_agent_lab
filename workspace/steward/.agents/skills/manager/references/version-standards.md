@@ -12,8 +12,8 @@
 
 | 类型 | 存储位置 | 含义 |
 |------|----------|------|
-| **技能模板版本** | `skills/*/HANDBOOK.md` frontmatter `version` | 模板格式规范版本，定义项目文件应达到的标准 |
-| **项目文件模板版本** | `项目/HANDBOOK.md` frontmatter `version` | 判断该项目文件是否与技能模板对齐 |
+| **技能模板版本** | `skills/*/AGENTS.md` frontmatter `version` | 模板格式规范版本，定义项目文件应达到的标准 |
+| **项目文件模板版本** | `项目/AGENTS.md` frontmatter `version` | 判断该项目文件是否与技能模板对齐 |
 | **项目版本** | `项目/metadata.json` `version` | 项目自身内容进度，与模板版本无关 |
 
 ---
@@ -35,7 +35,7 @@
 ```
 技能模板版本变化（如 v2.0.0 → v3.0.0）
     ↓
-扫描所有项目文件（HANDBOOK.md, README.md, TODO.md）
+扫描所有项目文件（AGENTS.md, README.md, TODO.md）
     ↓
 对比项目文件 version vs 技能模板 version
     ↓
@@ -49,7 +49,7 @@ version ≥ 技能模板 version → 跳过
 
 ```
 项目根目录/
-├── HANDBOOK.md              # 模板版本（frontmatter version）
+├── AGENTS.md              # 模板版本（frontmatter version）
 ├── README.md             # 模板版本（frontmatter version）
 ├── TODO.md              # 模板版本（frontmatter version）
 ├── metadata.json        # 项目版本（独立维护）

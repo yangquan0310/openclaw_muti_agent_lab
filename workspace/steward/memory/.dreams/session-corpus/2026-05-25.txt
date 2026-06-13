@@ -1,12 +1,12 @@
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L5] User: 仓库有哪些项目
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L9] Assistant: 仓库共有 **22 个项目**，按类别整理如下： ### 教育研究类 - 教育科学研究方法 - 跨期选择的年龄差异 - 量表编制 - 亲子关系与友谊质量对焦虑的共同作用 - 影响者营销中的自我扩展机制 ### 创业/就业指导类 - 创业指导 - 创新创业基础 - 学生社团申报 ### 论文/审稿类 - 学生论文修改 - 论文审稿 - 审稿学习 - 范文学习 ### 心理学类 - 科研实验室搭建 - 数字化存储与自传体记忆 - 武汉文理应用心理学系管理 ### AI/工具类 - AI降重提示工程 - openclaw
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L10] User: 把审稿学习和范文学习删一下
-[steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L12] Assistant: 确认删除以下两个项目： | 项目 | 路径 | |------|------| | 审稿学习 | `/root/data/disk/仓库/审稿学习` | | 范文学习 | `/root/data/disk/仓库/范文学习` | **⚠️ 删除后无法恢复，请确认是否继续？** 请回复"确认删除"。
+[steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L12] Assistant: 确认删除以下两个项目： | 项目 | 路径 | |------|------| | 审稿学习 | `/root/data/disk/OneDrive/Applications/openclaw repository/审稿学习` | | 范文学习 | `/root/data/disk/OneDrive/Applications/openclaw repository/范文学习` | **⚠️ 删除后无法恢复，请确认是否继续？** 请回复"确认删除"。
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L17] Assistant: 已删除以下两个项目： - ~~审稿学习~~ - ~~范文学习~~ 如需更新仓库 README.md 索引，请告知。
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L18] User: open bot review和openclaw bot review有啥区别？
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L26] Assistant: 两个项目区别如下： | 项目 | 性质 | 内容 | |------|------|------| | **open-bot-review** | 轻量辅助脚本 | 仅一个 `spawn-refresh.js`，用于后台触发统计刷新，实际调用的还是 openclaw-bot-review 的脚本 | | **openclaw-bot-review** | 完整 Next.js Web 应用 | 完整的 OpenClaw Bot 监控面板，支持 Agent 概览、模型列表、会话管理、统计图表、告警中心、像素风办公室
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L27] User: 合并。科研实验室删除
-[steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L31] Assistant: 已完成： - **合并**：`open-bot-review/scripts/spawn-refresh.js` → `openclaw-bot-review/scripts/`，原目录已删除 - **删除**：~~科研实验室搭建~~ ⚠️ `spawn-refresh.js` 中写死了旧路径，需确认是否更新： ```js cwd: "/root/data/disk/仓库/openclaw-bot-review" ``` 新路径一致，无需修改。是否需要检查其他引用？
+[steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L31] Assistant: 已完成： - **合并**：`open-bot-review/scripts/spawn-refresh.js` → `openclaw-bot-review/scripts/`，原目录已删除 - **删除**：~~科研实验室搭建~~ ⚠️ `spawn-refresh.js` 中写死了旧路径，需确认是否更新： ```js cwd: "/root/data/disk/OneDrive/Applications/openclaw repository/openclaw-bot-review" ``` 新路径一致，无需修改。是否需要检查其他引用？
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L32] User: 其他项目呢？
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L36] Assistant: 当前仓库 **20 个项目**，清理后状态： | 状态 | 项目 | |------|------| | ✅ 已合并 | `open-bot-review` → `openclaw-bot-review/scripts/` | | ❌ 已删除 | ~~审稿学习~~、~~范文学习~~、~~科研实验室搭建~~ | | 📦 正常 | 其余 20 个项目未变动 | --- **活跃任务看板**（MEMORY.md）： | 任务ID | 项目 | 状态 | |--------|------|------| | T036 
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L37] User: 按论文、课程、程序、其他整理
@@ -26,7 +26,7 @@
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L42] User: 量表编译删除
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L46] Assistant: 仓库中没有"量表编译"这个项目，只有"**量表编制**"。 确认删除"量表编制"吗？请回复"确认"或告知正确项目名。
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L47] User: wiki删除
-[steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L49] Assistant: 确认删除以下项目： | 项目 | 路径 | |------|------| | wiki | `/root/data/disk/仓库/wiki` | ⚠️ 删除后无法恢复，请确认是否继续？
+[steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L49] Assistant: 确认删除以下项目： | 项目 | 路径 | |------|------| | wiki | `/root/data/disk/OneDrive/Applications/openclaw repository/wiki` | ⚠️ 删除后无法恢复，请确认是否继续？
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L54] Assistant: 已删除：~~wiki~~ 当前仓库剩余 **18 个项目**。
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L55] User: 维护老板也删除
 [steward/sessions/steward/495148d4-b1fb-47df-9445-f45f9c52e3e4.jsonl#L59] Assistant: 已删除：~~维护老板信息~~ 当前仓库剩余 **17 个项目**。

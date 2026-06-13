@@ -67,12 +67,12 @@
 
 1. 确定项目类型（论文/课程/程序/通用）
 2. 创建标准目录结构
-3. 填写四个契约文件（README.md、HANDBOOK.md、TODO.md、metadata.json）
+3. 填写四个契约文件（README.md、AGENTS.md、TODO.md、metadata.json）
 
 ### Q3：四个契约文件是什么？
 
 - README.md（项目总览）
-- HANDBOOK.md（操作手册）
+- AGENTS.md（操作手册）
 - TODO.md（任务看板）
 - metadata.json（机器可读配置）
 

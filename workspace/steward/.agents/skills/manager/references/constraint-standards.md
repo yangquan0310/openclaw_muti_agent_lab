@@ -99,7 +99,7 @@
   - **约束目标**：
     - 产出：标准目录结构（uploads/manuscripts/knowledge/）
     - 完成标志：README.md 在根目录、metadata.json 已更新
-    - 边界：不移动 README.md、HANDBOOK.md、TODO.md
+    - 边界：不移动 README.md、AGENTS.md、TODO.md
     - 验收：大管家自验后汇报
 ```
 

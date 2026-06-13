@@ -1,0 +1,187 @@
+# {project_name} AGENTS
+
+> 版本：1.0.0
+> 本文件是项目级 AI 协作规范，定义 AI 进入本项目后必须遵守的工作/协作/红线/常用命令。
+
+<!-- GENERATED_START -->
+<!-- 下方内容由 manager 技能模板生成,sync 命令会安全更新此区段。 -->
+<!-- 项目定制内容请放在 GENERATED_END 之后,会被 sync 保留。 -->
+
+---
+
+## 项目入门
+
+任何 Agent 进入本项目后，必须按以下顺序执行：
+
+```
+1. 阅读 README.md
+   └── 了解项目元信息（名称、类型、创建时间）
+   └── 了解项目目的（为什么创建、解决什么问题、预期产出）
+
+2. 阅读 AGENTS.md（本文件）
+   └── 了解工作规范（做什么/不做什么）
+   └── 了解协作规范（大管家调度、其他代理自主执行）
+   └── 了解红线（绝对不能碰的文件/动作）
+   └── 了解常用命令（编译、归档、检索等）
+
+3. 打开 metadata.json
+   └── 了解项目元数据（类型、版本、状态）
+
+4. 打开 {项目路径}/.agents/agents/
+   └── 查看自己的角色文件
+   └── 明确自己的职责边界
+
+5. 打开 TODO.md
+   └── 了解当前任务状态
+   └── 确认自己负责的任务项
+```
+
+---
+
+## 工作规范
+
+**Agent 在本项目中的工作准则：**
+
+- **只动约定文件**：用户可改文件清单（见"红线"节）外的文件**先问大管家**
+- **每个轮次只生成一份文件**，直接在文件上修改；不创建分支版本（v2.1/v4.1 等）
+- **所有修改通过 Git 版本控制**——版本号在 commit message 里，不在文件名里
+- **如需回退**，使用 `git checkout` 或 `git revert`，不依赖文件副本
+- **每轮修改前先读现有内容**，避免重复造轮子
+- **每轮修改后即交**——`git add` + `git commit`，默认推 development，完成整体任务时推 main
+
+---
+
+## 协作规范
+
+**大管家负责协调+追踪任务（不替子代理执行）。**
+- 大管家根据老板指令更新 TODO.md，经确认后使用 **manager 技能** 派发任务
+- 大管家追踪各代理进度，在 TODO.md 中同步更新状态
+- **大管家不规定子代理具体怎么执行**——只通过 TODO 的"目标/约束/输入/产出"规定 WHAT，HOW 由子代理自决
+
+**其他代理自主执行并反馈。**
+- 其他代理接收任务后自行决定具体执行方式，不得被干涉
+- 任务完成后 → 在群聊艾特大管家汇报（❌ 禁止私聊）
+- 汇报内容必须包含：任务名称 + 产出文件
+
+**子任务必须在 TODO.md 中发布。**
+- 任何需要其他代理协作的子任务，必须先在 TODO.md 中创建任务项
+- 任务项 7 字段（老板 2026-06-03 定型）：任务ID、任务描述、负责人、目标、约束、输入、产出、状态（详见 task-flow-guide.md v2.3）
+- 4 必填内容字段：目标、约束、输入、产出（子代理**必须遵守的内容**）
+- 代理收到任务通知后，应先查看 TODO.md 的"目标/约束/输入/产出"
+
+**认领（claim）协议。**
+- 代理收到大管家 IM 群通知后，用 workboard_claim 插件工具认领该 card
+- 认领后在群里回复"已认领 card={{card_short}}"
+- ~~大管家**只在看到群里认领后**才调 `manager workboard start` 触发 run~~（v1.5.0 删：代理认领后自己 `chat.send` 启 run）
+
+---
+
+## 红线
+
+**绝对不能动（按危险程度排序）：**
+
+| 动作 | 后果 | 解除条件 |
+|------|------|----------|
+| 删除任何文件 | 数据不可恢复 | 必须得到老板**明确**确认 |
+| 修改 openclaw.json | 系统配置破坏 | 必须用 `openclaw config get/set/patch`，受 protected 路径保护 |
+| 泄露 ~/.openclaw/.env | 密钥泄露 | 任何情况都不输出 |
+| 擅自修改 npm/pnpm 依赖包 | 系统破坏 + 老板强烈警告（2026-06-02 踩坑） | 走 `openclaw plugins install` 机制 |
+| 擅自安装 pandoc | 与 Quarto 体系冲突（2026-06-04 老板明确） | Quarto 自带 pandoc 3.6.3 |
+| 移动/重命名契约文件 | 项目元数据失真 | README.md / AGENTS.md / TODO.md / metadata.json 都在保护清单 |
+
+**项目级保护文件清单**（本项目特有）：
+
+| 文件 | 说明 |
+|------|------|
+| README.md | 项目总览 |
+| **AGENTS.md** | **本文件**（原 HANDBOOK.md，2026-06-13 改名） |
+| TODO.md | 进度看板 |
+| metadata.json | 项目元数据 |
+| .agentignore | 可见性控制 |
+
+---
+
+## 常用命令
+
+### 编译 / 排版
+
+```bash
+# 博士论文:Quarto ccnu-thesis
+cd manuscripts/博士论文/
+quarto render
+
+# 课程备课:Quarto 范式
+cd chapters/
+quarto render
+
+# 期刊/学生论文:视具体配置
+cd manuscripts/{title}/
+quarto render
+```
+
+### 检索 / 知识库
+
+```bash
+# 记忆搜索
+openclaw memory search "{关键词}"
+
+# Wiki 搜索
+wiki_search "{query}"
+
+# 全文检索(项目内)
+grep -rn "{关键词}" /data/disk/OneDrive/Applications/openclaw repository/{项目名}/
+```
+
+### 版本控制
+
+```bash
+# 日常写作
+git add -A
+git commit -m "{type}: {简要说明}"
+git push origin development
+
+# 完成整体任务
+git checkout main
+git merge development
+git push origin main
+git checkout development
+```
+
+### 任务调度
+
+```bash
+# 派发任务(大管家用)
+workboard_create --title "..." --agentId "{agent}"
+
+# 认领任务(子代理用)
+workboard_claim --id "{card_id}"
+
+# 完成任务
+workboard_complete --id "{card_id}" --summary "..."
+```
+
+### 系统维护
+
+```bash
+# OpenClaw 服务
+openclaw status
+openclaw restart
+
+# 记忆系统
+openclaw memory status
+openclaw memory index --force --agent steward
+```
+
+<!-- GENERATED_END -->
+
+---
+
+## {custom_section_title}
+
+{custom_section_content}
+
+---
+
+*最后更新：{created_at}*
+*维护者：steward*
+*模板版本：v1.0.1（5 节结构：项目入门 / 工作规范 / 协作规范 / 红线 / 常用命令 + 自定义占位符；GENERATED 标记保护项目定制内容）*

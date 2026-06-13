@@ -22,12 +22,7 @@
         }
       },
       "model": {
-        "primary": "minimax/MiniMax-M3",
-        "fallbacks": [
-          "minimax/MiniMax-M3",
-          "xiaomicoding/mimo-v2.5-pro",
-          "deepseek/deepseek-v4-pro"
-        ]
+        "primary": "minimax/MiniMax-M3"
       },
       "pdfModel": {
         "primary": "minimax/MiniMax-M3"

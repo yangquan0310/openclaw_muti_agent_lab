@@ -3,7 +3,7 @@
 SemSchSearcher.py - Semantic Scholar 英文文献检索
 
 继承 BaseSearcher，通过 Semantic Scholar API 获取英文文献数据。
-支持 API Key（环境变量 SEMANTIC_SCHOLAR_API_KEY）。
+支持 API Key（v5.12.0 优先级: key > config > env）。
 """
 
 from __future__ import annotations
@@ -43,12 +43,31 @@ class SemSchSearcher(BaseSearcher):
         """
         Args:
             kb_path:          知识库文件路径
-            api_key:          API Key（默认从环境变量 SEMANTIC_SCHOLAR_API_KEY 读取）
+            api_key:          API Key（v5.12.0 优先级: key > config > env）
             request_interval: 每次 API 请求之间的间隔（秒），避免触发频率限制
         """
         super().__init__(kb_path)
         self.request_interval = request_interval
-        self.api_key = api_key or os.environ.get("SEMANTIC_SCHOLAR_API_KEY")
+        # v5.12.0: 优先级 key > config > env
+        config = self._load_config()
+        semantic = config.get("semantic_scholar", {})
+        self.api_key = (
+            api_key
+            or semantic.get("api_key", "")
+            or os.environ.get(semantic.get("api_key_env", "SEMANTIC_SCHOLAR_API_KEY"))
+        )
+
+    def _load_config(self) -> Dict:
+        """从 config.json 加载配置（v5.12.0 新增，与 Searcher.py 对齐）"""
+        from pathlib import Path
+        config_path = Path(__file__).parent.parent / "config.json"
+        if config_path.exists():
+            try:
+                with open(config_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        return {}
 
         self.session = requests.Session()
         self.session.headers.update({"Accept": "application/json"})

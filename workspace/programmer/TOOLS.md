@@ -10,7 +10,7 @@
 |------|------|
 | OpenClaw 安装路径 | `~/.openclaw` |
 | 个人工作空间 | `~/.openclaw/workspace/programmer` |
-| 仓库默认位置 | `/root/data/disk/仓库` |
+| 仓库默认位置 | `/root/data/disk/OneDrive/Applications/openclaw repository` |
 ## 系统管理命令
 
 ### 常用 CLI 命令

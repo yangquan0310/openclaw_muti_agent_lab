@@ -53,11 +53,11 @@ assets/
 
 | 文件 | 用于 |
 |------|------|
-| ThesisHANDBOOK.md | 论文项目技能定义 |
+| ThesisAGENTS.md | 论文项目技能定义 |
 | ThesisREADME.md | 论文项目说明 |
-| CourseHANDBOOK.md | 课程项目技能定义 |
+| CourseAGENTS.md | 课程项目技能定义 |
 | CourseREADME.md | 课程项目说明 |
-| ProgramHANDBOOK.md | 程序项目技能定义 |
+| ProgramAGENTS.md | 程序项目技能定义 |
 | ProgramREADME.md | 程序项目说明 |
 
 ---

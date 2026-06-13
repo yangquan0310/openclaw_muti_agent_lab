@@ -99,7 +99,7 @@
 来源：~/.openclaw/workspace/steward/skills/<skill-name>/
 目标：~/.openclaw/wiki/sources/<skill-name>.md
 ```
-1. 提取 HANDBOOK.md 核心内容
+1. 提取 AGENTS.md 核心内容
 2. 保留引用路径指向原技能
 3. 添加到 sources/index.md
 
@@ -149,7 +149,7 @@ openclaw wiki status
 │       └── {日期}/
 │           └── {runId}.md
 ├── README.md
-├── HANDBOOK.md
+├── AGENTS.md
 └── TODO.md
 ```
 

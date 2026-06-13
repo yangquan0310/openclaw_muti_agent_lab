@@ -39,7 +39,7 @@ class ProgramMaintainer(BaseMaintainer):
 ```
 '''
 
-    HANDBOOK_TITLE = '## 程序开发流程'
+    AGENTS_TITLE = '## 程序开发流程'
 
     EXTRA_DIRS = [
         'agents',
@@ -72,7 +72,7 @@ class ProgramMaintainer(BaseMaintainer):
         return base
 
     def _get_skill_custom_content(self):
-        """HANDBOOK.md 个性内容"""
+        """AGENTS.md 个性内容"""
         return '''
 ### Agent 角色
 
@@ -245,7 +245,7 @@ class ProgramMaintainer(BaseMaintainer):
 
         replacements = {**base_replacements, **custom_replacements}
 
-        for template_name, target_name in [("README", "README.md"), ("HANDBOOK", "HANDBOOK.md")]:
+        for template_name, target_name in [("README", "README.md"), ("AGENTS", "AGENTS.md")]:
             template_file = f"{template_name}.template"
             src = os.path.join(template_dir, template_file)
             dst = os.path.join(self.project_path, target_name)

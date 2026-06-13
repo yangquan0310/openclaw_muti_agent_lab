@@ -164,7 +164,7 @@ class Maintainer(BaseMaintainer):
 
         loaded = []
         # 加载根目录契约文件
-        for filename in ["README.md", "HANDBOOK.md", "TODO.md", "metadata.json"]:
+        for filename in ["README.md", "AGENTS.md", "TODO.md", "metadata.json"]:
             src = os.path.join(assets_dir, filename)
             dst = os.path.join(self.project_path, filename)
             if os.path.exists(src) and not os.path.exists(dst):
@@ -1025,7 +1025,7 @@ def main():
     parser = argparse.ArgumentParser(description="项目文件整理工具")
     parser.add_argument("--all", action="store_true", help="整理所有项目")
     parser.add_argument("--dry-run", action="store_true", help="预览模式")
-    parser.add_argument("--projects-dir", default="/root/data/disk/仓库", help="项目根目录（默认: /root/data/disk/仓库/）")
+    parser.add_argument("--projects-dir", default="/root/data/disk/OneDrive/Applications/openclaw repository", help="项目根目录（默认: /root/data/disk/OneDrive/Applications/openclaw repository/）")
 
     # 子命令
     subparsers = parser.add_subparsers(dest="command", help="可用命令")
@@ -1040,20 +1040,21 @@ def main():
     organize_parser.add_argument("project_path", nargs="?", help="项目路径")
     organize_parser.add_argument("--all", action="store_true", help="整理所有项目")
     organize_parser.add_argument("--dry-run", action="store_true", help="预览模式")
-    organize_parser.add_argument("--projects-dir", default="/root/data/disk/仓库", help="项目根目录（默认: /root/data/disk/仓库/）")
+    organize_parser.add_argument("--projects-dir", default="/root/data/disk/OneDrive/Applications/openclaw repository", help="项目根目录（默认: /root/data/disk/OneDrive/Applications/openclaw repository/）")
 
     # sync - 同步模板
     sync_parser = subparsers.add_parser("sync", help="同步模板文件（保留 PRIVATE 区块）")
     sync_parser.add_argument("project_path", nargs="?", help="项目路径")
     sync_parser.add_argument("--all", action="store_true", help="同步所有项目")
     sync_parser.add_argument("--dry-run", action="store_true", help="预览模式")
-    sync_parser.add_argument("--projects-dir", default="/root/data/disk/仓库", help="项目根目录（默认: /root/data/disk/仓库/）")
+    sync_parser.add_argument("--force", action="store_true", help="强制覆盖无标记模板（谨慎使用,会覆盖项目定制内容）")
+    sync_parser.add_argument("--projects-dir", default="/root/data/disk/OneDrive/Applications/openclaw repository", help="项目根目录（默认: /root/data/disk/OneDrive/Applications/openclaw repository/）")
 
     # check-updates - 检查更新
     check_parser = subparsers.add_parser("check-updates", help="检查项目文档是否需要更新")
     check_parser.add_argument("project_path", nargs="?", help="项目路径")
     check_parser.add_argument("--all", action="store_true", help="检查所有项目")
-    check_parser.add_argument("--projects-dir", default="/root/data/disk/仓库", help="项目根目录（默认: /root/data/disk/仓库/）")
+    check_parser.add_argument("--projects-dir", default="/root/data/disk/OneDrive/Applications/openclaw repository", help="项目根目录（默认: /root/data/disk/OneDrive/Applications/openclaw repository/）")
 
     args = parser.parse_args()
 
@@ -1072,7 +1073,7 @@ def main():
 
         # 如果只有项目名，自动加上仓库根目录
         if '/' not in project_path and '\\' not in project_path:
-            project_path = os.path.join('/root/data/disk/仓库', project_path)
+            project_path = os.path.join('/root/data/disk/OneDrive/Applications/openclaw repository', project_path)
 
         # 创建项目目录
         if not os.path.exists(project_path):
@@ -1210,6 +1211,7 @@ def main():
                 if os.path.isdir(project_path) and not project_name.startswith('.'):
                     print(f"\n📁 同步模板: {project_name}")
                     maintainer = Maintainer.from_path(project_path)
+                    maintainer.force_overwrite = args.force
                     maintainer.sync_templates(dry_run=args.dry_run)
         else:
             if not args.project_path:
@@ -1217,6 +1219,7 @@ def main():
                 sys.exit(1)
 
             maintainer = Maintainer.from_path(args.project_path)
+            maintainer.force_overwrite = args.force
             maintainer.sync_templates(dry_run=args.dry_run)
         return
 

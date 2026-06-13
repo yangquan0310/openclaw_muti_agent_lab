@@ -200,7 +200,7 @@ manager/
 ### 3.1 仓库根目录
 
 ```
-/data/disk/仓库/
+/data/disk/OneDrive/Applications/openclaw repository/
 ├── agent-self-development/    # 自我发展插件
 ├── AI-Agent科普文章/          # 科普项目
 ├── 创业指导/                  # 论文项目
@@ -389,7 +389,7 @@ Agent 检查：目标达成 / 资源消耗 / 时间偏差 / 质量偏差 / 协�
     └── MEMORY.md：检查 If-Then 规则
     ↓
 【第二件套·项目工作台】
-    ├── 读取 /data/disk/仓库/创业指导/metadata.json → project_type = "thesis"
+    ├── 读取 /data/disk/OneDrive/Applications/openclaw repository/创业指导/metadata.json → project_type = "thesis"
     ├── 路由到 ThesisMaintainer
     ├── 检查四契约文件是否齐全
     └── 执行 manager maintainer organize

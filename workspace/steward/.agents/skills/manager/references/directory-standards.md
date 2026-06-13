@@ -19,7 +19,7 @@
 | 文件 | 用途 |
 |------|------|
 | README.md | 项目总览 |
-| HANDBOOK.md | 操作手册 |
+| AGENTS.md | 操作手册 |
 | TODO.md | 任务看板 |
 | metadata.json | 机器可读配置 |
 
@@ -82,7 +82,7 @@
 以下文件**不可移动、不可删除**：
 
 - README.md
-- HANDBOOK.md
+- AGENTS.md
 - TODO.md
 - metadata.json
 - .agentignore

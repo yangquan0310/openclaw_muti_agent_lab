@@ -116,7 +116,7 @@ openclaw workboard create "title" --agent {agent} --priority high --labels "..."
 **关键约束**（v3.3.0）：
 - **绑定群 session**用 `workboard_comment` 写软关联（plugin CLI 不支持 sessionKey，agent tool 也没有 `--session` flag）
 - **Dx 自动同步**依赖 `metadata.sessionKey`——所以建卡后**必须** comment 写明
-- **文件路径必须绝对**——如 `/data/disk/仓库/.../temp/认知范式补充资料.md`
+- **文件路径必须绝对**——如 `/data/disk/OneDrive/Applications/openclaw repository/.../temp/认知范式补充资料.md`
 - 传 `idempotencyKey`（v3.0.1 等价 `--no-dup`）——建卡前查同 title + sessionKey 是否有活跃卡
 
 #### 步骤 3：IM 5 段模板艾特（**必须**）
@@ -339,7 +339,7 @@ Work on this OpenClaw Workboard card:
 | `knowledge/` | **知识沉淀**（长期保存）| 文献综述笔记、理论详解 |
 
 **v3.0.1 硬要求**：
-- 卡 notes / IM 模板的文件路径**必须绝对路径**——如 `/data/disk/仓库/.../temp/认知范式补充资料.md`
+- 卡 notes / IM 模板的文件路径**必须绝对路径**——如 `/data/disk/OneDrive/Applications/openclaw repository/.../temp/认知范式补充资料.md`
 - **中间文件放 `temp/`，不放 `knowledge/`**——知识沉淀才放 `knowledge/`
 
 ### 4.3 核验清单（两场景共用）

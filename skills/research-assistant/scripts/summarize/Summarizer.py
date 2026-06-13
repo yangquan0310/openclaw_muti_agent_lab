@@ -10,6 +10,11 @@ Summarizer.py - 使用 LLM 分析论文，生成 labels 和 notes
 - 修复: 支持多个环境变量名 (DEEPSEEK_API_KEY, TENCENTTOKENHUB_API_KEY 等)
 - 修复: 删除文件末尾重复粘贴的多份代码
 
+更新记录 (2026-06-14, v5.12.0):
+- 调整参数优先级: 参数 (key) > config.json > 环境变量（之前是 参数 > 环境变量 > config.json）
+- 让 config.json 显式配置优先于散落的环境变量，便于跨环境/跨项目复用
+- base_url / model 维持原优先级（key > config；无 env 来源）
+
 使用方式:
     # Python
     from summarize.Summarizer import Summarizer

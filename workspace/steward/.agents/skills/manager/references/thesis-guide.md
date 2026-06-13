@@ -28,7 +28,7 @@
 ```
 论文项目/
 ├── README.md              # 项目总览（必须根目录）
-├── HANDBOOK.md            # 项目操作手册（必须根目录）
+├── AGENTS.md            # 项目操作手册（必须根目录）
 ├── TODO.md                # 任务看板（必须根目录）
 ├── metadata.json          # 机器可读配置（必须根目录）
 │
@@ -50,7 +50,7 @@
     └── agents/           # 代理角色规范
 ```
 
-**四个契约文件**（README.md、HANDBOOK.md、TODO.md、metadata.json）必须在根目录，缺一不可。
+**四个契约文件**（README.md、AGENTS.md、TODO.md、metadata.json）必须在根目录，缺一不可。
 
 ---
 

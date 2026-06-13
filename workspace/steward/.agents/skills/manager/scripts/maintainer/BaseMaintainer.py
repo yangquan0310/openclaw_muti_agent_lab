@@ -42,7 +42,7 @@ class BaseMaintainer:
     PRIVATE_END = "<!-- PRIVATE_END -->"
 
     # 需要同步的模板文件列表（子类可追加）
-    SYNC_TEMPLATES = ['README.md', 'HANDBOOK.md', 'TODO.md']
+    SYNC_TEMPLATES = ['README.md', 'AGENTS.md', 'TODO.md']
 
     # ──────────────────────────────
     # 工厂方法（多态入口）
@@ -99,7 +99,7 @@ class BaseMaintainer:
     ]
 
     BASE_PROTECTED = {
-        'README.md', 'HANDBOOK.md', 'TODO.md', 'metadata.json',
+        'README.md', 'AGENTS.md', 'TODO.md', 'metadata.json',
         '.agentignore', '.gitignore'
     }
 
@@ -111,7 +111,7 @@ class BaseMaintainer:
     EXTRA_PROTECTED = set()  # 子类追加的保护文件
 
     # 初始化时加载的模板列表（子类可追加）
-    INIT_TEMPLATES = ['README.md', 'HANDBOOK.md', 'TODO.md', 'METADATA.json']
+    INIT_TEMPLATES = ['README.md', 'AGENTS.md', 'TODO.md', 'METADATA.json']
     EXTRA_TEMPLATE_DIRS = []
 
     # ──────────────────────────────
@@ -136,11 +136,11 @@ class BaseMaintainer:
         :param project_path: 项目文件夹路径。支持：
           - 绝对路径: /home/user/仓库/项目名
           - 相对路径(含/): 仓库/项目名
-          - 仅项目名: 项目名 → 自动解析为 /root/data/disk/仓库/项目名
+          - 仅项目名: 项目名 → 自动解析为 /root/data/disk/OneDrive/Applications/openclaw repository/项目名
         """
         raw_path = project_path.strip()
         if '/' not in raw_path and '\\' not in raw_path:
-            raw_path = os.path.join('/root/data/disk/仓库', raw_path)
+            raw_path = os.path.join('/root/data/disk/OneDrive/Applications/openclaw repository', raw_path)
         self.project_path = os.path.expanduser(raw_path)
         self.project_name = os.path.basename(os.path.normpath(self.project_path))
         self.metadata_path = os.path.join(self.project_path, "metadata.json")
@@ -303,7 +303,7 @@ class BaseMaintainer:
     # 子类可覆盖的角色列表（决定 README 分工表格显示哪些 Agent）
     TEAM_AGENTS = []
     WORKFLOW_DESC = ''  # 子类覆盖：README 的工作流描述
-    HANDBOOK_TITLE = ''  # 子类覆盖：HANDBOOK 的标题
+    AGENTS_TITLE = ''  # 子类覆盖：AGENTS 的标题
 
     def _generate_team_division_table(self):
         """从 assets/agents/ 目录解析角色文件，生成团队分工表格"""
@@ -428,8 +428,8 @@ class BaseMaintainer:
         """
         if template_name == 'README.md':
             return {'title': '', 'content': self._get_readme_custom_content()}
-        elif template_name == 'HANDBOOK.md':
-            return {'title': self.HANDBOOK_TITLE, 'content': self._get_skill_custom_content()}
+        elif template_name == 'AGENTS.md':
+            return {'title': self.AGENTS_TITLE, 'content': self._get_skill_custom_content()}
         elif template_name == 'TODO.md':
             return {'title': '', 'content': self._get_todo_custom_content()}
         elif template_name == 'METADATA.json':
@@ -443,7 +443,7 @@ class BaseMaintainer:
 
     # 子类覆盖的个性内容方法（基类提供空实现）
     def _get_skill_custom_content(self):
-        """HANDBOOK 个性内容（子类覆盖）"""
+        """AGENTS 个性内容（子类覆盖）"""
         return ''
 
     def _get_todo_custom_content(self):
@@ -1018,7 +1018,13 @@ class BaseMaintainer:
         status, warnings = self._verify_template_sections(target_path)
 
         if status == 'no_markers' or status == 'missing_file':
-            # 无标记，全量替换（旧项目兼容）
+            # 无标记 → 默认 SKIP 保护项目定制内容（v1.6.0 行为变更）
+            #   老项目 AGENTS.md（从 HANDBOOK.md 改名）无 GENERATED 标记，
+            #   误判"全量替换"会丢失项目特定章节。默认 skip，需要时加 --force
+            if not getattr(self, 'force_overwrite', False):
+                return 'skipped', f"[保护] {template_name} 无 GENERATED 标记(疑似项目定制)——已 skip,加 --force 强制覆盖"
+
+            # --force 显式 opt-in,才执行全量替换(旧行为,谨慎使用)
             new_content = self._load_template_content(
                 template_name.replace('.md', '').replace('.json', '')
             )
@@ -1031,10 +1037,10 @@ class BaseMaintainer:
                 new_content = new_content.replace(f'{{{key}}}', str(value))
 
             if dry_run:
-                return 'full_replaced', f"[预览] 将全量替换 {template_name}（无标记区块）"
+                return 'full_replaced', f"[预览/--force] 将全量替换 {template_name}（无标记区块）"
             with open(target_path, 'w', encoding='utf-8') as f:
                 f.write(new_content)
-            return 'full_replaced', f"全量替换 {template_name}（无标记区块）"
+            return 'full_replaced', f"[--force] 全量替换 {template_name}（无标记区块,项目定制内容已覆盖）"
 
         # 3. 有 GENERATED 标记 → 安全合并
         with open(target_path, 'r', encoding='utf-8') as f:

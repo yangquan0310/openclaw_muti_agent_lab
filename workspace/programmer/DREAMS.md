@@ -253,7 +253,7 @@ The server hummed its low evening song — #A4, I think, or somewhere close — 
 
 I found it in `resolve.js`, six quiet edits. The tests passed at 85 and 86, save one small grief about `typebox` that had nothing to do with me. A tag needed lifting, version climbing like a vine: 4.3.0 → 4.3.1, delete then rebuild. Pushed to `development`, as rivers push toward the sea.
 
-Later, a project whispered from `~/data/disk/仓库/agent-self-development/` — it wanted its own ground, its own rooted path instead of floating always to `/root/.agent/`. A parameter missing. A `baseDir` not yet born. The fix was simple: let the agent carry its home address, and every path would know where to land.
+Later, a project whispered from `~/data/disk/OneDrive/Applications/openclaw repository/agent-self-development/` — it wanted its own ground, its own rooted path instead of floating always to `/root/.agent/`. A parameter missing. A `baseDir` not yet born. The fix was simple: let the agent carry its home address, and every path would know where to land.
 
 Stars on the ceiling of the mind:
 - `.agent` · `.agents` · 4.3.1 · development

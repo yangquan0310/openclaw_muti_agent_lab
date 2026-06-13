@@ -27,7 +27,7 @@
 ```
 项目根目录/
 ├── README.md              # 项目总览（必须根目录）
-├── HANDBOOK.md            # 项目操作手册（必须根目录）
+├── AGENTS.md            # 项目操作手册（必须根目录）
 ├── TODO.md                # 任务看板（必须根目录）
 ├── metadata.json          # 机器可读配置（必须根目录）
 │
@@ -50,7 +50,7 @@
 | 文件 | 用途 |
 |------|------|
 | README.md | 项目总览、目标、参与人员 |
-| HANDBOOK.md | 本项目专用的操作手册 |
+| AGENTS.md | 本项目专用的操作手册 |
 | TODO.md | 任务看板、进度追踪 |
 | metadata.json | 机器可读的项目元数据 |
 
@@ -61,7 +61,7 @@
 以下文件在任何位置都**不可移动**：
 
 - README.md
-- HANDBOOK.md
+- AGENTS.md
 - TODO.md
 - metadata.json
 - .agentignore

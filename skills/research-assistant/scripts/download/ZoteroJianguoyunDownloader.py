@@ -11,8 +11,8 @@
 - 反查路径：MD5 → 8 字符 hash（用 .prop 文件建索引）
 
 凭据：
-- Zotero: ZOTERO_USER_ID + ZOTERO_API_KEY（.env）
-- 坚果云: JIANGUOYUN_USER（默认 yangquan0310@qq.com）+ JIANGUOYUN_PASSWORD（.env）
+- Zotero: ZOTERO_USER_ID + ZOTERO_API_KEY（v5.12.0 优先级: key > config.json > .env）
+- 坚果云: JIANGUOYUN_USER（默认 yangquan0310@qq.com）+ JIANGUOYUN_PASSWORD（v5.12.0 优先级: key > config.json > .env）
 - 目标: WIKI_RAW_PAPERS_DIR（默认 /root/.openclaw/wiki/raw/papers）
 """
 
@@ -56,34 +56,72 @@ class ZoteroJianguoyunDownloader(Downloader):
     ):
         """初始化下载器
 
-        所有凭据从 .env 读（默认 /root/.openclaw/.env）。
-        显式传入的参数覆盖 .env 值。
+        凭据读取优先级（v5.12.0）: key > config.json > .env > DEFAULT
+        - key: __init__ 显式传入的参数（最高）
+        - config.json: scripts/config.json（v5.12.0 新增，比 .env 优先）
+        - .env: ~/.openclaw/.env（兜底）
+        - DEFAULT_*：硬编码兜底（仅对 user/url，password 不兜底）
         """
         env_file = env_file or self.DEFAULT_ENV_FILE
         env = load_env_file(env_file)
 
+        # 加载 config.json（v5.12.0 新增）— Zotero + jianguoyun 段
+        dl_config = self._load_download_config()
+        zotero_cfg = dl_config.get("zotero", {})
+        jgy_cfg = dl_config.get("jianguoyun", {})
+
+        # Zotero 凭据：key > config > env > DEFAULT
         self.zotero_user_id = (
             zotero_user_id
+            or zotero_cfg.get("user_id", "")
             or env.get("ZOTERO_USER_ID")
             or self.DEFAULT_ZOTERO_USER_ID
         )
-        self.zotero_api_key = zotero_api_key or env.get("ZOTERO_API_KEY")
-        self.webdav_url = webdav_url or self.DEFAULT_WEBDAV_URL
-        self.webdav_user = webdav_user or self.DEFAULT_WEBDAV_USER
-        self.webdav_password = webdav_password or env.get("JIANGUOYUN_PASSWORD")
+        self.zotero_api_key = (
+            zotero_api_key
+            or zotero_cfg.get("api_key", "")
+            or env.get("ZOTERO_API_KEY")
+        )
+        # 坚果云凭据：key > config > env > DEFAULT（password 无 DEFAULT）
+        self.webdav_url = (
+            webdav_url
+            or jgy_cfg.get("url", "")
+            or self.DEFAULT_WEBDAV_URL
+        )
+        self.webdav_user = (
+            webdav_user
+            or jgy_cfg.get("user", "")
+            or self.DEFAULT_WEBDAV_USER
+        )
+        self.webdav_password = (
+            webdav_password
+            or jgy_cfg.get("password", "")
+            or env.get("JIANGUOYUN_PASSWORD")
+        )
         self.wiki_raw_dir = Path(wiki_raw_dir or self.DEFAULT_WIKI_RAW_DIR)
 
         if not self.zotero_api_key:
             raise ValueError(
-                f"ZOTERO_API_KEY 未在 {env_file} 中找到，也未显式传入"
+                f"ZOTERO_API_KEY 未在 config.json / {env_file} 中找到，也未显式传入"
             )
         if not self.webdav_password:
             raise ValueError(
-                f"JIANGUOYUN_PASSWORD 未在 {env_file} 中找到，也未显式传入"
+                f"JIANGUOYUN_PASSWORD 未在 config.json / {env_file} 中找到，也未显式传入"
             )
 
         # 缓存：{md5_full: hash_8char}
         self._md5_to_hash: Dict[str, str] = {}
+
+    def _load_download_config(self) -> dict:
+        """从 scripts/config.json 加载 download 段配置（v5.12.0 新增）"""
+        try:
+            _cfg_path = Path(__file__).parent.parent / "config.json"
+            if _cfg_path.exists():
+                with open(_cfg_path, "r", encoding="utf-8") as _f:
+                    return json.load(_f)
+        except Exception:
+            pass
+        return {}
 
     # ==================== find_paper ====================
 

@@ -35,7 +35,7 @@ class Searcher:
         """初始化检索器（绑定知识库路径）
         Args:
             kb_path: 知识库文件路径（默认 index.json，由调用者传入具体项目路径）
-            api_key: Semantic Scholar API key（可选，默认从环境变量读取）
+            api_key: Semantic Scholar API key（v5.12.0 优先级: key > config > env）
         """
         # 加载全局配置（API 参数等）
         config = self._load_config()
@@ -43,7 +43,12 @@ class Searcher:
 
         self.kb_path = kb_path
         self.request_interval = semantic.get("request_interval", 0.5)
-        self.api_key = api_key or os.environ.get('SEMANTIC_SCHOLAR_API_KEY')
+        # v5.12.0: 优先级 key > config > env
+        self.api_key = (
+            api_key
+            or semantic.get("api_key", "")
+            or os.environ.get(semantic.get("api_key_env", "SEMANTIC_SCHOLAR_API_KEY"))
+        )
         if not self.api_key:
             print("警告: 未设置 Semantic Scholar API key，可能受到速率限制")
 

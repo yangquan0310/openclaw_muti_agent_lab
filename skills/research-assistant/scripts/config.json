@@ -16,6 +16,7 @@
   },
   "semantic_scholar": {
     "api_key_env": "SEMANTIC_SCHOLAR_API_KEY",
+    "api_key": "",
     "request_interval": 0.5,
     "default_limit": 20
   },
@@ -25,6 +26,19 @@
     "timeout": 10,
     "retry_times": 3,
     "retry_delay": 1
+  },
+  "zotero": {
+    "user_id": "",
+    "api_key": "",
+    "user_id_env": "ZOTERO_USER_ID",
+    "api_key_env": "ZOTERO_API_KEY"
+  },
+  "jianguoyun": {
+    "url": "",
+    "user": "",
+    "password": "",
+    "user_env": "JIANGUOYUN_USER",
+    "password_env": "JIANGUOYUN_PASSWORD"
   },
   "storage": {
     "root_path": "/root/lab_repo/",

@@ -8,7 +8,7 @@ author: Yang Quan
 
 > {一句话描述}
 > 来源：{触发来源}
-> 规范依据：manager HANDBOOK.md v2.6.0
+> 规范依据：manager AGENTS.md v2.6.0
 
 ---
 
@@ -86,7 +86,7 @@ author: Yang Quan
 
 > ⚠️ **约束目标必须写入 TODO 任务描述中**，与任务绑定。后续推进、验收、交付均以 TODO 中的约束目标为准。
 
-任务管理规范详见 `HANDBOOK.md` 和 `references/constraint-objectives.md`。
+任务管理规范详见 `AGENTS.md` 和 `references/constraint-objectives.md`。
 
 ## 版本历史
 
@@ -106,4 +106,4 @@ author: Yang Quan
 ---
 
 *最后更新：2026-05-20*
-*修改依据：manager HANDBOOK.md v2.6.0*
+*修改依据：manager AGENTS.md v2.6.0*

@@ -2,8 +2,10 @@
 name: research-assistant
 description: >
   科研文献综述全流程助手。支持文献检索、AI总结、知识库管理、笔记导出、文献综述撰写、研究现状撰写。
+  **v5.12.0 重点**：参数优先级统一为 **key > config > env**（之前是 key > env > config）。
+  让 config.json 显式配置优先于散落的环境变量，便于跨环境/跨项目复用。涉及模块：Summarizer / Searcher / SemSchSearcher / ScholarSearcher / ZoteroJianguoyunDownloader。config.json 新增 `semantic_scholar.api_key` / `zotero.{user_id,api_key}` / `jianguoyun.{url,user,password}` 明文字段（默认空，自动 fallback 到 .env）。
   **v5.11.0 重点**：references 重构为 13 个文件（1 索引 + 1 工作流 + 1 排版 + 6 模块 + 4 文体）。4 个文体撰写指南（narrative-review / meta-analysis / observational-study / experimental-study）基于心理学 APA 7 + JARS-Quant 规范，**不**用医学 PRISMA / STROBE / CONSORT。
-version: 5.11.0
+version: 5.12.0
 author: Yang Quan
 metadata:
   openclaw:

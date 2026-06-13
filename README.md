@@ -680,6 +680,20 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.2 (2026-06-14)
+- **steward manager 技能重命名**：HANDBOOK.md → AGENTS.md（统一项目级操作手册命名）。覆盖 references（manager-overview/directory-standards/version-standards/contract-standards/course-guide/program-guide/project-guide/lesson-plan-guide/thesis-guide/task-flow-guide/sync-standards）/ BaseMaintainer.py + 4 个 Maintainer 子类 / template-versions.json / assets/project-level/AGENTS.template（新增）/ HANDBOOK.template（已删除）
+- **steward manager 仓库路径迁移**：`/data/disk/仓库/` → `/data/disk/OneDrive/Applications/openclaw repository/`（OneDrive 挂载点变化）。覆盖 BaseMaintainer.py / steward MEMORY.md / wiki sources + syntheses / 全员 TOOLS.md 仓库默认位置字段
+- **research-assistant v5.12.0 升级**：参数优先级统一为 **key > config > env**（之前 key > env > config），config.json 显式配置优先于散落环境变量便于跨环境复用；config.json 新增 `semantic_scholar.api_key` / `zotero.{user_id,api_key}` / `jianguoyun.{url,user,password}` 明文字段（默认空，fallback 到 .env）。涉及模块：Summarizer / Searcher / SemSchSearcher / ScholarSearcher / ZoteroJianguoyunDownloader
+- **mark_old_projects_generated.py**：新增老项目 AGENTS.md GENERATED_START/END 标记脚本，让老项目能"接收"模板后续更新（走"安全合并"路径）
+- **openclaw.json 配置清理**：移除 `agents.defaults.model.fallbacks` 字段（重复配置，primary 已含模型名）
+- **Git 推送目标更新**：从 `development` 分支切换至 `main` 分支（development 分支已于 2026-06-12 删除；本仓库 main 为唯一常驻分支）
+- **安全审计**：扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）
+- **工作空间核查**：11 个代理 workspace/{agents}/ 目录结构整洁，仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/.openclaw/memory/temp/steward.clawhub），无中间文件污染
+- **记忆同步**：全部 10 个代理的 DREAMS.md、memory/.dreams/ 日志文件日常同步（events.jsonl、phase-signals.json、session-corpus、short-term-recall.json 等）
+- **Dreaming 同步**：全部 10 个代理新增 2026-06-04~13 dreaming 报告（light/deep/rem）
+- **Wiki 同步**：syntheses（3 篇）+ sources/repository.md 仓库路径字段统一更新；知识库整体一致
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支
+
 ### 版本 4.3.1 (2026-06-05)
 - **OpenClaw 升级 2026.6.1**: verboseDefault: full→on, 新增 blockStreaming, queryMode: recent→message, promptStyle: balanced→precision-heavy
 - **工作空间清理**: 删除 44 个 `.migrated` 升级备份文件；`memory/dreaming/` 和 `memory/.dreams/session-corpus/` 加入 `.gitignore` 避免 untracked 文件堆积
@@ -687,7 +701,7 @@ openclaw agents restart <agent-name>
 - **记忆同步**: 全部 10 个代理的 DREAMS.md、memory/.dreams/ 日志文件日常同步（events.jsonl、phase-signals.json、session-corpus、short-term-recall.json 等）
 - **Dreaming 同步**: 全部 10 个代理新增 2026-06-05 dreaming 报告（light/deep/rem）
 - **配置同步**: `openclaw.json` 多字段更新（streaming / 记忆 prompt 优化）
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.3.0 (2026-06-03)
 - **task-flow 三件套定型**：task-flow-guide v2.2 → v2.3（合并三件套 + TODO 7 字段 + claim 协议 + IM 模板 + 占位符）
@@ -701,20 +715,20 @@ openclaw agents restart <agent-name>
 - **rps 项目挂起**：老板未授权，停止一切操作
 - **manager references 清理**：清理冗余 + 合并双件套
 - **安全审计**：扫描并确认无硬编码 API Key
-- **Git自动推送**：每日 04:00 自动同步 development 分支
+- **Git自动推送**：每日 04:00 自动同步 main 分支
 
 ### 版本 4.2.9 (2026-06-02)
 - **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
 - **配置更新**: openclaw.json 启用飞书 blockStreaming（块流式回复）；cron 日报任务 timeout 从 300s 提升至 600s
 - **记忆同步**: 全部 10 个代理的 DREAMS.md、memory/.dreams/ 日志文件日常同步（events.jsonl、phase-signals.json、session-corpus、short-term-recall.json 等）
 - **Wiki 同步**: 知识库概念/实体/综合分析/报告页面全面更新，新增认知过程对称性破缺机制理论框架综述
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.2.8 (2026-05-31)
 - **记忆同步**: 全部 10 个代理的 DREAMS.md、memory/.dreams/ 日志文件日常同步（events.jsonl、phase-signals.json、session-corpus、short-term-recall.json 等）
 - **Dreaming 同步**: 全部 10 个代理新增 2026-05-31 dreaming 报告（light/deep/rem）
 - **Cron 状态**: jobs.json、jobs-state.json 同步
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.2.7 (2026-05-30)
 - **工作空间清理**: 程序员 sessions/ 移至 temp/sessions/，大管家 agent/ 和 sessions/ 移至 temp/ 对应子目录
@@ -724,7 +738,7 @@ openclaw agents restart <agent-name>
 - **Cron 状态**: jobs.json、jobs-state.json 同步
 - **插件同步**: plugins/installs.json 更新
 - **配置同步**: openclaw.json 多字段更新
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.2.6 (2026-05-26)
 - **References 重构**: 程序员 references/ 目录重构为 8 个结构化章节（ch01-ch08）
@@ -733,7 +747,7 @@ openclaw agents restart <agent-name>
 - **Wiki 同步**: entities/index.md、wiki/index.md 小幅更新
 - **Cron 状态**: jobs-state.json 同步
 - **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.2.5 (2026-05-23)
 - **安全加固**: openclaw.json JINA API Key 改为环境变量 `${JINA_API_KEY}` 引用
@@ -758,7 +772,7 @@ openclaw agents restart <agent-name>
 - **Cron 任务状态**: jobs-state.json 小幅同步
 - **工作空间清理**: workspace/.clawhub/lock.json 删除（过时锁定文件）
 - **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.2.3 (2026-05-19)
 - **agent-self-development v4.3.0 规划文档更新**: 完善 Object-Driven Layer (ODL) 架构蓝图，明确 Task 对象与 Assets 资产层设计
@@ -770,17 +784,17 @@ openclaw agents restart <agent-name>
 - **Cron 任务状态更新**: jobs-state.json 小幅同步
 - **.gitignore 加固**: 添加 `*.db-shm` 和 `*.db-wal` 排除数据库 WAL 日志文件
 - **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.2.2 (2026-05-16)
 - **MiniMax 模型集成**: Steward 配置新增 minimax / minimax-cn / minimax-portal / minimax-portal-cn 四个 provider，支持 MiniMax-M2.7 及 MiniMax-M2.7-highspeed 模型（204.8K 上下文 / 131.072K 最大输出）
 - **README更新**: 同步版本号、Agent 数量(7→10)、运行状态标签(运行中→稳定版)
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.2.1 (2026-05-16)
 - **安全审计**: 扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
 - **README更新**: 同步版本号、时间戳、运行状态
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.2.0 (2026-05-14)
 - **agent-self-development v4.2.0 升级**: Cognitive Intelligence —— 让 Tool-Driven 架构从「可用」走向「智能」
@@ -793,7 +807,7 @@ openclaw agents restart <agent-name>
   - **任务类型模板**: 新增 coding / research / documentation 专用 planning 模板
   - **测试**: 126/126 断言通过，45 个 suite，0 失败
 - **README更新**: 同步版本号、时间戳、运行状态
-- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**: 每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.1.5 (2026-05-14)
 - **agent-self-development 插件代码重构**：
@@ -810,7 +824,7 @@ openclaw agents restart <agent-name>
 - **各代理记忆日常同步**：所有 10 个代理的 `.dreams/events.jsonl`、`.dreams/phase-signals.json`、`.dreams/session-ingestion.json`、`.dreams/short-term-recall.json`、 dreaming（light/deep/rem）文件同步至 2026-05-14
 - **安全审计**：扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
 - **README更新**：同步版本号、时间戳、运行状态
-- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.1.4 (2026-05-13)
 - **Reviewer模型配置更新**：`agents/reviewer/agent/models.json` 中 DeepSeek V4 Flash 模型参数调整（contextWindow 256000→1000000, maxTokens 256000→384000）
@@ -828,28 +842,28 @@ openclaw agents restart <agent-name>
   - 新增 TODO.md 更新后需与老板讨论的规则
 - **安全审计**：扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
 - **README更新**：同步版本号、时间戳、运行状态
-- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.1.3 (2026-05-13)
 - **Cron任务通知调整**：Git自动推送任务的通知目标从实验室群(`oc_cd80162eb81e39f77160a0daab2a6ab8`)改为当前私聊(`ou_a4bc01a3736e458817235a94124d340c`)，便于个人接收任务执行状态
 - **安全审计**：扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
 - **README更新**：同步版本号、时间戳、运行状态
-- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.1.2 (2026-05-13)
 - **安全审计**：扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
 - **README更新**：同步版本号、时间戳、运行状态
-- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.1.2 (2026-05-13)
 - **安全审计**：修复 `agents/programmer/agent/models.json`、`agents/main/agent/models.json`、`agents/instructor/agent/models.json` 中 6 处硬编码 API Key（3 处 Tencent Token Plan + 3 处 Kimi Code），分别替换为 `${TENCENTTOKENPLAN_API_KEY}` 和 `${KIMICODE_API_KEY}` 系统变量引用
 - **README更新**：同步版本号、时间戳、运行状态
-- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.1.1 (2026-05-12)
 - **安全审计**：扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用
 - **README更新**：同步版本号、时间戳、运行状态
-- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 4.1.0 (2026-05-11)
 - **agent-self-development v4.1.0 升级**:从「插件代劳」走向「Agent 自主」
@@ -872,20 +886,20 @@ openclaw agents restart <agent-name>
   - 新增多 Agent 协作角色与流程
   - 更新部署指南(初始化项目目录结构)
   - 同步 OpenClaw 版本号 2026.5.7
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.4.1 (2026-05-10)
 - **安全审计**:扫描并确认当前待提交文件中无硬编码 API Key,所有密钥均使用系统变量引用
 - **Gitignore 加固**:显式添加 `credentials/`、`qqbot/data/credential-backup-*.json` 至 `.gitignore`
 - **README更新**:同步版本号、时间戳、运行状态
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.4.0 (2026-05-09)
 - **agent-self-development 插件重构**:目录结构重组,新增 `agents/`、`docs/`、`skills/`、`test/reports/` 目录
 - **安全审计**:扫描并修复 `workspace/skills/research-assistant/scripts/config.json` 中 3 处硬编码 API Key
 - **各代理记忆日常更新**:所有 10 个代理的 `.dreams/` 记忆文件、events.jsonl、phase-signals.json 日常同步
 - **README更新**:同步版本号、时间戳、运行状态
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.3.9 (2026-05-08)
 - **IDENTITY.md 全局精炼**:所有 10 个代理 IDENTITY.md 从平均 200+ 行精炼至 75 行(减负 62-72%)
@@ -908,7 +922,7 @@ openclaw agents restart <agent-name>
 
 ### 版本 3.3.1 (2026-05-08)
 - **README更新**:同步版本号、时间戳、运行状态
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.3.0 (2026-05-06)
 - **技能全局共享重构**:所有技能从 `workspace/skills/` 迁移至 `~/.openclaw/skills/`
@@ -924,17 +938,17 @@ openclaw agents restart <agent-name>
 - **踩坑记录**:git checkout 覆盖 working tree 改动经验沉淀
 - **Dreaming 日记**:10 个 Agent 梦境日记自动增长（2026-06-04）
 - **README更新**:同步版本号、时间戳、运行状态
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.2.9 (2026-05-06)
 - **安全审计**:扫描并替换 10 个 agents 的 models.json 中硬编码 API Key
 - **README更新**:同步版本号、时间戳、运行状态
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.2.8 (2026-05-05)
 - **安全审计**:扫描并确认无硬编码 API Key
 - **README更新**:同步版本号、时间戳、运行状态
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.2.8 (2026-05-18)
 - **模型配置升级**: 新增 Kimi Code 系列模型(kimi-for-coding, kimi-code, k2p5)
@@ -942,20 +956,20 @@ openclaw agents restart <agent-name>
 - **MiniMax 更新**: M2.5 → M2.7, 新增 VL-01 视觉模型, maxTokens 扩展至 25600
 - **工作空间清理**: steward/ 目录 LaTeX 中间文件移至 temp/
 - **pixel-office 优化**: EditorToolbar 组件、layoutSerializer、spriteCache 精简
-- **Git自动推送**: 每日 04:00 自动同步 development 分支
+- **Git自动推送**: 每日 04:00 自动同步 main 分支
 - **安全审计**:扫描并确认无硬编码 API Key
 - **README更新**:同步版本号、时间戳、运行状态
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.2.6 (2026-05-03)
 - **安全审计**:扫描并确认无硬编码 API Key
 - **README更新**:同步版本号、时间戳、运行状态
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.2.4 (2026-04-28)
 - **安全审计**:扫描并确认无硬编码 API Key
 - **README更新**:同步版本号、时间戳、运行状态
-- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 development 分支
+- **Git自动推送**:每日凌晨 04:00 自动同步本地更改到 main 分支
 
 ### 版本 3.2.3 (2026-04-27)
 - **安全审计**:定期扫描仓库硬编码敏感信息,确保无API Key泄露
@@ -1103,8 +1117,8 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-13 04:00:00**
+**最后更新: 2026-06-14 04:00:00**
 **系统版本**: OpenClaw 2026.6.5
-**插件版本**: agent-self-development v4.3.1
+**Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
 **备份状态**: ✅ 自动执行中

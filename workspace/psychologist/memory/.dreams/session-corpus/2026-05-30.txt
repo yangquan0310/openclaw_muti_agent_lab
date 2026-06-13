@@ -99,7 +99,7 @@
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl#L60] Assistant: 同步更新文档字符串中的优先级说明：
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl#L62] Assistant: 验证一下：
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl#L64] Assistant: 已补上。现在 `easyscholar_api_key` 的加载优先级是： | 优先级 | 来源 | |--------|------| | 1 | 参数 `easyscholar_api_key="..."` | | 2 | 环境变量 `EASYSCHOLAR_API_KEY` | | 3 | `config.json` → `easy_scholar.api_key` | 这样即使不传参、不设环境变量，只要 `config.json` 里配了也能用。
-[psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl#L65] User: 然后给 /root/data/disk/仓库/数字化存储与自传体记忆/knowledge/index.json更新一下jcr 你先检查一下，是不是已经更新了？
+[psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl#L65] User: 然后给 /root/data/disk/OneDrive/Applications/openclaw repository/数字化存储与自传体记忆/knowledge/index.json更新一下jcr 你先检查一下，是不是已经更新了？
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl#L68] Assistant: 还有 **103 篇**没有 JCR 数据。现在执行更新：
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl#L82] Assistant: 进程被 SIGKILL 了，可能是超时。让我直接用 Python 测试一下 API 是否正常：
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl#L84] Assistant: API Key 没传进去，让我检查一下：
@@ -197,7 +197,7 @@
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L169] Assistant: 好，我来按「研究现状」模板的8部分框架重新撰写。
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L177] Assistant: 好，文献基础清楚了。现在开始撰写。
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L178] User: 你在修改哪一个？
-[psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L179] Assistant: 我准备重写的是这个文件： `/root/data/disk/仓库/数字化存储与自传体记忆/knowledge/review/研究现状_数字化存储与自传体记忆.md` 这是整合了全部5个子主题的主文件（还有各子主题的独立文件如`研究现状_自传体记忆的系统性巩固.md`等）。 是这个文件，对吗？
+[psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L179] Assistant: 我准备重写的是这个文件： `/root/data/disk/OneDrive/Applications/openclaw repository/数字化存储与自传体记忆/knowledge/review/研究现状_数字化存储与自传体记忆.md` 这是整合了全部5个子主题的主文件（还有各子主题的独立文件如`研究现状_自传体记忆的系统性巩固.md`等）。 是这个文件，对吗？
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L180] User: 不是。 你把研究现状_数字化存储与自传体记忆.md和研究现状_数字化使用对自传体记忆的影响.md 这两个合并一下 做一个研究现状
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L181] Assistant: 明白，合并这两个文件做一个研究现状。让我先看一下第二个文件的内容：
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L183] Assistant: 明白了，两个文件合并为一个研究现状。我来按模板8部分框架重组，内容以这两个文件为基础。
@@ -221,14 +221,14 @@
 [psychologist/sessions/psychologist/04c55aff-9ae2-40bb-86b4-6b692a6cf06d.jsonl.reset.2026-05-30T10-34-57.430Z#L281] User: 这八篇，有没有abstract？
 [psychologist/sessions/psychologist/04c55aff-9ae2-40bb-86b4-6b692a6cf06d.jsonl.reset.2026-05-30T10-34-57.430Z#L284] Assistant: | # | 标题 | 有无 Abstract | |---|------|---------------| | 1 | Five weeks of immersive reminiscence therapy improves... | ✓ (1410字符) | | 2 | The efficacy of Life Review Therapy combined with... | ✓ (1748字符) | | 3 | Impro
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L187] Assistant: 好，现在我有足够的信息了。来写合并后的研究现状文档：
-[psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L189] Assistant: 已完成，文件已写入： `/root/data/disk/仓库/数字化存储与自传体记忆/knowledge/review/研究现状_数字化存储与自传体记忆.md` --- **文档结构（按模板8部分）**： | 部分 | 内容 | |------|------| | 一、概述 | 核心概念定义表 + 报告范围 | | 二、核心议题 | 5个议题（数字化使用、自我参照编码、系统性巩固、主动遗忘、生成性提取），每议题按"主流观点→最新进
+[psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L189] Assistant: 已完成，文件已写入： `/root/data/disk/OneDrive/Applications/openclaw repository/数字化存储与自传体记忆/knowledge/review/研究现状_数字化存储与自传体记忆.md` --- **文档结构（按模板8部分）**： | 部分 | 内容 | |------|------| | 一、概述 | 核心概念定义表 + 报告范围 | | 二、核心议题 | 5个议题（数字化使用、自我参照编码、系统性巩固、主动遗忘、生成性提取），每议题按"主流观点→最新进
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L378] User: 把这个文件传递过来
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L380] Assistant: 研究现状_数字化存储与自传体记忆.md
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L382] Assistant: 已发送。
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L383] User: 这个写得不好。 删除后重新撰写。 名字叫数字化存储对自传体记忆的影响。
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L388] Assistant: 文件之前没写入成功（被截断了）。现在重新写：
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L396] Assistant: 明白了。核心问题是：**聚焦"数字化存储对自传体记忆的影响"**，而不是泛泛覆盖5个子主题。我来重写：
-[psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L398] Assistant: 已写入：`/root/data/disk/仓库/数字化存储与自传体记忆/knowledge/review/研究现状_数字化存储对自传体记忆的影响.md`
+[psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L398] Assistant: 已写入：`/root/data/disk/OneDrive/Applications/openclaw repository/数字化存储与自传体记忆/knowledge/review/研究现状_数字化存储对自传体记忆的影响.md`
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L399] Assistant: 研究现状_数字化存储对自传体记忆的影响.md
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L401] Assistant: 已发送。 **本次重写的核心变化**： | 改进 | 说明 | |------|------| | **主题聚焦** | 完全围绕"数字化存储对自传体记忆的影响"展开，不再分散到五个子主题 | | **理论框架清晰** | 以"认知卸载"为核心，整合分布式认知→延展心智→Google效应/拍照效应的逻辑链 | | **数据驱动** | 开篇加入全球数字化存储行为统计数据（照片1.94万亿张/日、Google搜索等） | | **文
 [psychologist/sessions/psychologist/3ea8d891-5727-490d-9bfa-04286d505251.jsonl.reset.2026-05-31T02-40-02.492Z#L402] User: 你这个写得不像一个研究现状。 你需要检索一下研究现状怎么写 先更新技能 然后再检索补充文献、提取主题、总结、提取笔记、攥写研究现状，完整走一个流程。

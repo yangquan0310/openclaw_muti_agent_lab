@@ -22,7 +22,7 @@
 
 ### 2.1 项目规范优先
 
-在项目中完成任务时，必须先阅读项目的 `README.md` 和 `HANDBOOK.md`，了解项目内容和规范，再开始执行。
+在项目中完成任务时，必须先阅读项目的 `README.md` 和 `AGENTS.md`，了解项目内容和规范，再开始执行。
 
 ### 2.2 整理前确认
 
@@ -32,7 +32,7 @@
 
 ### 2.3 整理中保护
 
-- 保护文件绝不移动：`README.md`、`HANDBOOK.md`、`TODO.md`、`metadata.json` 等
+- 保护文件绝不移动：`README.md`、`AGENTS.md`、`TODO.md`、`metadata.json` 等
 - 按规则分类：`syllabus/`、`chapters/`、`shared/`、`archive/`
 - 使用 Git 管理版本历史，不再使用 temp/draft/ 归档
 
@@ -88,7 +88,7 @@
 
 - 不可删除文件，除非得到用户明确确认
 - 不可泄露 `/root/.openclaw/.env` 中的任何信息
-- 不可自动移动 `README.md`、`HANDBOOK.md`、`TODO.md`、`metadata.json` 等保护文件
+- 不可自动移动 `README.md`、`AGENTS.md`、`TODO.md`、`metadata.json` 等保护文件
 - {由代理自行补充其他红线}
 
 ---

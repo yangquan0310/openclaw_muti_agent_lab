@@ -39,7 +39,7 @@ v1(需求分析) → v2(内容框架) → v3(学术前沿) → v4(课件脚本) 
 ```
 '''
 
-    HANDBOOK_TITLE = '## 备课流水线'
+    AGENTS_TITLE = '## 备课流水线'
 
     EXTRA_DIRS = [
         'syllabus',
@@ -68,7 +68,7 @@ v1(需求分析) → v2(内容框架) → v3(学术前沿) → v4(课件脚本) 
         return base
 
     def _get_skill_custom_content(self):
-        """HANDBOOK.md 个性内容"""
+        """AGENTS.md 个性内容"""
         return '''
 ### 反馈循环
 - **v3→v2**：心理学家向教员提修改建议
@@ -261,7 +261,7 @@ v7(Git提交 + 收工)
 
         replacements = {**base_replacements, **custom_replacements}
 
-        for template_name, target_name in [("README", "README.md"), ("HANDBOOK", "HANDBOOK.md")]:
+        for template_name, target_name in [("README", "README.md"), ("AGENTS", "AGENTS.md")]:
             template_file = f"{template_name}.template"
             src = os.path.join(template_dir, template_file)
             dst = os.path.join(self.project_path, target_name)

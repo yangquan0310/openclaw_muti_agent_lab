@@ -42,7 +42,7 @@ class ThesisMaintainer(BaseMaintainer):
 ```
 '''
 
-    HANDBOOK_TITLE = '## 论文工作流'
+    AGENTS_TITLE = '## 论文工作流'
 
     EXTRA_DIRS = [
         'knowledge',
@@ -111,7 +111,7 @@ class ThesisMaintainer(BaseMaintainer):
         return base
 
     def _get_skill_custom_content(self):
-        """HANDBOOK.md 个性内容"""
+        """AGENTS.md 个性内容"""
         return '''
 ### 双分支策略
 

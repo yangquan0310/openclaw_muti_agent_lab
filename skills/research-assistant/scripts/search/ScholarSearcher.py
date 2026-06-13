@@ -44,6 +44,7 @@ class ScholarSearcher(BaseSearcher):
     def __init__(
         self,
         kb_path: str = "knowledge/index.json",
+        api_key: Optional[str] = None,
         request_interval: float = 3.0,
         hl: str = "zh-CN",
     ):
@@ -51,6 +52,24 @@ class ScholarSearcher(BaseSearcher):
         self.request_interval = request_interval
         self.hl = hl
         self._fallback_used = False  # 记录是否使用了备选引擎
+        # v5.12.0: SemSch api_key 优先级 key > config > env（注入到 _search_semantic）
+        # config 读取（inline；保持与 Searcher.py / SemSchSearcher.py 一致）
+        _ss_config: dict = {}
+        try:
+            import json as _json
+            from pathlib import Path as _Path
+            _cfg_path = _Path(__file__).parent.parent / "config.json"
+            if _cfg_path.exists():
+                with open(_cfg_path, "r", encoding="utf-8") as _f:
+                    _ss_config = _json.load(_f)
+        except Exception:
+            pass
+        _semantic = _ss_config.get("semantic_scholar", {})
+        self._ss_api_key = (
+            api_key
+            or _semantic.get("api_key", "")
+            or os.environ.get(_semantic.get("api_key_env", "SEMANTIC_SCHOLAR_API_KEY"))
+        )
         self.session = requests.Session()
         self.session.headers.update({
             "User-Agent": (
@@ -150,7 +169,8 @@ class ScholarSearcher(BaseSearcher):
         year_max: Optional[int],
     ) -> List[Paper]:
         """通过 Semantic Scholar API 获取论文（备选引擎）"""
-        api_key = os.environ.get("SEMANTIC_SCHOLAR_API_KEY", "")
+        # v5.12.0: 使用 __init__ 解析的 _ss_api_key（key > config > env）
+        api_key = self._ss_api_key or ""
         headers = {"x-api-key": api_key} if api_key else {}
         params = {
             "query": keyword,

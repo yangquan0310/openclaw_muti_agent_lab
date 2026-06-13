@@ -102,7 +102,7 @@ manager 是管理技能唯一入口，涵盖所有管理场景。task-dispatcher
 1. 确定项目类型（论文/课程/程序/通用）
 2. 使用对应技能的初始化流程
 3. 创建标准目录结构
-4. 填写四个契约文件（README.md、HANDBOOK.md、TODO.md、metadata.json）
+4. 填写四个契约文件（README.md、AGENTS.md、TODO.md、metadata.json）
 
 **Q3：项目整理怎么做？**
 
@@ -116,7 +116,7 @@ manager 是管理技能唯一入口，涵盖所有管理场景。task-dispatcher
 
 **Q4：四个契约文件是什么？**
 
-README.md（项目总览）、HANDBOOK.md（操作手册）、TODO.md（任务看板）、metadata.json（机器可读配置）。这四个文件必须在项目根目录，不可移动。
+README.md（项目总览）、AGENTS.md（操作手册）、TODO.md（任务看板）、metadata.json（机器可读配置）。这四个文件必须在项目根目录，不可移动。
 
 ---
 
