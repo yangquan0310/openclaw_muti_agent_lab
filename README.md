@@ -1008,6 +1008,15 @@ openclaw agents restart <agent-name>
 - **配置同步**: openclaw.json 配置微调
 - **清理**: mathematician MCP server 删除、steward 旧体检报告删除
 
+### 版本 3.2.9 (2026-06-15)
+- **每日自动同步 2026-06-15**: 2 文件变更(2+/-12-,含 steward .clawhub 技能锁更新)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码(待推送文件 steward/.clawhub/lock.json + state/openclaw.sqlite mtime 同步,无明文)
+- **工作空间核查**: 10 个 Agent 目录结构正常,标准 8 个 .md 配置文件 + temp/memory/.agents/.openclaw/.learnings/steward.clawhub 目录齐全,无 stray 中间文件
+- **ClawHub 技能同步**: steward/.clawhub/lock.json 新增 3 个 minimax-* 技能锁(minimax-pdf v1.0.0 / minimax-docx v1.0.0 / minimax-xlsx v1.0.0);workspace/.clawhub/lock.json 全局工具锁(未跟踪,设计内)
+- **steward 记忆同步**: steward/memory/2026-06-14-1625.md(本次新生成,记录 rclone 卸载 + abraunegg onedrive 切换会话)
+- **state/openclaw.sqlite**: 系统状态数据库 mtime 同步(无字节内容变化)
+- **运行状态**: ✅ 稳定版,已推 main 分支
+
 ### 版本 3.2.7 (2026-06-12)
 - **每日自动同步 2026-06-12**: 64 文件变更（含梦境记忆同步 + 迁移文件清理）
 - **密钥核查**: 全仓库扫描无硬编码 API Key（仅 3 处 `your-xxx-key` 占位符在 skills/research-assistant 文档/备份中）
@@ -1117,7 +1126,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-14 04:00:00**
+**最后更新: 2026-06-15 04:00:00**
 **系统版本**: OpenClaw 2026.6.5
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
