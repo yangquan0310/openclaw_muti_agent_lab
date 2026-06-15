@@ -6,7 +6,7 @@
         "name": "deepseek",
         "base_url": "https://api.deepseek.com/v1",
         "default_model": "deepseek-chat",
-        "api_key_env": "DEEPSEEK_API_KEY",
+        "api_key_env": "${DEEPSEEK_API_KEY}",
         "api_key": "",
         "timeout": 30,
         "temperature": 0.3,
@@ -15,13 +15,13 @@
     }
   },
   "semantic_scholar": {
-    "api_key_env": "SEMANTIC_SCHOLAR_API_KEY",
+    "api_key_env": "${SEMANTIC_SCHOLAR_API_KEY}",
     "api_key": "",
     "request_interval": 0.5,
     "default_limit": 20
   },
   "easy_scholar": {
-    "api_key_env": "EASYSCHOLAR_API_KEY",
+    "api_key_env": "${EASYSCHOLAR_API_KEY}",
     "base_url": "https://easyscholar.cc/open",
     "timeout": 10,
     "retry_times": 3,
@@ -30,15 +30,15 @@
   "zotero": {
     "user_id": "",
     "api_key": "",
-    "user_id_env": "ZOTERO_USER_ID",
-    "api_key_env": "ZOTERO_API_KEY"
+    "user_id_env": "{ZOTERO_USER_ID}",
+    "api_key_env": "${ZOTERO_API_KEY}"
   },
   "jianguoyun": {
     "url": "",
     "user": "",
     "password": "",
-    "user_env": "JIANGUOYUN_USER",
-    "password_env": "JIANGUOYUN_PASSWORD"
+    "user_env": "${JIANGUOYUN_USER}",
+    "password_env": "${JIANGUOYUN_PASSWORD}"
   },
   "storage": {
     "root_path": "/root/lab_repo/",

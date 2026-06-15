@@ -680,6 +680,16 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.3 (2026-06-16)
+- **OpenClaw 升级 2026.6.5 → 2026.6.6**：wizard 重新运行 doctor；meta.lastTouchedVersion 同步至 2026.6.6，badge 同步至 2026.6.8
+- **research-assistant config.json 密钥引用标准化**：所有 `*_env` 字段从纯变量名改为 `${VAR}` 形式，更明确表达"环境变量引用"语义。涉及字段：`deepseek.api_key_env` / `semantic_scholar.api_key_env` / `easy_scholar.api_key_env` / `zotero.user_id_env` / `zotero.api_key_env` / `jianguoyun.user_env` / `jianguoyun.password_env`
+- **steward .clawhub 技能锁落地**：workspace/.clawhub/lock.json 记录已安装技能版本（ui-ux-pro-max 0.1.0 / ui-ux-for-openclaw 1.0.2 / minimax-pdf 1.0.0），作为后续技能升级/重装的依据
+- **openclaw.json 配置清理**：移除 `plugins.allow` 中已废弃的 `agent-self-development` 入口（该插件已被新 plugin 体系取代，参考 MEMORY.md T002 归档）；对应 allow 列表同步精简
+- **安全审计**：扫描并确认当前待提交文件中无硬编码 API Key，所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env` 已在 `.gitignore` 排除范围，不会进入仓库
+- **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/），无中间文件、解析文件、一次性文件污染
+- **state/openclaw.sqlite 数据库变化**：日常业务数据持久化，体积稳定（25,350,144 字节）
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支
+
 ### 版本 4.3.2 (2026-06-14)
 - **steward manager 技能重命名**：HANDBOOK.md → AGENTS.md（统一项目级操作手册命名）。覆盖 references（manager-overview/directory-standards/version-standards/contract-standards/course-guide/program-guide/project-guide/lesson-plan-guide/thesis-guide/task-flow-guide/sync-standards）/ BaseMaintainer.py + 4 个 Maintainer 子类 / template-versions.json / assets/project-level/AGENTS.template（新增）/ HANDBOOK.template（已删除）
 - **steward manager 仓库路径迁移**：`/data/disk/仓库/` → `/data/disk/OneDrive/Applications/openclaw repository/`（OneDrive 挂载点变化）。覆盖 BaseMaintainer.py / steward MEMORY.md / wiki sources + syntheses / 全员 TOOLS.md 仓库默认位置字段
