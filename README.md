@@ -680,6 +680,12 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.6 (2026-06-19)
+- **密钥核查**：扫描所有待提交文件（state/openclaw.sqlite），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查**：11 个 agent 目录（10 个代理 + skills）结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/），无中间文件、解析文件、一次性文件需要清理；psychologist/knowledge/ 为预置空目录（保留）
+- **state/openclaw.sqlite 数据库变化**：日常业务数据持久化，体积稳定（25,350,144 字节），仅 mtime 更新无实质内容差异
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支（development 已废弃）
+
 ### 版本 4.3.5 (2026-06-18)
 - **密钥核查**：扫描所有待提交文件（state/openclaw.sqlite），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/），无中间文件、解析文件、一次性文件需要清理；DREAMS.md 为梦境日记（非临时文件，保留）
@@ -1148,7 +1154,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-18 04:00:00**
+**最后更新: 2026-06-19 04:00:00**
 **系统版本**: OpenClaw 2026.6.6
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
