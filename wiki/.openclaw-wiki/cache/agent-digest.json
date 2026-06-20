@@ -2,15 +2,15 @@
   "pageCounts": {
     "entity": 13,
     "concept": 53,
-    "source": 10,
-    "synthesis": 35,
+    "source": 15,
+    "synthesis": 36,
     "report": 11
   },
   "claimCount": 23,
   "claimHealth": {
     "freshness": {
-      "fresh": 23,
-      "aging": 0,
+      "fresh": 21,
+      "aging": 2,
       "stale": 0,
       "unknown": 0
     },
@@ -1357,7 +1357,7 @@
       "entityType": "agent",
       "canonicalId": "agent.auditor",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T22:01:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -1397,7 +1397,7 @@
       "entityType": "agent",
       "canonicalId": "agent.instructor",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T22:01:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -1437,7 +1437,7 @@
       "entityType": "agent",
       "canonicalId": "agent.mathematician",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T14:11:47.308Z",
       "claimCount": 0,
       "topClaims": []
@@ -1498,7 +1498,7 @@
       "entityType": "agent",
       "canonicalId": "agent.physicist",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T14:11:47.285Z",
       "claimCount": 0,
       "topClaims": []
@@ -1538,7 +1538,7 @@
       "entityType": "agent",
       "canonicalId": "agent.presenter",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T22:01:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -1576,7 +1576,7 @@
       "entityType": "agent",
       "canonicalId": "agent.programmer",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T14:11:47.355Z",
       "claimCount": 2,
       "topClaims": [
@@ -1593,7 +1593,7 @@
               "note": "明确声明不操作生产环境"
             }
           ],
-          "freshnessLevel": "fresh",
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-12T14:11:47.355Z"
         },
         {
@@ -1609,7 +1609,7 @@
               "note": "v4.0.0 元认知框架重构由 programmer 负责架构设计"
             }
           ],
-          "freshnessLevel": "fresh",
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-12T14:11:47.355Z"
         }
       ]
@@ -1649,7 +1649,7 @@
       "entityType": "agent",
       "canonicalId": "agent.psychologist",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T14:08:17.810Z",
       "claimCount": 0,
       "topClaims": []
@@ -1689,7 +1689,7 @@
       "entityType": "agent",
       "canonicalId": "agent.reviewer",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T14:11:47.251Z",
       "claimCount": 0,
       "topClaims": []
@@ -1729,7 +1729,7 @@
       "entityType": "agent",
       "canonicalId": "agent.steward",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T14:11:47.208Z",
       "claimCount": 0,
       "topClaims": []
@@ -1790,7 +1790,7 @@
       "entityType": "agent",
       "canonicalId": "agent.writer",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T14:11:47.332Z",
       "claimCount": 0,
       "topClaims": []
@@ -2036,7 +2036,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-05T08:15:28.128Z",
+      "lastTouchedAt": "2026-06-20T16:11:49.513Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2114,6 +2114,57 @@
       "topClaims": []
     },
     {
+      "id": "source.buzsaki-2002-hippocampal-theta",
+      "title": "海马θ振荡（Buzsáki 2002）",
+      "kind": "source",
+      "path": "sources/buzsaki-2002-hippocampal-theta.md",
+      "aliases": [
+        "Buzsaki 2002",
+        "hippocampal theta",
+        "theta rhythm"
+      ],
+      "sourceIds": [
+        "external/Buzsaki-2002-Neuron"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.cavanagh-frank-2014-frontal-theta",
+      "title": "额中线θ作为认知控制机制（Cavanagh & Frank 2014）",
+      "kind": "source",
+      "path": "sources/cavanagh-frank-2014-frontal-theta.md",
+      "aliases": [
+        "Cavanagh Frank 2014",
+        "frontal theta",
+        "FMT",
+        "ACC theta"
+      ],
+      "sourceIds": [
+        "external/Cavanagh-Frank-2014-TICS"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "source.conda",
       "title": "Conda 环境管理",
       "kind": "source",
@@ -2129,7 +2180,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "source",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T11:05:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2158,6 +2209,81 @@
       "topClaims": []
     },
     {
+      "id": "source.klimesch-1999-eeg-alpha-theta",
+      "title": "EEG α与θ振荡反映认知与记忆表现：综述与分析（Klimesch 1999）",
+      "kind": "source",
+      "path": "sources/klimesch-1999-eeg-alpha-theta.md",
+      "aliases": [
+        "Klimesch 1999",
+        "EEG alpha theta review",
+        "subsequent memory effect"
+      ],
+      "sourceIds": [
+        "external/Klimesch-1999-BrainResRev"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.lisman-idiart-1995-theta-gamma",
+      "title": "θ-γ 跨频耦合与短时记忆存储（Lisman & Idiart 1995）",
+      "kind": "source",
+      "path": "sources/lisman-idiart-1995-theta-gamma.md",
+      "aliases": [
+        "Lisman Idiart 1995",
+        "theta gamma coupling",
+        "7 plus minus 2"
+      ],
+      "sourceIds": [
+        "external/Lisman-Idiart-1995-Science"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.okeefe-recce-1993-phase-precession",
+      "title": "海马位置细胞与θ 相位进动（O'Keefe & Recce 1993）",
+      "kind": "source",
+      "path": "sources/okeefe-recce-1993-phase-precession.md",
+      "aliases": [
+        "O'Keefe Recce 1993",
+        "phase precession",
+        "place cells theta"
+      ],
+      "sourceIds": [
+        "external/OKeefe-Recce-1993-Hippocampus"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "source.openclaw-env",
       "title": "openclaw-env",
       "kind": "source",
@@ -2175,7 +2301,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "source",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T10:55:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2198,7 +2324,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "source",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T10:22:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2221,7 +2347,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "source",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T10:22:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2242,7 +2368,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "source",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T11:10:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2265,7 +2391,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "source",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T10:17:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2289,7 +2415,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T09:30:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2312,7 +2438,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-16T02:30",
       "claimCount": 0,
       "topClaims": []
@@ -2354,7 +2480,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-09T08:31:31.212Z",
       "claimCount": 0,
       "topClaims": []
@@ -2379,7 +2505,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T08:24:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2404,7 +2530,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T03:30:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2450,7 +2576,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-18T11:44:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2475,7 +2601,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-15T16:56:14.945Z",
       "claimCount": 0,
       "topClaims": []
@@ -2500,7 +2626,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T03:30:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2525,7 +2651,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T03:30:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2549,7 +2675,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T09:54:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2573,7 +2699,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T09:54:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2598,7 +2724,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T09:54:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2619,7 +2745,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T08:24:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2643,7 +2769,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T09:54:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2667,7 +2793,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-12T08:52:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2709,7 +2835,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-20T15:47:31.525Z",
       "claimCount": 0,
       "topClaims": []
@@ -2734,7 +2860,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-21T08:12:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -3278,6 +3404,36 @@
       "pageType": "synthesis",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-06-05T15:48:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "eeg-theta-cognition",
+      "title": "脑电θ波与认知过程",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-21-00-09-41-脑电theta波与认知过程.md",
+      "aliases": [
+        "EEG theta oscillations",
+        "额中线θ",
+        "FMT",
+        "4-8 Hz 振荡"
+      ],
+      "sourceIds": [
+        "source.klimesch-1999-eeg-alpha-theta",
+        "source.cavanagh-frank-2014-frontal-theta",
+        "source.buzsaki-2002-hippocampal-theta",
+        "source.lisman-idiart-1995-theta-gamma",
+        "source.okeefe-recce-1993-phase-precession"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
       "claimCount": 0,
       "topClaims": []
     }

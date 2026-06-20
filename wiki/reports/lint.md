@@ -10,7 +10,7 @@ status: active
 ## Generated
 <!-- openclaw:wiki:lint:start -->
 - Errors: 0
-- Warnings: 41
+- Warnings: 42
 
 ### Warnings
 - `reports/2026-06-05-15-54-00-OpenClaw-v2026.6.1-session路径错配bug-修复报告.md`: Broken wikilink target `concept/xxx`.
@@ -22,7 +22,7 @@ status: active
 - `sources/2026-06-05_Diehl-et-al_Captured-Memories.md`: Broken wikilink target `concepts/记忆视角`.
 - `sources/2026-06-05_Diehl-et-al_Captured-Memories.md`: Broken wikilink target `concepts/外部痕迹改写记忆`.
 - `sources/2026-06-05_Diehl-et-al_Captured-Memories.md`: Broken wikilink target `syntheses/Hutmacher-Schramm-2026-数字工具重塑记忆`.
-- `sources/2026-06-05_Diehl-et-al_Captured-Memories.md`: Broken wikilink target `raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf`.
+- `sources/2026-06-05_Diehl-et-al_Captured-Memories.md`: Broken wikilink target `sources/raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf`.
 - `syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md`: Claim `科学团辅方案包含背景分析、目标设定、对象界定、内容设计、方法技术、效果评估、经费预算七要素` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md`: Claim `目标应包含认知、情感、行为三个维度` is missing structured evidence.
 - `syntheses/2026-05-24-23-22-05-团体辅导方案写作规范.md`: Claim `单元结构应包含暖身、主题、讨论、总结四个环节` is missing structured evidence.
@@ -52,6 +52,7 @@ status: active
 - `syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md`: Claim `claim.synergy.1` is missing structured evidence.
 - `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Page lists 1 contradiction to resolve.
 - `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Page lists 3 open questions.
+- `syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md`: Broken wikilink target `syntheses/sources/deepseek-cloud-local-hybrid-architecture.md`.
 - `syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026.md`: Broken wikilink target `raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf`.
 - `syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026.md`: Broken wikilink target `raw/papers/2026-05-31_Hutmacher-Schramm_Scrolling-through-the-Past_In-Mind-Magazine.pdf`.
 

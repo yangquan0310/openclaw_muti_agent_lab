@@ -680,6 +680,15 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.7 (2026-06-21)
+- **密钥核查**：扫描所有待提交文件（openclaw.json、state/openclaw.sqlite、5 篇 wiki sources、1 篇 wiki synthesis、programmer 会话 memory），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 7 个 .md 配置文件（AGENTS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams），无中间文件、解析文件、一次性文件需要清理；psychologist/knowledge/ 与 steward/.clawhub/ 为标准配置目录（保留）
+- **Wiki 新增 EEG θ 振荡研究资料**：5 篇 sources（Buzsáki 2002 海马θ / Cavanagh & Frank 2014 额中线θ / Klimesch 1999 α-θ 综述 / Lisman & Idiart 1995 θ-γ 耦合 / O'Keefe & Recce 1993 相位进动）+ 1 篇 synthesis（脑电θ波与认知过程，串联上述 5 篇文献）
+- **programmer 会话 memory 同步**：新增 2026-06-19 20:57 会话记录（feishu direct 通道，主题：知识冲突场景下的主动抑制长期研究方案）
+- **梦境记忆同步**：3 个 agent（programmer / psychologist / steward）的 memory/.dreams/events.jsonl 仅 mtime 更新，无新增/异常条目
+- **openclaw.json meta 更新**：lastTouchedVersion 2026.6.6 → 2026.6.8，lastTouchedAt 同步至 2026-06-19
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支（development 已废弃）
+
 ### 版本 4.3.6 (2026-06-19)
 - **密钥核查**：扫描所有待提交文件（state/openclaw.sqlite），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查**：11 个 agent 目录（10 个代理 + skills）结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/），无中间文件、解析文件、一次性文件需要清理；psychologist/knowledge/ 为预置空目录（保留）

@@ -440,25 +440,30 @@
 ## Generated
 <!-- openclaw:wiki:index:start -->
 - Render mode: `obsidian`
-- Total pages: 122
+- Total pages: 128
 - Claims: 23
-- Sources: 10
+- Sources: 15
 - Entities: 13
 - Concepts: 53
-- Syntheses: 35
+- Syntheses: 36
 - Reports: 11
 
 ### Sources
 - [[sources/conda|Conda 环境管理]]
 - [[sources/deepseek-cloud-local-hybrid-architecture|DeepSeek - 云端大模型+本地小模型+代理框架 工程化开发工作流]]
 - [[sources/2026-06-05_Diehl-et-al_Captured-Memories|Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
+- [[sources/klimesch-1999-eeg-alpha-theta|EEG α与θ振荡反映认知与记忆表现：综述与分析（Klimesch 1999）]]
 - [[sources/openclaw-env|openclaw-env]]
 - [[sources/openclaw-system|openclaw-system]]
 - [[sources/openclaw-workspace|openclaw-workspace]]
 - [[sources/_template_source_summary|Source Summary 模板]]
+- [[sources/lisman-idiart-1995-theta-gamma|θ-γ 跨频耦合与短时记忆存储（Lisman & Idiart 1995）]]
 - [[sources/repository|仓库]]
+- [[sources/buzsaki-2002-hippocampal-theta|海马θ振荡（Buzsáki 2002）]]
+- [[sources/okeefe-recce-1993-phase-precession|海马位置细胞与θ 相位进动（O'Keefe & Recce 1993）]]
 - [[sources/programming-languages|系统编程语言]]
 - [[sources/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv|范畴论结构先验可在 306M 规模上压低 WikiText-103 困惑度（GT-Full 单独贡献 84%）]]
+- [[sources/cavanagh-frank-2014-frontal-theta|额中线θ作为认知控制机制（Cavanagh & Frank 2014）]]
 
 ### Entities
 - [[entities/openclaw-ei4x|OpenClaw(龙虾)-ei4x]]
@@ -560,6 +565,7 @@
 - [[syntheses/2026-05-20-23-47-31-教育科学研究方法-多代理如何协作|教育科学研究方法-多代理协作总结]]
 - [[syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026|照片视角作为外部痕迹——改写自传体记忆视角的因果证据]]
 - [[syntheses/2026-05-19-22-53-22-如何管理程序项目|程序项目]]
+- [[syntheses/2026-06-21-00-09-41-脑电theta波与认知过程|脑电θ波与认知过程]]
 - [[syntheses/2026-05-23-10-02-41-认知范式与精细化注入词研究体系|认知范式与精细化注入词研究体系]]
 - [[syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架|认知过程的对称性破缺机制——从余代数到皮亚杰的发展理论]]
 - [[syntheses/2026-05-19-18-25-37-如何管理论文项目|论文项目]]
