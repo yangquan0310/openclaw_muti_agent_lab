@@ -1,73 +1,120 @@
 # research-assistant 参考手册
 
-> 科研文献综述全流程助手参考指南。
+> 科研文献综述全流程助手参考指南。**v5.16.0 起 6 模块全部走 wiki（老板 00:08 指令）**。
 
 ---
 
-## 章节导航
+## 工作流（v5.16.0 统一为 wiki-zotero-webdav 三联动）
+
+| 阶段 | 操作 | 工具 | 输出位置 |
+|------|------|------|----------|
+| 1. **检索** | `search` 命中 paper | `scripts/search/Searcher.py` + `ZoteroSearcher.py` | Zotero 库 + cache/index.json |
+| 2. **下载** | PDF 从 Zotero 同步到坚果云 | `scripts/download/Downloader.py` + `ZoteroJianguoyunDownloader.py` | `nutstore:quanquanzi/zotero/storage/` |
+| 3. **维护** | wiki source ↔ Zotero 双向建立 | `scripts/maintain/WikiZoteroManager.py` | `wiki/sources/*.md` |
+| 4. **总结** | paper 摘要提取 | `scripts/summarize/Summarizer.py` | `wiki/syntheses/<date>-summarize-*.md` |
+| 5. **合成** | source extract 笔记 | `scripts/synthesize/Synthesizer.py` | `wiki/syntheses/<date>-extract-*.md` |
+| 6. **管理** | merge / filter / stats | `scripts/manage/Manager.py` | `wiki/` 全集 |
+
+**核心原则**（详见 `wiki/AGENTS.md` v4）：
+- zotero 是文献元数据唯一权威
+- webdav 是附件存储
+- wiki 是笔记/人可读视图
+- 一一对应铁律：1 Zotero item = 1 source 页（强制）
+
+---
+
+## 章节导航（13 文件）
 
 | 章节 | 文件 | 内容 |
 |------|------|------|
-| 研究工作流 | [research-workflow.md](research-workflow.md) | 五阶段流程原则 |
-| 文献检索 | [paper-search.md](paper-search.md) | 检索策略与引擎选择 |
-| 知识库管理 | [knowledge-management.md](knowledge-management.md) | index.json 管理原则 |
-| 文献总结 | [paper-summary.md](paper-summary.md) | Summarizer 使用原则 |
-| 笔记合成 | [note-synthesis.md](note-synthesis.md) | Synthesizer 使用原则 |
-| 文献综述撰写 | [literature-review.md](literature-review.md) | 综述撰写原则 |
-| 研究现状撰写 | [research-status.md](research-status.md) | 现状报告撰写原则 |
-| 元数据维护 | [metadata-maintenance.md](metadata-maintenance.md) | Maintainer 使用原则 |
-| 🆕 排版原则（Quarto 四范式）| [typesetting.md](typesetting.md) | ①书 / ②基础 / ③一般 / **④apaquarto 严格 APA 7** |
-| 🆕 APA 7 manuscript 详细配置 | [apaquarto-manuscript.md](apaquarto-manuscript.md) | 范式 ④ 环境/扩展/YAML/排错指南 |
-| 排版标准 | [formatting-standards.md](formatting-standards.md) | 写作内容规范 + 范式决策 |
+| **工作流** | [research-workflow.md](research-workflow.md) | 五阶段流程原则 |
+| **检索模块** | [module-search.md](module-search.md) | Searcher / ZoteroSearcher / ZoteroAdder（v5.15.0+） |
+| **管理模块** | [module-manage.md](module-manage.md) | Manager（v5.16.0+ 走 wiki，按 zotero_item_key 去重） |
+| **维护模块** | [module-maintain.md](module-maintain.md) | Maintainer 协调器 + WikiZoteroManager（v5.15.0+） |
+| **总结模块** | [module-summarize.md](module-summarize.md) | Summarizer（v5.16.0+ 走 wiki，规则分类） |
+| **合成模块** | [module-synthesize.md](module-synthesize.md) | Synthesizer（v5.16.0+ 走 wiki，extract notes） |
+| **下载模块** | [module-download.md](module-download.md) | Downloader + ZoteroJianguoyunDownloader |
+| **排版（Quarto）** | [apaquarto-manuscript.md](apaquarto-manuscript.md) | 范式 ④ apaquarto 严格 APA 7 |
+| **文体指南** | [narrative-review.md](narrative-review.md) | 叙事综述（心理学 APA 7 + JARS-Quant） |
+| | [meta-analysis.md](meta-analysis.md) | 元分析 |
+| | [observational-study.md](observational-study.md) | 观察性研究 |
+| | [experimental-study.md](experimental-study.md) | 实验研究 |
+| **v5.21.0 新增：写作严谨** | [prisma-systematic-review.md](prisma-systematic-review.md) | PRISMA 系统综述 SOP（ARS Deep Research 思路） |
+| | [synthesize-peer-review.md](synthesize-peer-review.md) | 7-agent 同行评议（EIC + 3 dynamic + Devil's Advocate） |
+| **v5.21.0 新增：质量核验** | [apa7-citation-checklist.md](apa7-citation-checklist.md) | APA 7 引用核验 50 项 |
+| | [originality-checklist.md](originality-checklist.md) | 原创性核验 30 项（5 类抄袭） |
+| | [manuscript-audit-checklist.md](manuscript-audit-checklist.md) | 终稿完整性审计 60 项 |
 
 ---
 
 ## 按场景查找
 
-### 执行阶段
+### 工作流
 
 | 场景 | 章节 |
 |------|------|
-| 不知道工作流程 | [research-workflow.md](research-workflow.md) |
-| 不知道如何检索 | [paper-search.md](paper-search.md) |
-| 不知道如何管理知识库 | [knowledge-management.md](knowledge-management.md) |
+| 不知道 5 阶段流程 | [research-workflow.md](research-workflow.md) |
+| 想把项目知识迁移到 wiki | [module-manage.md](module-manage.md) + `wiki/AGENTS.md` v4 |
+| 想看 skill 整体健康 | `python3 scripts/manage/Manager.py stats` |
 
-### 撰写阶段
-
-| 场景 | 章节 |
-|------|------|
-| 不知道如何总结文献 | [paper-summary.md](paper-summary.md) |
-| 不知道如何合成笔记 | [note-synthesis.md](note-synthesis.md) |
-| 不知道如何写文献综述 | [literature-review.md](literature-review.md) |
-| 不知道如何写研究现状 | [research-status.md](research-status.md) |
-
-### 排版阶段
+### 各模块用法
 
 | 场景 | 章节 |
 |------|------|
-| 不知道选哪个范式 | [typesetting.md](typesetting.md) → 四范式对比表 |
-| 投稿论文/严格 APA 7 | [apaquarto-manuscript.md](apaquarto-manuscript.md) → 范式 ④ 完整配置 |
-| 写作内容规范 | [formatting-standards.md](formatting-standards.md) |
-| 范式 ④ 5 步关键修复踩坑 | [apaquarto-manuscript.md](apaquarto-manuscript.md) → 第 6 节 |
+| 怎么搜 paper 并 add 到 Zotero | [module-search.md](module-search.md) |
+| 怎么管理 wiki source/synthesis/concept 列表 | [module-manage.md](module-manage.md) |
+| 怎么批量补 wiki source 的 zotero_item_key | [module-maintain.md](module-maintain.md) |
+| 怎么对 paper 做总结 | [module-summarize.md](module-summarize.md) |
+| 怎么从 source 提取结构化笔记 | [module-synthesize.md](module-synthesize.md) |
+| 怎么把 paper PDF 同步到坚果云 | [module-download.md](module-download.md) |
 
-### 维护阶段
+### 撰写
 
 | 场景 | 章节 |
 |------|------|
-| 不知道如何维护元数据 | [metadata-maintenance.md](metadata-maintenance.md) |
+| 写叙事综述 | [narrative-review.md](narrative-review.md) |
+| 写元分析 | [meta-analysis.md](meta-analysis.md) |
+| 写观察性研究 | [observational-study.md](observational-study.md) |
+| 写实验研究 | [experimental-study.md](experimental-study.md) |
+| APA 7 排版（Quarto 范式 ④） | [apaquarto-manuscript.md](apaquarto-manuscript.md) |
+| **写 PRISMA 系统综述** | [prisma-systematic-review.md](prisma-systematic-review.md) |
+| **synthesize 后跑同行评议** | [synthesize-peer-review.md](synthesize-peer-review.md) |
+| **投稿前核验 APA 7 引用** | [apa7-citation-checklist.md](apa7-citation-checklist.md) |
+| **核验原创性** | [originality-checklist.md](originality-checklist.md) |
+| **终稿完整性审计** | [manuscript-audit-checklist.md](manuscript-audit-checklist.md) |
 
 ---
 
-## 快速命令
+## hooks/ 目录（10 个 SOP 文档）
 
-```bash
-# 检索文献
-research-assistant search --keyword "关键词" --limit 20
+详见 `hooks/` 目录。核心 5 个：
 
-# 总结文献
-research-assistant summarize --kb-path knowledge/index.json
+| Hook | 用途 |
+|------|------|
+| [add-zotero-source.md](hooks/add-zotero-source.md) | wiki source ↔ Zotero 双向建立（5 步） |
+| [check-drift.md](hooks/check-drift.md) | wiki-zotero-webdav 漂移检测 |
+| [concept-synthesis-zotero-link.md](hooks/concept-synthesis-zotero-link.md) | concept/synthesis ↔ Zotero 联动 SOP |
+| [manual-add-item.md](hooks/manual-add-item.md) | add-doi 失败时手动加条目 |
+| [zotero-patch-with-version.md](hooks/zotero-patch-with-version.md) | PATCH 用 `If-Unmodified-Since-Version` 头 |
 
-# 管理知识库
-research-assistant manage info --kb-path knowledge/index.json
-research-assistant manage merge --inputs a.json,b.json --output merged.json
-```
+完整 10 个：add-zotero-source / arxiv-title-parse / check-drift / cleanup-wrong-entry / concept-synthesis-zotero-link / manual-add-item / rclone-webdav-setup / sync-zotero-new-items / wiki-source-missing-in-zotero / zotero-patch-with-version
+
+### v5.21.0 新增 hook
+
+| Hook | 用途 |
+|------|------|
+| [quarto-cite-audit.md](hooks/quarto-cite-audit.md) | quarto 编译前 5 步审计（cite key / label / cross-ref / 下划线 / YAML 头）|
+
+---
+
+## workboard tracker
+
+`v5-roadmap` 看板：
+- v5.14.0 ✅ 完成（删旧类 + 拆 dashboard）
+- v5.15.0 ✅ 完成（5/5：main 模块 + Al-Kari + SOP + search 骨架）
+- v5.16.0 ✅ 完成（5/5：3 模块接入 wiki + 端到端 demo）
+- v5.17.0 ✅ 文档同步
+- v5.18.0 ✅ 6 项目 knowledge/ 迁移
+- v5.19.0 ✅ WikiSearchReport + _resolve_env bug 修复
+- v5.20.0 ✅ SKILL.md 精简 + 版本历史移末尾
+- **v5.21.0 ✅ 全面补充薄弱环节（9 项 ARS / Nature-skills / PaperSpine 三家长处）**

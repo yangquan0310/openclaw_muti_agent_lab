@@ -1,17 +1,15 @@
 ---
 name: research-assistant
 description: >
-  科研文献综述全流程助手。支持文献检索、AI总结、知识库管理、笔记导出、文献综述撰写、研究现状撰写。
-  **v5.12.0 重点**：参数优先级统一为 **key > config > env**（之前是 key > env > config）。
-  让 config.json 显式配置优先于散落的环境变量，便于跨环境/跨项目复用。涉及模块：Summarizer / Searcher / SemSchSearcher / ScholarSearcher / ZoteroJianguoyunDownloader。config.json 新增 `semantic_scholar.api_key` / `zotero.{user_id,api_key}` / `jianguoyun.{url,user,password}` 明文字段（默认空，自动 fallback 到 .env）。
-  **v5.11.0 重点**：references 重构为 13 个文件（1 索引 + 1 工作流 + 1 排版 + 6 模块 + 4 文体）。4 个文体撰写指南（narrative-review / meta-analysis / observational-study / experimental-study）基于心理学 APA 7 + JARS-Quant 规范，**不**用医学 PRISMA / STROBE / CONSORT。
-version: 5.12.0
+  当需要：检索论文（Semantic Scholar / CNKI / Scholar）、管理文献知识库（按 zotero_item_key / 主题筛选）、AI 总结论文、生成文献综述/研究现状、维护 wiki source ↔ Zotero 条目 ↔ WebDAV 附件一致性、批量迁移项目 knowledge/ 到 wiki、跑 search 报告到 wiki、PRISMA 系统综述、章节 motivation 蓝图、quarto APA 引用审计、synthesize 7-agent 同行评议、Nature 风格润色、APA 7 引用核验、原创性核验、Data Availability 声明生成、终稿完整性审计 时激活。
+version: 5.21.0
 author: Yang Quan
 metadata:
   openclaw:
     emoji: 🔬
     requires:
       bins: [python3]
+---
 ---
 
 # research-assistant（研究助手）
@@ -80,6 +78,11 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 | 11 | 元分析撰写指南 | [meta-analysis.md](references/meta-analysis.md) | APA 7 + JARS-Quant Table 9 (MARS) |
 | 12 | 观察研究报告撰写指南 | [observational-study.md](references/observational-study.md) | APA 7 + JARS-Quant Tables 1, 5, 6 |
 | 13 | 实验研究报告撰写指南 | [experimental-study.md](references/experimental-study.md) | APA 7 + JARS-Quant Table 2 |
+| 14 | PRISMA 系统综述 SOP（v5.21.0 新增）| [prisma-systematic-review.md](references/prisma-systematic-review.md) | 9 阶段流程：PICO → 多源检索 → 筛选 → 数据抽取 → 偏倚评估 → PRISMA 流程图 → 证据综合 → GRADE 评级 |
+| 15 | Synthesize 7-agent 同行评议（v5.21.0 新增）| [synthesize-peer-review.md](references/synthesize-peer-review.md) | EIC + 3 dynamic + Devil's Advocate + 0-100 rubric + R&R Traceability Matrix |
+| 16 | APA 7 引用核验（v5.21.0 新增）| [apa7-citation-checklist.md](references/apa7-citation-checklist.md) | 50 项 in-text + reference list + DOI 核验 |
+| 17 | 原创性核验（v5.21.0 新增）| [originality-checklist.md](references/originality-checklist.md) | 30 项：直接抄袭 + 自我抄袭 + 翻译抄袭 + 观点 + LLM 痕迹 |
+| 18 | 终稿完整性审计（v5.21.0 新增）| [manuscript-audit-checklist.md](references/manuscript-audit-checklist.md) | 60 项终稿审计：完整性 + rationale + 引用库 + 翻译覆盖 + artifact 健康 |
 
 ## 模板资源
 
@@ -88,6 +91,9 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 | 文献综述模板 | [assets/文献综述模板.md](assets/文献综述模板.md) |
 | 研究现状模板 | [assets/研究现状模板.md](assets/研究现状模板.md) |
 | 检索报告模板 | [assets/检索报告模板.md](assets/检索报告模板.md) |
+| Motivation Thread + Section Blueprints 模板（v5.21.0 新增）| [assets/motivation-thread-template.md](assets/motivation-thread-template.md) | 章节主线动机 + 段落蓝图 + rewrite_matrix |
+| Nature 风格润色 Prompt（v5.21.0 新增）| [assets/polish-nature-style.md](assets/polish-nature-style.md) | 中文笔记 → Nature 风格学术中文 + Style Calibration checklist |
+| Data Availability Statement 模板（v5.21.0 新增）| [assets/data-availability-template.md](assets/data-availability-template.md) | Nature/Cell/Science 4 模板（完全公开/部分公开/第三方/理论）|
 
 ---
 
@@ -128,18 +134,26 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 └── metadata.json
 ```
 
----
-
 ## 版本历史
 
-| 版本 | 日期 | 说明 |
-|------|------|------|
-| 5.11.0 | 2026-06-12 | **references 重构为 13 个文件**：删 12 个旧文件（typesetting, formatting-standards, research-status, literature-review, easyscholar-api, paper-search, knowledge-management, paper-summary, note-synthesis, metadata-maintenance, narrative-synthesis, systematic-review），重组为 1 索引 + 1 工作流 + 1 排版 + 6 模块 + 4 文体。4 个文体撰写指南（narrative-review / meta-analysis / observational-study / experimental-study）基于心理学 APA 7 + JARS-Quant 规范，**不**用医学 PRISMA / STROBE / CONSORT。 |
-| 5.10.0 | 2026-06-12 | **apaquarto 排版指南重大修正**（基于跨期选择年龄差异论文实战）：① `_quarto.yml`/`_extensions`/`references.bib` 全在 `manuscripts/` 下；② 不需要 `header.tex`；③ 引用必须用 `[@key]` 语法（参考 Quarto Citations 文档）；④ 图表直接放正文（apaquarto 自动处理 `floatsintext`）；⑤ 安装命令 `cd manuscripts` 不复制；⑥ 渲染命令加 `--resource-path .`。 |
-| 5.9.0 | 2026-06-04 | **铁律：所有学术论文默认 APA 7 manuscript mode（apaquarto 范式 ④）**。新增 `apaquarto-manuscript.md` 详细配置指南；`typesetting.md` 升级到四范式；`formatting-standards.md` 新增范式决策提示。源自记忆机制认知推断论文实战。 |
-| 5.8.0 | 2026-05-30 | 新增 easyScholar API 支持：获取期刊 JCR/SCI 分区 |
-| 5.7.0 | 2026-05-30 | 目录结构重构：研究现状_{topic}.md、检索报告、检索条件独立目录 |
-| 5.6.0 | 2026-05-26 | 重构 references 为原则性章节；新增文献综述模板、研究现状模板 |
-| 5.5.0 | 2026-05-25 | 重构 references：新框架 8 章，how-to 格式命名，问题→方法论→工作流→执行标准结构 |
-| 5.4.0 | 2026-05-24 | CLI 重构：统一 search 命令 + 语言自动路由 |
-| 5.3.0 | 2026-05-23 | 按 skill-developer 新标准重构 |
+> 完整版本演进记录。**description 字段保持简洁**，仅包含触发短语 + 最近 1-2 个版本重点。
+
+| 版本 | 日期 | 主要变更 |
+|------|------|----------|
+| v5.21.0 | 2026-06-22 | **全面补充薄弱环节**：吸收三家之长（ARS / Nature-skills / PaperSpine）补强 9 项——①PRISMA 系统综述 SOP ②章节 motivation 蓝图 ③quarto 引用审计 hook ④synthesize 7-agent 同行评议 ⑤Nature 风格润色 ⑥APA 7 引用核验 ⑦原创性核验 ⑧Data Availability 模板 ⑨终稿完整性审计 |
+| v5.20.0 | 2026-06-22 | SKILL.md description 精简 + 版本历史移至末尾（老板纠错） |
+| v5.19.0 | 2026-06-22 | 新建 WikiSearchReport.py（search 命中写 wiki report） + 修 _resolve_env() 解析 ${VAR} bug |
+| v5.18.0 | 2026-06-22 | 6 个项目 knowledge/ 按 B 方案改写为 wiki/reports/<date>-all-papers.md（1764 papers / 866KB） |
+| v5.17.0 | 2026-06-22 | SKILL.md + references 文档同步（13 文件全反映 v5.15.0 / v5.16.0 改动） |
+| v5.16.0 | 2026-06-22 | 6 模块全部走 wiki（删 3 旧主类，WikiXxx.py 重命名为默认名），老板 00:08 指令"不需要向后兼容" |
+| v5.15.0 | 2026-06-22 | WikiZoteroManager Python 类（5 方法 + CLI，check-drift 跑通）+ Al-Kari title PATCH 修复 + concept/synthesis 联动 SOP + ZoteroSearcher/ZoteroAdder 骨架 |
+| v5.14.0 | 2026-06-22 | 删 MetadataManager / VersionController 类（老板 19:39 指令"全部转移到 wiki"），Maintainer.py 376→46 行精简 |
+| v5.13.4 | 2026-06-22 | 新增 zotero-patch-with-version.md + arxiv-title-parse.md hooks（实战发现 Zotero API 用 If-Unmodified-Since-Version 头） |
+| v5.13.3 | 2026-06-22 | 新增 wiki-source-missing-in-zotero.md hook（4 路径：add-doi / CrossRef / arXiv / 标红） |
+| v5.13.2 | 2026-06-22 | 新增 manual-add-item / cleanup-wrong-entry hooks + add-zotero-source 失败处理附录 |
+| v5.13.1 | 2026-06-22 | 新增 dashboard.md + hooks/ 目录（add-zotero-source / check-drift / sync-zotero-new-items） |
+| v5.13.0 | 2026-06-22 | Maintain 模块工作平台迁移到 wiki-zotero-webdav 三联动 |
+| v5.12.0 | 2026-06-22 | 参数优先级统一为 key > config > env（涉及 Summarizer / Searcher / SemSchSearcher / ScholarSearcher / ZoteroJianguoyunDownloader） |
+| v5.11.0 | 2026-06-21 | references 重构为 13 个文件（1 索引 + 1 工作流 + 1 排版 + 6 模块 + 4 文体），4 文体指南（narrative-review / meta-analysis / observational / experimental） |
+
+> **注意**：v5.11.0 之前的历史在 `git log` 里。
