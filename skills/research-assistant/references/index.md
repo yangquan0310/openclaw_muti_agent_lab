@@ -2,8 +2,6 @@
 
 > 科研文献综述全流程助手参考指南。**v5.16.0 起 6 模块全部走 wiki（老板 00:08 指令）**。
 
----
-
 ## 工作流（v5.16.0 统一为 wiki-zotero-webdav 三联动）
 
 | 阶段 | 操作 | 工具 | 输出位置 |
@@ -20,8 +18,6 @@
 - webdav 是附件存储
 - wiki 是笔记/人可读视图
 - 一一对应铁律：1 Zotero item = 1 source 页（强制）
-
----
 
 ## 章节导航（13 文件）
 
@@ -44,8 +40,6 @@
 | **v5.21.0 新增：质量核验** | [apa7-citation-checklist.md](apa7-citation-checklist.md) | APA 7 引用核验 50 项 |
 | | [originality-checklist.md](originality-checklist.md) | 原创性核验 30 项（5 类抄袭） |
 | | [manuscript-audit-checklist.md](manuscript-audit-checklist.md) | 终稿完整性审计 60 项 |
-
----
 
 ## 按场景查找
 
@@ -83,29 +77,10 @@
 | **核验原创性** | [originality-checklist.md](originality-checklist.md) |
 | **终稿完整性审计** | [manuscript-audit-checklist.md](manuscript-audit-checklist.md) |
 
----
 
-## hooks/ 目录（10 个 SOP 文档）
 
-详见 `hooks/` 目录。核心 5 个：
-
-| Hook | 用途 |
-|------|------|
-| [add-zotero-source.md](hooks/add-zotero-source.md) | wiki source ↔ Zotero 双向建立（5 步） |
-| [check-drift.md](hooks/check-drift.md) | wiki-zotero-webdav 漂移检测 |
-| [concept-synthesis-zotero-link.md](hooks/concept-synthesis-zotero-link.md) | concept/synthesis ↔ Zotero 联动 SOP |
-| [manual-add-item.md](hooks/manual-add-item.md) | add-doi 失败时手动加条目 |
-| [zotero-patch-with-version.md](hooks/zotero-patch-with-version.md) | PATCH 用 `If-Unmodified-Since-Version` 头 |
-
-完整 10 个：add-zotero-source / arxiv-title-parse / check-drift / cleanup-wrong-entry / concept-synthesis-zotero-link / manual-add-item / rclone-webdav-setup / sync-zotero-new-items / wiki-source-missing-in-zotero / zotero-patch-with-version
-
-### v5.21.0 新增 hook
-
-| Hook | 用途 |
-|------|------|
-| [quarto-cite-audit.md](hooks/quarto-cite-audit.md) | quarto 编译前 5 步审计（cite key / label / cross-ref / 下划线 / YAML 头）|
-
----
+> ⚠️ **v5.21.2 已删除 hooks/ 整目录**（老板 14:29 明确不需要 hooks）  
+> 原 11 个 markdown SOP 全部删除，相关操作直接走 WikiZoteroManager 类方法
 
 ## workboard tracker
 

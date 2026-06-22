@@ -2,7 +2,7 @@
 
 > 来源：吸收通用 APA 7 规范 + Nature-skills citation 严格核验思路  
 > 用途：synthesize 输出 / quarto 编译前 / 投稿前**强制跑这个 checklist**  
-> 与 `hooks/quarto-cite-audit.md` 配合：审计自动化 + 本 checklist 人工核验
+> 配合 quarto 编译前人工核验（v5.21.2 已删除 hooks/quarto-cite-audit.md）
 
 ---
 

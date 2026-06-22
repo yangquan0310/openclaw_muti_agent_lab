@@ -151,7 +151,7 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 | v5.13.4 | 2026-06-22 | 新增 zotero-patch-with-version.md + arxiv-title-parse.md hooks（实战发现 Zotero API 用 If-Unmodified-Since-Version 头） |
 | v5.13.3 | 2026-06-22 | 新增 wiki-source-missing-in-zotero.md hook（4 路径：add-doi / CrossRef / arXiv / 标红） |
 | v5.13.2 | 2026-06-22 | 新增 manual-add-item / cleanup-wrong-entry hooks + add-zotero-source 失败处理附录 |
-| v5.13.1 | 2026-06-22 | 新增 dashboard.md + hooks/ 目录（add-zotero-source / check-drift / sync-zotero-new-items） |
+| v5.13.1 | 2026-06-22 | 新增 dashboard.md（**v5.21.2 已删除 hooks/ 整目录**，按老板 14:29 明确不需要 hooks）|
 | v5.13.0 | 2026-06-22 | Maintain 模块工作平台迁移到 wiki-zotero-webdav 三联动 |
 | v5.12.0 | 2026-06-22 | 参数优先级统一为 key > config > env（涉及 Summarizer / Searcher / SemSchSearcher / ScholarSearcher / ZoteroJianguoyunDownloader） |
 | v5.11.0 | 2026-06-21 | references 重构为 13 个文件（1 索引 + 1 工作流 + 1 排版 + 6 模块 + 4 文体），4 文体指南（narrative-review / meta-analysis / observational / experimental） |

@@ -3,7 +3,7 @@
 > **v5.14.0 重大重构**：删 `MetadataManager` / `VersionController`（老板 19:39 指令）。
 > - 旧项目级 `metadata.json` 维护 → 废弃（项目元数据应放 wiki frontmatter 或独立 config）
 > - 旧 `temp/draft/{title}/` 版本快照 → 改用 git（wiki 已在 git 里）
-> - Maintain 模块定位：**协调器**——只引导到 9 个 hooks/ SOP，不直接操作文件
+> - Maintain 模块定位：**协调器**——直接调 WikiZoteroManager 类方法（v5.21.2 起不再有 hooks/ SOP 中间层）
 
 ---
 
@@ -15,13 +15,13 @@
 | **zotero** | Zotero 库 + 坚果云同步 | 文献条目 metadata（题录、tags、collections） | `zotero.py` (Web API v3) |
 | **webdav** | `nutstore:quanquanzi/zotero/storage/` | PDF / images / supplementary | `rclone` |
 
-**全部维护操作**走 `hooks/` 目录 9 个 SOP（见下），不直接动 Python 代码。
+**全部维护操作**走 直接调 WikiZoteroManager 方法（见下），不直接动 Python 代码。
 
 ---
 
-## 二、9 个 hooks 工作流
+## 二、维护操作（直接调 WikiZoteroManager 方法）
 
-### `hooks/add-zotero-source.md`（核心）
+### `WikiZoteroManager.add_wiki_tag()`（v5.21.2 替代 add-zotero-source SOP）
 
 > **触发**：wiki 新建 source ↔ Zotero item 双向建立
 
@@ -32,7 +32,7 @@
 4. 加 Zotero 反向 tag（`wiki:source.<id>`）
 5. 验证双向跳转（`zotero://select/library/items/<KEY>` ↔ `obsidian://open?vault=wiki&file=sources/<file>.md`）
 
-### 失败处理 hooks
+### 失败处理
 
 | 失败 | hook |
 |---|---|
@@ -42,7 +42,7 @@
 | PATCH 428 (version header) | `zotero-patch-with-version.md` |
 | arXiv title 解析 bug | `arxiv-title-parse.md` |
 
-### 同步与漂移 hooks
+### 同步与漂移
 
 | 任务 | hook |
 |---|---|
@@ -93,7 +93,7 @@ python3 ~/.openclaw/skills/zotero/scripts/zotero.py add-pmid "<PMID>"
 
 ### 5. rclone / WebDAV 配置（首次接入）
 
-见 `hooks/rclone-webdav-setup.md`
+见 `scripts/config.json` 的 jianguoyun 段（v5.21.2 替代 rclone-webdav-setup SOP）
 
 ---
 
@@ -105,7 +105,7 @@ python3 ~/.openclaw/skills/zotero/scripts/zotero.py add-pmid "<PMID>"
 | `VersionController` 类 | 同上 | git 管理 wiki 版本（wiki 已在 git 里） |
 | 项目级 `metadata.json` 维护 | 同上 | wiki 是统一存储 |
 | `temp/draft/{title}/` 版本快照 | 同上 | git history |
-| 旧 CLI 命令（update-kb / save-version / list-versions 等） | 同上 | hooks/ 目录 SOP |
+| 旧 CLI 命令（update-kb / save-version / list-versions 等） | 同上 | WikiZoteroManager 类方法 |
 
 ---
 
@@ -130,7 +130,7 @@ python3 ~/.openclaw/skills/zotero/scripts/zotero.py add-pmid "<PMID>"
 - **zotero skill**：`~/.openclaw/skills/zotero/SKILL.md`（Web API v3 工具）
 - **download skill**（本 skill 内）：`module-download.md`（PDF 下载到坚果云）
 - **dashboard.md**：`~/.openclaw/skills/research-assistant/dashboard.md`（实时状态）
-- **hooks/**：`~/.openclaw/skills/research-assistant/hooks/`（9 个 SOP）
+- ~~hooks/~~ ❌ v5.21.2 删除（老板 14:29 明确不需要）
 
 
 ---

@@ -123,7 +123,7 @@
 
 ## 🔧 自动化辅助
 
-### Quarto 编译前自动审计（已有 hooks/quarto-cite-audit.md）
+### Quarto 编译前自动审计（v5.21.2 已删除 hooks/，按下方 5 步手动核验）
 
 ```bash
 python3 scripts/hooks/quarto_cite_audit.py manuscript.qmd
