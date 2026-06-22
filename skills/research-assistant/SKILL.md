@@ -1,8 +1,8 @@
 ---
 name: research-assistant
 description: >
-  当需要：检索论文（Semantic Scholar / CNKI / Scholar）、管理文献知识库（按 zotero_item_key / 主题筛选）、AI 总结论文、生成文献综述/研究现状、维护 wiki source ↔ Zotero 条目 ↔ WebDAV 附件一致性、批量迁移项目 knowledge/ 到 wiki、跑 search 报告到 wiki、PRISMA 系统综述、章节 motivation 蓝图、quarto APA 引用审计、synthesize 7-agent 同行评议、Nature 风格润色、APA 7 引用核验、原创性核验、Data Availability 声明生成、终稿完整性审计 时激活。
-version: 5.21.0
+  当需要：检索论文（Semantic Scholar / CNKI / Scholar）、拉 PDF 到 WebDAV（坚果云）、在 Zotero 库建条目 + wiki/sources/ 写 source YAML、单篇笔记写到 wiki/syntheses/、多篇综述写到 wiki/syntheses/、管理 wiki source 列表（merge / filter / stats）、跑 wiki source ↔ Zotero 条目 ↔ WebDAV 附件三方一致性检查、批量迁移项目 knowledge/ 到 wiki、跑 search 报告到 wiki 时激活。
+version: 5.21.2
 author: Yang Quan
 metadata:
   openclaw:
@@ -36,29 +36,52 @@ metadata:
 
 ---
 
-## 快速调用
+## 快速调用（v5.20.0+ 实际命令，wiki 后端）
 
 ```bash
-research-assistant search --keyword "深度学习" --limit 20 --year-min 2020
-research-assistant search --keyword "deep learning" --limit 20
-research-assistant summarize --kb-path knowledge/index.json
-research-assistant summarize --kb-path knowledge/index.json --update-jcr
-research-assistant summarize --kb-path knowledge/index.json --update-jcr --dry-run
-research-assistant manage info --kb-path knowledge/index.json
-research-assistant manage merge --inputs a.json,b.json --output merged.json
+# 6 个模块 CLI 入口：python3 scripts/main.py <module> [args]
+
+# 1. 检索（自动路由中文/英文）
+python3 scripts/main.py search --keyword "深度学习" --limit 20 --topic general
+python3 scripts/main.py search --keyword "working memory cognitive" --limit 5 --dry-run
+
+# 2. 下载（Zotero → 坚果云 WebDAV → wiki raw）
+python3 scripts/main.py download --zotero-key BNA4WATT
+
+# 3. 单篇笔记（→ wiki/syntheses/<date>-summarize-<id>.md）
+python3 scripts/main.py summarize --source-id buzsaki-2002-hippocampal-theta
+
+# 4. 多篇综述（→ wiki/syntheses/<date>-extract-<id>.md）
+python3 scripts/main.py synthesize extract --source-id buzsaki-2002-hippocampal-theta
+python3 scripts/main.py synthesize check --doc manuscript.md --kb wiki/sources/
+
+# 5. wiki source 列表管理
+python3 scripts/main.py manage list
+python3 scripts/main.py manage stats
+python3 scripts/main.py manage merge --inputs source.a,source.b
+python3 scripts/main.py manage filter --has-zotero-key true
+
+# 6. 一致性检查（wiki ↔ Zotero ↔ WebDAV）
+python3 scripts/main.py maintain check-drift
+python3 scripts/main.py maintain list-missing
+python3 scripts/main.py maintain report
 ```
 
-### search 子命令（多态自动路由）
+### 6 模块核心参数
 
-| 参数 | 说明 |
-|------|------|
-| `--keyword TEXT` | 检索关键词，自动判断语言路由 |
-| `--queries FILE` | 高级用法：检索条件 JSON 文件 |
-| `--limit N` | 最大结果数（默认 20）|
-| `--year-min Y` / `--year-max Y` | 发表年份范围 |
-| `--kb-path PATH` | 知识库路径 |
+| 子命令 | 核心参数 | 说明 |
+|--------|---------|------|
+| `search` | `--keyword` 或 `--queries` + `--limit` + `--topic` + `--dry-run` | 检索关键词（必填二选一）|
+| `download` | `--zotero-key` 或 `--doi` | 二选一，8 字符 Zotero item key |
+| `summarize` | `--source-id`（必填，wiki source 裸名）| + 可选 `--output` |
+| `synthesize` | `extract` / `check` / `fix` 三 sub-action | `--source-id` / `--doc` / `--kb` |
+| `manage` | `list` / `stats` / `merge` / `filter` / `info` 五 sub-action | 各自参数不同 |
+| `maintain` | `check-drift` / `list-missing` / `report` 三 sub-action（v5.20.0 新增）| 一致性检查 |
 
-**语言路由**：中文关键词 → CNKI（主）→ SemSch（备）；英文关键词 → SemSch（主）→ Scholar/GS（备）
+**v5.20.0+ 关键变化**：
+- 所有模块**走 wiki 后端**（`~/.openclaw/wiki/`），不再用 `index.json` / `knowledge/`
+- `--source-id` 是 wiki source 裸名（不带 `.md` / 不带路径），如 `buzsaki-2002-hippocampal-theta`
+- Zotero / WebDAV 通过 rclone + Zotero API 自动同步
 ---
 
 ## 指南导航（v5.11.0 重构：13 个 references）
@@ -140,7 +163,8 @@ research-assistant manage merge --inputs a.json,b.json --output merged.json
 
 | 版本 | 日期 | 主要变更 |
 |------|------|----------|
-| v5.21.0 | 2026-06-22 | **全面补充薄弱环节**：吸收三家之长（ARS / Nature-skills / PaperSpine）补强 9 项——①PRISMA 系统综述 SOP ②章节 motivation 蓝图 ③quarto 引用审计 hook ④synthesize 7-agent 同行评议 ⑤Nature 风格润色 ⑥APA 7 引用核验 ⑦原创性核验 ⑧Data Availability 模板 ⑨终稿完整性审计 |
+| v5.21.0 | 2026-06-22 | **增补 9 项参考文档**
+| v5.21.2 | 2026-06-22 | **删除 hooks/ 整目录**（11 个 markdown SOP，老板 14:29 明确不需要 hooks）；SKILL.md description 重写为只描述 wiki-zotero-webdav 实际运作流程，删除与功能不对应的描述 |（SOP 级，非功能）：①PRISMA 系统综述 SOP ②章节 motivation 蓝图 ③synthesize 7-agent 同行评议 ④Nature 风格润色 ⑤APA 7 引用核验 ⑥原创性核验 ⑦Data Availability 模板 ⑧终稿完整性审计（注：原含 ⑨quarto 引用审计 hook，v5.21.2 已删除） |
 | v5.20.0 | 2026-06-22 | SKILL.md description 精简 + 版本历史移至末尾（老板纠错） |
 | v5.19.0 | 2026-06-22 | 新建 WikiSearchReport.py（search 命中写 wiki report） + 修 _resolve_env() 解析 ${VAR} bug |
 | v5.18.0 | 2026-06-22 | 6 个项目 knowledge/ 按 B 方案改写为 wiki/reports/<date>-all-papers.md（1764 papers / 866KB） |

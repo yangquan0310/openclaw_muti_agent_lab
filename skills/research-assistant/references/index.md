@@ -92,4 +92,5 @@
 - v5.18.0 ✅ 6 项目 knowledge/ 迁移
 - v5.19.0 ✅ WikiSearchReport + _resolve_env bug 修复
 - v5.20.0 ✅ SKILL.md 精简 + 版本历史移末尾
-- **v5.21.0 ✅ 全面补充薄弱环节（9 项 ARS / Nature-skills / PaperSpine 三家长处）**
+- v5.21.0 ✅ 增补 9 项参考文档（SOP 级）
+- **v5.21.2 ✅ 删除 hooks/ 整目录 + SKILL.md description 修正（只描述 wiki-zotero-webdav 实际流程）**
