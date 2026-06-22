@@ -20,8 +20,21 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 
+
+
+# v5.19.0 deprecation: 直接用 Searcher 默认仍走 cache/index.json
+# 老板指令"以后把搜索到内容写入 report" → 用 WikiSearchReport 替代
+# main.py 优先用 WikiSearchReport 替代 Searcher
+
 class Searcher:
     """文献检索与知识库管理（初始化时绑定知识库路径）"""
+
+    @staticmethod
+    def _resolve_env(name):
+        """解析 config.json 中的 ${VAR} 语法，返回 env var 值（v5.19.0 修复）"""
+        if name and isinstance(name, str) and name.startswith("${") and name.endswith("}"):
+            name = name[2:-1]
+        return os.environ.get(name or "", "") or ""
 
     # API 端点
     SEARCH_URL = "https://api.semanticscholar.org/graph/v1/paper/search"
@@ -47,7 +60,7 @@ class Searcher:
         self.api_key = (
             api_key
             or semantic.get("api_key", "")
-            or os.environ.get(semantic.get("api_key_env", "SEMANTIC_SCHOLAR_API_KEY"))
+            or self._resolve_env(semantic.get("api_key_env", "SEMANTIC_SCHOLAR_API_KEY"))
         )
         if not self.api_key:
             print("警告: 未设置 Semantic Scholar API key，可能受到速率限制")

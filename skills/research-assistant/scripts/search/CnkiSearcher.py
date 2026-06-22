@@ -31,7 +31,7 @@ class CnkiSearcher(BaseSearcher):
 
     def __init__(
         self,
-        kb_path: str = "knowledge/index.json",
+        kb_path: str = "wiki/sources/cache.json",
         request_interval: float = 3.0,
     ):
         """

@@ -1,58 +1,51 @@
-# 知识库管理
+# 知识库管理（v5.16.0+ 全部走 wiki）
 
-> knowledge/index.json 是核心数据源。
+> **v5.16.0 重大重构**：删旧 `Manager.py`（走 knowledge/index.json 旧路径），新 `Manager.py` 直接以 wiki 为存储（替代品 `WikiManager.py` 已重命名为默认名）。
+> **老板 00:08 指令**："不需要向后兼容，全部改为 wiki"。
 
 ---
 
-## 数据结构
+## 一、Manager（v5.16.0+ wiki 版本）
+
+### 文件位置
+
+`scripts/manage/Manager.py`（6162 bytes）
+
+### 4 个核心方法
+
+| 方法 | 用途 | 输入 | 输出 |
+|------|------|------|------|
+| `list_sources()` | 列出所有 wiki source | - | list[dict]（id, file, title, zotero_item_key, zotero_doi, pageType） |
+| `merge(*source_ids)` | 按 zotero_item_key 去重合并 | source id 列表 | list[dict]（已去重） |
+| `filter(conditions)` | 按 YAML 字段筛选 source | dict（has_zotero_key/has_doi/pageType） | list[dict] |
+| `statistics()` | 统计 wiki 现状 | - | dict（total_sources, total_concepts, total_syntheses, total_reports） |
+
+### CLI 用法
+
+```bash
+python3 main.py manage list                    # 列出所有 wiki source
+python3 main.py manage stats                   # wiki 统计（14 sources / 47 syntheses / 54 concepts）
+python3 main.py manage filter --has-zotero-key true   # 筛已对齐 Zotero 的
+python3 main.py manage filter --has-zotero-key false  # 筛缺字段的
+python3 main.py manage filter --page-type source       # 筛 pageType
+python3 main.py manage merge --inputs source.diehl-...,source.buzsaki-...  # 按 zk 去重合并
+```
+
+### 不向后兼容
+
+- 旧 `knowledge/index.json` 路径**已废弃**
+- 旧 Manager 备份在 `_legacy_Manager_<TS>.py`
+- 任何依赖旧 CLI (`--kb-path`, `--inputs` 等) 的脚本需更新
+
+### demo（v5.16.0 上线）
 
 ```
-knowledge/
-├── index.json           ← 核心数据源
-├── topic/              ← 主题子集
-│   └── {topic}.json
-├── note/                ← 结构化笔记
-│   └── 笔记_{topic}.md
-└── review/              ← 综述文档
-    ├── 综述_{topic}.md
-    └── 研究现状.md
+Total: 14 sources / 47 syntheses / 54 concepts / 13 reports
+7 学术 source 已对齐 Zotero
+7 工具类 source 按 v4 规则跳过
 ```
 
----
+### 与 wiki/AGENTS.md 配合
 
-## index.json 原则
-
-### 是核心驱动
-
-所有知识产出以 index.json 为核心。它是检索结果、阅读笔记、撰写素材的统一来源。
-
-### 版本控制
-
-使用 Git 管理 index.json。每次更新后 commit。
-
-### 不直接编辑
-
-index.json 由 Searcher/Manager 自动维护，不手动编辑。
-
----
-
-## Manager 操作原则
-
-### topic 筛选
-
-使用 Manager.filter() 从 index.json 中筛选特定 topic，生成 topic.json。
-
-### 数据合并
-
-使用 Manager.merge() 合并多个 index.json，支持多轮检索整合。
-
----
-
-## 常见错误
-
-| 错误 | 后果 |
-|------|------|
-| 手动编辑 index.json | 被 Searcher 覆盖 |
-| 不 commit | 更新丢失无法追溯 |
-| 多份 index.json | 数据不一致 |
-| 不备份 | 意外丢失 |
+- 一一对应铁律：1 Zotero item = 1 source 页
+- 工具类 source（conda/openclaw-system 等）不需 zotero_item_key

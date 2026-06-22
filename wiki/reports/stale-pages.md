@@ -1,4 +1,5 @@
 ---
+sources: []  # 系统生成 report，无 source 引用
 pageType: report
 id: report.stale-pages
 title: Stale Pages

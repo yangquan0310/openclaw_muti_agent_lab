@@ -183,7 +183,7 @@ _LANG_MAP = {
 
 def create_searcher(
     lang: str,
-    kb_path: str = "knowledge/index.json",
+    kb_path: str = "wiki/sources/cache.json",
     **kwargs,
 ) -> BaseSearcher:
     """
@@ -320,7 +320,7 @@ _CHINESE_RE = __import__("re").compile(r"[\u4e00-\u9fff]")
 
 def search_by_keyword(
     keyword: str,
-    kb_path: str = "knowledge/index.json",
+    kb_path: str = "wiki/sources/cache.json",
     limit: int = 20,
     year_min: Optional[int] = None,
     year_max: Optional[int] = None,

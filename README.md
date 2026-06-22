@@ -1,6 +1,6 @@
 # OpenClaw 实验室多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.8-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.9-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
@@ -680,6 +680,26 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.8 (2026-06-22)
+- **research-assistant 升级 v5.20.0 → v5.21.0**：全面补充 9 项薄弱环节，融合 ARS / Nature-skills / PaperSpine 三家长处。新增文档：
+  - `references/prisma-systematic-review.md` — PRISMA 9 阶段系统综述 SOP (ARS)
+  - `references/synthesize-peer-review.md` — 7-agent 同行评议 SOP (ARS Reviewer)
+  - `references/apa7-citation-checklist.md` — APA 7 引用核验 50 项
+  - `references/originality-checklist.md` — 原创性核验 30 项 (5 类抄袭)
+  - `references/manuscript-audit-checklist.md` — 终稿完整性审计 60 项 (PaperSpine)
+  - `assets/motivation-thread-template.md` — 章节 motivation + section blueprints (PaperSpine)
+  - `assets/polish-nature-style.md` — Nature 风格润色 prompt (Nature-skills)
+  - `assets/data-availability-template.md` — Data Availability 4 模板 (Nature-skills)
+  - `hooks/quarto-cite-audit.md` — quarto 编译前 5 步引用审计 (PaperSpine latex)
+  - 同步更新 `SKILL.md` description (加 9 项新触发短语)、模板/导航表、`references/index.md` 章节导航/场景查找/hooks 列表/workboard tracker
+- **5 篇模块引用文档重写**：`references/module-{maintain,manage,search,summarize,synthesize}.md` 内容重组，与新模板/工作流对齐（合计 +135 / −218 行净增精简）
+- **scripts/config.json 密钥引用形式统一**：`zotero.user_id_env` 从 `{ZOTERO_USER_ID}` 修正为 `${ZOTERO_USER_ID}`，与 `zotero.api_key_env` / `deepseek.api_key_env` / `semantic_scholar.api_key_env` 等其他 `*_env` 字段保持一致
+- **openclaw.json meta 同步**：`lastTouchedVersion` 2026.6.8 → 2026.6.9，`lastTouchedAt` 同步至 2026-06-21 18:29 UTC
+- **密钥核查**：扫描所有待提交文件（openclaw.json、scripts/config.json、5 篇模块引用、5 个 .py 脚本、state/openclaw.sqlite、wiki 更新），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams），无中间文件、解析文件、一次性文件需要清理；本轮将 4 个 agent (mathematician/physicist/programmer/steward) 的运行时状态文件 `openclaw-workspace-state.json` 移入各自 `temp/` 目录
+- **state/openclaw.sqlite 数据库变化**：日常业务数据持久化，体积稳定（25,350,144 字节），仅 mtime 更新无实质内容差异
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支（development 已废弃）
+
 ### 版本 4.3.7 (2026-06-21)
 - **密钥核查**：扫描所有待提交文件（openclaw.json、state/openclaw.sqlite、5 篇 wiki sources、1 篇 wiki synthesis、programmer 会话 memory），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 7 个 .md 配置文件（AGENTS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams），无中间文件、解析文件、一次性文件需要清理；psychologist/knowledge/ 与 steward/.clawhub/ 为标准配置目录（保留）
@@ -1163,8 +1183,8 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-19 04:00:00**
-**系统版本**: OpenClaw 2026.6.6
+**最后更新: 2026-06-22 04:00:00**
+**系统版本**: OpenClaw 2026.6.9
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
 **备份状态**: ✅ 自动执行中

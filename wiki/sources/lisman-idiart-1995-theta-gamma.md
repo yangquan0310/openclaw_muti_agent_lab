@@ -2,17 +2,19 @@
 pageType: source
 id: source.lisman-idiart-1995-theta-gamma
 createdAt: "2026-06-21T00:09:41+08:00"
-updatedAt: "2026-06-21T00:09:41+08:00"
-title: θ-γ 跨频耦合与短时记忆存储（Lisman & Idiart 1995）
+updatedAt: "2026-06-21T21:37:23"
+title: θ-γ 跨频耦合与短时记忆存储：7±2 items 振荡模型（Lisman & Idiart 1995, *Science*）
 sourceIds:
   - external/Lisman-Idiart-1995-Science
+zotero_item_key: XW2F3M5H
+zotero_doi: 10.1126/science.7878473
 aliases:
   - Lisman Idiart 1995
   - theta gamma coupling
   - 7 plus minus 2
 ---
 
-# θ-γ 跨频耦合与短时记忆存储（Lisman & Idiart 1995）
+# θ-γ 跨频耦合与短时记忆存储：7±2 items 振荡模型（Lisman & Idiart 1995, *Science*）
 
 > **来源**：外部经典文献（*Science*, 1995）
 > **作者**：John E. Lisman, Marco A. P. Idiart

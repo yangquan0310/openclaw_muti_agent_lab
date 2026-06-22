@@ -2,10 +2,14 @@
 pageType: source
 id: source.diehl-2026-captured-memories
 createdAt: "2026-06-05T15:48:00+08:00"
-updatedAt: "2026-06-05T15:48:00+08:00"
+updatedAt: "2026-06-21T19:25:00+08:00"
 title: "Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）"
 sourceIds:
   - raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf
+zotero_item_key: Q8NF2W5T
+zotero_attachment_key: 7ZU3LAQ7
+zotero_pdf_path: nutstore:quanquanzi/zotero/7ZU3LAQ7.zip
+zotero_doi: 10.1037/mac0000231
 aliases:
   - 照片视角与记忆视角漂移
   - First-person vs third-person viewpoint photos

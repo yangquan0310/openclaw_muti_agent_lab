@@ -11,6 +11,7 @@ aliases:
   - Quarto 配置
   - Quarto PDF 编译
   - APA 7th 排版
+zotero_refs: []  # 笔记类 synthesis，无 Zotero 条目
 ---
 
 # Quarto PDF 编译配置总结：3 范式 + CJK 字体 + APA 7th

@@ -2,10 +2,12 @@
 pageType: source
 id: source.okeefe-recce-1993-phase-precession
 createdAt: "2026-06-21T00:09:41+08:00"
-updatedAt: "2026-06-21T00:09:41+08:00"
+updatedAt: "2026-06-21T20:24:15"
 title: 海马位置细胞与θ 相位进动（O'Keefe & Recce 1993）
 sourceIds:
   - external/OKeefe-Recce-1993-Hippocampus
+zotero_item_key: 2FU4S4CM
+zotero_doi: 10.1002/hipo.450030307
 aliases:
   - O'Keefe Recce 1993
   - phase precession

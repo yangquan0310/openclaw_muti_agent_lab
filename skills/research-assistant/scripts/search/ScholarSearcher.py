@@ -43,7 +43,7 @@ class ScholarSearcher(BaseSearcher):
 
     def __init__(
         self,
-        kb_path: str = "knowledge/index.json",
+        kb_path: str = "wiki/sources/cache.json",
         api_key: Optional[str] = None,
         request_interval: float = 3.0,
         hl: str = "zh-CN",

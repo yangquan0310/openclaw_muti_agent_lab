@@ -73,7 +73,7 @@
 
 | 实体 | 页面 |
 |------|------|
-| OpenClaw 系统架构 | [openclaw-gateway](entities/openclaw-gateway.md) |
+| OpenClaw 系统架构 | openclaw-gateway |
 
 > ⚠️ 实际 vault 有 13 个 entities（含 personality、team 等维度），详见下方"自动生成索引"。
 
@@ -85,17 +85,17 @@
 
 | 概念 | 说明 | 页面 |
 |------|------|------|
-| Agent 自我发展 | 元认知框架插件规范 | [agent-self-development](concepts/agent-self-development.md) |
-| 项目规范 | 目录结构、元数据、TODO模板 | [project](concepts/project.md) |
-| 仓库 | 统一项目仓库 | [repository](concepts/repository.md) |
+| Agent 自我发展 | 元认知框架插件规范 | agent-self-development |
+| 项目规范 | 目录结构、元数据、TODO模板 | project |
+| 仓库 | 统一项目仓库 | repository |
 
 ### 技能概念
 
 | 概念 | 说明 | 页面 |
 |------|------|------|
-| 论文项目 | 论文写作全流程 | [thesis-project](concepts/thesis-project.md) |
-| 课程项目 | 教学备课全流程 | [course-project](concepts/course-project.md) |
-| 程序项目 | 工具开发全流程 | [program-project](concepts/program-project.md) |
+| 论文项目 | 论文写作全流程 | thesis-project |
+| 课程项目 | 教学备课全流程 | course-project |
+| 程序项目 | 工具开发全流程 | program-project |
 
 > ⚠️ 实际 vault 有 53 个 concepts，详见下方"自动生成索引"。
 
@@ -105,9 +105,9 @@
 
 | 综合页面 | 说明 | 状态 |
 |----------|------|------|
-| [Wiki 维护任务看板](syntheses/wiki-维护-todo.md) | P0-P3 任务追踪 | ✅ 已归档 |
-| [Agent 实体页面模板](syntheses/wiki-agent-entity-template.md) | 标准 frontmatter + 正文结构 | ✅ 已发布 |
-| [多 Agent 协作案例](syntheses/多agent协作案例-学生论文修改项目.md) | 学生论文修改完整流程 | ✅ 已归档 |
+| Wiki 维护任务看板 | P0-P3 任务追踪 | ✅ 已归档 |
+| Agent 实体页面模板 | 标准 frontmatter + 正文结构 | ✅ 已发布 |
+| 多 Agent 协作案例 | 学生论文修改完整流程 | ✅ 已归档 |
 
 > ⚠️ 实际 vault 有 34 个 syntheses，详见下方"自动生成索引"。
 
@@ -164,278 +164,6 @@
 - [sources/_template_source_summary.md](sources/_template_source_summary.md) — 来源摘要标准结构
 
 ---
-
-## 自动生成索引
-
-<!-- openclaw:wiki:index:start -->
-- Render mode: `native`
-- Total pages: 252
-- Claims: 3
-- Sources: 228
-- Entities: 5
-- Concepts: 6
-- Syntheses: 3
-- Reports: 10
-
-### Sources
-- [Memory Bridge (mathematician): dreaming / deep / 2026-04-28](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-04-28-143002d0.md)
-- [Memory Bridge (mathematician): dreaming / deep / 2026-04-29](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-04-29-2dee97da.md)
-- [Memory Bridge (mathematician): dreaming / deep / 2026-04-30](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-04-30-e2383ad8.md)
-- [Memory Bridge (mathematician): dreaming / deep / 2026-05-01](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-05-01-e24ebf4f.md)
-- [Memory Bridge (mathematician): dreaming / deep / 2026-05-02](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-05-02-51d3cf8e.md)
-- [Memory Bridge (mathematician): dreaming / deep / 2026-05-03](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-05-03-9f817f91.md)
-- [Memory Bridge (mathematician): dreaming / deep / 2026-05-04](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-05-04-d162aa53.md)
-- [Memory Bridge (mathematician): dreaming / deep / 2026-05-08](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-05-08-72fed2e6.md)
-- [Memory Bridge (mathematician): dreaming / deep / 2026-05-09](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-05-09-52cb721d.md)
-- [Memory Bridge (mathematician): dreaming / deep / 2026-05-10](sources/bridge-mathematician-29c37e0d-memory-dreaming-deep-2026-05-10-10517361.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-04-28](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-04-28-bda03891.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-04-29](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-04-29-63cd16a5.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-04-30](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-04-30-d074e1da.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-05-01](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-05-01-cb687886.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-05-02](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-05-02-580ecc6d.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-05-03](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-05-03-d01ae825.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-05-04](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-05-04-ba725831.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-05-08](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-05-08-7c110ab8.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-05-09](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-05-09-33e65264.md)
-- [Memory Bridge (mathematician): dreaming / light / 2026-05-10](sources/bridge-mathematician-29c37e0d-memory-dreaming-light-2026-05-10-0af5f541.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-04-28](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-04-28-1798494f.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-04-29](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-04-29-e45bdd90.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-04-30](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-04-30-ac1bc335.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-05-01](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-05-01-084be960.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-05-02](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-05-02-48c16812.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-05-03](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-05-03-8ccdadcb.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-05-04](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-05-04-0e787ceb.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-05-08](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-05-08-388ea048.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-05-09](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-05-09-07af3c6b.md)
-- [Memory Bridge (mathematician): dreaming / rem / 2026-05-10](sources/bridge-mathematician-29c37e0d-memory-dreaming-rem-2026-05-10-4613e849.md)
-- [Memory Bridge (mathematician): event journal](sources/bridge-mathematician-29c37e0d-memory-dreams-events-jsonl-38a7dd37.md)
-- [Memory Bridge (mathematician): MEMORY](sources/bridge-mathematician-29c37e0d-memory-2d62c497.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-04-28](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-04-28-143002d0.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-04-29](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-04-29-2dee97da.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-04-30](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-04-30-e2383ad8.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-05-01](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-05-01-e24ebf4f.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-05-02](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-05-02-51d3cf8e.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-05-03](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-05-03-9f817f91.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-05-04](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-05-04-d162aa53.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-05-08](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-05-08-72fed2e6.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-05-09](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-05-09-52cb721d.md)
-- [Memory Bridge (physicist): dreaming / deep / 2026-05-10](sources/bridge-physicist-a33c75f3-memory-dreaming-deep-2026-05-10-10517361.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-04-28](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-04-28-bda03891.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-04-29](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-04-29-63cd16a5.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-04-30](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-04-30-d074e1da.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-05-01](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-05-01-cb687886.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-05-02](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-05-02-580ecc6d.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-05-03](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-05-03-d01ae825.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-05-04](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-05-04-ba725831.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-05-08](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-05-08-7c110ab8.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-05-09](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-05-09-33e65264.md)
-- [Memory Bridge (physicist): dreaming / light / 2026-05-10](sources/bridge-physicist-a33c75f3-memory-dreaming-light-2026-05-10-0af5f541.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-04-28](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-04-28-1798494f.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-04-29](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-04-29-e45bdd90.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-04-30](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-04-30-ac1bc335.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-05-01](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-05-01-084be960.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-05-02](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-05-02-48c16812.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-05-03](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-05-03-8ccdadcb.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-05-04](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-05-04-0e787ceb.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-05-08](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-05-08-388ea048.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-05-09](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-05-09-07af3c6b.md)
-- [Memory Bridge (physicist): dreaming / rem / 2026-05-10](sources/bridge-physicist-a33c75f3-memory-dreaming-rem-2026-05-10-4613e849.md)
-- [Memory Bridge (physicist): event journal](sources/bridge-physicist-a33c75f3-memory-dreams-events-jsonl-38a7dd37.md)
-- [Memory Bridge (physicist): MEMORY](sources/bridge-physicist-a33c75f3-memory-2d62c497.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-04-28](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-04-28-143002d0.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-04-29](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-04-29-2dee97da.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-04-30](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-04-30-e2383ad8.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-05-01](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-05-01-e24ebf4f.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-05-02](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-05-02-51d3cf8e.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-05-03](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-05-03-9f817f91.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-05-04](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-05-04-d162aa53.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-05-08](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-05-08-72fed2e6.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-05-09](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-05-09-52cb721d.md)
-- [Memory Bridge (programmer): dreaming / deep / 2026-05-10](sources/bridge-programmer-0f670986-memory-dreaming-deep-2026-05-10-10517361.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-04-28](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-04-28-bda03891.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-04-29](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-04-29-63cd16a5.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-04-30](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-04-30-d074e1da.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-05-01](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-05-01-cb687886.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-05-02](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-05-02-580ecc6d.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-05-03](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-05-03-d01ae825.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-05-04](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-05-04-ba725831.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-05-08](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-05-08-7c110ab8.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-05-09](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-05-09-33e65264.md)
-- [Memory Bridge (programmer): dreaming / light / 2026-05-10](sources/bridge-programmer-0f670986-memory-dreaming-light-2026-05-10-0af5f541.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-04-28](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-04-28-1798494f.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-04-29](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-04-29-e45bdd90.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-04-30](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-04-30-ac1bc335.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-05-01](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-05-01-084be960.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-05-02](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-05-02-48c16812.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-05-03](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-05-03-8ccdadcb.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-05-04](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-05-04-0e787ceb.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-05-08](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-05-08-388ea048.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-05-09](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-05-09-07af3c6b.md)
-- [Memory Bridge (programmer): dreaming / rem / 2026-05-10](sources/bridge-programmer-0f670986-memory-dreaming-rem-2026-05-10-4613e849.md)
-- [Memory Bridge (programmer): event journal](sources/bridge-programmer-0f670986-memory-dreams-events-jsonl-38a7dd37.md)
-- [Memory Bridge (programmer): MEMORY](sources/bridge-programmer-0f670986-memory-2d62c497.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-04-28](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-04-28-143002d0.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-04-29](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-04-29-2dee97da.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-04-30](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-04-30-e2383ad8.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-05-01](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-05-01-e24ebf4f.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-05-02](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-05-02-51d3cf8e.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-05-03](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-05-03-9f817f91.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-05-04](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-05-04-d162aa53.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-05-08](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-05-08-72fed2e6.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-05-09](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-05-09-52cb721d.md)
-- [Memory Bridge (psychologist): dreaming / deep / 2026-05-10](sources/bridge-psychologist-5b575731-memory-dreaming-deep-2026-05-10-10517361.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-04-28](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-04-28-bda03891.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-04-29](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-04-29-63cd16a5.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-04-30](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-04-30-d074e1da.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-05-01](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-05-01-cb687886.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-05-02](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-05-02-580ecc6d.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-05-03](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-05-03-d01ae825.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-05-04](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-05-04-ba725831.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-05-08](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-05-08-7c110ab8.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-05-09](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-05-09-33e65264.md)
-- [Memory Bridge (psychologist): dreaming / light / 2026-05-10](sources/bridge-psychologist-5b575731-memory-dreaming-light-2026-05-10-0af5f541.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-04-28](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-04-28-1798494f.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-04-29](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-04-29-e45bdd90.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-04-30](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-04-30-ac1bc335.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-05-01](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-05-01-084be960.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-05-02](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-05-02-48c16812.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-05-03](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-05-03-8ccdadcb.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-05-04](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-05-04-0e787ceb.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-05-08](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-05-08-388ea048.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-05-09](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-05-09-07af3c6b.md)
-- [Memory Bridge (psychologist): dreaming / rem / 2026-05-10](sources/bridge-psychologist-5b575731-memory-dreaming-rem-2026-05-10-4613e849.md)
-- [Memory Bridge (psychologist): event journal](sources/bridge-psychologist-5b575731-memory-dreams-events-jsonl-38a7dd37.md)
-- [Memory Bridge (psychologist): MEMORY](sources/bridge-psychologist-5b575731-memory-2d62c497.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-04-28](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-04-28-143002d0.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-04-29](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-04-29-2dee97da.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-04-30](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-04-30-e2383ad8.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-05-01](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-05-01-e24ebf4f.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-05-02](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-05-02-51d3cf8e.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-05-03](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-05-03-9f817f91.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-05-04](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-05-04-d162aa53.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-05-08](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-05-08-72fed2e6.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-05-09](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-05-09-52cb721d.md)
-- [Memory Bridge (reviewer): dreaming / deep / 2026-05-10](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-deep-2026-05-10-10517361.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-04-28](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-04-28-bda03891.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-04-29](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-04-29-63cd16a5.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-04-30](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-04-30-d074e1da.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-05-01](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-05-01-cb687886.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-05-02](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-05-02-580ecc6d.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-05-03](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-05-03-d01ae825.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-05-04](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-05-04-ba725831.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-05-08](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-05-08-7c110ab8.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-05-09](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-05-09-33e65264.md)
-- [Memory Bridge (reviewer): dreaming / light / 2026-05-10](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-light-2026-05-10-0af5f541.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-04-28](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-04-28-1798494f.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-04-29](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-04-29-e45bdd90.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-04-30](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-04-30-ac1bc335.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-05-01](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-05-01-084be960.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-05-02](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-05-02-48c16812.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-05-03](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-05-03-8ccdadcb.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-05-04](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-05-04-0e787ceb.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-05-08](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-05-08-388ea048.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-05-09](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-05-09-07af3c6b.md)
-- [Memory Bridge (reviewer): dreaming / rem / 2026-05-10](sources/bridge-reviewer-ff6cc1f2-memory-dreaming-rem-2026-05-10-4613e849.md)
-- [Memory Bridge (reviewer): event journal](sources/bridge-reviewer-ff6cc1f2-memory-dreams-events-jsonl-38a7dd37.md)
-- [Memory Bridge (reviewer): MEMORY](sources/bridge-reviewer-ff6cc1f2-memory-2d62c497.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-04-28](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-04-28-143002d0.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-04-29](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-04-29-2dee97da.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-04-30](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-04-30-e2383ad8.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-05-01](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-05-01-e24ebf4f.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-05-02](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-05-02-51d3cf8e.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-05-03](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-05-03-9f817f91.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-05-04](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-05-04-d162aa53.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-05-08](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-05-08-72fed2e6.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-05-09](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-05-09-52cb721d.md)
-- [Memory Bridge (steward): dreaming / deep / 2026-05-10](sources/bridge-steward-c7428e8e-memory-dreaming-deep-2026-05-10-10517361.md)
-- [Memory Bridge (steward): dreaming / light / 2026-04-28](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-04-28-bda03891.md)
-- [Memory Bridge (steward): dreaming / light / 2026-04-29](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-04-29-63cd16a5.md)
-- [Memory Bridge (steward): dreaming / light / 2026-04-30](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-04-30-d074e1da.md)
-- [Memory Bridge (steward): dreaming / light / 2026-05-01](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-05-01-cb687886.md)
-- [Memory Bridge (steward): dreaming / light / 2026-05-02](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-05-02-580ecc6d.md)
-- [Memory Bridge (steward): dreaming / light / 2026-05-03](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-05-03-d01ae825.md)
-- [Memory Bridge (steward): dreaming / light / 2026-05-04](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-05-04-ba725831.md)
-- [Memory Bridge (steward): dreaming / light / 2026-05-08](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-05-08-7c110ab8.md)
-- [Memory Bridge (steward): dreaming / light / 2026-05-09](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-05-09-33e65264.md)
-- [Memory Bridge (steward): dreaming / light / 2026-05-10](sources/bridge-steward-c7428e8e-memory-dreaming-light-2026-05-10-0af5f541.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-04-28](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-04-28-1798494f.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-04-29](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-04-29-e45bdd90.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-04-30](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-04-30-ac1bc335.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-05-01](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-05-01-084be960.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-05-02](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-05-02-48c16812.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-05-03](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-05-03-8ccdadcb.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-05-04](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-05-04-0e787ceb.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-05-08](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-05-08-388ea048.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-05-09](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-05-09-07af3c6b.md)
-- [Memory Bridge (steward): dreaming / rem / 2026-05-10](sources/bridge-steward-c7428e8e-memory-dreaming-rem-2026-05-10-4613e849.md)
-- [Memory Bridge (steward): event journal](sources/bridge-steward-c7428e8e-memory-dreams-events-jsonl-38a7dd37.md)
-- [Memory Bridge (steward): MEMORY](sources/bridge-steward-c7428e8e-memory-2d62c497.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-04-28](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-04-28-143002d0.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-04-29](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-04-29-2dee97da.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-04-30](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-04-30-e2383ad8.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-05-01](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-05-01-e24ebf4f.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-05-02](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-05-02-51d3cf8e.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-05-03](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-05-03-9f817f91.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-05-04](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-05-04-d162aa53.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-05-08](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-05-08-72fed2e6.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-05-09](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-05-09-52cb721d.md)
-- [Memory Bridge (writer): dreaming / deep / 2026-05-10](sources/bridge-writer-f1188890-memory-dreaming-deep-2026-05-10-10517361.md)
-- [Memory Bridge (writer): dreaming / light / 2026-04-28](sources/bridge-writer-f1188890-memory-dreaming-light-2026-04-28-bda03891.md)
-- [Memory Bridge (writer): dreaming / light / 2026-04-29](sources/bridge-writer-f1188890-memory-dreaming-light-2026-04-29-63cd16a5.md)
-- [Memory Bridge (writer): dreaming / light / 2026-04-30](sources/bridge-writer-f1188890-memory-dreaming-light-2026-04-30-d074e1da.md)
-- [Memory Bridge (writer): dreaming / light / 2026-05-01](sources/bridge-writer-f1188890-memory-dreaming-light-2026-05-01-cb687886.md)
-- [Memory Bridge (writer): dreaming / light / 2026-05-02](sources/bridge-writer-f1188890-memory-dreaming-light-2026-05-02-580ecc6d.md)
-- [Memory Bridge (writer): dreaming / light / 2026-05-03](sources/bridge-writer-f1188890-memory-dreaming-light-2026-05-03-d01ae825.md)
-- [Memory Bridge (writer): dreaming / light / 2026-05-04](sources/bridge-writer-f1188890-memory-dreaming-light-2026-05-04-ba725831.md)
-- [Memory Bridge (writer): dreaming / light / 2026-05-08](sources/bridge-writer-f1188890-memory-dreaming-light-2026-05-08-7c110ab8.md)
-- [Memory Bridge (writer): dreaming / light / 2026-05-09](sources/bridge-writer-f1188890-memory-dreaming-light-2026-05-09-33e65264.md)
-- [Memory Bridge (writer): dreaming / light / 2026-05-10](sources/bridge-writer-f1188890-memory-dreaming-light-2026-05-10-0af5f541.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-04-28](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-04-28-1798494f.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-04-29](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-04-29-e45bdd90.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-04-30](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-04-30-ac1bc335.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-05-01](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-05-01-084be960.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-05-02](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-05-02-48c16812.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-05-03](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-05-03-8ccdadcb.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-05-04](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-05-04-0e787ceb.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-05-08](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-05-08-388ea048.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-05-09](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-05-09-07af3c6b.md)
-- [Memory Bridge (writer): dreaming / rem / 2026-05-10](sources/bridge-writer-f1188890-memory-dreaming-rem-2026-05-10-4613e849.md)
-- [Memory Bridge (writer): event journal](sources/bridge-writer-f1188890-memory-dreams-events-jsonl-38a7dd37.md)
-- [Memory Bridge (writer): MEMORY](sources/bridge-writer-f1188890-memory-2d62c497.md)
-- [仓库](sources/repository.md)
-- [教务助手课程安排](sources/academic-course-schedule.md)
-- [教学助手课程表](sources/teaching-course-schedule.md)
-- [教研室仓库](sources/teaching-repository.md)
-
-### Entities
-- [OpenClaw 系统架构](entities/openclaw-gateway.md)
-- [教务助手（Academic Assistant）](entities/academicassistant.md)
-- [教学助手（Teaching Assistant）](entities/teachingassistant.md)
-- [杨权](entities/yangquan.md)
-- [程序员（Programmer）](entities/programmer.md)
-
-### Concepts
-- [Agent Self-Development](concepts/agent-self-development.md)
-- [项目规范](concepts/project.md)
-- [仓库](concepts/repository.md)
-
-### Syntheses
-- [Wiki 维护 TODO](syntheses/wiki-维护-todo.md)
-- [wiki-agent-entity-template](syntheses/wiki-agent-entity-template.md)
-- [多Agent协作案例：学生论文修改项目](syntheses/多agent协作案例-学生论文修改项目.md)
-
-### Reports
-- [Claim Health](reports/claim-health.md)
-- [Contradictions](reports/contradictions.md)
-- [Lint Report](reports/lint.md)
-- [Low Confidence](reports/low-confidence.md)
-- [Open Questions](reports/open-questions.md)
-- [Person Agent Directory](reports/person-agent-directory.md)
-- [Privacy Review](reports/privacy-review.md)
-- [Provenance Coverage](reports/provenance-coverage.md)
-- [Relationship Graph](reports/relationship-graph.md)
-- [Stale Pages](reports/stale-pages.md)
-<!-- openclaw:wiki:index:end -->
 
 ## Generated
 <!-- openclaw:wiki:index:start -->

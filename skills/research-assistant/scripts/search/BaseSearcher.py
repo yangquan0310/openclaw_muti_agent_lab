@@ -81,7 +81,7 @@ class BaseSearcher(ABC):
 
     source_name: str = ""
 
-    def __init__(self, kb_path: str = "knowledge/index.json"):
+    def __init__(self, kb_path: str = "wiki/sources/cache.json"):
         self.kb_path = kb_path
 
     # ── 抽象接口 ─────────────────────────────────────

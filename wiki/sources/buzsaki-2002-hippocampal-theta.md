@@ -2,10 +2,12 @@
 pageType: source
 id: source.buzsaki-2002-hippocampal-theta
 createdAt: "2026-06-21T00:09:41+08:00"
-updatedAt: "2026-06-21T00:09:41+08:00"
+updatedAt: "2026-06-21T20:33:48"
 title: 海马θ振荡（Buzsáki 2002）
 sourceIds:
   - external/Buzsaki-2002-Neuron
+zotero_item_key: BNA4WATT
+zotero_doi: 10.1016/s0896-6273(02)00586-x
 aliases:
   - Buzsaki 2002
   - hippocampal theta

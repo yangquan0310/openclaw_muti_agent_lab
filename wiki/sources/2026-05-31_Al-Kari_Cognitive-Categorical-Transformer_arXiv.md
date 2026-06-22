@@ -2,10 +2,12 @@
 pageType: source
 id: source.cct-al-kari-2026
 createdAt: "2026-06-05T15:40:00+08:00"
-updatedAt: "2026-06-05T15:40:00+08:00"
+updatedAt: "2026-06-21T21:27:38"
 title: 范畴论结构先验可在 306M 规模上压低 WikiText-103 困惑度（GT-Full 单独贡献 84%）
 sourceIds:
   - raw/papers/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.pdf
+zotero_item_key: JBGDN6ZI
+zotero_doi: 10.48550/arXiv.2605.28864
 aliases:
   - CCT
   - Cognitive Categorical Transformer

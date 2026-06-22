@@ -45,6 +45,7 @@ contradictions:
 questions:
   - "三件套各自的迭代节奏如何协调？"
   - "经验沉淀到什么程度可以独立成技能？"
+zotero_refs: []  # 笔记类 synthesis，无 Zotero 条目
 ---
 
 # 我的 agent 工程实践：驾驭方法论

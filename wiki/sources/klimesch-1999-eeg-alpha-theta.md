@@ -2,10 +2,12 @@
 pageType: source
 id: source.klimesch-1999-eeg-alpha-theta
 createdAt: "2026-06-21T00:09:41+08:00"
-updatedAt: "2026-06-21T00:09:41+08:00"
+updatedAt: "2026-06-21T20:33:53"
 title: EEG α与θ振荡反映认知与记忆表现：综述与分析（Klimesch 1999）
 sourceIds:
   - external/Klimesch-1999-BrainResRev
+zotero_item_key: 5XJ7CWHX
+zotero_doi: 10.1016/s0165-0173(98)00056-3
 aliases:
   - Klimesch 1999
   - EEG alpha theta review

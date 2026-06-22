@@ -2,10 +2,12 @@
 pageType: source
 id: source.cavanagh-frank-2014-frontal-theta
 createdAt: "2026-06-21T00:09:41+08:00"
-updatedAt: "2026-06-21T00:09:41+08:00"
+updatedAt: "2026-06-21T20:34:00"
 title: 额中线θ作为认知控制机制（Cavanagh & Frank 2014）
 sourceIds:
   - external/Cavanagh-Frank-2014-TICS
+zotero_item_key: I55CXP5N
+zotero_doi: 10.1016/j.tics.2014.04.012
 aliases:
   - Cavanagh Frank 2014
   - frontal theta

@@ -1,5 +1,6 @@
-"""Maintainer 模块 - 元数据维护与版本控制"""
+"""Maintainer 模块（v5.15.0：精简到协调器 + WikiZoteroManager）"""
 
-from .Maintainer import Maintainer, MetadataManager, VersionController
+from .Maintainer import Maintainer
+from .WikiZoteroManager import WikiZoteroManager
 
-__all__ = ["Maintainer", "MetadataManager", "VersionController"]
+__all__ = ["Maintainer", "WikiZoteroManager"]

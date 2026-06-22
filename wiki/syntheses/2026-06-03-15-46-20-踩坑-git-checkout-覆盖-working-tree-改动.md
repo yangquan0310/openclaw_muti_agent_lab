@@ -12,6 +12,7 @@ tags:
   - working-tree
   - stash
   - 跨分支操作
+zotero_refs: []  # 笔记类 synthesis，无 Zotero 条目
 ---
 
 # 踩坑：git checkout 覆盖 working tree 改动

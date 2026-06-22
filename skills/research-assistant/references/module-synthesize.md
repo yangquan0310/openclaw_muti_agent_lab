@@ -1,77 +1,59 @@
-# 笔记合成
+# 笔记合成（v5.16.0+ 走 wiki）
 
-> 使用 Synthesizer 将结构化笔记合成为连贯的笔记文档。
-
----
-
-## 合成原则
-
-### 主题聚合
-
-按主题聚合相关论文的笔记，而非按论文罗列。
-
-### 观点对比
-
-不同论文的观点应对比分析，而非孤立描述。
-
-### 批判性分析
-
-不仅描述，要分析、比较、评价已有研究。
+> **v5.16.0 重大重构**：删旧 `Synthesizer.py`（走 knowledge/topic/xxx.json + knowledge/note/），新 `Synthesizer.py` 直接从 wiki source 读，输出到 wiki syntheses/。
+> **老板 00:08 指令**："不需要向后兼容，全部改为 wiki"。
 
 ---
 
-## Synthesizer 操作
+## 一、Synthesizer（v5.16.0+ wiki 版本）
 
-### extract_notes
+### 文件位置
 
-将 topic.json 中的笔记导出为 Markdown 格式。
+`scripts/synthesize/Synthesizer.py`（4785 bytes）
 
-### check_references
+### 核心方法
 
-验证笔记中的 APA 引用是否正确。
-
-### identify_gaps
-
-识别已有研究中的空白（Research Gap）。
-
----
-
-## 输出结构
-
-```markdown
-## 主题一：[主题名称]
-
-### 核心观点
-- 观点1 [citation]
-- 观点2 [citation]
-
-### 比较分析
-| 研究 | 方法 | 结论 | 局限 |
+| 方法 | 用途 | 输入 | 输出 |
 |------|------|------|------|
+| `extract_notes(source_id)` | 从 wiki source 读 abstract → 输出 wiki synthesis | wiki source id | {success, output_path, zotero_key, summary_chars, key_content_chars} |
 
-### 研究空白
-- gap1
-- gap2
+### 提取逻辑
+
+1. 找 source 文件（按 id 字段或文件名匹配）
+2. 解析 YAML frontmatter（zotero_item_key, zotero_doi, title）
+3. 提取 markdown 段：「一句话总结」「关键内容」
+4. 输出到 `wiki/syntheses/<date>-extract-<slug>.md`
+5. 自动填 zotero_refs 字段（保持 wiki↔Zotero 一致性）
+
+### CLI 用法
+
+```bash
+python3 main.py synthesize extract --source-id source.diehl-2026-captured-memories
+python3 main.py synthesize extract --source-id source.okeefe-recce-1993-phase-precession --output custom.md
 ```
 
----
+### 输出格式
 
-## 补充检索
+写到 `wiki/syntheses/<date>-extract-<slug>.md`：
+- YAML: pageType=synthesis, zotero_refs 填主 source
+- 标题（来自 wiki source）
+- 来源 `[[sources/<filename>]]`
+- Zotero itemKey
+- 一句话总结
+- 关键内容（前 3000 chars）
+- 提取时间
 
-`extract_notes` 输出**初步笔记**后，**人工**用 jina-ai/Exa/Tavily 补检索（OpenClaw 系统级工具），将补检索结果**手动**整合回写笔记.md。
+### 不向后兼容
 
-补检索时机：
-- 补检索**不在** Synthesizer 代码内
-- 是**完整工作流**中的**人工/代理**环节
-- 补检索工具：jina-ai skill（`~/.openclaw/skills/jina-ai/`，需 `JINA_API_KEY`） + Exa/Tavily（OpenClaw MCP 工具，需 `EXA_API_KEY` / `TAVILY_API_KEY`）
+- 旧 `knowledge/topic/xxx.json` 路径**已废弃**
+- 旧 `check_references` / `fix_references` **未迁移**（v5.16.0 范围外）
+- 旧 Synthesizer 备份在 `_legacy_Synthesizer_<TS>.py`
 
----
+### 与 Summarizer 区别
 
-## 常见错误
-
-| 错误 | 后果 |
-|------|------|
-| 按论文罗列 | 缺乏分析深度 |
-| 不对比观点 | 综述表面化 |
-| 不识别 gap | 研究动机不明确 |
-| 引用错误 | 学术规范问题 |
+| 维度 | Summarizer | Synthesizer |
+|------|------------|-------------|
+| 输入 | wiki source | wiki source |
+| 输出 | 总结（type/importance） | 提取（结构化笔记） |
+| 方式 | 规则分类 | 字段提取 |
+| 文件名 | summarize-*.md | extract-*.md |
