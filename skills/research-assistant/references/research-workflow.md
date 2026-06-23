@@ -16,7 +16,7 @@
 | 检索 | 研究主题 + 关键词 | knowledge/index.json | Searcher |
 | 阅读 | index.json | topic.json + 笔记.md | Manager + Summarizer |
 | 撰写 | 笔记.md + 写作指南 | 综述.md | 代理 |
-| 检查 | 综述.md + topic.json | 修正后的综述 + 更新的元数据 | Synthesizer + Maintainer |
+| 检查 | 综述.md + topic.json | 修正后的综述 + 更新的元数据 | Synthesizer + WikiZoteroManager（v6.0.6+） |
 
 ---
 
@@ -65,7 +65,7 @@ queries.json → Searcher → index.json
                             ↓
                     Synthesizer.check → APA 核查
                             ↓
-                    Maintainer → 元数据更新
+                    WikiZoteroManager（v6.0.6+ 替代 Maintainer 协调器）→ 元数据更新
 ```
 
 ---

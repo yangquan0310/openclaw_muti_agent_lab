@@ -122,7 +122,7 @@ graph LR
 | 写作前 | `motivation_thread_model.md` + 全文章节表 |
 | 每章动笔前 | `section_blueprints.md`（该章的 5 部分） |
 | 改稿前 | `rewrite_matrix.md`（判断改/不改） |
-| 终稿前 | 跑 `references/manuscript-audit-checklist.md` |
+| 终稿前 | 跑 `references/manuscript-audit-standards.md` |
 
 ---
 

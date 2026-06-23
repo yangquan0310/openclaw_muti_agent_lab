@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import os
 import json
+import re as _re_module  # v6.0.5+ 加 arXiv 启发式
 import time as time_module
 from typing import List, Dict, Optional, Union
 from pathlib import Path
@@ -20,6 +21,7 @@ from .BaseSearcher import BaseSearcher, Paper
 from .CnkiSearcher import CnkiSearcher
 from .SemSchSearcher import SemSchSearcher
 from .ScholarSearcher import ScholarSearcher
+from .ArxivSearcher import ArxivSearcher  # v6.0.5+
 
 
 # ─── 多态检索函数 ───────────────────────────────────
@@ -178,7 +180,51 @@ _LANG_MAP = {
     "scholar": ScholarSearcher,
     "google": ScholarSearcher,
     "google_scholar": ScholarSearcher,
+    # arXiv（v6.0.5+ 数学/物理预印本路由）
+    "arxiv": ArxivSearcher,
+    "ax": ArxivSearcher,
+    "preprint": ArxivSearcher,
 }
+
+
+# v6.0.5+：数学/物理关键词启发式 → 自动加 arXiv 检索
+_ARXIV_HEURISTIC_PATTERNS = [
+    # 数学
+    r"\btheorem\b", r"\bconjecture\b", r"\bmanifold\b", r"\btopology\b",
+    r"\bhomotopy\b", r"\bcategory\b", r"\bgroup\s+theory\b",
+    r"\balgebra\b", r"\btopological\b", r"\bdifferential\s+geometry\b",
+    r"\bnumber\s+theory\b", r"\bcombinatorics\b", r"\bgraph\s+theory\b",
+    # 物理
+    r"\barxiv\b", r"\bpreprint\b", r"\bhamiltonian\b", r"\bschroedinger\b",
+    r"\bschrödinger\b", r"\bquantum\b", r"\bgeneral\s+relativity\b",
+    r"\bcosmology\b", r"\bcondensed\s+matter\b", r"\bcond-mat\b",
+    r"\bhep-th\b", r"\bgr-qc\b", r"\bastro-ph\b",
+    # 交叉（数×物×心）
+    r"\bneural\s+network\s+topology\b", r"\btopological\s+data\s+analysis\b",
+    r"\bmanifold\s+learning\b", r"\bgeometric\s+deep\s+learning\b",
+]
+
+
+def looks_like_arxiv_query(keyword: str) -> bool:
+    """启发式判断关键词是否适合走 arXiv（v6.0.5+）
+
+    Args:
+        keyword: 检索关键词
+
+    Returns:
+        True → 建议主引擎走 arXiv（备引擎仍走 SemSch）
+
+    Note:
+        - 仅当关键词是英文（无中文）时才触发启发式
+        - 启发式不替代显式 lang="arxiv"，仅辅助 routing
+    """
+    if _is_chinese(keyword):
+        return False
+    kw_lower = keyword.lower()
+    for pat in _ARXIV_HEURISTIC_PATTERNS:
+        if _re_module.search(pat, kw_lower):
+            return True
+    return False
 
 
 def create_searcher(
@@ -357,7 +403,14 @@ def search_by_keyword(
     is_chinese = _is_chinese(keyword)
     results: Dict[str, List[Paper]] = {}
 
-    if is_chinese:
+    # v6.0.5+：英文 + 数学/物理启发式命中 → 主引擎改走 arXiv
+    if not is_chinese and looks_like_arxiv_query(keyword):
+        primary = ArxivSearcher(kb_path=kb_path)
+        fallback = SemSchSearcher(kb_path=kb_path)
+        primary_name = "arXiv"
+        fallback_name = "Semantic Scholar"
+        print(f"[search_by_keyword] 英文 + 数学/物理启发式命中 → 主引擎: arXiv")
+    elif is_chinese:
         # ── 中文关键词：主 CNKI，备 Semantic Scholar ──
         primary = CnkiSearcher(kb_path=kb_path)
         fallback = SemSchSearcher(kb_path=kb_path)
@@ -371,6 +424,12 @@ def search_by_keyword(
         primary_name = "Semantic Scholar"
         fallback_name = "Google Scholar"
         print(f"[search_by_keyword] 检测到英文关键词 → 主引擎: Semantic Scholar")
+
+    # v6.0.6+：fallback_used 标记，让用户感知 fallback 是否已触发（audit #3）
+    # 设计：fallback 触发条件 = 主引擎 0 命中 OR 命中数 < limit
+    fallback_used: Optional[str] = None  # type: ignore[name-defined]
+    fallback_reason: Optional[str] = None  # type: ignore[name-defined]
+    fallback_count = 0
 
     # 主引擎
     try:
@@ -388,8 +447,10 @@ def search_by_keyword(
         papers = []
 
     # 备选引擎
+    fallback_attempted = False  # v6.0.6+：只要条件满足就标记“fallback 已尝试”——区分“未尝试”与“尝试了但 0 命中”
     if include_fallback and (not papers or len(papers) < limit):
         remaining = limit - len(results.get(primary_name, []))
+        fallback_attempted = True
         try:
             fb_papers = fallback._do_search(
                 keyword,
@@ -400,8 +461,35 @@ def search_by_keyword(
             if fb_papers:
                 fallback.merge_to_kb(fallback.normalize_batch(fb_papers))
                 results[fallback_name] = fb_papers
-                print(f"[search_by_keyword] {fallback_name}（备选）→ {len(fb_papers)} 篇")
+                fallback_count = len(fb_papers)
         except Exception as e:
             print(f"[search_by_keyword] {fallback_name}（备选）失败: {e}")
 
+        # v6.0.6+：fallback 触发时主动提示用户（audit #3：原默默退化）
+        if not papers:
+            fallback_reason = f"主引擎 {primary_name} 返回 0 篇"
+        else:
+            fallback_reason = f"主引擎 {primary_name} 命中 {len(papers)} < limit {limit}"
+        fallback_used = fallback_name  # 只要 fallback 尝试了（不管是否拿到结果）都标记
+        print(
+            f"[search_by_keyword] ⚠️ fallback 已触发 → {fallback_name}（{fallback_reason}）"
+        )
+        print(
+            f"[search_by_keyword] 建议：primary {primary_name} 不太适用此关键词——"
+            f"试试其他语言版本（如中文走 CNKI / 英文走 SemSch）或调整关键词"
+        )
+        print(
+            f"[search_by_keyword] {fallback_name}（备选）→ {fallback_count} 篇"
+        )
+
+    # v6.0.6+：把 fallback_used 信息打包进 results（供 CLI / 后续 agent 消费）
+    results["_meta"] = {
+        "primary_engine": primary_name,
+        "fallback_engine": fallback_name,
+        "fallback_used": fallback_used,
+        "fallback_reason": fallback_reason,
+        "fallback_count": fallback_count,
+        "include_fallback": include_fallback,
+        "total_papers": sum(len(v) for k, v in results.items() if k != "_meta" and isinstance(v, list)),
+    }
     return results

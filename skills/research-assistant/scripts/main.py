@@ -50,6 +50,10 @@ def main(argv=None) -> int:
     sum_parser.add_argument("--source-id", required=True,
                             help="wiki source id (如 source.diehl-2026-captured-memories)")
     sum_parser.add_argument("--output", help="输出 Markdown 路径（可选）")
+    sum_parser.add_argument("--pdf-path",
+                            help="可选：本地 PDF 路径，工具用 pypdf/pypdfium2/tesseract 提取结构化数据（v6.0.2+）")
+    sum_parser.add_argument("--ocr", action="store_true",
+                            help="启用 tesseract OCR（默认关，只提文本）")
     sum_parser.set_defaults(func=_run_summarize)
 
     # ── manage ──────────────────────────────────────────────────
@@ -75,7 +79,10 @@ def main(argv=None) -> int:
     stats_p = manage_sub.add_parser("stats", help="查看 wiki 统计信息")
     stats_p.set_defaults(func=_run_manage)
 
-    info_p = manage_sub.add_parser("info", help="查看 wiki 统计信息（同 stats）")
+    info_p = manage_sub.add_parser("info", help="查看 wiki source 详情（如指定 --source-id）或总统计（默认）")
+    # v6.0.6+：manage info --source-id 返回单篇 source 详情（audit #2 修复，v6.0.3 文档广告但代码未实现）
+    info_p.add_argument("--source-id",
+                        help="wiki source id（如 source.diehl-2026-captured-memories）；不传则退化为 stats 总统计")
     info_p.set_defaults(func=_run_manage)
 
     # ── synthesize ───────────────────────────────────────────────
@@ -87,19 +94,8 @@ def main(argv=None) -> int:
                           help="wiki source id (如 source.diehl-2026-captured-memories)")
     extract_p.add_argument("--output", help="输出 Markdown 路径（可选）")
     extract_p.set_defaults(func=_run_synthesize)
-
-    check_p = synth_sub.add_parser("check", help="检查参考文献")
-    check_p.add_argument("--doc", required=True, help="文档路径")
-    check_p.add_argument("--kb", required=True, action="append",
-                        help="知识库路径（可多次）")
-    check_p.set_defaults(func=_run_synthesize)
-
-    fix_p = synth_sub.add_parser("fix", help="修复参考文献")
-    fix_p.add_argument("--doc", required=True, help="文档路径")
-    fix_p.add_argument("--kb", required=True, action="append",
-                       help="知识库路径（可多次）")
-    fix_p.add_argument("--output", help="输出路径")
-    fix_p.set_defaults(func=_run_synthesize)
+    # v6.0.5: synthesize check/fix 已彻底从 argparse 删除（v6.0.4 文档修复不彻底）
+    # APA 7 引用核验请走 references/apa7-standards.md（agent 手动跑）
 
     # ── download（多态：DOI/key → Zotero → 坚果云 → wiki）─────────
     download_parser = sub.add_parser(
@@ -119,6 +115,21 @@ def main(argv=None) -> int:
         help="临时下载目录（默认 /tmp/zotero_dl）"
     )
     download_parser.set_defaults(func=_run_download)
+
+    # ── upload（v6.0.3+ 本地 PDF 反向上传：download 的反向对偶）──
+    upload_parser = sub.add_parser(
+        "upload", help="本地 PDF 上传到 Zotero + WebDAV + wiki source（v6.0.3+）"
+    )
+    upload_parser.add_argument("--pdf-path", required=True,
+                               help="本地 PDF 路径")
+    upload_parser.add_argument("--slug", help="wiki source slug（必填或 --doi；agent 自決唯一标识）")
+    upload_parser.add_argument("--doi", help="DOI（如有则建 Zotero 条目）")
+    upload_parser.add_argument("--title", help="wiki source title（默认用 slug）")
+    upload_parser.add_argument("--tags", help="Zotero tags（逗号分隔）")
+    upload_parser.add_argument("--no-zotero", action="store_true", help="跳过 Zotero 建条目")
+    upload_parser.add_argument("--no-webdav", action="store_true", help="跳过 WebDAV 推")
+    upload_parser.add_argument("--no-wiki", action="store_true", help="跳过 wiki source 创建")
+    upload_parser.set_defaults(func=_run_upload)
 
     # ── maintain（wiki-zotero-webdav 一致性维护，v5.20.0 新增 CLI 入口）──
     maintain_parser = sub.add_parser(
@@ -144,6 +155,15 @@ def main(argv=None) -> int:
     )
     report_p.set_defaults(func=_run_maintain)
 
+    graph_p = maintain_sub.add_parser(
+        "drift-graph", help="三方联动 ASCII 状态图（v6.0.0 新增；默认 light 模式秒级完成，--full 跑完整三方）"
+    )
+    graph_p.add_argument(
+        "--full", action="store_true",
+        help="跑完整三方检查（耗时 1-5 分钟，依赖 source 数量）"
+    )
+    graph_p.set_defaults(func=_run_maintain)
+
     args = parser.parse_args(argv)
     if not args.module:
         parser.print_help()
@@ -154,28 +174,82 @@ def main(argv=None) -> int:
 # ── 命令实现 ─────────────────────────────────────────────
 
 def _run_search(args) -> int:
-    """search 子命令（v5.19.0 起走 wiki report）"""
+    """search 子命令（v5.19.0 起走 wiki report；v6.0.6+ 触发 fallback 时主动提示）
+
+    v6.0.6 改动（audit #3 修复）：
+      - 改走 scripts.search.search_by_keyword()（中文/英文/启发式主备路由 + fallback_used 标记）
+      - CLI 输出包含 fallback_used / fallback_reason 字段（用户能感知 fallback 是否已触发）
+      - wiki report 仍写（fallback 命中的论文也进 report）
+    """
     import json
+    from scripts.search import search_by_keyword
     from scripts.search.WikiSearchReport import WikiSearchReport
+
     topic = getattr(args, 'topic', None) or 'general'
-    s = WikiSearchReport(topic=topic)
-    queries = {'queries': [{'query': args.keyword or 'unknown', 'limit': getattr(args, 'limit', 20)}]}
+    keyword = args.keyword or 'unknown'
+    limit = getattr(args, 'limit', 20)
+    year_min = getattr(args, 'year_min', None)
+    year_max = getattr(args, 'year_max', None)
     write_report = not getattr(args, 'dry_run', False)
-    result = s.search(queries, write_report=write_report)
+
+    # v6.0.6+：调 search_by_keyword() 获取 fallback_used 信息
+    # （WikiSearchReport 默认走 SemSch 不会触发 fallback，这里走 search_by_keyword 拿到主备路由 + fallback 标记）
+    search_results = search_by_keyword(
+        keyword,
+        limit=limit,
+        year_min=year_min,
+        year_max=year_max,
+        include_fallback=True,
+    )
+    meta = search_results.pop("_meta", {}) or {}
+    # 聚合所有来源的 papers
+    all_papers = []
+    for src, papers in search_results.items():
+        for p in papers:
+            d = p.to_dict() if hasattr(p, "to_dict") else (p if isinstance(p, dict) else {})
+            d["source"] = src
+            all_papers.append(d)
+
+    # 写 wiki report（如需要）
+    wiki_report_path = "N/A (dry-run)"
+    if write_report and all_papers:
+        try:
+            ws = WikiSearchReport(topic=topic)
+            queries = {'queries': [{'query': keyword, 'limit': limit}]}
+            wr_result = ws.search(queries, write_report=True)
+            wiki_report_path = wr_result.get('wiki_report_path', 'N/A')
+        except Exception as e:
+            wiki_report_path = f"failed: {e}"
+
+    # v6.0.6+：CLI 输出包含 fallback_used 信息（audit #3）
     output = {
         'success': True,
-        'papers_count': len(result.get('papers', [])),
-        'wiki_report_path': result.get('wiki_report_path', 'N/A (dry-run)'),
+        'papers_count': len(all_papers),
+        'keyword': keyword,
+        'primary_engine': meta.get('primary_engine', 'unknown'),
+        'fallback_engine': meta.get('fallback_engine', 'unknown'),
+        'fallback_used': meta.get('fallback_used'),  # None | 'CNKI' | 'Semantic Scholar' | 'Google Scholar' | 'arXiv'
+        'fallback_reason': meta.get('fallback_reason'),  # None | str
+        'fallback_count': meta.get('fallback_count', 0),
+        'wiki_report_path': wiki_report_path,
         'wiki_topic': topic,
     }
+    # 主动提示 fallback（用户视角可见）
+    if output['fallback_used']:
+        print(
+            f"⚠️ fallback 已触发：{output['primary_engine']} 0 命中 → 切到 {output['fallback_used']}（{output['fallback_reason']}）",
+            file=sys.stderr,
+        )
     print(json.dumps(output, ensure_ascii=False, indent=2))
     return 0
 def _run_summarize(args) -> int:
     import json
     from scripts.summarize.Summarizer import Summarizer as WikiSummesizer
     summarizer = WikiSummesizer()
+    pdf_path = getattr(args, 'pdf_path', None)
+    do_ocr = getattr(args, 'ocr', False)
     if getattr(args, 'source_id', None):
-        result = summarizer.summarize(args.source_id, args.output)
+        result = summarizer.summarize(args.source_id, args.output, pdf_path=pdf_path, do_ocr=do_ocr)
     else:
         result = {"success": False, "error": "需要 --source-id 参数（v5.16.0 wiki 版本）"}
     print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -207,12 +281,50 @@ def _run_manage(args) -> int:
         result = m.filter(conditions)
         print(json.dumps({"success": True, "count": len(result), "sources": result}, ensure_ascii=False, indent=2))
     elif args.manage_cmd in ("info", "stats"):
-        stats = m.statistics()
-        print(json.dumps({"success": True, "stats": stats}, ensure_ascii=False, indent=2))
+        # v6.0.6+：manage info --source-id 返回单篇 source 详情；不传则退化为 stats（audit #2）
+        source_id = getattr(args, "source_id", None)
+        if args.manage_cmd == "info" and source_id:
+            # 单篇 source 详情（走 list_sources + 匹配 + 读 frontmatter）
+            try:
+                sources = m.list_sources()
+                match = next((s for s in sources if s.get("id") == source_id or s.get("name") == source_id), None)
+                if not match:
+                    print(json.dumps({"success": False, "error": f"未找到 source: {source_id}"}, ensure_ascii=False, indent=2))
+                    return 1
+                # 读完整 frontmatter（不只是 list_sources 的摘要）
+                from pathlib import Path
+                fpath = Path(match.get("file", ""))
+                wiki_root = Path("~/.openclaw/wiki").expanduser()
+                full_path = (wiki_root / fpath) if not fpath.is_absolute() else fpath
+                if not full_path.exists():
+                    full_path = Path("/root/.openclaw/wiki") / fpath
+                detail = dict(match)
+                if full_path.exists():
+                    content = full_path.read_text(encoding="utf-8")
+                    import re as _re
+                    yaml_match = _re.match(r'^---\s*\n(.*?)\n---', content, _re.DOTALL)
+                    if yaml_match:
+                        # 保留完整 frontmatter（agent 可看全字段）
+                        detail["frontmatter_raw"] = yaml_match.group(1).strip()
+                    detail["file_path"] = str(full_path)
+                print(json.dumps({"success": True, "source": detail}, ensure_ascii=False, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": f"查询失败: {e}"}, ensure_ascii=False, indent=2))
+                return 1
+        else:
+            stats = m.statistics()
+            print(json.dumps({"success": True, "stats": stats}, ensure_ascii=False, indent=2))
     return 0
 
 
 def _run_synthesize(args) -> int:
+    """synthesize 子命令（v6.0.5：仅保留 extract，check/fix 已删除）
+
+    check/fix 子命令在 v5.16.0 范围外未迁移到 wiki，v6.0.4 文档层删除后
+    argparse 残留仍会接受参数。v6.0.5 彻底从 argparse + handler 删掉——
+    调用 synthesize check/fix 会直接走 argparse 的 unrecognized arguments 路径。
+    APA 7 引用核验请走 references/apa7-standards.md（agent 手动跑）。
+    """
     import json
     from scripts.synthesize.Synthesizer import Synthesizer
     if args.synth_cmd == "extract":
@@ -221,12 +333,6 @@ def _run_synthesize(args) -> int:
             result = s.extract_notes(args.source_id, args.output)
         else:
             result = {"success": False, "error": "需要 source_id 参数（v5.16.0 wiki 版本）"}
-        print(json.dumps(result, ensure_ascii=False, indent=2))
-    elif args.synth_cmd == "check":
-        result = {"success": False, "error": "check_references 未迁移到 wiki（v5.16.0 范围外）"}
-        print(json.dumps(result, ensure_ascii=False, indent=2))
-    elif args.synth_cmd == "fix":
-        result = {"success": False, "error": "fix_references 未迁移到 wiki（v5.16.0 范围外）"}
         print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 
@@ -263,6 +369,29 @@ def _run_download(args) -> int:
     return 0
 
 
+def _run_upload(args) -> int:
+    """upload 子命令（v6.0.3+）：本地 PDF 反向上传（download 的反向对偶）"""
+    import json
+    from scripts.upload.Uploader import Uploader
+    if not args.doi and not args.slug:
+        print(json.dumps({"success": False, "error": "需要 --doi 或 --slug 其中之一（agent 自決唯一标识）"}, ensure_ascii=False, indent=2))
+        return 1
+    tags = [t.strip() for t in (args.tags or "").split(",") if t.strip()]
+    u = Uploader()
+    result = u.run(
+        pdf_path=args.pdf_path,
+        doi=args.doi,
+        slug=args.slug,
+        title=args.title,
+        tags=tags or None,
+        no_zotero=args.no_zotero,
+        no_webdav=args.no_webdav,
+        no_wiki=args.no_wiki,
+    )
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if result.get("success") else 1
+
+
 def _run_maintain(args) -> int:
     """maintain 子命令（v5.20.0 新增）：WikiZoteroManager 一致性检查入口"""
     import json
@@ -278,10 +407,12 @@ def _run_maintain(args) -> int:
             "missing_key_count": len(result.get("missing_key", [])),
             "zotero_not_found_count": len(result.get("zotero_not_found", [])),
             "webdav_missing_count": len(result.get("webdav_missing", [])),
+            "non_academic_count": len(result.get("non_academic", [])),
             "ok_sources": [s["name"] for s in result.get("ok", [])],
             "missing_key_sources": [s["name"] for s in result.get("missing_key", [])],
             "zotero_not_found": result.get("zotero_not_found", []),
             "webdav_missing": result.get("webdav_missing", []),
+            "non_academic_sources": [s["name"] for s in result.get("non_academic", [])],
         }
         print(json.dumps(output, ensure_ascii=False, indent=2))
 
@@ -307,8 +438,13 @@ def _run_maintain(args) -> int:
             "missing_key_count": len(drift.get("missing_key", [])),
             "zotero_not_found_count": len(drift.get("zotero_not_found", [])),
             "webdav_missing_count": len(drift.get("webdav_missing", [])),
+            "non_academic_count": len(drift.get("non_academic", [])),
         }
         print(json.dumps(output, ensure_ascii=False, indent=2))
+
+    elif args.maintain_cmd == "drift-graph":
+        mode = "full" if getattr(args, "full", False) else "light"
+        print(m.generate_drift_graph(mode=mode))
 
     return 0
 

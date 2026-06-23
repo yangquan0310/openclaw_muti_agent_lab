@@ -25,7 +25,7 @@
         "primary": "minimax/MiniMax-M3"
       },
       "pdfModel": {
-        "primary": "minimax/MiniMax-M3"
+        "primary": "MiniMax-M3"
       },
       "imageModel": {
         "primary": "minimax/MiniMax-VL-01"
@@ -339,7 +339,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.6.9",
-    "lastTouchedAt": "2026-06-23T08:20:04.344Z"
+    "lastTouchedAt": "2026-06-23T10:22:35.764Z"
   },
   "browser": {
     "enabled": true,
@@ -833,7 +833,6 @@
       }
     },
     "allow": [
-      "active-memory",
       "browser",
       "deepseek",
       "document-extract",

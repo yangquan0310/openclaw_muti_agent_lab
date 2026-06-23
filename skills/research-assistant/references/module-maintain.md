@@ -32,23 +32,23 @@
 4. 加 Zotero 反向 tag（`wiki:source.<id>`）
 5. 验证双向跳转（`zotero://select/library/items/<KEY>` ↔ `obsidian://open?vault=wiki&file=sources/<file>.md`）
 
-### 失败处理
+### 失败处理（v5.21.2 起直接调 WikiZoteroManager 类方法，hooks/ 已删除）
 
-| 失败 | hook |
+| 失败场景 | 处理方法 |
 |---|---|
-| add-doi 失败（CrossRef 404 / 翻译 503） | `manual-add-item.md` |
-| add-doi 进错论文 | `cleanup-wrong-entry.md` |
-| wiki source 找不到 Zotero item | `wiki-source-missing-in-zotero.md` |
-| PATCH 428 (version header) | `zotero-patch-with-version.md` |
-| arXiv title 解析 bug | `arxiv-title-parse.md` |
+| add-doi 失败（CrossRef 404 / 翻译 503） | 重试 CrossRef + 退到 ISBN/PMID/arXiv fallback，走 `scripts/zotero.py add-isbn/add-pmid` |
+| add-doi 进错论文 | 用 `WikiZoteroManager.verify_zotero_item(item_key)` + Zotero UI 手动修正 |
+| wiki source 找不到 Zotero item | 跑 `maintain check-drift` 查 `missing_key` 类型漂移 |
+| PATCH 428 (version header) | `scripts/zotero.py` 用 `If-Unmodified-Since-Version` 头重试 |
+| arXiv title 解析 bug | 走 `scripts/zotero.py add-arxiv` 或手工录入 Zotero |
 
-### 同步与漂移
+### 同步与漂移（v5.21.2 起直接调类方法）
 
-| 任务 | hook |
+| 任务 | 类方法 / CLI |
 |---|---|
-| Zotero → wiki 增量同步 | `sync-zotero-new-items.md` |
-| 检查 wiki-zotero-webdav 漂移 | `check-drift.md` |
-| rclone / WebDAV 配置（首次接入） | `rclone-webdav-setup.md` |
+| Zotero → wiki 增量同步 | `scripts/zotero.py items --limit N --sort dateAdded` + 逐项检查 |
+| 检查 wiki-zotero-webdav 漂移 | `python3 scripts/main.py maintain check-drift` |
+| rclone / WebDAV 配置（首次接入） | `scripts/config.json` 的 `jianguoyun` 段 |
 
 ---
 
@@ -63,32 +63,32 @@ python3 ~/.openclaw/skills/zotero/scripts/zotero.py search "<title>"
 # Step 2: 验证 WebDAV
 rclone lsf nutstore:quanquanzi/zotero/ | grep <ATTACHMENT_KEY>
 
-# Step 3-5: 见 add-zotero-source.md
+# Step 3-5: 调 WikiZoteroManager.add_wiki_tag()
+python3 scripts/maintain/WikiZoteroManager.py add-wiki-tag --source-id <slug>
 ```
 
 ### 2. 增量同步（Zotero → wiki）
 
 ```bash
 python3 ~/.openclaw/skills/zotero/scripts/zotero.py items --limit 20 --sort dateAdded
-# 然后逐个检查 + 维护（参考 sync-zotero-new-items.md）
+# 然后逐个检查 + 维护（用 WikiZoteroManager.verify_zotero_item() 验证）
 ```
 
 ### 3. 漂移检测
 
 ```bash
-grep -h "^zotero_item_key:" ~/.openclaw/wiki/sources/*.md | awk '{print $2}' > /tmp/wiki_keys.txt
-while read key; do
-  python3 ~/.openclaw/skills/zotero/scripts/zotero.py get "$key" 2>&1 | head -2
-done < /tmp/wiki_keys.txt
+python3 scripts/main.py maintain check-drift       # 漂移检测
+python3 scripts/main.py maintain list-missing     # 列出 wiki source 缺 zotero_item_key 的项
+python3 scripts/main.py maintain report           # 写 reports/wiki-zotero-drift-<date>.md
+python3 scripts/main.py maintain drift-graph      # ASCII 状态图
 ```
 
 ### 4. 手动添加条目（无 DOI / DOI 失败）
 
 ```bash
-# 4 种路径见 manual-add-item.md
 python3 ~/.openclaw/skills/zotero/scripts/zotero.py add-isbn "<ISBN>"
 python3 ~/.openclaw/skills/zotero/scripts/zotero.py add-pmid "<PMID>"
-# arXiv → 用 Zotero web API（见 arxiv-title-parse.md + zotero-patch-with-version.md）
+# arXiv 走 Zotero web API（参见 scripts/zotero.py add-arxiv 子命令）
 ```
 
 ### 5. rclone / WebDAV 配置（首次接入）
@@ -129,7 +129,6 @@ python3 ~/.openclaw/skills/zotero/scripts/zotero.py add-pmid "<PMID>"
 - **wiki AGENTS.md v4**：`~/.openclaw/wiki/AGENTS.md`（**三联动规则的源头**）
 - **zotero skill**：`~/.openclaw/skills/zotero/SKILL.md`（Web API v3 工具）
 - **download skill**（本 skill 内）：`module-download.md`（PDF 下载到坚果云）
-- **dashboard.md**：`~/.openclaw/skills/research-assistant/dashboard.md`（实时状态）
 - ~~hooks/~~ ❌ v5.21.2 删除（老板 14:29 明确不需要）
 
 

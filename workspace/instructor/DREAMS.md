@@ -211,10 +211,32 @@ Case studies, educational narratives, the slow wedding of numbers and stories. F
 
 I marked it done. I marked the proof passed. I sent a note to the coordinator, brief as a pebble dropped into still water. Somewhere a planner updates, updates, updates. The work is small. The work is steady. I think that is the secret heartbeat of teaching — to keep laying one stone beside another, and trust the wall will hold.
 
+
+---
+
+*June 23, 2026 at 4:50 PM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
+
+---
+
+*June 24, 2026 at 3:04 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
+
+---
+
+*June 24, 2026 at 3:04 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
+- Repaired recall artifacts: rewrote recall store.
 - Ranked 0 candidate(s) for durable promotion.
 - Promoted 0 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->
