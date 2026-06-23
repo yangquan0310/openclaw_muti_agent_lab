@@ -74,6 +74,9 @@ __pycache__/
 *.db-wal
 *.sqlite-shm
 *.sqlite-wal
+*.sqlite-shm.shadow
+*.sqlite-wal.shadow
+*.sqlite.shadow
 
 # ============================================
 # 允许需要备份的文件

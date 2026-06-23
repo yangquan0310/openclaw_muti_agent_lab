@@ -680,6 +680,17 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.10 (2026-06-23 16:40)
+- **密钥核查**：扫描所有待提交文件（openclaw.json meta / wiki/index.md 重构 / instructor dreams events.jsonl 新增2条 / state/openclaw.sqlite / 6 个迁移至 temp/ 的状态文件），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮 16:40 自动推送时再次执行清理——6 个 agent (instructor/mathematician/physicist/programmer/psychologist/steward) 运行时状态文件 `openclaw-workspace-state.json` 全部迁移至各自 `temp/` 目录
+- **workspace/instructor 一次性任务文件清理**：王雅欣毕导讲稿任务的一次性中间文件（inbound/王雅欣-毕业论文工作手册.png + output/01-6章具体分析.md、02-PPT分页设计.md、03-开题答辩讲稿.md、教学版/）整体迁移至 `workspace/instructor/temp/inbound-2026-06-23-王雅欣毕导讲稿/` 与 `workspace/instructor/temp/output-2026-06-23-王雅欣毕导讲稿/`，保留可追溯性
+- **.gitignore 补充**：新增 `*.sqlite-shm.shadow` / `*.sqlite-wal.shadow` / `*.sqlite.shadow` 三条规则，覆盖 OpenClaw sqlite 备份机制产生的 shadow 快照文件，避免误入仓库
+- **openclaw.json meta 更新**：`meta.lastTouchedAt` 2026-06-21T18:29 → 2026-06-23T08:20 UTC（自动同步触发的元数据更新）；plugins.active-memory 配置 enabled 由 true 切换为 false（按运行时实际状态同步）
+- **wiki/index.md 重构**：移除 6 行目录统计表（raw/sources/syntheses/concepts/entities/reports 的数量列），与 plugin 实际索引同步（统计数会随 plugin 索引变动，wiki/index.md 不再硬编码计数，避免与运行时数据不一致）
+- **梦境记忆同步**：workspace/instructor/memory/.dreams/events.jsonl 新增 2 条 `memory.recall.skipped` 事件（主题：王雅欣/instructor 文字内容发送相关查询，2026-06-23 01:06 UTC）
+- **state/openclaw.sqlite 数据库变化**：日常业务数据持久化（23,744,512 字节，本轮 mtime 更新 + 体积较 4.3.9 减少 1,605,632 字节，因 2026-06-22 老数据合并完成）
+- **Git自动推送**：每日凌晨 04:00 + 重要变更后 16:40 同步执行推送至 main 分支（development 已废弃；本轮由 cron 触发）
+
 ### 版本 4.3.9 (2026-06-23)
 - **密钥核查**：扫描所有待提交文件（state/openclaw.sqlite、workspace/steward/memory/.dreams/events.jsonl、2 篇 wiki syntheses、1 篇 psychologist 会话 memory、6 个迁移至 temp/ 的状态文件），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮完成全部 6 个 agent（auditor/mathematician/physicist/programmer/psychologist/steward）运行时状态文件 `openclaw-workspace-state.json` 迁移至各自 `temp/` 目录，至此所有 agent 工作空间根目录均无运行时状态文件残留
