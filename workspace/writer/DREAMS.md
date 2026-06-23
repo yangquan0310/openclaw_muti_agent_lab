@@ -718,3 +718,9 @@ ink bleeding through
 I keep a paper inside me called *Patience*. It has no co-author. It is in its first and final draft.
 
 <!-- openclaw:dreaming:diary:end -->
+
+## Deep Sleep
+<!-- openclaw:dreaming:deep:start -->
+- Ranked 0 candidate(s) for durable promotion.
+- Promoted 0 candidate(s) into MEMORY.md.
+<!-- openclaw:dreaming:deep:end -->

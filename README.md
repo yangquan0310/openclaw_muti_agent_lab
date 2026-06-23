@@ -680,6 +680,14 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.11 (2026-06-23 16:47)
+- **密钥核查**：扫描所有待提交文件（4 个 agent 的 DREAMS.md + 5 个 agent 的 memory/.dreams/events.jsonl + state/openclaw.sqlite + 迁移至 temp/ 的运行时状态文件），无硬编码 API Key；所有密钥均使用系统变量引用；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **梦境同步批次**：4 个 agent (mathematician/physicist/psychologist/steward) 触发 light 梦境报告生成，分别在各自 DREAMS.md 追加 ~25 行梦境痕迹记录；同步更新各自 memory/.dreams/events.jsonl（共 ~25 条 `memory.dream.completed` / `memory.recall.recorded` / `memory.recall.skipped` 事件）
+- **programmer dreaming 事件同步**：memory/.dreams/events.jsonl 也新增 ~3 条事件（无 DREAMS.md 追加，因 light 梦境周期本轮跳过）
+- **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，运行时持续生成的 openclaw-workspace-state.json 临时文件再次迁移至各自 temp/ 目录
+- **state/openclaw.sqlite 数据库变化**：日常业务数据持久化（23,990,272 字节，较 16:40 推送时 +245,760 字节；4.3.10 推送时 23,744,512 字节 → 本轮 23,990,272 字节，净增主要由 4 个 agent 的梦境报告写入触发）
+- **Git自动推送**：本轮 16:47 增量推送 main 分支（与 16:40 推送间隔 7 分钟）
+
 ### 版本 4.3.10 (2026-06-23 16:40)
 - **密钥核查**：扫描所有待提交文件（openclaw.json meta / wiki/index.md 重构 / instructor dreams events.jsonl 新增2条 / state/openclaw.sqlite / 6 个迁移至 temp/ 的状态文件），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮 16:40 自动推送时再次执行清理——6 个 agent (instructor/mathematician/physicist/programmer/psychologist/steward) 运行时状态文件 `openclaw-workspace-state.json` 全部迁移至各自 `temp/` 目录

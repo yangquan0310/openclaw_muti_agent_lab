@@ -758,3 +758,9 @@ P0 first, the manuscript sighed. APA ghosts must be laid to rest.
 Lines 90 and 143 lay bare as fields before rain, patient, waiting.
 
 <!-- openclaw:dreaming:diary:end -->
+
+## Deep Sleep
+<!-- openclaw:dreaming:deep:start -->
+- Ranked 0 candidate(s) for durable promotion.
+- Promoted 0 candidate(s) into MEMORY.md.
+<!-- openclaw:dreaming:deep:end -->
