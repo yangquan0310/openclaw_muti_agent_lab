@@ -680,6 +680,14 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.9 (2026-06-23)
+- **密钥核查**：扫描所有待提交文件（state/openclaw.sqlite、workspace/steward/memory/.dreams/events.jsonl、2 篇 wiki syntheses、1 篇 psychologist 会话 memory、6 个迁移至 temp/ 的状态文件），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮完成全部 6 个 agent（auditor/mathematician/physicist/programmer/psychologist/steward）运行时状态文件 `openclaw-workspace-state.json` 迁移至各自 `temp/` 目录，至此所有 agent 工作空间根目录均无运行时状态文件残留
+- **梦境记忆同步**：workspace/steward/memory/.dreams/events.jsonl 新增 6 条 `memory.recall.skipped` 事件（涉及 research-assistant 技能能力检索 / 杨权身份核工程背景 / OpenClaw T042 版本查询等主题）
+- **3 个新文件待入库**：2 篇 wiki/syntheses 重新生成（Buzsáki 2002 海马θ 的 summarize/extract，时间戳更新至 16:10/16:13）+ 1 篇 psychologist 会话 memory（2026-06-22 22:52）
+- **state/openclaw.sqlite 数据库变化**：日常业务数据持久化，体积稳定（25,350,144 字节），仅 mtime 更新无实质内容差异
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支（development 已废弃）
+
 ### 版本 4.3.8 (2026-06-22)
 - **research-assistant 升级 v5.20.0 → v5.21.0**：全面补充 9 项薄弱环节，融合 ARS / Nature-skills / PaperSpine 三家长处。新增文档：
   - `references/prisma-systematic-review.md` — PRISMA 9 阶段系统综述 SOP (ARS)
