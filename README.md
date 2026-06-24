@@ -680,6 +680,16 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.13 (2026-06-25 04:00)
+- **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 9 个 agent 的 memory/.dreams/events.jsonl + steward/.clawhub/lock.json + 新增 wiki/reports/ 2 篇 + 新 skill ui-ux-for-openclaw 全套 + state/openclaw.sqlite），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **新 skill 入库 `ui-ux-for-openclaw` v1.0.2**（`workspace/programmer/.agents/skills/ui-ux-for-openclaw/`）：来自 [heyanming/clawhub](https://clawhub.ai/user/heyanming) 的 OpenClaw-native 端口版 UI/UX Pro Max 技能（原始仓库 [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)），零依赖离线推理引擎，包含 67 种 UI 风格 / 96 种配色 / 57 种字体配对；通过 `SKILL.md` 强制 agent 在生成任何 UI/前端代码前先用 `python3 scripts/search.py` 评估；要求 `tools.exec.safeBins` 包含 `python3`；MIT-0 协议
+- **steward .clawhub/lock.json 清理**：移除 `skill2cleaner` v1.0.0 与 `taste-skill` v1.6.1（已不再使用），保留 `jina-ai` v1.0.6 / `minimax-pdf` v1.0.0 / `minimax-docx` v1.0.0 / `minimax-xlsx` v1.0.0 四个常驻技能
+- **新文件入库**：①`wiki/reports/2026-06-24-agent-memory.md`（Agent 记忆日报，cron:b6a6b07d 子任务产出，arXiv cs.AI/cs.CL/cs.MA 2026-06-23 共 847 篇新论文中筛选 agent × memory 主题）②`wiki/reports/2026-06-24-伊辛模型最新应用.md`（数学家领域周报，伊辛模型近期跨学科应用综述）③`workspace/programmer/.agents/skills/ui-ux-for-openclaw/` 全套（SKILL.md / skill-card.md / README.md / _meta.json / scripts/{core,design_system,search}.py / data/ + .clawhub/）
+- **工作空间核查 + 清理**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮 5 个 agent (mathematician/physicist/programmer/psychologist/steward) 运行时状态文件 `openclaw-workspace-state.json` 整体迁移至各自 `workspace/<agent>/temp/cleanup-2026-06-25/openclaw-workspace-state.json`（与 4.3.10 / 4.3.12 推送模式一致）
+- **梦境记忆批次同步**：10 个 agent（auditor/instructor/mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer）的 DREAMS.md 与 memory/.dreams/events.jsonl 同步更新（~150 行 DREAMS.md 追加 + ~30 条 events.jsonl 梦境/召回事件），覆盖 dreaming 周期 / workboard 调度 / 新 skill 安装等主题
+- **state/openclaw.sqlite 数据库变化**：日常业务数据持久化（25,341,952 字节，较 4.3.12 推送时 25,350,144 字节净减 8,192 字节；mtime 跨日更新，元数据层面有微小调整）
+- **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
+
 ### 版本 4.3.12 (2026-06-24 04:03)
 - **密钥核查**：扫描所有待提交文件（research-assistant 技能全套 v6.0.6 代码 + 17 个 wiki/syntheses 工作日志/审计 + 10 个 agent 的 DREAMS.md 与 events.jsonl + state/openclaw.sqlite + openclaw.json），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret`/`credentials.json` 已在 `.gitignore` 排除范围
 - **research-assistant 技能大版本迭代 v5.21.2 → v6.0.6**（同日内三连发：v6.0.4 文档修复 / v6.0.5 代码修复 / v6.0.6 代码 polish）：
