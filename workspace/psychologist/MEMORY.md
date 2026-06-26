@@ -66,3 +66,12 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-15.md:54:85 -->
 - **树状结构**：严格按"问题演进"四层展开（最早提出→质疑修正→补充发展→最新进展） - **Git管理版本**：删除temp/draft/归档逻辑 - **Synthesizer职责**：仅extract_notes+check_references，不写综述 - **Manager职责**：仅管理JSON，不导出结构化笔记 - **英文标题命名指南**：Guide_to_Writing_a_Literature_Review.md - **5篇无摘要删除**：用户决定直接删除 ## 技术限制与问题 - **沙箱限制**：仅能访问 ~/.openclaw/workspace/psychologist/ - **子代理中断**：gateway服务重启导致子代理反复失败 - **Kimi search不可用**：provider配置问题，tavily缺少API key - **知乎/百度访问受限**：403错误和验证码 ## 核心文献 - Kwan 2010：治疗偏好首次系统研究（205引用） - Cooper & Norcross 2015：C-NIP量表开发 - Hou 2020/2024：CFPPS量表开发与青少年验证 - Vîslă 2018/2021：治疗期待机制研究 - Williams 2016：14,587患者全国调查 ## 知识库状态 - 总文献：707篇 - "治疗期待"主题：132篇（全部结构化） - 核心文献：已总结并纳入研究现状... [score=0.873 recalls=5 avg=0.493 source=memory/2026-05-15.md:54-85]
+
+## Promoted From Short-Term Memory (2026-06-26)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:18:18 -->
+- 任务要求: 按主题分类整理，每条文献附简要评述 [score=0.857 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:18-18]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:3:5 -->
+- Session: 2026-06-22 22:52:45 GMT+8: **Session Key**: agent:psychologist:corn:psychologist的定时任务; **Session ID**: a834e3bf-b60a-4767-85a1-e29e5482beba; **Source**: webchat [score=0.857 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:9:9 -->
+- Conversation Summary: user: [cron:aba0ae04-d41a-434f-9071-9d9a0f2f261e 日报：数字化存储与自传体记忆] 你是学术研究助手。请完成以下任务： [score=0.857 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:9-9]

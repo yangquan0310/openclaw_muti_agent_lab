@@ -14,7 +14,7 @@
 - 但下次 sync 会用模板 5 节结构**替换** GENERATED 区间 = 老项目升级
 
 用法：
-  python3 mark_old_projects_generated.py [--projects-dir /data/disk/OneDrive/Applications/openclaw repository] [--dry-run]
+  python3 mark_old_projects_generated.py [--projects-dir ~/OneDrive/Applications/openclaw repository] [--dry-run]
 """
 
 import os
@@ -122,8 +122,8 @@ def main():
     )
     parser.add_argument(
         '--projects-dir',
-        default='/data/disk/OneDrive/Applications/openclaw repository',
-        help='项目根目录（默认: /data/disk/OneDrive/Applications/openclaw repository）'
+        default='~/OneDrive/Applications/openclaw repository',
+        help='项目根目录（默认: ~/OneDrive/Applications/openclaw repository）'
     )
     parser.add_argument(
         '--dry-run',

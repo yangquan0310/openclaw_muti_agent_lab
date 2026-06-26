@@ -680,6 +680,16 @@ openclaw agents restart <agent-name>
 
 ## 📝 更新历史
 
+### 版本 4.3.14 (2026-06-26 04:00)
+- **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 9 个 agent 的 memory/.dreams/events.jsonl + steward/.agents/skills/manager/ 路径简化 5 处 + 2 个 agent 的 MEMORY.md promotion 块 + 2 篇 wiki/reports/ 日报 + state/openclaw.sqlite），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **仓库路径标准化（`/data/disk/OneDrive/...` → `~/OneDrive/...`）**：将 steward manager 技能中 5 处硬编码的绝对路径 `/data/disk/OneDrive/Applications/openclaw repository` 统一改为 `~/OneDrive/Applications/openclaw repository`，使用 `os.path.expanduser()` 或 shell `~` 展开。涉及文件：`workspace/steward/.agents/skills/manager/scripts/maintainer/{BaseMaintainer,Maintainer}.py`、`workspace/steward/.agents/skills/manager/scripts/mark_old_projects_generated.py`、`workspace/steward/.agents/skills/manager/assets/project-level/AGENTS.template`、`workspace/steward/.agents/skills/manager/references/task-flow-guide.md`、`workspace/steward/MEMORY.md`、`workspace/steward/TOOLS.md`（共 7 处路径引用）
+- **工作空间核查 + 清理**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮 6 个 agent (mathematician/physicist/programmer/psychologist/steward/writer) 运行时状态文件 `openclaw-workspace-state.json` 整体迁移至 `temp/cleanup-2026-06-26/<agent>-openclaw-workspace-state.json`（与 4.3.9/4.3.10/4.3.12/4.3.13 推送模式一致）；空目录 `workspace/steward/references/hooks/`（残留空钩子目录）与 `workspace/skills/`（残留空公共技能目录）已清理
+- **梦境记忆批次同步**：10 个 agent（auditor/instructor/mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer）的 DREAMS.md 与 memory/.dreams/events.jsonl 同步更新（~150 行 DREAMS.md 追加 + ~30 条 events.jsonl 梦境/召回事件），覆盖 dreaming 周期（light/deep/rem 三个 phase 完成事件）/ workboard 调度 / minimax-cli 修正等主题；steward 梦境条目「明白, 明白, 明白」描述 minimax-cli 路径修正
+- **MEMORY.md promotion 同步**：programmer MEMORY.md 新增 `## Promoted From Short-Term Memory (2026-06-26)` 块（Anthropic 论文冲突处理评估协议 / 评估函数模板 / follow_new_fact_rate 等 3 条）；psychologist MEMORY.md 新增 `## Promoted From Short-Term Memory (2026-06-26)` 块（2026-06-22 22:52 会话记录 / 任务要求按主题分类 2 条）
+- **wiki/reports/ 增量入库**：①`wiki/reports/2026-06-25-认知计算日报.md`（数学家 cron:ccdb4a42 产出，arXiv 552 篇去重后入选 10 篇）②`wiki/reports/2026-06-25-伊辛模型最新应用.md`（物理学家 cron 产出，伊辛模型跨学科应用综述）——上轮 04:00 推送遗漏，本轮补入库
+- **state/openclaw.sqlite 数据库变化**：日常业务数据持久化（25,833,472 字节，较 4.3.13 推送时 25,341,952 字节净增 491,520 字节；mtime 跨日更新 + 业务数据累积）
+- **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
+
 ### 版本 4.3.13 (2026-06-25 04:00)
 - **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 9 个 agent 的 memory/.dreams/events.jsonl + steward/.clawhub/lock.json + 新增 wiki/reports/ 2 篇 + 新 skill ui-ux-for-openclaw 全套 + state/openclaw.sqlite），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **新 skill 入库 `ui-ux-for-openclaw` v1.0.2**（`workspace/programmer/.agents/skills/ui-ux-for-openclaw/`）：来自 [heyanming/clawhub](https://clawhub.ai/user/heyanming) 的 OpenClaw-native 端口版 UI/UX Pro Max 技能（原始仓库 [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)），零依赖离线推理引擎，包含 67 种 UI 风格 / 96 种配色 / 57 种字体配对；通过 `SKILL.md` 强制 agent 在生成任何 UI/前端代码前先用 `python3 scripts/search.py` 评估；要求 `tools.exec.safeBins` 包含 `python3`；MIT-0 协议
@@ -1234,7 +1244,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-22 04:00:00**
+**最后更新: 2026-06-26 04:00:00**
 **系统版本**: OpenClaw 2026.6.9
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版

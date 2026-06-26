@@ -121,3 +121,12 @@
 - 新框架规范: **SKILL.md 更新规范**： [score=0.859 recalls=0 avg=0.620 source=memory/2026-05-25.md:33-33]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-25.md:36:36 -->
 - 新框架规范: 引用新框架的 ch* 文件 [score=0.859 recalls=0 avg=0.620 source=memory/2026-05-25.md:36-36]
+
+## Promoted From Short-Term Memory (2026-06-26)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:103:104 -->
+- Anthropic 论文配套代码在 Anthropic 仓库: ③ **评估协议**： ```python [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:103-104]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:106:107 -->
+- 评估函数模板: def evaluate_conflict_handling(model, benchmark): metrics = { [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:106-107]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:109:109 -->
+- 遵循新输入的能力: "新事实遵从率": follow_new_fact_rate, [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:109-109]
