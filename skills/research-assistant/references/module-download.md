@@ -1,200 +1,117 @@
-# 文献下载模块使用指南
+# module-download.md（v7.0.0，含 v6.0.7 SciHub 整合）
 
-> **2026-06-12 实战沉淀**。`download` 模块从 Zotero 库 → 坚果云 WebDAV → wiki raw 自动下载并归档 PDF。
-> **核心设计**：DOI / Zotero key → 找元数据 → 下载 PDF → 归档到 wiki raw。
+> download 模块：PDF 下载
+> - **默认**（`--source zotero`）：Zotero → WebDAV → wiki raw（论文必须先在 Zotero 库——避免乱下载到老板的坚果云）
+> - **可选**（`--source scihub`）：SciHub → wiki/raw/papers（绕过付费墙，不动老板坚果云，仅落本地归档）
 
----
+## 类清单
 
-## 三步流水线
+- `Downloader` (ABC) — 抽象基类
+- `ZoteroJianguoyunDownloader` — 老板专属 Zotero + 坚果云实现（`--source zotero`）
+- `SciHubDownloader` — SciHub 绕过付费墙实现（`--source scihub`），零外部依赖 + ALTCHA 验证码处理
+- `PaperMetadata` (dataclass) — 元数据 + 归档文件名生成
 
-```
-research-assistant download --doi 10.1177/...        (或 --zotero-key R8MVF42R)
-                          ↓
-                1. find_paper: Zotero API 查元数据
-                          ↓
-                2. download_pdf: 坚果云 WebDAV GET PDF
-                          ↓
-                3. archive_to_wiki: 按 YYYY-MM-DD_作者_关键词_期刊.pdf 归档
-```
+## 类 / 方法职责
 
----
+| 类 | 方法 | 作用 |
+|----|------|------|
+| `Downloader` (ABC) | `find(identifier) -> PaperMetadata` | abstract |
+| `Downloader` (ABC) | `pull(meta, dest_dir) -> Path` | abstract |
+| `Downloader` (ABC) | `save(pdf, meta, dest_dir) -> Path` | abstract |
+| `Downloader` | `fetch(identifier, dest_dir, archive_dir) -> Path` | 主入口：find + pull + save（幂等） |
 
-## YAML 头示例（apaquarto-pdf）
-
-apaquarto-pdf 跟下载**不相关**——apaquarto 是**排版**模块。下载是**CLI 命令**。
-
----
-
-## CLI 完整命令
-
-### 基本用法
+## CLI 用法
 
 ```bash
-# 按 DOI 下载
-research-assistant download --doi 10.1177/0956797617694868
+# 默认走 Zotero + 坚果云（论文必须先在 Zotero 库）
+python3 scripts/main.py download --doi 10.1177/0956797617694868
+python3 scripts/main.py download --zotero-key BNA4WATT
 
-# 按 Zotero item key 下载
-research-assistant download --zotero-key R8MVF42R
+# 走 SciHub（绕过付费墙，仅落 wiki/raw/papers，不写 Zotero / 不动坚果云）
+python3 scripts/main.py download --doi 10.1177/0956797617694868 --source scihub
 
-# 指定 wiki raw 目录
-research-assistant download --doi 10.1177/0956797617694868 --wiki-raw-dir /path/to/wiki/raw/papers
-
-# 指定临时下载目录
-research-assistant download --doi 10.1177/0956797617694868 --tmp-dir /tmp/zotero_dl
+# 自定义归档目录
+python3 scripts/main.py download --doi 10.xxx --source scihub --archive-dir /data/papers
 ```
 
-### 参数
+## 两个下载源的取舍
 
-| 参数 | 必填 | 默认值 | 说明 |
-|------|------|--------|------|
-| `--doi DOI` | 二选一 | — | DOI（如 `10.1177/0956797617694868`，以 `10.` 开头）|
-| `--zotero-key KEY` | 二选一 | — | Zotero item key（8 字符 alnum，如 `R8MVF42R`）|
-| `--wiki-raw-dir PATH` | ❌ | `/root/.openclaw/wiki/raw/papers` | wiki raw 论文归档目录 |
-| `--tmp-dir PATH` | ❌ | `/tmp/zotero_dl` | 临时下载目录（解压 WebDAV .zip）|
+| 维度 | `--source zotero`（默认） | `--source scihub` |
+|------|---------------------------|---------------------|
+| 论文是否需先在 Zotero | ✅ 是（设计原则：避免乱下载到老板的坚果云） | ❌ 否 |
+| 输出位置 | Zotero 库 + 坚果云 WebDAV + wiki raw（**三联动**） | 仅 wiki/raw/papers（不动 Zotero / WebDAV） |
+| 元数据来源 | Zotero API（含 MD5 / 附件 key） | SciHub 页面 `citation_*` meta（轻量，缺 MD5） |
+| 凭据要求 | `ZOTERO_*` + `JIANGUOYUN_PASSWORD` | 无 |
+| 镜像健壮性 | WebDAV 自动重试（429/503 退避） | 6 镜像 fallback + ALTCHA 验证码自动解 + 状态语义（FOUND/NOT_FOUND/OA_LINK/MIRROR_ERROR）|
+| 适用场景 | 已入 Zotero 库的论文 | Zotero 里没有、临时要读全文的论文 |
 
-### 互斥参数
+## v6.0.7 SciHub 整合说明
 
-`--doi` 和 `--zotero-key` **二选一**（mutually_exclusive_group）。
+- **整合源**：原独立技能 `scihub-paper-downloader`（v1.0.3）已合并到本模块的 `SciHubDownloader`；原技能目录已删除
+- **零依赖**：`SciHubDownloader` 仅用 Python stdlib（urllib / http / hashlib / json），无需 `requests`
+- **状态语义**：4 种返回值——`FOUND`（拿到 PDF URL）/ `NOT_FOUND`（库无 + 可选 OA_LINK 提示）/ `MIRROR_ERROR`（所有镜像不可达）/ `INVALID_INPUT`（DOI 格式无效）
+- **验证码**：内置 ALTCHA 解码器（v1.0.3 起），镜像被弹验证码时自动解
 
----
+## 镜像配置（config.json 优先）
 
-## 凭据（.env 文件）
+镜像列表 + 超时配置的优先级链（v6.0.7+ 老板 05:16 指令）：
 
-下载模块需要以下凭据，存放在 `~/.openclaw/.env`：
+```
+config.json 的 scihub.mirrors / request_timeout / pdf_timeout / min_pdf_size
+    ↓ 未设置时
+SCIHUB_MIRRORS 环境变量（逗号分隔）
+    ↓ 未设置时
+DEFAULT_MIRRORS hardcoded 兑底（6 镜像）
+```
+
+**修改优先级**（v6.0.7 改：默认走 config.json，不依赖 env）：
 
 ```bash
-# Zotero API
-ZOTERO_USER_ID=12345678
-ZOTERO_API_KEY=your_zotero_api_key_here
+# 1. 编辑 config.json（推荐）
+vim ~/.openclaw/skills/research-assistant/scripts/config.json
+#   "scihub": {
+#     "mirrors": ["https://sci-hub.st", "https://sci-hub.se", ...],   # 顺序 = 优先级
+#     "request_timeout": 20,
+#     "pdf_timeout": 120,
+#     "min_pdf_size": 1024
+#   }
 
-# 坚果云 WebDAV
-JIANGUOYUN_USER=yangquan0310@qq.com
-JIANGUOYUN_PASSWORD=your_jianguoyun_password
-
-# wiki 归档目录
-WIKI_RAW_PAPERS_DIR=/root/.openclaw/wiki/raw/papers
+# 2. 临时覆盖（CI/调试）
+SCIHUB_MIRRORS="https://custom1.example.com,https://custom2.example.org" \
+  python3 scripts/main.py download --doi 10.xxx --source scihub
 ```
 
-**缺少凭据会报错**，不会静默失败。
+## 全失败反馈（structured feedback，v6.0.7+）
 
----
+所有镜像都不可访问时，CLI 返结构化 JSON 而非纯字符串错误：
 
-## 内部实现：三步流水线
-
-### Step 1: find_paper(identifier)
-- 输入：DOI 字符串 / Zotero item key
-- 通过 Zotero API 查 item + attachment + MD5
-- 返回 `PaperMetadata` 对象（含 zotero_attachment_key, md5, authors, year, title, journal）
-
-### Step 2: download_pdf(meta, dest_dir)
-- 通过坚果云 WebDAV GET `{attachment_key}.zip`（**注意**：8 字符 hash = Zotero attachment key，**不是** MD5 前 8 位）
-- 解压 zip 提取 PDF
-- 保存到 `dest_dir`
-
-### Step 3: archive_to_wiki(pdf, meta)
-- 文件名格式：`YYYY-MM-DD_作者_关键词_期刊.pdf`（如 `2024-03-15_WangAI_aging_psych.pdf`）
-- 复制到 `wiki_raw_dir`
-- 删除临时文件
-
-### 完整流水线 run(identifier)
-
-```python
-from scripts.download import ZoteroJianguoyunDownloader
-
-downloader = ZoteroJianguoyunDownloader()
-meta = downloader.find_paper(identifier)  # Step 1
-pdf = downloader.download_pdf(meta, tmp_dir)  # Step 2
-archive_path = downloader.archive_to_wiki(pdf, meta)  # Step 3
-print(f"Archived to: {archive_path}")
+```json
+{
+  "success": false,
+  "identifier": "10.1038/nature12373",
+  "source": "scihub",
+  "error": "SciHub 所有 6 个镜像都不可访问（DOI: 10.1038/nature12373）: ...",
+  "error_type": "scihub_all_mirrors_failed",
+  "mirrors_tried": ["https://sci-hub.st", "https://sci-hub.se", ...],
+  "last_errors": [
+    "https://sci-hub.st → HTTPError: HTTP Error 403: Forbidden",
+    "https://sci-hub.se → URLError: <urlopen error [SSL: ...]>",
+    ...
+  ],
+  "suggestion": "1) 加论文到 Zotero 库改走 --source zotero ... 2) 等待几分钟后重试 ... 3) 检查网络/代理 ... 4) 编辑 config.json 的 scihub.mirrors ..."
+}
 ```
 
----
+**异常类**：`scripts.download.scihub.SciHubAllMirrorsFailedError`（带 `mirrors_tried` / `last_errors` / `doi` 字段）。CLI `cmd_download` 用 `isinstance` 捕获后转结构化 JSON。
 
-## 多态设计（基类 Downloader）
+## 凭据
 
-```python
-class Downloader(ABC):
-    @abstractmethod
-    def find_paper(self, identifier: str) -> PaperMetadata: ...
-
-    @abstractmethod
-    def download_pdf(self, meta: PaperMetadata, dest_dir: Path) -> Path: ...
-
-    @abstractmethod
-    def archive_to_wiki(self, pdf: Path, meta: PaperMetadata) -> Path: ...
-
-    def run(self, identifier: str) -> Path:
-        """默认流水线：find → download → archive"""
-        meta = self.find_paper(identifier)
-        pdf = self.download_pdf(meta, Path(self.tmp_dir))
-        return self.archive_to_wiki(pdf, meta)
-```
-
-**当前唯一实现**：`ZoteroJianguoyunDownloader`（老板专属 Zotero + 坚果云同步）。
-
-**未来扩展**：可加 `SciHubDownloader`、`InstitutionalDownloader` 等子类。
-
----
-
-## 关键发现（2026-06-05 Diehl 2026 实战沉淀）
-
-- **8 字符 hash = Zotero attachment key**（**不是** MD5 前 8 位）
-- 老板 Zotero 库 attachment 模式多为 `imported_url`，PDF 缓存到 Zotero Storage
-- 反查路径：MD5 → 8 字符 hash（用 `.prop` 文件建索引）
-
----
-
-## 实战要点
-
-| 要点 | 说明 |
-|------|------|
-| **DOI 优先** | Zotero key 必须先入库（手动）才能用；DOI 任何时候都能下 |
-| **凭据必填** | 缺任一 .env 必报错 |
-| **wiki 归档命名** | `YYYY-MM-DD_作者_关键词_期刊.pdf`（时间倒序、便于查重）|
-| **解压 zip** | WebDAV 返回 .zip 需解压出 PDF |
-| **清理临时** | 临时目录 `/tmp/zotero_dl` 定期清理 |
-| **错误重试** | 单次失败不重试，**手动** `--doi` 重跑 |
-
----
-
-## 常见错误排错
-
-| 错误 | 原因 | 修复 |
+| 字段 | 来源 | 兑底 |
 |------|------|------|
-| `Zotero API 404` | DOI 不在 Zotero 库 | 手动用 Zotero connector 添加 |
-| `WebDAV 404` | 坚果云 attachment 未同步 | 打开 Zotero 触发同步 |
-| `MD5 mismatch` | 坚果云文件损坏 | 重新下载（手动）|
-| `Permission denied` | wiki raw 目录权限 | `chmod 755` |
-| `Identifier format invalid` | DOI 不以 10. 开头或 Zotero key 非 8 字符 | 检查输入 |
+| `ZOTERO_USER_ID` | `config.json` 的 `zotero.user_id` | `~/.openclaw/.env` 的 `ZOTERO_USER_ID` |
+| `ZOTERO_API_KEY` | `config.json` 的 `zotero.api_key` | `~/.openclaw/.env` 的 `ZOTERO_API_KEY` |
+| `JIANGUOYUN_PASSWORD` | `config.json` 的 `jianguoyun.password` | `~/.openclaw/.env` 的 `JIANGUOYUN_PASSWORD` |
 
----
+## 工具定位
 
-## 引用语法
-
-不适用（下载是 CLI 操作，不生成引用）。
-
----
-
-## 关键源码文件
-
-- `scripts/download/Downloader.py` — 基类（多态接口）
-- `scripts/download/ZoteroJianguoyunDownloader.py` — 老板专属实现
-- `scripts/download/paper_metadata.py` — PaperMetadata 数据类
-- `scripts/download/utils.py` — 工具函数
-- `scripts/main.py` — CLI 入口（`--doi` / `--zotero-key` 参数）
-
----
-
-## 关键参考文献
-
-- 实战沉淀：2026-06-05 Diehl 2026 论文（Open Science Framework 数据）下载
-- Zotero Web API v3：https://www.zotero.org/support/dev/web_api/v3/start
-- 坚果云 WebDAV：https://www.jianguoyun.com/
-
----
-
-## 版本历史
-
-| 版本 | 日期 | 更新 |
-|------|------|------|
-| v1.0 | 2026-06-12 | 初版：基于现有 `scripts/download/` Python 实现 + 2026-06-05 Diehl 2026 实战沉淀。 |
+download 返 PDF 路径（dict），不返 narrative。流水线 `find + pull + save` 由 `fetch()` 一次完成。

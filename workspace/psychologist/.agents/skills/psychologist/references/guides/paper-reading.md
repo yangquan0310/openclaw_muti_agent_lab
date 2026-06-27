@@ -414,7 +414,7 @@ pdftotext -f 2 -l 5 <pdf> /tmp/page2-5.txt
 |------|------|------|
 | 引文元数据（DOI→title/authors/year/venue）| CrossRef | `curl api.crossref.org/works/<doi>` |
 | 摘要 + TLDR + 引用网络 | Semantic Scholar | `curl api.semanticscholar.org/graph/v1/paper/DOI:<doi>?fields=...` |
-| 全文兜底 | Tavily / Sci-Hub | `tavily_search` / `scihub-paper-downloader.py` |
+| 全文兜底 | Tavily / Sci-Hub | `tavily_search` / `python3 ~/.openclaw/skills/research-assistant/scripts/main.py download --doi <DOI> --source scihub` |
 | OA 链接 | Unpaywall | `curl api.unpaywall.org/v2/<doi>?email=<mail>` |
 
 ---

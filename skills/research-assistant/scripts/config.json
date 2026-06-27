@@ -1,60 +1,50 @@
 {
-  "llm": {
-    "default_provider": "deepseek",
-    "providers": {
-      "deepseek": {
-        "name": "deepseek",
-        "base_url": "https://api.deepseek.com/v1",
-        "default_model": "deepseek-chat",
-        "api_key_env": "${DEEPSEEK_API_KEY}",
-        "api_key": "",
-        "timeout": 30,
-        "temperature": 0.3,
-        "max_tokens": 5000
-      }
-    }
-  },
   "semantic_scholar": {
     "api_key_env": "${SEMANTIC_SCHOLAR_API_KEY}",
-    "api_key": "",
     "request_interval": 0.5,
+    "default_limit": 20,
+    "fields": "paperId,authors,year,title,venue,citationCount,journal,externalIds,url,abstract"
+  },
+  "arxiv": {
+    "request_interval": 3.0,
     "default_limit": 20
   },
-  "easy_scholar": {
-    "api_key_env": "${EASYSCHOLAR_API_KEY}",
-    "base_url": "https://easyscholar.cc/open",
-    "timeout": 10,
-    "retry_times": 3,
-    "retry_delay": 1
+  "google_scholar": {
+    "request_interval": 3.0,
+    "hl": "zh-CN"
+  },
+  "cnki": {
+    "request_interval": 3.0
   },
   "zotero": {
-    "user_id": "",
-    "api_key": "",
     "user_id_env": "${ZOTERO_USER_ID}",
     "api_key_env": "${ZOTERO_API_KEY}"
   },
-  "jianguoyun": {
-    "url": "",
-    "user": "",
-    "password": "",
-    "user_env": "${JIANGUOYUN_USER}",
-    "password_env": "${JIANGUOYUN_PASSWORD}"
+  "scihub": {
+    "_comment": "SciHub 镜像优先级（v6.0.7+ 整合到 download 模块；--source scihub 生效）。覆盖顺序：config.json → SCIHUB_MIRRORS 环境变量 → 本列表。顺序代表优先级（1=首选，6=最后）。",
+    "mirrors": [
+      "https://sci-hub.st",
+      "https://sci-hub.se",
+      "https://sci-hub.ru",
+      "https://sci-hub.ren",
+      "https://sci-hub.box",
+      "https://sci-hub.workflow"
+    ],
+    "request_timeout": 20,
+    "pdf_timeout": 120,
+    "min_pdf_size": 1024
   },
-  "storage": {
-    "root_path": "/root/lab_repo/",
-    "knowledge_base_dir": "knowledge/",
-    "knowledge_base_file": "index.json",
-    "note_dir": "knowledge/note/",
-    "notes_file_format": "研究笔记_{topic}.md",
-    "review_dir": "knowledge/review/",
-    "reviews_file_format": "文献综述_{topic}.md",
-    "research_status_dir": "knowledge/review/",
-    "research_status_file_format": "研究现状_{topic}.md",
-    "retrieval_report_dir": "knowledge/retrieval_report/",
-    "retrieval_report_file_format": "检索报告_{topic}.md",
-    "search_query_dir": "knowledge/search_query/",
-    "search_query_file_format": "检索条件_{topic}.json",
-    "topic_dir": "knowledge/topic/",
-    "topic_file_format": "{topic}.json"
+  "jianguoyun": {
+    "url_env": "${JIANGUOYUN_URL}",
+    "user_env": "${JIANGUOYUN_USER}",
+    "password_env": "${JIANGUOYUN_PASSWORD}",
+    "remote_root": "nutstore:quanquanzi/zotero"
+  },
+  "wiki": {
+    "root": "~/.openclaw/wiki"
+  },
+  "upload": {
+    "rclone_config": "~/.config/rclone/rclone.conf",
+    "agent_id_env": "${OPENCLAW_AGENT_ID}"
   }
 }

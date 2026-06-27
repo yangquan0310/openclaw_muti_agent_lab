@@ -25,8 +25,8 @@
 | # | 功能 | 现状 | 入口命令 | 沉淀位置 |
 |---|------|------|---------|---------|
 | 1 | **文献检索** | ✅ v5.21.2 已支持多引擎自动路由（CNKI / Semantic Scholar / Google Scholar）| `python3 scripts/main.py search --keyword "..."` | `wiki/sources/<id>.md` |
-| 2 | **保存条目到 Zotero** | ✅ v5.13.0+ 已支持自动建条目 + 标签 + 元数据 | `python3 scripts/main.py download --doi 10.xxxx/xxx` | Zotero 库 |
-| 3 | **管理 WebDAV 附件** | ✅ v5.13.0+ 已支持 rclone 同步到坚果云 | （download 模块内嵌）| 坚果云 WebDAV |
+| 2 | **保存条目到 Zotero** | ✅ v5.13.0+ 已支持自动建条目 + 标签 + 元数据（v6.0.7+ 可选 `--source scihub` 绕过付费墙）| `python3 scripts/main.py download --doi 10.xxxx/xxx [--source {zotero,scihub}]` | Zotero 库 或 `wiki/raw/papers`（v6.0.7+ SciHub 镜像在 `config.json.scibhub.mirrors` 配置）|
+| 3 | **管理 WebDAV 附件** | ✅ v5.13.0+ 已支持 rclone 同步到坚果云 | （download `--source zotero` 时内嵌；`--source scihub` 不写 WebDAV）| 坚果云 WebDAV |
 | 4 | **管理 OpenClaw wiki 知识库** | ✅ v5.16.0+ 所有模块已迁移 wiki 后端 | `python3 scripts/main.py manage {list,stats,merge,filter,info}` | `~/.openclaw/wiki/` |
 | 5 | **对文章进行精读** | ✅ v5.15.0+ 已支持单篇笔记输出（v6.0.2 加本地 PDF 解析：pypdf + pypdfium2 + tesseract）| `python3 scripts/main.py summarize --source-id <slug> [--pdf-path <pdf>] [--ocr]` | `wiki/syntheses/<date>-summarize-<slug>.md` |
 | 6 | **攥写学术文章** | ✅ v5.21.0+ 已支持 4 文体模板 | `python3 scripts/main.py synthesize extract --source-id <slug>` | `wiki/syntheses/<date>-extract-<slug>.md` |
@@ -50,7 +50,9 @@
                                   ↓
 ┌──────────────────────────────────────────────────────────────────────┐
 │  阶段2 收录（download 模块）                                           │
-│    DOI/Zotero key → Zotero 建条目 + 触发 WebDAV 拉 PDF + wiki raw     │
+│    DOI/Zotero key → 两个下载源（v6.0.7+ 双源）                          │
+│      --source zotero（默认）→ Zotero 建条目 + WebDAV 拉 PDF + wiki raw │
+│      --source scihub        → SciHub 绕过付费墙 → wiki/raw/papers     │
 │    三方同时落库 + 元数据一致性保证                                    │
 └──────────────────────────────────────────────────────────────────────┘
                                   ↓
@@ -97,7 +99,7 @@ research-assistant/
 │   ├── search/                       ← 文献检索（多引擎路由）
 │   ├── summarize/                    ← 精读笔记（LLM 提取）
 │   ├── synthesize/                   ← 多篇合成（4 文体模板）
-│   ├── download/                     ← Zotero + WebDAV 拉 PDF
+│   ├── download/                     ← Zotero+WebDAV（默认）/ SciHub（v6.0.7+ 绕过付费墙）拉 PDF
 │   ├── manage/                       ← wiki source 列表管理（merge/filter/stats）
 │   └── maintain/                     ← 三方一致性检查（check-drift 等）
 ├── references/                       ← 18 份 SOP 文档
@@ -140,6 +142,7 @@ python3 scripts/main.py search --keyword "working memory cognitive" --limit 5 --
 # 2. 收录到 Zotero + 拉 PDF 到 WebDAV + 写 wiki source
 python3 scripts/main.py download --zotero-key BNA4WATT
 python3 scripts/main.py download --doi 10.1234/example.2024.001
+python3 scripts/main.py download --doi 10.1234/example.2024.001 --source scihub   # 绕过付费墙（v6.0.7+）
 
 # 3. 精读（单篇 PDF → 笔记）
 python3 scripts/main.py summarize --source-id buzsaki-2002-hippocampal-theta
@@ -206,6 +209,7 @@ python3 scripts/main.py maintain drift-graph --full    # 完整三方（1-5 分�
 | **v6.0.5** | **2026-06-23** | **代码修复（按 psychologist 用户意见 4 项痛点）**（不动文档/不动 v6.0.4 文档修复成果）：**(1)🔴 synthesize check/fix argparse 残留彻底清理**——`scripts/main.py` `_run_synthesize` 删 `check` / `fix` 两个 subparser 及其 handler，现在调 `python3 main.py synthesize check` 会直接 argparse `unrecognized arguments: invalid choice 'check' (choose from extract)`（v6.0.4 文档删除但 CLI 仍接受参数的问题彻底解决）；**(2)🔴 upload title 默认解析 PDF 文件名**——`scripts/upload/Uploader.py` 新增 `_humanize_title_from_filename()` helper，`create_wiki_source` 优先级：agent 显式传 title > PDF 文件名解析 > slug 兜底（如 `buzsaki-2002-hippocampal-theta.pdf` → `2002 - Buzsaki - Hippocampal - Theta`）；**(3)🟡 search 加 arXiv 路由**——新增 `scripts/search/ArxivSearcher.py`（继承 BaseSearcher，调 export.arxiv.org/api/query 无 key 无 rate limit）+ `utils.py` `_LANG_MAP` 加 `arxiv` / `ax` / `preprint` 三个 lang 标识 + 英文数学/物理关键词启发式（`topology` / `manifold` / `quantum` / `cond-mat` 等 30+ 模式）→ 主引擎改走 arXiv，SemSch 备用；MathSciNet 需订阅暂列 TODO；**(4)🟡 paper_type 加 theorem / preprint-physics / book**——`scripts/summarize/Summarizer.py` `_classify_type()` 加 3 类（数学定理 / 物理预印本 / 书籍章节），9 测试用例全过。**严格遵循"工具 = 工具说明书，不替代 agent"边界**——helper 只做最小文件名解析、arXiv 只调 API 不攥写 narrative、分类只用规则不用 LLM。详见 `wiki/syntheses/2026-06-23-v6-0-5-improves-log.md`。|
 | **v6.0.4** | **2026-06-23** | **文档修复（审计报告 12 项可执行修复）**（不动代码）：**(1)** SKILL.md frontmatter version 5.21.2 → 6.0.3；**(2)** SKILL.md / README.md "快速调用" 删除 synthesize check/fix 命令（未迁移到 wiki）；**(3)** SKILL.md / README.md 删除 assets/文献综述模板.md / 研究现状模板.md 死链；**(4)** references 重命名（方案 B：8 个文件）——文体指南 + 排版加 `-guide` 后缀（apaquarto/narrative-review/meta-analysis/observational-study/experimental-study），PRISMA 改名 `prisma-workflow.md`，3 个 checklist 改 `-standards.md`；**(5)** SKILL.md description 精简（13 行 → 3 行）+ 触发场景独立章节；**(6)** 核心原则 1 由废弃的 `index.json` 改为 `wiki↔Zotero↔WebDAV 三联动`；**(7)** 指南导航表头 13 → 18、模块数 6 → 7 统一；**(8)** synthesize / summarize 输出命名 `<id>` → `<slug>`；**(9)** module-maintain.md + manuscript-audit-standards.md 删 hooks/ SOP 引用（改为直接调 WikiZoteroManager 类方法）；**(10)** SKILL.md 数据流图删 `index.json` 残留。**7-agent peer review SOP 删除**（老板 2026-06-23 19:23 明确废弃）已在 v5.21.2 完成后处理。|
 | **v6.0.3** | **2026-06-23** | **upload 模块上线**（download 反向对偶）：本地 PDF → Zotero 建条目 + WebDAV 推 + wiki source 创建；3 步流水线（`add_to_zotero` / `push_to_webdav` / `create_wiki_source`）；CLI `upload --pdf-path/--slug/--doi`；**严格遵循"工具不替代 agent"原则**：slug / title / tags 全部由 agent 传，工具只做幂等检查 + 最小可用 wiki source YAML（标注 PENDING + agent 待办清单）；**v6.0.3 教训沉淀**：第一版替 agent 派生 slug 导致重复 wiki source，删错文件后改为 slug 必填 agent 传；新增 `references/module-upload.md`；README 工具清单 6→7 |
+| **v6.0.7** | **2026-06-28** | **SciHub 整合到 download**（老板 04:08 指令）：原独立技能 `scihub-paper-downloader`（v1.0.3）合并到 `scripts/download/scihub.py` 的 `SciHubDownloader` 类，独立技能目录删除；CLI 新增 `--source {zotero,scihub}` 选项（默认 `zotero`）；`SciHubDownloader` 零外部依赖（纯 Python stdlib）+ ALTCHA 验证码自动解 + 6 镜像 fallback（`sci-hub.st/se/ru/ren/box/workflow`，**v6.0.7 后老板 05:16 指令配置写到 `config.json.scibhub.mirrors` 持久化**）+ 4 状态语义（FOUND / NOT_FOUND+OA_LINK / MIRROR_ERROR / INVALID_INPUT）；`wiki/raw/papers` 默认归档目录不变；`--source zotero` 行为完全不变（老板坚果云保护逻辑保留）；3 个 reference 文档（`SKILL.md` / `references/module-download.md` / `README.md` / `docs/ARCHITECTURE.md`）+ `psychologist/references/guides/paper-reading.md` 同步更新；**v6.0.7 末老板 05:16 指令**：`SCIHUB_MIRRORS` 写入 `config.json`（优先级链：config → env → hardcoded 兑底）；全失败时 `SciHubAllMirrorsFailedError` 异常携带 `mirrors_tried` + `last_errors` + `doi` 字段；CLI `cmd_download` 用 `isinstance` 捕获后返 `error_type: scihub_all_mirrors_failed` + 4 步 `suggestion` 结构化反馈 |
 | **v6.0.2** | **2026-06-23** | **多模态精读工具能力上线**（重新定位：工具不攥写，只提供数据）：summarize 工具加 `--pdf-path` / `--ocr` 标志；内部集成 `pypdf`（文本提取）+ `pypdfium2`（渲染）+ `tesseract`（OCR）；返回结构化数据（页数 / 文件大小 / 每页文本 / 图片 OCR）；**明确边界：工具不调 LLM、不攥写笔记**——agent 拿数据后自己写 narrative；删 v6.0.2 越界的"agent 流程"章节（之前错把 agent 流程塞进工具文档，违反"工具不替代 agent"原则）|
 | **v6.0.1** | **2026-06-23** | **Bug 修复**：drift detection 字段名纠正（`doi:` → `zotero_doi:`）+ 学术型判定加 `zotero_item_key` 兜底（兼容 arXiv 论文）；加 **非学术型豁免逻辑**（系统笔记 / 工具笔记 / 网页分享不再误报为"缺 zotero_item_key"）；`generate_drift_graph` / `check_drift` / `find_missing_zotero_keys` / `generate_drift_report` 全加 `non_academic` 类别；**修复后老板 wiki 后端真实健康度**：🟢 7/7 学术型三方同步 + 📂 7/14 非学术型豁免 |
 | **v6.0.0** | **2026-06-23** | **(1)** 重写 README：以老板拍板的 7 项功能为骨架，跟 v5.21.2 SKILL.md 对齐（wiki-zotero-webdav 三方联动）；**(2)** **drift-graph 三方联动可视化**上线（`python3 scripts/main.py maintain drift-graph [--full]`），light 模式秒级 / full 模式 1-5 分钟；输出 ASCII 状态图 + 漂移统计 + 修复建议；首次跑发现老板 wiki 后端 14 source 中 7 个缺 zotero_item_key（50% 漂移，后证实是误报）；**(3)** SKILL.md description 补齐 2 项：apaquarto 排版 + drift-graph 状态图；**(4)** 教学课件生成缺口移除（老板明确"不管"）|

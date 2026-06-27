@@ -7,7 +7,7 @@
 | 阶段 | 操作 | 工具 | 输出位置 |
 |------|------|------|----------|
 | 1. **检索** | `search` 命中 paper | `scripts/search/Searcher.py` + `ZoteroSearcher.py` | Zotero 库 + cache/index.json |
-| 2. **下载** | PDF 从 Zotero 同步到坚果云 | `scripts/download/Downloader.py` + `ZoteroJianguoyunDownloader.py` | `nutstore:quanquanzi/zotero/storage/` |
+| 2. **下载** | PDF 拉取（双源）：默认 Zotero→WebDAV→wiki raw（论文须先在 Zotero 库）；可选 SciHub→wiki/raw/papers（绕过付费墙）| `scripts/download/Downloader.py` + `ZoteroJianguoyunDownloader.py` + `SciHubDownloader` | Zotero+WebDAV 或 `wiki/raw/papers` |
 | 3. **维护** | wiki source ↔ Zotero 双向建立 | `scripts/maintain/WikiZoteroManager.py` | `wiki/sources/*.md` |
 | 4. **总结** | paper 摘要提取 | `scripts/summarize/Summarizer.py` | `wiki/syntheses/<date>-summarize-*.md` |
 | 5. **合成** | source extract 笔记 | `scripts/synthesize/Synthesizer.py` | `wiki/syntheses/<date>-extract-*.md` |
@@ -30,7 +30,7 @@
 | **维护模块** | [module-maintain.md](module-maintain.md) | WikiZoteroManager（v6.0.6+ 单一入口，Maintainer.py 已删） |
 | **总结模块** | [module-summarize.md](module-summarize.md) | Summarizer（v5.16.0+ 走 wiki，规则分类） |
 | **合成模块** | [module-synthesize.md](module-synthesize.md) | Synthesizer（v5.16.0+ 走 wiki，extract notes） |
-| **下载模块** | [module-download.md](module-download.md) | Downloader + ZoteroJianguoyunDownloader |
+| **下载模块**（v6.0.7+ 双源）| [module-download.md](module-download.md) | Downloader + ZoteroJianguoyunDownloader + SciHubDownloader |
 | **v6.0.3+ 上传模块**（下载反向） | [module-upload.md](module-upload.md) | Uploader（本地 PDF → Zotero + WebDAV + wiki source） |
 | **排版（Quarto）** | [apaquarto-manuscript-guide.md](apaquarto-manuscript-guide.md) | 范式 ④ apaquarto 严格 APA 7 |
 | **文体指南** | [narrative-review-guide.md](narrative-review-guide.md) | 叙事综述（心理学 APA 7 + JARS-Quant） |
@@ -100,4 +100,5 @@
 - **v6.0.0 ✅ README 重写（老板拍板 7 项功能）+ drift-graph 三方联动可视化**
 - **v6.0.1 ✅ drift detection bug 修复（`doi:` → `zotero_doi:` 字段名纠正 + 学术型豁免逻辑）**
 - **v6.0.2 ✅ summarize 多模态精读工具能力上线（pypdf + pypdfium2 + tesseract，工具不攥写 narrative）**
+- **v6.0.7 ✅ SciHub 整合到 download**（`--source scihub` → SciHubDownloader；零依赖 + ALTCHA 验证码 + 6 镜像 fallback；下载到 `wiki/raw/papers` 不动老板坚果云；原独立技能 `scihub-paper-downloader` 已合并删除）
 - **v6.0.3 ✅ upload 模块上线（download 反向对偶：本地 PDF → Zotero + WebDAV + wiki source；slug 必填 agent 传）**

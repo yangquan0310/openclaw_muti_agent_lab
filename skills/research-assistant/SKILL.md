@@ -2,7 +2,7 @@
 name: research-assistant
 description: >
   老板研究工作的全流程数字助手——wiki ↔ Zotero ↔ WebDAV 三联动场景下激活。提供文献检索、PDF 同步、本地 PDF 反向上传、源笔记 / 综述产出、三方一致性检查、APA 7 排版指南。详见下方“触发场景”与 README。
-version: 6.0.6
+version: 7.0.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -54,38 +54,46 @@ metadata:
 
 ---
 
-## 快速调用（v5.20.0+ 实际命令，wiki 后端）
+## 快速调用（v7.0.0 精简版）
 
 ```bash
-# 7 个模块 CLI 入口（v6.0.3+）：python3 scripts/main.py <module> [args]
+# 7 个模块 CLI 入口：python3 scripts/main.py <module> [args]
 
-# 1. 检索（自动路由中文/英文）
-python3 scripts/main.py search --keyword "深度学习" --limit 20 --topic general
-python3 scripts/main.py search --keyword "working memory cognitive" --limit 5 --dry-run
+# 1. 检索（v7.0.0 统一入口：source 路由 + 自动 fallback + wiki report）
+python3 scripts/main.py search --keyword "深度学习" --limit 20                 # 中文 → CNKI
+python3 scripts/main.py search --keyword "working memory" --limit 5            # 英文 → SemSch
+python3 scripts/main.py search --keyword "topological deep learning" --source arxiv  # 指定源
+python3 scripts/main.py search --keyword "深度学习" --dry-run                  # 不写 wiki report
 
-# 2. 下载（Zotero → 坚果云 WebDAV → wiki raw）
-python3 scripts/main.py download --zotero-key BNA4WATT
+# 2. 下载（Zotero → WebDAV → wiki raw；或 SciHub → wiki raw）
+python3 scripts/main.py download --doi 10.1177/0956797617694868               # DOI（默认走 Zotero + 坚果云）
+python3 scripts/main.py download --zotero-key BNA4WATT                         # 8 字符 Zotero key
+python3 scripts/main.py download --doi 10.1177/0956797617694868 --source scihub  # 绕过付费墙（SciHub → wiki/raw/papers，不动老板坚果云）
 
-# 2b. 反向上传（v6.0.3+ 本地 PDF → Zotero + WebDAV + wiki source）
-python3 scripts/main.py upload --pdf-path /data/local-pdfs/smith-2025.pdf --slug smith-2025-memory --doi "10.1234/example.2025.001"
+# 3. 上传（本地 PDF → Zotero + WebDAV + wiki source）
+python3 scripts/main.py upload --pdf-path /data/local-pdfs/smith-2025.pdf --slug smith-2025 --doi "10.1234/example.2025.001"
 
-# 3. 单篇笔记（→ wiki/syntheses/<date>-summarize-<slug>.md）
-python3 scripts/main.py summarize --source-id buzsaki-2002-hippocampal-theta
+# 4. 总结（→ wiki/syntheses/<date>-summarize-<slug>.md）
+python3 scripts/main.py summarize --source-id source.buzsaki-2002-hippocampal-theta
+python3 scripts/main.py summarize --source-id source.xxx --pdf-path /tmp/paper.pdf --ocr  # PDF 提取
 
-# 4. 多篇综述（→ wiki/syntheses/<date>-extract-<slug>.md）
-python3 scripts/main.py synthesize extract --source-id buzsaki-2002-hippocampal-theta
-# 注：synthesize check/fix 已在 v5.16.0 范围外移除（未迁移到 wiki），如需 APA 7 引用核验请走 references/apa7-standards.md
+# 5. 分析（→ wiki/syntheses/<date>-extract-<slug>.md）
+python3 scripts/main.py synthesize --source-id source.buzsaki-2002-hippocampal-theta
 
-# 5. wiki source 列表管理
+# 6. 管理（wiki source 列表 CRUD）
 python3 scripts/main.py manage list
 python3 scripts/main.py manage stats
+python3 scripts/main.py manage get --source-id source.xxx
+python3 scripts/main.py manage filter --has-zotero-key true --has-doi true
 python3 scripts/main.py manage merge --inputs source.a,source.b
-python3 scripts/main.py manage filter --has-zotero-key true
+python3 scripts/main.py manage search --keyword "deep learning"
 
-# 6. 一致性检查（wiki ↔ Zotero ↔ WebDAV）
-python3 scripts/main.py maintain check-drift
-python3 scripts/main.py maintain list-missing
+# 7. 维护（三方一致性检查）
+python3 scripts/main.py maintain check
+python3 scripts/main.py maintain missing
 python3 scripts/main.py maintain report
+python3 scripts/main.py maintain graph                 # light 模式
+python3 scripts/main.py maintain graph --full          # full 模式
 ```
 
 ### 7 模块核心参数
@@ -93,7 +101,7 @@ python3 scripts/main.py maintain report
 | 子命令 | 核心参数 | 说明 |
 |--------|---------|------|
 | `search` | `--keyword` 或 `--queries` + `--limit` + `--topic` + `--dry-run` | 检索关键词（必填二选一）|
-| `download` | `--zotero-key` 或 `--doi` | 二选一，8 字符 Zotero item key |
+| `download` | `--zotero-key` 或 `--doi` + `--source {zotero,scihub}` | 二选一标识符；`--source` 选下载源（默认 `zotero`）|
 | `summarize` | `--source-id`（必填，wiki source slug）| + 可选 `--output` |
 | `synthesize` | `extract`（仅 extract 已实现；check/fix v5.16.0 范围外未迁移）| `--source-id` |
 | `manage` | `list` / `stats` / `merge` / `filter` / `info` 五 sub-action | 各自参数不同 |
