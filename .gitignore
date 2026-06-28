@@ -64,6 +64,7 @@ __pycache__/
 .pytest_cache/
 **/.openclaw/
 **/*.state.json
+**/openclaw-workspace-state.json
 
 # 排除IDE配置文件
 .vscode/

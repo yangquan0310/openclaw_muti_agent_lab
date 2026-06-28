@@ -22,7 +22,11 @@
         }
       },
       "model": {
-        "primary": "minimax/MiniMax-M3"
+        "primary": "minimax/MiniMax-M3",
+        "fallbacks": [
+          "minimax/MiniMax-M2.7-highspeed",
+          "minimax/MiniMax-M2.7"
+        ]
       },
       "pdfModel": {
         "primary": "MiniMax-M3"
@@ -432,7 +436,30 @@
             "input": [
               "text",
               "image",
-              "audio",
+              "video"
+            ]
+          },
+          {
+            "id": "MiniMax-M2.7-highspeed",
+            "name": "MiniMax M2.7 highspeed",
+            "reasoning": true,
+            "contextWindow": 204800,
+            "maxTokens": 20480,
+            "input": [
+              "text",
+              "image",
+              "video"
+            ]
+          },
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7",
+            "reasoning": true,
+            "contextWindow": 204800,
+            "maxTokens": 20480,
+            "input": [
+              "text",
+              "image",
               "video"
             ]
           }

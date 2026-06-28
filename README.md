@@ -696,6 +696,17 @@ openclaw agents restart <agent-name>
 - **state/openclaw.sqlite 数据库变化**：日常业务数据持久化（26,284,032 字节，较 4.3.14 推送时 25,833,472 字节净增 450,560 字节；mtime 跨日更新 + 业务数据累积）
 - **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
 
+### 版本 4.3.16 (2026-06-29 05:42)
+- **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 10 个 agent 的 memory/.dreams/events.jsonl + 9 个 agent 的 openclaw-workspace-state.json + steward/MEMORY.md promotion 块 + openclaw.json 模型 fallback 配置 + state/openclaw.sqlite），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查 + 清理**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮 4 个 agent (physicist/programmer/psychologist/steward) 运行时状态文件 `openclaw-workspace-state.json` 整体迁移至各 agent 的 `temp/` 目录（与 4.3.9/4.3.10/4.3.12/4.3.13/4.3.14/4.3.15 推送模式一致）；同时新增 `.gitignore` 规则 `**/openclaw-workspace-state.json` 防止以后误追踪
+- **.gitignore 规则新增**：`/workspace/*/openclaw-workspace-state.json` 排除模式（双 `**/` 通配覆盖所有 agent workspace 下的运行时元数据文件）
+- **openclaw.json 模型 fallback 配置**：新增 2 个 minimax 系列模型（`MiniMax-M2.7-highspeed` / `MiniMax-M2.7`）作为 `model.primary` 的 fallback 选项，原 `MiniMax-M3` 保持主模型；2 个新模型均启用 reasoning 模式、204,800 contextWindow、20,480 maxTokens、输入支持 text/image/video
+- **梦境记忆批次同步**：10 个 agent（auditor/instructor/mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer）的 DREAMS.md 与 memory/.dreams/events.jsonl 同步更新
+- **MEMORY.md promotion 同步**：steward MEMORY.md 新增 `## Promoted From Short-Term Memory (2026-06-29)` 块（writer 文字审计完成报告 + active-memory 插件状态不一致等约 8 条）
+- **新增未追踪文件**：`wiki/reports/2026-06-28-仲晓模型最新应用.md`（wiki 研究报告新增）
+- **state/openclaw.sqlite 数据库变化**：日常业务数据持久化（26,660,864 字节，较 4.3.15 推送时 26,284,032 字节净增 376,832 字节；mtime 跨日更新 + 业务数据累积）
+- **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发；cron payload 中过时的 development 指令按 MEMORY.md 与实际项目状态忽略）
+
 ### 版本 4.3.14 (2026-06-26 04:00)
 - **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 9 个 agent 的 memory/.dreams/events.jsonl + steward/.agents/skills/manager/ 路径简化 5 处 + 2 个 agent 的 MEMORY.md promotion 块 + 2 篇 wiki/reports/ 日报 + state/openclaw.sqlite），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **仓库路径标准化（`/data/disk/OneDrive/...` → `~/OneDrive/...`）**：将 steward manager 技能中 5 处硬编码的绝对路径 `/data/disk/OneDrive/Applications/openclaw repository` 统一改为 `~/OneDrive/Applications/openclaw repository`，使用 `os.path.expanduser()` 或 shell `~` 展开。涉及文件：`workspace/steward/.agents/skills/manager/scripts/maintainer/{BaseMaintainer,Maintainer}.py`、`workspace/steward/.agents/skills/manager/scripts/mark_old_projects_generated.py`、`workspace/steward/.agents/skills/manager/assets/project-level/AGENTS.template`、`workspace/steward/.agents/skills/manager/references/task-flow-guide.md`、`workspace/steward/MEMORY.md`、`workspace/steward/TOOLS.md`（共 7 处路径引用）
@@ -1260,7 +1271,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-26 04:00:00**
+**最后更新: 2026-06-29 05:42:00**
 **系统版本**: OpenClaw 2026.6.9
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
