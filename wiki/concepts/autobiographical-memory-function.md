@@ -179,6 +179,7 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/sun-2025-digital-hoarding-nostalgic-consumption|Sun, Chen & Cui 2025 — 数字囤积是否导致怀旧消费？认知失调与情绪记忆联结的双中介机制]]
 - [[concepts/autobiographical-memory|自传体记忆（Autobiographical Memory）]]
 
 ### Related Pages

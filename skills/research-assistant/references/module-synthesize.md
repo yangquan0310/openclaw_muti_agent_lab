@@ -1,59 +1,47 @@
-# 笔记合成（v5.16.0+ 走 wiki）
+# module-synthesize.md（v7.0.0）
 
-> **v5.16.0 重大重构**：删旧 `Synthesizer.py`（走 knowledge/topic/xxx.json + knowledge/note/），新 `Synthesizer.py` 直接从 wiki source 读，输出到 wiki syntheses/。
-> **老板 00:08 指令**："不需要向后兼容，全部改为 wiki"。
+> synthesize 模块：综述素材抽取（从 body 抽"一句话总结" + "关键内容"）
 
----
+## 类清单
 
-## 一、Synthesizer（v5.16.0+ wiki 版本）
+- `Synthesizer` — 单一类
 
-### 文件位置
+## 类 / 方法职责
 
-`scripts/synthesize/Synthesizer.py`（4785 bytes）
+| 方法 | 作用 |
+|------|------|
+| `__init__(cfg)` | 读 config.wiki.root |
+| `extract(source_id) -> dict` | **主入口**：从 source body 抽两段 → 写 wiki syntheses/<date>-extract-<slug>.md |
 
-### 核心方法
-
-| 方法 | 用途 | 输入 | 输出 |
-|------|------|------|------|
-| `extract_notes(source_id)` | 从 wiki source 读 abstract → 输出 wiki synthesis | wiki source id | {success, output_path, zotero_key, summary_chars, key_content_chars} |
-
-### 提取逻辑
-
-1. 找 source 文件（按 id 字段或文件名匹配）
-2. 解析 YAML frontmatter（zotero_item_key, zotero_doi, title）
-3. 提取 markdown 段：「一句话总结」「关键内容」
-4. 输出到 `wiki/syntheses/<date>-extract-<slug>.md`
-5. 自动填 zotero_refs 字段（保持 wiki↔Zotero 一致性）
-
-### CLI 用法
+## CLI 用法
 
 ```bash
-python3 main.py synthesize extract --source-id source.diehl-2026-captured-memories
-python3 main.py synthesize extract --source-id source.okeefe-recce-1993-phase-precession --output custom.md
+python3 scripts/main.py synthesize --source-id source.buzsaki-2002-hippocampal-theta
 ```
 
-### 输出格式
+## 返回结构
 
-写到 `wiki/syntheses/<date>-extract-<slug>.md`：
-- YAML: pageType=synthesis, zotero_refs 填主 source
-- 标题（来自 wiki source）
-- 来源 `[[sources/<filename>]]`
-- Zotero itemKey
-- 一句话总结
-- 关键内容（前 3000 chars）
-- 提取时间
+```python
+{
+    "success": True,
+    "output_path": "/root/.openclaw/wiki/syntheses/2026-06-28-...-extract-xxx.md",
+    "zotero_key": "BNA4WATT",
+    "zotero_doi": "10.1016/...",
+    "summary_chars": 75,
+    "key_content_chars": 259,
+}
+```
 
-### 不向后兼容
+## 跟 summarize 的区别
 
-- 旧 `knowledge/topic/xxx.json` 路径**已废弃**
-- 旧 `check_references` / `fix_references` **未迁移**（v5.16.0 范围外）
-- 旧 Synthesizer 备份在 `_legacy_Synthesizer_<TS>.py`
+| 维度 | summarize | synthesize |
+|------|-----------|------------|
+| 目的 | 单篇笔记生成 | 综述素材抽取 |
+| 分类 | 规则分类（theorem/paper/...） | 不分类 |
+| 评级 | 评级（⭐） | 不评级 |
+| 输出命名 | `*-summarize-*.md` | `*-extract-*.md` |
+| 场景 | 拿到一篇论文生成笔记 | 为综述准备素材 |
 
-### 与 Summarizer 区别
+## 工具定位
 
-| 维度 | Summarizer | Synthesizer |
-|------|------------|-------------|
-| 输入 | wiki source | wiki source |
-| 输出 | 总结（type/importance） | 提取（结构化笔记） |
-| 方式 | 规则分类 | 字段提取 |
-| 文件名 | summarize-*.md | extract-*.md |
+synthesize 返字段 + 路径，不攥写 narrative。**工具只抽两段**——综述由 agent 用这些素材攥写。

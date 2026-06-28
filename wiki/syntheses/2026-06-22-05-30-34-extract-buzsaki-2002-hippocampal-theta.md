@@ -1,12 +1,16 @@
 ---
 pageType: synthesis
-id: synthesis.extract.buzsaki-2002-hippocampal-theta
+id: synthesis.extract.buzsaki-2002-hippocampal-theta.2026-06-22T05-30-34
 title: Extract Notes — 海马θ振荡（Buzsáki 2002）
 createdAt: "2026-06-22T05:30:34"
 zotero_refs:
   - key: BNA4WATT
     role: primary
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-22T05:30:34"
 ---
+
 
 # 海马θ振荡（Buzsáki 2002） — 笔记提取
 
@@ -36,3 +40,8 @@ zotero_refs:
 | Zotero itemKey | `BNA4WATT` |
 | Zotero DOI | `10.1016/s0896-6273(02)00586-x` |
 | 提取时间 | `2026-06-22T05:30:34` |
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

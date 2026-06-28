@@ -130,3 +130,21 @@
 - 评估函数模板: def evaluate_conflict_handling(model, benchmark): metrics = { [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:106-107]
 <!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:109:109 -->
 - 遵循新输入的能力: "新事实遵从率": follow_new_fact_rate, [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:109-109]
+
+## Promoted From Short-Term Memory (2026-06-27)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:130:130 -->
+- 💡 Phase 2（核心创新 - 2-4 个月）: **核心假设**： [score=0.816 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:130-130]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:134:134 -->
+- 💡 Phase 2（核心创新 - 2-4 个月）: **创新结构设计**： [score=0.816 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:134-134]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:136:139 -->
+- 💡 Phase 2（核心创新 - 2-4 个月）: ```python class ActiveInhibitionModule(nn.Module): """主动抑制错误记忆的核心结构""" def __init__(self, hidden_dim, num_knowledge_slots=64): [score=0.816 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:136-139]
+
+## Promoted From Short-Term Memory (2026-06-28)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:11:11 -->
+- Conversation Summary: assistant: 🎯 **「知识冲突场景下的主动抑制」长期研究方案** [score=0.804 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:11-11]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:13:13 -->
+- Conversation Summary: 收到你的方向：**长期研究 + 完全开放探索 + 知识冲突（旧记忆覆盖新事实）**。这是非常核心且前沿的方向，让我给一个完整的研究路线图。 [score=0.804 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:13-13]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-19-2057.md:132:132 -->
+- 💡 Phase 2（核心创新 - 2-4 个月）: > 当输入与预训练知识冲突时，模型应当主动评估"哪些旧记忆应该被本次输入覆盖"，而不是被动地生成。 [score=0.804 recalls=0 avg=0.620 source=memory/2026-06-19-2057.md:132-132]

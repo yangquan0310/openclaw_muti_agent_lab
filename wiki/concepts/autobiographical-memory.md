@@ -181,8 +181,12 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/liu-2025-digital-hoarding-cognitive-failures|Liu & Liu 2025 — 数字囤积是囤积知识还是囤积压力？中国大学生数字囤积与认知失败的关系]]
+- [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]
+- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 - [[concepts/digital-memory|数字记忆（Digital Memory）]]
 - [[concepts/autobiographical-memory-function|自传体记忆功能（Autobiographical Memory Function）]]
+- [[concepts/记忆视角|记忆视角（Memory Perspective）]]
 - [[concepts/collective-memory|集体记忆（Collective Memory）]]
 
 ### Related Pages

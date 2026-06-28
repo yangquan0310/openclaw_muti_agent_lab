@@ -176,6 +176,7 @@ aliases:
 ### Referenced By
 
 - [[concepts/creative-worker|创意工作者（Creative Worker）]]
+- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 
 ### Related Pages
 

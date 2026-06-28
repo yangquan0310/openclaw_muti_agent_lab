@@ -1,11 +1,9 @@
 ---
-pageType: synthesis
-id: synthesis.英文文献_SemanticScholar核查结果
+pageType: report
+id: report.英文文献_SemanticScholar核查结果
 title: "英文文献_SemanticScholar核查结果"
 createdAt: "2026-06-22T01:41:59"
 zotero_refs: []  # 笔记类 synthesis，无 Zotero 条目
-sources:
-  - knowledge/review/英文文献_SemanticScholar核查结果.md (manuscript-peer-review project)
 ---
 
 > 来源：项目 manuscript-peer-review/knowledge/review/英文文献_SemanticScholar核查结果.md

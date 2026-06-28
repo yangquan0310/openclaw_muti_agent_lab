@@ -1,43 +1,24 @@
 {
   "pageCounts": {
     "entity": 13,
-    "concept": 53,
-    "source": 15,
-    "synthesis": 36,
-    "report": 11
+    "concept": 60,
+    "source": 17,
+    "synthesis": 109,
+    "report": 42
   },
   "claimCount": 23,
   "claimHealth": {
     "freshness": {
-      "fresh": 21,
-      "aging": 2,
+      "fresh": 7,
+      "aging": 16,
       "stale": 0,
       "unknown": 0
     },
     "contested": 0,
     "lowConfidence": 0,
-    "missingEvidence": 18
+    "missingEvidence": 0
   },
-  "contradictionClusters": [
-    {
-      "key": "agents md 原则数量有版本差异 v8 写 11 条 早期写 10 条",
-      "label": "AGENTS.md 原则数量有版本差异：v8 写 11 条，早期写 10 条",
-      "kind": "page-note",
-      "entryCount": 1,
-      "paths": [
-        "syntheses/2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮.md"
-      ]
-    },
-    {
-      "key": "deepseek 推荐 7b 13b 小b模型处理高频任务 但实际工业部署中 7b 模型的能力上限是否能稳定支撑 分类 情绪判断 等任务 需基准测试验证 ",
-      "label": "DeepSeek 推荐 7B-13B 小B模型处理高频任务，但实际工业部署中 7B 模型的能力上限是否能稳定支撑\"分类+情绪判断\"等任务？需基准测试验证。",
-      "kind": "page-note",
-      "entryCount": 1,
-      "paths": [
-        "syntheses/2026-06-02-13-55-00-云端大模型-本地小模型-混合架构-工程化实践.md"
-      ]
-    }
-  ],
+  "contradictionClusters": [],
   "pages": [
     {
       "id": "concept.academic-procrastination",
@@ -58,7 +39,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -107,7 +88,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -131,7 +112,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -155,7 +136,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -179,7 +160,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -203,7 +184,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -227,7 +208,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -251,7 +232,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T00:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -275,7 +256,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -299,7 +280,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -323,8 +304,33 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.decision-making",
+      "title": "决策（Decision Making）",
+      "kind": "concept",
+      "path": "concepts/decision-making.md",
+      "aliases": [
+        "决策",
+        "Decision",
+        "Decision Making"
+      ],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27",
       "claimCount": 0,
       "topClaims": []
     },
@@ -347,7 +353,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -371,8 +377,43 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.digital-hoarding",
+      "title": "数字囤积（Digital Hoarding）",
+      "kind": "concept",
+      "path": "concepts/digital-hoarding.md",
+      "aliases": [
+        "数字囤积行为",
+        "数字收集",
+        "Digital Hoarding Behavior",
+        "Digital Clutter"
+      ],
+      "sourceIds": [
+        "source.Liu-Liu-2025-Digital-Hoarding-Cognitive-Failures",
+        "source.Zhang-Chen-2025-Digital-Hoarding-Perceived-Value",
+        "source.Bravo-Adasme-2025-Digital-Hoarding-Academic-Performance",
+        "source.Gao-Yu-2025-Digital-Hoarding-Workplace",
+        "source.Dai-et-al-2025-Undergraduate-Digital-Hoarding",
+        "source.Sun-et-al-2025-Digital-Hoarding-Nostalgic-Consumption",
+        "source.Xie-et-al-2025-Digital-Hoarding-Life-History",
+        "source.Bravo-Adasme-2025-Digital-Hoarding-Workplace-SEM",
+        "source.Yue-et-al-2025-Digital-Hoarding-Live-Ecommerce",
+        "source.Zhang-et-al-2025-Digital-Hamsters-Generation-Z"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27",
       "claimCount": 0,
       "topClaims": []
     },
@@ -395,7 +436,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -419,7 +460,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -443,7 +484,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -467,8 +508,33 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.inductive-bias",
+      "title": "归纳偏置（Inductive Bias）",
+      "kind": "concept",
+      "path": "concepts/inductive-bias.md",
+      "aliases": [
+        "归纳偏置",
+        "Inductive Bias",
+        "inductive_bias"
+      ],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27",
       "claimCount": 0,
       "topClaims": []
     },
@@ -491,7 +557,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -515,7 +581,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -539,7 +605,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -563,7 +629,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -587,7 +653,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -611,7 +677,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -635,7 +701,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -659,7 +725,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -683,7 +749,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -707,7 +773,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -731,7 +797,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -755,7 +821,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -779,7 +845,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -803,7 +869,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -827,7 +893,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -851,7 +917,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -875,7 +941,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -899,7 +965,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -924,7 +990,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -948,7 +1014,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -973,7 +1039,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -997,8 +1063,33 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.simplicial-message-passing",
+      "title": "单纯形消息传递（Simplicial Message Passing）",
+      "kind": "concept",
+      "path": "concepts/simplicial-message-passing.md",
+      "aliases": [
+        "Simplicial Message Passing",
+        "Simplicial Complex GNN",
+        "高阶消息传递"
+      ],
+      "sourceIds": [
+        "source.2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1021,7 +1112,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1045,7 +1136,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1069,7 +1160,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1093,7 +1184,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1117,7 +1208,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1141,7 +1232,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1165,7 +1256,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1189,7 +1280,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1213,7 +1304,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1237,7 +1328,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1261,7 +1352,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
       "claimCount": 0,
       "topClaims": []
@@ -1289,8 +1380,58 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23T11:02:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.外部痕迹改写记忆",
+      "title": "外部痕迹改写记忆（Externally-Cued Memory Rewriting）",
+      "kind": "concept",
+      "path": "concepts/外部痕迹改写记忆.md",
+      "aliases": [
+        "External Cue Memory Rewriting",
+        "AMEDIA Retrieval Rewriting",
+        "数字痕迹改写记忆"
+      ],
+      "sourceIds": [
+        "source.2026-06-05_Diehl-et-al_Captured-Memories"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.结构先验-vs-一致性先验",
+      "title": "结构先验 vs 一致性先验（Structural Prior vs Consistency Prior）",
+      "kind": "concept",
+      "path": "concepts/结构先验 vs 一致性先验.md",
+      "aliases": [
+        "结构先验",
+        "一致性先验",
+        "Structural vs Consistency Prior"
+      ],
+      "sourceIds": [
+        "source.2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1316,8 +1457,35 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23T11:02:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.记忆视角",
+      "title": "记忆视角（Memory Perspective）",
+      "kind": "concept",
+      "path": "concepts/记忆视角.md",
+      "aliases": [
+        "Memory Perspective",
+        "Field Perspective",
+        "Observer Perspective",
+        "第一人称视角",
+        "第三人称视角"
+      ],
+      "sourceIds": [
+        "source.2026-06-05_Diehl-et-al_Captured-Memories"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1458,7 +1626,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "entity",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-25T15:47:08.807Z",
       "claimCount": 0,
       "topClaims": []
@@ -1750,7 +1918,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "entity",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T00:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -1827,7 +1995,7 @@
       "entityType": "user",
       "canonicalId": "user.yangquan",
       "privacyTier": "private",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23T19:15:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -1852,6 +2020,450 @@
       "topClaims": []
     },
     {
+      "id": "report.多元负性思维与睡眠质量文献检索报告",
+      "title": "检索报告：多元负性思维与睡眠质量文献检索报告",
+      "kind": "report",
+      "path": "reports/2026-06-22-00-40-35-多元负性思维与睡眠质量文献检索报告.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.手机睡眠心理脱离_检索报告",
+      "title": "检索报告：手机睡眠心理脱离 检索报告",
+      "kind": "report",
+      "path": "reports/2026-06-22-00-40-35-手机睡眠心理脱离_检索报告.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.课堂拍照行为文献检索报告",
+      "title": "检索报告：课堂拍照行为文献检索报告",
+      "kind": "report",
+      "path": "reports/2026-06-22-00-40-35-课堂拍照行为文献检索报告.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.search-cognitive-neuroscience-2026-06-22-01-06-43",
+      "title": "Search Report — cognitive-neuroscience",
+      "kind": "report",
+      "path": "reports/2026-06-22-01-06-43-search-cognitive-neuroscience.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.跨期选择的年龄差异文献检索报告",
+      "title": "检索报告：跨期选择的年龄差异文献检索报告",
+      "kind": "report",
+      "path": "reports/2026-06-22-01-16-14-跨期选择的年龄差异文献检索报告.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.ch10_质性研究",
+      "title": "检索报告：ch10_质性研究",
+      "kind": "report",
+      "path": "reports/2026-06-22-01-18-43-ch10_质性研究.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.参考文献假文献核查报告",
+      "title": "参考文献假文献核查报告",
+      "kind": "report",
+      "path": "reports/2026-06-22-01-41-59-参考文献假文献核查报告.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.参考文献全查最终报告",
+      "title": "参考文献全查最终报告",
+      "kind": "report",
+      "path": "reports/2026-06-22-01-41-59-参考文献全查最终报告.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.参考文献核查报告_合并版",
+      "title": "参考文献核查报告_合并版",
+      "kind": "report",
+      "path": "reports/2026-06-22-01-41-59-参考文献核查报告_合并版.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.英文文献_SemanticScholar核查结果",
+      "title": "英文文献_SemanticScholar核查结果",
+      "kind": "report",
+      "path": "reports/2026-06-22-01-41-59-英文文献_SemanticScholar核查结果.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-24-agent-memory",
+      "title": "Agent 记忆 日报",
+      "kind": "report",
+      "path": "reports/2026-06-24-agent-memory.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-24-伊辛模型最新应用",
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-06-24-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-24-认知计算日报",
+      "title": "认知计算日报",
+      "kind": "report",
+      "path": "reports/2026-06-24-认知计算日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-25-agent-memory",
+      "title": "Agent 记忆 日报",
+      "kind": "report",
+      "path": "reports/2026-06-25-agent-memory.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-25-伊辛模型最新应用",
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-06-25-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-25-认知计算日报",
+      "title": "认知计算日报",
+      "kind": "report",
+      "path": "reports/2026-06-25-认知计算日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-26-agent-memory",
+      "title": "Agent 记忆 日报",
+      "kind": "report",
+      "path": "reports/2026-06-26-agent-memory.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-26-伊辛模型最新应用",
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-06-26-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-26-认知计算日报",
+      "title": "认知计算日报",
+      "kind": "report",
+      "path": "reports/2026-06-26-认知计算日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.search-general-2026-06-27-22-10-28",
+      "title": "Search Report — general",
+      "kind": "report",
+      "path": "reports/2026-06-27-22-10-28-search-general.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-27-伊辛模型最新应用",
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-06-27-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-27-数字化存储与自传体记忆日报",
+      "title": "数字化存储与自传体记忆日报",
+      "kind": "report",
+      "path": "reports/2026-06-27-数字化存储与自传体记忆日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T22:12:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-27-认知计算日报",
+      "title": "认知计算日报",
+      "kind": "report",
+      "path": "reports/2026-06-27-认知计算日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.age-differences-all-papers",
+      "title": "年龄差异与跨期选择 — 全部 679 papers 索引（按 type 分）",
+      "kind": "report",
+      "path": "reports/age-differences-in-intertemporal-choice-all-papers-2026-06-22.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "report.claim-health",
       "title": "Claim Health",
       "kind": "report",
@@ -1866,7 +2478,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-02T05:59:52.602Z",
+      "lastTouchedAt": "2026-06-27T15:56:48.102Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1885,7 +2497,79 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-02T06:03:05.379Z",
+      "lastTouchedAt": "2026-06-27T15:58:39.372Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.digital-storage-all-papers",
+      "title": "数字化存储与自传体记忆 — 499 papers 索引（按 type 分）",
+      "kind": "report",
+      "path": "reports/digital-storage-autobiographical-memory-all-papers-2026-06-22.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.educational-research-methods-all-papers",
+      "title": "教育科学研究方法 — ch10 质性研究 — 169 papers 索引（按 importance 分）",
+      "kind": "report",
+      "path": "reports/educational-research-methods-all-papers-2026-06-22.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.entrepreneurship-guidance-all-papers",
+      "title": "创业指导 — 147 papers 索引（按 type 分）",
+      "kind": "report",
+      "path": "reports/entrepreneurship-guidance-all-papers-2026-06-22.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.influencer-marketing-all-papers",
+      "title": "网红营销与自我扩展 — index.json 索引",
+      "kind": "report",
+      "path": "reports/influencer-marketing-self-expansion-all-papers-2026-06-22.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1922,7 +2606,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "lastTouchedAt": "2026-06-27T15:35:18.470Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1941,7 +2625,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-02T06:03:05.379Z",
+      "lastTouchedAt": "2026-06-27T15:58:39.372Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1960,7 +2644,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "lastTouchedAt": "2026-06-27T15:35:18.470Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1979,7 +2663,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "lastTouchedAt": "2026-06-27T15:35:18.470Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -1998,7 +2682,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-02T05:59:52.602Z",
+      "lastTouchedAt": "2026-06-27T15:56:48.102Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2017,7 +2701,25 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-05-23T02:34:51.054Z",
+      "lastTouchedAt": "2026-06-27T15:35:18.470Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.scale-development-all-papers",
+      "title": "量表开发 — 270 papers 索引（按 type 分）",
+      "kind": "report",
+      "path": "reports/scale-development-all-papers-2026-06-22.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2036,7 +2738,44 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-20T16:11:49.513Z",
+      "lastTouchedAt": "2026-06-27T15:43:21.193Z",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.student-thesis-revision-all-papers",
+      "title": "学生论文修改项目 — 全部 707 papers 索引（按 type 分）",
+      "kind": "report",
+      "path": "reports/student-thesis-revision-all-papers-2026-06-22.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.wiki-zotero-drift-2026-06-21",
+      "title": "漂移报告 - 2026-06-21",
+      "kind": "report",
+      "path": "reports/wiki-zotero-drift-2026-06-21.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2084,7 +2823,7 @@
       "topRelationships": [],
       "pageType": "source",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-05T15:40:00+08:00",
+      "lastTouchedAt": "2026-06-21T21:27:38",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2109,7 +2848,7 @@
       "topRelationships": [],
       "pageType": "source",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-05T15:48:00+08:00",
+      "lastTouchedAt": "2026-06-21T19:25:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2134,7 +2873,7 @@
       "topRelationships": [],
       "pageType": "source",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "lastTouchedAt": "2026-06-21T20:33:48",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2160,7 +2899,7 @@
       "topRelationships": [],
       "pageType": "source",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "lastTouchedAt": "2026-06-21T20:34:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2229,13 +2968,13 @@
       "topRelationships": [],
       "pageType": "source",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "lastTouchedAt": "2026-06-21T20:33:53",
       "claimCount": 0,
       "topClaims": []
     },
     {
       "id": "source.lisman-idiart-1995-theta-gamma",
-      "title": "θ-γ 跨频耦合与短时记忆存储（Lisman & Idiart 1995）",
+      "title": "θ-γ 跨频耦合与短时记忆存储：7±2 items 振荡模型（Lisman & Idiart 1995, *Science*）",
       "kind": "source",
       "path": "sources/lisman-idiart-1995-theta-gamma.md",
       "aliases": [
@@ -2254,7 +2993,30 @@
       "topRelationships": [],
       "pageType": "source",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "lastTouchedAt": "2026-06-21T21:37:23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.liu-2025-digital-hoarding-cognitive-failures",
+      "title": "Liu & Liu 2025 — 数字囤积是囤积知识还是囤积压力？中国大学生数字囤积与认知失败的关系",
+      "kind": "source",
+      "path": "sources/liu-2025-digital-hoarding-cognitive-failures.md",
+      "aliases": [
+        "数字囤积与认知失败",
+        "Digital hoarding cognitive failures",
+        "Liu 2025 Frontiers Psychology"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2279,7 +3041,7 @@
       "topRelationships": [],
       "pageType": "source",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "lastTouchedAt": "2026-06-21T20:24:15",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2397,6 +3159,29 @@
       "topClaims": []
     },
     {
+      "id": "source.sun-2025-digital-hoarding-nostalgic-consumption",
+      "title": "Sun, Chen & Cui 2025 — 数字囤积是否导致怀旧消费？认知失调与情绪记忆联结的双中介机制",
+      "kind": "source",
+      "path": "sources/sun-2025-digital-hoarding-nostalgic-consumption.md",
+      "aliases": [
+        "数字囤积与怀旧消费",
+        "Digital hoarding nostalgic consumption",
+        "Sun 2025 APJML"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "synthesis.协作演化",
       "title": "从学生论文修改到项目管理体系的演化",
       "kind": "synthesis",
@@ -2459,7 +3244,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T00:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2555,7 +3340,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23T14:06:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2814,7 +3599,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T00:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2881,7 +3666,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T00:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2902,7 +3687,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T00:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2923,7 +3708,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T00:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2944,7 +3729,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T00:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2965,7 +3750,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T00:00:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -2987,53 +3772,88 @@
       "topRelationships": [],
       "pageType": "synthesis",
       "confidence": 0.9,
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T04:08:14.609Z",
       "claimCount": 6,
       "topClaims": [
         {
           "text": "单元结构应包含暖身、主题、讨论、总结四个环节",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "樊富珉、何瑾《团体心理辅导》，华东师范大学出版社，单元结构设计规范"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T04:08:14.609Z"
         },
         {
           "text": "常用测量工具包括自我效能量表、人际交往能力问卷、情绪智力量表等",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "樊富珉、何瑾《团体心理辅导》，华东师范大学出版社，效果评估工具推荐列表"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T04:08:14.609Z"
         },
         {
           "text": "效果评估应包含前测和后测量表对比",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "樊富珉、何瑾《团体心理辅导》效果评估章节；方案二（发现闪光的我）前后测设计参考"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T04:08:14.609Z"
         },
         {
           "text": "每项活动应包含名称、目的、时间、规则四要素",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "樊富珉、何瑾《团体心理辅导》活动设计规范；方案二（发现闪光的我）活动设计示例"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T04:08:14.609Z"
         },
         {
           "text": "目标应包含认知、情感、行为三个维度",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "樊富珉、何瑾《团体心理辅导》，华东师范大学出版社，第一单元目标设定章节；教学目标分类（认知/情感/动作技能）参考 Bloom 教学目标分类学"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T04:08:14.609Z"
         }
       ]
@@ -3055,53 +3875,88 @@
       "topRelationships": [],
       "pageType": "synthesis",
       "confidence": 0.95,
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-24T03:57:08.172Z",
       "claimCount": 8,
       "topClaims": [
         {
           "text": "《团体心理辅导》由樊富珉、何瑾编著，华东师范大学出版社出版",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "樊富珉、何瑾《团体心理辅导》，华东师范大学出版社，ISBN 978-7-5675-8339-4"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T03:57:08.172Z"
         },
         {
           "text": "团体发展经历初期阶段、转换阶段、工作阶段、结束阶段四个时期",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "Corey, M.S. and Corey, G. (1982). Groups: Process and Practice. Brooks/Cole.（科瑞团体发展四阶段模型），第3章"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T03:57:08.172Z"
         },
         {
           "text": "团体辅导具有教育、发展、预防、治疗四大功能",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "樊富珉、何瑾《团体心理辅导》，华东师范大学出版社，第二单元"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T03:57:08.172Z"
         },
         {
           "text": "团体辅导场所需满足舒适性、功能性、保密性、互动性、非干扰性五个要求",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "樊富珉、何瑾《团体心理辅导》，华东师范大学出版社，第一单元"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T03:57:08.172Z"
         },
         {
           "text": "团体辅导常用技术包括倾听、复述、反映、澄清、提问、总结等",
           "status": "supported",
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
-          "freshnessLevel": "fresh",
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "source-link",
+              "sourceId": "wiki-self",
+              "weight": 0.7,
+              "note": "樊富珉、何瑾《团体心理辅导》，华东师范大学出版社，第一单元"
+            }
+          ],
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-05-24T03:57:08.172Z"
         }
       ]
@@ -3187,13 +4042,8 @@
         "entity.steward",
         "entity.yangquan"
       ],
-      "questions": [
-        "三件套各自的迭代节奏如何协调？",
-        "经验沉淀到什么程度可以独立成技能？"
-      ],
-      "contradictions": [
-        "AGENTS.md 原则数量有版本差异：v8 写 11 条，早期写 10 条"
-      ],
+      "questions": [],
+      "contradictions": [],
       "bestUsedFor": [],
       "notEnoughFor": [],
       "relationshipCount": 0,
@@ -3209,9 +4059,16 @@
           "text": "代理个人配置六件套各有分工：AGENTS 定原则、SOUL 定风格、IDENTITY 定边界、MEMORY 定规则、实践技能定流程",
           "status": "supported",
           "confidence": 0.95,
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "wiki-self",
+              "sourceId": "synthesis.agent-engineering-practice",
+              "weight": 0.9,
+              "note": "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
+            }
+          ],
           "freshnessLevel": "fresh",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
         },
@@ -3220,9 +4077,16 @@
           "text": "代理自我发展插件（v4.5.0）通过 8 个工具 + 4 个 hook 时机实现任务追踪、偏差检测、事件记录和自我调节",
           "status": "supported",
           "confidence": 0.95,
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "wiki-self",
+              "sourceId": "synthesis.agent-engineering-practice",
+              "weight": 0.9,
+              "note": "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
+            }
+          ],
           "freshnessLevel": "fresh",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
         },
@@ -3248,9 +4112,16 @@
           "text": "项目工作台通过四契约文件（README/HANDBOOK/TODO/metadata.json）+ 标准目录结构 + Manager 子类路由实现规范化管理",
           "status": "supported",
           "confidence": 0.95,
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "wiki-self",
+              "sourceId": "synthesis.agent-engineering-practice",
+              "weight": 0.9,
+              "note": "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
+            }
+          ],
           "freshnessLevel": "fresh",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
         },
@@ -3259,9 +4130,16 @@
           "text": "三件套协同循环：个人配置约束行为 → 工作台承载项目 → 插件固化经验 → 经验沉淀回个人配置",
           "status": "supported",
           "confidence": 0.9,
-          "evidenceCount": 0,
-          "missingEvidence": true,
-          "evidence": [],
+          "evidenceCount": 1,
+          "missingEvidence": false,
+          "evidence": [
+            {
+              "kind": "wiki-self",
+              "sourceId": "synthesis.agent-engineering-practice",
+              "weight": 0.9,
+              "note": "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
+            }
+          ],
           "freshnessLevel": "fresh",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
         }
@@ -3276,14 +4154,8 @@
       "sourceIds": [
         "source.deepseek-cloud-local-hybrid-architecture"
       ],
-      "questions": [
-        "OpenClaw 引入本地小模型后，多 agent 协作的 claim/heartbeat 机制是否还能正常工作（特别是大模型路由时）？",
-        "Workboard 看板的\"卡片状态机\"是否可以直接演化为\"工作流 DAG 节点\"？",
-        "本地小模型选型：Qwen 2.5 7B / Llama 3.1 8B / Mistral 7B 哪个最适配 OpenClaw 场景？"
-      ],
-      "contradictions": [
-        "DeepSeek 推荐 7B-13B 小B模型处理高频任务，但实际工业部署中 7B 模型的能力上限是否能稳定支撑\"分类+情绪判断\"等任务？需基准测试验证。"
-      ],
+      "questions": [],
+      "contradictions": [],
       "bestUsedFor": [],
       "notEnoughFor": [],
       "relationshipCount": 0,
@@ -3434,6 +4306,1539 @@
       "pageType": "synthesis",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-06-21T00:09:41+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.diehl-2026-captured-memories",
+      "title": "Extract Notes — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-00-37-extract-diehl-2026-captured-memories.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:00:37",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.diehl-2026-captured-memories.2026-06-22T00-03-32",
+      "title": "Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-03-32-summarize-diehl-2026-captured-memories.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:03:32",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.buzsaki-2002-hippocampal-theta.2026-06-22T00-06-50",
+      "title": "Extract Notes — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-06-50-extract-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:06:50",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.okeefe-recce-1993-phase-precession.2026-06-22T00-06-50",
+      "title": "Extract Notes — 海马位置细胞与θ 相位进动（O'Keefe & Recce 1993）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-06-50-extract-okeefe-recce-1993-phase-precession.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:06:50",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.buzsaki-2002-hippocampal-theta.2026-06-22T00-06-50",
+      "title": "Summarize — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-06-50-summarize-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:06:50",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.lisman-idiart-1995-theta-gamma",
+      "title": "Summarize — θ-γ 跨频耦合与短时记忆存储：7±2 items 振荡模型（Lisman & Idiart 1995, *Science*）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-06-50-summarize-lisman-idiart-1995-theta-gamma.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:06:50",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.buzsaki-2002-hippocampal-theta.2026-06-22T00-09-11",
+      "title": "Extract Notes — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-09-11-extract-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:09:11",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.diehl-2026-captured-memories.2026-06-22T00-09-11",
+      "title": "Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-09-11-summarize-diehl-2026-captured-memories.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:09:11",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.okeefe-recce-1993-phase-precession.2026-06-22T00-10-41",
+      "title": "Extract Notes — 海马位置细胞与θ 相位进动（O'Keefe & Recce 1993）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-10-41-extract-okeefe-recce-1993-phase-precession.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:10:41",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.diehl-2026-captured-memories.2026-06-22T00-11-03",
+      "title": "Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-11-03-summarize-diehl-2026-captured-memories.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:11:03",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.working-memory-perspective-on-delta-mem",
+      "title": "从工作记忆视角看 δ-mem",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-29-57-working-memory-perspective-on-delta-mem.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:30:41",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.awesome-gpt-messages",
+      "title": "δ-mem 论文总结",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-33-26-awesome-gpt-messages.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:33:26",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.threefold-forgetting-mechanism",
+      "title": "δ-mem 的三重遗忘机制：自然消退、主动抑制、干扰",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-33-26-threefold-forgetting-mechanism.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:33:26",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.手机睡眠心理脱离_文献笔记",
+      "title": "笔记：手机睡眠心理脱离 文献笔记",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-手机睡眠心理脱离_文献笔记.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.生成式AI_创意工作者_文献综述",
+      "title": "综述：生成式AI 创意工作者",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-生成式AI_创意工作者_文献综述.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.研究现状_心理治疗适宜性与治疗期待",
+      "title": "综述：研究现状 心理治疗适宜性与治疗期待",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-研究现状_心理治疗适宜性与治疗期待.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.笔记_治疗期待",
+      "title": "笔记：笔记 治疗期待",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-笔记_治疗期待.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.综述_心理治疗适宜性_影响因素_研究现状",
+      "title": "综述：综述 心理治疗适宜性 影响因素 研究现状",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-综述_心理治疗适宜性_影响因素_研究现状.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.综述_心理治疗适宜性_治疗偏好_研究现状",
+      "title": "综述：综述 心理治疗适宜性 治疗偏好 研究现状",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-综述_心理治疗适宜性_治疗偏好_研究现状.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.综述_心理治疗适宜性与治疗期待_研究现状",
+      "title": "综述：综述 心理治疗适宜性与治疗期待 研究现状",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-综述_心理治疗适宜性与治疗期待_研究现状.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.课堂拍照行为文献综述",
+      "title": "综述：课堂拍照行为",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-课堂拍照行为文献综述.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.负性思维与睡眠质量",
+      "title": "综述：负性思维与睡眠质量",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-负性思维与睡眠质量.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.错失焦虑与学业拖延",
+      "title": "综述：错失焦虑与学业拖延",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-错失焦虑与学业拖延.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.领悟社会支持_文献综述补充",
+      "title": "综述：领悟社会支持 补充",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-00-40-35-领悟社会支持_文献综述补充.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T00:40:35",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.引言草稿_v1",
+      "title": "综述：引言草稿_v1",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-16-14-引言草稿_v1.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:16:14",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.维度比较策略与SS偏好",
+      "title": "综述：维度比较策略与SS偏好",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-16-14-维度比较策略与SS偏好.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:16:14",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.跨期选择的年龄差异",
+      "title": "综述：跨期选择的年龄差异",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-16-14-跨期选择的年龄差异.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:16:14",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.ch10_质性研究_研究现状",
+      "title": "研究现状：ch10_质性研究_研究现状",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-18-43-ch10_质性研究_研究现状.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:18:43",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.问卷编制文献综述",
+      "title": "综述：问卷编制文献综述",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-20-52-问卷编制文献综述.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:20:52",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.内容质量审核意见_T021",
+      "title": "综述：内容质量审核意见_T021",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-22-17-内容质量审核意见_T021.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:22:17",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.创业指导_文献审核与补充报告",
+      "title": "综述：创业指导_文献审核与补充报告",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-22-17-创业指导_文献审核与补充报告.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:22:17",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.学术深化建议_T022",
+      "title": "综述：学术深化建议_T022",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-22-17-学术深化建议_T022.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:22:17",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.审稿意见_v3_T024",
+      "title": "综述：审稿意见_v3_T024",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-22-17-审稿意见_v3_T024.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:22:17",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.引用格式核查意见_v3",
+      "title": "综述：引用格式核查意见_v3",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-22-17-引用格式核查意见_v3.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:22:17",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.心理学家_理论文献格式核查意见",
+      "title": "综述：心理学家_理论文献格式核查意见",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-22-17-心理学家_理论文献格式核查意见.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:22:17",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.准社会关系对消费意愿的影响：文献综述",
+      "title": "综述：准社会关系对消费意愿的影响：文献综述",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-23-33-准社会关系对消费意愿的影响：文献综述.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:23:33",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.文献综述_数字化使用对自传体记忆的影响",
+      "title": "综述：文献综述_数字化使用对自传体记忆的影响",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-文献综述_数字化使用对自传体记忆的影响.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.文献综述_自传体记忆功能",
+      "title": "综述：文献综述_自传体记忆功能",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-文献综述_自传体记忆功能.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.文献综述_自传体记忆基础",
+      "title": "综述：文献综述_自传体记忆基础",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-文献综述_自传体记忆基础.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.文献综述_自传体记忆基础应用",
+      "title": "综述：文献综述_自传体记忆基础应用",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-文献综述_自传体记忆基础应用.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.文献综述_自传体记忆的主动遗忘",
+      "title": "综述：文献综述_自传体记忆的主动遗忘",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-文献综述_自传体记忆的主动遗忘.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.文献综述_自传体记忆的生成性提取",
+      "title": "综述：文献综述_自传体记忆的生成性提取",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-文献综述_自传体记忆的生成性提取.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.文献综述_自传体记忆的系统性巩固",
+      "title": "综述：文献综述_自传体记忆的系统性巩固",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-文献综述_自传体记忆的系统性巩固.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.文献综述_自传体记忆的自我参照编码",
+      "title": "综述：文献综述_自传体记忆的自我参照编码",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-文献综述_自传体记忆的自我参照编码.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.研究现状_数字化存储对自传体记忆的影响",
+      "title": "综述：研究现状_数字化存储对自传体记忆的影响",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-研究现状_数字化存储对自传体记忆的影响.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.研究现状_自传体记忆的主动遗忘",
+      "title": "综述：研究现状_自传体记忆的主动遗忘",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-研究现状_自传体记忆的主动遗忘.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.研究现状_自传体记忆的生成性提取",
+      "title": "综述：研究现状_自传体记忆的生成性提取",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-研究现状_自传体记忆的生成性提取.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.研究现状_自传体记忆的系统性巩固",
+      "title": "综述：研究现状_自传体记忆的系统性巩固",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-研究现状_自传体记忆的系统性巩固.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.研究现状_自传体记忆的自我参照编码",
+      "title": "综述：研究现状_自传体记忆的自我参照编码",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-研究现状_自传体记忆的自我参照编码.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.研究笔记_数字化使用对自传体记忆的影响",
+      "title": "笔记：研究笔记_数字化使用对自传体记忆的影响",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-研究笔记_数字化使用对自传体记忆的影响.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.补充检索_数字化存储与自传体记忆",
+      "title": "笔记：补充检索_数字化存储与自传体记忆",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-01-25-27-补充检索_数字化存储与自传体记忆.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T01:25:27",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.buzsaki-2002-hippocampal-theta.2026-06-22T05-30-34",
+      "title": "Extract Notes — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-05-30-34-extract-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T05:30:34",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.buzsaki-2002-hippocampal-theta.2026-06-22T16-10-49",
+      "title": "Summarize — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-16-10-49-summarize-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T16:10:49",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.buzsaki-2002-hippocampal-theta.2026-06-22T16-13-41",
+      "title": "Extract Notes — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-22-16-13-41-extract-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-22T16:13:41",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.diehl-2026-captured-memories.2026-06-23T18-33-05",
+      "title": "Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-18-33-05-summarize-diehl-2026-captured-memories.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T18:33:05",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.2026-06-05_Diehl-et-al_Captured-Memories",
+      "title": "Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-19-51-25-summarize-2026-06-05_Diehl-et-al_Captured-Memories.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T19:51:25",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.2026-06-05_Diehl-et-al_Captured-Memories.2026-06-23T19-53-29",
+      "title": "Extract Notes — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-19-53-29-extract-2026-06-05_Diehl-et-al_Captured-Memories.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T19:53:29",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.2026-06-05_Diehl-et-al_Captured-Memories.2026-06-23T21-56-42",
+      "title": "Extract Notes — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-21-56-42-extract-2026-06-05_Diehl-et-al_Captured-Memories.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T21:56:42",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.audit.2026-06-23.fortunetelling",
+      "title": "技能审计：fortunetelling v1.0.0 现状（2026-06-23）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-audit-fortunetelling.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T20:57:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.audit.2026-06-23.manager",
+      "title": "技能审计：manager v5.12.0 现状（2026-06-23）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-audit-manager.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T20:55:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.audit.2026-06-23.research-assistant.v6.0.5.2026-06-23T20-57-00+08-00",
+      "title": "专项审计：research-assistant v6.0.5 现状（对比 v6.0.3 审计报告）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-audit-research-assistant-v6-0-5.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T20:57:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.audit.2026-06-23.research-assistant.v6.0.5.2026-06-23T21-00-00+08-00",
+      "title": "技能审计：research-assistant v6.0.5 现状（2026-06-23 重审）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-audit-research-assistant.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T21:00:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.2026-06-23-text-audit-readme",
+      "title": "README.md 文字内容审计报告",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-text-audit-readme.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.2026-06-23-text-audit-references",
+      "title": "references/ 文字内容审计报告（18 个文件）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-text-audit-references.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.2026-06-23-text-audit-skill",
+      "title": "SKILL.md 文字内容审计报告",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-text-audit-skill.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.2026-06-23-text-audit-summary",
+      "title": "文字审计综合总报告",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-text-audit-summary.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.user-feedback.2026-06-23.research-assistant.psychologist.v6.0.6",
+      "title": "用户视角：psychologist 最终验证 research-assistant v6.0.6 polish + 返回最终意见",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-user-feedback-psychologist-v6-0-6.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T21:58:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.user-feedback.2026-06-23.research-assistant.psychologist",
+      "title": "用户视角：psychologist 深度使用 research-assistant 反馈（v6.0.4 修复后，2026-06-23）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-user-feedback-psychologist.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T19:55:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.work-log.2026-06-23.research-assistant.v6.0.5",
+      "title": "research-assistant v6.0.5 代码修复工作日志（2026-06-23）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-v6-0-5-improves-log.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T20:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.worklog.2026-06-23.research-assistant.v6.0.6",
+      "title": "工作日志：research-assistant v6.0.6 polish（清 v6.0.5 审计报告 4 项新发现）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-v6-0-6-polish-log.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T21:11:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.work-log.2026-06-23.research-assistant.v6.0.4",
+      "title": "research-assistant v6.0.4 文档修复工作日志（2026-06-23）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-23-v6.0.4-fixes-log.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-23T20:00:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.liu-2025-digital-hoarding-cognitive-failures",
+      "title": "Summarize — Liu & Liu 2025 — 数字囤积是囤积知识还是囤积压力？中国大学生数字囤积与认知失败的关系",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-27-23-37-26-summarize-liu-2025-digital-hoarding-cognitive-failures.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:37:26",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.sun-2025-digital-hoarding-nostalgic-consumption",
+      "title": "Summarize — Sun, Chen & Cui 2025 — 数字囤积是否导致怀旧消费？认知失调与情绪记忆联结的双中介机制",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-27-23-37-29-summarize-sun-2025-digital-hoarding-nostalgic-consumption.md",
+      "aliases": [],
+      "sourceIds": [
+        "placeholder"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-27T23:37:29",
       "claimCount": 0,
       "topClaims": []
     }

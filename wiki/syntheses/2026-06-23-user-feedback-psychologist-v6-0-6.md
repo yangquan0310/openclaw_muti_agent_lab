@@ -15,7 +15,11 @@ provenance:
   scope: hands_on_use_only_v6.0.6
   perspective: 真实用户视角
   user_profile: 数学/物理/心理学交叉研究者（老板）
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-23T21:58:00+08:00"
 ---
+
 
 # 用户视角：psychologist 最终验证 research-assistant v6.0.6 polish + 返回最终意见
 
@@ -477,3 +481,8 @@ $ python3 scripts/main.py synthesize extract --source-id "2026-06-05_Diehl-et-al
 *工作流：6 项核心验证（实测，非文档）*
 *评级：⭐⭐⭐⭐⭐（5 星）*
 *日常使用意愿：老板可以放心日常使用 + 推荐给同行*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

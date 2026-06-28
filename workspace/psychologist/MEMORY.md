@@ -12,6 +12,7 @@
 |--------|------|----------|------|----------|----------|------|
 | TASK-009 | ch11_行动研究法 | 学术深度补充v2（讨论结构重组+文献综述补强） | 进行中 | 2026-05-21 | 2026-05-21 | 输入：教材ch11 + 现有教案；输出：学术前沿补充v2 |
 | TASK-012 | CFPPS论文初稿 v1+T-CFPPS2-1 v2（重写）| 「治疗偏好 / 影响因素 × 心理治疗适宜性」文献综述 | 状态：v2 完成、v1 驳回 | 2026-06-06 | 2026-06-06 | v1（4500 字，4 维诊疗综述）：心理治疗适宜性 × 治疗偏好 = 出处。/knowledge/review/综述_心理治疗适宜性_治疗偏好_研究现状.md；v2（4500 字，X→Y 影响因素）：出错/驳回后重写。/knowledge/review/综述_心理治疗适宜性_影响因素_研究现状.md；**严重越界教训：v1 越界构建"链式模型+双轨结构假说+自我暴露中介桥梁"被老板 22:02 驳回**。 |
+| TASK-013 | 博士论文知识库扩充 | 从记忆→自传体记忆×数字化×大学生；检索+下载+添加条目+研究对象定位 | **阶段 1-4 完成，待老板拍板** | 2026-06-28 | 2026-06-28 | **输出物**（4 项）：(1) **8 个新 wiki source**（Hutmacher 2024/2025×2、Smart 2026、Mansfield 2026、Joanroy 2025、Osler 2025、Wardell 2025）— wiki sources 30→38 总；(2) **6/8 PDF 已下载**（Hutmacher 2024 + 2025 Birthday 待 Zotero 入库，2 篇被 anti-bot 挡）；(3) **1 个新概念卡** memory-research-methods.md（量化/质性/神经/混合/计算 6 大方法谱系 + 老板论文方法选择建议）；(4) **research-direction-thesis.md** 研究对象定位建议（3 维度：X 重要事件 / Y 手机相册+LLM / Z 中国大学生 18-25 + 3 套 RQ 方案 A>B>C + 4 章综述结构）。**P0 行动**：老板手动 Zotero 入库 3 篇（Hutmacher 2024 + 2025 Birthday + Wardell 2025）后走默认源下载；**P1 拍板**：研究对象定位（中国大学生 + 重要事件 + 手机相册/LLM）。**严重错位教训**（重要）：CNKI 中文检索返回的是不相关论文（GTDB 生物信息学），不是"数字化存储×自传体记忆×大学生"——中文检索可能需要浏览器打开+解析流程，未能完成。 |
 
 ---
 
@@ -75,3 +76,24 @@
 - Session: 2026-06-22 22:52:45 GMT+8: **Session Key**: agent:psychologist:corn:psychologist的定时任务; **Session ID**: a834e3bf-b60a-4767-85a1-e29e5482beba; **Source**: webchat [score=0.857 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:3-5]
 <!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:9:9 -->
 - Conversation Summary: user: [cron:aba0ae04-d41a-434f-9071-9d9a0f2f261e 日报：数字化存储与自传体记忆] 你是学术研究助手。请完成以下任务： [score=0.857 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:9-9]
+
+## Promoted From Short-Term Memory (2026-06-27)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:14:17 -->
+- 任务要求: 检索近24小时内新发布的学术文献; 主题范围：数字化存储与自传体记忆（digital storage and autobiographical memory）; 检索领域：心理学、认知科学、神经科学、人工智能; 每条文献需包含：标题、作者、期刊/会议、年份、DOI/链接 [score=0.893 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:14-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:55:55 -->
+- 参考链接: [文献标题] DOI/URL [score=0.893 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:55-55]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:57:58 -->
+- 参考链接: Current time: Monday, June 22nd, 2026 - 9:00 AM (Asia/Shanghai) Reference UTC: 2026-06-22 01:00 UTC [score=0.893 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:57-58]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:21:24 -->
+- 约束条件: 禁止编造文献信息，所有引用必须基于真实检索结果; 检索不到文献时，明确标注「未检索到该类型文献」; 只引用可验证的学术来源（DOI、正式发表的期刊/会议）; 报告总字数控制在 1500-2000 字以内 [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:21-24]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:25:26 -->
+- 约束条件: **检索方式：必须使用 jina-ai 技能（read 加载 ~/.openclaw/skills/jina-ai/SKILL.md）进行文献检索**; 日报禁止写入文件：完成后，将日报的完整内容整理在当前消息，不要保存到文件。 [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:25-26]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:29:29 -->
+- 报告结构: 请按以下结构生成 Markdown 格式的日报： [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:29-29]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:33:33 -->
+- 数字化存储与自传体记忆日报: > 日期：YYYY-MM-DD [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:33-33]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:60:60 -->
+- 参考链接: Use the message tool if you need to notify the user directly with an explicit target. If you do not send directly, your final plain-text reply will be delivered automatically. [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:60-60]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22-2252.md:31:31 -->
+- 报告结构: ```markdown [score=0.841 recalls=0 avg=0.620 source=memory/2026-06-22-2252.md:31-31]

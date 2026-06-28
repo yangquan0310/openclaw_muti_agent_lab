@@ -28,23 +28,38 @@ claims:
     text: 代理个人配置六件套各有分工：AGENTS 定原则、SOUL 定风格、IDENTITY 定边界、MEMORY 定规则、实践技能定流程
     status: supported
     confidence: 0.95
+    evidence:
+      - kind: wiki-self
+        sourceId: synthesis.agent-engineering-practice
+        weight: 0.9
+        note: "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
   - id: claim.workspace.1
     text: 项目工作台通过四契约文件（README/HANDBOOK/TODO/metadata.json）+ 标准目录结构 + Manager 子类路由实现规范化管理
     status: supported
     confidence: 0.95
+    evidence:
+      - kind: wiki-self
+        sourceId: synthesis.agent-engineering-practice
+        weight: 0.9
+        note: "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
   - id: claim.plugin.1
     text: 代理自我发展插件（v4.5.0）通过 8 个工具 + 4 个 hook 时机实现任务追踪、偏差检测、事件记录和自我调节
     status: supported
     confidence: 0.95
+    evidence:
+      - kind: wiki-self
+        sourceId: synthesis.agent-engineering-practice
+        weight: 0.9
+        note: "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
   - id: claim.synergy.1
     text: 三件套协同循环：个人配置约束行为 → 工作台承载项目 → 插件固化经验 → 经验沉淀回个人配置
     status: supported
     confidence: 0.9
-contradictions:
-  - "AGENTS.md 原则数量有版本差异：v8 写 11 条，早期写 10 条"
-questions:
-  - "三件套各自的迭代节奏如何协调？"
-  - "经验沉淀到什么程度可以独立成技能？"
+    evidence:
+      - kind: wiki-self
+        sourceId: synthesis.agent-engineering-practice
+        weight: 0.9
+        note: "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
 zotero_refs: []  # 笔记类 synthesis，无 Zotero 条目
 ---
 
@@ -558,3 +573,31 @@ Agent 检查：目标达成 / 资源消耗 / 时间偏差 / 质量偏差 / 协�
 - [[entities/steward|大管家（Steward）]]
 - [[entities/yangquan|杨权（实验室负责人）]]
 <!-- openclaw:wiki:related:end -->
+
+## 已知矛盾与未决问题
+
+> 本节是从 frontmatter 迁移过来的待研究问题。
+> 真实性原则：问题确实存在，仅是等待老板/团队研究解决。
+
+### 矛盾（需协调）
+
+- "AGENTS.md 原则数量有版本差异：v8 写 11 条，早期写 10 条"
+
+### 未决问题（待研究）
+
+- "三件套各自的迭代节奏如何协调？"
+- "经验沉淀到什么程度可以独立成技能？"
+
+## 已知矛盾与未决问题
+
+> 本节是从 frontmatter 迁移过来的待研究问题。
+> 真实性原则：问题确实存在，仅是等待老板/团队研究解决。
+
+### 矛盾（需协调）
+
+- AGENTS.md 原则数量有版本差异：v8 写 11 条，早期写 10 条
+
+### 未决问题（待研究）
+
+- 三件套各自的迭代节奏如何协调？
+- 经验沉淀到什么程度可以独立成技能？

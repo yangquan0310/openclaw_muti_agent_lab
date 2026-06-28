@@ -1,66 +1,25 @@
-"""
-scripts/search - 多源文献检索模块
-===============================
+"""search/ - 文献检索（ABC 统一接口 + kwargs 多态）
 
-统一导出所有检索器，支持多态调用：
+- BaseSearcher: 抽象基类（4 个 searcher 子类继承）
+- SearchManager: 编排器（选 source + 调 searcher 检索）
+- 4 个 searcher: semantic_scholar / google_scholar / cnki / arxiv
 
-    from scripts.search import (
-        BaseSearcher, Paper,
-        CnkiSearcher, SemSchSearcher, ScholarSearcher,
-        search_all, create_searcher, load_queries, save_results,
-    )
-
-多态用法（无需 if-else 判断子类）：
-
-    # 多源并行检索
-    results = search_all(
-        [CnkiSearcher(kb_path="kb.json"), SemSchSearcher(kb_path="kb.json")],
-        keyword="深度学习",
-        limit=10,
-        year_min=2020,
-    )
-    for source, papers in results.items():
-        print(f"{source}: {len(papers)} 条")
-
-    # 工厂创建
-    searcher = create_searcher("cn")   # → CnkiSearcher
-    searcher = create_searcher("en")   # → SemSchSearcher
-    searcher = create_searcher("gs")  # → ScholarSearcher (自动降级到 SemSch)
-
-    # 单检索器搜索 + KB 合并
-    searcher = SemSchSearcher(kb_path="kb.json")
-    kb = searcher.search("deep learning", limit=20, year_min=2020)
-
-备选引擎说明：
-    ScholarSearcher 优先使用 Google Scholar；
-    Google Scholar 被封时自动降级到 Semantic Scholar API。
-    CnkiSearcher 需要通过 browser.snapshot() 传入页面 accessibility tree。
+类用 ABC，方法统一签名为 `def search(**kwargs) -> list[Paper]`。
 """
 
-from .BaseSearcher import BaseSearcher, Paper
-from .CnkiSearcher import CnkiSearcher
-from .SemSchSearcher import SemSchSearcher
-from .ScholarSearcher import ScholarSearcher
-from .utils import (
-    search_all,
-    search_by_keyword,
-    create_searcher,
-    load_queries,
-    save_results,
-)
+from scripts.search.base import BaseSearcher, Paper
+from scripts.search.semantic_scholar import SemanticScholarSearcher
+from scripts.search.google_scholar import GoogleScholarSearcher
+from scripts.search.cnki import CnkiSearcher
+from scripts.search.arxiv import ArxivSearcher
+from scripts.search.manager import SearchManager
 
 __all__ = [
-    # ABC 基类
     "BaseSearcher",
     "Paper",
-    # 子类（各自实现 _do_search）
+    "SemanticScholarSearcher",
+    "GoogleScholarSearcher",
     "CnkiSearcher",
-    "SemSchSearcher",
-    "ScholarSearcher",
-    # 多态工具函数
-    "search_all",
-    "search_by_keyword",
-    "create_searcher",
-    "load_queries",
-    "save_results",
+    "ArxivSearcher",
+    "SearchManager",
 ]

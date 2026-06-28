@@ -180,6 +180,7 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[concepts/decision-making|决策（Decision Making）]]
 - [[concepts/perfectionism|完美主义（Perfectionism）]]
 - [[concepts/psychological-resilience|心理弹性（Psychological Resilience）]]
 - [[concepts/self-compassion|自我同情（Self-Compassion）]]

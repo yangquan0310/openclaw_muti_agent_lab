@@ -187,23 +187,25 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-06-12)
+## Promoted From Short-Term Memory (2026-06-28)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-06-08-2103.md:27:30 -->
-- "Feishu streaming cards 保留完整合并内容": **背景**：飞书 `streaming: true` + `renderMode: "card"` 时，**流式卡片更新会重复 / 串改内容**——已知的两个旧坑：; **#38943** cumulative token duplication（每个 chunk 把之前的 token 全重发一遍）; **#43704** merges unrelated replies when agent produces multiple final messages（多个 final reply 被错误合并进同一张卡片）; **这次 fix**：让 `mergeStreamingText` 把**完整的累积快照**作为新内容，replace 而不是 append；同时给 `FeishuStreamingSession` 加 `finalDelivered` 标志，多 final reply 不再串卡片。v2026.4.22 已经 ship 过一次合并逻辑，这次 beta.2 是同一思路的延续/硬化。 [score=0.839 recalls=0 avg=0.620 source=memory/2026-06-08-2103.md:27-30]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-08-2103.md:34:36 -->
-- "ClickClack reply tools 尊重 `toolsAllow`": **ClickClack 是什么**：OpenClaw 团队自研的 chat app（github.com/openclaw/clickclack，标语 "The chat app with claws"），定位类似 Slack + Discord 的混合体，给 OpenClaw agent 和人用。CLI 示例：`clickclack send` / `clickclack threads reply`。; **`toolsAllow` 是什么**：ClickClack account 配置里的**工具白名单字段**（`ResolvedClickClackAccount.toolsAllow: string[]`），用来限制这个 account 在 reply 时**能调哪些工具**——避免一个 account 被滥用去触发高权限 tool。; **这次 fix**：reply 路径在派发 tool 之前，先按 `toolsAllow` 过滤。**这是安全加固**（一个 account 即使被 prompt-injection，权限也被 `toolsAllow` 锁住）。 [score=0.839 recalls=0 avg=0.620 source=memory/2026-06-08-2103.md:34-36]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-08-2103.md:11:11 -->
-- Conversation Summary: assistant: 老板，我来拆一下这条 T042 日报里飞书相关的小注脚——但**先纠个错**（这也是您要的"解释"）： [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-08-2103.md:11-11]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-08-2103.md:17:17 -->
-- 一、这条注脚的来源: 是 **v2026.6.5-beta.2**（2026-06-07 发布）的 changelog，原文是一段把 5 个 channel/feature 改动打包的总结，结尾甩了 8 个 PR 号： [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-08-2103.md:17-17]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-08-2103.md:19:19 -->
-- 一、这条注脚的来源: > "WhatsApp …; Mattermost slash commands keep their state on `globalThis`; **Feishu streaming cards preserve full merged content**; voice-call tracks Twilio streams after connect; **ClickClack reply tools respect `toolsAllow`**. (#87951, #87965, #90486, #68113, **#90534, #90181, #90607**, #89500)" [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-08-2103.md:19-19]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-08-2103.md:3:5 -->
-- Session: 2026-06-08 21:03:10 GMT+8: **Session Key**: agent:steward:feishu:direct:ou_25cf20a1973aecc51f73d8e2800d7f7e; **Session ID**: 8d205e18-4c4a-4315-922f-4b3c332f52b2; **Source**: feishu [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-08-2103.md:3-5]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-08-2103.md:42:42 -->
-- 三、🚨 注脚里的 PR 号对不上: **这是我（之前）T042 报告写错了**，要明确更正： [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-08-2103.md:42-42]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-08-2103.md:44:47 -->
-- 三、🚨 注脚里的 PR 号对不上: | 注脚里写的 | 实际情况（来自 GitHub PR 标题） | |---|---| | #90534 → "Feishu streaming" | **#90534 = "anchor slash state on globalThis" = Mattermost 改动**（不是飞书） | | #90607 → "ClickClack toolsAllow" | **#90607 = "track Twilio streams after connect" = voice-call/Twilio 改动**（不是 ClickClack） | [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-08-2103.md:44-47]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-08-2103.md:49:49 -->
-- 三、🚨 注脚里的 PR 号对不上: 正确的 PR 映射（根据 changelog 段落 + 实际 GitHub 标题）我推测应该是： [score=0.808 recalls=0 avg=0.620 source=memory/2026-06-08-2103.md:49-49]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22.md:33:33 -->
+- 🚨 v8.32.0 教训 4次触发：飞书 connector #90559 deadlock: **触发条件**: [score=0.828 recalls=0 avg=0.620 source=memory/2026-06-22.md:33-33]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-22.md:9:9 -->
+- 🎯 Today's Goal (老板最终目标): > "zotero中存储好文献条目 / webdav存储好附件 / wiki存储好相关概念、来源与分析 / 让研究助手成为一个能做好科研知识库管理的专业技能" [score=0.828 recalls=0 avg=0.620 source=memory/2026-06-22.md:9-9]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-23-1706.md:11:14 -->
+- Conversation Summary: | 项 | 内容 | |------|------| | Legacy card | `T038 ch14 v4 终稿教案`（已 done）| | Legacy attempt id | `agent:instructor:feishu:group:oc_1032e70e8854c3bba9df42f38d532536`（session_key 当 attempt id）| [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-23-1706.md:11-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-23-1706.md:15:16 -->
+- Conversation Summary: | 新表 `workboard_card_attempts` | **已有一行**用同样 attempt id，但归属**别的 card**（`c345d2c8-...`）| | 冲突原因 | **schema 不兼容**：旧版用 session_key 作 attempt id，新版用 UUID，迁移时撞 PK | [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-23-1706.md:15-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-23-1706.md:19:19 -->
+- Conversation Summary: assistant: 老板，**完全确认**根因： [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-23-1706.md:19-19]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-23-1706.md:21:23 -->
+- Conversation Summary: 新 `workboard_cards` 表**没有** 7d0a9716（要 register → 撞 attempt PK）; 那个 session_key 在新表里**已被另一个 card 占用**（`c345d2c8-...`，T038 v2.1 反馈循环，done）; 这是 OpenClaw 升级时**"session 多 card 共享" → "session 独占"** 的 schema 演化冲突 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-23-1706.md:21-23]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-23-1706.md:25:25 -->
+- Conversation Summary: **方案 A（最务实）**：删掉这条 legacy entry [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-23-1706.md:25-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-23-1706.md:3:5 -->
+- Session: 2026-06-23 17:06:22 GMT+8: **Session Key**: agent:steward:feishu:direct:ou_25cf20a1973aecc51f73d8e2800d7f7e; **Session ID**: bd11634f-1c43-479e-8eb3-3f3c8493f6de; **Source**: feishu [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-23-1706.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-23-1706.md:9:9 -->
+- Conversation Summary: assistant: 老板，**根因找到了**： [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-23-1706.md:9-9]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-23-2221.md:12:15 -->
+- Conversation Summary: | 项 | 详情 | |----|------| | workboard 卡 | `e5f616a1-830b-41ff-ac32-c7003acac1e1` | | 子代理 | **writer**（spawn 已启动）| [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-23-2221.md:12-15]

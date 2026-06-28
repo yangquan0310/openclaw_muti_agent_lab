@@ -6,7 +6,11 @@ createdAt: "2026-06-22T00:06:50"
 zotero_refs:
   - key: XW2F3M5H
     role: primary
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-22T00:06:50"
 ---
+
 
 # θ-γ 跨频耦合与短时记忆存储：7±2 items 振荡模型（Lisman & Idiart 1995, *Science*） — 文献总结
 
@@ -34,3 +38,8 @@ zotero_refs:
 ## 提取时间
 
 2026-06-22T00:06:50
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

@@ -174,8 +174,11 @@ aliases:
 ### Referenced By
 
 - [[concepts/transactive-memory-system|交互记忆系统（Transactive Memory System, TMS）]]
+- [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]
+- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 - [[concepts/autobiographical-memory|自传体记忆（Autobiographical Memory）]]
 - [[concepts/memory-offloading|记忆外包（Memory Offloading）]]
+- [[concepts/记忆视角|记忆视角（Memory Perspective）]]
 - [[concepts/collective-memory|集体记忆（Collective Memory）]]
 
 ### Related Pages

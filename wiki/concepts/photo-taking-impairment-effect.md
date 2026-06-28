@@ -166,8 +166,11 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]
+- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 - [[concepts/cognitive-load|认知负荷（Cognitive Load）]]
 - [[concepts/memory-offloading|记忆外包（Memory Offloading）]]
+- [[concepts/记忆视角|记忆视角（Memory Perspective）]]
 
 ### Related Pages
 

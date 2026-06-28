@@ -173,9 +173,12 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/liu-2025-digital-hoarding-cognitive-failures|Liu & Liu 2025 — 数字囤积是囤积知识还是囤积压力？中国大学生数字囤积与认知失败的关系]]
+- [[concepts/decision-making|决策（Decision Making）]]
 - [[concepts/multitasking|多任务行为（Multitasking Behavior）]]
 - [[concepts/mobile-phone-policy|手机政策（Mobile Phone Policy）]]
 - [[concepts/photo-taking-impairment-effect|拍照损害效应（Photo-Taking Impairment Effect）]]
+- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 - [[concepts/memory-offloading|记忆外包（Memory Offloading）]]
 
 ### Related Pages

@@ -1,12 +1,16 @@
 ---
 pageType: synthesis
-id: synthesis.extract.okeefe-recce-1993-phase-precession
+id: synthesis.extract.okeefe-recce-1993-phase-precession.2026-06-22T00-06-50
 title: Extract Notes — 海马位置细胞与θ 相位进动（O'Keefe & Recce 1993）
 createdAt: "2026-06-22T00:06:50"
 zotero_refs:
   - key: 2FU4S4CM
     role: primary
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-22T00:06:50"
 ---
+
 
 # 海马位置细胞与θ 相位进动（O'Keefe & Recce 1993） — 笔记提取
 
@@ -35,3 +39,8 @@ zotero_refs:
 | Zotero itemKey | `2FU4S4CM` |
 | Zotero DOI | `10.1002/hipo.450030307` |
 | 提取时间 | `2026-06-22T00:06:50` |
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

@@ -1,3 +1,13 @@
+---
+pageType: synthesis
+id: synthesis.2026-06-23-text-audit-summary
+createdAt: "2026-06-23T22:00:00+08:00"
+updatedAt: "2026-06-27T23:40:00+08:00"
+title: 文字审计综合总报告
+sourceIds:
+  - placeholder  # TODO: 引用真实 source
+---
+
 # 文字审计综合总报告
 
 > **审计对象**：`~/.openclaw/skills/research-assistant/` 三层中文文档
@@ -343,3 +353,8 @@
 *审计者：writer subagent*
 *审计对象版本：research-assistant v6.0.6（2026-06-23）*
 *下次审计建议：v6.1.0 发布前复审*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

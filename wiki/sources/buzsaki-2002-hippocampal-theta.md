@@ -48,5 +48,11 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[syntheses/2026-06-22-00-06-50-extract-buzsaki-2002-hippocampal-theta|Extract Notes — 海马θ振荡（Buzsáki 2002）]]
+- [[syntheses/2026-06-22-00-09-11-extract-buzsaki-2002-hippocampal-theta|Extract Notes — 海马θ振荡（Buzsáki 2002）]]
+- [[syntheses/2026-06-22-05-30-34-extract-buzsaki-2002-hippocampal-theta|Extract Notes — 海马θ振荡（Buzsáki 2002）]]
+- [[syntheses/2026-06-22-16-13-41-extract-buzsaki-2002-hippocampal-theta|Extract Notes — 海马θ振荡（Buzsáki 2002）]]
+- [[syntheses/2026-06-22-00-06-50-summarize-buzsaki-2002-hippocampal-theta|Summarize — 海马θ振荡（Buzsáki 2002）]]
+- [[syntheses/2026-06-22-16-10-49-summarize-buzsaki-2002-hippocampal-theta|Summarize — 海马θ振荡（Buzsáki 2002）]]
 - [[syntheses/2026-06-21-00-09-41-脑电theta波与认知过程|脑电θ波与认知过程]]
 <!-- openclaw:wiki:related:end -->

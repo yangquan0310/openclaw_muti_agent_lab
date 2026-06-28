@@ -1,3 +1,11 @@
+---
+pageType: report
+id: report.2026-06-25-agent-memory
+createdAt: "2026-06-25T00:00:00+08:00"
+updatedAt: "2026-06-27T23:40:00+08:00"
+title: Agent 记忆 日报
+---
+
 # Agent 记忆 日报
 > 日期：2026-06-25（周四，Asia/Shanghai 08:18）
 > 检索时间窗口：过去 24 小时（2026-06-24 00:18 UTC ~ 2026-06-25 00:18 UTC）

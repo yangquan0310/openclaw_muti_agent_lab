@@ -8,7 +8,11 @@ zotero_refs:
     role: primary
 sources:
   - knowledge/notes/Threefold-Forgetting-Mechanism.md (memory-mechanism-cognitive-inference project)
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-22T00:33:26"
 ---
+
 
 > 来源：项目 memory-mechanism-cognitive-inference/knowledge/notes/Threefold-Forgetting-Mechanism.md
 > 原 Zotero note: ?, parent: δ-mem (WSZJGS59)
@@ -510,3 +514,8 @@ def fourfold_forgetting_update(S, h_t, k, v, dt, context):
 7.  **训练时的稳定性**：四重算子同时训练时，是否会相互干扰？课程学习的顺序（D → Π → $\mathcal{S}$ → RIF）是否最优？
 8.  **跨模型迁移**：在 Qwen、SmolLM、Llama 等不同 backbone 上，四种算子的相对重要性是否一致？
 9.  **病理模式模拟**：能否用这四种算子的极端参数模拟"阿尔茨海默病"（$D$ 异常快）/"PTSD"（$\mathcal{S}$ 异常弱）/"ADHD"（$\Pi$ 异常弱）/"前额叶损伤"（$\mathcal{S}$ 异常弱 + $\Pi$ 异常弱）？
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

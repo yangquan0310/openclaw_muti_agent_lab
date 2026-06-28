@@ -16,7 +16,7 @@ aliases:
 
 # 范畴论结构先验可在 306M 规模上压低 WikiText-103 困惑度（GT-Full 单独贡献 84%）
 
-> **来源**：`[[raw/papers/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.pdf]]`
+> **来源**：``PDF 待补充至 raw/papers/``
 > **作者**：Al Kari（Manceps Inc.，单人作者）
 > **年份**：2026（arXiv:2605.28864v1，2026-05-22 发布）
 > **类型**：paper
@@ -42,7 +42,7 @@ CCT（306M）在 WikiText-103 上比微调基线低 **2.92 PPL**（12% 相对）
 - `[[syntheses/2026-05-31-11-00-00-CCT-论文笔记.md]]`——主笔记，最详细的阅读材料
 - `[[syntheses/2026-05-31-11-30-00-复形vs流形-关系描述的数学对比.md]]`——复形本体论的第一手数学来源
 - `[[syntheses/2026-05-31-12-22-00-认知过程的对称性破缺机制-理论框架.md]]`——余代数与对称性破缺理论的工程来源
-- `[[concepts/inductive_bias]]`（如未来建）——结构先验 vs 一致性先验的新案例
+- `[[concepts/inductive-bias]]`（如未来建）——结构先验 vs 一致性先验的新案例
 - `[[concepts/范畴论]]`（如未来建）——单纯形复型/层/余代数/Yoneda 的应用样例
 
 ## 待确认
@@ -56,11 +56,12 @@ CCT（306M）在 WikiText-103 上比微调基线低 **2.92 PPL**（12% 相对）
 
 ## 关联的 raw 文件
 
-- `[[raw/papers/2026-05-31_Al-Kari_Cognitive-Categorical-Transformer_arXiv.pdf]]`
+- ``PDF 待补充至 raw/papers/``
 
 ## Related
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
 - [[syntheses/2026-05-31-11-00-00-CCT-论文笔记|The Cognitive Categorical Transformer (CCT) - 论文笔记]]
+- [[concepts/inductive-bias|归纳偏置（Inductive Bias）]]
 <!-- openclaw:wiki:related:end -->

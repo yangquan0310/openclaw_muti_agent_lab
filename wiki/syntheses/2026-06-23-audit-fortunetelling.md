@@ -10,7 +10,11 @@ target_version: 1.0.0
 provenance:
   type: skill_audit
   scope: only_audit_no_modification
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-23T20:57:00+08:00"
 ---
+
 
 # 技能审计：fortunetelling v1.0.0 现状
 
@@ -150,3 +154,8 @@ fortunetelling v1.0.0 是**功能完整但文档不达 SOP 标准**的技能：
 
 *最后更新：2026-06-23 20:57 GMT+8*
 *审计对象：fortunetelling v1.0.0*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

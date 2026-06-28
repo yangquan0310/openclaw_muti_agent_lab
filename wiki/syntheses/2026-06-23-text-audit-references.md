@@ -1,3 +1,13 @@
+---
+pageType: synthesis
+id: synthesis.2026-06-23-text-audit-references
+createdAt: "2026-06-23T22:00:00+08:00"
+updatedAt: "2026-06-27T23:40:00+08:00"
+title: references/ 文字内容审计报告（18 个文件）
+sourceIds:
+  - placeholder  # TODO: 引用真实 source
+---
+
 # references/ 文字内容审计报告（18 个文件）
 
 > **审计对象**：`/root/.openclaw/skills/research-assistant/references/` 下 18 个 .md 文件
@@ -315,3 +325,8 @@
 *审计完成时间：2026-06-23 22:35 GMT+8*
 *审计者：writer subagent*
 *下次审计建议：v6.1.0 发布前复审 + 模块新增时同步评估*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

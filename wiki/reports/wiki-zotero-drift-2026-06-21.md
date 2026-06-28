@@ -1,3 +1,11 @@
+---
+pageType: report
+id: report.wiki-zotero-drift-2026-06-21
+createdAt: "2026-06-27T00:00:00+08:00"
+updatedAt: "2026-06-27T23:40:00+08:00"
+title: 漂移报告 - 2026-06-21
+---
+
 # 漂移报告 - 2026-06-21
 
 > 自动生成 by WikiZoteroManager v5.15.0

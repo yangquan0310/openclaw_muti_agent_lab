@@ -177,8 +177,10 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[concepts/decision-making|决策（Decision Making）]]
 - [[concepts/academic-procrastination|学业拖延（Academic Procrastination）]]
 - [[concepts/delay-discounting|延迟折扣（Delay Discounting）]]
+- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 - [[concepts/intertemporal-choice|跨期选择（Intertemporal Choice）]]
 - [[concepts/fomo|错失焦虑（Fear of Missing Out, FoMO）]]
 

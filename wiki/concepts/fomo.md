@@ -167,6 +167,7 @@ aliases:
 - [[concepts/multitasking|多任务行为（Multitasking Behavior）]]
 - [[concepts/academic-procrastination|学业拖延（Academic Procrastination）]]
 - [[concepts/perfectionism|完美主义（Perfectionism）]]
+- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 - [[concepts/social-comparison|社会比较（Social Comparison）]]
 - [[concepts/self-control|自我控制（Self-Control）]]
 

@@ -1,12 +1,16 @@
 ---
 pageType: synthesis
-id: synthesis.summarize.buzsaki-2002-hippocampal-theta
+id: synthesis.summarize.buzsaki-2002-hippocampal-theta.2026-06-22T16-10-49
 title: Summarize — 海马θ振荡（Buzsáki 2002）
 createdAt: "2026-06-22T16:10:49"
 zotero_refs:
   - key: BNA4WATT
     role: primary
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-22T16:10:49"
 ---
+
 
 # 海马θ振荡（Buzsáki 2002） — 文献总结
 
@@ -36,3 +40,8 @@ zotero_refs:
 ## 提取时间
 
 2026-06-22T16:10:49
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

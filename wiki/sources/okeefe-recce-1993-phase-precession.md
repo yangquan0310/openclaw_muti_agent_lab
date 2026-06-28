@@ -48,5 +48,7 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[syntheses/2026-06-22-00-06-50-extract-okeefe-recce-1993-phase-precession|Extract Notes — 海马位置细胞与θ 相位进动（O'Keefe & Recce 1993）]]
+- [[syntheses/2026-06-22-00-10-41-extract-okeefe-recce-1993-phase-precession|Extract Notes — 海马位置细胞与θ 相位进动（O'Keefe & Recce 1993）]]
 - [[syntheses/2026-06-21-00-09-41-脑电theta波与认知过程|脑电θ波与认知过程]]
 <!-- openclaw:wiki:related:end -->

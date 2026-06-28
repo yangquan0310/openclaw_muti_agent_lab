@@ -1,6 +1,6 @@
 ---
 pageType: synthesis
-id: synthesis.audit.2026-06-23.research-assistant.v6.0.5
+id: synthesis.audit.2026-06-23.research-assistant.v6.0.5.2026-06-23T20-57-00+08-00
 title: 专项审计：research-assistant v6.0.5 现状（对比 v6.0.3 审计报告）
 createdAt: "2026-06-23T20:57:00+08:00"
 auditor: reviewer (workboard card 95949840-cf7a-48cc-8f88-378c74cba92e)
@@ -16,7 +16,11 @@ provenance:
   type: comparison_audit
   scope: only_audit_no_modification
   methodology: 23 项 v6.0.3 问题逐项对账 + 4 项 v6.0.5 代码修复实测验证 + 用户视角对照
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-23T20:57:00+08:00"
 ---
+
 
 # 专项审计：research-assistant v6.0.5 现状（对比 v6.0.3 审计报告）
 
@@ -532,3 +536,8 @@ research-assistant v6.0.5 在两次快速迭代后（v6.0.4 writer 12 项文档�
 *审计者：reviewer subagent*
 *审计对象：research-assistant v6.0.5 现状（对比 v6.0.3 审计报告 + v6.0.4/v6.0.5 修复日志 + psychologist 用户意见）*
 *审计方法：23 项逐项对账 + 4 项代码修复实测 + 用户视角对照 + 工具边界核查*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

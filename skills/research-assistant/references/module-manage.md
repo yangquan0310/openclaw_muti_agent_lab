@@ -1,51 +1,51 @@
-# 知识库管理（v5.16.0+ 全部走 wiki）
+# module-manage.md（v7.0.0）
 
-> **v5.16.0 重大重构**：删旧 `Manager.py`（走 knowledge/index.json 旧路径），新 `Manager.py` 直接以 wiki 为存储（替代品 `WikiManager.py` 已重命名为默认名）。
-> **老板 00:08 指令**："不需要向后兼容，全部改为 wiki"。
+> manage 模块：wiki source 列表 CRUD（只动 wiki，不调 Zotero / WebDAV）
 
----
+## 类清单
 
-## 一、Manager（v5.16.0+ wiki 版本）
+- `WikiSourceManager` — 单一类
 
-### 文件位置
+## 类 / 方法职责
 
-`scripts/manage/Manager.py`（6162 bytes）
+| 方法 | 作用 |
+|------|------|
+| `__init__(cfg)` | 读 config.wiki.root |
+| `list() -> list[dict]` | 列出所有 wiki source 摘要 |
+| `get(source_id) -> dict` | 单篇详情（含完整 frontmatter） |
+| `filter(conditions) -> list[dict]` | 按 `has_zotero_key` / `has_doi` / `pageType` 筛 |
+| `merge(source_ids) -> list[dict]` | 按 zotero_item_key 去重 |
+| `stats() -> dict` | 统计 total / with_zotero_key / by_pageType 等 |
+| `search(keyword) -> list[dict]` | 按 title 模糊搜索 |
 
-### 4 个核心方法
-
-| 方法 | 用途 | 输入 | 输出 |
-|------|------|------|------|
-| `list_sources()` | 列出所有 wiki source | - | list[dict]（id, file, title, zotero_item_key, zotero_doi, pageType） |
-| `merge(*source_ids)` | 按 zotero_item_key 去重合并 | source id 列表 | list[dict]（已去重） |
-| `filter(conditions)` | 按 YAML 字段筛选 source | dict（has_zotero_key/has_doi/pageType） | list[dict] |
-| `statistics()` | 统计 wiki 现状 | - | dict（total_sources, total_concepts, total_syntheses, total_reports） |
-
-### CLI 用法
+## CLI 用法
 
 ```bash
-python3 main.py manage list                    # 列出所有 wiki source
-python3 main.py manage stats                   # wiki 统计（14 sources / 47 syntheses / 54 concepts）
-python3 main.py manage filter --has-zotero-key true   # 筛已对齐 Zotero 的
-python3 main.py manage filter --has-zotero-key false  # 筛缺字段的
-python3 main.py manage filter --page-type source       # 筛 pageType
-python3 main.py manage merge --inputs source.diehl-...,source.buzsaki-...  # 按 zk 去重合并
+# 列表
+python3 scripts/main.py manage list
+
+# 统计
+python3 scripts/main.py manage stats
+
+# 单篇详情
+python3 scripts/main.py manage get --source-id source.buzsaki-2002-hippocampal-theta
+
+# 按条件筛
+python3 scripts/main.py manage filter --has-zotero-key true
+python3 scripts/main.py manage filter --has-doi true
+python3 scripts/main.py manage filter --page-type source
+
+# 合并重复
+python3 scripts/main.py manage merge --inputs source.a,source.b
+
+# 按 title 搜索
+python3 scripts/main.py manage search --keyword "deep learning"
 ```
 
-### 不向后兼容
+## 工具定位
 
-- 旧 `knowledge/index.json` 路径**已废弃**
-- 旧 Manager 备份在 `_legacy_Manager_<TS>.py`
-- 任何依赖旧 CLI (`--kb-path`, `--inputs` 等) 的脚本需更新
+manage 是 wiki 知识库的"ls / grep / cat / wc"——只动 wiki，不调 Zotero / WebDAV。
 
-### demo（v5.16.0 上线）
-
-```
-Total: 14 sources / 47 syntheses / 54 concepts / 13 reports
-7 学术 source 已对齐 Zotero
-7 工具类 source 按 v4 规则跳过
-```
-
-### 与 wiki/AGENTS.md 配合
-
-- 一一对应铁律：1 Zotero item = 1 source 页
-- 工具类 source（conda/openclaw-system 等）不需 zotero_item_key
+跟 maintain 的区别：
+- **manage** = wiki 内部 CRUD
+- **maintain** = 跨三方一致性检查

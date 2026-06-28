@@ -172,7 +172,9 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]
 - [[concepts/photo-taking-impairment-effect|拍照损害效应（Photo-Taking Impairment Effect）]]
+- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 - [[concepts/digital-memory|数字记忆（Digital Memory）]]
 
 ### Related Pages

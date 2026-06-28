@@ -8,7 +8,11 @@ zotero_refs:
     role: primary
 sources:
   - knowledge/notes/Awesome-GPT-Messages-ERZMJJTP.md (memory-mechanism-cognitive-inference project)
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-22T00:33:26"
 ---
+
 
 > 来源：项目 memory-mechanism-cognitive-inference/knowledge/notes/Awesome-GPT-Messages-ERZMJJTP.md
 > 原 Zotero note: ERZMJJTP, parent: δ-mem (WSZJGS59)
@@ -263,3 +267,8 @@ $$S_t = \lambda S_{t-1} + \beta \cdot (v_t - S_{t-1} \cdot k_t) \otimes k_t$$
 
 - 缓存是精确匹配，但联想记忆是 **基于相似度的泛化检索**：如果键不完全相同但相似，检索出的值也往往有意义（因为 $S$ 存储了多个外积，相似键在向量空间里靠近，会被多个存储向量的投影共同影响）。
 - 这种泛化能力使模型能处理从未见过的上下文，只需"联想到"相似情况即可，这正是人类记忆的核心特点之一。
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

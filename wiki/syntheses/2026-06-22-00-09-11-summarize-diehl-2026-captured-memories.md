@@ -1,12 +1,16 @@
 ---
 pageType: synthesis
-id: synthesis.summarize.diehl-2026-captured-memories
+id: synthesis.summarize.diehl-2026-captured-memories.2026-06-22T00-09-11
 title: Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）
 createdAt: "2026-06-22T00:09:11"
 zotero_refs:
   - key: Q8NF2W5T
     role: primary
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-22T00:09:11"
 ---
+
 
 # Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709） — 文献总结
 
@@ -56,3 +60,8 @@ zotero_refs:
 ## 提取时间
 
 2026-06-22T00:09:11
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

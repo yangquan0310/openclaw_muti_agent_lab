@@ -18,7 +18,7 @@ aliases:
 
 # 照片视角自然改写自传体记忆视角——5 个研究，N=709
 
-> **来源**：[`raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf`](raw/papers/2026-06-05_Diehl-et-al_Captured-Memories_JARMAC.pdf)
+> **来源**：`PDF 待补充至 raw/papers/`
 > **作者**：Kristin Diehl（USC Marshall）/ Alixandra Barasch（Colorado Boulder Leeds）/ Minjeong Ko（USC Marshall）/ Gal Zauberman（Yale SOM）
 > **年份**：2026（JARMAC 15(1), 98–107；Online First 2025-07-21）
 > **类型**：paper（实证，5 个研究，2 现场 + 3 线上预注册）
@@ -63,7 +63,7 @@ aliases:
 - [[syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026]]（即将创建）
 - [[concepts/记忆视角]]（潜在新概念页：field/observer memory perspective）
 - [[concepts/外部痕迹改写记忆]]（潜在新概念页：AMEDIA 框架的"retrieval 改写"机制实例）
-- [[syntheses/Hutmacher-Schramm-2026-数字工具重塑记忆]]（同主线另一篇科普评论，**待迁移后写**）
+- `Hutmacher-Schramm 2026 In-Mind Magazine`（待迁移后写）（同主线另一篇科普评论，**待迁移后写**）
 
 ## 待确认
 
@@ -78,5 +78,15 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[syntheses/2026-06-22-00-00-37-extract-diehl-2026-captured-memories|Extract Notes — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
+- [[syntheses/2026-06-23-19-53-29-extract-2026-06-05_Diehl-et-al_Captured-Memories|Extract Notes — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
+- [[syntheses/2026-06-23-21-56-42-extract-2026-06-05_Diehl-et-al_Captured-Memories|Extract Notes — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
+- [[syntheses/2026-06-22-00-03-32-summarize-diehl-2026-captured-memories|Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
+- [[syntheses/2026-06-22-00-09-11-summarize-diehl-2026-captured-memories|Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
+- [[syntheses/2026-06-22-00-11-03-summarize-diehl-2026-captured-memories|Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
+- [[syntheses/2026-06-23-18-33-05-summarize-diehl-2026-captured-memories|Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
+- [[syntheses/2026-06-23-19-51-25-summarize-2026-06-05_Diehl-et-al_Captured-Memories|Summarize — Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709）]]
+- [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]
 - [[syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026|照片视角作为外部痕迹——改写自传体记忆视角的因果证据]]
+- [[concepts/记忆视角|记忆视角（Memory Perspective）]]
 <!-- openclaw:wiki:related:end -->

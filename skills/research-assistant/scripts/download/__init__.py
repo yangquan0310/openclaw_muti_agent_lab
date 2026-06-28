@@ -1,26 +1,22 @@
-"""download module - 文献下载（多态流水线）
+"""download/ - 文献下载（多态流水线）
 
-- Downloader: 抽象基类
-- ZoteroJianguoyunDownloader: 老板专属（Zotero + 坚果云 WebDAV）
+- Downloader: 抽象基类（统一接口 find + pull + save）
+- ZoteroJianguoyunDownloader: 老板专属（论文先在 Zotero 库才能下）
+- SciHubDownloader: SciHub 替代方案（绕过付费墙，论文无需先入 Zotero）
 - PaperMetadata: 元数据 + 归档文件名生成
 
-用法（Python API）：
-    from scripts.download import ZoteroJianguoyunDownloader
-    dl = ZoteroJianguoyunDownloader()  # 自动从 .env 读凭据
-    path = dl.run("10.1177/0956797617694868")  # DOI 输入
-    # 或 path = dl.run("R8MVF42R")  # Zotero item key
-
-用法（CLI）：
-    python3 main.py download --doi 10.1177/0956797617694868
-    python3 main.py download --zotero-key R8MVF42R
+多态扩展点：未来可加 ArxivDirectDownloader / OpenAccessDownloader 等
+（继承 Downloader + 实现 find/pull/save 三个 abstract 方法）
 """
 
-from .Downloader import Downloader
-from .ZoteroJianguoyunDownloader import ZoteroJianguoyunDownloader
-from .paper_metadata import PaperMetadata
+from scripts.download.base import Downloader
+from scripts.download.paper import PaperMetadata
+from scripts.download.zotero_jianguoyun import ZoteroJianguoyunDownloader
+from scripts.download.scihub import SciHubDownloader
 
 __all__ = [
     "Downloader",
-    "ZoteroJianguoyunDownloader",
     "PaperMetadata",
+    "ZoteroJianguoyunDownloader",
+    "SciHubDownloader",
 ]

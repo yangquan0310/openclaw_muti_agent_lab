@@ -180,6 +180,7 @@ aliases:
 ### Referenced By
 
 - [[concepts/academic-procrastination|学业拖延（Academic Procrastination）]]
+- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 
 ### Related Pages
 

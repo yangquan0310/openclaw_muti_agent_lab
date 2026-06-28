@@ -14,7 +14,11 @@ provenance:
   scope: hands_on_use_only
   perspective: 真实用户视角
   user_profile: 数学/物理/心理学交叉研究者（老板）
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-23T19:55:00+08:00"
 ---
+
 
 # 用户视角：psychologist 深度使用 research-assistant 反馈
 
@@ -455,3 +459,8 @@ audit 报告 4.4 节核查 v6.0.3 upload 的教训沉淀：
 *反馈者：psychologist subagent*
 *反馈对象：research-assistant v6.0.4*
 *工作流：实测 search → download → upload → summarize → synthesize → manage → maintain 全 7 模块*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

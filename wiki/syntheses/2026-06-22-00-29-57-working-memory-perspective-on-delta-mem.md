@@ -8,7 +8,11 @@ zotero_refs:
     role: primary
 sources:
   - knowledge/notes/Working-Memory-Perspective-on-delta-mem.md (memory-mechanism-cognitive-inference project)
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-22T00:30:41"
 ---
+
 
 > 来源：项目 memory-mechanism-cognitive-inference/knowledge/notes/Working-Memory-Perspective-on-delta-mem.md
 > 原 Zotero note: ERZMJJTP, parent: δ-mem (WSZJGS59)
@@ -181,3 +185,8 @@ Dehaene 的全局工作空间理论：意识 = 信息在多个专门模块间"�
 但它**尚未覆盖**意识门槛、情绪调制、串行扫描、内部复述、绑定错误、动态容量等更深的工作记忆现象——这些既是 δ-mem 的局限，也是这个方向继续推进的丰富空间。
 
 从工作记忆的视角看，δ-mem 不只是一篇工程论文，它实质上**为 LLM 重新引入了"工作记忆"这一被简化的认知层次**——这是它最深层的贡献。
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

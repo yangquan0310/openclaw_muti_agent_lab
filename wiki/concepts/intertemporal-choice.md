@@ -176,6 +176,7 @@ $$V = A / (1 + kD)^s$$
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[concepts/decision-making|决策（Decision Making）]]
 - [[concepts/delay-discounting|延迟折扣（Delay Discounting）]]
 - [[concepts/socioemotional-selectivity-theory|社会情绪选择理论（Socioemotional Selectivity Theory）]]
 - [[concepts/buffering-hypothesis|缓冲假设（Buffering Hypothesis）]]

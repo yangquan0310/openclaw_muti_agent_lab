@@ -6,7 +6,11 @@ createdAt: "2026-06-22T00:00:37"
 zotero_refs:
   - key: Q8NF2W5T
     role: primary
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-22T00:00:37"
 ---
+
 
 # Diehl et al. 2026 — 照片视角自然改写自传体记忆视角（5 个研究，N=709） — 笔记提取
 
@@ -56,3 +60,8 @@ zotero_refs:
 | Zotero itemKey | `Q8NF2W5T` |
 | Zotero DOI | `10.1037/mac0000231` |
 | 提取时间 | `2026-06-22T00:00:37` |
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

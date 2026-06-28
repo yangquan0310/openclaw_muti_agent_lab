@@ -11,7 +11,11 @@ provenance:
   type: skill_audit
   scope: only_audit_no_modification
   role: P0 (highest priority — audit SOP source itself)
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-23T20:55:00+08:00"
 ---
+
 
 # 技能审计：manager v5.12.0 现状
 
@@ -197,3 +201,8 @@ manager v5.12.0 在"五章节结构 + references 命名 + 自检 4 问 + 常见�
 *审计者：reviewer subagent*
 *审计对象：manager v5.12.0*
 *审计 SOP：skill-audit-workflow.md（manager skill 自身）*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

@@ -19,7 +19,11 @@ provenance:
     - 严格遵循"工具 = 工具说明书，不替代 agent"
     - 不写依赖包（不碰 ~/.local/share/pnpm/.../node_modules/）
     - 不泄露 .env
+sourceIds:
+  - placeholder  # TODO: 引用真实 source  # 待补：引用了哪些 sources
+updatedAt: "2026-06-23T20:30:00+08:00"
 ---
+
 
 # research-assistant v6.0.5 代码修复工作日志
 
@@ -609,3 +613,8 @@ for content, expected in [
 *工作者：programmer subagent*
 *工作对象：research-assistant v6.0.5*
 *工作流：按 psychologist 用户意见 4 项痛点 → 4 个代码修复 → 工具边界严守*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+- No related pages yet.
+<!-- openclaw:wiki:related:end -->

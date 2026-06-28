@@ -47,5 +47,6 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[syntheses/2026-06-22-00-06-50-summarize-lisman-idiart-1995-theta-gamma|Summarize — θ-γ 跨频耦合与短时记忆存储：7±2 items 振荡模型（Lisman & Idiart 1995, *Science*）]]
 - [[syntheses/2026-06-21-00-09-41-脑电theta波与认知过程|脑电θ波与认知过程]]
 <!-- openclaw:wiki:related:end -->
