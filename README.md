@@ -51,12 +51,8 @@
 .openclaw/                          # OpenClaw 根目录（Git仓库根目录）
 ├── README.md                          # 本说明文件（需同步更新）
 ├── .gitignore                         # Git忽略规则
-├── .gitallowed                        # Git允许规则（secrets豁免）
 ├── requirements.txt                   # Python依赖文件
 ├── openclaw.json                      # OpenClaw主配置文件
-├── state/                             # SQLite 控制平面（cron/plugin/tasks/devices 等运行时状态，2026-06-05 迁入）
-│   ├── .gitkeep                       # 占位文件（让目录结构对仓库可见）
-│   └── openclaw.sqlite                # SQLite 主数据库（WAL 模式，WAL/SHM 不入库）
 ├── workspace/                         # Agent工作空间（10个）
 │   ├── programmer/                    # 程序员
 │   │   ├── AGENTS.md                  # 任务生命周期行为规范
