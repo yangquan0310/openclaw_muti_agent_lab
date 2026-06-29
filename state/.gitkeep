@@ -1,4 +1,0 @@
-# 占位文件 - 保留 state/ 目录结构对外部可见
-# state/ 内是 OpenClaw 运行时 SQLite 数据库（openclaw.sqlite + WAL/SHM）
-# 数据库本身（*.sqlite*）被 .gitignore 排除，不入库
-# 2026-06-05 清理：cron/plugin-state/flows/session-delivery-queue 已迁入 SQLite
