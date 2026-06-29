@@ -187,25 +187,11 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-06-29)
+## Promoted From Short-Term Memory (2026-06-30)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-06-23-2221.md:16:18 -->
-- Conversation Summary: | 任务 | 评估 SKILL.md / README.md / references/ 17 个 .md 的**文字内容质量**（不是技术问题）| | 评估维度 | A. 中文表达 (30) + B. 信息密度 (20) + C. 结构清晰 (20) + D. 一致性 (20) + E. 用户友好 (10) = 100 分 | | 产出 | 4 份报告（SKILL / README / references / 综合总报告）| [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-23-2221.md:16-18]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-23-2221.md:20:22 -->
-- Conversation Summary: writer 跑完会推完成事件，我等。 assistant: 🎉 **文字审计完成**——4 份报告 / 1140 行 / 53 KB。快速 verify + 给老板汇报： assistant: ✅ **文字内容审计完成**（4 份报告 / 53 KB / 卡 done）： [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-23-2221.md:20-22]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-23-2221.md:26:29 -->
-- 🏆 综合评分：**82.5 / 100（优秀）**: | 层级 | 中文表达(30) | 信息密度(20) | 结构(20) | 一致性(20) | 友好度(10) | **总分** | |------|----|----|----|----|----|----| | SKILL.md | 25 | 16 | 17 | 14 | 8 | **80** | | README.md | 27 | 18 | 16 | 13 | 9 | **83** | [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-23-2221.md:26-29]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-23-2221.md:3:5 -->
-- Session: 2026-06-23 22:21:18 GMT+8: **Session Key**: agent:steward:feishu:direct:ou_25cf20a1973aecc51f73d8e2800d7f7e; **Session ID**: 6ccf738f-4a42-474d-b23e-8ded2fb5290f; **Source**: feishu [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-23-2221.md:3-5]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-23-2221.md:30:31 -->
-- 🏆 综合评分：**82.5 / 100（优秀）**: | references/ (18 文件) | 25.4 | 17.0 | 17.3 | 16.2 | 8.6 | **84.5** | | **加权综合** | 25.8 | 17.0 | 16.8 | **14.4** | 8.5 | **82.5** | [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-23-2221.md:30-31]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-23-2221.md:9:10 -->
-- Conversation Summary: assistant: 老板——**做 reference / readme / skill 文字内容审计**（不是技术问题，是文字质量）。按 v3.3.0 私聊派发，**writer** 是最合适的评审员： assistant: ✅ **派发 writer 文字内容审计**： [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-23-2221.md:9-10]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:19:19 -->
-- `active-memory` 插件状态不一致: plugins.entries.active-memory: plugin disabled (disabled in config) but config is present [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:19-19]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:22:23 -->
-- `active-memory` 插件状态不一致: 含义：插件**被禁用**，但**配置块还在**——典型的"关掉开关却忘了拆线"; 风险：每次启动都打 warning；占配置空间；如果后续想重开可能踩坑 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:22-23]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:25:26 -->
-- `active-memory` 插件状态不一致: **真要关** → 把 `plugins.entries.active-memory` 整段配置从 openclaw.json 删掉; **想保留** → 把它重新 enable [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:25-26]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:3:5 -->
-- Session: 2026-06-24 00:32:31 GMT+8: **Session Key**: agent:steward:feishu:direct:ou_25cf20a1973aecc51f73d8e2800d7f7e; **Session ID**: 94203a64-798c-41a4-89ef-7151dea692b0; **Source**: feishu [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:34:37 -->
+- Obsidian CLI: missing: 渲染模式设的 `obsidian`，但 **Obsidian CLI 不可用**; 影响：依赖 Obsidian 的渲染/索引/搜索增强能力**全失效**（走 fallback 路径）; 解法（按优先级）：; 装 Obsidian CLI（`obsidian --version` 应该能找到） [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:34-37]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:38:38 -->
+- Obsidian CLI: missing: 或者把 `wiki.renderMode` 改成 `local` / `shared`（按实际用途） [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:38-38]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:9:10 -->
+- Conversation Summary: user: Wiki当前有哪些问题？运行一下 openclaw wiki status assistant: Wiki status 跑完了，按你问的"**有哪些问题**"汇报——分三档：配置警告、功能缺失、统计观察。 [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:9-10]
