@@ -78,6 +78,7 @@ __pycache__/
 *.sqlite-shm.shadow
 *.sqlite-wal.shadow
 *.sqlite.shadow
+/state/openclaw.sqlite
 
 # ============================================
 # 允许需要备份的文件
@@ -88,16 +89,13 @@ __pycache__/
 /openclaw.json
 !/workspace/
 !/wiki/
-!/state/
 !/skills/
 !/hooks/
 
 # ============================================
 # State 目录 
 # ============================================
-!state/
 !/state/.gitkeep
-!/state/openclaw.sqlite
 
 # ============================================
 # Workspace 目录 - 只追踪实验室7个代理
