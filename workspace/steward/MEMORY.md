@@ -187,11 +187,21 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-06-30)
+## Promoted From Short-Term Memory (2026-07-01)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:34:37 -->
-- Obsidian CLI: missing: 渲染模式设的 `obsidian`，但 **Obsidian CLI 不可用**; 影响：依赖 Obsidian 的渲染/索引/搜索增强能力**全失效**（走 fallback 路径）; 解法（按优先级）：; 装 Obsidian CLI（`obsidian --version` 应该能找到） [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:34-37]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:38:38 -->
-- Obsidian CLI: missing: 或者把 `wiki.renderMode` 改成 `local` / `shared`（按实际用途） [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:38-38]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-24-0032.md:9:10 -->
-- Conversation Summary: user: Wiki当前有哪些问题？运行一下 openclaw wiki status assistant: Wiki status 跑完了，按你问的"**有哪些问题**"汇报——分三档：配置警告、功能缺失、统计观察。 [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-24-0032.md:9-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:101:102 -->
+- 30 分钟后: **我读完 5 个文件后的"项目理解报告"**（证明我懂了）; **v3 决策书**（我**自己**写，不让 subagent 写） [score=0.841 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:101-102]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:106:109 -->
+- 30 分钟后: **不再让您反复推翻**——方案是我写的、我负责。 user: 我根本不在乎你要怎么做！！ 我给你的目标约束！你完全不理解！ 整个项目工程化！你完全不明白是什么意思？ [score=0.841 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:106-109]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:111:114 -->
+- 30 分钟后: 你根本没有做好理解用户需求的事情！！ 你甚至根本不知道项目的问题在哪里？？ 为什么我要提出哪些目标！！ assistant: 老板**完全说得对**。我之前没理解您的目标，**现在我**说出我的理解，您看对不对： [score=0.841 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:111-114]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:104:104 -->
+- 30 分钟后: 老板**拍板 v3 决策书**后，再派实施 subagent（按 v3 严格实施，不再让 subagent 自由发挥）。 [score=0.809 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:104-104]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:118:118 -->
+- 我对"工程化"的理解: **不是**"加 ABC 装饰器" / **不是**"加 docstring" / **不是**"加 type hint"。 [score=0.809 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:118-118]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:120:120 -->
+- 我对"工程化"的理解: **是** —— 让**老板您自己**（非专业程序员）能**5 分钟看懂一段代码**、能**改一行配置就改变行为**、能**加一个新功能不读懂所有旧代码**。 [score=0.809 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:120-120]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:124:127 -->
+- 老板的 4 个痛点（我**现在**看到的）: | 老板的原则 | 老板的痛点 | scripts/ 现状的具体问题 | |------------|------------|------------------------| | **可维护** | 您想自己改"文献分类规则"不痛苦 | `Summarizer._classify_type` 一堆 if/elif 揉在一个方法里——改规则得读懂整个 292 行类 | | **便捷** | 您想加新子命令不痛苦 | `main.py` 380 行手动 add_parser——加子命令要复制 50 行模板 | [score=0.809 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:124-127]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:128:129 -->
+- 老板的 4 个痛点（我**现在**看到的）: | **config** | 您想改 timeout / API key 不动代码 | `Searcher / SemSchSearcher / ScholarSearcher / ZoteroJianguoyunDownloader` 4 处重复 `_load_config()`——改 timeout 要改 4 处 | | **简洁** | 您想看代码 5 分钟明白 | `SemSchSearcher.py:190` 调 `self._load_kb()` 但您不知道这是基类委托给 adapter——**隐式行为**，违反您说的"基本封装都没有" | [score=0.809 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:128-129]

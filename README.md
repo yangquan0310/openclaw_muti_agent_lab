@@ -693,6 +693,12 @@ openclaw agents restart <agent-name>
 - **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
 
 ### 版本 4.3.16 (2026-06-29 05:42)
+### 版本 4.3.17 (2026-07-01 05:00)
+- **梦境系统活跃**:所有10个Agent的DREAMS.md及memory/.dreams/events.jsonl同步更新(222行新增)
+- **Wiki报告新增**:新增4篇研究报告(agent记忆/工作模型/日记-数字孪生/研究日报)和2篇综合分析
+- **steward记忆更新**:MEMORY.md工作记忆更新,DREAMS.md增长37行
+- **运行状态**:✅ 稳定版,20个文件待提交,7个未追踪wiki文件
+
 - **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 10 个 agent 的 memory/.dreams/events.jsonl + 9 个 agent 的 openclaw-workspace-state.json + steward/MEMORY.md promotion 块 + openclaw.json 模型 fallback 配置 + state/openclaw.sqlite），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查 + 清理**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮 4 个 agent (physicist/programmer/psychologist/steward) 运行时状态文件 `openclaw-workspace-state.json` 整体迁移至各 agent 的 `temp/` 目录（与 4.3.9/4.3.10/4.3.12/4.3.13/4.3.14/4.3.15 推送模式一致）；同时新增 `.gitignore` 规则 `**/openclaw-workspace-state.json` 防止以后误追踪
 - **.gitignore 规则新增**：`/workspace/*/openclaw-workspace-state.json` 排除模式（双 `**/` 通配覆盖所有 agent workspace 下的运行时元数据文件）
@@ -1267,7 +1273,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-06-29 05:42:00**
+**最后更新: 2026-07-01 05:00:00**
 **系统版本**: OpenClaw 2026.6.9
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
