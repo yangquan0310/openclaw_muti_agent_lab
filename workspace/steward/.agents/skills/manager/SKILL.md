@@ -2,7 +2,7 @@
 name: manager
 description: >
   manager是大管家的管理实践技能（**唯一入口**，任务派发唯一路径）。
-  当需要派发任务、推进任务、完善TODO、领取项目任务、协调子代理干活时激活（task-flow-guide.md）。
+  当需要派发任务（群派发 IM 艾特 / dispatch 派发 `openclaw workboard dispatch` CLI）、推进任务、完善TODO、领取项目任务、协调子代理干活时激活（task-flow-guide.md）。
   当需要创建/管理项目（论文、课程、程序、知识库/wiki、通用项目）时激活。
   当需要备课时激活（lesson-plan-guide）。
   当需要技能审计、核查技能质量时激活（skill-audit-workflow）。
@@ -10,7 +10,7 @@ description: >
   当需要定期清理wiki或同步规范时激活（cleaning-guide、sync-guide）。
   当需要发布 workboard 任务卡（多 Agent 协作跟踪）时激活（workboard-guide）。
   当需要 Quarto PDF 编译/排版/APA 7th 论文配置时激活（quarto-pdf-config）。
-version: 5.12.0
+version: 5.13.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -127,7 +127,8 @@ manager maintainer --help
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
-| **5.12.0** | **2026-06-06** | **两种任务协调方式必查**（老板 2026-06-06 拍板，源自私聊派发端到端测试）：(1) **description 字段加"两种协调方式"** 必查触发——群里 = IM + workboard、私聊 = sessions_spawn + workboard，确保 LLM 看到"派发"类任务立即想起 manager 技能；(2) **核心原则修"TODO.md 强制"为分场景**——群场景写，私聊场景不写（v3.2.0 §3.2）；(3) **边界条件撤销"禁止私聊汇报"**——v3.2.0 私聊派发场景下 DM 是合法通道；(4) **快速调用更新 v1.5.0**——start 子命令已删，加群/私聊建卡对照、spawn 派发说明；(5) 导航表 task-flow-guide v3.0.1 → v3.2.0、workboard-guide v1.4.0 → v1.5.0 |
+| **5.13.0** | **2026-07-02** | **派发模式重大重构**（老板拍板 + dispatch 闭环验证）：(1) **派发从 3 模式 → 2 模式**——群派发（IM）/ dispatch 派发（`openclaw workboard dispatch` CLI）——**dispatch 取代 v3.7.0 私聊 sessions_spawn**；(2) **description 加"dispatch 派发"触发词**；(3) **核心原则 4 改写**——"TODO.md 群场景强制，dispatch 派发场景不写"（取代私聊派发）；(4) **核心原则 5 改写**——"派发永远只 2 动作"（建卡 + 触发）+ 验收权下放；(5) **边界条件改写**——加 2 条 v5.13.0（大管家不调 workboard_complete / 不调 workboard_claim）；(6) **快速调用重写**——dispatch 建卡 + CLI 派发 + 只追踪不接管；(7) **导航表更新**——task-flow-guide v3.2.0 → v3.8.0 / workboard-guide v1.5.0 → v1.12.0；(8) **v5.12.0 错判修正**——"绝对禁止 dispatch 子命令"是错的，CLI 实际已存在 |
+| **5.12.0** | **2026-06-06** | **两种任务协调方式必查**（老板 2026-06-06 拍板，源自私聊派发端到端测试）：(1) **description 字段加"两种协调方式"** 必查触发——群里 = IM + workboard、私聊 = sessions_spawn + workboard，确保 LLM 看到"派发"类任务立即想起 manager 技能；(2) **核心原则修"TODO.md 强制"为分场景**——群场景写，私聊场景不写（v3.2.0 §3.2）；(3) **边界条件撤销"禁止私聊汇报"**——v3.2.0 私聊派发场景下 DM 是合法通道；(4) **快速调用更新 v1.5.0**——start 子命令已删，加群/私聊建卡对照、spawn 派发说明；(5) 导航表 task-flow-guide v3.0.1 → v3.2.0、workboard-guide v1.4.0 → v1.5.0。**v5.13.0 撤销部分** |
 | **5.11.0** | **2026-06-04** | **Quarto 作者单位渲染模式固化**：(1) references/quarto-pdf-config.md 升 v1.1（~11KB），新增「八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）」章节（源自记忆机制论文实战），含四件套配置（header.tex + title.tex partial + YAML 字段 + LaTeX 通讯作者块）+ 6 条坑速查 + 替代方案对比 + wiki 实体作为元数据源；(2) references/index.md 同步；(3) 导航表加 v1.1 标注 |
 | **5.10.0** | **2026-06-04** | **新增 Quarto PDF 编译/排版场景**：(1) 新增 references/quarto-pdf-config.md（v1.0，~7.7KB），覆盖 3 范式 + CJK 字体（AR PL SungtiL GB 避 Noto TTC 坑）+ APA 7th + header-includes vs header.tex；(2) references/index.md 加"排版/编译"段；(3) description 加触发条件；(4) 导航表加新条目 |
 | 5.9.0 | 2026-06-03 | **任务流指南 v3.0.1 老板定型**：(1) IM 群艾特必须（纠正"可选"歧义）；(2) 任务进度反馈走 workboard（proof+comment）；(3) 中间文件放 temp/ 不放 knowledge/；(4) start 保留但不主动调；(5) 新增 --no-dup 防重复建卡；(6) 指南导航 task-flow-guide 指向 v3.0.1 |

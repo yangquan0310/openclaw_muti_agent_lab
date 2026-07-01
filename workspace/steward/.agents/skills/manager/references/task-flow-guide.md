@@ -1,64 +1,69 @@
-# 任务流指南 v3.7.0
+# 任务流指南 v3.8.0
 
-> v3.7.0：任务四要素（建卡 note 核心）+ 通知模板 4 要素（派发核心）。详见末尾 §八、版本历史。
+> v3.8.0：**派发模式重构**（dispatch 取代私聊）+ **验收权下放**（worker 自己 complete）+ **v3.7.0 错判修正**。详见末尾 §八、版本历史。
 
 ---
 
 ## 一、心智模型（读前必看）
 
-### 1.1 三件套架构
+### 1.1 三件套架构（v3.8.0 重构）
 
 | 层级 | 工具 | 角色 | 谁用 |
 |------|------|------|------|
-| **纪律层** | `TODO.md` | 看板、状态记录（仅群场景） | 大管家 |
-| **执行层** | `workboard` 卡片 | 任务声明、状态机、进度反馈 | 大管家 agent tool（建卡/验收）+ 代理 agent tool（claim/heartbeat/proof/comment）|
-| **通知层** | **IM 群艾特**（群场景）/ **`sessions_spawn`**（私聊场景） | 派发通道 | 大管家手动 |
+| **纪律层** | `TODO.md` | 看板、状态记录（**仅群场景**） | 大管家 |
+| **执行层** | `workboard` 卡片 | 任务声明、状态机、进度反馈 | 大管家 agent tool（建卡/追踪）+ 代理 agent tool（claim/complete）|
+| **通知层** | **IM 群艾特**（群场景）/ **`openclaw workboard dispatch`**（群+私聊，指定 agentId 等价私聊） | 派发通道 | 大管家手动 |
 
-**关键洞察**：
-- **三件套缺一不可**：TODO（纪律）+ workboard（执行）+ IM/spawn（通知）
-- **workboard 永远只管"建卡/管理"**——**不**提供派发能力
+**关键洞察（v3.8.0）**：
+- **三件套缺一不可**：TODO（纪律）+ workboard（执行）+ IM/dispatch（通知/触发）
+- **workboard 永远只管"建卡/管理/追踪"**——**不**提供派发能力（**v3.7.0 错判修正**：plugin CLI 的 `dispatch` 子命令已存在，是合法派发通道）
 - **dashboard 是任务进度主可见层**——老板通过 dashboard 看进度
 
-### 1.2 大管家 3 动作铁律（v3.3.0 重写）
+### 1.2 大管家 2 动作铁律（v3.8.0 重大简化）
 
 ```
-[1] 建卡     →  workboard_create（agent tool，主用）/ openclaw workboard create（plugin CLI，shell 备选）
-[2] 派发     →  IM 群艾特（群场景）  /  sessions_spawn（私聊场景）
-[3] 验收     →  workboard_read + workboard_comment + workboard_complete（agent tool，全部走 tool）
+[1] 建卡     →  workboard_create（agent tool，必设 agentId + status）
+[2] 触发     →  IM 群艾特（群场景）/ openclaw workboard dispatch（群+私聊，指定 agentId 等价私聊）
 ```
 
-**绝对禁止**给 workboard 加 spawn / dispatch 子命令。**绝对禁止**重建 `manager workboard` CLI（v3.3.0 删除后永不重建）。派发动作永远在大管家会话里手动做。
+**大管家不做什么（v3.8.0 验收权下放）**：
+- ❌ **不调** `workboard_claim`（让代理 / dispatch 调）
+- ❌ **不调** `workboard_complete`（让 worker 自己 complete）
+- ✅ **只**用 `workboard_read` 追踪 status
+- ✅ status=done 时**汇报老板**
 
-### 1.3 workboard 状态机（Dx 自动）
+**绝对禁止**重建 `manager workboard` CLI（v3.3.0 删除后永不重建）。派发动作永远在大管家会话里手动做（IM 艾特 / dispatch CLI）。
+
+### 1.3 workboard 状态机（v3.8.0 重大修改）
 
 ```
    create (大管家)
      ↓
-   backlog   ← 卡创建（**Dx 自动推**）
-     ↓ (Dx 自动，代理 claim)
-   running    ← 代理执行
-     ↓ (Dx 自动，session 完成)
-   review     ← Dx 推→review（等待核验）
-     ↓ (大管家手动)
-   done       ← 核验通过
-     ↓ (大管家手动)
-   archived   ← 归档（可选）
+   ready    ← dispatch 派发场景（v3.8.0 默认）
+   backlog  ← 群派发场景（Dx 自动同步 sessionKey）
+     ↓ (dispatch / 代理 claim)
+   running  ← 代理执行
+     ↓ (worker 主动调 workboard_complete)
+   done     ← **v3.8.0 跳过 review 状态**（worker 主动推）
 ```
 
-**Dx 自动行为**：
-- 卡有 sessionKey + session 开始 → `backlog → running`
-- 卡有 sessionKey + session 完成 → `running → review`
-- 卡有 sessionKey + session 失败 → `running → blocked`
-- 卡无 sessionKey → **不动**（这正是 v3.1.0 私聊建卡时 `--no-session` 的语义——大管家手动管状态）
+**关键修改（v3.8.0）**：
+- **删除** v3.7.0 "session 完成 → Dx 自动推 review" 机制——worker 主动 complete 直接推 done
+- **dispatch 派发场景默认 status=ready**（dispatch 选 ready 卡）
+- **群派发场景默认 status=backlog**（Dx 推 running）
+- **不再有 review 状态**——v3.8.0 验收权下放，worker 主动 complete 跳 review
 
-### 1.4 两种派发场景概览
+### 1.4 两种派发场景概览（v3.8.0 重构）
 
 | 场景 | 触发 | 派发通道 | workboard 角色 | 流程序号 |
 |------|------|----------|----------------|----------|
-| **群派发** | 老板在群里交任务 | IM 5 段模板艾特 | 建卡 + 看板 | 看 [二、群派发场景](#二群派发场景v301-主线) |
-| **私聊派发** | 老板在 DM 交任务 | `sessions_spawn` 手动启子代理 | 建卡 + 看板 | 看 [三、私聊派发场景](#三私聊派发场景v310) |
+| **群派发** | 老板在群里交任务 | IM 5 段模板艾特 | 建卡 + 看板 + Dx 同步 | [§二、群派发场景](#二群派发场景v301-主线) |
+| **dispatch 派发**（v3.8.0 新增，取代私聊） | 老板在 DM 或群里交任务（机器启动场景）| `openclaw workboard dispatch` CLI（指定 agentId） | 建卡 + dispatch 自动 claim + 启动 worker | [§三、dispatch 派发场景](#三dispatch-派发场景v380-新增) |
 
-**派发通道决定一切**：群里 → IM（人看）；私聊 → spawn（机器看，没群可发）。
+**关键洞察（v3.8.0）**：
+- **派发模式 = 2 种**：群派发（IM）/ dispatch 派发（CLI）
+- **dispatch 取代 v3.7.0 私聊派发**（`sessions_spawn` 退场派发场景）
+- dispatch 既适用于群场景（机器启动不需要人艾特），也适用于私聊场景（通过 agentId 等价 spawn 启动子代理）
 
 ---
 
@@ -82,9 +87,9 @@
   - 📊 状态：⬜ 待认领
 ```
 
-**TODO 7 字段规范**（仅群场景用，私聊不写 TODO.md）见 [四、通用规则 § 4.1](#41-todo-7-字段规范仅群场景用)。
+**TODO 7 字段规范**（仅群场景用，dispatch 派发场景不写）见 [§四、通用规则 §4.1](#41-todo-7-字段规范仅群场景用)。
 
-#### 步骤 2：建 workboard 卡（绑群 session，v3.3.0 改用 agent tool）
+#### 步骤 2：建 workboard 卡（绑群 session）
 
 ```js
 // agent tool（主用，完整功能）
@@ -113,15 +118,9 @@ openclaw workboard create "title" --agent {agent} --priority high --labels "..."
 # ⚠️ plugin CLI 无 --session / --no-dup / 自定义字段，复杂建卡必须用 agent tool
 ```
 
-**关键约束**（v3.3.0）：
-- **绑定群 session**用 `workboard_comment` 写软关联（plugin CLI 不支持 sessionKey，agent tool 也没有 `--session` flag）
-- **Dx 自动同步**依赖 `metadata.sessionKey`——所以建卡后**必须** comment 写明
-- **文件路径必须绝对**——如 `~/OneDrive/Applications/openclaw repository/.../temp/认知范式补充资料.md`
-- 传 `idempotencyKey`（v3.0.1 等价 `--no-dup`）——建卡前查同 title + sessionKey 是否有活跃卡
-
 #### 步骤 3：IM 5 段模板艾特（**必须**）
 
-**完整 IM 模板**（5 段齐全，老板 2026-06-04 拍板）：
+**完整 IM 模板**（5 段齐全）：
 
 ```
 {{task_desc}}
@@ -143,13 +142,7 @@ openclaw workboard create "title" --agent {agent} --priority high --labels "..."
 - 汇报结果
 ```
 
-**模板要点**：
-- workboard 信息**在开头**——让代理一进群就看到
-- 目标/约束/输入/产出**双轨**（群里可见 + 卡 notes）
-- **只一个模板**，不要拆派发/启动/完成多个模板
-- 派发前自检 **5 段齐全**
-
-#### 步骤 4：代理自动执行 + 大管家验收
+#### 步骤 4：代理自动执行 + 大管家追踪（v3.8.0 简化）
 
 ```
 代理收到 @ 后自动：
@@ -158,159 +151,144 @@ openclaw workboard create "title" --agent {agent} --priority high --labels "..."
 3. 代理执行任务
 4. 代理 workboard_proof 附产出
 5. 代理 workboard_comment 留进度反馈
-6. Dx 看到 session 完成 → 卡 running → review（自动）
+6. 代理 workboard_complete → 卡 running → done（**v3.8.0 跳过 review**）
 7. 代理在群里发"完成 + 艾特大管家"消息
 
-大管家核验（review 状态时介入）：
-1. `workboard_read({ id: cardId })` 看产出
-2. 读文件手动核验（4 必填 / 引用规范 / proof status: passed）
-3. `workboard_comment({ id, body: "核验结果..." })` 写核验结果
+大管家（v3.8.0 验收权下放，**只追踪不接管**）：
+1. 群里收到代理完成消息
+2. workboard_read({ id: cardId }) 看 status=done
+3. 读 proof + 产出文件核验
 4. 更新 TODO.md 为 [x] + 核验结果
-5. `workboard_complete({ id, summary, proof })` → done
-6. （可选）群里发简短完成确认（**不是模板**，自己写）
+5. 汇报老板"卡已 done"
+6. ❌ **不调** workboard_complete（worker 已 complete）
 ```
 
 **大管家不需要**（Dx 全包）：
 - ❌ 手动 `move --status todo`（Dx 自动）
-- ❌ 手动 `move --status done`（Dx 自动）
-
-**核验清单**（详）见 [四、通用规则 § 4.3](#43-核验清单两场景共用)。
+- ❌ 手动 `move --status done`（v3.8.0 撤销——worker 自己 complete）
+- ❌ 手动 `workboard_claim`（代理自己 claim）
+- ❌ 手动 `workboard_complete`（worker 自己 complete）
 
 ---
 
-## 三、私聊派发场景（v3.1.0）
+## 三、dispatch 派发场景（v3.8.0 新增，**取代私聊**）
 
 ### 3.1 适用场景
 
-老板**在 DM 里**（飞书私聊、聊人不在群里）交任务给大管家。群里派发的 IM 艾特通道**不适用**——大管家必须**手动 `sessions_spawn` 启子代理**。
+老板在 **DM 或群里**交任务给大管家，需要**机器自动启动** subagent 跑任务（不需要群里人艾特 + 看）。
 
-### 3.2 私聊派发 3 步流程
+dispatch 派发**取代** v3.7.0 私聊派发（`sessions_spawn`）——通过指定 `agentId`，等价于私聊 spawn 启动子代理。
 
-#### 步骤 1：建 workboard 卡（**不**绑 session，v3.3.0 改用 agent tool）
+### 3.2 dispatch 派发 3 步流程（v3.8.0 简化）
+
+#### 步骤 1：建 workboard 卡（**必设** agentId，status=ready）
 
 ```js
 // agent tool（主用）
 workboard_create({
   title: "...",
-  notes: "目标：... 约束：... 任务描述：...",
-  agentId: "{agent}",
-  priority: "normal",             // normal / high / urgent
+  notes: "任务目标：...\n任务约束：...\n输入路径：...（绝对路径）\n输出路径：...",
+  agentId: "{agent}",            // **必填**（dispatch 启动 worker = 这个 agent）
+  priority: "normal",
   labels: ["..."],
-  status: "todo"                  // 私聊场景默认 todo（不需 Dx 同步）
-  // 不传 idempotencyKey（私聊单人任务，重复概率低）
+  status: "ready"                // **v3.8.0 dispatch 派发场景默认 ready**
+  // 不传 idempotencyKey（dispatch 派发任务由 dashboard 监管）
+  // 不传 sessionKey（dispatch 自动 link）
 })
-
-// （可选）反馈措辞直接写 notes 里：完成后在当前会话中向派发者反馈
 ```
 
-**关键调整（vs 群派发建卡，v3.3.0）**：
-- **不传 sessionKey**——agent tool 没有 sessionKey 字段（plugin CLI 也没有 `--no-session` flag）
-- **不需 `workboard_comment` 写软关联**——私聊场景下 sessions_spawn 返回的 childSessionKey 才需要 comment 写
-- **不传 `idempotencyKey`**（私聊单人任务，重复概率低）
-- **反馈措辞直接写 notes** 里：默认"在当前会话中向派发者反馈"
+**关键约束（v3.8.0）**：
+- **agentId 必填**（不知道派给谁就别建卡）
+- **status=ready**（dispatch 选 ready 卡自动 claim）
+- **不写 TODO.md**（dispatch 派发是单人任务）
+- **任务四要素**写进 notes（任务目标 / 任务约束 / 输入路径 / 输出路径）
 
-#### 步骤 2：sessions_spawn 启子代理（大管家手动，**不**走 workboard CLI）
+#### 步骤 2：`openclaw workboard dispatch` 启动 worker
 
-**workboard 不提供 spawn 派发能力**（v1.5.0 删了 start，v3.2.0 仍维持）。大管家在当前 DM session 里手动启子代理：
-
-```python
-# 以 sessions_spawn 隔离模式启子代理
-sessions_spawn(
-    agentId="{agent}",            # 卡上的 assignee，如 mathematician
-    task="""Work on this OpenClaw Workboard card:
-- card_id: {card_id}
-- card_url: {dashboard_url}
-- title: {title}
-
-{notes 全文}
-
-完成后：
-1. workboard_proof status=passed 附产出
-2. workboard_comment 写进度
-3. 在本 DM 会话回复"已完成 + 产出路径"
-""",
-    isolate=True,                # 隔离子代理，不污染主 DM 会话上下文
-    model="minimax",              # v1.5.0 默认，不指具体模型
-)
+```bash
+openclaw workboard dispatch \
+  --board default \
+  --expect-final \
+  --timeout 300000
 ```
 
-**为什么手 sessions_spawn 而不靠 workboard CLI**：
-- `workboard_*` agent tool / `openclaw workboard` CLI **不**提供 spawn 派发能力（v1.5.0 删了 start，v3.3.0 仍维持）——派发永远在大管家会话里手动做
-- 私聊派发没有"群艾特"通道，**必须**由大管家主动启 session
-- 隔离 `isolate=True` 保证子代理不污染主 DM 会话上下文
-- spawn 时**显式传 card_id + card_url**——让子代理知道"干的是这张卡"
+**核心行为**（v3.8.0 实测）：
+- dispatch 选 ready 卡（agentId 匹配）
+- **自动 claim** 卡（ownerId = card.agentId）
+- **自动启动** subagent worker（engine=codex, mode=autonomous）
+- 写入 card metadata：sessionKey + runId + execution
+- **输出**：`dispatch complete: started=N failures=0`
 
-#### 步骤 3：子代理自动执行 + 大管家验收
+**关键参数**：
+- `--board <id>` 限定 board（默认 default）
+- `--expect-final` 等待最终响应（实验性，可能不等——**实测**仍 fire-and-forget）
+- `--timeout <ms>` 默认 30s，dispatch 派发建议 300000（5 分钟）
+
+**等价私聊 spawn 的关键**：通过 `card.agentId` 指定目标代理，dispatch 内部用 `params.subagent.run({ sessionKey, ... })` 启动 subagent session——**效果等价**于 `sessions_spawn({ agentId, task, isolate: true })`。
+
+#### 步骤 3：worker 自动 complete + 大管家追踪
 
 ```
-子代理被 spawn 后自动：
-1. 读 card 看 goal/constraints/input/output（task 里给了 dashboard URL）
-2. workboard_claim 认领卡
-3. 子代理执行（调工具、写文件、读资料）
-4. workboard_proof 附产出（status=passed）
-5. workboard_comment 写进度
-6. Dx 看到 session 完成 → 卡 running → review（自动）
-7. 子代理在 DM 会话里回复"已完成 + 产出路径"（spawn task 里显式要求）
+worker 跑完自动：
+1. workboard_heartbeat（如需要）
+2. 执行任务（按 notes 任务四要素）
+3. workboard_proof 附产出（status=passed）
+4. workboard_comment 留进度
+5. workboard_complete → 卡 running → done（**v3.8.0 worker 主动 complete**）
 
-大管家核验：
-1. `workboard_read({ id: cardId })` 看产出
-2. 读文件手动核验
-3. `workboard_comment({ id, body })` 写核验结果
-4. `workboard_complete({ id, summary, proof })` → done
-5. **不**更新 TODO.md（私聊单人任务不必建 TODO）
-6. **不**发群完成确认（没群可发；DM 会话里大管家直接读 proof 就知道完成了）
+大管家（v3.8.0 验收权下放，**只追踪不接管**）：
+1. workboard_read({ id: cardId }) 看到 status=done
+2. 读 proof + 产出文件核验
+3. 汇报老板"卡已 done，验证通过"
+4. ❌ **不调** workboard_complete（worker 已 complete）
 ```
 
-### 3.3 spawn task 模板（可复用）
+### 3.3 dispatch 派发 vs 群派发对比
 
-```python
-TASK_TEMPLATE = f"""
-Work on this OpenClaw Workboard card:
-- card_id: {card_id}
-- card_url: {dashboard_url}
-- title: {title}
+| 维度 | 群派发 | dispatch 派发 |
+|------|--------|--------------|
+| 触发 | 老板在群里交任务 | 老板在 DM 或群里交任务（机器启动） |
+| 派发动作 | IM 5 段模板艾特 | `openclaw workboard dispatch` CLI |
+| 卡 status 默认 | backlog | ready |
+| 卡 sessionKey | 群 session（workboard_comment 写软关联）| 不传（dispatch 自动 link） |
+| 代理收任务方式 | 群里被 @ + 看到 dashboard 卡 | worker prompt（dispatch 自动构造 + token 透传） |
+| claim 触发 | 群里代理 workboard_claim | dispatch 自动 claim |
+| 完成信号 | 群里代理发"完成"消息 | **status=done**（大管家 workboard_read） |
+| TODO.md 写？ | 写（群场景强制）| **不写**（dispatch 派发单人任务） |
+| subagent 失败 fallback | 群里重新艾特 | dispatch 内部已处理（block 卡 + 记录原因） |
+| 大管家调 complete | ❌ | ❌ |
 
-{notes 全文}
+### 3.4 dispatch 派发常见 Q&A
 
-工作流：
-1. workboard_claim 认领卡
-2. 按 notes 里的 goal/constraints/input/output 干活
-3. workboard_proof status=passed 附产出
-4. workboard_comment 留进度反馈
-5. 在本 DM 会话回复 "已完成 + 产出路径"
-"""
-```
+**Q1：dispatch 派发时 agentId 没设会怎样？**
 
-### 3.4 私聊 vs 群场景差异
+A：dispatch fallback 到 `DEFAULT_DISPATCH_OWNER`（配置默认 agent）。**不推荐**——工作流层面 agentId 必填。规范（v3.8.0）规定"必填"，技术（dispatch 内部）允许"可选 fallback"。
 
-| 维度 | 群派发（v3.0.1） | 私聊派发（v3.1.0） |
-|------|------------------|-------------------|
-| 触发 | 老板在群里交任务 | 老板在 DM 里交任务 |
-| 派发通道 | IM 群 5 段模板艾特 | **大管家手动 `sessions_spawn`** |
-| 代理收任务方式 | 群里被 @ + 看 workboard | 启新 session + 传任务 + 看 workboard |
-| workboard session | `workboard_comment` 写 `sessionKey=agent:writer:feishu:group:oc_xxx`（agent tool / CLI 都不直接支持 `--session`） | 不传 sessionKey，私聊无 session 关联 |
-| 默认 status | backlog（Dx 推） | todo（无 Dx 同步） |
-| 进度反馈 | workboard（proof + comment） | **同群派发** |
-| 完成汇报 | 群里艾特大管家 | DM 会话里大管家自己看 proof |
-| 核验 | 大管家读卡 + comment + move done | **同群派发** |
-| TODO 更新 | 核验后更新 | **不写 TODO**（单人任务不必建） |
+**Q2：dispatch 启动多个 worker 会冲突吗？**
 
-### 3.5 私聊派发常见 Q&A
+A：dispatch 默认 `maxStarts=3`（每 pass 最多 3 worker）。同 owner 在同一 pass 只能启动 1 个（`selectStartableCards` 去重）。
 
-**Q1：私聊派发需要大管家会话清单吗？**
-不需要。`sessions_spawn` 是隔离子代理，子代理会话**不**进大管家主会话的子任务列表。
+**Q3：dispatch 失败了怎么办？**
 
-**Q2：子代理能在 DM 里回消息吗？**
-能——但默认**不**会调 `chat.send` 发到 DM 渠道（spawn 时 task 显式要求才回）。如需 DM 可见回复，在 spawn task 里明说"在 DM 里回一条完成消息"。
+A：dispatch 内部已处理——claim 成功但 subagent 启动失败 → block 卡 + 记录原因。大管家读卡（status=blocked）看 attempt 错误，重新派发。
 
-**Q3：能不能"多私聊任务"并行？**
-能。每个私聊任务 = 独立卡 + 独立 spawn session，互不干扰。
+**Q4：dispatch CLI vs `workboard_dispatch` agent tool 区别？**（**v3.8.0 关键发现**）
 
-**Q4：子代理出错了怎么办？**
-看卡 attempt 状态 → Dx 会把 failed session 推卡到 `blocked` → 大管家读卡看错误 → 手动重派（重新 spawn 或改任务描述）。
+| 入口 | 调什么 | 行为 |
+|------|--------|------|
+| `workboard_dispatch` **agent tool** | `store.dispatch()` | **只清理**（promote/reclaim/block/orchestrate），**不**启动 worker |
+| `openclaw workboard dispatch` **plugin CLI** | `dispatchAndStartWorkboardCards` | 完整：清理 + claim + 启动 subagent |
+| `/workboard dispatch` **runtime-slash** | `dispatchAndStartWorkboardCards` | 同 plugin CLI，完整函数 |
 
-**Q5：私聊派发用 `im` 还是 `spawn`？**
-用 `spawn`——v3.2.0 定型。`im` 是群派发专用（艾特群成员）。私聊没群，im 不能用。
+**大管家派发必须用 plugin CLI 或 runtime-slash**——agent tool 不派发。**v3.7.0 / v1.11.0 / v8.31.0 错判**：写"绝对禁止给 workboard CLI 加 dispatch 子命令"——**v3.8.0 撤销**，CLI 实际已存在。
+
+**Q5：dispatch 派发后大管家还需要 IM 通知吗？**
+
+A：**不需要**。dispatch 自动启动 worker，worker 直接读 notes 干活——不需要群里@。如果群里也想知道派发情况，可以额外 IM 通知（可选）。
+
+**Q6：dispatch 派发后大管家要等多久？**
+
+A：worker 跑完自动 complete（不等大管家）。大管家**不需要阻塞等**——下次轮内 `workboard_read` 看 status=done 即可。
 
 ---
 
@@ -328,7 +306,7 @@ Work on this OpenClaw Workboard card:
   - 📊 状态：⬜ 待认领
 ```
 
-私聊场景**不**写 TODO.md（单人任务不必建看板）。
+dispatch 派发场景**不**写 TODO.md（单人任务不必建看板）。
 
 ### 4.2 文件路径规范
 
@@ -338,28 +316,27 @@ Work on this OpenClaw Workboard card:
 | `temp/` | **中间过程文件** | 心理家家产出的认知范式补充资料 |
 | `knowledge/` | **知识沉淀**（长期保存）| 文献综述笔记、理论详解 |
 
-**v3.0.1 硬要求**：
+**硬要求**：
 - 卡 notes / IM 模板的文件路径**必须绝对路径**——如 `~/OneDrive/Applications/openclaw repository/.../temp/认知范式补充资料.md`
 - **中间文件放 `temp/`，不放 `knowledge/`**——知识沉淀才放 `knowledge/`
 
-### 4.3 核验清单（两场景共用）
+### 4.3 核验清单（两场景共用，v3.8.0 简化）
 
 - [ ] 产出文件是否存在（绝对路径）
 - [ ] 中间文件放 `temp/`，最终产出放 `manuscripts/`
 - [ ] 产出内容是否符合 4 必填（目标 / 约束 / 输入 / 产出）
 - [ ] 引用格式是否规范
 - [ ] 是否有 `workboard_proof`（status: passed）
+- [ ] **status 是否变 done**（v3.8.0 验收权下放标志）
 
-### 4.4 反馈措辞（v1.5.0 动态化）
+### 4.4 反馈措辞
 
-`workboard create` 反馈措辞**按 session 场景自动切换**（v1.5.0）：
+`workboard create` 反馈措辞**按 session 场景自动切换**：
 
 | session 类型 | 反馈措辞 |
 |---|---|
 | `feishu:group:oc_xxx`（群）| "完成后在群聊中艾特大管家汇报" |
 | 其他（dashboard / DM / main）| "完成后在当前会话中向派发者反馈" |
-
-不需要手动传 `--feedback`——CLI 根据 `--session` 自动选措辞。
 
 ### 4.5 监控规则（两场景共用）
 
@@ -368,233 +345,177 @@ Work on this OpenClaw Workboard card:
 2. 检查群里（或 DM 里）是否有"已认领"消息
 3. 如代理卡死 → 提醒续 `workboard_heartbeat` 或手动重派
 
-### 4.6 禁止行为清单
+### 4.6 禁止行为清单（v3.8.0 修订）
 
-1. **一个任务只艾特一个代理**——不得在同一条消息中艾特多个代理
-2. **禁止私信汇报**——进度反馈走 workboard，不私聊（私聊派发场景除外，DM 是派发通道本身）
+1. **一个任务只艾特一个代理**（群派发）——不得在同一条消息中艾特多个代理
+2. ~~禁止私信汇报~~（v3.2.0 撤销；v3.8.0 私聊派发改成 dispatch 派发，DM 是合法通道）
 3. **禁止用 Dashboard 的"开始"按钮**——必须用 CLI
-4. **不要重复发 IM 模板**——只一个模板
-5. **不要在 create 后手动 move 到 todo**——Dx 自动
-6. **不要在 agent 执行中用群消息发进度**——走 workboard
+4. **不要重复发 IM 模板**——只一个模板（群派发）
+5. ~~不要在 create 后手动 move 到 todo~~（v3.8.0 删除——不再适用）
+6. **不要在 agent 执行中用群消息发进度**——走 workboard（群派发）
 7. **不要把 workboard 当 TODO 平替**——各管一段
-8. **不要给 workboard CLI 加 spawn / dispatch 子命令**——派发动作永远在会话里手动做
+8. ~~不要给 workboard CLI 加 spawn / dispatch 子命令~~（**v3.8.0 删除**——v3.7.0 错判，CLI 实际已存在并使用）
 9. **卡 notes / IM 模板的文件路径必须绝对路径**
 10. **中间文件放 `temp/`，不放 `knowledge/`**
+11. **v3.8.0 新增**：大管家**不调** `workboard_complete` 验收——worker 自己 complete
+12. **v3.8.0 新增**：大管家**不调** `workboard_claim` 抢任务——让代理 / dispatch 调
 
 ---
 
-## 五、完整工作流（v3.4.0 新增）
+## 五、完整工作流（v3.8.0 简化）
 
-> 源自 2026-06-06 联动测试 + 老板指正："大管家只需要看最后 done 状态，或者干预一下 blocked 的。claim 是 session/IM 去通知其他代理。"
-
-### 5.1 三阶段总览
+### 5.1 二阶段总览（v3.8.0 简化）
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ Phase 1：建卡 + 派发（一次性）  5-10s                          │
-│   workboard_create + (IM 艾特 | sessions_spawn)              │
+│ Phase 1：建卡 + 触发（一次性）  5-30s                          │
+│   workboard_create + (IM 艾特 | openclaw workboard dispatch) │
 ├─────────────────────────────────────────────────────────────┤
-│ Phase 2：等待（不盯中间）  6s ~ 数分钟                          │
-│   Dx 自动同步 / 代理自管理 / OpenClaw runtime push           │
-│   大管家在这里 100% 不介入                                       │
-├─────────────────────────────────────────────────────────────┤
-│ Phase 3：验收（只动 done/blocked）  5-30s                       │
-│   done:  workboard_read → 核验 → workboard_comment →         │
-│          workboard_complete → archive（可选）                  │
-│   blocked: workboard_read → reassign / unblock /             │
-│            重新派发 / 接受失败                                 │
+│ Phase 2：追踪（被动观察）  数秒到数分钟                          │
+│   Dx 自动 / 代理自管 / worker 自动 complete                   │
+│   大管家在这里 100% 不介入，只 workboard_read 看 status       │
+│   status=done → 汇报老板                                     │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**关键洞察**：
-- Phase 1 是**大管家主动动作**（5-10s 一次性）
-- Phase 2 是**大管家完全不介入**（Dx / 代理 / runtime 三方自动化）
-- Phase 3 是**大管家再次主动**（5-30s，但只对 done/blocked 两种状态）
+**关键洞察（v3.8.0）**：
+- **只有 2 个阶段**——v3.7.0 的"建卡+派发 / 等待 / 验收"3 阶段简化为 2 阶段
+- **Phase 1 大管家主动**（建卡 + 触发）
+- **Phase 2 大管家被动**（只 `workboard_read` 看 status）
+- **status=done 时汇报老板**——**不**调 `workboard_complete`
 
-### 5.2 派发双通道对比
+### 5.2 派发双通道对比（v3.8.0 重构）
 
-| 维度 | 群派发 | 私聊派发 |
-|------|--------|----------|
-| 触发 | 老板在群里交任务 | 老板在 DM 交任务 |
-| 派发动作 | **IM 5 段模板艾特**（开头带 workboard 信息） | **`sessions_spawn` + `workboard_comment` 软关联** |
-| 卡 status 默认 | backlog（Dx 推 running） | todo（Dx/手动推） |
-| claim 触发 | 群里代理看到艾特 → 调 workboard_claim | Dx 看到 agentId 匹配 spawn → auto-claim |
-| 同步方式 | Dx 推：backlog → running → review | 手动管（spawn + comment 软关联） |
-| 完成信号 | 群里代理发"完成"消息 | **announce event 推回主 DM** |
-| 兜底 | 群里能看到 @ 状态 | spawn 后**立即发"已派发 + cardId"消息**（防中断）|
-| TODO.md 写？ | 写（群场景强制） | **不写**（私聊单人任务） |
+| 维度 | 群派发 | dispatch 派发 |
+|------|--------|--------------|
+| 触发 | 老板在群里交任务 | 老板在 DM 或群里交任务（机器启动）|
+| 派发动作 | IM 5 段模板艾特 | `openclaw workboard dispatch` CLI |
+| 卡 status 默认 | backlog | ready |
+| claim 触发 | 群里代理 workboard_claim | dispatch 自动 claim |
+| 同步方式 | Dx 推：backlog → running | dispatch 推：ready → running |
+| 完成信号 | 群里代理发"完成"消息 | **status=done**（大管家 workboard_read） |
+| TODO.md 写？ | 写 | **不写** |
 
-### 5.3 验收三态详细流程
+### 5.3 跨场景大管家工作流（v3.8.0 简化）
 
-```
-[卡 status = done]（或 review 状态但已 proof 完毕）
-  ↓
-workboard_read({ id: cardId })
-  查 metadata.proof + artifacts + comments
-  ↓
-读产出文件（人工核验）
-  - 目标达成？
-  - 约束符合？
-  - 4 必填字段？引用规范？proof status=passed？
-  ↓
-workboard_comment({ id, body: "核验通过/不通过" })
-  ↓
-workboard_complete({
-  id, token, summary: "...",
-  proof: { status: "passed", label, command, note }
-})
-  ↓
-workboard_board_archive({ id, archived: true })  // 可选
+**群场景**完整 4 步：
 
-
-[卡 status = blocked]
-  ↓
-workboard_read({ id: cardId })
-  查 failure reason + failureCount
-  ↓
-决策（4 选 1）：
-  ├─ 换人重做：workboard_reassign({ id, agentId: "新代理" })
-  │            → workboard_unblock({ id })  // 解阻塞
-  │
-  ├─ 解阻塞让原代理继续：workboard_unblock({ id })
-  │            → 代理 workboard_heartbeat + workboard_proof + workboard_complete
-  │
-  ├─ 接受失败归档：workboard_complete({
-  │     id, proof: { status: "failed", note: "原因..." }
-  │   })
-  │
-  └─ 完全放弃：workboard_board_archive({ id, archived: true })
-
-
-[卡 status = running]
-  ↓
-大管家：什么都不做
-  ↓
-等 announce event 触发
-  或等 Dx 推卡到 review
-```
-
-### 5.4 私聊派发防中断（v3.5.0 重写：3 轮测试验证）
-
-**老板之前担心**："spawn 后子代理不向你发消息，IM 流中断"
-
-**实测结果（v3.5.0）**：
-- ❌ 旧方案"spawn + sessions_yield"：**断流式**（yield message 整段出现，不流式）
-- ✅ 新方案"spawn + **不调 yield**"：**保留流式**（runtime auto-push event 触发下一轮）
-
-**v3.5.0 兜底方案**（不调 yield）：
-
-```
-[1] workboard_create + sessions_spawn + workboard_comment（顺序）
-[2] 流式 reply：派发信息（**不**调 sessions_yield）
-[3] turn 自然结束
-[4] runtime auto-push 子代理完成 event → 大管家下一轮
-[5] 大管家从 history 看到子代理产出 + 核验
-```
-
-**关键**：
-- **老板 DM 流字字流式**（reply 是本回合最终流式回复）
-- **不**依赖 yield 消息（runtime auto-push event 自然触发）
-- **不**需要 message tool 独立发"已派发"消息（reply 已包含派发信息）
-
-### 5.5 跨场景大管家工作流（v3.5.0 整合 + 3 轮测试修正）
-
-**群场景**完整 6 步（不变）：
 ```
 [1] workboard_create({ agentId, priority, labels, status: "backlog" })
     注：plugin CLI 不支持 session 绑定，用 workboard_comment 写软关联
 [2] workboard_comment({ id, body: "sessionKey=agent:writer:feishu:group:oc_xxx" })
 [3] IM 5 段模板艾特（开头带 workboard 信息：cardId/short + sessionKey + dashboard URL）
 [4] 群里代理 claim + 执行 + proof + complete（Dx 全包同步）
-[5] Dx 推 running → review
-[6] 大管家 read + 核验 + comment + complete + archive
+[5] 大管家被动追踪：workboard_read 看 status=done → 汇报老板
+    ❌ 不调 workboard_complete
 ```
 
-**私聊场景**完整 7 步（v3.5.0 新版，3 轮测试验证）：
+**dispatch 派发场景**完整 3 步（v3.8.0 新增，**取代私聊 spawn**）：
 
 ```
-[1] workboard_create({ agentId: "writer", priority, labels, status: "todo" })
-[2] sessions_spawn({
-      task: "用 CARD_ID 调 workboard_claim + comment + proof + complete（完整自管）"
-    })
-[3] workboard_comment({ id, body: "sessionKey=" + childSessionKey })  // 软关联
-[4] 流式 reply（**不**调 sessions_yield）
-[5] turn 自然结束
-[6] runtime auto-push announce event → 大管家下一轮
-[7] 大管家核验（workboard_read + comment 核验意见）—— **不**接管（subagent 已自管）
+[1] workboard_create({ agentId, priority, labels, status: "ready" })
+[2] openclaw workboard dispatch --board default --expect-final --timeout 300000
+    → dispatch 自动 claim + 启动 subagent worker
+[3] workboard_read 看 status=done → 汇报老板
+    ❌ 不调 workboard_complete
 ```
 
-**关键修正（v3.4.0 错误 → v3.5.0 正确）**：
-- ❌ v3.4.0 写"❌ workboard_claim"——**错**（实测 subagent 可 claim，**有时序窗口**）
-- ❌ v3.4.0 写"❌ workboard_complete"——**错**（实测 subagent 可 complete，用自己 token）
-- ✅ v3.5.0 改为"subagent **完整自管**"——大管家**只**核验——**不**接管
-
-**subagent 失败 fallback 路径**（3 种场景，v3.5.0 修正）：
-
-**A. claim 失败**（Dx 先占 + subagent 跑得慢）：
-```
-大管家 workboard_reassign({ agentId: "steward" })  // 改 agentId
-        ↓
-大管家 workboard_claim                              // 拿 token
-        ↓
-大管家 workboard_complete                            // 标 done
-```
-
-**B. 没调 workboard**（runtime 太短没机会）：大管家接管（同 A）—— reassign + claim + complete
-
-**C. 没 complete**（异常 / token 过期）：
-```
-大管家 sessions_send 续接 subagent
-        ↓
-subagent 用自己 token 调 workboard_complete
-        ↓
-大管家核验
-```
-
-**关键差异**（v3.5.0 vs v3.4.0）：
-- 群场景靠 **Dx 自动同步 + IM 群可见**——大管家只发一次艾特
-- 私聊场景靠 **runtime auto-push event**（**不**需要 yield 消息）——老板 DM 流**字字流式**
+**关键洞察**：
+- **群场景 4 步**（写 TODO + 建卡 + IM + 追踪）
+- **dispatch 派发场景 3 步**（建卡 + dispatch + 追踪）
+- **两场景大管家都不调 workboard_complete**——v3.8.0 验收权下放
 
 ---
 
-## 六、消息/note 模板库（v3.6.0 新增）
+## 六、消息/note 模板库
 
-> 详见 **workboard-guide.md v1.10.0 §三之5、消息/note 模板库**（10 个模板 + 派发范式 3 句话总结）。
+### 6.1 workboard_create 模板（任务四要素）
 
-**模板索引**（按使用场景分类）：
+```js
+{
+  title: "[<前缀>] <任务描述>",
+  notes: `任务目标：...
+任务约束：...
+输入路径：...
+输出路径：...`,
+  agentId: "<writer/reviewer/psychologist/...>",
+  priority: "low/normal/high/urgent",
+  labels: ["test", "v3.8.0", "..."],
+  status: "backlog"（群派发）/ "ready"（dispatch 派发）
+}
+```
 
-| 模板 | 用途 | 场景 |
+**任务四要素**：
+
+| 要素 | 含义 | 示例 |
 |------|------|------|
-| §三之5.1 workboard_create | 建卡 | 大管家派发前 |
-| §三之5.2 sessions_spawn task | spawn 完整自管 task | 大管家派发 |
-| §三之5.3 workboard_comment 软关联 | 软关联 childSessionKey | 大管家派发后 |
-| §三之5.4 v3.5.0 流式 reply | **不调 yield** 派发完成 | 大管家派发（v3.5.0 核心）|
-| §三之5.5 workboard_proof | 附证据 | subagent 验收 / 大管家验收 |
-| §三之5.6 workboard_complete summary | 完整归档 | subagent 验收 / 大管家接管 |
-| §三之5.7 大管家核验 reply | 核验报告 | 大管家 v3.5.0 不接管 |
-| §三之5.8 大管家接管 fallback A | 接管路径 | subagent claim 失败时 |
-| §三之5.9 sessions_send 续接 fallback C | 续接子代理 | subagent 跑完没 complete |
-| §三之5.10 v3.5.0 派发范式 3 句话总结 | 范式核心 | 所有派发的核心原则 |
+| **任务目标** | 干什么 | 写一首中文诗（主题/格律自选）|
+| **任务约束** | 限制 / 边界 | 不调任何 workboard 工具 / 不少于 4 句 / 严守格律 |
+| **输入路径** | 读什么文件 / 资源 | `~/.openclaw/workspace/steward/IDENTITY.md` |
+| **输出路径** | 产出落到哪 | 主 DM 回复 / `/tmp/...md`（文件产出）|
 
-**派发核心原则**（v3.5.0 子代理模板测试写的 3 句话）：
+### 6.2 IM 5 段模板（群派发）
 
-1. **大管家核心原则**：大管家 = 建卡（定任务）+ 派发（通知代理）+ 验收；中间执行全由 subagent 自治完成，大管家不介入细节。
-2. **v3.5.0 派发关键改进**：派发后**不调 sessions_yield**——reply 即本回合最终流式回复——turn 自然结束——runtime auto-push event 触发大管家下一轮——**流式输出全程保留**。
-3. **大管家只核验不接管**：subagent 完整自管 workboard 卡（claim + comment + proof + complete）——大管家仅 workboard_read 核验——除 fallback 路径外**不**调 reassign / claim / complete。
+```
+{{task_desc}}
 
-**详细模板内容**：见 workboard-guide.md v1.11.0 §三之5（10 个完整模板）。
+{{@代理}}
 
-**任务四要素**（v3.7.0 老板拍板）——**建卡 note 核心内容**：
-- **任务目标**：干什么（写诗/写词/分析数据/审核……）
-- **任务约束**：限制/边界（格律/字数/工具/时间/不调什么）
-- **输入路径**：读什么文件/资源（绝对路径）
-- **输出路径**：产出落到哪（主 DM 回复/具体文件路径/卡 metadata）
+🔧 workboard 信息：
+- card_id: {{card_id}}（短 8 位：{{card_short}}）
+- session: {{sessionKey}}
+- dashboard: {{card_url}}
 
-**通知模板 4 要素**（v3.7.0 老板拍板）——**派发通知核心内容**：
-- **任务标题**：告诉代理做什么
-- **CARD_ID**：告知 workboard 卡 ID（让代理自管）
-- **操作步骤**：按 v3.5.0 范式自管 workboard（claim → comment → proof → complete）
-- **反馈要求**：完成后怎么反馈（主 DM 回复 / 调 specific 工具 / 给具体路径）
+📋 前置要求：
+- 明确自己的角色：{{agent_role}}
+- 找到对应的 .agents/agents/{{agent}}.md 阅读
+- 查看 TODO.md 中的 {{subtask}} 子任务
+
+☁ 完成反馈：
+- 在群里艾特大管家
+- 汇报结果
+```
+
+### 6.3 dispatch 派发 CLI 模板（v3.8.0 新增）
+
+```bash
+openclaw workboard dispatch \
+  --board default \
+  --expect-final \
+  --timeout 300000
+```
+
+**前置 workboard_create 必须满足**：
+- `agentId` 必填（dispatch 启动 worker = 这个 agent）
+- `status: "ready"`（dispatch 选 ready 卡）
+- `notes` 含任务四要素（任务目标 / 任务约束 / 输入路径 / 输出路径）
+
+**追踪步骤**（worker 跑完后）：
+```bash
+# 大管家被动追踪
+workboard_read({ id: cardId })
+# status=done → 汇报老板
+# ❌ 不调 workboard_complete
+```
+
+### 6.4 通知模板 4 要素（v3.7.0 保留）
+
+**通知模板是派发通知的核心内容**——4 要素：
+
+| 要素 | 含义 | 示例 |
+|------|------|------|
+| **任务标题** | 告诉代理做什么 | 写一首词（蝶恋花/水调歌头自选）|
+| **CARD_ID** | 告知 workboard 卡 ID | `34b4d37f-704b-4a8e-bdeb-d2db19b73a73` |
+| **操作步骤** | 按 v3.5.0 范式自管 workboard | claim → comment → proof → complete |
+| **反馈要求** | 完成后怎么反馈 | 主 DM 回复 / 调 specific 工具 |
+
+**注意（v3.8.0）**：dispatch 派发场景下不需要 IM 5 段模板——dispatch 自动启动 worker，worker 直接读 notes。
+
+### 6.5 派发范式 3 句话总结（v3.5.0 保留）
+
+1. **大管家核心原则**：大管家 = 建卡（定任务）+ 触发（通知代理 / dispatch 启动 worker）+ 追踪（看 done 汇报老板）。中间执行全由 subagent / worker 自治完成。
+2. **v3.5.0 流式关键**（群派发）：派发后**不调 sessions_yield**——reply 即本回合最终流式回复——turn 自然结束——runtime auto-push event 触发大管家下一轮。
+3. **大管家只核验不接管**（v3.8.0 升级）：subagent / worker 完整自管 workboard 卡（claim + comment + proof + complete）——大管家仅 `workboard_read` 追踪 status——除 dispatch 内部已处理的失败外**不**调 reassign / claim / complete。
 
 ---
 
@@ -612,7 +533,7 @@ workboard_read({ id: cardId })
 workboard_unblock({ id: cardId })
 
 // 3. 如果 attempt 状态是 blocked（真失败），看 attempt 错误信息
-// 4. retry：手动重新 spawn（私聊）/ 群里重新 @ 代理（群场景）
+// 4. retry：手动重新派发（群里重新 @ / 重新 dispatch CLI）
 ```
 
 **预防**：代理 claim 后立即 `workboard_heartbeat` 续约，避免 claim token 过期被 Dx 误判。
@@ -624,12 +545,13 @@ workboard_unblock({ id: cardId })
 | claim 后 session 卡死 | 卡 `running` 30 分钟+ | 检查 session 活跃度；提醒代理 heartbeat；或 `workboard_block` + 重新派发 |
 | 产出不符合约束 | 核验发现错误 | `workboard_comment` 写反馈；`workboard_block`；大管家修改 task 描述后重新派发 |
 | 任务理解错误 | proof 不通过 | 同上 |
-| 代理崩溃/timeout | session 失败 | Dx 推卡到 `blocked`；大管家读卡看 attempt 错误；重新 spawn |
+| 代理崩溃/timeout | session 失败 | Dx 推卡到 `blocked`；大管家读卡看 attempt 错误；重新派发 |
+| dispatch 启动失败 | status=blocked | dispatch 内部已 block + 记录原因；大管家读卡看 attempt 错误，重新 dispatch |
 
-### 7.3 重新派发
+### 7.3 重新派发（v3.8.0 修改）
 
 - **群场景**：群里重新发 IM 模板（不传 `--no-dup` 让建新卡；或读旧卡用新 `move --status todo` 复用）
-- **私聊场景**：重新 `sessions_spawn`（spawn task 里传新 card_id 或复用旧 card）
+- **dispatch 派发场景**：重新 `openclaw workboard dispatch`（dispatch 内部已处理 claim 失败）；或读 blocked 卡重新派发
 
 ---
 
@@ -637,13 +559,14 @@ workboard_unblock({ id: cardId })
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
-| **v3.7.0** | 2026-06-06 | **重大补充**（老板拍板）：(1) **任务四要素**（建卡 note 核心）——任务目标 / 任务约束 / 输入路径 / 输出路径；(2) **通知模板 4 要素**（派发核心）——任务标题 / CARD_ID / 操作步骤 / 反馈要求；(3) 其他模板保持（10 个原模板不变）。详见 §六、消息/note 模板库 |
+| **v3.8.0** | 2026-07-02 | **重大重构**（老板拍板 + dispatch 闭环验证）：(1) **派发模式重构**：3 种 → 2 种——群派发（IM）/ dispatch 派发（CLI）——**dispatch 取代私聊 sessions_spawn**；(2) **新增 §三、dispatch 派发场景**（3 步流程 + 4 Q&A + vs 群派发对比）；(3) **删除 §三、私聊派发场景**（整段删除）；(4) **§1.2 铁律**：3 动作 → 2 动作（建卡 + 触发）+ 验收权下放给 worker（不调 workboard_complete/claim）；(5) **§1.3 状态机修改**：删除"session 完成 → Dx 自动推 review"——worker 主动 complete 直接推 done（**跳过 review 状态**）；(6) **§1.4 场景**：2 种场景（群派发 / dispatch 派发）；(7) **§4.6 禁止行为**：删除"不要给 workboard CLI 加 dispatch 子命令"（v3.7.0 错判，CLI 实际已存在）；(8) **§5.1 二阶段总览**：3 阶段 → 2 阶段（建卡+触发 / 追踪）；(9) **§6.3 dispatch 派发 CLI 模板**：新增；(10) **v3.7.0 错判修正**：v3.7.0 / v1.11.0 / v8.31.0 写时都没核实过 `openclaw workboard --help`，凭印象写禁令——v3.8.0 撤销 |
+| **v3.7.0** | 2026-06-06 | **重大补充**（老板拍板）：(1) **任务四要素**（建卡 note 核心）——任务目标 / 任务约束 / 输入路径 / 输出路径；(2) **通知模板 4 要素**（派发核心）——任务标题 / CARD_ID / 操作步骤 / 反馈要求；(3) 其他模板保持（10 个原模板不变）。**v3.8.0 撤销部分** |
 | **v3.6.0** | 2026-06-06 | **重大补充**（老板拍板 + 模板测试验证）：(1) **新加"§六、消息/note 模板库"**——指向 workboard-guide.md §三之5（v3.5.0 范式所有消息/note 模板）；(2) 序号顺移：原"§六、异常处理" → §七；原"§七、版本历史" → §八；(3) 异常处理子小节 6.x → 7.x 重编号；(4) 模板来源：5 轮测试验证（轮 1-3 / 重测 / 完整流程 / 模板测试）|
 | **v3.5.0** | 2026-06-06 | **重大修正**（3 轮多轮测试验证，老板拍板）：(1) **§五.4 私聊派发防中断**：删除"立即发'已派发'消息"——改为"**不调 yield**——流式 reply——turn 自然结束——runtime auto-push event 触发下一轮"；(2) **§五.5 私聊派发 6 步**（v3.4.0 写 7 步）：重写——subagent 完整自管 workboard（claim + comment + proof + complete）——大管家**只**核验——**不**接管；(3) **§五.5 接管 fallback**：3 种 fallback 场景（subagent claim 失败 / 没调 workboard / 没 complete）——大管家 reassign + claim + complete 或 sessions_send 续接；(4) **v3.4.0 §五.4 §五.5 错误**（已撤销） |
 | **v3.4.0** | 2026-06-06 | **重大补充**（老板指正 + 联动测试验证）：(1) **新加"§五、完整工作流"**——3 阶段总览（建卡+派发 / 等待 / 验收）/ 派发双通道对比 / 验收三态详细流程；(2) **加"§五之2、私聊派发防中断兜底"**；(3) **加"§五之3、跨场景大管家工作流整合"**——群场景 + 私聊场景完整 5 步流程；(4) 原"§五、异常处理" → §六（序号顺移）|
 | **v3.3.0** | 2026-06-06 | **重大修复**（老板纠错）：(1) **删除所有 `manager workboard` CLI 引用**（v2026.6.6）—— `scripts/workboard/` 932 行 Python 已删；(2) **建卡/验收全部走 `workboard_*` agent tool**（plugin contract tools 一直就有，见 `extensions/workboard/openclaw.plugin.json`）；(3) **shell 备选用 `openclaw workboard` plugin CLI**（runtime-slash 命令）；(4) **踩坑教训**：v8.25.0 拍板时漏看了 `workboard_create` agent tool，错让老板创建 932 行 Python 脚本——**完全没必要的** |
 | 3.2.0 | 2026-06-06 01:05 | **结构重构**（老板 2026-06-06 指正）：从 9 节精简到 6 节，按**场景**为主线（群派发 / 私聊派发），通用规则集中放一节，异常处理单独一节。改善 v3.1.0"读起来很乱"问题 |
-| 3.1.0 | 2026-06-06 00:55 | **新增私聊派发场景**（老板 2026-06-06 拍板）：用户 DM 交任务时，大管家走"建卡 + sessions_spawn + 验收"3 步（不写 TODO、不艾特群）；workboard 仍是任务进度控制面（建卡 + 验收），派发动作（IM 群艾特 / sessions_spawn）由大管家手动做，**不**走 workboard CLI |
+| 3.1.0 | 2026-06-06 00:55 | **新增私聊派发场景**（老板 2026-06-06 拍板）：用户 DM 交任务时，大管家走"建卡 + sessions_spawn + 验收"3 步（不写 TODO、不艾特群）；workboard 仍是任务进度控制面（建卡 + 验收），派发动作（IM 群艾特 / sessions_spawn）由大管家手动做，**不**走 workboard CLI。**v3.8.0 撤销**——dispatch 取代 sessions_spawn 私聊派发 |
 | 3.0.1 | 2026-06-03 03:05 | **老板定型**：(1) IM 群艾特必须（纠正 v3.0.1 草案"可选"）；(2) 任务进度反馈走 workboard（proof+comment）；(3) start 保留但不主动调；(4) 中间文件放 temp/，不放 knowledge/；(5) 采纳 A/B/C/E 提议，撤回 D；(6) 新增 --no-dup 防重复建卡 |
 | 3.0.0 | 2026-06-03 02:39 | 基于 T001.1 端到端测试定型：5+1 步 → 3 步派发；Dx 自动行为；代理汇报 |
 | 2.3.0 | 2026-06-03 | TODO 7 字段定型 |
@@ -652,5 +575,6 @@ workboard_unblock({ id: cardId })
 
 ---
 
-*最后更新：2026-06-06 14:25*
-*v3.7.0/v3.6.0/v3.5.0/v3.4.0/v3.3.0 整理者：大管家（steward）*
+*最后更新：2026-07-02 06:00*
+*v3.8.0 整理者：大管家（steward）*
+*v3.8.0 派发闭环验证：测试卡 d7709861-1412-4e2d-9976-812419aa1e27（status=done）*
