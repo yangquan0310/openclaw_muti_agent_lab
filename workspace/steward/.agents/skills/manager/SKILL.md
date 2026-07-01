@@ -30,10 +30,10 @@ metadata:
 1. **授权执行**：管方向、定边界、分配任务，不亲自执行
 2. **约束目标前置**：领取任务先明确验收标准 + 边界条件
 3. **子代理自主**：子任务由子代理自己拆解，大管家只定约束/输入/产出
-4. **TODO.md 群场景强制，私聊场景不写**：
+4. **TODO.md 群场景强制，dispatch 派发不写**：
    - **群派发**：领取任务立即写 TODO.md（看板 + 状态记录）
-   - **私聊派发**（v3.2.0）：单卡 workboard 即可，**不**写 TODO.md（单人任务不必建看板）
-5. **派发永远只 3 动作**（v3.2.0 老板拍板）：**建卡 + im/spawn 派发 + 验收**。workboard CLI 不接派发能力，spawn / dispatch 子命令**绝对禁止**加
+   - **dispatch 派发**：单卡 workboard 即可，**不**写 TODO.md（单人任务不必建看板）
+5. **派发永远只 2 动作**：**建卡（`openclaw workboard create` CLI）+ 触发**（IM 艾特 / `openclaw workboard dispatch` CLI）。验收权下放给 worker
 
 ---
 
@@ -42,64 +42,50 @@ metadata:
 - **不做什么**：不撰写内容、不编写代码、不进行数据分析、不提供学术观点
 - 模板只能存放在 `assets/`
 - 不得在任务中指定模型、预算等权限外内容
-- **汇报渠道按场景分**（v3.2.0 修正）：
+- **汇报渠道按场景分**：
   - **群派发**：进度走 workboard，群里不发"进度更新"（只派发通知 + 完成确认）
-  - **私聊派发**：DM 是派发通道本身，进度走 workboard，DM 看到 proof 即代表完成
-  - ~~汇报必须通过群聊，禁止私聊~~（v3.2.0 撤销：私聊派发场景下 DM 是合法通道）
+  - **dispatch 派发**：大管家只 `workboard_read` 追踪 status，**status=done → 汇报老板**
+  - ❌ 大管家**不调** `workboard_complete`（验收权下放）
+  - ❌ 大管家**不调** `workboard_claim`（让代理/dispatch 调）
 
 ---
 
 ## 快速调用
 
-```js
-// === Workboard 任务发布（v3.3.0 改用 agent tool） ===
+```bash
+# === Workboard 任务发布（v5.13.0：CLI 主用） ===
 
-// 群派发建卡（agent tool 主用，plugin CLI 不支持 session 绑定）
-workboard_create({
-  title: "...",
-  notes: "目标：... 约束：... 任务描述：...",
-  agentId: "writer",
-  priority: "high",
-  labels: ["..."],
-  status: "backlog"  // 群场景默认 backlog（Dx 自动同步）
-})
-// 绑群 session（用 workboard_comment 写软关联，agent tool / CLI 都无 --session flag）
-workboard_comment({ id: cardId, body: "sessionKey=agent:writer:feishu:group:oc_xxx" })
+# 群派发建卡
+openclaw workboard create "title" --agent <agent> --board default \
+  --status backlog --priority high --labels "..." --notes "任务四要素"
 
-// 私聊派发建卡（不绑 session）
-workboard_create({
-  title: "...",
-  notes: "...",
-  agentId: "writer",
-  priority: "high",
-  status: "todo"  // 私聊场景默认 todo
-})
+# 绑群 session（agent tool — CLI 无 comment）
+workboard_comment({ id: cardId, body: "sessionKey=agent:<agent>:feishu:group:oc_xxx" })
 
-// 核验
+# dispatch 派发建卡
+openclaw workboard create "title" --agent <agent> --board default \
+  --status ready --priority normal --labels "..." --notes "任务四要素"
+
+# === 派发动作 ===
+# 群场景：IM 5 段模板艾特（看 task-flow-guide.md §二）
+# dispatch 派发场景：openclaw workboard dispatch --board default --expect-final --timeout 300000
+
+# === 追踪（agent tool — CLI 无 read） ===
 workboard_read({ id: cardId })
-workboard_comment({ id: cardId, body: "大管家核验通过：..." })
-workboard_complete({ id: cardId, summary: "...", proof: { status: "passed" } })
-
-// === 派发动作（不走 workboard） ===
-// 群场景：IM 5 段模板艾特（看 task-flow-guide.md §二）
-// 私聊场景：sessions_spawn({ agentId, task, isolate: true })  # 看 task-flow-guide.md §三
-
-// === shell 备选：plugin CLI（最简建卡，复杂建卡必须用 agent tool） ===
-// openclaw workboard create "title" --agent writer --priority high
-// openclaw workboard list [--board default] [--status todo]
-// openclaw workboard show <id>
-// openclaw plugins enable workboard   # 启用 plugin
-
-// === 项目整理 ===
-manager maintainer organize <project_path> [--dry-run]
-manager maintainer sync <project_path> [--dry-run]
-manager maintainer check-updates <project_path>
-
-// === 查看帮助 ===
-manager maintainer --help
+# status=done → 汇报老板
+# ❌ 不调 workboard_complete（验收权下放，worker 自己）
+# ❌ 不调 workboard_claim（让代理/dispatch 调）
 ```
 
-**大管家 3 动作铁律**（v3.3.0 重写）：**建卡（agent tool）+ im/spawn 派发 + 验收（agent tool）**。workboard CLI (`manager workboard`) **已删除**（v2026.6.6，932 行 Python 脚本），派发动作脱离 workboard 仍正确。
+```bash
+# === plugin CLI 速查 ===
+openclaw workboard create "title" --agent <id> --status <s> ...
+openclaw workboard list [--board default] [--status <s>]
+openclaw workboard show <id>
+openclaw workboard dispatch --board default --expect-final --timeout 300000
+```
+
+**大管家 2 动作铁律**：**建卡（`openclaw workboard create` CLI）+ 触发**（IM 艾特 / `openclaw workboard dispatch` CLI）。验收权下放给 worker。
 
 ---
 
@@ -108,8 +94,8 @@ manager maintainer --help
 | 章节 | 文件 |
 |------|------|
 | manager 概述 | manager-overview.md |
-| Workboard 任务发布 | workboard-guide.md **v1.5.0**（start 子命令已删） |
-| **任务流（两种协调方式）** | **task-flow-guide.md v3.2.0**（§二、群派发 / §三、私聊派发） |
+| Workboard 任务发布 | workboard-guide.md v1.12.0 |
+| 任务流（两种协调方式）| task-flow-guide.md v3.8.0（§二、群派发 / §三、dispatch 派发） |
 | 论文项目 | thesis-guide.md |
 | 课程项目 | course-guide.md |
 | 程序项目 | program-guide.md |
@@ -127,8 +113,8 @@ manager maintainer --help
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
-| **5.13.0** | **2026-07-02** | **派发模式重大重构**（老板拍板 + dispatch 闭环验证）：(1) **派发从 3 模式 → 2 模式**——群派发（IM）/ dispatch 派发（`openclaw workboard dispatch` CLI）——**dispatch 取代 v3.7.0 私聊 sessions_spawn**；(2) **description 加"dispatch 派发"触发词**；(3) **核心原则 4 改写**——"TODO.md 群场景强制，dispatch 派发场景不写"（取代私聊派发）；(4) **核心原则 5 改写**——"派发永远只 2 动作"（建卡 + 触发）+ 验收权下放；(5) **边界条件改写**——加 2 条 v5.13.0（大管家不调 workboard_complete / 不调 workboard_claim）；(6) **快速调用重写**——dispatch 建卡 + CLI 派发 + 只追踪不接管；(7) **导航表更新**——task-flow-guide v3.2.0 → v3.8.0 / workboard-guide v1.5.0 → v1.12.0；(8) **v5.12.0 错判修正**——"绝对禁止 dispatch 子命令"是错的，CLI 实际已存在 |
-| **5.12.0** | **2026-06-06** | **两种任务协调方式必查**（老板 2026-06-06 拍板，源自私聊派发端到端测试）：(1) **description 字段加"两种协调方式"** 必查触发——群里 = IM + workboard、私聊 = sessions_spawn + workboard，确保 LLM 看到"派发"类任务立即想起 manager 技能；(2) **核心原则修"TODO.md 强制"为分场景**——群场景写，私聊场景不写（v3.2.0 §3.2）；(3) **边界条件撤销"禁止私聊汇报"**——v3.2.0 私聊派发场景下 DM 是合法通道；(4) **快速调用更新 v1.5.0**——start 子命令已删，加群/私聊建卡对照、spawn 派发说明；(5) 导航表 task-flow-guide v3.0.1 → v3.2.0、workboard-guide v1.4.0 → v1.5.0。**v5.13.0 撤销部分** |
+| **5.13.0** | **2026-07-02** | (1) 派发从 3 模式 → 2 模式：群派发（IM）/ dispatch 派发（CLI）；(2) description 加 dispatch 触发词；(3) 核心原则 4 改 TODO.md 分场景；(4) 核心原则 5 改 2 动作铁律 + 验收权下放；(5) 边界条件加 2 条不调项；(6) 快速调用重写；(7) 导航表升 v3.8.0 / v1.12.0 |
+| **5.12.0** | **2026-06-06** | (1) description 加"两种协调方式"必查触发；(2) 核心原则修分场景；(3) 边界条件撤销禁止私聊汇报；(4) 快速调用升 v1.5.0；(5) 导航表升 v3.2.0 / v1.5.0 |
 | **5.11.0** | **2026-06-04** | **Quarto 作者单位渲染模式固化**：(1) references/quarto-pdf-config.md 升 v1.1（~11KB），新增「八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）」章节（源自记忆机制论文实战），含四件套配置（header.tex + title.tex partial + YAML 字段 + LaTeX 通讯作者块）+ 6 条坑速查 + 替代方案对比 + wiki 实体作为元数据源；(2) references/index.md 同步；(3) 导航表加 v1.1 标注 |
 | **5.10.0** | **2026-06-04** | **新增 Quarto PDF 编译/排版场景**：(1) 新增 references/quarto-pdf-config.md（v1.0，~7.7KB），覆盖 3 范式 + CJK 字体（AR PL SungtiL GB 避 Noto TTC 坑）+ APA 7th + header-includes vs header.tex；(2) references/index.md 加"排版/编译"段；(3) description 加触发条件；(4) 导航表加新条目 |
 | 5.9.0 | 2026-06-03 | **任务流指南 v3.0.1 老板定型**：(1) IM 群艾特必须（纠正"可选"歧义）；(2) 任务进度反馈走 workboard（proof+comment）；(3) 中间文件放 temp/ 不放 knowledge/；(4) start 保留但不主动调；(5) 新增 --no-dup 防重复建卡；(6) 指南导航 task-flow-guide 指向 v3.0.1 |

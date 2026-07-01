@@ -1,6 +1,6 @@
 # Workboard 任务发布指南 v1.12.0
 
-> v1.12.0：**派发模式同步 v3.8.0**（dispatch 取代私聊）+ **验收权下放**（worker 自己 complete）+ **v1.11.0 错判修正**（CLI 实际有 dispatch）。详见末尾 §十、版本历史。
+> v1.12.0：派发模式（群派发 / dispatch 派发）+ 验收权下放。详见末尾 §十、版本历史。
 
 ---
 
@@ -101,7 +101,7 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 > ❌ **绝对禁止**重建 `manager workboard` CLI（v3.3.0 删除后永不重建）。如需 shell 操作，**只用 `openclaw workboard` plugin CLI**。
 > ❌ **绝对禁止**再回退到 `scripts/workboard/` Python 包（v1.7.0 删除后，永不重建）。如需 shell 操作，**只用 `openclaw workboard` plugin CLI**。
 >
-> **v1.12.0 撤销 v1.6.0 / v1.7.0 错判**："绝对禁止给 workboard CLI 加 spawn / dispatch 子命令"——**错判**。`openclaw workboard dispatch` CLI **已存在并使用**（OpenClaw 2026.6.11），是大管家 dispatch 派发的合法入口（agent tool `workboard_dispatch` ≠ plugin CLI `openclaw workboard dispatch`，前者只清理，后者是完整函数 `dispatchAndStartWorkboardCards`）。
+> `openclaw workboard dispatch` CLI 是大管家 dispatch 派发的合法入口（agent tool `workboard_dispatch` ≠ plugin CLI `openclaw workboard dispatch`，前者只清理，后者是完整函数 `dispatchAndStartWorkboardCards`）。
 
 ---
 
@@ -127,7 +127,7 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 
 ### 3.3.2 大管家"看 status" 的简化判断（v1.12.0 修订）
 
-✅ **看 done** → 核验产出 + 汇报老板（**v1.12.0 撤销** `workboard_complete`——worker 已 complete）
+✅ **看 done** → 核验产出 + 汇报老板（worker 已 complete）
 ✅ **看 blocked** → 人工介入（`workboard_reassign` / `workboard_unblock` / 重新派发 / 接受失败）
 ❌ **不看 running**（中间态，不管）
 ❌ **不看 todo / ready**（已派发，等代理 / dispatch claim）
@@ -201,7 +201,7 @@ OpenClaw Workboard 是 Dashboard 看板系统(http://10.0.0.9:18098/estqvr/),提
 
 ## 三之4、dispatch 派发场景（v1.12.0 新增，**取代 v3.5.0 私聊派发**）
 
-> **v1.12.0 撤销 §三之4、v3.5.0 私聊派发新范式（v1.9.0）**——dispatch 派发**取代**私聊 `sessions_spawn` 派发。详见 task-flow-guide.md v3.8.0 §三、dispatch 派发场景。
+> dispatch 派发取代私聊 `sessions_spawn` 派发。详见 task-flow-guide.md v3.8.0 §三、dispatch 派发场景。
 
 ### 3.4.1 dispatch CLI 实测（v1.12.0 闭环验证）
 
@@ -293,7 +293,7 @@ worker 跑完自动：
 }
 ```
 
-**任务四要素**（v1.11.0 老板拍板）：
+**任务四要素**：
 
 | 要素 | 含义 | 示例 |
 |------|------|------|
@@ -328,7 +328,7 @@ CARD_ID：<cardId>（看 prompt 实际替换值）
   - **反馈要求**（老板拍板）：...
 ```
 
-**通知模板 4 要素**（v1.11.0 老板拍板）：
+**通知模板 4 要素**：
 
 | 要素 | 含义 | 示例 |
 |------|------|------|
@@ -451,9 +451,9 @@ workboard_complete({
 
 ## 三之2、Workboard 永远只管"建卡/管理"（v1.6.0 新增铁律）
 
-> **v1.6.0 老板拍板**（2026-06-06）：workboard 是**任务进度控制工具**（看 §五、卡状态机），**不**包含派发能力本身。
+> workboard 是**任务进度控制工具**（看 §五、卡状态机），**不**包含派发能力本身。
 
-### 大管家 3 动作铁律（v1.7.0 重写）
+### 大管家 3 动作铁律
 
 ```
 [1] 建卡    →  workboard_create（agent tool，主用）/ openclaw workboard create（plugin CLI，shell 备选）
@@ -770,10 +770,10 @@ Dashboard 控制台的 `Ix()` 函数硬编码 `e.client.request("sessions.create
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
-| **v1.12.0** | 2026-07-02 | **重大重构**（老板拍板 + dispatch 闭环验证）：(1) **派发模式同步 v3.8.0**——2 种（群派发 / dispatch 派发）——**dispatch 取代私聊 sessions_spawn**；(2) **新增 §三之4、dispatch 派发场景**——3 步流程 + agent tool vs CLI 区别；(3) **删除 §三之4、v3.5.0 私聊派发新范式**（v1.9.0 整段删除）；(4) **§3.3.1 大管家 4 铁律改写**——加 2 条 v1.12.0（不主动 claim / 不调 complete）；(5) **§3.3.2 看 status 简化判断改写**——撤销 `workboard_complete`；(6) **§3.3.4 状态机图改写**——加 ready 状态（dispatch 派发）/ 跳过 review；(7) **v1.11.0 / v1.6.0 / v1.7.0 错判修正**——撤销"绝对禁止给 workboard CLI 加 dispatch 子命令"——`openclaw workboard dispatch` CLI 实际已存在并使用；(8) **派发闭环验证**——测试卡 d7709861 status=done 跑通 |
-| **v1.11.0** | 2026-06-06 | **重大补充**（老板拍板）：(1) **3.5.1 任务四要素**——建卡 note 核心内容（**任务目标 / 任务约束 / 输入路径 / 输出路径**）；(2) **3.5.2 通知模板**——派发核心内容（**任务标题 / CARD_ID / 操作步骤 / 反馈要求**）；(3) 其他模板保持（comment 软关联 / 流式 reply / proof / complete summary / 核验 reply / fallback A 接管 / fallback C 续接 / 3 句话总结）。详见 §三之5、消息/note 模板库。**v1.12.0 撤销部分** |
+| **v1.12.0** | 2026-07-02 | (1) 派发模式同步 v3.8.0：群派发 / dispatch 派发；(2) 新增 §三之4、dispatch 派发场景；(3) 删除 §三之4、v3.5.0 私聊派发新范式；(4) §3.3.1 大管家 4 铁律加 2 条；(5) §3.3.2 / §3.3.4 状态机图改写；(6) 派发闭环验证 |
+| **v1.11.0** | 2026-06-06 | (1) 3.5.1 任务四要素；(2) 3.5.2 通知模板；(3) 其他模板保持。详见 §三之5、消息/note 模板库 |
 | **v1.10.0** | 2026-06-06 | **重大补充**（老板拍板 + 模板测试验证）：(1) **新加"三之5、消息/note 模板库"**——10 个模板（workboard_create / spawn task / comment 软关联 / v3.5.0 流式 reply / proof / complete summary / 核验 reply / fallback A 接管 / fallback C 续接 / 派发范式 3 句话总结）；(2) 模板来源：5 轮测试验证（轮 1-3 / 重测 / 完整流程 / 模板测试）；(3) 指向：task-flow-guide.md v3.6.0 "§六、消息/note 模板库" 与本节同表 |
-| **v1.9.0** | 2026-06-06 | **重大补充**（3 轮多轮测试验证，老板拍板）：(1) **新加"三之4、v3.5.0 私聊派发新范式"**——基于 3 轮测试（subagent claim 行为 / 不 yield auto-trigger / 大管家接管 fallback）；(2) **§3.3.3 加 subagent claim 时序说明**——Dx auto-claim 不稳定，subagent 跑得快时 claim 成功（实测）；(3) **大管家 workboard_claim 强行覆盖行为总结**——Dx claim 是"软"（可覆盖）/ subagent claim 是"硬"（覆盖失败）；(4) **v1.9.0 撤销 v3.4.0 §5.4 §5.5 错误**：v3.4.0 写"❌ workboard_claim / ❌ workboard_complete"是错的——实测 subagent 可完整自管 |
+| **v1.9.0** | 2026-06-06 | (1) 新加"三之4、v3.5.0 私聊派发新范式"（已撤销，v1.12.0）；(2) §3.3.3 加 subagent claim 时序说明；(3) 大管家 claim 覆盖行为总结 |
 | **v1.8.0** | 2026-06-06 | **重大补充**（老板指正 + 联动测试验证）：(1) **新加"三之3、大管家使用技巧"**——明确"大管家不做什么"、"看 status 简化判断"、"agentId 副作用及应对"；(2) 4 场联动测试验证（v8.26.0 实测）：A done 路径 / B blocked 路径 / C subagent 自管 workboard / D notify_subscribe 链路 |
 | **v1.7.0** | 2026-06-06 | **重大修复**（老板纠错，老板拍板）：(1) **删除 `manager workboard` CLI**（v2026.6.6）—— `scripts/workboard/` 整个目录（932 行 Python）已删除；(2) **建卡改用 agent tool**（`workboard_create`）或 **plugin 自带 CLI**（`openclaw workboard create`）；(3) **核验/验收改用 agent tool**（`workboard_read` / `workboard_comment` / `workboard_complete` / `workboard_delete` 等）；(4) **大管家 3 动作铁律保持**（建卡 + im/spawn 派发 + 验收），但"建卡"和"验收"全部走 agent tool，**不再走 manager CLI**；(5) **踩坑教训**：v8.25.0 拍板时漏看了 `workboard_create` agent tool 一直就在 plugin contract tools 里（`extensions/workboard/openclaw.plugin.json:18`），错让老板创建 932 行 Python 脚本——**完全没必要的**。**v1.7.0 撤销 v8.25.0 沉淀，建卡用 tool/plugin CLI** |
 | **v1.6.0** | 2026-06-06 | **同步升级，对接 SKILL.md v5.12.0**：(1) 顶部加 v1.6.0 更新说明（6 项变更）；(2) §二、什么时候用 Workboard 加"两种派发场景"段；(3) §三、能力边界"关键分工"重写——大管家 = 建卡层（CLI），派发动作走 IM 群 / sessions_spawn；(4) **新章节"三之2、Workboard 永远只管建卡/管理"**——明确 3 动作铁律 + 两种派发场景下 workboard 角色 + 为什么 workboard 不接派发；(5) 同步 task-flow-guide.md v3.2.0 导航；(6) 源自私聊派发端到端测试 + SKILL.md v5.12.0 同步 |

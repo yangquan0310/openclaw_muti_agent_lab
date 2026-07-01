@@ -1,6 +1,6 @@
 # 任务流指南 v3.8.0
 
-> v3.8.0：**派发模式重构**（dispatch 取代私聊）+ **验收权下放**（worker 自己 complete）+ **v3.7.0 错判修正**。详见末尾 §八、版本历史。
+> v3.8.0：派发模式 = 群派发（IM）/ dispatch 派发（CLI）。验收权下放给 worker。详见末尾 §八、版本历史。
 
 ---
 
@@ -14,9 +14,9 @@
 | **执行层** | `workboard` 卡片 | 任务声明、状态机、进度反馈 | 大管家 agent tool（建卡/追踪）+ 代理 agent tool（claim/complete）|
 | **通知层** | **IM 群艾特**（群场景）/ **`openclaw workboard dispatch`**（群+私聊，指定 agentId 等价私聊） | 派发通道 | 大管家手动 |
 
-**关键洞察（v3.8.0）**：
+**关键洞察**：
 - **三件套缺一不可**：TODO（纪律）+ workboard（执行）+ IM/dispatch（通知/触发）
-- **workboard 永远只管"建卡/管理/追踪"**——**不**提供派发能力（**v3.7.0 错判修正**：plugin CLI 的 `dispatch` 子命令已存在，是合法派发通道）
+- **workboard 只管"建卡/管理/追踪"**——派发通道由大管家手动
 - **dashboard 是任务进度主可见层**——老板通过 dashboard 看进度
 
 ### 1.2 大管家 2 动作铁律（v3.8.0 重大简化）
@@ -47,11 +47,8 @@
    done     ← **v3.8.0 跳过 review 状态**（worker 主动推）
 ```
 
-**关键修改（v3.8.0）**：
-- **删除** v3.7.0 "session 完成 → Dx 自动推 review" 机制——worker 主动 complete 直接推 done
-- **dispatch 派发场景默认 status=ready**（dispatch 选 ready 卡）
-- **群派发场景默认 status=backlog**（Dx 推 running）
-- **不再有 review 状态**——v3.8.0 验收权下放，worker 主动 complete 跳 review
+- worker 主动 complete 推 done（**跳过 review 状态**）
+- dispatch 派发场景默认 status=ready；群派发场景默认 status=backlog
 
 ### 1.4 两种派发场景概览（v3.8.0 重构）
 
@@ -60,10 +57,8 @@
 | **群派发** | 老板在群里交任务 | IM 5 段模板艾特 | 建卡 + 看板 + Dx 同步 | [§二、群派发场景](#二群派发场景v301-主线) |
 | **dispatch 派发**（v3.8.0 新增，取代私聊） | 老板在 DM 或群里交任务（机器启动场景）| `openclaw workboard dispatch` CLI（指定 agentId） | 建卡 + dispatch 自动 claim + 启动 worker | [§三、dispatch 派发场景](#三dispatch-派发场景v380-新增) |
 
-**关键洞察（v3.8.0）**：
-- **派发模式 = 2 种**：群派发（IM）/ dispatch 派发（CLI）
-- **dispatch 取代 v3.7.0 私聊派发**（`sessions_spawn` 退场派发场景）
-- dispatch 既适用于群场景（机器启动不需要人艾特），也适用于私聊场景（通过 agentId 等价 spawn 启动子代理）
+- 派发模式 = 2 种：群派发（IM）/ dispatch 派发（CLI）
+- dispatch 通过 `card.agentId` 等价私聊 spawn 启动子代理
 
 ---
 
@@ -280,7 +275,7 @@ A：dispatch 内部已处理——claim 成功但 subagent 启动失败 → bloc
 | `openclaw workboard dispatch` **plugin CLI** | `dispatchAndStartWorkboardCards` | 完整：清理 + claim + 启动 subagent |
 | `/workboard dispatch` **runtime-slash** | `dispatchAndStartWorkboardCards` | 同 plugin CLI，完整函数 |
 
-**大管家派发必须用 plugin CLI 或 runtime-slash**——agent tool 不派发。**v3.7.0 / v1.11.0 / v8.31.0 错判**：写"绝对禁止给 workboard CLI 加 dispatch 子命令"——**v3.8.0 撤销**，CLI 实际已存在。
+**大管家派发必须用 plugin CLI 或 runtime-slash**——agent tool 不派发。
 
 **Q5：dispatch 派发后大管家还需要 IM 通知吗？**
 
@@ -354,7 +349,7 @@ dispatch 派发场景**不**写 TODO.md（单人任务不必建看板）。
 5. ~~不要在 create 后手动 move 到 todo~~（v3.8.0 删除——不再适用）
 6. **不要在 agent 执行中用群消息发进度**——走 workboard（群派发）
 7. **不要把 workboard 当 TODO 平替**——各管一段
-8. ~~不要给 workboard CLI 加 spawn / dispatch 子命令~~（**v3.8.0 删除**——v3.7.0 错判，CLI 实际已存在并使用）
+8. ~~不要给 workboard CLI 加 spawn / dispatch 子命令~~（已撤销——CLI 实际已存在）
 9. **卡 notes / IM 模板的文件路径必须绝对路径**
 10. **中间文件放 `temp/`，不放 `knowledge/`**
 11. **v3.8.0 新增**：大管家**不调** `workboard_complete` 验收——worker 自己 complete
@@ -378,11 +373,9 @@ dispatch 派发场景**不**写 TODO.md（单人任务不必建看板）。
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**关键洞察（v3.8.0）**：
-- **只有 2 个阶段**——v3.7.0 的"建卡+派发 / 等待 / 验收"3 阶段简化为 2 阶段
-- **Phase 1 大管家主动**（建卡 + 触发）
-- **Phase 2 大管家被动**（只 `workboard_read` 看 status）
-- **status=done 时汇报老板**——**不**调 `workboard_complete`
+- Phase 1 大管家主动（建卡 + 触发）
+- Phase 2 大管家被动（`workboard_read` 看 status）
+- status=done 时汇报老板，不调 `workboard_complete`
 
 ### 5.2 派发双通道对比（v3.8.0 重构）
 
@@ -420,10 +413,9 @@ dispatch 派发场景**不**写 TODO.md（单人任务不必建看板）。
     ❌ 不调 workboard_complete
 ```
 
-**关键洞察**：
-- **群场景 4 步**（写 TODO + 建卡 + IM + 追踪）
-- **dispatch 派发场景 3 步**（建卡 + dispatch + 追踪）
-- **两场景大管家都不调 workboard_complete**——v3.8.0 验收权下放
+- 群场景 4 步（写 TODO + 建卡 + IM + 追踪）
+- dispatch 派发场景 3 步（建卡 + dispatch + 追踪）
+- 大管家不调 `workboard_complete`（验收权下放）
 
 ---
 
@@ -559,7 +551,7 @@ workboard_unblock({ id: cardId })
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
-| **v3.8.0** | 2026-07-02 | **重大重构**（老板拍板 + dispatch 闭环验证）：(1) **派发模式重构**：3 种 → 2 种——群派发（IM）/ dispatch 派发（CLI）——**dispatch 取代私聊 sessions_spawn**；(2) **新增 §三、dispatch 派发场景**（3 步流程 + 4 Q&A + vs 群派发对比）；(3) **删除 §三、私聊派发场景**（整段删除）；(4) **§1.2 铁律**：3 动作 → 2 动作（建卡 + 触发）+ 验收权下放给 worker（不调 workboard_complete/claim）；(5) **§1.3 状态机修改**：删除"session 完成 → Dx 自动推 review"——worker 主动 complete 直接推 done（**跳过 review 状态**）；(6) **§1.4 场景**：2 种场景（群派发 / dispatch 派发）；(7) **§4.6 禁止行为**：删除"不要给 workboard CLI 加 dispatch 子命令"（v3.7.0 错判，CLI 实际已存在）；(8) **§5.1 二阶段总览**：3 阶段 → 2 阶段（建卡+触发 / 追踪）；(9) **§6.3 dispatch 派发 CLI 模板**：新增；(10) **v3.7.0 错判修正**：v3.7.0 / v1.11.0 / v8.31.0 写时都没核实过 `openclaw workboard --help`，凭印象写禁令——v3.8.0 撤销 |
+| **v3.8.0** | 2026-07-02 | (1) 派发模式重构：群派发（IM）/ dispatch 派发（CLI）；(2) 新增 §三、dispatch 派发场景；(3) 删除 §三、私聊派发场景；(4) §1.2 铁律改为 2 动作 + 验收权下放；(5) §1.3 状态机跳过 review；(6) §1.4 = 2 种场景；(7) §4.6 取消 dispatch 禁令；(8) §5.1 二阶段总览；(9) §6.3 dispatch CLI 模板；(10) v3.7.0 撤销 CLI 错判 |
 | **v3.7.0** | 2026-06-06 | **重大补充**（老板拍板）：(1) **任务四要素**（建卡 note 核心）——任务目标 / 任务约束 / 输入路径 / 输出路径；(2) **通知模板 4 要素**（派发核心）——任务标题 / CARD_ID / 操作步骤 / 反馈要求；(3) 其他模板保持（10 个原模板不变）。**v3.8.0 撤销部分** |
 | **v3.6.0** | 2026-06-06 | **重大补充**（老板拍板 + 模板测试验证）：(1) **新加"§六、消息/note 模板库"**——指向 workboard-guide.md §三之5（v3.5.0 范式所有消息/note 模板）；(2) 序号顺移：原"§六、异常处理" → §七；原"§七、版本历史" → §八；(3) 异常处理子小节 6.x → 7.x 重编号；(4) 模板来源：5 轮测试验证（轮 1-3 / 重测 / 完整流程 / 模板测试）|
 | **v3.5.0** | 2026-06-06 | **重大修正**（3 轮多轮测试验证，老板拍板）：(1) **§五.4 私聊派发防中断**：删除"立即发'已派发'消息"——改为"**不调 yield**——流式 reply——turn 自然结束——runtime auto-push event 触发下一轮"；(2) **§五.5 私聊派发 6 步**（v3.4.0 写 7 步）：重写——subagent 完整自管 workboard（claim + comment + proof + complete）——大管家**只**核验——**不**接管；(3) **§五.5 接管 fallback**：3 种 fallback 场景（subagent claim 失败 / 没调 workboard / 没 complete）——大管家 reassign + claim + complete 或 sessions_send 续接；(4) **v3.4.0 §五.4 §五.5 错误**（已撤销） |
