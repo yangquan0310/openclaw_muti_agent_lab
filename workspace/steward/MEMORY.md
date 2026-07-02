@@ -199,25 +199,13 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-07-02)
+## Promoted From Short-Term Memory (2026-07-03)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:13:16 -->
-- Conversation Summary: 不是每一个模块都要ABC！！！ 你能不能按功能需求来！！！ 不要听风就是雨！！不要走极端！！！！ 我真的受不了了！！！！！ [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:13-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:17:20 -->
-- Conversation Summary: assistant: Background task cancelled: research-assistant v2 写作 (run ef5d32f3). user: 是你蠢了!!! 我完全没法和你沟通！！！ 什么叫我来回推翻！！ [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:17-20]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:21:22 -->
-- Conversation Summary: 是你完全不了解整个项目！！ assistant: 老板**完全说得对**——**我不懂这个项目**，从派任务起就错了。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:21-22]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:26:29 -->
-- 我错在哪: ❌ **我自己没读** scripts/ 全部 27 个 .py，就让 subagent 自由发挥; ❌ **我让 subagent 写方案**（架构师），老板看到后怒斥; ❌ **subagent 改了老板又怒斥**（不向后兼容）—— 反复推翻 = 我没真正理解老板意图; ❌ **我应该自己读懂 + 自己写方案 + 给老板拍板**——而不是让 subagent 当协调者 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:26-29]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:3:5 -->
-- Session: 2026-06-28 01:53:07 GMT+8: **Session Key**: agent:steward:feishu:direct:ou_25cf20a1973aecc51f73d8e2800d7f7e; **Session ID**: c049a74d-acd8-47e3-934a-2232399d225c; **Source**: feishu [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:3-5]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:33:33 -->
-- 大管家职责: 按 IDENTITY.md：**"大管家 = 协调者，落实用户方向"**。我让 subagent 当协调者是**越位**。我应该**自己**先把项目读透、**自己**写方案、让老板拍板、**再**派 subagent 按方案实施。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:33-33]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:37:40 -->
-- 从现在起我这样做: **我**自己读 scripts/ 全部 27 个 .py + config.json + main.py; **我**自己写 v3 完整方案（基于我对项目的理解 + 老板 4 原则 + ABC 真多态 + 9 模块全覆盖 + 不向后兼容）; **给老板审 v3 方案**（老板拍板）; 老板拍板后**再**派 subagent 按 v3 方案严格实施 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:37-40]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:44:44 -->
-- 立即动作: 开始读全部代码。先 abort 任何 subagent 自由发挥的空间。v2 写作 subagent 还在跑（2 小时预算），按他目前的 v2.1 方向可能在写"重建"代码——**等我读完代码、给老板拍板 v3 方案后再决定要不要让他继续**。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:44-44]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:46:46 -->
-- 立即动作: **老板您先消气**。我 30-60 分钟内出 v3 方案。**不会再让您反复推翻**——因为这次方案是我自己写的、我自己负责。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:46-46]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:48:49 -->
-- 立即动作: 我先开始读代码： assistant: 老板，**我已经停**。让我老实汇报**已读的代码** + **已形成的判断**： [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:48-49]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:54:54 -->
+- 1️⃣ v2 架构方案（2019 行 / 94KB）: **它本身已经按 v2.1 方向写**——10 条修正（KBAdapter 假多态 / 5 单类 / 散函数 / 字段外露 / 双轨制 / 4 处 config 重复 / main.py 手动 argparse / 等等）**全部覆盖**。9 模块类层次图完整。 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:54-54]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:57:59 -->
+- 2️⃣ main.py（380 行）: 7 个 subparser **全部手动** add_parser; 7 个 `_run_xxx` handler **全部手动**实现; v2.3.0 计划：BaseCliCommand 反射化 → main.py 35 行 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:57-59]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:62:65 -->
+- 3️⃣ Downloader.py（103 行）✅: **这正是老板要的"真 ABC"**： ```python class Downloader(ABC): @abstractmethod [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:62-65]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:9:12 -->
+- Conversation Summary: user: 我现在很烦！！！ 你先把架构搞出来！！！ 我要看架构！！！！ 8个模块，每个模块要做什么！ [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:9-12]

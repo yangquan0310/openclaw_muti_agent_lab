@@ -693,6 +693,14 @@ openclaw agents restart <agent-name>
 - **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
 
 ### 版本 4.3.16 (2026-06-29 05:42)
+### 版本 4.3.19 (2026-07-03 05:00)
+- **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 10 个 agent 的 memory/.dreams/events.jsonl + 26 个文件变更 + 4 个未追踪文件），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查 + 清理**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮 7 个 agent (mathematician/physicist/programmer/psychologist/reviewer/steward/writer) 运行时状态文件 `openclaw-workspace-state.json` 整体迁移至各 agent 的 `temp/` 目录（与 4.3.14/4.3.15/4.3.17 推送模式一致）；programmer 的 `.learnings/` 和 `.openclaw/` 目录迁移至 `temp/` 保持工作空间整洁
+- **梦境记忆批次同步**：10 个 agent（auditor/instructor/mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer）的 DREAMS.md 与 memory/.dreams/events.jsonl 同步更新（~190 行 DREAMS.md 追加 + ~50 条 events.jsonl 梦境事件）
+- **Wiki报告新增**：3 篇研究报告入库（agent记忆/工作模型/数字孪生日报）
+- **steward记忆更新**：DREAMS.md 增长 29 行，MEMORY.md 工作记忆更新（32 行 diff）
+- **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
+
 ### 版本 4.3.18 (2026-07-02 05:00)
 - **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 10 个 agent 的 memory/.dreams/events.jsonl + 4 个 wiki/reports 新增文件 + steward lock.json/DREAMS.md/MEMORY.md），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 .md 配置文件和配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；programmer 的 `openclaw-workspace-state.json` 在 temp/ 目录，符合 .gitignore 规则
