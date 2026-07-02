@@ -36,14 +36,14 @@
 
 ## CLI 命令
 
-格式：`{技能名} {模块名} {方法名} [参数]`（**三段式**）
+格式：`python scripts/main.py <模块名> <方法名> [参数]`（**三段式**）
 
 | 段 | 命名 | 例子 |
 |----|------|------|
-| 技能名 | 字母、数字、连字符 | `skill-developer` |
-| 模块名 | 名词（与 references/ 一一对应）| `creation`, `extension`, `quality`, `naming`, `versioning`, `boundaries`, `principles`, `disclosure`, `audit` |
-| 方法名 | 动词或动词+名词 | `init`, `audit`, `check`, `extend`, `refactor` |
-| 参数 | 尽量少，每个参数有明确用途 | `<skill-name>`, `[path]`, `--format` |
+| 入口 | 固定为 `python scripts/main.py` | `python scripts/main.py` |
+| 模块名 | 与 scripts/ 子目录一一对应 | `skill`, `reference`, `version` |
+| 方法名 | 动词或动词+名词 | `init`, `audit`, `check`, `extend` |
+| 参数 | 尽量少，每个参数有明确用途 | `<skill-name>`, `[path]`, `--reference` |
 
 | 规范 | 要求 |
 |------|------|

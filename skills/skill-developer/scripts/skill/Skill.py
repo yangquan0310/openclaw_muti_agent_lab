@@ -12,6 +12,84 @@ from datetime import datetime
 from typing import Any
 
 
+_MAIN_PY_TEMPLATE = r'''#!/usr/bin/env python3
+"""
+{skill_name} CLI 统一入口（✨ 本技能的**唯一入口**）。
+
+三段式调用规范：
+    python scripts/main.py <模块名> <方法名> [参数]
+
+模块（对象类）：
+  （请在下方 _MODULES 注册你的模块）
+
+添加新模块的步骤：
+  1. 在 scripts/<模块名>/ 下创建模块文件（实现类或函数）
+  2. 在下方 _MODULES 字典中注册 "模块名": ("描述", "scripts.模块名.cli:run")
+  3. 模块文件需提供 run() 函数作为 CLI 入口
+"""
+
+import sys
+from pathlib import Path
+
+_SKILL_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_SKILL_ROOT))
+
+# 模块注册表：模块名 → (描述, 派发器导入路径)
+_MODULES: dict = {{
+    # 示例："my_module": ("模块描述", "scripts.my_module.cli:run"),
+}}
+
+
+def _print_help() -> None:
+    """打印顶层帮助"""
+    print("{skill_name} - 技能 CLI")
+    print("用法: python scripts/main.py <模块名> <方法名> [参数]")
+    print()
+    print("模块（对象类）:")
+    for name, (desc, _) in _MODULES.items():
+        print(f"  {{name:<12}}  {{desc}}")
+    if not _MODULES:
+        print("  （暂无已注册模块）")
+    print()
+    print("查看模块帮助: python scripts/main.py <模块名> --help")
+
+
+def _dispatch(module: str) -> int:
+    """派发到指定模块的 CLI 调度器"""
+    if module not in _MODULES:
+        print(f"Error: 未知模块 '{{module}}'")
+        print(f"可用模块: {{', '.join(_MODULES.keys()) or '(暂无)'}}")
+        return 1
+
+    _, import_path = _MODULES[module]
+    module_path, _, attr = import_path.partition(":")
+
+    try:
+        import importlib
+        mod = importlib.import_module(module_path)
+        run = getattr(mod, attr)
+    except ImportError as e:
+        print(f"Error: 模块 '{{module}}' 已注册但加载失败: {{e}}")
+        return 1
+    except AttributeError:
+        print(f"Error: 模块 '{{module}}' 缺少入口函数 '{{attr}}'")
+        return 1
+
+    del sys.argv[1]
+    return run()
+
+
+def main() -> int:
+    if len(sys.argv) < 2 or sys.argv[1] in ("-h", "--help"):
+        _print_help()
+        return 0
+    return _dispatch(sys.argv[1])
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+'''
+
 _TEMPLATES = {
     "SKILL.md": """---
 name: {skill_name}
@@ -53,7 +131,6 @@ metadata:
 | 1.0.0 | {date} | 初始版本 |
 """,
 
-
     "references/index.md": """# {skill_name}
 
 > {description}
@@ -63,86 +140,6 @@ metadata:
 ## 快速开始
 
 开发新技能时，使用 [skill-developer](~/.openclaw/skills/skill-developer/SKILL.md) 技能。
-""",
-
-    "mcp/server.py": """#!/usr/bin/env python3
-\"\"\"
-{skill_name} MCP Server
-通过 MCP 暴露 {skill_name} 的工具方法
-\"\"\"
-
-import asyncio
-import json
-from pathlib import Path
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
-from mcp.types import Tool, TextContent
-
-SKILL_DIR = Path("/root/.openclaw/skills/{skill_name}")
-
-EXPOSED_TOOLS = [
-    {{
-        "name": "{skill_name}_do_something",
-        "description": "执行 {skill_name} 的某个操作",
-        "parameters": {{
-            "type": "object",
-            "properties": {{
-                "action": {{
-                    "type": "string",
-                    "enum": ["do_something"],
-                    "description": "要执行的操作"
-                }}
-            }},
-            "required": ["action"]
-        }}
-    }}
-]
-
-
-class {handler_name}Handler:
-    \"\"\"处理 {skill_name} 请求\"\"\"
-
-    def __init__(self):
-        self.skill_dir = SKILL_DIR
-
-    async def handle_do_something(self, args: dict) -> dict:
-        \"\"\"执行某个操作\"\"\"
-        return {{"success": True, "message": "操作完成"}}
-
-
-app = Server("{skill_name}")
-handler = {handler_name}Handler()
-
-
-@app.list_tools()
-async def list_tools() -> list[Tool]:
-    return [
-        Tool(
-            name=t["name"],
-            description=t["description"],
-            inputSchema=t["parameters"]
-        )
-        for t in EXPOSED_TOOLS
-    ]
-
-
-@app.call_tool()
-async def call_tool(name: str, arguments: dict) -> list[TextContent]:
-    action = arguments.get("action")
-    if action == "do_something":
-        result = await handler.handle_do_something(arguments)
-    else:
-        result = {{"success": False, "error": f"未知操作: {{action}}"}}
-    return [TextContent(type="text", text=json.dumps(result, ensure_ascii=False))]
-
-
-async def main():
-    async with stdio_server(server=app) as (read_stream, write_stream):
-        await app.run(read_stream, write_stream, app.create_initialization_options())
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
 """,
 }
 
@@ -191,6 +188,11 @@ class Skill:
         ]:
             content = _TEMPLATES[key].format(**vars_)
             (skill_path / rel_path).write_text(content, encoding="utf-8")
+
+        # 生成 scripts/main.py（唯一入口）
+        main_py = skill_path / "scripts" / "main.py"
+        main_py.write_text(_MAIN_PY_TEMPLATE.format(**vars_), encoding="utf-8")
+        main_py.chmod(0o755)
 
         print(f"\n✅ 技能初始化完成: {skill_path}")
         print(f"   - SKILL.md")
@@ -312,11 +314,35 @@ class Skill:
             (pass_ if ok else warn).append(f"SKILL.md {'合理' if ok else '过长'}: {len(lines)}行")
 
     def _check_cli_entry(self, p: Path, pass_: list, fail: list, warn: list) -> None:
-        """检查 main.py 是否存在"""
+        """检查 scripts/main.py 是否存在且支持三段式 CLI（软提示）"""
         main = p / "scripts" / "main.py"
-        (pass_ if main.exists() else warn).append(
-            f"CLI 入口{'存在' if main.exists() else '缺失'}: scripts/main.py"
-        )
+
+        if not main.exists():
+            warn.append(
+                "CLI 入口缺失: scripts/main.py"
+                "（所有技能必须提供 python scripts/main.py <模块> <方法> <参数> 三段式入口）"
+            )
+            return
+
+        pass_.append("CLI 入口存在: scripts/main.py")
+
+        # 检查是否支持三段式（通过关键字识别）
+        try:
+            content = main.read_text(encoding="utf-8")
+        except Exception:
+            warn.append("CLI 入口无法读取: scripts/main.py")
+            return
+
+        indicators = ["_MODULES", "_dispatch", "sys.argv[1]"]
+        missing = [ind for ind in indicators if ind not in content]
+
+        if missing:
+            warn.append(
+                f"CLI 入口可能不支持三段式: 缺少标识 {missing}，"
+                f"建议参考 skill-developer 的 scripts/main.py 重写"
+            )
+        else:
+            pass_.append("CLI 入口支持三段式调度: scripts/main.py")
 
     def _check_global_symlink(self, p: Path, pass_: list, fail: list, warn: list) -> None:
         """检查 /usr/local/bin/ 下是否有 symlink"""
