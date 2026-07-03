@@ -11,13 +11,16 @@ zotero_attachment_key: null
 zotero_pdf_path: null
 zotero_doi: null
 zotero_arxiv_id: "2512.03682"
-**PDF 状态**：✅ 已从 arXiv OA 抓取（200KB，17 页）
 aliases:
   - Knowing Oneself with AI
   - Osler 2025
   - Narrative Deference
   - 分布式认知 AI
 ---
+
+<!-- wiki:frontmatter-pollution (moved from YAML) -->
+**PDF 状态**：✅ 已从 arXiv OA 抓取（200KB，17 页）
+<!-- /wiki:frontmatter-pollution -->
 
 # Osler 2025 — 通过 AI 认识自己
 
@@ -62,6 +65,7 @@ aliases:
 
 ## Related
 <!-- openclaw:wiki:related:start -->
-- Referenced By: [[concepts/autobiographical-memory]], [[concepts/generative-ai]]
-- Related Pages: [[sources/smart-2026-story-of-your-life-llm]], [[sources/mansfield-2026-ai-narrative-processing]]
+### Referenced By
+
+- [[concepts/research-direction-thesis|老板博士论文研究对象定位建议（Research Direction — Thesis）]]
 <!-- openclaw:wiki:related:end -->

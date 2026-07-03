@@ -10,12 +10,15 @@ zotero_item_key: null
 zotero_attachment_key: null
 zotero_pdf_path: null
 zotero_doi: 10.1080/1047840X.2024.2384125
-**PDF 状态**：⚠️ Würzburg 大学预印本 anti-bot 拦截，需老板手动 Zotero 入库后走默认源下载
 aliases:
   - AMEDIA Model
   - Hutmacher 2024
   - 自传体记忆 数字化 框架
 ---
+
+<!-- wiki:frontmatter-pollution (moved from YAML) -->
+**PDF 状态**：⚠️ Würzburg 大学预印本 anti-bot 拦截，需老板手动 Zotero 入库后走默认源下载
+<!-- /wiki:frontmatter-pollution -->
 
 # Hutmacher, Appel & Schwan 2024 — AMEDIA 模型
 
@@ -55,6 +58,8 @@ aliases:
 
 ## Related
 <!-- openclaw:wiki:related:start -->
-- Referenced By: [[concepts/autobiographical-memory]]
-- Related Pages: [[concepts/digital-memory]], [[concepts/memory-offloading]]
+### Referenced By
+
+- [[sources/schramm-hutmacher-2026-scrolling-through-the-past|Schramm & Hutmacher 2026 — 滑动回顾：数字工具如何改变我们的记忆方式（In-Mind 科普版 AMEDIA 模型）]]
+- [[concepts/research-direction-thesis|老板博士论文研究对象定位建议（Research Direction — Thesis）]]
 <!-- openclaw:wiki:related:end -->

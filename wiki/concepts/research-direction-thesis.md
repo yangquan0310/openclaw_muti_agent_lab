@@ -193,3 +193,21 @@ aliases:
 *最后更新：2026-06-28*
 *更新者：心理学家（psychologist）*
 *创建原因：老板 2026-06-28 05:23 任务"博士论文需要扩充，从记忆讲到自传体记忆。博士论文需要将领域扩展开，找准研究对象的定位"*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Sources
+
+- [[sources/hutmacher-2024-amedia-model|Hutmacher, Appel & Schwan 2024 — AMEDIA 模型：数字化时代自传体记忆的编码-策展-检索三阶段框架]]
+- [[sources/hutmacher-2025-birthday-memories|Hutmacher, Einhellig & Klink 2025 — 生日记忆：数字化时代自传体回忆的 think-aloud 实验]]
+- [[sources/hutmacher-2025-mediated-autobiographical-remembering|Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆：内外记忆切换的 3 种典型模式]]
+- [[sources/smart-2026-story-of-your-life-llm|Smart, Clowes, Krueger & Boniface 2026 — LLM 作为个人记忆技术：参数化 vs. 非参数化记忆区分]]
+- [[sources/mansfield-2026-ai-narrative-processing|Mansfield et al. 2026 — AI 处理自传体叙事：过度救赎（over-redemption）的实证证据]]
+- [[sources/joanroy-2025-algorithmic-memory-technologies|Joanroy et al. 2025 — 青年人对算法记忆技术的使用与体验：信任主动记录 vs. 抗拒算法代理]]
+- [[sources/osler-2025-knowing-oneself-with-ai|Osler 2025 — 通过 AI 认识自己：从自追踪到聊天机器人（叙事顺从风险）]]
+- [[sources/wardell-2025-autobiographical-memory-consistency|Wardell et al. 2025 — 评估自传体记忆一致性：机器与人工方法对比（Behavior Research Methods）]]
+
+### Related Pages
+
+- [[concepts/memory-research-methods|记忆研究方法（Memory Research Methods）]]
+<!-- openclaw:wiki:related:end -->

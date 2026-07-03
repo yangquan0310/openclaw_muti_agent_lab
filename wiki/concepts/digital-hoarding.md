@@ -248,7 +248,9 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/keightley-pickering-2014-technologies-of-memory|Keightley & Pickering 2014 — 记忆技术：模拟与数字摄影的实践（93 引用）]]
 - [[sources/liu-2025-digital-hoarding-cognitive-failures|Liu & Liu 2025 — 数字囤积是囤积知识还是囤积压力？中国大学生数字囤积与认知失败的关系]]
+- [[sources/lurie-fabrizio-westerman-2025-cost-of-saving|Lurie, Fabrizio & Westerman 2025 — 保存的代价：照片和截图如何损害记忆（Memory & Cognition）]]
 - [[sources/sun-2025-digital-hoarding-nostalgic-consumption|Sun, Chen & Cui 2025 — 数字囤积是否导致怀旧消费？认知失调与情绪记忆联结的双中介机制]]
 - [[concepts/decision-making|决策（Decision Making）]]
 - [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]

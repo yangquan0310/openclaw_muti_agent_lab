@@ -177,6 +177,7 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/conway-2019-self-memory-system-revisited|Conway, Justice & D'Argembeau 2019 — 自我记忆系统（SMS）19 年后的更新版]]
 - [[concepts/sleep-quality|睡眠质量（Sleep Quality）]]
 
 ### Related Pages

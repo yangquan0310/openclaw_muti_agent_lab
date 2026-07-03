@@ -177,6 +177,7 @@ aliases:
 ### Referenced By
 
 - [[concepts/thematic-analysis|主题分析（Thematic Analysis）]]
+- [[concepts/memory-research-methods|记忆研究方法（Memory Research Methods）]]
 
 ### Related Pages
 

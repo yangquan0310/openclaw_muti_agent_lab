@@ -52,6 +52,9 @@ aliases:
 
 ## Related
 <!-- openclaw:wiki:related:start -->
-- Referenced By: [[concepts/autobiographical-memory]], [[concepts/digital-memory]]
-- Related Pages: [[sources/hutmacher-2024-amedia-model]]
+### Referenced By
+
+- [[sources/schramm-hutmacher-2026-scrolling-through-the-past|Schramm & Hutmacher 2026 — 滑动回顾：数字工具如何改变我们的记忆方式（In-Mind 科普版 AMEDIA 模型）]]
+- [[concepts/research-direction-thesis|老板博士论文研究对象定位建议（Research Direction — Thesis）]]
+- [[concepts/memory-research-methods|记忆研究方法（Memory Research Methods）]]
 <!-- openclaw:wiki:related:end -->

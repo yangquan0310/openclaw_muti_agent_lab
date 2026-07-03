@@ -74,3 +74,10 @@ aliases:
 - [ ] **SMS 三层结构的神经基础**：Conway et al. 2001 Neuroanatomy of AM 是否有专门实验？
 - [ ] **特异性训练的具体协议**：Williams et al. 2007 的标准化程序
 - [ ] **跨文化适用性**：Wang et al. 2024 "culturally modulated self-memory system" 提供了什么差异？
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[syntheses/2026-06-28-03-50-00-记忆研究理论框架-博士论文基础|博士论文理论基础——从记忆系统到自传体记忆的层次递进]]
+<!-- openclaw:wiki:related:end -->

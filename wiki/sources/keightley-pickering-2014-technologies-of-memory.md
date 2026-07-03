@@ -69,3 +69,10 @@ aliases:
 - [ ] **样本量与国籍**：访谈是英国人？其他文化是否一致？
 - [ ] **近年延伸**：智能手机 vs. 单反 vs. 模拟的差异
 - [ ] **社交媒体角色**：Instagram/Snapchat 是否强化了"再现"模式
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[syntheses/2026-06-28-03-50-00-记忆研究理论框架-博士论文基础|博士论文理论基础——从记忆系统到自传体记忆的层次递进]]
+<!-- openclaw:wiki:related:end -->

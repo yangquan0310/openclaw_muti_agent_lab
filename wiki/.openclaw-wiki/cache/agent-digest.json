@@ -1,16 +1,16 @@
 {
   "pageCounts": {
     "entity": 13,
-    "concept": 60,
-    "source": 17,
-    "synthesis": 109,
-    "report": 42
+    "concept": 63,
+    "source": 32,
+    "synthesis": 116,
+    "report": 67
   },
   "claimCount": 23,
   "claimHealth": {
     "freshness": {
-      "fresh": 7,
-      "aging": 16,
+      "fresh": 0,
+      "aging": 23,
       "stale": 0,
       "unknown": 0
     },
@@ -64,7 +64,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "concept",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-06-01T16:45:00+08:00",
       "claimCount": 0,
       "topClaims": []
@@ -635,6 +635,32 @@
       "topClaims": []
     },
     {
+      "id": "concept.memory-classification",
+      "title": "记忆分类学（Memory Classification）",
+      "kind": "concept",
+      "path": "concepts/memory-classification.md",
+      "aliases": [
+        "记忆分类",
+        "Memory Taxonomy",
+        "Types of Memory"
+      ],
+      "sourceIds": [
+        "source.tulving-1972-episodic-semantic-memory",
+        "source.baddeley-2000-episodic-buffer"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "concept.memory-offloading",
       "title": "记忆外包（Memory Offloading）",
       "kind": "concept",
@@ -655,6 +681,35 @@
       "pageType": "concept",
       "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.memory-research-methods",
+      "title": "记忆研究方法（Memory Research Methods）",
+      "kind": "concept",
+      "path": "concepts/memory-research-methods.md",
+      "aliases": [
+        "记忆研究方法",
+        "Memory Research Methods",
+        "AM Methods"
+      ],
+      "sourceIds": [
+        "source.wardell-2025-autobiographical-memory-consistency",
+        "source.hutmacher-2025-birthday-memories",
+        "source.hutmacher-2025-mediated-autobiographical-remembering",
+        "source.joanroy-2025-algorithmic-memory-technologies",
+        "source.khan-2021-systematic-review-am-mental-health"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28",
       "claimCount": 0,
       "topClaims": []
     },
@@ -943,6 +998,38 @@
       "pageType": "concept",
       "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-23",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "concept.research-direction-thesis",
+      "title": "老板博士论文研究对象定位建议（Research Direction — Thesis）",
+      "kind": "concept",
+      "path": "concepts/research-direction-thesis.md",
+      "aliases": [
+        "论文方向",
+        "Thesis Direction",
+        "研究对象定位"
+      ],
+      "sourceIds": [
+        "source.hutmacher-2024-amedia-model",
+        "source.hutmacher-2025-birthday-memories",
+        "source.hutmacher-2025-mediated-autobiographical-remembering",
+        "source.smart-2026-story-of-your-life-llm",
+        "source.mansfield-2026-ai-narrative-processing",
+        "source.joanroy-2025-algorithmic-memory-technologies",
+        "source.osler-2025-knowing-oneself-with-ai",
+        "source.wardell-2025-autobiographical-memory-consistency"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "concept",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2446,6 +2533,430 @@
       "topClaims": []
     },
     {
+      "id": "report.search-general-2026-06-28-00-13-00",
+      "title": "Search Report — general",
+      "kind": "report",
+      "path": "reports/2026-06-28-00-13-00-search-general.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.search-general-2026-06-28-03-42-32",
+      "title": "Search Report — Tulving episodic semantic memory 1972",
+      "kind": "report",
+      "path": "reports/2026-06-28-03-42-32-search-general.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.search-general-2026-06-28-03-42-46",
+      "title": "Search Report — Conway autobiographical memory self memory system",
+      "kind": "report",
+      "path": "reports/2026-06-28-03-42-46-search-general.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.search-general-2026-06-28-03-43-23",
+      "title": "Search Report — digital photography autobiographical memory photo-taking impairment",
+      "kind": "report",
+      "path": "reports/2026-06-28-03-43-23-search-general.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.search-general-2026-06-28-03-43-32",
+      "title": "Search Report — autobiographical memory interview method Conway Pleydell-Pearce",
+      "kind": "report",
+      "path": "reports/2026-06-28-03-43-32-search-general.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.search-general-2026-06-28-03-43-34",
+      "title": "Search Report — working memory long-term memory Baddeley",
+      "kind": "report",
+      "path": "reports/2026-06-28-03-43-34-search-general.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-28-伊辛模型最新应用",
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-06-28-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T08:22:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-28-认知计算日报",
+      "title": "认知计算日报",
+      "kind": "report",
+      "path": "reports/2026-06-28-认知计算日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T08:05:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-29-伊辛模型最新应用",
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-06-29-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-29T08:22:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "数字化存储与自传体记忆日报",
+      "kind": "report",
+      "path": "reports/2026-06-29-数字化存储与自传体记忆日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "report.2026-06-29-认知计算日报",
+      "title": "认知计算日报",
+      "kind": "report",
+      "path": "reports/2026-06-29-认知计算日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "report",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-29T08:05:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "Agent 记忆 日报",
+      "kind": "report",
+      "path": "reports/2026-06-30-agent记忆日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-06-30-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "数字化存储与自传体记忆日报",
+      "kind": "report",
+      "path": "reports/2026-06-30-日报-数字化存储与自传体记忆.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "认知计算日报",
+      "kind": "report",
+      "path": "reports/2026-06-30-认知计算日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "Agent 记忆 日报",
+      "kind": "report",
+      "path": "reports/2026-07-01-agent记忆日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-07-01-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "数字化存储与自传体记忆日报",
+      "kind": "report",
+      "path": "reports/2026-07-01-日报-数字化存储与自传体记忆.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "认知计算日报",
+      "kind": "report",
+      "path": "reports/2026-07-01-认知计算日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "Agent 记忆 日报",
+      "kind": "report",
+      "path": "reports/2026-07-02-agent记忆日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-07-02-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "数字化存储与自传体记忆日报",
+      "kind": "report",
+      "path": "reports/2026-07-02-数字化存储与自传体记忆日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "Agent 记忆 日报",
+      "kind": "report",
+      "path": "reports/2026-07-03-agent记忆日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "伊辛模型最新应用日报",
+      "kind": "report",
+      "path": "reports/2026-07-03-伊辛模型最新应用.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "title": "数字化存储与自传体记忆日报",
+      "kind": "report",
+      "path": "reports/2026-07-03-数字化存储与自传体记忆日报.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "report.age-differences-all-papers",
       "title": "年龄差异与跨期选择 — 全部 679 papers 索引（按 type 分）",
       "kind": "report",
@@ -2738,7 +3249,7 @@
       "topRelationships": [],
       "pageType": "report",
       "freshnessLevel": "fresh",
-      "lastTouchedAt": "2026-06-27T15:43:21.193Z",
+      "lastTouchedAt": "2026-07-03T01:50:03.699Z",
       "claimCount": 0,
       "topClaims": []
     },
@@ -2853,6 +3364,30 @@
       "topClaims": []
     },
     {
+      "id": "source.baddeley-2000-episodic-buffer",
+      "title": "Baddeley 2000 — 工作记忆的第四组件：情景缓冲器（Episodic Buffer）",
+      "kind": "source",
+      "path": "sources/baddeley-2000-episodic-buffer.md",
+      "aliases": [
+        "Baddeley 2000",
+        "Episodic Buffer",
+        "工作记忆情景缓冲器",
+        "Multi-component working memory"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T03:50:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "source.buzsaki-2002-hippocampal-theta",
       "title": "海马θ振荡（Buzsáki 2002）",
       "kind": "source",
@@ -2925,6 +3460,53 @@
       "topClaims": []
     },
     {
+      "id": "source.conway-2019-self-memory-system-revisited",
+      "title": "Conway, Justice & D'Argembeau 2019 — 自我记忆系统（SMS）19 年后的更新版",
+      "kind": "source",
+      "path": "sources/conway-2019-self-memory-system-revisited.md",
+      "aliases": [
+        "SMS Revisited",
+        "Conway 2019",
+        "Self-Memory System"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T03:50:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.conway-pleydell-pearce-2000-self-memory-system",
+      "title": "Conway & Pleydell-Pearce 2000 — 自传体记忆的自我记忆系统建构理论（3877 引用）",
+      "kind": "source",
+      "path": "sources/conway-pleydell-pearce-2000-self-memory-system.md",
+      "aliases": [
+        "Self-Memory System (SMS)",
+        "SMS Theory",
+        "Conway 2000",
+        "自传体记忆自我记忆系统"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T03:50:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "source.deepseek-cloud-local-hybrid-architecture",
       "title": "DeepSeek - 云端大模型+本地小模型+代理框架 工程化开发工作流",
       "kind": "source",
@@ -2942,8 +3524,131 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "source",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-06-02T13:55:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.hutmacher-2024-amedia-model",
+      "title": "Hutmacher, Appel & Schwan 2024 — AMEDIA 模型：数字化时代自传体记忆的编码-策展-检索三阶段框架",
+      "kind": "source",
+      "path": "sources/hutmacher-2024-amedia-model.md",
+      "aliases": [
+        "AMEDIA Model",
+        "Hutmacher 2024",
+        "自传体记忆 数字化 框架"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-06-28_Hutmacher-Appel-Schwan_AMEDIA-Model_Psychological-Inquiry.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T05:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.hutmacher-2025-birthday-memories",
+      "title": "Hutmacher, Einhellig & Klink 2025 — 生日记忆：数字化时代自传体回忆的 think-aloud 实验",
+      "kind": "source",
+      "path": "sources/hutmacher-2025-birthday-memories.md",
+      "aliases": [
+        "Birthday Memories",
+        "Hutmacher 2025b",
+        "重要事件 vs 随机事件"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T05:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.hutmacher-2025-mediated-autobiographical-remembering",
+      "title": "Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆：内外记忆切换的 3 种典型模式",
+      "kind": "source",
+      "path": "sources/hutmacher-2025-mediated-autobiographical-remembering.md",
+      "aliases": [
+        "Mediated Autobiographical Remembering",
+        "Hutmacher 2025c",
+        "内外记忆切换 分类"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-06-28_Hutmacher-Conrad-Appel-Schwan_Mediated-Autobiographical-Remembering_Cognitive-Research.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T05:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.joanroy-2025-algorithmic-memory-technologies",
+      "title": "Joanroy et al. 2025 — 青年人对算法记忆技术的使用与体验：信任主动记录 vs. 抗拒算法代理",
+      "kind": "source",
+      "path": "sources/joanroy-2025-algorithmic-memory-technologies.md",
+      "aliases": [
+        "Algorithmic Memory",
+        "Joanroy 2025",
+        "青年 算法记忆",
+        "数字原住民"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-06-28_Joanroy-et-al_Algorithmic-Memory-Technologies_Memory-Mind-Media.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T05:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.keightley-pickering-2014-technologies-of-memory",
+      "title": "Keightley & Pickering 2014 — 记忆技术：模拟与数字摄影的实践（93 引用）",
+      "kind": "source",
+      "path": "sources/keightley-pickering-2014-technologies-of-memory.md",
+      "aliases": [
+        "Technologies of memory",
+        "Keightley Pickering",
+        "模拟与数字摄影",
+        "摄影实践"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T03:50:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -3017,6 +3722,56 @@
       "pageType": "source",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.lurie-fabrizio-westerman-2025-cost-of-saving",
+      "title": "Lurie, Fabrizio & Westerman 2025 — 保存的代价：照片和截图如何损害记忆（Memory & Cognition）",
+      "kind": "source",
+      "path": "sources/lurie-fabrizio-westerman-2025-cost-of-saving.md",
+      "aliases": [
+        "Cost of saving",
+        "Lurie 2025",
+        "保存代价",
+        "photo-screenshot memory"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T03:50:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.mansfield-2026-ai-narrative-processing",
+      "title": "Mansfield et al. 2026 — AI 处理自传体叙事：过度救赎（over-redemption）的实证证据",
+      "kind": "source",
+      "path": "sources/mansfield-2026-ai-narrative-processing.md",
+      "aliases": [
+        "Mansfield 2026",
+        "Over-Redemption",
+        "AI Narrative Processing",
+        "ChatGPT 自传体"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-06-28_Mansfield-et-al_AI-Autobiographical-Narrative_HSSC.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T05:30:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -3115,6 +3870,32 @@
       "topClaims": []
     },
     {
+      "id": "source.osler-2025-knowing-oneself-with-ai",
+      "title": "Osler 2025 — 通过 AI 认识自己：从自追踪到聊天机器人（叙事顺从风险）",
+      "kind": "source",
+      "path": "sources/osler-2025-knowing-oneself-with-ai.md",
+      "aliases": [
+        "Knowing Oneself with AI",
+        "Osler 2025",
+        "Narrative Deference",
+        "分布式认知 AI"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-06-28_Osler_Knowing-Oneself-with-AI_arXiv.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T05:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "source.programming-languages",
       "title": "系统编程语言",
       "kind": "source",
@@ -3159,6 +3940,57 @@
       "topClaims": []
     },
     {
+      "id": "source.schramm-hutmacher-2026-scrolling-through-the-past",
+      "title": "Schramm & Hutmacher 2026 — 滑动回顾：数字工具如何改变我们的记忆方式（In-Mind 科普版 AMEDIA 模型）",
+      "kind": "source",
+      "path": "sources/schramm-hutmacher-2026-scrolling-through-the-past.md",
+      "aliases": [
+        "Scrolling through the past",
+        "Schramm & Hutmacher 2026",
+        "Hutmacher 2026a",
+        "AMEDIA 模型 科普版"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-05-31_Hutmacher-Schramm_Scrolling-through-the-Past_In-Mind-Magazine.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-30T15:48:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.smart-2026-story-of-your-life-llm",
+      "title": "Smart, Clowes, Krueger & Boniface 2026 — LLM 作为个人记忆技术：参数化 vs. 非参数化记忆区分",
+      "kind": "source",
+      "path": "sources/smart-2026-story-of-your-life-llm.md",
+      "aliases": [
+        "Story of Your Life",
+        "LLM Personal Memory",
+        "Smart 2026"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-06-28_Smart-et-al_Story-of-Your-Life-LLM_Review-Philosophy-Psychology.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T05:30:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
       "id": "source.sun-2025-digital-hoarding-nostalgic-consumption",
       "title": "Sun, Chen & Cui 2025 — 数字囤积是否导致怀旧消费？认知失调与情绪记忆联结的双中介机制",
       "kind": "source",
@@ -3178,6 +4010,55 @@
       "pageType": "source",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-06-27T23:40:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.tulving-1972-episodic-semantic-memory",
+      "title": "Tulving 1972 — 情景记忆与语义记忆的经典区分（5126 引用）",
+      "kind": "source",
+      "path": "sources/tulving-1972-episodic-semantic-memory.md",
+      "aliases": [
+        "Tulving 1972",
+        "Episodic-Semantic Distinction",
+        "情景-语义记忆"
+      ],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T03:50:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "source.wardell-2025-autobiographical-memory-consistency",
+      "title": "Wardell et al. 2025 — 评估自传体记忆一致性：机器与人工方法对比（Behavior Research Methods）",
+      "kind": "source",
+      "path": "sources/wardell-2025-autobiographical-memory-consistency.md",
+      "aliases": [
+        "AM Consistency",
+        "Wardell 2025",
+        "Machine vs Human Coding",
+        "记忆一致性"
+      ],
+      "sourceIds": [
+        "raw/papers/2026-06-28_Wardell-et-al_AM-Consistency-Machine-Human_Behavior-Research-Methods.pdf"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "source",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T05:30:00+08:00",
       "claimCount": 0,
       "topClaims": []
     },
@@ -3999,7 +4880,7 @@
       "relationshipCount": 0,
       "topRelationships": [],
       "pageType": "synthesis",
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-05-31T03:35:50.748Z",
       "claimCount": 0,
       "topClaims": []
@@ -4050,7 +4931,7 @@
       "topRelationships": [],
       "pageType": "synthesis",
       "confidence": 0.9,
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-06-01T16:35:00+08:00",
       "claimCount": 5,
       "topClaims": [
@@ -4069,7 +4950,7 @@
               "note": "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
             }
           ],
-          "freshnessLevel": "fresh",
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
         },
         {
@@ -4087,7 +4968,7 @@
               "note": "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
             }
           ],
-          "freshnessLevel": "fresh",
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
         },
         {
@@ -4104,7 +4985,7 @@
               "weight": 0.95
             }
           ],
-          "freshnessLevel": "fresh",
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
         },
         {
@@ -4122,7 +5003,7 @@
               "note": "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
             }
           ],
-          "freshnessLevel": "fresh",
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
         },
         {
@@ -4140,7 +5021,7 @@
               "note": "从 OpenClaw v4.3+ harness 与 plugin 设计文档综合提炼"
             }
           ],
-          "freshnessLevel": "fresh",
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-06-01T16:35:00+08:00"
         }
       ]
@@ -4162,7 +5043,7 @@
       "topRelationships": [],
       "pageType": "synthesis",
       "confidence": 0.6,
-      "freshnessLevel": "fresh",
+      "freshnessLevel": "aging",
       "lastTouchedAt": "2026-06-02T05:59:52.026Z",
       "claimCount": 2,
       "topClaims": [
@@ -4182,7 +5063,7 @@
               "note": "典型场景（退款工单）节省 2 次云端调用，案例具体可参考"
             }
           ],
-          "freshnessLevel": "fresh",
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-06-02T05:59:52.026Z"
         },
         {
@@ -4201,7 +5082,7 @@
               "note": "DeepSeek 单一来源，需更多工程实践验证"
             }
           ],
-          "freshnessLevel": "fresh",
+          "freshnessLevel": "aging",
           "lastTouchedAt": "2026-06-02T05:59:52.026Z"
         }
       ]
@@ -5839,6 +6720,143 @@
       "pageType": "synthesis",
       "freshnessLevel": "fresh",
       "lastTouchedAt": "2026-06-27T23:37:29",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.buzsaki-2002-hippocampal-theta",
+      "title": "Extract Notes — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-28-03-10-10-extract-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.buzsaki-2002-hippocampal-theta",
+      "title": "Summarize — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-28-03-10-15-summarize-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.extract.buzsaki-2002-hippocampal-theta",
+      "title": "Extract Notes — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-28-03-13-37-extract-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.buzsaki-2002-hippocampal-theta",
+      "title": "Summarize — 海马θ振荡（Buzsáki 2002）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-28-03-13-37-summarize-buzsaki-2002-hippocampal-theta.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.memory-research-framework-phd-thesis",
+      "title": "博士论文理论基础——从记忆系统到自传体记忆的层次递进",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-28-03-50-00-记忆研究理论框架-博士论文基础.md",
+      "aliases": [
+        "博士论文理论基础",
+        "记忆研究综述"
+      ],
+      "sourceIds": [
+        "source.conway-pleydell-pearce-2000-self-memory-system",
+        "source.baddeley-2000-episodic-buffer",
+        "source.tulving-1972-episodic-semantic-memory",
+        "source.keightley-pickering-2014-technologies-of-memory",
+        "source.lurie-fabrizio-westerman-2025-cost-of-saving",
+        "source.conway-2019-self-memory-system-revisited"
+      ],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "fresh",
+      "lastTouchedAt": "2026-06-28T03:50:00+08:00",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.schramm-hutmacher-2026-scrolling-through-the-past",
+      "title": "Summarize — Schramm & Hutmacher 2026 — 滑动回顾：数字工具如何改变我们的记忆方式（In-Mind 科普版 AMEDIA 模型）",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-30-15-48-51-summarize-schramm-hutmacher-2026-scrolling-through-the-past.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "unknown",
+      "claimCount": 0,
+      "topClaims": []
+    },
+    {
+      "id": "synthesis.summarize.hutmacher-2025-mediated-autobiographical-remembering",
+      "title": "Summarize — Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆：内外记忆切换的 3 种典型模式",
+      "kind": "synthesis",
+      "path": "syntheses/2026-06-30-15-49-32-summarize-hutmacher-2025-mediated-autobiographical-remembering.md",
+      "aliases": [],
+      "sourceIds": [],
+      "questions": [],
+      "contradictions": [],
+      "bestUsedFor": [],
+      "notEnoughFor": [],
+      "relationshipCount": 0,
+      "topRelationships": [],
+      "pageType": "synthesis",
+      "freshnessLevel": "unknown",
       "claimCount": 0,
       "topClaims": []
     }

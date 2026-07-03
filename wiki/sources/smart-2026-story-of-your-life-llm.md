@@ -10,12 +10,15 @@ zotero_item_key: null
 zotero_attachment_key: null
 zotero_pdf_path: null
 zotero_doi: 10.1007/s13164-026-00831-1
-**PDF 状态**：✅ 已从 Springer OA 抓取（1.1MB，16 页）
 aliases:
   - Story of Your Life
   - LLM Personal Memory
   - Smart 2026
 ---
+
+<!-- wiki:frontmatter-pollution (moved from YAML) -->
+**PDF 状态**：✅ 已从 Springer OA 抓取（1.1MB，16 页）
+<!-- /wiki:frontmatter-pollution -->
 
 # Smart, Clowes, Krueger & Boniface 2026 — LLM 作为个人记忆技术
 
@@ -62,6 +65,7 @@ aliases:
 
 ## Related
 <!-- openclaw:wiki:related:start -->
-- Referenced By: [[concepts/autobiographical-memory]], [[concepts/generative-ai]]
-- Related Pages: [[sources/mansfield-2026-ai-narrative-processing]], [[sources/osler-2025-knowing-oneself-with-ai]]
+### Referenced By
+
+- [[concepts/research-direction-thesis|老板博士论文研究对象定位建议（Research Direction — Thesis）]]
 <!-- openclaw:wiki:related:end -->

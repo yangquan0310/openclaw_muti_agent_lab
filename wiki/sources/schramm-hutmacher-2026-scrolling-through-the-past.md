@@ -10,15 +10,18 @@ zotero_item_key: null
 zotero_attachment_key: null
 zotero_pdf_path: null
 zotero_doi: null
-**PDF 状态**：✅ 已从 In-Mind Magazine 抓取（27.7KB，OA 科普文，**无 DOI**）
-**首次入库**：2026-05-31（TASK-013 Hutmacher 系列批量入库时一起抓的）
-**补建 wiki source 时间**：2026-06-30（老板拍板选 1 后补登）
 aliases:
   - Scrolling through the past
   - Schramm & Hutmacher 2026
   - Hutmacher 2026a
   - AMEDIA 模型 科普版
 ---
+
+<!-- wiki:frontmatter-pollution (moved from YAML) -->
+**PDF 状态**：✅ 已从 In-Mind Magazine 抓取（27.7KB，OA 科普文，**无 DOI**）
+**首次入库**：2026-05-31（TASK-013 Hutmacher 系列批量入库时一起抓的）
+**补建 wiki source 时间**：2026-06-30（老板拍板选 1 后补登）
+<!-- /wiki:frontmatter-pollution -->
 
 # Schramm & Hutmacher 2026 — 滑动回顾：数字工具如何改变我们的记忆方式
 
@@ -75,6 +78,11 @@ aliases:
 
 ## Related
 <!-- openclaw:wiki:related:start -->
-- Referenced By: [[concepts/autobiographical-memory]], [[concepts/digital-memory]]
-- Related Pages: [[sources/hutmacher-2024-amedia-model]], [[sources/hutmacher-2025-birthday-memories]], [[sources/hutmacher-2025-mediated-autobiographical-remembering]]
+### Referenced By
+
+- [[syntheses/2026-06-30-15-48-51-summarize-schramm-hutmacher-2026-scrolling-through-the-past|Summarize — Schramm & Hutmacher 2026 — 滑动回顾：数字工具如何改变我们的记忆方式（In-Mind 科普版 AMEDIA 模型）]]
+
+### Related Pages
+
+- [[syntheses/2026-06-05-15-48-00-照片视角作为外部痕迹-改写自传体记忆视角-Diehl-2026|照片视角作为外部痕迹——改写自传体记忆视角的因果证据]]
 <!-- openclaw:wiki:related:end -->

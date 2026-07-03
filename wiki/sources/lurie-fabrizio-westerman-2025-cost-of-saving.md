@@ -68,3 +68,10 @@ aliases:
 - [ ] **精确效应量**：照片 vs. 截图的差异
 - [ ] **实验设计**：是实验室还是生态？
 - [ ] **理论整合**：与 Risko & Gilbert 2016 "cognitive offloading" 的关系
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[syntheses/2026-06-28-03-50-00-记忆研究理论框架-博士论文基础|博士论文理论基础——从记忆系统到自传体记忆的层次递进]]
+<!-- openclaw:wiki:related:end -->

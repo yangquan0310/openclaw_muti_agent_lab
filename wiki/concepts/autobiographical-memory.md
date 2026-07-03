@@ -181,16 +181,24 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/baddeley-2000-episodic-buffer|Baddeley 2000 — 工作记忆的第四组件：情景缓冲器（Episodic Buffer）]]
+- [[sources/conway-pleydell-pearce-2000-self-memory-system|Conway & Pleydell-Pearce 2000 — 自传体记忆的自我记忆系统建构理论（3877 引用）]]
+- [[sources/conway-2019-self-memory-system-revisited|Conway, Justice & D'Argembeau 2019 — 自我记忆系统（SMS）19 年后的更新版]]
+- [[sources/hutmacher-2024-amedia-model|Hutmacher, Appel & Schwan 2024 — AMEDIA 模型：数字化时代自传体记忆的编码-策展-检索三阶段框架]]
+- [[sources/hutmacher-2025-mediated-autobiographical-remembering|Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆：内外记忆切换的 3 种典型模式]]
+- [[sources/hutmacher-2025-birthday-memories|Hutmacher, Einhellig & Klink 2025 — 生日记忆：数字化时代自传体回忆的 think-aloud 实验]]
+- [[sources/joanroy-2025-algorithmic-memory-technologies|Joanroy et al. 2025 — 青年人对算法记忆技术的使用与体验：信任主动记录 vs. 抗拒算法代理]]
+- [[sources/keightley-pickering-2014-technologies-of-memory|Keightley & Pickering 2014 — 记忆技术：模拟与数字摄影的实践（93 引用）]]
 - [[sources/liu-2025-digital-hoarding-cognitive-failures|Liu & Liu 2025 — 数字囤积是囤积知识还是囤积压力？中国大学生数字囤积与认知失败的关系]]
-- [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]
-- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
-- [[concepts/digital-memory|数字记忆（Digital Memory）]]
-- [[concepts/autobiographical-memory-function|自传体记忆功能（Autobiographical Memory Function）]]
-- [[concepts/记忆视角|记忆视角（Memory Perspective）]]
-- [[concepts/collective-memory|集体记忆（Collective Memory）]]
+- [[sources/mansfield-2026-ai-narrative-processing|Mansfield et al. 2026 — AI 处理自传体叙事：过度救赎（over-redemption）的实证证据]]
+- [[sources/osler-2025-knowing-oneself-with-ai|Osler 2025 — 通过 AI 认识自己：从自追踪到聊天机器人（叙事顺从风险）]]
+- [[sources/schramm-hutmacher-2026-scrolling-through-the-past|Schramm & Hutmacher 2026 — 滑动回顾：数字工具如何改变我们的记忆方式（In-Mind 科普版 AMEDIA 模型）]]
 
 ### Related Pages
 
 - [[concepts/transactive-memory-system|交互记忆系统（Transactive Memory System, TMS）]]
+- [[concepts/digital-memory|数字记忆（Digital Memory）]]
+- [[concepts/autobiographical-memory-function|自传体记忆功能（Autobiographical Memory Function）]]
 - [[concepts/memory-offloading|记忆外包（Memory Offloading）]]
+- [[concepts/collective-memory|集体记忆（Collective Memory）]]
 <!-- openclaw:wiki:related:end -->

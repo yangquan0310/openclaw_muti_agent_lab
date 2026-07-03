@@ -10,13 +10,16 @@ zotero_item_key: null
 zotero_attachment_key: null
 zotero_pdf_path: null
 zotero_doi: 10.1017/mem.2025.4
-**PDF 状态**：✅ 已从 Cambridge OA（cc-by-nc）抓取（419KB，22 页）
 aliases:
   - Algorithmic Memory
   - Joanroy 2025
   - 青年 算法记忆
   - 数字原住民
 ---
+
+<!-- wiki:frontmatter-pollution (moved from YAML) -->
+**PDF 状态**：✅ 已从 Cambridge OA（cc-by-nc）抓取（419KB，22 页）
+<!-- /wiki:frontmatter-pollution -->
 
 # Joanroy et al. 2025 — 青年人对算法记忆技术的使用与体验
 
@@ -60,6 +63,8 @@ aliases:
 
 ## Related
 <!-- openclaw:wiki:related:start -->
-- Referenced By: [[concepts/autobiographical-memory]], [[concepts/digital-memory]]
-- Related Pages: [[sources/hutmacher-2024-amedia-model]], [[sources/smart-2026-story-of-your-life-llm]]
+### Referenced By
+
+- [[concepts/research-direction-thesis|老板博士论文研究对象定位建议（Research Direction — Thesis）]]
+- [[concepts/memory-research-methods|记忆研究方法（Memory Research Methods）]]
 <!-- openclaw:wiki:related:end -->

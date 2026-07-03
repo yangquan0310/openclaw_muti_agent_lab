@@ -173,15 +173,23 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/hutmacher-2024-amedia-model|Hutmacher, Appel & Schwan 2024 — AMEDIA 模型：数字化时代自传体记忆的编码-策展-检索三阶段框架]]
+- [[sources/hutmacher-2025-mediated-autobiographical-remembering|Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆：内外记忆切换的 3 种典型模式]]
+- [[sources/hutmacher-2025-birthday-memories|Hutmacher, Einhellig & Klink 2025 — 生日记忆：数字化时代自传体回忆的 think-aloud 实验]]
+- [[sources/joanroy-2025-algorithmic-memory-technologies|Joanroy et al. 2025 — 青年人对算法记忆技术的使用与体验：信任主动记录 vs. 抗拒算法代理]]
+- [[sources/keightley-pickering-2014-technologies-of-memory|Keightley & Pickering 2014 — 记忆技术：模拟与数字摄影的实践（93 引用）]]
+- [[sources/lurie-fabrizio-westerman-2025-cost-of-saving|Lurie, Fabrizio & Westerman 2025 — 保存的代价：照片和截图如何损害记忆（Memory & Cognition）]]
+- [[sources/osler-2025-knowing-oneself-with-ai|Osler 2025 — 通过 AI 认识自己：从自追踪到聊天机器人（叙事顺从风险）]]
+- [[sources/schramm-hutmacher-2026-scrolling-through-the-past|Schramm & Hutmacher 2026 — 滑动回顾：数字工具如何改变我们的记忆方式（In-Mind 科普版 AMEDIA 模型）]]
+- [[sources/smart-2026-story-of-your-life-llm|Smart, Clowes, Krueger & Boniface 2026 — LLM 作为个人记忆技术：参数化 vs. 非参数化记忆区分]]
+- [[sources/tulving-1972-episodic-semantic-memory|Tulving 1972 — 情景记忆与语义记忆的经典区分（5126 引用）]]
 - [[concepts/transactive-memory-system|交互记忆系统（Transactive Memory System, TMS）]]
 - [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]
-- [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
-- [[concepts/autobiographical-memory|自传体记忆（Autobiographical Memory）]]
-- [[concepts/memory-offloading|记忆外包（Memory Offloading）]]
-- [[concepts/记忆视角|记忆视角（Memory Perspective）]]
-- [[concepts/collective-memory|集体记忆（Collective Memory）]]
 
 ### Related Pages
 
+- [[concepts/autobiographical-memory|自传体记忆（Autobiographical Memory）]]
 - [[concepts/autobiographical-memory-function|自传体记忆功能（Autobiographical Memory Function）]]
+- [[concepts/memory-offloading|记忆外包（Memory Offloading）]]
+- [[concepts/collective-memory|集体记忆（Collective Memory）]]
 <!-- openclaw:wiki:related:end -->

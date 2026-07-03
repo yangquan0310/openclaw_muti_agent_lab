@@ -69,3 +69,10 @@ aliases:
 - [ ] **DMN 神经基础**的具体实验：Conway 2019 引用了哪些关键 fMRI 研究？
 - [ ] **跨文化 SMS**：Wang et al. 2024 vs. 西方案例的关键差异
 - [ ] **数字化挑战章节**：是否提供 SMS 的数字化重塑模型？
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[syntheses/2026-06-28-03-50-00-记忆研究理论框架-博士论文基础|博士论文理论基础——从记忆系统到自传体记忆的层次递进]]
+<!-- openclaw:wiki:related:end -->

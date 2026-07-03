@@ -77,3 +77,11 @@ aliases:
 - [ ] **情景缓冲器与 Tulving 情景记忆的精确关系**——是同一系统的不同方面还是不同系统？
 - [ ] **神经基础**：近年 fMRI 研究定位情景缓冲器的脑区
 - [ ] **临床证据**：遗忘症患者中情景缓冲器是否保留？
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[syntheses/2026-06-28-03-50-00-记忆研究理论框架-博士论文基础|博士论文理论基础——从记忆系统到自传体记忆的层次递进]]
+- [[concepts/memory-classification|记忆分类学（Memory Classification）]]
+<!-- openclaw:wiki:related:end -->

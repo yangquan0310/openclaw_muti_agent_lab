@@ -10,12 +10,15 @@ zotero_item_key: null
 zotero_attachment_key: null
 zotero_pdf_path: null
 zotero_doi: 10.1186/s41235-025-00627-4
-**PDF 状态**：✅ 已从 Cognitive Research OA 抓取（1.1MB，13 页）
 aliases:
   - Mediated Autobiographical Remembering
   - Hutmacher 2025c
   - 内外记忆切换 分类
 ---
+
+<!-- wiki:frontmatter-pollution (moved from YAML) -->
+**PDF 状态**：✅ 已从 Cognitive Research OA 抓取（1.1MB，13 页）
+<!-- /wiki:frontmatter-pollution -->
 
 # Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆
 
@@ -57,6 +60,10 @@ aliases:
 
 ## Related
 <!-- openclaw:wiki:related:start -->
-- Referenced By: [[concepts/autobiographical-memory]], [[concepts/memory-offloading]]
-- Related Pages: [[sources/hutmacher-2024-amedia-model]], [[sources/hutmacher-2025-birthday-memories]]
+### Referenced By
+
+- [[sources/schramm-hutmacher-2026-scrolling-through-the-past|Schramm & Hutmacher 2026 — 滑动回顾：数字工具如何改变我们的记忆方式（In-Mind 科普版 AMEDIA 模型）]]
+- [[syntheses/2026-06-30-15-49-32-summarize-hutmacher-2025-mediated-autobiographical-remembering|Summarize — Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆：内外记忆切换的 3 种典型模式]]
+- [[concepts/research-direction-thesis|老板博士论文研究对象定位建议（Research Direction — Thesis）]]
+- [[concepts/memory-research-methods|记忆研究方法（Memory Research Methods）]]
 <!-- openclaw:wiki:related:end -->

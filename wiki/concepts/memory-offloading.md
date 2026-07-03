@@ -172,10 +172,14 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/conway-2019-self-memory-system-revisited|Conway, Justice & D'Argembeau 2019 — 自我记忆系统（SMS）19 年后的更新版]]
+- [[sources/hutmacher-2025-mediated-autobiographical-remembering|Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆：内外记忆切换的 3 种典型模式]]
+- [[sources/lurie-fabrizio-westerman-2025-cost-of-saving|Lurie, Fabrizio & Westerman 2025 — 保存的代价：照片和截图如何损害记忆（Memory & Cognition）]]
 - [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]
 - [[concepts/photo-taking-impairment-effect|拍照损害效应（Photo-Taking Impairment Effect）]]
 - [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 - [[concepts/digital-memory|数字记忆（Digital Memory）]]
+- [[concepts/memory-classification|记忆分类学（Memory Classification）]]
 
 ### Related Pages
 

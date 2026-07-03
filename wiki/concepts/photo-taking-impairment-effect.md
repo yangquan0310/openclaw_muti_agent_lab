@@ -166,6 +166,8 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/keightley-pickering-2014-technologies-of-memory|Keightley & Pickering 2014 — 记忆技术：模拟与数字摄影的实践（93 引用）]]
+- [[sources/lurie-fabrizio-westerman-2025-cost-of-saving|Lurie, Fabrizio & Westerman 2025 — 保存的代价：照片和截图如何损害记忆（Memory & Cognition）]]
 - [[concepts/外部痕迹改写记忆|外部痕迹改写记忆（Externally-Cued Memory Rewriting）]]
 - [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 - [[concepts/cognitive-load|认知负荷（Cognitive Load）]]

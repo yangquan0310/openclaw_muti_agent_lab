@@ -73,3 +73,11 @@ aliases:
 - [ ] **Renoult & Rugg 2020 Neuropsychologia 综述**：是否提供了新解释？
 - [ ] **情景-语义二分 vs. 连续谱**：现代研究多认为二者不是二分而是连续
 - [ ] **跨文化差异**：东亚文化下情景-语义边界是否模糊？
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Referenced By
+
+- [[syntheses/2026-06-28-03-50-00-记忆研究理论框架-博士论文基础|博士论文理论基础——从记忆系统到自传体记忆的层次递进]]
+- [[concepts/memory-classification|记忆分类学（Memory Classification）]]
+<!-- openclaw:wiki:related:end -->

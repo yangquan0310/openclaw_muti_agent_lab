@@ -175,6 +175,9 @@ aliases:
 <!-- openclaw:wiki:related:start -->
 ### Referenced By
 
+- [[sources/mansfield-2026-ai-narrative-processing|Mansfield et al. 2026 — AI 处理自传体叙事：过度救赎（over-redemption）的实证证据]]
+- [[sources/osler-2025-knowing-oneself-with-ai|Osler 2025 — 通过 AI 认识自己：从自追踪到聊天机器人（叙事顺从风险）]]
+- [[sources/smart-2026-story-of-your-life-llm|Smart, Clowes, Krueger & Boniface 2026 — LLM 作为个人记忆技术：参数化 vs. 非参数化记忆区分]]
 - [[concepts/creative-worker|创意工作者（Creative Worker）]]
 - [[concepts/digital-hoarding|数字囤积（Digital Hoarding）]]
 

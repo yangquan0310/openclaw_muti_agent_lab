@@ -10,13 +10,16 @@ zotero_item_key: null
 zotero_attachment_key: null
 zotero_pdf_path: null
 zotero_doi: 10.3758/s13428-025-02690-7
-**PDF 状态**：✅ 已从 Springer OA 抓取（1.8MB，22 页）
 aliases:
   - AM Consistency
   - Wardell 2025
   - Machine vs Human Coding
   - 记忆一致性
 ---
+
+<!-- wiki:frontmatter-pollution (moved from YAML) -->
+**PDF 状态**：✅ 已从 Springer OA 抓取（1.8MB，22 页）
+<!-- /wiki:frontmatter-pollution -->
 
 # Wardell et al. 2025 — 评估自传体记忆一致性
 
@@ -62,6 +65,8 @@ aliases:
 
 ## Related
 <!-- openclaw:wiki:related:start -->
-- Referenced By: [[concepts/autobiographical-memory]]
-- Related Pages: [[sources/mansfield-2026-ai-narrative-processing]]
+### Referenced By
+
+- [[concepts/research-direction-thesis|老板博士论文研究对象定位建议（Research Direction — Thesis）]]
+- [[concepts/memory-research-methods|记忆研究方法（Memory Research Methods）]]
 <!-- openclaw:wiki:related:end -->

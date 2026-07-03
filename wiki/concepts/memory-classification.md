@@ -133,3 +133,20 @@ aliases:
 *最后更新：2026-06-28*
 *更新者：心理学家（psychologist）*
 *创建原因：博士论文文献综述章节需要"从记忆讲到自传体记忆"的层次化框架*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Sources
+
+- [[sources/tulving-1972-episodic-semantic-memory|Tulving 1972 — 情景记忆与语义记忆的经典区分（5126 引用）]]
+- [[sources/baddeley-2000-episodic-buffer|Baddeley 2000 — 工作记忆的第四组件：情景缓冲器（Episodic Buffer）]]
+
+### Referenced By
+
+- [[sources/hutmacher-2024-amedia-model|Hutmacher, Appel & Schwan 2024 — AMEDIA 模型：数字化时代自传体记忆的编码-策展-检索三阶段框架]]
+- [[concepts/memory-research-methods|记忆研究方法（Memory Research Methods）]]
+
+### Related Pages
+
+- [[syntheses/2026-06-28-03-50-00-记忆研究理论框架-博士论文基础|博士论文理论基础——从记忆系统到自传体记忆的层次递进]]
+<!-- openclaw:wiki:related:end -->

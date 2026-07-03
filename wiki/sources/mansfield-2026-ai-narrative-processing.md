@@ -10,13 +10,16 @@ zotero_item_key: null
 zotero_attachment_key: null
 zotero_pdf_path: null
 zotero_doi: 10.1057/s41599-025-06426-y
-**PDF 状态**：✅ 已从 HSSC/Nature OA 抓取（528KB，12 页）
 aliases:
   - Mansfield 2026
   - Over-Redemption
   - AI Narrative Processing
   - ChatGPT 自传体
 ---
+
+<!-- wiki:frontmatter-pollution (moved from YAML) -->
+**PDF 状态**：✅ 已从 HSSC/Nature OA 抓取（528KB，12 页）
+<!-- /wiki:frontmatter-pollution -->
 
 # Mansfield et al. 2026 — AI 处理自传体叙事的过度救赎
 
@@ -56,6 +59,7 @@ aliases:
 
 ## Related
 <!-- openclaw:wiki:related:start -->
-- Referenced By: [[concepts/autobiographical-memory]], [[concepts/generative-ai]]
-- Related Pages: [[sources/smart-2026-story-of-your-life-llm]]
+### Referenced By
+
+- [[concepts/research-direction-thesis|老板博士论文研究对象定位建议（Research Direction — Thesis）]]
 <!-- openclaw:wiki:related:end -->

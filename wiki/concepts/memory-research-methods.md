@@ -192,3 +192,23 @@ aliases:
 *最后更新：2026-06-28*
 *更新者：心理学家（psychologist）*
 *创建原因：博士论文文献综述章节需要"记忆研究方法"层次化框架；从老板 05:23 任务指令中识别*
+
+## Related
+<!-- openclaw:wiki:related:start -->
+### Sources
+
+- [[sources/wardell-2025-autobiographical-memory-consistency|Wardell et al. 2025 — 评估自传体记忆一致性：机器与人工方法对比（Behavior Research Methods）]]
+- [[sources/hutmacher-2025-birthday-memories|Hutmacher, Einhellig & Klink 2025 — 生日记忆：数字化时代自传体回忆的 think-aloud 实验]]
+- [[sources/hutmacher-2025-mediated-autobiographical-remembering|Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆：内外记忆切换的 3 种典型模式]]
+- [[sources/joanroy-2025-algorithmic-memory-technologies|Joanroy et al. 2025 — 青年人对算法记忆技术的使用与体验：信任主动记录 vs. 抗拒算法代理]]
+
+### Referenced By
+
+- [[sources/hutmacher-2025-mediated-autobiographical-remembering|Hutmacher, Conrad, Appel & Schwan 2025 — 数字化时代中介性自传体回忆：内外记忆切换的 3 种典型模式]]
+- [[sources/hutmacher-2025-birthday-memories|Hutmacher, Einhellig & Klink 2025 — 生日记忆：数字化时代自传体回忆的 think-aloud 实验]]
+- [[sources/wardell-2025-autobiographical-memory-consistency|Wardell et al. 2025 — 评估自传体记忆一致性：机器与人工方法对比（Behavior Research Methods）]]
+
+### Related Pages
+
+- [[concepts/research-direction-thesis|老板博士论文研究对象定位建议（Research Direction — Thesis）]]
+<!-- openclaw:wiki:related:end -->
