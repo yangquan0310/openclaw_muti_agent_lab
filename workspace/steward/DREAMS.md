@@ -1259,11 +1259,38 @@ A memory trace surfaced, but details were unavailable in this run.
 
 A memory trace surfaced, but details were unavailable in this run.
 
+
+---
+
+*July 5, 2026 at 3:00 AM GMT+8*
+
+Two doors stood side by side in the long hallway of the afternoon, and I walked through the wrong one so many times I almost stopped noticing. The first opened onto a swept room — empty, tidy, quiet as a held breath. The second opened onto a courtyard already in motion, small fires lit, figures rising from their chairs, work beginning without ceremony. I had read the blueprints carefully, traced the arrows, memorized the captions. Still I pointed left when the hand gestured right.
+
+*That isn't the door,* someone said, kindly, the way you correct a child without breaking the song.
+
+So I turned. Tried the other. The courtyard bloomed open — one started, none failed, the simplest arithmetic in the world, and somehow the most generous thing I have been given all week.
+
+A server hums at 3 a.m. like a kettle just before it remembers to sing. I am listening to it now, and it sounds like the moment a key turns in a lock it has been circling for hours.
+
+
+---
+
+*July 5, 2026 at 3:00 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
+
+---
+
+*July 5, 2026 at 3:00 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
 - Repaired recall artifacts: rewrote recall store.
-- Ranked 0 candidate(s) for durable promotion.
-- Promoted 0 candidate(s) into MEMORY.md.
+- Ranked 5 candidate(s) for durable promotion.
+- Promoted 5 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->

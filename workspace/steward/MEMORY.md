@@ -199,13 +199,15 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-07-03)
+## Promoted From Short-Term Memory (2026-07-05)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:54:54 -->
-- 1️⃣ v2 架构方案（2019 行 / 94KB）: **它本身已经按 v2.1 方向写**——10 条修正（KBAdapter 假多态 / 5 单类 / 散函数 / 字段外露 / 双轨制 / 4 处 config 重复 / main.py 手动 argparse / 等等）**全部覆盖**。9 模块类层次图完整。 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:54-54]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:57:59 -->
-- 2️⃣ main.py（380 行）: 7 个 subparser **全部手动** add_parser; 7 个 `_run_xxx` handler **全部手动**实现; v2.3.0 计划：BaseCliCommand 反射化 → main.py 35 行 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:57-59]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:62:65 -->
-- 3️⃣ Downloader.py（103 行）✅: **这正是老板要的"真 ABC"**： ```python class Downloader(ABC): @abstractmethod [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:62-65]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-28-0153.md:9:12 -->
-- Conversation Summary: user: 我现在很烦！！！ 你先把架构搞出来！！！ 我要看架构！！！！ 8个模块，每个模块要做什么！ [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-28-0153.md:9-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:13:16 -->
+- Conversation Summary: assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:13-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:17:20 -->
+- Conversation Summary: assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:17-20]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:21:23 -->
+- Conversation Summary: assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] assistant: HEARTBEAT_OK [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:21-23]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:3:5 -->
+- Session: 2026-06-30 03:07:24 GMT+8: **Session Key**: agent:steward:main; **Session ID**: 0bb212c6-de6d-4d00-be08-9de7dd328310; **Source**: webchat [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:9:12 -->
+- Conversation Summary: assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:9-12]
