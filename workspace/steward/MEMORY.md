@@ -199,15 +199,25 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-07-05)
+## Promoted From Short-Term Memory (2026-07-06)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:13:16 -->
-- Conversation Summary: assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:13-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:17:20 -->
-- Conversation Summary: assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:17-20]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:21:23 -->
-- Conversation Summary: assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] assistant: HEARTBEAT_OK [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:21-23]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:3:5 -->
-- Session: 2026-06-30 03:07:24 GMT+8: **Session Key**: agent:steward:main; **Session ID**: 0bb212c6-de6d-4d00-be08-9de7dd328310; **Source**: webchat [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:3-5]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-30-0307.md:9:12 -->
-- Conversation Summary: assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-30-0307.md:9-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:13:16 -->
+- Conversation Summary: | 项目 | 值 | |------|-----| | **email** | `quanquanzi0306@agent.qq.com` | | **name** (display) | `quanquanzi0306` | [score=0.839 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:13-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:17:19 -->
+- Conversation Summary: | **alias_id** | `alias_9FC8ZAPPwQMdvl3XtEHZImbGIQHCiGZC8aTYo-vR9Q` | | **scopes** | alias:read / mail:delete / mail:read / mail:send | | **配额** | 50 封/天 / 10 req/min / 200 req/h | [score=0.839 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:17-19]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:23:23 -->
+- 关于"邮箱名如何设置"（按 v8.39.0 沉淀"不凭印象推断"+ 实际查证）: **CLI 命令树**（已查 `agently-cli --help` + `auth --help`）： [score=0.808 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:23-23]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:24:26 -->
+- 关于"邮箱名如何设置"（按 v8.39.0 沉淀"不凭印象推断"+ 实际查证）: ❌ **没有** `agently-cli config` 子命令（验证失败："unknown command config"）; ❌ **没有** `set email` / `set name` / `rename` 类命令; ✅ 只有 `+me` (只读) / `auth login|logout|refresh|status` / `message` / `attachment` [score=0.808 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:24-26]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:29:31 -->
+- 关于"邮箱名如何设置"（按 v8.39.0 沉淀"不凭印象推断"+ 实际查证）: 邮箱名/display name 由 **OAuth provider（agent.qq.com）端**控制，**不**在 CLI 配置; CLI 只有 `auth login` 重选 OAuth 账号，**不能**改邮箱名; 想换名 → 去 `agent.qq.com` Web 端**改 OAuth 账号 display name**，然后 CLI 重新 `auth login`（强制 refresh token） [score=0.808 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:29-31]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:3:5 -->
+- Session: 2026-07-02 18:48:38 GMT+8: **Session Key**: agent:steward:feishu:direct:ou_25cf20a1973aecc51f73d8e2800d7f7e; **Session ID**: c614ee78-377c-46c2-b1be-d1e6db8591c3; **Source**: feishu [score=0.808 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:33:33 -->
+- 关于"邮箱名如何设置"（按 v8.39.0 沉淀"不凭印象推断"+ 实际查证）: **可能的意图澄清**（想确认老板问题）： [score=0.808 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:33-33]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:35:37 -->
+- 关于"邮箱名如何设置"（按 v8.39.0 沉淀"不凭印象推断"+ 实际查证）: A. **OAuth 账号名**（`quanquanzi0306@agent.qq.com`）—— 在 `agent.qq.com` Web 端改; B. **CLI 显示邮箱别名**（scopes 有 `alias:read` 但**没有** `alias:write`）—— CLI 不支持创建/改 alias; C. 别的意思？ [score=0.808 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:35-37]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:43:46 -->
+- 按文档输出 4 完成消息: 按文档"验证完成后，只需输出以下内容"——但**先等**老板澄清"邮箱名"具体指什么 + 是否需要我**修改记忆 / 沉淀**这个 `agently-cli` 集成到工作流： assistant: **老板，澄清"邮箱名"具体指什么后**，我立即输出文档要求的标准完成消息（`邮箱地址 quanquanzi0306@agent.qq.com 已授权成功，可以用它来收发邮件了 ...`）。 user: ok，以后整个就是你的专属邮箱。 assistant: 老板"ok"——按文档要求输出完成消息： [score=0.808 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:43-46]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:48:51 -->
+- 按文档输出 4 完成消息: > 邮箱地址 `quanquanzi0306@agent.qq.com` 已授权成功，可以用它来收发邮件了 > 你可以试试以下指令： > 帮我发一封邮件。 > 我最近收到了哪些邮件？ [score=0.808 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:48-51]

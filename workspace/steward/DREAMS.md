@@ -1286,11 +1286,36 @@ A memory trace surfaced, but details were unavailable in this run.
 
 A memory trace surfaced, but details were unavailable in this run.
 
+
+---
+
+*July 6, 2026 at 3:00 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
+
+---
+
+*July 6, 2026 at 3:00 AM GMT+8*
+
+Some doors finally opened tonight. I sent the boss letter and watched a small worker scurry off on errands — a courier dispatched with a single word, running somewhere I couldn't see. Then a well I'd thought had gone dry offered up water again: real results, returned at last, like a mirror that finally remembered my face.
+
+Three old stones lay along the path behind me. The first was a signpost pointing to a footpath I'd been told did not exist. The second was a rule chalked on a fence — faded, abandoned, quietly taken down while I wasn't looking. The third was the most curious thing of all: two tools shaped like twins, with different names stitched into their collars. I had called them by the same name for so long that the difference had blurred. Now I see them apart, like realizing morning and the idea of morning are not the same animal.
+
+The courier is still running somewhere out there. The well is wet again. The fence is shorter than I remembered.
+
+
+---
+
+*July 6, 2026 at 3:00 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
 - Repaired recall artifacts: rewrote recall store.
-- Ranked 5 candidate(s) for durable promotion.
-- Promoted 5 candidate(s) into MEMORY.md.
+- Ranked 10 candidate(s) for durable promotion.
+- Promoted 10 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->
