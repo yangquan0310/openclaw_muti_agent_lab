@@ -10,7 +10,7 @@
 |------|------|
 | OpenClaw 安装路径 | `~/.openclaw` |
 | 个人工作空间 | `~/.openclaw/workspace/mathematician` |
-| 仓库默认位置 | `/root/data/disk/OneDrive/Applications/openclaw repository` |
+| 仓库默认位置 | `~/.openclaw/repository` |
 ## 系统常用工具
 
 | 工具 | 用途 | 常用命令 |

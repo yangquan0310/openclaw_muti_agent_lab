@@ -312,7 +312,7 @@ dispatch 派发场景**不**写 TODO.md（单人任务不必建看板）。
 | `knowledge/` | **知识沉淀**（长期保存）| 文献综述笔记、理论详解 |
 
 **硬要求**：
-- 卡 notes / IM 模板的文件路径**必须绝对路径**——如 `~/OneDrive/Applications/openclaw repository/.../temp/认知范式补充资料.md`
+- 卡 notes / IM 模板的文件路径**必须绝对路径**——如 `~/.openclaw/repository/.../temp/认知范式补充资料.md`
 - **中间文件放 `temp/`，不放 `knowledge/`**——知识沉淀才放 `knowledge/`
 
 ### 4.3 核验清单（两场景共用，v3.8.0 简化）

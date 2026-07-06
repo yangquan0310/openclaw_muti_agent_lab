@@ -12,20 +12,20 @@ aliases:
 # 仓库
 
 > 实验室统一项目仓库。
-> 来源：`/data/disk/OneDrive/Applications/openclaw repository/`
+> 来源：`~/.openclaw/repository/`
 
 ---
 
 ## 路径
 
 ```
-/data/disk/OneDrive/Applications/openclaw repository/
+~/.openclaw/repository/
 ```
 
 ## 结构
 
 ```
-/data/disk/OneDrive/Applications/openclaw repository/
+~/.openclaw/repository/
 ├── README.md              # 仓库总览（项目索引）
 │
 ├── 项目A/                 # 每个项目一个文件夹

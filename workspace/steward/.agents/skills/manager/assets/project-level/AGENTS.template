@@ -129,7 +129,7 @@ openclaw memory search "{关键词}"
 wiki_search "{query}"
 
 # 全文检索(项目内)
-grep -rn "{关键词}" ~/OneDrive/Applications/openclaw repository/{项目名}/
+grep -rn "{关键词}" ~/.openclaw/repository/{项目名}/
 ```
 
 ### 版本控制

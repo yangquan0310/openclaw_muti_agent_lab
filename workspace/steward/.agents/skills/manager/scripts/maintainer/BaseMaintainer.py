@@ -136,11 +136,11 @@ class BaseMaintainer:
         :param project_path: 项目文件夹路径。支持：
           - 绝对路径: /home/user/仓库/项目名
           - 相对路径(含/): 仓库/项目名
-          - 仅项目名: 项目名 → 自动解析为 ~/OneDrive/Applications/openclaw repository/项目名
+          - 仅项目名: 项目名 → 自动解析为 ~/.openclaw/repository/项目名
         """
         raw_path = project_path.strip()
         if '/' not in raw_path and '\\' not in raw_path:
-            raw_path = os.path.join(os.path.expanduser('~/OneDrive/Applications/openclaw repository'), raw_path)
+            raw_path = os.path.join(os.path.expanduser('~/.openclaw/repository'), raw_path)
         self.project_path = os.path.expanduser(raw_path)
         self.project_name = os.path.basename(os.path.normpath(self.project_path))
         self.metadata_path = os.path.join(self.project_path, "metadata.json")

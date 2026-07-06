@@ -11,7 +11,7 @@
 | Agent 个人技能 | `~/.openclaw/workspace/steward/skills/README.md` | 技能存储目录说明 |
 | Agent 临时文件 | `~/.openclaw/workspace/steward/temp/README.md` | 临时文件存储目录说明 |
 | Agent 工作记忆 | `~/.openclaw/workspace/steward/memory/` | OpenClaw 核心记忆系统 |
-| 仓库默认位置 | `~/OneDrive/Applications/openclaw repository` | 项目文件根目录 |
+| 仓库默认位置 | `~/.openclaw/repository` | 项目文件根目录 |
 
 ---
 

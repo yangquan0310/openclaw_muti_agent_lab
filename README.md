@@ -693,6 +693,16 @@ openclaw agents restart <agent-name>
 - **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
 
 ### 版本 4.3.16 (2026-06-29 05:42)
+### 版本 4.3.20 (2026-07-06 19:00)
+
+- **仓库路径迁移（`~/OneDrive/Applications/openclaw repository` → `~/.openclaw/repository` + 软连接）**：在 `~/.openclaw/` 新增 `repository` 软连接指向 `/data/disk/OneDrive/Applications/openclaw repository/`（参照既有 6 个 `agents/git/media/memory/memory-tdai/npm` 软连接风格，绝对路径一致指向 `/data/disk/...`）。将所有"运行时"和"未来读"路径统一替换为 **`~/.openclaw/repository`**（软连接路径 + 短 + 稳定）。涉及 22 个文件 / 37 处替换：
+  - **A 类（核心配置 11 处）**：`workspace/steward/MEMORY.md`、`workspace/steward/TOOLS.md`、`workspace/{9 agents}/TOOLS.md`（auditor/instructor/mathematician/physicist/presenter/programmer/psychologist/reviewer/writer）
+  - **B 类（manager 工具脚本 7 处）**：`workspace/steward/.agents/skills/manager/scripts/maintainer/{BaseMaintainer.py, Maintainer.py}`（5 个 argparse `--projects-dir` + 1 个 init `expanduser`）、`workspace/steward/.agents/skills/manager/references/task-flow-guide.md`、`workspace/steward/.agents/skills/manager/assets/project-level/AGENTS.template`
+  - **C 类（wiki 15 处）**：`wiki/sources/repository.md`、`wiki/syntheses/{2026-05-19-22-53-22-如何管理项目, 2026-05-19-18-25-37-多agent协作案例-学生论文修改项目, 2026-05-19-18-25-37-如何配置仓库, 2026-06-01-16-12-00-我的agent工程实践-harness与plugin双轮, 2026-06-22-00-40-35-综述_心理治疗适宜性_影响因素_研究现状, 2026-06-22-00-40-35-综述_心理治疗适宜性_治疗偏好_研究现状}`
+  - **补改（4 处遗漏）**：`workspace/steward/MEMORY.md` v8.35.0 条目里的反例路径 + `workspace/steward/.agents/skills/manager/assets/project-level/AGENTS.template` + `workspace/steward/temp/pandoc-to-quarto-sop.md` + `workspace/programmer/temp/.openclaw工作流.md`
+- **保留不动（按"不动 DREAMS"原则）**：`README.md` 历史 changelog 2 处（v4.3.14 / v4.3.2 的"标准化"记录）+ 10 个 agent 的 DREAMS.md + 各 agent `memory/dreaming/*` 历史梦境（含 21 个 dreaming 文件）+ `*.jsonl/sqlite/bak/migrated` 运行时数据库和历史备份（如 `state/openclaw.sqlite`、`workspace/steward/temp/sessions/*.jsonl`、`workspace/{agents}/temp/memory_dreams_migrated/*.json.migrated`）
+- **root 用户路径一致性验证**：Python `os.path.expanduser('~/.openclaw/repository')` 在 root 下展开为 `/root/.openclaw/repository`，自动跟随软连接跳到真实仓库，BaseMaintainer 解析"仅项目名"测试通过（示例：项目名 `educational-research-methods` → `/root/.openclaw/repository/educational-research-methods` → 软连接目标真实存在，列出 `['archive', 'syllabus', 'chapters']` ✓）
+
 ### 版本 4.3.19 (2026-07-03 05:00)
 - **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 10 个 agent 的 memory/.dreams/events.jsonl + 26 个文件变更 + 4 个未追踪文件），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查 + 清理**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；本轮 7 个 agent (mathematician/physicist/programmer/psychologist/reviewer/steward/writer) 运行时状态文件 `openclaw-workspace-state.json` 整体迁移至各 agent 的 `temp/` 目录（与 4.3.14/4.3.15/4.3.17 推送模式一致）；programmer 的 `.learnings/` 和 `.openclaw/` 目录迁移至 `temp/` 保持工作空间整洁
@@ -1289,7 +1299,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-07-06 05:00:00**
+**最后更新: 2026-07-06 19:00:00**
 **系统版本**: OpenClaw 2026.6.9
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
