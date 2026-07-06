@@ -1304,3 +1304,13 @@ openclaw agents restart <agent-name>
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
 **备份状态**: ✅ 自动执行中
+### 版本 3.2.5 (2026-07-07)
+- **每日自动同步 2026-07-07**: 17 文件变更(142+/-24-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码
+- **工作空间核查**: 10 个 Agent 目录结构正常,无 stray 文件
+- **清理**: programmer/openclaw-workspace-state.json → temp/
+- **Agent梦境同步**: 10 个 Agent 的 DREAMS.md 及 dreams 记忆数据库同步(2026-07-06 夜间梦境)
+- **steward MEMORY.md**: 记忆晋升 4 条(2026-07-02 会话精选)
+- **新增未追踪文件**: 10 个 Agent memory/dreaming/light/rem/deep/2026-07-07.md
+- **运行状态**: ✅ 稳定版,准备推送 main 分支
+
