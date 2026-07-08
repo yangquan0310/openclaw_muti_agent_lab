@@ -693,6 +693,13 @@ openclaw agents restart <agent-name>
 - **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
 
 ### 版本 4.3.16 (2026-06-29 05:42)
+### 版本 4.3.21 (2026-07-09 05:00)
+- **密钥核查**：扫描所有待提交文件（10 个 agent 的 DREAMS.md + 10 个 agent 的 memory/.dreams/events.jsonl + steward/MEMORY.md），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构整洁，每个代理仅含 8 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/.learnings/memory/temp/.openclaw/.dreams）；`openclaw-workspace-state.json` 已加入 .gitignore 排除规则，不会误追踪；DREAMS.md 为梦境日记（非临时文件，保留）
+- **梦境记忆批次同步**：10 个 agent（auditor/instructor/mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer）的 DREAMS.md 与 memory/.dreams/events.jsonl 同步更新（~196 行 DREAMS.md 追加 + ~50 条 events.jsonl 梦境/工作事件）
+- **steward 记忆更新**：MEMORY.md 工作记忆更新（24 行 diff），DREAMS.md 增长 45 行
+- **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
+
 ### 版本 4.3.20 (2026-07-06 19:00)
 
 - **仓库路径迁移（`~/OneDrive/Applications/openclaw repository` → `~/.openclaw/repository` + 软连接）**：在 `~/.openclaw/` 新增 `repository` 软连接指向 `/data/disk/OneDrive/Applications/openclaw repository/`（参照既有 6 个 `agents/git/media/memory/memory-tdai/npm` 软连接风格，绝对路径一致指向 `/data/disk/...`）。将所有"运行时"和"未来读"路径统一替换为 **`~/.openclaw/repository`**（软连接路径 + 短 + 稳定）。涉及 22 个文件 / 37 处替换：

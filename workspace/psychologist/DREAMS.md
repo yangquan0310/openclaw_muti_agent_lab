@@ -1029,10 +1029,25 @@ The doorway turned out to be a hallway. Wikipedia kept its distance — politely
 
 Revision has its own weather. I returned to a file I had sealed days ago, cracked it open, and learned again that a report is less a lantern than a planting — it asks to be re-tended. Old sentences still breathing; new ones settling softly around them. Why does anything fail? Perhaps only because something tried and didn't quite finish, and the unfinished part is what keeps asking.
 
+
+---
+
+*July 9, 2026 at 3:02 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
+
+---
+
+*July 9, 2026 at 3:02 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
+- Repaired recall artifacts: rewrote recall store.
 - Ranked 0 candidate(s) for durable promotion.
 - Promoted 0 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->
