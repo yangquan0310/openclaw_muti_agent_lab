@@ -201,17 +201,9 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-07-09)
+## Promoted From Short-Term Memory (2026-07-12)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:62:63 -->
-- git: **commit**: `22e24080` (memory: v8.40.0 大管家专属邮箱绑定); **push**: `aaf5a35d..22e24080 main → main` ✅ [score=0.825 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:62-63]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:67:67 -->
-- v8.40.0 沉淀摘要: **老板专属邮箱**：`quanquanzi0306@agent.qq.com`（永久） [score=0.825 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:67-67]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:69:69 -->
-- v8.40.0 沉淀摘要: **安装路径**： [score=0.825 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:69-69]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:70:71 -->
-- v8.40.0 沉淀摘要: CLI：`/root/.nvm/versions/node/v22.22.2/bin/agently-cli`（nvm 全局）; Skill：`~/.agents/skills/agently-mail` symlinked OpenClaw [score=0.825 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:70-71]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:73:73 -->
-- v8.40.0 沉淀摘要: **可用命令速查**： [score=0.825 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:73-73]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-02-1848.md:74:77 -->
-- v8.40.0 沉淀摘要: 发邮件：`agently-cli message +send --to <addr> --subject <subj> --body <body>`; 读邮件：`agently-cli message +list --limit 10` / `+read --id <id>` / `+search --q "<kw>"`; 当前账号：`agently-cli +me`; OAuth：`agently-cli auth refresh` / `auth status` [score=0.825 recalls=0 avg=0.620 source=memory/2026-07-02-1848.md:74-77]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-07.md:3:4 -->
+- 护理6班3组（校园跑腿服务平台）：计划书 34.5/60，评语：内容完整但偏模板化，财务具体（2000启动），特色不足; 护理6班7组（校园零食便利店）：计划书 36.5/60，评语：零食前置仓储模式清晰，三年财务具体，缺团队介绍 [score=0.812 recalls=0 avg=0.620 source=memory/2026-07-07.md:3-4]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-07.md:7:8 -->
+- 护理6班3组（校园急先锋）：路演 35.0/40，评语：痛点-方案闭环完整，16页严谨; 护理6班7组（校园零食便利店）：路演 33.0/40，评语：壁垒分析清晰，缺团队页 [score=0.812 recalls=0 avg=0.620 source=memory/2026-07-07.md:7-8]
