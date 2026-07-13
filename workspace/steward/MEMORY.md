@@ -201,7 +201,7 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-07-13)
+## Promoted From Short-Term Memory (2026-07-14)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-07-07.md:10:11 -->
-- **总分**：3组=69.5，7组=69.5 **现共43组评分**（含2组新增） [score=0.804 recalls=0 avg=0.620 source=memory/2026-07-07.md:10-11]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-07.md:6:6 -->
+- **呈现师评分**： [score=0.804 recalls=0 avg=0.620 source=memory/2026-07-07.md:6-6]
