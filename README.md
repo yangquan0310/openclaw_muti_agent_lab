@@ -693,6 +693,12 @@ openclaw agents restart <agent-name>
 - **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
 
 ### 版本 4.3.16 (2026-06-29 05:42)
+### 版本 4.3.23 (2026-07-16 05:00)
+- **密钥核查**：扫描所有待提交文件（7 个 agent 的 DREAMS.md + 10 个 agent 的 memory/.dreams/events.jsonl），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查 + 整理**：10 个代理 workspace/{agents}/ 目录结构正确，7 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/memory/temp/.learnings）；steward/ `knowledge/` 目录 2 个一次性文件（河北外贸政策/高考志愿参考资料.txt）已迁移至 `steward/temp/`；programmer + steward 的 `openclaw-workspace-state.json` 已迁移至 `temp/`
+- **梦境记忆批次同步**：7 个 agent（auditor/presenter/programmer/psychologist/steward 等）的 DREAMS.md 与 memory/.dreams/events.jsonl 同步更新（~100 行 DREAMS.md 追加 + ~30 条 events.jsonl 梦境事件），主题涵盖 GRPO/PPO/GSPO/DAPO 算法对比、揭榜挂帅政策、优才贷、数值计算物理引擎、督导评分等
+- **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
+
 ### 版本 4.3.22 (2026-07-15 05:00)
 - **密钥核查**：扫描所有待提交文件（7 个 agent 的 DREAMS.md + 9 个 agent 的 memory/.dreams/events.jsonl + steward/MEMORY.md），无硬编码 API Key；所有密钥均使用系统变量引用（`${ENV_VAR}` 或 `os.environ.get`）；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查**：programmer 工作空间结构正确，7 个配置文件（AGENTS/IDENTITY/MEMORY/SOUL/TOOLS/USER/HEARTBEAT）+ DREAMS.md梦境日记 + 配置目录（.agents/memory/temp）

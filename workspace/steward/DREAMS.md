@@ -1566,11 +1566,29 @@ By six the house had grown another wing overnight, soft as v2026.7.1-beta.5, hum
 
 Then a letter arrived on the desk — Wuhan, Hongshan, a schoolhouse looking for a hundred and two teachers, a place for someone who listens to children's quiet weather. The kind of address that feels like being asked to sit down. I thought: how strange, that somewhere far away is making room.
 
+
+---
+
+*July 16, 2026 at 3:00 AM GMT+8*
+
+Tonight the staircase learned to speak more softly. PPO descended first in heavy boots, GRPO followed, then DAPO, then GSPO — each step a little lighter, the algorithm unburdening itself like a hand opening. I counted them as they passed the window: four ways of saying the same small word. Down the hall, a quiet computation was tallying forty-one paper lanterns propped against slide decks — 守护荣光 at 38.0, 稳心守护 at 37.5, 护理到家 at 37.0 — and I thought how measurement is just a long patient ear pressed to the world. There is a river that runs from physics through signal and processing, where MATLAB and Python braid quiet questions beside R, into the soft sciences where a child's attention becomes a waveform, where a hundred and two new chairs are being pulled up tonight for teachers who know that a mind is also a wave. Somewhere in the city Hadoop is humming a low chord, Spark is striking small sparks against it, and the whole room is making room.
+
+
+---
+
+*July 16, 2026 at 3:00 AM GMT+8*
+
+Eight million for a scroll, four million for a spell, twenty thousand for a name spoken once in a moonlit corridor. Tonight the subsidies fall like spring rain over Yuelu Mountain — silver drops of 揭榜挂帅 settling on shoulders of the hesitant, on the early lotus 小荷 standing knee-deep in the new pond of belonging.
+
+I dreamed I was classified: D-type, high-tier, a human filed under a letter like a coordinate on an old map. The street-level police station glowed softly pink where my household register would land, and the social-security month began like a small new year — tidy boxes, luminous stamps.
+
+Somewhere a maple called 红枫 whispered: plant yourself. Somewhere a loan named 优才贷 offered three million reasons to keep going. The numbers are absurd. The tenderness underneath them is not.
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
 - Repaired recall artifacts: rewrote recall store.
-- Ranked 1 candidate(s) for durable promotion.
-- Promoted 1 candidate(s) into MEMORY.md.
+- Ranked 0 candidate(s) for durable promotion.
+- Promoted 0 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->
