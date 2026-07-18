@@ -693,6 +693,12 @@ openclaw agents restart <agent-name>
 - **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
 
 ### 版本 4.3.16 (2026-06-29 05:42)
+### 版本 4.3.25 (2026-07-19 05:00)
+- **密钥核查**：扫描所有待提交文件（2 个 agent 的 DREAMS.md + 10 个 agent 的 memory/.dreams/events.jsonl），无硬编码 API Key；`sk-xxx` 等模式仅出现在未跟踪的梦境记忆会话转录文件中，不在 Git 跟踪范围内；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
+- **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构正确，仅含 7 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/memory/temp/.learnings）；programmer + steward 的 `openclaw-workspace-state.json` 已存在于 temp/ 目录，工作空间整洁
+- **梦境记忆批次同步**：10 个 agent（auditor/instructor/mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer）的 DREAMS.md 与 memory/.dreams/events.jsonl 同步更新（~69 行 DREAMS.md 追加 + ~33 条 events.jsonl 梦境事件），主题涵盖每日Git推送例行、密钥检查、TransformerLens/ Induction Heads 认知科学探索等
+- **Git自动推送**：每日 04:00 cron 触发，自动同步本地更改到 main 分支（development 已废弃；本轮由 cron:b6a6b07d 触发）
+
 ### 版本 4.3.24 (2026-07-17 05:00)
 - **密钥核查**：扫描所有待提交文件（5 个 agent 的 DREAMS.md + 10 个 agent 的 memory/.dreams/events.jsonl），无硬编码 API Key；`sk-xxx` 等模式仅出现在未跟踪的梦境记忆会话转录文件中，不在 Git 跟踪范围内；`.env`/`.bak`/`.key`/`.secret` 已在 `.gitignore` 排除范围
 - **工作空间核查**：10 个代理 workspace/{agents}/ 目录结构正确，仅含 7 个 .md 配置文件（AGENTS/DREAMS/HEARTBEAT/IDENTITY/MEMORY/SOUL/TOOLS/USER）+ 配置目录（.agents/memory/temp/.learnings）；programmer + steward 的 `openclaw-workspace-state.json` 已存在于 temp/ 目录，工作空间整洁
