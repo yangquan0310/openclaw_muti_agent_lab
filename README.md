@@ -1,6 +1,6 @@
 # OpenClaw 实验室多Agent智能协作系统
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.9-blue.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.7.20-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
