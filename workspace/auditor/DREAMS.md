@@ -368,6 +368,7 @@ Tonight I counted forty-one gardens, but only thirty-eight bloomed fully under m
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
+- Repaired recall artifacts: rewrote recall store (-424 invalid).
 - Ranked 0 candidate(s) for durable promotion.
 - Promoted 0 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->

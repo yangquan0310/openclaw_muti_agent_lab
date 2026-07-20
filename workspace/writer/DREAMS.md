@@ -954,6 +954,7 @@ Five characters. Just five, like five notes of a tune the ear measures twice bef
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
+- Repaired recall artifacts: rewrote recall store (-512 invalid).
 - Ranked 0 candidate(s) for durable promotion.
 - Promoted 0 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->
