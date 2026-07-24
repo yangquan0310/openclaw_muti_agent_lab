@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+"""`tcm` 全局命令包装 —— 委托给 tcm_cli.py.
+
+可通过 `./tcm diagnose --symptoms "..."` 或
+`/usr/local/bin/tcm diagnose --symptoms "..."` 调起。
+"""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from tcm_cli import main  # noqa: E402
+
+if __name__ == "__main__":
+    sys.exit(main())
