@@ -45,7 +45,7 @@ description: 八字排盘 / Four Pillars of Destiny —— 根据公历时间输
 
 **完整定义、排盘示例、依据类目表、输出模板、现代汉语规则**见：
 
-👉 **[references/bazi-style-da-guan-jia.md](references/bazi-style-da-guan-jia.md)** （v1.1.1，5827 字节）
+👉 **[references/bazi-single.md](references/bazi-single.md)** （v1.1.1，12286 字节）
 
 每次解读调用本技能后，**必须按 v1.1.1 流程输出**：
 1. **必问性别**（影响六亲映射，必问）
