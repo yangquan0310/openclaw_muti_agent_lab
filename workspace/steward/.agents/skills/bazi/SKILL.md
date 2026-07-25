@@ -301,7 +301,10 @@ bazi --self-test
 
 - `bazi-dayun` —— 排大运（待实现）
 - `bazi-shensha` —— 神煞（待实现）
-- `bazi-hehun` —— 合婚（待实现）
+- ✅ **`bazi-hehun`** —— 合盘 / 合婚 / 合伙匹配 / 亲子合盘（**v1.0.0 已实装**）
+
+👉 合盘技能详解 + 6 维度评分法 + 实战案例：
+**[references/bazi-hehun.md](references/bazi-hehun.md)**（v1.0.0，3182 字节）
 
 ## 版权与免责
 
