@@ -1330,7 +1330,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: 2026-07-18 05:00:00**
+**最后更新: July 27, 2026 05:00 (GMT+8)**
 **系统版本**: OpenClaw 2026.6.11
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
