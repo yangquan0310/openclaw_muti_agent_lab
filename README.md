@@ -1059,6 +1059,12 @@ openclaw agents restart <agent-name>
 - **README更新**：同步版本号、时间戳、运行状态
 - **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 main 分支
 
+### 版本 4.2.0 (2026-07-28)
+- **日常同步**：各代理 .dreams/events.jsonl 记忆文件更新（12 files, +60 lines）
+- **工作空间清理**：清理 programmer/steward 目录下的 openclaw-workspace-state.json 临时文件
+- **安全审计**：确认所有待提交文件中无硬编码 API Key
+- **Git自动推送**：每日凌晨 04:00 自动同步本地更改到 development 分支
+
 ### 版本 4.1.2 (2026-05-13)
 - **安全审计**：修复 `agents/programmer/agent/models.json`、`agents/main/agent/models.json`、`agents/instructor/agent/models.json` 中 6 处硬编码 API Key（3 处 Tencent Token Plan + 3 处 Kimi Code），分别替换为 `${TENCENTTOKENPLAN_API_KEY}` 和 `${KIMICODE_API_KEY}` 系统变量引用
 - **README更新**：同步版本号、时间戳、运行状态
