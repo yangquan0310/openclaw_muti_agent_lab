@@ -1,3 +1,10 @@
+### 版本 3.2.8 (2026-07-29)
+- **每日自动同步 2026-07-29**: 12 文件变更(62+/-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码
+- **工作空间核查**: programmer 工作空间正常,清理 openclaw-workspace-state.json → temp/
+- **Agent梦境同步**: 10 个 Agent 的 events.jsonl 梦境事件同步(2026-07-28 夜间梦境)
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 # OpenClaw 实验室多Agent智能协作系统
 
 ![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.7.20-blue.svg)
