@@ -373,19 +373,6 @@ def _build_target_bazi(year: int, month: int = None, day: int = None,
     return build_bazi(datetime(year, month, day, hour, minute))
 
 
-def _shishen_str(day_master: str, pillar) -> str:
-    """返回 '天干十神 | 地支本气十神' 字符串."""
-    gan_ss = ten_god(day_master, pillar.gan)
-    zhi_ss = ten_god_of_zhi(day_master, pillar.zhi)
-    return f"{gan_ss} | 地支{pillar.zhi}({pillar.canggan[0]})={zhi_ss}"
-
-
-def _render_section(title: str, lines: list) -> str:
-    """render 一节标题 + 内容."""
-    out = [f"━━━ {title} ━━━"]
-    out.extend(lines)
-    return "\n".join(out)
-
 
 def _liuyun_text(birth: Bazi, target_year: Bazi, birth_pos: str,
                  target_pos: str, target_label: str,
