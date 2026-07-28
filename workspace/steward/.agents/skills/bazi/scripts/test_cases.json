@@ -1,0 +1,528 @@
+[
+  {
+    "input": "1996-03-10 12:00",
+    "description": "基准用例：仓库硬编码",
+    "expected": {
+      "day_master": "丙",
+      "year": {
+        "gan": "丙",
+        "zhi": "子",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正官"
+      },
+      "month": {
+        "gan": "辛",
+        "zhi": "卯",
+        "gan_shishen": "正财",
+        "zhi_shishen": "正印"
+      },
+      "day": {
+        "gan": "丙",
+        "zhi": "午",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "劫财"
+      },
+      "hour": {
+        "gan": "甲",
+        "zhi": "午",
+        "gan_shishen": "偏印",
+        "zhi_shishen": "劫财"
+      }
+    }
+  },
+  {
+    "input": "1984-02-04 23:30",
+    "description": "立春当日 + 子时（同时测换年+换日）",
+    "expected": {
+      "day_master": "己",
+      "year": {
+        "gan": "甲",
+        "zhi": "子",
+        "gan_shishen": "正官",
+        "zhi_shishen": "偏财"
+      },
+      "month": {
+        "gan": "丙",
+        "zhi": "寅",
+        "gan_shishen": "正印",
+        "zhi_shishen": "正官"
+      },
+      "day": {
+        "gan": "己",
+        "zhi": "巳",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正印"
+      },
+      "hour": {
+        "gan": "甲",
+        "zhi": "子",
+        "gan_shishen": "正官",
+        "zhi_shishen": "偏财"
+      }
+    }
+  },
+  {
+    "input": "1990-08-07 12:00",
+    "description": "立秋前 12:00（应仍在未月）",
+    "expected": {
+      "day_master": "甲",
+      "year": {
+        "gan": "庚",
+        "zhi": "午",
+        "gan_shishen": "七杀",
+        "zhi_shishen": "伤官"
+      },
+      "month": {
+        "gan": "癸",
+        "zhi": "未",
+        "gan_shishen": "正印",
+        "zhi_shishen": "正财"
+      },
+      "day": {
+        "gan": "甲",
+        "zhi": "辰",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "偏财"
+      },
+      "hour": {
+        "gan": "庚",
+        "zhi": "午",
+        "gan_shishen": "七杀",
+        "zhi_shishen": "伤官"
+      }
+    }
+  },
+  {
+    "input": "1990-08-08 12:00",
+    "description": "立秋后 12:00（应进入申月）",
+    "expected": {
+      "day_master": "乙",
+      "year": {
+        "gan": "庚",
+        "zhi": "午",
+        "gan_shishen": "正官",
+        "zhi_shishen": "食神"
+      },
+      "month": {
+        "gan": "甲",
+        "zhi": "申",
+        "gan_shishen": "劫财",
+        "zhi_shishen": "正官"
+      },
+      "day": {
+        "gan": "乙",
+        "zhi": "巳",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "伤官"
+      },
+      "hour": {
+        "gan": "壬",
+        "zhi": "午",
+        "gan_shishen": "正印",
+        "zhi_shishen": "食神"
+      }
+    }
+  },
+  {
+    "input": "2017-07-23 12:00",
+    "description": "闰六月初一（月柱仍按节气未月）",
+    "expected": {
+      "day_master": "辛",
+      "year": {
+        "gan": "丁",
+        "zhi": "酉",
+        "gan_shishen": "七杀",
+        "zhi_shishen": "比肩"
+      },
+      "month": {
+        "gan": "丁",
+        "zhi": "未",
+        "gan_shishen": "七杀",
+        "zhi_shishen": "偏印"
+      },
+      "day": {
+        "gan": "辛",
+        "zhi": "亥",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "伤官"
+      },
+      "hour": {
+        "gan": "甲",
+        "zhi": "午",
+        "gan_shishen": "正财",
+        "zhi_shishen": "七杀"
+      }
+    }
+  },
+  {
+    "input": "2000-02-04 22:30",
+    "description": "立春前夕（年柱 1999 己卯）",
+    "expected": {
+      "day_master": "壬",
+      "year": {
+        "gan": "己",
+        "zhi": "卯",
+        "gan_shishen": "正官",
+        "zhi_shishen": "伤官"
+      },
+      "month": {
+        "gan": "戊",
+        "zhi": "寅",
+        "gan_shishen": "七杀",
+        "zhi_shishen": "食神"
+      },
+      "day": {
+        "gan": "壬",
+        "zhi": "辰",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "七杀"
+      },
+      "hour": {
+        "gan": "辛",
+        "zhi": "亥",
+        "gan_shishen": "正印",
+        "zhi_shishen": "比肩"
+      }
+    }
+  },
+  {
+    "input": "2000-02-05 12:00",
+    "description": "立春后第一天（年柱 2000 庚辰）",
+    "expected": {
+      "day_master": "癸",
+      "year": {
+        "gan": "庚",
+        "zhi": "辰",
+        "gan_shishen": "正印",
+        "zhi_shishen": "正官"
+      },
+      "month": {
+        "gan": "戊",
+        "zhi": "寅",
+        "gan_shishen": "正官",
+        "zhi_shishen": "伤官"
+      },
+      "day": {
+        "gan": "癸",
+        "zhi": "巳",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正财"
+      },
+      "hour": {
+        "gan": "戊",
+        "zhi": "午",
+        "gan_shishen": "正官",
+        "zhi_shishen": "偏财"
+      }
+    }
+  },
+  {
+    "input": "1984-02-04 22:30",
+    "description": "立春当日亥时（日柱仍为当天戊辰）",
+    "expected": {
+      "day_master": "戊",
+      "year": {
+        "gan": "甲",
+        "zhi": "子",
+        "gan_shishen": "七杀",
+        "zhi_shishen": "正财"
+      },
+      "month": {
+        "gan": "丙",
+        "zhi": "寅",
+        "gan_shishen": "偏印",
+        "zhi_shishen": "七杀"
+      },
+      "day": {
+        "gan": "戊",
+        "zhi": "辰",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "比肩"
+      },
+      "hour": {
+        "gan": "癸",
+        "zhi": "亥",
+        "gan_shishen": "正财",
+        "zhi_shishen": "偏财"
+      }
+    }
+  },
+  {
+    "input": "2024-01-01 00:30",
+    "description": "元旦 00:30 子时（换日后日柱）",
+    "expected": {
+      "day_master": "甲",
+      "year": {
+        "gan": "癸",
+        "zhi": "卯",
+        "gan_shishen": "正印",
+        "zhi_shishen": "劫财"
+      },
+      "month": {
+        "gan": "甲",
+        "zhi": "子",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正印"
+      },
+      "day": {
+        "gan": "甲",
+        "zhi": "子",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正印"
+      },
+      "hour": {
+        "gan": "甲",
+        "zhi": "子",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正印"
+      }
+    }
+  },
+  {
+    "input": "2024-01-01 23:59",
+    "description": "子时末日 23:59（换日后日柱）",
+    "expected": {
+      "day_master": "乙",
+      "year": {
+        "gan": "癸",
+        "zhi": "卯",
+        "gan_shishen": "偏印",
+        "zhi_shishen": "比肩"
+      },
+      "month": {
+        "gan": "甲",
+        "zhi": "子",
+        "gan_shishen": "劫财",
+        "zhi_shishen": "偏印"
+      },
+      "day": {
+        "gan": "乙",
+        "zhi": "丑",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "偏财"
+      },
+      "hour": {
+        "gan": "丙",
+        "zhi": "子",
+        "gan_shishen": "伤官",
+        "zhi_shishen": "偏印"
+      }
+    }
+  },
+  {
+    "input": "2000-12-12 10:00",
+    "description": "普通日（2000 大雪节气后）",
+    "expected": {
+      "day_master": "甲",
+      "year": {
+        "gan": "庚",
+        "zhi": "辰",
+        "gan_shishen": "七杀",
+        "zhi_shishen": "偏财"
+      },
+      "month": {
+        "gan": "戊",
+        "zhi": "子",
+        "gan_shishen": "偏财",
+        "zhi_shishen": "正印"
+      },
+      "day": {
+        "gan": "甲",
+        "zhi": "辰",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "偏财"
+      },
+      "hour": {
+        "gan": "己",
+        "zhi": "巳",
+        "gan_shishen": "正财",
+        "zhi_shishen": "食神"
+      }
+    }
+  },
+  {
+    "input": "1950-10-01 12:00",
+    "description": "1950 年普通日",
+    "expected": {
+      "day_master": "己",
+      "year": {
+        "gan": "庚",
+        "zhi": "寅",
+        "gan_shishen": "伤官",
+        "zhi_shishen": "正官"
+      },
+      "month": {
+        "gan": "乙",
+        "zhi": "酉",
+        "gan_shishen": "七杀",
+        "zhi_shishen": "食神"
+      },
+      "day": {
+        "gan": "己",
+        "zhi": "巳",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正印"
+      },
+      "hour": {
+        "gan": "庚",
+        "zhi": "午",
+        "gan_shishen": "伤官",
+        "zhi_shishen": "偏印"
+      }
+    }
+  },
+  {
+    "case_type": "liunian",
+    "input": "1996-03-10 12:00",
+    "year": 2025,
+    "description": "流年 2025 乙巳：vs 日主丙 = 正印(乙)/比肩(巳本气丙)；vs 命主年柱 丙子：天干相生(乙生丙)、地无",
+    "expected": {
+      "target_year_pillar": {"gan": "乙", "zhi": "巳"},
+      "vs_day_master": {"gan_shishen": "正印", "zhi_shishen": "比肩"},
+      "vs_birth_year": {
+        "gan_rels": ["天干相生"],
+        "zhi_rels": ["无特殊关系"],
+        "combined": ["普通"]
+      }
+    }
+  },
+  {
+    "case_type": "liunian",
+    "input": "1996-03-10 12:00",
+    "year": 2024,
+    "description": "流年 2024 甲辰：vs 日主丙 = 偏印(甲)/食神(辰本气戊)；vs 命主年柱 丙子：地三合水半合(辰子)",
+    "expected": {
+      "target_year_pillar": {"gan": "甲", "zhi": "辰"},
+      "vs_day_master": {"gan_shishen": "偏印", "zhi_shishen": "食神"},
+      "vs_birth_year": {
+        "gan_rels": ["天干相生"],
+        "zhi_rels": ["三合水半合"],
+        "combined": ["普通"]
+      }
+    }
+  },
+  {
+    "case_type": "liunian",
+    "input": "1996-03-10 12:00",
+    "year": 2026,
+    "description": "流年 2026 丙午：vs 日主丙 = 比肩(丙)/劫财(午本气丁)；vs 命主年柱 丙子：天比地冲",
+    "expected": {
+      "target_year_pillar": {"gan": "丙", "zhi": "午"},
+      "vs_day_master": {"gan_shishen": "比肩", "zhi_shishen": "劫财"},
+      "vs_birth_year": {
+        "gan_rels": [],
+        "zhi_rels": ["六冲"],
+        "combined": ["天比地冲"]
+      }
+    }
+  },
+  {
+    "case_type": "liumonth",
+    "input": "1996-03-10 12:00",
+    "year": 2025,
+    "month": 6,
+    "description": "流月 2025-06 壬午（立夏已过、芒种后=午月）：vs 日主丙 = 七杀(壬)/劫财(午)；vs 命主月柱 辛卯：地六破（决策 4 起 combined 进地支六破）",
+    "expected": {
+      "target_month_pillar": {"gan": "壬", "zhi": "午"},
+      "vs_day_master": {"gan_shishen": "七杀", "zhi_shishen": "劫财"},
+      "vs_birth_month": {
+        "gan_rels": ["天干被生"],
+        "zhi_rels": ["六破"],
+        "combined": ["地支六破"]
+      }
+    }
+  },
+  {
+    "case_type": "liumonth",
+    "input": "1996-03-10 12:00",
+    "year": 2024,
+    "month": 2,
+    "description": "流月 2024-02 丙寅（立春后=寅月）：vs 日主丙 = 比肩(丙)/偏印(寅本气甲)；vs 命主月柱 辛卯：天干丙辛合化水、地方合木半会",
+    "expected": {
+      "target_month_pillar": {"gan": "丙", "zhi": "寅"},
+      "vs_day_master": {"gan_shishen": "比肩", "zhi_shishen": "偏印"},
+      "vs_birth_month": {
+        "gan_rels": ["天干合化水", "天干相克"],
+        "zhi_rels": ["方合木半会"],
+        "combined": ["普通"]
+      }
+    }
+  },
+  {
+    "case_type": "liumonth",
+    "input": "1996-03-10 12:00",
+    "year": 2024,
+    "month": 5,
+    "description": "流月 2024-05 己巳（立夏后=巳月）：vs 日主丙 = 伤官(己)/比肩(巳)；vs 命主月柱 辛卯：天干相生、地无",
+    "expected": {
+      "target_month_pillar": {"gan": "己", "zhi": "巳"},
+      "vs_day_master": {"gan_shishen": "伤官", "zhi_shishen": "比肩"},
+      "vs_birth_month": {
+        "gan_rels": ["天干相生"],
+        "zhi_rels": ["无特殊关系"],
+        "combined": ["普通"]
+      }
+    }
+  },
+  {
+    "case_type": "liushi",
+    "input": "1996-03-10 12:00",
+    "target_dt": "2025-06-15 14:30",
+    "description": "流时 2025-06-15 14:30 癸未（乙日未时）：vs 日主丙 = 正官(癸)/伤官(未本气己)；vs 命主时柱 甲午：天生地合",
+    "expected": {
+      "target_hour_pillar": {"gan": "癸", "zhi": "未"},
+      "vs_day_master": {"gan_shishen": "正官", "zhi_shishen": "伤官"},
+      "vs_birth_hour": {
+        "gan_rels": ["天干相生"],
+        "zhi_rels": ["六合", "方合火半会"],
+        "combined": ["天生地合"]
+      }
+    }
+  },
+  {
+    "case_type": "liushi",
+    "input": "1996-03-10 12:00",
+    "target_dt": "2025-06-15 23:30",
+    "description": "流时 2025-06-15 23:30 戊子（子时换日→日柱变丙辰）：vs 日主丙 = 食神(戊)/正官(子)；vs 命主时柱 甲午：地六冲",
+    "expected": {
+      "target_hour_pillar": {"gan": "戊", "zhi": "子"},
+      "target_day_pillar": {"gan": "丙", "zhi": "辰"},
+      "vs_day_master": {"gan_shishen": "食神", "zhi_shishen": "正官"},
+      "vs_birth_hour": {
+        "gan_rels": ["天干被克"],
+        "zhi_rels": ["六冲"],
+        "combined": ["普通"]
+      }
+    }
+  },
+  {
+    "case_type": "liushi",
+    "input": "1996-03-10 12:00",
+    "target_dt": "2025-06-15 00:30",
+    "description": "流时 2025-06-15 00:30 丙子（早子时）：vs 日主丙 = 比肩(丙)/正官(子)；vs 命主时柱 甲午：天生地冲",
+    "expected": {
+      "target_hour_pillar": {"gan": "丙", "zhi": "子"},
+      "vs_day_master": {"gan_shishen": "比肩", "zhi_shishen": "正官"},
+      "vs_birth_hour": {
+        "gan_rels": ["天干被生"],
+        "zhi_rels": ["六冲"],
+        "combined": ["天生地冲"]
+      }
+    }
+  },
+  {
+    "case_type": "liushi",
+    "input": "1996-03-10 12:00",
+    "target_dt": "2024-02-04 22:30",
+    "description": "流时 2024-02-04 22:30 癸亥（立春前夕，年柱仍为癸卯；亥时）：vs 日主丙 = 正官(癸)/七杀(亥)；vs 命主时柱 甲午：天干相生、地无",
+    "expected": {
+      "target_hour_pillar": {"gan": "癸", "zhi": "亥"},
+      "vs_day_master": {"gan_shishen": "正官", "zhi_shishen": "七杀"},
+      "vs_birth_hour": {
+        "gan_rels": ["天干相生"],
+        "zhi_rels": ["无特殊关系"],
+        "combined": ["普通"]
+      }
+    }
+  }
+] 

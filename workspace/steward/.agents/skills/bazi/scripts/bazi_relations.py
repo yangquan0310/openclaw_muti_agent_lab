@@ -277,6 +277,10 @@ def pillar_relation(p1, p2) -> dict:
         combined.append("天生地合")
     if has_gan_sheng and has_chong:
         combined.append("天生地冲")
+    if has_hai:
+        combined.append("地支六害")
+    if has_po:
+        combined.append("地支六破")
     if not combined:
         combined.append("普通")
 
