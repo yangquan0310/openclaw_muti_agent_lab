@@ -71,6 +71,15 @@ ZHI_WUXING = {
     "辰": "土", "戌": "土", "丑": "土", "未": "土",
 }
 
+# 地支 → 生肖（生肖 = 年支，**不是**日支）
+# 修复说明：旧代码错用 cnlunar.get_chineseZodiacClash() 返回 "马日冲鼠"
+# （日冲信息），截第一个字当成生肖，导致输出日支"马"而不是年支"子"对应的"鼠"。
+SHENGXIAO_MAP = {
+    "子": "鼠", "丑": "牛", "寅": "虎", "卯": "兔",
+    "辰": "龙", "巳": "蛇", "午": "马", "未": "羊",
+    "申": "猴", "酉": "鸡", "戌": "狗", "亥": "猪",
+}
+
 # 地支藏干（本气 / 中气 / 余气）
 # 来源：子平术主流藏干表
 ZHI_CANGAN = {
@@ -298,9 +307,8 @@ def build_bazi(solar: datetime) -> Bazi:
     lunar_month_cn = day_cn_tuple[1] if len(day_cn_tuple) > 1 else ""
     lunar_day_cn = day_cn_tuple[2] if len(day_cn_tuple) > 2 else ""
 
-    # 生肖: cnlunar.get_chineseZodiacClash 返回 "马日冲鼠" 这种, 生肖 = 第一个字
-    zodiac_full = l.get_chineseZodiacClash() or ""
-    shengxiao = zodiac_full[:1] if zodiac_full else ""
+    # 生肖 = 年支对应的生肖（不是日支，不是日冲信息）
+    shengxiao = SHENGXIAO_MAP.get(year_p.zhi, "")
 
     # 节气（当日可能为空 → 取近日）
     jieqi = l.get_todaySolarTerms() or ""
@@ -364,19 +372,6 @@ def _build_target_bazi(year: int, month: int = None, day: int = None,
         month = 6
     return build_bazi(datetime(year, month, day, hour, minute))
 
-
-def _shishen_str(day_master: str, pillar) -> str:
-    """返回 '天干十神 | 地支本气十神' 字符串."""
-    gan_ss = ten_god(day_master, pillar.gan)
-    zhi_ss = ten_god_of_zhi(day_master, pillar.zhi)
-    return f"{gan_ss} | 地支{pillar.zhi}({pillar.canggan[0]})={zhi_ss}"
-
-
-def _render_section(title: str, lines: list) -> str:
-    """render 一节标题 + 内容."""
-    out = [f"━━━ {title} ━━━"]
-    out.extend(lines)
-    return "\n".join(out)
 
 
 def _liuyun_text(birth: Bazi, target_year: Bazi, birth_pos: str,

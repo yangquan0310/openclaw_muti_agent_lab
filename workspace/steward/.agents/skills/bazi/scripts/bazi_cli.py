@@ -477,7 +477,11 @@ def _birth_from_case_input(case: dict) -> "Bazi":  # noqa: F821
 
 def _bazi_to_dict(bz) -> dict:
     """Bazi → JSON-friendly dict."""
-    out = {"day_master": bz.day_master, "solar": bz.solar.strftime("%Y-%m-%d %H:%M")}
+    out = {
+        "day_master": bz.day_master,
+        "solar": bz.solar.strftime("%Y-%m-%d %H:%M"),
+        "shengxiao": bz.shengxiao,  # 修复：JSON 漏输出生肖字段
+    }
     for name, p in zip(("year", "month", "day", "hour"), bz.four_pillars()):
         out[name] = {
             "gan": p.gan,
