@@ -222,16 +222,48 @@ astrology --self-test
 - ✅ 新增 8 个 references（career/wealth/health/relationship/study/family/children/spirituality）
 - ✅ 扩展 astrology-rules.md 增加 10 领域宫位/星体映射
 - ✅ 完善 SKILL.md 增加 10 领域表格
-- 🔄 实际 astrology.py 算法仍待 programmer 代理实现
+- 🔄 实际 astrology.py 算法仍待 programmer 代理实现（v0.2.1 修正：算法已实装，下面描述）
 
-## v0.2.0 待办
+## v0.2.1 changelog（2026-07-29 老板测试触发）
 
-- [ ] 实际 `astrology.py` 核心算法
-- [ ] `astrology_cli.py` CLI 实现
-- [ ] `--focus` 模式的解读模板引擎
+- ✅ **CITY_DB 扩充**：新增 21 城市（+42 条目含 Pinyin 别名）—— 山西省全部 11 地级市 + 周边高频省会 10 个
+- ✅ **算法已实装**：`astrology.py` 核心算法 + `astrology_cli.py` CLI 完整可用（pyswisseph 20230604 + pytz 2026.2 实时天文计算）
+- ✅ **33/33 自测全过**：覆盖 5 基础排盘 + 10 focus 模式 + 2 合盘 + 1 JSON + 其他边界用例
+- ✅ **老板排盘验证**：1996-03-10 18:00 / 山西太原 / 太阳双鱼 20.1° 7宫 / 月亮天蝎 20.6° 3宫 / 上升处女 14.5°
+
+### v0.2.1 新增城市明细
+
+| 类别 | 城市数 | 列表 |
+|---|---|---|
+| 山西 | 11 | 太原 / 大同 / 阳泉 / 长治 / 晋城 / 朔州 / 晋中 / 运城 / 忻州 / 临汾 / 吕梁 |
+| 周边省会 | 10 | 石家庄 / 呼和浩特 / 兰州 / 银川 / 西宁 / 贵阳 / 南宁 / 福州 / 合肥 / 南昌 |
+| Pinyin 别名 | 21 | Taiyuan / Datong / Yangquan / Changzhi / Jincheng / Shuozhou / Jinzhong / Yuncheng / Xinzhou / Linfen / Lvliang / Shijiazhuang / Hohhot / Lanzhou / Yinchuan / Xining / Guiyang / Nanning / Fuzhou / Hefei / Nanchang |
+
+### v0.2.1 调用示例（带城市名）
+
+```bash
+# 中文
+astrology 1996-03-10 18:00 --location "太原"
+
+# Pinyin 别名
+astrology 1996-03-10 18:00 --location "Taiyuan"
+
+# 详细领域
+astrology 1996-03-10 18:00 --location "太原" --focus love career
+
+# 经纬度直传（不受 CITY_DB 限制）
+astrology 1996-03-10 18:00 --location "37.87,112.55,Asia/Shanghai"
+```
+
+## 待办
+
+- [x] 实际 `astrology.py` 核心算法（v0.2.1 已实装）
+- [x] `astrology_cli.py` CLI 实现（v0.2.1 已实装）
+- [x] `--focus` 模式的解读模板引擎（v0.2.1 已实装，10 领域框架）
 - [ ] 行运（transit）模块
-- [ ] 合盘（synastry）模块
 - [ ] 12 宫位详细解读库
+- [ ] CITY_DB 二期：补全江苏/浙江/广东/河北地级市（约 40 个高频城市）
+- [ ] Pinyin 别名补全：给现有 27 个中文城市加 Pinyin（北京→Beijing、上海→Shanghai 等）
 
 ## 版权与免责
 
