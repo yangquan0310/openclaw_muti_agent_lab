@@ -218,7 +218,15 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-07-15)
+## Promoted From Short-Term Memory (2026-07-30)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-07-07.md:2:2 -->
-- **19:57 督导评分产出**： [score=0.806 recalls=0 avg=0.620 source=memory/2026-07-07.md:2-2]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:14:17 -->
+- 📋 现状快照: | 项 | 状态 | |---|---| | **技能名** | `bazi`（八字排盘 + 明牌实证派解读） | | **入口** | `~/.openclaw/workspace/steward/.agents/skills/bazi/SKILL.md` | [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:14-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:18:21 -->
+- 📋 现状快照: | **文件数** | 4 docs + 5 scripts + 1 test JSON | | **自测** | 22/22 用例通过 | | **依赖** | `cnlunar >= 0.2.4`（可选 `sxtwl`） | | **最近活动** | 2026-07-25 当天迭代 4 个版本 + 合盘实战 | [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:18-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:27:30 -->
+- 📂 文件清单: ├── SKILL.md # ⚠ 版本号滞后（详见问题） ├── README.md # 安装说明（OK） ├── scripts/ │ ├── bazi.py # 核心算法（pure functions） [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:27-30]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:31:34 -->
+- 📂 文件清单: │ ├── bazi_cli.py # CLI 入口 │ ├── bazi_relations.py # 干支关系表 │ ├── bazi # 全局命令包装 │ └── test_cases.json # 22 用例 [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:31-34]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:35:38 -->
+- 📂 文件清单: └── references/ ├── bazi-rules.md # 八字规则速查 ├── bazi-style-da-guan-jia.md # 明牌实证派解读风格（v1.1.0） └── bazi-hehun.md # 合盘专项（v1.0.0） [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:35-38]
