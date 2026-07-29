@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+"""`astrology` 全局命令包装 —— 委托给 astrology_cli.py.
+
+允许通过 `/usr/local/bin/astrology` 或任意 PATH 中的 `astrology` 调用。
+"""
+import sys
+from pathlib import Path
+
+# 把脚本目录加入 sys.path 以便同目录导入 astrology / astrology_cli
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from astrology_cli import main  # noqa: E402
+
+if __name__ == "__main__":
+    sys.exit(main())
