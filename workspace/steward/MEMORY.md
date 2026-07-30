@@ -218,15 +218,17 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-07-30)
+## Promoted From Short-Term Memory (2026-07-31)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:14:17 -->
-- 📋 现状快照: | 项 | 状态 | |---|---| | **技能名** | `bazi`（八字排盘 + 明牌实证派解读） | | **入口** | `~/.openclaw/workspace/steward/.agents/skills/bazi/SKILL.md` | [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:14-17]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:18:21 -->
-- 📋 现状快照: | **文件数** | 4 docs + 5 scripts + 1 test JSON | | **自测** | 22/22 用例通过 | | **依赖** | `cnlunar >= 0.2.4`（可选 `sxtwl`） | | **最近活动** | 2026-07-25 当天迭代 4 个版本 + 合盘实战 | [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:18-21]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:27:30 -->
-- 📂 文件清单: ├── SKILL.md # ⚠ 版本号滞后（详见问题） ├── README.md # 安装说明（OK） ├── scripts/ │ ├── bazi.py # 核心算法（pure functions） [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:27-30]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:31:34 -->
-- 📂 文件清单: │ ├── bazi_cli.py # CLI 入口 │ ├── bazi_relations.py # 干支关系表 │ ├── bazi # 全局命令包装 │ └── test_cases.json # 22 用例 [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:31-34]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1435.md:35:38 -->
-- 📂 文件清单: └── references/ ├── bazi-rules.md # 八字规则速查 ├── bazi-style-da-guan-jia.md # 明牌实证派解读风格（v1.1.0） └── bazi-hehun.md # 合盘专项（v1.0.0） [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-25-1435.md:35-38]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-26-0512.md:19:21 -->
+- 👤 命中"妻星"配置: ⚙️ **正财（妻星）辛** = 月干辛 + 时支酉藏辛 = **2 位明透**; 🚫 **偏财庚 = 0**（婚恋路径单一，无混乱情史）; ⚠️ 命中**财破印**（辛克月支卯 + 酉冲卯）= 男命婚位受冲击 [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-26-0512.md:19-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-26-0512.md:23:23 -->
+- 👤 命中"妻星"配置: 古籍口径：`[依据: 古籍口径]` "印绶逢财，如月缺" / "印绶格 + 财破印 = 婚有反复" [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-26-0512.md:23-23]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-26-0512.md:29:32 -->
+- 💕 姻缘吉面: ⚙️ 正财 2 位 = **妻星显**（能找到）; 💪 身强财弱 = **财可用**（配偶助你）; 🚫 偏财 0 = **婚恋单一**（不会有混乱情史）; ⚙️ 正财辛金 = 配偶**理性 / 细致 / 内敛** [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-26-0512.md:29-32]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-26-0544.md:19:22 -->
+- 📖 技能规定（bazi-single.md v1.3.0）: 📋 **基础格式**：Markdown 表格（飞书/微信）+ bullet list（QQ 渠道默认）; 🎯 **直接结论先行**（§7.5）：第一段 3 句话总结; 🏷️ **节标题不带括号副标题**（§7.4）：如 `三、用神判定` 不写 `三、用神判定(三书融合,敢断)`; 🎨 **图标美化**（§7.7）：日主 🔥 财 💰 印 🏛️ 忌神 🚫 [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-26-0544.md:19-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-26-0544.md:23:25 -->
+- 📖 技能规定（bazi-single.md v1.3.0）: 📋 **5 维默认输出**（§7.8）：💼 事业 + 💰 财 + 💕 姻缘 + 🎭 性格 + 💪 健康; 📝 **末尾带"具体行动表"**（§7.3）：老板要能"听懂 + 用上"; 📝 **不重复标 bug / 不堆 metadata / 一张表搞定**（§7.5） [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-26-0544.md:23-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-26-0544.md:31:34 -->
+- ⚠️ 我之前输出哪里不合规: ❌ 用了 markdown 表格 → QQ 渠道拆独立窗口（§7.6）; ❌ 你说"排盘"，我**只**给排盘 → 但 §7.8 说单盘默认要出 5 维; ❌ 没带"具体行动表" → §7.3 强制要求; ❌ 重复标了"工具显示马是 bug" → §7.5 说只第一次提 [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-26-0544.md:31-34]
