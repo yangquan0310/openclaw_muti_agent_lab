@@ -1,6 +1,17 @@
 ### 版本 3.3.1 (2026-08-01)
 - **每日自动同步 2026-08-01**: 12 文件变更(71+/-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
+### 版本 3.3.2 (2026-08-03)
+- **每日自动同步 2026-08-03**: 13 文件变更(98+/-19-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码
+- **工作空间核查**: workspace/{agents}/ 结构正常,openclaw-workspace-state.json 已忽略
+- **steward DREAMS.md**: 夜间梦境记录 4 条(August 3 dreams)
+- **steward MEMORY.md**: 记忆晋升 4 条(2026-07-29 会话精选,astrology 技能路径修复)
+- **steward HEARTBEAT.md**: 定时任务状态同步
+- **Agent梦境同步**: 10 个 Agent 的 DREAMS.md 及 dreams 记忆数据库同步
+- **新增未追踪文件**: 1 个 steward memory 文件(2026-08-02-1806.md)
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 - **工作空间核查**: 各 Agent 工作空间正常(DREAMS/HEARTBEAT/events.jsonl等配置文件)
 - **Agent梦境同步**: 10 个 Agent 的 events.jsonl 梦境事件同步(2026-07-31 夜间梦境)
 - **管家梦境记录**: steward 新增2篇梦境记录(八字/印绶格/流日分析)
