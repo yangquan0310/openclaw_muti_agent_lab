@@ -226,13 +226,7 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-23.md:98:116 -->
 - | 数学家 | mathematician | 数学建模、统计分析 | | 物理学家 | physicist | 物理建模、公式推导 | ### 技能结构 ``` {agent}/skills/{agent}/ ├── SKILL.md # 入口文件 ├── references/ # 指南目录 ├── scripts/ # 脚本工具 └── assets/ # 模板资源 ``` ### 设计意图 - 实践命名 - 指南下沉 - 边界明确 - 快速检索 - 版本追踪 [score=0.812 recalls=30 avg=0.502 source=memory/2026-05-23.md:98-116]
 
-## Promoted From Short-Term Memory (2026-08-03)
+## Promoted From Short-Term Memory (2026-08-04)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-07-29-1132.md:15:18 -->
-- 为什么生成在 `skills/` 而非 `.agents/skills/`: | 项 | 来源 | |----|------| | 提案 `skillDir` 字段 | 提案创建时写死为 `~/.openclaw/workspace/steward/skills/astrology` | | skill_workshop apply | **严格按 proposal.json 里的 skillDir 路径写入** | [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-29-1132.md:15-18]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-29-1132.md:19:20 -->
-- 为什么生成在 `skills/` 而非 `.agents/skills/`: | 改名时 | 我只改了 `skillName/skillKey/id`，**没改 skillDir** | | 结果 | `skills/astrology/` 生成；`.agents/skills/` 没动 | [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-29-1132.md:19-20]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-29-1132.md:24:27 -->
-- 两个目录的差别（按 MEMORY.md）: | 目录 | 用途 | 实例 | |------|------|------| | `.agents/skills/` | **Agent 加载的技能**（SKILL.md 入口被 agent 读取）| `bazi` / `manager` / `tcm-diagnosis` | | `skills/` | **个人存储目录**（独立技能，agent 不自动加载）| `astrology`（现在） | [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-29-1132.md:24-27]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-29-1132.md:31:34 -->
-- 三种修复方案: | 方案 | 操作 | 优点 | 缺点 | |------|------|------|------| | **A. 软链接**（推荐）| `ln -s ../skills/astrology .agents/skills/astrology` | 1 行搞定；programmer 子代理写 `skills/astrology/scripts/` 同步可见；可逆 | 多一层间接 | | B. 移动 + 更新路径 | `mv skills/astrology .agents/skills/` + 更新 proposal.json skillDir + 重 apply | 单一权威路径 | 需要再过 apply 流程；programmer 子代理路径也要同步更新 | [score=0.803 recalls=0 avg=0.620 source=memory/2026-07-29-1132.md:31-34]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-01-0652.md:421:444 -->
+- ❌ 同一 bot、同 target、同一错误持续 5 次 **最可能原因**（按概率）： 1. **微信 bot access_token 过期**（最可能）—— bot 长时间没被主动调用，token 失效，微信侧直接返 -3 2. **target open_id 已失效** —— 用户把 bot 拉黑/设置免打扰 3. **openclaw-weixin 渠道插件本身有 bug** —— 但这个会触发所有 weixin 任务，目前只这一个任务有问题 ## 7. 建议下一步 要不要我帮你做： 1. **先排查 bot token 状态**（最便宜的诊断）—— 看 `openclaw channels` 或类似命令 2. **如果 token 过期，触发一次 token 刷新**（手动调一次 weixin 渠道，看能不能恢复） 3.... [score=0.816 recalls=5 avg=0.739 source=memory/2026-08-01-0652.md:421-444]
