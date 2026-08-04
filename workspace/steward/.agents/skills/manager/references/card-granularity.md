@@ -1,7 +1,7 @@
 ---
 name: card-granularity
 description: workboard 卡片粒度规范 — 混合 L1/L2/L3 三层模式
-version: 1.0.0
+version: 1.0.1
 author: Yang Quan
 created: 2026-08-04
 ---
@@ -106,11 +106,13 @@ created: 2026-08-04
 - `status`：`backlog` / `ready` / `running` / `done` / `blocked`
 - `priority`：继承阶段卡
 - `agentId`：派发的具体代理
-- `parents`：**L2 阶段卡 ID**（关键！）
 - `labels`：继承 + 任务类型
 - `boardId`：继承
+- ⚠️ **不设 `parents` 硬链接**（v1.0.1 修正，见下方「踩坑」）
 
 **何时建卡**：派发时建（**不**像 L2 提前批量建）。
+
+> ⚠️ **踩坑（v1.0.1 实测，2026-08-04 dashboard-workbench 项目）**：L3 卡**不要**通过 `parents` 字段挂 L2 卡！workboard 依赖机制（源码 `card dependencies are not done`）会把带未完成 parent 的卡**自动降级回 todo**，dispatch 无法拾取（`started=0`）。**正确做法**：L3 卡不设 parents（可设 `createdByCardId` 保留归属），L2 卡在 notes/comment 里记录所属 L3 卡 ID 做软关联追踪。层级关系（L1→L2→L3）由 **board 列表 + notes 引用**维护，不依赖硬链接。
 
 **示例**：
 ```json
@@ -225,4 +227,5 @@ workboard_read({ id: "<L2_阶段卡_ID>" })  // 详情里有 childCardIds
 
 | 版本 | 日期 | 更新内容 |
 |---|---|---|
+| v1.0.1 | 2026-08-04 | **踩坑修正**：L3 派发卡**不设 parents 硬链接**（workboard 依赖机制会把带未完成 parent 的卡自动降级回 todo，dispatch 选不到 → started=0）。L2 用 notes/comment 软关联追踪 L3。实测项目：dashboard-workbench。 |
 | v1.0.0 | 2026-08-04 | 初版。老板拍板混合模式（L1 项目卡 + L2 阶段卡 + L3 任务卡按需）。|
