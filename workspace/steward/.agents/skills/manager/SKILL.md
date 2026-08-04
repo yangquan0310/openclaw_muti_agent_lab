@@ -1,16 +1,15 @@
 ---
 name: manager
 description: >
-  manager是大管家的管理实践技能（**唯一入口**，任务派发唯一路径）。
+  manager是大管家的**科研项目管理**技能（**唯一入口**，任务派发唯一路径）。
   当需要派发任务（群派发 IM 艾特 / dispatch 派发 `openclaw workboard dispatch` CLI）、推进任务、完善TODO、领取项目任务、协调子代理干活时激活（task-flow-guide.md）。
-  当需要创建/管理项目（论文、课程、程序、知识库/wiki、通用项目）时激活。
-  当需要备课时激活（lesson-plan-guide）。
+  当需要创建/管理**科研项目**（论文、程序、知识库/wiki、通用项目）时激活。
   当需要技能审计、核查技能质量时激活（skill-audit-workflow）。
   当需要.openclaw系统体检、日常维护、问题处理时激活（openclaw-maintenance-guide）。
   当需要定期清理wiki或同步规范时激活（cleaning-guide、sync-guide）。
   当需要发布 workboard 任务卡（多 Agent 协作跟踪）时激活（workboard-guide）。
   当需要 Quarto PDF 编译/排版/APA 7th 论文配置时激活（quarto-pdf-config）。
-version: 5.13.0
+version: 5.14.0
 author: Yang Quan
 metadata:
   openclaw:
@@ -21,7 +20,7 @@ metadata:
 
 # manager 管理技能
 
-> **唯一入口**：所有管理场景统一由此入口处理。
+> **科研项目管理入口**：所有科研管理场景统一由此入口处理。**不**涵盖教学/课程管理（已 v8.52.0 教研→科研转型废弃）。
 
 ---
 
@@ -47,6 +46,7 @@ metadata:
   - **dispatch 派发**：大管家只 `workboard_read` 追踪 status，**status=done → 汇报老板**
   - ❌ 大管家**不调** `workboard_complete`（验收权下放）
   - ❌ 大管家**不调** `workboard_claim`（让代理/dispatch 调）
+- **提纯后定位（v5.14.0）**：本技能**仅**管科研项目（论文/程序/知识库/wiki/通用），**不**管教学/课程项目（lesson-plan-guide / course-guide 已删除，CourseMaintainer 已删除，教学模板已删除）。如需教学管理，请老板新建独立 `lesson-manager` 技能（v8.52.0 之后如有需要）
 
 ---
 
@@ -97,12 +97,12 @@ openclaw workboard dispatch --board default --expect-final --timeout 300000
 | Workboard 任务发布 | workboard-guide.md v1.12.0 |
 | 任务流（两种协调方式）| task-flow-guide.md v3.8.0（§二、群派发 / §三、dispatch 派发） |
 | 论文项目 | thesis-guide.md |
-| 课程项目 | course-guide.md |
+| ~~课程项目~~ | ~~course-guide.md~~（v5.14.0 已删除）|
 | 程序项目 | program-guide.md |
 | 知识库管理 | knowledge-guide.md v2.0 |
 | 项目整理 | organize-workflow.md |
 | 通用项目 | project-guide.md |
-| 课程备课 | lesson-plan-guide.md |
+| ~~课程备课~~ | ~~lesson-plan-guide.md~~（v5.14.0 已删除）|
 | 技能审核 | skill-audit-workflow.md |
 | 定期清理 | cleaning-guide.md |
 | 系统维护 | openclaw-maintenance-guide.md |
@@ -113,6 +113,7 @@ openclaw workboard dispatch --board default --expect-final --timeout 300000
 
 | 版本 | 日期 | 更新 |
 |------|------|------|
+| **5.14.0** | **2026-08-04** | **🆕 教研→科研转型：manager 技能提纯**（老板 2026-08-04 11:04 拍板）。**删除 12 个混杂文件**：(1) `references/lesson-plan-guide.md`（202 行，课程备课 v1-v7 SOP，v8.13.0/v8.40.0 已沉淀教训：项目 README/HANDBOOK 才是规范源）；(2) `references/course-guide.md`（112 行，课程项目指南）；(3) `scripts/maintainer/CourseMaintainer.py`（382 行，课程维护器）；(4) `assets/templates/终稿教案模板.md`；(5) `assets/templates/课件脚本模板.md`；(6) `assets/templates/内容框架模板.md`；(7) `assets/templates/学术前沿补充模板.md`；(8) `assets/templates/审校意见模板.md`；(9) `assets/templates/需求分析模板.md`；(10) `assets/chapter-metadata-template.json`；(11) `assets/agents/auditor.md`（agent 已删，v8.52.0）；(12) `assets/agents/instructor.md`（agent 已删，v8.52.0）。**清理缓存**：`scripts/maintainer/__pycache__/`（5 个 .pyc 文件）。**SKILL.md 重构**：(a) description 移除「当需要备课时激活（lesson-plan-guide）」触发词 + 「课程」从项目类型列表移除；(b) 章节标题从「所有管理场景统一由此入口处理」→「科研项目管理入口」；(c) 边界条件加「提纯后定位」段落（v5.14.0 明确：本技能**仅**管科研项目，不管教学/课程项目）；(d) 指南导航表删除 course-guide / lesson-plan-guide 行（用 ~~删除线~~ 标注）；(e) 版本号 5.13.0 → 5.14.0。**提纯后定位**：manager 技能**仅**管科研项目（论文/程序/知识库/wiki/通用）；如需教学管理，老板后续可新建独立 `lesson-manager` 技能。**配套**：(1) MEMORY.md v8.52.0 职责边界更新（删除 auditor/instructor）+ (2) README.md v3.3.4 badge 10→8 + (3) presentor v2.0.0 转型可视化师 + (4) HEARTBEAT.md v1.14.0 + (5) AGENTS.md v2026.8.4 仓库整理 + (6) `.archive/` 归档 10 个教学/AI 项目。**commit**：待 v5.14.0 commit。 |
 | **5.13.0** | **2026-07-02** | (1) 派发从 3 模式 → 2 模式：群派发（IM）/ dispatch 派发（CLI）；(2) description 加 dispatch 触发词；(3) 核心原则 4 改 TODO.md 分场景；(4) 核心原则 5 改 2 动作铁律 + 验收权下放；(5) 边界条件加 2 条不调项；(6) 快速调用重写；(7) 导航表升 v3.8.0 / v1.12.0 |
 | **5.12.0** | **2026-06-06** | (1) description 加"两种协调方式"必查触发；(2) 核心原则修分场景；(3) 边界条件撤销禁止私聊汇报；(4) 快速调用升 v1.5.0；(5) 导航表升 v3.2.0 / v1.5.0 |
 | **5.11.0** | **2026-06-04** | **Quarto 作者单位渲染模式固化**：(1) references/quarto-pdf-config.md 升 v1.1（~11KB），新增「八、作者 + 单位 + 联系方式 PDF 渲染（authblk 模式）」章节（源自记忆机制论文实战），含四件套配置（header.tex + title.tex partial + YAML 字段 + LaTeX 通讯作者块）+ 6 条坑速查 + 替代方案对比 + wiki 实体作为元数据源；(2) references/index.md 同步；(3) 导航表加 v1.1 标注 |
