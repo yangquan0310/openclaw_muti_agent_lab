@@ -1,6 +1,7 @@
 # manager 资产目录
 
 > 本目录包含 manager 技能的所有模板资产。
+> **v8.52.0 教研→科研转型后**：仅科研项目模板，教学/课程模板已全部删除。
 
 ---
 
@@ -8,33 +9,30 @@
 
 ```
 assets/
-├── agents/          # 角色定义（12个）
+├── agents/          # 角色定义（10个：8 agent + architect + developer + product-manager）
 ├── knowledge/       # Wiki 知识库模板（4个）
-├── project-level/   # 项目级模板（3类×2）
-├── templates/       # 课程模板（6个）
+├── project-level/   # 项目级模板（3类 × 2）
 ├── README.md        # 本文件
-├── TODO.md         # 任务看板模板
 └── metadata*.json   # 元数据模板
 ```
 
 ---
 
-## agents/ - 角色定义
+## agents/ - 角色定义（v8.52.0 仅 8 个 agent）
 
 | 角色 | 说明 |
 |------|------|
-| steward.md | 大管家 |
-| reviewer.md | 审稿助手 |
+| steward.md | 大管家（管理者） |
 | writer.md | 写作助手 |
-| psychologist.md | 心理学家 |
+| reviewer.md | 审稿助手（v8.52.0 起替代 auditor） |
+| psychologist.md | 心理学家（科研领域专家） |
 | mathematician.md | 数学家 |
 | physicist.md | 物理学家 |
-| instructor.md | 教员 |
-| presenter.md | 呈现师 |
-| auditor.md | 审计员 |
-| architect.md | 架构师 |
-| developer.md | 开发者 |
-| product-manager.md | 产品经理 |
+| programmer.md | 程序员 |
+| presenter.md | 可视化师（v8.52.0 起转型，科研图表 / 论文 figure / poster） |
+| architect.md | 架构师（不在 8 agent 内，但 skill 资产保留） |
+| developer.md | 开发者（不在 8 agent 内，但 skill 资产保留） |
+| product-manager.md | 产品经理（不在 8 agent 内，但 skill 资产保留） |
 
 ---
 
@@ -55,23 +53,8 @@ assets/
 |------|------|
 | ThesisAGENTS.md | 论文项目技能定义 |
 | ThesisREADME.md | 论文项目说明 |
-| CourseAGENTS.md | 课程项目技能定义 |
-| CourseREADME.md | 课程项目说明 |
 | ProgramAGENTS.md | 程序项目技能定义 |
 | ProgramREADME.md | 程序项目说明 |
-
----
-
-## templates/ - 课程模板
-
-| 模板 | 用于 |
-|------|------|
-| 需求分析模板.md | 备课需求分析 |
-| 内容框架模板.md | 课程内容框架 |
-| 学术前沿补充模板.md | 学术前沿补充 |
-| 审校意见模板.md | 审校意见 |
-| 终稿教案模板.md | 终稿教案 |
-| 课件脚本模板.md | 课件脚本 |
 
 ---
 
@@ -79,18 +62,9 @@ assets/
 
 | 文件 | 用于 |
 |------|------|
-| metadata.json | 项目元数据 |
-| metadata-template.json | 元数据模板 |
-| chapter-metadata-template.json | 章节元数据 |
+| metadata.json | 项目元数据（实例） |
+| metadata-template.json | 元数据模板（**v8.52.0 起简化**：仅科研项目字段） |
 
 ---
 
-## 其他文件
-
-| 文件 | 用于 |
-|------|------|
-| TODO.md | 任务看板模板 |
-
----
-
-*最后更新：2026-05-21*
+*最后更新：2026-08-04 (v8.52.0 教研→科研转型)*

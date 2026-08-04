@@ -101,7 +101,7 @@ created: 2026-08-04
 4. 大管家**自己**感觉到追踪粒度不够
 
 **必填字段**：
-- `title`：具体任务名（如「ch14 量的研究与质的研究的整合 v2 内容框架」）
+- `title`：具体任务名（如「综述 v5 重做」「数据收集 ch1-ch5」「实验设计 code review」）
 - `notes`：任务四要素（目标/约束/输入/输出）
 - `status`：`backlog` / `ready` / `running` / `done` / `blocked`
 - `priority`：继承阶段卡
@@ -115,14 +115,14 @@ created: 2026-08-04
 **示例**：
 ```json
 {
-  "title": "ch14 v2 内容框架（instructor）",
-  "notes": "任务目标：完成 ch14 量的研究与质的研究的整合 v2 内容框架\n任务约束：按 HANDBOOK v1.0.5 7 阶段流水线 v2 模板\n输入路径：/root/.openclaw/repository/教育科学研究方法/HANDBOOK.md\n输出路径：/root/.openclaw/repository/教育科学研究方法/ch14/v2_内容框架.md\n验收标准：含 6 节骨架 + 各节 ≥ 200 字 + 与 v1 需求分析对应。",
+  "title": "L3 任务：综述 v5 重做",
+  "notes": "任务目标：按 research-assistant/SKILL.md v5.x 重新做综述\n任务约束：必须用研究助手技能 workflow；输出 ≥ 30KB\n输入路径：/root/.openclaw/repository/跨期选择的年龄差异/knowledge/review/跨期选择的年龄差异_v4.md\n输出路径：/root/.openclaw/repository/跨期选择的年龄差异/knowledge/review/跨期选择的年龄差异_v5.md\n验收标准：v5 ≥ 30KB + 含跨期选择 5 流派对比表 + 引文 ≥ 50 篇。",
   "status": "ready",
   "priority": "high",
-  "agentId": "instructor",
+  "agentId": "psychologist",
   "parents": ["<L2_阶段卡_ID>"],
-  "labels": ["thesis", "course-prep", "ch14", "v2"],
-  "boardId": "course-jiaoyu-keyan"
+  "labels": ["thesis", "literature-review", "v5"],
+  "boardId": "thesis-intertemporal-age"
 }
 ```
 
@@ -159,7 +159,7 @@ workboard_create({
   title: "...",
   notes: "...",
   status: "ready",
-  agentId: "instructor",
+  agentId: "psychologist",
   parents: ["<L2_阶段卡_ID>"],
   labels: ["..."],
   boardId: "..."

@@ -71,11 +71,9 @@ class BaseMaintainer:
         # 动态导入子类（避免循环导入）
         if project_type:
             from .ThesisMaintainer import ThesisMaintainer
-            from .CourseMaintainer import CourseMaintainer
             from .ProgramMaintainer import ProgramMaintainer
             subclass_map = {
                 "thesis": ThesisMaintainer,
-                "course": CourseMaintainer,
                 "program": ProgramMaintainer,
             }
             if project_type in subclass_map:

@@ -303,9 +303,11 @@ Step 3: 确认恢复
 | steward.sqlite | 40-50 MB | > 100 MB | VACUUM |
 | programmer.sqlite | 30-40 MB | > 80 MB | VACUUM |
 | psychologist.sqlite | 35-40 MB | > 80 MB | VACUUM |
-| instructor.sqlite | 20-22 MB | > 45 MB | VACUUM |
 | mathematician.sqlite | 18-20 MB | > 40 MB | VACUUM |
 | physicist.sqlite | 14-16 MB | > 35 MB | VACUUM |
+| writer.sqlite | 25-30 MB | > 60 MB | VACUUM |
+| reviewer.sqlite | 15-20 MB | > 40 MB | VACUUM |
+| presenter.sqlite | 12-15 MB | > 30 MB | VACUUM |
 
 ### 4.2 配置文件标准
 

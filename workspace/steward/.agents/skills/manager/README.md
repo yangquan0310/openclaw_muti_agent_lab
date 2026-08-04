@@ -17,7 +17,6 @@
 | 功能 | 指南 |
 |------|------|
 | 论文项目整理 | [thesis-guide.md](references/thesis-guide.md) |
-| 课程项目整理 | [course-guide.md](references/course-guide.md) |
 | 程序项目整理 | [program-guide.md](references/program-guide.md) |
 | wiki 知识库维护 | [knowledge-guide.md](references/knowledge-guide.md) |
 | 多代理任务派发 | [task-flow-guide.md](references/task-flow-guide.md) |
@@ -35,7 +34,6 @@ manager/
 │   ├── index.md          # 书籍索引
 │   ├── manager-overview.md  # manager 概述
 │   ├── thesis-guide.md    # 论文管理
-│   ├── course-guide.md   # 课程管理
 │   ├── program-guide.md  # 程序管理
 │   ├── knowledge-guide.md # 知识库管理
 │   ├── task-flow-guide.md     # 任务派发（v2.2 三件套）

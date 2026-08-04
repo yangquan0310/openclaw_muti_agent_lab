@@ -6,7 +6,6 @@ Maintainer.py - 项目文件整理模块
 OOP架构：
 - BaseMaintainer: 通用基类，定义模板方法和多态钩子
 - Maintainer: 项目主入口，根据 project_type 路由到正确的子类
-- ThesisMaintainer / CourseMaintainer / ProgramMaintainer: 各项目类型的具体实现
 
 所有CLI命令通过 Maintainer.from_path() 自动路由到对应子类，确保多态生效。
 """
@@ -1084,11 +1083,9 @@ def main():
 
         # 根据类型创建子类实例并初始化
         from maintainer.ThesisMaintainer import ThesisMaintainer
-        from maintainer.CourseMaintainer import CourseMaintainer
         from maintainer.ProgramMaintainer import ProgramMaintainer
         subclass_map = {
             "thesis": ThesisMaintainer,
-            "course": CourseMaintainer,
             "program": ProgramMaintainer,
         }
         cls = subclass_map.get(project_type)

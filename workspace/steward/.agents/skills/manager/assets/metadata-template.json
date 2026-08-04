@@ -1,31 +1,21 @@
 {
-  "course": {
-    "name": "实验心理学",
-    "code": "PSY202",
-    "credits": 3,
-    "hours": 48,
-    "semester": "2025-spring",
-    "instructor": "杨权",
-    "department": "心理学系"
-  },
-  "chapters": [
-    {
-      "id": "ch01",
-      "title": "导论",
-      "hours": 4,
-      "status": "pending",
-      "currentRound": "v1"
-    }
-  ],
+  "project_type": "thesis",
+  "title": "跨期选择的年龄差异",
+  "code": "THESIS2026",
+  "owner": "杨权",
   "team": {
-    "instructor": "instructor",
+    "steward": "steward",
     "psychologist": "psychologist",
+    "writer": "writer",
+    "reviewer": "reviewer",
     "presenter": "presenter",
-    "auditor": "auditor",
-    "steward": "steward"
+    "programmer": "programmer",
+    "mathematician": "mathematician",
+    "physicist": "physicist"
   },
+  "milestones": [],
   "archive": {
-    "current": "2025-spring",
+    "current": "v1",
     "history": []
   }
 }
