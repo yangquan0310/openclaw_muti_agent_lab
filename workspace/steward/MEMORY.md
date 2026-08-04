@@ -74,6 +74,7 @@
 | **✅ 大管家专属邮箱** | **邮箱账号** `quanquanzi0306@agent.qq.com`（provider = agent.qq.com）。**发送邮件**：`agently-cli message +send --to <addr> --subject <subj> --body <body>`。**读邮件**：`agently-cli message +list --limit 10` / `+read --id <msg_id>`。**OAuth**：`agently-cli auth refresh` 强制刷新；`agently-cli auth status` 看本地状态。**配额**：50 封/天 / 10 req/min。 |
 | **✅ agently-cli 工具集速查** | **路径**：`/root/.nvm/versions/node/v22.22.2/bin/agently-cli`。**完整命令树**：(1) `+me` 当前用户信息；(2) `auth login|logout|refresh|status` 凭证管理；(3) `message +list|+read|+search|+send|+reply|+forward`；(4) `attachment +upload|+download`。**注意**：OAuth URL 必须用 `message` action=send 单独发（reply 通道会 filter OAuth URL）。 |
 | **✅ skill 部署路径规范** | **个人技能必须部署到 `workspace/steward/.agents/skills/<skill_name>/`**（与 bazi/manager/tcm-diagnosis 一致）。**绝对不**部署到 `workspace/steward/skills/`（OpenClaw 全局共享技能目录，非个人）。**skill_workshop proposal 的 target paths 必须与最终部署路径一致**。 |
+| **✅ workboard 卡片粒度 = 混合 L1/L2/L3 模式**（v5.15.0，2026-08-04 老板拍板） | **场景**：任何 workboard 建卡。**新规则**（取代 v8.51.0 之前的"一项目一卡 vs 一任务一卡"二元讨论）：(1) **L1 项目卡** = 1 张 / 项目（立项时建，`agentId=steward` 元数据卡，老板视角）；(2) **L2 阶段卡** = 3-5 张 / 项目（立项后**立即全部建好** `status=todo`，大管家追踪）；(3) **L3 任务卡** = **按需**（L2 卡涵盖 3+ 子任务 / 子代理明确要求拆 / 阶段需分批严格串行 / 大管家觉得追踪粒度不够时建）。**关键约束**：(a) L2 卡的 `parents` 指向 L1 ID；(b) L3 卡的 `parents` 指向 L2 ID；(c) **L1/L2 卡不直接派发**，只做元数据 + 追踪；(d) **L3 才是真正派发对象**（群派发 IM 5 段艾特 / dispatch 派发 `openclaw workboard dispatch` CLI）。**完整定义**：`manager` 技能 `references/card-granularity.md` v1.0.0。**派生规则**：(a) 新项目立项 → 先建 L1 + 立即批量建 L2；(b) 派发时如 L2 阶段卡过重 → 拆 L3 任务卡；(c) 已有项目**不**强制迁移到三层，**新项目严格**执行。**踩坑教训（v8.51.0 沉淀）**：之前讨论的"一任务一卡 vs 一项目一卡"是**二元对立**——workboard 原生支持 parents/children 字段，三层混合才是最优解。**commit**：待 v5.15.0 commit。 |
 
 ---
 
@@ -82,6 +83,7 @@
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
 | v8.52.0 | 2026-08-04 | **教研→科研转型**：删除 auditor + instructor + presenter 转型可视化师。当前可用 8 个 agent：steward + mathematician + physicist + psychologist + programmer + writer + reviewer + presenter（可视化师）。清理全部教学混杂内容（lesson-plan-guide / course-guide / CourseMaintainer / 6个教学模板）。清理 MEMORY.md 历史快照（v8.52.0 一次清理干净）。 |
+| v5.15.0 | 2026-08-04 | **workboard 卡片粒度 = 混合 L1/L2/L3 模式**（老板 2026-08-04 11:32 拍板）。新增 `manager/references/card-granularity.md` v1.0.0；SKILL.md 加触发条件 + 指南导航 + 版本号 5.14.0 → 5.15.0；MEMORY.md 加 v5.15.0 规则。 |
 | v8.49.0 | 2026-07-29 | **skill 部署路径规范**：个人技能必须部署到 `.agents/skills/<skill_name>/`，skill_workshop target paths 必须同步。commit `e6ddcd68`。 |
 | v8.37.0 | 2026-07-02 | **派发模式根本重构**：群派发（IM 5段艾特）/ **dispatch 派发**（`openclaw workboard dispatch` CLI，取代私聊 sessions_spawn）。验收权下放：大管家**不调** `workboard_complete`（worker 自己 complete）。**agent tool ≠ plugin CLI 关键发现**：`workboard_dispatch` agent tool = `store.dispatch()`（只清理），**不**启动 worker；`openclaw workboard dispatch` CLI = 完整函数（清理+claim+启动）。规范更新推 main（撤销"只推 development"旧规则）。 |
 | v8.35.0 | 2026-06-09 | **沉淀方向根本转变**：从"不要型"（避免错误）→ **do 型**（成功经验）。**不**沉淀"如何避免错"；**不**重复 system 提示已覆盖的规则；**不**重复 v3.5.0 范式已覆盖的基础派发。 |
