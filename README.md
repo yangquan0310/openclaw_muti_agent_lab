@@ -1,3 +1,15 @@
+### 版本 3.3.4 (2026-08-04)
+- **🆕 教研→科研转型**：彻底删除 auditor + instructor + presenter 转型科研可视化师（老板 2026-08-04 09:46/09:51/10:00 三次拍板）
+- **Agent 数量变化**：10 → 8（删除 auditor/instructor；presenter 保留并转型）
+- **删除范围**：`workspace/{auditor,instructor}` + `/data/disk/.openclaw/agents/{auditor,instructor}/`（sessions 运行时数据）+ `~/.openclaw/agents/{auditor,instructor}` 符号链接 + `openclaw.json` 8 处引用（agents.list×2 + allowAgents×2 + feishu accounts×2 + bindings×2）+ `.env` 2 个飞书 bot 凭证 + SQLite 全部 9 张相关表（4 配置表 + 5 历史表）
+- **presenter 转型**：从「课件编译师」→「科研可视化师 visualizer」—— 科研图表 + 论文 figure + poster + 报告 pptx（教学课件模板保留）
+- **当前可用 8 agent**（v8.52.0 起）：steward（自己）+ mathematician + physicist + psychologist（科研领域专家，非教学）+ programmer + writer + reviewer（替代 auditor 的审核职责）+ presenter（科研可视化师）
+- **git 安全网**（老板亲自要求"记忆删除前的 commit"）：(a) **snapshot commit `41acc6b8`** —— 删除前完整状态存档；(b) **deletion commit `bb57edc5`** —— 592 个 deleted 文件 + skills 同步
+- **备份位置**（老板日后复原需要）：`/data/disk/.openclaw/agents-env-backup-20260804/{auditor,instructor}.env` + `/data/disk/.openclaw/openclaw.json.bak-20260804` + `/data/disk/.openclaw/env.bak-20260804` + `/data/disk/.openclaw/sqlite-residue-backup-20260804/*.sql` + `/data/disk/.openclaw/state-openclaw.sqlite.bak-20260804`
+- **飞书 bot 待办**（老板手动去飞书开放平台 https://open.feishu.cn/ 操作）：auditor (appId=`cli_a947bb2b87399cc8`) + instructor (appId=`cli_a947bed63d785cdd`) —— 两个 bot 的 appSecret 已在 .env 清除，但开放平台 bot 仍存在，建议手动禁用/删除
+- **完整复原命令 + 教训沉淀**：见 MEMORY.md v8.52.0 版本历史
+- **运行状态**: ✅ 稳定版,待重启 OpenClaw 生效
+
 ### 版本 3.3.3 (2026-08-04)
 - **每日自动同步 2026-08-04**: 12 文件变更(79+/-13-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
@@ -46,7 +58,7 @@
 
 ![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.7.20-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Agents](https://img.shields.io/badge/Agents-10%20个-orange.svg)
+![Agents](https://img.shields.io/badge/Agents-8%20个-orange.svg)
 ![Skills](https://img.shields.io/badge/Skills-20%2B-yellow.svg)
 ![Status](https://img.shields.io/badge/Status-稳定版-success.svg)
 
@@ -54,7 +66,7 @@
 
 ## 👥 实验室成员(研究团队)
 
-整个系统围绕**实验室科研**展开,由 **10 个 Agent** 组成:
+整个系统围绕**实验室科研**展开,由 **8 个 Agent** 组成:
 
 | 成员 | 角色 | 研究领域 |
 |------|------|----------|
@@ -66,8 +78,7 @@
 | 心理学家Agent | 科研助理 | 心理学理论、实验设计、数据分析 |
 | 写作助手Agent | 科研助理 | 论文撰写、内容创作、文档编辑 |
 | 审稿助手Agent | 科研助理 | 论文审查、质量控制、格式规范 |
-| 审计员Agent | 教学审计 | 教学质量审核、课件一致性检查 |
-| 讲师Agent | 教学支持 | 教学辅助、课程材料整理 |
+| 呈现师Agent | 科研可视化 | 科研图表、论文 figure、poster、报告 pptx |
 
 ---
 
@@ -82,9 +93,9 @@
 | **心理学家** | 理论审核、实验设计、结果解释 | 心理学、实验设计、理论分析、问卷设计 |
 | **写作助手** | 论文撰写、内容创作、文档编辑 | 写作、编辑、翻译、润色、文档生成 |
 | **审稿助手** | 质量审查、格式规范、投稿建议 | 审稿、检查、格式、投稿、审查 |
-| **审计员** | 教学质量审核、课件一致性检查 | 审计、检查、一致性、审核 |
-| **讲师** | 教学辅助、课程材料整理 | 教学、课件、整理 |
-| **呈现师** | PPT设计与视觉呈现 | PPT、设计、呈现、视觉 |
+| **审计员** | ~~已删除（2026-08-04 v8.52.0）~~ | ~~审计、检查、一致性、审核~~ |
+| **讲师** | ~~已删除（2026-08-04 v8.52.0）~~ | ~~教学、课件、整理~~ |
+| **呈现师** | 科研图表、论文 figure、poster、报告 pptx | 可视化、图表、figure、poster |
 
 ---
 
@@ -97,7 +108,7 @@
 ├── .gitignore                         # Git忽略规则
 ├── requirements.txt                   # Python依赖文件
 ├── openclaw.json                      # OpenClaw主配置文件
-├── workspace/                         # Agent工作空间（10个）
+├── workspace/                         # Agent工作空间（8个）
 │   ├── programmer/                    # 程序员
 │   │   ├── AGENTS.md                  # 任务生命周期行为规范
 │   │   ├── SOUL.md                    # 核心自我认知与价值观
@@ -121,8 +132,7 @@
 │   ├── psychologist/                  # 心理学家
 │   ├── reviewer/                      # 审稿助手
 │   ├── writer/                        # 写作助手
-│   ├── auditor/                       # 审计员
-│   └── instructor/                    # 讲师
+│   └── presenter/                     # 呈现师（科研可视化师）
 ├── skills/                            # 公共技能库（自研核心技能）
 │   ├── .gitignore                     # Skills目录git规则
 │   ├── skill-developer/               # 技能开发工程化
