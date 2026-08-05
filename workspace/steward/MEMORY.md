@@ -97,3 +97,12 @@
 *最后更新：2026-08-04*
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
+
+## Promoted From Short-Term Memory (2026-08-06)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-08-01-0652.md:16:16 -->
+- 命主基本信息（固定）: 公历生日：1996-03-10 18:00 [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-01-0652.md:16-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-01-0652.md:18:21 -->
+- 命主基本信息（固定）: 八字四柱：丙子年 辛卯月 丙午日 丁酉时; 日主：丙火（太阳）; 格局：印绶格，身旺; 用神：金水（财 + 官） [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-01-0652.md:18-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-01-0652.md:26:26 -->
+- 流派归属: > 基于格局分析的传统命理现代化 [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-01-0652.md:26-26]
