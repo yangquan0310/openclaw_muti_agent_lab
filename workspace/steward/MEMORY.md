@@ -98,7 +98,11 @@
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
 
-## Promoted From Short-Term Memory (2026-08-07)
+## Promoted From Short-Term Memory (2026-08-08)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-08-02-1806.md:24:27 -->
-- 一、排盘: 👤 **公历**：1992-04-26 10:00; 👤 **农历**：壬申年三月廿四·巳时; 🐵 **生肖**：猴（年支申）; 👤 **日主**：壬水（阳水·大江大河之水） [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-02-1806.md:24-27]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-04.md:21:24 -->
+- 11:04 manager 技能提纯（Phase 1-7 全做）: 删 10 个教学混杂文件（lesson-plan-guide / course-guide / CourseMaintainer.py / 6 教学模板 / chapter-metadata-template.json）; 删 2 个已删 agent 资产（auditor.md / instructor.md）; SKILL.md 重构（description + 边界条件 + 导航表 + 版本号 5.13.0 → 5.14.0）; 修 3 个 Python broken imports（BaseMaintainer / Maintainer / __init__） [score=0.815 recalls=0 avg=0.620 source=memory/2026-08-04.md:21-24]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-04.md:25:25 -->
+- 11:04 manager 技能提纯（Phase 1-7 全做）: commit `bb57edc5` [score=0.815 recalls=0 avg=0.620 source=memory/2026-08-04.md:25-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-01-0652.md:22:22 -->
+- 命主基本信息（固定）: 忌神：木火（印 + 比劫） [score=0.811 recalls=0 avg=0.620 source=memory/2026-08-01-0652.md:22-22]
