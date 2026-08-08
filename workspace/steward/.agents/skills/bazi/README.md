@@ -31,7 +31,7 @@ bazi/
 │   ├── bazi-shiju.md    v1.0.0   [势局] = 势
 │   ├── bazi-shensha.md  v2.1.1   [神煞] = 助缘
 │   ├── bazi-yongshen.md v1.0.0   [用神] = 融合产物  ★ 新
-│   ├── bazi-style.md    v3.0.0   [输出风格]
+│   ├── bazi-style.md    v3.1.0   [输出风格 · 含排盘/合盘输出示例]
 │   ├── bazi-paipan.md   v1.7.0   [排盘]  5+1 步流程  ★ 重命名
 │   └── bazi-hehun.md    v1.3.0   [合盘]  5+1+1 步流程
 │
@@ -133,7 +133,7 @@ pip install sxtwl
 | **势局体系** | [`references/bazi-shiju.md`](references/bazi-shiju.md) v1.0.0 |
 | **神煞体系** | [`references/bazi-shensha.md`](references/bazi-shensha.md) v2.1.1 |
 | **用神体系** ★ 新 | [`references/bazi-yongshen.md`](references/bazi-yongshen.md) v1.0.0 |
-| **输出风格** | [`references/bazi-style.md`](references/bazi-style.md) v3.0.0 |
+| **输出风格** | [`references/bazi-style.md`](references/bazi-style.md) v3.1.0（含排盘/合盘输出示例 §六）|
 | **工具层规则** | [`references/bazi-rules.md`](references/bazi-rules.md) |
 
 ---
