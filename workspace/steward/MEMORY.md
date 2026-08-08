@@ -99,11 +99,15 @@
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
 
-## Promoted From Short-Term Memory (2026-08-08)
+## Promoted From Short-Term Memory (2026-08-09)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-08-04.md:21:24 -->
-- 11:04 manager 技能提纯（Phase 1-7 全做）: 删 10 个教学混杂文件（lesson-plan-guide / course-guide / CourseMaintainer.py / 6 教学模板 / chapter-metadata-template.json）; 删 2 个已删 agent 资产（auditor.md / instructor.md）; SKILL.md 重构（description + 边界条件 + 导航表 + 版本号 5.13.0 → 5.14.0）; 修 3 个 Python broken imports（BaseMaintainer / Maintainer / __init__） [score=0.815 recalls=0 avg=0.620 source=memory/2026-08-04.md:21-24]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-04.md:25:25 -->
-- 11:04 manager 技能提纯（Phase 1-7 全做）: commit `bb57edc5` [score=0.815 recalls=0 avg=0.620 source=memory/2026-08-04.md:25-25]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-01-0652.md:22:22 -->
-- 命主基本信息（固定）: 忌神：木火（印 + 比劫） [score=0.811 recalls=0 avg=0.620 source=memory/2026-08-01-0652.md:22-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-04.md:3:3 -->
+- 2026-08-04 记忆归档: > 本文件记录 2026-08-04 会话的持久记忆。MEMORY.md / SOUL.md / AGENTS.md 等引导文件为只读，本文件仅追加归档。 [score=0.805 recalls=0 avg=0.620 source=memory/2026-08-04.md:3-3]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-04.md:15:15 -->
+- 老板三次拍板（09:46 / 09:51 / 10:00）删除 auditor + instructor: 备份到 `/data/disk/.openclaw/`（agents-env-backup-20260804/ + openclaw.json.bak-20260804 + env.bak-20260804 + state-openclaw.sqlite.bak-20260804 + sqlite-residue-backup-20260804/） [score=0.804 recalls=0 avg=0.620 source=memory/2026-08-04.md:15-15]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-04.md:17:17 -->
+- 老板三次拍板（09:46 / 09:51 / 10:00）删除 auditor + instructor: **结果**：当前可用 8 个 agent = steward + mathematician + physicist + psychologist + programmer + writer + reviewer + presenter（可视化师） [score=0.804 recalls=0 avg=0.620 source=memory/2026-08-04.md:17-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-04.md:11:14 -->
+- 老板三次拍板（09:46 / 09:51 / 10:00）删除 auditor + instructor: 删除 `workspace/auditor/` + `workspace/instructor/` + 关联 git/agents 符号链接; 删除飞书 bot 凭证（FEISHU_ACADEMICASSISTANT_APP_SECRET + FEISHU_TEACHINGASSISTANT_APP_SECRET）; 清理 openclaw.json 8 处引用 + SQLite 4 张核心表 + 5 张历史表; snapshot commit `41acc6b8`（删除前完整状态存档）→ deletion commit `bb57edc5`（592 个 deleted 文件） [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-04.md:11-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-02-1806.md:29:29 -->
+- 一、排盘: **四柱**（list 格式，QQ 不拆表）： [score=0.801 recalls=0 avg=0.620 source=memory/2026-08-02-1806.md:29-29]
