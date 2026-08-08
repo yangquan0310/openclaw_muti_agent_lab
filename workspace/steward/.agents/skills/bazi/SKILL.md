@@ -1,6 +1,6 @@
 ---
 name: bazi
-version: 1.1.0
+version: 1.7.0
 description: 八字排盘 / Four Pillars of Destiny —— 根据公历时间输出年柱、月柱、日柱、时柱、天干地支、五行、十神、地支藏干。覆盖节气切月、立春换年、子时换日等关键边界。含流年/流月/流时扩展推算。当用户要求"排八字"、"算命"、"算八字"、"看四柱"、"排盘"、"查日柱"、"查年柱"、"查月柱"、"算十神"、"流年"、"流月"、"流时"时触发。
 ---
 
@@ -50,8 +50,8 @@ description: 八字排盘 / Four Pillars of Destiny —— 根据公历时间输
 
 **完整定义、用书策略、排盘示例、依据类目表、输出模板、现代汉语规则**见：
 
-👉 **[references/bazi-style.md](references/bazi-style.md)**（v2.1.0，思考总纲领 · 基于格局的现代体系）
-👉 **[references/bazi-single.md](references/bazi-single.md)** （v1.6.0，单盘技术规范 · 基于格局的 5+1 步）
+👉 **[references/bazi-style.md](references/bazi-style.md)**（v3.0.0，输出风格 · 基于格局的现代体系）
+👉 **[references/bazi-paipan.md](references/bazi-paipan.md)** （v1.7.0，排盘分析规范 · 基于格局的 5+1 步含用神融合）
 
 每次解读调用本技能后，**必须按 v1.6.0 流程输出**（5+1 步 · 三种分析并列）：
 
