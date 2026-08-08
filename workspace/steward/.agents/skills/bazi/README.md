@@ -25,7 +25,7 @@ bazi/
 ├── README.md          ← 本文件（入口）
 ├── SKILL.md v1.7.0   ← 主技能文档（5+1 步流程）
 │
-├── references/         ← 8 个 reference 文档
+├── references/         ← 9 个 reference 文档
 │   ├── bazi-rules.md              [工具层]  工具规则
 │   ├── bazi-zhengge.md  v1.0.1   [正格] = 骨
 │   ├── bazi-shiju.md    v1.0.0   [势局] = 势
@@ -33,7 +33,8 @@ bazi/
 │   ├── bazi-yongshen.md v1.0.0   [用神] = 融合产物  ★ 新
 │   ├── bazi-style.md    v3.1.0   [输出风格 · 含排盘/合盘输出示例]
 │   ├── bazi-paipan.md   v1.7.0   [排盘]  5+1 步流程  ★ 重命名
-│   └── bazi-hehun.md    v1.3.0   [合盘]  5+1+1 步流程
+│   ├── bazi-hehun.md    v1.3.0   [合盘]  5+1+1 步流程
+│   └── bazi-audit-principles.md  v1.0.0   [核查原则]  ★ 新
 │
 └── scripts/            ← 5 个程序 + 1 个测试
     ├── bazi                       ← shell 入口
