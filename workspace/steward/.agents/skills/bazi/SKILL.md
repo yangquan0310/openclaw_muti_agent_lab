@@ -50,10 +50,10 @@ description: 八字排盘 / Four Pillars of Destiny —— 根据公历时间输
 
 **完整定义、用书策略、排盘示例、依据类目表、输出模板、现代汉语规则**见：
 
-👉 **[references/bazi-style-da-guan-jia.md](references/bazi-style-da-guan-jia.md)**（v2.0.0，思考总纲领 · 基于格局的现代体系）
-👉 **[references/bazi-single.md](references/bazi-single.md)** （v1.2.0，单盘技术规范 · 基于格局的 6 步）
+👉 **[references/bazi-style.md](references/bazi-style.md)**（v2.1.0，思考总纲领 · 基于格局的现代体系）
+👉 **[references/bazi-single.md](references/bazi-single.md)** （v1.6.0，单盘技术规范 · 基于格局的 5+1 步）
 
-每次解读调用本技能后，**必须按 v1.4.0 流程输出**（5 步，决策 1 同步）：
+每次解读调用本技能后，**必须按 v1.6.0 流程输出**（5+1 步 · 三种分析并列）：
 
 **Step 0 · 必问性别**（前置，影响六亲映射）
 - **选问**（按需，不主动问）：行业 / 真太阳时 / 阴历阳历 / 当前关注问题
