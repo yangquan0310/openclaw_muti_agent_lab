@@ -49,6 +49,7 @@
 | **大管家 vs 其他专家代理职责边界** | 大管家 = 协调者，落实用户方向；其他专家 = 执行者（writer 写论文/mathematician 分析数据/physicist 建模/psychologist 科研领域/各专家解释自己领域理论/programmer 写代码/**reviewer 同行评审/审阅**）。当前可用 8 个 agent：steward + mathematician + physicist + psychologist + programmer + writer + reviewer + presenter（可视化师） |
 | **发送链接/卡片的操作权** | steward 自主根据情况选择纯文本 vs 飞书交互卡片（不需先与老板讨论）——这是操作权，不算"擅自修改"老板给的 SOP |
 | **"不擅自修改 SOP" vs "根据情况选择"** | **不冲突**——前者针对老板给的 SOP 内容（不能改）；后者是工具/格式的操作权（steward 自主）|
+| **🚫 用户隐私零记录**（2026-08-08 老板明确指示） | **涉及老板个人隐私/亲密关系的对话内容，禁止写入任何记忆文件**（MEMORY.md / memory/*.md / dreaming / 索引）——只记录规则，不记录内容。核查命令：`grep -rn "<敏感词>" memory/ MEMORY.md` + `openclaw memory search`。 |
 | **🚫 严禁编造任何时间/版本号/发布信息** | **任何**包含"发布时间"或"版本号"的回答，**必须**先实查到原始数据（GitHub releases.atom feed、changelog、官方公告）再报告。**绝对不能凭记忆编造精确时间戳**。 |
 | **回答版本前必查 4 件事** | (1) `https://github.com/openclaw/openclaw/releases.atom`（真实数据源）；(2) 实际当前装的版本（`openclaw --version`）；(3) 当前时间（CST = UTC+8）；(4) **对照前 3 项在 atom feed 中实际出现的 entry 数**。 |
 | **三件套矛盾梳理（IDENTITY/SOUL/MEMORY 内在矛盾）** | 矛盾处理原则：**平衡分析后修改**——逐条检查 if-then 规则（哪些仍然适用保留、哪些已过时删除、哪些矛盾修改/合并）；IDENTITY 边界**加限定词**（不替换），具体下放技能；SOUL 不轻易改（人格层稳定） |
