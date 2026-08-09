@@ -1,3 +1,15 @@
+### 版本 3.3.7 (2026-08-10)
+- **每日自动同步 2026-08-10**: 31 文件变更(新增 workspace/main/ 完整工作空间 + 多个Agent梦境同步)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅ (sk- 模式仅出现于未跟踪梦境记录中)
+- **工作空间核查**: programmer 工作空间 openclaw-workspace-state.json 已移至 temp/
+- **workspace/main/**: 新增 main Agent 完整工作空间(AGENTS/DREAMS/HEARTBEAT/IDENTITY/SOUL/TOOLS/USER + memory)
+- **psychologist DREAMS.md**: 梦境事件同步
+- **steward DREAMS.md + MEMORY.md**: 梦境事件及记忆同步
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer 的 events.jsonl 同步
+- **技能删除**: find-skill-skillhub + web-tools-guide 已从 workspace/skills/ 中移除
+- **配置文件清理**: BACKUP-INVENTORY.md, CHANGELOG.md, requirements.txt 已删除
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.3.6 (2026-08-08)
 - **每日自动同步 2026-08-08**: 11 文件变更(108+/-6-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
