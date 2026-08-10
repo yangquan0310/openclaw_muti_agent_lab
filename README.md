@@ -1,5 +1,16 @@
 ### 版本 3.3.7 (2026-08-10)
 - **每日自动同步 2026-08-10**: 31 文件变更(新增 workspace/main/ 完整工作空间 + 多个Agent梦境同步)
+### 版本 3.3.8 (2026-08-11)
+- **每日自动同步 2026-08-11**: 14 文件变更(92+/-341-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
+- **工作空间核查**: workspace/{agents}/ 结构正常,reviewer/bazi-v1.7.0-review.md 一次性文件已移至 temp/
+- **steward DREAMS.md**: 新增4篇梦境记录(August 11, 2026 3:00 AM - 五门/职业/财富/婚姻/健康/八字/木/偏财/脚本翻译)
+- **steward MEMORY.md**: 记忆晋升1条(算命八字排盘硬约束/ programmer 子代理执行状态)
+- **psychologist DREAMS.md**: 梦境事件同步
+- **main DREAMS.md**: 梦境事件同步
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer 的 events.jsonl 同步
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅ (sk- 模式仅出现于未跟踪梦境记录中)
 - **工作空间核查**: programmer 工作空间 openclaw-workspace-state.json 已移至 temp/
 - **workspace/main/**: 新增 main Agent 完整工作空间(AGENTS/DREAMS/HEARTBEAT/IDENTITY/SOUL/TOOLS/USER + memory)

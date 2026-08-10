@@ -99,7 +99,7 @@
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
 
-## Promoted From Short-Term Memory (2026-08-10)
+## Promoted From Short-Term Memory (2026-08-11)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-08-04.md:29:32 -->
-- 11:20 MEMORY.md 一次清理干净: 老板指令："一次清理干净、不需要保留历史快照、删除明确过时引用"; 删除：ch14/ch15 教研教训 12 处、auditor/instructor 残留 12 处、bazi 流派历史 v8.42-v8.50、CFPPS 残留、wiki entities 残留、早期 v8.x 冗余版本历史; 232 行 / 112KB → 精简（-59%），If-Then 92 条 → 精简; commit `2d792536` [score=0.812 recalls=0 avg=0.620 source=memory/2026-08-04.md:29-32]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1352.md:41:60 -->
+- | **输出路径** | `/root/.openclaw/skills/suanming/` | ## 🚨 八字排盘正确性硬约束（已写进 workboard notes + spawn task） - **算法忠于 github 源码**——禁止自创/简化/合并 - **至少 8 个边界测试用例**全部 PASS 才算完成： - 立春换年（1984-02-02） - 节气换月（小满/大暑前后） - 子时换日（2000-01-01 23:30） - 闰月年（2017 闰六月） - 五鼠遁起时 - 1900-01-31 甲辰日基准 - 真太阳时修正 - 五行纳音 / 空亡 / 旬空 - programmer 完成 `workboard_complete` 后，大管家核验后向您汇报结果 ## ⏳ 当前状态 子代理已接受任务，正在后台执行（预计 1-2 小时）。完成后会自动通知，我会核验测试结果并向您汇报。 assistant: 子代理已完成并提交。但子代理主动标注了几个**关键发现**，与老板原话"八字排盘不能有问题"存在歧义——必须先核验，再诚实汇报给老板拍板。 [score=0.806 recalls=4 avg=0.482 source=memory/2026-07-25-1352.md:41-60]
