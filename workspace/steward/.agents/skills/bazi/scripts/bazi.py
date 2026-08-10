@@ -310,8 +310,8 @@ def build_bazi(solar: datetime) -> Bazi:
     # 生肖 = 年支对应的生肖（不是日支，不是日冲信息）
     shengxiao = SHENGXIAO_MAP.get(year_p.zhi, "")
 
-    # 节气（当日可能为空 → 取近日）
-    jieqi = l.get_todaySolarTerms() or ""
+    # 节气：当天显示节气名（如"立夏"）；非当天显示"上一节气后 N 天"（如"惊蛰后 5 天"）
+    jieqi = jieqi_text(l, solar)
 
     return Bazi(
         year=year_p,
@@ -334,6 +334,65 @@ def build_bazi_from_str(date_str: str, time_str: str = "12:00") -> Bazi:
     hh, mm = time_str.split(":")
     solar = datetime(int(y), int(m), int(d), int(hh), int(mm))
     return build_bazi(solar)
+
+
+def _previous_jieqi(l, solar: datetime):
+    """找出生日之前最近的节气（含日期）.
+
+    cnlunar 的 `thisYearSolarTermsDic` 按公历年组织（{节气名: (月,日)}）：
+    - 常规情况：取今年节气表中日期 <= 出生日 的最近一个；
+    - 年初边界（小寒之前）：上一节气在上一年（冬至），
+      需用上一年 12 月中旬的 Lunar 对象取上一年节气表。
+    """
+    this_year = solar.year
+    try:
+        items = []
+        for name, (m, d) in l.thisYearSolarTermsDic.items():
+            try:
+                items.append((datetime(this_year, m, d, 12, 0), name))
+            except ValueError:
+                continue
+        items.sort()
+        prev = None
+        for dt, name in items:
+            if dt.date() <= solar.date():
+                prev = (dt, name)
+            else:
+                break
+        if prev is None:
+            # 年初边界：取上一年最后一个节气（冬至）
+            prev_l = cnlunar.Lunar(datetime(this_year - 1, 12, 15, 12, 0))
+            p_items = []
+            for name, (m, d) in prev_l.thisYearSolarTermsDic.items():
+                try:
+                    p_items.append((datetime(this_year - 1, m, d, 12, 0), name))
+                except ValueError:
+                    continue
+            if p_items:
+                prev = max(p_items)
+        return prev
+    except Exception:
+        return None
+
+
+def jieqi_text(l, solar: datetime) -> str:
+    """节气显示文本（日级精度，cnlunar 限制，节气当天 ±1 天边界可能偏差）.
+
+    - 节气当天 → 节气名（如"立夏"）；
+    - 非节气当天 → "上一节气后 N 天"（如"惊蛰后 5 天"）；
+    - 无节气信息 → ""（显示为"无"）。
+    """
+    today_term = l.get_todaySolarTerms()
+    if today_term and today_term != "无":
+        return today_term
+    prev = _previous_jieqi(l, solar)
+    if prev is None:
+        return ""
+    prev_dt, prev_name = prev
+    days = (solar.date() - prev_dt.date()).days
+    if days <= 0:
+        return prev_name
+    return f"{prev_name}后 {days} 天"
 
 
 # ============================================================================

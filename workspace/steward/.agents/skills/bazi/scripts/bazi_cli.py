@@ -28,6 +28,7 @@ from bazi import (  # noqa: E402
     liunian, liumonth, liushi,
     liunian_text, liumonth_text, liushi_text,
     zhengge, shiju, shensha, yongshen, dayun, reverse_lookup,
+    wuxing_of_gan,
 )
 
 
@@ -102,7 +103,7 @@ def _parse_liushi_target(args_value):
 def cmd_chart(args, birth) -> int:
     """输出单张排盘（命主盘）."""
     if args.json:
-        print(json.dumps(_bazi_to_dict(birth), ensure_ascii=False, indent=2))
+        print(json.dumps(_chart_to_dict(birth), ensure_ascii=False, indent=2))
     else:
         print(birth.pretty())
     return 0
@@ -117,7 +118,7 @@ def cmd_zhengge(args, birth) -> int:
     result = zhengge(birth)
     if args.json:
         out = {
-            "chart": _bazi_to_dict(birth),
+            "chart": _chart_to_dict(birth),
             "analysis": {"zhengge": result},
         }
         print(json.dumps(out, ensure_ascii=False, indent=2))
@@ -143,7 +144,7 @@ def cmd_shiju(args, birth) -> int:
     result = shiju(birth)
     if args.json:
         out = {
-            "chart": _bazi_to_dict(birth),
+            "chart": _chart_to_dict(birth),
             "analysis": {"shiju": result},
         }
         print(json.dumps(out, ensure_ascii=False, indent=2))
@@ -169,7 +170,7 @@ def cmd_shensha(args, birth) -> int:
     result = shensha(birth)
     if args.json:
         out = {
-            "chart": _bazi_to_dict(birth),
+            "chart": _chart_to_dict(birth),
             "analysis": {"shensha": result, "count": len(result)},
         }
         print(json.dumps(out, ensure_ascii=False, indent=2))
@@ -191,7 +192,7 @@ def cmd_yongshen(args, birth) -> int:
     result = yongshen(birth)
     if args.json:
         out = {
-            "chart": _bazi_to_dict(birth),
+            "chart": _chart_to_dict(birth),
             "analysis": {"yongshen": result},
         }
         print(json.dumps(out, ensure_ascii=False, indent=2))
@@ -217,7 +218,7 @@ def cmd_dayun(args, birth) -> int:
     result = dayun(birth, gender=gender)
     if args.json:
         out = {
-            "chart": _bazi_to_dict(birth),
+            "chart": _chart_to_dict(birth),
             "gender": gender,
             "analysis": {"dayun": result},
         }
@@ -347,6 +348,8 @@ def _check_case(case: dict) -> tuple[bool, str]:
         return _check_yongshen_case(case)
     elif ctype == "dayun":
         return _check_dayun_case(case)
+    elif ctype == "combined_json":
+        return _check_combined_json_case(case)
     elif ctype == "reverse":
         return _check_reverse_case(case)
     elif ctype == "daliuren":
@@ -362,7 +365,7 @@ def _check_chart_case(case: dict) -> tuple[bool, str]:
     if not time_part:
         time_part = "12:00"
     bz = build_bazi_from_str(date_part, time_part)
-    actual = _bazi_to_dict(bz)
+    actual = _chart_to_dict(bz)
     expected = case.get("expected", {})
 
     mismatches = []
@@ -380,6 +383,15 @@ def _check_chart_case(case: dict) -> tuple[bool, str]:
         mismatches.append(
             f"day_master: expected={expected['day_master']!r} actual={actual['day_master']!r}"
         )
+
+    # jieqi 检查（子串包含匹配，如 "惊蛰后 5 天" 含 "惊蛰"）
+    exp_jieqi = expected.get("jieqi")
+    if exp_jieqi:
+        act_jieqi = actual.get("jieqi", "")
+        if exp_jieqi not in act_jieqi:
+            mismatches.append(
+                f"jieqi: expected 含 {exp_jieqi!r} actual={act_jieqi!r}"
+            )
 
     if mismatches:
         return False, "; ".join(mismatches)
@@ -685,6 +697,54 @@ def _check_dayun_case(case: dict) -> tuple[bool, str]:
     return True, ""
 
 
+def _check_combined_json_case(case: dict) -> tuple[bool, str]:
+    """组合模式用例：CLI 输出必须是单个有效 JSON，analysis 含全部指定模块键."""
+    import io
+    import contextlib
+
+    inp = case.get("input", "")
+    parts = inp.split()
+    argv = [parts[0]]
+    if len(parts) > 1:
+        argv.append(parts[1])
+    argv += ["--json"]
+    for flag in ("--liunian", "--liumonth", "--liushi", "--zhengge", "--shiju",
+                 "--shensha", "--yongshen", "--dayun"):
+        if case.get(flag.lstrip("-")):
+            argv.append(flag)
+            val = case.get(flag.lstrip("-"))
+            if not isinstance(val, bool):
+                argv.append(str(val))
+    if case.get("gender"):
+        argv += ["--gender", case["gender"]]
+
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        rc = main(argv)
+    raw = buf.getvalue().strip()
+    if rc != 0:
+        return False, f"CLI 返回码 {rc}"
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        return False, f"输出不是单个有效 JSON: {e}"
+    mismatches = []
+    if not isinstance(data, dict):
+        return False, f"输出不是 JSON 对象: {type(data).__name__}"
+    if "chart" not in data:
+        mismatches.append("缺少 chart 键")
+    analysis = data.get("analysis")
+    if not isinstance(analysis, dict):
+        mismatches.append("缺少 analysis 对象")
+    else:
+        for key in case.get("expected", {}).get("analysis_keys", []):
+            if key not in analysis:
+                mismatches.append(f"analysis 缺少 {key} 键")
+    if mismatches:
+        return False, "; ".join(mismatches)
+    return True, ""
+
+
 def _check_reverse_case(case: dict) -> tuple[bool, str]:
     """v1.8.0 八字反查用例."""
     year_gz = case.get("year", "")
@@ -878,14 +938,19 @@ def _birth_from_case_input(case: dict) -> "Bazi":  # noqa: F821
 # 工具
 # ============================================================================
 
-def _bazi_to_dict(bz) -> dict:
-    """Bazi → JSON-friendly dict."""
+def _chart_to_dict(birth) -> dict:
+    """Bazi → JSON-friendly chart dict（排盘部分，单 JSON 顶层 chart 结构）.
+
+    结构：solar/lunar/shengxiao/jieqi/year/month/day/hour/day_master/element
+    （与组合模式正确格式样例 /tmp/yangquan_full.json 一致）
+    """
     out = {
-        "day_master": bz.day_master,
-        "solar": bz.solar.strftime("%Y-%m-%d %H:%M"),
-        "shengxiao": bz.shengxiao,  # 修复：JSON 漏输出生肖字段
+        "solar": birth.solar.strftime("%Y-%m-%d %H:%M"),
+        "lunar": f"{birth.lunar_year_cn}年 {birth.lunar_month_cn} {birth.lunar_day_cn}",
+        "shengxiao": birth.shengxiao,
+        "jieqi": birth.jieqi or "无",
     }
-    for name, p in zip(("year", "month", "day", "hour"), bz.four_pillars()):
+    for name, p in zip(("year", "month", "day", "hour"), birth.four_pillars()):
         out[name] = {
             "gan": p.gan,
             "zhi": p.zhi,
@@ -895,7 +960,59 @@ def _bazi_to_dict(bz) -> dict:
             "zhi_shishen": p.zhi_shishen,
             "canggan": p.canggan,
         }
+    out["day_master"] = birth.day_master
+    out["element"] = wuxing_of_gan(birth.day_master)
     return out
+
+
+# 向后兼容别名（旧名）
+_bazi_to_dict = _chart_to_dict
+
+
+def _combined_json_output(args, birth):
+    """组合模式：--json 且 ≥2 个分析模块 → 单个完整 JSON dict；否则返回 None.
+
+    analysis 键：liunian / liumonth / liushi / zhengge / shiju / shensha / yongshen / dayun
+    （仅含被触发的模块；shensha 保持数组并附 count）
+    """
+    gender = getattr(args, "gender", "男") or "男"
+    analysis = {}
+    modules = 0
+
+    if args.liunian is not None:
+        analysis["liunian"] = liunian(birth, args.liunian)
+        modules += 1
+    if args.liumonth is not None:
+        y, m = args.liumonth.split("-")
+        analysis["liumonth"] = liumonth(birth, int(y), int(m))
+        modules += 1
+    if args.liushi is not None:
+        target_dt = _parse_liushi_target(args.liushi)
+        if target_dt is not None:
+            analysis["liushi"] = liushi(birth, target_dt)
+            modules += 1
+    if args.zhengge:
+        analysis["zhengge"] = zhengge(birth)
+        modules += 1
+    if args.shiju:
+        analysis["shiju"] = shiju(birth)
+        modules += 1
+    if args.shensha:
+        ss = shensha(birth)
+        # 仅放模块键（shensha 保持数组，count 不入 analysis，符合"仅包含用户指定的模块键"）
+        analysis["shensha"] = ss
+        modules += 1
+    if args.yongshen:
+        analysis["yongshen"] = yongshen(birth)
+        modules += 1
+    if args.dayun:
+        analysis["dayun"] = dayun(birth, gender=gender)
+        modules += 1
+
+    # 非 json / 单模块：保持现状（走各自 cmd_xxx）
+    if not args.json or modules < 2:
+        return None
+    return {"chart": _chart_to_dict(birth), "analysis": analysis}
 
 
 def _validate_date(date_str: str) -> bool:
@@ -981,6 +1098,12 @@ def main(argv=None) -> int:
 
     # 构造命主盘
     birth = build_bazi_from_str(args.date, time_str)
+
+    # 组合模式：--json 且 ≥2 个分析模块 → 单个完整 JSON（chart + analysis）
+    combined_out = _combined_json_output(args, birth)
+    if combined_out is not None:
+        print(json.dumps(combined_out, ensure_ascii=False, indent=2))
+        return 0
 
     # 互斥/可组合：流年 + 流月 + 流时 + v1.8.0 模块，按顺序输出
     rc = 0
