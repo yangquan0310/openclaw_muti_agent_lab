@@ -28,6 +28,7 @@ Author: programmer agent (for 大管家)
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional
@@ -236,10 +237,18 @@ class Bazi:
     def pretty(self) -> str:
         """人类可读排盘（竖排）。"""
         lines = []
-        lines.append(f"公历：{self.solar.strftime('%Y-%m-%d %H:%M')}")
-        lines.append(
-            f"农历：{self.lunar_year_cn}年 {self.lunar_month_cn} {self.lunar_day_cn}"
-        )
+        if self.solar is not None:
+            lines.append(f"公历：{self.solar.strftime('%Y-%m-%d %H:%M')}")
+            lines.append(
+                f"农历：{self.lunar_year_cn}年 {self.lunar_month_cn} {self.lunar_day_cn}"
+            )
+        else:
+            # 四柱直接输入：无公历/农历日期，按四柱展示
+            pillars_str = " ".join(
+                f"{p.gan}{p.zhi}" for p in self.four_pillars()
+            )
+            lines.append(f"公历：四柱输入（{pillars_str}，公历日期未知）")
+            lines.append("农历：四柱输入（无对应农历日期）")
         lines.append(f"生肖：{self.shengxiao}    节气：{self.jieqi or '无'}")
         lines.append("")
 
@@ -2146,13 +2155,17 @@ def dayun(bz: Bazi, gender: str = "男") -> dict:
 
     # 起运岁数
     direction = "forward" if forward else "backward"
-    jie_name, jie_dt, days_diff = _find_nearest_jie(bz, direction)
-    qi_yun_age = days_diff // 3
-
-    qi_yun_note = (
-        f"出生日 → {'下一个' if forward else '上一个'}节"
-        f"{jie_name or '（未找到）'} 的天数{days_diff} ÷ 3 = {qi_yun_age} 岁起运"
-    )
+    if bz.solar is not None:
+        jie_name, jie_dt, days_diff = _find_nearest_jie(bz, direction)
+        qi_yun_age = days_diff // 3
+        qi_yun_note = (
+            f"出生日 → {'下一个' if forward else '上一个'}节"
+            f"{jie_name or '（未找到）'} 的天数{days_diff} ÷ 3 = {qi_yun_age} 岁起运"
+        )
+    else:
+        # 四柱直接输入：无公历日期，无法精确起运（干支大运仍可排）
+        jie_name, qi_yun_age = "", None
+        qi_yun_note = "四柱输入无公历日期，起运岁数未知（可用 --reverse 反查日期）"
 
     # 10 步大运（从月柱顺/逆推）
     month_gan = bz.month.gan
@@ -2163,8 +2176,11 @@ def dayun(bz: Bazi, gender: str = "男") -> dict:
 
     steps = []
     for i in range(10):
-        step_start = qi_yun_age + i * 10
-        step_end = step_start + 9
+        if qi_yun_age is not None:
+            step_start = qi_yun_age + i * 10
+            step_end = step_start + 9
+        else:
+            step_start, step_end = None, None
         steps.append({
             "index": i + 1,
             "gan": cur_gan,
@@ -2351,6 +2367,241 @@ def reverse_lookup(year_gz: str, month_gz: str, day_gz: str, hour_gz: str,
                     continue
 
     return candidates
+
+
+# ============================================================================
+# v1.9.0 模块 7：农历输入解析（农历 → 公历）+ 四柱直接排盘
+# ============================================================================
+#
+# 设计说明：
+# - 农历 → 公历：不自己写历法，用 cnlunar 反向搜索（对候选公历日逐一验证
+#   农历年月日是否匹配）。cnlunar 已正确处理闰月、大小月，搜索窗口按农历年
+#   覆盖（±1 个公历年）足够，性能 ~0.02s。
+# - 四柱直接排盘：`build_bazi_from_pillars` 只依赖干支本身（日主十神/藏干/
+#   生肖/月支节气区间），不需要公历日期；solar 置 None，输出时标注"公历未知"。
+
+from datetime import timedelta as _timedelta
+
+# 中文数字（农历年/月/日解析）
+CN_DIGITS = {
+    "零": 0, "〇": 0, "一": 1, "二": 2, "三": 3, "四": 4,
+    "五": 5, "六": 6, "七": 7, "八": 8, "九": 9,
+}
+
+# 农历月名 → 数字（正月=1 … 腊月=12；冬月=11 为北方俗称）
+LUNAR_MONTH_CN = {
+    "正": 1, "一": 1, "二": 2, "三": 3, "四": 4, "五": 5,
+    "六": 6, "七": 7, "八": 8, "九": 9, "十": 10,
+    "冬": 11, "腊": 12,
+}
+
+# 时辰 → 代表时刻（取各时辰中点为默认时刻）
+# 子[23-01]→00:00  丑[01-03]→02:00 … 酉[17-19]→18:00 … 亥[21-23]→22:00
+SHICHEN_HOUR = {
+    "子": 0, "丑": 2, "寅": 4, "卯": 6, "辰": 8, "巳": 10,
+    "午": 12, "未": 14, "申": 16, "酉": 18, "戌": 20, "亥": 22,
+}
+
+# 月支 → 节气区间（四柱输入时展示月令对应节气，如 卯月=惊蛰—清明）
+MONTH_ZHI_JIEQI_START = {
+    "寅": "立春", "卯": "惊蛰", "辰": "清明", "巳": "立夏",
+    "午": "芒种", "未": "小暑", "申": "立秋", "酉": "白露",
+    "戌": "寒露", "亥": "立冬", "子": "大雪", "丑": "小寒",
+}
+MONTH_ZHI_JIEQI_END = {
+    "寅": "惊蛰", "卯": "清明", "辰": "立夏", "巳": "芒种",
+    "午": "小暑", "未": "立秋", "申": "白露", "酉": "寒露",
+    "戌": "立冬", "亥": "大雪", "子": "小寒", "丑": "立春",
+}
+
+
+def _cn_year_to_int(s: str) -> int:
+    """中文年份 → int（一九九六 → 1996；逐位读）."""
+    try:
+        return int("".join(str(CN_DIGITS[c]) for c in s))
+    except (KeyError, ValueError):
+        raise ValueError(f"无法解析中文年份: {s}")
+
+
+def _cn_month_to_int(s: str) -> tuple[int, bool]:
+    """农历月名 → (月数, 是否闰月)（正月→1 … 冬月→11 腊月→12）."""
+    leap = s.startswith("闰")
+    if leap:
+        s = s[1:]
+    if s in ("十一月",):
+        return 11, leap
+    if s in ("十二月",):
+        return 12, leap
+    if s and s[0] in LUNAR_MONTH_CN:
+        return LUNAR_MONTH_CN[s[0]], leap
+    raise ValueError(f"无法解析农历月份: {s}")
+
+
+def _cn_single_digit(s: str) -> int:
+    """单个中文/阿拉伯数字 → int（一→1 … 十→10，1→1）."""
+    if s in CN_DIGITS:
+        return CN_DIGITS[s]
+    if s == "十":
+        return 10
+    if s.isdigit():
+        return int(s)
+    raise ValueError(f"无法解析数字: {s}")
+
+
+def _cn_day_to_int(s: str) -> int:
+    """农历日名 → int（初一→1 初十→10 十一→11 二十→20 廿一→21 三十→30）."""
+    if s.startswith("初"):
+        return _cn_single_digit(s[1:])
+    if s.startswith("廿"):
+        return 20 + (_cn_single_digit(s[1:]) if len(s) > 1 else 0)
+    if s.startswith("三十"):
+        return 30
+    if s.startswith("二十"):
+        return 20 + (_cn_single_digit(s[2:]) if len(s) > 2 else 0)
+    if s.startswith("十"):
+        return 10 + (_cn_single_digit(s[1:]) if len(s) > 1 else 0)
+    return _cn_single_digit(s)
+
+
+def _cn_hour_to_int(s: str) -> tuple[int, int]:
+    """时辰名 → (小时, 分钟)（酉时 → (18, 0)；子时取 00:00）."""
+    if s.endswith("时") and s[0] in SHICHEN_HOUR:
+        return SHICHEN_HOUR[s[0]], 0
+    raise ValueError(f"无法解析时辰: {s}")
+
+
+_DAY_RE = re.compile(
+    r"(初[一二三四五六七八九十]|廿[一二三四五六七八九]?|三十|"
+    r"[一二三四五六七八九]十[一二三四五六七八九]?|十[一二三四五六七八九]?|"
+    r"[一二三四五六七八九]|\d{1,2})"
+)
+
+
+def parse_lunar_input(text: str) -> dict:
+    """解析农历输入字符串 → dict(year, month, day, leap, hour, minute).
+
+    支持格式：
+    - "一九九六年 正月廿一 酉时"（中文年份 + 农历月日 + 时辰）
+    - "1996年正月廿一 18:00"（阿拉伯年份 + 农历月日 + 具体时刻）
+    - "1996年闰四月十五"（闰月，缺省时刻 12:00）
+    """
+    text = text.strip()
+    # 年：4 位阿拉伯或中文数字（可带可不带"年"字）
+    m_year = re.search(r"(\d{4}|[〇零一二三四五六七八九]{4})\s*年?", text)
+    if not m_year:
+        raise ValueError(f"无法解析农历年份: {text!r}")
+    year_str = m_year.group(1)
+    year = int(year_str) if year_str.isdigit() else _cn_year_to_int(year_str)
+    rest = text[m_year.end():]
+
+    # 月：可带闰（闰四月）
+    m_mon = re.search(r"(闰?[正一二三四五六七八九十冬腊]+)月", rest)
+    if not m_mon:
+        raise ValueError(f"无法解析农历月份: {text!r}")
+    month, leap = _cn_month_to_int(m_mon.group(1))
+    rest = rest[m_mon.end():]
+
+    # 日：紧跟月之后
+    m_day = _DAY_RE.match(rest.lstrip())
+    if not m_day:
+        raise ValueError(f"无法解析农历日期: {text!r}")
+    day = _cn_day_to_int(m_day.group(1))
+    rest = rest[m_day.end():].strip()
+
+    # 时刻：时辰（酉时）或 HH:MM，缺省 12:00
+    hour, minute = 12, 0
+    if rest:
+        m_hour = re.match(r"([子丑寅卯辰巳午未申酉戌亥])时", rest)
+        if m_hour:
+            hour, minute = _cn_hour_to_int(m_hour.group(0))
+        else:
+            m_hm = re.match(r"(\d{1,2}):(\d{2})", rest)
+            if m_hm:
+                hour, minute = int(m_hm.group(1)), int(m_hm.group(2))
+            else:
+                raise ValueError(f"无法解析时刻: {rest!r}")
+
+    if not (1 <= month <= 12):
+        raise ValueError(f"农历月份超出范围: {month}")
+    if not (1 <= day <= 30):
+        raise ValueError(f"农历日期超出范围: {day}")
+    if not (0 <= hour <= 23 and 0 <= minute <= 59):
+        raise ValueError(f"时刻超出范围: {hour:02d}:{minute:02d}")
+    return {"year": year, "month": month, "day": day,
+            "leap": leap, "hour": hour, "minute": minute}
+
+
+def lunar_to_solar(year: int, month: int, day: int, leap: bool = False,
+                   hour: int = 12, minute: int = 0) -> datetime | None:
+    """农历 → 公历（cnlunar 反向搜索，窗口覆盖农历年前后各约 1 年）.
+
+    返回匹配的公历 datetime（默认取 12:00 参考点），找不到返回 None。
+    注意：返回时刻为参考时刻，由调用方按需替换时分。
+    """
+    # 农历 N 年约从公历 N-1 年 12 月持续到 N+1 年 6 月（春节 1/21-2/21，
+    # 除夕在次年 1 月底-2 月中），搜索窗口取 [N-1-12-01, N+1-07-01) 足够。
+    cur = datetime(year - 1, 12, 1, 12, 0)
+    end = datetime(year + 1, 7, 1, 12, 0)
+    while cur < end:
+        try:
+            l = cnlunar.Lunar(cur)
+        except Exception:
+            cur += _timedelta(days=1)
+            continue
+        num = l.get_lunarDateNum()  # (农历年, 农历月, 农历日)
+        is_leap = "闰" in l.get_lunarMonthCN()
+        if num[0] == year and num[1] == month and num[2] == day and is_leap == leap:
+            return cur.replace(hour=hour, minute=minute)
+        cur += _timedelta(days=1)
+    return None
+
+
+def build_bazi_from_lunar_str(text: str) -> Bazi:
+    """农历输入 → 完整八字（转公历后走统一 build_bazi 管线）."""
+    p = parse_lunar_input(text)
+    solar = lunar_to_solar(p["year"], p["month"], p["day"], p["leap"],
+                           p["hour"], p["minute"])
+    if solar is None:
+        raise ValueError(
+            f"农历日期无法转换到公历: {text!r}（年份需在 cnlunar 支持范围内）"
+        )
+    return build_bazi(solar)
+
+
+def build_bazi_from_pillars(year_gz: str, month_gz: str, day_gz: str,
+                            hour_gz: str) -> Bazi:
+    """四柱直接排盘：给定 4 个干支 → 完整 Bazi（日主十神/藏干/生肖/节气区间）.
+
+    solar 置 None（公历日期未知），农历字段留空，输出时标注"四柱输入"。
+    与 --reverse 反查的区别：这里直接排盘分析，不做日期反查。
+    """
+    pillars = [year_gz, month_gz, day_gz, hour_gz]
+    for gz in pillars:
+        if len(gz) != 2 or gz[0] not in TIANGAN or gz[1] not in DIZHI:
+            raise ValueError(f"无效干支: {gz!r}（应为 天干+地支 两字，如 甲子）")
+
+    year_p = Pillar(gan=year_gz[0], zhi=year_gz[1])
+    month_p = Pillar(gan=month_gz[0], zhi=month_gz[1])
+    day_p = Pillar(gan=day_gz[0], zhi=day_gz[1])
+    hour_p = Pillar(gan=hour_gz[0], zhi=hour_gz[1])
+    day_master = day_gz[0]
+    for p in (year_p, month_p, day_p, hour_p):
+        p.render(day_master)
+
+    mz = month_p.zhi
+    jieqi = (
+        f"{mz}月（{MONTH_ZHI_JIEQI_START.get(mz, '')}—"
+        f"{MONTH_ZHI_JIEQI_END.get(mz, '')}）"
+    )
+    shengxiao = SHENGXIAO_MAP.get(year_p.zhi, "")
+
+    return Bazi(
+        year=year_p, month=month_p, day=day_p, hour=hour_p,
+        day_master=day_master,
+        solar=None,
+        lunar_year_cn="", lunar_month_cn="", lunar_day_cn="",
+        shengxiao=shengxiao, jieqi=jieqi,
+    )
 
 
 # ============================================================================

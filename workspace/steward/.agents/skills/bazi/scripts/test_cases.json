@@ -846,5 +846,109 @@
         "dayun"
       ]
     }
+  },
+  {
+    "case_type": "lunar",
+    "input": "一九九六年 正月廿一 酉时",
+    "description": "v1.9.0 农历输入（中文年份+时辰）→ 与公历 1996-03-10 18:00 一致",
+    "expected": {
+      "solar": "1996-03-10",
+      "day_master": "丙",
+      "shengxiao": "鼠",
+      "year": {
+        "gan": "丙",
+        "zhi": "子",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正官"
+      },
+      "month": {
+        "gan": "辛",
+        "zhi": "卯",
+        "gan_shishen": "正财",
+        "zhi_shishen": "正印"
+      },
+      "day": {
+        "gan": "丙",
+        "zhi": "午",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "劫财"
+      },
+      "hour": {
+        "gan": "丁",
+        "zhi": "酉",
+        "gan_shishen": "劫财",
+        "zhi_shishen": "正财"
+      },
+      "jieqi": "惊蛰"
+    }
+  },
+  {
+    "case_type": "lunar",
+    "input": "1996年正月廿一 18:00",
+    "description": "v1.9.0 农历输入（阿拉伯年份+HH:MM）→ 与公历 1996-03-10 18:00 一致",
+    "expected": {
+      "solar": "1996-03-10",
+      "day_master": "丙",
+      "shengxiao": "鼠",
+      "year": {
+        "gan": "丙",
+        "zhi": "子",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正官"
+      },
+      "month": {
+        "gan": "辛",
+        "zhi": "卯",
+        "gan_shishen": "正财",
+        "zhi_shishen": "正印"
+      },
+      "day": {
+        "gan": "丙",
+        "zhi": "午",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "劫财"
+      },
+      "hour": {
+        "gan": "丁",
+        "zhi": "酉",
+        "gan_shishen": "劫财",
+        "zhi_shishen": "正财"
+      },
+      "jieqi": "惊蛰"
+    }
+  },
+  {
+    "case_type": "pillars",
+    "input": "丙子 辛卯 丙午 丁酉",
+    "description": "v1.9.0 四柱直接排盘（与 1996-03-10 18:00 同柱）",
+    "expected": {
+      "day_master": "丙",
+      "shengxiao": "鼠",
+      "year": {
+        "gan": "丙",
+        "zhi": "子",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正官"
+      },
+      "month": {
+        "gan": "辛",
+        "zhi": "卯",
+        "gan_shishen": "正财",
+        "zhi_shishen": "正印"
+      },
+      "day": {
+        "gan": "丙",
+        "zhi": "午",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "劫财"
+      },
+      "hour": {
+        "gan": "丁",
+        "zhi": "酉",
+        "gan_shishen": "劫财",
+        "zhi_shishen": "正财"
+      },
+      "jieqi": "卯月"
+    }
   }
 ]

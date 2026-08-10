@@ -25,6 +25,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from bazi import (  # noqa: E402
     build_bazi_from_str,
+    build_bazi_from_lunar_str,
+    build_bazi_from_pillars,
+    parse_lunar_input,
     liunian, liumonth, liushi,
     liunian_text, liumonth_text, liushi_text,
     zhengge, shiju, shensha, yongshen, dayun, reverse_lookup,
@@ -124,7 +127,7 @@ def cmd_zhengge(args, birth) -> int:
         print(json.dumps(out, ensure_ascii=False, indent=2))
     else:
         print("=" * 50)
-        print(f"【正格分析】{birth.solar.strftime('%Y-%m-%d %H:%M')}")
+        print(f"【正格分析】{_birth_label(birth)}")
         print("=" * 50)
         print(f"格局：{result.get('ge_type') or '未成格（走势局）'}")
         print(f"来源：{result.get('ge_source','')}")
@@ -150,7 +153,7 @@ def cmd_shiju(args, birth) -> int:
         print(json.dumps(out, ensure_ascii=False, indent=2))
     else:
         print("=" * 50)
-        print(f"【势局分析】{birth.solar.strftime('%Y-%m-%d %H:%M')}")
+        print(f"【势局分析】{_birth_label(birth)}")
         print("=" * 50)
         print(f"旺衰：{result.get('wangshuai','')}（{result.get('wangshuai_score',0)}/4）")
         print(f"  得令：{result.get('de_ling')}")
@@ -176,7 +179,7 @@ def cmd_shensha(args, birth) -> int:
         print(json.dumps(out, ensure_ascii=False, indent=2))
     else:
         print("=" * 50)
-        print(f"【神煞清单】{birth.solar.strftime('%Y-%m-%d %H:%M')}（命中 {len(result)} 个）")
+        print(f"【神煞清单】{_birth_label(birth)}（命中 {len(result)} 个）")
         print("=" * 50)
         for s in result:
             print(f"\n■ {s['name']}（{s['zhiwei']}）")
@@ -198,7 +201,7 @@ def cmd_yongshen(args, birth) -> int:
         print(json.dumps(out, ensure_ascii=False, indent=2))
     else:
         print("=" * 50)
-        print(f"【用神融合】{birth.solar.strftime('%Y-%m-%d %H:%M')}")
+        print(f"【用神融合】{_birth_label(birth)}")
         print("=" * 50)
         print(f"最终用神：{result.get('final','')}")
         print(f"总结：{result.get('final_desc','')}")
@@ -225,10 +228,14 @@ def cmd_dayun(args, birth) -> int:
         print(json.dumps(out, ensure_ascii=False, indent=2))
     else:
         print("=" * 50)
-        print(f"【大运】{birth.solar.strftime('%Y-%m-%d %H:%M')}（{gender}命）")
+        print(f"【大运】{_birth_label(birth)}（{gender}命）")
         print("=" * 50)
         print(f"顺/逆排：{result.get('shunni','')}")
-        print(f"起运岁数：{result.get('qi_yun_age','')} 岁")
+        qi_yun_age = result.get('qi_yun_age')
+        if qi_yun_age is None:
+            print(f"起运岁数：未知（四柱输入无公历日期）")
+        else:
+            print(f"起运岁数：{qi_yun_age} 岁")
         print(f"所对节：{result.get('qi_yun_jie','')}")
         print(f"计算说明：{result.get('qi_yun_note','')}")
         print(f"\n10 步大运：")
@@ -282,6 +289,9 @@ def cmd_reverse(args) -> int:
 
 def cmd_daliuren(args, birth) -> int:
     """v2.0.0 大六壬排盘（天地盘/四课/三传/九宗门）."""
+    if birth.solar is None:
+        print("ERROR: 大六壬需要公历时间，四柱输入无法排大六壬（请用公历/农历输入）", file=sys.stderr)
+        return 2
     from bazi_daliuren import daliuren_text
     print(daliuren_text(birth.solar))
     return 0
@@ -354,20 +364,16 @@ def _check_case(case: dict) -> tuple[bool, str]:
         return _check_reverse_case(case)
     elif ctype == "daliuren":
         return _check_daliuren_case(case)
+    elif ctype == "lunar":
+        return _check_lunar_case(case)
+    elif ctype == "pillars":
+        return _check_pillars_case(case)
     else:
         return _check_chart_case(case)
 
 
-def _check_chart_case(case: dict) -> tuple[bool, str]:
-    """基础排盘用例."""
-    inp = case["input"]
-    date_part, _, time_part = inp.partition(" ")
-    if not time_part:
-        time_part = "12:00"
-    bz = build_bazi_from_str(date_part, time_part)
-    actual = _chart_to_dict(bz)
-    expected = case.get("expected", {})
-
+def _compare_chart_expected(actual: dict, expected: dict) -> list:
+    """把 chart dict 与 expected 对比，返回 mismatch 列表（复用排盘用例断言）."""
     mismatches = []
     for pillar_name in ("year", "month", "day", "hour"):
         exp_p = expected.get(pillar_name, {})
@@ -383,8 +389,10 @@ def _check_chart_case(case: dict) -> tuple[bool, str]:
         mismatches.append(
             f"day_master: expected={expected['day_master']!r} actual={actual['day_master']!r}"
         )
-
-    # jieqi 检查（子串包含匹配，如 "惊蛰后 5 天" 含 "惊蛰"）
+    if expected.get("shengxiao") and expected["shengxiao"] != actual.get("shengxiao"):
+        mismatches.append(
+            f"shengxiao: expected={expected['shengxiao']!r} actual={actual.get('shengxiao')!r}"
+        )
     exp_jieqi = expected.get("jieqi")
     if exp_jieqi:
         act_jieqi = actual.get("jieqi", "")
@@ -392,7 +400,57 @@ def _check_chart_case(case: dict) -> tuple[bool, str]:
             mismatches.append(
                 f"jieqi: expected 含 {exp_jieqi!r} actual={act_jieqi!r}"
             )
+    return mismatches
 
+
+def _check_chart_case(case: dict) -> tuple[bool, str]:
+    """基础排盘用例."""
+    inp = case["input"]
+    date_part, _, time_part = inp.partition(" ")
+    if not time_part:
+        time_part = "12:00"
+    bz = build_bazi_from_str(date_part, time_part)
+    actual = _chart_to_dict(bz)
+    expected = case.get("expected", {})
+
+    mismatches = _compare_chart_expected(actual, expected)
+
+    if mismatches:
+        return False, "; ".join(mismatches)
+    return True, ""
+
+
+def _check_lunar_case(case: dict) -> tuple[bool, str]:
+    """v1.9.0 农历输入用例：农历串 → 公历 → 同一 chart 断言."""
+    inp = case["input"]
+    try:
+        bz = build_bazi_from_lunar_str(inp)
+    except ValueError as e:
+        return False, f"农历解析失败: {e}"
+    actual = _chart_to_dict(bz)
+    expected = case.get("expected", {})
+    mismatches = _compare_chart_expected(actual, expected)
+    # 若给了 expected_solar，额外校验转出的公历日期一致
+    exp_solar = expected.get("solar")
+    if exp_solar and exp_solar not in actual.get("solar", ""):
+        mismatches.append(f"solar: expected 含 {exp_solar!r} actual={actual.get('solar')!r}")
+    if mismatches:
+        return False, "; ".join(mismatches)
+    return True, ""
+
+
+def _check_pillars_case(case: dict) -> tuple[bool, str]:
+    """v1.9.0 四柱输入用例：4 干支 → 直接排盘 chart 断言."""
+    parts = case["input"].split()
+    if len(parts) != 4:
+        return False, f"四柱输入需要 4 个干支，实际 {len(parts)}"
+    try:
+        bz = build_bazi_from_pillars(*parts)
+    except ValueError as e:
+        return False, f"四柱解析失败: {e}"
+    actual = _chart_to_dict(bz)
+    expected = case.get("expected", {})
+    mismatches = _compare_chart_expected(actual, expected)
     if mismatches:
         return False, "; ".join(mismatches)
     return True, ""
@@ -938,6 +996,28 @@ def _birth_from_case_input(case: dict) -> "Bazi":  # noqa: F821
 # 工具
 # ============================================================================
 
+def _split_pillars(pillars_arg) -> list:
+    """把 --pillars 参数归一为 4 个干支（支持空格分隔的多个参数或单个带空格字符串）."""
+    if isinstance(pillars_arg, str):
+        parts = pillars_arg.split()
+    else:
+        parts = []
+        for p in pillars_arg:
+            parts.extend(p.split())
+    if len(parts) != 4:
+        raise ValueError(
+            f"--pillars 需要 4 个干支（年月日时），实际 {len(parts)} 个: {parts!r}"
+        )
+    return parts
+
+
+def _birth_label(birth) -> str:
+    """birth 的人类可读时间标签（四柱输入时 solar 为 None）."""
+    if birth.solar is not None:
+        return birth.solar.strftime("%Y-%m-%d %H:%M")
+    return "四柱输入（公历未知）"
+
+
 def _chart_to_dict(birth) -> dict:
     """Bazi → JSON-friendly chart dict（排盘部分，单 JSON 顶层 chart 结构）.
 
@@ -945,8 +1025,9 @@ def _chart_to_dict(birth) -> dict:
     （与组合模式正确格式样例 /tmp/yangquan_full.json 一致）
     """
     out = {
-        "solar": birth.solar.strftime("%Y-%m-%d %H:%M"),
-        "lunar": f"{birth.lunar_year_cn}年 {birth.lunar_month_cn} {birth.lunar_day_cn}",
+        "solar": birth.solar.strftime("%Y-%m-%d %H:%M") if birth.solar is not None else "四柱输入（公历未知）",
+        "lunar": f"{birth.lunar_year_cn}年 {birth.lunar_month_cn} {birth.lunar_day_cn}"
+        if birth.solar is not None else "四柱输入（无对应农历日期）",
         "shengxiao": birth.shengxiao,
         "jieqi": birth.jieqi or "无",
     }
@@ -1036,6 +1117,12 @@ def main(argv=None) -> int:
     parser.add_argument("--self-test", nargs="?", const="__ALL__", default=None,
                         help="跑 test_cases.json（可选指定 input 字段过滤）")
 
+    # v1.9.0 三输入：公历（默认）/ 农历 / 四柱
+    parser.add_argument("--lunar", nargs="+", metavar="农历",
+                        help="农历输入，如 \"一九九六年 正月廿一 酉时\" 或 \"1996年正月廿一 18:00\"")
+    parser.add_argument("--pillars", nargs="+", metavar="干支",
+                        help="四柱输入，如 丙子 辛卯 丙午 丁酉（直接排盘分析，不反查）")
+
     # 流年 / 流月 / 流时 flag
     parser.add_argument("--liunian", type=int, metavar="YEAR",
                         help="推算 YEAR 年的流年柱（与命局关系）")
@@ -1082,6 +1169,62 @@ def main(argv=None) -> int:
     # 反查是独立命令（不需要 date 参数）
     if args.reverse:
         return cmd_reverse(args)
+
+    # v1.9.0 农历 / 四柱输入：不需要 date 参数，构造 birth 后走同一分析管线
+    if args.lunar is not None or args.pillars is not None:
+        if args.lunar is not None and args.pillars is not None:
+            print("ERROR: --lunar 与 --pillars 不能同时使用", file=sys.stderr)
+            return 2
+        try:
+            if args.lunar is not None:
+                lunar_text = " ".join(args.lunar)
+                birth = build_bazi_from_lunar_str(lunar_text)
+            else:
+                pillars = _split_pillars(args.pillars)
+                birth = build_bazi_from_pillars(*pillars)
+        except ValueError as e:
+            print(f"ERROR: {e}", file=sys.stderr)
+            return 2
+
+        # 组合模式：--json 且 ≥2 个分析模块 → 单个完整 JSON（chart + analysis）
+        combined_out = _combined_json_output(args, birth)
+        if combined_out is not None:
+            print(json.dumps(combined_out, ensure_ascii=False, indent=2))
+            return 0
+
+        rc = 0
+        has_any = False
+        if args.liunian is not None:
+            has_any = True
+            rc |= cmd_liunian(args, birth)
+        if args.liumonth is not None:
+            has_any = True
+            rc |= cmd_liumonth(args, birth)
+        if args.liushi is not None:
+            has_any = True
+            rc |= cmd_liushi(args, birth)
+        if args.zhengge:
+            has_any = True
+            rc |= cmd_zhengge(args, birth)
+        if args.shiju:
+            has_any = True
+            rc |= cmd_shiju(args, birth)
+        if args.shensha:
+            has_any = True
+            rc |= cmd_shensha(args, birth)
+        if args.yongshen:
+            has_any = True
+            rc |= cmd_yongshen(args, birth)
+        if args.dayun:
+            has_any = True
+            rc |= cmd_dayun(args, birth)
+        if getattr(args, "daliuren", False):
+            has_any = True
+            rc |= cmd_daliuren(args, birth)
+
+        if not has_any:
+            return cmd_chart(args, birth)
+        return rc
 
     if not args.date:
         parser.print_help()
