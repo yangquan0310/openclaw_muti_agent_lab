@@ -1175,8 +1175,8 @@ def main(argv=None) -> int:
                         help="v1.8.0 用神融合（正格方向 ∩ 势局精化，神煞不进入）")
     parser.add_argument("--dayun", action="store_true",
                         help="v1.8.0 大运推算（顺/逆排 + 起运岁数 + 10 步）")
-    parser.add_argument("--gender", type=str, choices=["男", "女"], default="男",
-                        help="性别（与 --dayun 配合使用，默认男）")
+    parser.add_argument("--gender", type=str, choices=["男", "女"], default=None,
+                        help="性别（与 --dayun 配合使用；公历/农历输入默认男，四柱输入必须显式指定）")
 
     # v1.8.0 八字反查 flag
     parser.add_argument("--reverse", action="store_true",
@@ -1207,6 +1207,10 @@ def main(argv=None) -> int:
     if args.lunar is not None or args.pillars is not None:
         if args.lunar is not None and args.pillars is not None:
             print("ERROR: --lunar 与 --pillars 不能同时使用", file=sys.stderr)
+            return 2
+        # 四柱输入：大运需要性别，缺省报错（公历/农历输入无公历日期问题，默认男）
+        if args.pillars is not None and args.dayun and args.gender is None:
+            print("ERROR: 四柱输入排大运需要显式指定 --gender 男|女", file=sys.stderr)
             return 2
         try:
             if args.lunar is not None:

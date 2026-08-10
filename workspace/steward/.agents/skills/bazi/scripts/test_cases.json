@@ -952,6 +952,40 @@
     }
   },
   {
+    "case_type": "pillars",
+    "input": "戊寅 己未 甲子 己巳",
+    "description": "v1.9.0 四柱直接排盘（王雅欣 1998-07-16 09:00 同柱）",
+    "expected": {
+      "day_master": "甲",
+      "shengxiao": "虎",
+      "year": {
+        "gan": "戊",
+        "zhi": "寅",
+        "gan_shishen": "偏财",
+        "zhi_shishen": "比肩"
+      },
+      "month": {
+        "gan": "己",
+        "zhi": "未",
+        "gan_shishen": "正财",
+        "zhi_shishen": "正财"
+      },
+      "day": {
+        "gan": "甲",
+        "zhi": "子",
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正印"
+      },
+      "hour": {
+        "gan": "己",
+        "zhi": "巳",
+        "gan_shishen": "正财",
+        "zhi_shishen": "食神"
+      },
+      "jieqi": "未月"
+    }
+  },
+  {
     "case_type": "dayun",
     "input": "1998-07-16 09:00",
     "gender": "女",
