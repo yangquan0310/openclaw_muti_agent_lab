@@ -349,6 +349,8 @@ def _check_case(case: dict) -> tuple[bool, str]:
         return _check_dayun_case(case)
     elif ctype == "reverse":
         return _check_reverse_case(case)
+    elif ctype == "daliuren":
+        return _check_daliuren_case(case)
     else:
         return _check_chart_case(case)
 
@@ -706,6 +708,46 @@ def _check_reverse_case(case: dict) -> tuple[bool, str]:
     min_c = expected.get("min_candidates")
     if min_c is not None and len(actual) < min_c:
         mismatches.append(f"min_candidates: 实际 {len(actual)} < 期望最小 {min_c}")
+
+    if mismatches:
+        return False, "; ".join(mismatches)
+    return True, ""
+
+
+def _check_daliuren_case(case: dict) -> tuple[bool, str]:
+    """v2.0.0 大六壬用例."""
+    from datetime import datetime as _dt
+    from bazi_daliuren import judge_daliuren
+    inp = case.get("input", "")
+    date_part, _, time_part = inp.partition(" ")
+    if not time_part:
+        time_part = "12:00"
+    solar = _dt.strptime(f"{date_part} {time_part}", "%Y-%m-%d %H:%M")
+    actual = judge_daliuren(solar)
+    d = actual.to_dict()
+    expected = case.get("expected", {})
+    mismatches = []
+
+    # yue_jiang
+    if "yue_jiang" in expected and d["yue_jiang"] != expected["yue_jiang"]:
+        mismatches.append(f"yue_jiang: exp={expected['yue_jiang']!r} act={d['yue_jiang']!r}")
+    # hour_zhi
+    if "hour_zhi" in expected and d["hour_zhi"] != expected["hour_zhi"]:
+        mismatches.append(f"hour_zhi: exp={expected['hour_zhi']!r} act={d['hour_zhi']!r}")
+    # month_zhi
+    if "month_zhi" in expected and d["month_zhi"] != expected["month_zhi"]:
+        mismatches.append(f"month_zhi: exp={expected['month_zhi']!r} act={d['month_zhi']!r}")
+    # ke_1_down
+    if "ke_1_down" in expected:
+        ke1_down = d["si_ke"]["ke_1"][1]
+        if ke1_down != expected["ke_1_down"]:
+            mismatches.append(f"ke_1_down: exp={expected['ke_1_down']!r} act={ke1_down!r}")
+    # chu_chuan
+    if "chu_chuan" in expected and d["san_chuan"]["chu_chuan"] != expected["chu_chuan"]:
+        mismatches.append(f"chu_chuan: exp={expected['chu_chuan']!r} act={d['san_chuan']['chu_chuan']!r}")
+    # zongmen
+    if "zongmen" in expected and d["san_chuan"]["zongmen"] != expected["zongmen"]:
+        mismatches.append(f"zongmen: exp={expected['zongmen']!r} act={d['san_chuan']['zongmen']!r}")
 
     if mismatches:
         return False, "; ".join(mismatches)

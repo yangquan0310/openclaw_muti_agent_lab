@@ -377,12 +377,24 @@
     "year": 2025,
     "description": "流年 2025 乙巳：vs 日主丙 = 正印(乙)/比肩(巳本气丙)；vs 命主年柱 丙子：天干相生(乙生丙)、地无",
     "expected": {
-      "target_year_pillar": {"gan": "乙", "zhi": "巳"},
-      "vs_day_master": {"gan_shishen": "正印", "zhi_shishen": "比肩"},
+      "target_year_pillar": {
+        "gan": "乙",
+        "zhi": "巳"
+      },
+      "vs_day_master": {
+        "gan_shishen": "正印",
+        "zhi_shishen": "比肩"
+      },
       "vs_birth_year": {
-        "gan_rels": ["天干相生"],
-        "zhi_rels": ["无特殊关系"],
-        "combined": ["普通"]
+        "gan_rels": [
+          "天干相生"
+        ],
+        "zhi_rels": [
+          "无特殊关系"
+        ],
+        "combined": [
+          "普通"
+        ]
       }
     }
   },
@@ -392,12 +404,24 @@
     "year": 2024,
     "description": "流年 2024 甲辰：vs 日主丙 = 偏印(甲)/食神(辰本气戊)；vs 命主年柱 丙子：地三合水半合(辰子)",
     "expected": {
-      "target_year_pillar": {"gan": "甲", "zhi": "辰"},
-      "vs_day_master": {"gan_shishen": "偏印", "zhi_shishen": "食神"},
+      "target_year_pillar": {
+        "gan": "甲",
+        "zhi": "辰"
+      },
+      "vs_day_master": {
+        "gan_shishen": "偏印",
+        "zhi_shishen": "食神"
+      },
       "vs_birth_year": {
-        "gan_rels": ["天干相生"],
-        "zhi_rels": ["三合水半合"],
-        "combined": ["普通"]
+        "gan_rels": [
+          "天干相生"
+        ],
+        "zhi_rels": [
+          "三合水半合"
+        ],
+        "combined": [
+          "普通"
+        ]
       }
     }
   },
@@ -407,12 +431,22 @@
     "year": 2026,
     "description": "流年 2026 丙午：vs 日主丙 = 比肩(丙)/劫财(午本气丁)；vs 命主年柱 丙子：天比地冲",
     "expected": {
-      "target_year_pillar": {"gan": "丙", "zhi": "午"},
-      "vs_day_master": {"gan_shishen": "比肩", "zhi_shishen": "劫财"},
+      "target_year_pillar": {
+        "gan": "丙",
+        "zhi": "午"
+      },
+      "vs_day_master": {
+        "gan_shishen": "比肩",
+        "zhi_shishen": "劫财"
+      },
       "vs_birth_year": {
         "gan_rels": [],
-        "zhi_rels": ["六冲"],
-        "combined": ["天比地冲"]
+        "zhi_rels": [
+          "六冲"
+        ],
+        "combined": [
+          "天比地冲"
+        ]
       }
     }
   },
@@ -423,12 +457,24 @@
     "month": 6,
     "description": "流月 2025-06 壬午（立夏已过、芒种后=午月）：vs 日主丙 = 七杀(壬)/劫财(午)；vs 命主月柱 辛卯：地六破（决策 4 起 combined 进地支六破）",
     "expected": {
-      "target_month_pillar": {"gan": "壬", "zhi": "午"},
-      "vs_day_master": {"gan_shishen": "七杀", "zhi_shishen": "劫财"},
+      "target_month_pillar": {
+        "gan": "壬",
+        "zhi": "午"
+      },
+      "vs_day_master": {
+        "gan_shishen": "七杀",
+        "zhi_shishen": "劫财"
+      },
       "vs_birth_month": {
-        "gan_rels": ["天干被生"],
-        "zhi_rels": ["六破"],
-        "combined": ["地支六破"]
+        "gan_rels": [
+          "天干被生"
+        ],
+        "zhi_rels": [
+          "六破"
+        ],
+        "combined": [
+          "地支六破"
+        ]
       }
     }
   },
@@ -439,12 +485,25 @@
     "month": 2,
     "description": "流月 2024-02 丙寅（立春后=寅月）：vs 日主丙 = 比肩(丙)/偏印(寅本气甲)；vs 命主月柱 辛卯：天干丙辛合化水、地方合木半会",
     "expected": {
-      "target_month_pillar": {"gan": "丙", "zhi": "寅"},
-      "vs_day_master": {"gan_shishen": "比肩", "zhi_shishen": "偏印"},
+      "target_month_pillar": {
+        "gan": "丙",
+        "zhi": "寅"
+      },
+      "vs_day_master": {
+        "gan_shishen": "比肩",
+        "zhi_shishen": "偏印"
+      },
       "vs_birth_month": {
-        "gan_rels": ["天干合化水", "天干相克"],
-        "zhi_rels": ["方合木半会"],
-        "combined": ["普通"]
+        "gan_rels": [
+          "天干合化水",
+          "天干相克"
+        ],
+        "zhi_rels": [
+          "方合木半会"
+        ],
+        "combined": [
+          "普通"
+        ]
       }
     }
   },
@@ -455,12 +514,24 @@
     "month": 5,
     "description": "流月 2024-05 己巳（立夏后=巳月）：vs 日主丙 = 伤官(己)/比肩(巳)；vs 命主月柱 辛卯：天干相生、地无",
     "expected": {
-      "target_month_pillar": {"gan": "己", "zhi": "巳"},
-      "vs_day_master": {"gan_shishen": "伤官", "zhi_shishen": "比肩"},
+      "target_month_pillar": {
+        "gan": "己",
+        "zhi": "巳"
+      },
+      "vs_day_master": {
+        "gan_shishen": "伤官",
+        "zhi_shishen": "比肩"
+      },
       "vs_birth_month": {
-        "gan_rels": ["天干相生"],
-        "zhi_rels": ["无特殊关系"],
-        "combined": ["普通"]
+        "gan_rels": [
+          "天干相生"
+        ],
+        "zhi_rels": [
+          "无特殊关系"
+        ],
+        "combined": [
+          "普通"
+        ]
       }
     }
   },
@@ -470,12 +541,25 @@
     "target_dt": "2025-06-15 14:30",
     "description": "流时 2025-06-15 14:30 癸未（乙日未时）：vs 日主丙 = 正官(癸)/伤官(未本气己)；vs 命主时柱 甲午：天生地合",
     "expected": {
-      "target_hour_pillar": {"gan": "癸", "zhi": "未"},
-      "vs_day_master": {"gan_shishen": "正官", "zhi_shishen": "伤官"},
+      "target_hour_pillar": {
+        "gan": "癸",
+        "zhi": "未"
+      },
+      "vs_day_master": {
+        "gan_shishen": "正官",
+        "zhi_shishen": "伤官"
+      },
       "vs_birth_hour": {
-        "gan_rels": ["天干相生"],
-        "zhi_rels": ["六合", "方合火半会"],
-        "combined": ["天生地合"]
+        "gan_rels": [
+          "天干相生"
+        ],
+        "zhi_rels": [
+          "六合",
+          "方合火半会"
+        ],
+        "combined": [
+          "天生地合"
+        ]
       }
     }
   },
@@ -485,13 +569,28 @@
     "target_dt": "2025-06-15 23:30",
     "description": "流时 2025-06-15 23:30 戊子（子时换日→日柱变丙辰）：vs 日主丙 = 食神(戊)/正官(子)；vs 命主时柱 甲午：地六冲",
     "expected": {
-      "target_hour_pillar": {"gan": "戊", "zhi": "子"},
-      "target_day_pillar": {"gan": "丙", "zhi": "辰"},
-      "vs_day_master": {"gan_shishen": "食神", "zhi_shishen": "正官"},
+      "target_hour_pillar": {
+        "gan": "戊",
+        "zhi": "子"
+      },
+      "target_day_pillar": {
+        "gan": "丙",
+        "zhi": "辰"
+      },
+      "vs_day_master": {
+        "gan_shishen": "食神",
+        "zhi_shishen": "正官"
+      },
       "vs_birth_hour": {
-        "gan_rels": ["天干被克"],
-        "zhi_rels": ["六冲"],
-        "combined": ["普通"]
+        "gan_rels": [
+          "天干被克"
+        ],
+        "zhi_rels": [
+          "六冲"
+        ],
+        "combined": [
+          "普通"
+        ]
       }
     }
   },
@@ -501,12 +600,24 @@
     "target_dt": "2025-06-15 00:30",
     "description": "流时 2025-06-15 00:30 丙子（早子时）：vs 日主丙 = 比肩(丙)/正官(子)；vs 命主时柱 甲午：天生地冲",
     "expected": {
-      "target_hour_pillar": {"gan": "丙", "zhi": "子"},
-      "vs_day_master": {"gan_shishen": "比肩", "zhi_shishen": "正官"},
+      "target_hour_pillar": {
+        "gan": "丙",
+        "zhi": "子"
+      },
+      "vs_day_master": {
+        "gan_shishen": "比肩",
+        "zhi_shishen": "正官"
+      },
       "vs_birth_hour": {
-        "gan_rels": ["天干被生"],
-        "zhi_rels": ["六冲"],
-        "combined": ["天生地冲"]
+        "gan_rels": [
+          "天干被生"
+        ],
+        "zhi_rels": [
+          "六冲"
+        ],
+        "combined": [
+          "天生地冲"
+        ]
       }
     }
   },
@@ -516,12 +627,24 @@
     "target_dt": "2024-02-04 22:30",
     "description": "流时 2024-02-04 22:30 癸亥（立春前夕，年柱仍为癸卯；亥时）：vs 日主丙 = 正官(癸)/七杀(亥)；vs 命主时柱 甲午：天干相生、地无",
     "expected": {
-      "target_hour_pillar": {"gan": "癸", "zhi": "亥"},
-      "vs_day_master": {"gan_shishen": "正官", "zhi_shishen": "七杀"},
+      "target_hour_pillar": {
+        "gan": "癸",
+        "zhi": "亥"
+      },
+      "vs_day_master": {
+        "gan_shishen": "正官",
+        "zhi_shishen": "七杀"
+      },
       "vs_birth_hour": {
-        "gan_rels": ["天干相生"],
-        "zhi_rels": ["无特殊关系"],
-        "combined": ["普通"]
+        "gan_rels": [
+          "天干相生"
+        ],
+        "zhi_rels": [
+          "无特殊关系"
+        ],
+        "combined": [
+          "普通"
+        ]
       }
     }
   },
@@ -591,7 +714,12 @@
     "input": "1996-03-10 18:00",
     "description": "v1.8.0 神煞 - 杨权 命中 ≥5 个关键神煞（含天乙、羊刃、桃花、阴阳差错）",
     "expected": {
-      "must_contain": ["天乙贵人", "羊刃", "桃花", "阴阳差错"]
+      "must_contain": [
+        "天乙贵人",
+        "羊刃",
+        "桃花",
+        "阴阳差错"
+      ]
     }
   },
   {
@@ -599,7 +727,9 @@
     "input": "1998-07-16 09:00",
     "description": "v1.8.0 神煞 - 王雅欣 命中神煞（含驿马）",
     "expected": {
-      "must_contain": ["驿马"]
+      "must_contain": [
+        "驿马"
+      ]
     }
   },
   {
@@ -618,7 +748,10 @@
     "input": "1998-07-16 09:00",
     "description": "v1.8.0 用神 - 王雅欣 正财格 + 3/4 偏旺 = 火金（兼调候）",
     "expected": {
-      "final_wuxing_contains": ["火", "金"],
+      "final_wuxing_contains": [
+        "火",
+        "金"
+      ],
       "zhengge_direction_contains": "火金",
       "tiaohou": "癸水+庚金"
     }
@@ -653,11 +786,38 @@
     "month": "辛卯",
     "day": "丙午",
     "hour": "丁酉",
-    "year_range": [1995, 1997],
+    "year_range": [
+      1995,
+      1997
+    ],
     "description": "v1.8.0 八字反查 - 杨权 4 柱反查命中 1996-03-10",
     "expected": {
       "must_contain_solar": "1996-03-10",
       "min_candidates": 1
     }
+  },
+  {
+    "case_type": "daliuren",
+    "input": "1996-03-10 17:30",
+    "description": "v2.0.0 大六壬 - 杨权 卯月酉时 → 月将寅、四课三传比用",
+    "expected": {
+      "yue_jiang": "寅",
+      "hour_zhi": "酉",
+      "month_zhi": "卯",
+      "ke_1_down": "亥",
+      "chu_chuan": "午",
+      "zongmen": "比用"
+    }
+  },
+  {
+    "case_type": "daliuren",
+    "input": "1998-07-16 09:30",
+    "description": "v2.0.0 大六壬 - 王雅欣 未月巳时 → 月将午、四课三传比用",
+    "expected": {
+      "yue_jiang": "午",
+      "hour_zhi": "巳",
+      "month_zhi": "未",
+      "chu_chuan": "丑"
+    }
   }
-] 
+]
