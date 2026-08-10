@@ -753,7 +753,7 @@
   {
     "case_type": "yongshen",
     "input": "1998-07-16 09:00",
-    "description": "v1.8.0 用神 - 王雅欣 正财格 + 3/4 偏旺 = 火金（兼调候）",
+    "description": "v1.8.0 用神 - 王雅欣 正财格 + 2/4 中等 = 火金（兼调候）",
     "expected": {
       "final_wuxing_contains": [
         "火",
@@ -949,6 +949,72 @@
         "zhi_shishen": "正财"
       },
       "jieqi": "卯月"
+    }
+  },
+  {
+    "case_type": "dayun",
+    "input": "1998-07-16 09:00",
+    "gender": "女",
+    "description": "v1.8.0 大运 - 王雅欣 戊寅年阳女 → 逆排，起运约 3 岁（数到上一个节小暑）",
+    "expected": {
+      "shunni": "逆排",
+      "qi_yun_age_min": 2,
+      "qi_yun_age_max": 4,
+      "steps_count": 10,
+      "first_step_gan": "戊",
+      "first_step_zhi": "午"
+    }
+  },
+  {
+    "case_type": "zaisha",
+    "description": "v1.8.0 灾煞查表 - 传统口诀口径（申子辰→午、寅午戌→子、巳酉丑→卯、亥卯未→酉）",
+    "expected": {
+      "zaisha_map": {
+        "申": "午",
+        "子": "午",
+        "辰": "午",
+        "寅": "子",
+        "午": "子",
+        "戌": "子",
+        "巳": "卯",
+        "酉": "卯",
+        "丑": "卯",
+        "亥": "酉",
+        "卯": "酉",
+        "未": "酉"
+      }
+    }
+  },
+  {
+    "case_type": "reverse",
+    "year": "戊辰",
+    "month": "己未",
+    "day": "丁亥",
+    "hour": "丙午",
+    "year_range": [
+      1987,
+      1989
+    ],
+    "description": "v1.8.0 反查月末边界 - 1988-07-31（31 日出生）反查命中",
+    "expected": {
+      "must_contain_solar": "1988-07-31",
+      "min_candidates": 1
+    }
+  },
+  {
+    "case_type": "reverse",
+    "year": "庚午",
+    "month": "庚辰",
+    "day": "乙丑",
+    "hour": "壬午",
+    "year_range": [
+      1989,
+      1991
+    ],
+    "description": "v1.8.0 反查月末边界 - 1990-04-30（30 日出生）反查命中",
+    "expected": {
+      "must_contain_solar": "1990-04-30",
+      "min_candidates": 1
     }
   }
 ]

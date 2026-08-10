@@ -238,6 +238,8 @@ def cmd_dayun(args, birth) -> int:
             print(f"起运岁数：{qi_yun_age} 岁")
         print(f"所对节：{result.get('qi_yun_jie','')}")
         print(f"计算说明：{result.get('qi_yun_note','')}")
+        if result.get('qi_yun_rule'):
+            print(f"口径说明：{result.get('qi_yun_rule')}")
         print(f"\n10 步大运：")
         for s in result.get("steps", []):
             print(
@@ -354,6 +356,8 @@ def _check_case(case: dict) -> tuple[bool, str]:
         return _check_shiju_case(case)
     elif ctype == "shensha":
         return _check_shensha_case(case)
+    elif ctype == "zaisha":
+        return _check_zaisha_case(case)
     elif ctype == "yongshen":
         return _check_yongshen_case(case)
     elif ctype == "dayun":
@@ -707,6 +711,35 @@ def _check_yongshen_case(case: dict) -> tuple[bool, str]:
     if zg_contains and zg_contains not in zg_dir:
         mismatches.append(f"zhengge_direction_contains: {zg_contains!r} 未在 {zg_dir!r} 中")
 
+    if mismatches:
+        return False, "; ".join(mismatches)
+    return True, ""
+
+
+def _check_zaisha_case(case: dict) -> tuple[bool, str]:
+    """灾煞查表精确断言：核对 ZAISHA 表与传统口诀一致.
+
+    expected 支持两种形式：
+    - zaisha_map: {日支: 灾煞支, ...} 全表/部分表逐项比对
+    - 缺省时按传统口诀全表校验（申子辰→午、寅午戌→子、巳酉丑→卯、亥卯未→酉）
+    """
+    from bazi import ZAISHA
+
+    expected = case.get("expected", {})
+    zaisha_map = expected.get("zaisha_map")
+    if not zaisha_map:
+        # 传统口诀全表（《渊海子平/三命通会》口径）
+        zaisha_map = {
+            "申": "午", "子": "午", "辰": "午",
+            "寅": "子", "午": "子", "戌": "子",
+            "巳": "卯", "酉": "卯", "丑": "卯",
+            "亥": "酉", "卯": "酉", "未": "酉",
+        }
+    mismatches = []
+    for day_zhi, want in zaisha_map.items():
+        got = ZAISHA.get(day_zhi)
+        if got != want:
+            mismatches.append(f"ZAISHA[{day_zhi}]: exp={want!r} act={got!r}")
     if mismatches:
         return False, "; ".join(mismatches)
     return True, ""

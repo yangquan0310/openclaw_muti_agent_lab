@@ -29,6 +29,7 @@ Author: programmer agent (for 大管家)
 from __future__ import annotations
 
 import re
+import calendar
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional
@@ -1180,10 +1181,11 @@ JIESHA = {"申": "巳", "子": "巳", "辰": "巳",
           "亥": "寅", "卯": "寅", "未": "寅",
           "巳": "申", "酉": "申", "丑": "申"}
 
-ZAISHA = {"申": "午", "子": "午", "辰": "子",
-          "寅": "申", "午": "子", "戌": "午",
-          "亥": "酉", "卯": "酉", "未": "丑",
-          "巳": "丑", "酉": "卯", "丑": "未"}
+# 传统口诀（《渊海子平/三命通会》口径）：申子辰→午、寅午戌→子、巳酉丑→卯、亥卯未→酉
+ZAISHA = {"申": "午", "子": "午", "辰": "午",
+          "寅": "子", "午": "子", "戌": "子",
+          "巳": "卯", "酉": "卯", "丑": "卯",
+          "亥": "酉", "卯": "酉", "未": "酉"}
 
 # D. 年支 → 孤辰 / 寡宿 / 红鸾 / 天喜 / 丧门 / 吊客 / 天罗 / 地网
 GUCHEN_GUASU = {
@@ -1810,35 +1812,19 @@ def shensha(bz: Bazi) -> list:
                 "control": "天罗 + 地网同临 = 牢狱/重大约束",
             })
 
-    # 26. 六甲空亡（按日柱所在旬）
-    day_gan_idx = TIANGAN.index(bz.day.gan)
-    xun_start = (day_gan_idx // 1) * 1  # 不重要
-    # 用日柱推所在旬
-    # 60 甲子 → 6 旬
-    # 找最近的旬首
-    day_gz_60 = bz.day.gan + bz.day.zhi
-    if day_gz_60 in KONGWANG:
-        kongwang_zhi = KONGWANG[day_gz_60]
-    else:
-        # 找最近的旬首
-        from datetime import datetime as _dt
-        gan_idx = TIANGAN.index(bz.day.gan)
-        # 简化：直接枚举
-        kongwang_zhi = None
-        for xun_gan_zhi, kw in KONGWANG.items():
-            # 检查日柱是否在该旬内（连续 10 个干支）
-            xun_gan = xun_gan_zhi[0]
-            xun_zhi = xun_gan_zhi[1]
-            xun_gan_idx = TIANGAN.index(xun_gan)
-            xun_zhi_idx = DIZHI.index(xun_zhi)
-            for i in range(10):
-                g_i = TIANGAN[(xun_gan_idx + i) % 10]
-                z_i = DIZHI[(xun_zhi_idx + i) % 12]
-                if g_i == bz.day.gan and z_i == bz.day.zhi:
-                    kongwang_zhi = kw
-                    break
-            if kongwang_zhi:
+    # 26. 六甲空亡（按日柱所在旬：6 旬首 → 每旬空亡两支，统一走旬遍历）
+    kongwang_zhi = None
+    for xun_gan_zhi, kw in KONGWANG.items():
+        # 检查日柱是否在该旬内（旬首起连续 10 个干支）
+        xun_gan_idx = TIANGAN.index(xun_gan_zhi[0])
+        xun_zhi_idx = DIZHI.index(xun_gan_zhi[1])
+        for i in range(10):
+            if (TIANGAN[(xun_gan_idx + i) % 10] == bz.day.gan and
+                    DIZHI[(xun_zhi_idx + i) % 12] == bz.day.zhi):
+                kongwang_zhi = kw
                 break
+        if kongwang_zhi:
+            break
 
     if kongwang_zhi:
         for pos_name, zhi, p in [
@@ -2089,11 +2075,9 @@ def _find_nearest_jie(bz: Bazi, direction: str) -> tuple:
                     return (jq_name, jt, (jt - birth).days)
         return (None, None, 0)
     else:
-        # 找出生日之前的上一个节
+        # 找出生日之前的上一个节（逆排：上一个节恰恰就是本月起点节，不能跳过）
         for year in [birth.year, birth.year - 1]:
             for jq_name in reversed(JIE_NAMES):
-                if JIE_TO_ZHI[jq_name] == month_zhi:
-                    continue
                 jt = _get_jieqi_datetime(year, jq_name)
                 if jt and jt < birth:
                     return (jq_name, jt, (birth - jt).days)
@@ -2162,10 +2146,13 @@ def dayun(bz: Bazi, gender: str = "男") -> dict:
             f"出生日 → {'下一个' if forward else '上一个'}节"
             f"{jie_name or '（未找到）'} 的天数{days_diff} ÷ 3 = {qi_yun_age} 岁起运"
         )
+        # 简化口径：起运岁数按 3 天=1 岁取整（1 天≈4 个月、1 时辰≈10 天）
+        qi_yun_rule = "起运岁数按 3 天=1 岁取整（1 天≈4 个月、1 时辰≈10 天）"
     else:
         # 四柱直接输入：无公历日期，无法精确起运（干支大运仍可排）
         jie_name, qi_yun_age = "", None
         qi_yun_note = "四柱输入无公历日期，起运岁数未知（可用 --reverse 反查日期）"
+        qi_yun_rule = ""
 
     # 10 步大运（从月柱顺/逆推）
     month_gan = bz.month.gan
@@ -2197,6 +2184,7 @@ def dayun(bz: Bazi, gender: str = "男") -> dict:
         "qi_yun_age": qi_yun_age,
         "qi_yun_jie": jie_name or "",
         "qi_yun_note": qi_yun_note,
+        "qi_yun_rule": qi_yun_rule,
         "steps": steps,
     }
 
@@ -2292,8 +2280,9 @@ def reverse_lookup(year_gz: str, month_gz: str, day_gz: str, hour_gz: str,
                 continue
 
             # Step 3: 月柱匹配 → 遍历该月日期找日柱
-            # 每月 1-28 日（保守范围，避免月末跨月）
-            for d in range(1, 29):
+            # 按该月实际天数遍历（1-月末），避免漏掉 29/30/31 日出生
+            last_day = calendar.monthrange(y, m)[1]
+            for d in range(1, last_day + 1):
                 try:
                     l_d = cnlunar.Lunar(datetime(y, m, d, 12, 0))
                 except Exception:
