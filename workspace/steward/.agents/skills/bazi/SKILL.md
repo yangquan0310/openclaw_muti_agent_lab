@@ -482,6 +482,14 @@ bazi/
 │   ├── bazi_relations.py   # 干支关系表（六合/六冲/三合/天干合等）—— 与 bazi.py 解耦
 │   └── test_cases.json     # 45 个标准用例（13 基础 + 10 流年/月/时 + 2 大六壬 + 17 v1.8.0 模块 + 3 v1.9.0 农历/四柱）
 └── references/
+    ├── bazi-zhengge.md     # 正格体系（八格 + 透干 + 用神方向）
+    ├── bazi-shiju.md       # 势局体系（旺衰 + 调候 + 用神精化）
+    ├── bazi-liutong.md     # 流通分析（十神通堵检查）🆕 v1.0.0
+    ├── bazi-shensha.md     # 神煞体系（28 神煞 + 一体两面 + 五维映射）
+    ├── bazi-yongshen.md    # 用神判定子流程参考
+    ├── bazi-hehun.md       # 合盘 / 合婚 / 合伙匹配 / 亲子合盘
+    ├── bazi-paipan.md      # 解读流程规范（5+1 步）
+    ├── bazi-style.md       # 输出风格（含现代汉语翻译对照表）
     └── bazi-rules.md       # 八字规则速查（节气表、五行、十神）+ 流年关系表
 ```
 
