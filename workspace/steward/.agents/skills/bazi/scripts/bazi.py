@@ -511,6 +511,1790 @@ def liushi_text(birth: Bazi, target_dt: datetime) -> str:
 
 
 # ============================================================================
+# v1.8.0 模块 1：正格（zhengge）—— 月令定格 + 透干 + 用神方向
+# ============================================================================
+#
+# 设计依据：`references/bazi-zhengge.md` v1.0.1
+# 核心问题：月令是否透干成标准八格？用神方向是什么？
+#
+# 算法概要：
+# 1. 月支查表 → 月令本气（按主流子平术）
+# 2. 月令本气 vs 日主 → 十神
+# 3. 月令本气是否在天干透出？
+#    - 是 → 标准八格（按十神命名）
+#    - 否 → 变格 / 走势局（返回 ge_type=null + 透干位）
+# 4. 喜忌按 `bazi-zhengge.md` §三.1 总则查表
+# 5. 破格 / 救应 自动检测（基于四柱关系）
+
+# 八格喜忌总则（按 bazi-zhengge.md §三.1）
+# 键：格名（与 ge_type 返回一致）
+# 值：(yongshen_direction 五行串, xiangshen, jishen, choushen, po_ge_check)
+ZHENGGE_XIJI = {
+    "正官格": {
+        "yongshen_dir": "金水（财+官）",
+        "yongshen_wuxing": "金水",
+        "xiangshen": "财星",
+        "jishen": "伤官",
+        "choushen": "食神",
+        "po_ge_check": "伤官见官",
+        "po_ge_target_ten": ["伤官"],
+    },
+    "七杀格": {
+        "yongshen_dir": "火土（食神制杀）",
+        "yongshen_wuxing": "火土",
+        "xiangshen": "印星",
+        "jishen": "财星",
+        "choushen": "官杀混杂",
+        "po_ge_check": "财生杀旺",
+        "po_ge_target_ten": ["偏财", "正财"],
+    },
+    "正印格": {
+        "yongshen_dir": "金水（财+官）",
+        "yongshen_wuxing": "金水",
+        "xiangshen": "财星",
+        "jishen": "木火",
+        "choushen": "水",
+        "po_ge_check": "印太旺无制",
+        "po_ge_target_ten": ["比肩", "劫财"],
+    },
+    "偏印格": {
+        "yongshen_dir": "金水（财制枭）",
+        "yongshen_wuxing": "金水",
+        "xiangshen": "财星",
+        "jishen": "食神",
+        "choushen": "枭神夺食",
+        "po_ge_check": "偏印夺食",
+        "po_ge_target_ten": ["食神"],
+    },
+    "正财格": {
+        "yongshen_dir": "火金（食伤+官）",
+        "yongshen_wuxing": "火金",
+        "xiangshen": "官杀、食伤",
+        "jishen": "比劫",
+        "choushen": "劫财",
+        "po_ge_check": "比劫夺财",
+        "po_ge_target_ten": ["比肩", "劫财"],
+    },
+    "偏财格": {
+        "yongshen_dir": "火土金（食伤生财）",
+        "yongshen_wuxing": "火土金",
+        "xiangshen": "食伤、正财",
+        "jishen": "比劫",
+        "choushen": "比劫",
+        "po_ge_check": "比劫夺财",
+        "po_ge_target_ten": ["比肩", "劫财"],
+    },
+    "食神格": {
+        "yongshen_dir": "金水（财泄食）",
+        "yongshen_wuxing": "金水",
+        "xiangshen": "官杀",
+        "jishen": "偏印",
+        "choushen": "枭神夺食",
+        "po_ge_check": "枭神夺食",
+        "po_ge_target_ten": ["偏印"],
+    },
+    "伤官格": {
+        "yongshen_dir": "金水木（财+正印）",
+        "yongshen_wuxing": "金水木",
+        "xiangshen": "财、正印",
+        "jishen": "官杀",
+        "choushen": "伤官见官",
+        "po_ge_check": "伤官见官",
+        "po_ge_target_ten": ["正官", "七杀"],
+    },
+    # 特殊格：建禄/羊刃（主流承认）
+    "建禄格": {
+        "yongshen_dir": "财官（克泄）",
+        "yongshen_wuxing": "金水",
+        "xiangshen": "财、官",
+        "jishen": "比劫",
+        "choushen": "印星",
+        "po_ge_check": "比劫太旺",
+        "po_ge_target_ten": ["比肩"],
+    },
+    "羊刃格": {
+        "yongshen_dir": "官杀（制刃）",
+        "yongshen_wuxing": "金水",
+        "xiangshen": "官杀",
+        "jishen": "财星",
+        "choushen": "印星",
+        "po_ge_check": "羊刃倒戈",
+        "po_ge_target_ten": ["偏印"],
+    },
+}
+
+# 月支 → 本气（用于月令查表）
+YUELING_BENQI = {
+    "子": "癸", "丑": "己", "寅": "甲", "卯": "乙",
+    "辰": "戊", "巳": "丙", "午": "丁", "未": "己",
+    "申": "庚", "酉": "辛", "戌": "戊", "亥": "壬",
+}
+
+# 月支 → 中气（用于变格判定）
+YUELING_ZHONGQI = {
+    "丑": "癸", "寅": "丙", "辰": "乙", "巳": "戊",
+    "午": "己", "未": "丁", "申": "壬", "戌": "辛", "亥": "甲",
+}
+
+# 月支 → 余气（用于小变格判定）
+YUELING_YUQI = {
+    "丑": "辛", "寅": "戊", "辰": "癸", "巳": "庚",
+    "未": "乙", "申": "戊", "戌": "丁",
+}
+
+# 十神 → 格名（反向）
+SHISHEN_TO_GE = {
+    "正官": "正官格",
+    "七杀": "七杀格",
+    "正印": "正印格",
+    "偏印": "偏印格",
+    "正财": "正财格",
+    "偏财": "偏财格",
+    "食神": "食神格",
+    "伤官": "伤官格",
+    "比肩": "建禄格",   # 特殊
+    "劫财": "羊刃格",   # 特殊
+}
+
+# 天干集合
+ALL_GANS = set(TIANGAN)
+
+
+def _zhengge_check_po_ge(bz: Bazi, ge_type: str) -> str | None:
+    """检查破格.
+
+    按 `bazi-zhengge.md` §四.2 破格类型 + 喜忌总则：
+    - 命中是否出现 po_ge_target_ten 的十神？
+    - 若是，则可能破格（仅标注，不下死结论——给大管家整合层判断）
+    """
+    if ge_type not in ZHENGGE_XIJI:
+        return None
+    cfg = ZHENGGE_XIJI[ge_type]
+    targets = cfg.get("po_ge_target_ten", [])
+
+    for p in bz.four_pillars():
+        if p.gan_shishen in targets:
+            return f"命中{p.gan}{p.zhi}={p.gan_shishen} → {cfg['po_ge_check']}"
+    return None
+
+
+def _zhengge_check_jiu_ying(bz: Bazi, ge_type: str) -> str | None:
+    """检查救应.
+
+    简化的救应检测：
+    - 命中是否有 xiangshen 中提到的十神？
+    - 若是 → 标注救应成立
+    """
+    if ge_type not in ZHENGGE_XIJI:
+        return None
+    cfg = ZHENGGE_XIJI[ge_type]
+
+    # 把 xiangshen 字符串解析成十神列表（中文拆词）
+    xiangshen_text = cfg["xiangshen"]
+    # 简单拆解：印星 / 财星 / 食伤 / 官杀 / 比劫
+    found_any = []
+    for keyword, label in [
+        ("印星", "印星"),
+        ("财", "财星"),
+        ("官杀", "官杀"),
+        ("食伤", "食伤"),
+        ("比劫", "比劫"),
+        ("正印", "正印"),
+    ]:
+        if keyword in xiangshen_text:
+            found_any.append(label)
+
+    for p in bz.four_pillars():
+        for label in found_any:
+            if label == "印星" and p.gan_shishen in ("正印", "偏印"):
+                return f"命中{p.gan}{p.zhi}={p.gan_shishen} → {label}护卫用神"
+            if label == "财星" and p.gan_shishen in ("正财", "偏财"):
+                return f"命中{p.gan}{p.zhi}={p.gan_shishen} → {label}生扶格局"
+            if label == "官杀" and p.gan_shishen in ("正官", "七杀"):
+                return f"命中{p.gan}{p.zhi}={p.gan_shishen} → {label}护格局"
+            if label == "食伤" and p.gan_shishen in ("食神", "伤官"):
+                return f"命中{p.gan}{p.zhi}={p.gan_shishen} → {label}助格局"
+            if label == "比劫" and p.gan_shishen in ("比肩", "劫财"):
+                return f"命中{p.gan}{p.zhi}={p.gan_shishen} → {label}制忌神"
+
+    return None
+
+
+def zhengge(bz: Bazi) -> dict:
+    """正格判定（月令定格 + 透干 + 用神方向 + 破格/救应检测）.
+
+    返回 dict：
+    {
+        "ge_type": str | None,         # 标准八格名 or "建禄/羊刃" 特殊 or None
+        "ge_source": str,              # 一句话格局来源描述
+        "yongshen_direction": str,     # 用神方向（中文）
+        "yongshen_wuxing": str,        # 用神五行串
+        "xiangshen": str,              # 相神
+        "jishen": str,                 # 忌神
+        "choushen": str,               # 仇神
+        "po_ge": str | None,           # 破格描述（如有）
+        "jiu_ying": str | None,        # 救应描述（如有）
+        "tou_gan": str | None,         # 透干天干位（年/月/日/时）
+        "tou_gan_pos": str | None,     # 透干天干具体字
+        "month_benqi": str,            # 月令本气
+        "month_benqi_shishen": str,    # 月令本气 vs 日主的十神
+        "shensha_in_ge": list,         # 与格局相关的辅助十神信息
+    }
+
+    算法依据：`references/bazi-zhengge.md` v1.0.1
+    流派口径：**主流口径（按月令当令）**—— 月支本气 vs 日主 = 什么十神 = 什么格。
+    严格口径（透干）为备选项，在 ge_source 中标注。
+    """
+    day_master = bz.day_master
+    month_zhi = bz.month.zhi
+    month_benqi = YUELING_BENQI[month_zhi]
+    month_ss = ten_god(day_master, month_benqi)
+
+    # 检查四柱天干，看月令本气是否透出
+    four_gans = [
+        ("年", bz.year.gan, bz.year),
+        ("月", bz.month.gan, bz.month),
+        ("日", bz.day.gan, bz.day),
+        ("时", bz.hour.gan, bz.hour),
+    ]
+
+    tou_gan = None
+    tou_gan_pos = None
+    tou_gan_pillar_name = None
+
+    for pos_name, gan, p in four_gans:
+        if gan == month_benqi:
+            tou_gan = pos_name
+            tou_gan_pos = gan
+            tou_gan_pillar_name = f"{pos_name}干"
+            break
+
+    # **主流口径**：ge_type = 月令本气 vs 日主的十神（即使未透干也算正格）
+    ge_type = SHISHEN_TO_GE.get(month_ss)
+
+    # 如果没找到 ge_type（理论上不会，因为 SHISHEN_TO_GE 覆盖了所有十神）
+    if ge_type is None:
+        return {
+            "ge_type": None,
+            "ge_source": f"月支{month_zhi}本气{month_benqi}（{month_ss}）→ 未知格局",
+            "yongshen_direction": "（待人工判定）",
+            "yongshen_wuxing": "",
+            "xiangshen": "",
+            "jishen": "",
+            "choushen": "",
+            "po_ge": None,
+            "jiu_ying": None,
+            "tou_gan": None,
+            "tou_gan_pos": None,
+            "month_benqi": month_benqi,
+            "month_benqi_shishen": month_ss,
+            "shensha_in_ge": [],
+        }
+
+    # 查喜忌总则
+    cfg = ZHENGGE_XIJI.get(ge_type, {
+        "yongshen_dir": "（未知格局）",
+        "yongshen_wuxing": "",
+        "xiangshen": "",
+        "jishen": "",
+        "choushen": "",
+        "po_ge_check": "",
+        "po_ge_target_ten": [],
+    })
+
+    po_ge = _zhengge_check_po_ge(bz, ge_type)
+    jiu_ying = _zhengge_check_jiu_ying(bz, ge_type)
+
+    # ge_source 描述
+    if tou_gan:
+        ge_source = (
+            f"月支{month_zhi}本气{month_benqi}（{month_ss}）→ "
+            f"{tou_gan_pillar_name}透干 → {ge_type}"
+        )
+    else:
+        ge_source = (
+            f"月支{month_zhi}本气{month_benqi}（{month_ss}）→ "
+            f"月令当令（主流口径） → {ge_type}（本气未透干）"
+        )
+
+    return {
+        "ge_type": ge_type,
+        "ge_source": ge_source,
+        "yongshen_direction": cfg["yongshen_dir"],
+        "yongshen_wuxing": cfg["yongshen_wuxing"],
+        "xiangshen": cfg["xiangshen"],
+        "jishen": cfg["jishen"],
+        "choushen": cfg["choushen"],
+        "po_ge": po_ge,
+        "jiu_ying": jiu_ying,
+        "tou_gan": tou_gan,
+        "tou_gan_pos": tou_gan_pos,
+        "month_benqi": month_benqi,
+        "month_benqi_shishen": month_ss,
+        "shensha_in_ge": [],
+    }
+
+
+# ============================================================================
+# v1.8.0 模块 2：势局（shiju）—— 旺衰四维度 + 调候 + 流通
+# ============================================================================
+#
+# 设计依据：`references/bazi-shiju.md` v1.0.0
+# 核心问题：日主旺衰？调候用神？五行流通如何？
+
+# 调候速查表（按 bazi-shiju.md §五.2）
+# 键：日主天干，值：(春, 夏, 秋, 冬) 的调候用神串
+TIAOHOU_TABLE = {
+    "甲": ("庚金+壬水", "癸水+庚金", "丁火+壬水", "庚金+丁火+戊土"),
+    "乙": ("丙火+癸水", "癸水+丙火", "丁火+丙火", "丙火+戊土"),
+    "丙": ("壬水", "壬水+庚金", "壬水+戊土", "壬水+甲木"),
+    "丁": ("甲木+庚金", "壬水+庚金", "辛亥+甲木", "甲木+庚金"),
+    "戊": ("丙火+乙木", "壬水+甲木", "丙火+甲木+癸水", "丙火+甲木"),
+    "己": ("丙火+甲木+癸水", "壬水+丙火+甲木", "丙火+甲木+癸水", "丙火+甲木+戊土"),
+    "庚": ("壬水+丁火", "壬水+戊土", "丁火+壬水", "丁火+甲木"),
+    "辛": ("壬水+乙木", "壬水+庚金", "丁火+壬水", "壬水+戊土+丙火"),
+    "壬": ("庚金+丙火", "壬水+辛金", "丁火+甲木", "丙火+甲木+戊土"),
+    "癸": ("庚金+辛金", "丙火+庚金", "丁火+甲木+戊土", "丙火+辛金"),
+}
+
+# 月支 → 季节
+MONTH_TO_SEASON = {
+    "寅": "春", "卯": "春", "辰": "春",
+    "巳": "夏", "午": "夏", "未": "夏",
+    "申": "秋", "酉": "秋", "戌": "秋",
+    "亥": "冬", "子": "冬", "丑": "冬",
+}
+
+# 日干 → 禄位（用于得地判定）
+LU_POS = {
+    "甲": "寅", "乙": "卯", "丙": "巳", "丁": "午",
+    "戊": "巳", "己": "午", "庚": "申", "辛": "酉",
+    "壬": "亥", "癸": "子",
+}
+
+# 旺衰分级表（按 bazi-shiju.md §三.2）
+# 总分 → 等级
+WANGSHUAI_GRADE = [
+    (4, "极旺（考虑从强）"),
+    (3, "旺"),
+    (2, "中等"),
+    (1, "弱"),
+    (0, "极弱（考虑从弱）"),
+]
+
+
+def _shiju_check_de_ling(bz: Bazi) -> bool:
+    """得令：月支五行 = 日主五行 OR 月支五行生日主."""
+    me = GAN_WUXING[bz.day_master]
+    month_zhi_wx = ZHI_WUXING[bz.month.zhi]
+    return month_zhi_wx == me or SHENG_ME[me] == month_zhi_wx
+
+
+def _shiju_check_de_di(bz: Bazi) -> bool:
+    """得地：日支五行 = 日主五行 OR 日支 = 日主禄位."""
+    me = GAN_WUXING[bz.day_master]
+    day_zhi_wx = ZHI_WUXING[bz.day.zhi]
+    if day_zhi_wx == me:
+        return True
+    return bz.day.zhi == LU_POS[bz.day_master]
+
+
+def _shiju_check_de_sheng(bz: Bazi) -> bool:
+    """得生：命中是否有印星（天干透出 OR 地支藏干有根）."""
+    me = bz.day_master
+    # 检查天干
+    for p in [bz.year, bz.month, bz.hour]:
+        ss = p.gan_shishen
+        if ss in ("正印", "偏印"):
+            return True
+    # 检查地支（本气）
+    for p in [bz.year, bz.month, bz.day, bz.hour]:
+        for cg in p.canggan:
+            cg_ss = ten_god(me, cg)
+            if cg_ss in ("正印", "偏印"):
+                return True
+    return False
+
+
+def _shiju_check_de_zhu(bz: Bazi) -> bool:
+    """得助：命中是否有比劫（天干透出 OR 地支藏干有根）."""
+    me = bz.day_master
+    for p in [bz.year, bz.month, bz.hour]:
+        if p.gan_shishen in ("比肩", "劫财"):
+            return True
+    for p in [bz.year, bz.month, bz.day, bz.hour]:
+        for cg in p.canggan:
+            cg_ss = ten_god(me, cg)
+            if cg_ss in ("比肩", "劫财"):
+                return True
+    return False
+
+
+def shiju(bz: Bazi) -> dict:
+    """势局分析（旺衰四维度 + 调候 + 流通 + 用神精化）.
+
+    返回 dict：
+    {
+        "wangshuai": str,         # 旺衰等级
+        "wangshuai_score": int,   # 4 维度得分
+        "de_ling": bool,
+        "de_di": bool,
+        "de_sheng": bool,
+        "de_zhu": bool,
+        "tiaohou": str,           # 调候用神
+        "liutong": str,           # 流通描述
+        "yongshen_jinhua": str,   # 精化用神
+        "zhuan_ge": str | None,   # 特殊格局（从强/从弱/化气等）
+    }
+
+    算法依据：`references/bazi-shiju.md` v1.0.0
+    """
+    de_ling = _shiju_check_de_ling(bz)
+    de_di = _shiju_check_de_di(bz)
+    de_sheng = _shiju_check_de_sheng(bz)
+    de_zhu = _shiju_check_de_zhu(bz)
+
+    score = sum([de_ling, de_di, de_sheng, de_zhu])
+    grade = next((g for s, g in WANGSHUAI_GRADE if score >= s), "未知")
+
+    # 调候查表
+    season = MONTH_TO_SEASON[bz.month.zhi]
+    tiaohou_raw = TIAOHOU_TABLE[bz.day_master]
+    season_idx = {"春": 0, "夏": 1, "秋": 2, "冬": 3}[season]
+    tiaohou = tiaohou_raw[season_idx]
+
+    # 精化用神（基于旺衰）
+    if score >= 3:
+        jinhua = "克泄（食伤/财星/官杀）"
+    elif score == 2:
+        jinhua = "看具体配合（调候优先）"
+    elif score == 1:
+        jinhua = "生扶（印星/比劫）"
+    else:
+        jinhua = "财+官杀（从弱格考虑）"
+
+    # 流通分析（简化版）
+    liutong_lines = []
+    if de_ling and de_di and de_sheng and de_zhu:
+        liutong_lines.append("日主极旺（4/4 维度），身极强")
+    elif de_ling and de_di:
+        liutong_lines.append("月令+日支双重助力")
+    elif de_ling and not de_di:
+        liutong_lines.append("月令助力但日支不助")
+
+    # 检测印太旺（流通阻滞点 1）
+    if bz.month.gan_shishen in ("正印", "偏印"):
+        liutong_lines.append(f"月干{bz.month.gan}={bz.month.gan_shishen} → 可能印旺，需财制印")
+    if bz.hour.gan_shishen in ("正印", "偏印"):
+        liutong_lines.append(f"时干{bz.hour.gan}={bz.hour.gan_shishen} → 印星再助，需调候制化")
+
+    # 检测比劫旺（流通阻滞点 2）
+    bijie_count = sum(
+        1 for p in [bz.year, bz.month, bz.hour] if p.gan_shishen in ("比肩", "劫财")
+    )
+    if bijie_count >= 2:
+        liutong_lines.append(f"天干比劫{bijie_count}个 → 比劫旺，需官杀制")
+
+    liutong = "；".join(liutong_lines) if liutong_lines else "五行流通平稳"
+
+    # 特殊格局检测（简化）
+    zhuan_ge = None
+    if score == 4:
+        # 检查是否有财官食伤（任一克泄十神）
+        has_ke_xie = any(
+            p.gan_shishen in ("正官", "七杀", "正财", "偏财", "食神", "伤官")
+            for p in [bz.year, bz.month, bz.hour]
+        )
+        if not has_ke_xie:
+            zhuan_ge = "从强格（极旺无比劫印星以外十神）"
+    elif score == 0:
+        has_yin_bijie = any(
+            p.gan_shishen in ("正印", "偏印", "比肩", "劫财")
+            for p in [bz.year, bz.month, bz.hour]
+        )
+        if not has_yin_bijie:
+            zhuan_ge = "从弱格（极弱无印星比劫）"
+
+    return {
+        "wangshuai": f"{score}/4 {grade}",
+        "wangshuai_score": score,
+        "de_ling": de_ling,
+        "de_di": de_di,
+        "de_sheng": de_sheng,
+        "de_zhu": de_zhu,
+        "tiaohou": tiaohou,
+        "liutong": liutong,
+        "yongshen_jinhua": jinhua,
+        "zhuan_ge": zhuan_ge,
+    }
+
+
+# ============================================================================
+# v1.8.0 模块 3：神煞（shensha）—— 28 神煞一体两面
+# ============================================================================
+#
+# 设计依据：`references/bazi-shensha.md` v2.1.1
+# 核心问题：命中 28 神煞有哪些？阳面 + 阴面 解读
+
+# 神煞查表（按 bazi-shensha.md §3 速查矩阵）
+
+# A. 贵人星类（按日干）
+TIANYI_GUIREN = {
+    "甲": ["丑", "未"], "乙": ["子", "申"], "丙": ["亥", "酉"], "丁": ["亥", "酉"],
+    "戊": ["丑", "未"], "己": ["子", "申"], "庚": ["丑", "未"], "辛": ["午", "寅"],
+    "壬": ["巳", "卯"], "癸": ["巳", "卯"],
+}
+
+WENCHANG_GUIREN = {
+    "甲": "亥", "乙": "午", "丙": "申", "丁": "酉", "戊": "申",
+    "己": "酉", "庚": "子", "辛": "寅", "壬": "卯", "癸": "寅",
+}
+
+TAIJI_GUIREN = {
+    "甲": ["子", "午"], "乙": ["子", "午"], "丙": ["卯", "酉"], "丁": ["卯", "酉"],
+    "戊": ["辰", "戌", "丑", "未"], "己": ["辰", "戌", "丑", "未"],
+    "庚": ["寅", "亥"], "辛": ["寅", "亥"], "壬": ["巳", "申"], "癸": ["巳", "申"],
+}
+
+GUOYIN_GUIREN = {
+    "甲": "戌", "乙": "亥", "丙": "丑", "丁": "寅", "戊": "辰",
+    "己": "巳", "庚": "未", "辛": "申", "壬": "午", "癸": "酉",
+}
+
+# B. 月支 → 天德 / 月德
+TIANDE_GUIREN = {
+    "寅": "丁", "午": "丁", "戌": "丁",
+    "巳": "癸", "酉": "癸", "丑": "癸",
+    "申": "壬", "子": "壬", "辰": "壬",
+    "亥": "甲", "卯": "甲", "未": "甲",
+}
+
+YUEDE_GUIREN = {
+    "寅": "丙", "午": "丙", "戌": "丙",
+    "巳": "庚", "酉": "庚", "丑": "庚",
+    "申": "壬", "子": "壬", "辰": "壬",
+    "亥": "甲", "卯": "甲", "未": "甲",
+}
+
+# C. 日支 → 驿马 / 桃花 / 华盖 / 将星 / 亡神 / 劫煞 / 灾煞
+# 简化记忆：日支所在三合局
+# 申子辰 → 马寅 / 桃酉 / 盖辰 / 将子 / 亡亥 / 劫巳 / 灾午
+# 寅午戌 → 马申 / 桃卯 / 盖戌 / 将午 / 亡巳 / 劫亥 / 灾子
+# 亥卯未 → 马巳 / 桃子 / 盖未 / 将卯 / 亡申 / 劫寅 / 灾酉
+# 巳酉丑 → 马亥 / 桃午 / 盖丑 / 将酉 / 亡寅 / 劫申 / 灾未
+YIMA = {"申": "寅", "子": "寅", "辰": "寅",
+        "寅": "申", "午": "申", "戌": "申",
+        "亥": "巳", "卯": "巳", "未": "巳",
+        "巳": "亥", "酉": "亥", "丑": "亥"}
+
+TAOHUA = {"申": "酉", "子": "酉", "辰": "酉",
+          "寅": "卯", "午": "卯", "戌": "卯",
+          "亥": "子", "卯": "子", "未": "子",
+          "巳": "午", "酉": "午", "丑": "午"}
+
+HUAGAI = {"申": "辰", "子": "辰", "辰": "辰",
+          "寅": "戌", "午": "戌", "戌": "戌",
+          "亥": "未", "卯": "未", "未": "未",
+          "巳": "丑", "酉": "丑", "丑": "丑"}
+
+JIANGXING = {"申": "子", "子": "子", "辰": "子",
+             "寅": "午", "午": "午", "戌": "午",
+             "亥": "卯", "卯": "卯", "未": "卯",
+             "巳": "酉", "酉": "酉", "丑": "酉"}
+
+WANGSHEN = {"申": "亥", "子": "亥", "辰": "亥",
+            "寅": "巳", "午": "巳", "戌": "巳",
+            "亥": "申", "卯": "申", "未": "申",
+            "巳": "寅", "酉": "寅", "丑": "寅"}
+
+JIESHA = {"申": "巳", "子": "巳", "辰": "巳",
+          "寅": "亥", "午": "亥", "戌": "亥",
+          "亥": "寅", "卯": "寅", "未": "寅",
+          "巳": "申", "酉": "申", "丑": "申"}
+
+ZAISHA = {"申": "午", "子": "午", "辰": "子",
+          "寅": "申", "午": "子", "戌": "午",
+          "亥": "酉", "卯": "酉", "未": "丑",
+          "巳": "丑", "酉": "卯", "丑": "未"}
+
+# D. 年支 → 孤辰 / 寡宿 / 红鸾 / 天喜 / 丧门 / 吊客 / 天罗 / 地网
+GUCHEN_GUASU = {
+    "寅": ("寅", "辰"), "卯": ("寅", "辰"), "辰": ("寅", "辰"),
+    "巳": ("申", "未"), "午": ("申", "未"), "未": ("申", "未"),
+    "申": ("亥", "戌"), "酉": ("亥", "戌"), "戌": ("亥", "戌"),
+    "亥": ("巳", "子"), "子": ("巳", "子"), "丑": ("巳", "子"),
+}
+
+HONGLUAN = {
+    "子": "卯", "丑": "寅", "寅": "丑", "卯": "子",
+    "辰": "亥", "巳": "戌", "午": "酉", "未": "申",
+    "申": "未", "酉": "午", "戌": "巳", "亥": "辰",
+}
+
+# 天喜 = 红鸾对冲
+def _tianxi(zhi: str) -> str:
+    """天喜 = 红鸾对冲."""
+    idx = DIZHI.index(zhi)
+    return DIZHI[(idx + 6) % 12]
+
+
+SANGSMEN = {
+    "子": "寅", "丑": "卯", "寅": "辰", "卯": "巳",
+    "辰": "午", "巳": "未", "午": "申", "未": "酉",
+    "申": "戌", "酉": "亥", "戌": "子", "亥": "丑",
+}
+
+# 吊客 = 丧门对冲
+def _diaoke(zhi: str) -> str:
+    """吊客 = 丧门对冲."""
+    idx = DIZHI.index(zhi)
+    return DIZHI[(idx + 6) % 12]
+
+
+TIANLUO_DIWANG = {"辰": "天罗", "戌": "天罗", "巳": "地网", "亥": "地网"}
+
+# E. 日干 → 羊刃（禄前一位）
+YANGREN = {
+    "甲": "卯", "乙": "辰", "丙": "午", "丁": "未",
+    "戊": "午", "己": "未", "庚": "酉", "辛": "戌",
+    "壬": "子", "癸": "丑",
+}
+
+# F. 日柱 → 金神 / 阴阳差错
+JINSHEN_DAYS = {"乙丑", "己巳", "癸酉"}
+
+YINYANG_CUOCUO = {
+    "丙子", "丁丑", "戊寅", "辛卯", "壬辰", "癸巳",
+    "丙午", "丁未", "戊申", "辛酉", "壬戌", "癸亥",
+}
+
+# G. 日柱所在旬 → 空亡（按 bazi-shensha.md §3.6）
+KONGWANG = {
+    "甲子": ["戌", "亥"], "甲戌": ["申", "酉"], "甲申": ["午", "未"],
+    "甲午": ["辰", "巳"], "甲辰": ["寅", "卯"], "甲寅": ["子", "丑"],
+}
+
+# H. 月支 + 日柱 → 天赦日
+TIANSHE = {
+    "寅": "戊寅", "卯": "戊寅", "辰": "戊寅",
+    "巳": "甲午", "午": "甲午", "未": "甲午",
+    "申": "戊申", "酉": "戊申", "戌": "戊申",
+    "亥": "甲子", "子": "甲子", "丑": "甲子",
+}
+
+# I. 月支 → 月破日（对冲）
+YUEPO = {
+    "寅": "申", "卯": "酉", "辰": "戌", "巳": "亥",
+    "午": "子", "未": "丑", "申": "寅", "酉": "卯",
+    "戌": "辰", "亥": "巳", "子": "午", "丑": "未",
+}
+
+# 28 神煞阴阳面（按 bazi-shensha.md §4.0.4 速查表）
+SHENSHA_YINYANG = {
+    "天乙贵人": ("遇难呈祥、贵人运强", "依赖外力、自力懈怠"),
+    "文昌贵人": ("学业聪慧、文书助力", "思虑过度、不务实际"),
+    "天德贵人": ("逢凶化吉、上天庇佑", "庇护依赖、不敢担责"),
+    "月德贵人": ("长辈提携、灾厄救济", "依赖人和、懈怠自力"),
+    "太极贵人": ("聪明好学、哲学天赋", "陷玄思、脱实向虚"),
+    "国印贵人": ("掌权有印、行政信誉", "权力执着、形式主义"),
+    "桃花": ("异性缘旺、艺术魅力", "烂桃花扰、感情纠葛"),
+    "红鸾": ("姻缘速成、婚嫁吉兆", "冲动结合、闪婚闪离"),
+    "天喜": ("喜庆连连、人缘和合", "浮于喜乐、不积深度"),
+    "驿马": ("迁动得财、出差获利", "奔波劳碌、动中不安"),
+    "天马": ("突发转机、被动得益", "突遭变故、身不由己"),
+    "华盖": ("才华出众、艺术天赋", "孤僻自闭、不合群"),
+    "将星": ("天生权威、统御力强", "孤高难群、独断专行"),
+    "金神": ("刚毅果断、杀伐决断", "杀气过重、人缘紧张"),
+    "羊刃": ("刚毅果敢、执行力惊人", "刚烈易怒、克配偶 / 血光"),
+    "亡神": ("警觉敏锐、能识阴谋", "官非损耗、暗算缠身"),
+    "劫煞": ("应激反应强、能脱困", "劫夺破财、意外损伤"),
+    "孤辰": ("独立自主、不随波逐流", "婚姻不顺、六亲缘薄"),
+    "寡宿": ("独立自主、不随波逐流", "婚姻不顺、六亲缘薄"),
+    "灾煞": ("危机意识强、能避祸于先", "突发不顺、意外血光"),
+    "丧门": ("珍惜当下、情感有深度", "丧事哀痛、亲缘考验"),
+    "吊客": ("哀痛中反思、情感细腻", "伤痛缠绵、难以自拔"),
+    "天赦日": ("逢凶化吉、可赦可解", "依赖赦免、规避责任"),
+    "月破日": ("破旧立新、敢于颠覆", "所求破败、损耗失败"),
+    "阴阳差错": ("独特视角、非主流路径", "婚恋波折、节奏异常"),
+    "天罗地网": ("制度保护、约束有度", "束缚限制、牢狱之灾"),
+    "六甲空亡": ("真空则灵、超脱执念", "所求落空、福德不实"),
+}
+
+
+def _shensha_match_zhi(zhi: str, target: str) -> bool:
+    """检查地支是否命中 target（单值字符串或串列表）."""
+    if isinstance(target, list):
+        return zhi in target
+    return zhi == target
+
+
+def _shensha_match_gan(gan: str, target: str) -> bool:
+    return gan == target
+
+
+def shensha(bz: Bazi) -> list:
+    """神煞清单（28 神煞 × 4 柱 = 一体两面解读）.
+
+    返回 list[dict]，每个 dict:
+    {
+        "name": str,
+        "yang": str,         # 阳面
+        "yin": str,          # 阴面
+        "zhiwei": str,       # 位置（如 "日支"、"时干"）
+        "activation": str,   # 激活条件
+        "control": str,      # 制化机制
+    }
+
+    算法依据：`references/bazi-shensha.md` v2.1.1 §3 速查矩阵
+    """
+    day_master = bz.day_master
+    day_zhi = bz.day.zhi
+    year_zhi = bz.year.zhi
+    month_zhi = bz.month.zhi
+    day_pillar_str = bz.day.gan + bz.day.zhi
+
+    results = []
+
+    # ========== A. 贵人星类（按日干） ==========
+
+    # 1. 天乙贵人（按日干查：年支、月支、日支、时支）
+    tianyi_zhi = TIANYI_GUIREN[day_master]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi in tianyi_zhi:
+            yang, yin = SHENSHA_YINYANG["天乙贵人"]
+            results.append({
+                "name": "天乙贵人",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "遇急难事时有人出手相助",
+                "control": "最忌刑冲（遇冲则贵人失力）",
+            })
+
+    # 2. 文昌贵人（按日干查：年干、月干、日干、时干）
+    wenchang = WENCHANG_GUIREN[day_master]
+    for pos_name, gan, p in [
+        ("年干", bz.year.gan, bz.year),
+        ("月干", bz.month.gan, bz.month),
+        ("日干", bz.day.gan, bz.day),
+        ("时干", bz.hour.gan, bz.hour),
+    ]:
+        if gan == wenchang:
+            yang, yin = SHENSHA_YINYANG["文昌贵人"]
+            results.append({
+                "name": "文昌贵人",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "流年逢文昌 = 当年考试/学习运佳",
+                "control": "无明显制化",
+            })
+            break
+
+    # 3. 天德贵人（按月支查某天干是否在四柱天干）
+    tiande_gan = TIANDE_GUIREN[month_zhi]
+    for pos_name, gan, p in [
+        ("年干", bz.year.gan, bz.year),
+        ("月干", bz.month.gan, bz.month),
+        ("时干", bz.hour.gan, bz.hour),
+    ]:
+        if gan == tiande_gan:
+            yang, yin = SHENSHA_YINYANG["天德贵人"]
+            results.append({
+                "name": "天德贵人",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": f"{pos_name}（月支{month_zhi}生天德{tiande_gan}）",
+                "activation": "逢凶化吉",
+                "control": "天德 + 天乙 / 月德 同临则吉力增强",
+            })
+            break
+
+    # 4. 月德贵人（同上）
+    yuede_gan = YUEDE_GUIREN[month_zhi]
+    for pos_name, gan, p in [
+        ("年干", bz.year.gan, bz.year),
+        ("月干", bz.month.gan, bz.month),
+        ("时干", bz.hour.gan, bz.hour),
+    ]:
+        if gan == yuede_gan:
+            yang, yin = SHENSHA_YINYANG["月德贵人"]
+            results.append({
+                "name": "月德贵人",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": f"{pos_name}（月支{month_zhi}生月德{yuede_gan}）",
+                "activation": "长辈/领导提携",
+                "control": "月德 + 天德 同临 = 贵格",
+            })
+            break
+
+    # 5. 太极贵人（按日干查地支）
+    taiji_zhi = TAIJI_GUIREN[day_master]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi in taiji_zhi:
+            yang, yin = SHENSHA_YINYANG["太极贵人"]
+            results.append({
+                "name": "太极贵人",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "对哲学/玄学/中医有兴趣或天赋",
+                "control": "无明显制化",
+            })
+
+    # 6. 国印贵人（按日干查地支）
+    guoyin_zhi = GUOYIN_GUIREN[day_master]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == guoyin_zhi:
+            yang, yin = SHENSHA_YINYANG["国印贵人"]
+            results.append({
+                "name": "国印贵人",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "适合行政管理/执法/签章",
+                "control": "国印 + 天乙 同临 = 大贵",
+            })
+
+    # ========== B. 桃花 / 红鸾 / 天喜 ==========
+
+    # 7. 桃花（按日支和年支）
+    taohua_zhi = TAOHUA[day_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == taohua_zhi and pos_name != "日支":  # 自坐桃花也算
+            yang, yin = SHENSHA_YINYANG["桃花"]
+            results.append({
+                "name": "桃花",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "未婚 = 异性缘广；婚内 = 外缘重",
+                "control": "桃花逢合 = 情定一人；逢冲 = 情感动荡",
+            })
+    # 自坐桃花特殊标记
+    if day_zhi == taohua_zhi:
+        yang, yin = SHENSHA_YINYANG["桃花"]
+        results.append({
+            "name": "桃花",
+            "yang": yang,
+            "yin": yin,
+            "zhiwei": "日支（自坐桃花）",
+            "activation": "配偶本身有桃花特质",
+            "control": "桃花逢合 = 情定一人；逢冲 = 情感动荡",
+        })
+
+    # 8. 红鸾（按年支）
+    hongluan_zhi = HONGLUAN[year_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == hongluan_zhi and pos_name != "年支":
+            yang, yin = SHENSHA_YINYANG["红鸾"]
+            results.append({
+                "name": "红鸾",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "流年逢红鸾 = 当年有婚恋运",
+                "control": "红鸾 + 天喜 同临 = 大喜",
+            })
+
+    # 9. 天喜（同上）
+    tianxi_zhi = _tianxi(year_zhi)
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == tianxi_zhi and pos_name != "年支":
+            yang, yin = SHENSHA_YINYANG["天喜"]
+            results.append({
+                "name": "天喜",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "当年多喜事（升迁/添丁/结婚/获奖）",
+                "control": "无明显制化",
+            })
+
+    # ========== C. 驿马 / 天马 ==========
+
+    # 10. 驿马（按日支和年支）
+    yima_zhi = YIMA[day_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == yima_zhi and pos_name != "日支":
+            yang, yin = SHENSHA_YINYANG["驿马"]
+            results.append({
+                "name": "驿马",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "出差/迁居/出国/工作调动",
+                "control": "驿马逢冲 = 奔波不安；逢合 = 动中有定",
+            })
+
+    # 11. 天马（按年支所在三合局对冲）
+    tianma_zhi = YIMA[year_zhi]  # 与驿马同位（按 bazi-shensha.md §2.C.2）
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == tianma_zhi and pos_name != "年支":
+            yang, yin = SHENSHA_YINYANG["天马"]
+            results.append({
+                "name": "天马",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "突发性迁动/调动",
+                "control": "天马与驿马同临 = 终身多动",
+            })
+
+    # ========== D. 才华将星类 ==========
+
+    # 12. 华盖（按日支）
+    huagai_zhi = HUAGAI[day_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == huagai_zhi and pos_name != "日支":
+            yang, yin = SHENSHA_YINYANG["华盖"]
+            results.append({
+                "name": "华盖",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "适合钻研学问/艺术/宗教哲学",
+                "control": "华盖逢冲 = 才华外露；逢合 = 收敛内敛",
+            })
+
+    # 13. 将星（按日支）
+    jiangxing_zhi = JIANGXING[day_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == jiangxing_zhi and pos_name != "日支":
+            yang, yin = SHENSHA_YINYANG["将星"]
+            results.append({
+                "name": "将星",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "适合做管理/当领导",
+                "control": "将星 + 天乙 同临 = 贵上加贵",
+            })
+
+    # 14. 金神（按日柱）
+    if day_pillar_str in JINSHEN_DAYS:
+        yang, yin = SHENSHA_YINYANG["金神"]
+        results.append({
+            "name": "金神",
+            "yang": yang,
+            "yin": yin,
+            "zhiwei": "日柱（入命）",
+            "activation": "夏季金神力量最强；冬季最弱",
+            "control": "金神遇火 = 大贵；遇水 = 大凶",
+        })
+
+    # ========== E. 羊刃刚强类 ==========
+
+    # 15. 羊刃（按日干查地支）
+    yangren_zhi = YANGREN[day_master]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == yangren_zhi:
+            yang, yin = SHENSHA_YINYANG["羊刃"]
+            results.append({
+                "name": "羊刃",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "身旺 = 大贵（武将/开拓）；身弱 = 大凶",
+                "control": "食神（己土）制刃最佳；羊刃逢冲 = 倒戈",
+            })
+
+    # ========== F. 凶煞破败类 ==========
+
+    # 16. 亡神
+    wangshen_zhi = WANGSHEN[day_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == wangshen_zhi and pos_name != "日支":
+            yang, yin = SHENSHA_YINYANG["亡神"]
+            results.append({
+                "name": "亡神",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "易遭意外破财/官非诉讼/阴谋暗算",
+                "control": "亡神 + 吉星同临 = 凶力减弱",
+            })
+
+    # 17. 劫煞
+    jiesha_zhi = JIESHA[day_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == jiesha_zhi and pos_name != "日支":
+            yang, yin = SHENSHA_YINYANG["劫煞"]
+            results.append({
+                "name": "劫煞",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "易遭抢劫/诈骗/意外破财",
+                "control": "劫煞 + 羊刃同临 = 大凶；逢合 = 凶力减弱",
+            })
+
+    # 18. 孤辰寡宿（按年支）
+    guchen, guasu = GUCHEN_GUASU[year_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == guchen and pos_name != "年支":
+            yang, yin = SHENSHA_YINYANG["孤辰"]
+            results.append({
+                "name": "孤辰",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "易晚婚/配偶缘薄",
+                "control": "无明显制化",
+            })
+        if zhi == guasu and pos_name != "年支":
+            yang, yin = SHENSHA_YINYANG["寡宿"]
+            results.append({
+                "name": "寡宿",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "婚姻风险较高",
+                "control": "无明显制化",
+            })
+
+    # 19. 灾煞
+    zaisha_zhi = ZAISHA[day_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == zaisha_zhi and pos_name != "日支":
+            yang, yin = SHENSHA_YINYANG["灾煞"]
+            results.append({
+                "name": "灾煞",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "易遭水火之灾/跌打损伤/突发意外",
+                "control": "灾煞 + 天乙/天德 = 凶力大减",
+            })
+
+    # 20. 丧门（按年支）
+    sangmen_zhi = SANGSMEN[year_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == sangmen_zhi and pos_name != "年支":
+            yang, yin = SHENSHA_YINYANG["丧门"]
+            results.append({
+                "name": "丧门",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "当年易有丧事（亲人离世/伤病）",
+                "control": "丧门 + 吊客同临 = 凶力加倍",
+            })
+
+    # 21. 吊客
+    diaoke_zhi = _diaoke(year_zhi)
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == diaoke_zhi and pos_name != "年支":
+            yang, yin = SHENSHA_YINYANG["吊客"]
+            results.append({
+                "name": "吊客",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "主哀痛/伤痛",
+                "control": "吊客 + 丧门同临 = 大凶",
+            })
+
+    # ========== G. 特殊日类 ==========
+
+    # 22. 天赦日（按月支 + 日柱）
+    tianshe_day = TIANSHE[month_zhi]
+    if day_pillar_str == tianshe_day:
+        yang, yin = SHENSHA_YINYANG["天赦日"]
+        results.append({
+            "name": "天赦日",
+            "yang": yang,
+            "yin": yin,
+            "zhiwei": "日柱（入命）",
+            "activation": "当日/命主逢凶化吉",
+            "control": "无明显制化",
+        })
+
+    # 23. 月破日（按月支查日支是否对冲）
+    yuepo_zhi = YUEPO[month_zhi]
+    if day_zhi == yuepo_zhi:
+        yang, yin = SHENSHA_YINYANG["月破日"]
+        results.append({
+            "name": "月破日",
+            "yang": yang,
+            "yin": yin,
+            "zhiwei": "日支（与月支对冲）",
+            "activation": "所求之事易破败/损耗",
+            "control": "无明显制化",
+        })
+
+    # 24. 阴阳差错日（按日柱）
+    if day_pillar_str in YINYANG_CUOCUO:
+        yang, yin = SHENSHA_YINYANG["阴阳差错"]
+        results.append({
+            "name": "阴阳差错",
+            "yang": yang,
+            "yin": yin,
+            "zhiwei": "日柱（入命）",
+            "activation": "婚姻多波折/易有感情纠纷",
+            "control": "男命带 = 妻缘浅；女命带 = 夫缘浅",
+        })
+
+    # ========== H. 杂煞类 ==========
+
+    # 25. 天罗地网（按年支 → 辰戌天罗，巳亥地网）
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi in TIANLUO_DIWANG:
+            kind = TIANLUO_DIWANG[zhi]
+            yang, yin = SHENSHA_YINYANG["天罗地网"]
+            results.append({
+                "name": f"{kind}",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": f"命带{kind}",
+                "control": "天罗 + 地网同临 = 牢狱/重大约束",
+            })
+
+    # 26. 六甲空亡（按日柱所在旬）
+    day_gan_idx = TIANGAN.index(bz.day.gan)
+    xun_start = (day_gan_idx // 1) * 1  # 不重要
+    # 用日柱推所在旬
+    # 60 甲子 → 6 旬
+    # 找最近的旬首
+    day_gz_60 = bz.day.gan + bz.day.zhi
+    if day_gz_60 in KONGWANG:
+        kongwang_zhi = KONGWANG[day_gz_60]
+    else:
+        # 找最近的旬首
+        from datetime import datetime as _dt
+        gan_idx = TIANGAN.index(bz.day.gan)
+        # 简化：直接枚举
+        kongwang_zhi = None
+        for xun_gan_zhi, kw in KONGWANG.items():
+            # 检查日柱是否在该旬内（连续 10 个干支）
+            xun_gan = xun_gan_zhi[0]
+            xun_zhi = xun_gan_zhi[1]
+            xun_gan_idx = TIANGAN.index(xun_gan)
+            xun_zhi_idx = DIZHI.index(xun_zhi)
+            for i in range(10):
+                g_i = TIANGAN[(xun_gan_idx + i) % 10]
+                z_i = DIZHI[(xun_zhi_idx + i) % 12]
+                if g_i == bz.day.gan and z_i == bz.day.zhi:
+                    kongwang_zhi = kw
+                    break
+            if kongwang_zhi:
+                break
+
+    if kongwang_zhi:
+        for pos_name, zhi, p in [
+            ("年支", bz.year.zhi, bz.year),
+            ("月支", bz.month.zhi, bz.month),
+            ("日支", bz.day.zhi, bz.day),
+            ("时支", bz.hour.zhi, bz.hour),
+        ]:
+            if zhi in kongwang_zhi:
+                yang, yin = SHENSHA_YINYANG["六甲空亡"]
+                results.append({
+                    "name": "六甲空亡",
+                    "yang": yang,
+                    "yin": yin,
+                    "zhiwei": pos_name,
+                    "activation": "所求之事易落空",
+                    "control": "空亡逢冲 = 填实，反而有好事",
+                })
+
+    return results
+
+
+# ============================================================================
+# v1.8.0 模块 4：用神（yongshen）—— 正格 ∩ 势局 融合
+# ============================================================================
+#
+# 设计依据：`references/bazi-yongshen.md` v1.0.0
+# 核心问题：融合正格方向 + 势局精化 → 最终用神
+# ⚠️ 神煞不进入用神判定（神煞 = 28 神星；用神 = 十神五行）
+
+# 用神五行映射（按十神 → 五行）
+# 用于把十神喜忌总则转换成五行方向
+SHISHEN_WUXING = {
+    "比肩": {"阳": "木", "阴": "木"} | {"丙": "火", "丁": "火"},  # placeholder
+}
+
+
+# 直接定义：每个日主 → 用神方向（基于 zhengge）
+# 避免复杂查询，这里按"用神方向"中文描述 → 五行串
+YONGSHEN_WUXING_MAP = {
+    # 正官格
+    "财星": "金水木",  # 我克
+    "食神": "火土",  # 我生
+    "印星": "木水",  # 生我
+    "官杀": "金水",
+    "官星": "金水",
+    "比劫": "同我",
+    # 七杀格
+    # 食神制杀
+    # 偏财格
+    "食伤": "火土",
+    # 通用
+    "财+官": "金水",
+}
+
+
+def _yongshen_resolve_wuxing(zhengge_out: dict, shiju_out: dict, bz: Bazi) -> str:
+    """解析最终用神五行（融合正格 + 势局）.
+
+    三层模型：
+    - L1（正格）：方向 → 五行
+    - L2（势局）：精化 → 五行
+    - L3（融合）：最终 → 五行
+
+    优先级：正格方向 > 调候 > 扶抑（神煞不进入用神判定）
+    """
+    # 正格方向（最高优先级）
+    zg_dir = zhengge_out.get("yongshen_wuxing", "")
+    if not zg_dir or "（走势局精化）" in zg_dir:
+        zg_dir = ""
+
+    # 调候五行（势局精化）
+    tiaohou = shiju_out.get("tiaohou", "")
+    tiaohou_wuxing = []
+    if "庚" in tiaohou or "辛" in tiaohou:
+        tiaohou_wuxing.append("金")
+    if "壬" in tiaohou or "癸" in tiaohou:
+        tiaohou_wuxing.append("水")
+    if "甲" in tiaohou or "乙" in tiaohou:
+        tiaohou_wuxing.append("木")
+    if "丙" in tiaohou or "丁" in tiaohou:
+        tiaohou_wuxing.append("火")
+    if "戊" in tiaohou or "己" in tiaohou:
+        tiaohou_wuxing.append("土")
+
+    # 旺衰精化方向
+    score = shiju_out.get("wangshuai_score", 2)
+    if score >= 3:
+        fuyi_wuxing = "金水"  # 身旺 → 克泄（金水为主）
+    elif score <= 1:
+        fuyi_wuxing = "木火"  # 身弱 → 生扶
+    else:
+        fuyi_wuxing = ""
+
+    # 融合优先级：正格方向 > 调候 > 扶抑
+    final = []
+    for wx in zg_dir:
+        if wx not in final:
+            final.append(wx)
+    for wx in tiaohou_wuxing:
+        if wx not in final:
+            final.append(wx)
+    for wx in fuyi_wuxing:
+        if wx not in final:
+            final.append(wx)
+
+    return "".join(final) if final else "（待人工判定）"
+
+
+def yongshen(bz: Bazi) -> dict:
+    """用神融合（正格方向 ∩ 势局精化）.
+
+    返回 dict：
+    {
+        "final": str,            # 最终用神（五行串）
+        "final_desc": str,       # 一句话总结
+        "xiangshen": str,        # 相神
+        "jishen": str,           # 忌神
+        "choushen": str,         # 仇神
+        "zhengge_direction": str,    # 正格方向
+        "shiju_jinhua": str,     # 势局精化
+        "tiaohou": str,          # 调候
+        "fusion_source": str,    # 融合来源说明
+        "wangshuai_score": int,  # 旺衰得分
+    }
+
+    算法依据：`references/bazi-yongshen.md` v1.0.0
+    ⚠️ 神煞不进入用神判定（神煞 = 28 神星；用神 = 十神五行）
+    """
+    # 取正格和势局
+    zg_out = zhengge(bz)
+    sj_out = shiju(bz)
+
+    # 融合最终五行
+    final_wuxing = _yongshen_resolve_wuxing(zg_out, sj_out, bz)
+
+    # 提取相神 / 忌神 / 仇神（从正格取）
+    xiangshen = zg_out.get("xiangshen", "")
+    jishen = zg_out.get("jishen", "")
+    choushen = zg_out.get("choushen", "")
+
+    # 一句话最终用神
+    tiaohou = sj_out.get("tiaohou", "")
+    if tiaohou and final_wuxing:
+        final_desc = f"{final_wuxing}（{tiaohou}为调候核，{zg_out.get('ge_type', '用神')}为体）"
+    else:
+        final_desc = final_wuxing or "（待人工判定）"
+
+    # 融合来源说明
+    ge_type = zg_out.get("ge_type", "（无格）")
+    fusion_source = (
+        f"正格（{ge_type} → {zg_out.get('yongshen_direction', '未知')}）∩ "
+        f"势局（{sj_out.get('yongshen_jinhua', '未知')}，调候={tiaohou or '无'}）"
+    )
+
+    return {
+        "final": final_wuxing,
+        "final_desc": final_desc,
+        "xiangshen": xiangshen,
+        "jishen": jishen,
+        "choushen": choushen,
+        "zhengge_direction": zg_out.get("yongshen_direction", ""),
+        "shiju_jinhua": sj_out.get("yongshen_jinhua", ""),
+        "tiaohou": tiaohou,
+        "fusion_source": fusion_source,
+        "wangshuai_score": sj_out.get("wangshuai_score", 0),
+    }
+
+
+# ============================================================================
+# v1.8.0 模块 5：大运（dayun）—— 顺/逆排 + 起运岁数 + 10 步大运
+# ============================================================================
+#
+# 设计依据：传统子平术 + 老板 2026-08-10 17:31 拍板
+# 核心规则：
+# 1. 阳男 / 阴女 → 顺排
+# 2. 阴男 / 阳女 → 逆排
+# 3. 阳年干 = 甲丙戊庚壬；阴年干 = 乙丁己辛癸
+# 4. 起运岁数 = 出生日 → 下一个节（顺排）/ 上一个节（逆排）的天数 ÷ 3
+# 5. 10 步大运：顺排 = 从月柱下一个干支开始；逆排 = 从月柱上一个干支开始
+
+# 24 节气表（公历近似日期，用于起运计算）
+# 实际应使用 cnlunar 的近似时间（cnlunar 返回 (month, day) tuple）
+# 来源：references/bazi-rules.md §三 节气切月
+# 注意：子平术只用"节"（每月的第一个节气），不用"气"（第二个）
+# 节列表（按时间顺序）：
+JIE_NAMES = [
+    "小寒",   # 丑月起点
+    "立春",   # 寅月起点
+    "惊蛰",   # 卯月起点
+    "清明",   # 辰月起点
+    "立夏",   # 巳月起点
+    "芒种",   # 午月起点
+    "小暑",   # 未月起点
+    "立秋",   # 申月起点
+    "白露",   # 酉月起点
+    "寒露",   # 戌月起点
+    "立冬",   # 亥月起点
+    "大雪",   # 子月起点
+]
+
+# 节对应的月支
+JIE_TO_ZHI = {
+    "小寒": "丑", "立春": "寅", "惊蛰": "卯", "清明": "辰",
+    "立夏": "巳", "芒种": "午", "小暑": "未", "立秋": "申",
+    "白露": "酉", "寒露": "戌", "立冬": "亥", "大雪": "子",
+}
+
+
+def _get_jieqi_datetime(year: int, jieqi_name: str) -> "datetime | None":
+    """获取指定年份某个节气的近似 datetime（用 cnlunar 节气表）.
+
+    cnlunar 节气返回 (month, day) tuple（精度 ±1 天），
+    本函数默认 12:00 作为节气当日时间点。
+    """
+    try:
+        # cnlunar.getSolarTermsDateList 是 instance method
+        # 通过 Lunar 对象调用
+        ref_dt = datetime(year, 6, 15, 12, 0)
+        l = cnlunar.Lunar(ref_dt)
+        terms_dict = l.thisYearSolarTermsDic
+        if jieqi_name in terms_dict:
+            m, d = terms_dict[jieqi_name]
+            return datetime(year, m, d, 12, 0)
+    except Exception:
+        pass
+    return None
+
+
+def _find_nearest_jie(bz: Bazi, direction: str) -> tuple:
+    """找最近的节（direction='forward' 或 'backward'）.
+
+    返回 (jie_name, jie_datetime, days_diff).
+    """
+    birth = bz.solar
+    month_zhi = bz.month.zhi
+
+    if direction == "forward":
+        # 找出生日之后的下一个节（**不在月内的节**）
+        # 先在当年找，然后下一年
+        for year in [birth.year, birth.year + 1]:
+            for jq_name in JIE_NAMES:
+                # 跳过本月起点（这个节前在月外，下一个节才是真正的下一个）
+                if JIE_TO_ZHI[jq_name] == month_zhi:
+                    continue
+                jt = _get_jieqi_datetime(year, jq_name)
+                if jt and jt > birth:
+                    return (jq_name, jt, (jt - birth).days)
+        return (None, None, 0)
+    else:
+        # 找出生日之前的上一个节
+        for year in [birth.year, birth.year - 1]:
+            for jq_name in reversed(JIE_NAMES):
+                if JIE_TO_ZHI[jq_name] == month_zhi:
+                    continue
+                jt = _get_jieqi_datetime(year, jq_name)
+                if jt and jt < birth:
+                    return (jq_name, jt, (birth - jt).days)
+        return (None, None, 0)
+
+
+def _next_gan_zhi(gan: str, zhi: str, forward: bool = True) -> tuple:
+    """在 60 甲子表中找下一个（或上一个）干支."""
+    gan_idx = TIANGAN.index(gan)
+    zhi_idx = DIZHI.index(zhi)
+    if forward:
+        new_gan = TIANGAN[(gan_idx + 1) % 10]
+        new_zhi = DIZHI[(zhi_idx + 1) % 12]
+    else:
+        new_gan = TIANGAN[(gan_idx - 1) % 10]
+        new_zhi = DIZHI[(zhi_idx - 1) % 12]
+    return (new_gan, new_zhi)
+
+
+def dayun(bz: Bazi, gender: str = "男") -> dict:
+    """大运推算（顺/逆排 + 起运岁数 + 10 步大运）.
+
+    参数：
+    - bz: Bazi 对象
+    - gender: '男' 或 '女'
+
+    返回 dict：
+    {
+        "shunni": str,                # '顺排' 或 '逆排'
+        "qi_yun_age": int,            # 起运岁数
+        "qi_yun_jie": str,            # 所对节
+        "qi_yun_note": str,           # 起运计算说明
+        "steps": [
+            {
+                "index": int,
+                "gan": str,
+                "zhi": str,
+                "gan_shishen": str,
+                "zhi_shishen": str,
+                "start_age": int,
+                "end_age": int,
+            }
+        ]
+    }
+
+    算法依据：传统子平术
+    """
+    year_gan = bz.year.gan
+    is_yang_year = YIN_YANG[TIANGAN.index(year_gan)] == "阳"
+    is_male = (gender == "男") or (gender == "male") or (gender == "M")
+
+    # 顺/逆判定
+    if (is_yang_year and is_male) or (not is_yang_year and not is_male):
+        shunni = "顺排"
+        forward = True
+    else:
+        shunni = "逆排"
+        forward = False
+
+    # 起运岁数
+    direction = "forward" if forward else "backward"
+    jie_name, jie_dt, days_diff = _find_nearest_jie(bz, direction)
+    qi_yun_age = days_diff // 3
+
+    qi_yun_note = (
+        f"出生日 → {'下一个' if forward else '上一个'}节"
+        f"{jie_name or '（未找到）'} 的天数{days_diff} ÷ 3 = {qi_yun_age} 岁起运"
+    )
+
+    # 10 步大运（从月柱顺/逆推）
+    month_gan = bz.month.gan
+    month_zhi = bz.month.zhi
+    cur_gan, cur_zhi = month_gan, month_zhi
+    # 第一步大运从月柱的下一（或上一）个开始
+    cur_gan, cur_zhi = _next_gan_zhi(cur_gan, cur_zhi, forward=forward)
+
+    steps = []
+    for i in range(10):
+        step_start = qi_yun_age + i * 10
+        step_end = step_start + 9
+        steps.append({
+            "index": i + 1,
+            "gan": cur_gan,
+            "zhi": cur_zhi,
+            "gan_shishen": ten_god(bz.day_master, cur_gan),
+            "zhi_shishen": ten_god_of_zhi(bz.day_master, cur_zhi),
+            "start_age": step_start,
+            "end_age": step_end,
+        })
+        cur_gan, cur_zhi = _next_gan_zhi(cur_gan, cur_zhi, forward=forward)
+
+    return {
+        "shunni": shunni,
+        "qi_yun_age": qi_yun_age,
+        "qi_yun_jie": jie_name or "",
+        "qi_yun_note": qi_yun_note,
+        "steps": steps,
+    }
+
+
+# ============================================================================
+# v1.8.0 模块 6：八字反查（reverse_lookup）—— 60 甲子反推
+# ============================================================================
+#
+# 设计依据：传统 60 甲子循环 + cnlunar
+# 核心算法：
+# 1. 给定 4 柱（年/月/日/时），反查候选公历日期
+# 2. 用 cnlunar 验证每个候选（注意 ±1 天节气误差）
+
+# 60 甲子表（用于反查年份循环）
+JIAZI_60 = [
+    "甲子", "乙丑", "丙寅", "丁卯", "戊辰", "己巳", "庚午", "辛未", "壬申", "癸酉",
+    "甲戌", "乙亥", "丙子", "丁丑", "戊寅", "己卯", "庚辰", "辛巳", "壬午", "癸未",
+    "甲申", "乙酉", "丙戌", "丁亥", "戊子", "己丑", "庚寅", "辛卯", "壬辰", "癸巳",
+    "甲午", "乙未", "丙申", "丁酉", "戊戌", "己亥", "庚子", "辛丑", "壬寅", "癸卯",
+    "甲辰", "乙巳", "丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子", "癸丑",
+    "甲寅", "乙卯", "丙辰", "丁巳", "戊午", "己未", "庚申", "辛酉", "壬戌", "癸亥",
+]
+
+
+def reverse_lookup(year_gz: str, month_gz: str, day_gz: str, hour_gz: str,
+                   year_range: tuple = (1900, 2100)) -> list:
+    """八字反查 —— 给定 4 柱，反查候选公历日期.
+
+    参数：
+    - year_gz: 年柱（甲子）
+    - month_gz: 月柱
+    - day_gz: 日柱
+    - hour_gz: 时柱
+    - year_range: 搜索年份范围（默认 1900-2100）
+
+    返回 list[dict]，每个候选：
+    {
+        "solar": "YYYY-MM-DD",
+        "lunar": "...",
+        "shengxiao": "...",
+        "year_pillar": "...",
+        "month_pillar": "...",
+        "day_pillar": "...",
+        "hour_pillar": "...",
+        "jieqi_match": str,        # 节气匹配说明
+        "cnlunar_precision": str,  # cnlunar 精度说明
+        "candidate_rank": int,     # 候选排名
+        "score": float,            # 匹配置信度
+    }
+
+    限制：cnlunar 节气精度 ±1 天，反查为候选范围而非唯一日期。
+    """
+    candidates = []
+
+    if year_gz not in JIAZI_60 or day_gz not in JIAZI_60:
+        return [{
+            "error": "输入的干支不在 60 甲子表内",
+            "year_pillar": year_gz,
+            "month_pillar": month_gz,
+            "day_pillar": day_gz,
+            "hour_pillar": hour_gz,
+            "notes": "请检查输入是否正确",
+        }]
+
+    year_start, year_end = year_range
+
+    # 60 甲子索引
+    target_year_idx = JIAZI_60.index(year_gz)
+    target_day_idx = JIAZI_60.index(day_gz)
+
+    # Step 1: 找出候选年份（按 60 甲子循环）
+    # 由于 cnlunar 用 立春 换年，年份判定时取 (year, 6, 1) 作为参考点（年中无歧义）
+    candidate_years = []
+    for y in range(year_start, year_end + 1):
+        try:
+            l = cnlunar.Lunar(datetime(y, 6, 1, 12, 0))
+            if l.year8Char == year_gz:
+                candidate_years.append(y)
+        except Exception:
+            continue
+
+    # Step 2: 对每个候选年份，遍历月份找月柱匹配
+    rank = 1
+    for y in candidate_years:
+        for m in range(1, 13):
+            # 取月中（15 号）作为参考点
+            try:
+                l = cnlunar.Lunar(datetime(y, m, 15, 12, 0))
+            except Exception:
+                continue
+
+            if l.month8Char != month_gz:
+                continue
+
+            # Step 3: 月柱匹配 → 遍历该月日期找日柱
+            # 每月 1-28 日（保守范围，避免月末跨月）
+            for d in range(1, 29):
+                try:
+                    l_d = cnlunar.Lunar(datetime(y, m, d, 12, 0))
+                except Exception:
+                    continue
+
+                if l_d.day8Char != day_gz:
+                    continue
+
+                # Step 4: 日柱匹配 → 遍历时辰
+                # 12 个时辰，从 23:00 上一天 到 22:00 当天
+                # 简化：取 12:00 作为默认检查点 + 23:30 边界
+                # 如果 12:00 命中，则考虑该日所有时辰
+                matched_hours = []
+                for hour_int in range(0, 24):
+                    # 子时 23:00-00:59 跨日，需要用 24:00 之前的时刻
+                    if hour_int >= 23:
+                        # 23:00+ 当天 → 次日日柱（但小时柱不变）
+                        # 用 hour=23 测试
+                        test_dt = datetime(y, m, d, hour_int, 0)
+                    else:
+                        test_dt = datetime(y, m, d, hour_int, 0)
+                    try:
+                        l_h = cnlunar.Lunar(test_dt)
+                    except Exception:
+                        continue
+                    if l_h.twohour8Char == hour_gz:
+                        matched_hours.append(hour_int)
+
+                if not matched_hours:
+                    continue
+
+                # Step 5: 找匹配日中最早一个时辰的代表
+                rep_hour = matched_hours[0] if 0 in matched_hours else matched_hours[0]
+                rep_dt = datetime(y, m, d, rep_hour, 0)
+
+                try:
+                    l_final = cnlunar.Lunar(rep_dt)
+                    solar_str = rep_dt.strftime("%Y-%m-%d")
+                    lunar_tuple = l_final.get_lunarCn()
+                    lunar_str = (
+                        f"{lunar_tuple[0][4:]}年 {lunar_tuple[1]} {lunar_tuple[2]}"
+                        if len(lunar_tuple) >= 3
+                        else ""
+                    )
+                    shengxiao = SHENGXIAO_MAP.get(l_final.year8Char[1], "")
+
+                    # 节气说明
+                    jieqi = l_final.get_todaySolarTerms() or ""
+                    jieqi_match = (
+                        f"生当月节气={jieqi}（按 cnlunar）"
+                        if jieqi
+                        else f"无特殊节气"
+                    )
+
+                    candidates.append({
+                        "solar": solar_str,
+                        "lunar": lunar_str,
+                        "shengxiao": shengxiao,
+                        "year_pillar": l_final.year8Char,
+                        "month_pillar": l_final.month8Char,
+                        "day_pillar": l_final.day8Char,
+                        "hour_pillar": l_final.twohour8Char,
+                        "jieqi_match": jieqi_match,
+                        "cnlunar_precision": "±1 天（节气日级精度限制）",
+                        "matched_hours": [f"{h:02d}:00" for h in matched_hours],
+                        "candidate_rank": rank,
+                        "score": 1.0,
+                    })
+                    rank += 1
+                except Exception:
+                    continue
+
+    return candidates
+
+
+# ============================================================================
 # 自测入口
 # ============================================================================
 

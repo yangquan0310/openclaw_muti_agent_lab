@@ -524,5 +524,140 @@
         "combined": ["普通"]
       }
     }
+  },
+  {
+    "case_type": "zhengge",
+    "input": "1996-03-10 18:00",
+    "description": "v1.8.0 正格 - 杨权 印绶格（金水为用）",
+    "expected": {
+      "ge_type": "正印格",
+      "yongshen_wuxing": "金水",
+      "xiangshen": "财星",
+      "jishen": "木火",
+      "choushen": "水"
+    }
+  },
+  {
+    "case_type": "zhengge",
+    "input": "1998-07-16 09:00",
+    "description": "v1.8.0 正格 - 王雅欣 正财格（火金为用）",
+    "expected": {
+      "ge_type": "正财格",
+      "yongshen_wuxing": "火金",
+      "xiangshen": "官杀、食伤",
+      "jishen": "比劫",
+      "choushen": "劫财",
+      "tou_gan": "月"
+    }
+  },
+  {
+    "case_type": "zhengge",
+    "input": "1990-08-08 12:00",
+    "description": "v1.8.0 正格 - 立秋后申月（庚金 = 乙木日主得正官）",
+    "expected": {
+      "ge_type": "正官格",
+      "yongshen_wuxing": "金水",
+      "jishen": "伤官"
+    }
+  },
+  {
+    "case_type": "shiju",
+    "input": "1996-03-10 18:00",
+    "description": "v1.8.0 势局 - 杨权 4/4 极旺，调候壬水",
+    "expected": {
+      "wangshuai_score": 4,
+      "de_ling": true,
+      "de_di": true,
+      "de_sheng": true,
+      "de_zhu": true,
+      "tiaohou": "壬水"
+    }
+  },
+  {
+    "case_type": "shiju",
+    "input": "1998-07-16 09:00",
+    "description": "v1.8.0 势局 - 王雅欣 2/4 中等（未月失令/子水非禄），调候癸水+庚金",
+    "expected": {
+      "wangshuai_score": 2,
+      "de_ling": false,
+      "de_di": false,
+      "de_sheng": true,
+      "de_zhu": true,
+      "tiaohou": "癸水+庚金"
+    }
+  },
+  {
+    "case_type": "shensha",
+    "input": "1996-03-10 18:00",
+    "description": "v1.8.0 神煞 - 杨权 命中 ≥5 个关键神煞（含天乙、羊刃、桃花、阴阳差错）",
+    "expected": {
+      "must_contain": ["天乙贵人", "羊刃", "桃花", "阴阳差错"]
+    }
+  },
+  {
+    "case_type": "shensha",
+    "input": "1998-07-16 09:00",
+    "description": "v1.8.0 神煞 - 王雅欣 命中神煞（含驿马）",
+    "expected": {
+      "must_contain": ["驿马"]
+    }
+  },
+  {
+    "case_type": "yongshen",
+    "input": "1996-03-10 18:00",
+    "description": "v1.8.0 用神 - 杨权 正印格 + 4/4 极旺 = 金水",
+    "expected": {
+      "final": "金水",
+      "zhengge_direction": "金水（财+官）",
+      "tiaohou": "壬水",
+      "wangshuai_score": 4
+    }
+  },
+  {
+    "case_type": "yongshen",
+    "input": "1998-07-16 09:00",
+    "description": "v1.8.0 用神 - 王雅欣 正财格 + 3/4 偏旺 = 火金（兼调候）",
+    "expected": {
+      "final_wuxing_contains": ["火", "金"],
+      "zhengge_direction_contains": "火金",
+      "tiaohou": "癸水+庚金"
+    }
+  },
+  {
+    "case_type": "dayun",
+    "input": "1996-03-10 18:00",
+    "gender": "男",
+    "description": "v1.8.0 大运 - 杨权 丙子年阳男 → 顺排，起运约 8 岁",
+    "expected": {
+      "shunni": "顺排",
+      "qi_yun_age_min": 6,
+      "qi_yun_age_max": 10,
+      "steps_count": 10,
+      "first_step_gan": "壬",
+      "first_step_zhi": "辰"
+    }
+  },
+  {
+    "case_type": "dayun",
+    "input": "2009-03-15 12:00",
+    "gender": "女",
+    "description": "v1.8.0 大运 - 庚金女命 己丑年阴女 → 顺排（逆阴 = 顺）",
+    "expected": {
+      "shunni": "顺排",
+      "steps_count": 10
+    }
+  },
+  {
+    "case_type": "reverse",
+    "year": "丙子",
+    "month": "辛卯",
+    "day": "丙午",
+    "hour": "丁酉",
+    "year_range": [1995, 1997],
+    "description": "v1.8.0 八字反查 - 杨权 4 柱反查命中 1996-03-10",
+    "expected": {
+      "must_contain_solar": "1996-03-10",
+      "min_candidates": 1
+    }
   }
 ] 
