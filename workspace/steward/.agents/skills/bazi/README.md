@@ -30,16 +30,16 @@ bazi/
 ├── SKILL.md           v1.11.0  ← 主技能文档（9 步流程 + v3.16.0 一段话范式）
 │
 ├── references/        ← 10 个 reference 文档
-│   ├── bazi-rules.md              [工具层]  工具规则
+│   ├── bazi-audit-principles.md  v1.0.0  [核查原则]
+│   ├── bazi-rules.md    v1.2.0   [规则速查]（含 §十一 v8.55.0 古代天文历法术数）★
 │   ├── bazi-zhengge.md  v1.0.1   [正格] = 骨
-│   ├── bazi-shiju.md    v1.0.0   [势局] = 势
+│   ├── bazi-shiju.md    v2.0.0   [势局] = 势
 │   ├── bazi-liutong.md  v1.0.0   [流通] = 气血  ★ 新（v1.10.0）
 │   ├── bazi-shensha.md  v2.1.1   [神煞] = 助缘
-│   ├── bazi-yongshen.md v1.0.0   [用神] = 融合产物
+│   ├── bazi-yongshen.md v1.1.0   [用神] = 融合产物
 │   ├── bazi-style.md    v3.16.0  [输出风格 · 含 v3.8.0-v3.16.0 一段话范式] ★
-│   ├── bazi-paipan.md   v1.7.0   [排盘]  9 步流程
-│   ├── bazi-hehun.md    v1.3.0   [合盘]  5+1+1 步流程
-│   └── bazi-audit-principles.md  [核查原则]
+│   ├── bazi-paipan.md   v2.2.0   [排盘]  9 步流程
+│   └── bazi-hehun.md    v1.3.0   [合盘]  5+1+1 步流程
 │
 └── scripts/           ← 程序 + 测试
     ├── bazi                       ← shell 入口

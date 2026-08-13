@@ -1,3 +1,8 @@
+---
+title: 八字 · 流通（Bazi Liutong / Flow）
+version: 1.0.0
+---
+
 # 大管家八字 · 流通（Bazi Liutong / Flow）
 
 > **本文件定义八字命局"十神流通"分析。**

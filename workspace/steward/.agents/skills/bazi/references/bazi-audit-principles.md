@@ -1,3 +1,8 @@
+---
+title: 八字技能核查原则（Bazi Audit Principles）
+version: 1.0.0
+---
+
 # bazi 技能核查原则（v1.0）
 
 > **本文档定义 bazi 技能文档体系的核查原则**——用于自查 / reviewer 审阅 / 版本发布前检查。

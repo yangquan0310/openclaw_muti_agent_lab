@@ -82,11 +82,20 @@ def cmd_liushi(args, birth) -> int:
 
 
 def _parse_liushi_target(args_value):
-    """解析 --liushi YYYY-MM-DD [HH:MM]."""
+    """解析 --liushi YYYY-MM-DD [HH:MM].
+
+    支持三种调用形式（v1.12.0 修复）：
+    - `--liushi 2025-06-15 14:30`（两参数，argparse nargs='+' 拆分）
+    - `--liushi "2025-06-15 14:30"`（单参数带引号）
+    - `--liushi 2025-06-15`（单参数无时间，默认 12:00）
+    """
     if isinstance(args_value, str):
         parts = args_value.split()
     elif isinstance(args_value, list):
-        parts = list(args_value)
+        # 关键修复：拆分每个 element 内的空白（处理 "--liushi \"YYYY-MM-DD HH:MM\"" 场景）
+        parts = []
+        for p in args_value:
+            parts.extend(p.split())
     else:
         return None
     if not parts:

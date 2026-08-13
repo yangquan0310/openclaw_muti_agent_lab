@@ -471,6 +471,13 @@ def _liuyun_text(birth: Bazi, target_year: Bazi, birth_pos: str,
     lines.append(f"流{target_pos[:1]}柱：{target_pillar.gan}{target_pillar.zhi}")
     lines.append(f"  └ 干十神（vs 日主{birth.day_master}）：{ten_god(birth.day_master, target_pillar.gan)}")
     lines.append(f"  └ 支本气（{target_pillar.zhi} 本气 {target_pillar.canggan[0]}）十神：{ten_god_of_zhi(birth.day_master, target_pillar.zhi)}")
+
+    # v1.12.0 修复：子时换日时显示日柱同步变更
+    birth_day_gz = f"{birth.day.gan}{birth.day.zhi}"
+    target_day_gz = f"{target_year.day.gan}{target_year.day.zhi}"
+    if birth_day_gz != target_day_gz:
+        lines.append(f"  └ ⚠️ 日柱同步变更：{birth_day_gz} → {target_day_gz}（子时换日）")
+
     lines.append("")
     lines.append(f"与命主{birth_pos}（{birth_pillar.gan}{birth_pillar.zhi}）的关系：")
     lines.append(f"  天干：{target_pillar.gan} vs {birth_pillar.gan} → {' | '.join(rel['gan_rels'])}")
@@ -2526,6 +2533,11 @@ def lunar_to_solar(year: int, month: int, day: int, leap: bool = False,
 
     返回匹配的公历 datetime（默认取 12:00 参考点），找不到返回 None。
     注意：返回时刻为参考时刻，由调用方按需替换时分。
+
+    v1.12.0 增强（P2-3 修复）：
+    - 如果 leap=True 但指定年没有闰该月，**不会**回退到非闰月，而是返回 None。
+      调用方需自行检查（可通过 cnlunar.Lunar(year, 6, 15).getLunarMonthName() 判断）。
+    - 找不到对应日期时，搜索窗口完整遍历后才返回 None，不存在中途截断。
     """
     # 农历 N 年约从公历 N-1 年 12 月持续到 N+1 年 6 月（春节 1/21-2/21，
     # 除夕在次年 1 月底-2 月中），搜索窗口取 [N-1-12-01, N+1-07-01) 足够。

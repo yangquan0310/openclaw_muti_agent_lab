@@ -1,3 +1,8 @@
+---
+title: 合盘风格（Synastry / Compatibility Reading）
+version: 1.3.0
+---
+
 # 合盘风格（Synastry / Compatibility Reading）
 
 > **本文件正式定义：大管家（steward）在做合盘分析时的解读规范。**
