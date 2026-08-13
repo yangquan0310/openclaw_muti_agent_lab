@@ -100,7 +100,15 @@
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
 
-## Promoted From Short-Term Memory (2026-08-11)
+## Promoted From Short-Term Memory (2026-08-14)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-07-25-1352.md:41:60 -->
-- | **输出路径** | `/root/.openclaw/skills/suanming/` | ## 🚨 八字排盘正确性硬约束（已写进 workboard notes + spawn task） - **算法忠于 github 源码**——禁止自创/简化/合并 - **至少 8 个边界测试用例**全部 PASS 才算完成： - 立春换年（1984-02-02） - 节气换月（小满/大暑前后） - 子时换日（2000-01-01 23:30） - 闰月年（2017 闰六月） - 五鼠遁起时 - 1900-01-31 甲辰日基准 - 真太阳时修正 - 五行纳音 / 空亡 / 旬空 - programmer 完成 `workboard_complete` 后，大管家核验后向您汇报结果 ## ⏳ 当前状态 子代理已接受任务，正在后台执行（预计 1-2 小时）。完成后会自动通知，我会核验测试结果并向您汇报。 assistant: 子代理已完成并提交。但子代理主动标注了几个**关键发现**，与老板原话"八字排盘不能有问题"存在歧义——必须先核验，再诚实汇报给老板拍板。 [score=0.806 recalls=4 avg=0.482 source=memory/2026-07-25-1352.md:41-60]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:19:22 -->
+- 一、`openclaw.json` agents.list 中的 main: | 字段 | 值 | |------|-----| | `id` | **`main`** | | `default` | **`true`** ← 默认 agent | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:19-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:23:26 -->
+- 一、`openclaw.json` agents.list 中的 main: | `name` | `main` | | `workspace` | `/root/.openclaw/workspace/main` | | `agentDir` | `/root/.openclaw/agents/main/agent` | | `subagents.allowAgents` | ❌ **未配置**（steward 有 7 个专家，main 没有） | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:23-26]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:27:27 -->
+- 一、`openclaw.json` agents.list 中的 main: | `subagents.delegationMode` | ❌ 未配置（继承 defaults） | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:27-27]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:33:36 -->
+- 二、main workspace引导文件状态（全部是 OpenClaw 默认模板）: | 文件 | 状态 |备注 | |------|------|------| | `IDENTITY.md` | **默认模板，未填** | "Fill this in during your first conversation"，Name/Creature/Vibe/Emoji/Avatar 全是占位 | | `SOUL.md` | **默认模板，未填** | OpenClaw 通用 SOUL 文本 | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:33-36]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:37:40 -->
+- 二、main workspace引导文件状态（全部是 OpenClaw 默认模板）: | `AGENTS.md` | **默认模板，未填** | OpenClaw 通用 AGENTS 文本 | | `TOOLS.md` | **默认模板，几乎空** | 仅占位说明 | | `USER.md` | **默认模板，全空** | Name/时区/Notes 都没填 | | `HEARTBEAT.md` | **只有注释** | "Keep this file empty (or with only comments) to skip heartbeat API calls" | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:37-40]
