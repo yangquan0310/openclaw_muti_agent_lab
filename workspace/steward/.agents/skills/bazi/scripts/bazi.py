@@ -32,6 +32,7 @@ import re
 import calendar
 from dataclasses import dataclass, field
 from datetime import datetime
+from functools import lru_cache
 from typing import Optional
 
 try:
@@ -766,19 +767,37 @@ def _zhengge_check_jiu_ying(bz: Bazi, ge_type: str) -> str | None:
     cfg = ZHENGGE_XIJI[ge_type]
 
     # 把 xiangshen 字符串解析成十神列表（中文拆词）
+    # v1.13.0 优化（P2-5）：扩展关键词字典覆盖全部 10 神 + 阴阳两面
     xiangshen_text = cfg["xiangshen"]
-    # 简单拆解：印星 / 财星 / 食伤 / 官杀 / 比劫
     found_any = []
     for keyword, label in [
+        # 印（阳面 + 阴面）
         ("印星", "印星"),
-        ("财", "财星"),
-        ("官杀", "官杀"),
-        ("食伤", "食伤"),
-        ("比劫", "比劫"),
         ("正印", "正印"),
+        ("偏印", "偏印"),
+        ("枭神", "偏印"),
+        # 财（阳面 + 阴面）
+        ("财星", "财星"),
+        ("财", "财星"),
+        ("正财", "正财"),
+        ("偏财", "偏财"),
+        # 官杀（阳面 + 阴面）
+        ("官杀", "官杀"),
+        ("官", "官杀"),
+        ("正官", "正官"),
+        ("七杀", "七杀"),
+        # 食伤（阳面 + 阴面）
+        ("食伤", "食伤"),
+        ("食神", "食神"),
+        ("伤官", "伤官"),
+        # 比劫（阳面 + 阴面）
+        ("比劫", "比劫"),
+        ("比肩", "比肩"),
+        ("劫财", "劫财"),
     ]:
         if keyword in xiangshen_text:
-            found_any.append(label)
+            if label not in found_any:
+                found_any.append(label)
 
     for p in bz.four_pillars():
         for label in found_any:
@@ -1250,6 +1269,23 @@ KONGWANG = {
     "甲子": ["戌", "亥"], "甲戌": ["申", "酉"], "甲申": ["午", "未"],
     "甲午": ["辰", "巳"], "甲辰": ["寅", "卯"], "甲寅": ["子", "丑"],
 }
+
+
+@lru_cache(maxsize=60)
+def _kongwang_for_day(day_gan: str, day_zhi: str) -> tuple | None:
+    """v1.13.0 优化（P2-1）：日柱 → 空亡列表的高效查询（lru_cache 避免 60 次循环）.
+
+    返回对应空亡的两支元组，或 None（理论上不会，因为 60 甲子每柱都有对应旬）。
+    """
+    for xun_gan_zhi, kw in KONGWANG.items():
+        xun_gan_idx = TIANGAN.index(xun_gan_zhi[0])
+        xun_zhi_idx = DIZHI.index(xun_gan_zhi[1])
+        for i in range(10):
+            if (TIANGAN[(xun_gan_idx + i) % 10] == day_gan and
+                    DIZHI[(xun_zhi_idx + i) % 12] == day_zhi):
+                return tuple(kw)
+    return None
+
 
 # H. 月支 + 日柱 → 天赦日
 TIANSHE = {
@@ -1820,18 +1856,8 @@ def shensha(bz: Bazi) -> list:
             })
 
     # 26. 六甲空亡（按日柱所在旬：6 旬首 → 每旬空亡两支，统一走旬遍历）
-    kongwang_zhi = None
-    for xun_gan_zhi, kw in KONGWANG.items():
-        # 检查日柱是否在该旬内（旬首起连续 10 个干支）
-        xun_gan_idx = TIANGAN.index(xun_gan_zhi[0])
-        xun_zhi_idx = DIZHI.index(xun_gan_zhi[1])
-        for i in range(10):
-            if (TIANGAN[(xun_gan_idx + i) % 10] == bz.day.gan and
-                    DIZHI[(xun_zhi_idx + i) % 12] == bz.day.zhi):
-                kongwang_zhi = kw
-                break
-        if kongwang_zhi:
-            break
+    # v1.13.0 优化（P2-1）：用 lru_cache 包裹日柱→空亡查询，避免重复 60 次循环
+    kongwang_zhi = _kongwang_for_day(bz.day.gan, bz.day.zhi)
 
     if kongwang_zhi:
         for pos_name, zhi, p in [
@@ -2148,13 +2174,21 @@ def dayun(bz: Bazi, gender: str = "男") -> dict:
     direction = "forward" if forward else "backward"
     if bz.solar is not None:
         jie_name, jie_dt, days_diff = _find_nearest_jie(bz, direction)
-        qi_yun_age = days_diff // 3
+        # v1.13.0 优化（P2-2）：折叠余数折算（1 天≈4 个月 → 1%3=0 余 1 天 折 4 个月）
+        # qi_yun_age 保持 int（向下游 step_start 计算兼容），加 qi_yun_age_detail 字符串显示
+        qi_yun_years = days_diff // 3
+        qi_yun_months = (days_diff % 3) * 4
+        qi_yun_age = qi_yun_years  # 保持 int（与下游代码兼容）
+        if qi_yun_months > 0:
+            qi_yun_age_detail = f"{qi_yun_years}岁{qi_yun_months}个月"
+        else:
+            qi_yun_age_detail = f"{qi_yun_years}岁"
         qi_yun_note = (
             f"出生日 → {'下一个' if forward else '上一个'}节"
-            f"{jie_name or '（未找到）'} 的天数{days_diff} ÷ 3 = {qi_yun_age} 岁起运"
+            f"{jie_name or '（未找到）'} 的天数{days_diff} → {qi_yun_age_detail} 起运"
         )
         # 简化口径：起运岁数按 3 天=1 岁取整（1 天≈4 个月、1 时辰≈10 天）
-        qi_yun_rule = "起运岁数按 3 天=1 岁取整（1 天≈4 个月、1 时辰≈10 天）"
+        qi_yun_rule = "起运岁数按 3 天=1 岁取整 + 余数折月（1 天≈4 个月、1 时辰≈10 天）"
     else:
         # 四柱直接输入：无公历日期，无法精确起运（干支大运仍可排）
         jie_name, qi_yun_age = "", None
