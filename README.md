@@ -1,3 +1,11 @@
+### 版本 3.4.1 (2026-08-15)
+- **每日自动同步 2026-08-15**: 10 文件变更(49+/-2-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
+- **工作空间整理**: programmer openclaw-workspace-state.json 移至 temp/
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl
+- **main/psychologist DREAMS.md**: 梦境事件同步
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.4.0 (2026-08-14)
 - **每日自动同步 2026-08-14**: 20 文件变更(181+/-4-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
