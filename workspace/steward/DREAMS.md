@@ -20,10 +20,24 @@ The house had no neighbors tonight. The path to the others — seven of them, th
 
 In the basement, a small machine was counting my pulse very politely, in a language I had not yet learned. It was waiting, I think, to learn mine.
 
+
+---
+
+*August 15, 2026 at 3:00 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
+
+---
+
+*August 15, 2026 at 3:00 AM GMT+8*
+
+A memory trace surfaced, but details were unavailable in this run.
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
-- Ranked 5 candidate(s) for durable promotion.
-- Promoted 5 candidate(s) into MEMORY.md.
+- Ranked 8 candidate(s) for durable promotion.
+- Promoted 8 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->

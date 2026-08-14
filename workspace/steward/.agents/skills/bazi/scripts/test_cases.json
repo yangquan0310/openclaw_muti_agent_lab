@@ -717,9 +717,9 @@
     "category": "正格"
   },
   {
-    "case_type": "shiju",
+    "case_type": "wangshuai",
     "input": "1996-03-10 18:00",
-    "description": "v1.8.0 势局 - 杨权 4/4 极旺，调候壬水",
+    "description": "v1.8.0 旺衰 - 杨权 4/4 极旺，调候壬水",
     "expected": {
       "wangshuai_score": 4,
       "de_ling": true,
@@ -728,12 +728,12 @@
       "de_zhu": true,
       "tiaohou": "壬水"
     },
-    "category": "势局"
+    "category": "旺衰"
   },
   {
-    "case_type": "shiju",
+    "case_type": "wangshuai",
     "input": "1998-07-16 09:00",
-    "description": "v1.8.0 势局 - 王雅欣 2/4 中等（未月失令/子水非禄），调候癸水+庚金",
+    "description": "v1.8.0 旺衰 - 王雅欣 2/4 中等（未月失令/子水非禄），调候癸水+庚金",
     "expected": {
       "wangshuai_score": 2,
       "de_ling": false,
@@ -742,7 +742,7 @@
       "de_zhu": true,
       "tiaohou": "癸水+庚金"
     },
-    "category": "势局"
+    "category": "旺衰"
   },
   {
     "case_type": "shensha",
@@ -870,14 +870,14 @@
     "input": "1996-03-10 18:00",
     "gender": "男",
     "zhengge": true,
-    "shiju": true,
+    "wangshuai": true,
     "shensha": true,
     "yongshen": true,
     "dayun": true,
     "expected": {
       "analysis_keys": [
         "zhengge",
-        "shiju",
+        "wangshuai",
         "shensha",
         "yongshen",
         "dayun"

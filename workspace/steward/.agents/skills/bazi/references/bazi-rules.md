@@ -424,7 +424,7 @@ version: 1.3.0
 |------|---------|------|
 | 八字排盘 | `bazi` CLI（v1.x）| ✅ 已实装 |
 | 八字大六壬 | `bazi --daliuren`（v2.0.0）| ✅ 已合并 |
-| 八字分析 | `bazi --zhengge / --shiju / --yongshen / --shensha` | ✅ 子命令 |
+| 八字分析 | `bazi --zhengge / --wangshuai / --yongshen / --shensha` | ✅ 子命令 |
 | 紫微斗数 | `ziwei` 技能（v1.x）| ⏳ 待建 |
 | 奇门遁甲 | `qimen` 技能（v1.x）| ⏳ 待建 |
 | 太乙神数 | `taiyi` 技能（v1.x）| ⏳ 待建 |

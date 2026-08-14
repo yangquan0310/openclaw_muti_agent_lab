@@ -30,7 +30,7 @@ from bazi import (  # noqa: E402
     parse_lunar_input,
     liunian, liumonth, liushi,
     liunian_text, liumonth_text, liushi_text,
-    zhengge, shiju, shensha, yongshen, dayun, reverse_lookup,
+    zhengge, wangshuai, shensha, yongshen, dayun, reverse_lookup,
     wuxing_of_gan,
 )
 
@@ -138,7 +138,7 @@ def cmd_zhengge(args, birth) -> int:
         print("=" * 50)
         print(f"【正格分析】{_birth_label(birth)}")
         print("=" * 50)
-        print(f"格局：{result.get('ge_type') or '未成格（走势局）'}")
+        print(f"格局：{result.get('ge_type') or '未成格（走旺衰）'}")
         print(f"来源：{result.get('ge_source','')}")
         print(f"用神方向：{result.get('yongshen_direction','')}（{result.get('yongshen_wuxing','')}）")
         print(f"相神：{result.get('xiangshen','')}")
@@ -151,18 +151,18 @@ def cmd_zhengge(args, birth) -> int:
     return 0
 
 
-def cmd_shiju(args, birth) -> int:
-    """v1.8.0 势局分析."""
-    result = shiju(birth)
+def cmd_wangshuai(args, birth) -> int:
+    """v1.8.0 旺衰分析."""
+    result = wangshuai(birth)
     if args.json:
         out = {
             "chart": _chart_to_dict(birth),
-            "analysis": {"shiju": result},
+            "analysis": {"wangshuai": result},
         }
         print(json.dumps(out, ensure_ascii=False, indent=2))
     else:
         print("=" * 50)
-        print(f"【势局分析】{_birth_label(birth)}")
+        print(f"【旺衰分析】{_birth_label(birth)}")
         print("=" * 50)
         print(f"旺衰：{result.get('wangshuai','')}（{result.get('wangshuai_score',0)}/4）")
         print(f"  得令：{result.get('de_ling')}")
@@ -215,7 +215,7 @@ def cmd_yongshen(args, birth) -> int:
         print(f"最终用神：{result.get('final','')}")
         print(f"总结：{result.get('final_desc','')}")
         print(f"正格方向：{result.get('zhengge_direction','')}")
-        print(f"势局精化：{result.get('shiju_jinhua','')}")
+        print(f"旺衰精化：{result.get('wangshuai_jinhua','')}")
         print(f"调候：{result.get('tiaohou','')}")
         print(f"相神：{result.get('xiangshen','')}")
         print(f"忌神：{result.get('jishen','')}")
@@ -361,8 +361,8 @@ def _check_case(case: dict) -> tuple[bool, str]:
         return _check_combined_case(case)
     elif ctype == "zhengge":
         return _check_zhengge_case(case)
-    elif ctype == "shiju":
-        return _check_shiju_case(case)
+    elif ctype == "wangshuai":
+        return _check_wangshuai_case(case)
     elif ctype == "shensha":
         return _check_shensha_case(case)
     elif ctype == "zaisha":
@@ -650,10 +650,10 @@ def _check_zhengge_case(case: dict) -> tuple[bool, str]:
     return True, ""
 
 
-def _check_shiju_case(case: dict) -> tuple[bool, str]:
-    """v1.8.0 势局用例."""
+def _check_wangshuai_case(case: dict) -> tuple[bool, str]:
+    """v1.8.0 旺衰用例."""
     birth = _birth_from_case_input(case)
-    actual = shiju(birth)
+    actual = wangshuai(birth)
     expected = case.get("expected", {})
     mismatches = []
 
@@ -808,7 +808,7 @@ def _check_combined_json_case(case: dict) -> tuple[bool, str]:
     if len(parts) > 1:
         argv.append(parts[1])
     argv += ["--json"]
-    for flag in ("--liunian", "--liumonth", "--liushi", "--zhengge", "--shiju",
+    for flag in ("--liunian", "--liumonth", "--liushi", "--zhengge", "--wangshuai",
                  "--shensha", "--yongshen", "--dayun"):
         if case.get(flag.lstrip("-")):
             argv.append(flag)
@@ -1095,7 +1095,7 @@ _bazi_to_dict = _chart_to_dict
 def _combined_json_output(args, birth):
     """组合模式：--json 且 ≥2 个分析模块 → 单个完整 JSON dict；否则返回 None.
 
-    analysis 键：liunian / liumonth / liushi / zhengge / shiju / shensha / yongshen / dayun
+    analysis 键：liunian / liumonth / liushi / zhengge / wangshuai / shensha / yongshen / dayun
     （仅含被触发的模块；shensha 保持数组并附 count）
     """
     gender = getattr(args, "gender", "男") or "男"
@@ -1117,8 +1117,8 @@ def _combined_json_output(args, birth):
     if args.zhengge:
         analysis["zhengge"] = zhengge(birth)
         modules += 1
-    if args.shiju:
-        analysis["shiju"] = shiju(birth)
+    if args.wangshuai:
+        analysis["wangshuai"] = wangshuai(birth)
         modules += 1
     if args.shensha:
         ss = shensha(birth)
@@ -1176,12 +1176,12 @@ def main(argv=None) -> int:
     # v1.8.0 新增模块 flag
     parser.add_argument("--zhengge", action="store_true",
                         help="v1.8.0 正格判定（月令定格 + 透干 + 用神方向）")
-    parser.add_argument("--shiju", action="store_true",
-                        help="v1.8.0 势局分析（旺衰四维度 + 调候 + 流通）")
+    parser.add_argument("--wangshuai", action="store_true",
+                        help="v1.8.0 旺衰分析（旺衰四维度 + 调候 + 流通）")
     parser.add_argument("--shensha", action="store_true",
                         help="v1.8.0 神煞清单（28 神煞 × 4 柱 = 一体两面）")
     parser.add_argument("--yongshen", action="store_true",
-                        help="v1.8.0 用神融合（正格方向 ∩ 势局精化，神煞不进入）")
+                        help="v1.8.0 用神融合（正格方向 ∩ 旺衰精化，神煞不进入）")
     parser.add_argument("--dayun", action="store_true",
                         help="v1.8.0 大运推算（顺/逆排 + 起运岁数 + 10 步）")
     parser.add_argument("--gender", type=str, choices=["男", "女"], default=None,
@@ -1252,9 +1252,9 @@ def main(argv=None) -> int:
         if args.zhengge:
             has_any = True
             rc |= cmd_zhengge(args, birth)
-        if args.shiju:
+        if args.wangshuai:
             has_any = True
-            rc |= cmd_shiju(args, birth)
+            rc |= cmd_wangshuai(args, birth)
         if args.shensha:
             has_any = True
             rc |= cmd_shensha(args, birth)
@@ -1310,9 +1310,9 @@ def main(argv=None) -> int:
     if args.zhengge:
         has_any = True
         rc |= cmd_zhengge(args, birth)
-    if args.shiju:
+    if args.wangshuai:
         has_any = True
-        rc |= cmd_shiju(args, birth)
+        rc |= cmd_wangshuai(args, birth)
     if args.shensha:
         has_any = True
         rc |= cmd_shensha(args, birth)

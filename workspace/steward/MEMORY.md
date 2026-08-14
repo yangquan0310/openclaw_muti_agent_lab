@@ -100,15 +100,21 @@
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
 
-## Promoted From Short-Term Memory (2026-08-14)
+## Promoted From Short-Term Memory (2026-08-15)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:19:22 -->
-- 一、`openclaw.json` agents.list 中的 main: | 字段 | 值 | |------|-----| | `id` | **`main`** | | `default` | **`true`** ← 默认 agent | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:19-22]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:23:26 -->
-- 一、`openclaw.json` agents.list 中的 main: | `name` | `main` | | `workspace` | `/root/.openclaw/workspace/main` | | `agentDir` | `/root/.openclaw/agents/main/agent` | | `subagents.allowAgents` | ❌ **未配置**（steward 有 7 个专家，main 没有） | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:23-26]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:27:27 -->
-- 一、`openclaw.json` agents.list 中的 main: | `subagents.delegationMode` | ❌ 未配置（继承 defaults） | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:27-27]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:33:36 -->
-- 二、main workspace引导文件状态（全部是 OpenClaw 默认模板）: | 文件 | 状态 |备注 | |------|------|------| | `IDENTITY.md` | **默认模板，未填** | "Fill this in during your first conversation"，Name/Creature/Vibe/Emoji/Avatar 全是占位 | | `SOUL.md` | **默认模板，未填** | OpenClaw 通用 SOUL 文本 | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:33-36]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-09-1251.md:37:40 -->
-- 二、main workspace引导文件状态（全部是 OpenClaw 默认模板）: | `AGENTS.md` | **默认模板，未填** | OpenClaw 通用 AGENTS 文本 | | `TOOLS.md` | **默认模板，几乎空** | 仅占位说明 | | `USER.md` | **默认模板，全空** | Name/时区/Notes 都没填 | | `HEARTBEAT.md` | **只有注释** | "Keep this file empty (or with only comments) to skip heartbeat API calls" | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-09-1251.md:37-40]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-10.md:13:16 -->
+- 子午冲 检查（流月 / 流时 / 大运叠加）: 子午冲 = 年支子 vs 日支午（命中既有子又有午）; 八字大运叠加子午冲：流年地支为子或午时，与命中对应支形成六冲 → 重大变化信号; 杨权命盘：年支子、日支午 → 命中自带子午冲，2026 丙午流年再添冲 → 双冲叠加 = 变动之年; 王雅欣命盘：年支寅、日支子、时支巳 → 无子午冲基础 [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-10.md:13-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-10.md:17:17 -->
+- 子午冲 检查（流月 / 流时 / 大运叠加）: **推断**：老板 2026 子午冲双叠加 = 婚姻宫动 + 事业冲变年 → 已应用在流年解读 [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-10.md:17-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-10.md:21:21 -->
+- 沟通风格 do 型规则（v3.6.0 沉淀后强化）: 老板反复强调，输出要： [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-10.md:21-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-10.md:22:25 -->
+- 沟通风格 do 型规则（v3.6.0 沉淀后强化）: **直接结论先行**——别绕; **现代汉语翻译**——按 §五 翻译对照表; **精简不堆砌**——表格只对复杂数据用，bullet list 是默认; **标题最简**——`### 🔍 正格` 不要 `### 🔍 正格（Step 2 · 骨）`（v3.6.0 老板拍板"标题不需要用括号解释"） [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-10.md:22-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-10.md:26:27 -->
+- 沟通风格 do 型规则（v3.6.0 沉淀后强化）: **正文括号正常用**——补充说明，不是标题装饰; **流程中常用 Step 编号**——但不放标题里，放段落首句或条目末尾 `依据 xxx` [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-10.md:26-27]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-10.md:31:31 -->
+- skill 文档结构（v1.10.0 沉淀）: bazi skill 6 个独立 md： [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-10.md:31-31]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-10.md:5:5 -->
+- 流月天干 五虎遁起月法（v8.54.0 已沉淀）: 老板 2026-08-10 21:05 拍板"流年流月计算，别再出问题了"——已在 v8.54.0 沉淀，但仍要点醒： [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-10.md:5-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-10.md:6:9 -->
+- 流月天干 五虎遁起月法（v8.54.0 已沉淀）: **核心口诀**：甲己之年丙作首（甲/己年正月寅月=丙寅）；乙庚之年戊为头（乙/庚年正月寅月=戊寅）；丙辛之年寻庚上（丙/辛年正月寅月=庚寅）；丁壬壬寅顺水流；戊癸之年何处起，甲寅之上好追求; **2026 丙午年正月寅月 = 庚寅**（不是按天干顺推的壬寅）; **反例（不许做）**：按"上一月天干+1"硬推; 任何流月排盘前先用 `bazi <生日> --liumonth <年>-<月>` 验算 [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-10.md:6-9]

@@ -599,7 +599,7 @@ def liushi_text(birth: Bazi, target_dt: datetime) -> str:
 # 2. 月令本气 vs 日主 → 十神
 # 3. 月令本气是否在天干透出？
 #    - 是 → 标准八格（按十神命名）
-#    - 否 → 变格 / 走势局（返回 ge_type=null + 透干位）
+#    - 否 → 变格 / 走旺衰（返回 ge_type=null + 透干位）
 # 4. 喜忌按 `bazi-zhengge.md` §三.1 总则查表
 # 5. 破格 / 救应 自动检测（基于四柱关系）
 
@@ -931,13 +931,13 @@ def zhengge(bz: Bazi) -> dict:
 
 
 # ============================================================================
-# v1.8.0 模块 2：势局（shiju）—— 旺衰四维度 + 调候 + 流通
+# v1.8.0 模块 2：旺衰（wangshuai）—— 旺衰四维度 + 调候 + 流通
 # ============================================================================
 #
-# 设计依据：`references/bazi-shiju.md` v1.0.0
+# 设计依据：`references/bazi-wangshuai.md` v1.0.0
 # 核心问题：日主旺衰？调候用神？五行流通如何？
 
-# 调候速查表（按 bazi-shiju.md §五.2）
+# 调候速查表（按 bazi-wangshuai.md §五.2）
 # 键：日主天干，值：(春, 夏, 秋, 冬) 的调候用神串
 TIAOHOU_TABLE = {
     "甲": ("庚金+壬水", "癸水+庚金", "丁火+壬水", "庚金+丁火+戊土"),
@@ -967,7 +967,7 @@ LU_POS = {
     "壬": "亥", "癸": "子",
 }
 
-# 旺衰分级表（按 bazi-shiju.md §三.2）
+# 旺衰分级表（按 bazi-wangshuai.md §三.2）
 # 总分 → 等级
 WANGSHUAI_GRADE = [
     (4, "极旺（考虑从强）"),
@@ -978,14 +978,14 @@ WANGSHUAI_GRADE = [
 ]
 
 
-def _shiju_check_de_ling(bz: Bazi) -> bool:
+def _wangshuai_check_de_ling(bz: Bazi) -> bool:
     """得令：月支五行 = 日主五行 OR 月支五行生日主."""
     me = GAN_WUXING[bz.day_master]
     month_zhi_wx = ZHI_WUXING[bz.month.zhi]
     return month_zhi_wx == me or SHENG_ME[me] == month_zhi_wx
 
 
-def _shiju_check_de_di(bz: Bazi) -> bool:
+def _wangshuai_check_de_di(bz: Bazi) -> bool:
     """得地：日支五行 = 日主五行 OR 日支 = 日主禄位."""
     me = GAN_WUXING[bz.day_master]
     day_zhi_wx = ZHI_WUXING[bz.day.zhi]
@@ -994,7 +994,7 @@ def _shiju_check_de_di(bz: Bazi) -> bool:
     return bz.day.zhi == LU_POS[bz.day_master]
 
 
-def _shiju_check_de_sheng(bz: Bazi) -> bool:
+def _wangshuai_check_de_sheng(bz: Bazi) -> bool:
     """得生：命中是否有印星（天干透出 OR 地支藏干有根）."""
     me = bz.day_master
     # 检查天干
@@ -1011,7 +1011,7 @@ def _shiju_check_de_sheng(bz: Bazi) -> bool:
     return False
 
 
-def _shiju_check_de_zhu(bz: Bazi) -> bool:
+def _wangshuai_check_de_zhu(bz: Bazi) -> bool:
     """得助：命中是否有比劫（天干透出 OR 地支藏干有根）."""
     me = bz.day_master
     for p in [bz.year, bz.month, bz.hour]:
@@ -1025,8 +1025,8 @@ def _shiju_check_de_zhu(bz: Bazi) -> bool:
     return False
 
 
-def shiju(bz: Bazi) -> dict:
-    """势局分析（旺衰四维度 + 调候 + 流通 + 用神精化）.
+def wangshuai(bz: Bazi) -> dict:
+    """旺衰分析（旺衰四维度 + 调候 + 流通 + 用神精化）.
 
     返回 dict：
     {
@@ -1042,12 +1042,12 @@ def shiju(bz: Bazi) -> dict:
         "zhuan_ge": str | None,   # 特殊格局（从强/从弱/化气等）
     }
 
-    算法依据：`references/bazi-shiju.md` v1.0.0
+    算法依据：`references/bazi-wangshuai.md` v1.0.0
     """
-    de_ling = _shiju_check_de_ling(bz)
-    de_di = _shiju_check_de_di(bz)
-    de_sheng = _shiju_check_de_sheng(bz)
-    de_zhu = _shiju_check_de_zhu(bz)
+    de_ling = _wangshuai_check_de_ling(bz)
+    de_di = _wangshuai_check_de_di(bz)
+    de_sheng = _wangshuai_check_de_sheng(bz)
+    de_zhu = _wangshuai_check_de_zhu(bz)
 
     score = sum([de_ling, de_di, de_sheng, de_zhu])
     grade = next((g for s, g in WANGSHUAI_GRADE if score >= s), "未知")
@@ -1881,11 +1881,11 @@ def shensha(bz: Bazi) -> list:
 
 
 # ============================================================================
-# v1.8.0 模块 4：用神（yongshen）—— 正格 ∩ 势局 融合
+# v1.8.0 模块 4：用神（yongshen）—— 正格 ∩ 旺衰 融合
 # ============================================================================
 #
 # 设计依据：`references/bazi-yongshen.md` v1.0.0
-# 核心问题：融合正格方向 + 势局精化 → 最终用神
+# 核心问题：融合正格方向 + 旺衰精化 → 最终用神
 # ⚠️ 神煞不进入用神判定（神煞 = 28 神星；用神 = 十神五行）
 
 # 用神五行映射（按十神 → 五行）
@@ -1914,23 +1914,23 @@ YONGSHEN_WUXING_MAP = {
 }
 
 
-def _yongshen_resolve_wuxing(zhengge_out: dict, shiju_out: dict, bz: Bazi) -> str:
-    """解析最终用神五行（融合正格 + 势局）.
+def _yongshen_resolve_wuxing(zhengge_out: dict, wangshuai_out: dict, bz: Bazi) -> str:
+    """解析最终用神五行（融合正格 + 旺衰）.
 
     三层模型：
     - L1（正格）：方向 → 五行
-    - L2（势局）：精化 → 五行
+    - L2（旺衰）：精化 → 五行
     - L3（融合）：最终 → 五行
 
     优先级：正格方向 > 调候 > 扶抑（神煞不进入用神判定）
     """
     # 正格方向（最高优先级）
     zg_dir = zhengge_out.get("yongshen_wuxing", "")
-    if not zg_dir or "（走势局精化）" in zg_dir:
+    if not zg_dir or "（走旺衰精化）" in zg_dir:
         zg_dir = ""
 
-    # 调候五行（势局精化）
-    tiaohou = shiju_out.get("tiaohou", "")
+    # 调候五行（旺衰精化）
+    tiaohou = wangshuai_out.get("tiaohou", "")
     tiaohou_wuxing = []
     if "庚" in tiaohou or "辛" in tiaohou:
         tiaohou_wuxing.append("金")
@@ -1944,7 +1944,7 @@ def _yongshen_resolve_wuxing(zhengge_out: dict, shiju_out: dict, bz: Bazi) -> st
         tiaohou_wuxing.append("土")
 
     # 旺衰精化方向
-    score = shiju_out.get("wangshuai_score", 2)
+    score = wangshuai_out.get("wangshuai_score", 2)
     if score >= 3:
         fuyi_wuxing = "金水"  # 身旺 → 克泄（金水为主）
     elif score <= 1:
@@ -1968,7 +1968,7 @@ def _yongshen_resolve_wuxing(zhengge_out: dict, shiju_out: dict, bz: Bazi) -> st
 
 
 def yongshen(bz: Bazi) -> dict:
-    """用神融合（正格方向 ∩ 势局精化）.
+    """用神融合（正格方向 ∩ 旺衰精化）.
 
     返回 dict：
     {
@@ -1978,7 +1978,7 @@ def yongshen(bz: Bazi) -> dict:
         "jishen": str,           # 忌神
         "choushen": str,         # 仇神
         "zhengge_direction": str,    # 正格方向
-        "shiju_jinhua": str,     # 势局精化
+        "wangshuai_jinhua": str,     # 旺衰精化
         "tiaohou": str,          # 调候
         "fusion_source": str,    # 融合来源说明
         "wangshuai_score": int,  # 旺衰得分
@@ -1987,9 +1987,9 @@ def yongshen(bz: Bazi) -> dict:
     算法依据：`references/bazi-yongshen.md` v1.0.0
     ⚠️ 神煞不进入用神判定（神煞 = 28 神星；用神 = 十神五行）
     """
-    # 取正格和势局
+    # 取正格和旺衰
     zg_out = zhengge(bz)
-    sj_out = shiju(bz)
+    sj_out = wangshuai(bz)
 
     # 融合最终五行
     final_wuxing = _yongshen_resolve_wuxing(zg_out, sj_out, bz)
@@ -2010,7 +2010,7 @@ def yongshen(bz: Bazi) -> dict:
     ge_type = zg_out.get("ge_type", "（无格）")
     fusion_source = (
         f"正格（{ge_type} → {zg_out.get('yongshen_direction', '未知')}）∩ "
-        f"势局（{sj_out.get('yongshen_jinhua', '未知')}，调候={tiaohou or '无'}）"
+        f"旺衰（{sj_out.get('yongshen_jinhua', '未知')}，调候={tiaohou or '无'}）"
     )
 
     return {
@@ -2020,7 +2020,7 @@ def yongshen(bz: Bazi) -> dict:
         "jishen": jishen,
         "choushen": choushen,
         "zhengge_direction": zg_out.get("yongshen_direction", ""),
-        "shiju_jinhua": sj_out.get("yongshen_jinhua", ""),
+        "wangshuai_jinhua": sj_out.get("yongshen_jinhua", ""),
         "tiaohou": tiaohou,
         "fusion_source": fusion_source,
         "wangshuai_score": sj_out.get("wangshuai_score", 0),
