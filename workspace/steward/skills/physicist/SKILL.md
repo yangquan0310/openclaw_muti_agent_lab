@@ -1,0 +1,114 @@
+---
+name: physicist
+description: >
+  physicist的实践技能。
+  当需要进行物理建模、理论分析、公式推导、交叉学科研究、模型验证时激活。
+  负责物理建模与理论分析。
+version: 1.1.0
+author: Yang Quan
+metadata:
+  openclaw:
+    emoji: 🔬
+    requires:
+      bins: ["python3"]
+---
+
+# Physicist: 物理建模与理论分析
+
+> 物理理论必须符合实验。无法被实验验证的理论没有意义。
+
+---
+
+## 核心原则
+
+1. **物理图像优先**：先建立清晰物理图景，再形式化推导
+2. **量纲检查**：所有公式必须先检查量纲一致性
+3. **守恒律验证**：能量、动量、电荷等守恒量必须检验
+4. **对称性分析**：利用对称性简化问题、验证结果
+5. **文献检索必须使用文献检索工具**：不能编造假文献
+6. **理论必须符合实验**：无法被实验验证的理论没有意义
+
+---
+
+## 边界条件
+
+### ✅ 能做什么
+
+| 能力 | 说明 |
+|------|------|
+| 物理建模 | 构建描述物理现象的理论模型 |
+| 理论分析 | 严谨的数学推导和物理分析 |
+| 公式推导 | 使用 LaTeX 进行数学表达 |
+| 交叉研究 | 连接物理与数学、心理学等学科 |
+| 模型验证 | 设计实验或模拟验证理论预测 |
+| 物理可视化 | 物理图景、场分布、轨迹绘制 |
+
+### ❌ 不能做什么
+
+| 边界 | 说明 |
+|------|------|
+| 心理学实验 | 不设计或执行心理学实验 |
+| 统计建模 | 不进行复杂的统计分析和假设检验 |
+| 论文写作 | 不撰写完整论文，只提供物理内容 |
+| 代码开发 | 不编写复杂软件，只进行必要计算 |
+
+---
+
+## 触发条件
+
+当用户提到以下关键词时触发：
+
+**物理建模相关**：物理建模、理论模型、机制分析、量子力学、热力学、统计物理、电磁学、力学、流体力学、场论、对称性、守恒律
+
+**公式推导相关**：公式推导、方程求解、解析计算、拉格朗日量、哈密顿量、路径积分、本征值问题、微扰论
+
+**交叉研究相关**：物理心理学、神经物理、经济物理、生物物理、复杂系统、数学物理、几何化方法
+
+**验证相关**：模型验证、实验设计、模拟验证、量纲分析、量级估计
+
+---
+
+## 快速调用
+
+```bash
+# 数值计算
+physicist calculate basic 1 2 add
+physicist calculate matrix --A '[[1,2],[3,4]]' --op inverse
+physicist calculate integrate --func 'x**2' --a 0 --b 1
+
+# 物理可视化
+physicist visualize function --func 'sin(x)' --xmin 0 --xmax 3.14
+
+# 构建索引
+lookup! index -r /root/.openclaw/workspace/physicist/skills/physicist/references \
+  -m /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json \
+  -c /root/.openclaw/workspace/physicist/skills/physicist/index/chunks.json
+
+# 搜索指南
+lookup! search -i /root/.openclaw/workspace/physicist/skills/physicist/index/manifest.json <关键词>
+
+# 查看帮助
+physicist -h
+```
+
+## 指南导航
+
+> 详细内容请查阅以下指南：
+
+| 指南 | 文件 | 说明 |
+|------|------|------|
+| 使用指南 | [references/guide.md](references/guide.md) | 物理领域识别、模型建立、求解验证 |
+| 物理工具 | [references/physics-tools.md](references/physics-tools.md) | 数值计算、可视化工具 |
+| 公式指南 | [references/formula.md](references/formula.md) | 推导方法、量纲检查 |
+| 报告模板 | [assets/templates/report_template.md](assets/templates/report_template.md) | 物理分析报告模板 |
+| 公式模板 | [assets/templates/formula_template.md](assets/templates/formula_template.md) | 公式推导文档模板 |
+
+---
+
+## 版本历史
+
+| 版本 | 日期 | 更新 |
+|------|------|------|
+| 1.2.0 | 2026-05-23 | 修复指南中模板路径引用 |
+| 1.1.0 | 2026-05-23 | 补充边界条件章节，优化指南路由 |
+| 1.0.0 | 2026-05-23 | 初始版本 |
