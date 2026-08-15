@@ -38,6 +38,7 @@ bazi/
 │   ├── bazi-liutong.md           v1.0.0  [流通] = 气血
 │   ├── bazi-shensha.md           v2.2.0  [神煞] = 助缘
 │   ├── bazi-yongshen.md          v1.2.0  [用神] = 融合产物
+│   ├── bazi-yingyuan.md          v1.0.0  [姻缘] = 5 层判断流程（夫妻宫=家 / 夫妻星=人）
 │   ├── bazi-style.md             v3.16.0 [输出风格 · 含一段话范式]
 │   ├── bazi-paipan.md            v2.2.0  [排盘] 9 步流程
 │   └── bazi-hehun.md             v1.3.0  [合盘] 5+1+1 步流程
@@ -148,6 +149,7 @@ bazi/
 | **流通体系** | [`references/bazi-liutong.md`](references/bazi-liutong.md) v1.0.0 |
 | **神煞体系** | [`references/bazi-shensha.md`](references/bazi-shensha.md) v2.2.0 |
 | **用神体系** | [`references/bazi-yongshen.md`](references/bazi-yongshen.md) v1.2.0 |
+| **姻缘专题** | [`references/bazi-yingyuan.md`](references/bazi-yingyuan.md) v1.0.0 |
 | **输出风格（含一段话范式）** | [`references/bazi-style.md`](references/bazi-style.md) v3.16.0 |
 
 ---
