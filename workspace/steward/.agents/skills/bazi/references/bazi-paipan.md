@@ -290,11 +290,11 @@ version: 2.3.0
 
 #### 8.1 五维入口（指向专题md）
 
-- **💼 事业** → 本文件 §Step 2 正格 + §Step 7 大运 + §六 行业五行匹配
-- **💰 财** → 本文件 §Step 5 用神融合 + §Step 7 大运
+- **💼 事业** → **[`bazi-shiye.md`](bazi-shiye.md) v1.0.0**（完整专题）
+- **💰 财** → **[`bazi-cai.md`](bazi-cai.md) v1.0.0**（完整专题）
 - **💕 姻缘** → **[`bazi-yingyuan.md`](bazi-yingyuan.md) v2.1.0**（完整专题）
-- **🎭 性格** → 本文件 §Step 2 正格 + §Step 3 旺衰 + §Step 4 流通
-- **💪 健康** → 本文件 §Step 4 流通 + §六 行业五行映射
+- **🎭 性格** → **[`bazi-xingge.md`](bazi-xingge.md) v1.0.0**（完整专题）
+- **💪 健康** → **[`bazi-jiankang.md`](bazi-jiankang.md) v1.0.0**（完整专题）
 
 #### 8.2 五维应用的通用原则（**留在 paipan.md**）
 

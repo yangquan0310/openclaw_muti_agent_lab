@@ -507,6 +507,10 @@ bazi/
     ├── bazi-yongshen.md    # 用神判定子流程参考（v1.1.0）
     ├── bazi-hehun.md       # 合盘 / 合婚 / 合伙匹配 / 亲子合盘（v1.3.0）
     ├── bazi-yingyuan.md    # 姻缘专题（夫妻宫=家 / 夫妻星=人 / 隐晦断定 / 异位关系 / 流通，v1.0.0）
+    ├── bazi-shiye.md       # 事业专题（工作 + 创业 + 关系，v1.0.0）
+    ├── bazi-cai.md         # 财专题（工资 + 横财 + 关系，v1.0.0）
+    ├── bazi-xingge.md      # 性格专题（自我 + 思维 + 关系，v1.0.0）
+    ├── bazi-jiankang.md    # 健康专题（脏腑 + 堵点 + 关系，v1.0.0）
     ├── bazi-paipan.md      # 解读流程规范（5+1 步，v2.2.0）
     ├── bazi-style.md       # 输出风格（含现代汉语翻译对照表，v3.16.0）
     └── bazi-rules.md       # 八字规则速查（节气表、五行、十神）+ 流年关系表（v1.2.0）
