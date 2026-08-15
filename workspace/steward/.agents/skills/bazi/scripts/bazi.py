@@ -1140,15 +1140,22 @@ TIANYI_GUIREN = {
     "壬": ["巳", "卯"], "癸": ["巳", "卯"],
 }
 
+# v2.2.0 修正：文昌贵人传统派主流为多值版（甲乙→巳午、丙戊→申酉、丁己→亥子、庚辛→寅卯、壬癸→辰戌丑未）
 WENCHANG_GUIREN = {
-    "甲": "亥", "乙": "午", "丙": "申", "丁": "酉", "戊": "申",
-    "己": "酉", "庚": "子", "辛": "寅", "壬": "卯", "癸": "寅",
+    "甲": ["巳", "午"], "乙": ["巳", "午"],
+    "丙": ["申", "酉"], "戊": ["申", "酉"],
+    "丁": ["亥", "子"], "己": ["亥", "子"],
+    "庚": ["寅", "卯"], "辛": ["寅", "卯"],
+    "壬": ["辰", "戌", "丑", "未"], "癸": ["辰", "戌", "丑", "未"],
 }
 
+# v2.2.0 修正：太极贵人采用传统派主流版本（壬癸→巳卯、丙丁→亥酉、戊己→寅申、庚辛→寅午）
 TAIJI_GUIREN = {
-    "甲": ["子", "午"], "乙": ["子", "午"], "丙": ["卯", "酉"], "丁": ["卯", "酉"],
-    "戊": ["辰", "戌", "丑", "未"], "己": ["辰", "戌", "丑", "未"],
-    "庚": ["寅", "亥"], "辛": ["寅", "亥"], "壬": ["巳", "申"], "癸": ["巳", "申"],
+    "甲": ["子", "午"], "乙": ["子", "午"],
+    "丙": ["亥", "酉"], "丁": ["亥", "酉"],
+    "戊": ["寅", "申"], "己": ["寅", "申"],
+    "庚": ["寅", "午"], "辛": ["寅", "午"],
+    "壬": ["巳", "卯"], "癸": ["巳", "卯"],
 }
 
 GUOYIN_GUIREN = {
@@ -1270,6 +1277,55 @@ KONGWANG = {
     "甲午": ["辰", "巳"], "甲辰": ["寅", "卯"], "甲寅": ["子", "丑"],
 }
 
+# J. 福星贵人（按日干查，v2.2.0 新增传统派补充）
+FUXING_GUIREN = {
+    "甲": ["子", "丑"], "乙": ["子", "丑"],
+    "丙": ["丑", "寅"], "丁": ["丑", "寅"],
+    "戊": ["丑", "未"], "己": ["丑", "未"],
+    "庚": ["申", "酉"], "辛": ["申", "酉"],
+    "壬": ["辰", "巳"], "癸": ["辰", "巳"],
+}
+
+# K. 天厨贵人（按年干查，v2.2.0 新增传统派补充）
+TIANCHU_GUIREN = {
+    "甲": ["巳", "午"], "乙": ["巳", "午"],
+    "丙": ["巳", "午"], "丁": ["巳", "午"],
+    "戊": ["申", "酉"], "己": ["申", "酉"],
+    "庚": ["亥", "子"], "辛": ["亥", "子"],
+    "壬": ["寅", "卯"], "癸": ["寅", "卯"],
+}
+
+# L. 德秀贵人（按月支三合局查，v2.2.0 新增传统派补充）
+DEXIU_SANHE = {
+    "亥": ["亥", "卯", "未"], "卯": ["亥", "卯", "未"], "未": ["亥", "卯", "未"],
+    "申": ["申", "子", "辰"], "子": ["申", "子", "辰"], "辰": ["申", "子", "辰"],
+    "巳": ["巳", "酉", "丑"], "酉": ["巳", "酉", "丑"], "丑": ["巳", "酉", "丑"],
+    "寅": ["寅", "午", "戌"], "午": ["寅", "午", "戌"], "戌": ["寅", "午", "戌"],
+}
+
+# M. 披麻（按年支查，v2.2.0 新增传统派补充）
+PIMA = {
+    "寅": "子", "午": "子", "戌": "子",
+    "申": "辰", "子": "辰", "辰": "辰",
+    "巳": "酉", "酉": "酉", "丑": "酉",
+    "亥": "卯", "卯": "卯", "未": "卯",
+}
+
+# N. 飞刃（按日干查，v2.2.0 新增传统派补充）
+FEIREN = {
+    "甲": "卯", "乙": "辰", "丙": "午",
+    "丁": "未", "戊": "午", "己": "未",
+    "庚": "酉", "辛": "戌", "壬": "子",
+    "癸": "巳",
+}
+
+# O. 退神（按日干查日支，v2.2.0 新增传统派补充）
+TUISHEN = {
+    "甲": "申", "乙": "酉", "丙": "戌", "丁": "亥",
+    "戊": "子", "己": "丑", "庚": "寅", "辛": "卯",
+    "壬": "辰", "癸": "巳",
+}
+
 
 @lru_cache(maxsize=60)
 def _kongwang_for_day(day_gan: str, day_zhi: str) -> tuple | None:
@@ -1331,6 +1387,13 @@ SHENSHA_YINYANG = {
     "阴阳差错": ("独特视角、非主流路径", "婚恋波折、节奏异常"),
     "天罗地网": ("制度保护、约束有度", "束缚限制、牢狱之灾"),
     "六甲空亡": ("真空则灵、超脱执念", "所求落空、福德不实"),
+    # v2.2.0 新增传统派补充（6 项）
+    "福星贵人": ("享福、有福气", "懒惰、不思进取"),
+    "天厨贵人": ("美食缘、有口福", "贪吃、纵欲"),
+    "德秀贵人": ("人品好、德行端正", "沽名钓誉、形式主义"),
+    "披麻": ("有丧事相关缘", "亲近者有伤病/离世"),
+    "退神": ("愿意退让、随缘", "退缩、错失机会"),
+    "飞刃": ("魄力十足、执行力强", "脾气暴、容易冲动"),
 }
 
 
@@ -1389,7 +1452,7 @@ def shensha(bz: Bazi) -> list:
                 "control": "最忌刑冲（遇冲则贵人失力）",
             })
 
-    # 2. 文昌贵人（按日干查：年干、月干、日干、时干）
+    # 2. 文昌贵人（按日干查：年干、月干、日干、时干；v2.2.0 改多值版）
     wenchang = WENCHANG_GUIREN[day_master]
     for pos_name, gan, p in [
         ("年干", bz.year.gan, bz.year),
@@ -1397,7 +1460,7 @@ def shensha(bz: Bazi) -> list:
         ("日干", bz.day.gan, bz.day),
         ("时干", bz.hour.gan, bz.hour),
     ]:
-        if gan == wenchang:
+        if gan in wenchang:
             yang, yin = SHENSHA_YINYANG["文昌贵人"]
             results.append({
                 "name": "文昌贵人",
@@ -1876,6 +1939,122 @@ def shensha(bz: Bazi) -> list:
                     "activation": "所求之事易落空",
                     "control": "空亡逢冲 = 填实，反而有好事",
                 })
+
+    # ========== I. 传统派补充神煞（v2.2.0 新增 6 项） ==========
+
+    # 27. 福星贵人（按日干查）
+    fuxing_zhi = FUXING_GUIREN[day_master]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi in fuxing_zhi:
+            yang, yin = SHENSHA_YINYANG["福星贵人"]
+            results.append({
+                "name": "福星贵人",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "享福、有福气，遇事多逢吉人",
+                "control": "无明显制化",
+            })
+
+    # 28. 天厨贵人（按年干查）
+    tianchu_zhi = TIANCHU_GUIREN[bz.year.gan]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi in tianchu_zhi:
+            yang, yin = SHENSHA_YINYANG["天厨贵人"]
+            results.append({
+                "name": "天厨贵人",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "美食缘、有口福",
+                "control": "无明显制化",
+            })
+
+    # 29. 德秀贵人（按月支三合局查）
+    dexiu_zhi_list = DEXIU_SANHE[month_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi in dexiu_zhi_list:
+            yang, yin = SHENSHA_YINYANG["德秀贵人"]
+            results.append({
+                "name": "德秀贵人",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "品德高尚、人缘好",
+                "control": "无明显制化",
+            })
+
+    # 30. 披麻（按年支查）
+    pima_zhi = PIMA[year_zhi]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == pima_zhi and pos_name != "年支":
+            yang, yin = SHENSHA_YINYANG["披麻"]
+            results.append({
+                "name": "披麻",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "亲近者有伤病/离世",
+                "control": "披麻 + 丧门/吊客同临 = 凶力加倍",
+            })
+
+    # 31. 飞刃（按日干查）
+    feiren_zhi = FEIREN[day_master]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == feiren_zhi and pos_name != "年支":
+            yang, yin = SHENSHA_YINYANG["飞刃"]
+            results.append({
+                "name": "飞刃",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "魄力十足、执行力强",
+                "control": "飞刃 + 羊刃同临 = 大凶",
+            })
+
+    # 32. 退神（按日干查日支）
+    tuishen_zhi = TUISHEN[day_master]
+    for pos_name, zhi, p in [
+        ("年支", bz.year.zhi, bz.year),
+        ("月支", bz.month.zhi, bz.month),
+        ("日支", bz.day.zhi, bz.day),
+        ("时支", bz.hour.zhi, bz.hour),
+    ]:
+        if zhi == tuishen_zhi:
+            yang, yin = SHENSHA_YINYANG["退神"]
+            results.append({
+                "name": "退神",
+                "yang": yang,
+                "yin": yin,
+                "zhiwei": pos_name,
+                "activation": "愿意退让、随缘",
+                "control": "无明显制化",
+            })
 
     return results
 
