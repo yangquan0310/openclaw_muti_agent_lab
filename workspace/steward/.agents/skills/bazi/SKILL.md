@@ -502,7 +502,7 @@ bazi/
     ├── bazi-audit-principles.md  # 核查原则（v1.0.0）
     ├── bazi-zhengge.md     # 正格体系（八格 + 透干 + 用神方向，v1.0.1）
     ├── bazi-wangshuai.md   # 旺衰体系（旺衰四维 + 调候 + 用神精化，v2.1.0）
-    ├── bazi-liutong.md     # 流通分析（十神通堵检查，v1.0.0）
+    ├── bazi-liutong.md     # 流通分析（作用规则 3 条，v2.0.0）
     ├── bazi-shensha.md     # 神煞体系（34 神煞 + 一体两面 + 五维映射，v2.2.0）
     ├── bazi-yongshen.md    # 用神判定子流程参考（v1.1.0）
     ├── bazi-hehun.md       # 合盘 / 合婚 / 合伙匹配 / 亲子合盘（v1.3.0）
