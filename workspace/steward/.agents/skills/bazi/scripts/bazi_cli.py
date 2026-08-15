@@ -178,7 +178,7 @@ def cmd_wangshuai(args, birth) -> int:
 
 
 def cmd_shensha(args, birth) -> int:
-    """v1.8.0 神煞清单."""
+    """v2.2.0 神煞清单（按四柱输出 · 34 神煞 × 4 柱 = 一体两面）."""
     result = shensha(birth)
     if args.json:
         out = {
@@ -190,12 +190,48 @@ def cmd_shensha(args, birth) -> int:
         print("=" * 50)
         print(f"【神煞清单】{_birth_label(birth)}（命中 {len(result)} 个）")
         print("=" * 50)
+
+        # 按四柱位置分组：年柱 → 月柱 → 日柱 → 时柱 → 特殊
+        groups = {
+            "年柱": [], "月柱": [], "日柱": [], "时柱": [], "特殊": [],
+        }
+        # 优先级：年柱 > 月柱 > 日柱 > 时柱 > 特殊（处理同日柱入命与日柱对冲同属日柱）
+        order_key = {
+            "年支": 0, "年干": 0,
+            "月支": 1, "月干": 1,
+            "日支": 2, "日干": 2, "日柱": 2,
+            "时支": 3, "时干": 3,
+        }
         for s in result:
-            print(f"\n■ {s['name']}（{s['zhiwei']}）")
-            print(f"  🟢 阳面：{s['yang']}")
-            print(f"  🔴 阴面：{s['yin']}")
-            print(f"  激活：{s['activation']}")
-            print(f"  制化：{s['control']}")
+            zw = s["zhiwei"]
+            placed = False
+            for key in ("年", "月", "日", "时"):
+                if zw.startswith(key):
+                    groups[key + "柱"].append(s)
+                    placed = True
+                    break
+            if not placed:
+                groups["特殊"].append(s)
+
+        pillar_labels = {
+            "年柱": f"年柱（{birth.year.gan}{birth.year.zhi}）",
+            "月柱": f"月柱（{birth.month.gan}{birth.month.zhi}）",
+            "日柱": f"日柱（{birth.day.gan}{birth.day.zhi}）",
+            "时柱": f"时柱（{birth.hour.gan}{birth.hour.zhi}）",
+            "特殊": "日主 / 日柱（特殊）",
+        }
+
+        for pillar in ("年柱", "月柱", "日柱", "时柱", "特殊"):
+            if not groups[pillar]:
+                continue
+            print(f"\n■ {pillar_labels[pillar]}")
+            for s in groups[pillar]:
+                level_icon = "🟢" if "贵人" in s["name"] or "德" in s["name"] else "🔴" if s["name"] in ("亡神", "劫煞", "灾煞", "丧门", "吊客", "披麻", "飞刃", "羊刃") else "⚪"
+                print(f"  {level_icon} {s['name']}（{s['zhiwei']}）")
+                print(f"     阳面：{s['yang']}")
+                print(f"     阴面：{s['yin']}")
+                print(f"     激活：{s['activation']}")
+                print(f"     制化：{s['control']}")
     return 0
 
 
