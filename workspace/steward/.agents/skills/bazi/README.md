@@ -35,7 +35,7 @@ bazi/
 │   ├── bazi-rules.md             v1.3.0  [规则速查]
 │   ├── bazi-zhengge.md           v1.0.1  [正格] = 骨
 │   ├── bazi-wangshuai.md         v2.1.0  [旺衰] = 势（原 bazi-shiju.md 已合并）
-│   ├── bazi-liutong.md           v2.2.0  [流通] = 气血
+│   ├── bazi-liutong.md           v2.3.0  [流通] = 气血
 │   ├── bazi-shensha.md           v2.2.0  [神煞] = 助缘
 │   ├── bazi-yongshen.md          v1.2.0  [用神] = 融合产物
 │   ├── bazi-yingyuan.md          v1.0.0  [姻缘] = 5 层判断流程（夫妻宫=家 / 夫妻星=人）
@@ -84,7 +84,7 @@ bazi/
 |---|---|---|---|
 | **正格**（Layer 1）| `bazi-zhengge.md` | v1.0.1 | 渊海 / 三命 / 人伦 / 千里 |
 | **旺衰**（Layer 1）| `bazi-wangshuai.md` | v2.1.0 | 滴天 / 子平 / 穷通 |
-| **流通**（Layer 1）| `bazi-liutong.md` | v2.2.0 | 子平 / 滴天 |
+| **流通**（Layer 1）| `bazi-liutong.md` | v2.3.0 | 子平 / 滴天 |
 | **神煞**（Layer 1）| `bazi-shensha.md` | v2.2.0 | 渊海 / 三命 / 星平会海 |
 | **用神**（Layer 2）| `bazi-yongshen.md` | v1.2.0 | 渊海 / 子平 / 滴天 / 穷通 |
 
@@ -150,7 +150,7 @@ bazi/
 | **合盘技术规范** | [`references/bazi-hehun.md`](references/bazi-hehun.md) v1.3.0 |
 | **正格体系** | [`references/bazi-zhengge.md`](references/bazi-zhengge.md) v1.0.1 |
 | **旺衰体系** | [`references/bazi-wangshuai.md`](references/bazi-wangshuai.md) v2.1.0 |
-| **流通体系** | [`references/bazi-liutong.md`](references/bazi-liutong.md) v2.2.0 |
+| **流通体系** | [`references/bazi-liutong.md`](references/bazi-liutong.md) v2.3.0 |
 | **神煞体系** | [`references/bazi-shensha.md`](references/bazi-shensha.md) v2.2.0 |
 | **用神体系** | [`references/bazi-yongshen.md`](references/bazi-yongshen.md) v1.2.0 |
 | **姻缘专题** | [`references/bazi-yingyuan.md`](references/bazi-yingyuan.md) v1.0.0 |
