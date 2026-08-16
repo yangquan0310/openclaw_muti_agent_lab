@@ -1,3 +1,11 @@
+### 版本 3.4.3 (2026-08-17)
+- **每日自动同步 2026-08-17**: 12 文件变更(75+/-1-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
+- **工作空间核查**: workspace/{agents}/ 结构正常,steward/scripts(shensha_traditional.py)/skills(13项)为有效技能目录
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.4.2 (2026-08-16)
 - **每日自动同步 2026-08-16**: 17 文件变更(128+/-375-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
