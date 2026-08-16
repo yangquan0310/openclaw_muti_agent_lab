@@ -684,7 +684,7 @@
     "description": "v1.8.0 正格 - 杨权 印绶格（金水为用）",
     "expected": {
       "ge_type": "正印格",
-      "yongshen_wuxing": "金水",
+      "shiyao_wuxing": "金水",
       "xiangshen": "财星",
       "jishen": "木火",
       "choushen": "水"
@@ -697,7 +697,7 @@
     "description": "v1.8.0 正格 - 王雅欣 正财格（火金为用）",
     "expected": {
       "ge_type": "正财格",
-      "yongshen_wuxing": "火金",
+      "shiyao_wuxing": "火金",
       "xiangshen": "官杀、食伤",
       "jishen": "比劫",
       "choushen": "劫财",
@@ -711,7 +711,7 @@
     "description": "v1.8.0 正格 - 立秋后申月（庚金 = 乙木日主得正官）",
     "expected": {
       "ge_type": "正官格",
-      "yongshen_wuxing": "金水",
+      "shiyao_wuxing": "金水",
       "jishen": "伤官"
     },
     "category": "正格"
@@ -770,21 +770,21 @@
     "category": "神煞"
   },
   {
-    "case_type": "yongshen",
+    "case_type": "shiyao",
     "input": "1996-03-10 18:00",
-    "description": "v1.8.0 用神 - 杨权 正印格 + 4/4 极旺 = 金水",
+    "description": "v1.8.0 施药 - 杨权 正印格 + 4/4 极旺 = 金水",
     "expected": {
       "final": "金水",
       "zhengge_direction": "金水（财+官）",
       "tiaohou": "壬水",
       "wangshuai_score": 4
     },
-    "category": "用神"
+    "category": "施药"
   },
   {
-    "case_type": "yongshen",
+    "case_type": "shiyao",
     "input": "1998-07-16 09:00",
-    "description": "v1.8.0 用神 - 王雅欣 正财格 + 2/4 中等 = 火金（兼调候）",
+    "description": "v1.8.0 施药 - 王雅欣 正财格 + 2/4 中等 = 火金（兼调候）",
     "expected": {
       "final_wuxing_contains": [
         "火",
@@ -793,7 +793,7 @@
       "zhengge_direction_contains": "火金",
       "tiaohou": "癸水+庚金"
     },
-    "category": "用神"
+    "category": "施药"
   },
   {
     "case_type": "dayun",
@@ -872,14 +872,14 @@
     "zhengge": true,
     "wangshuai": true,
     "shensha": true,
-    "yongshen": true,
+    "shiyao": true,
     "dayun": true,
     "expected": {
       "analysis_keys": [
         "zhengge",
         "wangshuai",
         "shensha",
-        "yongshen",
+        "shiyao",
         "dayun"
       ]
     },

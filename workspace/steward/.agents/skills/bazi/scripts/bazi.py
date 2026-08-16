@@ -588,11 +588,11 @@ def liushi_text(birth: Bazi, target_dt: datetime) -> str:
 
 
 # ============================================================================
-# v1.8.0 模块 1：正格（zhengge）—— 月令定格 + 透干 + 用神方向
+# v1.8.0 模块 1：正格（zhengge）—— 月令定格 + 透干 + 施药方向
 # ============================================================================
 #
 # 设计依据：`references/bazi-zhengge.md` v1.0.1
-# 核心问题：月令是否透干成标准八格？用神方向是什么？
+# 核心问题：月令是否透干成标准八格？施药方向是什么？
 #
 # 算法概要：
 # 1. 月支查表 → 月令本气（按主流子平术）
@@ -605,11 +605,11 @@ def liushi_text(birth: Bazi, target_dt: datetime) -> str:
 
 # 八格喜忌总则（按 bazi-zhengge.md §三.1）
 # 键：格名（与 ge_type 返回一致）
-# 值：(yongshen_direction 五行串, xiangshen, jishen, choushen, po_ge_check)
+# 值：(shiyao_direction 五行串, xiangshen, jishen, choushen, po_ge_check)
 ZHENGGE_XIJI = {
     "正官格": {
-        "yongshen_dir": "金水（财+官）",
-        "yongshen_wuxing": "金水",
+        "shiyao_dir": "金水（财+官）",
+        "shiyao_wuxing": "金水",
         "xiangshen": "财星",
         "jishen": "伤官",
         "choushen": "食神",
@@ -617,8 +617,8 @@ ZHENGGE_XIJI = {
         "po_ge_target_ten": ["伤官"],
     },
     "七杀格": {
-        "yongshen_dir": "火土（食神制杀）",
-        "yongshen_wuxing": "火土",
+        "shiyao_dir": "火土（食神制杀）",
+        "shiyao_wuxing": "火土",
         "xiangshen": "印星",
         "jishen": "财星",
         "choushen": "官杀混杂",
@@ -626,8 +626,8 @@ ZHENGGE_XIJI = {
         "po_ge_target_ten": ["偏财", "正财"],
     },
     "正印格": {
-        "yongshen_dir": "金水（财+官）",
-        "yongshen_wuxing": "金水",
+        "shiyao_dir": "金水（财+官）",
+        "shiyao_wuxing": "金水",
         "xiangshen": "财星",
         "jishen": "木火",
         "choushen": "水",
@@ -635,8 +635,8 @@ ZHENGGE_XIJI = {
         "po_ge_target_ten": ["比肩", "劫财"],
     },
     "偏印格": {
-        "yongshen_dir": "金水（财制枭）",
-        "yongshen_wuxing": "金水",
+        "shiyao_dir": "金水（财制枭）",
+        "shiyao_wuxing": "金水",
         "xiangshen": "财星",
         "jishen": "食神",
         "choushen": "枭神夺食",
@@ -644,8 +644,8 @@ ZHENGGE_XIJI = {
         "po_ge_target_ten": ["食神"],
     },
     "正财格": {
-        "yongshen_dir": "火金（食伤+官）",
-        "yongshen_wuxing": "火金",
+        "shiyao_dir": "火金（食伤+官）",
+        "shiyao_wuxing": "火金",
         "xiangshen": "官杀、食伤",
         "jishen": "比劫",
         "choushen": "劫财",
@@ -653,8 +653,8 @@ ZHENGGE_XIJI = {
         "po_ge_target_ten": ["比肩", "劫财"],
     },
     "偏财格": {
-        "yongshen_dir": "火土金（食伤生财）",
-        "yongshen_wuxing": "火土金",
+        "shiyao_dir": "火土金（食伤生财）",
+        "shiyao_wuxing": "火土金",
         "xiangshen": "食伤、正财",
         "jishen": "比劫",
         "choushen": "比劫",
@@ -662,8 +662,8 @@ ZHENGGE_XIJI = {
         "po_ge_target_ten": ["比肩", "劫财"],
     },
     "食神格": {
-        "yongshen_dir": "金水（财泄食）",
-        "yongshen_wuxing": "金水",
+        "shiyao_dir": "金水（财泄食）",
+        "shiyao_wuxing": "金水",
         "xiangshen": "官杀",
         "jishen": "偏印",
         "choushen": "枭神夺食",
@@ -671,8 +671,8 @@ ZHENGGE_XIJI = {
         "po_ge_target_ten": ["偏印"],
     },
     "伤官格": {
-        "yongshen_dir": "金水木（财+正印）",
-        "yongshen_wuxing": "金水木",
+        "shiyao_dir": "金水木（财+正印）",
+        "shiyao_wuxing": "金水木",
         "xiangshen": "财、正印",
         "jishen": "官杀",
         "choushen": "伤官见官",
@@ -681,8 +681,8 @@ ZHENGGE_XIJI = {
     },
     # 特殊格：建禄/羊刃（主流承认）
     "建禄格": {
-        "yongshen_dir": "财官（克泄）",
-        "yongshen_wuxing": "金水",
+        "shiyao_dir": "财官（克泄）",
+        "shiyao_wuxing": "金水",
         "xiangshen": "财、官",
         "jishen": "比劫",
         "choushen": "印星",
@@ -690,8 +690,8 @@ ZHENGGE_XIJI = {
         "po_ge_target_ten": ["比肩"],
     },
     "羊刃格": {
-        "yongshen_dir": "官杀（制刃）",
-        "yongshen_wuxing": "金水",
+        "shiyao_dir": "官杀（制刃）",
+        "shiyao_wuxing": "金水",
         "xiangshen": "官杀",
         "jishen": "财星",
         "choushen": "印星",
@@ -802,7 +802,7 @@ def _zhengge_check_jiu_ying(bz: Bazi, ge_type: str) -> str | None:
     for p in bz.four_pillars():
         for label in found_any:
             if label == "印星" and p.gan_shishen in ("正印", "偏印"):
-                return f"命中{p.gan}{p.zhi}={p.gan_shishen} → {label}护卫用神"
+                return f"命中{p.gan}{p.zhi}={p.gan_shishen} → {label}护卫施药"
             if label == "财星" and p.gan_shishen in ("正财", "偏财"):
                 return f"命中{p.gan}{p.zhi}={p.gan_shishen} → {label}生扶格局"
             if label == "官杀" and p.gan_shishen in ("正官", "七杀"):
@@ -816,14 +816,14 @@ def _zhengge_check_jiu_ying(bz: Bazi, ge_type: str) -> str | None:
 
 
 def zhengge(bz: Bazi) -> dict:
-    """正格判定（月令定格 + 透干 + 用神方向 + 破格/救应检测）.
+    """正格判定（月令定格 + 透干 + 施药方向 + 破格/救应检测）.
 
     返回 dict：
     {
         "ge_type": str | None,         # 标准八格名 or "建禄/羊刃" 特殊 or None
         "ge_source": str,              # 一句话格局来源描述
-        "yongshen_direction": str,     # 用神方向（中文）
-        "yongshen_wuxing": str,        # 用神五行串
+        "shiyao_direction": str,     # 施药方向（中文）
+        "shiyao_wuxing": str,        # 施药五行串
         "xiangshen": str,              # 相神
         "jishen": str,                 # 忌神
         "choushen": str,               # 仇神
@@ -872,8 +872,8 @@ def zhengge(bz: Bazi) -> dict:
         return {
             "ge_type": None,
             "ge_source": f"月支{month_zhi}本气{month_benqi}（{month_ss}）→ 未知格局",
-            "yongshen_direction": "（待人工判定）",
-            "yongshen_wuxing": "",
+            "shiyao_direction": "（待人工判定）",
+            "shiyao_wuxing": "",
             "xiangshen": "",
             "jishen": "",
             "choushen": "",
@@ -888,8 +888,8 @@ def zhengge(bz: Bazi) -> dict:
 
     # 查喜忌总则
     cfg = ZHENGGE_XIJI.get(ge_type, {
-        "yongshen_dir": "（未知格局）",
-        "yongshen_wuxing": "",
+        "shiyao_dir": "（未知格局）",
+        "shiyao_wuxing": "",
         "xiangshen": "",
         "jishen": "",
         "choushen": "",
@@ -915,8 +915,8 @@ def zhengge(bz: Bazi) -> dict:
     return {
         "ge_type": ge_type,
         "ge_source": ge_source,
-        "yongshen_direction": cfg["yongshen_dir"],
-        "yongshen_wuxing": cfg["yongshen_wuxing"],
+        "shiyao_direction": cfg["shiyao_dir"],
+        "shiyao_wuxing": cfg["shiyao_wuxing"],
         "xiangshen": cfg["xiangshen"],
         "jishen": cfg["jishen"],
         "choushen": cfg["choushen"],
@@ -935,10 +935,10 @@ def zhengge(bz: Bazi) -> dict:
 # ============================================================================
 #
 # 设计依据：`references/bazi-wangshuai.md` v1.0.0
-# 核心问题：日主旺衰？调候用神？五行流通如何？
+# 核心问题：日主旺衰？调候施药？五行流通如何？
 
 # 调候速查表（按 bazi-wangshuai.md §五.2）
-# 键：日主天干，值：(春, 夏, 秋, 冬) 的调候用神串
+# 键：日主天干，值：(春, 夏, 秋, 冬) 的调候施药串
 TIAOHOU_TABLE = {
     "甲": ("庚金+壬水", "癸水+庚金", "丁火+壬水", "庚金+丁火+戊土"),
     "乙": ("丙火+癸水", "癸水+丙火", "丁火+丙火", "丙火+戊土"),
@@ -1026,7 +1026,7 @@ def _wangshuai_check_de_zhu(bz: Bazi) -> bool:
 
 
 def wangshuai(bz: Bazi) -> dict:
-    """旺衰分析（旺衰四维度 + 调候 + 流通 + 用神精化）.
+    """旺衰分析（旺衰四维度 + 调候 + 流通 + 施药精化）.
 
     返回 dict：
     {
@@ -1036,9 +1036,9 @@ def wangshuai(bz: Bazi) -> dict:
         "de_di": bool,
         "de_sheng": bool,
         "de_zhu": bool,
-        "tiaohou": str,           # 调候用神
+        "tiaohou": str,           # 调候施药
         "liutong": str,           # 流通描述
-        "yongshen_jinhua": str,   # 精化用神
+        "shiyao_jinhua": str,   # 精化施药
         "zhuan_ge": str | None,   # 特殊格局（从强/从弱/化气等）
     }
 
@@ -1058,7 +1058,7 @@ def wangshuai(bz: Bazi) -> dict:
     season_idx = {"春": 0, "夏": 1, "秋": 2, "冬": 3}[season]
     tiaohou = tiaohou_raw[season_idx]
 
-    # 精化用神（基于旺衰）
+    # 精化施药（基于旺衰）
     if score >= 3:
         jinhua = "克泄（食伤/财星/官杀）"
     elif score == 2:
@@ -1119,7 +1119,7 @@ def wangshuai(bz: Bazi) -> dict:
         "de_zhu": de_zhu,
         "tiaohou": tiaohou,
         "liutong": liutong,
-        "yongshen_jinhua": jinhua,
+        "shiyao_jinhua": jinhua,
         "zhuan_ge": zhuan_ge,
     }
 
@@ -2060,22 +2060,22 @@ def shensha(bz: Bazi) -> list:
 
 
 # ============================================================================
-# v1.8.0 模块 4：用神（yongshen）—— 正格 ∩ 旺衰 融合
+# v1.8.0 模块 4：施药（shiyao）—— 正格 ∩ 旺衰 融合
 # ============================================================================
 #
-# 设计依据：`references/bazi-yongshen.md` v1.0.0
-# 核心问题：融合正格方向 + 旺衰精化 → 最终用神
-# ⚠️ 神煞不进入用神判定（神煞 = 28 神星；用神 = 十神五行）
+# 设计依据：`references/bazi-shiyao.md` v1.0.0
+# 核心问题：融合正格方向 + 旺衰精化 → 最终施药
+# ⚠️ 神煞不进入施药判定（神煞 = 28 神星；施药 = 十神五行）
 
-# 用神五行映射（按十神 → 五行）
+# 施药五行映射（按十神 → 五行）
 # 用于把十神喜忌总则转换成五行方向
 SHISHEN_WUXING = {
     "比肩": {"阳": "木", "阴": "木"} | {"丙": "火", "丁": "火"},  # placeholder
 }
 
 
-# 直接定义：每个日主 → 用神方向（基于 zhengge）
-# 避免复杂查询，这里按"用神方向"中文描述 → 五行串
+# 直接定义：每个日主 → 施药方向（基于 zhengge）
+# 避免复杂查询，这里按"施药方向"中文描述 → 五行串
 YONGSHEN_WUXING_MAP = {
     # 正官格
     "财星": "金水木",  # 我克
@@ -2093,18 +2093,18 @@ YONGSHEN_WUXING_MAP = {
 }
 
 
-def _yongshen_resolve_wuxing(zhengge_out: dict, wangshuai_out: dict, bz: Bazi) -> str:
-    """解析最终用神五行（融合正格 + 旺衰）.
+def _shiyao_resolve_wuxing(zhengge_out: dict, wangshuai_out: dict, bz: Bazi) -> str:
+    """解析最终施药五行（融合正格 + 旺衰）.
 
     三层模型：
     - L1（正格）：方向 → 五行
     - L2（旺衰）：精化 → 五行
     - L3（融合）：最终 → 五行
 
-    优先级：正格方向 > 调候 > 扶抑（神煞不进入用神判定）
+    优先级：正格方向 > 调候 > 扶抑（神煞不进入施药判定）
     """
     # 正格方向（最高优先级）
-    zg_dir = zhengge_out.get("yongshen_wuxing", "")
+    zg_dir = zhengge_out.get("shiyao_wuxing", "")
     if not zg_dir or "（走旺衰精化）" in zg_dir:
         zg_dir = ""
 
@@ -2146,12 +2146,12 @@ def _yongshen_resolve_wuxing(zhengge_out: dict, wangshuai_out: dict, bz: Bazi) -
     return "".join(final) if final else "（待人工判定）"
 
 
-def yongshen(bz: Bazi) -> dict:
-    """用神融合（正格方向 ∩ 旺衰精化）.
+def shiyao(bz: Bazi) -> dict:
+    """施药融合（正格方向 ∩ 旺衰精化）.
 
     返回 dict：
     {
-        "final": str,            # 最终用神（五行串）
+        "final": str,            # 最终施药（五行串）
         "final_desc": str,       # 一句话总结
         "xiangshen": str,        # 相神
         "jishen": str,           # 忌神
@@ -2163,33 +2163,33 @@ def yongshen(bz: Bazi) -> dict:
         "wangshuai_score": int,  # 旺衰得分
     }
 
-    算法依据：`references/bazi-yongshen.md` v1.0.0
-    ⚠️ 神煞不进入用神判定（神煞 = 28 神星；用神 = 十神五行）
+    算法依据：`references/bazi-shiyao.md` v1.0.0
+    ⚠️ 神煞不进入施药判定（神煞 = 28 神星；施药 = 十神五行）
     """
     # 取正格和旺衰
     zg_out = zhengge(bz)
     sj_out = wangshuai(bz)
 
     # 融合最终五行
-    final_wuxing = _yongshen_resolve_wuxing(zg_out, sj_out, bz)
+    final_wuxing = _shiyao_resolve_wuxing(zg_out, sj_out, bz)
 
     # 提取相神 / 忌神 / 仇神（从正格取）
     xiangshen = zg_out.get("xiangshen", "")
     jishen = zg_out.get("jishen", "")
     choushen = zg_out.get("choushen", "")
 
-    # 一句话最终用神
+    # 一句话最终施药
     tiaohou = sj_out.get("tiaohou", "")
     if tiaohou and final_wuxing:
-        final_desc = f"{final_wuxing}（{tiaohou}为调候核，{zg_out.get('ge_type', '用神')}为体）"
+        final_desc = f"{final_wuxing}（{tiaohou}为调候核，{zg_out.get('ge_type', '施药')}为体）"
     else:
         final_desc = final_wuxing or "（待人工判定）"
 
     # 融合来源说明
     ge_type = zg_out.get("ge_type", "（无格）")
     fusion_source = (
-        f"正格（{ge_type} → {zg_out.get('yongshen_direction', '未知')}）∩ "
-        f"旺衰（{sj_out.get('yongshen_jinhua', '未知')}，调候={tiaohou or '无'}）"
+        f"正格（{ge_type} → {zg_out.get('shiyao_direction', '未知')}）∩ "
+        f"旺衰（{sj_out.get('shiyao_jinhua', '未知')}，调候={tiaohou or '无'}）"
     )
 
     return {
@@ -2198,8 +2198,8 @@ def yongshen(bz: Bazi) -> dict:
         "xiangshen": xiangshen,
         "jishen": jishen,
         "choushen": choushen,
-        "zhengge_direction": zg_out.get("yongshen_direction", ""),
-        "wangshuai_jinhua": sj_out.get("yongshen_jinhua", ""),
+        "zhengge_direction": zg_out.get("shiyao_direction", ""),
+        "wangshuai_jinhua": sj_out.get("shiyao_jinhua", ""),
         "tiaohou": tiaohou,
         "fusion_source": fusion_source,
         "wangshuai_score": sj_out.get("wangshuai_score", 0),

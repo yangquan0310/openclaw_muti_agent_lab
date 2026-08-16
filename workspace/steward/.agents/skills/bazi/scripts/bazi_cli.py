@@ -30,7 +30,7 @@ from bazi import (  # noqa: E402
     parse_lunar_input,
     liunian, liumonth, liushi,
     liunian_text, liumonth_text, liushi_text,
-    zhengge, wangshuai, shensha, yongshen, dayun, reverse_lookup,
+    zhengge, wangshuai, shensha, shiyao, dayun, reverse_lookup,
     wuxing_of_gan,
 )
 
@@ -140,7 +140,7 @@ def cmd_zhengge(args, birth) -> int:
         print("=" * 50)
         print(f"格局：{result.get('ge_type') or '未成格（走旺衰）'}")
         print(f"来源：{result.get('ge_source','')}")
-        print(f"用神方向：{result.get('yongshen_direction','')}（{result.get('yongshen_wuxing','')}）")
+        print(f"施药方向：{result.get('shiyao_direction','')}（{result.get('shiyao_wuxing','')}）")
         print(f"相神：{result.get('xiangshen','')}")
         print(f"忌神：{result.get('jishen','')}")
         print(f"仇神：{result.get('choushen','')}")
@@ -169,9 +169,9 @@ def cmd_wangshuai(args, birth) -> int:
         print(f"  得地：{result.get('de_di')}")
         print(f"  得生：{result.get('de_sheng')}")
         print(f"  得助：{result.get('de_zhu')}")
-        print(f"调候用神：{result.get('tiaohou','')}")
+        print(f"调候施药：{result.get('tiaohou','')}")
         print(f"流通分析：{result.get('liutong','')}")
-        print(f"精化用神：{result.get('yongshen_jinhua','')}")
+        print(f"精化施药：{result.get('shiyao_jinhua','')}")
         if result.get("zhuan_ge"):
             print(f"特殊格局：{result['zhuan_ge']}")
     return 0
@@ -235,20 +235,20 @@ def cmd_shensha(args, birth) -> int:
     return 0
 
 
-def cmd_yongshen(args, birth) -> int:
-    """v1.8.0 用神融合."""
-    result = yongshen(birth)
+def cmd_shiyao(args, birth) -> int:
+    """v1.8.0 施药融合."""
+    result = shiyao(birth)
     if args.json:
         out = {
             "chart": _chart_to_dict(birth),
-            "analysis": {"yongshen": result},
+            "analysis": {"shiyao": result},
         }
         print(json.dumps(out, ensure_ascii=False, indent=2))
     else:
         print("=" * 50)
-        print(f"【用神融合】{_birth_label(birth)}")
+        print(f"【施药融合】{_birth_label(birth)}")
         print("=" * 50)
-        print(f"最终用神：{result.get('final','')}")
+        print(f"最终施药：{result.get('final','')}")
         print(f"总结：{result.get('final_desc','')}")
         print(f"正格方向：{result.get('zhengge_direction','')}")
         print(f"旺衰精化：{result.get('wangshuai_jinhua','')}")
@@ -403,8 +403,8 @@ def _check_case(case: dict) -> tuple[bool, str]:
         return _check_shensha_case(case)
     elif ctype == "zaisha":
         return _check_zaisha_case(case)
-    elif ctype == "yongshen":
-        return _check_yongshen_case(case)
+    elif ctype == "shiyao":
+        return _check_shiyao_case(case)
     elif ctype == "dayun":
         return _check_dayun_case(case)
     elif ctype == "combined_json":
@@ -675,7 +675,7 @@ def _check_zhengge_case(case: dict) -> tuple[bool, str]:
     mismatches = []
 
     # 严格相等字段
-    for key in ("ge_type", "yongshen_wuxing", "xiangshen", "jishen", "choushen", "tou_gan"):
+    for key in ("ge_type", "shiyao_wuxing", "xiangshen", "jishen", "choushen", "tou_gan"):
         ev = expected.get(key)
         av = actual.get(key)
         if ev is not None and ev != av:
@@ -729,10 +729,10 @@ def _check_shensha_case(case: dict) -> tuple[bool, str]:
     return True, ""
 
 
-def _check_yongshen_case(case: dict) -> tuple[bool, str]:
-    """v1.8.0 用神融合用例."""
+def _check_shiyao_case(case: dict) -> tuple[bool, str]:
+    """v1.8.0 施药融合用例."""
     birth = _birth_from_case_input(case)
-    actual = yongshen(birth)
+    actual = shiyao(birth)
     expected = case.get("expected", {})
     mismatches = []
 
@@ -845,7 +845,7 @@ def _check_combined_json_case(case: dict) -> tuple[bool, str]:
         argv.append(parts[1])
     argv += ["--json"]
     for flag in ("--liunian", "--liumonth", "--liushi", "--zhengge", "--wangshuai",
-                 "--shensha", "--yongshen", "--dayun"):
+                 "--shensha", "--shiyao", "--dayun"):
         if case.get(flag.lstrip("-")):
             argv.append(flag)
             val = case.get(flag.lstrip("-"))
@@ -1131,7 +1131,7 @@ _bazi_to_dict = _chart_to_dict
 def _combined_json_output(args, birth):
     """组合模式：--json 且 ≥2 个分析模块 → 单个完整 JSON dict；否则返回 None.
 
-    analysis 键：liunian / liumonth / liushi / zhengge / wangshuai / shensha / yongshen / dayun
+    analysis 键：liunian / liumonth / liushi / zhengge / wangshuai / shensha / shiyao / dayun
     （仅含被触发的模块；shensha 保持数组并附 count）
     """
     gender = getattr(args, "gender", "男") or "男"
@@ -1161,8 +1161,8 @@ def _combined_json_output(args, birth):
         # 仅放模块键（shensha 保持数组，count 不入 analysis，符合"仅包含用户指定的模块键"）
         analysis["shensha"] = ss
         modules += 1
-    if args.yongshen:
-        analysis["yongshen"] = yongshen(birth)
+    if args.shiyao:
+        analysis["shiyao"] = shiyao(birth)
         modules += 1
     if args.dayun:
         analysis["dayun"] = dayun(birth, gender=gender)
@@ -1211,13 +1211,13 @@ def main(argv=None) -> int:
 
     # v1.8.0 新增模块 flag
     parser.add_argument("--zhengge", action="store_true",
-                        help="v1.8.0 正格判定（月令定格 + 透干 + 用神方向）")
+                        help="v1.8.0 正格判定（月令定格 + 透干 + 施药方向）")
     parser.add_argument("--wangshuai", action="store_true",
                         help="v1.8.0 旺衰分析（旺衰四维度 + 调候 + 流通）")
     parser.add_argument("--shensha", action="store_true",
                         help="v1.8.0 神煞清单（28 神煞 × 4 柱 = 一体两面）")
-    parser.add_argument("--yongshen", action="store_true",
-                        help="v1.8.0 用神融合（正格方向 ∩ 旺衰精化，神煞不进入）")
+    parser.add_argument("--shiyao", action="store_true",
+                        help="v1.8.0 施药融合（正格方向 ∩ 旺衰精化，神煞不进入）")
     parser.add_argument("--dayun", action="store_true",
                         help="v1.8.0 大运推算（顺/逆排 + 起运岁数 + 10 步）")
     parser.add_argument("--gender", type=str, choices=["男", "女"], default=None,
@@ -1294,9 +1294,9 @@ def main(argv=None) -> int:
         if args.shensha:
             has_any = True
             rc |= cmd_shensha(args, birth)
-        if args.yongshen:
+        if args.shiyao:
             has_any = True
-            rc |= cmd_yongshen(args, birth)
+            rc |= cmd_shiyao(args, birth)
         if args.dayun:
             has_any = True
             rc |= cmd_dayun(args, birth)
@@ -1352,9 +1352,9 @@ def main(argv=None) -> int:
     if args.shensha:
         has_any = True
         rc |= cmd_shensha(args, birth)
-    if args.yongshen:
+    if args.shiyao:
         has_any = True
-        rc |= cmd_yongshen(args, birth)
+        rc |= cmd_shiyao(args, birth)
     if args.dayun:
         has_any = True
         rc |= cmd_dayun(args, birth)

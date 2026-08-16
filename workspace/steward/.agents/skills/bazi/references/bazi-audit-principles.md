@@ -15,7 +15,7 @@ version: 1.1.0
 
 | 层 | 文档 | 职责 | 违规信号 |
 |----|------|------|----------|
-| **内容层** | rules / shensha / zhengge / wangshuai / yongshen | 具体内容唯一权威 | 出现流程步骤 / 输出格式 |
+| **内容层** | rules / shensha / zhengge / wangshuai / shiyao | 具体内容唯一权威 | 出现流程步骤 / 输出格式 |
 | **应用层** | paipan/ hehun| 具体应用| 出现内容层理论细节|
 | **输出层** | style | 输出独占| 出现内容 / 流程定义 |
 
