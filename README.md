@@ -1,3 +1,12 @@
+### 版本 3.4.4 (2026-08-18)
+- **每日自动同步 2026-08-18**: 12 文件变更(70+/-11-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
+- **工作空间核查**: workspace/{agents}/ 结构正常,仅含7个.md配置文件+标准配置目录
+- **steward/bazi-liutong.md**: v3.4.4→v3.4.5,卯午破规则修正(刑破先于生克)
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.4.3 (2026-08-17)
 - **每日自动同步 2026-08-17**: 12 文件变更(75+/-1-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
