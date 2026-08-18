@@ -34,10 +34,10 @@ bazi/
 │   ├── bazi-audit-principles.md  v1.1.0  [核查原则——V1-V4 / P1-P4 / R1-R4 / N1-N4 / A1-A2]
 │   ├── bazi-rules.md             v1.3.0  [规则速查——节气表 + 流年关系表]
 │   ├── bazi-zhengge.md           v1.0.1  [正格] = 骨
-│   ├── bazi-wangshuai.md         v2.2.1  [旺衰] = 势——原 bazi-shiju.md 已合并
+│   ├── bazi-wangshuai.md         v2.2.5  [旺衰] = 势——原 bazi-shiju.md 已合并
 │   ├── bazi-liutong.md           v3.4.7  [流通] = 气血——路径分析 v3.0.0 + 场景化递归 v3.3.0 + 距离规则 v3.3.1 + 双层框架 v3.4.6 + P0 修复 v3.4.7
 │   ├── bazi-shensha.md           v2.2.0  [神煞] = 助缘
-│   ├── bazi-shiyao.md          v1.2.0  [施药] = 融合产物——4 大治法总览：调候/抑扶/通关/对症
+│   ├── bazi-shiyao.md          v1.3.3  [施药] = 融合产物——4 大治法总览：调候/抑扶/通关/对症
 │   ├── bazi-yingyuan.md          v2.3.1  [姻缘] = 5 层判断流程——夫妻宫=家 / 夫妻星=人 / 异位关系 / 姻缘时间线 / 流通框架
 │   ├── bazi-shiye.md             v1.1.1  [事业] = 工作 + 创业 + 关系 / 应用 v3.3.1 流通框架
 │   ├── bazi-cai.md               v1.0.0  [财] = 工资 + 横财 + 关系
@@ -53,7 +53,7 @@ bazi/
     ├── bazi.py                    ← 核心算法
     ├── bazi_relations.py          ← 干支关系查表
     ├── bazi_daliuren.py           ← 大六壬排盘（v2.0.0）
-    └── test_cases.json            ← 46 个标准测试用例
+    └── test_cases.json            ← 47 个标准测试用例
 ```
 
 ---
@@ -83,10 +83,10 @@ bazi/
 | 分析 | 文档 | 版本 | 主要用书 |
 |---|---|---|---|
 | **正格**——Layer 1| `bazi-zhengge.md` | v1.0.1 | 渊海 / 三命 / 人伦 / 千里 |
-| **旺衰**——Layer 1| `bazi-wangshuai.md` | v2.2.1 | 滴天 / 子平 / 穷通 |
+| **旺衰**——Layer 1| `bazi-wangshuai.md` | v2.2.5 | 滴天 / 子平 / 穷通 |
 | **流通**——Layer 1| `bazi-liutong.md` | v3.4.7 | 子平 / 滴天 |
 | **神煞**——Layer 1| `bazi-shensha.md` | v2.2.0 | 渊海 / 三命 / 星平会海 |
-| **施药**——Layer 2| `bazi-shiyao.md` | v1.2.0 | 渊海 / 子平 / 滴天 / 穷通 |
+| **施药**——Layer 2| `bazi-shiyao.md` | v1.3.3 | 渊海 / 子平 / 滴天 / 穷通 |
 
 > **关键**：施药是**融合产物**——基于正格 + 旺衰，**不是第四种分析**。神煞**不进入施药判定**，但**进入五维判断**。
 
@@ -149,10 +149,10 @@ bazi/
 | **排盘技术规范** | [`references/bazi-paipan.md`](references/bazi-paipan.md) v2.4.0 |
 | **合盘技术规范** | [`references/bazi-hehun.md`](references/bazi-hehun.md) v1.3.0 |
 | **正格体系** | [`references/bazi-zhengge.md`](references/bazi-zhengge.md) v1.0.1 |
-| **旺衰体系** | [`references/bazi-wangshuai.md`](references/bazi-wangshuai.md) v2.2.1 |
+| **旺衰体系** | [`references/bazi-wangshuai.md`](references/bazi-wangshuai.md) v2.2.5 |
 | **流通体系** | [`references/bazi-liutong.md`](references/bazi-liutong.md) v3.4.7 |
 | **神煞体系** | [`references/bazi-shensha.md`](references/bazi-shensha.md) v2.2.0 |
-| **施药体系** | [`references/bazi-shiyao.md`](references/bazi-shiyao.md) v1.2.0 |
+| **施药体系** | [`references/bazi-shiyao.md`](references/bazi-shiyao.md) v1.3.3 |
 | **姻缘专题** | [`references/bazi-yingyuan.md`](references/bazi-yingyuan.md) v2.3.1 |
 | **事业专题** | [`references/bazi-shiye.md`](references/bazi-shiye.md) v1.1.1 |
 | **财专题** | [`references/bazi-cai.md`](references/bazi-cai.md) v1.0.0 |
@@ -198,7 +198,7 @@ bazi/
 | v1.13.0 | 2026-08-13 | SKILL.md 整合——流通独立标记 + 施药完全移入|
 | v2.0.0 | 2026-07-26 | 大六壬排盘——天地盘/四课/三传 4 宗门|
 | **v2.2.0** | **2026-08-15** | **🆕 神煞 28 → 34——合并传统派补充：福星/天厨/德秀/披麻/飞刃/退神；修正文昌多值版+太极版本 B** |
-| **v2.2.0** | **2026-08-15** | **🆕 README 重写**：修正版本号漂移 + 删除已合并的 `bazi-shiju.md` 引用 + 更新为当前版本——旺衰 v2.1.0 / 神煞 v2.2.0 / 施药 v1.2.0 / 正格 v1.0.1 / 排盘 v2.2.0 |
+| **v2.2.0** | **2026-08-15** | **🆕 README 重写**：修正版本号漂移 + 删除已合并的 `bazi-shiju.md` 引用 + 更新为当前版本——旺衰 v2.1.0 / 神煞 v2.2.0 / 施药 v1.3.3 / 正格 v1.0.1 / 排盘 v2.2.0 |
 
 ---
 

@@ -23,7 +23,7 @@ version: 2.2.5
 |---|---|
 | `bazi-zhengge.md` | 正格体系——月令定格 + 八格标准 + 施药|
 | **本文件 `bazi-wangshuai.md`** | 旺衰体系——特殊格局 + 旺衰 + 流通（**调候+扶抑 已移至 `bazi-shiyao.md`**）|
-| `bazi-shensha.md` v2.1.1 | 神煞体系——28 神煞 + 一体两面|
+| `bazi-shensha.md` v2.2.0 | 神煞体系——34 神煞 + 一体两面 + 五维映射|
 | `bazi-rules.md` | 工具层规则 |
 | `bazi-paipan.md` | 单盘 5+1 步流程——融合三大体系|
 
