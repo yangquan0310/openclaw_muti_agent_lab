@@ -967,15 +967,18 @@ LU_POS = {
     "壬": "亥", "癸": "子",
 }
 
-# 旺衰分级表（按 bazi-wangshuai.md §三.2）
-# 总分 → 等级
-WANGSHUAI_GRADE = [
-    (4, "极旺（考虑从强）"),
-    (3, "旺"),
-    (2, "中等"),
-    (1, "弱"),
-    (0, "极弱（考虑从弱）"),
-]
+# 旺衰分级（v2.2.3 起改 3 维度——按 bazi-wangshuai.md §3.2）
+# 3 维度组合 → 等级；得助 = 印星 ∪ 比劫
+WANGSHUAI_GRADE_3DIM = {
+    (True, True, True): "极旺（考虑从强）",       # 3/3
+    (True, True, False): "旺",                    # 2/3
+    (True, False, True): "旺",                    # 2/3
+    (False, True, True): "中偏旺",                # 2/3
+    (True, False, False): "中等偏旺",             # 1/3
+    (False, True, False): "中等",                 # 1/3
+    (False, False, True): "中等偏弱",             # 1/3
+    (False, False, False): "极弱（考虑从弱）",    # 0/3
+}
 
 
 def _wangshuai_check_de_ling(bz: Bazi) -> bool:
@@ -986,71 +989,67 @@ def _wangshuai_check_de_ling(bz: Bazi) -> bool:
 
 
 def _wangshuai_check_de_di(bz: Bazi) -> bool:
-    """得地：日支五行 = 日主五行 OR 日支 = 日主禄位."""
+    """得地：日支五行 = 日主五行 OR 日支五行生日主 OR 日主禄位.
+
+    v2.2.3.bug 修：原代码只检查 '日支 = 日主五行'（同五行），漏了 '日支 = SHENG_ME[me]'
+    （日支生日主）。王雅欣案例（甲木日主 / 子水日支）——子水生日主甲木 → 得地 ✓，
+    但原代码判 False。老板 2026-08-18 21:03 纠正 '王雅欣得地，得助'。
+    """
     me = GAN_WUXING[bz.day_master]
     day_zhi_wx = ZHI_WUXING[bz.day.zhi]
-    if day_zhi_wx == me:
-        return True
-    return bz.day.zhi == LU_POS[bz.day_master]
+    return (
+        day_zhi_wx == me
+        or SHENG_ME[me] == day_zhi_wx
+        or bz.day.zhi == LU_POS[bz.day_master]
+    )
 
 
-def _wangshuai_check_de_sheng(bz: Bazi) -> bool:
-    """得生：命中是否有印星（天干透出 OR 地支藏干有根）."""
+def _wangshuai_check_de_zhu(bz: Bazi) -> bool:
+    """得助（v2.2.3 起合并印星）：命中是否有印星 OR 比劫（天干透出 OR 地支藏干有根）.
+
+    v2.2.3 老板拍板："印星并入得助"——因为印星与比劫都是"帮身"性质，
+    4 维度有重叠。传统三维度派（子平真诠/滴天髓主流口径）。
+    """
     me = bz.day_master
     # 检查天干
     for p in [bz.year, bz.month, bz.hour]:
-        ss = p.gan_shishen
-        if ss in ("正印", "偏印"):
+        if p.gan_shishen in ("正印", "偏印", "比肩", "劫财"):
             return True
     # 检查地支（本气）
     for p in [bz.year, bz.month, bz.day, bz.hour]:
         for cg in p.canggan:
             cg_ss = ten_god(me, cg)
-            if cg_ss in ("正印", "偏印"):
-                return True
-    return False
-
-
-def _wangshuai_check_de_zhu(bz: Bazi) -> bool:
-    """得助：命中是否有比劫（天干透出 OR 地支藏干有根）."""
-    me = bz.day_master
-    for p in [bz.year, bz.month, bz.hour]:
-        if p.gan_shishen in ("比肩", "劫财"):
-            return True
-    for p in [bz.year, bz.month, bz.day, bz.hour]:
-        for cg in p.canggan:
-            cg_ss = ten_god(me, cg)
-            if cg_ss in ("比肩", "劫财"):
+            if cg_ss in ("正印", "偏印", "比肩", "劫财"):
                 return True
     return False
 
 
 def wangshuai(bz: Bazi) -> dict:
-    """旺衰分析（旺衰四维度 + 调候 + 流通 + 施药精化）.
+    """旺衰分析（v2.2.3 起改 3 维度——得令/得地/得助，印星并入得助）.
 
     返回 dict：
     {
-        "wangshuai": str,         # 旺衰等级
-        "wangshuai_score": int,   # 4 维度得分
+        "wangshuai": str,         # 旺衰等级（含 X/3 前缀）
+        "wangshuai_score": int,   # 3 维度得分（0-3）
         "de_ling": bool,
         "de_di": bool,
-        "de_sheng": bool,
-        "de_zhu": bool,
+        "de_zhu": bool,           # 印星 ∪ 比劫
         "tiaohou": str,           # 调候施药
         "liutong": str,           # 流通描述
-        "shiyao_jinhua": str,   # 精化施药
+        "shiyao_jinhua": str,     # 精化施药
         "zhuan_ge": str | None,   # 特殊格局（从强/从弱/化气等）
     }
 
-    算法依据：`references/bazi-wangshuai.md` v1.0.0
+    算法依据：`references/bazi-wangshuai.md` v2.2.3 §3.1 + §3.2
+    v2.2.3 重大修正：4 维度（得令/得地/得生/得助）→ 3 维度（得令/得地/得助）
+    ——印星与比劫都是"帮身"性质，合并为得助（老板 2026-08-18 20:18 拍板）。
     """
     de_ling = _wangshuai_check_de_ling(bz)
     de_di = _wangshuai_check_de_di(bz)
-    de_sheng = _wangshuai_check_de_sheng(bz)
     de_zhu = _wangshuai_check_de_zhu(bz)
 
-    score = sum([de_ling, de_di, de_sheng, de_zhu])
-    grade = next((g for s, g in WANGSHUAI_GRADE if score >= s), "未知")
+    score = sum([de_ling, de_di, de_zhu])
+    grade = WANGSHUAI_GRADE_3DIM[(de_ling, de_di, de_zhu)]
 
     # 调候查表
     season = MONTH_TO_SEASON[bz.month.zhi]
@@ -1058,26 +1057,33 @@ def wangshuai(bz: Bazi) -> dict:
     season_idx = {"春": 0, "夏": 1, "秋": 2, "冬": 3}[season]
     tiaohou = tiaohou_raw[season_idx]
 
-    # 精化施药（基于旺衰）
-    if score >= 3:
-        jinhua = "克泄（食伤/财星/官杀）"
+    # 精化施药（基于 v2.2.3 §3.3 旺衰与施药方向表）
+    if score == 3:
+        jinhua = "克泄（食伤/财星/官杀）"  # 极旺
     elif score == 2:
-        jinhua = "看具体配合（调候优先）"
+        # 旺（得令+得地 / 得令+得助）/ 中偏旺（得地+得助）→ 都偏向克泄
+        jinhua = "克泄（食伤/财星/官杀）"
     elif score == 1:
-        jinhua = "生扶（印星/比劫）"
+        # 1/3 拆 3 档：中等偏旺 / 中等 / 中等偏弱
+        if de_ling:
+            jinhua = "财星/食伤"  # 中等偏旺
+        elif de_di:
+            jinhua = "看具体配合（调候优先）"  # 中等
+        else:
+            jinhua = "生扶（印星/比劫）"  # 中等偏弱
     else:
-        jinhua = "财+官杀（从弱格考虑）"
+        jinhua = "财+官杀（从弱格考虑）"  # 极弱
 
     # 流通分析（简化版）
     liutong_lines = []
-    if de_ling and de_di and de_sheng and de_zhu:
-        liutong_lines.append("日主极旺（4/4 维度），身极强")
+    if de_ling and de_di and de_zhu:
+        liutong_lines.append("日主极旺（3/3 维度），身极强")
     elif de_ling and de_di:
         liutong_lines.append("月令+日支双重助力")
     elif de_ling and not de_di:
         liutong_lines.append("月令助力但日支不助")
 
-    # 检测印太旺（流通阻滞点 1）
+    # 检测印太旺（流通阻滞点 1）—— v2.2.3 起印星仍按独立十神检滞
     if bz.month.gan_shishen in ("正印", "偏印"):
         liutong_lines.append(f"月干{bz.month.gan}={bz.month.gan_shishen} → 可能印旺，需财制印")
     if bz.hour.gan_shishen in ("正印", "偏印"):
@@ -1092,9 +1098,9 @@ def wangshuai(bz: Bazi) -> dict:
 
     liutong = "；".join(liutong_lines) if liutong_lines else "五行流通平稳"
 
-    # 特殊格局检测（简化）
+    # 特殊格局检测（简化）—— v2.2.3 起阈值 4→3
     zhuan_ge = None
-    if score == 4:
+    if score == 3:
         # 检查是否有财官食伤（任一克泄十神）
         has_ke_xie = any(
             p.gan_shishen in ("正官", "七杀", "正财", "偏财", "食神", "伤官")
@@ -1111,11 +1117,10 @@ def wangshuai(bz: Bazi) -> dict:
             zhuan_ge = "从弱格（极弱无印星比劫）"
 
     return {
-        "wangshuai": f"{score}/4 {grade}",
+        "wangshuai": f"{score}/3 {grade}",
         "wangshuai_score": score,
         "de_ling": de_ling,
         "de_di": de_di,
-        "de_sheng": de_sheng,
         "de_zhu": de_zhu,
         "tiaohou": tiaohou,
         "liutong": liutong,
