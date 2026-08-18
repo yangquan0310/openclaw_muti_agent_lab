@@ -1,3 +1,12 @@
+### 版本 3.4.5 (2026-08-19)
+- **每日自动同步 2026-08-19**: 11 文件变更(67+/-0-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(仅 memory 历史记录中提及环境变量名,无实际密钥值)
+- **工作空间整理**: main/programmer/reviewer/steward/writer 的 openclaw-workspace-state.json 已移入各自 temp/ 目录
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步
+- **steward/memory**: 新增 2026-08-18.md 记忆文件
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.4.4 (2026-08-18)
 - **每日自动同步 2026-08-18**: 12 文件变更(70+/-11-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
