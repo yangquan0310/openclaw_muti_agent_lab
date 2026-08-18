@@ -164,10 +164,9 @@ def cmd_wangshuai(args, birth) -> int:
         print("=" * 50)
         print(f"【旺衰分析】{_birth_label(birth)}")
         print("=" * 50)
-        print(f"旺衰：{result.get('wangshuai','')}（{result.get('wangshuai_score',0)}/4）")
+        print(f"旺衰：{result.get('wangshuai','')}（{result.get('wangshuai_score',0)}%）")
         print(f"  得令：{result.get('de_ling')}")
         print(f"  得地：{result.get('de_di')}")
-        print(f"  得生：{result.get('de_sheng')}")
         print(f"  得助：{result.get('de_zhu')}")
         print(f"调候施药：{result.get('tiaohou','')}")
         print(f"流通分析：{result.get('liutong','')}")
@@ -694,7 +693,7 @@ def _check_wangshuai_case(case: dict) -> tuple[bool, str]:
     mismatches = []
 
     # 严格相等字段
-    for key in ("wangshuai_score", "de_ling", "de_di", "de_sheng", "de_zhu", "tiaohou"):
+    for key in ("wangshuai_score", "de_ling", "de_di", "de_zhu", "tiaohou"):
         ev = expected.get(key)
         av = actual.get(key)
         if ev is not None and ev != av:
@@ -1213,7 +1212,7 @@ def main(argv=None) -> int:
     parser.add_argument("--zhengge", action="store_true",
                         help="v1.8.0 正格判定（月令定格 + 透干 + 施药方向）")
     parser.add_argument("--wangshuai", action="store_true",
-                        help="v1.8.0 旺衰分析（旺衰四维度 + 调候 + 流通）")
+                        help="v2.2.3 旺衰分析（3 维度：得令/得地/得助——印星并入得助）")
     parser.add_argument("--shensha", action="store_true",
                         help="v1.8.0 神煞清单（28 神煞 × 4 柱 = 一体两面）")
     parser.add_argument("--shiyao", action="store_true",

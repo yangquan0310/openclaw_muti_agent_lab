@@ -969,15 +969,17 @@ LU_POS = {
 
 # 旺衰分级（v2.2.3 起改 3 维度——按 bazi-wangshuai.md §3.2）
 # 3 维度组合 → 等级；得助 = 印星 ∪ 比劫
-WANGSHUAI_GRADE_3DIM = {
-    (True, True, True): "极旺（考虑从强）",       # 3/3
-    (True, True, False): "旺",                    # 2/3
-    (True, False, True): "旺",                    # 2/3
-    (False, True, True): "中偏旺",                # 2/3
-    (True, False, False): "中等偏旺",             # 1/3
-    (False, True, False): "中等",                 # 1/3
-    (False, False, True): "中等偏弱",             # 1/3
-    (False, False, False): "极弱（考虑从弱）",    # 0/3
+WANGSHUAI_GRADE_WEIGHTED = {
+    # v2.2.5 加权打分（老板 2026-08-18 21:07 拍板）：令 60% + 地 30% + 助 10%
+    # (令, 地, 助) → (等级, 总分%)
+    (True, True, True):   ("极旺（考虑从强）", 100),  # 60+30+10 = 100%
+    (True, True, False):  ("旺", 90),                # 60+30+0 = 90%
+    (True, False, True):  ("旺", 70),                # 60+0+10 = 70%
+    (True, False, False): ("中偏旺", 60),           # 60+0+0 = 60%
+    (False, True, True):  ("中偏弱", 40),           # 0+30+10 = 40%
+    (False, True, False): ("弱", 30),               # 0+30+0 = 30%
+    (False, False, True): ("弱", 10),               # 0+0+10 = 10%
+    (False, False, False):("极弱（考虑从弱）", 0),  # 0+0+0 = 0%
 }
 
 
@@ -1029,8 +1031,8 @@ def wangshuai(bz: Bazi) -> dict:
 
     返回 dict：
     {
-        "wangshuai": str,         # 旺衰等级（含 X/3 前缀）
-        "wangshuai_score": int,   # 3 维度得分（0-3）
+        "wangshuai": str,         # 旺衰等级（含 X% 前缀）
+        "wangshuai_score": int,   # 加权百分比得分（0-100）
         "de_ling": bool,
         "de_di": bool,
         "de_zhu": bool,           # 印星 ∪ 比劫
@@ -1049,7 +1051,7 @@ def wangshuai(bz: Bazi) -> dict:
     de_zhu = _wangshuai_check_de_zhu(bz)
 
     score = sum([de_ling, de_di, de_zhu])
-    grade = WANGSHUAI_GRADE_3DIM[(de_ling, de_di, de_zhu)]
+    grade, score = WANGSHUAI_GRADE_WEIGHTED[(de_ling, de_di, de_zhu)]
 
     # 调候查表
     season = MONTH_TO_SEASON[bz.month.zhi]
@@ -1064,7 +1066,7 @@ def wangshuai(bz: Bazi) -> dict:
         # 旺（得令+得地 / 得令+得助）/ 中偏旺（得地+得助）→ 都偏向克泄
         jinhua = "克泄（食伤/财星/官杀）"
     elif score == 1:
-        # 1/3 拆 3 档：中等偏旺 / 中等 / 中等偏弱
+        # 加权打分后档位：中偏旺 / 中等 / 中偏弱（按 60-90/40-59/10-39 分段）
         if de_ling:
             jinhua = "财星/食伤"  # 中等偏旺
         elif de_di:
@@ -1077,7 +1079,7 @@ def wangshuai(bz: Bazi) -> dict:
     # 流通分析（简化版）
     liutong_lines = []
     if de_ling and de_di and de_zhu:
-        liutong_lines.append("日主极旺（3/3 维度），身极强")
+        liutong_lines.append("日主极旺（100% 极旺），身极强")
     elif de_ling and de_di:
         liutong_lines.append("月令+日支双重助力")
     elif de_ling and not de_di:
@@ -1117,7 +1119,7 @@ def wangshuai(bz: Bazi) -> dict:
             zhuan_ge = "从弱格（极弱无印星比劫）"
 
     return {
-        "wangshuai": f"{score}/3 {grade}",
+        "wangshuai": f"{score}% {grade}",
         "wangshuai_score": score,
         "de_ling": de_ling,
         "de_di": de_di,

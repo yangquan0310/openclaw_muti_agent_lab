@@ -719,9 +719,9 @@
   {
     "case_type": "wangshuai",
     "input": "1996-03-10 18:00",
-    "description": "v2.2.3 旺衰 - 杨权 3/3 极旺（印星并入得助），调候壬水",
+    "description": "v2.2.3 旺衰 - 杨权 100% 极旺（加权打分：令60%+地30%+助10%=100%）（印星并入得助），调候壬水",
     "expected": {
-      "wangshuai_score": 3,
+      "wangshuai_score": 100,
       "de_ling": true,
       "de_di": true,
       "de_zhu": true,
@@ -732,9 +732,9 @@
   {
     "case_type": "wangshuai",
     "input": "1998-07-16 09:00",
-    "description": "v2.2.3.bug 修 旺衰 - 王雅欣 2/3 中偏旺（未月失令/子水生日主甲木 → 得地 ✓/寅印合并得助），调候癸水+庚金",
+    "description": "v2.2.5 加权打分 - 王雅欣 40% 中偏弱（未月失令60%×0/子水生日主甲木地30%×1/寅印合并助10%×1=40%），调候癸水+庚金",
     "expected": {
-      "wangshuai_score": 2,
+      "wangshuai_score": 40,
       "de_ling": false,
       "de_di": true,
       "de_zhu": true,
@@ -745,9 +745,9 @@
   {
     "case_type": "wangshuai",
     "input": "2024-04-08 12:00",
-    "description": "v2.2.3 旺衰 - 壬水辰月 1/3 中等偏弱（边界用例：得助仅比劫天干透出）",
+    "description": "v2.2.3 旺衰 - 壬水辰月 10% 弱（加权打分：令60%×0+地30%×0+助10%×1=10%）（边界用例：得助仅比劫天干透出）",
     "expected": {
-      "wangshuai_score": 1,
+      "wangshuai_score": 10,
       "de_ling": false,
       "de_di": false,
       "de_zhu": true,
@@ -783,19 +783,19 @@
   {
     "case_type": "shiyao",
     "input": "1996-03-10 18:00",
-    "description": "v2.2.3 施药 - 杨权 正印格 + 3/3 极旺 = 金水",
+    "description": "v2.2.3 施药 - 杨权 正印格 + 100% 极旺 = 金水",
     "expected": {
       "final": "金水",
       "zhengge_direction": "金水（财+官）",
       "tiaohou": "壬水",
-      "wangshuai_score": 3
+      "wangshuai_score": 100
     },
     "category": "施药"
   },
   {
     "case_type": "shiyao",
     "input": "1998-07-16 09:00",
-    "description": "v2.2.3.bug 修 施药 - 王雅欣 正财格 + 2/3 中偏旺（实际扶身能力中等偏弱 - 印生路径被枭神夺食+子未害）= 火金（兼调候）",
+    "description": "v2.2.5 加权打分 施药 - 王雅欣 正财格 + 40% 中偏弱 = 火金（兼调候）",
     "expected": {
       "final_wuxing_contains": [
         "火",
