@@ -28,23 +28,23 @@
 ```
 bazi/
 ├── README.md          ← 本文件——入口v2.2.0
-├── SKILL.md           v1.14.0 ← 主技能文档——9 步流程
+├── SKILL.md           v1.16.0 ← 主技能文档——9 步流程
 │
 ├── references/        ← 16 个 reference 文档
 │   ├── bazi-audit-principles.md  v1.1.0  [核查原则——V1-V4 / P1-P4 / R1-R4 / N1-N4 / A1-A2]
 │   ├── bazi-rules.md             v1.3.0  [规则速查——节气表 + 流年关系表]
 │   ├── bazi-zhengge.md           v1.0.1  [正格] = 骨
-│   ├── bazi-wangshuai.md         v2.1.0  [旺衰] = 势——原 bazi-shiju.md 已合并
-│   ├── bazi-liutong.md           v3.3.1  [流通] = 气血——路径分析 v3.0.0 + 场景化递归 v3.3.0 + 距离规则 v3.3.1
+│   ├── bazi-wangshuai.md         v2.2.1  [旺衰] = 势——原 bazi-shiju.md 已合并
+│   ├── bazi-liutong.md           v3.4.7  [流通] = 气血——路径分析 v3.0.0 + 场景化递归 v3.3.0 + 距离规则 v3.3.1 + 双层框架 v3.4.6 + P0 修复 v3.4.7
 │   ├── bazi-shensha.md           v2.2.0  [神煞] = 助缘
 │   ├── bazi-shiyao.md          v1.2.0  [施药] = 融合产物——4 大治法总览：调候/抑扶/通关/对症
-│   ├── bazi-yingyuan.md          v2.3.0  [姻缘] = 5 层判断流程——夫妻宫=家 / 夫妻星=人 / 异位关系 / 姻缘时间线 / 流通框架
-│   ├── bazi-shiye.md             v1.1.0  [事业] = 工作 + 创业 + 关系 / 应用 v3.3.1 流通框架
+│   ├── bazi-yingyuan.md          v2.3.1  [姻缘] = 5 层判断流程——夫妻宫=家 / 夫妻星=人 / 异位关系 / 姻缘时间线 / 流通框架
+│   ├── bazi-shiye.md             v1.1.1  [事业] = 工作 + 创业 + 关系 / 应用 v3.3.1 流通框架
 │   ├── bazi-cai.md               v1.0.0  [财] = 工资 + 横财 + 关系
 │   ├── bazi-xingge.md            v1.0.0  [性格] = 自我 + 思维 + 关系
 │   ├── bazi-jiankang.md          v1.0.0  [健康] = 脏腑 + 堵点 + 关系
-│   ├── bazi-style.md             v3.18.0 [输出风格——不出表格铁律 + 现代汉语翻译对照表 + 一段话范式]
-│   ├── bazi-paipan.md            v2.3.0  [排盘] 9 步流程（v2.3.0 定位重构）
+│   ├── bazi-style.md             v3.19.0 [输出风格——不出表格铁律 + 现代汉语翻译对照表 + 一段话范式]
+│   ├── bazi-paipan.md            v2.4.0  [排盘] 9 步流程（v2.4.0 修复 Step 4 流通→通关→施药 链）
 │   └── bazi-hehun.md             v1.3.0  [合盘] 5+1+1 步流程
 │
 └── scripts/           ← 程序 + 测试
@@ -83,8 +83,8 @@ bazi/
 | 分析 | 文档 | 版本 | 主要用书 |
 |---|---|---|---|
 | **正格**——Layer 1| `bazi-zhengge.md` | v1.0.1 | 渊海 / 三命 / 人伦 / 千里 |
-| **旺衰**——Layer 1| `bazi-wangshuai.md` | v2.1.0 | 滴天 / 子平 / 穷通 |
-| **流通**——Layer 1| `bazi-liutong.md` | v3.3.1 | 子平 / 滴天 |
+| **旺衰**——Layer 1| `bazi-wangshuai.md` | v2.2.1 | 滴天 / 子平 / 穷通 |
+| **流通**——Layer 1| `bazi-liutong.md` | v3.4.7 | 子平 / 滴天 |
 | **神煞**——Layer 1| `bazi-shensha.md` | v2.2.0 | 渊海 / 三命 / 星平会海 |
 | **施药**——Layer 2| `bazi-shiyao.md` | v1.2.0 | 渊海 / 子平 / 滴天 / 穷通 |
 
@@ -145,20 +145,20 @@ bazi/
 | 需求 | 看哪份文档 |
 |---|---|
 | **快速入门** | 本 README.md |
-| **9 步流程摘要** | [`SKILL.md`](SKILL.md) v1.14.0 |
-| **排盘技术规范** | [`references/bazi-paipan.md`](references/bazi-paipan.md) v2.3.0 |
+| **9 步流程摘要** | [`SKILL.md`](SKILL.md) v1.16.0 |
+| **排盘技术规范** | [`references/bazi-paipan.md`](references/bazi-paipan.md) v2.4.0 |
 | **合盘技术规范** | [`references/bazi-hehun.md`](references/bazi-hehun.md) v1.3.0 |
 | **正格体系** | [`references/bazi-zhengge.md`](references/bazi-zhengge.md) v1.0.1 |
-| **旺衰体系** | [`references/bazi-wangshuai.md`](references/bazi-wangshuai.md) v2.1.0 |
-| **流通体系** | [`references/bazi-liutong.md`](references/bazi-liutong.md) v3.3.1 |
+| **旺衰体系** | [`references/bazi-wangshuai.md`](references/bazi-wangshuai.md) v2.2.1 |
+| **流通体系** | [`references/bazi-liutong.md`](references/bazi-liutong.md) v3.4.7 |
 | **神煞体系** | [`references/bazi-shensha.md`](references/bazi-shensha.md) v2.2.0 |
 | **施药体系** | [`references/bazi-shiyao.md`](references/bazi-shiyao.md) v1.2.0 |
-| **姻缘专题** | [`references/bazi-yingyuan.md`](references/bazi-yingyuan.md) v2.3.0 |
-| **事业专题** | [`references/bazi-shiye.md`](references/bazi-shiye.md) v1.1.0 |
+| **姻缘专题** | [`references/bazi-yingyuan.md`](references/bazi-yingyuan.md) v2.3.1 |
+| **事业专题** | [`references/bazi-shiye.md`](references/bazi-shiye.md) v1.1.1 |
 | **财专题** | [`references/bazi-cai.md`](references/bazi-cai.md) v1.0.0 |
 | **性格专题** | [`references/bazi-xingge.md`](references/bazi-xingge.md) v1.0.0 |
 | **健康专题** | [`references/bazi-jiankang.md`](references/bazi-jiankang.md) v1.0.0 |
-| **输出风格（含一段话范式）** | [`references/bazi-style.md`](references/bazi-style.md) v3.18.0 |
+| **输出风格（含一段话范式）** | [`references/bazi-style.md`](references/bazi-style.md) v3.19.0 |
 
 ---
 
