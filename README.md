@@ -1,3 +1,12 @@
+### 版本 3.4.6 (2026-08-20)
+- **每日自动同步 2026-08-20**: 12 文件变更(89+/-21-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
+- **工作空间核查**: workspace/{agents}/ 结构正常,仅含7个.md配置文件+标准配置目录(temp/memory/.agents),无杂散文件
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步
+- **steward/MEMORY.md**: promotion 同步(2026-08-20,8条 bazi 文档沉淀)
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.4.5 (2026-08-19)
 - **每日自动同步 2026-08-19**: 11 文件变更(67+/-0-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(仅 memory 历史记录中提及环境变量名,无实际密钥值)
