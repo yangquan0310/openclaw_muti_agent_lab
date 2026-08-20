@@ -1,3 +1,13 @@
+### 版本 3.4.7 (2026-08-21)
+- **每日自动同步 2026-08-21**: 12 文件变更(62+/-2-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
+- **工作空间整理**: workspace/skills/(skillhub 一次性下载文件)已移入 workspace/temp/,agent 工作区仅含 .md 配置+标准目录
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步(2026-08-21 03:00)
+- **steward/memory**: 新增 2026-08-20.md 工作记忆(宫星系统框架确立、bazi-paipan 重构分析总纲、5个应用专题三层思维、神煞移除等)
+- **bazi 系列提交(3.4.6 之后)**: 得令改12长生判定、宫星交互健康分析、五步链总纲、删除大六壬、流日 --liuri、神煞移除、姻缘三层思维等 15 笔
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.4.6 (2026-08-20)
 - **每日自动同步 2026-08-20**: 12 文件变更(89+/-21-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
