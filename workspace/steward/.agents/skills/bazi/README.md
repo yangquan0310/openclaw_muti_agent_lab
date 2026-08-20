@@ -44,7 +44,7 @@ bazi/
 │   ├── bazi-xingge.md            v1.0.0  [性格] = 自我 + 思维 + 关系
 │   ├── bazi-jiankang.md          v1.0.0  [健康] = 脏腑 + 堵点 + 关系
 │   ├── bazi-style.md             v3.19.0 [输出风格——不出表格铁律 + 现代汉语翻译对照表 + 一段话范式]
-│   ├── bazi-paipan.md            v2.4.0  [排盘] 9 步流程（v2.4.0 修复 Step 4 流通→通关→施药 链）
+│   ├── bazi-paipan.md            v3.0.0  [分析总纲] 四线导航 + 分析流程 + 宫星系统
 │   └── bazi-hehun.md             v1.3.0  [合盘] 5+1+1 步流程
 │
 └── scripts/           ← 程序 + 测试
@@ -146,7 +146,7 @@ bazi/
 |---|---|
 | **快速入门** | 本 README.md |
 | **9 步流程摘要** | [`SKILL.md`](SKILL.md) v1.16.0 |
-| **排盘技术规范** | [`references/bazi-paipan.md`](references/bazi-paipan.md) v2.4.0 |
+| **排盘技术规范** | [`references/bazi-paipan.md`](references/bazi-paipan.md) v3.0.0 |
 | **合盘技术规范** | [`references/bazi-hehun.md`](references/bazi-hehun.md) v1.3.0 |
 | **正格体系** | [`references/bazi-zhengge.md`](references/bazi-zhengge.md) v1.0.1 |
 | **旺衰体系** | [`references/bazi-wangshuai.md`](references/bazi-wangshuai.md) v2.2.5 |

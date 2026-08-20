@@ -63,7 +63,7 @@ description: 八字排盘 / Four Pillars of Destiny —— 支持三种输入—
 **完整定义、用书策略、排盘示例、依据类目表、输出模板、现代汉语规则**见：
 
 👉 **[references/bazi-style.md](references/bazi-style.md)**——v3.19.0，输出风格 · 基于格局的现代体系 · **不出表格铁律 v3.18.0 + §六 6.1/6.2/6.3/6.4 4 表转 bullet** · 含排盘/合盘输出示例 §六 / §6.3 一段话介绍范式
-👉 **[references/bazi-paipan.md](references/bazi-paipan.md)** ——v2.4.0，排盘分析规范 · 基于格局的 9 步含施药融合
+👉 **[references/bazi-paipan.md](references/bazi-paipan.md)** ——v3.0.0，**分析总纲**——技能全景图（排盘-分析-应用-输出四线）/ 流派定位 / 核心立场 / 分析总流程（Step 0-7 指针）/ **宫星系统**（宫位+六亲星+星看交互+宫藏干与星交互）/ 应用入口 / 输出规范
 
 ## 何时使用本技能
 
@@ -245,7 +245,7 @@ bazi/
     ├── bazi-xingge.md      # 性格专题——自我 + 思维 + 关系，v1.0.0
     ├── bazi-jiankang.md    # 健康专题——脏腑 + 堵点 + 关系，v1.0.0
     ├── bazi-case.md        # 案例库——实战命例逐案存档（每案例独立章节），v1.0.8
-    ├── bazi-paipan.md      # 解读流程规范——9 步，v2.4.0
+    ├── bazi-paipan.md      # 分析总纲——四线导航 + 分析流程 + 宫星系统，v3.0.0
     ├── bazi-style.md       # 输出风格——不出表格铁律 v3.18.0 + 现代汉语翻译对照表，v3.19.0
     └── bazi-rules.md       # 八字规则速查——节气表、五行、十神+ 流年关系表——v1.3.0
 ```
