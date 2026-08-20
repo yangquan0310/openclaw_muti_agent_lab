@@ -447,14 +447,15 @@ def _build_target_bazi(year: int, month: int = None, day: int = None,
 def _liuyun_text(birth: Bazi, target_year: Bazi, birth_pos: str,
                  target_pos: str, target_label: str,
                  target_value: str) -> str:
-    """流年 / 流月 / 流时 共用的渲染逻辑.
+    """流年 / 流月 / 流时 / 流日 共用的渲染逻辑.
 
     birth_pos: 命局对照柱（"年柱"/"月柱"/"日柱"/"时柱"）
-    target_pos: 目标柱（"年柱"/"月柱"/"时柱"）
+    target_pos: 目标柱（"年柱"/"月柱"/"日柱"/"时柱"）
     """
     target_pillar = {
         "年柱": target_year.year,
         "月柱": target_year.month,
+        "日柱": target_year.day,
         "时柱": target_year.hour,
     }[target_pos]
 
@@ -584,6 +585,39 @@ def liushi_text(birth: Bazi, target_dt: datetime) -> str:
         target_pos="时柱",
         target_label="流时",
         target_value=target_dt.strftime("%Y-%m-%d %H:%M"),
+    )
+
+
+def liuri(birth: Bazi, target_dt: datetime) -> dict:
+    """流日柱推算：给定日期，返回与命主的关系字典."""
+    target = build_bazi(target_dt)
+    rel = pillar_relation(target.day, birth.day)
+    return {
+        "target_dt": target_dt.strftime("%Y-%m-%d"),
+        "target_day_pillar": {"gan": target.day.gan, "zhi": target.day.zhi},
+        "target_year_pillar": {"gan": target.year.gan, "zhi": target.year.zhi},
+        "target_month_pillar": {"gan": target.month.gan, "zhi": target.month.zhi},
+        "target_hour_pillar": {"gan": target.hour.gan, "zhi": target.hour.zhi},
+        "vs_day_master": {
+            "gan_shishen": ten_god(birth.day_master, target.day.gan),
+            "zhi_shishen": ten_god_of_zhi(birth.day_master, target.day.zhi),
+            "zhi_benqi": target.day.canggan[0],
+        },
+        "vs_birth_day": rel,
+        "target_solar": target.solar.strftime("%Y-%m-%d"),
+        "target_lunar": f"{target.lunar_year_cn}年 {target.lunar_month_cn} {target.lunar_day_cn}",
+    }
+
+
+def liuri_text(birth: Bazi, target_dt: datetime) -> str:
+    """流日的纯文本输出."""
+    target = build_bazi(target_dt)
+    return _liuyun_text(
+        birth, target,
+        birth_pos="日柱",
+        target_pos="日柱",
+        target_label="流日",
+        target_value=target_dt.strftime("%Y-%m-%d"),
     )
 
 

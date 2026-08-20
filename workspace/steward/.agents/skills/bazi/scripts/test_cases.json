@@ -1081,5 +1081,30 @@
       "min_candidates": 1
     },
     "category": "反查"
+  },
+  {
+    "case_type": "liuri",
+    "input": "1996-03-10 17:30",
+    "target_dt": "2026-08-20",
+    "description": "v1.13.0 流日 - 杨权 2026-08-20 丙寅日 → 比肩+偏印，寅午三合火半合",
+    "expected": {
+      "target_day_pillar": {
+        "gan": "丙",
+        "zhi": "寅"
+      },
+      "vs_day_master": {
+        "gan_shishen": "比肩",
+        "zhi_shishen": "偏印"
+      },
+      "vs_birth_day": {
+        "gan_rels": [],
+        "zhi_rels": [
+          "三合火半合"
+        ],
+        "combined": [
+          "普通"
+        ]
+      }
+    }
   }
 ]

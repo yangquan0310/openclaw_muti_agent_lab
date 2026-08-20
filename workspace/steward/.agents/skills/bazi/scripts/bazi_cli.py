@@ -28,8 +28,8 @@ from bazi import (  # noqa: E402
     build_bazi_from_lunar_str,
     build_bazi_from_pillars,
     parse_lunar_input,
-    liunian, liumonth, liushi,
-    liunian_text, liumonth_text, liushi_text,
+    liunian, liumonth, liushi, liuri,
+    liunian_text, liumonth_text, liushi_text, liuri_text,
     zhengge, wangshuai, shensha, shiyao, dayun, reverse_lookup,
     wuxing_of_gan,
 )
@@ -79,6 +79,41 @@ def cmd_liushi(args, birth) -> int:
     else:
         print(liushi_text(birth, target_dt))
     return 0
+
+
+def cmd_liuri(args, birth) -> int:
+    """流日柱输出."""
+    target_dt = _parse_liuri_target(args.liuri)
+    if target_dt is None:
+        print(f"ERROR: 无法解析 --liuri 参数: {args.liuri}", file=sys.stderr)
+        return 2
+    info = liuri(birth, target_dt)
+    if args.json:
+        out = dict(info)
+        out["target_dt"] = info["target_dt"]
+        print(json.dumps(out, ensure_ascii=False, indent=2))
+    else:
+        print(liuri_text(birth, target_dt))
+    return 0
+
+
+def _parse_liuri_target(args_value):
+    """解析 --liuri YYYY-MM-DD."""
+    if isinstance(args_value, str):
+        parts = args_value.split()
+    elif isinstance(args_value, list):
+        parts = []
+        for p in args_value:
+            parts.extend(p.split())
+    else:
+        return None
+    if not parts:
+        return None
+    date_part = parts[0]
+    try:
+        return datetime.strptime(f"{date_part} 12:00", "%Y-%m-%d %H:%M")
+    except ValueError:
+        return None
 
 
 def _parse_liushi_target(args_value):
@@ -382,6 +417,8 @@ def _check_case(case: dict) -> tuple[bool, str]:
         return _check_liumonth_case(case)
     elif ctype == "liushi":
         return _check_liushi_case(case)
+    elif ctype == "liuri":
+        return _check_liuri_case(case)
     elif ctype == "combined":
         return _check_combined_case(case)
     elif ctype == "zhengge":
@@ -626,6 +663,49 @@ def _check_liushi_case(case: dict) -> tuple[bool, str]:
             av = a_day.get(key)
             if ev is not None and ev != av:
                 mismatches.append(f"target_day_pillar.{key}: exp={ev!r} act={av!r}")
+
+    if mismatches:
+        return False, "; ".join(mismatches)
+    return True, ""
+
+
+def _check_liuri_case(case: dict) -> tuple[bool, str]:
+    """流日用例."""
+    birth = _birth_from_case_input(case)
+    target_dt = datetime.strptime(case["target_dt"], "%Y-%m-%d")
+    actual = liuri(birth, target_dt)
+    expected = case.get("expected", {})
+    mismatches = []
+
+    e_pillar = expected.get("target_day_pillar", {})
+    a_pillar = actual.get("target_day_pillar", {})
+    for key in ("gan", "zhi"):
+        ev = e_pillar.get(key)
+        av = a_pillar.get(key)
+        if ev is not None and ev != av:
+            mismatches.append(f"target_day_pillar.{key}: exp={ev!r} act={av!r}")
+
+    e_dm = expected.get("vs_day_master", {})
+    a_dm = actual.get("vs_day_master", {})
+    for key in ("gan_shishen", "zhi_shishen"):
+        ev = e_dm.get(key)
+        av = a_dm.get(key)
+        if ev is not None and ev != av:
+            mismatches.append(f"vs_day_master.{key}: exp={ev!r} act={av!r}")
+
+    e_rel = expected.get("vs_birth_day", {})
+    a_rel = actual.get("vs_birth_day", {})
+    for key in ("gan_rels", "zhi_rels", "combined"):
+        ev = e_rel.get(key)
+        av = a_rel.get(key)
+        if ev is not None:
+            if isinstance(ev, list):
+                for item in ev:
+                    if item not in av:
+                        mismatches.append(f"vs_birth_day.{key}: 期望列表含 {item!r} 实际={av}")
+            else:
+                if ev != av:
+                    mismatches.append(f"vs_birth_day.{key}: exp={ev!r} act={av!r}")
 
     if mismatches:
         return False, "; ".join(mismatches)
@@ -1097,6 +1177,11 @@ def _combined_json_output(args, birth):
         if target_dt is not None:
             analysis["liushi"] = liushi(birth, target_dt)
             modules += 1
+    if args.liuri is not None:
+        target_dt = _parse_liuri_target(args.liuri)
+        if target_dt is not None:
+            analysis["liuri"] = liuri(birth, target_dt)
+            modules += 1
     if args.zhengge:
         analysis["zhengge"] = zhengge(birth)
         modules += 1
@@ -1155,6 +1240,8 @@ def main(argv=None) -> int:
                         help="推算 YYYY-MM 月的流月柱（与命局关系）")
     parser.add_argument("--liushi", nargs="+", metavar="YYYY-MM-DD",
                         help="推算指定日期[时间]的流时柱（与命局关系）")
+    parser.add_argument("--liuri", nargs="+", metavar="YYYY-MM-DD",
+                        help="推算指定日期的流日柱（与命局关系）")
 
     # v1.8.0 新增模块 flag
     parser.add_argument("--zhengge", action="store_true",
@@ -1229,6 +1316,9 @@ def main(argv=None) -> int:
         if args.liushi is not None:
             has_any = True
             rc |= cmd_liushi(args, birth)
+        if args.liuri is not None:
+            has_any = True
+            rc |= cmd_liuri(args, birth)
         if args.zhengge:
             has_any = True
             rc |= cmd_zhengge(args, birth)
@@ -1284,6 +1374,9 @@ def main(argv=None) -> int:
     if args.liushi is not None:
         has_any = True
         rc |= cmd_liushi(args, birth)
+    if args.liuri is not None:
+        has_any = True
+        rc |= cmd_liuri(args, birth)
     if args.zhengge:
         has_any = True
         rc |= cmd_zhengge(args, birth)
