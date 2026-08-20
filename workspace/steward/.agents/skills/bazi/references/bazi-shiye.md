@@ -430,7 +430,6 @@ version: 1.3.0
 - [`bazi-shiyao.md`](bazi-shiyao.md) → 施药判定——行业方向
 - [`bazi-wangshuai.md`](bazi-wangshuai.md) → 旺衰分析——事业体能
 - [`bazi-zhengge.md`](bazi-zhengge.md) → 正格体系——事业格局
-- [`bazi-shensha.md`](bazi-shensha.md) → 神煞体系——将星/驿马/天乙等
 - [`bazi-liutong.md`](bazi-liutong.md) v3.3.1 → 流通路径分析框架——**本节按新框架应用事业分析**
 
 ---

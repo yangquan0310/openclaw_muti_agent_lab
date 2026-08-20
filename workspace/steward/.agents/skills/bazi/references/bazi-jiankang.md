@@ -291,7 +291,6 @@ version: 1.1.0
 - [`bazi-paipan.md`](bazi-paipan.md) → 排盘规范——健康维度引用本文件
 - [`bazi-shiyao.md`](bazi-shiyao.md) → 施药判定——养生方向
 - [`bazi-wangshuai.md`](bazi-wangshuai.md) → 旺衰分析——健康体能
-- [`bazi-shensha.md`](bazi-shensha.md) → 神煞体系——灾煞/披麻等健康风险神煞
 
 ---
 
