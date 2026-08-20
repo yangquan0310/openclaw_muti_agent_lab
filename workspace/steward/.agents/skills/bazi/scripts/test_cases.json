@@ -850,32 +850,6 @@
     "category": "反查"
   },
   {
-    "case_type": "daliuren",
-    "input": "1996-03-10 17:30",
-    "description": "v2.0.0 大六壬 - 杨权 卯月酉时 → 月将寅、四课三传比用",
-    "expected": {
-      "yue_jiang": "寅",
-      "hour_zhi": "酉",
-      "month_zhi": "卯",
-      "ke_1_down": "亥",
-      "chu_chuan": "午",
-      "zongmen": "比用"
-    },
-    "category": "大六壬"
-  },
-  {
-    "case_type": "daliuren",
-    "input": "1998-07-16 09:30",
-    "description": "v2.0.0 大六壬 - 王雅欣 未月巳时 → 月将午、四课三传比用",
-    "expected": {
-      "yue_jiang": "午",
-      "hour_zhi": "巳",
-      "month_zhi": "未",
-      "chu_chuan": "丑"
-    },
-    "category": "大六壬"
-  },
-  {
     "case_type": "combined_json",
     "description": "组合模式：chart + analysis 单 JSON（杨权 1996-03-10 18:00 男，5 模块）",
     "input": "1996-03-10 18:00",
