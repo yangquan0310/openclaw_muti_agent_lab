@@ -1,3 +1,11 @@
+### 版本 3.4.8 (2026-08-22)
+- **每日自动同步 2026-08-22**: 11 文件变更(60+/-1-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
+- **工作空间整理**: psychologist/writer/steward 的 media/inbound staged 一次性文件(9个)已移入各 agent temp/media-inbound-20260822/;main/programmer/reviewer/steward 的 openclaw-workspace-state.json 已移入 temp/
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步(2026-08-22 03:00)
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.4.7 (2026-08-21)
 - **每日自动同步 2026-08-21**: 12 文件变更(62+/-2-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅
