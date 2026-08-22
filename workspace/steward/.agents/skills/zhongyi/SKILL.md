@@ -1,5 +1,5 @@
 ---
-name: tcm-diagnosis
+name: zhongyi
 version: 1.0.0
 description: 中医辨证（Traditional Chinese Medicine Syndrome Differentiation）—— 输入文本症状（主诉、舌象、脉象、寒热、汗出、二便等）→ 输出八纲判定 + 候选证型 + 经典方剂名 + 免责声明。覆盖 32 个证型、31 首经典方（含解表/清热/温里/补益/理气/理血/祛湿七大类）。数据源：《中医诊断学》《方剂学》（中国中医药出版社"十四五"规划教材）、《伤寒论》《金匮要略》经典原典。触发词："中医诊断"、"辨证"、"证型"、"中医"、"舌苔"、"脉象"、"tcm"、"diagnose"。
 ---

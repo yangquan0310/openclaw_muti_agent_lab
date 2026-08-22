@@ -145,7 +145,7 @@ def cmd_list_formulas(args) -> int:
 
 def cmd_version(args) -> int:
     """显示版本."""
-    print("tcm-diagnosis  v1.0.0")
+    print("zhongyi  v1.0.0")
     print(f"skill root: {SKILL_ROOT}")
     print(f"zheng entries: {len(ZHENG_TABLE)}")
     print(f"formula entries: {len(FORMULA_TABLE)}")

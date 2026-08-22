@@ -1,4 +1,4 @@
-# tcm-diagnosis · 中医辨证技能 v1
+# zhongyi · 中医辨证技能 v1
 
 > 给一段文本症状 → 返回八纲 + 候选证型 + 经典方剂 + 强 disclaimer。
 > 32 证型 · 31 方剂 · 基于《中医诊断学》《方剂学》《伤寒论》《金匮要略》整理。
@@ -8,11 +8,11 @@
 
 ```bash
 # 1) 直接调局部 CLI
-cd ~/.openclaw/workspace/steward/.agents/skills/tcm-diagnosis/scripts
+cd ~/.openclaw/workspace/steward/.agents/skills/zhongyi/scripts
 ./tcm diagnose --symptoms "头痛3天，怕冷，无汗，鼻塞流清涕，脉浮紧"
 
 # 2) 全局安装（推荐）
-sudo ln -sf $(pwd)/scripts/tcm /usr/local/bin/tcm
+sudo ln -sf $(pwd)/scripts/tcm /usr/local/bin/zhongyi
 tcm --help
 ```
 
@@ -22,7 +22,7 @@ tcm --help
 
 ```bash
 # 注册全局 `tcm` 命令
-sudo ln -sf /root/.openclaw/workspace/steward/.agents/skills/tcm-diagnosis/scripts/tcm /usr/local/bin/tcm
+sudo ln -sf /root/.openclaw/workspace/steward/.agents/skills/zhongyi/scripts/tcm /usr/local/bin/zhongyi
 
 # 验证
 which tcm
@@ -32,7 +32,7 @@ tcm version
 可选：加入 PATH 直接用：
 
 ```bash
-export PATH=$PATH:/root/.openclaw/workspace/steward/.agents/skills/tcm-diagnosis/scripts
+export PATH=$PATH:/root/.openclaw/workspace/steward/.agents/skills/zhongyi/scripts
 ```
 
 ## 常用命令
@@ -54,7 +54,7 @@ tcm version                                           # 版本与统计
 from tcm_diagnose import TCMDiagnose
 from pathlib import Path
 
-diag = TCMDiagnose(skill_root=Path("/root/.openclaw/workspace/steward/.agents/skills/tcm-diagnosis"))
+diag = TCMDiagnose(skill_root=Path("/root/.openclaw/workspace/steward/.agents/skills/zhongyi"))
 out = diag.diagnose("心悸怔忡，失眠多梦，纳少腹胀，面色萎黄，舌淡嫩脉细弱", top_n=3)
 print(out["zheng_candidates"][0]["name"])   # → "心脾两虚"
 print(out["formulas"][0]["name"])           # → "归脾汤（丸）"

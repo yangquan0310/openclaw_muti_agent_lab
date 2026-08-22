@@ -820,7 +820,7 @@ class TCMDiagnose:
         ]
 
         return {
-            "engine": "tcm-diagnosis v1.0.0",
+            "engine": "zhongyi v1.0.0",
             "input_symptoms": symptoms,
             "extracted_features": {
                 "has_cold_signal": features["has_cold"],

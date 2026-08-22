@@ -1,5 +1,5 @@
 ---
-name: "tcm-diagnosis"
+name: "zhongyi"
 description: "中医辨证 v1.0.0：文本症状→八纲+证型+方剂+免责声明。32证型/31方剂"
 ---
 
