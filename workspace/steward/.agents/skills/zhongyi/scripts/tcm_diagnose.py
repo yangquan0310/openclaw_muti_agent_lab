@@ -9,7 +9,7 @@
   5. 输出 JSON：含 bagang / 候选证型 / 主方 / disclaimer
 
 ⚠️ 本模块仅供学术参考与工程演示，不构成医疗建议。
-数据源见 references/tcm-zheng.md 与 references/tcm-formulas.md。
+数据源见 references/zhongyi-zhenduan.md 与 references/zhongyi-fangji.md。
 """
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 
 # ============================================================================
-# 数据：证型表（与 references/tcm-zheng.md 同步）
+# 数据：证型表（与 references/zhongyi-zhenduan.md 同步）
 # ============================================================================
 # 每个 zheng 包含 ID、八纲归类、主症特征关键词、舌脉关键词、主方 ID
 # 关键词权重：主症 3 分；舌象/脉象 2 分；部位/寒热/汗等 1 分
@@ -556,7 +556,7 @@ ZHENG_TABLE: List[Dict] = [
 assert len(ZHENG_TABLE) >= 30, f"证型数量不足: {len(ZHENG_TABLE)}"
 
 # ============================================================================
-# 数据：方剂表（与 references/tcm-formulas.md 同步）
+# 数据：方剂表（与 references/zhongyi-fangji.md 同步）
 # ============================================================================
 
 FORMULA_TABLE: Dict[str, Dict] = {
@@ -843,23 +843,7 @@ class TCMDiagnose:
         }
 
     def _load_disclaimer_text(self) -> str:
-        """从 references/tcm-disclaimer.md 加载全文。"""
-        # 默认搜索路径
-        candidates = []
-        if self.skill_root:
-            candidates.append(self.skill_root / "references" / "tcm-disclaimer.md")
-        # 兜底：相对当前文件
-        here = Path(__file__).resolve().parent
-        candidates.append(here.parent / "references" / "tcm-disclaimer.md")
-        candidates.append(here / "tcm-disclaimer.md")
-
-        for p in candidates:
-            try:
-                if p.exists():
-                    return p.read_text(encoding="utf-8").strip()
-            except OSError:
-                pass
-        # fallback
+        """免责声明（内联，不依赖外部文件——老板 2026-08-22 拍板删免责文件）。"""
         return ("⚠️ 本技能仅供学习参考，**不构成医疗建议**。"
                 "请前往中医院由执业中医师面诊，"
                 "急症请拨 120 或就近医院。")

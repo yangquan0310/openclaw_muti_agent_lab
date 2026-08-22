@@ -6,7 +6,7 @@ description: "中医辨证 v1.0.0：文本症状→八纲+证型+方剂+免责�
 # 中医辨证技能（TCM Diagnosis）v1.0.0
 
 > 给定一段 **文本症状描述**，输出 **八纲辨证** + **候选证型 + 主方** + **免责声明**。
-> 严格限制：**仅学习参考，不构成医疗建议**（详见 `references/tcm-disclaimer.md`）。
+> 严格限制：**仅学习参考，不构成医疗建议**（免责见内联输出）。
 
 ## 核心能力
 
@@ -108,7 +108,7 @@ result = diag.diagnose("发热重，咽痛口渴，舌尖红苔薄黄，脉浮�
 ## ⚠️ 严格免责声明
 
 **每次输出必须附带 `disclaimer` 字段，内容不得删除、改弱化或省略**。
-完整 disclaim 见 `references/tcm-disclaimer.md`，要点：
+免责要点（内联，无独立文件）：
 
 - 本技能仅供学习参考，**不构成医疗建议**；
 - 中医辨证需要四诊合参，文本症状 **不足以完成可靠辨证**；
@@ -152,9 +152,10 @@ tcm-diagnosis/
 │   ├── tcm                          # 全局命令 wrapper
 │   └── test_cases.json              # 5+ 用例（实有 8 条）
 └── references/
-    ├── tcm-zheng.md                  # 32 证型（详尽）
-    ├── tcm-formulas.md               # 31 方剂（无剂量）
-    └── tcm-disclaimer.md             # 强 disclaimer
+    ├── zhongyi-jichu.md              # 基础：历法→五脏六腑→内外→三焦→身体隐喻
+    ├── zhongyi-zhenduan.md           # 诊断：32 证型（详尽）
+    ├── zhongyi-zhongyao.md           # 中药：性味归经功效索引（99 味）
+    └── zhongyi-fangji.md             # 方剂：34 方（无剂量）
 ```
 
 ## 算法要点
@@ -198,4 +199,4 @@ v1.0.0 目标：**8/8 全通过**。
 ## 版权与免责
 
 本技能仅供学术研究与文化记录使用。**中医辨证不构成任何医疗决策建议**。
-具体见 `references/tcm-disclaimer.md`。
+免责已内联（不依赖独立文件）。

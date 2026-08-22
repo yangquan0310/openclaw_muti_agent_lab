@@ -68,7 +68,7 @@ def cmd_diagnose(args) -> int:
     print("─" * 70)
     print(out["disclaimer"]["text"].split("\n")[1] if "\n" in out["disclaimer"]["text"] else out["disclaimer"]["text"])
     print("─" * 70)
-    print(f"\n（完整 disclaim 见 references/tcm-disclaimer.md）")
+    print(f"\n（完整免责见内联说明）")
     return 0
 
 
