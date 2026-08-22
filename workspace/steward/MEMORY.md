@@ -101,21 +101,21 @@
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
 
-## Promoted From Short-Term Memory (2026-08-20)
+## Promoted From Short-Term Memory (2026-08-23)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-08-15.md:22:24 -->
-- v1.0.1 / v2.0.0 / v1.2.0 / v2.1.0 文档沉淀: ✅ bazi-zhengge.md v1.0.1 取格三原则 SOP; ✅ bazi-yongshen.md v1.2.0 四治法总览; ✅ bazi-shensha.md v2.2.0 34 神煞 + 一体两面 [score=0.805 recalls=0 avg=0.620 source=memory/2026-08-15.md:22-24]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-15.md:27:30 -->
-- v2.2.0 → v2.1.0 → v2.3.0 → yingyuan 专题: ✅ bazi-yingyuan.md 新建 v2.1.0（以对象为中心）; 3 章结构（家/人/关系）; 5 规则隐晦断定; 异位关系 + 位置含义 + 暗含内容 [score=0.805 recalls=0 avg=0.620 source=memory/2026-08-15.md:27-30]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-15.md:3:3 -->
-- 2026-08-15 工作记忆: > **沉淀今天的关键经验**（老板拍板 / 错误修正 / 新文档结构 / 系统规则） [score=0.805 recalls=0 avg=0.620 source=memory/2026-08-15.md:3-3]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-15.md:31:34 -->
-- v2.2.0 → v2.1.0 → v2.3.0 → yingyuan 专题: ✅ bazi-paipan.md v2.3.0 重构（只负责个人基础）; 删除 Step 8/9（交给具体专题）; commit `1ebcddc0`; ✅ bazi-rules.md 流年表加姻缘引用 [score=0.805 recalls=0 avg=0.620 source=memory/2026-08-15.md:31-34]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-15.md:35:36 -->
-- v2.2.0 → v2.1.0 → v2.3.0 → yingyuan 专题: ✅ bazi-hehun.md 婚嫁关系表加引用; ✅ SKILL.md + README.md 同步 [score=0.805 recalls=0 avg=0.620 source=memory/2026-08-15.md:35-36]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-15.md:10:13 -->
-- v2.2.0 神煞 28→34（合并传统派补充）: ✅ bazi.py 修 WENCHANG_GUIREN 多值版 + TAIJI_GUIREN 版本 B; ✅ bazi.py 加 6 个新神煞查表（FUXING/TIANCHU/DEXIU/PIMA/FEIREN/TUISHEN）; ✅ bazi-shensha.md v2.1.1 → v2.2.0; ✅ SKILL.md description + 进度表 + 树结构 [score=0.804 recalls=0 avg=0.620 source=memory/2026-08-15.md:10-13]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-15.md:14:15 -->
-- v2.2.0 神煞 28→34（合并传统派补充）: ✅ commit `6d30749a`; ✅ self-test 46/46 [score=0.804 recalls=0 avg=0.620 source=memory/2026-08-15.md:14-15]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-15.md:18:19 -->
-- v2.1.0 神煞按四柱输出: ✅ bazi_cli.py cmd_shensha 重写; ✅ commit `e71dcea9` [score=0.804 recalls=0 avg=0.620 source=memory/2026-08-15.md:18-19]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-15-2015.md:265:294 -->
+- 病：**印太旺无制**（正格破格点） - 药：**财星**（辛金）制印 = 印旺得财制 = 病药 - 所以**财星金** = 病药 让我整理输出： **用神 4 类分析（老板的盘）**： | 类型 | 病/需求 | 用神 | |---|---|---| | 调候 | 初春丙火，水木旺有余寒 | **壬水** | | 抑扶 | 身 4/4 极旺 | **克泄**（土金水） | | 通关 | 食伤生财断 | **金**（财生……不对，要让己土到辛，需要土金同柱或相邻） | | 病药 | 印太旺无制 | **财星金**（制印） | 合并：调候壬水 + 抑扶克泄（土金水）+ 病药财星金 = **金水**为主，土为辅。 但要小心：通关那个堵点（食伤生财断）的通关用神比较复杂，需要专门讲。 我需要重新输出： 1. 承认错误：流通逻辑混乱（不应该输出通路，那是用神的） 2. 给出 4 类用神 输出格式：QQ bullet list，不用表格！老板要简洁、直接。 让我重新整理输出。老板我错！**流通逻辑乱了**——把"通路"放在流通是错的，**通路也是用神管的**！我重做： ## 🚨 我的错误 - ❌ **流通输出 = 堵点 + 通路**（错！通路是用神的，不是流通的） [score=0.885 recalls=4 avg=0.741 source=memory/2026-08-15-2015.md:265-294]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-18.md:11:14 -->
+- 一、bazi 技能今日重大变更汇总: | 时间 | 文件 | 版本变化 | 老板原话 / 拍板要点 | |---|---|:---|:---| | 03:48 | `bazi-liutong.md` | v3.4.0 → v3.4.1 | "流通问题分析到位了。就是同柱、天干之间、地支之间。治病施药就是让整个命局强弱得当,流通起来,生生不息" | | 03:51 | `bazi-liutong.md` | v3.4.1 → v3.4.2 | "治病施药属于施药。不是在流通" —— 职责边界修正 | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-18.md:11-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-18.md:15:18 -->
+- 一、bazi 技能今日重大变更汇总: | 04:14 | `bazi-liutong.md` | v3.4.2 → v3.4.3 | 全文档一致性修复性("修复!D按标准6破") | | 04:36 | `bazi-liutong.md` | v3.4.3 → v3.4.4 | "财星空转。这个词不对,要用正统词汇" —— "空转"→"克之无力" | | 04:55/04:58 | `bazi-liutong.md` | v3.4.4 → v3.4.5 | "刑破优先级高于生克" + "不存在!刑破优先级高于生克" | | 12:15 | `bazi-rules.md` | v1.3.0 → v1.4.0 | "你更新rule中地支部分" | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-18.md:15-18]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-18.md:19:22 -->
+- 一、bazi 技能今日重大变更汇总: | 12:18 | `bazi-liutong.md` | v3.4.5 → v3.4.6 | "流通部分需要引用rule具体分析地支相互作用" | | 12:20 | - | - | "在rule中更新,不要新建" —— 不新建独立文件 | | 12:25 | - | - | "按审计文件检索后更新现有章节" | | 12:31 | - | - | "rule修改内容逻辑 - 从历法讲到天干地支,再到干支关系" | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-18.md:19-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-18.md:23:26 -->
+- 一、bazi 技能今日重大变更汇总: | 12:36 | - | - | "专题不是rule的!删除!" —— 丙火专题不属于 rule | | 12:40 | - | - | "rule只定义规则,不要乱搞" | | 12:45 | `bazi-rules.md` | v1.4.0 → v1.5.0 | "新的rule内容" —— 结构重排 §1.2→§2.2 / §九→§五,删丙火专题 | | 13:18 | `bazi-wangshuai.md` | v2.0.0 → v2.2.0 | reviewer 审计反馈 + "修复旺衰md版本号 等问题" | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-18.md:23-26]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-18.md:27:30 -->
+- 一、bazi 技能今日重大变更汇总: | 13:21 | - | - | "亥巳是什么关系" / "亥巳巳亥 这种地支 巳自刑+亥巳对冲怎么理解" | | 15:41 | `bazi-liutong.md` | v3.4.6 → v3.4.7 | "流通本质 = 清浊之辨,特定干支在其他干支影响下是否生生不息" | | 15:43 | - | - | "清浊之辨的核心不在于被克冲刑害破,而在于是否生生不息" | | 15:45 | - | - | "不应该取代,中心强调应用,流通本质是方法。两个不矛盾" —— 应用聚焦层 + 流通方法层叠加 | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-18.md:27-30]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-18.md:3:5 -->
+- 2026-08-18 工作记忆（老板实战分析 + bazi 技能修订）: > 本文件由 OpenClaw 自动生成,记录今日会话中可持久化的关键决策与状态。 > MEMORY.md / DREAMS.md / SOUL.md / TOOLS.md / AGENTS.md 为只读参考。 > 本文件可追加(append-only)。 [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-18.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-18.md:31:34 -->
+- 一、bazi 技能今日重大变更汇总: | 15:47 | - | - | "格局-旺衰-流通。这是你的核心分析方法论。你依赖一共7本书!你整理一下" | | 15:51 | `bazi-paipan.md` | v2.3.0 → v2.4.0 | "更新" —— 用书策略反转,按子方法定位(抛弃主要/辅助二分法) | | 16:08 | - | - | "让review审计" —— 派 reviewer 子代理按 bazi-audit-principles.md 完整审计 | | 16:51 | - | - | "让写作专家修改" —— 派 writer 修复审计反馈问题 | [score=0.803 recalls=0 avg=0.620 source=memory/2026-08-18.md:31-34]
