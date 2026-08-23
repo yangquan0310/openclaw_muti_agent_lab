@@ -1,3 +1,14 @@
+### 版本 3.5.0 (2026-08-24)
+- **每日自动同步 2026-08-24**: 38 文件变更(2843+/-1356-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(扫描全部待提交文件,未发现密钥模式)
+- **工作空间核查**: workspace/{agents}/ 结构正常,仅含 .md 配置文件+标准配置目录(temp/memory/.agents);steward/scripts(shensha_traditional.py)/skills(13项)/.clawhub 为有效内容;无杂散中间文件需移动
+- **bazi 技能「施药→体用」术语重构**: bazi-shiyao.md → bazi-tiyong.md 重命名;SKILL.md 及 references 全面统一为体用体系;新增六害生成原理(六合×六冲)、六破生成原理(六合交叉)、忌神病药理论(有病方为贵)、格局成局 4 条件;bazi-case.md 案例库重构(16 案例统一 5 节结构,清理 9 处重复结论)
+- **技能匿名化**: bazi 技能文档去除"老板"称呼,统一匿名化表述
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer/main events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步(2026-08-24 03:00)
+- **steward/memory**: 新增 2026-08-24.md 工作记忆(bazi 理论体系深化+案例库重构+技能匿名化)
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.4.9 (2026-08-23)
 - **每日自动同步 2026-08-23**: 12 文件变更(93+/-20-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)

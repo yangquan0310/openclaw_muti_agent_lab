@@ -681,10 +681,10 @@
   {
     "case_type": "zhengge",
     "input": "1996-03-10 18:00",
-    "description": "v1.8.0 正格 - 杨权 印绶格（金水为用）",
+    "description": "v1.8.0 正格 - 印绶格（金水为用）",
     "expected": {
       "ge_type": "正印格",
-      "shiyao_wuxing": "金水",
+      "tiyong_wuxing": "金水",
       "xiangshen": "财星",
       "jishen": "木火",
       "choushen": "水"
@@ -694,10 +694,10 @@
   {
     "case_type": "zhengge",
     "input": "1998-07-16 09:00",
-    "description": "v1.8.0 正格 - 王雅欣 正财格（火金为用）",
+    "description": "v1.8.0 正格 - 正财格（火金为用）",
     "expected": {
       "ge_type": "正财格",
-      "shiyao_wuxing": "火金",
+      "tiyong_wuxing": "火金",
       "xiangshen": "官杀、食伤",
       "jishen": "比劫",
       "choushen": "劫财",
@@ -711,7 +711,7 @@
     "description": "v1.8.0 正格 - 立秋后申月（庚金 = 乙木日主得正官）",
     "expected": {
       "ge_type": "正官格",
-      "shiyao_wuxing": "金水",
+      "tiyong_wuxing": "金水",
       "jishen": "伤官"
     },
     "category": "正格"
@@ -719,7 +719,7 @@
   {
     "case_type": "wangshuai",
     "input": "1996-03-10 18:00",
-    "description": "v2.2.3 旺衰 - 杨权 100% 极旺（加权打分：令60%+地30%+助10%=100%）（印星并入得助），调候壬水",
+    "description": "v2.2.3 旺衰 - 100% 极旺（加权打分：令60%+地30%+助10%=100%）（印星并入得助），调候壬水",
     "expected": {
       "wangshuai_score": 100,
       "de_ling": true,
@@ -732,7 +732,7 @@
   {
     "case_type": "wangshuai",
     "input": "1998-07-16 09:00",
-    "description": "v2.2.5 加权打分 - 王雅欣 40% 中偏弱（未月失令60%×0/子水生日主甲木地30%×1/寅印合并助10%×1=40%），调候癸水+庚金",
+    "description": "v2.2.5 加权打分 - 40% 中偏弱（未月失令60%×0/子水生日主甲木地30%×1/寅印合并助10%×1=40%），调候癸水+庚金",
     "expected": {
       "wangshuai_score": 40,
       "de_ling": false,
@@ -758,7 +758,7 @@
   {
     "case_type": "shensha",
     "input": "1996-03-10 18:00",
-    "description": "v1.8.0 神煞 - 杨权 命中 ≥5 个关键神煞（含天乙、羊刃、桃花、阴阳差错）",
+    "description": "v1.8.0 神煞 - 命中 ≥5 个关键神煞（含天乙、羊刃、桃花、阴阳差错）",
     "expected": {
       "must_contain": [
         "天乙贵人",
@@ -772,7 +772,7 @@
   {
     "case_type": "shensha",
     "input": "1998-07-16 09:00",
-    "description": "v1.8.0 神煞 - 王雅欣 命中神煞（含驿马）",
+    "description": "v1.8.0 神煞 - 命中神煞（含驿马）",
     "expected": {
       "must_contain": [
         "驿马"
@@ -781,21 +781,21 @@
     "category": "神煞"
   },
   {
-    "case_type": "shiyao",
+    "case_type": "tiyong",
     "input": "1996-03-10 18:00",
-    "description": "v2.2.3 施药 - 杨权 正印格 + 100% 极旺 = 金水",
+    "description": "v2.2.3 体用 - 正印格 + 100% 极旺 = 金水",
     "expected": {
       "final": "金水",
       "zhengge_direction": "金水（财+官）",
       "tiaohou": "壬水",
       "wangshuai_score": 100
     },
-    "category": "施药"
+    "category": "体用"
   },
   {
-    "case_type": "shiyao",
+    "case_type": "tiyong",
     "input": "1998-07-16 09:00",
-    "description": "v2.2.5 加权打分 施药 - 王雅欣 正财格 + 40% 中偏弱 = 火金（兼调候）",
+    "description": "v2.2.5 加权打分 体用 - 正财格 + 40% 中偏弱 = 火金（兼调候）",
     "expected": {
       "final_wuxing_contains": [
         "火",
@@ -804,13 +804,13 @@
       "zhengge_direction_contains": "火金",
       "tiaohou": "癸水+庚金"
     },
-    "category": "施药"
+    "category": "体用"
   },
   {
     "case_type": "dayun",
     "input": "1996-03-10 18:00",
     "gender": "男",
-    "description": "v1.8.0 大运 - 杨权 丙子年阳男 → 顺排，起运约 8 岁",
+    "description": "v1.8.0 大运 - 丙子年阳男 → 顺排，起运约 8 岁",
     "expected": {
       "shunni": "顺排",
       "qi_yun_age_min": 6,
@@ -842,7 +842,7 @@
       1995,
       1997
     ],
-    "description": "v1.8.0 八字反查 - 杨权 4 柱反查命中 1996-03-10",
+    "description": "v1.8.0 八字反查 - 4 柱反查命中 1996-03-10",
     "expected": {
       "must_contain_solar": "1996-03-10",
       "min_candidates": 1
@@ -851,20 +851,20 @@
   },
   {
     "case_type": "combined_json",
-    "description": "组合模式：chart + analysis 单 JSON（杨权 1996-03-10 18:00 男，5 模块）",
+    "description": "组合模式：chart + analysis 单 JSON（1996-03-10 18:00 男，5 模块）",
     "input": "1996-03-10 18:00",
     "gender": "男",
     "zhengge": true,
     "wangshuai": true,
     "shensha": true,
-    "shiyao": true,
+    "tiyong": true,
     "dayun": true,
     "expected": {
       "analysis_keys": [
         "zhengge",
         "wangshuai",
         "shensha",
-        "shiyao",
+        "tiyong",
         "dayun"
       ]
     },
@@ -980,7 +980,7 @@
   {
     "case_type": "pillars",
     "input": "戊寅 己未 甲子 己巳",
-    "description": "v1.9.0 四柱直接排盘（王雅欣 1998-07-16 09:00 同柱）",
+    "description": "v1.9.0 四柱直接排盘（1998-07-16 09:00 同柱）",
     "expected": {
       "day_master": "甲",
       "shengxiao": "虎",
@@ -1016,7 +1016,7 @@
     "case_type": "dayun",
     "input": "1998-07-16 09:00",
     "gender": "女",
-    "description": "v1.8.0 大运 - 王雅欣 戊寅年阳女 → 逆排，起运约 3 岁（数到上一个节小暑）",
+    "description": "v1.8.0 大运 - 戊寅年阳女 → 逆排，起运约 3 岁（数到上一个节小暑）",
     "expected": {
       "shunni": "逆排",
       "qi_yun_age_min": 2,
@@ -1086,7 +1086,7 @@
     "case_type": "liuri",
     "input": "1996-03-10 17:30",
     "target_dt": "2026-08-20",
-    "description": "v1.13.0 流日 - 杨权 2026-08-20 丙寅日 → 比肩+偏印，寅午三合火半合",
+    "description": "v1.13.0 流日 - 2026-08-20 丙寅日 → 比肩+偏印，寅午三合火半合",
     "expected": {
       "target_day_pillar": {
         "gan": "丙",

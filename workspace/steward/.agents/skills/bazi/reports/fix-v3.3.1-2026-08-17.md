@@ -102,7 +102,7 @@ version: 1.0.0
 + 
 + | 版本 | 日期 | 更新 |
 + |---|---|---|
-+ | **v1.2.0** | **2026-08-15** | **🆕 §七 四大治法总览（调候/抑扶/通关/病药）**（老板 2026-08-15 14:49 拍板"克泄归抑扶子项，不是独立大类"，commit 481ce381）：① 新增 §七 四大治法总览章节（4 大治法优先级：调候 > 抑扶 > 通关 > 病药）；② §三 调候 / §四 扶抑 内部重排；③ **4 大治法重新归类**：克泄/生扶并入抑扶子项（不独立大类）；④ §七→§八 §八→§九 §九→§十 §十→§十一 编号顺移（§十一 = 老版本历史表）；⑤ 与 `bazi-paipan.md` v2.3.0 + `bazi-wangshuai.md` v2.1.0 同步；⑥ front-matter `version: 1.2.0` 与文件内容对齐。 |
++ | **v1.2.0** | **2026-08-15** | **🆕 §七 四大治法总览（调候/抑扶/通关/病药）**（ 2026-08-15 14:49 拍板"克泄归抑扶子项，不是独立大类"，commit 481ce381）：① 新增 §七 四大治法总览章节（4 大治法优先级：调候 > 抑扶 > 通关 > 病药）；② §三 调候 / §四 扶抑 内部重排；③ **4 大治法重新归类**：克泄/生扶并入抑扶子项（不独立大类）；④ §七→§八 §八→§九 §九→§十 §十→§十一 编号顺移（§十一 = 老版本历史表）；⑤ 与 `bazi-paipan.md` v2.3.0 + `bazi-wangshuai.md` v2.1.0 同步；⑥ front-matter `version: 1.2.0` 与文件内容对齐。 |
 + | **v1.1.0** | **2026-08-10** | **🆕 流通独立后融合公式更新（...）**：... + ⑤ 同步调整（§一 三层模型重构 + §三 扩展 + §四 新增 + §六/§七/§八/§九/§十 顺移）|
 + | **v1.0.0** | **2026-08-08** | **初版创建（...）** |
 ```
@@ -160,7 +160,7 @@ version: 1.0.0
 | **P1-18** | 入口表 L161 | `bazi-style.md` | v3.16.0 | v3.18.0 |
 | **P1-19** | §三 Layer 表 L87 | `bazi-liutong.md` | v2.3.0 | v3.3.1 |
 
-注：同时把 §四"references/  ← 10 个 reference 文档"更新为"← **16 个 reference 文档**"（与实际磁盘 15 个 + index = 16 docs 一致）；§八"一体两面 · v2.1.0"未在 audit 列表中，保留原样。
+注：同时把 §四"references/ ← 10 个 reference 文档"更新为"← **16 个 reference 文档**"（与实际磁盘 15 个 + index = 16 docs 一致）；§八"一体两面 · v2.1.0"未在 audit 列表中，保留原样。
 
 **验证命令**：`grep -nE 'v[0-9]+\.[0-9]+\.[0-9]+' README.md`
 **结果**：所有引用的 `bazi-*.md` 版本号 = 实际 front-matter 版本（15/15 一致）。
@@ -185,11 +185,11 @@ version: 1.0.0
 **结构层变化（同步顺手做的，因为原 index.md 把应用层堆在一个表里，结构难读）**：
 - §一 内容层：2 → 2（不变）
 - §二 应用层：从单一表格拆分为 5 个子节
-  - 2.1 基础分析（4 个 Layer 1：zhengge / wangshuai / liutong / shensha）
-  - 2.2 融合产物（1 个 Layer 2：yongshen）
-  - 2.3 流程主入口（1 个：paipan）
-  - 2.4 合盘专题（1 个：hehun）
-  - 2.5 **应用层专题（5 个 NEW：yingyuan / shiye / cai / xingge / jiankang）** ← P1-28
+ - 2.1 基础分析（4 个 Layer 1：zhengge / wangshuai / liutong / shensha）
+ - 2.2 融合产物（1 个 Layer 2：yongshen）
+ - 2.3 流程主入口（1 个：paipan）
+ - 2.4 合盘专题（1 个：hehun）
+ - 2.5 **应用层专题（5 个 NEW：yingyuan / shiye / cai / xingge / jiankang）** ← P1-28
 - §三 输出层：1 → 1（不变）
 
 **验证命令**：`grep -nE 'bazi-[a-zA-Z-]+\.md' references/index.md | sort -u`
@@ -206,11 +206,11 @@ version: 1.0.0
 **修复动作**：删除整行 `> **解读执行流程（Step 0-5 · 5+1 步）见下文「端到端执行工作流」**——此处不重复。`（"端到端执行工作流"章节自 v1.7.0 重构后不存在，引用残留）
 
 ```diff
-  👉 **[references/bazi-paipan.md](references/bazi-paipan.md)** （v2.3.0，排盘分析规范 · 基于格局的 9 步含用神融合）
+ 👉 **[references/bazi-paipan.md](references/bazi-paipan.md)** （v2.3.0，排盘分析规范 · 基于格局的 9 步含用神融合）
 - 
 - > **解读执行流程（Step 0-5 · 5+1 步）见下文「端到端执行工作流」**——此处不重复。
 
-  ## 何时使用本技能
+ ## 何时使用本技能
 ```
 
 **验证命令**：`grep -n '端到端执行工作流' SKILL.md || echo "(none ✓)"`
@@ -240,12 +240,12 @@ version: 1.0.0
 2. paipan 描述 `"解读流程规范（5+1 步端到端）"` → `"解读流程规范（**9 步** · v2.3.0 定位重构）"`
 
 ```diff
-  ---
+ ---
 - title: 八字技能 references 索引（v1.12.0 新增）
 - version: 1.0.0
 + title: 八字技能 references 索引（v1.1.0 · 16 个 reference 完整登记）
 + version: 1.1.0
-  ---
+ ---
 
 - # references 索引（v1.12.0 新增）
 + # references 索引（v1.1.0）
@@ -270,11 +270,11 @@ version: 1.0.0
 **修复动作**：将 `version: 2.1.0` 改为 `version: 2.3.0`（与实际 §六 应用 v3.3.1 流通框架内容一致）。
 
 ```diff
-  ---
-  title: 八字姻缘专题
+ ---
+ title: 八字姻缘专题
 - version: 2.1.0
 + version: 2.3.0
-  ---
+ ---
 ```
 
 **验证命令**：`grep '^version:' references/bazi-yingyuan.md`
@@ -301,18 +301,18 @@ sed -n '/^## 十一/,/^## /p' references/bazi-yongshen.md | grep -cE '^\| \*\*v'
 
 # 5) 全文档 front-matter 版本
 for f in SKILL.md README.md references/*.md; do
-  printf "  %-50s %s\n" "$f" "$(grep -m1 '^version:' "$f")"
+ printf " %-50s %s\n" "$f" "$(grep -m1 '^version:' "$f")"
 done
 
 # 6) index.md 漏登检查（应输出空 = 磁盘 15 个 bazi-*.md 全部登记）
 comm -23 <(ls references/bazi-*.md | xargs -n1 basename | sort) \
-         <(grep -oE 'bazi-[a-zA-Z-]+\.md' references/index.md | sort -u)
+ <(grep -oE 'bazi-[a-zA-Z-]+\.md' references/index.md | sort -u)
 
 # 7) A1 标题括号 + A2 正文中括号（仅参考，本轮 P2 不修）
 for f in SKILL.md README.md references/index.md references/bazi-yongshen.md references/bazi-yingyuan.md; do
-  a1=$(grep -cE '^###+ .*[（(]' "$f")
-  a2=$(grep -cE '（' "$f")
-  echo "  $f A1=$a1 A2=$a2"
+ a1=$(grep -cE '^###+ .*[（(]' "$f")
+ a2=$(grep -cE '（' "$f")
+ echo " $f A1=$a1 A2=$a2"
 done
 ```
 

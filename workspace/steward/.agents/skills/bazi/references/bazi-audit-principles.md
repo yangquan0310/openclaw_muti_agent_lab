@@ -6,7 +6,7 @@ version: 1.1.0
 # bazi 技能核查原则
 
 > **本文档定义 bazi 技能文档体系的核查原则**——用于自查 / reviewer 审阅 / 版本发布前检查。
-> 创建背景：2026-08-08 老板 16:18 拍板"整理核查原则，创建 workboard 让 reviewer 进行完整审阅"。
+> 创建背景：2026-08-08 16:18 拍板"整理核查原则，创建 workboard 让 reviewer 进行完整审阅"。
 > 来源：v1.7.0 系列修复中实际发现的问题。
 
 ---
@@ -15,7 +15,7 @@ version: 1.1.0
 
 | 层 | 文档 | 职责 | 违规信号 |
 |----|------|------|----------|
-| **内容层** | rules / shensha / zhengge / wangshuai / shiyao | 具体内容唯一权威 | 出现流程步骤 / 输出格式 |
+| **内容层** | rules / shensha / zhengge / wangshuai / tiyong | 具体内容唯一权威 | 出现流程步骤 / 输出格式 |
 | **应用层** | paipan/ hehun| 具体应用| 出现内容层理论细节|
 | **输出层** | style | 输出独占| 出现内容 / 流程定义 |
 
@@ -79,11 +79,11 @@ version: 1.1.0
 ## 六、核查执行方式
 
 1. **自查**：
-   ```bash
-   cd ~/.openclaw/workspace/steward/.agents/skills/bazi
-   grep -rn "旧名\|旧版本\|§X" README.md SKILL.md references/*.md
-   wc -l README.md SKILL.md references/*.md   # 行数变化可接受
-   ```
+ ```bash
+ cd ~/.openclaw/workspace/steward/.agents/skills/bazi
+ grep -rn "旧名\|旧版本\|§X" README.md SKILL.md references/*.md
+ wc -l README.md SKILL.md references/*.md # 行数变化可接受
+ ```
 2. **reviewer 审阅**：按本清单逐项核查，输出报告
 3. **发布检查**：README 版本历史 + SKILL YAML + 文件树三者一致
 
@@ -103,4 +103,4 @@ version: 1.1.0
 | 版本 | 日期 | 更新 |
 |------|------|------|
 | **1.1.0** | **2026-08-15** | 🆕 §七 美学核查 + A2 正文括号补充说明密度。规则见 `bazi-style.md` v3.17.0。 |
-| **1.0.0** | **2026-08-08** | 首次创建(老板 16:18 拍板)。整合 v1.7.0 系列修复经验:三层职责边界(内容/应用/输出)、版本一致性、流程一致性(案例=正文)、引用完整性(新增必引用)、残留边界(旧名/旧版本/行号)。 |
+| **1.0.0** | **2026-08-08** | 首次创建( 16:18 拍板)。整合 v1.7.0 系列修复经验:三层职责边界(内容/应用/输出)、版本一致性、流程一致性(案例=正文)、引用完整性(新增必引用)、残留边界(旧名/旧版本/行号)。 |
