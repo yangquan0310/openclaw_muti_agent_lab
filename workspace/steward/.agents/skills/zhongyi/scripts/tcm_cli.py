@@ -55,13 +55,13 @@ def cmd_diagnose(args) -> int:
         print(f"     教材来源：{z['source']}")
 
     if out["formulas"]:
-        print(f"\n【对应方剂】")
+        print(f"\n【对应中成药】")
         for i, f in enumerate(out["formulas"], 1):
-            herbs_str = "、".join(f["herbs"]) if f["herbs"] else "—"
             print(f"  {i}. {f['name']}（{f['formula_id']}）  [{f['category']}]")
-            print(f"     主治：{f['indications']}")
-            print(f"     组成药物：{herbs_str}  ⚠️ 不含剂量")
-            print(f"     出处：{f['source']}")
+            print(f"     什么时候吃：{f['indications']}")
+            print(f"     怎么吃：{f['dosage']}  ⚠️ 以说明书为准")
+            print(f"     注意：{f['caution']}")
+            print(f"     经典渊源：{f['classic_formula']}（{f['source']}）")
 
     print("\n" + "─" * 70)
     print("⚠️  免责声明")
@@ -129,17 +129,18 @@ def cmd_list(args) -> int:
 
 
 def cmd_list_formulas(args) -> int:
-    """列出全部方剂."""
-    print(f"=== 中医经典方剂表（共 {len(FORMULA_TABLE)} 首）===\n")
+    """列出全部中成药."""
+    print(f"=== 现代常用中成药表（共 {len(FORMULA_TABLE)} 种）===\n")
     cats = sorted(set(f.get("category", "?") for f in FORMULA_TABLE.values()))
     for cat in cats:
         items = [(k, f) for k, f in FORMULA_TABLE.items() if f.get("category") == cat]
-        print(f"▸ {cat}（{len(items)} 首）")
+        print(f"▸ {cat}（{len(items)} 种）")
         for k, f in items:
-            herbs = "、".join(f["herbs"])
-            print(f"   {k}  {f['name']:<18s}  组成：{herbs}")
+            print(f"   {k}  {f['name']}")
+            print(f"      什么时候吃：{f['indications']}")
+            print(f"      怎么吃：{f['dosage']}  ⚠️ 以说明书为准")
         print()
-    print(f"\n总计：{len(FORMULA_TABLE)} 首方剂（**均不含剂量**）")
+    print(f"\n总计：{len(FORMULA_TABLE)} 种中成药（**仅供对照，用药以说明书/执业医师为准**）")
     return 0
 
 
