@@ -225,7 +225,7 @@ ZHENG_TABLE: List[Dict] = [
         "pulse":  "濡缓",
         "category": "脾系",
         "main_formula": "F-补益-001",
-        "alt_formulas": ["F-补益-004"],
+        "alt_formulas": ["F-补益-004", "F-补益-008"],
         "source": "中医诊断学第四章·太平惠民和剂局方",
     },
     {
@@ -255,7 +255,7 @@ ZHENG_TABLE: List[Dict] = [
         "pulse":  "濡缓",
         "category": "脾系",
         "main_formula": "F-补益-004",
-        "alt_formulas": ["F-祛湿-002"],
+        "alt_formulas": ["F-祛湿-002", "F-补益-008"],
         "source": "中医诊断学第四章·太平惠民和剂局方",
     },
     {
@@ -667,6 +667,22 @@ FORMULA_TABLE: Dict[str, Dict] = {
                    "dosage": "颗粒一次15g，一日3次",
                    "caution": "实证、湿热者不宜；忌生冷",
                    "source": "《太平惠民和剂局方》"},
+    "F-补益-006": {"name": "六君子丸", "classic_formula": "六君子汤", "category": "气血·气虚",
+                   "indications": "脾虚兼痰湿：食少便溏、恶心呕吐、咳嗽痰多稀白、胸脘痞闷",
+                   "dosage": "水丸一次6-9g，一日2次；大蜜丸一次1丸，一日2次",
+                   "caution": "阴虚燥咳、痰中带血者不宜；忌生冷油腻",
+                   "source": "《太平惠民和剂局方》六君子汤（四君子+陈皮半夏）"},
+    "F-补益-007": {"name": "香砂六君子丸", "classic_formula": "香砂六君子汤", "category": "气血·气虚",
+                   "indications": "脾虚气滞：脘腹胀满、嗳气食少、消化不良、恶心呕吐、便溏",
+                   "dosage": "水丸一次6-9g，一日2次；浓缩丸一次12丸，一日3次",
+                   "caution": "实热、湿热者不宜；忌生冷",
+                   "source": "《古今名医方论》香砂六君子汤（六君子+木香砂仁）"},
+    "F-补益-008": {"name": "参苓白术丸", "classic_formula": "参苓白术散", "category": "气血·气虚",
+                   "indications": "脾虚湿盛：食少便溏、泄泻、四肢乏力、面色萎黄、脘闷",
+                   "dosage": "水丸一次6g（或12丸），一日3次；散剂一次6-9g，一日2-3次",
+                   "caution": "泄泻兼实热积滞者不宜；忌生冷油腻",
+                   "source": "《太平惠民和剂局方》参苓白术散（四君子+山药莲子扁豆薏苡仁砂仁桔梗）"},
+
     "F-补益-004": {"name": "补中益气丸", "classic_formula": "补中益气汤", "category": "气血·气虚",
                    "indications": "中气不足/下陷：体倦乏力、少气懒言、食少腹胀、久泻脱肛",
                    "dosage": "浓缩丸一次8-10丸，一日3次",
@@ -969,7 +985,7 @@ class TCMDiagnose:
         ]
 
         return {
-            "engine": "zhongyi v1.4.0",
+            "engine": "zhongyi v1.5.0",
             "input_symptoms": symptoms,
             "extracted_features": {
                 "has_cold_signal": features["has_cold"],
