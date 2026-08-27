@@ -69,7 +69,7 @@ ZHENG_TABLE: List[Dict] = [
         "pulse":  "浮细数",
         "category": "外感",
         "main_formula": "F-补-013",
-        "alt_formulas": ["F-补-012"],
+        "alt_formulas": [],
         "source": "中医诊断学第二章·温病条辨·秋燥",
     },
     {
@@ -145,8 +145,8 @@ ZHENG_TABLE: List[Dict] = [
         "tongue": "舌淡胖嫩，苔白滑",
         "pulse":  "沉细无力或结代",
         "category": "心系",
-        "main_formula": "F-温里-002",
-        "alt_formulas": [],
+        "main_formula": "F-温里-003",
+        "alt_formulas": ["F-温里-001"],
         "source": "中医诊断学第四章·伤寒论",
     },
 
@@ -285,7 +285,7 @@ ZHENG_TABLE: List[Dict] = [
         "pulse":  "濡数",
         "category": "脾系",
         "main_formula": "F-清热-002",
-        "alt_formulas": ["F-祛湿-004"],
+        "alt_formulas": ["F-清热-004"],
         "source": "中医诊断学第四章·伤寒论",
     },
 
@@ -317,7 +317,7 @@ ZHENG_TABLE: List[Dict] = [
         "pulse":  "细数",
         "category": "肺系",
         "main_formula": "F-补-013",
-        "alt_formulas": ["F-补-012"],
+        "alt_formulas": [],
         "source": "中医诊断学第四章·温病条辨",
     },
     {
@@ -394,7 +394,7 @@ ZHENG_TABLE: List[Dict] = [
         "pulse":  "沉细无力",
         "category": "肾系",
         "main_formula": "F-温里-003",
-        "alt_formulas": ["F-补-010"],
+        "alt_formulas": [],
         "source": "中医诊断学第四章·金匮要略",
     },
     {
@@ -500,7 +500,7 @@ ZHENG_TABLE: List[Dict] = [
         "tongue": "舌淡胖，苔白滑",
         "pulse":  "沉迟无力",
         "category": "复合",
-        "main_formula": "F-补-010",
+        "main_formula": "F-温里-003",
         "alt_formulas": ["F-祛湿-001"],
         "source": "中医诊断学第四章·伤寒论",
     },
@@ -603,11 +603,6 @@ FORMULA_TABLE: Dict[str, Dict] = {
                    "dosage": "大蜜丸一次1丸，一日2-3次",
                    "caution": "实热证、感冒发热停用；孕妇慎用；忌生冷",
                    "source": "《伤寒论》"},
-    "F-温里-002": {"name": "四逆汤（无市售中成药⚠️）", "classic_formula": "四逆汤", "category": "六淫·寒",
-                   "indications": "少阴寒厥：四肢厥冷、脉微细——危重证须医师处方",
-                   "dosage": "无OTC中成药",
-                   "caution": "急救用药，不可自行使用",
-                   "source": "《伤寒论》"},
     "F-温里-003": {"name": "金匮肾气丸", "classic_formula": "肾气丸（崔氏八味丸）", "category": "脏腑·补肾阳",
                    "indications": "肾阳虚：腰膝酸冷、夜尿多、小便不利或反多、畏寒肢冷",
                    "dosage": "大蜜丸一次1丸，一日2次",
@@ -642,23 +637,7 @@ FORMULA_TABLE: Dict[str, Dict] = {
                    "dosage": "水丸一次9g（或浓缩丸12-16丸），一日2次",
                    "caution": "阴虚燥咳、痰中带血者不宜；忌辛辣",
                    "source": "《太平惠民和剂局方》"},
-    "F-祛湿-004": {"name": "三仁汤（无市售中成药⚠️）", "classic_formula": "三仁汤", "category": "六淫·湿",
-                   "indications": "湿温初起：头痛身重、胸闷不饥、午后身热",
-                   "dosage": "无OTC中成药",
-                   "caution": "暑湿轻证可用藿香正气类替代",
-                   "source": "《温病条辨》"},
-    "F-补-010":   {"name": "真武汤（无市售中成药⚠️）", "classic_formula": "真武汤", "category": "六淫·湿",
-                   "indications": "阳虚水泛：小便不利、四肢沉重、水肿、心悸头眩",
-                   "dosage": "无OTC中成药",
-                   "caution": "阳虚水肿可参考济生肾气丸（医师指导下）",
-                   "source": "《伤寒论》"},
-
     # ===== 六淫·燥 =====
-    "F-补-012":   {"name": "沙参麦冬汤（无市售中成药⚠️）", "classic_formula": "沙参麦冬汤", "category": "六淫·燥",
-                   "indications": "温燥伤肺胃：咽干口渴、干咳少痰",
-                   "dosage": "无OTC中成药",
-                   "caution": "干咳咽干可参考养阴清肺丸/川贝枇杷类",
-                   "source": "《温病条辨》"},
     "F-补-013":   {"name": "百合固金丸", "classic_formula": "百合固金汤", "category": "六淫·燥",
                    "indications": "肺肾阴虚燥咳：干咳少痰或痰中带血、咽干喉痛、潮热",
                    "dosage": "大蜜丸一次1丸，一日2次",
@@ -666,11 +645,6 @@ FORMULA_TABLE: Dict[str, Dict] = {
                    "source": "《慎斋遗书》"},
 
     # ===== 六淫·火 =====
-    "F-清热-001": {"name": "白虎汤（无市售中成药⚠️）", "classic_formula": "白虎汤", "category": "六淫·火",
-                   "indications": "气分热盛：壮热面赤、烦渴引饮、汗出恶热——高热重症",
-                   "dosage": "无OTC中成药",
-                   "caution": "高热不退请及时就医",
-                   "source": "《伤寒论》"},
     "F-清热-002": {"name": "黄连解毒丸", "classic_formula": "黄连解毒汤", "category": "六淫·火",
                    "indications": "三焦火毒：大热烦躁、口燥咽干、口舌生疮、目赤尿黄",
                    "dosage": "水丸一次3g，一日2-3次（以说明书为准）",
@@ -732,12 +706,6 @@ FORMULA_TABLE: Dict[str, Dict] = {
                    "dosage": "水丸一次3-6g，一日2次",
                    "caution": "肺热痰黄、阴虚燥咳者不宜",
                    "source": "《太平惠民和剂局方》"},
-    "F-理气-002": {"name": "半夏厚朴汤（无市售中成药⚠️）", "classic_formula": "半夏厚朴汤", "category": "气血·气滞",
-                   "indications": "梅核气：咽中如有物阻、咯之不出咽之不下",
-                   "dosage": "无OTC中成药",
-                   "caution": "咽堵兼郁可参考舒肝和胃类（医师指导下）",
-                   "source": "《金匮要略》"},
-
     # ===== 气血·血瘀 =====
     "F-理血-001": {"name": "血府逐瘀丸/胶囊", "classic_formula": "血府逐瘀汤", "category": "气血·血瘀",
                    "indications": "胸中血瘀：胸痛头痛如针刺、固定不移、心悸失眠、舌暗瘀斑",
@@ -775,11 +743,6 @@ FORMULA_TABLE: Dict[str, Dict] = {
                    "source": "《中医内科杂病证治新义》"},
 
     # ===== 脏腑·通腑 =====
-    "F-补-011":   {"name": "大承气汤（无市售中成药⚠️）", "classic_formula": "大承气汤", "category": "脏腑·通腑",
-                   "indications": "阳明腑实：痞满燥实、大便不通、潮热谵语——攻下重剂",
-                   "dosage": "无OTC中成药",
-                   "caution": "不可自行服用；便秘轻症可参考麻仁润肠丸",
-                   "source": "《伤寒论》"},
 }
 
 assert len(FORMULA_TABLE) >= 20, f"方剂数量不足: {len(FORMULA_TABLE)}"
@@ -953,7 +916,7 @@ class TCMDiagnose:
         ]
 
         return {
-            "engine": "zhongyi v1.0.0",
+            "engine": "zhongyi v1.2.0",
             "input_symptoms": symptoms,
             "extracted_features": {
                 "has_cold_signal": features["has_cold"],

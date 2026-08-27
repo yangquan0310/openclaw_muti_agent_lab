@@ -42,7 +42,7 @@ def cmd_diagnose(args) -> int:
 
     # 人类可读
     print("=" * 70)
-    print(f"中医辨证技能 v1.0.0 · 输入症状：{args.symptoms}")
+    print(f"中医辨证技能 v1.2.0 · 输入症状：{args.symptoms}")
     print("=" * 70)
     bagang = out["bagang"]
     print(f"\n【八纲】  表里={bagang['表里']}  寒热={bagang['寒热']}  虚实={bagang['虚实']}  阴阳={bagang['阴阳']}")
@@ -146,7 +146,7 @@ def cmd_list_formulas(args) -> int:
 
 def cmd_version(args) -> int:
     """显示版本."""
-    print("zhongyi  v1.0.0")
+    print("zhongyi  v1.2.0")
     print(f"skill root: {SKILL_ROOT}")
     print(f"zheng entries: {len(ZHENG_TABLE)}")
     print(f"formula entries: {len(FORMULA_TABLE)}")
