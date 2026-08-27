@@ -68,7 +68,7 @@ ZHENG_TABLE: List[Dict] = [
         "tongue": "舌红少津，苔薄白干",
         "pulse":  "浮细数",
         "category": "外感",
-        "main_formula": "F-补-013",
+        "main_formula": None,
         "alt_formulas": [],
         "source": "中医诊断学第二章·温病条辨·秋燥",
     },
@@ -145,8 +145,8 @@ ZHENG_TABLE: List[Dict] = [
         "tongue": "舌淡胖嫩，苔白滑",
         "pulse":  "沉细无力或结代",
         "category": "心系",
-        "main_formula": "F-温里-003",
-        "alt_formulas": ["F-温里-001"],
+        "main_formula": None,
+        "alt_formulas": [],
         "source": "中医诊断学第四章·伤寒论",
     },
 
@@ -285,7 +285,7 @@ ZHENG_TABLE: List[Dict] = [
         "pulse":  "濡数",
         "category": "脾系",
         "main_formula": "F-清热-002",
-        "alt_formulas": ["F-清热-004"],
+        "alt_formulas": [],
         "source": "中医诊断学第四章·伤寒论",
     },
 
@@ -500,8 +500,8 @@ ZHENG_TABLE: List[Dict] = [
         "tongue": "舌淡胖，苔白滑",
         "pulse":  "沉迟无力",
         "category": "复合",
-        "main_formula": "F-温里-003",
-        "alt_formulas": ["F-祛湿-001"],
+        "main_formula": None,
+        "alt_formulas": [],
         "source": "中医诊断学第四章·伤寒论",
     },
     {
@@ -884,6 +884,20 @@ class TCMDiagnose:
         formulas_out = []
         for zheng, score in positive:
             main_id = zheng["main_formula"]
+            if main_id is None:
+                formulas_out.append({
+                    "formula_id": None,
+                    "name": "无对应中成药",
+                    "classic_formula": "",
+                    "category": "",
+                    "indications": "该证型暂无对应非处方中成药，建议就医辨证",
+                    "dosage": "",
+                    "caution": "",
+                    "source": "",
+                    "linked_zheng_id": zheng["id"],
+                    "linked_zheng_name": zheng["name"],
+                })
+                continue
             formula = self.formula_table.get(main_id, {})
             formulas_out.append({
                 "formula_id": main_id,
@@ -916,7 +930,7 @@ class TCMDiagnose:
         ]
 
         return {
-            "engine": "zhongyi v1.2.0",
+            "engine": "zhongyi v1.3.0",
             "input_symptoms": symptoms,
             "extracted_features": {
                 "has_cold_signal": features["has_cold"],
