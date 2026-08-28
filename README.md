@@ -1,3 +1,12 @@
+### 版本 3.5.2 (2026-08-29)
+- **每日自动同步 2026-08-29**: 11 文件变更(242+/-22-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(扫描全部待提交文件,未发现密钥模式;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
+- **工作空间核查**: workspace/{agents}/ 结构正常,仅含 .md 配置文件+标准配置目录(temp/memory/.agents);steward/scripts(shensha_traditional.py)/skills(13项)/.clawhub 为有效内容;main/programmer/steward 的 openclaw-workspace-state.json 已移入各自 temp/;无其他杂散中间文件
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer/main events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步(2026-08-26 ~ 2026-08-29 03:00);steward Deep Sleep 修复 recall 存储(rewrote recall store)
+- **steward/MEMORY.md**: promotion 同步(2026-08-29,10条记忆晋升:格局体系标准八格、成局4条件、典籍成格局案例16则、案例统一5节结构、金水运应期时间轴、合婚结论)
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.5.1 (2026-08-25)
 - **每日自动同步 2026-08-25**: 12 文件变更(92+/-21-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(扫描全部待提交文件,未发现密钥模式)
