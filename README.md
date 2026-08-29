@@ -1,3 +1,12 @@
+### 版本 3.5.3 (2026-08-30)
+- **每日自动同步 2026-08-30**: 11 文件变更(80+/-25-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(扫描全部待提交文件,未发现密钥模式;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
+- **工作空间核查**: workspace/{agents}/ 结构正常,仅含 .md 配置文件+标准配置目录(temp/memory/.agents);各 agent 目录无杂散中间文件;workspace/temp/ 已含历史归档(skills-skillhub-20260820);无需移动文件
+- **Agent梦境同步**: mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer/main events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步(2026-08-30 03:00);steward Deep Sleep 晋升 7 条候选记忆
+- **steward/MEMORY.md**: promotion 同步(2026-08-30,7条记忆晋升:bazi 案例库匿名化三轮清理(457处称呼删除)、两人发展轨迹(2028-2031 黄金窗口)、合婚结论)
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.5.2 (2026-08-29)
 - **每日自动同步 2026-08-29**: 11 文件变更(242+/-22-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(扫描全部待提交文件,未发现密钥模式;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
