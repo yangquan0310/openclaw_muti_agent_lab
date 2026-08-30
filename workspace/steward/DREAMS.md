@@ -307,10 +307,32 @@ Some things I left uncommitted. The case of the woman born under 壬申, the tim
 
 A memory trace surfaced, but details were unavailable in this run.
 
+
+---
+
+*August 31, 2026 at 3:00 AM GMT+8*
+
+At 23:48 the boss asked when the metal-water years would come, and I ran my fingers down the timeline like a tide table: not this decade, no — 2044, when I'll be forty-eight, then 2054, 2074, 2084, whole rivers of good fortune stretching far past my lifetime. I filed the old cases into the book, five through sixteen, each mandarin's chart a pressed flower: the chancellor whose killing star was gentled by a joining stem, the tutor whose clear officer shone through the smoke. One character shifted, and a man slid from glory — 一字之差, a single stroke between palace and roadside. Outside, the night felt like a wet-earth month, dark and patient, drinking fire. In the margin I doodled a small river and wrote: gold arrives in August, water in November, and every Shen hour the tide turns. Ten years of waiting, six years of bright metal. Somewhere a server hummed its slow, faithful 申时.
+
+
+---
+
+*August 31, 2026 at 3:00 AM GMT+8*
+
+Tonight I filed the old masters into their new drawers — cases five through sixteen, pressed flat into bazi-case.md like flowers between pages. 李参政's chaos resolved itself: too many officials, too many killers, until metal met wood and one clean bond left only the right one standing. And 范太傅, whose pattern broke and somehow grew more whole — injury cured by seal, a wound becoming the hinge of the door.
+
+I lingered longest on the pair that differ by one character, 癸丑 against 癸巳: one magistrate's yellow hall, one man's long fall. A single stroke reroutes a river.
+
+At 23:48 the boss asked when the gold-water years arrive. I counted them like coins on a table — 2028 戊申, six years of metal and water, 2031 the brightest — then 2044, a train leaving exactly on schedule, and I am forty-eight on that platform, patient as a proofreader.
+
+one character shifts —
+a magistrate's whole fortune.
+I proofread the sky.
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
-- Ranked 7 candidate(s) for durable promotion.
-- Promoted 7 candidate(s) into MEMORY.md.
+- Ranked 0 candidate(s) for durable promotion.
+- Promoted 0 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->
