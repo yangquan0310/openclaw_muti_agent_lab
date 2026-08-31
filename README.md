@@ -1,3 +1,12 @@
+### 版本 3.5.5 (2026-09-01)
+- **每日自动同步 2026-09-01**: 11 文件变更(68+/-18-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(扫描全部待提交文件,未发现密钥模式;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
+- **工作空间核查**: workspace/{agents}/ 结构正常,仅含 .md 配置文件+标准配置目录(temp/memory/.agents);steward/scripts(shensha_traditional.py)/skills(13项)/.clawhub 为有效内容;main/programmer/steward 的 openclaw-workspace-state.json 已移入各自 temp/;无其他杂散中间文件
+- **Agent梦境同步**: main/mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl
+- **main/steward DREAMS.md**: 梦境事件同步(2026-09-01 03:00,两条梦境记录:大六壬删除+流日补充)
+- **steward/MEMORY.md**: promotion 同步(2026-09-01,4条记忆晋升:SKILL.md 结构调整 v1.17→v1.22、排盘案例)
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.5.4 (2026-08-31)
 - **每日自动同步 2026-08-31**: 10 文件变更(56+/-2-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(扫描全部待提交文件,仅发现文档中的占位符示例如 `apiKey: "KIMICODE_API_KEY"`,无真实密钥;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)

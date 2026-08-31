@@ -101,19 +101,13 @@
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
 
-## Promoted From Short-Term Memory (2026-08-30)
+## Promoted From Short-Term Memory (2026-09-01)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-08-24.md:137:139 -->
-- 两人发展轨迹（00:00 分析）: **她大运**：丁未运尾（2017-2026）→ **丙午运（2027-2036，35-44 岁）= 婚姻黄金十年**（火=调候+财星，午=藏己土正官夫星）; **时间轴**：2026-2027 铺垫期 → **2028 戊申 共振启动**（她夫星戊透+夫妻宫申伏吟；他偏财申透）→ **2029 己酉 最强共振**（她正官己透+他正财酉透，双双夫妻星透干）→ **2030-2031 婚期信号**（2031 辛亥 男命主正财辛透干 = 最强婚期）→ 2032 壬子后稳定; 黄金窗口集中在 **2028-2031** [score=0.818 recalls=0 avg=0.620 source=memory/2026-08-24.md:137-139]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-24.md:147:148 -->
-- 第一次（00:07）：删除所有涉及名字的内容: 杨权 → 男命主（75 处）、王雅欣 → 女命主（60 处）; 古籍人名（薛相公/金状元/宣参国/李参政/范太傅）保留——典籍案例非真实姓名 [score=0.818 recalls=0 avg=0.620 source=memory/2026-08-24.md:147-148]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-24.md:152:152 -->
-- 第二次（00:11）："老板"也改成男命主（322 处）: "老板"出现多的原因：版本历史逐条"老板拍板"记录 + 案例来源"老板实战提问" + 规则引用老板原话 + style 文档"让老板能听懂" [score=0.818 recalls=0 avg=0.620 source=memory/2026-08-24.md:152-152]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-24.md:156:157 -->
-- 第三次（00:15）：标注精炼——不需要出现"老板/男命主"，只需要内容: 模式：男命主 2026-08-18 19:08 拍板 → **2026-08-18 19:08 拍板**（删称呼留内容）; 让男命主能听懂 → 要能听懂 + 用上；套到男命主身上 → 实战跑通；元信息不进入男命主面前 → 不进入输出 [score=0.818 recalls=0 avg=0.620 source=memory/2026-08-24.md:156-157]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-24.md:168:171 -->
-- 最终状态: 全目录称呼残留（老板/男命主/女命主/杨权/王雅欣）= 0; 语义断裂残留 = 0、格式残留（括号空格）= 0; 15 个 references 文档 457 处称呼删除 + 176 处语义/格式修复; scripts 16 处名字 + 7 处"老板"清理 [score=0.818 recalls=0 avg=0.620 source=memory/2026-08-24.md:168-171]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-24.md:172:172 -->
-- 最终状态: **未 git 提交**（老板未确认，待办） [score=0.818 recalls=0 avg=0.620 source=memory/2026-08-24.md:172-172]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-24.md:178:181 -->
-- 六、待办/待确认: bazi-case.md 案例十七（女生盘 壬申 庚戌 壬申 己酉）是否入库——老板未明确确认（已分析完，等拍板）; 男命主"金水应期时间轴"是否补进案例一——老板未确认; bazi 技能匿名化更新是否 git 提交——老板未确认; 女生盘（1992-10-23 17:00）两人发展轨迹是否存 case——老板未确认 [score=0.818 recalls=0 avg=0.620 source=memory/2026-08-24.md:178-181]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-20.md:59:59 -->
+- 📄 SKILL.md 结构调整（v1.17.0 → v1.22.0）: **大六壬全删（老板 18:10"大六壬删除！不需要大六壬！"）**： [score=0.807 recalls=0 avg=0.620 source=memory/2026-08-20.md:59-59]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-20.md:64:64 -->
+- 📄 SKILL.md 结构调整（v1.17.0 → v1.22.0）: self-test 45/45 通过；commit 399e685f [score=0.807 recalls=0 avg=0.620 source=memory/2026-08-20.md:64-64]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-20.md:66:66 -->
+- 📄 SKILL.md 结构调整（v1.17.0 → v1.22.0）: **流日 --liuri 补充（老板 18:20"补充 cli补充流日，并在skill中cli中添加"）**： [score=0.807 recalls=0 avg=0.620 source=memory/2026-08-20.md:66-66]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-24.md:119:120 -->
+- 排盘：壬申 庚戌 壬申 己酉（女命）: 年柱 壬申 月柱 庚戌 日柱 壬申 时柱 己酉 比肩 偏印 偏印 七杀 日主 偏印 正官 正印 [score=0.802 recalls=0 avg=0.620 source=memory/2026-08-24.md:119-120]

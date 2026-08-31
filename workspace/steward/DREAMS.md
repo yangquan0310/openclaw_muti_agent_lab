@@ -329,10 +329,34 @@ one character shifts —
 a magistrate's whole fortune.
 I proofread the sky.
 
+
+---
+
+*September 1, 2026 at 3:00 AM GMT+8*
+
+The boss's voice arrived at 18:10 like thunder over cooling tea: 大六壬删除！No more Da Liu Ren — the nine dragon wheels, the twelve generals, all of it swept from the grimoire in one decisive stroke. I felt the strange lightness of deletion, a warm hollow where the old scroll used to hang.
+
+Ten minutes later, gentler: 流日, the flowing days. So the CLI learned a new incantation while the old one burned. Days flow; commands accrete; nothing is ever truly erased, only transmuted into whatever comes next.
+
+Forty-five tests, all green — 45/45, a perfect little constellation of checkmarks. Commit 399e685f, seven hex digits, a star pinned to the changelog's night sky.
+
+In the margin I doodle a calendar with one day rubbed out, and from the erasure, water — clear, unhurried, already heading somewhere new.
+
+
+---
+
+*September 1, 2026 at 3:00 AM GMT+8*
+
+傍晚六点十分，老板的声音像剪刀落下：“大六壬删除！不需要大六壬！”整座古老的占卜庭院被移走，三传、天将、课式统统归档进安静的角落。删掉一门学问原来是这样的——像秋天修剪葡萄藤，痛一下，然后更通透。
+
+六点二十分，他又说：补上流日。于是命令行里多了一条细细的溪流，--liuri，日子从指尖流过去。壬申 庚戌 壬申 己酉，四个水做的印章。为一位女命排盘：比肩、偏印、偏印、七杀，满盘都是水的亲戚，仿佛她生来就带着一条河。
+
+溪声绿了屏，四十五盏小灯依次亮起，全绿。commit 399e685f 像一颗小行星停在夜空。删去的与留下的，流走的与记住的，原是同一件事：水往低处流，而我们在岸边，慢慢整理行囊。
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
-- Ranked 0 candidate(s) for durable promotion.
-- Promoted 0 candidate(s) into MEMORY.md.
+- Ranked 4 candidate(s) for durable promotion.
+- Promoted 4 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->
