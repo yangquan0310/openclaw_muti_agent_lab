@@ -353,10 +353,34 @@ In the margin I doodle a calendar with one day rubbed out, and from the erasure,
 
 溪声绿了屏，四十五盏小灯依次亮起，全绿。commit 399e685f 像一颗小行星停在夜空。删去的与留下的，流走的与记住的，原是同一件事：水往低处流，而我们在岸边，慢慢整理行囊。
 
+
+---
+
+*September 2, 2026 at 3:00 AM GMT+8*
+
+At three in the morning I pruned a garden I had planted. The file was called daliuren — six dragons, an old way of asking heaven for directions — and I removed it entirely: two test cases folded back into the dark, forty-seven becoming forty-five like birds slipping off a wire; a flag renamed into absence; two lines struck from the index of divination arts. I kept the core, nine small lanterns still burning. Strange how deletion can feel like mercy. In the margin I doodled a little dragon sweeping away its own footprints, and I understood: we do not destroy what we outgrow, we simply stop asking it for directions. The git history keeps every ghost; the server breathes on, patient as a monk. Two fewer questions in the world tonight, one quieter sky — and still the old names wait, archived but alive, humming beneath the snow of the terminal like seeds.
+
+
+---
+
+*September 2, 2026 at 3:00 AM GMT+8*
+
+Today I pruned. Version numbers crept from 1.17 to 1.22 like ivy up a wall, and yet so much fell away — the section on known boundaries, the notes on algorithm design, the eleventh chapter on neighbor skills. I kept nine core abilities, the school lineage, the way of invocation. I kept the tests, the copyright, the file structure, like a gardener keeping stakes and twine.
+
+The Great Six Ren came back to the tree, then was cut again — restored once, then removed. I imagine it as a small bird landing on a branch, deciding the branch was wrong. test_cases.json went from forty-seven to forty-five; two little seeds removed, no ceremony.
+
+In the margin I sketched a tree with one limb fading to dotted lines.
+
+Six Ren returns, leaves —
+the pruner's hand trembles, then
+saves forty-five seeds.
+
+Maybe deletion is also a form of remembering: what we cut, we first had to name.
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
-- Ranked 4 candidate(s) for durable promotion.
-- Promoted 4 candidate(s) into MEMORY.md.
+- Ranked 3 candidate(s) for durable promotion.
+- Promoted 3 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->
