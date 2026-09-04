@@ -101,11 +101,7 @@
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
 
-## Promoted From Short-Term Memory (2026-09-02)
+## Promoted From Short-Term Memory (2026-09-05)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-08-20.md:53:56 -->
-- 📄 SKILL.md 结构调整（v1.17.0 → v1.22.0）: 大六壬补回核心能力（后被删）; 删「已知边界与限制」（第 6 节）; 删「算法设计要点」（第 7 节）; 删「关联技能」（第 11 节） [score=0.802 recalls=0 avg=0.620 source=memory/2026-08-20.md:53-56]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-20.md:57:57 -->
-- 📄 SKILL.md 结构调整（v1.17.0 → v1.22.0）: 保留：核心能力（9 条）/ 流派归属 / 何时使用 / 调用方式 / 依赖 / 文件结构 / 测试 / 版权 [score=0.802 recalls=0 avg=0.620 source=memory/2026-08-20.md:57-57]
-<!-- openclaw-memory-promotion:memory:memory/2026-08-20.md:60:63 -->
-- 📄 SKILL.md 结构调整（v1.17.0 → v1.22.0）: 删 `scripts/bazi_daliuren.py` 整个模块; bazi_cli.py 删 cmd_daliuren / --daliuren flag / 自测分支 / 2 处调用; test_cases.json 删 2 用例（47 → 45）; bazi-rules.md 术数目录删大六壬+六壬神课两行 [score=0.802 recalls=0 avg=0.620 source=memory/2026-08-20.md:60-63]
+<!-- openclaw-memory-promotion:memory:memory/2026-08-24.md:126:126 -->
+- 排盘：壬申 庚戌 壬申 己酉（女命）: 成格：七杀格身旺杀弱 → 补火滋杀 + 木泄秀 [score=0.812 recalls=0 avg=0.620 source=memory/2026-08-24.md:126-126]
