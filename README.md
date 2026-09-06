@@ -1,3 +1,11 @@
+### 版本 3.6.1 (2026-09-07)
+- **每日自动同步 2026-09-07**: 10 文件变更(40+/-0-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(扫描全部待提交文件,未发现密钥模式;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
+- **工作空间核查**: workspace/{agents}/ 结构正常,仅含 .md 配置文件+标准配置目录(temp/memory/.agents);各 agent 顶层无杂散中间文件;openclaw-workspace-state.json 为系统运行状态文件(源码常量 WORKSPACE_STATE_FILENAME,未跟踪),保留原位;无一次性文件需移入 temp
+- **Agent梦境同步**: main/mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl(2026-09-07 凌晨梦境,各 agent 含 09-06 会话召回记录)
+- **steward/DREAMS.md**: 梦境事件同步(2026-09-07 03:00,梦境记录:金水之年/火男水女互补命盘/六合因六冲成六害/2028-2031 黄金窗口);Deep Sleep 0 条候选晋升(本轮无晋升)
+- **运行状态**: ✅ 稳定版,推送 main 分支
+
 ### 版本 3.6.0 (2026-09-06)
 - **每日自动同步 2026-09-06**: 10 文件变更(38+/-2-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(精确复核全部待提交文件,未发现密钥模式;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
