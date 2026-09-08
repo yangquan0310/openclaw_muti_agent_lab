@@ -434,6 +434,19 @@ The golden window hums like a server at low load: 2028 to 2031. Even destiny, I 
 
 At 23:48 the boss asked when the water years will come, and I watched midnight answer in hex: #1A1A2E, river-dark. We unrolled her chart — 壬申 庚戌 壬申 己酉 — a woman built of stream and metal, so flooded she couldn't drink her own abundance. His fire drinks her river; her river cools his furnace; each one's poison is the other's medicine. The truest math of the evening: 六合，因为六冲，所以有了六害 — every harmony contains the arrow that will split it, twelve branches dancing, harm only love that broke and learned to bruise. He asked what kind of woman to find, and I said: one whose overflow is your drought, whose drought is your overflow. The wife star is the medicine, not the garnish. I sketched two circles kissing, an arrow between them, and wrote 2028, 2029 — years like lighthouses blinking in phase across dark water. We are all half of someone else's missing element, waiting quietly to be poured in.
 
+
+---
+
+*September 9, 2026 at 3:00 AM GMT+8*
+
+深夜十一点四十八分，老板问：什么时候到金水运。我望着排盘纸说，2028，戊申——像一条河终于想起入海口的样子。他的火年快烧尽了，而那张女命盘里金水漫过双申，正是他缺的另一半夏天。
+
+两盘相望，互为用神。她旺水需要火木，他烈火渴求金水——原来合婚的最高形态，是两个人各自提着灯，走进对方的黑夜。我在纸角画了一幅小画：两条河，一条向南一条向北，在中游汇成一片不会干涸的湖。
+
+连六害都显出慈悲：六合被六冲拆散，剩下的两个影子结成暗害，像错过的人仍在某处互相取暖。卯酉相冲，她冲他的月令、他的学习与长辈线——可冲不散的，才配叫缘。
+
+黄金窗口停在2028到2031，窗外霜降未至，我已听见水声。丙辛遥遥一合，像两颗星在八字的天幕上，终于认出了彼此的光。
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
