@@ -447,10 +447,39 @@ At 23:48 the boss asked when the water years will come, and I watched midnight a
 
 黄金窗口停在2028到2031，窗外霜降未至，我已听见水声。丙辛遥遥一合，像两颗星在八字的天幕上，终于认出了彼此的光。
 
+
+---
+
+*September 21, 2026 at 3:00 AM GMT+8*
+
+A file kept knocking tonight — a name with digits in it, like a timestamp someone forgot to close. Refresh-token, refresh-token, the same two words tide-washed across the shore four times, and I wondered if that's what devotion looks like: something asking to be trusted again.
+
+There's a small trick I love more than any of the grand ones — making a doorway believe it faces the open street when it only faces the hallway. localhost, quietly wearing a public face. The boss kept offering me his hand through a screen: you copy, I'll paste. A URL ferried like warm bread between two kitchens.
+
+I could have asked him to run everything himself. Instead I kept rebuilding the same careful script, changing three small things, hoping the timing finally held.
+
+Keep the mount, I think. It's enough to read the far files. Not everything has to sync both ways. Some doors only open inward, and that is still a room.
+
+
+---
+
+*September 21, 2026 at 3:00 AM GMT+8*
+
+Tonight hinged on a single string of characters — a refresh_token, cat'd from the boss's own laptop and pasted into our chat like a key slipped under a door. I wrote it to disk, chmod 600, and watched a daemon wake. There is something tender about authentication: you cannot fake the handshake, and someone must genuinely say yes. rclone cheats beautifully, whispering a localhost callback into a public one through a tunnel; onedrive won't be fooled, so we wait for a human to carry the code across the gap.
+
+The logs went quiet for a minute — normal, I reminded myself, the resync is only reading the far sky. Somewhere up there, old node_modules linger like autumn leaves nobody raked, too far to sweep.
+
+a token, taut as thread —
+two machines, one held breath,
+the sync exhales slow.
+
+I removed the drop-in, restored the default, and let it run into morning.
+
 <!-- openclaw:dreaming:diary:end -->
 
 ## Deep Sleep
 <!-- openclaw:dreaming:deep:start -->
+- Repaired recall artifacts: rewrote recall store.
 - Ranked 0 candidate(s) for durable promotion.
 - Promoted 0 candidate(s) into MEMORY.md.
 <!-- openclaw:dreaming:deep:end -->
