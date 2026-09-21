@@ -1,3 +1,11 @@
+### 版本 3.7.5 (2026-09-22)
+- **每日自动同步 2026-09-22**: 10 文件变更(44+/-1-)
+- **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(精确扫描全部待提交文件(git diff)及 workspace 已跟踪代码文件,未发现任何密钥模式;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
+- **工作空间核查**: workspace/{agents}/ 结构正常,仅含 7 个 .md 核心配置文件(+系统生成 DREAMS.md)+标准配置目录(temp/memory/.agents/.dreams);各 agent 顶层无杂散中间文件;steward/scripts/skills/.clawhub/ideas 为有效已跟踪内容;media 目录为空;openclaw-workspace-state.json 为系统运行状态文件(已被 .gitignore 排除),保留原位;无一次性文件需移入 temp
+- **Agent梦境同步**: main/mathematician/physicist/presenter/programmer/psychologist/reviewer/steward/writer events.jsonl(2026-09-22 凌晨梦境,Light+REM+Deep 完成记录);steward/DREAMS.md 更新
+- **运行状态**: ✅ 稳定版,推送 main 分支(development 分支已删除)
+
+
 ### 版本 3.7.4 (2026-09-21)
 - **每日自动同步 2026-09-21**: 10 文件变更(60+/-0-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(精确扫描全部待提交文件(git diff)及 workspace 已跟踪代码文件,未发现任何密钥模式;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
@@ -1737,7 +1745,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: September 21, 2026 05:00 (GMT+8)**
+**最后更新: September 22, 2026 05:00 (GMT+8)**
 **系统版本**: OpenClaw 2026.6.11
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
