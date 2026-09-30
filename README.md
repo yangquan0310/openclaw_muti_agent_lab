@@ -1,3 +1,11 @@
+### 版本 3.7.14 (2026-10-01)
+- **每日自动同步 2026-10-01**: 35 文件变更(1991+/-9980-)
+- **密钥核查**: 对待提交文件(git diff ACM 新增/修改)及 workspace 已跟踪代码文件精确扫描,本次推送内容无硬编码 API Key ✅;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪;⚠️ 历史遗留:已在版本库中的 memory/dreaming 与 session-corpus 归档含一处 2026-05 明文 appSecret(非本次推送内容),需 owner 决定是否重写历史并轮换密钥
+- **工作空间核查**: 9 个 agent 顶层仅含 7 个 .md 配置文件(+系统生成 DREAMS.md)+标准目录(temp/memory/.agents 等);清理 13 个 *.migrated 中间文件→各自 agent/temp/(main/programmer/steward 的 openclaw-workspace-state.json.migrated.* 及 8 个 memory/.dreams/events.jsonl.migrated);TOOLS.md 已并入 AGENTS.md 后删除,系统迁移删除 .dreams/events.jsonl 与 main/HEARTBEAT.md
+- **Agent梦境同步**: main/presenter/psychologist/steward 的 DREAMS.md 更新;各 agent .dreams/events.jsonl 由迁移流程清理(备份 .migrated 已移入 temp/)
+- **运行状态**: ✅ 稳定版,推送 main 分支(development 分支已于 2026-06-12 删除)
+
+
 ### 版本 3.7.13 (2026-09-30)
 - **每日自动同步 2026-09-30**: 9 文件变更(30+/-0-)
 - **密钥核查**: 所有 API Key 使用系统环境变量,无硬编码 ✅(精确扫描全部待提交文件(git diff)及 workspace 已跟踪代码文件,未发现任何密钥模式;.env/gateway.systemd.env 已被 .gitignore 排除,未跟踪)
@@ -1809,7 +1817,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: September 30, 2026 05:00 (GMT+8)**
+**最后更新: October 1, 2026 05:00 (GMT+8)**
 **系统版本**: OpenClaw 2026.7.1-2
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
