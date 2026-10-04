@@ -1,3 +1,11 @@
+### 版本 3.7.17 (2026-10-05)
+- **每日自动同步 2026-10-05**: 2 文件变更(15+/-0-)
+- **密钥核查**: 待提交文件(git diff 新增 + 未跟踪新文件)精确扫描,未发现任何硬编码 API Key/密钥模式 ✅;.env 与 gateway.systemd.env 已被 .gitignore 排除,未跟踪
+- **工作空间核查**: 9 个 agent 顶层均为 7 个 .md 核心配置文件+标准目录(temp/memory/.agents;steward 另含 .clawhub/ideas/scripts/skills,psychologist/writer/steward 含 media);无杂散中间/解析/一次性文件,无需移入 temp(新增 steward/memory/2026-10-04-1912.md 属记忆文件,正常归档)
+- **Agent梦境同步**: steward 的 DREAMS.md 更新(2026-10-04 夜间梦境记录)
+- **运行状态**: ✅ 稳定版,推送 main 分支(development 分支已于 2026-06-12 删除)
+
+
 ### 版本 3.7.16 (2026-10-04)
 - **每日自动同步 2026-10-04**: 2 文件变更(14+/-0-)
 - **密钥核查**: 待提交文件(git diff)新增内容精确扫描,未发现任何硬编码 API Key/密钥模式 ✅;.env 与 gateway.systemd.env 已被 .gitignore 排除,未跟踪
@@ -1834,7 +1842,7 @@ openclaw agents restart <agent-name>
 
 ---
 
-**最后更新: October 4, 2026 05:00 (GMT+8)**
+**最后更新: October 5, 2026 05:00 (GMT+8)**
 **系统版本**: OpenClaw 2026.7.1-2
 **Git 分支**: main（development 分支已于 2026-06-12 删除）
 **运行状态**: ✅ 稳定版
