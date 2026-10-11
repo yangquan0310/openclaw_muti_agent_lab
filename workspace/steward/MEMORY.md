@@ -79,6 +79,7 @@
 | **✅ workboard 卡片粒度 = 混合 L1/L2/L3 模式**（v5.15.0，2026-08-04 老板拍板） | **场景**：任何 workboard 建卡。**新规则**（取代 v8.51.0 之前的"一项目一卡 vs 一任务一卡"二元讨论）：(1) **L1 项目卡** = 1 张 / 项目（立项时建，`agentId=steward` 元数据卡，老板视角）；(2) **L2 阶段卡** = 3-5 张 / 项目（立项后**立即全部建好** `status=todo`，大管家追踪）；(3) **L3 任务卡** = **按需**（L2 卡涵盖 3+ 子任务 / 子代理明确要求拆 / 阶段需分批严格串行 / 大管家觉得追踪粒度不够时建）。**关键约束**：(a) L2 卡的 `parents` 指向 L1 ID；(b) L3 卡的 `parents` 指向 L2 ID——**⚠️ v5.15.1 踩坑修正：L3 派发卡不要真设 `parents` 硬链接**（workboard 依赖机制会把带未完成 parent 的卡自动降级回 todo，dispatch 选不到 → started=0），改用 `createdByCardId` + L2 notes 软关联；(c) **L1/L2 卡不直接派发**，只做元数据 + 追踪；(d) **L3 才是真正派发对象**（群派发 IM 5 段艾特 / dispatch 派发 `openclaw workboard dispatch` CLI）。**完整定义**：`manager` 技能 `references/card-granularity.md` v1.0.1。**派生规则**：(a) 新项目立项 → 先建 L1 + 立即批量建 L2；(b) 派发时如 L2 阶段卡过重 → 拆 L3 任务卡；(c) 已有项目**不**强制迁移到三层，**新项目严格**执行。**踩坑教训（v8.51.0 沉淀）**：之前讨论的"一任务一卡 vs 一项目一卡"是**二元对立**——workboard 原生支持 parents/children 字段，三层混合才是最优解。**commit**：dc1da94d + 本次 v5.15.1。 |
 | **✅ 流月天干必须用五虎遁起月法**（v8.54.0，2026-08-05 老板拍板） | **场景**：任何流月排盘 / 流月与命局互动分析。**老板原话**（2026-08-05 23:18）："你更新一下流年流月计算。别在出问题了"。**新规则**：(a) **流月天干 = 五虎遁起月法**（**不是**相生顺序硬推）。**五虎遁口诀**：① **甲己之年丙作首**（甲/己年正月寅月=丙寅）；② **乙庚之年戊为头**（乙/庚年正月寅月=戊寅）；③ **丙辛之年寻庚上**（丙/辛年正月寅月=**庚寅**——2026 丙午年正月即此）；④ **丁壬壬寅顺水流**（丁/壬年正月寅月=壬寅）；⑤ **戊癸之年何处起，甲寅之上好追求**（戊/癸年正月寅月=甲寅）。(b) 然后按天干顺序顺推各月：庚寅→辛卯→壬辰→癸巳→甲午→乙未→丙申→丁酉→戊戌→己亥→庚子→辛丑。(c) **反例（不许做）**：按"上一月天干+1"硬推（如壬寅→癸卯→甲辰→乙巳→丙午...）—— **这是错的**！地支也按节气切月（立春→寅月开始，不是农历正月）。**踩坑教训（v8.54.0 沉淀）**：在 2004-02-16 09:30 女命姻缘深度解读中，整张流月天干全错（壬寅/癸卯→甲辰→乙巳→丙午...），根因 = 从壬寅开始按相生顺序硬推没用五虎遁，老板亲自下场纠错"今年是庚寅月吧？你搞错了"，连带姻缘关键月份的判断全错。**派生规则**：(a) 流月排盘前**先**用 `bazi <生日> --liumonth <年>-<月>` 验算，**不要**自己推；(b) 流年起法（公历年 = 流年柱）只是近似，**精确**以立春为界；(c) 任何排盘解析前**先**自检"流月天干对吗？"，避免低级错误。 |
 | **🚧 古代天文历法术数 5 待建技能**（v1.13.0 / MEMORY.md v8.55.0 §十一.8，老板 2026-08-13 14:40 拍板范畴规则） | **场景**：未来新增术数技能（紫微/奇门/太乙/七政四余/纳甲）。**5 个待建技能清单**（按优先级）：① **P0 `ziwei` 紫微斗数**（v1.x 待建）；② **P1 `qimen` 奇门遁甲**（v1.x 待建）；③ **P1 `taiyi` 太乙神数**（v1.x 待建）；④ **P2 `qizhengsiyu` 七政四余**（v1.x 待建）；⑤ **P2 `najia` 纳甲**（v1.x 待建）。**派生规则**：(a) 未来 5 个技能按"**范畴识别 + 统一边界 + 流派归属 + 专用工具**"四步走实施（按 bazi-rules.md §11.2-11.5 模板）；(b) **不混用**八字技法到紫微/奇门/六壬（如八字"用神"≠紫微"宫位"）；(c) **不沿用** P0-1 教训——每个新技能**首版必须有 ≥8 边界用例**（参考 bazi self-test 46/46 经验）；(d) 立项后通过 **`skill_workshop` 提案**走 OpenClaw 标准流程（路径 `.agents/skills/<name>/`）。**踩坑教训（v1.13.0 沉淀）**：之前 bazi 评审发现 5 个技能只在文档中提及，**未在 MEMORY.md 列入强约束**，导致任意时刻可能被遗忘。**补法**：本条记录强约束 + 给出 P0/P1/P2 优先级 + 给出实施模板。 |
+| **🚨 全局 CLI「看似孤儿」时先查 PATH 解析，别只看目录引用**（v8.56.0，2026-10-11 沉淀） | **场景**：node 升级（v22→v24）后 `npm root -g`/prefix 指向新版本目录，但旧版本 `lib/node_modules/*` 仍在，**看着像可删的遗留孤儿**。**踩坑**：曾判定 `/root/.nvm/versions/node/v22.22.2/lib/node_modules` 为遗留目录，实际 `PATH` 里仍挂着 `/root/.nvm/current/bin`（→v22），其中 `lark-cli`/`agently-cli`/`mmx`/`mcporter`/`lighthouse-mcp-server` **全机唯一副本且正在用**——直接删会废掉飞书/邮箱能力。**正确做法（do 型）**：① `which -a <cmd>` 看解析到哪一份；② `echo $PATH` 确认是否仍含旧版本 bin；③ `npm config get prefix` 看安装目标是否已迁移；④ **先迁移再删**（`npm i -g <pkg>@<同版本>` 到新 prefix → smoke test 通过）；⑤ 删旧副本 + 悬空 symlink；⑥ 删后必验 `openclaw --version` + 关键 API 实调。**派生**：`pnpm store prune`（1.4G→23M 属正常）后同样要验 openclaw 完好、`openclaw status` 正常。 <!-- project: github.com/yangquan0310/openclaw_muti_agent_lab --> |
 
 ---
 
@@ -86,6 +87,7 @@
 
 | 版本 | 日期 | 更新内容 |
 |------|------|----------|
+| v8.56.0 | 2026-10-11 | **全局 npm 包 v22→v24 迁移 + 磁盘清理**：`npm i -g` 迁移 @larksuite/cli@1.0.72 / @tencent-qqmail/agently-cli@1.0.6 / mmx-cli@1.0.16 / mcporter@0.8.1 / lighthouse-mcp-server@1.0.0 / agent-browser@0.27.0 到 v24 prefix；清 npm 缓存 2.7G + `pnpm store prune`（覆盖 1.4G→23M）+ 删 v22 已迁移副本（340M→75M）+ 清悬空 symlink；修复悬空 agent-browser wrapper（原 pnpm 0.24.0 已坏）。新增「全局 CLI 看似孤儿」If-Then 规则。 |
 | v8.55.1 | 2026-08-22 | **tcm-diagnosis 技能改名 zhongyi**（老板拍板）：目录 `.agents/skills/tcm-diagnosis/` → `zhongyi/` + `skills/tcm-diagnosis/` → `skills/zhongyi/`；SKILL.md name 字段同步；全局命令 `/usr/local/bin/tcm` → `/usr/local/bin/zhongyi`（symlink 重建）；内部引用（README/CLI engine/disclaimer）同步；self-test 8/8 通过。 |
 | v8.53.0 | 2026-08-04 | **🚨 删除目录前必查 symlink**：删除 memory-tdai/canvas/mcp/extensions/git 时踩坑（memory-tdai 和 git 是符号链接指向 /data/disk/.openclaw/，rm -rf 带斜杠跟随链接删除真实目标；tar 备份只打包链接本身不备份数据）。新增 if-then 规则：删前 ls -la 查箭头 / readlink，备份用 tar -czhf，删链接用 rm 不带斜杠，其他 symlink（memory/media/npm/agents/repository）严禁误删。 |
 | v5.15.0 | 2026-08-04 | **workboard 卡片粒度 = 混合 L1/L2/L3 模式**（老板 2026-08-04 11:32 拍板）。新增 `manager/references/card-granularity.md` v1.0.0；SKILL.md 加触发条件 + 指南导航 + 版本号 5.14.0 → 5.15.0；MEMORY.md 加 v5.15.0 规则。 |
@@ -97,7 +99,7 @@
 
 ---
 
-*最后更新：2026-08-04*
+*最后更新：2026-10-11*
 *更新者：大管家*
 *说明：MEMORY.md v8.52.0 一次清理完成，删除全部教学混杂内容、ch14 教研教训、bazi 流派版本历史（v8.42-v8.50）、auditor/instructor 残留引用、CFPPS 项目残留、wiki entities 残留。保留所有当前活跃 If-Then 规则和必要的版本历史。*
 
